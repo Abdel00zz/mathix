@@ -1,0 +1,20 @@
+{
+  "id": "ex-vect-esp-03",
+  "theme": "vecteurs-espace",
+  "difficulty": "moyen",
+  "topic": "Vecteurs de l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Multiplication d'un vecteur par un réel",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère le vecteur $\\overrightarrow{u}(1, -2, 3)$.\nDéterminer les coordonnées du vecteur $\\overrightarrow{w} = 2\\overrightarrow{u}$.",
+          "hint": "Les coordonnées du vecteur $\\overrightarrow{w} = k\\overrightarrow{u}$ sont données par la formule :\n$\\overrightarrow{w}(kx_u, ky_u, kz_u)$\n\nEn appliquant cette formule avec $\\overrightarrow{u}(1, -2, 3)$ et $k = 2$ :\n$\\overrightarrow{w}(2 \\times 1, 2 \\times (-2), 2 \\times 3)$\n$\\overrightarrow{w}(2, -4, 6)$"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "ex-geo-14",
+  "theme": "produit-scalaire",
+  "difficulty": "moyen",
+  "topic": "Géométrie Analytique - Lieux géométriques : médiatrice et barycentre",
+  "requiresRedaction": true,
+  "context": "Soient $A$ et $B$ deux points tels que $AB = 2$ et $I$ le milieu du segment $[AB]$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que : $MA^2 - MB^2 = 2\\overrightarrow{IM} \\cdot \\overrightarrow{AB}$.",
+          "hint": "Exprimez $\\overrightarrow{MA}$ et $\\overrightarrow{MB}$ en passant par $I$ : $\\overrightarrow{MA} = \\overrightarrow{MI} + \\overrightarrow{IA}$ et $\\overrightarrow{MB} = \\overrightarrow{MI} + \\overrightarrow{IB}$. Utilisez que $\\overrightarrow{IA} = -\\overrightarrow{IB}$ car $I$ est le milieu de $[AB]$."
+        },
+        {
+          "id": "sq1b",
+          "content": "Déterminer l'ensemble des points $M$ du plan tels que $MA^2 - MB^2 = x$.",
+          "hint": "D'après la question précédente, la condition devient $\\overrightarrow{IM} \\cdot \\overrightarrow{AB} = \\dfrac{x}{2}$. C'est l'équation d'une droite perpendiculaire à $(AB)$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer l'ensemble des points $M$ du plan tels que $MA^2 - MB^2 = 8$.",
+      "hint": "Utilisez le résultat de la question précédente avec le bon membre de droite."
+    },
+    {
+      "id": "q3",
+      "content": "Soit $[AB]$ un segment de longueur 6. On considère l'ensemble des points du plan $M$ tels que $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = -4$. Soit $I$ le milieu du segment $[AB]$.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que : $M \\in \\mathcal{C} \\Leftrightarrow MI^2 - IA^2 = -4$.",
+          "hint": "Exprimez $\\overrightarrow{MA}$ et $\\overrightarrow{MB}$ en passant par $I$ et développez le produit scalaire. $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = (\\overrightarrow{MI}+\\overrightarrow{IA})\\cdot(\\overrightarrow{MI}+\\overrightarrow{IB}) = MI^2 - IA^2$ car $\\overrightarrow{IA} = -\\overrightarrow{IB}$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Déterminer puis construire $\\mathcal{C}$.",
+          "hint": "L'équation $MI^2 = IA^2 - 4$ définit un cercle de centre $I$ et de rayon $r = \\sqrt{IA^2 - 4}$. Calculez $IA$ à partir de la longueur $AB = 6$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Soit $\\mathcal{C}'$ l'ensemble des points $M$ du plan tels que $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = -12$. Déterminer l'ensemble $\\mathcal{C}'$.",
+      "hint": "Même démarche qu'en 3a. Calculez le rayon du cercle obtenu et comparez à $IA^2$."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "ex-ens-app-31",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Composition des applications : composée et bijections réciproques",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "pA",
+      "content": "Partie A. On considère les applications $f$ et $g$ définies par : $f : \\mathbb{R}^* \\to \\mathbb{R}$, $x \\mapsto \\dfrac{1}{x}$ et $g : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto \\begin{cases} \\dfrac{|x|}{x} & x \\neq 0 \\\\ 0 & x = 0 \\end{cases}$. Définir les applications $f \\circ f$ ; $g \\circ g$ ; $f \\circ g$ ; $g \\circ f$.",
+      "hint": "Pour chaque composée, précisez le domaine de définition avant de calculer l'expression. $f \\circ g$ : le domaine est $\\{x \\in \\mathbb{R} \\mid g(x) \\in \\mathbb{R}^*\\}$, c'est-à-dire $x \\neq 0$."
+    },
+    {
+      "id": "pB_q1",
+      "content": "Partie B. On considère : $f : [-1;0] \\to \\left[0;\\dfrac{1}{2}\\right]$, $x \\mapsto \\dfrac{x^2}{1+x^2}$ et $g : [-1;0] \\to [0;1]$, $x \\mapsto x^2$. Montrer que $f$ est une bijection et déterminer sa bijection réciproque.",
+      "hint": "Sur $[-1;0]$, $f$ est strictement décroissante (calculez $f'$ ou étudiez la monotonie directement). Calculez $f(-1)$ et $f(0)$ pour vérifier l'image. Pour $f^{-1}$ : résolvez $y = \\dfrac{x^2}{1+x^2}$ avec $x \\in [-1;0]$."
+    },
+    {
+      "id": "pB_q2",
+      "content": "Montrer que $g$ est une bijection et déterminer sa bijection réciproque.",
+      "hint": "Sur $[-1;0]$, $g$ est strictement décroissante. $g(-1) = 1$ et $g(0) = 0$. $g^{-1}(y) = -\\sqrt{y}$ pour $y \\in [0;1]$."
+    },
+    {
+      "id": "pB_q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq_pB3a",
+          "content": "Déterminer une application $h$ telle que $f = h \\circ g$.",
+          "hint": "$f = h \\circ g$ signifie $h(g(x)) = f(x)$, soit $h(x^2) = \\dfrac{x^2}{1+x^2}$. Posez $t = x^2$ et exprimez $h(t)$."
+        },
+        {
+          "id": "sq_pB3b",
+          "content": "En déduire que $h$ est bijective puis donner $h^{-1}$.",
+          "hint": "$f = h \\circ g$ avec $f$ et $g$ bijectives implique que $h = f \\circ g^{-1}$ est bijective. $h^{-1} = g \\circ f^{-1}$."
+        }
+      ]
+    },
+    {
+      "id": "pC",
+      "content": "Partie C. Déterminer $f \\circ g$ et $g \\circ f$ dans chacun des cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq_pC1",
+          "content": "$f(x) = x^2 - 2x + 5$ et $g(x) = 2x - 6$",
+          "hint": ""
+        },
+        {
+          "id": "sq_pC2",
+          "content": "$f(x) = \\dfrac{x+3}{x^2+1}$ et $g(x) = 5x + 4$",
+          "hint": "Précisez bien les domaines de définition de $f \\circ g$ et $g \\circ f$."
+        },
+        {
+          "id": "sq_pC3",
+          "content": "$f(x) = \\sqrt{2+x^2}$ et $g(x) = 3 - x^2$",
+          "hint": ""
+        }
+      ]
+    }
+  ]
+}

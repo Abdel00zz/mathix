@@ -1,0 +1,313 @@
+/* Semantic macro styling for MathRenderer output.
+   The parser emits structure-oriented classes; all visual decisions live here. */
+
+.math-savant {
+  color: #2e7d6f;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.math-history-note {
+  position: relative;
+  display: block;
+  margin: clamp(1rem, 2vw, 1.35rem) 0 clamp(0.85rem, 1.6vw, 1.1rem);
+  padding: clamp(0.85rem, 1.5vw, 1.15rem) clamp(1rem, 1.8vw, 1.35rem);
+  border-left: 3px solid #f0c36a;
+  border-radius: 0 10px 10px 0;
+  background: #fdfbf5;
+  box-shadow: 0 1px 5px rgba(120, 78, 20, 0.06);
+  color: rgba(120, 63, 4, 0.9);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95em;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.math-history-note::before {
+  content: "HISTOIRE";
+  position: absolute;
+  top: -0.66rem;
+  left: 0.75rem;
+  padding: 0 0.45rem;
+  border-radius: 3px;
+  background: #fff;
+  color: rgba(180, 83, 9, 0.7);
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+.math-motivation {
+  color: #2563eb;
+  font-weight: 550;
+}
+
+.math-challenge {
+  color: #b91c1c;
+  font-weight: 650;
+}
+
+.math-objective {
+  color: #4338ca;
+  font-size: 0.82em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.math-mathqst {
+  font-family: var(--font-title-mono), var(--font-ui);
+  letter-spacing: 0.01em;
+}
+
+.math-text-bold {
+  color: #1e293b;
+  font-weight: 750;
+}
+
+.math-text-italic {
+  color: #334155;
+  font-style: italic;
+  font-weight: 620;
+  letter-spacing: 0.015em;
+}
+
+.math-text-code {
+  padding: 0.1rem 0.38rem;
+  border-radius: 4px;
+  background: rgba(15, 23, 42, 0.055);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.88em;
+}
+
+.math-text-sup {
+  vertical-align: super;
+  font-size: 0.72em;
+  line-height: 1;
+}
+
+.math-text-underline {
+  border-bottom: 1px solid var(--border, rgba(148, 163, 184, 0.7));
+  padding-bottom: 0.1em;
+}
+
+.math-text-st {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  display: inline;
+}
+
+.math-text-emph {
+  color: #b45309;
+  font-style: italic;
+}
+
+.math-text-red { color: #ef4444; }
+.math-text-blue { color: #2563eb; }
+.math-text-green { color: #059669; }
+.math-text-orange { color: #d97706; }
+.math-text-purple { color: #7c3aed; }
+
+.math-highlight {
+  padding-inline: 0.16em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  /* Le fond du surlignage doit survivre à l'impression (« graphiques d'arrière-plan »). */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.math-highlight-amber {
+  background: rgba(245, 158, 11, 0.12);
+}
+
+/* Surligneurs de couleur : fond seul, le texte garde son encre (contraste). */
+.math-highlight-yellow { background: rgba(250, 204, 21, 0.34); }
+.math-highlight-green { background: rgba(34, 197, 94, 0.2); }
+.math-highlight-orange { background: rgba(249, 115, 22, 0.2); }
+.math-highlight-purple { background: rgba(139, 92, 246, 0.18); }
+.math-highlight-pink { background: rgba(236, 72, 153, 0.18); }
+.math-highlight-cyan { background: rgba(6, 182, 212, 0.2); }
+.math-highlight-gray { background: rgba(100, 116, 139, 0.2); }
+
+.math-highlight-red {
+  background: rgba(239, 68, 68, 0.11);
+  color: rgba(220, 38, 38, 0.88);
+}
+
+.math-highlight-blue {
+  background: rgba(59, 130, 246, 0.11);
+  color: #2563eb;
+}
+
+.math-interactive-blank {
+  cursor: pointer;
+  user-select: none;
+}
+
+.math-size-large {
+  font-size: clamp(1.12rem, 1.02rem + 0.34vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.math-size-huge {
+  display: block;
+  margin-block: 1rem;
+  font-size: clamp(1.55rem, 1.3rem + 0.9vw, 1.9rem);
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.math-size-small {
+  font-size: 0.88em;
+  opacity: 0.9;
+}
+
+.math-size-tiny {
+  font-size: 0.78em;
+  opacity: 0.82;
+}
+
+.math-semref,
+.math-ref {
+  color: #b45309;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration-color: rgba(180, 83, 9, 0.24);
+  text-decoration-line: underline;
+  text-underline-offset: 0.18em;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.math-semref {
+  cursor: help;
+}
+
+.math-semref:hover,
+.math-ref:hover {
+  background: rgba(180, 83, 9, 0.06);
+  color: #92400e;
+}
+
+.math-cite {
+  color: #64748b;
+  font-style: italic;
+}
+
+.math-boxed {
+  display: inline-block;
+  margin-block: 0.45rem;
+  padding: 0.18rem 0.7rem;
+  border: 2px solid #334155;
+  border-radius: 0 !important;
+  font-weight: 600;
+}
+
+.math-result {
+  display: inline-block;
+  margin-block: 1rem;
+  padding: 0.55rem 1rem;
+  border: 2px solid #2563eb;
+  border-radius: 0 !important;
+  background: rgba(37, 99, 235, 0.04);
+  box-shadow: none;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.math-space-inline {
+  display: inline-block;
+}
+
+.math-space-block {
+  display: block;
+  width: 100%;
+}
+
+.math-linebreak {
+  display: block;
+  width: 100%;
+  height: 0;
+}
+
+.math-indent {
+  display: inline-block;
+  width: 2rem;
+}
+
+.math-noindent {
+  display: block;
+}
+
+.math-inline-text {
+  display: inline;
+}
+
+.math-command-label {
+  margin-right: 0.5rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.math-command-label-method {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+}
+
+.math-command-label-muted {
+  color: #64748b;
+}
+
+.math-command-step {
+  color: #4f5bd5;
+}
+
+.math-section-heading {
+  color: #1e293b;
+  font-family: var(--font-display, var(--font-editorial-text, var(--font-ui)));
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+.math-section-heading-1 {
+  margin: 3rem 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: none !important;
+  font-size: clamp(1.55rem, 1.25rem + 1vw, 1.9rem);
+  font-weight: 800;
+}
+
+.math-section-heading-2 {
+  margin: 2rem 0 1rem;
+  font-size: clamp(1.32rem, 1.13rem + 0.6vw, 1.56rem);
+  font-weight: 700;
+  color: rgba(30, 41, 59, 0.92);
+}
+
+.math-section-heading-3 {
+  margin: 1.5rem 0 0.75rem;
+  font-size: clamp(1.12rem, 1rem + 0.45vw, 1.28rem);
+  font-weight: 650;
+  color: rgba(30, 41, 59, 0.84);
+}
+
+.math-section-heading-4 {
+  margin: 1rem 0 0.5rem;
+  font-family: var(--font-ui);
+  font-size: clamp(1.25rem, 1.19rem + 0.31vw, 1.41rem);
+  font-weight: 650;
+  color: rgba(30, 41, 59, 0.72);
+}
+
+.math-section-heading-5 {
+  margin: 0.75rem 0 0.5rem;
+  font-family: var(--font-ui);
+  font-size: clamp(0.96rem, calc(0.92rem + 0.14vw), 1.06rem);
+  font-weight: 600;
+  color: rgba(30, 41, 59, 0.68);
+}

@@ -1,0 +1,68 @@
+{
+  "id": "ex-esp-14",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "difficile",
+  "topic": "Géométrie analytique dans l'espace — Plan, droite orthogonale, sphère",
+  "requiresRedaction": true,
+  "context": "On considère les points $A(1;1;1)$, $B(0;1;2)$ et $C(-3;2;5)$ et le plan $(P)$ d'équation cartésienne : $x+y-z+2 = 0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que les points $A$, $B$, $C$ et $O$ ne sont pas coplanaires.",
+          "hint": "Calculez le déterminant $\\det(\\overrightarrow{OA},\\overrightarrow{OB},\\overrightarrow{OC})$. S'il est non nul, les quatre points ne sont pas coplanaires."
+        },
+        {
+          "id": "sq1b",
+          "content": "Déterminer une équation cartésienne du plan $(ABC)$.",
+          "hint": "Calculez $\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$ pour obtenir le vecteur normal, puis utilisez le point $A$."
+        },
+        {
+          "id": "sq1c",
+          "content": "Montrer que les deux plans $(P)$ et $(ABC)$ sont orthogonaux.",
+          "hint": "Deux plans sont orthogonaux si et seulement si leurs vecteurs normaux sont orthogonaux : $\\overrightarrow{n}_P \\cdot \\overrightarrow{n}_{ABC} = 0$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soit $(\\Delta)$ la droite passant par $O$ et orthogonale au plan $(P)$.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Déterminer une représentation paramétrique de la droite $(\\Delta)$.",
+          "hint": "La droite passe par $O$ et a pour vecteur directeur le vecteur normal de $(P)$ : $(1;1;-1)$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Déterminer l'intersection de la droite $(\\Delta)$ et le plan $(P)$.",
+          "hint": "Substituez la représentation paramétrique dans l'équation de $(P)$ et résolvez en $t$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Soit $(S)$ la sphère d'équation : $x^2+y^2+z^2-2 = 0$.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Déterminer le centre et le rayon de $(S)$.",
+          "hint": "L'équation est déjà sous forme canonique."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que le plan $(ABC)$ est tangent à la sphère $(S)$.",
+          "hint": "Calculez $d(O,(ABC))$ et comparez à $R = \\sqrt{2}$."
+        },
+        {
+          "id": "sq3c",
+          "content": "Montrer que l'intersection du plan $(P)$ et la sphère $(S)$ est un cercle dont on déterminera le centre et le rayon.",
+          "hint": "Calculez $d(O,(P))$ et vérifiez qu'elle est inférieure à $R$. Le rayon du cercle est $r = \\sqrt{R^2-d^2}$ et le centre est le pied de la perpendiculaire de $O$ sur $(P)$."
+        }
+      ]
+    }
+  ]
+}

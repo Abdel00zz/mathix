@@ -1,0 +1,694 @@
+{
+  "questions": [
+    {
+      "id": "med-16-01",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "analyse",
+      "prompt": "Pour tout entier $m>0$, quelle est la limite de $\\frac{\\ln(x)}{x^m}$ lorsque $x\\to+\\infty$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$m$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• En l'infini, la fonction puissance l'emporte toujours sur la fonction logarithme.\n• Cela signifie que l'expression se comporte ultimement comme $\\frac{1}{x^m}$, qui tend vers $0$."
+    },
+    {
+      "id": "med-16-02",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "algebre",
+      "prompt": "Parmi les propositions suivantes sur les nombres complexes, laquelle est correcte concernant les puissances de $i$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La partie réelle de $1 - i^5$ est $0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Le nombre $i^4$ est égal à $-1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La puissance $i^{20}$ est égale à $1$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "L'équation $z^4 - 1 = 0$ possède exactement une seule solution dans $\\mathbb{C}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• Les puissances de $i$ bouclent par cycle de 4 : $i^1=i$, $i^2=-1$, $i^3=-i$, $i^4=1$.\n• $20$ étant un multiple de $4$, $i^{20} = (i^4)^5 = 1^5 = 1$.\n• $z^4-1=0$ admet 4 solutions (les racines quatrièmes de l'unité : $1, -1, i, -i$)."
+    },
+    {
+      "id": "med-16-03",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "theme": "analyse",
+      "prompt": "Que signifie rigoureusement le fait qu'une suite numérique $(u_n)$ soit minorée ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Il existe un réel $M$ tel que pour tout $n$, $u_n \\leq M$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Il existe un réel $m$ tel que pour tout $n$, $u_n \\geq m$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "La suite admet une limite finie quand $n$ tend vers l'infini.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La suite est à la fois strictement décroissante et positive.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Minorée signifie qu'il existe un « plancher » (une valeur $m$) sous lequel la suite ne descend jamais. C'est une condition indispensable pour utiliser le théorème de convergence monotone (décroissante + minorée = convergente)."
+    },
+    {
+      "id": "med-16-04",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "analyse",
+      "prompt": "Si $f$ est continue et strictement positive sur $[a,b]$ avec $a<b$, quelle affirmation est vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\int_a^b f(x)\\,dx>0$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\int_a^b f(x)\\,dx<0$ si les valeurs de $f$ sont petites.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\int_a^b f(x)\\,dx=0$ quelle que soit $f$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le signe de l'intégrale dépend uniquement de $f(a)$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La positivité de l'intégrale est stricte : si $f(x) > 0$ et que les bornes sont dans l'ordre croissant ($a < b$), l'aire sous la courbe (et donc l'intégrale) est obligatoirement strictement positive, quelle que soit la petitesse des valeurs."
+    },
+    {
+      "id": "med-16-05",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "Soient $m$ une constante de $\\mathbb{R}$ et $h$ la fonction définie sur $\\mathbb{R}^*_+$ par $h(x) = x^m - \\ln^2(x)$. Si $m > 0$, la limite de $h(x)$ en $+\\infty$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Indéterminée car c'est une forme $+\\infty - \\infty$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Analyse de la méthode :\n• On factorise par le terme dominant $x^m$ : $h(x) = x^m \\left(1 - \\frac{\\ln^2(x)}{x^m}\\right)$.\n• Par croissances comparées, $\\frac{\\ln^2(x)}{x^m} \\to 0$.\n• La parenthèse tend vers $1$. Comme $x^m \\to +\\infty$ (car $m>0$), le produit tend vers $+\\infty$."
+    },
+    {
+      "id": "med-16-06",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "algebre",
+      "prompt": "Quelle est l'affirmation correcte concernant le nombre complexe $(1+i)^{20}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sa partie imaginaire est $42$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Il s'agit d'un nombre réel.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Il est égal à $1 + i$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Son module est $2^{20}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Astuce de calcul :\n• On calcule le carré d'abord : $(1+i)^2 = 1 + 2i + i^2 = 1 + 2i - 1 = 2i$.\n• On élève ensuite à la puissance 10 : $(1+i)^{20} = (2i)^{10} = 2^{10} i^{10} = 1024 \\times (i^4)^2 \\times i^2 = 1024 \\times (-1) = -1024$.\n• Le résultat étant $-1024$, il n'a pas de partie imaginaire, c'est un réel pur."
+    },
+    {
+      "id": "med-16-07",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "Soit la suite définie par $u_n = \\frac{(-1)^n}{n^2}$ pour tout $n \\in \\mathbb{N}^*$. Laquelle de ces affirmations est vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle est monotone.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Elle est strictement décroissante et minorée.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Elle est toujours négative.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle est convergente.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Rappels utiles :\n• À cause du terme $(-1)^n$, la suite alterne de signe : elle n'est ni monotone, ni toujours négative.\n• Cependant, on peut l'encadrer : $-\\frac{1}{n^2} \\leq u_n \\leq \\frac{1}{n^2}$.\n• D'après le théorème des gendarmes, les deux limites externes tendant vers $0$, la suite $(u_n)$ converge vers $0$."
+    },
+    {
+      "id": "med-16-08",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "theme": "analyse",
+      "prompt": "Quelle mise en œuvre de l'intégration par parties est correcte pour $\\displaystyle \\int_1^e \\frac{\\ln(x)}{\\sqrt{x}}\\,dx$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prendre $u=\\ln x$, $v'=x^{-\\frac{1}{2}}$, donc $u'=\\frac{1}{x}$ et $v=2\\sqrt{x}$, puis appliquer $\\displaystyle [uv]_1^e-\\int_1^e u'v$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Prendre $u=\\ln x$, $v'=x^{-\\frac{1}{2}}$, puis utiliser $v=\\frac{1}{2\\sqrt{x}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Écrire $\\displaystyle \\int uv'=\\int u'v$ sans terme de bord.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Remplacer $\\ln(x)$ par $x$ avant d'intégrer.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La règle ALPES (Arc, Log, Poly, Exp, Sin) indique que la fonction logarithme a toujours la priorité pour être dérivée (fonction $u$) afin de la faire disparaître sous l'intégrale résiduelle."
+    },
+    {
+      "id": "med-16-09",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "En appliquant la méthode d'intégration par parties détaillée précédemment, la valeur de $\\displaystyle \\int_1^e \\frac{\\ln(x)}{\\sqrt{x}}\\,dx$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$4 - 2\\sqrt{e}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$4 + 2\\sqrt{e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}\\ln(2)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Développement final :\n• Le crochet $[2\\sqrt{x}\\ln(x)]_1^e = 2\\sqrt{e}\\ln(e) - 2\\sqrt{1}\\ln(1) = 2\\sqrt{e}$.\n• L'intégrale résiduelle $\\displaystyle \\int_1^e 2x^{-\\frac{1}{2}}\\,dx = [4\\sqrt{x}]_1^e = 4\\sqrt{e} - 4$.\n• Soustraction : $2\\sqrt{e} - (4\\sqrt{e} - 4) = 4 - 2\\sqrt{e}$."
+    },
+    {
+      "id": "med-16-10",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "algebre",
+      "prompt": "Soient $n$ et $p$ deux entiers naturels strictement positifs. Si la somme $n^2 + np + p^2$ est paire, alors nécessairement :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$n$ et $p$ sont impairs.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$n$ est pair et $p$ est impair (ou inversement).",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$n$ et $p$ sont pairs.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Cette somme ne peut jamais être paire.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Test des cas de parité possibles :\n• Si $n, p$ impairs : Impair + Impair$\\times$Impair + Impair = Impair + Impair + Impair = Impair.\n• Si un seul est pair : Pair + Pair$\\times$Impair + Impair = Pair + Pair + Impair = Impair.\n• Si $n, p$ pairs : Pair + Pair$\\times$Pair + Pair = Pair + Pair + Pair = Pair.\nLa seule condition pour obtenir un résultat pair est que $n$ et $p$ soient tous les deux pairs."
+    },
+    {
+      "id": "med-16-11",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "Pour $f(x)=e^x$ si $x<0$ et $f(x)=\\cos(x)$ si $x\\geq0$, quelle affirmation résout correctement $f(x)=0$ sur $]-\\infty;\\pi]$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$e^x$ ne s'annule jamais ; l'unique solution est $x=\\frac{\\pi}{2}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$e^x=0$ admet la solution $x=0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\cos(x)=0$ n'a aucune solution sur $[0,\\pi]$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il faut résoudre une seule équation sur tout l'intervalle sans tenir compte des morceaux.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est un piège de réflexe courant. Parce que les élèves cherchent frénétiquement une racine, ils forcent la fonction exponentielle à valoir zéro. Il n'y a finalement qu'une seule et unique solution : $\\frac{\\pi}{2}$."
+    },
+    {
+      "id": "med-16-12",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "theme": "algebre",
+      "prompt": "Quelle méthode calcule correctement $(1+i)^{20}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Écrire $1+i=\\sqrt2e^{i\\frac{\\pi}{4}}$ ; ainsi $(1+i)^{20}=2^{10}e^{i5\\pi}=-1024$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Distribuer la puissance : $(1+i)^{20}=1^{20}+i^{20}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Utiliser $i^{20}=1$ pour conclure que $(1+i)^{20}=1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Conclure que $(1+i)^{20}=2$ parce que $1^{20}=i^{20}=1$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Distribuer une puissance sur une somme détruit totalement l'algèbre (hormis le cas exceptionnel de la caractéristique 2). Il faut maîtriser les identités remarquables et la formule du binôme de Newton pour s'en convaincre."
+    },
+    {
+      "id": "med-16-13",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "ambiguity_note": "L'oubli des règles de dérivation d'intégrales à bornes variables est fatal ici. On n'intègre pas, on dérive.",
+      "prompt": "Soient $f$ et $g$ définies sur $\\mathbb{R}$ par $f(x) = \\frac{1}{1+x^2}$ et $\\displaystyle g(x) = \\int_x^{x+1} f(t)\\,dt$. La fonction $g$ est dérivable sur $\\mathbb{R}$, pour tout $x \\in \\mathbb{R}$, $g'(x)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(x+1) - f(x)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f(x) - f(x+1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f'(x+1) - f'(x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln(1+(x+1)^2) - \\ln(1+x^2)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Soit $F$ une primitive de $f$. \n• Par définition, $g(x) = F(x+1) - F(x)$.\n• En dérivant cette égalité, on utilise la dérivée des fonctions composées : $g'(x) = (x+1)'F'(x+1) - (x)'F'(x)$.\n• Puisque $F' = f$, on obtient $1\\times f(x+1) - 1\\times f(x) = f(x+1) - f(x)$."
+    },
+    {
+      "id": "med-16-14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "ambiguity_note": "La présence du cosinus au carré au dénominateur intimide et fait oublier la primitive directe de la fonction tangente.",
+      "prompt": "La valeur de l'intégrale trigonométrique $\\displaystyle \\int_0^{\\frac{\\pi}{8}} \\frac{2}{\\cos^2(x)}\\,dx$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2(\\sqrt{2} - 1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1 - \\sqrt{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$4\\sqrt{2} - 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4(1 - \\sqrt{2})$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Analyse du calcul :\n• On reconnaît immédiatement que $\\frac{1}{\\cos^2(x)}$ est la dérivée usuelle de la fonction $\\tan(x)$.\n• La primitive est donc $2\\tan(x)$.\n• L'évaluation donne $[2\\tan(x)]_0^{\\frac{\\pi}{8}} = 2\\tan(\\frac{\\pi}{8}) - 0$.\n• La valeur de $\\tan(\\frac{\\pi}{8})$ (demi-angle) est $\\sqrt{2}-1$. Résultat : $2(\\sqrt{2}-1)$."
+    },
+    {
+      "id": "med-16-15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "ambiguity_note": "Il est fréquent de croire que l'exponentielle s'impose face à la puissance. Mais n à la puissance n croît factoriellement plus vite.",
+      "prompt": "Soit la suite définie pour tout $n \\in \\mathbb{N}^*$ par $u_n = \\frac{e^n}{n^n}$. Laquelle de ces affirmations est vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La suite $u_n$ est bornée.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La suite $u_n$ diverge vers $+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La suite $u_n$ est strictement croissante.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La suite $u_n$ admet une limite non nulle.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• On peut réécrire la suite sous la forme $u_n = \\left(\\frac{e}{n}\\right)^n$.\n• Dès que $n > e$ (donc pour $n \\geq 3$), la base $\\frac{e}{n}$ est strictement inférieure à $1$.\n• La suite décroît donc rapidement vers $0$. Étant positive et convergente, elle est nécessairement bornée."
+    },
+    {
+      "id": "med-16-16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "theme": "analyse",
+      "prompt": "Avec $v_n=-2u_n+3n-\\frac{21}{2}$, quelle démarche permet de déterminer la forme explicite de $u_n$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculer $v_{n+1}$, remplacer $u_{n+1}$, montrer $v_{n+1}=\\frac{1}{3}v_n$, déterminer $v_n$, puis isoler $u_n$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Isoler $u_n$ avant de déterminer une relation de récurrence pour $v_n$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Conclure que $v_n$ est arithmétique de raison $\\frac{1}{3}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Remplacer $u_{n+1}$ par $u_n+n-2$ sans le facteur $\\frac{1}{3}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Cette structure d'exercice est omniprésente au baccalauréat et dans les concours. L'objectif entier de la suite auxiliaire $v_n$ est d'absorber la partie polynomiale de la récurrence pour révéler une suite géométrique pure dont on connaît la formule explicite."
+    },
+    {
+      "id": "med-16-17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "theme": "algebre",
+      "ambiguity_note": "L'énoncé d'origine ne précisait pas que $n$ et $p$ étaient impairs ; le QCM le précise pour que la parité demandée soit déterminée.",
+      "prompt": "Sachant que $n$ et $p$ sont deux entiers impairs quelconques, quelle écriture respecte leur indépendance pour étudier la parité de $n^2+np+p^2$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$n=2k+1$ et $p=2\\ell+1$, avec $k,\\ell\\in\\mathbb Z$ indépendants.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$n=2k+1$ et $p=2k+1$, avec un même paramètre $k$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$n=2k$ et $p=2\\ell$, car deux impairs sont des multiples de $2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$n=p=1$, car un seul exemple suffit à décrire tous les impairs.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Indépendance des variables : l'introduction d'un second paramètre ($k'$ différent de $k$) est requise à chaque fois que l'on décrit les propriétés générales de deux nombres indépendants."
+    },
+    {
+      "id": "med-16-18",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "Une fois l'algorithme des suites croisées appliqué (vu en Q16), l'expression explicite finale pour tout $n \\in \\mathbb{N}$ de $u_n$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{25}{4}\\left(\\frac{1}{3}\\right)^n + \\frac{3}{2}n - \\frac{21}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{25}{2}\\left(\\frac{1}{3}\\right)^n + \\frac{3}{2}n + \\frac{21}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\frac{25}{4}\\left(\\frac{1}{3}\\right)^n - 3n + \\frac{21}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{25}{4}\\left(\\frac{1}{3}\\right)^n - n - 2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Bilan calculatoire : \n• $v_0 = -2(1) + 0 - \\frac{21}{2} = -\\frac{25}{2}$.\n• Suite géométrique : $v_n = -\\frac{25}{2}\\left(\\frac{1}{3}\\right)^n$.\n• Isolation : $-2u_n = v_n - 3n + \\frac{21}{2} \\implies u_n = -\\frac{1}{2}v_n + \\frac{3}{2}n - \\frac{21}{4}$.\n• On injecte $v_n$ : $u_n = -\\frac{1}{2}\\left(-\\frac{25}{2}\\left(\\frac{1}{3}\\right)^n\\right) + \\frac{3}{2}n - \\frac{21}{4}$, ce qui valide le résultat A."
+    },
+    {
+      "id": "med-16-19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "prompt": "Quelle est l'image de $\\mathbb R$ par $f(x)=\\frac{1}{1+x^2}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]0;1]$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$[0;1]$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$]0;+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\mathbb R$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Analyse de l'image de la fonction (Courbe de Cauchy/Lorentzienne) :\n• Le dénominateur $1+x^2$ est strictement positif et toujours $\\geq 1$.\n• Le numérateur étant constant (1), la fraction atteint son maximum quand le dénominateur est le plus petit ($x=0$), valant $\\frac{1}{1} = 1$.\n• En $\\pm\\infty$, le dénominateur explose, la fonction tend vers $0$ sans jamais l'atteindre. L'image est donc bien $]0; 1]$."
+    },
+    {
+      "id": "med-16-20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "analyse",
+      "prompt": "En généralisant la méthode de la question 13 pour dériver des intégrales, comment exprime-t-on la dérivée d'une fonction $\\displaystyle H(x) = \\int_{u(x)}^{v(x)} f(t)\\,dt$ (en supposant tout dérivable et continu) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$H'(x) = v'(x)f(v(x)) - u'(x)f(u(x))$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$H'(x) = f(v(x)) - f(u(x))$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$H'(x) = f(v'(x)) - f(u'(x))$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle H'(x) = \\int_{u(x)}^{v(x)} f'(t)\\,dt$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il s'agit du pont théorique fondamental liant la dérivation des fonctions composées au théorème fondamental de l'analyse. \nSoit $F$ la primitive de $f$. $H(x) = F(v(x)) - F(u(x))$. En dérivant, la règle de composition impose de multiplier par les dérivées internes $v'$ et $u'$, ce qui donne l'option A."
+    },
+    {
+      "id": "med-16-21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "analyse",
+      "ambiguity_note": "L'alternance de signe n'assure pas elle-même la convergence ; elle impose seulement que toute limite éventuelle soit nulle.",
+      "prompt": "Si une suite $(w_n)$ change de signe à chaque rang et converge, quelle affirmation est nécessairement vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sa limite est $0$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Sa limite est strictement positive.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Sa limite est strictement négative.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle diverge nécessairement.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si une suite alterne convergeait vers une limite $L > 0$, alors à partir d'un certain rang, tous ses termes devraient être proches de $L$ (et donc strictement positifs). Cela contredit le fait qu'elle change de signe. Le même raisonnement s'applique pour $L < 0$. Seul $0$ permet de resserrer la distance tout en oscillant de signe (comme vu avec la suite $\\frac{(-1)^n}{n^2}$)."
+    },
+    {
+      "id": "med-16-22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "analyse",
+      "prompt": "Dans la question 14, le résultat dépendait de la valeur de $\\tan(\\frac{\\pi}{8})$. Quelle approche algébrique permet de trouver cette valeur exacte sans recourir à un cercle trigonométrique chiffré ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Résoudre l'équation du second degré $t^2 + 2t - 1 = 0$ issue de $\\tan(2x)$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Appliquer la formule de Moivre à la puissance 8.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Diviser la valeur de $\\tan(\\frac{\\pi}{4})$ par deux, soit $\\frac{1}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Utiliser l'identité $\\cos^2(x) + \\sin^2(x) = 1$ en isolant la tangente.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• La formule de duplication de la tangente est $\\tan(2x) = \\frac{2\\tan(x)}{1 - \\tan^2(x)}$.\n• En posant $x = \\frac{\\pi}{8}$, on obtient $\\tan(\\frac{\\pi}{4}) = 1 = \\frac{2t}{1 - t^2}$ (où $t=\\tan(\\frac{\\pi}{8})$).\n• Cela se réarrange en $1 - t^2 = 2t$, soit l'équation du second degré $t^2 + 2t - 1 = 0$. La racine positive (car $\\frac{\\pi}{8}$ est dans le premier quadrant) donne $\\sqrt{2}-1$."
+    }
+  ],
+  "school": "medecine",
+  "year": "2016",
+  "title": "Concours Médecine 2016"
+}

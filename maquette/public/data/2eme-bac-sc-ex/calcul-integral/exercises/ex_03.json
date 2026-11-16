@@ -1,0 +1,42 @@
+{
+  "id": "ex-03",
+  "theme": "calcul-integral",
+  "difficulty": "facile",
+  "topic": "Calcul Intégral - Vérification algébrique et intégration par parties",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Vérifier que : $(\\forall x \\in \\mathbb{R})\\,;\\, \\dfrac{(x+1)^2}{x^2+1} = 1 + \\dfrac{2x}{x^2+1}$",
+          "hint": "\\method Développez $(x+1)^2$ et écrivez tout au même dénominateur $x^2+1$. \\tip C'est une vérification algébrique directe, il suffit de partir du membre de droite et de réduire."
+        },
+        {
+          "id": "sq1b",
+          "content": "En déduire la valeur de l'intégrale : $\\displaystyle\\int_0^1 \\frac{(x+1)^2}{x^2+1}\\,dx$.",
+          "hint": "\\method Intégrez les deux termes obtenus en 1a séparément. \\tip $\\displaystyle\\int \\frac{2x}{x^2+1}\\,dx$ est de la forme $\\displaystyle\\int \\frac{u'}{u}\\,dx$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "En utilisant une intégration par parties, calculer l'intégrale : $\\displaystyle\\int_0^1 x e^x\\,dx$.",
+          "hint": "\\method Posez $u = x$ et $v' = e^x$. \\tip Après l'IPP, l'intégrale restante est immédiate."
+        },
+        {
+          "id": "sq2b",
+          "content": "En déduire la valeur de l'intégrale : $\\displaystyle\\int_0^1 (x - e^{-2x})e^x\\,dx$",
+          "hint": "\\method Développez et séparez en deux intégrales. \\tip $\\displaystyle\\int (x - e^{-2x})e^x\\,dx = \\int xe^x\\,dx - \\int e^{-x}\\,dx$. La première vient d'être calculée en 2a."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Le vol d'un planeur",
+    "subtitle": "Vecteurs et trigonométrie",
+    "context": "Vecteurs · Trigonométrie"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le vol d'un planeur",
+          "content": "Un planeur est en vol plané. Dans un repère orthonormé $(O;\\vec{i},\\vec{j})$ où $\\vec{i}$ est horizontal et $\\vec{j}$ est vertical (unité : le mètre), le planeur se déplace selon un vecteur vitesse $\\vec{v}$ faisant un angle de $-5°$ avec l'horizontale (descente légère), avec $\\|\\vec{v}\\| = 20$ m/s.\\par Le planeur part du point $P(0, 800)$ (soit une altitude de $800$ m)."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Décomposer $\\vec{v}$ en ses composantes horizontale et verticale (arrondir à $10^{-2}$ près). On rappelle que $\\cos(-5°) \\approx 0{,}996$ et $\\sin(-5°) \\approx -0{,}087$.\\item Après $t$ secondes, donner les coordonnées du planeur.\\item Au bout de combien de secondes le planeur atteint-il le sol ($y = 0$) ?\\item Quelle distance horizontale le planeur a-t-il alors parcourue ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Les composantes de $\\vec{v}$ sont $v_x = \\|\\vec{v}\\|\\cos(-5°)$ et $v_y = \\|\\vec{v}\\|\\sin(-5°)$."
+        },
+        {
+          "type": "hint",
+          "content": "La position après $t$ secondes est $(0 + v_x \\cdot t,\\; 800 + v_y \\cdot t)$. Posez $y = 0$ pour trouver $t$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $v_x = 20 \\times 0{,}996 = 19{,}92$ m/s et $v_y = 20 \\times (-0{,}087) = -1{,}74$ m/s.\\par\\textbf{2)} Position après $t$ s : $(19{,}92t,\\; 800 - 1{,}74t)$.\\par\\textbf{3)} $800 - 1{,}74t = 0 \\Leftrightarrow t = \\dfrac{800}{1{,}74} \\approx \\boxed{460}$ s.\\par\\textbf{4)} Distance horizontale : $19{,}92 \\times 460 \\approx \\boxed{9163}$ m $\\approx 9{,}2$ km."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ex-prod-scal-esp-05",
+  "theme": "produit-scalaire-espace",
+  "difficulty": "moyen",
+  "topic": "Produit scalaire dans l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Équation cartésienne d'un plan",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère le point $A(1, -2, 3)$ et le vecteur $\\overrightarrow{n}(2, 1, -1)$.\nDéterminer une équation cartésienne du plan $(P)$ passant par $A$ et de vecteur normal $\\overrightarrow{n}$.",
+          "hint": "Un point $M(x, y, z)$ appartient au plan $(P)$ si et seulement si les vecteurs $\\overrightarrow{AM}$ et $\\overrightarrow{n}$ sont orthogonaux, c'est-à-dire $\\overrightarrow{AM} \\cdot \\overrightarrow{n} = 0$.\n\nLe vecteur $\\overrightarrow{AM}$ a pour coordonnées $(x - 1, y - (-2), z - 3) = (x - 1, y + 2, z - 3)$.\n\nL'équation s'écrit donc :\n$(x - 1)(2) + (y + 2)(1) + (z - 3)(-1) = 0$\n$2x - 2 + y + 2 - z + 3 = 0$\n$2x + y - z + 3 = 0$\n\nUne équation cartésienne du plan $(P)$ est $2x + y - z + 3 = 0$."
+        }
+      ]
+    }
+  ]
+}

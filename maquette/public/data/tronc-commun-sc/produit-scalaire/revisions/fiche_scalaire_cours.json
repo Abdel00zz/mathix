@@ -1,0 +1,135 @@
+{
+  "header": {
+    "title": "Le Produit Scalaire",
+    "subtitle": "Définitions, géométrie et relations métriques",
+    "context": "Tronc Commun Scientifique"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie le \\objectif{produit scalaire de deux vecteurs} : définition par la norme et le cosinus, calcul par projection orthogonale ou par les trois longueurs, propriétés algébriques, critère d'orthogonalité, théorème d'Al Kashi et théorème de la médiane. Le produit scalaire est l'outil qui généralise le théorème de Pythagore à tout triangle et permet de démonter l'orthogonalité sans aucun repère. La \\defi{principale difficulté} est le choix de la bonne formule selon les données disponibles et la maîtrise du signe lors de la projection — il faut observer le sens des vecteurs sur la droite de projection. C'est \\savant{Josiah Willard Gibbs} qui a formalisé le produit scalaire en 1881 dans son analyse vectorielle, un outil aujourd'hui indispensable à toute la physique et à l'informatique.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Josiah_Willard_Gibbs_-from_MMS-.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Josiah Willard Gibbs (1839–1903)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definitions_et_projection",
+      "category": "course",
+      "title": "Définition et projection orthogonale",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le produit scalaire relie la norme de deux vecteurs et l'angle qui les sépare. Pour le calculer visuellement, on utilise la technique de la projection orthogonale."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le produit scalaire ?",
+          "content": "Le \\textbf{produit scalaire} de deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$, noté $\\overrightarrow{u} \\cdot \\overrightarrow{v}$, est un nombre réel.\\par\\smallskip Si $\\overrightarrow{u} = \\overrightarrow{0}$ ou $\\overrightarrow{v} = \\overrightarrow{0}$, alors $\\overrightarrow{u} \\cdot \\overrightarrow{v} = 0$.\\par Si les vecteurs sont non nuls, en notant $\\alpha$ l'angle orienté entre eux :\\par $$\\boxed{\\overrightarrow{u} \\cdot \\overrightarrow{v} = ||\\overrightarrow{u}|| \\times ||\\overrightarrow{v}|| \\times \\cos(\\alpha)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons $\\overrightarrow{u} \\cdot \\overrightarrow{v}$ sachant que $||\\overrightarrow{u}|| = 4$, $||\\overrightarrow{v}|| = 3$ et l'angle entre les deux est de $\\dfrac{\\pi}{3}$.}\\par On applique directement la formule avec le cosinus de l'angle :\\begin{align*}\\overrightarrow{u} \\cdot \\overrightarrow{v} &= ||\\overrightarrow{u}|| \\times \\blank{||\\overrightarrow{v}||} \\times \\cos\\left(\\frac{\\pi}{3}\\right) \\\\ &= 4 \\times 3 \\times \\blank{\\frac{1}{2}} \\\\ &= 12 \\times \\blank{\\frac{1}{2}} \\\\ &= \\blank{6}\\end{align*}"
+        },
+        {
+          "type": "property",
+          "title": "Comment utiliser la projection orthogonale ?",
+          "content": "Si on cherche à calculer $\\overrightarrow{AB} \\cdot \\overrightarrow{AC}$, on trace $H$, le projeté orthogonal de $C$ sur la droite $(AB)$.\\par Le produit scalaire se calcule en utilisant uniquement des vecteurs alignés sur la même droite :\\par $$\\boxed{\\overrightarrow{AB} \\cdot \\overrightarrow{AC} = \\overrightarrow{AB} \\cdot \\overrightarrow{AH}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment déterminer le signe avec la projection ?",
+          "content": "On projette orthogonalement une extrémité sur la ligne de l'autre vecteur. On observe ensuite le sens des deux vecteurs obtenus sur cette ligne.\\par\\begin{itemize}\\item S'ils ont le \\textbf{même sens}, le produit scalaire est positif : on multiplie les longueurs ($AB \\times AH$)\\item S'ils sont de \\textbf{sens contraire}, le produit scalaire est négatif : on ajoute un moins ($-AB \\times AH$)\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit un triangle $ABC$ tel que $AB = 5$. Le projeté orthogonal $H$ de $C$ sur $(AB)$ appartient au segment $[AB]$ et $AH = 2$. Calculons $\\overrightarrow{AB} \\cdot \\overrightarrow{AC}$.}\\par On utilise le projeté $H$. Les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AH}$ ont le \\blank{même sens}.\\par On applique la règle de la méthode (produit positif) :\\begin{align*}\\overrightarrow{AB} \\cdot \\overrightarrow{AC} &= \\overrightarrow{AB} \\cdot \\blank{\\overrightarrow{AH}} \\\\ &= AB \\times \\blank{AH} \\\\ &= 5 \\times 2 \\\\ &= \\blank{10}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "proprietes_et_orthogonalite",
+      "category": "course",
+      "title": "Propriétés algébriques et orthogonalité",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le produit scalaire fonctionne presque comme la multiplication classique en algèbre : on peut développer des expressions et utiliser des identités remarquables."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les propriétés algébriques du produit scalaire ?",
+          "content": "Les règles de calcul s'appliquent de manière naturelle :\\begin{itemize}\\item $\\overrightarrow{u} \\cdot \\overrightarrow{v} = \\overrightarrow{v} \\cdot \\overrightarrow{u}$ (symétrie)\\item $\\overrightarrow{u} \\cdot (\\overrightarrow{v} + \\overrightarrow{w}) = \\overrightarrow{u} \\cdot \\overrightarrow{v} + \\overrightarrow{u} \\cdot \\overrightarrow{w}$ (développement)\\item $(\\overrightarrow{u} + \\overrightarrow{v})^2 = \\overrightarrow{u}^2 + 2\\overrightarrow{u}\\cdot\\overrightarrow{v} + \\overrightarrow{v}^2$ (identité remarquable)\\end{itemize}\\par De plus, le produit scalaire d'un vecteur par lui-même donne le carré de sa norme : $$\\boxed{\\overrightarrow{u}^2 = \\overrightarrow{u} \\cdot \\overrightarrow{u} = ||\\overrightarrow{u}||^2}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer un produit scalaire avec trois longueurs ?",
+          "content": "Si on ne connaît aucun angle ni projeté, mais uniquement les trois longueurs du triangle, on utilise cette formule :\\par $$\\boxed{\\overrightarrow{AB} \\cdot \\overrightarrow{AC} = \\frac{1}{2}(AB^2 + AC^2 - BC^2)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Dans un triangle $ABC$, on donne $AB = 4$, $AC = 5$ et $BC = 6$. Calculons $\\overrightarrow{AB} \\cdot \\overrightarrow{AC}$.}\\par On utilise la formule des trois longueurs car on ne connaît aucun angle :\\begin{align*}\\overrightarrow{AB} \\cdot \\overrightarrow{AC} &= \\frac{1}{2}(AB^2 + AC^2 - \\blank{BC^2}) \\\\ &= \\frac{1}{2}(\\blank{16} + 25 - \\blank{36}) \\\\ &= \\frac{1}{2}(\\blank{5}) \\\\ &= \\blank{2.5}\\end{align*}"
+        },
+        {
+          "type": "theorem",
+          "title": "Quand dit-on que deux vecteurs sont orthogonaux ?",
+          "content": "C'est l'application la plus importante. Deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont \\textbf{orthogonaux} (leurs directions sont perpendiculaires) si et seulement si leur produit scalaire est nul :\\par $$\\boxed{\\overrightarrow{u} \\perp \\overrightarrow{v} \\iff \\overrightarrow{u} \\cdot \\overrightarrow{v} = 0}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $\\overrightarrow{u}$ et $\\overrightarrow{v}$ deux vecteurs de même norme, soit $||\\overrightarrow{u}|| = ||\\overrightarrow{v}||$. Montrons que les vecteurs $\\overrightarrow{u} + \\overrightarrow{v}$ et $\\overrightarrow{u} - \\overrightarrow{v}$ sont orthogonaux.}\\par On développe leur produit scalaire avec l'identité remarquable :\\begin{align*}(\\overrightarrow{u} + \\overrightarrow{v}) \\cdot (\\overrightarrow{u} - \\overrightarrow{v}) &= \\overrightarrow{u}^2 - \\blank{\\overrightarrow{v}^2} \\\\ &= ||\\overrightarrow{u}||^2 - \\blank{||\\overrightarrow{v}||^2}\\end{align*}Puisque les normes sont égales, la soustraction donne \\blank{0}.\\par Le produit scalaire est nul, les deux vecteurs sont donc \\blank{\\text{orthogonaux}}."
+        }
+      ]
+    },
+    {
+      "id": "relations_metriques",
+      "category": "course",
+      "title": "Relations métriques dans un triangle quelconque",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grâce au produit scalaire, le théorème de Pythagore s'étend à tous les triangles, même s'ils ne sont pas rectangles. On obtient des formules générales pour relier les côtés, les angles et les médianes."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment trouver un côté avec le théorème d'Al Kashi ?",
+          "content": "Dans un triangle $ABC$ quelconque, la longueur au carré d'un côté dépend des deux autres côtés et de l'angle opposé (loi des cosinus) :\\par $$\\boxed{BC^2 = AB^2 + AC^2 - 2AB \\times AC \\times \\cos(\\widehat{A})}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment calculer une longueur avec le théorème de la médiane ?",
+          "content": "Soit deux points $A$ et $B$, et $I$ le milieu du segment $[AB]$. Pour n'importe quel point $M$ du plan, la distance à ce milieu est donnée par :\\par $$\\boxed{MA^2 + MB^2 = 2MI^2 + \\frac{AB^2}{2}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment choisir le bon théorème dans un exercice ?",
+          "content": "Face à un triangle quelconque, lisez les données et l'objectif de la question pour faire le bon choix :\\par\\begin{itemize}\\item Si vous connaissez deux longueurs, un angle, et cherchez le \\textbf{troisième côté} $\\Rightarrow$ utiliser \\textbf{Al Kashi}\\item Si vous connaissez trois longueurs et cherchez un \\textbf{angle} $\\Rightarrow$ utiliser \\textbf{Al Kashi}\\item Si l'énoncé cite un \\textbf{milieu} ou utilise la lettre $I$ au centre d'un segment $\\Rightarrow$ appliquer le \\textbf{théorème de la médiane}\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Dans le triangle $ABC$, on a $AB = 3$, $AC = 8$ et l'angle $\\widehat{A} = 60^\\circ$. Calculons la longueur $BC$.}\\par On cherche un côté opposé à un angle connu, on applique le théorème d'Al Kashi :\\begin{align*}BC^2 &= AB^2 + AC^2 - 2 \\times AB \\times AC \\times \\blank{\\cos(\\widehat{A})} \\\\ &= 3^2 + 8^2 - 2 \\times 3 \\times 8 \\times \\blank{\\cos(60^\\circ)} \\\\ &= 9 + 64 - 48 \\times \\blank{\\frac{1}{2}} \\\\ &= 73 - \\blank{24} \\\\ &= \\blank{49}\\end{align*}Puisque $BC$ est une distance positive, on conclut que $BC = \\sqrt{49} = 7$."
+        },
+        {
+          "type": "summary",
+          "title": "Ce qu'il faut retenir pour les triangles",
+          "content": "\\begin{itemize}\\item \\textbf{Al Kashi} : $BC^2 = AB^2 + AC^2 - 2AB \\cdot AC \\cos A$\\item \\textbf{Théorème de la médiane} ($I$ milieu de $[AB]$) : $MA^2 + MB^2 = 2MI^2 + \\frac{AB^2}{2}$\\item \\textbf{Aire du triangle} : $S = \\frac{1}{2}bc \\sin A$\\item \\textbf{Loi des sinus} : $\\frac{\\sin A}{a} = \\frac{\\sin B}{b} = \\frac{\\sin C}{c} = \\frac{2S}{abc}$\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

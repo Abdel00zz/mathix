@@ -1,0 +1,53 @@
+{
+  "id": "olympiad-1ere-bac-sc-math-2024",
+  "title": "Olympiade Internationale de Mathématiques (IMO) 2024 — Sujet officiel",
+  "year": 2024,
+  "classId": "1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "badge": "international",
+  "source": "https://www.imo-official.org/problems.aspx",
+  "duration": 240,
+  "totalPoints": 42,
+  "exercises": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2024-ex1",
+      "number": 1,
+      "theme": "arithmetique",
+      "points": 7,
+      "topic": "Partie entière et divisibilité",
+      "context": "On considère la fonction partie entière $\\lfloor x \\rfloor$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Déterminer tous les nombres réels $\\alpha$ tels que, pour tout entier strictement positif $n$, l'entier\n$$\\lfloor \\alpha \\rfloor + \\lfloor 2\\alpha \\rfloor + \\lfloor 3\\alpha \\rfloor + \\dots + \\lfloor n\\alpha \\rfloor$$\nest un multiple de $n$."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2024-ex2",
+      "number": 2,
+      "theme": "arithmetique",
+      "points": 7,
+      "topic": "PGCD et puissances",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Déterminer tous les couples $(a, b)$ d'entiers strictement positifs pour lesquels il existe des entiers strictement positifs $g$ et $N$ tels que\n$$\\text{pgcd}(a^n + b, b^n + a) = g$$\npour tout entier $n \\geq N$."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2024-ex3",
+      "number": 3,
+      "theme": "geometrie",
+      "points": 7,
+      "topic": "Géométrie plane",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $ABC$ un triangle tel que $AB < AC < BC$. Soit $I$ le centre du cercle inscrit et $\\omega$ le cercle circonscrit. Soit $X$ un point sur l'arc $BC$ de $\\omega$ ne contenant pas $A$. La droite passant par $I$ et perpendiculaire à $AX$ coupe $AB$ en $K$ et $AC$ en $L$. Montrer que $K$ est sur la droite $BC$ si et seulement si $X$ est un point spécifique à déterminer."
+        }
+      ]
+    }
+  ]
+}

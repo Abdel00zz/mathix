@@ -1,0 +1,35 @@
+{
+  "id": "ex-ens-app-15",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Théorie des Ensembles — Propriétés avancées des ensembles",
+  "requiresRedaction": true,
+  "context": "Soient $A$, $B$ et $C$ trois parties d'un ensemble $E$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que : $\\begin{cases} A \\cap B = A \\cap C \\\\ A \\cup B = A \\cup C \\end{cases} \\Rightarrow B = C$",
+      "hint": "Montrez $B \\subset C$ (et par symétrie $C \\subset B$) : soit $x \\in B$. Distinguez les cas $x \\in A$ et $x \\notin A$, et exploitez les deux conditions."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que : $A \\cup B = A \\cap C \\iff (A \\supset B$ et $A \\subset C$ et $B \\subset C)$",
+      "hint": "Pour $\\Rightarrow$ : l'égalité $A \\cup B = A \\cap C$ implique $A \\cup B \\subset A$ (donc $B \\subset A$) et $A \\subset A \\cap C$ (donc $A \\subset C$)."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que : $A \\cup B = A \\cap C \\iff B \\subset A \\subset C$",
+      "hint": "C'est un cas particulier de la question 2 : identifiez quelle simplification se produit."
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que : $\\begin{cases} A \\cap C = \\varnothing \\\\ B \\cap C = \\varnothing \\end{cases} \\Rightarrow A \\cap \\overline{B} \\neq \\varnothing$",
+      "hint": "Supposez par l'absurde que $A \\cap \\overline{B} = \\varnothing$, soit $A \\subset B$. Utilisez alors $A \\cap C = \\varnothing$ et $B \\cap C = \\varnothing$ pour aboutir à une contradiction sur $A$."
+    },
+    {
+      "id": "q5",
+      "content": "Établir les égalités suivantes : $A \\cup [B \\cap (A \\cup C)] = A \\cup (B \\cap C)$ et $A \\cap [B \\cup (A \\cap C)] = A \\cap (B \\cup C)$",
+      "hint": "Utilisez les lois de distributivité. Pour la première : $A \\cup [B \\cap (A \\cup C)] = (A \\cup B) \\cap (A \\cup A \\cup C)$, puis simplifiez."
+    }
+  ]
+}

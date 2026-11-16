@@ -1,0 +1,20 @@
+{
+  "id": "ex-denom-10",
+  "theme": "denombrement",
+  "difficulty": "difficile",
+  "topic": "Dénombrement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Tirages successifs avec condition sans ordre",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Une urne contient 5 boules rouges et 3 boules noires.\nOn tire successivement et sans remise 3 boules de l'urne.\nCombien de tirages différents contenant exactement 2 boules rouges et 1 boule noire, dans n'importe quel ordre, peut-on obtenir ?",
+          "hint": "Pour avoir un tirage contenant exactement 2 boules rouges et 1 boule noire, il faut :\n1. Choisir les 2 boules rouges parmi les 5 : $C_5^2 = 10$.\n2. Choisir la boule noire parmi les 3 : $C_3^1 = 3$.\n3. Choisir l'ordre des 3 boules : $C_3^2 = 3$.\n\nD'après le principe multiplicatif, le nombre total de tirages est le produit des possibilités à chaque étape.\nNombre de tirages = $C_5^2 \\times C_3^1 \\times C_3^2 = 10 \\times 3 \\times 3 = 90$.\n\nIl y a 90 tirages différents contenant exactement 2 boules rouges et 1 boule noire, dans n'importe quel ordre."
+        }
+      ]
+    }
+  ]
+}

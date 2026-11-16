@@ -1,0 +1,34 @@
+{
+  "id": "droite-plan",
+  "title": "La droite dans le plan",
+  "section": "algebre-geometrie",
+  "quizCount": 10,
+  "revisions": [
+    {
+      "id": "rev-droite-tc",
+      "title": "Fiche Complète : Droites",
+      "path": "data/tronc-commun-sc/droite-plan/revisions/fiche_droite_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-droite-tc-01",
+      "path": "data/tronc-commun-sc/droite-plan/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-droite-tc-02",
+      "path": "data/tronc-commun-sc/droite-plan/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-droite-plan-01",
+      "path": "data/tronc-commun-sc/droite-plan/exercises/ex_droite_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-droite-plan-01",
+      "path": "data/tronc-commun-sc/droite-plan/quiz/droite-plan_quiz.json",
+      "questionsCount": 10
+    }
+  ]
+}

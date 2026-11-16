@@ -1,0 +1,601 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "On dit que $(\\mathcal{C}_f)$ admet une branche infinie lorsque :",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'une des coordonnées d'un point de $(\\mathcal{C}_f)$ tend vers l'infini",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La fonction $f$ n'est pas définie en un point",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La fonction $f$ est croissante sur $\\mathbb{R}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La courbe coupe l'axe des abscisses en deux points",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une branche infinie apparait dès qu'une coordonnée (abscisse ou ordonnée) d'un point de la courbe tend vers $\\pm\\infty$."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "category": "Définition",
+      "prompt": "Les branches infinies sont exclusivement constituées d'asymptotes verticales.",
+      "isTrue": false,
+      "explanation": "Les branches infinies comprennent les droites asymptotes (verticales, horizontales, obliques) et les branches paraboliques."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Asymptote verticale",
+      "prompt": "Soit $\\displaystyle f(x) = \\frac{-2}{x-1}$. Que peut-on dire de $(\\mathcal{C}_f)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle admet une asymptote verticale d'équation $x = 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Elle admet une asymptote horizontale d'équation $y = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Elle admet une asymptote verticale d'équation $x = -2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle n'admet aucune asymptote",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$x = 1$ est exclue de $D_f$ et $\\displaystyle\\lim_{x \\to 1} f(x) = \\pm\\infty$, donc $x = 1$ est asymptote verticale."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "Asymptote horizontale",
+      "prompt": "Soit $\\displaystyle f(x) = \\frac{2x}{x-1}$. Quelle est l'asymptote horizontale de $(\\mathcal{C}_f)$ au voisinage de $+\\infty$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = -2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\displaystyle\\lim_{x \\to +\\infty} \\dfrac{2x}{x-1} = 2$, donc $y = 2$ est asymptote horizontale."
+    },
+    {
+      "id": "q5",
+      "type": "boolean",
+      "category": "Asymptote horizontale",
+      "prompt": "Si $\\displaystyle\\lim_{x \\to +\\infty} f(x) = 3$, alors $(\\mathcal{C}_f)$ admet l'asymptote horizontale $y = 3$ au voisinage de $+\\infty$.",
+      "isTrue": true,
+      "explanation": "Si $\\displaystyle\\lim_{x \\to +\\infty} f(x) = b \\in \\mathbb{R}$, alors $y = b$ est asymptote horizontale en $+\\infty$."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Asymptote oblique",
+      "prompt": "Soit $\\displaystyle f(x) = 2x - 3 + \\frac{3}{x^2}$. Quelle est l'asymptote oblique de $(\\mathcal{C}_f)$ au voisinage de $-\\infty$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = 2x - 3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = 2x + 3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = -3x + 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = 2x$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\displaystyle\\lim_{x \\to -\\infty}\\left[f(x) - (2x-3)\\right] = \\lim_{x \\to -\\infty} \\dfrac{3}{x^2} = 0$, donc $y = 2x - 3$ est asymptote oblique."
+    },
+    {
+      "id": "q7",
+      "type": "order",
+      "category": "Asymptote oblique",
+      "prompt": "Ordonner les étapes pour trouver l'asymptote oblique $y = ax+b$ de $(\\mathcal{C}_f)$ au voisinage de $+\\infty$, lorsque son équation n'est pas donnée.",
+      "items": [
+        {
+          "id": "a",
+          "content": "Calculer $\\displaystyle a = \\lim_{x \\to +\\infty} \\frac{f(x)}{x}$ et vérifier $a \\neq 0$"
+        },
+        {
+          "id": "b",
+          "content": "Calculer $\\displaystyle b = \\lim_{x \\to +\\infty} \\left[f(x) - ax\\right]$"
+        },
+        {
+          "id": "c",
+          "content": "Vérifier que $\\displaystyle\\lim_{x \\to +\\infty} f(x) = \\pm\\infty$"
+        },
+        {
+          "id": "d",
+          "content": "Conclure que $y = ax + b$ est l'asymptote oblique"
+        }
+      ],
+      "correctOrder": [
+        "c",
+        "a",
+        "b",
+        "d"
+      ],
+      "explanation": "On verifie d'abord que $f$ diverge, puis on calcule $a = \\displaystyle\\lim \\dfrac{f(x)}{x}$, puis $b = \\displaystyle\\lim [f(x)-ax]$, et on conclut."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Asymptote oblique",
+      "prompt": "Pour qu'une courbe admette une asymptote oblique $y = ax + b$ au voisinage de $+\\infty$, que doit-il se passer ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle\\lim_{x \\to +\\infty} \\left[f(x) - (ax+b)\\right] = 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle\\lim_{x \\to +\\infty} f(x) = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle\\lim_{x \\to +\\infty} \\left[f(x) + (ax+b)\\right] = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f(x) = ax + b$ pour tout $x$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La distance verticale entre la courbe et la droite doit tendre vers zero : $\\displaystyle\\lim_{x\\to+\\infty}\\left[f(x)-(ax+b)\\right]=0$."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Branches paraboliques",
+      "prompt": "Soit $f$ telle que $\\displaystyle\\lim_{x \\to +\\infty} f(x) = +\\infty$ et $\\displaystyle\\lim_{x \\to +\\infty} \\frac{f(x)}{x} = 0$. Quelle est la nature de cette branche infinie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Branche parabolique de direction l'axe des abscisses",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Branche parabolique de direction l'axe des ordonnées",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Asymptote oblique",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Asymptote horizontale",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Quand $\\displaystyle\\lim \\dfrac{f(x)}{x} = 0$ avec $f(x) \\to \\pm\\infty$, la courbe s'aplatit par rapport a toute droite oblique : c'est une BP de direction $(Ox)$."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "Branches paraboliques",
+      "prompt": "Pour $f(x) = 2x^3 - x$, que vaut $\\displaystyle\\lim_{x \\to +\\infty} \\frac{f(x)}{x}$ ? Quelle conclusion en tire-t-on ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$+\\infty$ : branche parabolique de direction l'axe des ordonnées",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$ : asymptote oblique $y = 2x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$ : branche parabolique de direction l'axe des abscisses",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$ : asymptote oblique de pente infinie",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\displaystyle\\dfrac{f(x)}{x} = 2x^2 - 1 \\to +\\infty$. Donc $(\\mathcal{C}_f)$ admet une BP de direction $(Oy)$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Branches paraboliques",
+      "prompt": "Soit $f(x) = 2x + 3\\sqrt{x}$ définie sur $[0\\,;+\\infty[$. On pose $\\displaystyle a = \\lim_{x \\to +\\infty} \\frac{f(x)}{x}$. Que vaut $a$ et quelle est la conclusion ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a = 2$ et $\\displaystyle\\lim_{x\\to+\\infty}\\left[f(x)-2x\\right] = +\\infty$ : BP de direction $y = 2x$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$a = 2$ et $\\displaystyle\\lim_{x\\to+\\infty}\\left[f(x)-2x\\right] = 0$ : asymptote oblique $y = 2x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$a = 0$ : BP de direction l'axe des abscisses",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a = +\\infty$ : BP de direction l'axe des ordonnées",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$a = 2$ puis $f(x) - 2x = 3\\sqrt{x} \\to +\\infty$ : la limite $b$ est infinie, donc ce n'est pas une AO mais une BP de direction $y = 2x$."
+    },
+    {
+      "id": "q12",
+      "type": "boolean",
+      "category": "Branches paraboliques",
+      "prompt": "Si $\\displaystyle\\lim_{x \\to +\\infty} \\frac{f(x)}{x} = 0$, alors $(\\mathcal{C}_f)$ admet nécessairement une branche parabolique de direction l'axe des abscisses.",
+      "isTrue": false,
+      "explanation": "Il faut aussi que $\\displaystyle\\lim_{x \\to +\\infty} f(x) = \\pm\\infty$. Si $f(x) \\to b \\in \\mathbb{R}$, c'est une asymptote horizontale, pas une BP."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "category": "Concavité",
+      "prompt": "On dit que $(\\mathcal{C}_f)$ est **convexe** sur $I$ si et seulement si :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(\\mathcal{C}_f)$ est entièrement au-dessus de chacune de ses tangentes sur $I$ (i.e. $f''(x) \\geq 0$)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(\\mathcal{C}_f)$ est entièrement en-dessous de ses tangentes sur $I$ (i.e. $f''(x) \\leq 0$)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f'(x) \\geq 0$ pour tout $x \\in I$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f''(x) \\leq 0$ pour tout $x \\in I$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Convexe signifie courbe au-dessus de ses tangentes, ce qui equivaut a $f''(x) \\geq 0$ sur $I$."
+    },
+    {
+      "id": "q14",
+      "type": "boolean",
+      "category": "Concavité",
+      "prompt": "Si $f''(a) = 0$, alors le point $A\\bigl(a\\,;\\,f(a)\\bigr)$ est nécessairement un point d'inflexion de $(\\mathcal{C}_f)$.",
+      "isTrue": false,
+      "explanation": "$f''(a) = 0$ est necessaire mais pas suffisant : il faut que $f''$ change de signe en $a$. Contre-exemple : $f(x) = x^4$, $f''(0) = 0$ mais pas d'inflexion."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "category": "Concavité",
+      "prompt": "Soit $f(x) = x^3 - 3x^2 + x + 4$. On calcule $f''(x) = 6(x-1)$. Que peut-on conclure ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$A\\bigl(1\\,;\\,f(1)\\bigr)$ est un point d'inflexion ; $f$ est concave sur $]-\\infty\\,;1[$ et convexe sur $]1\\,;+\\infty[$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$A\\bigl(1\\,;\\,f(1)\\bigr)$ est un extremum local de $f$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f$ est convexe sur $\\mathbb{R}$ entier",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f''(1) = 0$ donc $x=1$ ne donne aucun point remarquable",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f''(x) < 0$ pour $x < 1$ (concave) et $f''(x) > 0$ pour $x > 1$ (convexe). Le changement de signe en $x = 1$ donne un point d'inflexion."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "category": "Concavité",
+      "prompt": "Quelle propriété (via $f'$) permet d'identifier un point d'inflexion ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'$ change de monotonie au voisinage de $a$ (passe de croissante à décroissante ou inversement)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f'(a) = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f'$ est positive au voisinage de $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f'(a)$ est un maximum local",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si $f'$ change de monotonie en $a$, alors $f''$ change de signe en $a$, ce qui caracterise un point d'inflexion."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "category": "Symétrie",
+      "prompt": "Quelle condition caractérise le fait que $\\Omega(a\\,;\\,b)$ soit un **centre de symétrie** de $(\\mathcal{C}_f)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2a - x \\in D_f$ et $f(2a-x) = 2b - f(x)$ pour tout $x \\in D_f$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f(2a-x) = f(x)$ pour tout $x \\in D_f$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f(a) = b$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f(-x) = -f(x)$ pour tout $x \\in D_f$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Centre de symetrie : $f(2a-x) = 2b - f(x)$.\\par Axe de symetrie : $f(2a-x) = f(x)$. L'option d est le cas particulier $a = 0, b = 0$ (fonction impaire)."
+    },
+    {
+      "id": "q18",
+      "type": "boolean",
+      "category": "Symétrie",
+      "prompt": "Pour toute fonction homographique $\\displaystyle x \\mapsto \\frac{ax+b}{cx+d}$ (avec $c \\neq 0$ et $ad - bc \\neq 0$), le point $\\displaystyle\\Omega\\!\\left(\\frac{-d}{c}\\,;\\,\\frac{a}{c}\\right)$ est un centre de symétrie de sa courbe.",
+      "isTrue": true,
+      "explanation": "Toute fonction homographique admet $\\displaystyle\\Omega\\!\\left(\\dfrac{-d}{c}\\,;\\,\\dfrac{a}{c}\\right)$ comme centre de symetrie, qui est aussi l'intersection des asymptotes."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "category": "Symétrie",
+      "prompt": "Soit $f(x) = 3x^2 - 2x + 5$ (polynôme de degré 2, $a=3$, $b=-2$). Quelle est l'équation de l'axe de symétrie de $(\\mathcal{C}_f)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle x = \\frac{1}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle x = \\frac{2}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle x = -\\frac{2}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour un trinome $ax^2 + bx + c$, l'axe de symetrie est $x = \\dfrac{-b}{2a} = \\dfrac{2}{6} = \\dfrac{1}{3}$."
+    },
+    {
+      "id": "q20",
+      "type": "order",
+      "category": "Construction de courbe",
+      "prompt": "Ordonner correctement les étapes de la construction d'une courbe représentative.",
+      "items": [
+        {
+          "id": "a",
+          "content": "Placer les asymptotes (en respectant les positions relatives) et esquisser les branches paraboliques"
+        },
+        {
+          "id": "b",
+          "content": "Placer le repère orthogonal, indiquer le domaine de définition et les éléments de symétrie"
+        },
+        {
+          "id": "c",
+          "content": "Relier à main levée tous les éléments en respectant le tableau de variations"
+        },
+        {
+          "id": "d",
+          "content": "Placer les points remarquables : extremums, intersections avec les axes $(Ox)$ et $(Oy)$"
+        },
+        {
+          "id": "e",
+          "content": "Placer les points d'inflexion et tracer les tangentes associées"
+        }
+      ],
+      "correctOrder": [
+        "b",
+        "d",
+        "e",
+        "a",
+        "c"
+      ],
+      "explanation": "On pose le cadre (repere, symetries), puis les points cles (extremums, inflexions, tangentes), puis le comportement global (asymptotes, BP), et enfin on trace la courbe."
+    },
+    {
+      "id": "q21",
+      "type": "error",
+      "category": "Asymptote oblique",
+      "prompt": "Identifier l'erreur dans le calcul de l'asymptote oblique pour $\\displaystyle f(x) = \\frac{2x^2+3x-1}{x+2}$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Comme $\\displaystyle\\lim_{x\\to+\\infty} f(x) = +\\infty$, on cherche une asymptote oblique.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "$\\displaystyle a = \\lim_{x\\to+\\infty} \\frac{f(x)}{x} = \\lim_{x\\to+\\infty} \\frac{2x^2+3x-1}{x(x+2)} = 2$",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "$\\displaystyle b = \\lim_{x\\to+\\infty}\\left[f(x) - 2x\\right] = \\lim_{x\\to+\\infty} \\frac{2x^2+3x-1 - 2x}{x+2} = \\lim_{x\\to+\\infty}\\frac{x-1}{x+2} = 1$",
+          "isError": true,
+          "correction": "Il faut soustraire $2x(x+2)$ et non $2x$ seul : $\\displaystyle f(x)-2x = \\frac{2x^2+3x-1 - 2x(x+2)}{x+2} = \\frac{-x-1}{x+2} \\xrightarrow[x\\to+\\infty]{} -1$. Donc $b = -1$ et l'AO est $y = 2x - 1$."
+        }
+      ],
+      "explanation": "Il faut mettre au meme denominateur : $f(x) - 2x = \\dfrac{2x^2+3x-1 - 2x(x+2)}{x+2}$, et non soustraire $2x$ du numerateur seul."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "category": "Positions relatives",
+      "prompt": "Soit $(D)\\,:\\,y = ax+b$ une asymptote oblique de $(\\mathcal{C}_f)$. Si $f(x) - (ax+b) > 0$ pour tout $x \\in I$, que peut-on conclure ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(\\mathcal{C}_f)$ est strictement au-dessus de $(D)$ sur $I$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(\\mathcal{C}_f)$ est strictement en-dessous de $(D)$ sur $I$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(\\mathcal{C}_f)$ et $(D)$ se confondent sur $I$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(\\mathcal{C}_f)$ coupe $(D)$ en un point de $I$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le signe de $f(x) - (ax+b)$ donne la position relative : positif signifie courbe au-dessus, negatif signifie en-dessous."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "category": "Synthèse",
+      "prompt": "Soit $\\displaystyle f(x) = \\frac{x}{x+1}$. Parmi les affirmations suivantes, laquelle est entièrement correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(\\mathcal{C}_f)$ admet l'AV $x = -1$, l'AH $y = 1$, et $\\Omega(-1\\,;\\,1)$ est centre de symétrie",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(\\mathcal{C}_f)$ admet une asymptote oblique $y = x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(\\mathcal{C}_f)$ admet l'asymptote horizontale $y = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le point $(0\\,;\\,0)$ est le centre de symétrie de $(\\mathcal{C}_f)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f$ est homographique : $\\displaystyle\\Omega\\!\\left(\\dfrac{-d}{c}\\,;\\,\\dfrac{a}{c}\\right) = (-1\\,;\\,1)$ est centre de symetrie, et c'est l'intersection des asymptotes $x = -1$ et $y = 1$."
+    },
+    {
+      "id": "q24",
+      "type": "error",
+      "category": "Concavité",
+      "prompt": "Repérer l'erreur dans l'étude de la concavité de $f(x) = x^4 - 2x^2$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "$f'(x) = 4x^3 - 4x$",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "$f''(x) = 12x^2 - 4$",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "$f''(x) = 0 \\Leftrightarrow x^2 = \\displaystyle\\frac{1}{3} \\Leftrightarrow x = \\displaystyle\\frac{1}{3}$",
+          "isError": true,
+          "correction": "$x^2 = \\displaystyle\\frac{1}{3} \\Rightarrow x = \\pm\\displaystyle\\frac{1}{\\sqrt{3}} = \\pm\\displaystyle\\frac{\\sqrt{3}}{3}$. Il y a deux solutions donc deux points d'inflexion : l'élève a oublié $x = -\\dfrac{\\sqrt{3}}{3}$."
+        },
+        {
+          "id": "s4",
+          "text": "On conclut à un seul point d'inflexion.",
+          "isError": false
+        }
+      ],
+      "explanation": "$x^2 = \\dfrac{1}{3}$ donne deux solutions $x = \\pm\\dfrac{\\sqrt{3}}{3}$. Oublier la solution negative est une erreur classique."
+    }
+  ]
+}

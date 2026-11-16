@@ -1,0 +1,24 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vite-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "vite-preview-tablet",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "--port", "5199", "--strictPort"],
+      "port": 5199
+    },
+    {
+      "name": "vite-preview-tablet-2",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "--port", "5290", "--strictPort"],
+      "port": 5290,
+      "autoPort": false
+    }
+  ]
+}

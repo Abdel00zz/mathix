@@ -1,0 +1,31 @@
+{
+  "id": "ex-geometrie-espace-01",
+  "theme": "geometrie-espace",
+  "difficulty": "difficile",
+  "topic": "Géométrie dans l'Espace",
+  "context": "SABCD est une pyramide régulière à base carrée ABCD de centre O. On donne $AB = 4$ et $SO = 6$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Volume",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Calculer le volume de la pyramide.",
+          "hint": "La base est un carré de côté 4, donc $\\mathcal{B} = 4^2 = 16$.\nLa hauteur est $h = SO = 6$.\nVolume $V = \\frac{1}{3} \\mathcal{B} h = \\frac{1}{3} \\times 16 \\times 6 = 32$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Pythagore dans l'espace",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Calculer la longueur de l'arête latérale $SA$.",
+          "hint": "Dans le carré $ABCD$, la diagonale $AC = 4\\sqrt{2}$.\n$O$ est le milieu de $[AC]$, donc $OA = 2\\sqrt{2}$.\nLe triangle $SOA$ est rectangle en $O$ (car $(SO) \\perp (ABCD)$).\n$SA^2 = SO^2 + OA^2 = 6^2 + (2\\sqrt{2})^2 = 36 + 8 = 44$.\n\\conclusion $SA = \\sqrt{44} = 2\\sqrt{11}$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Le mouvement des robots",
+    "subtitle": "Vecteurs et repères",
+    "context": "Vecteurs"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le mouvement des robots",
+          "content": "Dans une usine, deux robots $R_1$ et $R_2$ se déplacent sur un plan quadrillé. On repère leurs positions dans un repère orthonormé $(O;\\vec{i},\\vec{j})$ où l'unité est $10$ cm.\\par À l'instant $t = 0$ :\\begin{itemize}\\item $R_1$ est en position $A(2, 5)$ et se déplace à chaque unité de temps selon le vecteur $\\vec{u} = (1, -2)$.\\item $R_2$ est en position $B(8, 1)$ et se déplace à chaque unité de temps selon le vecteur $\\vec{v} = (-1, 2)$.\\end{itemize}\\par On note $A_n$ et $B_n$ leurs positions respectives à l'instant $n$."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Exprimer les coordonnées de $A_n$ et $B_n$ en fonction de $n$.\\item Calculer la distance $A_n B_n$ en fonction de $n$.\\item Les deux robots se rencontrent-ils ? Si oui, à quel instant et en quelle position ?\\item À quel instant les robots sont-ils à moins de $3$ unités l'un de l'autre pour la première fois ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "$A_n = A + n\\vec{u} = (2+n,\\; 5-2n)$ et $B_n = B + n\\vec{v} = (8-n,\\; 1+2n)$."
+        },
+        {
+          "type": "hint",
+          "content": "Ils se rencontrent si $A_n = B_n$, c'est-à-dire $2+n = 8-n$ et $5-2n = 1+2n$ simultanément."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $A_n = (2+n,\\; 5-2n)$ et $B_n = (8-n,\\; 1+2n)$.\\par\\textbf{2)} $\\overrightarrow{A_nB_n} = (6-2n,\\; -4+4n)$, donc $A_nB_n = \\sqrt{(6-2n)^2+(4n-4)^2} = 2\\sqrt{(3-n)^2+(2n-2)^2}$.\\par\\textbf{3)} $A_n = B_n \\Leftrightarrow 2+n = 8-n \\Rightarrow n = 3$ et $5-6 = 1+6 \\Rightarrow -1 \\neq 7$ : \\textbf{les robots ne se rencontrent pas}.\\par\\textbf{4)} $A_nB_n < 3 \\Leftrightarrow 4(3-n)^2 + 4(2n-2)^2 < 9$. En développant : $20n^2 - 40n + 28 < 9$, soit $20n^2 - 40n + 19 < 0$.\\par Discriminant $= 80 > 0$, racines $\\approx 0{,}71$ et $1{,}29$. Il n'existe pas d'entier $n$ dans $]0{,}71 ; 1{,}29[$, donc \\boxed{\\text{ils ne sont jamais à moins de 3 unités l'un de l'autre}}."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   Surface d'encre du canvas d'exercice (DrawingCanvas) — arbitrage doigt/stylet.
+
+   `touch-action` s'applique AUSSI au stylet dans Chromium : une surface en
+   `pan-y` voit le tracé du S Pen détourné en défilement, une surface en `none`
+   prive le doigt de défilement. On tranche donc dynamiquement, comme le fait
+   déjà `.boxnote-surface` côté révision :
+     - au repos : `pan-y`, le doigt fait défiler la page ou le tableau ;
+     - stylet présent (survol ou contact) : `none`, l'encre passe avant tout ;
+     - rejet de paume désactivé : `none`, le doigt dessine volontairement.
+
+   Le `<canvas>` ne déclare rien : `touch-action` se compose avec les ancêtres,
+   la surface décide donc pour lui. Thème clair uniquement.
+   ════════════════════════════════════════════════════════════════════════════ */
+
+.canvas-ink-surface {
+  touch-action: pan-y;
+  overscroll-behavior: contain;
+}
+
+/* Image élève zoomée : le cadre déborde dans les deux sens, le doigt doit
+   pouvoir atteindre les bords. Règle placée AVANT celles du stylet : à
+   spécificité égale, c'est l'ordre qui tranche, et le stylet doit gagner. */
+.canvas-ink-surface[data-ink-pan='both'] {
+  touch-action: pan-x pan-y;
+}
+
+.canvas-ink-surface[data-pen-active='true'],
+.canvas-ink-surface[data-touch-ink='true'] {
+  touch-action: none;
+}

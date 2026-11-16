@@ -1,0 +1,20 @@
+{
+  "id": "ex-vect-esp-02",
+  "theme": "vecteurs-espace",
+  "difficulty": "facile",
+  "topic": "Vecteurs de l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Somme de deux vecteurs",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les vecteurs $\\overrightarrow{u}(1, -2, 3)$ et $\\overrightarrow{v}(4, 5, -1)$.\nDéterminer les coordonnées du vecteur $\\overrightarrow{w} = \\overrightarrow{u} + \\overrightarrow{v}$.",
+          "hint": "Les coordonnées du vecteur $\\overrightarrow{w} = \\overrightarrow{u} + \\overrightarrow{v}$ sont données par la formule :\n$\\overrightarrow{w}(x_u + x_v, y_u + y_v, z_u + z_v)$\n\nEn appliquant cette formule avec $\\overrightarrow{u}(1, -2, 3)$ et $\\overrightarrow{v}(4, 5, -1)$ :\n$\\overrightarrow{w}(1 + 4, -2 + 5, 3 + (-1))$\n$\\overrightarrow{w}(5, 3, 2)$"
+        }
+      ]
+    }
+  ]
+}

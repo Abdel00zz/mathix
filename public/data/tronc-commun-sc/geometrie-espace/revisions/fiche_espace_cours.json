@@ -1,0 +1,46 @@
+{
+  "header": {
+    "title": "Géométrie dans l'Espace",
+    "subtitle": "Volumes et Positions",
+    "context": "Tronc Commun Scientifique"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie la \\objectif{géométrie dans l'espace} : positions relatives de droites et de plans, orthogonalité, et calcul des volumes des solides usuels (pyramide, cône, prisme, cylindre, sphère). Passer de la géométrie plane à l'espace exige un effort de visualisation tridimensionnelle qui est lui-même un objectif de formation. La \\defi{principale difficulté} est de raisonner correctement sur des objets qu'on ne voit que projetés sur une feuille plane — des dessins soignés et des repères bien choisis sont indispensables. C'est \\savant{Gaspard Monge} qui a, à la fin du XVIII\\textsuperscript{e} siècle, fondé la géométrie descriptive permettant de représenter rigoureusement les solides, un outil encore central en architecture et en ingénierie aérospatiale.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Gaspard_monge.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Gaspard Monge (1746–1818)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "positions_relatives",
+      "category": "course",
+      "title": "Positions relatives",
+      "content": "\\begin{itemize}\\item \\textbf{Deux droites} peuvent être coplanaires (sécantes ou parallèles) ou non coplanaires.\\item \\textbf{Droite et Plan} : La droite peut être incluse, sécante ou parallèle au plan.\\item \\textbf{Deux Plans} : Ils peuvent être sécants (selon une droite) ou parallèles.\\end{itemize}"
+    },
+    {
+      "id": "orthogonalite",
+      "category": "course",
+      "title": "Orthogonalité",
+      "content": "\\begin{definition}Une droite $(D)$ est orthogonale à un plan $(P)$ si elle est orthogonale à deux droites sécantes de $(P)$.\\\\Propriété : Si $(D) \\perp (P)$, alors $(D)$ est orthogonale à \\textbf{toutes} les droites de $(P)$.\\end{definition}"
+    },
+    {
+      "id": "volumes",
+      "category": "course",
+      "title": "Volumes usuels",
+      "content": "\\begin{itemize}\\item Pyramide / Cône : $V = \\frac{1}{3} \\times \\text{Base} \\times \\text{Hauteur}$\\item Prisme / Cylindre : $V = \\text{Base} \\times \\text{Hauteur}$\\item Sphère : $V = \\frac{4}{3} \\pi R^3$\\end{itemize}",
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "classId": "2eme-bac-sc-math",
+  "title": "Examens Nationaux — Sciences Mathématiques",
+  "themeDistribution": {
+    "analyse": 1,
+    "probabilites": 1,
+    "nombres-complexes": 1,
+    "geometrie-espace": 1,
+    "arithmetique": 1
+  },
+  "themes": [
+    {
+      "id": "analyse",
+      "name": "Analyse"
+    },
+    {
+      "id": "probabilites",
+      "name": "Probabilités"
+    },
+    {
+      "id": "nombres-complexes",
+      "name": "Nombres Complexes"
+    },
+    {
+      "id": "geometrie-espace",
+      "name": "Géométrie dans l'Espace"
+    },
+    {
+      "id": "arithmetique",
+      "name": "Arithmétique"
+    },
+    {
+      "id": "algebre",
+      "name": "Algèbre & Structures"
+    }
+  ],
+  "examens": [
+    {
+      "id": "nat-sm-2024-n",
+      "title": "Session Normale 2024",
+      "type": "national",
+      "year": 2024,
+      "session": "normale",
+      "exerciseCount": 5,
+      "path": "data/2eme-bac-sc-math/examen/nat_2024_normale.json"
+    },
+    {
+      "id": "nat-sm-2024-r",
+      "title": "Session Rattrapage 2024",
+      "type": "national",
+      "year": 2024,
+      "session": "rattrapage",
+      "exerciseCount": 5,
+      "path": "data/2eme-bac-sc-math/examen/nat_2024_rattrapage.json"
+    }
+  ]
+}

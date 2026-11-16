@@ -1,0 +1,398 @@
+{
+  "id": "nat-2023-r",
+  "title": "Examen National 2023 — Session Rattrapage",
+  "type": "national",
+  "year": 2023,
+  "session": "rattrapage",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 4,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2023r-ex1",
+      "number": 1,
+      "theme": "suites-numeriques",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Suites numériques — Récurrence, monotonie, suite arithmétique, suite géométrique",
+      "context": "On considère la suite numérique $(u_n)$ définie par $u_0 = 0$ et $u_{n+1} = \\dfrac{u_n - 2}{2u_n + 5}$, pour tout $n$ de $\\mathbb{N}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que pour tout $n$ de $\\mathbb{N}$ : $u_n > -1$.",
+          "bareme": 0.5,
+          "hint": "Procédez par récurrence. Initialisation : $u_0 = 0 > -1$. Hérédité : supposez $u_n > -1$ et montrez $u_{n+1} + 1 = \\frac{3(u_n+1)}{2u_n+5} > 0$ en justifiant que numérateur et dénominateur sont positifs."
+        },
+        {
+          "id": "q2",
+          "content": "Montrer que la suite $(u_n)$ est décroissante, puis déduire que $(u_n)$ est convergente.",
+          "bareme": 0.5,
+          "hint": "Calculez $u_{n+1} - u_n = \\frac{-2(u_n+1)^2}{2u_n+5}$. Utilisez $u_n > -1$ (donc $(u_n+1)^2 > 0$) et $2u_n + 5 > 3 > 0$ pour conclure $u_{n+1} - u_n < 0$. La suite est décroissante et minorée par $-1$, donc convergente."
+        },
+        {
+          "id": "q3",
+          "content": "On pose $v_n = \\dfrac{3}{1 + u_n}$, pour tout $n$ de $\\mathbb{N}$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que $(v_n)$ est une suite arithmétique de raison 2, puis déterminer son premier terme.",
+              "bareme": 0.5,
+              "hint": "Calculez $v_{n+1} - v_n$ en remplaçant $u_{n+1}$ par son expression. Simplifiez pour obtenir $v_{n+1} - v_n = 2$. Puis calculez $v_0 = \\frac{3}{1+u_0}$."
+            },
+            {
+              "id": "3b",
+              "content": "Exprimer $u_n$ en fonction de $n$, pour tout $n$ de $\\mathbb{N}$, et déduire la limite de $(u_n)$.",
+              "bareme": 0.5,
+              "hint": "$(v_n)$ est arithmétique de raison 2 et $v_0 = 3$, donc $v_n = 2n + 3$. De $v_n = \\frac{3}{1+u_n}$, tirez $u_n = \\frac{3}{v_n} - 1 = \\frac{3 - 2n - 3}{2n+3} = \\frac{-2n}{2n+3}$. Puis calculez $\\lim_{n\\to+\\infty} u_n$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "On pose $w_n = e^{3 - v_n}$ et $S_n = w_0 + w_1 + \\ldots + w_n$, pour tout $n$ de $\\mathbb{N}$.",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Montrer que $(w_n)$ est une suite géométrique et déterminer sa raison et son premier terme.",
+              "bareme": 0.5,
+              "hint": "Calculez $\\frac{w_{n+1}}{w_n} = e^{(3-v_{n+1})-(3-v_n)} = e^{-(v_{n+1}-v_n)} = e^{-2}$. Puis calculez $w_0 = e^{3-v_0} = e^{3-3} = 1$."
+            },
+            {
+              "id": "4b",
+              "content": "Calculer la limite de la somme $S_n$.",
+              "bareme": 0.5,
+              "hint": "$(w_n)$ est géométrique de raison $q = e^{-2}$ et $w_0 = 1$. La somme est $S_n = \\frac{1 - e^{-2(n+1)}}{1 - e^{-2}}$. Comme $|q| = e^{-2} < 1$, $e^{-2(n+1)} \\to 0$, donc $\\lim S_n = \\frac{1}{1 - e^{-2}}$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2023r-ex2",
+      "number": 2,
+      "theme": "geometrie-espace",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Plan, sphère, tangence, intersection de plans",
+      "context": "Dans l'espace rapporté à un repère orthonormé direct $(O; \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les points $A(2, 1, 2)$, $B(-2, 0, 5)$, $C(4, -5, 7)$ et $\\Omega(1, -1, 0)$. On pose $\\overrightarrow{u} = \\overrightarrow{\\Omega A}$. Soit $(S)$ la sphère de centre $\\Omega$ et de rayon $R = 3$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = 13\\overrightarrow{u}$ et en déduire que les points $A$, $B$ et $C$ ne sont pas alignés.",
+              "bareme": 0.5,
+              "hint": "Calculez les coordonnées de $\\overrightarrow{AB}$, $\\overrightarrow{AC}$ et $\\overrightarrow{u} = \\overrightarrow{\\Omega A}$, puis effectuez le produit vectoriel. $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} \\neq \\overrightarrow{0}$ implique que $A$, $B$, $C$ ne sont pas alignés."
+            },
+            {
+              "id": "1b",
+              "content": "Vérifier que $x + 2y + 2z - 8 = 0$ est une équation cartésienne du plan $(ABC)$.",
+              "bareme": 0.25,
+              "hint": "$\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = 13\\overrightarrow{u}$ donc $\\overrightarrow{u}(1;2;2)$ est normal au plan $(ABC)$. L'équation est $x + 2y + 2z + d = 0$ ; substituez $A(2,1,2)$ pour trouver $d$."
+            },
+            {
+              "id": "1c",
+              "content": "Montrer que le plan $(ABC)$ est tangent à la sphère $(S)$ au point $A$.",
+              "bareme": 0.5,
+              "hint": "$\\overrightarrow{u} = \\overrightarrow{\\Omega A}$ est normal au plan $(ABC)$, donc $\\Omega A \\perp (ABC)$ et $A$ est le projeté de $\\Omega$ sur $(ABC)$. Calculez $d(\\Omega, (ABC)) = \\Omega A = \\sqrt{1^2+2^2+2^2} = 3 = R$. Vérifiez aussi $A \\in (S)$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soient $(P)$ le plan d'équation cartésienne $3x + 4y + z + 1 = 0$ et $(\\Delta)$ la droite passant par le point $A$ et orthogonale au plan $(P)$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que la droite $(\\Delta)$ coupe le plan $(P)$ au point $H\\left(\\dfrac{1}{2}, -1, \\dfrac{3}{2}\\right)$.",
+              "bareme": 0.5,
+              "hint": "Le vecteur directeur de $(\\Delta)$ est le vecteur normal à $(P)$ : $\\overrightarrow{n}(3;4;1)$. Écrivez la représentation paramétrique de $(\\Delta)$ passant par $A(2,1,2)$, puis substituez dans $3x+4y+z+1=0$ pour trouver $t$."
+            },
+            {
+              "id": "2b",
+              "content": "Déterminer les coordonnées du point $D$ tel que le point $H$ soit milieu du segment $[AD]$.",
+              "bareme": 0.5,
+              "hint": "Si $H$ est le milieu de $[AD]$, alors $\\overrightarrow{AD} = 2\\overrightarrow{AH}$. Calculez $\\overrightarrow{AH}$ puis $D = A + 2\\overrightarrow{AH}$."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Soit $(Q)$ le plan passant par le point $D$ et de vecteur normal $\\overrightarrow{\\Omega D}$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que le plan $(Q)$ est tangent à la sphère $(S)$ en $D$.",
+              "bareme": 0.25,
+              "hint": "$\\overrightarrow{\\Omega D}$ est normal à $(Q)$ et $D \\in (Q)$, donc $D$ est le projeté de $\\Omega$ sur $(Q)$. Calculez $d(\\Omega, (Q)) = \\Omega D$ et vérifiez $\\Omega D = R = 3$."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que les plans $(Q)$ et $(ABC)$ se coupent suivant la droite $(BC)$.",
+              "bareme": 0.5,
+              "hint": "Déterminez l'équation de $(Q)$ puis vérifiez que $B$ et $C$ appartiennent à $(Q)$ et à $(ABC)$. Vérifiez que $A \\notin (Q)$ pour confirmer que les plans sont distincts, donc leur intersection est la droite $(BC)$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2023r-ex3",
+      "number": 3,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Nombres complexes — Forme trigonométrique, puissance, rotation, équation, médiatrice",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "On considère le nombre complexe $a = \\dfrac{\\sqrt{3}}{2} + \\dfrac{3}{2}i$.",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que $a = \\sqrt{3}\\left(\\cos\\dfrac{\\pi}{3} + i\\sin\\dfrac{\\pi}{3}\\right)$.",
+              "bareme": 0.25,
+              "hint": "Calculez $|a| = \\sqrt{\\frac{3}{4} + \\frac{9}{4}} = \\sqrt{3}$. Puis identifiez $\\cos\\theta = \\frac{1}{2}$ et $\\sin\\theta = \\frac{\\sqrt{3}}{2}$ en divisant par $|a|$."
+            },
+            {
+              "id": "1b",
+              "content": "Déduire que $a^{2022}$ est un nombre réel.",
+              "bareme": 0.25,
+              "hint": "$a^{2022} = (\\sqrt{3})^{2022}\\left(\\cos\\frac{2022\\pi}{3} + i\\sin\\frac{2022\\pi}{3}\\right)$. Calculez $\\frac{2022}{3} = 674$, donc $a^{2022} = 3^{1011}(\\cos 674\\pi + i\\sin 674\\pi)$. Comme $\\sin 674\\pi = 0$, c'est un réel."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A$ et $B$ d'affixes respectives $a$ et $\\bar{a}$. Déterminer une mesure de l'angle de la rotation $R$ de centre $O$ et qui transforme $B$ en $A$.",
+          "bareme": 0.5,
+          "hint": "$R(B) = A$ s'écrit $a - 0 = e^{i\\theta}(\\bar{a} - 0)$, donc $e^{i\\theta} = \\frac{a}{\\bar{a}}$. Calculez $\\frac{a}{\\bar{a}}$ en utilisant la forme trigonométrique de $a$ et $\\bar{a} = \\sqrt{3}e^{-i\\pi/3}$."
+        },
+        {
+          "id": "q3",
+          "content": "On considère dans $\\mathbb{C}$ l'équation $(E_\\alpha) : z^2 - \\sqrt{3}\\,z + \\alpha = 0$ où $\\alpha$ est un nombre réel non nul. On suppose que l'équation $(E_\\alpha)$ admet deux racines complexes conjuguées non réelles $z$ et $\\bar{z}$. Soient les points $M(z)$, $N(\\bar{z})$ et $P(\\sqrt{3})$ du plan complexe. Sans résoudre l'équation $(E_\\alpha)$ :",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Justifier que $\\alpha > \\dfrac{3}{4}$ et que $\\alpha = z\\bar{z}$.",
+              "bareme": 0.5,
+              "hint": "Les racines sont non réelles donc $\\Delta = 3 - 4\\alpha < 0$, d'où $\\alpha > \\frac{3}{4}$. Par les relations de Viète : $z \\cdot \\bar{z} = \\frac{\\alpha}{1} = \\alpha$."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que $|z| = |z - \\sqrt{3}|$.",
+              "bareme": 0.5,
+              "hint": "Par Viète : $z + \\bar{z} = \\sqrt{3}$ donc $\\bar{z} = \\sqrt{3} - z$. Ainsi $|\\bar{z}| = |\\sqrt{3} - z| = |z - \\sqrt{3}|$. Or $|z| = |\\bar{z}|$, donc $|z| = |z - \\sqrt{3}|$."
+            },
+            {
+              "id": "3c",
+              "content": "En déduire que les points $M$ et $N$ appartiennent à la médiatrice $(\\Delta)$ du segment $[OP]$.",
+              "bareme": 0.5,
+              "hint": "$|z| = |z - \\sqrt{3}|$ signifie $MO = MP$ : $M$ est équidistant de $O$ et $P(\\sqrt{3})$, donc $M \\in$ médiatrice de $[OP]$. Même raisonnement pour $N(\\bar{z})$ avec $|\\bar{z}| = |\\bar{z} - \\sqrt{3}|$."
+            },
+            {
+              "id": "3d",
+              "content": "Déterminer la valeur de $\\alpha$ pour laquelle $|z - \\sqrt{3}| = \\sqrt{3}$ et déduire dans ce cas les points d'intersection de la droite $(\\Delta)$ et le cercle de centre $P$ et de rayon $\\sqrt{3}$.",
+              "bareme": 0.5,
+              "hint": "De $|z| = |z-\\sqrt{3}| = \\sqrt{3}$, on a $|z|^2 = z\\bar{z} = \\alpha = 3$. Vérifiez $\\alpha = 3 > \\frac{3}{4}$. Les points d'intersection sont $M$ et $N$ qui appartiennent à la fois à $(\\Delta)$ et au cercle de centre $P$ et rayon $\\sqrt{3}$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2023r-ex4",
+      "number": 4,
+      "theme": "probabilites",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Probabilités — Tirage simultané, loi binomiale, variable aléatoire sans remise",
+      "context": "Une urne contient quatre boules blanches et deux boules noires, indiscernables au toucher.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "On tire au hasard et simultanément deux boules de l'urne.",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Calculer la probabilité de l'événement $A$ : « tirer au moins une boule noire ».",
+              "bareme": 0.5,
+              "hint": "$\\text{Card}(\\Omega) = C_6^2 = 15$. Utilisez l'événement contraire $\\bar{A}$ = « aucune noire » = 2 blanches : $\\text{Card}(\\bar{A}) = C_4^2 = 6$. Donc $p(A) = 1 - \\frac{6}{15}$."
+            },
+            {
+              "id": "1b",
+              "content": "Soit l'événement $B$ : « Obtenir deux boules de même couleur ». Montrer que $p(B) = \\dfrac{7}{15}$.",
+              "bareme": 0.5,
+              "hint": "$B$ = 2 blanches ou 2 noires : $\\text{Card}(B) = C_4^2 + C_2^2 = 6 + 1 = 7$. Donc $p(B) = \\frac{7}{15}$."
+            },
+            {
+              "id": "1c",
+              "content": "On répète cette expérience cinq fois en remettant dans l'urne les boules tirées après chaque tirage. Quelle est la probabilité pour que l'événement $B$ soit réalisé exactement trois fois ?",
+              "bareme": 0.5,
+              "hint": "C'est une loi binomiale $\\mathcal{B}(5, p(B))$ avec $p(B) = \\frac{7}{15}$. La probabilité cherchée est $C_5^3 \\left(\\frac{7}{15}\\right)^3 \\left(\\frac{8}{15}\\right)^2$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Dans cette question, on tire des boules de l'urne une après l'autre et sans remise et on arrête le tirage lorsqu'on obtient une boule blanche pour la première fois. Soit $X$ la variable aléatoire égale au nombre de tirages effectués dans cette expérience.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Justifier que les valeurs prises par $X$ sont : 1 ; 2 et 3.",
+              "bareme": 0.25,
+              "hint": "$X = 1$ : 1re boule blanche. $X = 2$ : 1re noire, 2e blanche. $X = 3$ : les 2 premières noires (il y en a seulement 2), la 3e est forcément blanche. Impossible d'avoir $X > 3$."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que $p(X = 2) = \\dfrac{4}{15}$.",
+              "bareme": 0.25,
+              "hint": "Pour $X = 2$ : 1re boule noire ($\\frac{2}{6}$) puis 2e boule blanche ($\\frac{4}{5}$). Donc $p(X=2) = \\frac{2}{6} \\times \\frac{4}{5} = \\frac{8}{30} = \\frac{4}{15}$."
+            },
+            {
+              "id": "2c",
+              "content": "Déterminer la loi de probabilité de la variable aléatoire $X$.",
+              "bareme": 0.5,
+              "hint": "Calculez $p(X=1) = \\frac{4}{6} = \\frac{2}{3}$, $p(X=2) = \\frac{4}{15}$ (déjà trouvé), et $p(X=3) = 1 - p(X=1) - p(X=2)$. Vérifiez que la somme vaut 1."
+            },
+            {
+              "id": "2d",
+              "content": "Quelle est la probabilité d'obtenir au moins une boule noire ?",
+              "bareme": 0.5,
+              "hint": "On obtient au moins une noire si et seulement si $X \\geq 2$. Donc $p(X \\geq 2) = p(X=2) + p(X=3)$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2023r-pb",
+      "number": 5,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 8,
+      "topic": "Analyse — Continuité, dérivabilité, étude complète d'une fonction définie par morceaux, intégration",
+      "context": "On considère la fonction numérique $f$ définie sur $\\mathbb{R}$ par $f(x) = \\begin{cases} (x-1)^2 e^{x(2-x)} & \\text{si } x \\leq 2 \\\\ 1 + (x-2)^2 \\ln(x-2) & \\text{si } x > 2 \\end{cases}$. Soit $(C)$ sa courbe représentative dans un repère orthonormé $(O; \\overrightarrow{i}, \\overrightarrow{j})$ (unité : 1 cm).",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que la fonction $f$ est continue au point 2.",
+          "bareme": 0.5,
+          "hint": "Calculez $f(2) = (2-1)^2 e^0 = 1$. Puis calculez $\\lim_{x\\to 2^-} f(x)$ et $\\lim_{x\\to 2^+} f(x)$ (pour $x \\to 2^+$, posez $t = x-2 \\to 0^+$ et utilisez $\\lim_{t\\to 0^+} t\\ln t = 0$). Concluez par égalité des trois valeurs."
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Vérifier que pour tout $x < 2$ et $x \\neq 0$, $\\dfrac{f(x) - f(2)}{x - 2} = xe^{x(2-x)} - x \\cdot \\dfrac{e^{x(2-x)} - 1}{x(2-x)}$.",
+              "bareme": 0.25,
+              "hint": "Substituez $f(x) = (x-1)^2 e^{x(2-x)}$ et $f(2) = 1$. Développez $(x-1)^2 = x^2 - 2x + 1$ et factoriseez le numérateur $f(x) - f(2)$ pour faire apparaître $(x-2)$."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que $f$ est dérivable à gauche en 2.",
+              "bareme": 0.5,
+              "hint": "Calculez $\\lim_{x\\to 2^-} \\frac{f(x)-f(2)}{x-2}$ en utilisant l'expression de 2a). Quand $x \\to 2^-$ : $xe^{x(2-x)} \\to 2$ et $\\frac{e^{x(2-x)}-1}{x(2-x)} \\to 1$ (limite classique). Donc $f'_g(2) = 2 - 2 \\cdot 1 \\cdot (-2) = ...$"
+            },
+            {
+              "id": "2c",
+              "content": "Montrer que $f$ est dérivable en 2 et que $f'(2) = 0$, puis interpréter géométriquement le résultat.",
+              "bareme": 0.75,
+              "hint": "Calculez aussi $f'_d(2) = \\lim_{x\\to 2^+} \\frac{f(x)-f(2)}{x-2} = \\lim_{x\\to 2^+} (x-2)\\ln(x-2)$. Posez $t = x-2 \\to 0^+$ : $t\\ln t \\to 0$. Si $f'_g(2) = f'_d(2) = 0$, la courbe admet une tangente horizontale en $(2, 1)$."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que pour tout $x \\leq 2$, $f(x) = x(x-2)e^{x(2-x)} + e^{x(2-x)}$.",
+              "bareme": 0.25,
+              "hint": "Développez $(x-1)^2 = (x^2-2x+1)$ et factorisez : $(x^2-2x)e^{x(2-x)} + e^{x(2-x)} = x(x-2)e^{x(2-x)} + e^{x(2-x)}$."
+            },
+            {
+              "id": "3b",
+              "content": "Calculer $\\displaystyle\\lim_{x \\to -\\infty} f(x)$ et interpréter géométriquement le résultat.",
+              "bareme": 0.5,
+              "hint": "Pour $x \\to -\\infty$ : posez $t = x(2-x) = -(x^2-2x) \\to -\\infty$. Donc $e^{x(2-x)} \\to 0$. Puis $x(x-2)e^{x(2-x)} \\to 0$ (croissances comparées). Donc $f(x) \\to 0$ : asymptote horizontale $y = 0$."
+            },
+            {
+              "id": "3c",
+              "content": "Calculer $\\displaystyle\\lim_{x \\to +\\infty} f(x)$ et $\\displaystyle\\lim_{x \\to +\\infty} \\dfrac{f(x)}{x}$, puis interpréter géométriquement le résultat.",
+              "bareme": 0.75,
+              "hint": "Pour $x > 2$ : $\\lim_{x\\to+\\infty} (x-2)^2 \\ln(x-2) = +\\infty$ donc $\\lim f(x) = +\\infty$. Pour $\\frac{f(x)}{x}$ : $\\frac{1+(x-2)^2\\ln(x-2)}{x} \\to +\\infty$. Interprétation : $(C)$ admet une branche parabolique de direction $(Oy)$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Montrer que pour tout $x < 2$, $f'(x) = 2x(x-1)(2-x)e^{x(2-x)}$.",
+              "bareme": 0.5,
+              "hint": "Dérivez $f(x) = (x-1)^2 e^{x(2-x)}$ : $f'(x) = 2(x-1)e^{x(2-x)} + (x-1)^2 \\cdot (2-2x)e^{x(2-x)}$. Factorisez par $2(x-1)e^{x(2-x)}$ pour obtenir $2x(x-1)(2-x)e^{x(2-x)}$."
+            },
+            {
+              "id": "4b",
+              "content": "Montrer que pour tout $x > 2$, $f'(x) = (x-2)(1 + 2\\ln(x-2))$.",
+              "bareme": 0.5,
+              "hint": "Dérivez $f(x) = 1 + (x-2)^2\\ln(x-2)$ : $f'(x) = 2(x-2)\\ln(x-2) + (x-2)^2 \\cdot \\frac{1}{x-2} = (x-2)[2\\ln(x-2) + 1]$."
+            },
+            {
+              "id": "4c",
+              "content": "Résoudre dans l'intervalle $]2, +\\infty[$ l'inéquation $1 + 2\\ln(x-2) \\leq 0$.",
+              "bareme": 0.5,
+              "hint": "$1 + 2\\ln(x-2) \\leq 0 \\Leftrightarrow \\ln(x-2) \\leq -\\frac{1}{2} \\Leftrightarrow x - 2 \\leq e^{-1/2} = \\frac{1}{\\sqrt{e}}$. Comme $x > 2$, la solution est $x \\in \\left]2, 2 + \\frac{1}{\\sqrt{e}}\\right]$."
+            },
+            {
+              "id": "4d",
+              "content": "Étudier le signe de $f'(x)$ sur $\\mathbb{R}$ puis dresser le tableau de variations de $f$ sur $\\mathbb{R}$.",
+              "bareme": 0.75,
+              "hint": "Pour $x < 2$ : signe de $f'$ = signe de $x(x-1)(2-x)$ ; annulation en $0$, $1$, $2$. Pour $x > 2$ : signe de $(x-2)(1+2\\ln(x-2))$ ; annulation en $2 + \\frac{1}{\\sqrt{e}}$. Utilisez $f'(2) = 0$ comme lien."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "Construire la courbe $(C)$ dans le repère $(O; \\overrightarrow{i}, \\overrightarrow{j})$ (On donne : $f(3) = 1$ ; $2 + \\dfrac{1}{\\sqrt{e}} \\approx 2{,}6$ et $f\\left(2 + \\dfrac{1}{\\sqrt{e}}\\right) \\approx 0{,}8$).",
+          "bareme": 1,
+          "hint": "Utilisez : asymptote $y = 0$ en $-\\infty$, maximum local en $x = 0$ ($f(0) = 0$), minimum en $x = 1$ ($f(1) = 0$), tangente horizontale en $x = 2$ ($f(2) = 1$), minimum en $2+\\frac{1}{\\sqrt{e}}$ ($f \\approx 0{,}8$), et branche parabolique en $+\\infty$."
+        },
+        {
+          "id": "q6",
+          "content": "Soit $\\lambda \\in ]2, 3[$.",
+          "subQuestions": [
+            {
+              "id": "6a",
+              "content": "En utilisant une intégration par parties, montrer que : $\\displaystyle\\int_\\lambda^3 (x-2)^2 \\ln(x-2)\\,dx = -\\dfrac{1}{9} + \\dfrac{1}{3}(\\lambda-2)^3\\left(\\dfrac{1}{3} - \\ln(\\lambda-2)\\right)$.",
+              "bareme": 0.5,
+              "hint": "Posez $u = \\ln(x-2)$, $v' = (x-2)^2$, donc $u' = \\frac{1}{x-2}$ et $v = \\frac{(x-2)^3}{3}$. Appliquez IPP puis calculez l'intégrale restante $\\int \\frac{(x-2)^2}{3}dx$."
+            },
+            {
+              "id": "6b",
+              "content": "Déduire en fonction de $\\lambda$ l'aire $A(\\lambda)$ de la partie du plan limitée par la courbe $(C)$ et les droites d'équations : $y = 1$, $x = \\lambda$ et $x = 3$.",
+              "bareme": 0.5,
+              "hint": "Sur $]2, 3[$, $(C)$ est en dessous de $y = 1$ donc $A(\\lambda) = \\int_\\lambda^3 (1 - f(x))\\,dx = \\int_\\lambda^3 [-(x-2)^2\\ln(x-2)]\\,dx$. Utilisez le résultat de 6a)."
+            },
+            {
+              "id": "6c",
+              "content": "Calculer $\\displaystyle\\lim_{\\lambda \\to 2^+} A(\\lambda)$.",
+              "bareme": 0.25,
+              "hint": "Dans $A(\\lambda)$, faites tendre $\\lambda \\to 2^+$. On a $(\\lambda-2)^3 \\to 0$ et $(\\lambda-2)^3 \\ln(\\lambda-2) \\to 0$ (car $t^3 \\ln t \\to 0$ quand $t \\to 0^+$). Donc $\\lim A(\\lambda) = \\frac{1}{9}$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

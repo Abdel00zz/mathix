@@ -1,0 +1,39 @@
+{
+  "id": "ex-ens-app-33",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Composée, idempotence et applications spéciales",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "pA_q1",
+      "content": "Partie A. Soit $f$ une application de $E$ dans $F$ et $A \\subset E$. Montrer que : $f(E) \\setminus f(A) \\subset f(E \\setminus A)$",
+      "hint": "Soit $y \\in f(E) \\setminus f(A)$. Il existe $x \\in E$ tel que $f(x) = y$, et $y \\notin f(A)$. Montrez que $x \\notin A$, donc $x \\in E \\setminus A$, ce qui donne $y \\in f(E \\setminus A)$."
+    },
+    {
+      "id": "pA_q2",
+      "content": "En déduire que si $f$ est surjective, alors $F \\setminus f(A) \\subset f(E \\setminus A)$.",
+      "hint": "Si $f$ est surjective, $f(E) = F$. Substituez dans le résultat précédent."
+    },
+    {
+      "id": "pA_q3",
+      "content": "On suppose que $f$ est injective. Montrer que : $f(E \\setminus A) \\subset F \\setminus f(A)$.",
+      "hint": "Soit $y \\in f(E \\setminus A)$ : il existe $x \\in E \\setminus A$ tel que $f(x) = y$. Supposez par l'absurde que $y \\in f(A)$ : il existe $a \\in A$ tel que $f(a) = y = f(x)$. L'injectivité implique $a = x$, contradiction avec $x \\notin A$."
+    },
+    {
+      "id": "pA_q4",
+      "content": "On suppose que $f$ est bijective de $E$ dans $F$. Montrer que : $f\\!\\left(C_E^A\\right) = C_F^{f(A)}$.",
+      "hint": "Combinez les résultats des questions 2 et 3 (cas bijectif = injectif et surjectif). Vous obtenez une double inclusion."
+    },
+    {
+      "id": "pB",
+      "content": "Partie B. On dit qu'une application $f$ définie de $E$ dans $E$ est \\textit{idempotente} si elle vérifie $\\left(\\forall x \\in E\\right)\\; (f \\circ f)(x) = f(x)$. Déterminer les applications idempotentes parmi les suivantes : $u : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto |x|$ ; $v : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto E(x)$ ; $z : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto x + 5$ ; $w : \\mathbb{R}^* \\to \\mathbb{R}^*$, $x \\mapsto \\sqrt{x}$",
+      "hint": "Pour chaque application, calculez $(f \\circ f)(x) = f(f(x))$ et vérifiez si c'est égal à $f(x)$. $u$ : $|\\,|x|\\,| = |x|$ ✓. $v$ : $E(E(x)) = E(x)$ car $E(x)$ est un entier ✓. $z$ : $(x+5)+5 = x+10 \\neq x+5$. $w$ : $\\sqrt{\\sqrt{x}} = x^{1/4} \\neq \\sqrt{x}$ en général."
+    },
+    {
+      "id": "pC",
+      "content": "Partie C. Soit $f$ une application de $\\mathbb{R}^*_+$ dans $\\mathbb{R}$ telle que : $\\left(\\forall x \\in \\mathbb{R}^*_+\\right)\\; f\\!\\left(\\dfrac{x-1}{x}\\right) + f(x) = \\dfrac{1}{x} - x + 1$. Déterminer l'expression de $f(x)$.",
+      "hint": "Posez $\\varphi(x) = \\dfrac{x-1}{x}$. Calculez $\\varphi(\\varphi(x))$ et $\\varphi(\\varphi(\\varphi(x)))$ pour trouver le cycle. Vous obtenez un système de 3 équations en $f(x)$, $f(\\varphi(x))$ et $f(\\varphi(\\varphi(x)))$ : résolvez-le."
+    }
+  ]
+}

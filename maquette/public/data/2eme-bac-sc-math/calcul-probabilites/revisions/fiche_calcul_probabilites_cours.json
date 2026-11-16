@@ -1,0 +1,508 @@
+{
+  "header": {
+    "title": "Calcul des probabilités",
+    "subtitle": "Dénombrement, conditionnement, variables aléatoires et loi binomiale",
+    "context": "2BAC Sciences Mathématiques"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre apprend à \\objectif{modéliser une situation aléatoire et calculer des probabilités} en reliant le dénombrement, les événements, le conditionnement et les variables aléatoires. La \\defi{difficulté} principale consiste à choisir le bon modèle, puis à distinguer clairement ordre, répétition, équiprobabilité, conditionnement et indépendance. \\savant{Blaise Pascal} contribua avec Pierre de Fermat aux premiers calculs systématiques de probabilités, à l'origine d'outils aujourd'hui utilisés en statistique, en sciences et dans l'étude du risque.",
+          "media": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Portrait_de_Blaise_Pascal_%28MARQ_623%29.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "15%",
+            "caption": "Blaise Pascal (1623–1662)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "principe-multiplicatif",
+      "category": "course",
+      "title": "Compter des choix successifs",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avant de calculer une probabilité, il faut souvent compter les résultats possibles. Le cardinal et le principe multiplicatif évitent de dresser une liste complète."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le cardinal d'un ensemble fini} ?",
+          "content": "Le \\textbf{cardinal} d'un ensemble fini $E$ est son nombre d'éléments. Il se note $\\operatorname{card}(E)$.\\par\\smallskip Si $E=\\{x_1,\\ldots,x_n\\}$, alors $\\operatorname{card}(E)=n$, et $\\operatorname{card}(\\varnothing)=0$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{multiplier les possibilités successives} ?",
+          "content": "Une situation comporte plusieurs choix successifs. Si ces choix offrent respectivement $n_1,n_2,\\ldots,n_k$ possibilités, alors le nombre total de résultats est :\\par\\smallskip$$\\boxed{n_1n_2\\cdots n_k}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Formons des nombres à deux chiffres avec les chiffres $3$, $5$ et $7$, d'abord sans répétition, puis avec répétition.}\\par\\smallskip \\textbf{Sans répétition.} Le chiffre des dizaines offre \\blank{3} choix, puis celui des unités offre \\blank{2} choix. On obtient donc $3\\times2=\\blank{6}$ nombres.\\par\\smallskip \\textbf{Avec répétition.} Chaque position offre \\blank{3} choix. Ainsi, le nombre obtenu est $3\\times3=3^2=\\blank{9}$.\\par\\smallskip $$\\boxed{6\\text{ nombres sans répétition et }9\\text{ avec répétition}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Un code comporte deux lettres distinctes suivies d'un chiffre non nul. Calculons le nombre de codes possibles.}\\par\\smallskip La première lettre offre \\blank{26} choix. La deuxième doit être différente, elle offre donc \\blank{25} choix. Le chiffre non nul offre \\blank{9} choix. Le principe multiplicatif donne :\\par\\smallskip$$26\\times25\\times9=\\blank{5850}.$$$$\\boxed{5850\\text{ codes}}$$"
+        }
+      ]
+    },
+    {
+      "id": "arrangements-permutations",
+      "category": "course",
+      "title": "Compter lorsque l'ordre intervient",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le principe multiplicatif suffit lorsque les choix sont décrits directement. Les arrangements et les permutations donnent des formules adaptées aux listes ordonnées."
+        },
+        {
+          "type": "definition",
+          "title": "Comment compter \\mathqst{des listes ordonnées de longueur donnée} ?",
+          "content": "Soient $n$ objets distincts et $p$ positions.\\par\\smallskip Si la répétition est autorisée, le nombre de listes ordonnées de longueur $p$ est $n^p$. Si la répétition est interdite et $p\\leq n$, ce nombre est :\\par\\smallskip$$\\boxed{A_n^p=n(n-1)\\cdots(n-p+1)=\\frac{n!}{(n-p)!}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Une course réunit $10$ participants sans ex æquo. Calculons le nombre de classements possibles pour les quatre premières places.}\\par\\smallskip L'ordre intervient, car être premier ou quatrième ne représente pas le même résultat. Aucun participant ne peut occuper deux places. On utilise donc $A_{10}^{4}=\\blank{10}\\times\\blank{9}\\times\\blank{8}\\times\\blank{7}$. Ainsi :\\par\\smallskip$$A_{10}^{4}=\\blank{5040}.$$$$\\boxed{5040\\text{ classements}}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{une permutation de tous les objets} ?",
+          "content": "Une \\textbf{permutation} de $n$ objets distincts est un arrangement de ces $n$ objets pris tous ensemble. Son nombre est :\\par\\smallskip$$\\boxed{n!=n(n-1)\\cdots2\\times1}$$avec la convention $0!=1$."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Cinq personnes s'assoient sur cinq sièges alignés. Déterminons le nombre de placements possibles.}\\par\\smallskip Les sièges sont remplis successivement avec \\blank{5}, \\blank{4}, \\blank{3}, \\blank{2} puis \\blank{1} choix. Ainsi :\\par\\smallskip$$5!=5\\times4\\times3\\times2\\times1=\\blank{120}.$$$$\\boxed{120\\text{ placements}}$$"
+        }
+      ]
+    },
+    {
+      "id": "combinaisons",
+      "category": "course",
+      "title": "Compter lorsque l'ordre ne joue aucun rôle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans un groupe choisi simultanément, l'ordre de sélection ne change pas le résultat. La notation marocaine des combinaisons sera utilisée systématiquement."
+        },
+        {
+          "type": "definition",
+          "title": "Comment compter \\mathqst{un choix non ordonné de plusieurs objets} ?",
+          "content": "Choisir $p$ objets parmi $n$ objets distincts sans tenir compte de l'ordre revient à former une \\textbf{combinaison}. Pour $0\\leq p\\leq n$ :\\par\\smallskip$$\\boxed{C_n^p=\\frac{n!}{p!(n-p)!}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{On choisit deux délégués parmi quatre élèves. Calculons le nombre de groupes possibles.}\\par\\smallskip L'ordre ne joue aucun rôle : choisir Ahmed puis Laila donne le même groupe que choisir Laila puis Ahmed. On utilise donc $C_4^2$ :\\par\\smallskip$$C_4^2=\\frac{4!}{2!2!}=\\frac{\\blank{4}\\times\\blank{3}}{\\blank{2}}=\\blank{6}.$$$$\\boxed{6\\text{ groupes}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{choisir la formule de dénombrement adaptée} ?",
+          "content": "On examine d'abord le rôle de l'ordre et de la répétition.\\par\\smallskip \\begin{enumerate}\\item Si l'ordre intervient et la répétition est autorisée, utiliser $n^p$.\\item Si l'ordre intervient sans répétition, utiliser $A_n^p$.\\item Si tous les objets sont rangés, utiliser $n!$.\\item Si l'ordre n'intervient pas, utiliser $C_n^p$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Une urne contient $4$ boules blanches, $3$ rouges et $2$ noires. On tire simultanément $3$ boules.\\begin{enumerate}\\item Calculons le nombre total de tirages.\\item Calculons le nombre de tirages contenant une boule de chaque couleur.\\item Calculons le nombre de tirages contenant au moins deux boules rouges.\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item Le tirage est simultané, donc non ordonné. Le nombre total est $C_9^3=\\blank{84}$.\\item On choisit une boule dans chaque couleur : $C_4^1C_3^1C_2^1=\\blank{4}\\times\\blank{3}\\times\\blank{2}=\\blank{24}$.\\item Il y a exactement deux rouges ou trois rouges : $C_3^2C_6^1+C_3^3=\\blank{18}+\\blank{1}=\\blank{19}$.\\end{enumerate}$$\\boxed{84\\text{ tirages au total},\\ 24\\text{ avec une boule de chaque couleur},\\ 19\\text{ avec au moins deux rouges}}$$"
+        }
+      ]
+    },
+    {
+      "id": "experience-aleatoire-univers",
+      "category": "course",
+      "title": "Décrire une expérience aléatoire",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après avoir appris à compter, il faut décrire précisément les résultats possibles. L'univers rassemble toutes les issues de l'expérience."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'\\mathqst{une expérience aléatoire et son univers} ?",
+          "content": "Une \\textbf{expérience aléatoire} est une expérience dont le résultat ne peut pas être prévu avec certitude avant sa réalisation. L'ensemble de tous les résultats possibles est appelé \\textbf{univers} et se note $\\Omega$."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Déterminons l'univers de trois expériences simples.\\begin{enumerate}\\item Un lancer d'une pièce.\\item Un lancer d'un dé cubique.\\item Deux lancers successifs d'une pièce.\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item Pour la pièce, $\\Omega=\\{\\blank{P},\\blank{F}\\}$.\\item Pour le dé, $\\Omega=\\{\\blank{1},2,3,4,5,\\blank{6}\\}$.\\item L'ordre des deux lancers intervient : $\\Omega=\\{(P,P),(P,F),(F,P),(F,F)\\}$, donc $\\operatorname{card}(\\Omega)=\\blank{4}$.\\end{enumerate}$$\\boxed{\\text{L'univers doit contenir toutes les issues possibles.}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Ordre des résultats.} Dans une expérience successive, $(P,F)$ et $(F,P)$ sont deux issues différentes."
+        }
+      ]
+    },
+    {
+      "id": "evenements",
+      "category": "course",
+      "title": "Traduire les événements par des ensembles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fois l'univers fixé, chaque condition de l'énoncé devient un sous-ensemble. Les opérations ensemblistes traduisent les mots « et », « ou » et « contraire »."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{un événement associé à une expérience} ?",
+          "content": "Un \\textbf{événement} est une partie de $\\Omega$.\\par\\smallskip \\begin{itemize}\\item $\\varnothing$ est l'événement impossible.\\item $\\Omega$ est l'événement certain.\\item Un événement contenant une seule issue est élémentaire.\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{combiner et comparer deux événements} ?",
+          "content": "Soient $A$ et $B$ deux événements.\\par\\smallskip \\begin{itemize}\\item $A\\cap B$ signifie que $A$ et $B$ se réalisent.\\item $A\\cup B$ signifie que $A$ ou $B$ se réalise, éventuellement les deux.\\item $\\overline{A}=\\Omega\\setminus A$ est l'événement contraire de $A$.\\item $A$ et $B$ sont incompatibles lorsque $A\\cap B=\\varnothing$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{On tire une carte parmi les cartes numérotées de $1$ à $10$. On pose $A$ : « multiple de $3$ », $B$ : « nombre impair » et $C$ : « multiple de $4$ ». Déterminons les événements, leurs intersections, leur réunion et le contraire de $A$.}\\par\\smallskip On obtient $A=\\{\\blank{3},\\blank{6},\\blank{9}\\}$, $B=\\{1,3,5,7,9\\}$ et $C=\\{4,8\\}$.\\par\\smallskip Ainsi, $A\\cap B=\\{\\blank{3},\\blank{9}\\}$ et $A\\cap C=\\blank{\\varnothing}$. De plus :\\par\\smallskip$$A\\cup B=\\{1,3,5,6,7,9\\},\\qquad \\overline{A}=\\{1,2,4,5,7,8,10\\}.$$$$\\boxed{A\\text{ et }C\\text{ sont incompatibles, tandis que }A\\text{ et }B\\text{ ne le sont pas.}}$$"
+        }
+      ]
+    },
+    {
+      "id": "probabilite-univers-fini",
+      "category": "course",
+      "title": "Définir une probabilité sur un univers fini",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les événements sont maintenant décrits comme des ensembles. Une loi de probabilité attribue un poids à chaque issue, puis additionne les poids des issues favorables."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{définir une loi de probabilité finie} ?",
+          "content": "Soit $\\Omega=\\{\\omega_1,\\ldots,\\omega_n\\}$. Une probabilité est déterminée par $p_1,\\ldots,p_n$ tels que $p_i\\geq0$ et $p_1+\\cdots+p_n=1$. Pour tout événement $A$ :\\par\\smallskip$$\\boxed{P(A)=\\sum_{\\omega_i\\in A}p_i}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les règles fondamentales de calcul probabiliste} ?",
+          "content": "Pour tous événements $A$ et $B$ :\\par\\smallskip \\begin{itemize}\\item $P(\\varnothing)=0$ et $P(\\Omega)=1$.\\item $P(\\overline{A})=1-P(A)$.\\item $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$.\\item Si $A$ et $B$ sont incompatibles, $P(A\\cup B)=P(A)+P(B)$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Les faces paires d'un dé ont chacune une probabilité double de celle de chaque face impaire. Calculons la probabilité de l'événement $A=\\{1,2,3,4\\}$.}\\par\\smallskip On note $p$ la probabilité d'une face paire et $q$ celle d'une face impaire. L'information donne $p=\\blank{2q}$. La somme des probabilités donne $3p+3q=\\blank{1}$. Donc $3(2q)+3q=1$, d'où $q=\\blank{\\frac{1}{9}}$ et $p=\\blank{\\frac{2}{9}}$.\\par\\smallskip Alors :\\par\\smallskip$$P(A)=q+p+q+p=\\blank{\\frac{2}{3}}.$$$$\\boxed{P(A)=\\frac{2}{3}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Équiprobabilité obligatoire.} La formule fondée sur les cardinaux ne s'utilise pas lorsque les issues n'ont pas toutes la même probabilité."
+        }
+      ]
+    },
+    {
+      "id": "equiprobabilite",
+      "category": "course",
+      "title": "Calculer par équiprobabilité et dénombrement",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lorsque toutes les issues ont le même poids, une probabilité devient un quotient de cardinaux. Le dénombrement fournit alors le nombre total d'issues et le nombre d'issues favorables."
+        },
+        {
+          "type": "property",
+          "title": "Quand peut-on \\mathqst{utiliser la formule d'équiprobabilité} ?",
+          "content": "Si toutes les issues de l'univers fini $\\Omega$ ont la même probabilité, alors pour tout événement $A$ :\\par\\smallskip$$\\boxed{P(A)=\\frac{\\operatorname{card}(A)}{\\operatorname{card}(\\Omega)}}$$"
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{Les expressions \\textbf{dé équilibré} et \\textbf{tirage au hasard} annoncent généralement l'équiprobabilité.}\\itemsize{Des objets \\textbf{indiscernables au toucher} conduisent aussi, en général, à des issues équiprobables.}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer une probabilité par dénombrement} ?",
+          "content": "\\begin{enumerate}\\item Décrire l'univers et vérifier l'équiprobabilité.\\item Compter les résultats possibles.\\item Traduire l'événement et compter les résultats favorables.\\item Former le quotient, puis le simplifier.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{On lance deux dés cubiques équilibrés.\\begin{enumerate}\\item Calculons la probabilité d'obtenir deux faces identiques.\\item Calculons la probabilité d'obtenir au moins un $1$.\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item L'univers contient $6^2=\\blank{36}$ couples. L'événement contient $\\blank{6}$ couples : $(1,1),\\ldots,(6,6)$. Donc $P(A)=\\frac{6}{36}=\\blank{\\frac{1}{6}}$.\\item Pour « au moins un $1$ », on passe par le contraire. Aucun dé ne donne $1$ dans $5^2=\\blank{25}$ cas. Ainsi $P(B)=1-\\frac{25}{36}=\\blank{\\frac{11}{36}}$.\\end{enumerate}$$\\boxed{P(A)=\\frac{1}{6}\\quad\\text{et}\\quad P(B)=\\frac{11}{36}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{On lance un dé équilibré. Soit $A$ : « obtenir un nombre impair » et $B$ : « obtenir un multiple de $3$ ». Calculons $P(A\\cup B)$.}\\par\\smallskip On a $P(A)=\\blank{\\frac{1}{2}}$, $P(B)=\\blank{\\frac{1}{3}}$ et $A\\cap B=\\{3\\}$, donc $P(A\\cap B)=\\blank{\\frac{1}{6}}$. La formule de réunion donne :\\par\\smallskip$$P(A\\cup B)=\\frac12+\\frac13-\\frac16=\\blank{\\frac23}.$$$$\\boxed{P(A\\cup B)=\\frac{2}{3}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Dans une classe de $35$ élèves, $5$ étudient uniquement le russe. Parmi les $30$ autres, $20$ étudient l'anglais et $18$ l'espagnol. Calculons la probabilité qu'un élève choisi au hasard étudie à la fois l'anglais et l'espagnol.}\\par\\smallskip On pose $A$ : « étudier l'anglais » et $E$ : « étudier l'espagnol ». Comme les $30$ élèves non russisants étudient l'une de ces deux langues, $\\operatorname{card}(A\\cup E)=\\blank{30}$.\\par\\smallskip Ainsi :\\par\\smallskip$$\\operatorname{card}(A\\cap E)=\\blank{20}+\\blank{18}-\\blank{30}=\\blank{8}.$$Donc $P(A\\cap E)=\\blank{\\frac{8}{35}}$.$$\\boxed{P(A\\cap E)=\\frac{8}{35}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Une urne contient $12$ boules : $m$ blanches et $n$ noires, avec $m,n\\geq1$. On tire successivement deux boules sans remise. La probabilité d'obtenir deux couleurs différentes est $\\frac{16}{33}$. Déterminons $m$ et $n$.}\\par\\smallskip Deux couleurs différentes correspondent à « blanche puis noire » ou « noire puis blanche » :\\par\\smallskip$$\\frac{m}{12}\\frac{n}{11}+\\frac{n}{12}\\frac{m}{11}=\\frac{16}{33}.$$Ainsi, $\\frac{mn}{66}=\\frac{16}{33}$, donc $mn=\\blank{32}$. De plus, $m+n=\\blank{12}$. Les nombres $m$ et $n$ sont les racines de $x^2-12x+32=0$, soit \\blank{4} et \\blank{8}.\\par\\smallskip $$\\boxed{(m,n)=(4,8)\\text{ ou }(8,4)}$$"
+        }
+      ]
+    },
+    {
+      "id": "probabilite-conditionnelle",
+      "category": "course",
+      "title": "Changer d'univers par conditionnement",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une information connue réduit l'univers aux issues compatibles avec cette information. La probabilité conditionnelle mesure alors la fréquence d'un événement dans ce nouvel univers."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{la probabilité de $B$ sachant $A$} ?",
+          "content": "Soient $A$ et $B$ deux événements tels que $P(A)>0$. La probabilité de $B$ sachant que $A$ est réalisé se note $P_A(B)$, ou $P(B\\mid A)$, et vaut :\\par\\smallskip$$\\boxed{P_A(B)=P(B\\mid A)=\\frac{P(A\\cap B)}{P(A)}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Dans une classe de $36$ élèves, on dispose du tableau suivant :$$\\begin{array}{c|ccc}&\\text{Littéraires}&\\text{Non littéraires}&\\text{Total}\\\\\\hline\\text{Sportifs}&18&6&24\\\\\\text{Non sportifs}&9&3&12\\\\\\text{Total}&27&9&36\\end{array}$$On choisit un élève au hasard. Calculons la probabilité qu'il soit sportif sachant qu'il est littéraire.}\\par\\smallskip Sachant que l'élève est littéraire, l'univers de référence contient \\blank{27} élèves. Parmi eux, \\blank{18} sont sportifs. Ainsi :\\par\\smallskip$$P_L(S)=\\frac{\\operatorname{card}(S\\cap L)}{\\operatorname{card}(L)}=\\frac{\\blank{18}}{\\blank{27}}=\\blank{\\frac23}.$$$$\\boxed{P_L(S)=\\frac{2}{3}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{retrouver une intersection par conditionnement} ?",
+          "content": "Si $P(A)>0$, alors :\\par\\smallskip$$\\boxed{P(A\\cap B)=P(A)P_A(B)}$$De même, si $P(B)>0$ :\\par\\smallskip$$\\boxed{P(A\\cap B)=P(B)P_B(A)}$$"
+        }
+      ]
+    },
+    {
+      "id": "arbres-probabilites-totales",
+      "category": "course",
+      "title": "Organiser un calcul avec un arbre pondéré",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le conditionnement se lit naturellement sur un arbre pondéré. Chaque chemin représente une succession d'événements, et plusieurs chemins peuvent former un même événement."
+        },
+        {
+          "type": "property",
+          "title": "Quelles règles \\mathqst{gouvernent un arbre pondéré} ?",
+          "content": "\\begin{itemize}\\item La somme des probabilités issues d'un même nœud vaut $1$.\\item La probabilité d'un chemin est le produit des probabilités de ses branches.\\item La probabilité d'un événement obtenu par des chemins incompatibles est la somme de leurs probabilités.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer efficacement avec un arbre} ?",
+          "content": "\\begin{enumerate}\\item Placer les événements du premier niveau et leurs probabilités.\\item Compléter les embranchements avec les probabilités conditionnelles.\\item Multiplier les probabilités le long de chaque chemin utile.\\item Additionner les chemins correspondant à l'événement demandé.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Une classe comprend $15$ filles et $21$ garçons. Parmi eux, $8$ filles et $16$ garçons sont volontaires. On choisit un élève au hasard. Calculons la probabilité qu'il soit volontaire.}\\par\\smallskip On pose $F$ : « l'élève est une fille » et $V$ : « l'élève est volontaire ». On a $P(F)=\\frac{15}{36}=\\blank{\\frac{5}{12}}$ et $P(\\overline{F})=\\blank{\\frac{7}{12}}$.\\par\\smallskip Les probabilités conditionnelles sont $P_F(V)=\\blank{\\frac{8}{15}}$ et $P_{\\overline{F}}(V)=\\blank{\\frac{16}{21}}$. La somme des deux chemins donne :\\par\\smallskip$$P(V)=P(F)P_F(V)+P(\\overline{F})P_{\\overline{F}}(V)=\\blank{\\frac{24}{36}}=\\blank{\\frac23}.$$$$\\boxed{P(V)=\\frac{2}{3}}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{décomposer une probabilité totale} ?",
+          "content": "Soient $A_1,\\ldots,A_n$ des événements deux à deux incompatibles, de probabilités non nulles, dont la réunion est $\\Omega$. Pour tout événement $B$ :\\par\\smallskip$$\\boxed{P(B)=\\sum_{k=1}^{n}P(A_k)P_{A_k}(B)}$$En particulier :\\par\\smallskip$$P(B)=P(A)P_A(B)+P(\\overline{A})P_{\\overline{A}}(B).$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Une urne $U_1$ contient $3$ boules rouges et $7$ noires. Une urne $U_2$ contient $4$ rouges et $6$ noires. On tire simultanément deux boules de $U_1$ et une boule de $U_2$. On note $D$ : « les trois boules ne sont pas de la même couleur » et $B$ : « la boule tirée de $U_2$ est rouge ». Calculons $P_D(B)$.}\\par\\smallskip L'événement contraire $\\overline{D}$ signifie que les trois boules sont toutes rouges ou toutes noires :\\par\\smallskip$$P(\\overline{D})=\\frac{C_3^2}{C_{10}^2}\\frac{4}{10}+\\frac{C_7^2}{C_{10}^2}\\frac{6}{10}=\\blank{\\frac{23}{75}}.$$Donc $P(D)=1-\\frac{23}{75}=\\blank{\\frac{52}{75}}$.\\par\\smallskip Pour $B\\cap D$, la boule de $U_2$ est rouge et les deux boules de $U_1$ ne sont pas toutes rouges :\\par\\smallskip$$P(B\\cap D)=\\frac{4}{10}\\left(1-\\frac{C_3^2}{C_{10}^2}\\right)=\\blank{\\frac{28}{75}}.$$Ainsi :\\par\\smallskip$$P_D(B)=\\frac{P(B\\cap D)}{P(D)}=\\frac{\\frac{28}{75}}{\\frac{52}{75}}=\\blank{\\frac{7}{13}}.$$$$\\boxed{P_D(B)=\\frac{7}{13}}$$"
+        }
+      ]
+    },
+    {
+      "id": "independance",
+      "category": "course",
+      "title": "Reconnaître des événements indépendants",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le conditionnement peut modifier la probabilité d'un événement. Lorsque cette probabilité reste inchangée, les événements sont indépendants."
+        },
+        {
+          "type": "definition",
+          "title": "Quand deux événements sont-ils \\mathqst{indépendants} ?",
+          "content": "Deux événements $A$ et $B$ sont \\textbf{indépendants} si et seulement si :\\par\\smallskip$$\\boxed{P(A\\cap B)=P(A)P(B)}$$Lorsque $P(A)>0$, cette condition équivaut à $P_A(B)=P(B)$."
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Indépendance et incompatibilité sont différentes.} Deux événements incompatibles de probabilités non nulles ne sont pas indépendants, car leur intersection a une probabilité nulle tandis que $P(A)P(B)>0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{On lance un dé équilibré. Soient $A=\\{2,4,6\\}$, $B=\\{3,6\\}$ et $C=\\{4\\}$. Étudions l'indépendance de $A$ avec $B$, puis de $A$ avec $C$.}\\par\\smallskip Pour $A$ et $B$, $A\\cap B=\\{6\\}$, donc $P(A\\cap B)=\\blank{\\frac16}$. De plus, $P(A)P(B)=\\frac12\\times\\frac13=\\blank{\\frac16}$. Les deux valeurs sont égales, donc $A$ et $B$ sont \\blank{indépendants}.\\par\\smallskip Pour $A$ et $C$, $P(A\\cap C)=\\blank{\\frac16}$, tandis que $P(A)P(C)=\\frac12\\times\\frac16=\\blank{\\frac1{12}}$. Les valeurs sont différentes, donc $A$ et $C$ ne sont pas indépendants.$$\\boxed{A\\text{ et }B\\text{ sont indépendants, mais }A\\text{ et }C\\text{ ne le sont pas.}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Que devient l'indépendance avec \\mathqst{les événements contraires} ?",
+          "content": "Si $A$ et $B$ sont indépendants, alors les couples $(A,\\overline{B})$, $(\\overline{A},B)$ et $(\\overline{A},\\overline{B})$ sont également indépendants."
+        }
+      ]
+    },
+    {
+      "id": "variable-aleatoire",
+      "category": "course",
+      "title": "Associer une valeur numérique à chaque issue",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une expérience peut produire des issues nombreuses, mais seules certaines valeurs numériques nous intéressent. Une variable aléatoire regroupe les issues qui donnent la même valeur."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{une variable aléatoire réelle} ?",
+          "content": "Une \\textbf{variable aléatoire réelle} est une application :\\par\\smallskip$$\\boxed{X:\\Omega\\longrightarrow\\mathbb{R}}$$L'ensemble des valeurs prises par $X$ est noté $X(\\Omega)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{On lance un dé équilibré. Si le résultat est pair, on gagne $2$ dirhams. Si le résultat est $1$, on gagne $3$ dirhams. Si le résultat est $3$ ou $5$, on perd $4$ dirhams. Déterminons les valeurs de la variable aléatoire $X$ et l'ensemble $X(\\Omega)$.}\\par\\smallskip On a $X(1)=\\blank{3}$, $X(2)=\\blank{2}$, $X(3)=\\blank{-4}$, $X(4)=2$, $X(5)=-4$ et $X(6)=2$. Les valeurs distinctes sont donc $\\blank{-4}$, $\\blank{2}$ et $\\blank{3}$.\\par\\smallskip $$\\boxed{X(\\Omega)=\\{-4,2,3\\}}$$"
+        },
+        {
+          "type": "remark",
+          "content": "Plusieurs issues différentes peuvent produire la même valeur de la variable aléatoire."
+        }
+      ]
+    },
+    {
+      "id": "loi-variable-aleatoire",
+      "category": "course",
+      "title": "Construire la loi d'une variable aléatoire",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après avoir déterminé les valeurs possibles, il faut regrouper les issues qui produisent chaque valeur. La loi de la variable associe alors une probabilité à chacune de ces valeurs."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{la loi d'une variable aléatoire} ?",
+          "content": "Si $X(\\Omega)=\\{x_1,\\ldots,x_n\\}$, la loi de $X$ associe à chaque valeur $x_i$ la probabilité $p_i=P(X=x_i)$. On a $p_i\\geq0$ et :\\par\\smallskip$$\\boxed{\\sum_{i=1}^{n}p_i=1}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Construisons la loi de la variable de gain définie lors du lancer précédent.}\\par\\smallskip La valeur $-4$ est obtenue pour les issues $3$ et $5$, donc $P(X=-4)=\\frac{\\blank{2}}{6}=\\blank{\\frac13}$. La valeur $2$ est obtenue pour $2$, $4$ et $6$, donc $P(X=2)=\\frac{\\blank{3}}{6}=\\blank{\\frac12}$. Enfin, $P(X=3)=\\blank{\\frac16}$.\\par\\smallskip $$\\begin{array}{c|ccc}x_i&-4&2&3\\\\\\\\hline P(X=x_i)&\\frac13&\\frac12&\\frac16\\end{array}$$La somme vaut $\\frac13+\\frac12+\\frac16=\\blank{1}$.$$\\boxed{\\text{La loi est complète et sa somme vaut }1.}$$"
+        }
+      ]
+    },
+    {
+      "id": "esperance-variance",
+      "category": "course",
+      "title": "Mesurer la moyenne et la dispersion",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La loi d'une variable décrit les valeurs possibles et leurs probabilités. L'espérance résume la valeur moyenne, tandis que la variance et l'écart-type mesurent la dispersion."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{l'espérance, la variance et l'écart-type} ?",
+          "content": "Si $X$ prend les valeurs $x_1,\\ldots,x_n$ avec les probabilités $p_1,\\ldots,p_n$, alors :\\par\\smallskip$$E(X)=\\sum_{i=1}^{n}p_ix_i,$$$$V(X)=\\sum_{i=1}^{n}p_i\\bigl(x_i-E(X)\\bigr)^2=E(X^2)-E(X)^2,$$$$\\boxed{\\sigma(X)=\\sqrt{V(X)}}$$L'espérance représente la valeur moyenne attendue lors d'un grand nombre de répétitions."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer efficacement une variance} ?",
+          "content": "\\begin{enumerate}\\item Établir la loi complète de $X$.\\item Calculer $E(X)$.\\item Calculer $E(X^2)=\\sum p_ix_i^2$.\\item Utiliser $V(X)=E(X^2)-E(X)^2$, puis $\\sigma(X)=\\sqrt{V(X)}$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Une boîte contient $6$ jetons blancs, $4$ noirs, $3$ rouges et $2$ verts. On tire simultanément $4$ jetons. On note $X$ le nombre de jetons rouges obtenus. Construisons la loi de $X$ et calculons son espérance.}\\par\\smallskip Les valeurs possibles sont $X(\\Omega)=\\{\\blank{0},\\blank{1},\\blank{2},\\blank{3}\\}$. Le nombre total de tirages est $C_{15}^4=\\blank{1365}$. Pour $k\\in\\{0,1,2,3\\}$ :\\par\\smallskip$$P(X=k)=\\frac{C_3^kC_{12}^{4-k}}{C_{15}^4}.$$On obtient :\\par\\smallskip$$\\begin{array}{c|cccc}k&0&1&2&3\\\\\\\\hline P(X=k)&\\frac{495}{1365}&\\frac{660}{1365}&\\frac{198}{1365}&\\frac{12}{1365}\\end{array}$$Ainsi :\\par\\smallskip$$E(X)=\\frac{660+2\\times198+3\\times12}{1365}=\\blank{\\frac45}.$$$$\\boxed{E(X)=\\frac45}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Un joueur lance un dé équilibré. Si le numéro obtenu est premier, il gagne ce nombre de dirhams. Sinon, il perd ce nombre de dirhams. Déterminons si le jeu est favorable.}\\par\\smallskip Les gains algébriques sont $-1$, $2$, $3$, $-4$, $5$ et $-6$. L'espérance vaut :\\par\\smallskip$$E(X)=\\frac{-1+2+3-4+5-6}{6}=\\blank{-\\frac16}.$$Cette espérance est \\blank{négative}. Le jeu est donc \\blank{défavorable} au joueur.$$\\boxed{E(X)=-\\frac16}$$"
+        }
+      ]
+    },
+    {
+      "id": "fonction-repartition",
+      "category": "course",
+      "title": "Cumuler les probabilités avec une fonction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La loi donne les probabilités valeur par valeur. La fonction de répartition cumule toutes les probabilités situées à gauche d'un seuil."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la fonction de répartition d'une variable} ?",
+          "content": "La \\textbf{fonction de répartition} d'une variable aléatoire $X$ est la fonction $F:\\mathbb{R}\\longrightarrow[0,1]$ définie par :\\par\\smallskip$$\\boxed{F(x)=P(X\\leq x)}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment évolue \\mathqst{une fonction de répartition discrète} ?",
+          "content": "Si $x_1<x_2<\\cdots<x_n$ sont les valeurs prises par $X$, alors :\\par\\smallskip$$F(x)=\\sum_{x_i\\leq x}P(X=x_i).$$La fonction $F$ est croissante, constante entre deux valeurs successives, nulle avant $x_1$ et égale à $1$ à partir de $x_n$."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Un dé porte les nombres $-1,0,0,1,1,2$. On le lance deux fois et on note $Y$ la somme obtenue. Construisons la loi de $Y$, sa fonction de répartition, puis calculons $P(0<Y\\leq3)$.}\\par\\smallskip Un tableau de sommes donne $Y(\\Omega)=\\{-2,-1,0,1,2,3,4\\}$ et :\\par\\smallskip$$\\begin{array}{c|rrrrrrr}y&-2&-1&0&1&2&3&4\\\\\\hline36P(Y=y)&1&4&8&10&8&4&1\\end{array}$$Les probabilités cumulées sont $\\blank{1}$, $\\blank{5}$, $\\blank{13}$, $\\blank{23}$, $\\blank{31}$, $\\blank{35}$ puis $36$, sur $36$. Ainsi :\\par\\smallskip$$F(x)=\\begin{cases}0&\\text{si }x<-2,\\\\\\frac{1}{36}&\\text{si }-2\\leq x<-1,\\\\\\frac{5}{36}&\\text{si }-1\\leq x<0,\\\\\\frac{13}{36}&\\text{si }0\\leq x<1,\\\\\\frac{23}{36}&\\text{si }1\\leq x<2,\\\\\\frac{31}{36}&\\text{si }2\\leq x<3,\\\\\\frac{35}{36}&\\text{si }3\\leq x<4,\\\\1&\\text{si }x\\geq4.\\end{cases}$$Enfin :\\par\\smallskip$$P(0<Y\\leq3)=F(3)-F(0)=\\frac{35}{36}-\\frac{13}{36}=\\blank{\\frac{22}{36}}.$$$$\\boxed{P(0<Y\\leq3)=\\frac{11}{18}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer \\mathqst{des probabilités d'intervalles avec $F$} ?",
+          "content": "Pour tous réels $a<b$ :\\par\\smallskip$$\\boxed{P(X>x)=1-F(x)}$$$$\\boxed{P(a<X\\leq b)=F(b)-F(a)}$$"
+        }
+      ]
+    },
+    {
+      "id": "epreuves-repetees",
+      "category": "course",
+      "title": "Répéter une épreuve indépendante",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une même expérience peut être répétée plusieurs fois dans les mêmes conditions. L'indépendance permet de multiplier les probabilités le long de chaque suite de résultats."
+        },
+        {
+          "type": "property",
+          "title": "Quelle est \\mathqst{la probabilité d'un chemin de répétitions} ?",
+          "content": "On considère une épreuve ayant deux résultats : un succès $S$ de probabilité $p$ et un échec $\\overline{S}$ de probabilité $1-p$. Lors de $n$ répétitions indépendantes, un chemin contenant $k$ succès et $n-k$ échecs a pour probabilité :\\par\\smallskip$$\\boxed{p^k(1-p)^{n-k}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Un sac contient $4$ jetons rouges et $2$ verts. On tire un jeton, on le remet, puis on recommence trois fois. Le succès est « tirer un jeton vert ». On note $X$ le nombre de succès. Calculons $P(X=k)$.}\\par\\smallskip La probabilité du succès est $p=\\blank{\\frac13}$ et celle de l'échec est $1-p=\\blank{\\frac23}$. Les valeurs possibles sont $X(\\Omega)=\\{\\blank{0},1,2,\\blank{3}\\}$.\\par\\smallskip Pour obtenir exactement $k$ succès, on choisit leurs positions parmi les trois répétitions. Il y a $C_3^k$ choix. Ainsi :\\par\\smallskip$$\\boxed{P(X=k)=C_3^k\\left(\\frac13\\right)^k\\left(\\frac23\\right)^{3-k}}$$"
+        }
+      ]
+    },
+    {
+      "id": "loi-binomiale",
+      "category": "course",
+      "title": "Reconnaître et utiliser la loi binomiale",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le nombre de succès obtenu lors de répétitions indépendantes suit un modèle particulier. La loi binomiale combine la probabilité d'un chemin et le nombre de positions possibles des succès."
+        },
+        {
+          "type": "definition",
+          "title": "Quand une variable suit-elle \\mathqst{une loi binomiale} ?",
+          "content": "On répète $n$ fois, de manière indépendante, une même épreuve dont la probabilité de succès est $p$. Si $X$ compte le nombre de succès, alors $X$ suit la loi binomiale de paramètres $n$ et $p$. Pour $k\\in\\{0,1,\\ldots,n\\}$ :\\par\\smallskip$$\\boxed{P(X=k)=C_n^k p^k(1-p)^{n-k}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Que valent \\mathqst{l'espérance et la variance binomiales} ?",
+          "content": "Si $X$ suit une loi binomiale de paramètres $n$ et $p$, alors :\\par\\smallskip$$\\boxed{E(X)=np}$$$$\\boxed{V(X)=np(1-p)}$$$$\\boxed{\\sigma(X)=\\sqrt{np(1-p)}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{reconnaître une situation binomiale} ?",
+          "content": "\\begin{enumerate}\\item Vérifier que l'épreuve est répétée un nombre fixe de fois.\\item Identifier deux résultats : succès et échec.\\item Vérifier que la probabilité du succès reste constante.\\item Vérifier l'indépendance des répétitions.\\item Définir $X$ comme le nombre de succès.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Dans les trois tirages avec remise précédents, construisons la loi de $X$, puis calculons son espérance et sa variance.}\\par\\smallskip On a $X\\sim\\mathcal{B}\\left(3,\\frac13\\right)$. La loi est :\\par\\smallskip$$\\begin{array}{c|cccc}k&0&1&2&3\\\\\\\\hline P(X=k)&\\frac{8}{27}&\\frac{12}{27}&\\frac{6}{27}&\\frac{1}{27}\\end{array}$$Puis $E(X)=3\\times\\frac13=\\blank{1}$ et $V(X)=3\\times\\frac13\\times\\frac23=\\blank{\\frac23}$. L'espérance signifie qu'on obtient en moyenne \\blank{un} jeton vert au cours de trois tirages.$$\\boxed{E(X)=1\\quad\\text{et}\\quad V(X)=\\frac23}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Une question à choix multiple propose trois réponses, dont une seule est correcte. Un candidat répond au hasard à $8$ questions indépendantes. On note $X$ le nombre de réponses correctes. Calculons $P(X=3)$ et $E(X)$.}\\par\\smallskip Chaque réponse correcte est un succès de probabilité $p=\\blank{\\frac13}$. Donc $X\\sim\\mathcal{B}\\left(\\blank{8},\\blank{\\frac13}\\right)$. Ainsi :\\par\\smallskip$$P(X=3)=C_8^3\\left(\\frac13\\right)^3\\left(\\frac23\\right)^5.$$L'espérance vaut $E(X)=8\\times\\frac13=\\blank{\\frac83}$.$$\\boxed{P(X=3)=C_8^3\\left(\\frac13\\right)^3\\left(\\frac23\\right)^5\\quad\\text{et}\\quad E(X)=\\frac83}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Une épreuve de probabilité de succès $p$ est répétée indépendamment $n$ fois. On note $X$ le nombre de succès. Calculons la probabilité d'obtenir au moins un succès.}\\par\\smallskip L'événement contraire de $X\\geq1$ est $X=\\blank{0}$. Or $P(X=0)=\\blank{(1-p)^n}$. Donc :\\par\\smallskip$$P(X\\geq1)=1-P(X=0)=\\blank{1-(1-p)^n}.$$$$\\boxed{P(X\\geq1)=1-(1-p)^n}$$"
+        }
+      ]
+    }
+  ]
+}

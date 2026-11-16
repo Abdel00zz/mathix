@@ -1,0 +1,30 @@
+{
+  "id": "ex-log-33",
+  "theme": "logique",
+  "difficulty": "difficile",
+  "topic": "Logique & Raisonnements — Exercices de perfectionnement",
+  "requiresRedaction": true,
+  "context": "Soit $n \\in \\mathbb{N}$.",
+  "questions": [
+    {
+      "id": "pA",
+      "content": "Partie A. Montrer que si $2n+1$ est un carré parfait, alors $n+1$ est la somme de deux carrés parfaits.",
+      "hint": "Si $2n+1 = k^2$ pour un entier $k$, alors $k$ est impair : posez $k = 2m+1$. Calculez $n+1 = \\dfrac{k^2+1}{2} = \\dfrac{(2m+1)^2+1}{2} = 2m^2+2m+1 = m^2 + (m+1)^2$."
+    },
+    {
+      "id": "pB",
+      "content": "Partie B. Montrer que si $n+1$ est un carré parfait, alors $14n+14$ est la somme de trois carrés parfaits.",
+      "hint": "Si $n+1 = k^2$, alors $14n+14 = 14k^2$. Cherchez $a, b, c \\in \\mathbb{N}$ tels que $a^2+b^2+c^2 = 14k^2$. Essayez $a = 3k$, $b = 2k$, $c = k$."
+    },
+    {
+      "id": "pC_q1",
+      "content": "Partie C. Trouver $a, b, c \\in \\mathbb{N}$ tels que $14 \\times 8 + 14 = a^2 + b^2 + c^2$.",
+      "hint": "Ici $n = 8$ donc $n+1 = 9 = 3^2$. Utilisez la formule de la Partie B avec $k = 3$."
+    },
+    {
+      "id": "pC_q2",
+      "content": "Montrer que si $n+1$ est un carré parfait, alors $14n+14$ est divisible par 7.",
+      "hint": "D'après la Partie B, $14n+14 = 14(n+1) = 14k^2$. Cette expression est clairement divisible par 7."
+    }
+  ]
+}

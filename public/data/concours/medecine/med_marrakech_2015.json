@@ -1,0 +1,398 @@
+{
+  "school": "medecine",
+  "year": "2015 · Marrakech",
+  "title": "Annale Médecine — 2015 · Marrakech",
+  "source": "05_marrakech_2015.tex — transcription LaTeX normalisée",
+  "questions": [
+    {
+      "id": "med-marrakech_2015-q01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2015 · Marrakech · Q21",
+      "officialQuestionCode": "Q21",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Soit $m\\in\\mathbb{R}$ et, pour $x>0$,\n$h(x)=x^m-(\\ln x)^2.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Si $m>0$, alors $\\displaystyle\\lim_{x\\to+\\infty}h(x)=0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Si $m<0$, alors $\\displaystyle\\lim_{x\\to0^+}h(x)=0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Si $m<0$, alors $\\displaystyle\\lim_{x\\to0^+}h(x)=-\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Si $m\\le0$, alors $\\displaystyle\\lim_{x\\to+\\infty}h(x)=0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Si $m>0$, alors $\\displaystyle\\lim_{x\\to+\\infty}h(x)=+\\infty$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Pour $m>0$, toute puissance positive domine $(\\ln x)^2$ à l'infini, donc $h(x)\\to+\\infty$."
+    },
+    {
+      "id": "med-marrakech_2015-q02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2015 · Marrakech · Q22",
+      "officialQuestionCode": "Q22",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "On définit $U_n=\\frac{(-1)^n}{n^2}$ pour $n\\ge1$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(U_n)$ est monotone.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(U_n)$ est convergente.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$(U_n)$ est négative.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(U_n)$ est décroissante et minorée.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$(U_n)$ est croissante et majorée.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|U_n|=\\frac{1}{n^2}\\to0$, donc $U_n\\to0$. La suite change de signe et n'est pas monotone."
+    },
+    {
+      "id": "med-marrakech_2015-q03",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2015 · Marrakech · Q23",
+      "officialQuestionCode": "Q23",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Choisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "La partie réelle de $(1- {i})^5$ est $\\sqrt2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La partie imaginaire de $(1+ {i})^{20}$ est $42$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(1+ {i})^{20}$ est réel.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "L'équation $z^4-1=0$ possède une seule solution dans $\\mathbb{C}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "L'équation $z^4-1=0$ possède trois solutions distinctes dans $\\mathbb{C}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$1+ {i}=\\sqrt2\\, {e}^{ {i}\\frac{\\pi}{4}} \\quad\\Longrightarrow\\quad (1+ {i})^{20}=2^{10} {e}^{5 {i}\\pi}=-2^{10}\\in\\mathbb{R}.$\nL'équation $z^4=1$ possède quatre solutions."
+    },
+    {
+      "id": "med-marrakech_2015-q04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2015 · Marrakech · Q24",
+      "officialQuestionCode": "Q24",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "On définit sur $\\mathbb{R}$\n$f(x)=\\begin{cases} {e}^x,&x<0,\\\\ \\cos x,&x\\ge0. \\end{cases}$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'équation $f(x)=0$ possède trois solutions dans $]-\\infty,2\\pi]$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f$ n'est pas continue en $0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f$ est dérivable en $0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "L'équation $f(x)=0$ possède deux solutions dans $]-\\infty,\\pi]$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "L'équation $f(x)=0$ possède une unique solution dans $]-\\infty,\\pi]$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "La fonction est continue en $0$ car les deux limites valent $1$, mais elle n'est pas dérivable : la dérivée à gauche vaut $1$ et celle à droite vaut $0$. Sur $]-\\infty,\\pi]$, les zéros proviennent uniquement de $\\cos x$ et il n'y en a qu'un : $x=\\frac{\\pi}{2}$."
+    },
+    {
+      "id": "med-marrakech_2015-q05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2015 · Marrakech · Q25",
+      "officialQuestionCode": "Q25",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Choisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle\\int_2^ {e}\\frac{1}{x\\ln x}\\,\\,d x=-2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle\\int_0^{-\\frac{\\pi}{4}}\\tan x\\,\\,d x=-\\frac{1}{2}\\ln2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle\\int_0^{\\frac{\\pi}{4}}\\tan x\\,\\,d x=\\ln2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle\\int_1^ {e}\\frac{\\ln x}{\\sqrt{x}}\\,\\,d x=4+2\\sqrt {e}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\displaystyle\\int_1^ {e}\\frac{\\ln x}{\\sqrt{x}}\\,\\,d x=4-2\\sqrt {e}$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Une primitive de $\\frac{(\\ln x)}{\\sqrt{x}}$ est $2\\sqrt{x}\\ln x-4\\sqrt{x}$. Ainsi\n$\\displaystyle \\int_1^ {e}\\frac{\\ln x}{\\sqrt{x}}\\,\\,d x=4-2\\sqrt {e}.$"
+    },
+    {
+      "id": "med-marrakech_2015-q06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2015 · Marrakech · Q26",
+      "officialQuestionCode": "Q26",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "On définit\n$\\displaystyle f(x)=\\frac{1}{{1+x^2}}, \\qquad g(x)=\\int_x^{x+1}f(t)\\,\\,d t.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'image de $\\mathbb{R}$ par $f$ est $]0,1]$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "L'image de $\\mathbb{R}$ par $f$ est $]0,+\\infty]$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$g'(x)=f(x)-f(x+1)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Pour tout $x\\in\\mathbb{R}$, $g(x)<0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Pour tout $x\\in\\mathbb{R}$, $0\\le g(x)\\le\\frac{1}{2}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f$ prend toutes les valeurs de $]0,1]$. Par ailleurs\n$g'(x)=f(x+1)-f(x),$\net $g(x)>0$. L'affirmation E est fausse, par exemple près de $x=-\\frac{1}{2}$."
+    },
+    {
+      "id": "med-marrakech_2015-q07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2015 · Marrakech · Q27",
+      "officialQuestionCode": "Q27",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Soient $n,p\\in\\mathbb{N}^*$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Si $n^2+np+p^2$ est pair, alors $n$ est impair et $p$ est pair.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Si $n^2+np+p^2$ est pair, alors $n$ est pair et $p$ est impair.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Si $n^2+np+p^2$ est pair, alors $np$ est impair.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Si $n^2+np+p^2$ est pair, alors $n$ et $p$ sont pairs.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Si $n^2+np+p^2$ est pair, alors $n$ et $p$ sont impairs.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Modulo $2$, on a $n^2\\equiv n$ et $p^2\\equiv p$. Un examen des quatre parités montre que $n^2+np+p^2$ est pair uniquement lorsque $n$ et $p$ sont pairs.\n\nLe corrigé imprimé marque aussi E comme vraie ; c'est une erreur."
+    },
+    {
+      "id": "med-marrakech_2015-q08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2015 · Marrakech · Q28",
+      "officialQuestionCode": "Q28",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Choisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle\\int_0^{\\frac{\\pi}{8}}\\frac{2\\,\\,d x}{\\cos^2x}=1-\\sqrt2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle\\int_{-\\frac{\\pi}{8}}^{\\frac{\\pi}{8}}\\frac{2\\,\\,d x}{\\cos^2x}=2(1-\\sqrt2)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle\\int_0^{\\frac{\\pi}{8}}\\frac{2\\,\\,d x}{\\cos^2x}=4(\\sqrt2-1)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle\\int_{-\\frac{\\pi}{4}}^{\\frac{\\pi}{4}}\\frac{2\\,\\,d x}{\\cos^2x}=4$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$\\displaystyle\\int_{-\\frac{\\pi}{8}}^{\\frac{\\pi}{8}}\\frac{2\\,\\,d x}{\\cos^2x}=4(1-\\sqrt2)$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\displaystyle \\int_{-\\frac{\\pi}{4}}^{\\frac{\\pi}{4}}2\\sec^2x\\,\\,d x =2[\\tan x]_{-\\frac{\\pi}{4}}^{\\frac{\\pi}{4}}=4.$"
+    },
+    {
+      "id": "med-marrakech_2015-q09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2015 · Marrakech · Q29",
+      "officialQuestionCode": "Q29",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Pour $n\\in\\mathbb{N}^*$, on pose\n$U_n=\\frac{ {e}^n}{n^n}, \\qquad V_n=\\ln(U_n).$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(U_n)$ et $(V_n)$ ont la même limite.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(V_n)$ est strictement croissante.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(U_n)$ est strictement croissante.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(U_n)$ est bornée.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$(U_n)$ admet une limite non nulle.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$U_n=\\left(\\frac{e}{n}\\right)^n\\longrightarrow0, \\qquad V_n=n(1-\\ln n)\\longrightarrow-\\infty.$\nLa suite $(U_n)$ est positive, donc bornée."
+    },
+    {
+      "id": "med-marrakech_2015-q10",
+      "type": "mcq",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l’espace",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2015 · Marrakech · Q30",
+      "officialQuestionCode": "Q30",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "On définit\n$U_0=1, \\qquad U_{n+1}=\\frac{1}{3}U_n+n-2, \\qquad V_n=-2U_n+3n-\\frac{21}{2}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pour tout $n\\ge5$, $U_n\\le n-3$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Pour tout $n\\ge5$, $U_n\\ge n-3$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "La limite de $(U_n)$ est finie.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(V_n)$ est géométrique de raison $\\frac{1}{3}$ et de premier terme $\\frac{21}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\displaystyle U_n=\\frac{25}{4}\\left(\\frac{1}{3}\\right)^n+\\frac{3}{2}n+\\frac{21}{4}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On vérifie\n$V_{n+1}=\\frac{1}{3}V_n, \\qquad V_0=-\\frac{25}{2}.$\nDonc\n$U_n=\\frac{25}{4}\\left(\\frac{1}{3}\\right)^n+\\frac{3}{2}n-\\frac{21}{4}.$\nPour $n\\ge5$, cette expression est supérieure ou égale à $n-3$."
+    }
+  ]
+}

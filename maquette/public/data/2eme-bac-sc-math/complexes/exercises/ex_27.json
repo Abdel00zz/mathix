@@ -1,0 +1,94 @@
+{
+  "id": "ex-complexes-27",
+  "topic": "Nombres complexes - Bac National 2024 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2024,
+  "examenSession": "Normale",
+  "context": "Le plan complexe est rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. On considère dans $\\mathbb{C}$ l'équation d'inconnue $z$ : $(E_\\alpha) : z^2-2iz+\\alpha=0$ où $\\alpha\\in\\mathbb{C}$.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": ""
+    },
+    {
+      "id": "p1q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q1a",
+          "content": "Montrer que le discriminant de l'équation $(E_\\alpha)$ est $\\Delta=-4(1+\\alpha)$.",
+          "hint": "Ici $a=1$, $b=-2i$, $c=\\alpha$ : calculez $b^2-4ac$ en faisant attention au signe de $i^2$."
+        },
+        {
+          "id": "p1q1b",
+          "content": "Déterminer l'ensemble des valeurs de $\\alpha$ pour lesquelles l'équation $(E_\\alpha)$ admet dans $\\mathbb{C}$ deux solutions distinctes.",
+          "hint": "Une équation du second degré a deux solutions distinctes dans $\\mathbb{C}$ exactement quand son discriminant est non nul."
+        }
+      ]
+    },
+    {
+      "id": "p1q2",
+      "content": "On note $z_1$ et $z_2$ les deux solutions de l'équation $(E_\\alpha)$. Déterminer $z_1+z_2$ et $z_1z_2$.",
+      "hint": "Utilisez les relations entre coefficients et racines : $z_1+z_2=-\\dfrac{b}{a}$ et $z_1z_2=\\dfrac{c}{a}$."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Soient $\\Omega$, $M_1$ et $M_2$ les points d'affixes respectivement $\\alpha$, $z_1$ et $z_2$."
+    },
+    {
+      "id": "p2q1",
+      "content": "On suppose que $\\alpha=m^2-2m$ avec $m\\in\\mathbb{R}$.",
+      "subQuestions": [
+        {
+          "id": "p2q1a",
+          "content": "Déterminer $z_1$ et $z_2$ en fonction de $m$.",
+          "hint": "Injectez $\\alpha=m^2-2m$ dans $\\Delta=-4(1+\\alpha)$, simplifiez-le en un carré, puis appliquez la formule des racines."
+        },
+        {
+          "id": "p2q1b",
+          "content": "En déduire que les points $O$, $M_1$ et $M_2$ sont alignés.",
+          "hint": "Trois points d'affixes $0$, $z_1$, $z_2$ sont alignés si et seulement si $\\dfrac{z_1}{z_2}$ (ou $\\dfrac{z_1-0}{z_2-0}$) est un nombre réel."
+        }
+      ]
+    },
+    {
+      "id": "p2q2",
+      "content": "On suppose que les points $O$, $M_1$ et $M_2$ ne sont pas alignés.",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Montrer que $\\dfrac{z_1}{z_2}$ est un imaginaire pur si et seulement si $\\text{Re}\\left(z_1\\overline{z_2}\\right)=0$.",
+          "hint": "Multipliez $\\dfrac{z_1}{z_2}$ par $\\dfrac{\\overline{z_2}}{\\overline{z_2}}$ pour faire apparaître $z_1\\overline{z_2}$ au numérateur ; un quotient est imaginaire pur si et seulement si sa partie réelle est nulle."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que $|z_1-z_2|^2=|z_1+z_2|^2-4\\,\\text{Re}\\left(z_1\\overline{z_2}\\right)$.",
+          "hint": "Développez $|z_1-z_2|^2=(z_1-z_2)\\overline{(z_1-z_2)}$ et $|z_1+z_2|^2=(z_1+z_2)\\overline{(z_1+z_2)}$, puis comparez les deux développements."
+        },
+        {
+          "id": "p2q2c",
+          "content": "En déduire que $\\dfrac{z_1}{z_2}$ est un imaginaire pur si et seulement si $|z_1-z_2|=2$.",
+          "hint": "Combinez les deux résultats précédents avec les valeurs déjà connues de $z_1+z_2$ et $z_1z_2$ (question Partie 1, 2)."
+        }
+      ]
+    },
+    {
+      "id": "p2q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q3a",
+          "content": "Montrer que $(z_1-z_2)^2=\\Delta$.",
+          "hint": "Exprimez $(z_1-z_2)^2$ à l'aide de $(z_1+z_2)^2-4z_1z_2$, puis remplacez par les expressions trouvées en Partie 1."
+        },
+        {
+          "id": "p2q3b",
+          "content": "Déterminer l'ensemble $\\Gamma$ des points $\\Omega$ pour que le triangle $OM_1M_2$ soit rectangle en $O$.",
+          "hint": "Le triangle est rectangle en $O$ si et seulement si $\\dfrac{z_1}{z_2}$ est imaginaire pur ; réutilisez la condition $|z_1-z_2|=2$ et le lien $(z_1-z_2)^2=\\Delta=-4(1+\\alpha)$ pour traduire cela sur $\\alpha$."
+        }
+      ]
+    }
+  ]
+}

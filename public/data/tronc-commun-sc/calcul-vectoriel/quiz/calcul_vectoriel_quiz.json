@@ -1,0 +1,151 @@
+{
+  "questions": [
+    {
+      "id": "q1_fond_vect_egalite",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Pour les points distincts A, B, C et D, l'égalité vectorielle $\\overrightarrow{AB} = \\overrightarrow{DC}$ signifie exactement que :",
+      "options": [
+        { "id": "a", "text": "$ABCD$ est un parallélogramme.", "isCorrect": true },
+        { "id": "b", "text": "$ABDC$ est un parallélogramme.", "isCorrect": false },
+        { "id": "c", "text": "Les segments $[AB]$ et $[DC]$ sont seulement parallèles.", "isCorrect": false },
+        { "id": "d", "text": "Les points sont alignés.", "isCorrect": false }
+      ],
+      "explanation": "La définition géométrique absolue est que $\\overrightarrow{AB} = \\overrightarrow{DC}$ implique que le quadrilatère formé en lisant les lettres dans le sens $A \\to B \\to C \\to D$ est un parallélogramme. Attention à l'ordre des lettres (les diagonales se coupent en leur milieu)."
+    },
+    {
+      "id": "q2_fond_vect_caracts",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Deux vecteurs sont considérés comme parfaitement égaux s'ils ont uniquement la même norme (longueur) et la même direction.",
+      "isTrue": false,
+      "explanation": "C'est faux, il manque le troisième attribut fondamental : le SENS. Les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{BA}$ ont la même norme et la même direction, mais des sens opposés, ils ne sont donc pas égaux."
+    },
+    {
+      "id": "q3_fond_chasles",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "D'après la relation de Chasles, que vaut la somme $\\overrightarrow{AB} + \\overrightarrow{BC}$ ?",
+      "options": [
+        { "id": "a", "text": "$\\overrightarrow{CB}$", "isCorrect": false },
+        { "id": "b", "text": "$\\overrightarrow{AC}$", "isCorrect": true },
+        { "id": "c", "text": "$\\overrightarrow{CA}$", "isCorrect": false },
+        { "id": "d", "text": "$\\overrightarrow{0}$", "isCorrect": false }
+      ],
+      "explanation": "L'enchaînement de deux déplacements de A vers B puis de B vers C équivaut à un seul déplacement direct de A vers C. Le point intermédiaire B 'disparaît'."
+    },
+    {
+      "id": "q4_cons_soustraction",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Comment se simplifie l'expression $\\overrightarrow{OA} - \\overrightarrow{OB}$ ?",
+      "options": [
+        { "id": "a", "text": "$\\overrightarrow{AB}$", "isCorrect": false },
+        { "id": "b", "text": "$\\overrightarrow{BA}$", "isCorrect": true },
+        { "id": "c", "text": "$\\overrightarrow{AO}$", "isCorrect": false },
+        { "id": "d", "text": "$\\overrightarrow{0}$", "isCorrect": false }
+      ],
+      "explanation": "On transforme la soustraction en addition de l'opposé : $\\overrightarrow{OA} + \\overrightarrow{BO}$. Puis, par commutativité de l'addition vectorielle, $\\overrightarrow{BO} + \\overrightarrow{OA} = \\overrightarrow{BA}$ d'après Chasles."
+    },
+    {
+      "id": "q5_cons_mult_scalaire",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Si $\\overrightarrow{v} = -3\\overrightarrow{u}$ avec $\\|\\overrightarrow{u}\\| = 4$, quelles sont les caractéristiques de $\\overrightarrow{v}$ ?",
+      "options": [
+        { "id": "a", "text": "Même direction, même sens, $\\|\\overrightarrow{v}\\| = 12$", "isCorrect": false },
+        { "id": "b", "text": "Même direction, sens opposé, $\\|\\overrightarrow{v}\\| = -12$", "isCorrect": false },
+        { "id": "c", "text": "Même direction, sens opposé, $\\|\\overrightarrow{v}\\| = 12$", "isCorrect": true },
+        { "id": "d", "text": "Direction perpendiculaire, sens opposé, $\\|\\overrightarrow{v}\\| = 12$", "isCorrect": false }
+      ],
+      "explanation": "La multiplication par un réel négatif ($-3$) conserve la direction mais inverse le sens. La norme d'un vecteur est toujours positive : $|-3| \\times 4 = 12$."
+    },
+    {
+      "id": "q6_cons_colinearite",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Prouver que les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ sont colinéaires permet de conclure que les droites (AB) et (AC) sont strictement parallèles.",
+      "isTrue": false,
+      "explanation": "Puisque les deux vecteurs partagent le point commun A, la colinéarité prouve en réalité que les points A, B, et C sont ALIGNÉS. Les droites sont donc confondues, et non strictement parallèles."
+    },
+    {
+      "id": "q7_cons_milieu",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Lequel de ces énoncés VECTORIELS traduit formellement que I est le milieu du segment $[AB]$ ?",
+      "options": [
+        { "id": "a", "text": "$\\overrightarrow{AI} + \\overrightarrow{IB} = \\overrightarrow{0}$", "isCorrect": false },
+        { "id": "b", "text": "$\\overrightarrow{IA} + \\overrightarrow{IB} = \\overrightarrow{0}$", "isCorrect": true },
+        { "id": "c", "text": "$\\overrightarrow{AB} = 2\\overrightarrow{IB}$", "isCorrect": false },
+        { "id": "d", "text": "$AI = IB$", "isCorrect": false }
+      ],
+      "explanation": "La réponse (d) est une notion de distance, pas de vecteur. Mettre la somme des vecteurs partants du milieu vers les extrémités à $\\overrightarrow{0}$ est la définition algébrique par excellence du milieu."
+    },
+    {
+      "id": "q8_maitrise_simplification",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Identifier l'erreur de calcul dans la simplification de l'expression $3\\overrightarrow{AB} - 2(\\overrightarrow{AB} + \\overrightarrow{AC})$ :",
+      "context": "Un élève tente de développer puis réduire l'expression vectorielle.",
+      "steps": [
+        { "id": "s1", "text": "Il distribue le -2 sur la parenthèse : $3\\overrightarrow{AB} - 2\\overrightarrow{AB} - 2\\overrightarrow{AC}$.", "isError": false },
+        { "id": "s2", "text": "Il regroupe les termes en $\\overrightarrow{AB}$ : $(3 - 2)\\overrightarrow{AB} - 2\\overrightarrow{AC}$.", "isError": false },
+        { "id": "s3", "text": "Il obtient $\\overrightarrow{AB} - 2\\overrightarrow{AC}$.", "isError": false },
+        { "id": "s4", "text": "Voulant forcer Chasles, il réécrit ce résultat final sous la forme $\\overrightarrow{CB}$.", "isError": true, "correction": "La relation de Chasles $\\overrightarrow{AB} - \\overrightarrow{AC} = \\overrightarrow{CB}$ ne s'applique QUE pour des vecteurs ayant le même coefficient (ici 1). L'expression $\\overrightarrow{AB} - 2\\overrightarrow{AC}$ ne peut pas être simplifiée géométriquement sans ajouter d'autres points." }
+      ],
+      "explanation": "Les élèves ont souvent le réflexe pavlovien d'appliquer Chasles dès qu'ils voient deux lettres identiques, oubliant que les coefficients scalaires (ici le -2) empêchent la fusion directe."
+    },
+    {
+      "id": "q9_maitrise_alignement",
+      "type": "order",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Ordonnez les étapes pour prouver vectoriellement que trois points $A(x_A; y_A)$, $B(x_B; y_B)$ et $C(x_C; y_C)$ sont alignés :",
+      "items": [
+        { "id": "a", "content": "Calculer les coordonnées du vecteur AB : (x_B - x_A ; y_B - y_A)." },
+        { "id": "b", "content": "Calculer les coordonnées d'un autre vecteur issu des mêmes points, comme AC." },
+        { "id": "c", "content": "Vérifier la colinéarité en cherchant un coefficient de proportionnalité k." },
+        { "id": "d", "content": "Conclure que les vecteurs sont colinéaires, et puisqu'ils partagent le point A, les points sont alignés." }
+      ],
+      "correctOrder": ["a", "b", "c", "d"],
+      "explanation": "On crée d'abord l'arsenal (les composantes des vecteurs reliés entre eux), on effectue le test de colinéarité, puis on déduit l'alignement à partir du point mort."
+    },
+    {
+      "id": "q10_depassement_chasles_zero",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "ambiguity_note": "Un point fixe M a un rôle clé. Confondre AM + MA = 0 avec la simplification en MM.",
+      "prompt": "Que vaut la somme vectorielle finale $\\overrightarrow{AM} + \\overrightarrow{MB} + \\overrightarrow{BA}$ ?",
+      "options": [
+        { "id": "a", "text": "$\\overrightarrow{AA}$", "isCorrect": false },
+        { "id": "b", "text": "$\\overrightarrow{MB}$", "isCorrect": false },
+        { "id": "c", "text": "$\\overrightarrow{0}$", "isCorrect": true },
+        { "id": "d", "text": "$0$", "isCorrect": false }
+      ],
+      "explanation": "Par application successive de la relation de Chasles : $\\overrightarrow{AM} + \\overrightarrow{MB} = \\overrightarrow{AB}$. Ensuite $\\overrightarrow{AB} + \\overrightarrow{BA} = \\overrightarrow{AA} = \\overrightarrow{0}$. L'option (d) est un nombre scalaire zéro, or une somme de vecteurs donne impérativement un vecteur (le vecteur nul)."
+    },
+    {
+      "id": "q11_depassement_relation_complexe",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Soit M le milieu de [AB] et O un point arbitraire. Que vaut l'expression $\\overrightarrow{OM} - \\dfrac{\\overrightarrow{OA} + \\overrightarrow{OB}}{2}$ ?",
+      "options": [
+        { "id": "a", "text": "$\\overrightarrow{AB}$", "isCorrect": false },
+        { "id": "b", "text": "$\\dfrac{1}{2}\\overrightarrow{AB}$", "isCorrect": false },
+        { "id": "c", "text": "$\\overrightarrow{0}$", "isCorrect": true },
+        { "id": "d", "text": "Cela dépend de la position du point O", "isCorrect": false }
+      ],
+      "explanation": "C'est l'identité fondamentale du milieu vue en cours : $\\overrightarrow{OM} = \\frac{\\overrightarrow{OA} + \\overrightarrow{OB}}{2}$ est toujours vrai indépendamment de l'endroit où O se trouve. La différence des deux vaut donc obligatoirement $\\overrightarrow{0}$."
+    }
+  ]
+}

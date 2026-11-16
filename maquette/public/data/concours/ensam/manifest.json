@@ -1,0 +1,45 @@
+{
+  "id": "ensam",
+  "name": "ENSAM",
+  "fullName": "Ecole Nationale Supérieure des Arts et Métiers",
+  "description": "Concours d'accès à l'ENSAM — QCM Mathématiques",
+  "color": "#059669",
+  "questionsPerExam": 25,
+  "timePerQuestion": 50,
+  "annales": [
+    {
+      "id": "ensam_2023",
+      "year": "2023",
+      "path": "data/concours/ensam/ensam_2023.json",
+      "questionsCount": 13
+    },
+    {
+      "id": "ensam_2022",
+      "year": "2022",
+      "path": "data/concours/ensam/ensam_2022.json",
+      "questionsCount": 13
+    },
+    {
+      "id": "ensam_2021",
+      "year": "2021",
+      "path": "data/concours/ensam/ensam_2021.json",
+      "questionsCount": 13
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "ensam-analyse",
+      "theme": "analyse",
+      "title": "Analyse",
+      "path": "data/concours/ensam/quiz/ensam_analyse_quiz.json",
+      "questionsCount": 15
+    },
+    {
+      "id": "ensam-algebre",
+      "theme": "algebre",
+      "title": "Algèbre",
+      "path": "data/concours/ensam/quiz/ensam_algebre_quiz.json",
+      "questionsCount": 10
+    }
+  ]
+}

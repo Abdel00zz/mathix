@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Le point d'équilibre d'un mobile",
+    "subtitle": "Barycentre de points pondérés",
+    "context": "Barycentre"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le point d'équilibre d'un mobile",
+          "content": "On suspend un mobile décoratif composé de trois objets placés dans un repère $(O ; \\vec{i}, \\vec{j})$ :\\par $\\bullet$ $A(0\\,;\\,0)$ de masse $1\\ \\text{kg}$,\\par $\\bullet$ $B(6\\,;\\,0)$ de masse $2\\ \\text{kg}$,\\par $\\bullet$ $C(3\\,;\\,6)$ de masse $3\\ \\text{kg}$.\\par Le mobile s'équilibre en son \\textbf{centre de gravité} $G$, barycentre des points $A$, $B$, $C$ pondérés par leurs masses."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Rappeler la relation vectorielle définissant le barycentre $G$ de $\\{(A,1),(B,2),(C,3)\\}$.\\item Calculer les coordonnées de $G$.\\item Si l'on double toutes les masses, le point d'équilibre $G$ change-t-il ? Justifier.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "$G$ vérifie $1\\cdot\\overrightarrow{GA} + 2\\cdot\\overrightarrow{GB} + 3\\cdot\\overrightarrow{GC} = \\vec{0}$. En coordonnées : $x_G = \\dfrac{1\\,x_A + 2\\,x_B + 3\\,x_C}{1+2+3}$ (de même pour $y_G$)."
+        },
+        {
+          "type": "hint",
+          "content": "Multiplier tous les coefficients par un même réel non nul ne change pas le barycentre."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $G$ est défini par $\\overrightarrow{GA} + 2\\overrightarrow{GB} + 3\\overrightarrow{GC} = \\vec{0}$, de masse totale $1+2+3 = 6$.\\par\\textbf{2)} $x_G = \\dfrac{1\\times 0 + 2\\times 6 + 3\\times 3}{6} = \\dfrac{0 + 12 + 9}{6} = \\dfrac{21}{6} = 3{,}5$ et $y_G = \\dfrac{1\\times 0 + 2\\times 0 + 3\\times 6}{6} = \\dfrac{18}{6} = 3$. Donc $G\\,(\\boxed{3{,}5\\,;\\,3})$.\\par\\textbf{3)} En doublant les masses, les coefficients deviennent $2, 4, 6$ : le barycentre est \\textbf{inchangé}, car on peut factoriser et simplifier par $2$. Le point d'équilibre ne dépend que des \\emph{proportions} des masses."
+        }
+      ]
+    }
+  ]
+}

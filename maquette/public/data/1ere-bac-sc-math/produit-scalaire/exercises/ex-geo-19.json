@@ -1,0 +1,30 @@
+{
+  "id": "ex-geo-19",
+  "theme": "produit-scalaire",
+  "difficulty": "difficile",
+  "topic": "Géométrie Analytique - Exercices de perfectionnement : deux cercles, positions relatives et système",
+  "requiresRedaction": true,
+  "context": "On considère les deux cercles : $\\mathcal{C}_1 : x^2 + y^2 - 2x - 2y - 7 = 0$ et $\\mathcal{C}_2 : x^2 + y^2 - 6x - 1 = 0$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer le centre et le rayon du cercle $\\mathcal{C}_1$.",
+      "hint": "Complétez le carré en $x$ et en $y$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer le centre et le rayon du cercle $\\mathcal{C}_2$.",
+      "hint": ""
+    },
+    {
+      "id": "q3",
+      "content": "Résoudre graphiquement le système suivant : $\\begin{cases} x^2 + y^2 - 2x - 2y - 7 = 0 \\\\ x^2 + y^2 - 6x - 1 < 0 \\end{cases}$",
+      "hint": "La première équation est le cercle $\\mathcal{C}_1$, la seconde inégalité est l'intérieur strict du cercle $\\mathcal{C}_2$. La solution est l'intersection du cercle $\\mathcal{C}_1$ avec le disque ouvert délimité par $\\mathcal{C}_2$."
+    },
+    {
+      "id": "q4",
+      "content": "On considère le cercle $\\mathcal{C}$ d'équation cartésienne $x^2 + y^2 = 5$ et l'ensemble $\\mathcal{P}$ des points $M(x;y)$ tels que $x^2 + y^2 - 6x + 5 > 0$. Résoudre graphiquement : $\\begin{cases} x^2 + y^2 - 6x + 5 > 0 \\\\ \\sqrt{5}|y| < 2x \\end{cases}$",
+      "hint": "Identifiez d'abord la région $\\mathcal{P}$ (extérieur d'un cercle). La seconde inégalité $\\sqrt{5}|y| < 2x$ définit un secteur angulaire : étudiez les deux cas $y \\geq 0$ et $y < 0$."
+    }
+  ]
+}

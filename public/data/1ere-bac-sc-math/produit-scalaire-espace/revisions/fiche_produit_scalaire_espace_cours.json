@@ -1,0 +1,202 @@
+{
+  "header": {
+    "title": "Le Produit Scalaire dans l'Espace",
+    "subtitle": "Outils analytiques, plans et sphères",
+    "context": "1BAC SM"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Le produit scalaire dans l'espace permet de \\objectif{mesurer des angles et de verifier l'orthogonalite} entre des vecteurs en trois dimensions. Il prolonge naturellement les outils vus dans le plan pour etudier plans, spheres, distances et intersections. La \\defi{difficulte} consiste a jongler entre coordonnees, calculs algebriques et interpretation geometrique sans perdre la structure spatiale du probleme. \\savant{William Rowan Hamilton} a contribue a structurer les outils algebriques qui ont conduit au langage vectoriel moderne, devenu central en geometrie euclidienne.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/William_Rowan_Hamilton_portrait_oval_combined.png",
+            "type": "image",
+            "position": "right",
+            "width": "16.5%",
+            "caption": "William Rowan Hamilton (1805–1865)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definition_produit_scalaire",
+      "category": "course",
+      "title": "Le produit scalaire dans l'espace",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On commence par définir le produit scalaire géométriquement. Heureusement, toutes les propriétés que vous connaissez dans le plan restent valables dans l'espace."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le produit scalaire géométrique ?",
+          "content": "Soient $\\overrightarrow{u} = \\overrightarrow{AB}$ et $\\overrightarrow{v} = \\overrightarrow{AC}$ deux vecteurs de l'espace.\\par\\smallskip Le \\textbf{produit scalaire} $\\overrightarrow{u} \\cdot \\overrightarrow{v}$ est un nombre réel défini par :\\begin{itemize}\\item $\\overrightarrow{u} \\cdot \\overrightarrow{v} = 0$ si l'un des vecteurs est nul.\\item $\\overrightarrow{u} \\cdot \\overrightarrow{v} = \\|\\overrightarrow{u}\\| \\times \\|\\overrightarrow{v}\\| \\times \\cos(\\overrightarrow{u}, \\overrightarrow{v})$ si les vecteurs sont non nuls.\\end{itemize}\\par\\smallskip On peut aussi utiliser la projection orthogonale : si $H$ est le projeté orthogonal de $C$ sur la droite $(AB)$, alors $\\overrightarrow{u} \\cdot \\overrightarrow{v} = \\overline{AH} \\times \\overline{AB}$."
+        },
+        {
+          "type": "property",
+          "title": "Comment caractériser l'orthogonalité ?",
+          "content": "Deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont orthogonaux (noté $\\overrightarrow{u} \\perp \\overrightarrow{v}$) si et seulement si leur produit scalaire est nul.\\par\\smallskip $$\\boxed{\\overrightarrow{u} \\perp \\overrightarrow{v} \\iff \\overrightarrow{u} \\cdot \\overrightarrow{v} = 0}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{$\\overrightarrow{u} \\cdot \\overrightarrow{v}$ sachant} que $\\|\\overrightarrow{u}\\| = 2$, $\\|\\overrightarrow{v}\\| = 5$ et l'angle vaut $\\frac{\\pi}{3}$.}\\par On applique directement la formule trigonométrique du produit scalaire :\\begin{align*}\\overrightarrow{u} \\cdot \\overrightarrow{v} &= \\|\\overrightarrow{u}\\| \\times \\|\\overrightarrow{v}\\| \\times \\blank{\\cos\\left(\\frac{\\pi}{3}\\right)} \\\\&= 2 \\times 5 \\times \\blank{\\frac{1}{2}} \\\\&= \\blank{10} \\times \\frac{1}{2} \\\\&= \\blank{5}\\end{align*}"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les propriétés calculatoires ?",
+          "content": "Le produit scalaire est symétrique et bilinéaire. Pour tous vecteurs $\\overrightarrow{u}, \\overrightarrow{v}, \\overrightarrow{w}$ et tout réel $k$ :\\begin{itemize}\\item $\\overrightarrow{u} \\cdot \\overrightarrow{v} = \\overrightarrow{v} \\cdot \\overrightarrow{u}$\\item $\\overrightarrow{u} \\cdot (\\overrightarrow{v} + \\overrightarrow{w}) = \\overrightarrow{u} \\cdot \\overrightarrow{v} + \\overrightarrow{u} \\cdot \\overrightarrow{w}$\\item $\\overrightarrow{u} \\cdot (k\\overrightarrow{v}) = k(\\overrightarrow{u} \\cdot \\overrightarrow{v})$\\end{itemize}\\par De plus, les identités remarquables classiques s'appliquent aux vecteurs, par exemple : $(\\overrightarrow{u} + \\overrightarrow{v})^2 = \\overrightarrow{u}^2 + 2\\overrightarrow{u} \\cdot \\overrightarrow{v} + \\overrightarrow{v}^2$."
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer un produit scalaire avec les longueurs ?",
+          "content": "Quand on ne connaît pas d'angle, on utilise la formule de polarisation basée sur les trois côtés du triangle $ABC$.\\par \\textbf{Technique} : Prendre le carré du côté opposé à l'angle, et les carrés des deux côtés adjacents.\\par $$\\overrightarrow{AB} \\cdot \\overrightarrow{AC} = \\frac{1}{2}\\left(AB^2 + AC^2 - BC^2\\right)$$\\par Il suffit de remplacer les distances par leurs valeurs numériques et de calculer."
+        }
+      ]
+    },
+    {
+      "id": "produit_scalaire_analytique",
+      "category": "course",
+      "title": "Calcul analytique dans un repère orthonormé",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour faire des calculs précis sans dessiner dans l'espace, on munit l'espace d'un repère orthonormé. Le produit scalaire se calcule alors très simplement à partir des coordonnées."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un repère orthonormé ?",
+          "content": "Un repère $(O; \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$ est \\textbf{orthonormé} si les trois vecteurs de base sont unitaires (norme égale à 1) et orthogonaux deux à deux.\\par\\smallskip Tout vecteur $\\overrightarrow{u}$ de l'espace s'écrit de manière unique sous la forme $\\overrightarrow{u} = x\\overrightarrow{i} + y\\overrightarrow{j} + z\\overrightarrow{k}$. Le triplet $(x; y; z)$ correspond à ses coordonnées."
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer le produit scalaire et la norme analytiquement ?",
+          "content": "Dans une base orthonormée, si $\\overrightarrow{u}(x; y; z)$ et $\\overrightarrow{v}(x'; y'; z')$ :\\par\\smallskip $$\\boxed{\\overrightarrow{u} \\cdot \\overrightarrow{v} = xx' + yy' + zz'}$$\\par\\smallskip La norme se calcule avec : $\\|\\overrightarrow{u}\\| = \\sqrt{x^2 + y^2 + z^2}$.\\par La distance entre deux points est $AB = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2 + (z_B - z_A)^2}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons \\textbf{le réel $m$} pour que $\\overrightarrow{u}(1; 2; -1)$ et $\\overrightarrow{v}(m; 3; 2)$ soient orthogonaux.}\\par On commence par exprimer le produit scalaire en fonction de $m$ :\\begin{align*}\\overrightarrow{u} \\cdot \\overrightarrow{v} &= (1 \\times m) + (2 \\times 3) + ((-1) \\times 2) \\\\&= m + \\blank{6} - 2 \\\\&= \\blank{m + 4}\\end{align*}\\par Puisque les vecteurs doivent être orthogonaux, leur produit scalaire est nul : $m + 4 = \\blank{0}$.\\par On en déduit que $m = \\blank{-4}$."
+        }
+      ]
+    },
+    {
+      "id": "etude_plan_espace",
+      "category": "course",
+      "title": "Étude analytique du plan",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le produit scalaire analytique permet de caractériser très simplement l'ensemble des points qui forment un plan dans l'espace."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un vecteur normal à un plan ?",
+          "content": "Un vecteur non nul $\\overrightarrow{n}$ est \\textbf{normal} à un plan $(P)$ s'il est orthogonal à tous les vecteurs formés par les points de ce plan.\\par\\smallskip En pratique, il suffit que $\\overrightarrow{n}$ soit orthogonal à deux vecteurs non colinéaires du plan."
+        },
+        {
+          "type": "property",
+          "title": "Quelle est l'équation cartésienne d'un plan ?",
+          "content": "L'ensemble des points $M(x; y; z)$ vérifiant une équation de la forme :\\par\\smallskip $$\\boxed{ax + by + cz + d = 0}$$\\par (avec $a, b, c$ non tous nuls) est un plan.\\par Le vecteur $\\overrightarrow{n}(a; b; c)$ est un vecteur normal à ce plan."
+        },
+        {
+          "type": "method",
+          "title": "Comment déterminer l'équation cartésienne d'un plan ?",
+          "content": "On connait un point $A(x_A; y_A; z_A)$ du plan et un vecteur normal $\\overrightarrow{n}(a; b; c)$.\\par Les coordonnées du vecteur normal donnent directement les coefficients $a$, $b$ et $c$ de l'équation $ax + by + cz + d = 0$.\\par \\textbf{Astuce} : Pour trouver la valeur manquante $d$, on remplace $x$, $y$ et $z$ par les coordonnées du point $A$, puisque l'équation doit être vérifiée en ce point. Il suffit de résoudre la petite équation pour trouver $d$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons l'équation du plan $(P)$ passant par $A(1; 0; 2)$ de \\textbf{vecteur} normal $\\overrightarrow{n}(2; -1; 1)$.}\\par Le vecteur $\\overrightarrow{n}(2; -1; 1)$ est normal, donc l'équation est de la forme :\\par $2x - y + z + d = \\blank{0}$.\\par Le point $A(1; 0; 2)$ appartient à $(P)$, on remplace ses coordonnées dans l'équation :\\begin{align*}2(\\blank{1}) - \\blank{0} + \\blank{2} + d &= 0 \\\\2 + 2 + d &= 0 \\\\d &= \\blank{-4}\\end{align*}\\par L'équation finale du plan est donc $2x - y + z - 4 = 0$."
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer la distance d'un point à un plan ?",
+          "content": "Soit un point $A(x_A; y_A; z_A)$ et un plan $(P)$ d'équation $ax + by + cz + d = 0$.\\par La distance entre le point $A$ et le plan $(P)$ est donnée par :\\par\\smallskip $$\\boxed{d(A; (P)) = \\frac{|ax_A + by_A + cz_A + d|}{\\sqrt{a^2 + b^2 + c^2}}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons la distance de $A(2; 1; -1)$ au plan $(P)$ d'équation $x + 2y - 2z + 3 = 0$.}\\par On calcule la valeur absolue au numérateur en remplaçant par les coordonnées de $A$ :\\par $|1(2) + 2(1) - 2(-1) + 3| = |2 + 2 + \\blank{2} + 3| = \\blank{9}$.\\par On calcule la norme du vecteur normal $\\overrightarrow{n}(1; 2; -2)$ au dénominateur :\\par $\\sqrt{1^2 + 2^2 + (-2)^2} = \\sqrt{1 + 4 + 4} = \\sqrt{\\blank{9}} = \\blank{3}$.\\par On obtient finalement $d(A; (P)) = \\frac{9}{3} = \\blank{3}$."
+        }
+      ]
+    },
+    {
+      "id": "etude_sphere_espace",
+      "category": "course",
+      "title": "Étude analytique de la sphère",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tout comme le plan, la sphère se met très bien en équation. On peut la définir soit par son centre et son rayon, soit par l'un de ses diamètres."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que l'équation d'une sphère avec centre et rayon ?",
+          "content": "La sphère $S(\\Omega, R)$ de centre $\\Omega(a; b; c)$ et de rayon $R$ est l'ensemble des points $M(x; y; z)$ tels que la distance $\\Omega M = R$.\\par\\smallskip En l'élevant au carré, on obtient son équation cartésienne :\\par $$\\boxed{(x - a)^2 + (y - b)^2 + (z - c)^2 = R^2}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment retrouver le centre et le rayon à partir d'une équation développée ?",
+          "content": "Si on donne une équation de la forme $x^2 + y^2 + z^2 + \\alpha x + \\beta y + \\gamma z + d = 0$, on regroupe les termes en $x$, en $y$ et en $z$.\\par \\textbf{Technique} : Utiliser le début des identités remarquables. On sait que $x^2 + \\alpha x$ est le début de $\\left(x + \\frac{\\alpha}{2}\\right)^2 - \\left(\\frac{\\alpha}{2}\\right)^2$.\\par On factorise ainsi chaque variable pour retomber sur la forme canonique de la sphère et identifier le centre et le carré du rayon."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir une sphère à partir d'un diamètre ?",
+          "content": "Soient $A$ et $B$ deux points de l'espace.\\par L'ensemble des points $M(x; y; z)$ vérifiant $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = 0$ est la sphère de \\textbf{diamètre} $[AB]$.\\par\\smallskip Son équation cartésienne se trouve en développant :\\par $(x - x_A)(x - x_B) + (y - y_A)(y - y_B) + (z - z_A)(z - z_B) = 0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons \\textbf{l'équation} de la sphère de diamètre $[AB]$ avec $A(1; 2; 0)$ et $B(-1; 0; 2)$.}\\par Un point $M(x;y;z)$ appartient à la sphère si $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = \\blank{0}$.\\par On utilise la formule avec les coordonnées :\\begin{align*}(x - 1)(x - (\\blank{-1})) + (y - 2)(y - \\blank{0}) + (z - 0)(z - 2) &= 0 \\\\(x - 1)(x + 1) + y(y - 2) + z(z - 2) &= 0 \\\\(x^2 - 1) + (y^2 - 2y) + (z^2 - 2z) &= \\blank{0}\\end{align*}\\par En réorganisant, l'équation finale est $x^2 + y^2 + z^2 - 2y - 2z - \\blank{1} = 0$."
+        }
+      ]
+    },
+    {
+      "id": "intersections_espace",
+      "category": "course",
+      "title": "Intersections et plans tangents",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour finir, on utilise la distance calculée plus haut pour étudier les positions relatives : comment un plan coupe-t-il une sphère ?"
+        },
+        {
+          "type": "property",
+          "title": "Comment un plan et une sphère peuvent-ils s'intersecter ?",
+          "content": "Soit $(S)$ une sphère de centre $O$ et de rayon $R$, et $(P)$ un plan. On calcule la distance $d$ entre le centre $O$ et le plan $(P)$. Trois cas sont possibles :\\begin{itemize}\\item Si $d > R$ : le plan et la sphère n'ont aucun point commun (intersection vide).\\item Si $d = R$ : le plan et la sphère se touchent en un point unique $H$. Le plan est dit tangent.\\item Si $d < R$ : le plan coupe la sphère. L'intersection est un \\textbf{cercle} de rayon $r = \\sqrt{R^2 - d^2}$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment déterminer l'intersection entre une sphère et un plan ?",
+          "content": "D'abord, identifier le centre $\\Omega$ et le rayon $R$ de la sphère.\\par Ensuite, utiliser la formule de distance d'un point à un plan pour calculer $d = d(\\Omega, (P))$.\\par \\textbf{Décision} : Comparer rigoureusement $d$ et $R$ pour choisir parmi les trois cas.\\par Si $d < R$, terminer en calculant le rayon du cercle d'intersection avec le théorème de Pythagore : $r = \\sqrt{R^2 - d^2}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Étudions l'\\textbf{intersection} d'une sphère de centre $\\Omega$ et de rayon $R = 5$ avec un plan $(P)$, sachant que $d(\\Omega, (P)) = 3$.}\\par On applique la méthode en comparant la distance et le rayon.\\par On a $d = \\blank{3}$ et $R = \\blank{5}$.\\par Puisque $d < R$, on en déduit que le plan \\blank{coupe} la sphère.\\par L'intersection est un cercle dont le rayon $r$ vérifie le théorème de Pythagore :\\begin{align*}r &= \\sqrt{R^2 - d^2} \\\\r &= \\sqrt{25 - \\blank{9}} \\\\r &= \\sqrt{16} = \\blank{4}\\end{align*}"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le plan tangent à une sphère ?",
+          "content": "Soit une sphère $(S)$ de centre $\\Omega$ et un point $A$ appartenant à cette sphère.\\par Il existe un unique plan $(P)$ tangent à la sphère en $A$. Ce plan a pour caractéristique d'être orthogonal au rayon $[\\Omega A]$.\\par\\smallskip $M \\in (P) \\iff \\overrightarrow{AM} \\cdot \\overrightarrow{A\\Omega} = 0$"
+        },
+        {
+          "type": "method",
+          "title": "Comment trouver l'équation du plan tangent à une sphère en un point ?",
+          "content": "Vérifier que le point de contact $A$ appartient bien à la sphère.\\par Le vecteur $\\overrightarrow{\\Omega A}$ (reliant le centre de la sphère au point de contact) est un \\textbf{vecteur normal} au plan tangent.\\par Appliquer la méthode de détermination d'un plan avec le point $A$ et le vecteur normal $\\overrightarrow{\\Omega A}$. L'équation s'écrit directement avec l'égalité $\\overrightarrow{AM} \\cdot \\overrightarrow{\\Omega A} = 0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Trouvons \\textbf{le plan tangent en $A(0; 0; 2)$ à la sphère de centre $\\Omega(0; 0; 0)$.}\\par Le vecteur normal au plan est $\\overrightarrow{\\Omega A}$ de coordonnées $\\blank{(0; 0; 2)}$.\\par Un point $M(x; y; z)$ appartient au plan si $\\overrightarrow{AM} \\cdot \\overrightarrow{\\Omega A} = \\blank{0}$.\\par On développe le produit scalaire avec les coordonnées :\\begin{align*}0(x - 0) + 0(y - 0) + 2(z - \\blank{2}) &= 0 \\\\2z - 4 &= \\blank{0} \\\\z &= \\blank{2}\\end{align*}\\par L'équation du plan tangent est très simplement $z = 2$."
+        }
+      ]
+    }
+  ]
+}

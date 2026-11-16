@@ -1,0 +1,86 @@
+{
+  "id": "calcul-integral",
+  "title": "Calcul intégral",
+  "section": "analyse",
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-integrale-2bac",
+      "title": "Fiche Compléte : Calcul Intégral",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/revisions/fiche_calcul_integral_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-01",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-02",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-03",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-04",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_04.json"
+    },
+    {
+      "id": "ex-05",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_05.json"
+    },
+    {
+      "id": "ex-06",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_06.json"
+    },
+    {
+      "id": "ex-07",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_07.json"
+    },
+    {
+      "id": "ex-08",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_08.json"
+    },
+    {
+      "id": "ex-09",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_09.json"
+    },
+    {
+      "id": "ex-10",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_10.json"
+    },
+    {
+      "id": "ex-11",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_11.json"
+    },
+    {
+      "id": "ex-12",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_12.json"
+    },
+    {
+      "id": "ex-13",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_13.json"
+    },
+    {
+      "id": "ex-14",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_14.json"
+    },
+    {
+      "id": "ex-16",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_15.json"
+    },
+    {
+      "id": "ex-17",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/exercises/ex_16.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-calcul-integral-01",
+      "path": "data/2eme-bac-sc-ex/calcul-integral/quiz/calcul-integral_quiz.json",
+      "questionsCount": 22
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "id": "complexes",
+  "title": "Les nombres complexes",
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-complexes-sm",
+      "title": "Fiche Complète : Complexes",
+      "path": "data/2eme-bac-sc-math/complexes/revisions/fiche_complexes_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-complexes-01",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-complexes-02",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-complexes-03",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-complexes-04",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_04.json"
+    },
+    {
+      "id": "ex-complexes-05",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_05.json"
+    },
+    {
+      "id": "ex-complexes-06",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_06.json"
+    },
+    {
+      "id": "ex-complexes-07",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_07.json"
+    },
+    {
+      "id": "ex-complexes-08",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_08.json"
+    },
+    {
+      "id": "ex-complexes-09",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_09.json"
+    },
+    {
+      "id": "ex-complexes-10",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_10.json"
+    },
+    {
+      "id": "ex-complexes-11",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_11.json"
+    },
+    {
+      "id": "ex-complexes-12",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_12.json"
+    },
+    {
+      "id": "ex-complexes-13",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_13.json"
+    },
+    {
+      "id": "ex-complexes-14",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_14.json"
+    },
+    {
+      "id": "ex-complexes-15",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_15.json"
+    },
+    {
+      "id": "ex-complexes-16",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_16.json"
+    },
+    {
+      "id": "ex-complexes-17",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_17.json"
+    },
+    {
+      "id": "ex-complexes-18",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_18.json"
+    },
+    {
+      "id": "ex-complexes-19",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_19.json"
+    },
+    {
+      "id": "ex-complexes-20",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_20.json"
+    },
+    {
+      "id": "ex-complexes-21",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_21.json"
+    },
+    {
+      "id": "ex-complexes-22",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_22.json"
+    },
+    {
+      "id": "ex-complexes-23",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_23.json"
+    },
+    {
+      "id": "ex-complexes-24",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_24.json"
+    },
+    {
+      "id": "ex-complexes-25",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_25.json"
+    },
+    {
+      "id": "ex-complexes-26",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_26.json"
+    },
+    {
+      "id": "ex-complexes-27",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_27.json"
+    },
+    {
+      "id": "ex-complexes-28",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_28.json"
+    },
+    {
+      "id": "ex-complexes-29",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_29.json"
+    },
+    {
+      "id": "ex-complexes-30",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_30.json"
+    },
+    {
+      "id": "ex-complexes-31",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_31.json"
+    },
+    {
+      "id": "ex-complexes-32",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_32.json"
+    },
+    {
+      "id": "ex-complexes-33",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_33.json"
+    },
+    {
+      "id": "ex-complexes-34",
+      "path": "data/2eme-bac-sc-math/complexes/exercises/ex_34.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-complexes",
+      "title": "Quiz : Les Nombres Complexes",
+      "path": "data/2eme-bac-sc-math/complexes/quiz/complexes_quiz.json",
+      "questionsCount": 22
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "header": {
+    "title": "La droite dans le plan",
+    "subtitle": "Repères, vecteurs et géométrie analytique",
+    "context": "Tronc Commun"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie la \\objectif{géométrie analytique dans le plan} : repères cartésiens, coordonnées de points et de vecteurs, déterminant, distance, et équations cartésiennes des droites. En associant des nombres à des figures, on traduit tout problème de parallélisme ou d'intersection en un simple calcul algébrique. La \\defi{principale difficulté} est la rigueur du calcul (signes, fractions, équations) et la confusion entre les différentes formules — un petit schéma systématique au brouillon est le meilleur remède. C'est \\savant{René Descartes} qui a eu cette idée révolutionnaire en 1637, ouvrant la voie à toute la physique mathématique moderne, au GPS et aux logiciels de conception assistée par ordinateur.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "René Descartes (1596–1650)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "introduction",
+      "category": "course",
+      "title": "Unifier algèbre et géométrie",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avez-vous déjà imaginé pouvoir traduire des figures géométriques en équations mathématiques ? La géométrie analytique marque une véritable révolution : elle unifie l'algèbre et la géométrie en associant des coordonnées aux points et des équations aux droites. \\par\\smallskip \\textbf{Pourquoi étudier ce chapitre ?} Ce pont entre deux mondes mathématiques est \\textbf{fondamental} pour modéliser l'espace qui nous entoure. Historiquement, c'est René Descartes qui a eu cette idée de génie au XVIIe siècle, ouvrant la voie à la physique moderne et à l'informatique. \\par\\smallskip Dans ce chapitre, vous apprendrez à :\n\\begin{itemize}\n\\item \\textbf{Repérer} des points et des vecteurs dans un plan cartésien.\n\\item \\textbf{Calculer} des distances, des milieux et tester la colinéarité avec le déterminant.\n\\item \\textbf{Déterminer} et utiliser les équations cartésiennes de droites pour résoudre des problèmes d'intersection et de parallélisme.\n\\end{itemize}\n\\par\\smallskip \\textbf{Difficultés possibles :} La principale difficulté réside dans la rigueur des calculs algébriques (signes, fractions) et la confusion entre les différentes formules. \\par\\smallskip \\textbf{Comment bien maîtriser ?} Pour réussir, il faut \\textbf{pratiquer} régulièrement, toujours faire un petit schéma au brouillon pour visualiser la situation, et bien mémoriser les formules clés. Cette approche permet de transformer des problèmes géométriques complexes en simples calculs algébriques !"
+        }
+      ]
+    },
+    {
+      "id": "reperes",
+      "category": "course",
+      "title": "Repère du plan et coordonnées",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un repère permet de localiser précisément chaque point du plan par deux nombres : ses coordonnées. C'est le GPS des mathématiques !"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un repère du plan ?",
+          "content": "Soient $O$, $I$ et $J$ trois points \\blank{non alignés} du plan $(P)$.\\par On pose $\\overrightarrow{i} = \\overrightarrow{OI}$ et $\\overrightarrow{j} = \\overrightarrow{OJ}$\\par\\smallskip Le triplet $(O, \\overrightarrow{i}, \\overrightarrow{j})$ est appelé \\blank{repère} du plan $(P)$ où :\\begin{itemize}\\item $O$ est l'\\blank{origine} du repère\\item $(\\overrightarrow{i}, \\overrightarrow{j})$ est une \\blank{base} du plan\\item La droite $(OI)$ est l'axe des \\blank{abscisses}\\item La droite $(OJ)$ est l'axe des \\blank{ordonnées}\\end{itemize}"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un repère orthonormé ?",
+          "content": "Le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$ est :\\par\\smallskip• \\blank{Orthogonal} si $\\overrightarrow{i} \\perp \\overrightarrow{j}$\\par\\smallskip• \\blank{Orthonormé} si $\\overrightarrow{i} \\perp \\overrightarrow{j}$ et $\\|\\overrightarrow{i}\\| = \\|\\overrightarrow{j}\\| = 1$"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que les coordonnées d'un point ?",
+          "content": "Pour tout point $M$ du plan $(P)$, il existe un \\blank{unique} couple $(x, y) \\in \\mathbb{R}^2$ tel que :\\par\\smallskip$$\\overrightarrow{OM} = x\\overrightarrow{i} + y\\overrightarrow{j}$$\\par\\smallskip Le couple $(x, y)$ est appelé les \\blank{coordonnées} de $M$.\\par• $x$ est l'\\blank{abscisse} de $M$\\par• $y$ est l'\\blank{ordonnée} de $M$\\par\\smallskip On note : $M(x, y)$ ou $M\\begin{pmatrix}x\\\\y\\end{pmatrix}$",
+          "graphId": "repere_point_coords",
+          "graphCaption": "Déplacez le point M pour voir ses coordonnées et la décomposition vectorielle."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "Dans le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$ :\\begin{itemize}\\item Si $A(2, 3)$, cela signifie que $\\overrightarrow{OA} = 2\\overrightarrow{i} + 3\\overrightarrow{j}$.\\item Géométriquement : partir de $O$, avancer de 2 unités selon $\\overrightarrow{i}$, puis de 3 unités selon $\\overrightarrow{j}$ pour arriver en $A$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "operations_vecteurs",
+      "category": "course",
+      "title": "Opérations sur les vecteurs",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les coordonnées permettent de calculer facilement les opérations vectorielles. Addition de vecteurs, multiplication par un scalaire, milieu d'un segment : tout devient calcul !"
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer avec les coordonnées ?",
+          "content": "Soient $\\overrightarrow{u}\\begin{pmatrix}x\\\\y\\end{pmatrix}$ et $\\overrightarrow{v}\\begin{pmatrix}x'\\\\y'\\end{pmatrix}$ deux vecteurs, et $k \\in \\mathbb{R}$.\\par\\smallskip\\textbf{Somme :} $\\overrightarrow{u} + \\overrightarrow{v} = \\begin{pmatrix}\\blank{x + x'}\\\\\\blank{y + y'}\\end{pmatrix}$\\par\\smallskip\\textbf{Multiplication par un scalaire :} $k\\overrightarrow{u} = \\begin{pmatrix}\\blank{kx}\\\\\\blank{ky}\\end{pmatrix}$\\par\\smallskip\\textbf{Vecteur $\\overrightarrow{AB}$ :} Si $A(x_A, y_A)$ et $B(x_B, y_B)$, alors :\\par$$\\overrightarrow{AB} = \\begin{pmatrix}x_B - \\blank{x_A}\\\\y_B - y_A\\end{pmatrix}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer le milieu d'un segment ?",
+          "content": "Si $I$ est le milieu de $[AB]$ avec $A(x_A, y_A)$ et $B(x_B, y_B)$, alors :\\par\\smallskip$$I\\left(\\displaystyle\\frac{x_A + \\blank{x_B}}{2}; \\displaystyle\\frac{y_A + y_B}{\\blank{2}}\\right)$$",
+          "graphId": "milieu_segment",
+          "graphCaption": "Déplacez A et B : le point I reste toujours au milieu."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "Calculons $\\overrightarrow{AB}$ et le milieu de $[AB]$ avec $A(1, 3)$ et $B(-2, 5)$ :\\begin{itemize}\\item \\textbf{Vecteur :} $\\overrightarrow{AB} = \\begin{pmatrix}-2 - 1\\\\5 - 3\\end{pmatrix} = \\begin{pmatrix}-3\\\\2\\end{pmatrix}$\\item \\textbf{Milieu :} $I\\left(\\displaystyle\\frac{1 + (-2)}{2}; \\displaystyle\\frac{3 + 5}{2}\\right) = I\\left(-\\displaystyle\\frac{1}{2}; 4\\right)\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "Pour calculer $\\overrightarrow{AB}$, on soustrait les coordonnées de $A$ à celles de $B$ : « arrivée moins départ »."
+        }
+      ]
+    },
+    {
+      "id": "determinant",
+      "category": "course",
+      "title": "Déterminant et colinéarité de vecteurs",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le déterminant est un outil algébrique puissant qui permet de tester si deux vecteurs sont colinéaires (ont la même direction). C'est essentiel pour étudier l'alignement de points et le parallélisme de droites."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le déterminant de deux vecteurs ?",
+          "content": "Soient $\\overrightarrow{u}\\begin{pmatrix}x\\\\y\\end{pmatrix}$ et $\\overrightarrow{v}\\begin{pmatrix}x'\\\\y'\\end{pmatrix}$ deux vecteurs.\\par\\smallskip Le \\blank{déterminant} de $\\overrightarrow{u}$ et $\\overrightarrow{v}$ est le nombre :\\par\\smallskip$$\\det(\\overrightarrow{u}, \\overrightarrow{v}) = xy' - \\blank{x'y}$$\\par\\smallskip On note aussi : $\\begin{vmatrix}x & x'\\\\y & y'\\end{vmatrix} = xy' - x'y$"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment tester la colinéarité de deux vecteurs ?",
+          "content": "Deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont \\blank{colinéaires} si et seulement si :\\par\\smallskip$$\\det(\\overrightarrow{u}, \\overrightarrow{v}) = \\blank{0}$$\\par\\smallskip Autrement dit : $xy' - x'y = 0$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "Testons si $\\overrightarrow{u}\\begin{pmatrix}2\\\\3\\end{pmatrix}$ et $\\overrightarrow{v}\\begin{pmatrix}4\\\\6\\end{pmatrix}$ sont colinéaires :\\begin{itemize}\\item On calcule le déterminant : $\\det(\\overrightarrow{u}, \\overrightarrow{v}) = 2 \\times 6 - 4 \\times 3 = 12 - 12 = 0$\\item Le déterminant est nul, donc $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont colinéaires.\\item En effet, on remarque que : $\\overrightarrow{v} = 2\\overrightarrow{u}\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "Vérifions si les points $A(1, 2)$, $B(3, 5)$ et $C(5, 8)$ sont alignés :\\begin{itemize}\\item On calcule les coordonnées des vecteurs : $\\overrightarrow{AB}\\begin{pmatrix}2\\\\3\\end{pmatrix}$ et $\\overrightarrow{AC}\\begin{pmatrix}4\\\\6\\end{pmatrix}$\\item On calcule leur déterminant : $\\det(\\overrightarrow{AB}, \\overrightarrow{AC}) = 2 \\times 6 - 4 \\times 3 = 0$\\item Le déterminant est nul, donc les vecteurs sont colinéaires.\\item Conclusion : les points $A$, $B$ et $C$ sont alignés.\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "Trois points $A$, $B$, $C$ sont alignés si et seulement si $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ sont colinéaires, c'est-à-dire si $\\det(\\overrightarrow{AB}, \\overrightarrow{AC}) = 0$."
+        }
+      ]
+    },
+    {
+      "id": "distance",
+      "category": "course",
+      "title": "Norme d'un vecteur et distance",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La norme d'un vecteur mesure sa longueur. Dans un repère orthonormé, on utilise le théorème de Pythagore pour calculer distances et longueurs."
+        },
+        {
+          "type": "definition",
+          "title": "Comment calculer la norme d'un vecteur ?",
+          "content": "Dans un repère orthonormé, la norme du vecteur $\\overrightarrow{u}\\begin{pmatrix}x\\\\y\\end{pmatrix}$ est :\\par\\smallskip$$\\|\\overrightarrow{u}\\| = \\sqrt{x^\\blank{2} + y^2}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Comment calculer la distance entre deux points ?",
+          "content": "La distance entre $A(x_A, y_A)$ et $B(x_B, y_B)$ est :\\par\\smallskip$$AB = \\|\\overrightarrow{AB}\\| = \\sqrt{(x_B - x_A)^2 + (y_B - \\blank{y_A})^2}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "Calculons la distance entre $A(1, 2)$ et $B(4, 6)$ :\\begin{itemize}\\item On applique la formule de la distance : $AB = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}$\\item On remplace par les coordonnées : $AB = \\sqrt{(4-1)^2 + (6-2)^2}$\\item On calcule : $AB = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "La formule de la distance provient du théorème de Pythagore appliqué au triangle rectangle formé par les projections horizontale et verticale du segment $[AB]$."
+        }
+      ]
+    },
+    {
+      "id": "equations_droites",
+      "category": "course",
+      "title": "Équations de droites",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une droite peut être décrite par une équation reliant les coordonnées $x$ et $y$ de ses points. Cette équation cartésienne est la signature algébrique de la droite."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un vecteur directeur ?",
+          "content": "Soit $(D)$ une droite passant par un point $A$.\\par\\smallskip Tout vecteur \\blank{non nul} et \\blank{colinéaire} avec $\\overrightarrow{AB}$ (où $B \\in (D)$, $B \\neq A$) est appelé vecteur directeur de $(D)$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que l'équation cartésienne d'une droite ?",
+          "content": "Toute droite $(D)$ du plan a une équation de la forme :\\par\\smallskip$$ax + by + c = 0$$\\par\\smallskip où $a, b, c \\in \\mathbb{R}$ avec $(a, b) \\neq (0, 0)$.\\par\\smallskip Un vecteur directeur de $(D)$ est $\\overrightarrow{u}\\begin{pmatrix}\\blank{-b}\\\\\\blank{a}\\end{pmatrix}$",
+          "graphId": "droite_vecteur_directeur",
+          "graphCaption": "La droite est dirigée par le vecteur u. Modifiez u pour faire tourner la droite."
+        },
+        {
+          "type": "property",
+          "title": "Comment trouver l'équation d'une droite ?",
+          "content": "Si $(D)$ passe par $A(x_0, y_0)$ et a pour vecteur directeur $\\overrightarrow{u}\\begin{pmatrix}\\alpha\\\\\\beta\\end{pmatrix}$, alors :\\par\\smallskip Une équation cartésienne de $(D)$ est :\\par\\smallskip$$-\\beta(x - x_0) + \\alpha(y - y_0) = 0$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment tester le parallélisme de deux droites ?",
+          "content": "Deux droites $(D)$ et $(D')$ de vecteurs directeurs $\\overrightarrow{u}$ et $\\overrightarrow{u'}$ sont \\blank{parallèles} si et seulement si :\\par\\smallskip$$\\overrightarrow{u} \\text{ et } \\overrightarrow{u'} \\text{ sont } \\blank{colinéaires}$$\\par\\smallskip C'est-à-dire : $\\det(\\overrightarrow{u}, \\overrightarrow{u'}) = 0$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "Trouvons l'équation de la droite $(D)$ passant par $A(2, 1)$ et de vecteur directeur $\\overrightarrow{u}\\begin{pmatrix}3\\\\-2\\end{pmatrix}$ :\\begin{itemize}\\item \\textbf{Méthode :} Un point $M(x, y) \\in (D)$ si et seulement si $\\overrightarrow{AM}$ et $\\overrightarrow{u}$ sont colinéaires.\\item On exprime le vecteur $\\overrightarrow{AM}$ : $\\overrightarrow{AM}\\begin{pmatrix}x-2\\\\y-1\\end{pmatrix}$\\item La colinéarité se traduit par un déterminant nul : $\\det(\\overrightarrow{AM}, \\overrightarrow{u}) = 0$\\item On calcule le déterminant : $(x-2)(-2) - (y-1)(3) = 0$\\item On développe : $-2x + 4 - 3y + 3 = 0$\\item On simplifie pour obtenir l'équation cartésienne : $-2x - 3y + 7 = 0$ (ou $2x + 3y - 7 = 0$)\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "Si une droite a pour équation $ax + by + c = 0$, alors un vecteur directeur est $\\overrightarrow{u}\\begin{pmatrix}-b\\\\a\\end{pmatrix}$. Attention : il existe une infinité de vecteurs directeurs (tous les vecteurs colinéaires à $\\overrightarrow{u}$)."
+        }
+      ]
+    }
+  ]
+}

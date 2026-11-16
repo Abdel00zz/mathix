@@ -1,0 +1,132 @@
+{
+  "id": "arithmetique",
+  "title": "Arithmétique dans $\\mathbb{Z}$",
+  "section": "algebre-geometrie",
+  "start_date": "2026-03-28",
+  "end_date": "2026-04-07",
+  "revisions": [
+    {
+      "id": "rev-arith-1",
+      "title": "Fiche Complète : Arithmétique dans Z",
+      "path": "data/1ere-bac-sc-math/arithmetique/revisions/fiche_arithmetique_z_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ch01-ex01",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-01.json"
+    },
+    {
+      "id": "ch01-ex02",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-02.json"
+    },
+    {
+      "id": "ch01-ex03",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-03.json"
+    },
+    {
+      "id": "ch02-ex01",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-04.json"
+    },
+    {
+      "id": "ch02-ex02",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-05.json"
+    },
+    {
+      "id": "ch02-ex03",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-06.json"
+    },
+    {
+      "id": "ch02-ex04",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-07.json"
+    },
+    {
+      "id": "ch03-ex01",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-08.json"
+    },
+    {
+      "id": "ch03-ex02",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-09.json"
+    },
+    {
+      "id": "ch03-ex03",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-10.json"
+    },
+    {
+      "id": "ch03-ex04",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-11.json"
+    },
+    {
+      "id": "ch03-ex05",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-12.json"
+    },
+    {
+      "id": "ch03-ex06",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-13.json"
+    },
+    {
+      "id": "ch04-ex01",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-14.json"
+    },
+    {
+      "id": "ch04-ex02",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-15.json"
+    },
+    {
+      "id": "ch04-ex03",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-16.json"
+    },
+    {
+      "id": "ch05-ex01",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-17.json"
+    },
+    {
+      "id": "ch05-ex02",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-18.json"
+    },
+    {
+      "id": "ch05-ex03",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-19.json"
+    },
+    {
+      "id": "ch05-ex04",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-20.json"
+    },
+    {
+      "id": "ch05-ex05",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-21.json"
+    },
+    {
+      "id": "ch05-ex06",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-22.json"
+    },
+    {
+      "id": "ch05-ex07",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-23.json"
+    },
+    {
+      "id": "ch05-ex08",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-24.json"
+    },
+    {
+      "id": "ex-arith-25",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-25.json"
+    },
+    {
+      "id": "ex-arith-26",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-26.json"
+    },
+    {
+      "id": "ex-arith-27",
+      "path": "data/1ere-bac-sc-math/arithmetique/exercises/ex-arith-27.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-arithmetique-1",
+      "path": "data/1ere-bac-sc-math/arithmetique/quiz/arithmetique_z_quiz.json",
+      "questionsCount": 26
+    }
+  ],
+  "quizCount": 26
+}

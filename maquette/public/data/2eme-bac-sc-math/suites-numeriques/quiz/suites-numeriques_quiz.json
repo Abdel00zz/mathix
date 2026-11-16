@@ -1,0 +1,547 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quand dit-on qu'une suite $(u_n)_{n \\in I}$ est bornée ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S'il existe un réel positif $M$ tel que pour tout $n \\in I$, $|u_n| \\le M$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "S'il existe un réel $M$ tel que pour tout $n \\in I$, $u_n \\le M$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "S'il existe un réel $m$ tel que pour tout $n \\in I$, $m \\le u_n$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Si elle est croissante et majorée",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une suite est bornée si elle est à la fois majorée et minorée, ce qui équivaut à dire que sa valeur absolue est majorée par un réel positif $M$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Toute suite croissante et majorée est convergente.",
+      "isTrue": true,
+      "explanation": "C'est le théorème de la convergence monotone, fondamental pour l'étude des suites.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Que peut-on affirmer concernant une suite décroissante non minorée ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle tend vers $-\\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Elle tend vers $0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Elle n'admet pas de limite",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle tend vers $+\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisqu'elle descend sans cesse et n'a pas de plancher, elle diverge vers $-\\infty$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quelle est la formule de la somme $s_n = u_p + u_{p+1} + \\dots + u_n$ pour une suite arithmétique ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{n-p+1}{2}(u_p + u_n)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{n-p}{2}(u_p + u_n)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$u_p \\frac{1-r^{n-p+1}}{1-r}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(n-p) \\frac{u_p + u_n}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La somme est égale au nombre de termes multiplié par la moyenne du premier et du dernier terme.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Quelle est la formule du terme général $u_n$ d'une suite géométrique de raison $q$ en fonction de $u_p$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$u_n = q^{n-p} u_p$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$u_n = u_p + (n-p)q$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$u_n = q^{n-1} u_p$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$u_n = u_p q^n$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour passer du rang $p$ au rang $n$, on multiplie par la raison $q$ exactement $(n-p)$ fois.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q6",
+      "type": "error",
+      "category": "Application",
+      "prompt": "Identifier l'erreur dans ce calcul de somme géométrique :",
+      "context": "On calcule $S = u_2 + u_3 + \\dots + u_8$ pour une suite géométrique de raison $q = 3$ avec $u_2 = 5$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "La formule de la somme est $S = u_p \\frac{1 - q^{\\text{nombre de termes}}}{1 - q}$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Le premier terme de la somme est $u_2 = 5$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Le nombre de termes est $8 - 2 = 6$.",
+          "isError": true,
+          "correction": "Le nombre de termes est $n - p + 1$, soit $8 - 2 + 1 = 7$ termes."
+        },
+        {
+          "id": "s4",
+          "text": "La somme est $S = 5 \\frac{1 - 3^6}{1 - 3}$.",
+          "isError": false
+        }
+      ],
+      "explanation": "L'erreur classique est d'oublier le '+1' en comptant le nombre de termes de $p$ à $n$ inclus.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Quelle est la limite de la suite $a^n$ lorsque $-1 < a < 1$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle n'a pas de limite",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Multiplier un nombre strictement compris entre -1 et 1 par lui-même le rapproche de 0.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q8",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Si $\\lim_{n \\to +\\infty} u_n = -\\infty$ et $\\lim_{n \\to +\\infty} v_n = +\\infty$, alors $\\lim_{n \\to +\\infty} (u_n + v_n) = 0$.",
+      "isTrue": false,
+      "explanation": "C'est une forme indéterminée ($\\infty - \\infty$). La limite dépend de la vitesse de croissance de chaque suite.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "Comment lève-t-on généralement l'indétermination pour la limite d'une suite rationnelle (quotient de deux polynômes en $n$) en $+\\infty$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "En factorisant par le terme de plus haut degré au numérateur et au dénominateur",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "En utilisant l'expression conjuguée",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "En appliquant le théorème des gendarmes",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "En calculant la dérivée",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Factoriser par le terme dominant permet de faire apparaître des termes en $1/n$ qui tendent vers 0.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Que stipule le théorème des gendarmes (ou d'encadrement) pour trois suites $(u_n)$, $(v_n)$ et $(w_n)$ telles que $w_n \\le u_n \\le v_n$ à partir d'un certain rang ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Si $\\lim v_n = \\lim w_n = l$, alors $\\lim u_n = l$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Si $\\lim v_n = l$ et $\\lim w_n = l'$, alors $\\lim u_n = (l+l')/2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Si $(v_n)$ et $(w_n)$ convergent, alors $(u_n)$ converge",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Si $\\lim v_n = +\\infty$, alors $\\lim u_n = +\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si la suite $(u_n)$ est coincée entre deux suites qui tendent vers la même limite $l$, elle est forcée de tendre vers $l$.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q11",
+      "type": "boolean",
+      "category": "Méthode",
+      "prompt": "Pour utiliser le théorème des gendarmes, il est obligatoire que l'encadrement $w_n \\le u_n \\le v_n$ soit vrai pour tout entier $n \\ge 0$.",
+      "isTrue": false,
+      "explanation": "L'encadrement doit seulement être vrai à partir d'un certain rang $N$. Les premiers termes n'influencent pas la limite en $+\\infty$.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Quelle est la limite de $f(u_n)$ si $\\lim_{n \\to +\\infty} u_n = l$ et si $f$ est une fonction continue en $l$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(l)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$l$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f'(l)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "On ne peut pas savoir",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est la caractérisation séquentielle de la continuité : on peut 'passer à la limite' à l'intérieur de la fonction continue.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q13",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour déterminer la limite d'une suite récurrente $u_{n+1} = f(u_n)$ :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Prouver que la suite $(u_n)$ est convergente (ex: croissante et majorée)"
+        },
+        {
+          "id": "b",
+          "content": "Vérifier que $f$ est continue sur l'intervalle stable $I$"
+        },
+        {
+          "id": "c",
+          "content": "Résoudre l'équation du point fixe $f(l) = l$"
+        },
+        {
+          "id": "d",
+          "content": "Sélectionner la valeur de $l$ cohérente avec les termes de la suite"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "On doit d'abord s'assurer que la limite existe et que la fonction est continue avant de résoudre $f(l)=l$, puis on choisit la bonne solution si l'équation en a plusieurs.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quelles sont les conditions pour que deux suites $(u_n)$ et $(v_n)$ soient dites adjacentes ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'une est croissante, l'autre décroissante, et $\\lim (v_n - u_n) = 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Elles sont toutes les deux croissantes et $\\lim (v_n - u_n) = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'une est croissante, l'autre décroissante, et $\\lim (v_n / u_n) = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elles convergent vers la même limite",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les suites adjacentes se rapprochent l'une de l'autre (l'une monte, l'autre descend) et l'écart entre elles tend vers 0.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q15",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Deux suites adjacentes convergent toujours vers la même limite.",
+      "isTrue": true,
+      "explanation": "C'est le théorème des suites adjacentes. Puisque leur différence tend vers 0 et qu'elles sont monotones en sens contraire, elles convergent vers une limite commune.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q16",
+      "type": "error",
+      "category": "Méthode",
+      "prompt": "Identifier l'erreur dans la recherche de la limite d'une suite récurrente $u_{n+1} = \\sqrt{u_n + 2}$ :",
+      "context": "On suppose $u_0 = 0$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On pose $f(x) = \\sqrt{x + 2}$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "On résout $f(l) = l$, soit $\\sqrt{l + 2} = l$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "On élève au carré : $l + 2 = l^2$, donc $l^2 - l - 2 = 0$. Les solutions sont $l = -1$ et $l = 2$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "La suite peut converger vers $-1$ ou $2$.",
+          "isError": true,
+          "correction": "La suite est à termes positifs (car $u_0=0$ et $f(x) \\ge 0$), donc la limite $l$ doit être positive. La seule limite possible est $l = 2$."
+        }
+      ],
+      "explanation": "Il faut toujours vérifier que la solution de l'équation $f(l)=l$ est cohérente avec le signe ou l'intervalle des termes de la suite.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q17",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour montrer que deux suites $(u_n)$ et $(v_n)$ sont adjacentes :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Étudier le signe de $u_{n+1} - u_n$ pour montrer que $(u_n)$ est croissante"
+        },
+        {
+          "id": "b",
+          "content": "Étudier le signe de $v_{n+1} - v_n$ pour montrer que $(v_n)$ est décroissante"
+        },
+        {
+          "id": "c",
+          "content": "Calculer la limite de la différence $v_n - u_n$"
+        },
+        {
+          "id": "d",
+          "content": "Vérifier que cette limite est égale à $0$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "On vérifie la monotonie de chaque suite, puis on calcule la limite de leur différence pour s'assurer qu'elle s'annule.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Quelle est la limite de la suite $u_n = \\frac{\\sin(n)}{n^2}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "N'existe pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On utilise le théorème des gendarmes : $-1 \\le \\sin(n) \\le 1$, donc $-1/n^2 \\le u_n \\le 1/n^2$. Comme $\\pm 1/n^2$ tendent vers 0, $u_n$ tend vers 0.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Si $(u_n)$ est une suite géométrique de raison $q \\le -1$, que peut-on dire de sa limite ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle n'admet pas de limite",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Elle tend vers $0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Elle tend vers $-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle tend vers $+\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La suite alterne de signe et sa valeur absolue croît ou reste constante (si $q=-1$), elle ne converge donc vers aucune valeur et ne diverge pas vers une infinité de même signe.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q20",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Si $\\lim_{n \\to +\\infty} |u_n| = 0$, alors on peut affirmer que $\\lim_{n \\to +\\infty} u_n = 0$.",
+      "isTrue": true,
+      "explanation": "C'est une propriété fondamentale : une suite tend vers 0 si et seulement si sa valeur absolue tend vers 0.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Pour $u_{n+1}=2u_n+3$, quel changement transforme la suite en une suite géométrique ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$v_n=u_n+3$, alors $v_{n+1}=2v_n$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$v_n=u_n-3$, alors $v_{n+1}=2v_n$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$v_n=2u_n$, alors $v_{n+1}=v_n+3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$v_n=u_n+2$, alors $v_{n+1}=3v_n$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le point fixe vérifie $\\ell=2\\ell+3$, donc $\\ell=-3$. On pose $v_n=u_n-\\ell=u_n+3$ et l'on obtient $v_{n+1}=2v_n$."
+    },
+    {
+      "id": "q22",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "ambiguity_note": "L'équation de point fixe fournit seulement les limites possibles.",
+      "prompt": "Si $\\ell$ vérifie $f(\\ell)=\\ell$, alors toute suite définie par $u_{n+1}=f(u_n)$ converge vers $\\ell$.",
+      "isTrue": false,
+      "explanation": "L'équation $f(\\ell)=\\ell$ est une condition nécessaire lorsque la suite converge et que $f$ est continue en $\\ell$, mais elle ne prouve ni la convergence ni le choix du point fixe."
+    }
+  ]
+}

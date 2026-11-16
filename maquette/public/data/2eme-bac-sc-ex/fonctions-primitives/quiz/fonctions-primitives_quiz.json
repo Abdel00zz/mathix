@@ -1,0 +1,363 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Si $F$ est une fonction dérivable sur un intervalle $I$ et que $F'(x) = f(x)$ pour tout $x \\in I$, alors on dit que $f$ est une primitive de $F$.",
+      "isTrue": false,
+      "explanation": "C'est l'inverse ! C'est la fonction de départ $F$ (celle qu'on dérive) qui s'appelle la primitive de $f$. La fonction $f$ est la dérivée de $F$."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Quelle propriété d'une fonction $f$ garantit à coup sûr qu'elle admet au moins une primitive sur un intervalle $I$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La fonction $f$ est continue sur l'intervalle $I$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La fonction $f$ est positive sur l'intervalle $I$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La fonction $f$ est dérivable sur l'intervalle $I$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La fonction $f$ s'annule en un point de l'intervalle $I$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le théorème fondamental assure que toute fonction continue sur un intervalle y admet toujours des primitives. La continuité est une condition suffisante."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si $F_1$ et $F_2$ sont deux primitives d'une même fonction $f$ sur un intervalle $I$, que peut-on affirmer sur ces deux fonctions ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elles sont égales : $F_1(x) = F_2(x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Elles diffèrent d'une constante : $F_2(x) = F_1(x) + \\lambda$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Elles diffèrent d'un facteur : $F_2(x) = \\lambda \\times F_1(x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Leur somme vaut zéro : $F_1(x) + F_2(x) = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque $(F_2 - F_1)' = F_2' - F_1' = f - f = 0$, la fonction différence est de dérivée nulle donc elle est constante."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Application",
+      "prompt": "Quelle est l'expression générale des primitives de la fonction $f(x) = \\frac{1}{x}$ sur l'intervalle $]0, +\\infty[$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$F(x) = -\\frac{1}{x^2} + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$F(x) = \\ln(x) + C$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$F(x) = e^x + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$F(x) = \\sqrt{x} + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est une formule de référence absolue : la fonction dont la dérivée est $\\frac{1}{x}$ est la fonction logarithme népérien $\\ln(x)$."
+    },
+    {
+      "id": "q5",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Pour trouver une unique primitive d'une fonction $f$, il suffit de connaître la valeur de la dérivée de $f$ en un point.",
+      "isTrue": false,
+      "explanation": "Pour fixer l'unique constante $\\lambda$, on a besoin de connaître la valeur de la \n*primitive elle-même* (la fonction $F$) en un point (par exemple $F(x_0) = y_0$), et non pas la valeur de sa dérivée."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Quelle est la méthode générale pour calculer la primitive d'une fonction composée (ex: fonction divisée par un polynôme à une puissance) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Identifier une fonction intérieure $u(x)$, faire apparaître $u'(x)$ en facteur, puis reconnaître une forme du tableau (comme $\\frac{u'}{u}$, $u'e^u$)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Dériver la fonction deux fois et diviser par la constante",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Calculer la primitive du numérateur et la diviser par la primitive du dénominateur",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Appliquer la formule de l'intégration par parties systématiquement",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La reconnaissance de formes ($u'$, $u$, etc.) est la clé. On pose le $u(x)$, on dérive puis on ajuste les constantes pour retrouver le tableau."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Quelle est une primitive de $f(x) = 4x^3 + e^x$ sur $\\mathbb{R}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$F(x) = 12x^2 + e^x$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$F(x) = \\frac{x^4}{4} + e^x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$F(x) = x^4 + e^x$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$F(x) = 4x^4 + e^x$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La primitive de $x^n$ est $\\frac{x^{n+1}}{n+1}$. Pour $4x^3$, on a $4 \\times \\frac{x^4}{4} = x^4$. La primitive de $e^x$ reste $e^x$. Mots-clés : ne pas confondre primitive et dérivée (choix a)."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Déterminez l'unique primitive $F$ de $f(x) = 2x$ qui vérifie $F(1) = 8$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$F(x) = x^2 + 8$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$F(x) = x^2 + 7$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$F(x) = x^2 - 7$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$F(x) = 2x^2 + 6$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La primitive générale est $F(x) = x^2 + C$. On résout $F(1) = 8 \\iff 1^2 + C = 8 \\iff C = 7$. La solution est donc $F(x) = x^2 + 7$."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Un élève affirme que la primitive de $f(x) = \\cos(2x)$ est $F(x) = \\sin(2x) + C$. Quelle est son erreur ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Il a oublié de diviser par la dérivée de la fonction intérieure $u(x) = 2x$, la bonne primitive est $\\frac{1}{2}\\sin(2x) + C$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La primitive de $\\cos$ est $-\\sin$, donc c'est $-\\sin(2x) + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Il faut multiplier par 2, la bonne primitive est $2\\sin(2x) + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La primitive de $\\cos(2x)$ est $\\cos^2(x) + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'oubli de la dérivée interne $u'$ (et donc l'oubli de diviser par cette dérivée lorsqu'elle est constante) est la faute la plus fréquente dans le calcul de primitives. La primitive d'une forme composée $u' \\cos(u)$ est $\\sin(u)$."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Confusion très fréquente entre le formulaire des dérivées (qui donne -sin) et celui des primitives (qui donne -cos).",
+      "prompt": "Parmi ces propositions sur les fonctions trigonométriques, laquelle donne les \\textbf{primitives} exactes ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La primitive de $\\sin(x)$ est $\\cos(x) + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La primitive de $\\cos(x)$ est $-\\sin(x) + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La primitive de $\\sin(x)$ est $-\\cos(x) + C$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "La primitive de $\\cos(x)$ est $-\\cos(x) + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour s'en souvenir, il faut imaginer la dérivation : la dérivée de $\\cos(x)$ est $-\\sin(x)$, donc pour retrouver le signe positif de $\\sin(x)$ de départ, il faut dériver $-\\cos(x)$. Les élèves inversent souvent les signes entre dérivation et primitivation."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "On considère la fonction $g(x) = \\frac{2x}{x^2+5}$. Comment s'écrit la forme de cette primitive composée ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "On reconnaît la forme $\\frac{u'}{u^2}$, dont la primitive est $-\\frac{1}{u}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "On reconnaît la forme $u' u$, dont la primitive est $\\frac{u^2}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "On reconnaît la forme $\\frac{u'}{u}$, dont la primitive est $\\ln(u)$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "On reconnaît la forme $u' e^u$, dont la primitive est $e^u$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le numérateur $2x$ est exactement la dérivée du dénominateur $u(x) = x^2+5$. C'est donc la forme $\\frac{u'}{u}$, qui conduit au logarithme $\\ln(x^2+5)$."
+    },
+    {
+      "id": "q12",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Si une fonction n'est pas continue sur un intervalle, elle ne peut absolument pas posséder de primitive sur cet intervalle.",
+      "isTrue": false,
+      "explanation": "C'est un piège très subtil ! Le théorème dit \"Continue $\\implies$ Admet une primitive\". C'est une condition suffisante. Toutefois, certaines fonctions bizarres qui ne sont pas continues peuvent avoir des primitives ! Ce n'est donc pas une condition strictement nécessaire."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Quelle est la famille entière des primitives de $h(x) = e^{3x}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$H(x) = e^{3x} + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$H(x) = 3e^{3x} + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$H(x) = \\frac{1}{3}e^{3x} + C$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$H(x) = e^{\\frac{x}{3}} + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a une composée exponentielle. On pose $u = 3x$, donc $u' = 3$. La fonction s'écrit $\\frac{1}{3} \\times (3 e^{3x}) = \\frac{1}{3} u' e^u$. La primitive d'une constante de proportionalité est conservée : on trouve $\\frac{1}{3} e^u = \\frac{1}{3}e^{3x} + C$."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Confusion entre dériver et primitiver les puissances, particulièrement avec les dénominateurs constants.",
+      "prompt": "On cherche la primitive $F$ de $f(x) = \\frac{x^3}{3}$. Laquelle des expressions suivantes est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$F(x) = x^2 + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$F(x) = \\frac{x^4}{12} + C$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$F(x) = \\frac{x^4}{4} + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$F(x) = 3x^2 + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La fonction est $f(x) = \\frac{1}{3} x^3$. La constante $\\frac{1}{3}$ reste devant. La primitive de $x^3$ est $\\frac{x^4}{4}$. On a donc $F(x) = \\frac{1}{3} \\times \\frac{x^4}{4} = \\frac{x^4}{12} + C$. Le choix a) correspond au calcul trivial de la dérivée !"
+    }
+  ]
+}

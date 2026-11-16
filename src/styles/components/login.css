@@ -1,0 +1,872 @@
+/* Onboarding & authentification — styles structurels actifs (le thème visuel final est porté par learning-experience.css et auth-web.css). */
+.mp-auth-experience {
+  position: relative;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+.mp-split-landing {
+  position: relative;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+.mp-split-landing *,
+.mp-split-landing *::before,
+.mp-split-landing *::after,
+.mp-expanded-onboarding *,
+.mp-expanded-onboarding *::before,
+.mp-expanded-onboarding *::after {
+  box-sizing: border-box;
+}
+
+/* ── Header & cartes de choix de l'accueil ─────────────────────────────────── */
+.mp-split-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mp-split-brand {
+  display: flex;
+  align-items: center;
+}
+
+.mp-split-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mp-split-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.mp-split-main {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mp-split-space {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.mp-split-glass-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: start;
+}
+
+.mp-split-card-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.mp-btn-action {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.mp-split-glass-card > small,
+.mp-split-card-actions > small {
+  display: block;
+}
+
+/* ── Aperçu rôle professeur ────────────────────────────────────────────────── */
+.mp-split-landing[data-preview-role='prof'] .mp-split-main {
+  grid-template-columns: 0fr minmax(0, 1fr);
+}
+
+.mp-split-landing[data-preview-role='prof'] .mp-split-student {
+  display: none;
+}
+
+.mp-split-space.is-preview-active {
+  align-items: stretch;
+  padding: clamp(18px, 2.2vw, 26px) clamp(16px, 5vw, 72px) clamp(28px, 3.8vw, 46px);
+}
+
+.mp-role-preview {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  width: min(clamp(760px, 86vw, 1200px), 100%);
+  margin: 0 auto;
+  align-items: center;
+  grid-template-columns: minmax(280px, .9fr) minmax(320px, 1.1fr);
+  gap: clamp(24px, 5.5vw, 80px);
+  animation: mpAuthSurfaceIn .35s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.mp-preview-back {
+  position: absolute;
+  z-index: 8;
+  top: 0;
+  inset-inline-start: 0;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid #d5e0da;
+  border-radius: 50%;
+  color: #203a36;
+  background: #ffffffeb;
+  box-shadow: 0 8px 20px -14px rgba(32, 58, 54, .35);
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.mp-preview-back:hover {
+  transform: translateY(-1px);
+  background: #fff;
+}
+
+.mp-preview-copy {
+  padding-top: clamp(50px, 5.5vw, 68px);
+}
+
+.mp-preview-copy h2 {
+  max-width: 620px;
+  margin: 0;
+  color: #203a36;
+  font-size: clamp(28px, calc(22px + 2.2vw), 54px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+
+.mp-preview-copy > p {
+  max-width: 540px;
+  margin: clamp(14px, 1.6vw, 20px) 0 clamp(18px, 2.2vw, 26px);
+  color: #566562;
+  font-size: clamp(13.5px, calc(12.5px + 0.3vw), 17px);
+  line-height: 1.7;
+}
+
+.mp-preview-benefits {
+  display: grid;
+  max-width: 540px;
+  gap: clamp(8px, 0.9vw, 11px);
+  margin-bottom: clamp(20px, 2.2vw, 28px);
+}
+
+.mp-preview-benefits span {
+  display: flex;
+  align-items: center;
+  gap: clamp(9px, 1vw, 12px);
+  color: #324743;
+  font-size: clamp(12.5px, calc(11.8px + 0.16vw), 14px);
+  font-weight: 600;
+}
+
+.mp-preview-benefits svg {
+  flex: 0 0 auto;
+  color: #326c5c;
+}
+
+.mp-preview-primary {
+  display: inline-flex;
+  min-height: clamp(46px, 4.2vw, 52px);
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 clamp(18px, 2vw, 26px);
+  border: 0;
+  border-radius: clamp(10px, 1vw, 13px);
+  color: #fff;
+  background: #326c5c;
+  box-shadow: 0 12px 26px -14px rgba(39, 87, 71, .55);
+  font-size: clamp(13px, calc(12.4px + 0.16vw), 15px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.mp-preview-primary:hover {
+  background: #275747;
+  transform: translateY(-1px);
+}
+
+/* ── Conteneur overlay Onboarding (Inscription & Connexion) ────────────────── */
+.mp-expanded-onboarding {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  animation: mpAuthSurfaceIn .28s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.mp-expanded-registration-layout {
+  display: grid;
+  width: min(clamp(780px, 86vw, 1140px), calc(100vw - clamp(24px, 3.5vw, 44px)));
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 640px) minmax(280px, 410px);
+  align-items: start;
+  justify-content: center;
+  gap: clamp(16px, 2.4vw, 32px);
+}
+
+.mp-expanded-onboarding[data-auth-surface='connection'] .mp-expanded-registration-layout {
+  display: flex;
+  width: min(clamp(380px, 42vw, 480px), 100%);
+}
+
+.mp-expanded-registration-layout .mp-expanded-form-card {
+  width: 100%;
+  margin: 0;
+}
+
+.mp-expanded-registration-visual {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid #e0e7df;
+  border-radius: clamp(14px, 1.5vw, 19px);
+  background: #f0f5f1;
+}
+
+/* ── Parcours d'inscription (Élève & Professeur) ───────────────────────────── */
+.login-journey-auth {
+  width: 100%;
+}
+
+.login-journey-heading {
+  margin-bottom: clamp(16px, 1.8vw, 22px);
+  text-align: center;
+}
+
+.login-journey-heading h1 {
+  margin: 4px 0 6px;
+  color: #203a36;
+  font-size: clamp(22px, calc(19px + 0.8vw), 29px);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+
+.login-journey-heading p {
+  margin: 0;
+  color: #566562;
+  font-size: clamp(12.5px, calc(11.8px + 0.16vw), 14px);
+  line-height: 1.55;
+}
+
+.login-student-heading {
+  scroll-margin-top: 82px;
+}
+
+.login-student-progress {
+  display: flex;
+  width: 68px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 14px auto 0;
+}
+
+.login-student-progress i {
+  display: block;
+  width: 24px;
+  height: 6px;
+  border-radius: 999px;
+  background: #dce3ef;
+  transition: width .28s cubic-bezier(.22, 1, .36, 1), background .2s ease;
+}
+
+.login-student-progress i.is-active {
+  width: 36px;
+  background: #326c5c;
+}
+
+.login-journey-form {
+  display: grid;
+  gap: clamp(14px, 1.6vw, 20px);
+}
+
+.login-journey-step {
+  min-height: clamp(180px, 18vw, 220px);
+  animation: loginJourneyIn .26s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.login-journey-step-title {
+  margin-bottom: clamp(14px, 1.6vw, 20px);
+}
+
+.login-journey-step-title h2 {
+  margin: 0;
+  color: #203a36;
+  font-size: clamp(16.5px, calc(15px + 0.35vw), 19px);
+  font-weight: 700;
+}
+
+.login-journey-step-title p {
+  margin: 4px 0 0;
+  color: #566562;
+  font-size: clamp(11.5px, calc(11px + 0.14vw), 13px);
+  line-height: 1.5;
+}
+
+.login-journey-fields,
+.login-journey-security {
+  display: grid;
+  gap: clamp(12px, 1.3vw, 16px);
+}
+
+.login-student-class-step .login-student-path {
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 1.8vw, 22px);
+}
+
+.login-student-details-step {
+  gap: clamp(13px, 1.4vw, 17px);
+}
+
+.login-student-details-step .login-journey-security {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.login-student-details-step .login-journey-rules {
+  grid-column: 1 / -1;
+}
+
+.login-journey-fields > div,
+.login-journey-names > div,
+.login-journey-phone,
+.login-journey-security > div {
+  display: grid;
+  min-width: 0;
+  gap: clamp(6px, 0.7vw, 8px);
+}
+
+.login-journey-form label,
+.login-field-label {
+  margin: 0;
+  color: #354743;
+  font-size: clamp(11.5px, calc(11px + 0.14vw), 13px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.login-journey-names {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.1vw, 14px);
+}
+
+.login-journey-names input {
+  width: 100%;
+  min-height: clamp(46px, 4vw, 51px);
+  padding: 0 clamp(12px, 1.3vw, 16px);
+  border: 1px solid #d5e0da;
+  border-radius: 10px;
+  color: #1c2d2a;
+  background: #fcfdfc;
+  font-size: max(16px, clamp(15px, 1.15vw, 16.5px));
+  font-weight: 550;
+  outline: none;
+  transition: border-color .16s ease, box-shadow .16s ease, background .16s ease;
+}
+
+.login-journey-names input:hover {
+  border-color: #b7c9bf;
+  background: #fff;
+}
+
+.login-journey-names input:focus {
+  border-color: #326c5c;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(50, 108, 92, .12);
+}
+
+.login-journey-names input.is-invalid {
+  border-color: #dc2626;
+  background: #fffafa;
+}
+
+.login-journey-form .login-level-card {
+  display: flex;
+  min-height: clamp(46px, 4vw, 50px);
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(10px, 1.1vw, 14px);
+  border: 1px solid #d5e0da;
+  border-radius: 10px;
+  color: #465a55;
+  background: #f8faf9;
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease, color .15s ease;
+}
+
+.login-journey-form .login-level-card strong {
+  font-size: clamp(12.5px, calc(11.8px + 0.16vw), 14px);
+  font-weight: 700;
+}
+
+.login-journey-form .login-level-card:hover {
+  border-color: #afc2b8;
+  background: #fff;
+}
+
+.login-journey-form .login-level-card.is-selected {
+  border-color: #326c5c;
+  color: #204c3f;
+  background: #edf5ef;
+  box-shadow: inset 0 0 0 1px #326c5c;
+}
+
+.login-journey-form .login-input {
+  min-height: clamp(46px, 4vw, 51px);
+  border: 1px solid #d5e0da;
+  border-radius: 10px;
+  background: #fcfdfc;
+  box-shadow: none;
+}
+
+.login-journey-form .login-input:focus-within {
+  border-color: #326c5c;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(50, 108, 92, .12);
+}
+
+.login-journey-rules {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(6px, 0.7vw, 9px);
+  padding: clamp(9px, 1vw, 12px) clamp(10px, 1.1vw, 14px);
+  border: 1px solid #e2e9e5;
+  border-radius: 10px;
+  background: #f6f9f7;
+}
+
+.login-journey-rules span {
+  position: relative;
+  padding-inline-start: 15px;
+  color: #566562;
+  font-size: clamp(10.5px, calc(10px + 0.14vw), 12px);
+  line-height: 1.45;
+}
+
+.login-journey-rules span::before {
+  position: absolute;
+  inset-inline-start: 0;
+  top: .45em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  content: '';
+  background: #b5c2bc;
+}
+
+.login-journey-rules span.is-valid {
+  color: #1f6b50;
+  font-weight: 600;
+}
+
+.login-journey-rules span.is-valid::before {
+  background: #22986b;
+}
+
+.login-journey-error {
+  margin: 4px 0 0;
+  padding: clamp(9px, 1vw, 12px) clamp(10px, 1.1vw, 14px);
+  border-radius: 10px;
+  color: #b42332;
+  background: #fff0f1;
+  font-size: clamp(11.5px, calc(11px + 0.14vw), 13px);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.login-journey-actions {
+  display: flex;
+  gap: clamp(8px, 0.9vw, 12px);
+  padding-top: clamp(13px, 1.4vw, 18px);
+  border-top: 1px solid #e6ece8;
+}
+
+.login-journey-actions button {
+  min-height: clamp(46px, 4vw, 51px);
+  padding: 0 clamp(14px, 1.6vw, 20px);
+  border-radius: 10px;
+  font-size: clamp(12.5px, calc(11.8px + 0.16vw), 14px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .16s ease, opacity .16s ease;
+}
+
+.login-journey-actions .is-secondary {
+  flex: 0 1 auto;
+  min-width: clamp(140px, 16vw, 195px);
+  border: 1px solid #d5e0da;
+  color: #3f524d;
+  background: #f5f8f6;
+}
+
+.login-journey-actions .is-secondary:hover {
+  border-color: #b5c7bd;
+  background: #ebf1ed;
+}
+
+.login-journey-actions .is-primary {
+  flex: 1;
+  border: 0;
+  color: #fff;
+  background: #326c5c;
+}
+
+.login-journey-actions .is-primary:hover:not(:disabled) {
+  background: #275747;
+}
+
+.login-journey-actions button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.login-journey-signin {
+  margin: clamp(13px, 1.4vw, 18px) 0 0;
+  color: #566562;
+  font-size: clamp(12.5px, calc(11.8px + 0.16vw), 14px);
+  text-align: center;
+}
+
+.login-journey-signin button {
+  margin-inline-start: 6px;
+  min-height: 44px;
+  padding: 0 6px;
+  border: 0;
+  color: #275747;
+  background: transparent;
+  font-size: clamp(12.5px, calc(11.8px + 0.16vw), 14px);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.login-prof-registration-step {
+  display: grid;
+  min-height: 0;
+  gap: 14px;
+}
+
+.login-prof-registration-step .login-journey-step-title {
+  margin-bottom: 0;
+}
+
+/* ── Sélecteur d'indicatif et champs téléphone/mot de passe ────────────────── */
+.login-phone-input {
+  overflow: visible;
+}
+
+.login-dial-picker {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-dial-trigger {
+  display: inline-flex;
+  height: 100%;
+  min-height: 44px;
+  min-width: clamp(72px, 6.5vw, 82px);
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding-inline: clamp(9px, 1vw, 12px);
+  border: 0;
+  border-inline-end: 1px solid #d5e0da;
+  border-radius: 10px 0 0 10px;
+  color: #354743;
+  background: #f3f6f4;
+  font-size: clamp(12.5px, calc(12px + 0.16vw), 14px);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-dial-trigger:hover {
+  background: #eaf0ec;
+}
+
+.login-dial-value {
+  color: #566562;
+  font-size: clamp(11.5px, calc(11px + 0.14vw), 13px);
+  font-weight: 700;
+}
+
+.login-dial-menu {
+  animation: loginCountryEnter 160ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Écran Connexion (ReturningUserSection) ────────────────────────────────── */
+.login-returning-page {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 0;
+}
+
+.login-returning-interface {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+}
+
+.login-returning-grid {
+  display: none;
+}
+
+.login-returning-content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.login-returning-icon {
+  display: grid;
+  place-items: center;
+}
+
+.login-returning-heading p {
+  color: #566562;
+}
+
+.login-returning-form {
+  display: grid;
+  gap: 18px;
+}
+
+.login-returning-submit {
+  display: flex;
+  width: 100%;
+  min-height: clamp(48px, 4.2vw, 52px);
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 10px;
+  color: #56655e;
+  background: #e6ede9;
+  font-size: clamp(13.5px, calc(13px + 0.14vw), 15px);
+  font-weight: 700;
+  cursor: not-allowed;
+  transition: background .18s ease, color .18s ease;
+}
+
+.login-returning-submit.is-enabled {
+  color: #fff;
+  background: #326c5c;
+  cursor: pointer;
+}
+
+.login-returning-submit.is-enabled:hover {
+  background: #275747;
+}
+
+/* ── Choix de classe : grille native ───────────────────────────────────────── */
+.login-class-choice {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.login-class-choice-hint {
+  margin: 0 0 clamp(14px, 1.6vw, 20px);
+  color: #566562;
+  font-size: clamp(12.5px, calc(11.8px + 0.16vw), 14px);
+  line-height: 1.6;
+  text-align: start;
+}
+
+.login-class-group + .login-class-group {
+  margin-top: clamp(16px, 1.8vw, 22px);
+}
+
+.login-class-group-title {
+  margin: 0 0 clamp(8px, 0.9vw, 11px);
+  color: #566562;
+  font-size: clamp(11.5px, calc(11px + 0.14vw), 13px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: start;
+}
+
+.login-class-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(8px, 0.9vw, 11px);
+}
+
+.login-journey-form label.login-class-option {
+  display: flex;
+  min-width: 0;
+  min-height: clamp(50px, 4.6vw, 58px);
+  align-items: center;
+  gap: clamp(10px, 1vw, 13px);
+  margin: 0;
+  padding: clamp(10px, 1.1vw, 13px) clamp(12px, 1.3vw, 16px);
+  border: 1px solid #d5e0da;
+  border-radius: clamp(10px, 1vw, 13px);
+  background: #fff;
+  color: #2a3c38;
+  font-size: clamp(12.5px, calc(11.8px + 0.16vw), 14px);
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: start;
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.login-journey-form label.login-class-option:hover {
+  border-color: #9bb3a7;
+}
+
+.login-journey-form label.login-class-option:has(input:checked) {
+  border-color: #326c5c;
+  background: #edf5ef;
+  color: #1f4d3f;
+}
+
+.login-class-option:focus-within {
+  outline: 2px solid #326c5c;
+  outline-offset: 2px;
+}
+
+.login-journey-form .login-class-option input[type='radio'] {
+  appearance: auto;
+  flex: 0 0 18px;
+  width: 18px;
+  min-height: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  accent-color: #326c5c;
+  box-shadow: none;
+}
+
+/* ── Animations & responsive ───────────────────────────────────────────────── */
+@keyframes mpAuthSurfaceIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes loginJourneyIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes loginCountryEnter {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (min-width: 640px) {
+  .login-class-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .mp-expanded-registration-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 34vw);
+    gap: 18px;
+  }
+
+  .mp-role-preview {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .mp-expanded-registration-layout,
+  .mp-expanded-onboarding[data-auth-surface='connection'] .mp-expanded-registration-layout {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .mp-expanded-registration-layout .mp-expanded-form-card {
+    position: relative;
+    z-index: 4;
+  }
+}
+
+@media (max-width: 600px) {
+  .mp-preview-primary {
+    width: 100%;
+  }
+
+  .login-journey-names,
+  .login-journey-rules,
+  .login-student-details-step .login-journey-security {
+    grid-template-columns: 1fr;
+  }
+
+  .login-student-details-step .login-journey-rules {
+    grid-column: auto;
+  }
+
+  .login-student-details-step + .login-journey-actions {
+    flex-direction: column-reverse;
+  }
+
+  .login-student-details-step + .login-journey-actions .is-secondary {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) and (min-height: 660px) {
+  .login-journey-actions {
+    position: sticky;
+    bottom: 0;
+    z-index: 6;
+    padding: 12px 0 max(10px, env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 34%);
+  }
+}
+
+@media (pointer: coarse) {
+  .login-journey-names input,
+  .login-input input {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-expanded-onboarding,
+  .mp-role-preview,
+  .login-journey-step,
+  .login-dial-menu,
+  .login-journey-form label.login-class-option {
+    animation: none !important;
+    transition-duration: .01ms !important;
+  }
+}

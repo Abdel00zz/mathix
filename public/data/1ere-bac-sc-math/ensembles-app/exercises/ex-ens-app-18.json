@@ -1,0 +1,40 @@
+{
+  "id": "ex-ens-app-18",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Théorie des Ensembles — Propriétés avancées des ensembles",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "On considère les ensembles : $E = \\left\\{\\dfrac{\\pi}{5} + \\dfrac{k\\pi}{4} \\;\\ \\middle| \\;\\ k \\in \\mathbb{Z}\\right\\}$ et $F = \\left\\{\\dfrac{\\pi}{8} + \\dfrac{2k\\pi}{5} \\;\\ \\middle| \\;\\ k \\in \\mathbb{Z}\\right\\}$",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que : $(\\forall x \\in E)\\; \\cos(40x) = 1$",
+          "hint": "Pour $x = \\dfrac{\\pi}{5} + \\dfrac{k\\pi}{4}$, calculez $40x$ et vérifiez que c'est un multiple de $2\\pi$."
+        },
+        {
+          "id": "sq1b",
+          "content": "Montrer que : $(\\forall x \\in F)\\; \\cos(40x) = -1$",
+          "hint": "Pour $x = \\dfrac{\\pi}{8} + \\dfrac{2k\\pi}{5}$, calculez $40x$ et vérifiez que c'est un multiple impair de $\\pi$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "En déduire : $E \\cap F = \\varnothing$.",
+      "hint": "Si $x \\in E \\cap F$, alors $\\cos(40x) = 1$ et $\\cos(40x) = -1$ simultanément : c'est impossible."
+    },
+    {
+      "id": "q3",
+      "content": "On considère également : $A = \\{3\\pi + 2k\\pi \\mid k \\in \\mathbb{Z}\\}$ et $B = \\left\\{\\dfrac{\\pi}{3} + \\dfrac{2k\\pi}{3} \\;\\ \\middle| \\;\\ k \\in \\mathbb{Z}\\right\\}$. Montrer que $A \\subset B$.",
+      "hint": "Tout élément de $A$ est de la forme $3\\pi + 2k\\pi = (2k+3)\\pi$. Vérifiez qu'il peut s'écrire sous la forme $\\dfrac{\\pi}{3} + \\dfrac{2m\\pi}{3}$ pour un certain entier $m$."
+    },
+    {
+      "id": "q4",
+      "content": "A-t-on $B \\subset A$ ? Justifier.",
+      "hint": "Cherchez un élément de $B$ qui n'appartient pas à $A$. Essayez $k=0$ dans la définition de $B$."
+    }
+  ]
+}

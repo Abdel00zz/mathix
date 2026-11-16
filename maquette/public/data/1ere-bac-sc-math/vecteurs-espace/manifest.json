@@ -1,0 +1,50 @@
+{
+  "id": "vecteurs-espace",
+  "title": "Les vecteurs de l'espace",
+  "section": "algebre-geometrie",
+  "quizCount": 20,
+  "revisions": [
+    {
+      "id": "rev-vect-esp-1",
+      "title": "Fiche Complète : Vecteurs Espace",
+      "path": "data/1ere-bac-sc-math/vecteurs-espace/revisions/fiche_vecteurs_espace_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-vect-esp-01",
+      "path": "data/1ere-bac-sc-math/vecteurs-espace/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-vect-esp-02",
+      "path": "data/1ere-bac-sc-math/vecteurs-espace/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-vect-esp-03",
+      "path": "data/1ere-bac-sc-math/vecteurs-espace/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-vect-esp-04",
+      "path": "data/1ere-bac-sc-math/vecteurs-espace/exercises/ex_04.json"
+    },
+    {
+      "id": "ex-vect-esp-05",
+      "path": "data/1ere-bac-sc-math/vecteurs-espace/exercises/ex_05.json"
+    },
+    {
+      "id": "ex-vect-esp-06",
+      "path": "data/1ere-bac-sc-math/vecteurs-espace/exercises/ex_06.json"
+    },
+    {
+      "id": "ex-vect-esp-07",
+      "path": "data/1ere-bac-sc-math/vecteurs-espace/exercises/ex_07.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-vecteurs-espace-1",
+      "path": "data/1ere-bac-sc-math/vecteurs-espace/quiz/vecteurs-espace_quiz.json",
+      "questionsCount": 20
+    }
+  ]
+}

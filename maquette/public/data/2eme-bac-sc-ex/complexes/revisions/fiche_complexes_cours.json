@@ -1,0 +1,782 @@
+{
+  "header": {
+    "title": "Nombres complexes",
+    "subtitle": "Calculer, représenter, mesurer et résoudre avec les écritures complexes",
+    "context": "2BAC Sciences"
+  },
+  "lexique": [
+    {
+      "term": "Nombre complexe",
+      "arabic": "عدد مركب",
+      "category": "concept",
+      "symbol": "z=a+ib",
+      "definition": "Objet algébrique de la forme z=a+ib, où a et b sont réels et i vérifie i^2=-1. Il permet de représenter simultanément un calcul algébrique et un point du plan.",
+      "variants": [
+        "nombres complexes"
+      ]
+    },
+    {
+      "term": "Ensemble des nombres complexes",
+      "arabic": "مجموعة الأعداد المركبة",
+      "category": "concept",
+      "symbol": "\\mathbb{C}",
+      "definition": "Ensemble qui contient les nombres réels et l'élément i tel que i^2=-1. C'est le cadre naturel pour résoudre certaines équations sans solution réelle.",
+      "variants": [
+        "ensemble des complexes",
+        "mathbb C"
+      ]
+    },
+    {
+      "term": "Forme algébrique",
+      "arabic": "الصيغة الجبرية",
+      "category": "concept",
+      "symbol": "a+ib",
+      "definition": "Écriture unique d'un nombre complexe sous la forme a+ib. Elle sert à lire directement la partie réelle et la partie imaginaire.",
+      "variants": [
+        "forme algebrique",
+        "écriture algébrique",
+        "ecriture algebrique",
+        "algébrique",
+        "algebrique"
+      ]
+    },
+    {
+      "term": "Partie réelle",
+      "arabic": "الجزء الحقيقي",
+      "category": "concept",
+      "symbol": "\\operatorname{Re}(z)",
+      "definition": "Coefficient réel a dans l'écriture z=a+ib. Géométriquement, il correspond à l'abscisse du point associé au complexe.",
+      "variants": [
+        "partie reelle",
+        "Re(z)",
+        "parties réelles"
+      ]
+    },
+    {
+      "term": "Partie imaginaire",
+      "arabic": "الجزء التخيلي",
+      "category": "concept",
+      "symbol": "\\operatorname{Im}(z)",
+      "definition": "Coefficient réel b dans l'écriture z=a+ib. Géométriquement, il correspond à l'ordonnée du point associé au complexe.",
+      "variants": [
+        "partie imaginaire",
+        "Im(z)",
+        "parties imaginaires"
+      ]
+    },
+    {
+      "term": "Imaginaire pur",
+      "arabic": "عدد تخيلي صرف",
+      "category": "concept",
+      "symbol": "a=0",
+      "definition": "Nombre complexe dont la partie réelle est nulle. Il s'écrit sous la forme ib avec b réel.",
+      "variants": [
+        "imaginaire pure",
+        "imaginaires purs"
+      ]
+    },
+    {
+      "term": "Conjugué",
+      "arabic": "مرافق",
+      "category": "concept",
+      "symbol": "\\overline{z}",
+      "definition": "Si z=a+ib, son conjugué est a-ib. Il est utilisé pour simplifier des quotients, calculer un module et reconnaître des expressions réelles.",
+      "variants": [
+        "conjugue",
+        "conjuguée",
+        "conjuguee"
+      ]
+    },
+    {
+      "term": "Module",
+      "arabic": "معيار",
+      "category": "concept",
+      "symbol": "|z|",
+      "definition": "Distance du point associé à z à l'origine du plan complexe. Pour z=a+ib, on a |z|=sqrt(a^2+b^2).",
+      "variants": [
+        "modules"
+      ]
+    },
+    {
+      "term": "Argument",
+      "arabic": "عمدة",
+      "category": "concept",
+      "symbol": "\\arg(z)",
+      "definition": "Mesure d'un angle qui donne la direction du complexe non nul dans le plan. Il est défini modulo 2pi.",
+      "variants": [
+        "arg",
+        "arguments"
+      ]
+    },
+    {
+      "term": "Affixe",
+      "arabic": "لاحقة",
+      "category": "concept",
+      "symbol": "z_M",
+      "definition": "Nombre complexe associé à un point ou à un vecteur du plan. L'affixe transforme une situation géométrique en calcul sur les complexes.",
+      "variants": [
+        "affixes"
+      ]
+    },
+    {
+      "term": "Plan complexe",
+      "arabic": "المستوى العقدي",
+      "category": "concept",
+      "definition": "Plan muni d'un repère orthonormé direct où chaque point M(a,b) est associé au complexe a+ib.",
+      "variants": [
+        "plan des complexes"
+      ]
+    },
+    {
+      "term": "Forme trigonométrique",
+      "arabic": "الصيغة المثلثية",
+      "category": "concept",
+      "symbol": "r(\\cos\\theta+i\\sin\\theta)",
+      "definition": "Écriture d'un complexe non nul qui sépare sa longueur r et sa direction theta. Elle facilite les produits, quotients et puissances.",
+      "variants": [
+        "forme trigonometrique",
+        "écriture trigonométrique",
+        "ecriture trigonometrique",
+        "trigonométrique",
+        "trigonometrique"
+      ]
+    },
+    {
+      "term": "Forme exponentielle",
+      "arabic": "الصيغة الأسية",
+      "category": "concept",
+      "symbol": "re^{i\\theta}",
+      "definition": "Écriture condensée d'un complexe non nul fondée sur la formule d'Euler. Elle rend les rotations et les puissances particulièrement simples.",
+      "variants": [
+        "ecriture exponentielle",
+        "écriture exponentielle",
+        "exponentielle"
+      ]
+    },
+    {
+      "term": "Rotation",
+      "arabic": "دوران",
+      "category": "concept",
+      "symbol": "z'=a+e^{i\\theta}(z-a)",
+      "definition": "Transformation du plan qui conserve les distances et fait tourner les points autour d'un centre d'un angle donné.",
+      "variants": [
+        "rotations"
+      ]
+    },
+    {
+      "term": "Homothétie",
+      "arabic": "تحاكي",
+      "category": "concept",
+      "definition": "Transformation de centre fixé qui multiplie toutes les distances au centre par un même rapport réel.",
+      "variants": [
+        "homothetie",
+        "homothéties",
+        "homotheties"
+      ]
+    },
+    {
+      "term": "Lieu géométrique",
+      "arabic": "محل هندسي",
+      "category": "concept",
+      "definition": "Ensemble de tous les points qui vérifient une propriété donnée. En nombres complexes, il se décrit souvent par une condition sur z.",
+      "variants": [
+        "lieu geometrique",
+        "lieux géométriques",
+        "lieux geometriques"
+      ]
+    },
+    {
+      "term": "Alignement",
+      "arabic": "استقامية",
+      "category": "concept",
+      "definition": "Propriété de points situés sur une même droite. Avec les complexes, on l'établit souvent par un quotient réel.",
+      "variants": [
+        "alignés",
+        "alignes",
+        "aligner"
+      ]
+    },
+    {
+      "term": "Orthogonalité",
+      "arabic": "تعامد",
+      "category": "concept",
+      "definition": "Relation entre deux directions perpendiculaires. Avec les complexes, un quotient imaginaire pur non nul traduit souvent cette propriété.",
+      "variants": [
+        "orthogonalite",
+        "orthogonal",
+        "orthogonaux"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Les nombres complexes permettent d'\\objectif{calculer dans un plan où les équations et les rotations deviennent naturelles}. Ils prolongent les réels en introduisant $i^2=-1$, puis donnent une écriture efficace pour les points, les vecteurs, les longueurs et les angles. La \\defi{difficulté} principale est de choisir la bonne forme : algébrique pour identifier, conjuguée pour simplifier, trigonométrique ou exponentielle pour mesurer, tourner et élever à une puissance. Dans les exercices d'examen, ce chapitre sert à résoudre des équations, prouver un alignement, reconnaître une orthogonalité, étudier une transformation ou décrire un lieu géométrique.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonhard_Euler.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "15%",
+            "caption": "Leonhard Euler (1707–1783)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ensemble_c_forme_algebrique",
+      "category": "course",
+      "title": "Comment lire la forme algébrique d'un complexe ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certaines équations simples n'ont pas de solution réelle. Les nombres complexes ajoutent un nombre nouveau qui permet de dépasser ce blocage et de garder des règles de calcul proches de l'algèbre habituelle."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la forme algébrique $z=a+ib$} ?",
+          "media": {
+            "src": "figures/complex-plane.svg",
+            "type": "image",
+            "position": "inline-right",
+            "width": "42%",
+            "alt": "Point d'affixe z égal à a plus ib dans le plan complexe",
+            "caption": "Affixe $z=a+ib$",
+            "captionStyle": {
+              "align": "center",
+              "size": "xs"
+            },
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Il existe un ensemble appelé \\textbf{ensemble des nombres complexes}, noté $\\mathbb{C}$, qui contient $\\mathbb{R}$. Il contient un élément $i$ tel que $i^2=-1$.\\par\\smallskip Tout nombre complexe $z$ s'écrit d'une manière unique sous la forme $z=a+ib$, avec $(a,b)\\in\\mathbb{R}^2$. Le réel $a$ est la \\textbf{partie réelle} de $z$, notée $\\operatorname{Re}(z)$, et le réel $b$ est la \\textbf{partie imaginaire} de $z$, notée $\\operatorname{Im}(z)$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{reconnaître la nature d'un complexe} ?",
+          "content": "Si $z=a+ib$, avec $a,b\\in\\mathbb{R}$, alors :\\begin{itemize}\\item $z$ est réel lorsque $b=0$.\\item $z$ est imaginaire pur lorsque $a=0$.\\item $z=0$ lorsque $a=0$ et $b=0$.\\end{itemize}"
+        },
+        {
+          "type": "example",
+          "title": "Lecture directe de la forme algébrique",
+          "content": "\\itemsize{Pour $z_1=3-5i$, on lit $\\operatorname{Re}(z_1)=3$ et $\\operatorname{Im}(z_1)=-5$.}\\itemsize{Pour $z_2=-7$, on écrit $z_2=-7+0i$, donc $z_2\\in\\mathbb{R}$.}\\itemsize{Pour $z_3=4i$, on écrit $z_3=0+4i$, donc $z_3\\in i\\mathbb{R}$.}"
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{deux complexes sont-ils égaux} ?",
+          "content": "Si $z=a+ib$ et $w=a'+ib'$, avec $a,b,a',b'\\in\\mathbb{R}$, alors :\\par\\smallskip$$\\boxed{z=w\\Longleftrightarrow a=a'\\ \\text{et}\\ b=b'}$$\\par En particulier, $z=0$ si et seulement si $\\operatorname{Re}(z)=0$ et $\\operatorname{Im}(z)=0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\question{Lire la \\textbf{forme algébrique}, déterminer les \\textbf{parties réelle et imaginaire}, puis préciser la nature de $z_1=3-5i$, $z_2=-7$ et $z_3=4i$.}\\par\\smallskip\\itemsize{Pour $z_1=3-5i$, on lit $\\operatorname{Re}(z_1)=\\blank{3}$ et $\\operatorname{Im}(z_1)=\\blank{-5}$, donc $z_1$ est un complexe non réel.}\\itemsize{Pour $z_2=-7$, on écrit $z_2=-7+0i$, donc $z_2$ est \\textbf{réel}.}\\itemsize{Pour $z_3=4i$, on écrit $z_3=0+4i$, donc $z_3$ est \\textbf{imaginaire pur}.}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Déterminer les réels $x$ et $y$ tels que $(2x-1)+i(y+3)=5-2i$.}\\par\\smallskip\\textbf{D'abord}, on identifie les parties réelles : $2x-1=\\blank{5}$, donc $2x=6$ et $x=3$. \\textbf{Ensuite}, on identifie les parties imaginaires : $y+3=\\blank{-2}$, donc $y=-5$. \\textbf{Enfin}, les valeurs cherchées sont donc $\\boxed{x=3\\ \\text{et}\\ y=-5}$."
+        }
+      ]
+    },
+    {
+      "id": "calculs_algebriques",
+      "category": "course",
+      "title": "Comment effectuer les calculs algébriques dans $\\mathbb{C}$ ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fois la forme algébrique comprise, on peut calculer avec les complexes presque comme avec des expressions ordinaires. La seule règle à garder constamment en tête est que le carré de $i$ vaut un réel négatif."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{additionner, soustraire et multiplier} ?",
+          "content": "Soient $z=a+ib$ et $w=a'+ib'$, avec $a,b,a',b'\\in\\mathbb{R}$. Alors :\\begin{itemize}\\item $z+w=(a+a')+i(b+b')$ ;\\item $z-w=(a-a')+i(b-b')$ ;\\item $zw=(aa'-bb')+i(ab'+a'b)$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{supprimer $i$ au dénominateur} ?",
+          "content": "\\textbf{D'abord}, repérer le dénominateur $a+ib$. \\textbf{Ensuite}, multiplier le numérateur et le dénominateur par son conjugué $a-ib$. \\textbf{Puis}, utiliser $(a+ib)(a-ib)=a^2+b^2$. \\textbf{Enfin}, séparer la partie réelle et la partie imaginaire."
+        },
+        {
+          "type": "example",
+          "title": "Produit de deux complexes",
+          "content": "On développe $(2-3i)(1+4i)$ puis on remplace $i^2$ par $-1$ :\\par\\smallskip\\begin{align*}(2-3i)(1+4i)&=2+8i-3i-12i^2\\\\&=2+5i+12\\\\&=14+5i.\\end{align*}"
+        },
+        {
+          "type": "example",
+          "title": "Quotient sous forme algébrique",
+          "content": "Pour écrire $\\dfrac{3+i}{2-i}$ sous forme algébrique, on multiplie par $2+i$ :\\par\\smallskip\\begin{align*}\\dfrac{3+i}{2-i}&=\\dfrac{(3+i)(2+i)}{(2-i)(2+i)}\\\\&=\\dfrac{5+5i}{5}\\\\&=1+i.\\end{align*}"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer les puissances de $i$} ?",
+          "media": {
+            "src": "figures/i-powers-cycle.svg",
+            "type": "image",
+            "position": "inline-right",
+            "width": "42%",
+            "alt": "Cycle des puissances de i sur le cercle unité",
+            "caption": "Cycle de période $4$",
+            "captionStyle": {
+              "align": "center",
+              "size": "xs"
+            },
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Les puissances de $i$ se répètent avec une période égale à $4$ :\\par\\smallskip$$\\begin{array}{c|cccc} n\\pmod 4&0&1&2&3\\\\ \\hline i^n&1&i&-1&-i\\end{array}$$\\par Ainsi, pour tout $k\\in\\mathbb{N}$ : $i^{4k}=1$, $i^{4k+1}=i$, $i^{4k+2}=-1$ et $i^{4k+3}=-i$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Développer et réduire sous \\textbf{forme algébrique} le nombre $(2-3i)(1+4i)$ en utilisant $i^2=-1$.}\\par\\smallskip\\textbf{D'abord}, on développe :\\begin{align*}(2-3i)(1+4i)&=2+8i-3i-12i^2.\\end{align*} \\textbf{Enfin}, comme $i^2=\\blank{-1}$, on obtient :\\begin{align*}2+8i-3i-12i^2&=2+5i+\\blank{12}\\\\&=\\boxed{14+5i}.\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Rationaliser le dénominateur et écrire le quotient $\\dfrac{3+i}{2-i}$ sous \\textbf{forme algébrique} en utilisant le conjugué du dénominateur.}\\par\\smallskip\\textbf{D'abord}, le conjugué de $2-i$ est $\\blank{2+i}$. \\textbf{Enfin}, on multiplie le numérateur et le dénominateur par ce conjugué :\\begin{align*}\\dfrac{3+i}{2-i}&=\\dfrac{(3+i)(2+i)}{(2-i)(2+i)}\\\\&=\\dfrac{\\blank{5+5i}}{\\blank{5}}\\\\&=\\boxed{1+i}.\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminer les réels $a$ et $b$ tels que $a(1-i)+b(2+3i)=7+4i$.}\\par\\smallskip\\textbf{D'abord}, on met le membre de gauche sous forme algébrique :\\begin{align*}a(1-i)+b(2+3i)&=a-ai+2b+3bi\\\\&=\\blank{(a+2b)+i(-a+3b)}.\\end{align*} \\textbf{Ensuite}, on identifie avec $7+4i$ :\\par$$\\begin{array}{rcl}a+2b&=&7\\\\-a+3b&=&4\\end{array}$$ \\textbf{Puis}, en additionnant les deux équations, on obtient $5b=\\blank{11}$, donc $b=\\dfrac{11}{5}$. \\textbf{Enfin}, Puis $a=7-2b=7-\\dfrac{22}{5}=\\dfrac{13}{5}$. Ainsi $\\boxed{a=\\dfrac{13}{5}\\ \\text{et}\\ b=\\dfrac{11}{5}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\question{Réduire la puissance $i^{2026}$ en utilisant la \\textbf{période 4} des puissances de $i$.}\\par\\smallskip\\textbf{D'abord}, on divise $2026$ par $4$ : $2026=4\\times 506+\\blank{2}$. \\textbf{Enfin}, $i^{2026}=i^{4\\times 506+2}=i^2=\\boxed{-1}$."
+        }
+      ]
+    },
+    {
+      "id": "conjugue",
+      "category": "course",
+      "title": "Comment utiliser le conjugué pour simplifier et reconnaître ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le conjugué est un raccourci très utile. Il permet de transformer un quotient, de calculer un module, et de reconnaître rapidement si une expression est réelle ou imaginaire pure."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le conjugué d'un complexe} ?",
+          "media": {
+            "src": "figures/conjugate-symmetry.svg",
+            "type": "image",
+            "position": "inline-right",
+            "width": "42%",
+            "alt": "Symétrie des points d'affixes z et conjugué de z",
+            "caption": "Symétrie par rapport à l'axe réel",
+            "captionStyle": {
+              "align": "center",
+              "size": "xs"
+            },
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Si $z=a+ib$, avec $a,b\\in\\mathbb{R}$, le \\textbf{conjugué} de $z$ est le complexe :\\par\\smallskip$$\\boxed{\\overline{z}=a-ib}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les propriétés du conjugué} ?",
+          "content": "Pour tous complexes $z$ et $w$, et pour tout réel $\\alpha$, on a :\\begin{itemize}\\item $\\overline{z+w}=\\overline{z}+\\overline{w}$ ;\\item $\\overline{zw}=\\overline{z}\\,\\overline{w}$ ;\\item $\\overline{\\alpha z}=\\alpha\\overline{z}$ ;\\item $z+\\overline{z}=2\\operatorname{Re}(z)$ ;\\item $z-\\overline{z}=2i\\operatorname{Im}(z)$ ;\\item $z\\overline{z}=\\operatorname{Re}(z)^2+\\operatorname{Im}(z)^2$.\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Une erreur classique, que vous ne devez pas commettre : la formule correcte est $z-\\overline{z}=2i\\operatorname{Im}(z)$. Il ne faut pas oublier le facteur $i$."
+        },
+        {
+          "type": "example",
+          "title": "Somme d'un complexe et de son conjugué",
+          "content": "Si $w=\\dfrac{2+i}{1-i}$, alors $\\overline{w}=\\dfrac{2-i}{1+i}$. Ainsi $w+\\overline{w}=2\\operatorname{Re}(w)$, donc cette somme est réelle."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Soit $z=x+iy$, avec $x,y\\in\\mathbb{R}$. On suppose que $z+\\overline{z}=6$ et $z\\overline{z}=13$. Déterminer les valeurs possibles de $z$.}\\par\\smallskip\\textbf{D'abord}, on utilise $z+\\overline{z}=2x$. Donc $2x=\\blank{6}$ et $x=3$. \\textbf{Ensuite}, on utilise $z\\overline{z}=x^2+y^2$. Donc $3^2+y^2=13$, d'où $y^2=\\blank{4}$. \\textbf{Enfin}, ainsi $y=2$ ou $y=-2$. Les valeurs possibles sont $\\boxed{z=3+2i\\ \\text{ou}\\ z=3-2i}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrer que $w=\\dfrac{2+i}{1-i}+\\dfrac{2-i}{1+i}$ est un \\textbf{réel}.}\\par\\smallskip\\textbf{D'abord}, posons $u=\\dfrac{2+i}{1-i}$. Alors son conjugué est $\\overline{u}=\\blank{\\dfrac{2-i}{1+i}}$. \\textbf{Ensuite}, on reconnaît donc $w=u+\\overline{u}$. \\textbf{Puis}, or $u+\\overline{u}=2\\operatorname{Re}(u)$. Donc $w$ est un réel. \\textbf{Enfin}, on peut écrire $\\boxed{w\\in\\mathbb{R}}$."
+        }
+      ]
+    },
+    {
+      "id": "plan_complexe",
+      "category": "course",
+      "title": "Comment représenter un complexe par une affixe ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un complexe peut être lu comme un point du plan. Cette lecture transforme l'algèbre en géométrie : la partie réelle devient une abscisse et la partie imaginaire devient une ordonnée."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{l'affixe d'un point et d'un vecteur} ?",
+          "content": "Dans un repère orthonormé direct $(O\\,;\\overrightarrow{u}\\,;\\overrightarrow{v})$, le point $M(a,b)$ a pour affixe $z_M=a+ib$.\\par\\smallskip Si $A(z_A)$ et $B(z_B)$, alors le vecteur $\\overrightarrow{AB}$ a pour affixe :\\par\\smallskip$$\\boxed{z_{\\overrightarrow{AB}}=z_B-z_A}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{lire une question géométrique avec les affixes} ?",
+          "content": "\\textbf{D'abord}, traduire chaque point par son affixe. \\textbf{Ensuite}, transformer les vecteurs en différences d'affixes. \\textbf{Puis}, utiliser un module pour une longueur ou un argument pour un angle. \\textbf{Enfin}, rédiger la conclusion dans le langage géométrique demandé."
+        },
+        {
+          "type": "example",
+          "title": "Affixe d'un vecteur",
+          "content": "Si $A(1+2i)$ et $B(4-i)$, alors l'affixe de $\\overrightarrow{AB}$ est :\\par\\smallskip\\begin{align*}z_{\\overrightarrow{AB}}&=z_B-z_A\\\\&=(4-i)-(1+2i)\\\\&=3-3i.\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Dans le plan complexe, $A$ a pour affixe $1+2i$ et $B$ a pour affixe $4-i$. Calculer l'affixe du vecteur $\\overrightarrow{AB}$.}\\par\\smallskip\\textbf{D'abord}, L'affixe du vecteur $\\overrightarrow{AB}$ est $z_B-z_A$. \\textbf{Ensuite}, donc :\\begin{align*}z_{\\overrightarrow{AB}}&=(4-i)-(1+2i)\\\\&=\\blank{3-3i}.\\end{align*} \\textbf{Enfin}, ainsi $\\boxed{z_{\\overrightarrow{AB}}=3-3i}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Soient $A(a)$ et $B(b)$ avec $a=1+2i$ et $b=1-2i$. Déterminer l'affixe du \\textbf{milieu} de $[AB]$.}\\par\\smallskip\\textbf{D'abord}, L'affixe du milieu $P$ de $[AB]$ est $p=\\dfrac{a+b}{2}$. \\textbf{Ensuite}, on calcule :\\begin{align*}a+b&=(1+2i)+(1-2i)=\\blank{2}.\\end{align*} \\textbf{Enfin}, $p=\\dfrac{2}{2}=\\boxed{1}$."
+        }
+      ]
+    },
+    {
+      "id": "module_argument",
+      "category": "course",
+      "title": "Comment mesurer une longueur et une direction avec module et argument ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le module et l'argument donnent une lecture géométrique directe. Le module mesure une longueur, tandis que l'argument décrit une direction dans le plan."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le module d'un complexe} ?",
+          "media": {
+            "src": "figures/module-argument.svg",
+            "type": "image",
+            "position": "inline-right",
+            "width": "42%",
+            "alt": "Module et argument d'un complexe dans le plan",
+            "caption": "Module : longueur · argument : direction",
+            "captionStyle": {
+              "align": "center",
+              "size": "xs"
+            },
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Si $z=a+ib$, avec $a,b\\in\\mathbb{R}$, le \\textbf{module} de $z$ est le réel positif :\\par\\smallskip$$\\boxed{|z|=\\sqrt{a^2+b^2}}$$\\par Géométriquement, si $M(z)$, alors $|z|=OM$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{l'argument d'un complexe non nul} ?",
+          "content": "Soit $z\\neq 0$ et soit $M(z)$. Un \\textbf{argument} de $z$ est une mesure de l'angle $(\\overrightarrow{u},\\overrightarrow{OM})$. On écrit $\\arg(z)\\equiv \\theta\\ [2\\pi]$.\\par\\smallskip Si $z=a+ib$, alors :\\par$$\\cos\\theta=\\dfrac{a}{|z|}\\quad\\text{et}\\quad \\sin\\theta=\\dfrac{b}{|z|}.$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les propriétés du module} ?",
+          "content": "Pour tous complexes $z$ et $w$, on a :\\begin{itemize}\\item $|z|\\geq 0$ et $|z|=0\\Longleftrightarrow z=0$ ;\\item $|zw|=|z|\\,|w|$ ;\\item si $w\\neq 0$, alors $\\left|\\dfrac{z}{w}\\right|=\\dfrac{|z|}{|w|}$ ;\\item $|\\overline{z}|=|z|$ et $z\\overline{z}=|z|^2$.\\end{itemize}"
+        },
+        {
+          "type": "example",
+          "title": "Module et argument de $1+i$",
+          "content": "Pour $z=1+i$, on a $|z|=\\sqrt{1^2+1^2}=\\sqrt{2}$. De plus, $\\cos\\theta=\\dfrac{1}{\\sqrt2}=\\dfrac{\\sqrt2}{2}$ et $\\sin\\theta=\\dfrac{1}{\\sqrt2}=\\dfrac{\\sqrt2}{2}$, donc $\\arg(1+i)\\equiv \\dfrac{\\pi}{4}\\ [2\\pi]$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Déterminer le \\textbf{module} de $z=-3+4i$, puis interpréter le résultat comme une distance.}\\par\\smallskip\\textbf{D'abord}, on applique la formule du module :\\begin{align*}|z|&=\\sqrt{(-3)^2+4^2}\\\\&=\\sqrt{\\blank{9+16}}\\\\&=\\boxed{5}.\\end{align*} \\textbf{Enfin}, si $M$ a pour affixe $z$, alors $OM=|z|=5$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminer le \\textbf{module} et un \\textbf{argument} de $z=1+i$.}\\par\\smallskip\\textbf{D'abord}, on calcule le module : $|z|=\\sqrt{1^2+1^2}=\\blank{\\sqrt2}$. \\textbf{Ensuite}, si $\\theta=\\arg(z)$, alors :\\par$$\\begin{array}{c|c|c} z&\\cos\\theta&\\sin\\theta\\\\ \\hline 1+i&\\dfrac{\\sqrt2}{2}&\\dfrac{\\sqrt2}{2}\\end{array}$$ \\textbf{Enfin}, on reconnaît $\\theta\\equiv \\blank{\\dfrac{\\pi}{4}}\\ [2\\pi]$. Donc $\\boxed{|1+i|=\\sqrt2\\ \\text{et}\\ \\arg(1+i)\\equiv \\dfrac{\\pi}{4}\\ [2\\pi]}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Soient $a=2+i\\sqrt5$, $b=2-i\\sqrt5$ et $c=2-\\sqrt5$. Vérifier que le triangle $ABC$ est \\textbf{rectangle isocèle} en $C$.}\\par\\smallskip\\textbf{D'abord}, on calcule les modules : $|a|=\\sqrt{2^2+(\\sqrt5)^2}=\\blank{3}$ et $|b|=3$. Donc $OA=OB$. \\textbf{Ensuite}, pour comparer $\\overrightarrow{CA}$ et $\\overrightarrow{CB}$, on calcule :\\begin{align*}a-c&=\\sqrt5+i\\sqrt5=\\sqrt5(1+i),\\\\ b-c&=\\sqrt5-i\\sqrt5=\\sqrt5(1-i).\\end{align*} \\textbf{Puis}, ainsi :\\begin{align*}\\dfrac{a-c}{b-c}&=\\dfrac{1+i}{1-i}=\\blank{i}.\\end{align*} \\textbf{Enfin}, le quotient a pour module $1$ et un argument $\\dfrac{\\pi}{2}$. Donc $CA=CB$ et $(CA)\\perp(CB)$. Ainsi $\\boxed{ABC\\ \\text{est rectangle isocèle en}\\ C}$."
+        }
+      ]
+    },
+    {
+      "id": "formes_complexes",
+      "category": "course",
+      "title": "Quand choisir la forme algébrique, trigonométrique ou exponentielle ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Chaque écriture a une fonction précise. La forme algébrique sert surtout aux additions, tandis que les formes trigonométrique et exponentielle deviennent plus efficaces pour multiplier, diviser et élever à une puissance."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la forme trigonométrique} ?",
+          "content": "Si $z\\neq 0$, $r=|z|$ et $\\theta$ est un argument de $z$, alors :\\par\\smallskip$$\\boxed{z=r(\\cos\\theta+i\\sin\\theta)}$$\\par Cette écriture est appelée \\textbf{forme trigonométrique} de $z$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la forme exponentielle} ?",
+          "content": "Pour tout réel $\\theta$, on note $e^{i\\theta}=\\cos\\theta+i\\sin\\theta$.\\par\\smallskip Si $z\\neq 0$ et si $\\theta$ est un argument de $z$, alors :\\par$$\\boxed{z=|z|e^{i\\theta}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer en forme exponentielle} ?",
+          "media": {
+            "src": "figures/exponential-product.svg",
+            "type": "image",
+            "position": "inline-right",
+            "width": "42%",
+            "alt": "Produit de complexes en forme exponentielle",
+            "caption": "Modules × · arguments +",
+            "captionStyle": {
+              "align": "center",
+              "size": "xs"
+            },
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Si $z=re^{i\\theta}$ et $w=r'e^{i\\theta'}$, avec $r,r'>0$, alors :\\begin{itemize}\\item $zw=rr'e^{i(\\theta+\\theta')}$ ;\\item $\\dfrac{z}{w}=\\dfrac{r}{r'}e^{i(\\theta-\\theta')}$ ;\\item pour tout $n\\in\\mathbb{Z}$, $(re^{i\\theta})^n=r^ne^{in\\theta}$.\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{La forme algébrique $a+ib$ est adaptée aux additions, aux soustractions et à l'identification.}\\itemsize{La forme exponentielle $re^{i\\theta}$ est adaptée aux produits, aux quotients, aux puissances et aux rotations.}"
+        },
+        {
+          "type": "example",
+          "title": "Passage à la forme exponentielle",
+          "content": "Pour $z=-1-i$, on a $|z|=\\sqrt2$. Le point est dans le troisième quadrant et on peut prendre $\\theta\\equiv -\\dfrac{3\\pi}{4}\\ [2\\pi]$. Ainsi $z=\\sqrt2e^{-i\\frac{3\\pi}{4}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Convertir $z=-1-i$ en deux écritures.\\begin{enumerate}\\item Donner la \\textbf{forme trigonométrique}.\\item Donner la \\textbf{forme exponentielle}.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On calcule le module : $|z|=\\sqrt{(-1)^2+(-1)^2}=\\blank{\\sqrt2}$. Le point est dans le troisième quadrant et on peut choisir $\\theta\\equiv -\\dfrac{3\\pi}{4}\\ [2\\pi]$. Donc :\\par$$z=\\sqrt2\\left(\\cos\\left(-\\dfrac{3\\pi}{4}\\right)+i\\sin\\left(-\\dfrac{3\\pi}{4}\\right)\\right).$$\\item La forme exponentielle est $\\boxed{z=\\sqrt2e^{-i\\frac{3\\pi}{4}}}$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrer que $\\left(\\sqrt3\\left(\\cos\\dfrac{\\pi}{3}+i\\sin\\dfrac{\\pi}{3}\\right)\\right)^{2022}$ est un \\textbf{réel}.}\\par\\smallskip\\textbf{D'abord}, on écrit $z=\\sqrt3e^{i\\frac{\\pi}{3}}$. \\textbf{Ensuite}, alors :\\begin{align*}z^{2022}&=(\\sqrt3)^{2022}e^{i\\frac{2022\\pi}{3}}\\\\&=3^{1011}e^{i\\blank{674\\pi}}.\\end{align*} \\textbf{Puis}, comme $674\\pi=337\\times 2\\pi$, on a $e^{i674\\pi}=\\blank{1}$. \\textbf{Enfin}, $z^{2022}=3^{1011}\\in\\mathbb{R}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Soient $a=\\sqrt3(1-i)$ et $b=2+\\sqrt3+i$. On admet que $\\dfrac{b}{a}=\\dfrac{3+\\sqrt3}{3}e^{i\\frac{\\pi}{3}}$.\\begin{enumerate}\\item Écrire $a$ sous \\textbf{forme exponentielle}.\\item En déduire une forme exponentielle de $b$.\\item Vérifier que $b^{24}$ est réel.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On calcule $|a|=\\sqrt{(\\sqrt3)^2+(-\\sqrt3)^2}=\\blank{\\sqrt6}$ et un argument de $a$ est $-\\dfrac{\\pi}{4}$. Donc $a=\\sqrt6e^{-i\\frac{\\pi}{4}}$.\\item On multiplie les formes exponentielles :\\begin{align*}b&=a\\times \\dfrac{b}{a}\\\\&=\\sqrt6e^{-i\\frac{\\pi}{4}}\\times \\dfrac{3+\\sqrt3}{3}e^{i\\frac{\\pi}{3}}\\\\&=\\blank{\\dfrac{\\sqrt6(3+\\sqrt3)}{3}e^{i\\frac{\\pi}{12}}}.\\end{align*}\\item On élève à la puissance $24$ :\\begin{align*}b^{24}&=\\left(\\dfrac{\\sqrt6(3+\\sqrt3)}{3}\\right)^{24}e^{i\\cdot 24\\cdot \\frac{\\pi}{12}}\\\\&=\\left(\\dfrac{\\sqrt6(3+\\sqrt3)}{3}\\right)^{24}e^{i2\\pi}.\\end{align*}Donc $\\boxed{b^{24}\\in\\mathbb{R}}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "geometrie_complexe",
+      "category": "course",
+      "title": "Comment traduire distances, angles et configurations géométriques ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les complexes permettent de remplacer une configuration géométrique par un calcul. Une distance devient un module, un angle devient un argument, et une relation d'alignement ou d'orthogonalité devient une condition sur un quotient."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{traduire les distances et les angles} ?",
+          "content": "Soient $A(z_A)$, $B(z_B)$, $C(z_C)$ et $D(z_D)$, avec $A\\neq B$ et $C\\neq D$. Alors :\\par\\smallskip$$\\boxed{AB=|z_B-z_A|}$$\\par De plus :\\par$$\\left(\\overrightarrow{AB},\\overrightarrow{CD}\\right)\\equiv \\arg\\left(\\dfrac{z_D-z_C}{z_B-z_A}\\right)\\ [2\\pi].$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{reconnaître alignement et orthogonalité} ?",
+          "content": "Avec $A(z_A)$, $B(z_B)$ et $C(z_C)$, les points $A$, $B$ et $C$ sont alignés si et seulement si :\\par$$\\dfrac{z_C-z_A}{z_B-z_A}\\in\\mathbb{R}.$$\\par Les droites $(AB)$ et $(CD)$ sont perpendiculaires si et seulement si :\\par$$\\dfrac{z_D-z_C}{z_B-z_A}\\in i\\mathbb{R}.$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{reconnaître rapidement une configuration} ?",
+          "content": "\\textbf{D'abord}, choisir deux vecteurs utiles et écrire leurs affixes par différence. \\textbf{Ensuite}, former un quotient. \\textbf{Puis}, observer sa nature : réel pour l'alignement, imaginaire pur pour l'orthogonalité, module $1$ pour deux longueurs égales. \\textbf{Enfin}, combiner les informations pour conclure : triangle rectangle, isocèle, carré, losange ou cercle."
+        },
+        {
+          "type": "example",
+          "title": "Alignement par quotient réel",
+          "content": "Pour $A(1+2i)$, $B(3+6i)$ et $C(-1-2i)$ :\\par\\smallskip\\begin{align*}\\dfrac{z_C-z_A}{z_B-z_A}&=\\dfrac{(-1-2i)-(1+2i)}{(3+6i)-(1+2i)}\\\\&=\\dfrac{-2-4i}{2+4i}=-1.\\end{align*}\\par Comme $-1\\in\\mathbb{R}$, les points $A$, $B$ et $C$ sont alignés."
+        },
+        {
+          "type": "example",
+          "title": "Orthogonalité par quotient imaginaire pur",
+          "content": "Pour $A(0)$, $B(2+i)$, $C(1-i)$ et $D(2-3i)$ :\\par\\smallskip\\begin{align*}\\dfrac{z_D-z_C}{z_B-z_A}&=\\dfrac{(2-3i)-(1-i)}{2+i}\\\\&=\\dfrac{1-2i}{2+i}=-i.\\end{align*}\\par Comme $-i\\in i\\mathbb{R}$, on obtient $(AB)\\perp(CD)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Établir par quotient complexe que les points $A(1+2i)$, $B(3+6i)$ et $C(-1-2i)$ sont \\textbf{alignés}.}\\par\\smallskip\\textbf{D'abord}, on forme le quotient de deux affixes de vecteurs :\\begin{align*}\\dfrac{z_C-z_A}{z_B-z_A}&=\\dfrac{(-1-2i)-(1+2i)}{(3+6i)-(1+2i)}\\\\&=\\dfrac{\\blank{-2-4i}}{\\blank{2+4i}}\\\\&=-1.\\end{align*} \\textbf{Ensuite}, comme $-1\\in\\mathbb{R}$, le quotient est réel. \\textbf{Enfin}, $\\boxed{A,B,C\\ \\text{sont alignés}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Établir par quotient complexe que les droites $(AB)$ et $(CD)$ sont \\textbf{perpendiculaires} pour $A(0)$, $B(2+i)$, $C(1-i)$ et $D(2-3i)$.}\\par\\smallskip\\textbf{D'abord}, on calcule :\\begin{align*}\\dfrac{z_D-z_C}{z_B-z_A}&=\\dfrac{(2-3i)-(1-i)}{2+i}\\\\&=\\dfrac{1-2i}{2+i}.\\end{align*} \\textbf{Ensuite}, on multiplie par le conjugué du dénominateur :\\begin{align*}\\dfrac{1-2i}{2+i}&=\\dfrac{(1-2i)(2-i)}{5}\\\\&=\\dfrac{\\blank{-5i}}{5}=-i.\\end{align*} \\textbf{Enfin}, comme $-i\\in i\\mathbb{R}$, on obtient $\\boxed{(AB)\\perp(CD)}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Dans le plan complexe, on donne $a=1+2i$, $b=1-2i$, $c=\\dfrac{9+3i}{2}$ et $d=\\dfrac{3+3i}{2}$.\\begin{enumerate}\\item Déterminer l'affixe du \\textbf{milieu} de $[AB]$.\\item Montrer que $(CD)\\perp(AB)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item L'affixe du milieu $P$ de $[AB]$ est $p=\\dfrac{a+b}{2}$. Or $a+b=\\blank{2}$, donc $p=1$.\\item Pour tester l'orthogonalité, on calcule deux affixes de vecteurs :\\begin{align*}d-c&=\\dfrac{3+3i}{2}-\\dfrac{9+3i}{2}=-3,\\\\ a-b&=(1+2i)-(1-2i)=4i.\\end{align*}Ainsi :\\begin{align*}\\dfrac{d-c}{a-b}&=\\dfrac{-3}{4i}=\\blank{\\dfrac{3}{4}i}.\\end{align*}Le quotient est un imaginaire pur non nul, donc $\\boxed{(CD)\\perp(AB)}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "transformations",
+      "category": "course",
+      "title": "Comment modéliser les transformations usuelles avec les complexes ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les transformations géométriques se traduisent par des formules simples sur les affixes. Cette partie relie les calculs complexes aux rotations, translations et homothéties."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{écrire une transformation usuelle} ?",
+          "media": {
+            "src": "figures/rotation.svg",
+            "type": "image",
+            "position": "inline-right",
+            "width": "42%",
+            "alt": "Rotation de centre O dans le plan complexe",
+            "caption": "Rotation d'angle $\\theta$",
+            "captionStyle": {
+              "align": "center",
+              "size": "xs"
+            },
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Dans le plan complexe :\\par\\smallskip$$\\begin{array}{c|c|c} \\text{Transformation}&\\text{Écriture complexe}&\\text{Lecture}\\\\ \\hline \\text{Translation d'affixe }u&z'=z+u&\\text{même déplacement}\\\\ \\text{Homothétie de centre }\\Omega(\\omega)\\text{ et rapport }k&z'-\\omega=k(z-\\omega)&\\text{distances multipliées par }|k|\\\\ \\text{Rotation de centre }\\Omega(\\omega)\\text{ et angle }\\theta&z'-\\omega=e^{i\\theta}(z-\\omega)&\\text{direction tournée de }\\theta\\end{array}$$"
+        },
+        {
+          "type": "example",
+          "title": "Rotation de centre $O$",
+          "content": "Si $R$ est la rotation de centre $O$ et d'angle $\\dfrac{\\pi}{6}$, alors $z'=e^{i\\frac{\\pi}{6}}z$. Comme $e^{i\\frac{\\pi}{6}}=\\dfrac{\\sqrt3}{2}+\\dfrac12i$, on obtient $z'=\\dfrac12(\\sqrt3+i)z$."
+        },
+        {
+          "type": "example",
+          "title": "Homothétie de centre $C(c)$",
+          "content": "Si $h$ est l'homothétie de centre $C(c)$ et de rapport $\\dfrac23$, alors $z'-c=\\dfrac23(z-c)$. Donc $z'=\\dfrac23z+\\dfrac13c$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminer l'écriture complexe de la \\textbf{rotation} de centre $O$ et d'angle $\\dfrac{\\pi}{6}$.}\\par\\smallskip\\textbf{D'abord}, une rotation de centre $O$ et d'angle $\\theta$ s'écrit $z'=e^{i\\theta}z$. \\textbf{Enfin}, ici $\\theta=\\blank{\\dfrac{\\pi}{6}}$, donc :\\begin{align*}z'&=e^{i\\frac{\\pi}{6}}z\\\\&=\\left(\\blank{\\dfrac{\\sqrt3}{2}+\\dfrac12 i}\\right)z\\\\&=\\boxed{\\dfrac12(\\sqrt3+i)z}.\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminer l'écriture complexe de l'\\textbf{homothétie} de centre $C(c)$ et de rapport $\\dfrac23$.}\\par\\smallskip\\textbf{D'abord}, une homothétie de centre $C(c)$ et de rapport $k$ vérifie $z'-c=\\blank{k(z-c)}$. \\textbf{Enfin}, ici $k=\\blank{\\dfrac23}$, donc :\\begin{align*}z'-c&=\\dfrac23(z-c)\\\\z'&=\\dfrac23z+\\left(1-\\dfrac23\\right)c\\\\&=\\boxed{\\dfrac23z+\\dfrac13c}.\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Soient $a=e^{i\\frac{\\pi}{6}}$ et $b=\\dfrac32+\\dfrac{\\sqrt3}{2}i$. On considère la rotation $R$ de centre $A(a)$ et d'angle $\\dfrac{\\pi}{2}$.\\begin{enumerate}\\item Écrire l'expression complexe de $R$.\\item Déterminer l'affixe de l'image de $C(\\overline{a})$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On écrit $a$ sous forme algébrique : $a=\\cos\\dfrac{\\pi}{6}+i\\sin\\dfrac{\\pi}{6}=\\blank{\\dfrac{\\sqrt3}{2}+\\dfrac12 i}$. La rotation de centre $A(a)$ et d'angle $\\dfrac{\\pi}{2}$ vérifie $z'-a=i(z-a)$, donc $z'=iz+a(1-i)$.\\item Pour $C(\\overline{a})$, on remplace $z$ par $\\overline{a}$ :\\par$$z'-a=i(\\overline{a}-a).$$Or $\\overline{a}-a=-i$, donc $z'-a=i(-i)=\\blank{1}$. Ainsi l'affixe cherchée est $\\boxed{a+1}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "equations_second_degre",
+      "category": "course",
+      "title": "Comment résoudre une équation du second degré dans $\\mathbb{C}$ ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans les réels, une équation du second degré peut ne pas avoir de solution. Dans les complexes, le discriminant négatif donne deux solutions conjuguées."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{résoudre $az^2+bz+c=0$ dans $\\mathbb{C}$} ?",
+          "content": "Soit $az^2+bz+c=0$, avec $a\\neq 0$ et $a,b,c\\in\\mathbb{R}$. On pose $\\Delta=b^2-4ac$.\\begin{itemize}\\item Si $\\Delta>0$, les solutions sont réelles : $z_1=\\dfrac{-b-\\sqrt\\Delta}{2a}$ et $z_2=\\dfrac{-b+\\sqrt\\Delta}{2a}$.\\item Si $\\Delta=0$, la solution double est $z_0=-\\dfrac{b}{2a}$.\\item Si $\\Delta<0$, les solutions sont $z_1=\\dfrac{-b-i\\sqrt{-\\Delta}}{2a}$ et $z_2=\\dfrac{-b+i\\sqrt{-\\Delta}}{2a}$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{traiter une équation complexe du second degré} ?",
+          "content": "\\textbf{D'abord}, identifier $a$, $b$ et $c$. \\textbf{Ensuite}, calculer le discriminant $\\Delta=b^2-4ac$. \\textbf{Puis}, choisir la formule selon le signe de $\\Delta$. \\textbf{Enfin}, simplifier les racines et vérifier si une forme demandée est algébrique, trigonométrique ou exponentielle."
+        },
+        {
+          "type": "example",
+          "title": "Discriminant négatif",
+          "content": "Pour $z^2-4z+9=0$, on a $\\Delta=(-4)^2-4\\times1\\times9=-20$. Comme $\\Delta<0$, les solutions sont $2-i\\sqrt5$ et $2+i\\sqrt5$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résoudre dans $\\mathbb{C}$ l'équation $z^2-4z+9=0$ en utilisant le \\textbf{discriminant}.}\\par\\smallskip\\textbf{D'abord}, on calcule :\\begin{align*}\\Delta&=(-4)^2-4\\times1\\times9\\\\&=16-36=\\blank{-20}.\\end{align*} \\textbf{Ensuite}, comme $\\Delta<0$, les solutions sont complexes conjuguées :\\begin{align*}z_1&=\\dfrac{4-i\\sqrt{20}}{2}=\\blank{2-i\\sqrt5},\\\\z_2&=\\dfrac{4+i\\sqrt{20}}{2}=\\blank{2+i\\sqrt5}.\\end{align*} \\textbf{Enfin}, $\\boxed{S=\\{2-i\\sqrt5,\\,2+i\\sqrt5\\}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Résoudre dans $\\mathbb{C}$ l'équation $8z^3+1=0$ en utilisant une \\textbf{somme de cubes}.}\\par\\smallskip\\textbf{D'abord}, on reconnaît $8z^3+1=(2z)^3+1^3$, donc :\\par$$8z^3+1=(2z+1)(4z^2-2z+1).$$ \\textbf{Ensuite}, la première équation donne $2z+1=0$, donc $z=\\blank{-\\dfrac12}$. \\textbf{Puis}, pour $4z^2-2z+1=0$, on calcule $\\Delta=(-2)^2-4\\times4\\times1=\\blank{-12}$. \\textbf{Après cela}, les deux autres solutions sont :\\par$$z=\\dfrac{2\\pm i\\sqrt{12}}{8}=\\dfrac14\\pm\\dfrac{\\sqrt3}{4}i.$$ \\textbf{Enfin}, $\\boxed{S=\\left\\{-\\dfrac12,\\dfrac14-\\dfrac{\\sqrt3}{4}i,\\dfrac14+\\dfrac{\\sqrt3}{4}i\\right\\}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{On considère $(E): z^2-2(\\sqrt2+\\sqrt6)z+16=0$.\\begin{enumerate}\\item Vérifier l'expression du \\textbf{discriminant}.\\item Résoudre $(E)$ dans $\\mathbb{C}$.\\item Écrire une solution sous \\textbf{forme trigonométrique}.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Le discriminant vaut :\\begin{align*}\\Delta&=\\left[-2(\\sqrt2+\\sqrt6)\\right]^2-64\\\\&=4(\\sqrt2+\\sqrt6)^2-64\\\\&=16\\sqrt3-32\\\\&=\\blank{-4(\\sqrt6-\\sqrt2)^2}.\\end{align*}\\item Comme $\\Delta<0$, les solutions sont :\\par$$z_1=(\\sqrt2+\\sqrt6)-i(\\sqrt6-\\sqrt2),\\quad z_2=(\\sqrt2+\\sqrt6)+i(\\sqrt6-\\sqrt2).$$\\item Pour $z_2$, on calcule $|z_2|^2=(\\sqrt6+\\sqrt2)^2+(\\sqrt6-\\sqrt2)^2=\\blank{16}$, donc $|z_2|=4$. De plus, $\\cos\\theta=\\dfrac{\\sqrt6+\\sqrt2}{4}$ et $\\sin\\theta=\\dfrac{\\sqrt6-\\sqrt2}{4}$, donc $\\theta=\\dfrac{\\pi}{12}$. Ainsi $\\boxed{z_2=4\\left(\\cos\\dfrac{\\pi}{12}+i\\sin\\dfrac{\\pi}{12}\\right)}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "lieux_geometriques",
+      "category": "course",
+      "title": "Comment identifier un lieu géométrique par une condition complexe ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un lieu géométrique s'obtient en traduisant une condition complexe. Le plus souvent, il s'agit d'une distance, d'une égalité de distances, d'un alignement ou d'une équation cartésienne."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{traduire une condition complexe en lieu} ?",
+          "content": "Pour un point $M(z)$ :\\par\\smallskip$$\\begin{array}{c|c|c}\\text{Condition complexe}&\\text{Interprétation}&\\text{Ensemble obtenu}\\\\ \\hline |z-a|=r&\\text{distance à }A(a)\\text{ égale à }r&\\text{cercle}\\\\ |z-a|=|z-b|&\\text{distances à }A\\text{ et }B\\text{ égales}&\\text{médiatrice de }[AB]\\\\ \\dfrac{z-a}{b-a}\\in\\mathbb{R}&A,M,B\\text{ alignés}&\\text{droite }(AB)\\\\ \\operatorname{Re}(z)=\\alpha&\\text{abscisse constante}&\\text{droite verticale}\\\\ \\operatorname{Im}(z)=\\beta&\\text{ordonnée constante}&\\text{droite horizontale}\\end{array}$$"
+        },
+        {
+          "type": "example",
+          "title": "Cercle défini par un module",
+          "content": "La relation $|z-(2-i)|=3$ signifie que la distance entre $M(z)$ et le point $A(2-i)$ vaut $3$. L'ensemble cherché est donc le cercle de centre $A(2-i)$ et de rayon $3$."
+        },
+        {
+          "type": "example",
+          "title": "Médiatrice définie par une égalité de distances",
+          "content": "La relation $|z-1|=|z-(3+2i)|$ signifie que $M$ est à égale distance de $A(1)$ et de $B(3+2i)$. En posant $z=x+iy$, on obtient $(x-1)^2+y^2=(x-3)^2+(y-2)^2$, donc $x+y=3$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Traduire la condition complexe et déterminer l'ensemble des points $M(z)$ tels que $|z-(2-i)|=3$.}\\par\\smallskip\\textbf{D'abord}, la relation $|z-(2-i)|=3$ signifie que la distance entre $M$ et le point $A(2-i)$ vaut $\\blank{3}$. \\textbf{Ensuite}, L'ensemble cherché est donc le cercle de centre $A(2-i)$ et de rayon $3$. \\textbf{Enfin}, on écrit $\\boxed{\\mathcal{C}(A,3)}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Traduire la condition complexe et déterminer l'ensemble des points $M(z=x+iy)$ tels que $|z-1|=|z-(3+2i)|$.}\\par\\smallskip\\textbf{D'abord}, cette relation signifie que $M$ est à égale distance de $A(1)$ et $B(3+2i)$. L'ensemble est la médiatrice de $[AB]$. \\textbf{Ensuite}, pour obtenir l'équation, on écrit :\\par$$(x-1)^2+y^2=(x-3)^2+(y-2)^2.$$ \\textbf{Puis}, en développant et en simplifiant, on obtient $\\blank{x+y=3}$. \\textbf{Enfin}, l'ensemble cherché est la droite $\\boxed{x+y=3}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Soient les cercles $(\\Gamma): |z+2|=2$ et $(\\Gamma'): |z|=4$. Déterminer leur point d'intersection.}\\par\\smallskip\\textbf{D'abord}, la relation $|z+2|=2$ définit le cercle de centre $-2$ et de rayon $2$. La relation $|z|=4$ définit le cercle de centre $O$ et de rayon $4$. \\textbf{Ensuite}, pour un point commun, $|z+2|^2=4$. Donc :\\begin{align*}(z+2)(\\overline{z}+2)&=4\\\\z\\overline{z}+2z+2\\overline{z}+4&=4.\\end{align*} \\textbf{Puis}, comme $|z|=4$, on a $z\\overline{z}=\\blank{16}$. Ainsi $16+2z+2\\overline{z}=0$, donc $z+\\overline{z}=-8$. \\textbf{Après cela}, si $z=x+iy$, alors $z+\\overline{z}=2x$, donc $x=\\blank{-4}$. \\textbf{Enfin}, comme $|z|=4$, on a $x^2+y^2=16$, donc $(-4)^2+y^2=16$ et $y=0$. L'unique point commun a pour affixe $\\boxed{z=-4}$."
+        }
+      ]
+    }
+  ]
+}

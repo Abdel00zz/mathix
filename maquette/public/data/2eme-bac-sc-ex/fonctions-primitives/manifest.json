@@ -1,0 +1,39 @@
+{
+  "id": "fonctions-primitives",
+  "title": "Fonctions primitives",
+  "section": "analyse",
+  "revisions": [
+    {
+      "id": "rev-prim-2bac",
+      "title": "Fiche Compléte : Primitives",
+      "path": "data/2eme-bac-sc-ex/fonctions-primitives/revisions/fiche_primitives_cours.json"
+    },
+    {
+      "id": "rev-prim-complements-2bac",
+      "path": "data/2eme-bac-sc-ex/fonctions-primitives/revisions/fiche_primitives_complements.json",
+      "title": "Fonctions Primitives — Fiche de Cours & Méthodes"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-fonctions-primitives-01",
+      "path": "data/2eme-bac-sc-ex/fonctions-primitives/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-fonctions-primitives-02",
+      "path": "data/2eme-bac-sc-ex/fonctions-primitives/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-fonctions-primitives-03",
+      "path": "data/2eme-bac-sc-ex/fonctions-primitives/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-fonctions-primitives-01",
+      "path": "data/2eme-bac-sc-ex/fonctions-primitives/quiz/fonctions-primitives_quiz.json",
+      "questionsCount": 14
+    }
+  ],
+  "quizCount": 14
+}

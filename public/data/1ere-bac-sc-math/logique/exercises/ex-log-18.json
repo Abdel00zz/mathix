@@ -1,0 +1,25 @@
+{
+  "id": "ex-log-18",
+  "theme": "logique",
+  "difficulty": "moyen",
+  "topic": "Logique & Raisonnements — Raisonnement par l'absurde",
+  "requiresRedaction": true,
+  "context": "On considère la fonction $f$ définie sur $\\mathbb{R}$ par $f(x) = x^2 + 2x$.",
+  "questions": [
+    {
+      "id": "qa",
+      "content": "Montrer que la fonction $f$ n'est pas paire.",
+      "hint": "Calculez $f(-x)$ et comparez à $f(x)$ ; ou trouvez un $x$ tel que $f(-x) \\neq f(x)$."
+    },
+    {
+      "id": "qb",
+      "content": "Montrer qu'il n'existe aucun réel positif $M$ tel que pour tout $x \\in \\mathbb{R}$ : $f(x) \\leq M$.",
+      "hint": "Supposez par l'absurde qu'un tel $M$ existe, et cherchez un $x$ tel que $f(x) > M$."
+    },
+    {
+      "id": "qc",
+      "content": "Montrer que, pour trois réels strictement positifs vérifiant $a + b + c < \\dfrac{1}{a} + \\dfrac{1}{b} + \\dfrac{1}{c}$ et $abc > 1$ : au moins un des nombres $a$, $b$, $c$ est inférieur à 1.",
+      "hint": "Supposez par l'absurde que $a \\geq 1$, $b \\geq 1$, $c \\geq 1$. Alors $abc \\geq 1$ et $a + b + c \\geq \\dfrac{1}{a} + \\dfrac{1}{b} + \\dfrac{1}{c}$ par AM-GM — contradiction."
+    }
+  ]
+}

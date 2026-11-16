@@ -1,0 +1,372 @@
+{
+  "questions": [
+    {
+      "id": "q1_fond_inclusions",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Quelle est la bonne chaîne d'inclusions pour les ensembles de nombres ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathbb{Z} \\subset \\mathbb{N} \\subset \\mathbb{D} \\subset \\mathbb{R} \\subset \\mathbb{Q}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb{N} \\subset \\mathbb{D} \\subset \\mathbb{Z} \\subset \\mathbb{Q} \\subset \\mathbb{R}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{D} \\subset \\mathbb{Q} \\subset \\mathbb{R}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\mathbb{Q} \\subset \\mathbb{D} \\subset \\mathbb{Z} \\subset \\mathbb{N} \\subset \\mathbb{R}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'ordre strict des ensembles, du plus petit (entiers naturels) au plus grand (réels) est $\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{D} \\subset \\mathbb{Q} \\subset \\mathbb{R}$."
+    },
+    {
+      "id": "q2_fond_classification",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "À quel ensemble appartient le nombre $-7$ (comme plus petit ensemble) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathbb{N}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb{Z}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\mathbb{D}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\mathbb{Q}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$-7$ est un entier négatif. Il n'appartient pas à $\\mathbb{N}$ (entiers naturels, positifs). Le plus petit ensemble le contenant est donc $\\mathbb{Z}$ (entiers relatifs)."
+    },
+    {
+      "id": "q3_fond_decimaux",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Le nombre $\\frac{1}{3}$ est un nombre décimal.",
+      "isTrue": false,
+      "explanation": "Faux. Un nombre décimal (dans $\\mathbb{D}$) s'écrit sous la forme $\\frac{a}{10^n}$. Si on fait la division usuelle $1 \\div 3$, on obtient $0{,}333\\dots$ avec une infinité de chiffres, ce qui n'est pas décimal. Il appartient à $\\mathbb{Q} \\setminus \\mathbb{D}$."
+    },
+    {
+      "id": "q4_fond_racine_signe",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Le résultat de $\\sqrt{x}$ peut être négatif si $x>0$.",
+      "isTrue": false,
+      "explanation": "Par définition fondamentale, la racine carrée d'un réel positif est **l'unique** réel **positif** dont le carré est $x$. $\\sqrt{x}$ est donc toujours supérieur ou égal à zéro."
+    },
+    {
+      "id": "q5_cons_fraction_add",
+      "type": "error",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Identifiez l'erreur dans cette addition de fractions :",
+      "context": "On cherche à calculer $A = \\dfrac{3}{4} + \\dfrac{5}{6}$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On cherche un dénominateur commun : le PPCM de 4 et 6 est 12.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "On récrit chaque fraction avec ce dénominateur : $\\dfrac{3 \\times 3}{12} + \\dfrac{5 \\times 2}{12}$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "On additionne numérateurs et dénominateurs : $\\dfrac{9+10}{12+12} = \\dfrac{19}{24}$.",
+          "isError": true,
+          "correction": "On n'additionne JAMAIS les dénominateurs ! La bonne méthode est d'additionner les numérateurs sur un dénominateur qui reste inchangé : $\\dfrac{19}{12}$."
+        },
+        {
+          "id": "s4",
+          "text": "La fraction finale est rendue irréductible.",
+          "isError": false
+        }
+      ],
+      "explanation": "L'addition horizontale des dénominateurs est l'erreur la plus persistante. Pensez au fait que 3 quarts plus 5 sixièmes restent des parts, on n'ajoute pas les \"types\" de parts entre eux."
+    },
+    {
+      "id": "q6_cons_racine_prod",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Quelle est la forme simplifiée de $\\sqrt{75}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$7\\sqrt{5}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$3\\sqrt{5}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$5\\sqrt{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$25\\sqrt{3}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour simplifier, on décompose : $75 = 25 \\times 3$. Puisque $\\sqrt{a \\times b} = \\sqrt{a} \\times \\sqrt{b}$, on obtient $\\sqrt{25} \\times \\sqrt{3} = 5\\sqrt{3}$."
+    },
+    {
+      "id": "q7_cons_puissance",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Parmi les règles de puissances suivantes, laquelle est EXACTE ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a^m \\times a^n = a^{m \\times n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(a+b)^n = a^n + b^n$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(a^m)^n = a^{m \\times n}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$a^m + a^n = a^{m+n}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La puissance d'une puissance équivaut à la multiplication des exposants : $(a^m)^n = a^{mn}$. Les règles portant sur les sommes comme $(a+b)^n = a^n+b^n$ sont complètement fausses."
+    },
+    {
+      "id": "q8_cons_identite",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Sous quelle forme factorisée peut-on écrire $a^3 - b^3$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(a-b)^3$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(a-b)(a^2 + ab + b^2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$(a-b)(a^2 - ab + b^2)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(a+b)(a^2 - ab + b^2)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'identité remarquable de factorisation pour la différence de deux cubes est $a^3 - b^3 = (a-b)(a^2 + ab + b^2)$."
+    },
+    {
+      "id": "q9_maitrise_erreur_racine",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Pour tous réels positifs $a$ et $b$, l'égalité $\\sqrt{a + b} = \\sqrt{a} + \\sqrt{b}$ est vraie.",
+      "isTrue": false,
+      "explanation": "C'est l'erreur numéro une sur les racines. La racine carrée ne se distribue **jamais** sur une somme. Exemple flagrant : $\\sqrt{9+16} = \\sqrt{25} = 5$. Mais $\\sqrt{9} + \\sqrt{16} = 3+4=7$. Or $5 \\neq 7$."
+    },
+    {
+      "id": "q10_maitrise_puissance_calc",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "ambiguity_note": "Confusion classique entre règle d'addition d'exposants de bases égales vs addition de nombres normaux.",
+      "prompt": "Si on calcule $B = 3^6 \\times 3^{-4}$, on obtient :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$9^{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$3^{10}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$9$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$3^{-24}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La règle est $a^m \\times a^n = a^{m+n}$. Ici, $3^6 \\times 3^{-4} = 3^{6 + (-4)} = 3^2 = 9$. Le piège est de multiplier les exposants (réponse d) ou de multiplier les bases entre elles (réponse a)."
+    },
+    {
+      "id": "q11_maitrise_scientifique",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Lequel de ces nombres est écrit **correctement** sous forme scientifique ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}15 \\times 10^4$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$35 \\times 10^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$7{,}23 \\times 10^{-3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$-50{,}7 \\times 10^1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'écriture scientifique de $x$ requiert un nombre $a$ tel que $1 \\leq |a| < 10$. Dans la réponse choisie, $7{,}23$ respecte cette condition. $0{,}15$ est inférieur à 1, et $35$ ainsi que $50{,}7$ sont supérieurs à 10."
+    },
+    {
+      "id": "q12_depassement_decimaux",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "ambiguity_note": "Peu d'élèves lisent attentivement la règle : le dénominateur DOIT être décomposé en 2 et 5 uniquement pour appartenir à D.",
+      "prompt": "Sans faire la division complète, comment se certifier que la fraction irréductible $\\frac{7}{40}$ est un nombre décimal (appartient à $\\mathbb{D}$) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Parce qu'elle possède une fraction de décimale.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Parce que 40 est un multiple de 10.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Parce que la décomposition du dénominateur 40 contient un 3.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Parce que la décomposition du dénominateur 40 ne contient que des facteurs premiers 2 et 5.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Une fraction irréductible appartient à $\\mathbb{D}$ ssi son dénominateur n'admet que $2$ ou $5$ en facteurs premiers. Or, $40 = 8 \\times 5 = 2^3 \\times 5$. Il n'y a que des $2$ et des $5$, donc $\\frac{7}{40}$ a un développement décimal fini."
+    },
+    {
+      "id": "q13_depassement_ordre",
+      "type": "order",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Ordonnez les étapes de la conversion du nombre $x = 0{,}00723$ en écriture scientifique :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Repérer la position de la virgule."
+        },
+        {
+          "id": "b",
+          "content": "Déplacer la virgule vers la droite pour isoler un premier chiffre non nul (7)."
+        },
+        {
+          "id": "c",
+          "content": "Compter le nombre de déplacements (3 rangs vers la droite)."
+        },
+        {
+          "id": "d",
+          "content": "Mettre l'exposant en négatif ($10^{-3}$) car le nombre de base était inférieur à 1."
+        },
+        {
+          "id": "e",
+          "content": "Écrire la forme finale : $7{,}23 \\times 10^{-3}$."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "explanation": "Le procédé impose de visualiser la virgule, la décaler au bon endroit, compter les rangs et appliquer la règle du signe de la puissance selon si on zoom sur un nombre petit (droite/négatif) ou macro (gauche/positif)."
+    },
+    {
+      "id": "q14_depassement_complexe",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Si vous avez la fraction $\\frac{1}{3 + \\sqrt{2}}$, quelle valeur multiplie le numérateur et le dénominateur pour le rendre rationnel (entier) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$3 - \\sqrt{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$3 + \\sqrt{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt{3} + 2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est la méthode de la 'quantité conjuguée'. Le multiplicateur est $3-\\sqrt{2}$ afin d'exploiter l'identité $(a+b)(a-b) = a^2 - b^2$, faisant ainsi sauter la racine carrée du dénominateur : $(3+\\sqrt{2})(3-\\sqrt{2}) = 9 - 2 = 7$."
+    }
+  ]
+}

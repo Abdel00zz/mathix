@@ -1,0 +1,83 @@
+{
+  "id": "geometrie-analytique-espace",
+  "title": "Géométrie analytique dans l'espace",
+  "section": "algebre-geometrie",
+  "revisions": [
+    {
+      "id": "rev-geom-analytique-2bac",
+      "title": "Fiche Complète : Géométrie Analytique",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/revisions/fiche_geometrie_analytique_cours.json"
+    },
+    {
+      "id": "rev-geom-espace-2bac",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/revisions/fiche_geometrie_espace_cours.json",
+      "title": "Produit vectoriel dans l'espace — De l'orientation à l'équation d'un plan"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-esp-01",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-esp-02",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-esp-03",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-esp-04",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_04.json"
+    },
+    {
+      "id": "ex-esp-05",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_05.json"
+    },
+    {
+      "id": "ex-esp-06",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_06.json"
+    },
+    {
+      "id": "ex-esp-07",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_07.json"
+    },
+    {
+      "id": "ex-esp-08",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_08.json"
+    },
+    {
+      "id": "ex-esp-09",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_09.json"
+    },
+    {
+      "id": "ex-esp-10",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_10.json"
+    },
+    {
+      "id": "ex-esp-11",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_11.json"
+    },
+    {
+      "id": "ex-esp-12",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_12.json"
+    },
+    {
+      "id": "ex-esp-13",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_13.json"
+    },
+    {
+      "id": "ex-esp-14",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/exercises/ex_14.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-geometrie-analytique-espace-01",
+      "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/quiz/geometrie-analytique-espace_quiz.json",
+      "questionsCount": 24
+    }
+  ],
+  "quizCount": 24
+}

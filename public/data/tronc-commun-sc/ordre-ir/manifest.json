@@ -1,0 +1,34 @@
+{
+  "id": "ordre-ir",
+  "title": "L'ordre dans $\\mathbb{R}$",
+  "section": "algebre-geometrie",
+  "quizCount": 13,
+  "revisions": [
+    {
+      "id": "rev-ordre-tc",
+      "title": "Fiche Complète : Ordre & Valeur Absolue",
+      "path": "data/tronc-commun-sc/ordre-ir/revisions/fiche_ordre_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-ordre-tc-01",
+      "path": "data/tronc-commun-sc/ordre-ir/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-ordre-tc-02",
+      "path": "data/tronc-commun-sc/ordre-ir/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-ordre-ir-01",
+      "path": "data/tronc-commun-sc/ordre-ir/exercises/ex_ordre_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-ordre-ir-01",
+      "path": "data/tronc-commun-sc/ordre-ir/quiz/ordre-ir_quiz.json",
+      "questionsCount": 13
+    }
+  ]
+}

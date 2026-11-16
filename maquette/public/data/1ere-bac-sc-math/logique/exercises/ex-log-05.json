@@ -1,0 +1,40 @@
+{
+  "id": "ex-log-05",
+  "theme": "logique",
+  "difficulty": "facile",
+  "topic": "Logique & Raisonnements — Logique propositionnelle",
+  "requiresRedaction": true,
+  "context": "En utilisant un raisonnement par contre-exemple, montrer que les propositions suivantes sont fausses :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$P : (\\forall x \\in ]0;1[)\\; \\dfrac{2x+1}{x^2(1-x^2)} < 1$",
+      "hint": "Cherchez une valeur de $x$ proche de 0 ou de 1 pour laquelle l'inégalité est violée."
+    },
+    {
+      "id": "q2",
+      "content": "$Q$ : « Pour tout entier naturel $n$, le nombre $n^3$ est impair »",
+      "hint": ""
+    },
+    {
+      "id": "q3",
+      "content": "$R : (\\forall x \\in \\mathbb{R}^*)\\; x + \\dfrac{1}{x} \\geq 2$",
+      "hint": "Testez avec un réel négatif."
+    },
+    {
+      "id": "q4",
+      "content": "$S : (\\forall(a;b) \\in \\mathbb{R}^2)\\; \\sqrt{a^2+b^2} = a+b$",
+      "hint": ""
+    },
+    {
+      "id": "q5",
+      "content": "$T$ : « Tout entier naturel divisible par 2 et par 6 est divisible par 12 »",
+      "hint": ""
+    },
+    {
+      "id": "q6",
+      "content": "$U : (\\forall x \\in \\mathbb{R})\\; 3\\cos x \\neq 2\\sin^2 x$",
+      "hint": ""
+    }
+  ]
+}

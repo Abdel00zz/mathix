@@ -1,0 +1,188 @@
+:root {
+  /* Polices officielles Samsung, Latin Modern, Roboto Slab & Scilab Mono */
+  --font-ui: 'Samsung Sharp Sans', 'SamsungOne', 'Samsung Sans', -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-latin-ui: 'Samsung Sharp Sans', 'SamsungOne', 'Samsung Sans', -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: 'Samsung Sharp Sans', 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-chapter-title: var(--font-display);
+  --font-editorial: 'Roboto Slab', 'Latin Modern Roman', 'Computer Modern', 'CMU Serif', 'Lora', Georgia, serif;
+  --font-technical: 'Samsung Sharp Sans', 'SamsungOne', 'Roboto Mono', 'Fira Code', monospace;
+  --font-modern: var(--font-ui);
+  --font-tech-forward: var(--font-ui);
+  --font-math: 'Latin Modern Roman', 'Latin Modern Math', 'KaTeX_Main', 'Computer Modern', 'CMU Serif', 'Times New Roman', serif;
+  --font-mono-ui: 'Roboto Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  --font-title-mono: var(--font-display);
+  --font-arabic-ui: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', Tahoma, Arial, sans-serif;
+  --font-arabic-display: 'Lateef', 'Noto Naskh Arabic', 'Traditional Arabic', serif;
+  --font-arabic: var(--font-arabic-display);
+  --font-handwritten: 'Caveat', cursive;
+  --font-itim: 'Itim', cursive, sans-serif;
+  /* Corps des documents (exercices, révisions) : Latin Modern / Roboto Slab harmonisé avec KaTeX. */
+  --font-exercise: 'Latin Modern Roman', 'Computer Modern', 'Roboto Slab', 'Lora', Georgia, serif;
+  /* Titres impériaux & majuscules / numéros de paragraphes : History Channel / Franklin Gothic / Cinzel */
+  --font-paragraph-number: 'History Channel', 'History Channels', 'History', 'Franklin Gothic Heavy', 'Franklin Gothic Bold', 'Franklin Gothic Medium', 'Franklin Gothic', 'Cinzel Decorative', 'Cinzel', 'Trajan Pro', 'Trajan', serif, sans-serif;
+  --font-majestic: var(--font-paragraph-number);
+  /* Typographie unifiée pour les fiches de révision et lecture : Inter & Latin Modern */
+  --font-editorial-text: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Latin Modern Roman', system-ui, sans-serif;
+  /* Police Fira Sans pour boutons d'action d'exercices & corrections */
+  --font-fira-sans: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-button-fira: var(--font-fira-sans);
+
+  /* Jetons typographiques fluides proportionnels à la largeur d'écran */
+  --typo-caption-fluid: clamp(0.68rem, calc(0.64rem + 0.14vw), 0.78rem);
+  --typo-body-fluid: clamp(0.92rem, calc(0.87rem + 0.2vw), 1.05rem);
+  --typo-lead-fluid: clamp(1.02rem, calc(0.95rem + 0.3vw), 1.2rem);
+  --typo-heading-fluid: clamp(1.25rem, calc(1.08rem + 0.85vw), 1.85rem);
+  --typo-display-fluid: clamp(1.85rem, calc(1.32rem + 2.3vw), 3.25rem);
+}
+
+/* Interface arabe : IBM Plex assure la lisibilité des contrôles tandis que
+   Lateef donne aux titres une présence éditoriale plus naturelle. */
+html[lang='ar'] {
+  --font-ui: var(--font-arabic-ui);
+  --font-display: var(--font-arabic-display);
+  --font-chapter-title: var(--font-arabic-display);
+  --font-editorial: var(--font-arabic-display);
+  --font-technical: var(--font-arabic-ui);
+  --font-modern: var(--font-arabic-ui);
+  --font-tech-forward: var(--font-arabic-ui);
+  --font-title-mono: var(--font-arabic-display);
+  --font-majestic: var(--font-arabic-display);
+  --font-paragraph-number: var(--font-arabic-display);
+  --font-editorial-text: var(--font-arabic-ui);
+}
+
+html[lang='ar'] body,
+html[lang='ar'] button,
+html[lang='ar'] input,
+html[lang='ar'] select,
+html[lang='ar'] textarea {
+  font-family: var(--font-arabic-ui);
+}
+
+html[lang='ar'] h1,
+html[lang='ar'] h2,
+html[lang='ar'] h3,
+html[lang='ar'] .typo-display,
+html[lang='ar'] .typo-dashboard-title,
+html[lang='ar'] .chapter-title-bricolage {
+  font-family: var(--font-arabic-display);
+}
+
+/* Les rails, barres d'actions et cartes suivent la lecture arabe sans
+   retourner les icônes mathématiques ou le contenu des leçons. */
+html[dir='rtl'] .app-page__rail,
+html[dir='rtl'] .app-page__footer,
+html[dir='rtl'] .app-page__scroll {
+  direction: rtl;
+}
+
+html[dir='rtl'] .app-page__rail .app-tab,
+html[dir='rtl'] .app-page__scroll .modal-ui {
+  text-align: right;
+}
+
+/* Les quelques alignements physiques des anciens panneaux restent lisibles
+   dans une page RTL, sans modifier le sens des formules mathématiques. */
+html[dir='rtl'] .app-page__scroll .text-left {
+  text-align: right;
+}
+
+/* Les titres du programme peuvent rester en français dans une interface
+   arabe : ils gardent volontairement leur police latine d'origine. */
+.latin-content,
+html[lang='ar'] .latin-content {
+  font-family: var(--font-latin-ui) !important;
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
+/* Les contenus du programme dans le modal Orientation restent français :
+   l'en-tête arabe peut être RTL, mais les onglets, titres, listes, numéros,
+   flèches et formules de ce référentiel doivent conserver leur ordre LTR. */
+.orientation-french-content,
+html[lang='ar'] .orientation-french-content,
+html[lang='ar'] .orientation-french-content button {
+  font-family: var(--font-latin-ui);
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir='rtl'] .app-page__scroll .orientation-french-content .text-left {
+  text-align: left;
+}
+
+.orientation-french-content .katex,
+.orientation-french-content .katex-display {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+}
+
+/* Style Vercel pour le studio et la console admin : police neutre Inter,
+   sans les arrondis des polices « playful » utilisées côté élève. */
+.vercel-font {
+  --font-ui: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-title-mono: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.typo-ui { font-family: var(--font-ui); }
+.typo-display { font-family: var(--font-display); }
+.typo-editorial { font-family: var(--font-editorial); }
+.typo-technical { font-family: var(--font-technical); }
+.typo-modern { font-family: var(--font-modern); }
+.typo-tech-forward { font-family: var(--font-tech-forward); }
+.typo-course { font-family: var(--font-ui); letter-spacing: 0; }
+.typo-math {
+  font-family: var(--font-exercise);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.typo-math .katex { font-family: var(--font-math); }
+.typo-exercise {
+  font-family: var(--font-exercise);
+  letter-spacing: 0;
+}
+.typo-exercise .katex { font-family: var(--font-math); }
+.typo-mono { font-family: var(--font-mono-ui); }
+.typo-title-mono,
+.typo-title-mono .typo-ui,
+.typo-title-mono .typo-mono {
+  font-family: var(--font-title-mono) !important;
+}
+
+.font-arabic { font-family: var(--font-arabic); }
+.font-itim { font-family: var(--font-itim); }
+
+.math-renderer-inherit {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+.font-mono { font-family: var(--font-mono-ui); }
+.font-lora,
+.font-serif { font-family: var(--font-editorial); }
+
+@layer components {
+  .typo-dashboard-title {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: 0;
+  }
+
+  .chapter-title-bricolage {
+    font-family: var(--font-chapter-title);
+    font-optical-sizing: auto;
+    letter-spacing: 0;
+  }
+
+  .typo-dashboard-body {
+    font-family: var(--font-ui);
+  }
+
+  .typo-dashboard-mono {
+    font-family: var(--font-mono-ui);
+  }
+}

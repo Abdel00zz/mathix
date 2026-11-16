@@ -1,0 +1,55 @@
+{
+  "id": "ex-etude-fct-10",
+  "theme": "etude-fonctions",
+  "difficulty": "difficile",
+  "topic": "Analyse - Étude de fonctions et Trigonométrie",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Étudier les variations de la fonction numérique : $f: x \\mapsto \\frac{1}{4x} - x$",
+      "hint": "Calculez la dérivée $f'(x)$. Pour cela, rappelez-vous que la dérivée de $\\frac{1}{x}$ est $-\\frac{1}{x^2}$. Étudiez ensuite le signe de $f'(x)$ sur le domaine de définition $\\mathbb{R}^*$."
+    },
+    {
+      "id": "q2",
+      "content": "Soit $g$ la fonction numérique définie par : $g(x) = \\frac{1-4\\cos^2 x}{4\\cos x}$",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Déterminer $D_g$",
+          "hint": "La fonction existe si le dénominateur est non nul. Résolvez l'équation $\\cos x \\neq 0$."
+        },
+        {
+          "id": "b",
+          "content": "Vérifier que : $\\forall x \\in D_g : g(x) = f(\\cos x)$",
+          "hint": "Dans l'expression de $f(X) = \\frac{1}{4X} - X$, remplacez $X$ par $\\cos x$, mettez au même dénominateur et comparez avec l'expression donnée de $g(x)$."
+        },
+        {
+          "id": "c",
+          "content": "Montrer qu'on peut restreindre l'étude de $g$ sur l'ensemble $D_E = [0; \\frac{\\pi}{2}[ \\cup ]\\frac{\\pi}{2}, \\pi]$",
+          "hint": "Étudiez la parité de la fonction $g$ (fonction paire ou impaire ?) pour réduire le domaine de moitié, puis étudiez la périodicité de la fonction cosinus ($2\\pi$) pour justifier l'étude sur un intervalle de longueur $\\pi$."
+        },
+        {
+          "id": "d",
+          "content": "Étudier les variations de $g$ sur $D_E$ puis calculer : $\\displaystyle \\lim_{x \\to \\frac{\\pi}{2}^-} g(x)$ et $\\displaystyle \\lim_{x \\to \\frac{\\pi}{2}^+} g(x)$",
+          "hint": "Utilisez le théorème de composition des fonctions monotones : $g = f \\circ u$ avec $u(x)=\\cos x$. Connaissant les variations de $u$ sur $D_E$ et celles de $f$ (question 1), déduisez celles de $g$. Pour les limites, posez $X = \\cos x$ et utilisez les limites de $f(X)$ quand $X \\to 0$."
+        },
+        {
+          "id": "e",
+          "content": "Dresser le tableau de variation de $g$ sur $D_E$",
+          "hint": "Rassemblez les résultats précédents dans un tableau. N'oubliez pas la double barre en $\\frac{\\pi}{2}$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Construire $\\mathscr{C}_g$ sur $D_E$",
+      "hint": "Tracez les asymptotes verticales trouvées grâce aux limites. Placez quelques points particuliers (comme $x=0$ ou $x=\\pi$) pour guider le tracé."
+    },
+    {
+      "id": "q4",
+      "content": "Discuter, suivant les valeurs de $m \\in \\mathbb{R}$, le nombre [de solutions] de l'équation $x \\in [0; \\pi]$, $4\\cos^2 x + 4m \\cos x - 1 = 0$",
+      "hint": "Transformez l'équation pour isoler $m$. Divisez par $4\\cos x$ (si $\\cos x \\neq 0$) pour faire apparaître l'expression $g(x) = m$. La résolution devient alors une lecture graphique : intersection de la courbe $\\mathscr{C}_g$ avec la droite horizontale $y=m$."
+    }
+  ]
+}

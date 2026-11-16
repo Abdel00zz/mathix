@@ -1,0 +1,31 @@
+{
+  "id": "ch03-ex02",
+  "theme": "arithmetique",
+  "difficulty": "facile",
+  "chapter": "03 - PPCM et PGCD ; propriétés",
+  "topic": "PGCD/PPCM - Équations avec un inconnu",
+  "requiresRedaction": true,
+  "context": "Soit $x$ un entier naturel.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $x$ tel que : $x \\vee 72 = 216$.",
+      "hint": "Pour que $x \\vee 72 = 216$, il faut que $216$ soit un multiple de $x$ et de $72$. Décomposez $72$ et $216$ en facteurs premiers, puis identifiez les valeurs possibles de $x$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer $x$ tel que : $x \\vee 6 = 96$.",
+      "hint": "Décomposez $6$ et $96$ en facteurs premiers. Les valeurs de $x$ sont les diviseurs de $96$ dont le PPCM avec $6$ vaut exactement $96$."
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer $x$ tel que : $x = 28(x \\wedge 15)$.",
+      "hint": "Posez $d = x \\wedge 15$. Alors $d / 15$ et $x = 28d$. Listez les diviseurs de $15$ et pour chacun vérifiez si $28d \\wedge 15 = d$."
+    },
+    {
+      "id": "q4",
+      "content": "Déterminer $x$ tel que : $x \\wedge 5880 = 84$.",
+      "hint": "Posez $x = 84x'$ avec $x' \\wedge \\frac{5880}{84} = 1$ (calculez $5880 / 84$). Cherchez les valeurs de $x'$ premières avec ce quotient."
+    }
+  ]
+}

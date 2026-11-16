@@ -1,0 +1,26 @@
+{
+  "id": "barycentre",
+  "title": "Le barycentre",
+  "exercises": [
+    {
+      "id": "ex-barycentre-01",
+      "path": "data/1ere-bac-sc-ex/barycentre/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-barycentre-02",
+      "path": "data/1ere-bac-sc-ex/barycentre/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-barycentre-03",
+      "path": "data/1ere-bac-sc-ex/barycentre/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-barycentre-01",
+      "path": "data/1ere-bac-sc-ex/barycentre/quiz/barycentre_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

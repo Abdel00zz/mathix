@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "chapitre": "Géométrie analytique dans l'espace",
+    "niveau": "2BAC Sciences Expérimentales (SVT+PC)",
+    "total": 24,
+    "distribution": {
+      "boolean": 10,
+      "mcq": 10,
+      "order": 2,
+      "error": 2
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j};\\overrightarrow{k})$, si $\\overrightarrow{u}(x;y;z)$ et $\\overrightarrow{v}(x';y';z')$, alors $\\overrightarrow{u} \\cdot \\overrightarrow{v} = xx' + yy' + zz'$.",
+      "isTrue": true,
+      "explanation": "En repere orthonorme, le produit scalaire se calcule en multipliant les coordonnees terme a terme puis en additionnant."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Pour tout vecteur $\\overrightarrow{u}(x;y;z)$ dans un repère orthonormé, on a $\\|\\overrightarrow{u}\\| = x^2 + y^2 + z^2$.",
+      "isTrue": false,
+      "explanation": "La norme est $\\|\\overrightarrow{u}\\| = \\sqrt{x^2+y^2+z^2}$. Oublier la racine carree est une erreur frequente."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Application",
+      "prompt": "Soient $\\overrightarrow{u}(1;2;-1)$ et $\\overrightarrow{v}(3;0;2)$ dans un repère orthonormé. Quelle est la valeur de $\\overrightarrow{u} \\cdot \\overrightarrow{v}$ ?",
+      "options": [
+        { "id": "a", "text": "$1$", "isCorrect": true },
+        { "id": "b", "text": "$5$", "isCorrect": false },
+        { "id": "c", "text": "$-1$", "isCorrect": false },
+        { "id": "d", "text": "$3$", "isCorrect": false }
+      ],
+      "explanation": "$\\overrightarrow{u} \\cdot \\overrightarrow{v} = (1)(3)+(2)(0)+(-1)(2) = 3+0-2 = 1$."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Application",
+      "prompt": "Quelle est la norme du vecteur $\\overrightarrow{u}(2;-1;2)$ ?",
+      "options": [
+        { "id": "a", "text": "$3$", "isCorrect": true },
+        { "id": "b", "text": "$\\sqrt{5}$", "isCorrect": false },
+        { "id": "c", "text": "$9$", "isCorrect": false },
+        { "id": "d", "text": "$\\sqrt{7}$", "isCorrect": false }
+      ],
+      "explanation": "$\\|\\overrightarrow{u}\\| = \\sqrt{4+1+4} = \\sqrt{9} = 3$."
+    },
+    {
+      "id": "q5",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "L'ensemble des points $M(x;y;z)$ de l'espace vérifiant $ax+by+cz+d=0$ (avec $(a;b;c)\\neq(0;0;0)$) est un plan.",
+      "isTrue": true,
+      "explanation": "C'est l'equation cartesienne d'un plan, ou $\\overrightarrow{n}(a;b;c)$ est un vecteur normal a ce plan."
+    },
+    {
+      "id": "q6",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Le produit vectoriel est commutatif : $\\overrightarrow{u} \\wedge \\overrightarrow{v} = \\overrightarrow{v} \\wedge \\overrightarrow{u}$.",
+      "isTrue": false,
+      "explanation": "Le produit vectoriel est antisymetrique : $\\overrightarrow{u} \\wedge \\overrightarrow{v} = -(\\overrightarrow{v} \\wedge \\overrightarrow{u})$."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si $\\overrightarrow{u}$ et $\\overrightarrow{v}$ ne sont pas colinéaires, quelle propriété géométrique possède le vecteur $\\overrightarrow{u} \\wedge \\overrightarrow{v}$ ?",
+      "options": [
+        { "id": "a", "text": "Il est orthogonal à la fois à $\\overrightarrow{u}$ et à $\\overrightarrow{v}$.", "isCorrect": true },
+        { "id": "b", "text": "Il est colinéaire à $\\overrightarrow{u} + \\overrightarrow{v}$.", "isCorrect": false },
+        { "id": "c", "text": "Il est coplanaire avec $\\overrightarrow{u}$ et $\\overrightarrow{v}$.", "isCorrect": false },
+        { "id": "d", "text": "Il forme un angle aigu avec $\\overrightarrow{u}$.", "isCorrect": false }
+      ],
+      "explanation": "Le produit vectoriel $\\overrightarrow{u} \\wedge \\overrightarrow{v}$ est toujours orthogonal a $\\overrightarrow{u}$ et a $\\overrightarrow{v}$."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Soient les plans $(P) : 2x-y+3z+1=0$ et $(P') : 4x-2y+6z-5=0$. Quelle est leur position relative ?",
+      "options": [
+        { "id": "a", "text": "Parallèles et distincts", "isCorrect": true },
+        { "id": "b", "text": "Sécants", "isCorrect": false },
+        { "id": "c", "text": "Confondus", "isCorrect": false },
+        { "id": "d", "text": "Perpendiculaires", "isCorrect": false }
+      ],
+      "explanation": "Les normales $\\overrightarrow{n}(2;-1;3)$ et $\\overrightarrow{n'}(4;-2;6) = 2\\overrightarrow{n}$ sont colineaires (plans paralleles), mais les constantes ne sont pas proportionnelles (plans distincts)."
+    },
+    {
+      "id": "q9",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Deux plans $(P)$ et $(P')$ sont perpendiculaires si et seulement si leurs vecteurs normaux respectifs $\\overrightarrow{n}$ et $\\overrightarrow{n'}$ sont orthogonaux.",
+      "isTrue": true,
+      "explanation": "La perpendicularite de deux plans equivaut a $\\overrightarrow{n} \\cdot \\overrightarrow{n'} = 0$."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Calculer la distance du point $A(1;2;-1)$ au plan $(P) : 2x+y-2z+3=0$.",
+      "options": [
+        { "id": "a", "text": "$3$", "isCorrect": true },
+        { "id": "b", "text": "$\\dfrac{5}{3}$", "isCorrect": false },
+        { "id": "c", "text": "$9$", "isCorrect": false },
+        { "id": "d", "text": "$\\dfrac{9}{\\sqrt{5}}$", "isCorrect": false }
+      ],
+      "explanation": "$d = \\dfrac{\\left|2(1)+1(2)-2(-1)+3\\right|}{\\sqrt{4+1+4}} = \\dfrac{9}{3} = 3$."
+    },
+    {
+      "id": "q11",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Définition",
+      "prompt": "La sphère de centre $\\Omega(a;b;c)$ et de rayon $R>0$ a pour équation cartésienne $(x-a)^2+(y-b)^2+(z-c)^2=R^2$.",
+      "isTrue": true,
+      "explanation": "$M$ appartient a la sphere ssi $\\Omega M = R$, ce qui donne $(x-a)^2+(y-b)^2+(z-c)^2 = R^2$."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Soit la sphère $(S) : (x-1)^2+(y+2)^2+(z-3)^2=25$. Quel est son centre et son rayon ?",
+      "options": [
+        { "id": "a", "text": "Centre $\\Omega(1;-2;3)$, rayon $R=5$", "isCorrect": true },
+        { "id": "b", "text": "Centre $\\Omega(-1;2;-3)$, rayon $R=5$", "isCorrect": false },
+        { "id": "c", "text": "Centre $\\Omega(1;-2;3)$, rayon $R=25$", "isCorrect": false },
+        { "id": "d", "text": "Centre $\\Omega(1;2;3)$, rayon $R=5$", "isCorrect": false }
+      ],
+      "explanation": "On lit $a=1$, $b=-2$ (car $(y+2) = (y-(-2))$), $c=3$ et $R = \\sqrt{25} = 5$."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Quelle est l'abscisse du vecteur $\\overrightarrow{u} \\wedge \\overrightarrow{v}$ dans la base analytique, avec $\\overrightarrow{u}(x; y; z)$ et $\\overrightarrow{v}(x'; y'; z')$ ?",
+      "options": [
+        { "id": "a", "text": "$yz' - zy'$", "isCorrect": true },
+        { "id": "b", "text": "$xy' - yx'$", "isCorrect": false },
+        { "id": "c", "text": "$zx' - xz'$", "isCorrect": false },
+        { "id": "d", "text": "$y'z - z'y$", "isCorrect": false }
+      ],
+      "explanation": "La premiere coordonnee du produit vectoriel est le determinant des composantes $y,z$ : $yz' - zy'$."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Soit trois points $A, B$ et $C$ non alignés. Comment exprime-t-on l'aire du triangle $ABC$ ?",
+      "options": [
+        { "id": "a", "text": "$\\dfrac{1}{2} ||\\overrightarrow{AB} \\wedge \\overrightarrow{AC}||$", "isCorrect": true },
+        { "id": "b", "text": "$||\\overrightarrow{AB} \\wedge \\overrightarrow{AC}||$", "isCorrect": false },
+        { "id": "c", "text": "$\\dfrac{1}{2} (\\overrightarrow{AB} \\cdot \\overrightarrow{AC})$", "isCorrect": false },
+        { "id": "d", "text": "$||\\overrightarrow{AB}|| \\times ||\\overrightarrow{AC}||$", "isCorrect": false }
+      ],
+      "explanation": "$\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$ donne l'aire du parallelogramme ; l'aire du triangle est la moitie."
+    },
+    {
+      "id": "q15",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Si $(P)$ est un plan sécant à la sphère $(S)$ de centre $\\Omega$ et de rayon $R$, l'intersection est un cercle de rayon $\\sqrt{R^2-d^2}$, où $d = \\Omega H$.",
+      "isTrue": true,
+      "explanation": "Par Pythagore dans le triangle $\\Omega HM$ : $R^2 = d^2 + r^2$, donc $r = \\sqrt{R^2 - d^2}$."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Quelle est la première étape pour déterminer une équation cartésienne du plan $(ABC)$ à l'aide du produit vectoriel ?",
+      "options": [
+        { "id": "a", "text": "Calculer les coordonnées des vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$", "isCorrect": true },
+        { "id": "b", "text": "Calculer le vecteur normal $\\overrightarrow{n} = \\overrightarrow{AB} \\wedge \\overrightarrow{AC}$", "isCorrect": false },
+        { "id": "c", "text": "Poser un point $M(x;y;z)$ appartenant au plan $(ABC)$", "isCorrect": false },
+        { "id": "d", "text": "Écrire que le produit scalaire $\\overrightarrow{AM} \\cdot (\\overrightarrow{AB} \\wedge \\overrightarrow{AC}) = 0$", "isCorrect": false }
+      ],
+      "explanation": "On calcule d'abord les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$, puis le vecteur normal via le produit vectoriel, et enfin on utilise l'orthogonalité $\\overrightarrow{AM} \\cdot \\overrightarrow{n} = 0$."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Soit la sphère $(S) : (x-2)^2+(y-1)^2+(z+1)^2=9$ et le plan $(P) : 2x+2y-z-3=0$. Quelle est la position relative de $(S)$ et $(P)$ ?",
+      "options": [
+        { "id": "a", "text": "$(P)$ est sécant à $(S)$ : l'intersection est un cercle", "isCorrect": true },
+        { "id": "b", "text": "$(P)$ est tangent à $(S)$", "isCorrect": false },
+        { "id": "c", "text": "$(P)$ et $(S)$ n'ont aucun point commun", "isCorrect": false },
+        { "id": "d", "text": "$(P)$ passe par le centre de $(S)$", "isCorrect": false }
+      ],
+      "explanation": "$d = \\dfrac{\\left|4+2+1-3\\right|}{3} = \\dfrac{4}{3} < 3 = R$, donc le plan est secant a la sphere."
+    },
+    {
+      "id": "q18",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "Deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ de l'espace sont colinéaires si, et seulement si, $\\overrightarrow{u} \\wedge \\overrightarrow{v} = 0$.",
+      "isTrue": false,
+      "explanation": "Le produit vectoriel donne un vecteur. La bonne ecriture est $\\overrightarrow{u} \\wedge \\overrightarrow{v} = \\overrightarrow{0}$ (vecteur nul), et non le scalaire $0$."
+    },
+    {
+      "id": "q19",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "Si $(P)$ et $(P')$ sont deux plans sécants de vecteurs normaux respectifs $\\overrightarrow{n}$ et $\\overrightarrow{n}'$, alors le vecteur $\\overrightarrow{n} \\wedge \\overrightarrow{n}'$ est un vecteur normal à leur droite d'intersection $(D)$.",
+      "isTrue": false,
+      "explanation": "$\\overrightarrow{n} \\wedge \\overrightarrow{n}'$ est un vecteur directeur de la droite d'intersection, pas un vecteur normal."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Trois points distincts $A, B$ et $C$ de l'espace sont alignés si et seulement si :",
+      "options": [
+        { "id": "a", "text": "$\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = \\overrightarrow{0}$", "isCorrect": true },
+        { "id": "b", "text": "$\\overrightarrow{AB} \\cdot \\overrightarrow{AC} = 0$", "isCorrect": false },
+        { "id": "c", "text": "$||\\overrightarrow{AB} \\wedge \\overrightarrow{AC}|| = 1$", "isCorrect": false },
+        { "id": "d", "text": "$\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = \\overrightarrow{BC}$", "isCorrect": false }
+      ],
+      "explanation": "Produit vectoriel nul signifie vecteurs colineaires, donc points alignes. Le produit scalaire nul indiquerait un angle droit."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Quelle formule permet de calculer la distance d'un point $M$ à une droite $(D)$ passant par $A$ et de vecteur directeur $\\overrightarrow{u}$ ?",
+      "options": [
+        { "id": "a", "text": "$d(M, (D)) = \\dfrac{||\\overrightarrow{AM} \\wedge \\overrightarrow{u}||}{||\\overrightarrow{u}||}$", "isCorrect": true },
+        { "id": "b", "text": "$d(M, (D)) = \\dfrac{|\\overrightarrow{AM} \\cdot \\overrightarrow{u}|}{||\\overrightarrow{u}||}$", "isCorrect": false },
+        { "id": "c", "text": "$d(M, (D)) = ||\\overrightarrow{AM} \\wedge \\overrightarrow{u}||$", "isCorrect": false },
+        { "id": "d", "text": "$d(M, (D)) = \\dfrac{||\\overrightarrow{AM} \\wedge \\overrightarrow{u}||}{||\\overrightarrow{AM}||}$", "isCorrect": false }
+      ],
+      "explanation": "On utilise le produit vectoriel pour calculer la distance : $d(M,(D)) = \\dfrac{\\|\\overrightarrow{AM} \\wedge \\overrightarrow{u}\\|}{\\|\\overrightarrow{u}\\|}."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Quelle est la distance du point $B(0;1;3)$ au plan $(P) : x+2y-2z+6=0$ ?",
+      "options": [
+        { "id": "a", "text": "$\\dfrac{2}{3}$", "isCorrect": true },
+        { "id": "b", "text": "$\\dfrac{2}{9}$", "isCorrect": false },
+        { "id": "c", "text": "$2$", "isCorrect": false },
+        { "id": "d", "text": "$\\dfrac{4}{3}$", "isCorrect": false }
+      ],
+      "explanation": "Numérateur : $|0+2(1)-2(3)+6| = |2|=2$. Dénominateur : $\\sqrt{1^2+2^2+(-2)^2} = \\sqrt{9} = 3$. Donc $d(B;(P)) = \\dfrac{2}{3}$."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Sachant que $||\\overrightarrow{u}|| = 2$, $||\\overrightarrow{v}|| = 5$ et $\\overrightarrow{u} \\cdot \\overrightarrow{v} = 5$, que vaut $||\\overrightarrow{u} \\wedge \\overrightarrow{v}||$ ?",
+      "options": [
+        { "id": "a", "text": "$5\\sqrt{3}$", "isCorrect": true },
+        { "id": "b", "text": "$5$", "isCorrect": false },
+        { "id": "c", "text": "$10$", "isCorrect": false },
+        { "id": "d", "text": "$\\dfrac{5}{2}$", "isCorrect": false }
+      ],
+      "explanation": "$\\cos(\\theta) = \\dfrac{5}{10} = \\dfrac{1}{2}$, donc $|\\sin(\\theta)| = \\dfrac{\\sqrt{3}}{2}$. La norme du produit vectoriel est $||\\overrightarrow{u}|| \\cdot ||\\overrightarrow{v}|| \\cdot |\\sin(\\theta)| = 10 \\times \\dfrac{\\sqrt{3}}{2} = 5\\sqrt{3}$."
+    },
+    {
+      "id": "q24",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "L'ensemble des points $M(x;y;z)$ vérifiant $\\overrightarrow{AM} \\cdot (\\overrightarrow{AB} \\wedge \\overrightarrow{AC}) = 0$ (où $A, B, C$ sont non alignés) représente :",
+      "options": [
+        { "id": "a", "text": "Le plan $(ABC)$", "isCorrect": true },
+        { "id": "b", "text": "La droite $(AB)$", "isCorrect": false },
+        { "id": "c", "text": "La sphère de diamètre $[AB]$", "isCorrect": false },
+        { "id": "d", "text": "La droite orthogonale au plan $(ABC)$", "isCorrect": false }
+      ],
+      "explanation": "$\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$ est normal au plan $(ABC)$. La condition $\\overrightarrow{AM} \\cdot \\overrightarrow{n} = 0$ force $M$ a appartenir a ce plan."
+    }
+  ]
+}

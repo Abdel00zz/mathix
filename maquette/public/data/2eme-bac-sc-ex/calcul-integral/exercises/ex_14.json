@@ -1,0 +1,42 @@
+{
+  "id": "ex-14",
+  "theme": "calcul-integral",
+  "difficulty": "difficile",
+  "topic": "Calcul Intégral - Étude graphique, IPP et calcul d'aire avec paramètre",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction numérique définie sur $]0;+\\infty[$ par $f(x) = 2 - \\dfrac{2}{x} + (1-\\ln x)^2$. Et $(\\mathcal{C})$ sa courbe représentative dans un repère orthonormé $(O,\\overrightarrow{i},\\overrightarrow{j})$ (unité : $1\\,\\text{cm}$). La courbe $(\\mathcal{C}_g)$ ci-contre est la représentation graphique de la fonction $g: x \\mapsto f(x) - x$ qui s'annule en $\\alpha$ et $1$ ($\\alpha \\approx 0{,}3$). Soit $(\\Delta)$ la droite d'équation $y = x$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "A partir de la courbe $(\\mathcal{C}_g)$, déterminer le signe de la fonction $g$ sur $]0;+\\infty[$",
+          "hint": "\\method Lisez directement le graphe de $(\\mathcal{C}_g)$ : où est-elle au-dessus de l'axe des abscisses, où est-elle en dessous ? \\tip La fonction $g$ s'annule en $\\alpha$ et $1$ ; ce sont les deux points de changement de signe."
+        },
+        {
+          "id": "sq1b",
+          "content": "Déduire que la droite $(\\Delta)$ est en dessous de $(\\mathcal{C})$ sur l'intervalle $[\\alpha;1]$ et au-dessus de $(\\mathcal{C})$ sur les intervalles $]0,\\alpha[$ et $[1;+\\infty[$",
+          "hint": "\\method Le signe de $g(x) = f(x) - x$ traduit directement la position relative de $(\\mathcal{C})$ et $(\\Delta)$. \\tip Utilisez le tableau de signe de $g$ établi en 1a."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Vérifier que : $x \\mapsto 2x - x\\ln(x)$ est une primitive de : $x \\mapsto 1 - \\ln(x)$ sur $]0;+\\infty[$",
+          "hint": "\\method Dérivez $2x - x\\ln x$ par la règle du produit pour $x\\ln x$. \\tip $(x\\ln x)' = \\ln x + 1$, donc $(2x - x\\ln x)' = 2 - \\ln x - 1 = 1 - \\ln x$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Par une intégrale par partie montrer que $\\displaystyle\\int_{\\alpha}^1 (1-\\ln x)^2\\,dx = 5(1-\\alpha) + \\alpha(4-\\ln\\alpha)\\ln\\alpha$. En déduire en fonction de $\\alpha$ l'aire du domaine délimité par la courbe $(\\mathcal{C})$ et l'axe des abscisses et les droites d'équations $x = \\alpha$ et $x = 1$",
+          "hint": "\\method Pour l'IPP, posez $u = (1-\\ln x)^2$ et $v' = 1$. \\tip Après l'IPP, la nouvelle intégrale fait apparaître $\\int (1-\\ln x)\\,dx$, calculable grâce à la primitive trouvée en 2a. Pour l'aire, exprimez $\\displaystyle\\int_\\alpha^1 f(x)\\,dx$ en décomposant $f(x)$."
+        }
+      ]
+    }
+  ]
+}

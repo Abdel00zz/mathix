@@ -1,0 +1,57 @@
+{
+  "id": "ex-esp-11",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "difficile",
+  "topic": "Géométrie analytique dans l'espace — Sphère, plan, projection orthogonale",
+  "requiresRedaction": true,
+  "context": "On considère dans l'espace rapporté à un repère orthonormé direct $\\left(O;\\overrightarrow{i};\\overrightarrow{j};\\overrightarrow{k}\\right)$ la sphère $(S)$ définie par son équation cartésienne : $(S) : x^2+y^2+z^2-4x+2z+1 = 0$. Soit $(P)$ le plan défini par son équation cartésienne : $(P) : 4x+3y-3 = 0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Déterminer le triplet de coordonnées du point $\\Omega$ le centre de la sphère $(S)$, et déterminer son rayon $R$.",
+          "hint": "Complétez le carré en $x$, $y$ et $z$."
+        },
+        {
+          "id": "sq1b",
+          "content": "Déterminer la distance entre le point $\\Omega$ et le plan $(P)$, puis déduire la position relative de la sphère $(S)$ et le plan $(P)$.",
+          "hint": "Utilisez $d(\\Omega,(P)) = \\dfrac{|4x_\\Omega + 3y_\\Omega - 3|}{\\sqrt{16+9}}$. Comparez à $R$."
+        },
+        {
+          "id": "sq1c",
+          "content": "Déterminer une représentation paramétrique de la droite $(\\Delta)$ qui passe par le point $\\Omega$, et orthogonale au plan $(P)$.",
+          "hint": "La droite a pour vecteur directeur le vecteur normal de $(P)$ : $(4;3;0)$."
+        },
+        {
+          "id": "sq1d",
+          "content": "En déduire le triplet de coordonnées du point $H$ la projection orthogonale du point $\\Omega$ sur le plan $(P)$.",
+          "hint": "Substituez la représentation paramétrique de $(\\Delta)$ dans l'équation de $(P)$ pour trouver $t$, puis les coordonnées de $H$."
+        },
+        {
+          "id": "sq1e",
+          "content": "Que représente le point $H$ ?",
+          "hint": "Comparez $d(\\Omega,(P))$ et $R$ pour identifier le rôle géométrique de $H$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Vérifier que le point $A(2;2;-1)$ est un point de la sphère $(S)$.",
+          "hint": "Substituez les coordonnées de $A$ dans l'équation de $(S)$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Déterminer une équation cartésienne du plan $(Q)$ tangent à la sphère $(S)$ au point $A$.",
+          "hint": "Le plan tangent en $A$ est perpendiculaire au rayon $\\Omega A$. Son vecteur normal est $\\overrightarrow{\\Omega A}$ et il passe par $A$."
+        }
+      ]
+    }
+  ]
+}

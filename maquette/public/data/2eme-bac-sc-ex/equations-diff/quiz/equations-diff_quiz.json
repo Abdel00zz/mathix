@@ -1,0 +1,270 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "L'équation différentielle $y' = ay$ où $a\\in\\mathbb{R}^*$ admet pour solution générale :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = Ce^{ax}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = Ce^{-ax}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = Ce^{x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = C e^{a}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La solution générale de $y'=ay$ est $y(x)=Ce^{ax}$."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Méthode",
+      "prompt": "Pour résoudre $y' = ay + b$, on commence par chercher une solution constante $y_0 = -b/a$.",
+      "isTrue": true,
+      "explanation": "La solution particulière constante vérifie $0 = ay_0 + b$, soit $y_0=-b/a$."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Application",
+      "prompt": "La solution générale de $y' - 2y = 3$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = Ce^{2x} - \\frac{3}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = Ce^{-2x} - \\frac{3}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = Ce^{2x} + \\frac{3}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = Ce^{-2x} + 3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$y'=2y+3$, solution constante $y_0=-3/2$, solution générale $y=Ce^{2x}-3/2$."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "L'équation $y'' + \\omega^2 y = 0$ a pour solution générale $y = A\\cos(\\omega x) + B\\sin(\\omega x)$.",
+      "isTrue": true,
+      "explanation": "C'est l'équation de l'oscillateur harmonique, les solutions sont sinusoïdales."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "L'équation caractéristique de $y'' - 5y' + 6y = 0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$r^2 -5r +6 = 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$r^2 +5r +6 = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$r^2 -5r +6y = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$r^2 -5 = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour $y''+ay'+by=0$, l'équation caractéristique est $r^2+ar+b=0$. Ici $a=-5$, $b=6$."
+    },
+    {
+      "id": "q6",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Les solutions de $y'' - 2y' + y = 0$ sont de la forme $(Ax+B)e^{x}$.",
+      "isTrue": true,
+      "explanation": "L'équation caractéristique $r^2-2r+1=0$ a une racine double $r=1$, donc solution $(A+Bx)e^{x}$."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "La solution particulière de $y' = 2y + e^{2x}$ est de la forme :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$axe^{2x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$ae^{2x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$axe^{x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$ae^{x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le second membre $e^{2x}$ est solution de l'équation homogène (car $2$ est racine de $r=2$), donc on cherche $y_p = ax e^{2x}$."
+    },
+    {
+      "id": "q8",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "L'équation $y'' + y = 0$ admet pour solutions $\\cos x$ et $\\sin x$.",
+      "isTrue": true,
+      "explanation": "Équation caractéristique $r^2+1=0$, racines $\\pm i$, solutions $\\cos x$, $\\sin x$."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Attention aux conditions initiales pour déterminer les constantes.",
+      "prompt": "La solution de $y'' + 4y = 0$ vérifiant $y(0)=1$, $y'(0)=0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = \\cos(2x)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = \\cos x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = \\sin(2x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = e^{2x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Solution générale $A\\cos(2x)+B\\sin(2x)$. $y(0)=A=1$, $y'(0)=2B=0$ donc $B=0$."
+    },
+    {
+      "id": "q10",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "L'équation $y'' - 2y' + 2y = 0$ a pour solutions des fonctions de la forme $e^{x}(A\\cos x + B\\sin x)$.",
+      "isTrue": true,
+      "explanation": "Équation caractéristique $r^2-2r+2=0$, discriminant $-4$, racines $1\\pm i$, partie réelle $1$, partie imaginaire $1$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "La solution de $y' + y = e^{-x}$ vérifiant $y(0)=2$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = (2+x)e^{-x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = (2-x)e^{-x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = 2e^{-x} + xe^{-x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$y = 2e^{x} + xe^{x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Solution homogène $Ce^{-x}$, solution particulière $y_p = axe^{-x}$ (car $e^{-x}$ est solution homogène). On trouve $a=1$, puis condition initiale donne $C=2$."
+    },
+    {
+      "id": "q12",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Confondre ordre et degré.",
+      "prompt": "L'équation $y'' + y'^2 = 0$ est linéaire du second ordre.",
+      "isTrue": false,
+      "explanation": "Elle n'est pas linéaire à cause du terme $y'^2$ (non linéaire)."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "L'équation différentielle $\\frac{dy}{dt} = ky$ modélise une croissance exponentielle. Si la population double en 50 ans, la constante $k$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$k = \\frac{\\ln 2}{50}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$k = \\ln 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$k = 50\\ln 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$k = \\frac{50}{\\ln 2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$P(t)=P_0 e^{kt}$, $P(50)=2P_0$ ⇒ $e^{50k}=2$ ⇒ $k = \\ln 2 / 50$."
+    }
+  ]
+}

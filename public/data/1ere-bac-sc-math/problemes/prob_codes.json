@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Combien de codes secrets ?",
+    "subtitle": "Dénombrement : arrangements et combinaisons",
+    "context": "Dénombrement"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Combien de codes secrets ?",
+          "content": "On s'intéresse à la sécurité de différents codes et à des choix de groupes.\\par $\\bullet$ Un \\textbf{code PIN} est formé de $4$ chiffres choisis parmi $0,1,\\dots,9$.\\par $\\bullet$ Un \\textbf{comité} de $3$ personnes doit être formé parmi $10$ candidats.\\par On rappelle : le nombre de combinaisons de $k$ éléments parmi $n$ est $\\dbinom{n}{k} = \\dfrac{n!}{k!\\,(n-k)!}$."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Combien de codes PIN à $4$ chiffres existe-t-il (chiffres pouvant se répéter) ?\\item Combien de codes PIN à $4$ chiffres \\textbf{tous distincts} peut-on former ?\\item Combien de comités de $3$ personnes peut-on former parmi $10$ candidats ? L'ordre compte-t-il ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Pour le PIN sans contrainte : chacun des $4$ chiffres a $10$ possibilités indépendantes (principe du produit) : $10^4$."
+        },
+        {
+          "type": "hint",
+          "content": "Chiffres distincts : $10 \\times 9 \\times 8 \\times 7$ (un choix de moins à chaque position). Pour le comité, l'ordre ne compte pas : c'est une combinaison $\\binom{10}{3}$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} Chaque position a $10$ choix indépendants : $10^4 = \\boxed{10\\,000}$ codes possibles.\\par\\textbf{2)} Chiffres tous distincts : $10 \\times 9 \\times 8 \\times 7 = \\boxed{5040}$ codes (arrangement de $4$ parmi $10$).\\par\\textbf{3)} Un comité est un sous-ensemble : l'ordre ne compte pas. Nombre de comités $= \\dbinom{10}{3} = \\dfrac{10 \\times 9 \\times 8}{3 \\times 2 \\times 1} = \\boxed{120}$."
+        }
+      ]
+    }
+  ]
+}

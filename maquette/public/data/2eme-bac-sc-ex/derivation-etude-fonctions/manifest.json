@@ -1,0 +1,55 @@
+{
+  "id": "derivation-etude-fonctions",
+  "title": "Dérivation et étude de fonctions",
+  "section": "analyse",
+  "revisions": [
+    {
+      "id": "rev-derivation-etude-fonctions-2bac",
+      "title": "Fiche complète : Dérivation et étude de fonctions",
+      "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/revisions/fiche_derivation_etude_fonctions_cours.json"
+    },
+    {
+      "id": "rev-etude-fonctions-2bac",
+      "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/revisions/fiche_etude_fonctions_cours.json",
+      "title": "Dérivation et étude des fonctions — Partie 2 — Monotonie, extremums, concavité, symétrie, branches infinies et asymptotes"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-derivation-etude-01",
+      "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/exercises/ex_derivation_etude_01.json"
+    },
+    {
+      "id": "ex-derivation-etude-02",
+      "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/exercises/ex_derivation_etude_02.json"
+    },
+    {
+      "id": "ex-derivation-etude-03",
+      "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/exercises/ex_derivation_etude_03.json"
+    },
+    {
+      "id": "ex-derivation-etude-04",
+      "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/exercises/ex_derivation_etude_04.json"
+    },
+    {
+      "id": "ex-etude-fonctions-01",
+      "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/exercises/ex_etude_fonctions_01.json"
+    },
+    {
+      "id": "ex-etude-fonctions-02",
+      "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/exercises/ex_etude_fonctions_02.json"
+    },
+    {
+      "id": "ex-etude-fonctions-03",
+      "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/exercises/ex_etude_fonctions_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-derivation-etude-fonctions-01",
+      "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/quiz/derivation_etude_fonctions_quiz.json",
+      "questionsCount": 42
+    }
+  ],
+  "quizCount": 42
+}

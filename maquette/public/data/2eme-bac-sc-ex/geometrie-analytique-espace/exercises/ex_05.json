@@ -1,0 +1,57 @@
+{
+  "id": "ex-esp-05",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "facile",
+  "topic": "Géométrie analytique dans l'espace — Plan, sphère, intersection cercle",
+  "requiresRedaction": true,
+  "context": "Dans l'espace rapporté à un repère orthonormé $(0,\\overrightarrow{i},\\overrightarrow{j},\\overrightarrow{k})$, on considère les deux points $A(-1,0,-1)$ et $B(1,2,-1)$, le plan $(P)$ passant par $A$ et de vecteur normal $\\overrightarrow{n}(2,-2,1)$ et la sphère $(S)$ de centre $\\Omega(2,-1,0)$ et de rayon 5.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $2x - 2y + z + 3 = 0$ est une équation cartésienne du plan $(P)$",
+      "hint": "Vérifiez que $\\overrightarrow{n}(2;-2;1)$ est bien vecteur normal, et que $A(-1;0;-1)$ appartient au plan."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer une équation cartésienne de la sphère $(S)$",
+      "hint": "$(x-2)^2+(y+1)^2+z^2 = 25$."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Vérifier que la distance du point $\\Omega$ au plan $(P)$ est $d(\\Omega,(P)) = 3$",
+          "hint": "Utilisez $d(\\Omega,(P)) = \\dfrac{|2x_\\Omega - 2y_\\Omega + z_\\Omega + 3|}{\\sqrt{4+4+1}}$."
+        },
+        {
+          "id": "sq3b",
+          "content": "En déduire que le plan $(P)$ coupe la sphère $(S)$ suivant un cercle $(T)$ de rayon à déterminer.",
+          "hint": "Le rayon du cercle d'intersection est $r = \\sqrt{R^2 - d^2} = \\sqrt{25-9}$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Déterminer une représentation paramétrique de la droite $(\\Delta)$ passant par $\\Omega$ et perpendiculaire au plan $(P)$",
+          "hint": "La droite est perpendiculaire à $(P)$ donc son vecteur directeur est $\\overrightarrow{n}(2;-2;1)$."
+        },
+        {
+          "id": "sq4b",
+          "content": "Montrer que le point $H(0,1,-1)$ est le centre du cercle $(\\Gamma)$",
+          "hint": "Vérifiez que $H \\in (P)$ et que $H \\in (\\Delta)$."
+        },
+        {
+          "id": "sq4c",
+          "content": "Montrer que la droite $(\\Delta)$ est une médiatrice du segment $[AB]$",
+          "hint": "Montrez que $\\Delta$ passe par le milieu de $[AB]$ et est perpendiculaire à $[AB]$."
+        }
+      ]
+    }
+  ]
+}

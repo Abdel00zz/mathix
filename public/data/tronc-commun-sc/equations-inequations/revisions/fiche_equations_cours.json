@@ -1,0 +1,212 @@
+{
+  "header": {
+    "title": "Équations, Inéquations et Systèmes",
+    "subtitle": "Premier degré, second degré et méthode de Cramer",
+    "context": "TCT - BIOF"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie la \\objectif{résolution des équations et inéquations algébriques} : équations du premier et du second degré, factorisation par le discriminant, étude du signe d'un trinôme, et systèmes d'équations linéaires résolus par la méthode de Cramer. Ces outils permettent de modéliser et de résoudre des problèmes réels en physique, en économie ou en ingénierie. La \\defi{principale difficulté} est la rigueur du calcul du discriminant et l'étude de signe — une erreur de signe sur $b^2$ ou sur la multiplication par un négatif peut tout fausser. C'est \\savant{Al-Khwarizmi} qui, au IX\\textsuperscript{e} siècle, a posé les bases de l'algèbre et de la résolution systématique des équations du second degré, donnant son nom à l'algorithmique moderne.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Muhammad_ibn_Musa_al-Khwarizmi.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Al-Khwarizmi (~780–850)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "equations_premier_degre",
+      "category": "course",
+      "title": "Équations du premier degré",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On commence par revoir les équations simples du premier degré à une inconnue. Ce sont les fondations indispensables avant de passer au degré supérieur."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'équation $\\displaystyle\\frac{x-3}{2} = \\frac{x}{3}$.}\\par On réduit au même dénominateur (qui est 6) ou on fait le produit en croix :\\begin{align*}3(x-3) &= \\blank{2x} \\\\3x - 9 &= 2x \\\\3x - 2x &= \\blank{9} \\\\x &= \\blank{9}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "equations_second_degre",
+      "category": "course",
+      "title": "Équations du second degré",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait manipuler le premier degré. On étudie maintenant les équations contenant un carré ($x^2$), qu'on ne peut généralement pas résoudre par un simple isolement de variable."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une équation du second degré ?",
+          "content": "Une \\textbf{équation du second degré} à une inconnue $x$ est une équation de la forme :\\par\\smallskip $$\\boxed{ax^2 + bx + c = 0}$$ \\par Avec $a \\in \\mathbb{R}^*$ (non nul), $b \\in \\mathbb{R}$ et $c \\in \\mathbb{R}$."
+        },
+        {
+          "type": "property",
+          "title": "Qu'est-ce que le discriminant ?",
+          "content": "Pour résoudre l'équation $ax^2 + bx + c = 0$, on utilise un nombre appelé \\textbf{discriminant}, noté $\\Delta$ (lire \"delta\") :\\par\\smallskip $$\\boxed{\\Delta = b^2 - 4ac}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment résoudre avec le discriminant ?",
+          "content": "On suit toujours la même démarche pas à pas pour éviter les erreurs de signe.\\par\\begin{itemize}\\item Identifier clairement les coefficients $a$, $b$ et $c$ avec leurs signes\\item Calculer la valeur de $\\Delta = b^2 - 4ac$\\item Observer le \\textbf{signe de $\\Delta$} pour connaître le nombre de solutions\\item Appliquer la formule correspondante pour trouver les racines\\end{itemize}\\par \\textbf{Astuce :} Attention au calcul de $b^2$ si $b$ est négatif, le résultat est toujours positif !"
+        },
+        {
+          "type": "theorem",
+          "title": "Combien de solutions selon le signe de $\\Delta$ ?",
+          "content": "Le signe de $\\Delta$ détermine le nombre de racines (ou solutions) :\\begin{itemize}\\item \\textbf{Si $\\Delta > 0$} : L'équation a \\textbf{deux} solutions distinctes : $x_1 = \\displaystyle\\frac{-b - \\sqrt{\\Delta}}{2a}$ et $x_2 = \\displaystyle\\frac{-b + \\sqrt{\\Delta}}{2a}$\\item \\textbf{Si $\\Delta = 0$} : L'équation a \\textbf{une} solution unique : $x = \\displaystyle\\frac{-b}{2a}$\\item \\textbf{Si $\\Delta < 0$} : L'équation n'a \\textbf{pas de solution} dans $\\mathbb{R}$ (l'ensemble des solutions est vide, $S = \\emptyset$)\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'équation $x^2 - 3x + 2 = 0$.}\\par On identifie $a=1$, $b=-3$ et $c=2$. On calcule le discriminant :\\begin{align*}\\Delta &= (-3)^2 - 4 \\times 1 \\times 2 \\\\&= 9 - 8 = \\blank{1}\\end{align*}Puisque $\\Delta > 0$, l'équation a deux solutions :\\begin{align*}x_1 &= \\frac{-(-3) - \\sqrt{\\blank{1}}}{2 \\times 1} = \\frac{3 - 1}{2} = \\blank{1} \\\\x_2 &= \\frac{3 + \\sqrt{1}}{\\blank{2}} = \\frac{4}{2} = \\blank{2}\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'équation $x^2 - 2x + 1 = 0$.}\\par On calcule $\\Delta$ avec $a=1, b=-2, c=1$ :\\begin{align*}\\Delta &= (-2)^2 - 4(1)(1) = 4 - 4 = \\blank{0}\\end{align*}Puisque $\\Delta = 0$, il y a une solution unique :\\begin{align*}x &= \\frac{-(-2)}{2 \\times 1} = \\frac{\\blank{2}}{2} = \\blank{1}\\end{align*}"
+        },
+        {
+          "type": "remark",
+          "content": "Il n'est pas toujours utile de calculer le discriminant. C'est le cas pour des équations incomplètes comme $x^2 - a = 0$ ou $x^2 + bx = 0$, qu'on peut résoudre directement par isolement ou factorisation."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons rapidement $x^2 - 4 = 0$ sans le discriminant.}\\par On isole directement l'inconnue au carré :\\begin{align*}x^2 &= \\blank{4}\\end{align*}Un nombre dont le carré fait 4 peut être positif ou négatif. Donc on a deux solutions :\\begin{align*}x &= \\blank{2} \\quad \\text{ou} \\quad x &= \\blank{-2}\\end{align*}L'ensemble des solutions est $S = \\blank{\\{-2, 2\\}}$."
+        }
+      ]
+    },
+    {
+      "id": "somme_produit_factorisation",
+      "category": "course",
+      "title": "Propriétés des racines et factorisation",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Maintenant qu'on sait trouver les racines, découvrons les liens qui les unissent (somme et produit) et comment elles permettent de factoriser l'expression."
+        },
+        {
+          "type": "property",
+          "title": "Quels sont la somme et le produit des racines ?",
+          "content": "Si une équation du second degré admet deux solutions $x_1$ et $x_2$, on peut calculer leur somme et leur produit directement à partir des coefficients :\\par\\begin{itemize}\\item \\textbf{Somme} : $x_1 + x_2 = \\displaystyle\\frac{-b}{a}$\\item \\textbf{Produit} : $x_1 \\times x_2 = \\displaystyle\\frac{c}{a}$\\end{itemize}"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment savoir s'il y a deux racines sans calculer Delta ?",
+          "content": "Si les coefficients $a$ et $c$ \\textbf{n'ont pas le même signe} (c'est-à-dire si le produit $ac < 0$), alors l'équation $ax^2 + bx + c = 0$ admet obligatoirement \\textbf{deux solutions distinctes}.\\par\\smallskip (La réciproque n'est pas toujours vraie)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit l'équation $x^2 + 2x - 3 = 0$. On remarque que $1$ est une solution évidente. Déterminons la deuxième racine sans utiliser $\\Delta$.}\\par On vérifie que $x_1 = 1$ est solution : $1^2 + 2(1) - 3 = \\blank{0}$.\\par On utilise la formule du produit des racines $x_1 \\times x_2 = \\frac{c}{a}$. Ici, $\\frac{c}{a} = \\frac{-3}{1} = \\blank{-3}$.\\par On a donc $1 \\times x_2 = \\blank{-3}$, ce qui donne immédiatement $x_2 = \\blank{-3}$."
+        },
+        {
+          "type": "property",
+          "title": "Comment factoriser un trinôme du second degré ?",
+          "content": "La factorisation de $P(x) = ax^2 + bx + c$ dépend du signe de $\\Delta$ :\\begin{itemize}\\item \\textbf{Si $\\Delta > 0$} : $P(x) = a(x - x_1)(x - x_2)$\\item \\textbf{Si $\\Delta = 0$} : $P(x) = a(x - x_1)^2$\\item \\textbf{Si $\\Delta < 0$} : on ne peut pas factoriser $P(x)$ dans $\\mathbb{R}$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Factorisons le trinôme $P(x) = x^2 - 3x + 2$.}\\par On a déjà calculé que $\\Delta > 0$ et que les racines sont $x_1 = 1$ et $x_2 = 2$. Ici, le coefficient $a = \\blank{1}$.\\par On applique la formule de factorisation : $P(x) = 1(x - \\blank{1})(x - \\blank{2})$.\\par Ce qui s'écrit plus simplement : $P(x) = (x-1)(x-2)$."
+        }
+      ]
+    },
+    {
+      "id": "inequations_second_degre",
+      "category": "course",
+      "title": "Le signe et les inéquations du second degré",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour résoudre une inéquation du second degré, on ne peut pas isoler x. On doit étudier le signe de l'expression entière, et c'est là que la factorisation devient utile."
+        },
+        {
+          "type": "technique",
+          "title": "Quelle est la règle du signe pour un trinôme ?",
+          "content": "Pour déterminer le signe de $ax^2+bx+c$ (quand $\\Delta > 0$) :\\par Le trinôme prend le \\textbf{signe de $a$} à l'extérieur des racines (pour les $x$ éloignés).\\par Il prend le \\textbf{signe opposé à $a$} à l'intérieur de l'intervalle formé par les deux racines."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'inéquation $x^2 - 3x + 2 < 0$.}\\par Les racines trouvées précédemment sont $x_1 = \\blank{1}$ et $x_2 = \\blank{2}$.\\par Le coefficient de $x^2$ est $a = \\blank{1}$, qui est un nombre strictement positif.\\par On cherche les valeurs pour lesquelles l'expression est strictement négative, donc le signe \\textbf{opposé} à $a$. Cela correspond à la zone entre les racines.\\par L'ensemble des solutions est donc l'intervalle $S = \\blank{]1, 2[}$."
+        }
+      ]
+    },
+    {
+      "id": "equations_deux_inconnues",
+      "category": "course",
+      "title": "Équations du premier degré à deux inconnues",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On rajoute une dimension à notre réflexion : des équations où il faut trouver à la fois $x$ et $y$. Graphiquement, cela correspond à tracer une droite dans le plan."
+        },
+        {
+          "type": "property",
+          "title": "Combien y a-t-il de solutions pour ax + by = c ?",
+          "content": "Résoudre une équation du type $ax + by = c$, c'est trouver tous les \\textbf{couples} $(x;y)$ qui la vérifient.\\par Cette équation possède une infinité de solutions. Graphiquement, l'ensemble des solutions forme une \\textbf{droite} dans le plan."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Trouvons quelques solutions de l'équation $2x + y = 1$.}\\par On isole $y$ pour simplifier les calculs : $y = \\blank{1 - 2x}$.\\par On peut tester différentes valeurs de $x$ :\\begin{itemize}\\item Si $x = 0$, alors $y = 1 - 2(0) = \\blank{1}$. Le couple $(0;1)$ est solution.\\item Si $x = 1$, alors $y = 1 - 2(1) = \\blank{-1}$.\\end{itemize}\\par Ainsi, on confirme que le couple $(1 ; \\blank{-1})$ appartient à l'ensemble des solutions."
+        }
+      ]
+    },
+    {
+      "id": "systemes_equations",
+      "category": "course",
+      "title": "Systèmes d'équations et Méthode de Cramer",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Que se passe-t-il si l'on cherche l'intersection de deux droites ? C'est ce qu'on appelle un système. Il existe des méthodes de calcul basiques (substitution) et une méthode experte utilisant les déterminants."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons par la méthode de substitution ou d'addition le système : $\\begin{cases} 2x + y = 4 \\\\ x - y = -1 \\end{cases}$.}\\par Si on additionne les deux lignes verticalement, on élimine la variable \\blank{y} :\\begin{align*}(2x + x) + (y - y) &= 4 + (\\blank{-1}) \\\\3x &= \\blank{3} \\implies x = \\blank{1}\\end{align*}On remplace $x=1$ dans la deuxième équation : $1 - y = -1 \\implies y = \\blank{2}$. Le couple solution est $(1;2)$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le déterminant d'un système ?",
+          "content": "Pour le système $\\begin{cases} ax + by = c \\\\ a'x + b'y = c' \\end{cases}$, le \\textbf{déterminant principal} $\\Delta$ se calcule ainsi :\\par\\smallskip $$\\Delta = \\begin{vmatrix} a & b \\\\ a' & b' \\end{vmatrix} = ab' - a'b$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment appliquer la méthode de Cramer ?",
+          "content": "Cette méthode permet de résoudre un système directement sans tâtonner.\\par\\begin{itemize}\\item Calculer le déterminant principal $\\Delta$ avec les colonnes de $x$ et $y$\\item Calculer $\\Delta_x$ en remplaçant la colonne de $x$ par les résultats $c$ et $c'$\\item Calculer $\\Delta_y$ en remplaçant la colonne de $y$ par les résultats $c$ et $c'$\\item Si $\\Delta \\neq 0$, la solution unique est donnée par : $x = \\displaystyle\\frac{\\Delta_x}{\\Delta}$ et $y = \\displaystyle\\frac{\\Delta_y}{\\Delta}$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons avec la méthode de Cramer : $\\begin{cases} 2x + y = 4 \\\\ x - y = -1 \\end{cases}$.}\\par On calcule le déterminant principal $\\Delta$ :\\begin{align*}\\Delta = \\begin{vmatrix} 2 & 1 \\\\ 1 & -1 \\end{vmatrix} = 2(-1) - 1(1) = \\blank{-3}\\end{align*}On calcule $\\Delta_x$ :\\begin{align*}\\Delta_x = \\begin{vmatrix} 4 & 1 \\\\ -1 & -1 \\end{vmatrix} = 4(-1) - 1(-1) = \\blank{-3}\\end{align*}Puisque $\\Delta \\neq 0$, on trouve $x$ : $x = \\frac{\\Delta_x}{\\Delta} = \\frac{\\blank{-3}}{\\blank{-3}} = \\blank{1}$."
+        },
+        {
+          "type": "property",
+          "title": "Que faire si le déterminant est nul ?",
+          "content": "Si $\\Delta = 0$, le système n'a pas de solution unique. Il y a deux cas :\\begin{itemize}\\item Si $\\Delta_x \\neq 0$ ou $\\Delta_y \\neq 0$, les droites sont strictement parallèles : \\textbf{aucune solution} ($S = \\emptyset$)\\item Si $\\Delta = \\Delta_x = \\Delta_y = 0$, les deux équations représentent la même droite : \\textbf{infinité de solutions}\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons le système : $\\begin{cases} x - y = 2 \\\\ -2x + 2y = 3 \\end{cases}$.}\\par On commence par $\\Delta$ : $\\Delta = \\begin{vmatrix} 1 & -1 \\\\ -2 & 2 \\end{vmatrix} = 1(2) - (-1)(-2) = 2 - 2 = \\blank{0}$.\\par On calcule $\\Delta_x$ : $\\Delta_x = \\begin{vmatrix} 2 & -1 \\\\ 3 & 2 \\end{vmatrix} = 2(2) - (-1)(\\blank{3}) = 4 + 3 = \\blank{7}$.\\par Puisque $\\Delta = 0$ et $\\Delta_x \\neq 0$, le système n'a aucune solution. Donc $S = \\blank{\\emptyset}$."
+        }
+      ]
+    }
+  ]
+}

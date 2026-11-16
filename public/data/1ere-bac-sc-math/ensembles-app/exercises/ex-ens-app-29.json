@@ -1,0 +1,47 @@
+{
+  "id": "ex-ens-app-29",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Applications et intervalles",
+  "requiresRedaction": true,
+  "context": "On considère l'application : $f : [1;+\\infty[ \\to [1;+\\infty[$, $x \\mapsto x + \\dfrac{1}{x}$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que pour tout $x \\in [1;+\\infty[$ : $x^2 + 1 = x \\cdot x + 1 \\geq 1$, donc $f(x) \\geq 1$.",
+          "hint": ""
+        },
+        {
+          "id": "sq1b",
+          "content": "En déduire que $f$ est injective.",
+          "hint": "Supposez $f(x_1) = f(x_2)$ avec $x_1, x_2 \\geq 1$ : $x_1 + \\frac{1}{x_1} = x_2 + \\frac{1}{x_2}$. Développez et factorisez pour conclure $x_1 = x_2$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Vérifier que $\\left(\\forall x \\in [1;+\\infty[\\right)$ $f(x) \\geq 2$.",
+          "hint": "Utilisez l'inégalité arithmético-géométrique : $x + \\dfrac{1}{x} \\geq 2\\sqrt{x \\cdot \\frac{1}{x}} = 2$."
+        },
+        {
+          "id": "sq2b",
+          "content": "L'application $f$ est-elle surjective ? Justifier.",
+          "hint": "$f(x) \\geq 2$ pour tout $x \\geq 1$, donc $f([1;+\\infty[) \\subset [2;+\\infty[ \\subsetneq [1;+\\infty[$. La valeur $y = 1$ n'est pas atteinte : $f$ n'est pas surjective de $[1;+\\infty[$ dans $[1;+\\infty[$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer un intervalle $J$ de $\\mathbb{R}$ pour lequel $f$ réalise une bijection de $[1;+\\infty[$ sur $J$.",
+      "hint": "D'après la question 2 et le tableau de variation, $f([1;+\\infty[) = [2;+\\infty[$. Donc $J = [2;+\\infty[$."
+    }
+  ]
+}

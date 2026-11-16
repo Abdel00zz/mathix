@@ -1,0 +1,45 @@
+{
+  "id": "ex-log-01",
+  "theme": "logique",
+  "difficulty": "facile",
+  "topic": "Logique & Raisonnements — Logique propositionnelle",
+  "requiresRedaction": true,
+  "context": "Exprimer les propositions suivantes à l'aide des quantificateurs et connecteurs logiques, puis indiquer la valeur de vérité de chacune d'elles :",
+  "questions": [
+    {
+      "id": "qa",
+      "content": "$P_1$ : « Il n'existe aucun rationnel solution de l'équation $r^2 - 2 = 0$ »",
+      "hint": ""
+    },
+    {
+      "id": "qb",
+      "content": "$P_2$ : « Pour tous rationnels $x$ et $y$ tels que $x < y$, il existe un rationnel $z$ tel que $x < z < y$ »",
+      "hint": ""
+    },
+    {
+      "id": "qc",
+      "content": "$P_3$ : « Pour tout réel $x$, il existe un unique entier relatif $p$ tel que $p \\leq x < p+1$ »",
+      "hint": ""
+    },
+    {
+      "id": "qd",
+      "content": "$P_4$ : « Pour tout entier naturel $n$, il existe un entier naturel $m$ tel que $n \\leq m+2$ »",
+      "hint": ""
+    },
+    {
+      "id": "qe",
+      "content": "$P_5$ : « Pour tous réels $x$ et $y$, $\\sqrt{y+1} + (x-1)^2 = 0$ si et seulement si $x = 1$ et $y = -1$ »",
+      "hint": ""
+    },
+    {
+      "id": "qf",
+      "content": "$P_6$ : « Tout entier naturel divisible par 3 est divisible par 9 »",
+      "hint": ""
+    },
+    {
+      "id": "qg",
+      "content": "$P_7$ : « Tout entier naturel $n$ s'écrit : $n = 3k$ ou $n = 3k+1$ ou $n = 3k+2$ avec $k \\in \\mathbb{N}$ »",
+      "hint": ""
+    }
+  ]
+}

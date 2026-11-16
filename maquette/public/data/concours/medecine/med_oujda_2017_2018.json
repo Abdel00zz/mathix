@@ -1,0 +1,359 @@
+{
+  "school": "medecine",
+  "year": "2017–2018 · Oujda",
+  "title": "Annale Médecine — 2017–2018 · Oujda",
+  "source": "01_oujda_2017_2018.tex — transcription LaTeX normalisée",
+  "questions": [
+    {
+      "id": "med-oujda_2017_2018-q01",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2017–2018 · Oujda · Q1",
+      "officialQuestionCode": "Q1",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "On pose\n$A=1+\\cos\\frac{\\pi}{5}+\\cos\\frac{2\\pi}{5}+\\cdots+\\cos\\frac{9\\pi}{5}, \\qquad B=\\sin\\frac{\\pi}{5}+\\sin\\frac{2\\pi}{5}+\\cdots+\\sin\\frac{9\\pi}{5}.$\nOn considère le complexe $Z=A+ {i} B$. Déterminer $Z$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$Z=0$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$Z=-2 {i}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$Z=\\frac{1}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$Z=2 {i}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Toutes les réponses proposées sont fausses.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $\\omega= {e}^{ {i}\\frac{\\pi}{5}}$. Alors\n$\\displaystyle Z=\\sum_{k=0}^{9}\\omega^k=\\frac{1-\\omega^{10}}{1-\\omega}=0,$\ncar $\\omega^{10}= {e}^{2 {i}\\pi}=1$ et $\\omega\\ne1$."
+    },
+    {
+      "id": "med-oujda_2017_2018-q02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2017–2018 · Oujda · Q2",
+      "officialQuestionCode": "Q2",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Soit $f(x)=2\\ln(x^2-2x+2)$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le domaine de définition de $f$ est $\\R_+^*$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}f(x)=0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}\\frac{f(x)}{x}=0$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle f''(x)=\\frac{x(4-x)}{\\bigl[(x-1)^2+1\\bigr]^2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\displaystyle\\lim_{x\\to0}f(x)=\\ln2$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $x^2-2x+2=(x-1)^2+1>0$, donc $D_f=\\mathbb{R}$. De plus\n$\\frac{f(x)}x=\\frac{2\\ln\\bigl(x^2(1-\\frac{2}{x}+\\frac{2}{x^2})\\bigr)}x\\longrightarrow0.$\nEnfin $f(0)=2\\ln2$ et\n$f''(x)=\\frac{4x(2-x)}{\\bigl[(x-1)^2+1\\bigr]^2}.$"
+    },
+    {
+      "id": "med-oujda_2017_2018-q03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2017–2018 · Oujda · Q3",
+      "officialQuestionCode": "Q3",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "On considère\n$\\displaystyle I=\\int_0^1 5 {e}^t\\cos(2t)\\,\\,d t, \\qquad J=5\\int_0^1  {e}^t\\sin(2t)\\,\\,d t.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2J-I= {e}\\cos2-1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2I+J=1- {e}\\sin2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$J=2+ {e}\\sin2-2 {e}\\cos2$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$I=2+ {e}\\cos2-2\\sin2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Toutes les réponses proposées sont fausses.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une intégration directe, ou la résolution du système obtenu en dérivant ${e}^t(a\\cos2t+b\\sin2t)$, donne\n$J=2+ {e}\\sin2-2 {e}\\cos2.$"
+    },
+    {
+      "id": "med-oujda_2017_2018-q04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2017–2018 · Oujda · Q4",
+      "officialQuestionCode": "Q4",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Si $f$ est une fonction définie en $a$, alors :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ est continue en $a$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\ln(f)$ est définie en $a$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{f}$ est définie en $a$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{{ {e}^f}}$ est définie en $a$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Toutes les réponses proposées sont fausses.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque ${e}^{f(a)}>0$, l'expression $\\frac{1}{{e}^{f(a)}}$ existe toujours. Les autres affirmations demandent des hypothèses supplémentaires."
+    },
+    {
+      "id": "med-oujda_2017_2018-q06",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2017–2018 · Oujda · Q6",
+      "officialQuestionCode": "Q6",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Choisir les propositions justes.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "La solution de $y''-2y'-8y=0$, avec $y(0)=1$ et $y'(0)=2$, est $y(x)= {e}^{-2x}+2 {e}^{4x}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Pour $m\\in\\mathbb{N}$ et $\\theta\\in\\mathbb{R}$, $( {e}^{ {i}\\theta})^m=\\cos(\\theta^m)+ {i}\\sin(\\theta^m)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Pour $m\\in\\mathbb{N}$ et $\\theta\\in\\mathbb{R}$, $( {e}^{ {i}\\theta})^m=m\\bigl(\\cos\\theta+ {i}\\sin\\theta\\bigr)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "L'ensemble des points $M(x,y,z)$ vérifiant\n$x^2+y^2+z^2-2x+4y+2z+3=0$\nest une sphère.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "L'ensemble précédent est vide.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'équation différentielle a pour solution\n$y(x)=\\frac{1}{3} {e}^{-2x}+\\frac{2}{3} {e}^{4x},$\net la formule de Moivre est $( {e}^{ {i}\\theta})^m=\\cos(m\\theta)+ {i}\\sin(m\\theta)$. Enfin\n$(x-1)^2+(y+2)^2+(z+1)^2=3,$\nce qui est la sphère de centre $(1,-2,-1)$ et de rayon $\\sqrt3$."
+    },
+    {
+      "id": "med-oujda_2017_2018-q07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2017–2018 · Oujda · Q7",
+      "officialQuestionCode": "Q7",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Pour $n\\in\\mathbb{N}^*$, $n\\ge1$, on définit sur $[0,+\\infty[$\n$f_n(x)=nx {e}^{-nx}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}f_n(x)=+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}f_n(x)=-\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}f_n(x)=n$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f_n'(x)=n {e}^{-nx}(nx-1)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Toutes les réponses proposées sont fausses.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "On a\n$\\displaystyle \\lim_{x\\to+\\infty}nx {e}^{-nx}=0, \\qquad f_n'(x)=n {e}^{-nx}(1-nx).$\nToutes les propositions A à D sont donc fausses."
+    },
+    {
+      "id": "med-oujda_2017_2018-q08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2017–2018 · Oujda · Q8",
+      "officialQuestionCode": "Q8",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "On reprend les données de la question 7.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(C_n)$ admet l'asymptote $y=1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(C_n)$ admet l'asymptote $y= {e}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f_n$ atteint son maximum au point $\\left(\\frac{1}{{e}},\\frac{1}{n}\\right)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f_n$ atteint son maximum au point $\\left(\\frac{1}{n},\\frac{1}{{e}}\\right)$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$f_n$ atteint son maximum au point $\\left(\\frac{1}{{e}},-\\frac{1}{n}\\right)$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La dérivée s'annule uniquement en $x=\\frac{1}{n}$. Le signe de $f_n'$ passe de $+$ à $-$ et\n$f_n\\!\\left(\\frac{1}{n}\\right)=\\frac{1}{{e}}.$"
+    },
+    {
+      "id": "med-oujda_2017_2018-q09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2017–2018 · Oujda · Q9",
+      "officialQuestionCode": "Q9",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "On note $(C_1)$ et $(C_2)$ les courbes de $f_1(x)=x {e}^{-x}$ et $f_2(x)=2x {e}^{-2x}$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elles se coupent en deux points d'abscisses ${e}^2$ et $\\ln4$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Sur $]\\ln2,+\\infty[$, $(C_2)$ est au-dessous de $(C_1)$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Elles ne se coupent pas.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Sur $]0,\\ln2[$, $(C_2)$ est au-dessous de $(C_1)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Elles se coupent en deux points d'abscisses ${e}^2$ et ${e}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour $x>0$,\n$f_1(x)=f_2(x)\\iff  {e}^x=2\\iff x=\\ln2.$\nLes courbes se coupent aussi en $x=0$. Sur $]0,\\ln2[$, $f_2>f_1$, puis sur $]\\ln2,+\\infty[$, $f_2<f_1$."
+    },
+    {
+      "id": "med-oujda_2017_2018-q10",
+      "type": "mcq",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l’espace",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2017–2018 · Oujda · Q10",
+      "officialQuestionCode": "Q10",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Calculer l'aire du domaine limité par $(C_1)$, l'axe des abscisses et les droites $x=0$ et $x=\\ln2$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}(\\ln2-1)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\ln2-1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1-\\ln2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\ln2}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Toutes les réponses proposées sont fausses.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "$\\displaystyle \\mathcal A=\\int_0^{\\ln2}x {e}^{-x}\\,\\,d x =\\left[-(x+1) {e}^{-x}\\right]_0^{\\ln2} =\\frac{1-\\ln2}{2}.$\nCette valeur ne figure pas parmi A à D."
+    }
+  ]
+}

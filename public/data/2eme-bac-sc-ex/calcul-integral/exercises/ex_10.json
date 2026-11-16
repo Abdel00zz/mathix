@@ -1,0 +1,42 @@
+{
+  "id": "ex-10",
+  "theme": "calcul-integral",
+  "difficulty": "moyen",
+  "topic": "Calcul Intégral - Encadrement d'une intégrale par étude de variations",
+  "requiresRedaction": true,
+  "context": "On considère l'intégrale suivante : $I = \\displaystyle\\int_0^1 \\frac{e^{-x^2}}{1+x}\\,dx$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Pour tout réel $x \\in [0;1]$, on pose : $u(x) = e^{-x} + x - 1$ et $v(x) = 1 - x + \\dfrac{x^2}{2} - e^{-x}$",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Étudier les variations des fonctions $u$ et $v$ sur $[0;1]$",
+          "hint": "\\method Calculez $u'(x)$ et $v'(x)$, puis étudiez leur signe sur $[0;1]$. \\tip $u'(x) = -e^{-x} + 1$ et $v'(x) = -1 + x + e^{-x}$. Comparez chacune à 0 en utilisant les inégalités classiques sur $e^{-x}$."
+        },
+        {
+          "id": "sq1b",
+          "content": "En déduire que pour tout $x \\in [0;1]$ : $1 - x \\leq e^{-x} \\leq 1 - x + \\dfrac{x^2}{2}$ et que $1 - x \\leq \\dfrac{e^{-x^2}}{1+x} \\leq 1 - x + \\dfrac{x^4}{2(1+x)}$",
+          "hint": "\\method Le signe de $u$ donne un encadrement de $e^{-x}$, et le signe de $v$ l'autre. \\tip Pour passer de l'encadrement de $e^{-x}$ à celui de $\\frac{e^{-x^2}}{1+x}$, substituez $x$ par $x^2$ dans l'encadrement et divisez par $1+x$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Justifier que pour tout $x \\in [0;1]$ : $\\dfrac{x^4}{1+x} = x^3 - x^2 + x - 1 + \\dfrac{1}{x+1}$",
+          "hint": "\\method Effectuez la division euclidienne de $x^4$ par $x+1$. \\tip Vérifiez en repassant au même dénominateur que l'égalité est bien satisfaite."
+        },
+        {
+          "id": "sq2b",
+          "content": "En déduire que : $\\dfrac{1}{2} \\leq I \\leq \\dfrac{5}{24} + \\dfrac{\\ln(2)}{2}$",
+          "hint": "\\method Intégrez l'encadrement de $\\frac{e^{-x^2}}{1+x}$ obtenu en 1b sur $[0;1]$. \\tip Pour la borne supérieure, utilisez le résultat de 2a pour calculer $\\displaystyle\\int_0^1 \\frac{x^4}{2(1+x)}\\,dx$."
+        }
+      ]
+    }
+  ]
+}

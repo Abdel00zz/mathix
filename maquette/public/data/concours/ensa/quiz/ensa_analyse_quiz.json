@@ -1,0 +1,604 @@
+{
+  "questions": [
+    {
+      "id": "ensa-an-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "prompt": "La limite $\\displaystyle \\lim_{x \\to 0} \\frac{\\sqrt{1+x} - \\sqrt{1-x}}{x}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "N'existe pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Multiplication par le conjugué : $\\frac{(1+x)-(1-x)}{x(\\sqrt{1+x}+\\sqrt{1-x})} = \\frac{2}{\\sqrt{1+x}+\\sqrt{1-x}} \\xrightarrow[x\\to 0]{} \\frac{2}{2} = 1$."
+    },
+    {
+      "id": "ensa-an-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "prompt": "$\\displaystyle \\lim_{x \\to 0} \\frac{\\sin(3x)}{\\tan(5x)}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{3}{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{5}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Equivalents en $0$ : $\\sin(3x) \\sim 3x$ et $\\tan(5x) \\sim 5x$. Quotient : $\\frac{3x}{5x} = \\frac{3}{5}$."
+    },
+    {
+      "id": "ensa-an-03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "prompt": "$\\displaystyle \\lim_{x \\to +\\infty} \\left(1 + \\frac{3}{x}\\right)^x$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$e^3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$3e$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\left(1+\\frac{3}{x}\\right)^x = e^{x\\ln(1+3/x)}$. Or $\\ln(1+u) \\sim u$ quand $u\\to 0$, donc l'exposant tend vers $3$. Limite fondamentale : $(1+a/n)^n \\to e^a$."
+    },
+    {
+      "id": "ensa-an-04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Continuité",
+      "prompt": "Soit $f(x)=\\frac{e^x - 1 - x}{x^2}$ si $x \\neq 0$. Pour que $f$ soit prolongeable par continuité en $0$, on pose $f(0) =$ :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "DL : $e^x = 1 + x + \\frac{x^2}{2} + o(x^2)$. Donc $\\frac{e^x-1-x}{x^2} \\to \\frac{1}{2}$. La règle de L'Hôpital (appliquée deux fois) donne le même résultat."
+    },
+    {
+      "id": "ensa-an-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "prompt": "Soit $f(x) = x^x$ pour $x > 0$. Alors $f'(x)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^x(\\ln x + 1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x \\cdot x^{x-1}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x^x \\ln x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x^{x+1}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On écrit $f(x) = e^{x\\ln x}$. Dérivée de la composée : $f'(x) = (\\ln x + 1) \\cdot e^{x\\ln x} = x^x(\\ln x + 1)$. Le piège est d'appliquer $(x^n)' = nx^{n-1}$ qui ne s'applique que si $n$ est constant."
+    },
+    {
+      "id": "ensa-an-06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "prompt": "La dérivée de $f(x) = \\ln(\\cos x)$ sur $]-\\frac{\\pi}{2}, \\frac{\\pi}{2}[$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\tan x$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{\\cos x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\frac{\\sin x}{\\cos^2 x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\cos x \\cdot \\ln(\\cos x)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Dérivée d'une composée $\\ln(u)$ : $f'(x) = \\frac{u'}{u} = \\frac{-\\sin x}{\\cos x} = -\\tan x$."
+    },
+    {
+      "id": "ensa-an-07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "prompt": "Soit $(u_n)$ définie par $u_0 = 2$ et $u_{n+1} = \\sqrt{2u_n + 3}$. La suite converge vers :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\sqrt{7}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Point fixe : $\\ell = \\sqrt{2\\ell+3} \\Rightarrow \\ell^2 - 2\\ell - 3 = 0 \\Rightarrow \\ell = 3$ (seule racine $> 0$). Par récurrence : $u_n < 3$ et $u_{n+1} > u_n$. Suite croissante majorée, donc convergente."
+    },
+    {
+      "id": "ensa-an-08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "prompt": "La somme $\\displaystyle S = \\sum_{k=0}^{n} \\binom{n}{k}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^n$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$n!$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$n^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2n$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Binôme de Newton avec $a=b=1$ : $\\displaystyle (1+1)^n = \\sum_{k=0}^n \\binom{n}{k} = 2^n$."
+    },
+    {
+      "id": "ensa-an-09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Logarithme",
+      "prompt": "L'ensemble des solutions de $\\ln(x^2 - 3) = \\ln(2x)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{3\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\{-1, 3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{-1\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\emptyset$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Domaine : $x^2-3>0$ et $x>0$, donc $x>\\sqrt{3}$. Equation : $x^2-2x-3=0$, racines $3$ et $-1$. Seul $x=3$ est dans le domaine. Piège classique : oublier de vérifier le domaine."
+    },
+    {
+      "id": "ensa-an-10",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Exponentielle",
+      "prompt": "Le nombre de solutions de $e^{2x} - 5e^x + 6 = 0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $t = e^x > 0$. Equation : $t^2 - 5t + 6 = (t-2)(t-3) = 0$. Deux solutions $t=2$ et $t=3$, toutes deux $>0$. D'où $x = \\ln 2$ et $x = \\ln 3$."
+    },
+    {
+      "id": "ensa-an-11",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "$\\displaystyle \\int_0^1 x e^{-x} \\, dx$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1 - \\frac{2}{e}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1 - \\frac{1}{e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e - 2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "IPP avec $u=x$ et $v'=e^{-x}$ : $\\displaystyle [-xe^{-x}]_0^1 + \\int_0^1 e^{-x}dx = -\\frac{1}{e} + [-e^{-x}]_0^1 = -\\frac{1}{e} - \\frac{1}{e} + 1 = 1-\\frac{2}{e}$."
+    },
+    {
+      "id": "ensa-an-12",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "$\\displaystyle \\int_0^{\\pi/2} \\cos^2(x) \\, dx$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Linéarisation : $\\cos^2 x = \\frac{1+\\cos(2x)}{2}$. Intégrale : $\\frac{1}{2}[x+\\frac{\\sin(2x)}{2}]_0^{\\pi/2} = \\frac{\\pi}{4}$."
+    },
+    {
+      "id": "ensa-an-13",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "Soit $f$ continue sur $[0,1]$ avec $\\displaystyle \\int_0^1 f(t)\\,dt = 3$. Alors $\\displaystyle \\int_0^1 f(1-t)\\,dt$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "On ne peut pas conclure",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Changement de variable $u = 1-t$ : $\\displaystyle \\int_0^1 f(1-t)dt = \\int_0^1 f(u)du = 3$. Propriété de symétrie de l'intégrale sur $[0,1]$."
+    },
+    {
+      "id": "ensa-an-14",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "La primitive de $\\frac{2x+3}{x^2+3x+5}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln(x^2+3x+5) + C$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\ln(x^2+3x+5)}{2} + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\arctan(x^2+3x+5) + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(x^2+3x+5)^{-1} + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le numérateur $2x+3$ est la dérivée du dénominateur. Forme $\\displaystyle \\int \\frac{u'}{u} = \\ln|u| + C$. Le trinôme est toujours positif ($\\Delta = 9-20 < 0$)."
+    },
+    {
+      "id": "ensa-an-15",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Equations différentielles",
+      "prompt": "Les solutions de $y' + 2y = 0$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = Ce^{-2x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = Ce^{2x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = C\\cos(2x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = -2x + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$y' + ay = 0 \\Rightarrow y = Ce^{-ax}$. Ici $a=2$."
+    },
+    {
+      "id": "ensa-an-16",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Equations différentielles",
+      "prompt": "La solution de $y' - 3y = e^{3x}$ avec $y(0)=1$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = (x+1)e^{3x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = xe^{3x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = e^{3x} + x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = (x+1)e^{-3x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Solution homogène : $Ce^{3x}$. Variation de la constante : $C'(x)e^{3x} = e^{3x}$, donc $C(x) = x$. Générale : $y = (x+K)e^{3x}$, $y(0)=K=1$."
+    },
+    {
+      "id": "ensa-an-17",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Exponentielle",
+      "prompt": "L'aire sous la courbe $y=\\frac{1}{x}$ entre $x=1$ et $x=e^2$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$e^2 - 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e^2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\displaystyle \\int_1^{e^2} \\frac{dx}{x} = [\\ln x]_1^{e^2} = 2 - 0 = 2$."
+    },
+    {
+      "id": "ensa-an-18",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "prompt": "$\\displaystyle \\lim_{x \\to +\\infty} \\frac{x^2}{e^x}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Croissance comparée : $\\displaystyle \\lim_{x\\to+\\infty} \\frac{x^n}{e^x} = 0$ pour tout $n$. L'exponentielle l'emporte toujours sur les polynômes en $+\\infty$."
+    },
+    {
+      "id": "ensa-an-19",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "prompt": "La tangente à $y = e^x$ en $x = 0$ a pour équation :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = x + 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = ex$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = 2x + 1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(0)=1$, $f'(0)=1$. Tangente : $y = f'(0)(x-0) + f(0) = x + 1$."
+    },
+    {
+      "id": "ensa-an-20",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "prompt": "Soit $(u_n)$ définie par $u_n = \\frac{(-1)^n}{n}$. La suite est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Convergente vers $0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Divergente",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Croissante",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Convergente vers $1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|u_n| = \\frac{1}{n} \\to 0$. Par le théorème des gendarmes : $-\\frac{1}{n} \\leq u_n \\leq \\frac{1}{n} \\to 0$."
+    }
+  ]
+}

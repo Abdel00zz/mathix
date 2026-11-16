@@ -1,0 +1,30 @@
+{
+  "id": "ex-deriv-04",
+  "theme": "derivation",
+  "difficulty": "moyen",
+  "topic": "Tangentes et Géométrie",
+  "context": "Soit $f$ la fonction définie par $f(x) = \\sqrt{4-2x}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Étudier les variations de la fonction $f$.",
+      "hint": "Utilisez la dérivée de la composée $(\\sqrt{u})' = \\frac{u'}{2\\sqrt{u}}$. Attention au signe apporté par la dérivée de $4-2x$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer une équation de la tangente $T$ à $(C_f)$ au point d'abscisse 0.",
+      "hint": "Calculez simplement $f(0)$ et $f'(0)$ pour les injecter dans la formule $y = f'(0)x + f(0)$."
+    },
+    {
+      "id": "q3",
+      "content": "Existe-t-il une tangente à $(C_f)$ de coefficient directeur $-\\frac{1}{4}$ ?",
+      "hint": "Résolvez l'équation $f'(x) = -\\frac{1}{4}$. Isolez la racine carrée avant d'élever au carré pour trouver $x$."
+    },
+    {
+      "id": "q4",
+      "content": "Existe-t-il une tangente à $(C_f)$ qui passe par le point $A(2;3)$ ?",
+      "hint": "Écrivez l'équation de la tangente en un point générique d'abscisse $a$. Remplacez $x$ par 2 et $y$ par 3, puis résolvez l'équation obtenue pour trouver $a$."
+    }
+  ]
+}

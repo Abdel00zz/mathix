@@ -1,0 +1,34 @@
+{
+  "id": "generalites-fonctions",
+  "title": "Généralités sur les fonctions",
+  "section": "analyse",
+  "quizCount": 6,
+  "revisions": [
+    {
+      "id": "rev-fonc-tc",
+      "title": "Fiche Complète : Fonctions",
+      "path": "data/tronc-commun-sc/generalites-fonctions/revisions/fiche_fonctions_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-fonc-tc-01",
+      "path": "data/tronc-commun-sc/generalites-fonctions/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-fonc-tc-02",
+      "path": "data/tronc-commun-sc/generalites-fonctions/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-generalites-fonctions-01",
+      "path": "data/tronc-commun-sc/generalites-fonctions/exercises/ex_fonctions_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-generalites-fonctions-01",
+      "path": "data/tronc-commun-sc/generalites-fonctions/quiz/generalites-fonctions_quiz.json",
+      "questionsCount": 6
+    }
+  ]
+}

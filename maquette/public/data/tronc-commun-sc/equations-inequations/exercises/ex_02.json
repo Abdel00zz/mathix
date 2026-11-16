@@ -1,0 +1,20 @@
+{
+  "id": "ex-eq-tc-02",
+  "theme": "equations-inequations",
+  "difficulty": "moyen",
+  "topic": "Équations, inéquations et systèmes",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Système d'équations",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Résoudre dans $\\mathbb{R}^2$ le système : $\\begin{cases} 2x + 3y = 7 \\\\ 3x - y = 5 \\end{cases}$.",
+          "hint": "\\method Utilisez la méthode de substitution (isolez $y$ dans la deuxième équation) ou la méthode de combinaison linéaire."
+        }
+      ]
+    }
+  ]
+}

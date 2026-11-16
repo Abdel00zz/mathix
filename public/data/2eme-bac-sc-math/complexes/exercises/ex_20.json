@@ -1,0 +1,67 @@
+{
+  "id": "ex-complexes-20",
+  "topic": "Nombres complexes - Bac National 2017 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2017,
+  "examenSession": "Normale",
+  "context": "Soit $m$ un nombre complexe non nul.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans $\\mathbb{C}$ l'équation : $(E):2z^2-2(m+1+i)z+m^2+(1+i)m+i=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "Vérifier que le discriminant de l'équation $(E)$ est : $\\Delta=(2im)^2$.",
+      "hint": "Calculez $\\Delta=4(m+1+i)^2-8[m^2+(1+i)m+i]$, développez soigneusement puis regroupez pour obtenir un carré en $2im$."
+    },
+    {
+      "id": "p1q2",
+      "content": "Résoudre dans $\\mathbb{C}$ l'équation $(E)$.",
+      "hint": "Une racine carrée de $\\Delta$ est $2im$ ; appliquez la formule des racines avec $a=2$."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe est rapporté à un repère orthonormé direct $\\left(O,\\overrightarrow{e_1},\\overrightarrow{e_2}\\right)$. On suppose que $m\\in\\mathbb{C}\\setminus\\{0,1,i\\}$ et on pose : $z_1=\\dfrac{1+i}{2}(m+1)$ et $z_2=\\dfrac{1-i}{2}(m+i)$. On considère les points $A$, $B$, $M$, $M_1$ et $M_2$ d'affixes respectifs $1$, $i$, $m$, $z_1$ et $z_2$."
+    },
+    {
+      "id": "p2q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q1a",
+          "content": "Vérifier que : $z_1=iz_2+1$.",
+          "hint": "Calculez $iz_2+1=i\\cdot\\dfrac{1-i}2(m+i)+1$, développez, et comparez à $z_1$."
+        },
+        {
+          "id": "p2q1b",
+          "content": "Montrer que $M_1$ est l'image de $M_2$ par la rotation de centre le point $\\Omega$ d'affixe $w=\\dfrac{1+i}{2}$ et d'angle de mesure $\\dfrac{\\pi}{2}$.",
+          "hint": "Il faut vérifier $z_1-w=i(z_2-w)$ ; utilisez le résultat précédent $z_1=iz_2+1$ et calculez $iz_2+1-w$ pour comparer à $i(z_2-w)$."
+        }
+      ]
+    },
+    {
+      "id": "p2q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Vérifier que : $\\dfrac{z_2-m}{z_1-m}=i\\dfrac{m-1}{m-i}$.",
+          "hint": "Remplacez $z_1$ et $z_2$ par leurs expressions en fonction de $m$, mettez chaque numérateur/dénominateur au même dénominateur, puis simplifiez."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que si les points $M$, $M_1$ et $M_2$ sont alignés alors $M$ appartient au cercle $(\\Gamma)$ de diamètre $[AB]$.",
+          "hint": "L'alignement de $M,M_1,M_2$ équivaut à $\\dfrac{z_2-m}{z_1-m}\\in\\mathbb{R}$ ; d'après la question précédente cela équivaut à $\\dfrac{m-1}{m-i}$ imaginaire pur, condition caractéristique du cercle de diamètre $[AB]$."
+        },
+        {
+          "id": "p2q2c",
+          "content": "Déterminer l'ensemble des points $M$ pour que les points $\\Omega$, $M$, $M_1$ et $M_2$ soient cocycliques (remarquer que : $\\dfrac{z_1-w}{z_2-w}=i$).",
+          "hint": "Utilisez un birapport faisant intervenir $\\Omega,M,M_1,M_2$ ; l'indication $\\frac{z_1-w}{z_2-w}=i$ (constant) simplifie ce birapport en un quotient à comparer à celui de la question 2a) pour traduire la cocyclicité."
+        }
+      ]
+    }
+  ]
+}

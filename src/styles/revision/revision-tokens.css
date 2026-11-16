@@ -1,0 +1,77 @@
+/* ═══ JETONS DE COULEUR DES BLOCS DE RÉVISION — STYLE NASA & NATIONAL GEOGRAPHIC ═══
+   Design Language : Spatial, aérospatial, cartographie et exploration scientifique d'élite.
+   Haute clarté cognitive, surfaces épurées, typographie nette, contrastes impeccables.
+   Source de vérité unique référencée par revisionPalette.ts. */
+:root {
+  /* DÉFINITION — Deep Telemetry Cyan / Apollo Earth Observation (#0f766e) */
+  --rev-definition-bg: #ffffff;
+  --rev-definition-soft: #f0fdfa;
+  --rev-definition-border: rgba(13, 148, 136, 0.22);
+  --rev-definition-accent: #0f766e;
+  --rev-definition-glow: rgba(13, 148, 136, 0.08);
+
+  /* THÉORIE (Théorème, Proposition, Propriété, Lemme...) — NASA Deep Space Cobalt (#1d4ed8) */
+  --rev-theory-bg: #ffffff;
+  --rev-theory-soft: #f0f7ff;
+  --rev-theory-border: rgba(29, 78, 216, 0.2);
+  --rev-theory-accent: #1d4ed8;
+  --rev-theory-glow: rgba(29, 78, 216, 0.08);
+
+  /* APPLICATION & EXERCICES — Modern Coursera Blue (#0056d2) */
+  --rev-application-bg: #ffffff;
+  --rev-application-soft: #f0f5ff;
+  --rev-application-border: rgba(0, 86, 210, 0.28);
+  --rev-application-accent: #0056d2;
+  --rev-application-glow: rgba(0, 86, 210, 0.08);
+
+  /* MÉTHODE & RAPPEL — National Geographic Signature Solar Gold / Lunar Horizon (#b45309) */
+  --rev-method-bg: #ffffff;
+  --rev-method-soft: #fffbeb;
+  --rev-method-border: rgba(217, 119, 6, 0.24);
+  --rev-method-accent: #b45309;
+  --rev-method-glow: rgba(217, 119, 6, 0.08);
+
+  /* PRATIQUE (Exemples, Problèmes, Indices, Solutions) — Deep Ocean Cyan (#0369a1) */
+  --rev-practice-bg: #ffffff;
+  --rev-practice-soft: #f0f9ff;
+  --rev-practice-border: rgba(2, 132, 199, 0.2);
+  --rev-practice-accent: #0369a1;
+  --rev-practice-glow: rgba(2, 132, 199, 0.07);
+
+  /* NOTE & SYNTHÈSE — Lunar Basalt / Titanium Slate (#475569) */
+  --rev-note-bg: #ffffff;
+  --rev-note-soft: #f8fafc;
+  --rev-note-border: rgba(100, 116, 139, 0.18);
+  --rev-note-accent: #475569;
+  --rev-note-glow: rgba(100, 116, 139, 0.06);
+
+  /* ATTENTION (Warning) — Mars Horizon / Solar Flare Alert Red (#dc2626) */
+  --rev-warning-bg: #fffbfb;
+  --rev-warning-soft: #fef2f2;
+  --rev-warning-border: transparent;
+  --rev-warning-accent: #dc2626;
+  --rev-warning-glow: rgba(220, 38, 38, 0.08);
+
+  /* NEUTRE (Preuve, Intro) — Clean Scientific Alabaster (#334155) */
+  --rev-neutral-bg: #ffffff;
+  --rev-neutral-soft: #f8fafc;
+  --rev-neutral-border: rgba(148, 163, 184, 0.18);
+  --rev-neutral-accent: #334155;
+  --rev-neutral-glow: rgba(15, 23, 42, 0.04);
+
+  /* ÉCHELLE FLUIDE CONTINUE — téléphone (320px) → tablette → laptop → grand écran (1600px+) */
+  --rev-fluid-body: clamp(0.98rem, calc(0.945rem + 0.175vw), 1.12rem);
+  --rev-fluid-heading: clamp(1.06rem, calc(0.99rem + 0.35vw), 1.34rem);
+  --rev-fluid-section-title: clamp(1.35rem, calc(1.22rem + 0.65vw), 1.9rem);
+  --rev-fluid-section-index: clamp(1.75rem, calc(1.4rem + 1.55vw), 3.05rem);
+  --rev-fluid-hero-title: clamp(2.05rem, calc(1.48rem + 2.85vw), 4.35rem);
+  --rev-fluid-card-pad-y: clamp(12px, calc(10px + 0.5vw), 18px);
+  --rev-fluid-card-pad-x: clamp(14px, calc(11px + 0.85vw), 24px);
+  --rev-fluid-card-gap: clamp(0.9rem, calc(0.75rem + 0.7vw), 1.35rem);
+  --rev-fluid-stage-pad-y: clamp(1.75rem, calc(1.1rem + 3vw), 4rem);
+  --rev-fluid-stage-pad-x: clamp(1.15rem, calc(0.7rem + 2.4vw), 3.25rem);
+  --rev-fluid-badge-font: clamp(0.64rem, calc(0.61rem + 0.1vw), 0.74rem);
+  --rev-fluid-badge-pad-y: clamp(3px, 0.35vw, 5px);
+  --rev-fluid-badge-pad-x: clamp(9px, calc(8px + 0.35vw), 13px);
+  --rev-fluid-badge-min-h: clamp(23px, calc(21px + 0.38vw), 28px);
+}

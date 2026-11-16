@@ -1,0 +1,21 @@
+{
+  "id": "ch02-ex02",
+  "theme": "arithmetique",
+  "difficulty": "facile",
+  "chapter": "02 - Les nombres premiers ; la décomposition en produit de facteurs premiers",
+  "topic": "Nombres premiers - Primalité et décomposition de factorielle",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $2017$ est un nombre premier.",
+      "hint": "Il suffit de vérifier qu'aucun nombre premier $p$ avec $p \\leq \\sqrt{2017} \\approx 44{,}9$ ne divise $2017$. Testez méthodiquement les premiers : $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43$."
+    },
+    {
+      "id": "q2",
+      "content": "Après avoir décomposé le nombre $17!$ en produit de facteurs premiers, quel est l'exposant du nombre $2$ dans cette décomposition ?",
+      "hint": "L'exposant de $2$ dans $n!$ est $\\displaystyle\\sum_{k=1}^{\\infty} \\left\\lfloor \\frac{n}{2^k} \\right\\rfloor$. Calculez $\\lfloor 17/2 \\rfloor + \\lfloor 17/4 \\rfloor + \\lfloor 17/8 \\rfloor + \\lfloor 17/16 \\rfloor$."
+    }
+  ]
+}

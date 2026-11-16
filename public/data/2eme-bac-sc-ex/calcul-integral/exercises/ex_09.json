@@ -1,0 +1,25 @@
+{
+  "id": "ex-09",
+  "theme": "calcul-integral",
+  "difficulty": "moyen",
+  "topic": "Calcul Intégral - Primitive, IPP et aire (avec logarithme)",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction définie sur $]0;+\\infty[$ par : $f(x) = (1+\\ln x)^2 + \\dfrac{1}{x^2}$. Soit $(C_f)$ la courbe de $f$ dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$ (unité $1\\,\\text{cm}$). On considère les intégrales $I$ et $J$ définies par : $I = \\displaystyle\\int_1^e (1+\\ln x)\\,dx$ et $J = \\displaystyle\\int_1^e (1+\\ln x)^2\\,dx$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que la fonction $H : x \\mapsto x\\ln x$ est une primitive de la fonction $h : x \\mapsto 1 + \\ln x$ sur $]0;+\\infty[$, puis en déduire que : $I = e$.",
+      "hint": "\\method Calculez $H'(x)$ par la règle du produit. \\tip Pour l'intégrale $I$, évaluez $[x\\ln x]_1^e$ en tenant compte de $\\ln e = 1$ et $\\ln 1 = 0$."
+    },
+    {
+      "id": "q2",
+      "content": "En utilisant une intégration par parties, montrer que : $J = 2e - 1$.",
+      "hint": "\\method Posez $u = (1+\\ln x)^2$ et $v' = 1$. \\tip Après l'IPP, la nouvelle intégrale fait apparaître $1 + \\ln x$. Sa valeur vient d'être établie en question 1."
+    },
+    {
+      "id": "q3",
+      "content": "Calculer en $\\text{cm}^2$, l'aire du domaine plan limité par $(C_f)$, l'axe des abscisses et les droites d'équations $x = 1$ et $x = e$.",
+      "hint": "\\method L'aire est $\\displaystyle\\int_1^e f(x)\\,dx = J + \\int_1^e \\frac{1}{x^2}\\,dx$. \\tip $\\displaystyle\\int_1^e \\frac{1}{x^2}\\,dx$ est une intégrale immédiate. Utilisez le résultat de la question 2 pour $J$."
+    }
+  ]
+}

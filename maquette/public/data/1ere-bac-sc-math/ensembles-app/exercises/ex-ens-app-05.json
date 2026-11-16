@@ -1,0 +1,45 @@
+{
+  "id": "ex-ens-app-05",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Opérations sur les ensembles",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $A \\cap B$ et $A \\cup B$ dans les cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq1_1",
+          "content": "$A = [-2;3]$ et $B = [1;5]$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_2",
+          "content": "$A = ]-5;-1[$ et $B = ]-2;5]$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_3",
+          "content": "$A = ]-3;1[$ et $B = ]-5;2]$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_4",
+          "content": "$A = ]-6;-5[$ et $B = [4;6]$",
+          "hint": "Ces deux intervalles sont-ils disjoints ?"
+        },
+        {
+          "id": "sq1_5",
+          "content": "$A = ]-\\infty;2[$ et $B = ]-\\infty;2[$",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soit $A$ et $B$ deux sous-ensembles de $\\mathbb{R}$ vérifiant : $A \\cup B = \\{1;2;3;4;5;6\\}$, $A \\cap B = \\{1;2;3;4\\}$, $6 \\notin A \\setminus B$ et $5 \\notin B \\setminus A$. Déterminer en extension les ensembles $A$ et $B$.",
+      "hint": "Utilisez les conditions : $6 \\notin A \\setminus B$ signifie que si $6 \\in A$ alors $6 \\in B$. Raisonnez de même pour 5."
+    }
+  ]
+}

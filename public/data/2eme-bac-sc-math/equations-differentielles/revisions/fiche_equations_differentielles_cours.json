@@ -1,0 +1,31 @@
+{
+  "header": {
+    "title": "Equations differentielles",
+    "subtitle": "Resume de cours essentiel",
+    "context": "2eme Bac Sciences Mathematiques"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ce chapitre \"Equations differentielles\" regroupe les notions fondamentales a maitriser pour les exercices du bac."
+        }
+      ]
+    },
+    {
+      "id": "essentiel",
+      "category": "course",
+      "title": "Points essentiels",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Retenir les definitions, les proprietes principales et les conditions d application."
+        }
+      ]
+    }
+  ]
+}

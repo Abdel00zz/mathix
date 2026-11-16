@@ -1,0 +1,30 @@
+{
+  "id": "ex-ens-app-16",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Théorie des Ensembles — Propriétés avancées des ensembles",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "On considère les ensembles suivants : $A = \\left\\{x \\in \\mathbb{R} \\;\\ \\middle| \\;\\ \\dfrac{|x|}{x^2+1} \\leq \\dfrac{1}{2}\\right\\}$. Montrer que $A = \\mathbb{R}$.",
+      "hint": "Montrez que pour tout $x \\in \\mathbb{R}$, $\\dfrac{|x|}{x^2+1} \\leq \\dfrac{1}{2}$. Cela revient à $2|x| \\leq x^2 + 1$, soit $(|x|-1)^2 \\geq 0$."
+    },
+    {
+      "id": "q2",
+      "content": "On considère l'ensemble : $A = \\left\\{x \\in \\mathbb{R} \\;\\ \\middle| \\;\\ \\dfrac{3x-2}{x+2} > 1\\right\\}$ et $B = \\left\\{x \\in \\mathbb{R} \\;\\ \\middle| \\;\\ \\dfrac{3x-2}{x+2} < \\dfrac{5}{3}\\right\\}$",
+      "subQuestions": [
+        {
+          "id": "sq2_1",
+          "content": "Écrire $A$ et $B$ sous forme d'intervalles.",
+          "hint": "Pour $A$ : ramenez l'inégalité à $\\dfrac{3x-2}{x+2} - 1 > 0$, simplifiez le numérateur et étudiez le signe. Faites de même pour $B$."
+        },
+        {
+          "id": "sq2_2",
+          "content": "Déterminer $A \\cup B$ et $A \\cap B$.",
+          "hint": "Une fois les intervalles trouvés, reportez-vous sur la droite réelle."
+        }
+      ]
+    }
+  ]
+}

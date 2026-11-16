@@ -1,0 +1,89 @@
+{
+  "header": {
+    "title": "Géométrie analytique dans l'espace",
+    "subtitle": "Repérage, droites et plans dans l'espace",
+    "context": "1ère Bac Sciences Expérimentales"
+  },
+  "sections": [
+    {
+      "id": "repere-espace",
+      "category": "course",
+      "title": "Repérer un point dans l'espace",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Dans un repère $(O,\\overrightarrow{i},\\overrightarrow{j},\\overrightarrow{k})$, chaque point $M$ possède trois coordonnées : $M(x_M,y_M,z_M)$. Elles permettent de traduire une situation géométrique en calculs rigoureux."
+        },
+        {
+          "type": "definition",
+          "title": "Coordonnées d'un vecteur",
+          "content": "Si $A(x_A,y_A,z_A)$ et $B(x_B,y_B,z_B)$, alors $$\\boxed{\\overrightarrow{AB}(x_B-x_A,\\;y_B-y_A,\\;z_B-z_A)}$$"
+        },
+        {
+          "type": "property",
+          "title": "Milieu d'un segment",
+          "content": "Le milieu $I$ de $[AB]$ est donné par $$\\boxed{I\\left(\\frac{x_A+x_B}{2},\\frac{y_A+y_B}{2},\\frac{z_A+z_B}{2}\\right)}$$"
+        }
+      ]
+    },
+    {
+      "id": "droite-espace",
+      "category": "course",
+      "title": "Droite de l'espace",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une droite est déterminée par un point et un vecteur directeur non nul."
+        },
+        {
+          "type": "definition",
+          "title": "Représentation paramétrique",
+          "content": "La droite $(D)$ passant par $A(x_A,y_A,z_A)$ et de vecteur directeur $\\overrightarrow{u}(a,b,c)$ admet la représentation $$\\boxed{\\begin{cases}x=x_A+at\\\\y=y_A+bt\\\\z=z_A+ct\\end{cases}\\quad(t\\in\\mathbb{R})}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Écrivons une représentation paramétrique de la droite passant par $A(1,-1,2)$ et de vecteur directeur $\\overrightarrow{u}(2,3,-1)$.}\\par On obtient $x=\\blank{1+2t}$, $y=\\blank{-1+3t}$ et $z=\\blank{2-t}$, avec $t\\in\\mathbb{R}$."
+        }
+      ]
+    },
+    {
+      "id": "plan-espace",
+      "category": "course",
+      "title": "Plan de l'espace",
+      "blocks": [
+        {
+          "type": "definition",
+          "title": "Équation cartésienne",
+          "content": "Un plan $(P)$ d'équation $ax+by+cz+d=0$, où $(a,b,c)\\neq(0,0,0)$, possède pour vecteur normal $\\overrightarrow{n}(a,b,c)$."
+        },
+        {
+          "type": "property",
+          "title": "Appartenance à un plan",
+          "content": "Pour vérifier que $M(x_M,y_M,z_M)$ appartient à $(P)$, on remplace ses coordonnées dans l'équation du plan. L'égalité doit être vérifiée."
+        },
+        {
+          "type": "warning",
+          "content": "Un vecteur normal est perpendiculaire au plan. Ne pas le confondre avec un vecteur directeur d'une droite contenue dans le plan."
+        }
+      ]
+    },
+    {
+      "id": "positions-relatives",
+      "category": "course",
+      "title": "Positions relatives",
+      "blocks": [
+        {
+          "type": "property",
+          "title": "Droite et plan",
+          "content": "Si $\\overrightarrow{u}(a,b,c)$ est un vecteur directeur de $(D)$ et $\\overrightarrow{n}(\\alpha,\\beta,\\gamma)$ un vecteur normal de $(P)$, alors $\\overrightarrow{u}\\cdot\\overrightarrow{n}=0$ signifie que la droite est parallèle au plan ou incluse dans ce plan."
+        },
+        {
+          "type": "method",
+          "title": "Distinguer les cas",
+          "content": "On calcule d'abord $\\overrightarrow{u}\\cdot\\overrightarrow{n}$. S'il est non nul, la droite coupe le plan en un unique point. S'il est nul, on teste un point de la droite dans l'équation du plan pour décider entre droite parallèle et droite incluse."
+        }
+      ]
+    }
+  ]
+}

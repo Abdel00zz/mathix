@@ -1,0 +1,32 @@
+{
+  "id": "ex-ensembles-nombres-01",
+  "theme": "ensembles-nombres",
+  "difficulty": "difficile",
+  "topic": "Ensembles de Nombres",
+  "context": "Simplifier et déterminer l'ensemble des nombres suivants.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Simplification de racines",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Soit $A = \\sqrt{3-2\\sqrt{2}} - \\sqrt{3+2\\sqrt{2}}$. Calculer $A^2$ puis déduire $A$.",
+          "hint": "Calculez d'abord $A^2$ en utilisant l'identité remarquable $(a-b)^2 = a^2 - 2ab + b^2$. Simplifiez le terme sous la racine. Ensuite, déterminez le signe de A pour choisir la bonne racine carrée."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Nature d'un nombre",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Le nombre $B = \\frac{1}{3} - \\frac{1}{4}$ est-il décimal ?",
+          "hint": "Calculez d'abord la valeur de B sous forme de fraction irréductible. Quelle est la condition sur les facteurs premiers du dénominateur pour qu'une fraction soit un nombre décimal ?"
+        }
+      ]
+    }
+  ]
+}

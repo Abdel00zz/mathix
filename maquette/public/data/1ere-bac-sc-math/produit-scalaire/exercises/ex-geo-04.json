@@ -1,0 +1,51 @@
+{
+  "id": "ex-geo-04",
+  "theme": "produit-scalaire",
+  "difficulty": "facile",
+  "topic": "Géométrie Analytique - La droite : équation cartésienne et vecteur normal",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer une équation cartésienne de la droite $\\mathcal{D}$ passant par $A$ et de vecteur normal $\\overrightarrow{n}$ dans chacun des cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq1_1",
+          "content": "$A(2;1)$ et $\\overrightarrow{n} = \\overrightarrow{i} + 2\\overrightarrow{j}$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_2",
+          "content": "$A(-1;3)$ et $\\overrightarrow{n} = -3\\overrightarrow{i} + 4\\overrightarrow{j}$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_3",
+          "content": "$A(2;-2)$ et $\\overrightarrow{n}(\\sqrt{3};1)$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_4",
+          "content": "$A\\left(\\dfrac{3}{2};-\\dfrac{1}{2}\\right)$ et $\\overrightarrow{n} = \\overrightarrow{i}$",
+          "hint": "$\\overrightarrow{n} = \\overrightarrow{i}$ signifie que la droite est verticale."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer aussi une équation cartésienne de la médiatrice du segment $[AB]$ dans les cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq2_5",
+          "content": "$A(2;1)$ et $B(4;3)$",
+          "hint": "La médiatrice de $[AB]$ passe par le milieu de $[AB]$ et a pour vecteur normal $\\overrightarrow{AB}$."
+        },
+        {
+          "id": "sq2_6",
+          "content": "$A\\left(\\dfrac{1}{2};\\sqrt{2}\\right)$ et $B\\left(\\dfrac{3}{2};-\\sqrt{2}\\right)$",
+          "hint": "Même méthode : milieu de $[AB]$ et $\\overrightarrow{AB}$ comme vecteur normal."
+        }
+      ]
+    }
+  ]
+}

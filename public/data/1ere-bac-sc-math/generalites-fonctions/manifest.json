@@ -1,0 +1,26 @@
+{
+  "id": "generalites-fonctions",
+  "title": "Généralités sur les fonctions numériques",
+  "section": "analyse",
+  "quizCount": 5,
+  "revisions": [
+    {
+      "id": "rev-gen-fonc-1",
+      "title": "Fiche Complète : Généralités",
+      "path": "data/1ere-bac-sc-math/generalites-fonctions/revisions/fiche_generalites_fonctions_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-gen-fonc-01",
+      "path": "data/1ere-bac-sc-math/generalites-fonctions/exercises/ex_generalites_fonctions_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-generalites-fonctions-01",
+      "path": "data/1ere-bac-sc-math/generalites-fonctions/quiz/generalites-fonctions_quiz.json",
+      "questionsCount": 5
+    }
+  ]
+}

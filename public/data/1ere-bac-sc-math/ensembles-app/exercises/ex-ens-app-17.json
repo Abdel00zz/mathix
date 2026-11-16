@@ -1,0 +1,35 @@
+{
+  "id": "ex-ens-app-17",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Théorie des Ensembles — Propriétés avancées des ensembles",
+  "requiresRedaction": true,
+  "context": "On considère les ensembles suivants :\n$$A = \\left\\{x \\in \\mathbb{Z} \\;\\ \\middle| \\;\\ \\dfrac{4x^2-4x+10}{2x-1} \\in \\mathbb{Z}\\right\\}$$\n$$B = \\{x \\in \\mathbb{N} \\mid x \\text{ divise } 12\\}$$",
+  "questions": [
+    {
+      "id": "pA_q1",
+      "content": "Partie A. Déterminer en extension $A$ et $B$ sachant que $A \\cup B = [-2;-1;1;3]$.",
+      "hint": "Effectuez la division euclidienne de $4x^2-4x+10$ par $2x-1$ pour simplifier la fraction. Puis identifiez les entiers $x$ pour lesquels le quotient est entier."
+    },
+    {
+      "id": "pA_q2",
+      "content": "Déterminer $A \\cap B$ et $A \\cup B$.",
+      "hint": "Utilisez les ensembles trouvés à la question précédente."
+    },
+    {
+      "id": "pB_q1",
+      "content": "Partie B. On considère les ensembles : $E = \\left\\{x \\in \\mathbb{R} \\;\\ \\middle| \\;\\ 2x-1 > \\dfrac{x+3}{2}\\right\\}$ et $F = \\left\\{x \\in \\mathbb{R} \\;\\ \\middle| \\;\\ \\dfrac{4}{x-1} \\geq 0\\right\\}$. Déterminer $E$ et $F$ sous forme d'intervalles.",
+      "hint": "Pour $E$ : résolvez l'inégalité $2x-1 > \\dfrac{x+3}{2}$. Pour $F$ : étudiez le signe de $\\dfrac{4}{x-1}$, attention à la valeur interdite."
+    },
+    {
+      "id": "pB_q2",
+      "content": "Déterminer $E \\cup F$, $E \\cap F$, $E \\setminus F$ et $F \\setminus E$.",
+      "hint": "Représentez $E$ et $F$ sur la droite réelle, puis lisez les opérations graphiquement."
+    },
+    {
+      "id": "pC",
+      "content": "Partie C. Résoudre dans $\\mathcal{P}(E)$ l'équation : $X \\setminus A = A \\setminus X$",
+      "hint": "$X \\setminus A = A \\setminus X$ signifie que $X$ et $A$ ont la même différence symétrique... ou plus directement : montrez que cette équation est équivalente à $X = A$."
+    }
+  ]
+}

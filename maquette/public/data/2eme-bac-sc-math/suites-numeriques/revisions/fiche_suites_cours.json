@@ -1,0 +1,545 @@
+{
+  "header": {
+    "title": "Les suites numériques",
+    "subtitle": "Définitions, récurrence, monotonie, limites et convergence",
+    "context": "2BAC Sciences Mathématiques BIOF"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "\\objectif{Comprendre les différents modes de définition d'une suite, maîtriser la récurrence et choisir un outil fiable pour étudier monotonie, bornes et convergence.} Une suite récurrente ne se traite pas comme une fonction explicite : chaque forme impose une démarche adaptée. \\defi{L'enjeu central consiste à prouver la convergence avant de chercher la valeur de la limite.} \\savant{Jacob Bernoulli} a développé des résultats fondamentaux sur les suites, les sommes et les phénomènes de croissance, dont l'inégalité de Bernoulli reste un outil classique."
+        }
+      ]
+    },
+    {
+      "id": "definition_modes",
+      "category": "course",
+      "title": "Définition et modes d’écriture d’une suite",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une suite associe un nombre réel à chaque indice entier autorisé. Avant tout calcul, on identifie son mode de définition, car celui-ci détermine les techniques disponibles."
+        },
+        {
+          "type": "definition",
+          "title": "Qu’est-ce que \\mathqst{la suite $(u_n)$}",
+          "content": "Une \\textbf{suite numérique} est une fonction définie sur $\\mathbb{N}$, ou sur une partie $I\\subset\\mathbb{N}$, et à valeurs dans $\\mathbb{R}$. L'image de l'entier $n$ se note $u_n$ et s'appelle le \\textbf{terme d'indice $n$}. La suite se note $(u_n)_{n\\in I}$."
+        },
+        {
+          "type": "property",
+          "title": "Quels sont \\mathqst{les trois modes de définition}",
+          "content": "Une suite peut être présentée sous trois formes principales :\\itemsize{\\textbf{Forme explicite :} $u_n=f(n)$. Le terme se calcule directement à partir de $n$.}\\itemsize{\\textbf{Forme récurrente :} $u_{n+1}=f(u_n)$, avec un premier terme donné. Chaque terme dépend du précédent.}\\itemsize{\\textbf{Forme sommatoire :} $u_n=\\displaystyle\\sum_{k=1}^{n}a_k$. Le nombre de termes dépend de $n$.}"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Choix de la méthode :} une forme explicite se traite comme une fonction de $n$. Une forme récurrente exige souvent une récurrence. Pour une somme, on écrit soigneusement $u_{n+1}$ avant de simplifier $u_{n+1}-u_n$."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Pour chacune des suites suivantes, \\textbf{identifions le mode de définition} et calculons le terme demandé :\\begin{enumerate}\\item $u_n=\\dfrac{3n-1}{n+1}$, calculer $u_2$ ;\\item $v_0=0$ et $v_{n+1}=\\sqrt{v_n+2}$, calculer $v_1$ puis $v_2$ ;\\item $w_n=\\displaystyle\\sum_{k=1}^{n}\\dfrac{1}{n+k}$, calculer $w_2$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item La suite $(u_n)$ est explicite. Ainsi : $$u_2=\\blank{\\dfrac{3\\times2-1}{2+1}}=\\boxed{\\dfrac53}.$$\\item La suite $(v_n)$ est récurrente. On obtient :\\begin{align*}v_1&=\\sqrt{v_0+2}=\\blank{\\sqrt2},\\\\v_2&=\\sqrt{v_1+2}=\\boxed{\\blank{\\sqrt{2+\\sqrt2}}}.\\end{align*}\\item La suite $(w_n)$ est définie par une somme. Pour $n=2$ :\\begin{align*}w_2&=\\sum_{k=1}^{2}\\dfrac{1}{2+k}\\\\&=\\blank{\\dfrac13+\\dfrac14}\\\\&=\\boxed{\\dfrac7{12}}.\\end{align*}\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "recurrence",
+      "category": "course",
+      "title": "Raisonnement par récurrence",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certaines propriétés portent sur tous les indices, alors qu'un calcul direct ne permet d'en vérifier que quelques-uns. Le raisonnement par récurrence transforme une vérification initiale et une transmission héréditaire en une preuve générale."
+        },
+        {
+          "type": "theorem",
+          "title": "Principe de récurrence à partir de $n_0$",
+          "content": "Soit $P(n)$ une propriété dépendant de l'entier $n$, et soit $n_0\\in\\mathbb{N}$. Si $P(n_0)$ est vraie et si, pour tout $n\\ge n_0$, la vérité de $P(n)$ entraîne celle de $P(n+1)$, alors :$$\\large\\boxed{P(n)\\text{ est vraie pour tout }n\\ge n_0}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{rédiger une récurrence complète}",
+          "content": "Une rédaction complète suit quatre moments :\\begin{enumerate}\\item Énoncer clairement la propriété $P(n)$ avec les quantificateurs.\\item Vérifier $P(n_0)$ par un calcul explicite.\\item Supposer $P(n)$ vraie pour un entier fixé, puis utiliser cette hypothèse pour obtenir $P(n+1)$.\\item Invoquer le principe de récurrence pour conclure.\\end{enumerate}\\par\\textbf{Attention :} une hérédité qui n'utilise jamais l'hypothèse $P(n)$ ne démontre rien."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Soit $u_0=0$ et $u_{n+1}=\\sqrt{u_n+2}$. Montrons que, pour tout $n\\in\\mathbb{N}$, $0\\le u_n\\le2$.} Posons $P(n)$ : « $0\\le u_n\\le2$ ». Pour $n=0$, on a $u_0=0$, donc $P(0)$ est vraie.\\par\\smallskip Supposons maintenant que $0\\le u_n\\le2$. En ajoutant $2$, on obtient :$\\blank{2\\le u_n+2\\le4}.$ La fonction racine carrée étant croissante sur $[0\\,;+\\infty[$ :$\\blank{\\sqrt2\\le\\sqrt{u_n+2}\\le2}.$ Or $u_{n+1}=\\sqrt{u_n+2}$ et $\\sqrt2\\ge0$, donc $0\\le u_{n+1}\\le2$. La propriété est héréditaire. Par récurrence :$$\\boxed{\\forall n\\in\\mathbb{N},\\ \\blank{0\\le u_n\\le2}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Démontrons l'inégalité de Bernoulli : pour tout $n\\in\\mathbb{N}$ et tout $x\\ge0$, $(1+x)^n\\ge1+nx$.} Fixons $x\\ge0$ et posons $P(n)$ : « $(1+x)^n\\ge1+nx$ ». Pour $n=0$, les deux membres valent $1$.\\par\\smallskip Supposons $(1+x)^n\\ge1+nx$. Comme $1+x>0$, on peut multiplier par $1+x$ :\\begin{align*}(1+x)^{n+1}&\\ge\\blank{(1+nx)(1+x)}\\\\&=\\blank{1+(n+1)x+nx^2}\\\\&\\ge\\blank{1+(n+1)x},\\end{align*} puisque $nx^2\\ge0$. La propriété est héréditaire. Ainsi :$$\\boxed{\\forall n\\in\\mathbb{N},\\ \\forall x\\ge0,\\ \\blank{(1+x)^n\\ge1+nx}}$$"
+        },
+        {
+          "type": "remark",
+          "content": "La récurrence peut fournir un résultat plus précis que celui demandé. Dans la première application, on obtient même $\\sqrt2\\le u_n\\le2$ pour tout $n\\ge1$."
+        }
+      ]
+    },
+    {
+      "id": "bornes",
+      "category": "course",
+      "title": "Suites majorées, minorées et bornées",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les bornes contrôlent l'amplitude des termes d'une suite. Elles jouent un rôle décisif dans les théorèmes de convergence monotone étudiés plus loin."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{caractériser une suite bornée}",
+          "content": "Soit $(u_n)_{n\\in I}$ une suite numérique.\\itemsize{Elle est \\textbf{majorée} s'il existe $M\\in\\mathbb{R}$ tel que $u_n\\le M$ pour tout $n\\in I$.}\\itemsize{Elle est \\textbf{minorée} s'il existe $m\\in\\mathbb{R}$ tel que $u_n\\ge m$ pour tout $n\\in I$.}\\itemsize{Elle est \\textbf{bornée} si elle est à la fois majorée et minorée. Cela équivaut à l'existence de $K>0$ tel que $|u_n|\\le K$ pour tout $n$.}"
+        },
+        {
+          "type": "remark",
+          "content": "Un \\textbf{majorant} n'est pas nécessairement un maximum. Par exemple, $u_n=1-\\dfrac1n$ est majorée par $1$, mais aucun terme n'est égal à $1$. Pour prouver qu'une suite est majorée, il suffit d'exhiber un majorant convenable."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{prouver qu’une suite est bornée}",
+          "content": "On adapte la preuve à la forme de la suite :\\begin{enumerate}\\item Pour une expression trigonométrique, encadrer séparément chaque sinus et chaque cosinus entre $-1$ et $1$.\\item Pour une suite récurrente, proposer un intervalle stable et établir l'encadrement par récurrence.\\item Pour une somme de $n$ termes, minorer chaque terme par le plus petit et majorer chacun par le plus grand.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Montrons que $u_n=\\dfrac{2+\\cos n}{3-\\sin\\sqrt n}$ est bornée.} On a $-1\\le\\cos n\\le1$, donc :$\\blank{1\\le2+\\cos n\\le3}.$ De même, $-1\\le\\sin\\sqrt n\\le1$, d'où :$\\blank{2\\le3-\\sin\\sqrt n\\le4}.$ Le dénominateur est donc strictement positif. En passant aux inverses :$\\blank{\\dfrac14\\le\\dfrac{1}{3-\\sin\\sqrt n}\\le\\dfrac12}.$ Les facteurs étant positifs, on obtient :$$\\boxed{\\blank{\\dfrac14\\le u_n\\le\\dfrac32}}$$ La suite est donc bornée."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{construire un intervalle stable}",
+          "content": "Pour une suite $u_{n+1}=f(u_n)$, on cherche un intervalle $I=[a\\,;b]$ contenant $u_0$. Si $f$ est monotone sur $I$, on calcule $f(a)$ et $f(b)$ afin de vérifier que $f(I)\\subset I$. Une récurrence donne alors $u_n\\in I$ pour tout $n$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $u_0=3$ et $u_{n+1}=\\dfrac{8(u_n-1)}{u_n+2}$. Montrons que $2\\le u_n\\le4$ pour tout $n$.} Posons $f(x)=\\dfrac{8(x-1)}{x+2}$. Sur $[2\\,;4]$ :\\begin{align*}f'(x)&=\\dfrac{\\blank{8(x+2)-8(x-1)}}{(x+2)^2}\\\\&=\\dfrac{\\blank{24}}{(x+2)^2}>0.\\end{align*} Ainsi, $f$ est croissante. De plus :$$f(2)=2\\quad\\text{et}\\quad f(4)=4.$$ Donc $f([2\\,;4])\\subset\\blank{[2\\,;4]}$. Comme $u_0=3\\in[2\\,;4]$, la stabilité se transmet par récurrence. Finalement :$$\\boxed{\\forall n\\in\\mathbb{N},\\ \\blank{2\\le u_n\\le4}}$$"
+        }
+      ]
+    },
+    {
+      "id": "monotonie",
+      "category": "course",
+      "title": "Monotonie d’une suite $(u_n)$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Étudier la monotonie revient à comparer deux termes consécutifs. La forme de la suite indique s'il faut travailler avec une différence, un rapport ou une fonction associée."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{$u_{n+1}\\ge u_n$}",
+          "content": "Soit $(u_n)$ une suite.\\itemsize{Elle est \\textbf{croissante} si $u_{n+1}\\ge u_n$ pour tout indice admissible.}\\itemsize{Elle est \\textbf{décroissante} si $u_{n+1}\\le u_n$.}\\itemsize{Elle est \\textbf{monotone} si elle est croissante ou décroissante.}\\itemsize{Elle est \\textbf{stationnaire} si $u_{n+1}=u_n$ pour tout $n$.}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{choisir le bon critère de monotonie}",
+          "content": "Trois techniques sont usuelles :\\begin{enumerate}\\item Étudier le signe de $u_{n+1}-u_n$. Cette méthode est universelle et indispensable pour les sommes.\\item Comparer $\\dfrac{u_{n+1}}{u_n}$ à $1$ lorsque tous les termes sont strictement positifs, surtout avec des puissances ou des factorielles.\\item Si $u_n=f(n)$, étudier les variations de $f$ sur un intervalle contenant les entiers concernés.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Étudions la monotonie de $u_n=\\displaystyle\\sum_{k=1}^{n}\\dfrac{2^k}{k}$.} En passant de $n$ à $n+1$, un seul terme positif s'ajoute :\\begin{align*}u_{n+1}-u_n&=\\blank{\\dfrac{2^{n+1}}{n+1}}>0.\\end{align*} Ainsi :$$\\boxed{(u_n)\\text{ est \\blank{\\text{strictement croissante}}}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions la monotonie de $u_n=\\displaystyle\\sum_{k=1}^{n}\\dfrac{1}{n+k}$.} Les deux bornes dépendant de $n$, on écrit les sommes :\\begin{align*}u_n&=\\dfrac1{n+1}+\\dfrac1{n+2}+\\cdots+\\dfrac1{2n},\\\\u_{n+1}&=\\dfrac1{n+2}+\\cdots+\\dfrac1{2n}+\\blank{\\dfrac1{2n+1}+\\dfrac1{2n+2}}.\\end{align*} Après simplification des termes communs :\\begin{align*}u_{n+1}-u_n&=\\blank{\\dfrac1{2n+1}+\\dfrac1{2n+2}-\\dfrac1{n+1}}\\\\&=\\blank{\\dfrac1{2n+1}-\\dfrac1{2n+2}}>0.\\end{align*} Donc :$$\\boxed{(u_n)\\text{ est \\blank{\\text{strictement croissante}}}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Une erreur très fréquente, que vous ne devez pas commettre : pour une suite récurrente $u_{n+1}=f(u_n)$, la monotonie de $f$ ne donne pas directement celle de $(u_n)$. Le premier terme et la comparaison entre $u_1$ et $u_0$ interviennent."
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{$f$ croissante transmet-elle la monotonie}",
+          "content": "Supposons que $f$ soit croissante sur un intervalle $I$ stable par $f$, et que $u_0\\in I$.\\itemsize{Si $u_1\\ge u_0$, alors $(u_n)$ est croissante.}\\itemsize{Si $u_1\\le u_0$, alors $(u_n)$ est décroissante.} En effet, l'ordre entre deux termes consécutifs se transmet en appliquant $f$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $u_0=1$ et $u_{n+1}=\\sqrt{u_n+2}$. Montrons que $(u_n)$ est croissante.} On sait que $1\\le u_n\\le2$. Calculons :\\begin{align*}u_{n+1}^2-u_n^2&=\\blank{u_n+2-u_n^2}\\\\&=\\blank{-(u_n-2)(u_n+1)}.\\end{align*} Or $u_n-2\\le0$ et $u_n+1>0$, donc $u_{n+1}^2-u_n^2\\ge0$. Les deux termes étant positifs :$\\blank{u_{n+1}\\ge u_n}.$ Ainsi :$$\\boxed{(u_n)\\text{ est \\blank{\\text{croissante}}}}$$"
+        }
+      ]
+    },
+    {
+      "id": "arith_geo",
+      "category": "course",
+      "title": "Suites arithmétiques et géométriques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les suites arithmétiques modélisent une variation additive constante. Les suites géométriques décrivent une évolution multiplicative constante et peuvent croître très rapidement."
+        },
+        {
+          "type": "property",
+          "title": "Formules d’une \\mathqst{suite arithmétique}",
+          "content": "Une suite $(u_n)$ est \\textbf{arithmétique} de raison $r$ lorsque $u_{n+1}=u_n+r$. Pour $n\\ge p$ :\\itemsize{$u_n=u_p+(n-p)r$.}\\itemsize{Trois termes consécutifs $a,b,c$ vérifient $2b=a+c$.}\\itemsize{$\\displaystyle\\sum_{k=p}^{n}u_k=\\dfrac{n-p+1}{2}(u_p+u_n)$.}\\itemsize{Elle est croissante si $r\\ge0$ et décroissante si $r\\le0$.}"
+        },
+        {
+          "type": "property",
+          "title": "Formules d’une \\mathqst{suite géométrique}",
+          "content": "Une suite $(v_n)$ est \\textbf{géométrique} de raison $q$ lorsque $v_{n+1}=qv_n$. Pour $n\\ge p$ :\\itemsize{$v_n=v_pq^{n-p}$.}\\itemsize{Trois termes consécutifs $a,b,c$ vérifient $b^2=ac$.}\\itemsize{Si $q\\ne1$, $\\displaystyle\\sum_{k=p}^{n}v_k=v_p\\dfrac{1-q^{n-p+1}}{1-q}$.}\\itemsize{Si $v_0>0$, elle est croissante pour $q\\ge1$ et décroissante pour $0<q\\le1$. Si $q<0$, elle n'est généralement pas monotone.}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer correctement une somme}",
+          "content": "Pour une somme arithmétique, on multiplie le \\textbf{nombre de termes} par la moyenne du premier et du dernier. Pour une somme géométrique, on multiplie le premier terme par $\\dfrac{1-q^{N}}{1-q}$, où $N$ est le nombre de termes.\\par\\textbf{Piège :} de l'indice $p$ à l'indice $n$, il y a $n-p+1$ termes."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Une personne reçoit $1$ centime le premier jour, puis le montant double chaque jour pendant $20$ jours. Déterminons la somme totale reçue.} Le montant du jour $k$ est $a_k=2^{k-1}$ centimes. La suite est géométrique de premier terme $a_1=1$ et de raison $\\blank{2}$. Il y a $20$ termes. Ainsi :\\begin{align*}S&=\\blank{a_1\\dfrac{1-2^{20}}{1-2}}\\\\&=\\blank{2^{20}-1}\\\\&=\\boxed{\\blank{1\\,048\\,575}\\text{ centimes}}.\\end{align*} Cela correspond à environ $10\\,485{,}75$ dirhams."
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Vérification utile :} avant d'appliquer une formule de somme, identifier le premier indice, le dernier indice et le nombre exact de termes. Une erreur d'une unité modifie toute la réponse."
+        }
+      ]
+    },
+    {
+      "id": "arithmetico_geo",
+      "category": "course",
+      "title": "Suites arithmético-géométriques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une relation affine entre deux termes consécutifs n'est généralement ni arithmétique ni géométrique. On la transforme en une suite géométrique en recentrant les termes autour d'un point fixe."
+        },
+        {
+          "type": "definition",
+          "title": "Qu’est-ce qu’une suite \\mathqst{$u_{n+1}=au_n+b$}",
+          "content": "Une suite vérifiant $u_{n+1}=au_n+b$, avec $a\\ne1$, est appelée \\textbf{suite arithmético-géométrique}. Le réel $\\ell$ vérifiant $\\ell=a\\ell+b$ est son \\textbf{point fixe}."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{utiliser le point fixe $\\ell$}",
+          "content": "La transformation suit trois idées :\\begin{enumerate}\\item Résoudre $\\ell=a\\ell+b$ pour déterminer le point fixe.\\item Poser $v_n=u_n-\\ell$ et vérifier que $v_{n+1}=av_n$.\\item Écrire $v_n=v_0a^n$, puis revenir à $u_n=v_n+\\ell$.\\end{enumerate}Si l'on propose $v_n=u_n+\\alpha$, alors $\\alpha=-\\ell$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Soit $u_0=4$ et $u_{n+1}=2u_n-5$. Déterminons une expression explicite de $u_n$.} Le point fixe vérifie :\\begin{align*}\\ell&=2\\ell-5,\\\\\\ell&=\\blank{5}.\\end{align*} Posons $v_n=u_n-5$. Alors :\\begin{align*}v_{n+1}&=u_{n+1}-5\\\\&=2u_n-10\\\\&=\\blank{2(u_n-5)}\\\\&=2v_n.\\end{align*} La suite $(v_n)$ est géométrique de raison $2$, avec $v_0=4-5=\\blank{-1}$. Donc $v_n=-2^n$, puis :$$\\boxed{u_n=\\blank{5-2^n}}$$"
+        },
+        {
+          "type": "remark",
+          "content": "La vérification sur les premiers termes permet de contrôler rapidement la formule obtenue : $u_0=5-1=4$ et $u_1=5-2=3$, ce qui concorde avec $2\\times4-5=3$."
+        }
+      ]
+    },
+    {
+      "id": "definitions_limites",
+      "category": "course",
+      "title": "Limite et convergence d’une suite",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La notion de limite décrit le comportement des termes lorsque l'indice devient arbitrairement grand. Il faut distinguer une limite finie, une limite infinie et l'absence totale de limite."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{définir une limite finie}",
+          "content": "Soit $(u_n)$ une suite et $\\ell\\in\\mathbb{R}$. On dit que $u_n$ tend vers $\\ell$ lorsque :$$\\forall\\varepsilon>0,\\ \\exists N_0\\in\\mathbb{N},\\ \\forall n\\ge N_0,\\ |u_n-\\ell|<\\varepsilon.$$ On écrit :$$\\large\\boxed{\\displaystyle\\lim_{n\\to+\\infty}u_n=\\ell}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{$u_n\\to\\pm\\infty$}",
+          "content": "On écrit $\\displaystyle\\lim_{n\\to+\\infty}u_n=+\\infty$ si, pour tout $A>0$, il existe $N_0$ tel que $u_n>A$ dès que $n\\ge N_0$. De même, $u_n\\to-\\infty$ si, pour tout $A>0$, on a $u_n<-A$ à partir d'un certain rang."
+        },
+        {
+          "type": "definition",
+          "title": "Convergence et divergence de $(u_n)$",
+          "content": "Une suite qui possède une limite finie est dite \\textbf{convergente}. Une suite qui n'est pas convergente est dite \\textbf{divergente}."
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{À distinguer :} une suite divergente ne tend pas nécessairement vers l'infini. La suite $u_n=n^2$ tend vers $+\\infty$, tandis que $v_n=(-1)^n$ oscille entre $-1$ et $1$ et ne possède aucune limite."
+        },
+        {
+          "type": "theorem",
+          "title": "Unicité de la limite d’une suite",
+          "content": "Si une suite admet une limite finie, cette limite est unique."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Montrons directement que la suite $u_n=(-1)^n$ est divergente.} Supposons qu'elle converge vers un réel $\\ell$. Prenons $\\varepsilon=\\blank{\\dfrac12}$. Il existe alors $N_0$ tel que, pour tout $n\\ge N_0$ :$$|u_n-\\ell|<\\dfrac12\\quad\\text{et}\\quad|u_{n+1}-\\ell|<\\dfrac12.$$ Or deux termes consécutifs valent $1$ et $-1$, dans un ordre ou dans l'autre. Ainsi :\\begin{align*}2=|u_n-u_{n+1}|&=\\blank{|(u_n-\\ell)-(u_{n+1}-\\ell)|}\\\\&\\le\\blank{|u_n-\\ell|+|u_{n+1}-\\ell|}\\\\&<\\blank{1},\\end{align*} ce qui est impossible. Donc :$$\\boxed{((-1)^n)\\text{ est \\blank{\\text{divergente}}}}$$"
+        }
+      ]
+    },
+    {
+      "id": "limites_reference",
+      "category": "course",
+      "title": "Limites de référence et calcul explicite",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les limites de suites explicites se calculent avec les mêmes transformations que les limites de fonctions. Une forme indéterminée impose de réécrire l'expression avant de conclure."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les limites de référence}",
+          "content": "Les limites usuelles sont :\\itemsize{$n$, $n^2$, plus généralement $n^k$ avec $k\\ge1$, tendent vers $+\\infty$.}\\itemsize{$\\sqrt n$ et $\\sqrt[p]{n}$, avec $p\\ge1$, tendent vers $+\\infty$.}\\itemsize{$\\dfrac1n$, $\\dfrac1{n^2}$ et $\\dfrac1{\\sqrt n}$ tendent vers $0$.}"
+        },
+        {
+          "type": "property",
+          "title": "Comment reconnaître \\mathqst{une forme indéterminée}",
+          "content": "Les règles de somme, produit et quotient sont celles des limites de fonctions. Les formes $\\infty-\\infty$, $0\\times\\infty$, $\\dfrac\\infty\\infty$ et $\\dfrac00$ sont indéterminées. Elles imposent une factorisation, une quantité conjuguée ou une comparaison dominante."
+        },
+        {
+          "type": "property",
+          "title": "Que permet \\mathqst{la valeur absolue}",
+          "content": "On a :$$\\large\\boxed{|u_n|\\to0\\ \\Longleftrightarrow\\ u_n\\to0}$$ Cette équivalence est propre à la limite $0$. Par exemple, $|(-1)^n|=1$ converge vers $1$, alors que $(-1)^n$ diverge."
+        },
+        {
+          "type": "theorem",
+          "title": "Passage de la fonction $f$ à la suite $f(n)$",
+          "content": "Si $u_n=f(n)$ et si $\\displaystyle\\lim_{x\\to+\\infty}f(x)=\\ell$, finie ou infinie, alors :$$\\large\\boxed{\\displaystyle\\lim_{n\\to+\\infty}u_n=\\ell}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Réciproque fausse :} la fonction $x\\mapsto\\sin(\\pi x)$ n'a pas de limite en $+\\infty$, alors que la suite $\\sin(\\pi n)$ est constamment nulle."
+        }
+      ]
+    },
+    {
+      "id": "calcul_limites_explicit",
+      "category": "course",
+      "title": "Techniques de calcul pour les suites explicites",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une expression explicite peut comporter une fraction rationnelle, des racines ou une fonction trigonométrique réciproque. La transformation choisie doit supprimer la forme indéterminée avant le passage à la limite."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{transformer une limite explicite}",
+          "content": "Pour une suite explicite :\\begin{enumerate}\\item Dans un polynôme ou une fraction rationnelle, isoler les termes de plus haut degré.\\item Devant une différence de racines, multiplier par la quantité conjuguée.\\item Lorsque plusieurs puissances et racines sont mêlées, factoriser la puissance dominante sous chaque radical.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons les trois limites suivantes :\\begin{enumerate}\\item $\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{4n^2-3n-7}{3n^2+5}$ ;\\item $\\displaystyle\\lim_{n\\to+\\infty}\\left(\\sqrt{n^2+n+1}-n\\right)$ ;\\item $\\displaystyle\\lim_{n\\to+\\infty}n\\operatorname{Arctan}\\!\\left(\\dfrac1n\\right)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Les termes dominants sont $4n^2$ et $3n^2$, donc :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{4n^2-3n-7}{3n^2+5}=\\blank{\\dfrac43}}$$\\item On conjugue :\\begin{align*}\\sqrt{n^2+n+1}-n&=\\blank{\\dfrac{n+1}{\\sqrt{n^2+n+1}+n}}\\\\&=\\blank{\\dfrac{1+\\frac1n}{\\sqrt{1+\\frac1n+\\frac1{n^2}}+1}}.\\end{align*} Ainsi :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}\\left(\\sqrt{n^2+n+1}-n\\right)=\\blank{\\dfrac12}}$$\\item On écrit :$$n\\operatorname{Arctan}\\!\\left(\\dfrac1n\\right)=\\blank{\\dfrac{\\operatorname{Arctan}(1/n)}{1/n}}.$$ Comme $\\dfrac{\\operatorname{Arctan}x}{x}\\to1$ lorsque $x\\to0$, on obtient :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}n\\operatorname{Arctan}\\!\\left(\\dfrac1n\\right)=1}$$\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{n\\to+\\infty}n\\left(\\sqrt{n^2+1}-n\\right)$.} La différence est indéterminée. On conjugue :\\begin{align*}n\\left(\\sqrt{n^2+1}-n\\right)&=\\blank{n\\dfrac{1}{\\sqrt{n^2+1}+n}}\\\\&=\\blank{\\dfrac{1}{\\sqrt{1+\\frac1{n^2}}+1}}.\\end{align*} Par conséquent :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}n\\left(\\sqrt{n^2+1}-n\\right)=\\blank{\\dfrac12}}$$"
+        }
+      ]
+    },
+    {
+      "id": "puissances_qn",
+      "category": "course",
+      "title": "Comportement de la suite $(q^n)$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La suite géométrique $(q^n)$ sert de référence dans de nombreux calculs. Son comportement dépend entièrement de la position de $q$ par rapport à $-1$ et à $1$."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle est \\mathqst{la limite de $q^n$}",
+          "content": "Soit $q\\in\\mathbb{R}$.\\itemsize{Si $q>1$, alors $q^n\\to+\\infty$.}\\itemsize{Si $-1<q<1$, alors $q^n\\to0$.}\\itemsize{Si $q=1$, la suite est constante égale à $1$.}\\itemsize{Si $q\\le-1$, la suite $(q^n)$ ne possède pas de limite.}"
+        },
+        {
+          "type": "proof",
+          "title": "Pourquoi \\mathqst{$|q|<1$ entraîne $q^n\\to0$}",
+          "content": "Pour $q>1$, écrivons $q=1+x$ avec $x>0$. L'inégalité de Bernoulli donne $q^n=(1+x)^n\\ge1+nx$. Comme $1+nx\\to+\\infty$, on obtient $q^n\\to+\\infty$.\\par\\smallskip Si $-1<q<1$ et $q\\ne0$, alors $\\left|\\dfrac1q\\right|>1$. Le premier résultat donne $\\dfrac1{|q|^n}\\to+\\infty$, donc $|q|^n\\to0$. Comme $|q^n|=|q|^n$, on en déduit $q^n\\to0$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{factoriser un quotient de puissances}",
+          "content": "Dans un quotient comportant plusieurs puissances, on repère la base de plus grande valeur absolue. On factorise sa puissance $n$ au numérateur et au dénominateur, puis les autres termes apparaissent sous la forme $r^n$ avec $|r|<1$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{2^n-3^n}{3^n-5^n}$.} La base dominante est $\\blank{5}$. On factorise par $5^n$ :\\begin{align*}\\dfrac{2^n-3^n}{3^n-5^n}&=\\blank{\\dfrac{\\left(\\frac25\\right)^n-\\left(\\frac35\\right)^n}{\\left(\\frac35\\right)^n-1}}.\\end{align*} Les puissances de raisons $\\dfrac25$ et $\\dfrac35$ tendent vers $0$. Ainsi :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{2^n-3^n}{3^n-5^n}=\\blank{0}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Déterminons $\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{3^n+2^n}{2^n}$.} On sépare le quotient :\\begin{align*}\\dfrac{3^n+2^n}{2^n}&=\\blank{\\left(\\dfrac32\\right)^n+1}.\\end{align*} Comme $\\blank{\\dfrac32}>1$, la première suite tend vers $+\\infty$. Donc :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{3^n+2^n}{2^n}=\\blank{+\\infty}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Cas $q\\le-1$ :} les signes alternent lorsque $q<0$. Même si $|q|^n$ devient très grand, la suite $q^n$ n'a pas de limite unique."
+        }
+      ]
+    },
+    {
+      "id": "comparaison",
+      "category": "course",
+      "title": "Limites, ordre et encadrement",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certaines suites contiennent un terme oscillant ou une somme difficile à calculer exactement. On remplace alors le calcul direct par des inégalités dont les limites sont connues."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{passer à la limite dans une inégalité}",
+          "content": "Soient $(u_n)$ et $(v_n)$ convergentes, de limites $\\ell$ et $\\ell'$. À partir d'un certain rang :\\itemsize{Si $u_n\\ge0$, alors $\\ell\\ge0$.}\\itemsize{Si $u_n\\ge a$, alors $\\ell\\ge a$.}\\itemsize{Si $u_n\\le v_n$, alors $\\ell\\le\\ell'$.}"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Perte de la stricte inégalité :} de $u_n>0$, on déduit seulement $\\ell\\ge0$. Par exemple, $\\dfrac1n>0$ pour tout $n$, mais sa limite vaut $0$."
+        },
+        {
+          "type": "theorem",
+          "title": "Quels sont \\mathqst{les quatre critères de comparaison}",
+          "content": "À partir d'un certain rang :\\itemsize{Si $|u_n-\\ell|\\le v_n$ et $v_n\\to0$, alors $u_n\\to\\ell$.}\\itemsize{Si $w_n\\le u_n\\le v_n$ et $w_n,v_n\\to\\ell$, alors $u_n\\to\\ell$.}\\itemsize{Si $v_n\\le u_n$ et $v_n\\to+\\infty$, alors $u_n\\to+\\infty$.}\\itemsize{Si $u_n\\le v_n$ et $v_n\\to-\\infty$, alors $u_n\\to-\\infty$.}"
+        },
+        {
+          "type": "method",
+          "title": "Quand \\mathqst{remplacer le calcul par un encadrement}",
+          "content": "On utilise un encadrement dès qu'apparaissent $\\sin n$, $\\cos n$ ou $(-1)^n$, car ces termes sont bornés sans être convergents. Pour une somme de $n$ termes positifs, on encadre chaque terme par le plus petit et le plus grand, puis on somme les inégalités."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{3n+\\sin n}{n+1}$.} On sépare :\\begin{align*}\\dfrac{3n+\\sin n}{n+1}&=\\blank{\\dfrac{3n}{n+1}+\\dfrac{\\sin n}{n+1}}.\\end{align*} Le premier terme tend vers $3$. Pour le second :$$\\left|\\dfrac{\\sin n}{n+1}\\right|\\le\\blank{\\dfrac1{n+1}}\\to0.$$ Donc ce terme tend vers $0$. Ainsi :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{3n+\\sin n}{n+1}=\\blank{3}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $S_n=\\displaystyle\\sum_{k=1}^{n}\\dfrac{1}{n^2+k}$. Déterminons sa limite.} Pour $1\\le k\\le n$ :$\\blank{n^2+1\\le n^2+k\\le n^2+n}.$ En prenant les inverses puis en sommant les $n$ inégalités :$\\blank{\\dfrac{n}{n^2+n}\\le S_n\\le\\dfrac{n}{n^2+1}}.$ Les deux membres tendent vers $0$. Par encadrement :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}S_n=\\blank{0}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $S_n=\\displaystyle\\sum_{k=1}^{n}\\dfrac{1}{\\sqrt{n+k}}$. Montrons que $S_n\\to+\\infty$.} Pour $1\\le k\\le n$, on a $n+k\\le2n$, donc :$$\\dfrac1{\\sqrt{n+k}}\\ge\\blank{\\dfrac1{\\sqrt{2n}}}.$$ En sommant $n$ termes :\\begin{align*}S_n&\\ge\\blank{\\dfrac{n}{\\sqrt{2n}}}\\\\&=\\blank{\\sqrt{\\dfrac n2}}.\\end{align*} Or $\\sqrt{\\dfrac n2}\\to+\\infty$. Ainsi :$$\\boxed{S_n\\to\\blank{+\\infty}}$$"
+        }
+      ]
+    },
+    {
+      "id": "convergence_monotone",
+      "category": "course",
+      "title": "Convergence des suites monotones",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La monotonie et les bornes suffisent parfois à garantir l'existence d'une limite, sans la calculer. Cette distinction entre existence et valeur doit rester explicite dans la rédaction."
+        },
+        {
+          "type": "theorem",
+          "title": "Théorème de \\mathqst{convergence monotone}",
+          "content": "\\itemsize{Toute suite croissante et majorée est convergente.}\\itemsize{Toute suite décroissante et minorée est convergente.}"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Ce théorème donne l'existence, pas la valeur.} Si $(u_n)$ est croissante et majorée par $M$, sa limite $\\ell$ vérifie seulement $\\ell\\le M$. Rien ne permet d'affirmer $\\ell=M$."
+        },
+        {
+          "type": "theorem",
+          "title": "Divergence d’une suite monotone non bornée",
+          "content": "\\itemsize{Toute suite croissante et non majorée tend vers $+\\infty$.}\\itemsize{Toute suite décroissante et non minorée tend vers $-\\infty$.}"
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi \\mathqst{convergence entraîne bornitude}",
+          "content": "Toute suite convergente est bornée. La réciproque est fausse : la suite $(-1)^n$ est bornée, mais elle diverge."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $u_0=1$ et $u_{n+1}=u_n^2+u_n+1$. Déterminons le comportement de $(u_n)$.} Pour tout $n$ :\\begin{align*}u_{n+1}-u_n&=\\blank{u_n^2+1}>0.\\end{align*} La suite est donc strictement \\blank{\\text{croissante}}.\\par\\smallskip Supposons qu'elle soit majorée. Elle serait alors convergente vers un réel $\\ell$. En passant à la limite dans la relation :\\begin{align*}\\ell&=\\blank{\\ell^2+\\ell+1},\\\\\\blank{\\ell^2+1}&=0.\\end{align*} Cette équation n'a aucune solution réelle. La suite n'est donc pas majorée. Comme elle est croissante :$$\\boxed{u_n\\to\\blank{+\\infty}}$$"
+        },
+        {
+          "type": "remark",
+          "content": "Le raisonnement par contradiction est utile lorsqu'une suite monotone serait convergente si elle possédait une borne, mais que l'équation obtenue par passage à la limite n'admet aucune solution réelle."
+        }
+      ]
+    },
+    {
+      "id": "recurrence_f",
+      "category": "course",
+      "title": "Suites définies par $u_{n+1}=f(u_n)$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les suites récurrentes de la forme $u_{n+1}=f(u_n)$ suivent un ordre de travail stable : enfermer les termes dans un intervalle, établir la monotonie, prouver la convergence, puis seulement identifier la limite."
+        },
+        {
+          "type": "theorem",
+          "title": "Image d’une suite convergente par $f$",
+          "content": "Soit $f$ continue sur un intervalle $I$. Si $u_n\\in I$ à partir d'un certain rang et si $u_n\\to\\ell\\in I$, alors :$$\\large\\boxed{f(u_n)\\to f(\\ell)}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{la limite vérifie $f(\\ell)=\\ell$}",
+          "content": "Soit $u_{n+1}=f(u_n)$. Si $f$ est continue sur un intervalle stable $I$, si tous les termes appartiennent à $I$ et si $(u_n)$ converge vers $\\ell\\in I$, alors :$$\\large\\boxed{f(\\ell)=\\ell}$$ La limite éventuelle est donc un \\textbf{point fixe} de $f$."
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Ordre obligatoire :} l'équation $f(x)=x$ ne prouve jamais la convergence. On établit d'abord la stabilité et la convergence, puis on utilise cette équation pour déterminer la limite."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{étudier complètement $u_{n+1}=f(u_n)$}",
+          "content": "La démarche complète comporte quatre phases :\\begin{enumerate}\\item Trouver un intervalle $I$ contenant $u_0$ et vérifier $f(I)\\subset I$, puis établir $u_n\\in I$ par récurrence.\\item Prouver la monotonie, soit par croissance de $f$ et comparaison de $u_1$ à $u_0$, soit par le signe de $f(u_n)-u_n$.\\item Appliquer le théorème de convergence monotone grâce à la borne fournie par $I$.\\item Résoudre $f(x)=x$ et retenir la solution compatible avec $I$ et la monotonie.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $u_0=0$ et $u_{n+1}=\\dfrac{3u_n+2}{u_n+2}$. Montrons que la suite converge et déterminons sa limite.} Posons $f(x)=\\dfrac{3x+2}{x+2}$. Sur $[0\\,;2]$ :\\begin{align*}f'(x)&=\\dfrac{\\blank{3(x+2)-(3x+2)}}{(x+2)^2}\\\\&=\\dfrac{\\blank{4}}{(x+2)^2}>0.\\end{align*} Ainsi $f$ est croissante, avec $f(0)=1$ et $f(2)=2$. Donc $f([0\\,;2])\\subset[0\\,;2]$, et une récurrence donne $0\\le u_n\\le2$.\\par\\smallskip De plus, $u_1=1>u_0$. La croissance de $f$ transmet cette inégalité, donc $(u_n)$ est croissante. Elle est croissante et majorée par $2$, donc convergente. Notons $\\ell$ sa limite. Alors :\\begin{align*}\\ell&=\\dfrac{3\\ell+2}{\\ell+2},\\\\\\blank{\\ell^2-\\ell-2}&=0,\\\\\\blank{(\\ell-2)(\\ell+1)}&=0.\\end{align*} Comme $\\ell\\in[0\\,;2]$, seule la valeur $2$ convient. Ainsi :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}u_n=\\blank{2}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $u_{n+1}=\\sqrt{\\dfrac{1+u_n}{2}}$. Comparons les comportements obtenus pour $u_0=1$ et pour $u_0=0$.}\\par\\smallskip\\begin{enumerate}\\item Pour $u_0=1$, on a $u_1=\\blank{1}$. La relation reproduit ensuite la même valeur, donc :$$\\boxed{u_n=1\\text{ pour tout }n}$$\\item Pour $u_0=0$, la fonction $f(x)=\\sqrt{\\dfrac{1+x}{2}}$ est croissante sur $[0\\,;1]$ et $f([0\\,;1])\\subset[0\\,;1]$. Comme $u_1=\\dfrac{\\sqrt2}{2}>0=u_0$, la suite est croissante et majorée par $1$, donc convergente. Sa limite $\\ell\\in[0\\,;1]$ vérifie :\\begin{align*}\\ell&=\\sqrt{\\dfrac{1+\\ell}{2}},\\\\\\blank{2\\ell^2-\\ell-1}&=0.\\end{align*} Les solutions sont $1$ et $\\blank{-\\dfrac12}$. Seule $1$ appartient à $[0\\,;1]$. Ainsi :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}u_n=\\blank{1}}$$\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "adjacentes",
+      "category": "course",
+      "title": "Suites adjacentes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Deux suites peuvent encadrer progressivement une même valeur sans que l'on connaisse cette valeur à l'avance. Le théorème des suites adjacentes formalise ce rapprochement."
+        },
+        {
+          "type": "definition",
+          "title": "Quand deux suites sont-elles \\mathqst{adjacentes}",
+          "content": "Deux suites $(u_n)$ et $(v_n)$ sont dites \\textbf{adjacentes} lorsque :\\itemsize{l'une est croissante et l'autre décroissante ;}\\itemsize{$v_n-u_n\\to0$, ou de manière équivalente $u_n-v_n\\to0$.}"
+        },
+        {
+          "type": "theorem",
+          "title": "Convergence de deux suites adjacentes",
+          "content": "Si $(u_n)$ est croissante, $(v_n)$ décroissante et $v_n-u_n\\to0$, alors :\\itemsize{$u_n\\le v_n$ pour tout $n$ ;}\\itemsize{les deux suites sont convergentes ;}\\itemsize{elles possèdent la même limite $\\ell$ ;}\\itemsize{$u_n\\le\\ell\\le v_n$ pour tout $n$.}"
+        },
+        {
+          "type": "proof",
+          "title": "Pourquoi \\mathqst{$u_n\\le v_n$ pour tout $n$}",
+          "content": "La suite $(u_n-v_n)$ est croissante car :\\begin{align*}(u_{n+1}-v_{n+1})-(u_n-v_n)&=(u_{n+1}-u_n)+(v_n-v_{n+1})\\\\&\\ge0.\\end{align*} Elle est croissante et tend vers $0$, donc tous ses termes sont inférieurs ou égaux à $0$. Ainsi $u_n\\le v_n$. La première suite est alors croissante et majorée, la seconde décroissante et minorée. Elles convergent, et leur différence tendant vers $0$, leurs limites sont égales."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{prouver que deux suites sont adjacentes}",
+          "content": "Pour établir l'adjacence :\\begin{enumerate}\\item Calculer $u_{n+1}-u_n$ et montrer que son signe est constant.\\item Calculer $v_{n+1}-v_n$ et obtenir le signe opposé.\\item Calculer $v_n-u_n$ et montrer que cet écart tend vers $0$.\\end{enumerate}Le théorème fournit alors la convergence commune et l'encadrement de la limite."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soient $u_n=\\displaystyle\\sum_{k=1}^{n}\\dfrac1{k^3}$ et $v_n=u_n+\\dfrac1n$, pour $n\\ge1$. Montrons qu'elles sont adjacentes.} On a :\\begin{align*}u_{n+1}-u_n&=\\blank{\\dfrac1{(n+1)^3}}>0,\\end{align*} donc $(u_n)$ est croissante. Ensuite :\\begin{align*}v_{n+1}-v_n&=\\blank{\\dfrac1{(n+1)^3}+\\dfrac1{n+1}-\\dfrac1n}\\\\&=\\blank{\\dfrac1{(n+1)^3}-\\dfrac1{n(n+1)}}\\\\&=\\blank{-\\dfrac{n^2+n+1}{n(n+1)^3}}<0.\\end{align*} Ainsi $(v_n)$ est décroissante. Enfin :$$v_n-u_n=\\dfrac1n\\to0.$$ Les deux suites sont donc adjacentes. Elles convergent vers une même limite $\\ell$ et :$$\\boxed{\\blank{u_n\\le\\ell\\le v_n}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soient $u_n=\\displaystyle\\sum_{k=0}^{n}\\dfrac1{k!}$ et $v_n=u_n+\\dfrac1{n\\,n!}$, pour $n\\ge1$. Vérifions qu'elles sont adjacentes.} D'abord :$u_{n+1}-u_n=\\blank{\\dfrac1{(n+1)!}}>0,$ donc $(u_n)$ est croissante. Pour $(v_n)$ :\\begin{align*}v_{n+1}-v_n&=\\blank{\\dfrac1{(n+1)!}+\\dfrac1{(n+1)(n+1)!}-\\dfrac1{n\\,n!}}\\\\&=\\blank{-\\dfrac1{n(n+1)(n+1)!}}<0.\\end{align*} Enfin :$v_n-u_n=\\blank{\\dfrac1{n\\,n!}}\\to0.$ Ainsi :$$\\boxed{(u_n)\\text{ et }(v_n)\\text{ sont \\blank{\\text{adjacentes}}}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Contrôle indispensable :} les deux monotonies doivent être opposées et l'écart doit tendre vers $0$. Deux suites monotones de sens opposés ne sont pas nécessairement adjacentes si leur distance ne s'annule pas."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "header": {
+    "title": "Le problème des partis de Pascal et Fermat",
+    "subtitle": "Probabilités et espérance",
+    "context": "Probabilités"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le problème des partis de Pascal et Fermat",
+          "content": "En 1654, deux joueurs — Pascal et Fermat — s'affrontent dans un jeu de pile ou face. Chaque manche, le joueur $A$ mise sur pile et le joueur $B$ mise sur face. La pièce est équilibrée.\\par\\textbf{Règle du jeu :} le premier joueur à remporter $3$ manches gagne la partie et emporte la mise totale de $60$ dirhams.\\par La partie est interrompue alors que le score est de $\\mathbf{2}$ victoires pour $A$ et $\\mathbf{1}$ victoire pour $B$. \\textbf{Comment partager équitablement la mise ?}\\par C'est ce problème qui donna naissance au calcul des probabilités."
+        }
+      ]
+    },
+    {
+      "id": "analyse",
+      "category": "course",
+      "title": "Analyse du problème",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour partager équitablement, on calcule la probabilité que chaque joueur aurait gagné si la partie avait continué. On peut supposer que la partie se joue encore au maximum $2$ manches supplémentaires (il en faut au plus $2$ pour qu'un joueur atteigne $3$ victoires)."
+        },
+        {
+          "type": "hint",
+          "content": "Listez tous les scénarios possibles sur les $2$ manches suivantes : $\\{PP, PF, FP, FF\\}$, chacun avec probabilité $\\dfrac{1}{4}$."
+        },
+        {
+          "type": "hint",
+          "content": "Le joueur $A$ gagne si la première manche est Pile ($PP$ ou $PF$), ou si la séquence est $FP$ (car $A$ passe à $3$ victoires). Listez dans quels scénarios chaque joueur atteint $3$ victoires en premier."
+        },
+        {
+          "type": "hint",
+          "content": "Dans le scénario $PP$ : $A$ gagne dès la 1ère manche supplémentaire.\\par Dans le scénario $PF$ : $A$ gagne dès la 1ère manche.\\par Dans le scénario $FP$ : $B$ gagne la 1ère, puis $A$ gagne la 2ème.\\par Dans le scénario $FF$ : $B$ gagne les deux et remporte la partie."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Calculer $P(A \\text{ gagne la partie})$ et $P(B \\text{ gagne la partie})$.\\item Quelle somme chaque joueur devrait-il recevoir pour un partage équitable ?\\item Généraliser : si le score est $2$-$0$ pour $A$, quelle est la probabilité que $A$ remporte la partie (le premier à $3$ victoires) ?\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} Scénarios sur les 2 manches supplémentaires (équiprobables, prob. $\\frac{1}{4}$ chacun) :\\par\\begin{itemize}\\item $PP$ : $A$ atteint $3$ victoires → $A$ gagne\\item $PF$ : $A$ atteint $3$ victoires → $A$ gagne\\item $FP$ : $B$ passe à $2$, puis $A$ passe à $3$ → $A$ gagne\\item $FF$ : $B$ atteint $3$ victoires → $B$ gagne\\end{itemize}\\par $P(A \\text{ gagne}) = \\dfrac{3}{4}$ et $P(B \\text{ gagne}) = \\dfrac{1}{4}$.\\par\\textbf{2)} Partage équitable : $A$ reçoit $60 \\times \\dfrac{3}{4} = \\boxed{45}$ dirhams et $B$ reçoit $60 \\times \\dfrac{1}{4} = \\boxed{15}$ dirhams.\\par\\textbf{3)} Si le score est $2$-$0$, $B$ doit gagner les $3$ prochaines manches : $P(B \\text{ gagne}) = \\left(\\dfrac{1}{2}\\right)^3 = \\dfrac{1}{8}$, donc $P(A \\text{ gagne}) = \\boxed{\\dfrac{7}{8}}$."
+        }
+      ]
+    }
+  ]
+}

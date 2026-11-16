@@ -1,0 +1,78 @@
+{
+  "id": "ex-complexes-16",
+  "topic": "Nombres complexes - Bac National 2012 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2012,
+  "examenSession": "Rattrapage",
+  "context": "Le plan complexe est rapporté à un repère orthonormé direct $(O;\\vec{u},\\vec{v})$.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans l'ensemble $\\mathbb{C}$ l'équation : $(E):z^2-4\\left(1+\\dfrac23i\\right)z+\\dfrac53+4i=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q1a",
+          "content": "Vérifier que $z_1=1+\\dfrac23i$ est une solution de l'équation $(E)$.",
+          "hint": "Remplacez directement $z_1$ dans $(E)$ et vérifiez que l'expression obtenue vaut $0$ après simplification."
+        },
+        {
+          "id": "p1q1b",
+          "content": "Montrer que la deuxième solution de l'équation $(E)$ est $z_2=3z_1$.",
+          "hint": "Utilisez la relation $z_1z_2=\\dfrac{c}{a}=\\dfrac53+4i$ ou la relation $z_1+z_2=4\\left(1+\\frac23i\\right)$ pour retrouver $z_2$ en fonction de $z_1$."
+        }
+      ]
+    },
+    {
+      "id": "p1q2",
+      "content": "Soit $\\theta$ un argument du nombre complexe $z_1$. Écrire en fonction de $\\theta$ la forme trigonométrique du nombre complexe $\\dfrac53+4i$.",
+      "hint": "Remarquez que $\\dfrac53+4i=z_1z_2=3z_1^2$, et utilisez que $\\arg(z_1)=\\theta$ pour en déduire $\\arg(z_1^2)=2\\theta$."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "On considère trois points distincts deux à deux $A$, $B$ et $\\Omega$, d'affixes respectifs les nombres complexes $a$, $b$ et $w$. Soit $r$ la rotation de centre $w$ et d'angle $\\dfrac{\\pi}{3}$. On pose $P=r(A)$ et $Q=r(B)$ et soient $p$ et $q$ les affixes respectifs des points $P$ et $Q$."
+    },
+    {
+      "id": "p2q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q1a",
+          "content": "Montrer que : $p=w+e^{i\\pi/3}(a-w)$ et $q=w+e^{-i\\pi/3}(b-w)$.",
+          "hint": "Attention : $Q$ est obtenu par une rotation d'angle $-\\pi/3$ (image inverse) autour de $w$ ; appliquez simplement la formule de rotation à chaque cas."
+        },
+        {
+          "id": "p2q1b",
+          "content": "Montrer que : $\\dfrac{1-e^{i\\pi/3}}{1-e^{-i\\pi/3}}=e^{i4\\pi/3}$.",
+          "hint": "Factorisez numérateur et dénominateur par l'arc moitié $e^{\\pm i\\pi/6}$ pour faire apparaître des sinus, puis simplifiez le quotient."
+        },
+        {
+          "id": "p2q1c",
+          "content": "Montrer que : $\\dfrac{p-a}{q-b}=\\dfrac{w-a}{w-b}e^{i4\\pi/3}$.",
+          "hint": "Exprimez $p-a=(w-a)(e^{i\\pi/3}-1)$ et $q-b=(w-b)(e^{-i\\pi/3}-1)$ à partir de la question 1a), faites le quotient et utilisez le résultat de la question 1b)."
+        }
+      ]
+    },
+    {
+      "id": "p2q2",
+      "content": "On suppose que $\\dfrac{w-a}{w-b}=e^{i2\\pi/3}$.",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Montrer que $APQB$ est un parallélogramme.",
+          "hint": "Combinez la relation de la question 1c) avec l'hypothèse $\\frac{w-a}{w-b}=e^{i2\\pi/3}$ pour obtenir $\\dfrac{p-a}{q-b}=e^{i2\\pi}=1$, c'est-à-dire $p-a=q-b$."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que $\\arg\\left(\\dfrac{b-a}{p-a}\\right)\\equiv\\dfrac{\\pi}{2}[2\\pi]$, en déduire que $APQB$ est un rectangle.",
+          "hint": "Calculez $\\dfrac{b-a}{p-a}$ en utilisant $p-a=(w-a)(e^{i\\pi/3}-1)$ et l'hypothèse sur $\\frac{w-a}{w-b}$ ; un parallélogramme dont une diagonale fait un angle droit avec un côté est un rectangle."
+        }
+      ]
+    }
+  ]
+}

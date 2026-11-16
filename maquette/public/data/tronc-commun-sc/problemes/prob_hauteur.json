@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Mesurer la hauteur d'un arbre",
+    "subtitle": "Trigonométrie du triangle rectangle",
+    "context": "Trigonométrie"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Mesurer la hauteur d'un arbre",
+          "content": "Pour mesurer la hauteur d'un grand arbre sans l'escalader, un élève se place à $20\\ \\text{m}$ du pied de l'arbre et vise son sommet. Son instrument, tenu à hauteur des yeux ($1{,}60\\ \\text{m}$ du sol), indique un \\textbf{angle d'élévation} de $35^\\circ$.\\par On note $h$ la hauteur de l'arbre au-dessus du niveau des yeux, et $H$ la hauteur totale de l'arbre."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Dans le triangle rectangle formé, exprimer $\\tan(35^\\circ)$ en fonction de $h$ et de la distance $20\\ \\text{m}$.\\item En déduire $h$, puis la hauteur totale $H$ de l'arbre.\\item L'élève recule de $10\\ \\text{m}$ (il est alors à $30\\ \\text{m}$). Quel nouvel angle d'élévation $\\beta$ mesurera-t-il (au degré près) ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Dans un triangle rectangle, $\\tan(\\text{angle}) = \\dfrac{\\text{côté opposé}}{\\text{côté adjacent}} = \\dfrac{h}{20}$."
+        },
+        {
+          "type": "hint",
+          "content": "La hauteur totale est $H = h + 1{,}60$ (on ajoute la hauteur des yeux). Pour la question 3, $\\tan\\beta = \\dfrac{h}{30}$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $\\tan(35^\\circ) = \\dfrac{h}{20}$.\\par\\textbf{2)} $h = 20 \\tan(35^\\circ) \\approx 20 \\times 0{,}700 \\approx 14{,}0\\ \\text{m}$. La hauteur totale est $H = h + 1{,}60 \\approx \\boxed{15{,}6\\ \\text{m}}$.\\par\\textbf{3)} À $30\\ \\text{m}$ : $\\tan\\beta = \\dfrac{14{,}0}{30} \\approx 0{,}467$, donc $\\beta \\approx \\arctan(0{,}467) \\approx \\boxed{25^\\circ}$. Plus on s'éloigne, plus l'angle d'élévation diminue."
+        }
+      ]
+    }
+  ]
+}

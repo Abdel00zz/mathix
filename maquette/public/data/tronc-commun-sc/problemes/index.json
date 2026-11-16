@@ -1,0 +1,124 @@
+{
+  "classId": "tronc-commun-sc",
+  "title": "Problèmes — Tronc Commun Sciences",
+  "themes": [
+    {
+      "id": "arithmetique",
+      "name": "Arithmétique"
+    },
+    {
+      "id": "ensembles",
+      "name": "Ensembles & Dénombrement"
+    },
+    {
+      "id": "equations",
+      "name": "Équations & Inéquations"
+    },
+    {
+      "id": "trigonometrie",
+      "name": "Trigonométrie"
+    },
+    {
+      "id": "vecteurs",
+      "name": "Produit scalaire"
+    },
+    {
+      "id": "statistiques",
+      "name": "Statistiques"
+    },
+    {
+      "id": "fonctions",
+      "name": "Fonctions"
+    },
+    {
+      "id": "probabilites",
+      "name": "Probabilités"
+    },
+    {
+      "id": "geometrie",
+      "name": "Géométrie"
+    }
+  ],
+  "problemes": [
+    {
+      "id": "tc-prob-dallage",
+      "title": "Carreler une pièce sans découpe",
+      "subtitle": "Problème — PGCD et PPCM",
+      "theme": "arithmetique",
+      "difficulty": "facile",
+      "path": "data/tronc-commun-sc/problemes/prob_dallage.json"
+    },
+    {
+      "id": "tc-prob-langues",
+      "title": "Le sondage des langues vivantes",
+      "subtitle": "Problème — Cardinaux et réunion",
+      "theme": "ensembles",
+      "difficulty": "facile",
+      "path": "data/tronc-commun-sc/problemes/prob_langues.json"
+    },
+    {
+      "id": "tc-prob-forfaits",
+      "title": "Quel forfait téléphonique choisir ?",
+      "subtitle": "Problème — Inéquations du premier degré",
+      "theme": "equations",
+      "difficulty": "facile",
+      "path": "data/tronc-commun-sc/problemes/prob_forfaits.json"
+    },
+    {
+      "id": "tc-prob-hauteur",
+      "title": "Mesurer la hauteur d'un arbre",
+      "subtitle": "Problème — Trigonométrie du triangle rectangle",
+      "theme": "trigonometrie",
+      "difficulty": "moyen",
+      "path": "data/tronc-commun-sc/problemes/prob_hauteur.json"
+    },
+    {
+      "id": "tc-prob-travail",
+      "title": "Le travail d'une force",
+      "subtitle": "Problème — Produit scalaire",
+      "theme": "vecteurs",
+      "difficulty": "moyen",
+      "path": "data/tronc-commun-sc/problemes/prob_travail.json"
+    },
+    {
+      "id": "tc-prob-notes",
+      "title": "Analyser les notes d'une classe",
+      "subtitle": "Problème — Moyenne, médiane et écart-type",
+      "theme": "statistiques",
+      "difficulty": "facile",
+      "path": "data/tronc-commun-sc/problemes/prob_notes.json"
+    },
+    {
+      "id": "tc-prob-benefice",
+      "title": "Maximiser le bénéfice d'une entreprise",
+      "subtitle": "Problème — Fonction du second degré",
+      "theme": "fonctions",
+      "difficulty": "moyen",
+      "path": "data/tronc-commun-sc/problemes/prob_benefice.json"
+    },
+    {
+      "id": "prob-pascal-fermat",
+      "title": "Le problème des partis de Pascal et Fermat",
+      "subtitle": "Problème 1.14 — Probabilités et espérance",
+      "theme": "probabilites",
+      "difficulty": "difficile",
+      "path": "data/1ere-bac-sc-math/problemes/prob_pascal_fermat.json"
+    },
+    {
+      "id": "prob-euler",
+      "title": "La droite d'Euler",
+      "subtitle": "Problème 1.32 — Géométrie vectorielle",
+      "theme": "geometrie",
+      "difficulty": "difficile",
+      "path": "data/1ere-bac-sc-math/problemes/prob_euler.json"
+    },
+    {
+      "id": "prob-benford",
+      "title": "La loi de Benford sur les nombres anormaux",
+      "subtitle": "Problème 1.35 — Logarithmes et probabilités",
+      "theme": "probabilites",
+      "difficulty": "difficile",
+      "path": "data/1ere-bac-sc-math/problemes/prob_benford.json"
+    }
+  ]
+}

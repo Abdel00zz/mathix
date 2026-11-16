@@ -1,0 +1,62 @@
+{
+  "id": "derivation",
+  "title": "La dérivation et ses applications",
+  "section": "analyse",
+  "quizCount": 25,
+  "revisions": [
+    {
+      "id": "rev-deriv-1",
+      "title": "Fiche Complète : La Dérivation",
+      "path": "data/1ere-bac-sc-math/derivation/revisions/fiche_derivation_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-deriv-01",
+      "path": "data/1ere-bac-sc-math/derivation/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-deriv-02",
+      "path": "data/1ere-bac-sc-math/derivation/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-deriv-03",
+      "path": "data/1ere-bac-sc-math/derivation/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-deriv-04",
+      "path": "data/1ere-bac-sc-math/derivation/exercises/ex_04.json"
+    },
+    {
+      "id": "ex-deriv-05",
+      "path": "data/1ere-bac-sc-math/derivation/exercises/ex_05.json"
+    },
+    {
+      "id": "ex-deriv-06",
+      "path": "data/1ere-bac-sc-math/derivation/exercises/ex_06.json"
+    },
+    {
+      "id": "ex-deriv-07",
+      "path": "data/1ere-bac-sc-math/derivation/exercises/ex_07.json"
+    },
+    {
+      "id": "ex-analyse-bac-001",
+      "path": "data/1ere-bac-sc-math/derivation/exercises/ex_08.json"
+    },
+    {
+      "id": "ex-analyse-etude-fct-irrationnelle",
+      "path": "data/1ere-bac-sc-math/derivation/exercises/ex-deriv-09.json"
+    },
+    {
+      "id": "ex-deriv-10",
+      "path": "data/1ere-bac-sc-math/derivation/exercises/ex_10.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-derivation-01",
+      "path": "data/1ere-bac-sc-math/derivation/quiz/derivation_quiz.json",
+      "questionsCount": 25
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "proba-ex17",
+  "theme": "probabilites",
+  "difficulty": "difficile",
+  "chapter": "03 - Variables aléatoires et loi binomiale",
+  "topic": "Normale 2018 - Tirage simultané, trois événements liés, loi binomiale",
+  "requiresRedaction": true,
+  "context": "Une urne contient 9 boules indiscernables au toucher : cinq boules rouges portant les numéros 1, 1, 2, 2, 2 et quatre boules blanches portant les numéros 1, 2, 2, 2. On tire au hasard et simultanément trois boules de l'urne.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soient les événements : $A$ : « Les trois boules tirées sont de même couleur » ; $B$ : « Les trois boules tirées portent le même numéro » ; $C$ : « Les trois boules tirées sont de même couleur et portent le même numéro ». Montrer que $p(A) = \\dfrac{1}{6}$, $p(B) = \\dfrac{1}{4}$ et $p(C) = \\dfrac{1}{42}$.",
+      "hint": "$Card(\\Omega) = C_9^3 = 84$. Pour $A$ : $C_5^3 + C_4^3 = 10 + 4 = 14$. Pour $B$ : numéro 1 (2R+1B = 3 boules) ou numéro 2 (3R+3B = 6 boules). $Card(B) = C_3^3 + C_6^3 = 1 + 20 = 21$. Pour $C$ : même couleur ET même numéro. Listez les cas : (R,R,R) portant le 2 ($C_3^3=1$) et (B,B,B) portant le 2 ($C_3^3=1$). $Card(C) = 2$."
+    },
+    {
+      "id": "q2",
+      "content": "On répète l'expérience précédente trois fois avec remise dans l'urne des trois boules tirées après chaque tirage, et on considère la variable aléatoire qui est égale au nombre de fois de réalisation de l'événement $A$.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Déterminer les paramètres de la variable aléatoire binomiale $X$.",
+          "hint": "L'événement $A$ a une probabilité $p(A) = \\frac{1}{6}$. L'expérience est répétée $n = 3$ fois de manière indépendante (avec remise). Donc $X \\sim B\\left(3 ; \\frac{1}{6}\\right)$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Montrer que $P(X = 1) = \\dfrac{25}{72}$ et calculer $P(X = 2)$.",
+          "hint": "Utilisez $P(X=k) = C_3^k \\cdot \\left(\\frac{1}{6}\\right)^k \\cdot \\left(\\frac{5}{6}\\right)^{3-k}$. Pour $k=1$ : $C_3^1 \\cdot \\frac{1}{6} \\cdot \\left(\\frac{5}{6}\\right)^2 = 3 \\times \\frac{1}{6} \\times \\frac{25}{36}$. Pour $P(X=2)$, remplacez $k$ par $2$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,501 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Pour prouver qu'une fonction $f$ est continue en un point $a$, il suffit de vérifier que la limite de $f$ en $a$ donne un nombre fini (pas d'infinis).",
+      "isTrue": false,
+      "explanation": "C'est incomplet ! Il faut que cette limite finie soit exactement égale à la valeur de la fonction en ce point, c'est-à-dire $\\lim_{x \\to a} f(x) = f(a)$."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Quelle propriété réunit nécessairement la limite à droite et la limite à gauche pour qu'une fonction soit continue en $x_0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elles doivent être opposées l'une de l'autre",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Elles doivent toutes deux tendre vers l'infini",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Elles doivent être égales entre elles, et égales à $f(x_0)$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "L'une d'elles doit valoir zéro",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La continuité en un point exige que les deux « morceaux » de courbe se rejoignent au même endroit : $\\lim_{x \\to x_0^+} f(x) = \\lim_{x \\to x_0^-} f(x) = f(x_0)$."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Parmi les familles de fonctions suivantes, laquelle n'est pas garantie d'être continue sur tout $\\mathbb{R}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Les fonctions polynômes",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La fonction cosinus",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La fonction valeur absolue",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Les fonctions rationnelles",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Les fonctions rationnelles (des fractions avec un polynôme au dénominateur) possèdent des « valeurs interdites » où le dénominateur s'annule. Elles ne sont continues que sur leur domaine de définition, et non sur $\\mathbb{R}$ entier."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "L'image du segment $[2, 5]$ par la fonction $f(x) = x^2$ est le segment $[4, 25]$.",
+      "isTrue": true,
+      "explanation": "La fonction carré est strictement croissante sur les nombres positifs. On a donc $f([a,b]) = [f(a), f(b)]$. L'image de $2$ est $4$, celle de $5$ est $25$."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Par quelle transformation géométrique obtient-on la courbe d'une fonction réciproque $f^{-1}$ à partir de celle de $f$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une symétrie par rapport à l'axe des abscisses",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Une symétrie par rapport à l'axe des ordonnées",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Une symétrie par rapport à la droite d'équation $y = x$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Une translation de vecteur $(1, 1)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La fonction réciproque inverse exactement les rôles de $x$ (les abscisses) et de $y$ (les ordonnées). Cela se traduit par une réflexion miroir le long de la première bissectrice $y=x$."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Pour appliquer le Théorème des Valeurs Intermédiaires (TVI) et prouver l'existence d'une solution à $f(x)=0$ sur $[a, b]$, quelle est la condition nécessaire ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ est continue et $f(a) \\times f(b) < 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f$ est continue et $f(a) \\times f(b) > 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f$ est dérivable et $f(a) \\times f(b) < 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f$ est monotone et $f(a) \\times f(b) < 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le TVI nécessite la continuité de la fonction sur l'intervalle $[a, b]$ et que les images aux bornes soient de signes contraires ($f(a) \\times f(b) < 0$)."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "La fonction $f(x) = \\frac{\\sin x}{x}$ n'est pas définie en 0. Quel est son prolongement par continuité en 0 ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "On pose $f(0) = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "On pose $f(0) = 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "On pose $f(0) = -1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle n'admet aucun prolongement",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est une limite de référence absolue. Quand $x \\to 0$, le rapport $\\frac{\\sin x}{x}$ tend vers $1$. On peut donc « boucher le trou » en définissant la valeur $\\tilde{f}(0) = 1$."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Soit $f$ une fonction continue et strictement décroissante. Si $f(-2) = 8$ et $f(5) = -3$, quelle est l'image de l'intervalle $[-2, 5]$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$[-2, 5]$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$[-3, 8]$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$[8, -3]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "On ne peut pas le déterminer",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'image d'un intervalle est formée de toutes les valeurs prises. Une fonction strictement décroissante inverse les bornes : la plus grande valeur de $x$ donne la plus petite valeur d'image. L'image est donc $[f(5), f(-2)] = [-3, 8]$."
+    },
+    {
+      "id": "q9",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Si $f$ admet une fonction réciproque $f^{-1}$, alors le sens de variation de $f^{-1}$ est strictement inversé par rapport à celui de $f$.",
+      "isTrue": false,
+      "explanation": "Absolument pas ! Une règle fondamentale dit que la fonction réciproque conserve le MÊME sens de variation que la fonction de départ. L'idée reçue de l'inversion est fausse (en dérivée, on a d'ailleurs $(f^{-1})' > 0$ si $f' > 0$)."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Combien de solutions réelles l'équation $x^6 = -64$ admet-elle ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "0",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "1",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "2",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "6",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un exposant pair ($n=6$) produit toujours un résultat positif ou nul pour un nombre réel. Comme $-64 < 0$, l'équation n'admet aucune solution réelle."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "Dans la définition des puissances rationnelles exponentielles, comment se traduit l'expression $x^{\\frac{3}{5}}$ par des racines ($x>0$) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^{\\frac{3}{5}} = \\sqrt[5]{x^3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x^{\\frac{3}{5}} = \\sqrt[3]{x^5}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x^{\\frac{3}{5}} = (\\sqrt[5]{x})^{1/3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x^{\\frac{3}{5}} = \\frac{1}{\\sqrt[5]{x^3}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La règle s'applique $x^{p/q} = \\sqrt[q]{x^p}$. Le numérateur $p$ devient la puissance intérieure classique, le dénominateur $q$ devient l'ordre général (l'indice) de la racine."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Confusion classique dans la dérivée et le quotient inverse des fonctions réciproques.",
+      "prompt": "On considère $f(x) = x^3 + x$, bijective de $\\mathbb{R}$ vers $\\mathbb{R}$. Par définition de sa réciproque $f^{-1}$, que vaut $f^{-1}(2)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "C'est l'inverse multiplicatif $\\frac{1}{f(2)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "C'est la solution $x$ de l'équation $f(x) = 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "C'est la limite quand $x \\to 2$ de $f(x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Cela vaut $2^3 + 2 = 10$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par définition, l'équation $y = f^{-1}(x)$ est équivalente à $x = f(y)$. Pour trouver $f^{-1}(2)$, il faut donc chercher l'antécédent de la fonction : quel nombre au carré puis au cube donne $2$ ? C'est le nombre $1$ (car $1^3 + 1 = 2$). Par l'absurde, la notation puissance $-1$ n'est absolument pas l'inverse $\\frac{1}{x}$."
+    },
+    {
+      "id": "q13",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "L'image d'un intervalle non-borné de type $]a, +\\infty[$ par une fonction continue peut très bien être un segment $[m, M]$ très petit et fermé.",
+      "isTrue": true,
+      "explanation": "L'intervalle de base n'impose aucune contrainte de type de bornes sur l'intervalle image. L'exemple typique serait la fonction sinusoïdale continue sur l'intervalle infini $\\mathbb{R}$ mais tout le temps bornée en image dans un intervalle fermé $[-1, 1]$."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "On sait que $\\lim_{x \\to x_0} u(x) = \\frac{\\pi}{2}$ et que $v(x) = \\sin(x)$. Que peut-on dire de $\\lim_{x \\to x_0} (v \\circ u)(x)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle n'existe pas",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Elle vaut $1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Elle s'écrit sous forme indéterminée",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle se multiplie",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque sur le théorème de la composée continue, la limite interne $u(x)$ fait $\\frac{\\pi}{2}$, la limite globale revient à faire la continuité extérieure $v(\\frac{\\pi}{2}) = \\sin(\\frac{\\pi}{2}) = 1$."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "ambiguity_note": "Le cas classique de l'élimination de zéro pour les racines",
+      "prompt": "Pour calculer $\\lim_{x \\to +\\infty} (\\sqrt{x+1} - \\sqrt{x})$, on se retrouve sur le cas de proportion infini - infini. On la lève en :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Appliquant la dérivée pour vérifier la continuité",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Utilisant la forme d'un produit conjugué positif au dénominateur",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Isolant l'asymptote $x=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Regroupant la racine : $\\sqrt{x+1-x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le conjugué est la solution miracle aux racines. On multiplie en haut et en bas par $(\\sqrt{x+1} + \\sqrt{x})$. L'identité remarquable annule les racines au-dessus. Le dénominateur fera exploser la fraction à zéro : $\\frac{1}{\\infty}$ = $0$."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "La fonction $f(x) = |x| / x$ est-elle continûment prolongeable pour réparer son absence de définition en $0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, sa limite est de zéro",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Oui, elle devient une asymptote",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Non, elle est impossible à prolonger. Les limites ne matchent pas.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Non, elle correspond au TVI",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $|x| / x$, quand on est sur la partie supérieure à $0$, la division fait la limite de $+1$. A l'inverse dans la branche des nombres inférieurs à zéro on a un moins $|-x|$, donc de limite inverse à $-1$. Comme la limite gauche est radicalement opposée à la droite, le trou est béant, un prolongement s'avère mathématiquement impensable."
+    },
+    {
+      "id": "q17",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "La continuité, c'est l'idée implicite que le graphe d'une courbe sera en tout point \"lisse\", sans pointus ni angles saillants sur le tracé.",
+      "isTrue": false,
+      "explanation": "C'est l'erreur la plus sournoise ! Ce que vous décrivez est la DÉRIVABILITÉ d'une fonction (la tangence continue). Une fonction peut très bien être continue mais comporter de nombreux angles extrêment pointus où d'asymétries subites, comme la fonction valeur absolue. Les angles ne se rattachent qu'au côté de cassure vis-à-vis d'une dérivabilité. Être confondu à un lieu continue certifie simplement la notion de relai de connexion."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Avec $n^m$ pour la relation $5^{10}$. Est ce possible de valider sa notation originelle sous un cas unificateur fractionnaire $a^{p/q}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Il n'y a pas d'unificateur dans l'entier. Le $r$ du rationnel exige une factorielle.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "C'est la seule notation de $\\sqrt[1]{x^n}$ de la racine de l'entier universellement neutre.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Une simplification $5^{10/2}$ est le même équivalent",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le TVI l'interdit",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les entiers sont techniquement des fractionnaires dissimulés sur quotient de $1$. Ici toute racine basique peut être assimilée sur la forme généralisée des exposants par la racine universelle $\\sqrt[1]{r}$ et l'exposant de son rationnel."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Pour les fonctions d'expressions distinctes $f(x)=2x+1$ pour $x<1$, et $f(x)=x^2+c$ pour $x\\geq 1$. Afin d'obtenir une continuité intégrale dans tous son ensemble, la constante $c$ ajustée vaudra :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$c = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$c = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$c = 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$c = 3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La continuité doit unir le point de contact en $1$. On substitue la partie gauche à $2(1)+1=3$. Pour matcher, on substitue la seconde $1^2+c=1+c$. Et pour être identique sur $3$ on force une équation : $3 = 1+c$, dont la réponse fait $c=2$."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "En calculant algébriquement des propriétés racine-puissance : comment écrire et réduire explicitement l'assemblage matriciel complexe $\\sqrt[3]{\\sqrt{x^6}}$ ? (Où $x > 0$)",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x^3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'encastrement multiplicateur $\\sqrt[n]{\\sqrt[p]{}}$ se mutiplie ! L'indice fantôme racine au carré équivaut $p=2$, pour $n=3$, l'indexation matricielle donne la racine externe unie unique d'une racine $n \\times p= 6$. Sachant qu'une racine de classe 6 qui détruit une élévation $x^6$, le corps s'annihile formellement aux abords de ce simple nombre : $x$."
+    }
+  ]
+}

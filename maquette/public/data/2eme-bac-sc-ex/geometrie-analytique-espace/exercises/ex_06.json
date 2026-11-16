@@ -1,0 +1,63 @@
+{
+  "id": "ex-esp-06",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "moyen",
+  "topic": "Géométrie analytique dans l'espace — Plan, sphère, famille de plans",
+  "requiresRedaction": true,
+  "context": "Dans l'espace rapporté à un repère orthonormé direct $\\left(O,\\overrightarrow{i},\\overrightarrow{j},\\overrightarrow{k}\\right)$, on considère les deux points $A(1;1;0)$ et $\\Omega(-1;1;-2)$ et le plan $(P)$ d'équation $x + z - 1 = 0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Vérifier que $A$ est un point du plan $(P)$ et donner un vecteur normal de $(P)$",
+          "hint": "Substituez les coordonnées de $A$ dans l'équation de $(P)$ et lisez le vecteur normal sur les coefficients."
+        },
+        {
+          "id": "sq1b",
+          "content": "Montrer que la droite $(\\Omega A)$ est perpendiculaire au plan $(P)$",
+          "hint": "Montrez que $\\overrightarrow{\\Omega A}$ est colinéaire au vecteur normal $(1;0;1)$ de $(P)$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soit $(S)$ l'ensemble des points $M(x;y;z)$ de l'espace vérifiant : $x^2+y^2+z^2+2x-2y+4z-3 = 0$.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que $(S)$ est une sphère de centre $\\Omega$ et déterminer son rayon",
+          "hint": "Complétez le carré en $x$, $y$ et $z$ et vérifiez que le centre est $\\Omega(-1;1;-2)$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Montrer que $(P)$ coupe $(S)$ suivant un cercle de centre $A$ puis déterminer son rayon",
+          "hint": "Calculez $d(\\Omega,(P))$ et vérifiez que $A$ est bien le pied de la perpendiculaire. Le rayon vaut $\\sqrt{R^2 - d^2}$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Soit $(Q_m)$ un plan d'équation $x + y + mz - 2 = 0$, où $m$ est un nombre réel.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Vérifier que $A$ est un point du plan $(Q_m)$, pour tout $m$ de $\\mathbb{R}$",
+          "hint": "Substituez les coordonnées de $A(1;1;0)$ dans l'équation de $(Q_m)$ : $1+1+m\\cdot 0 - 2 = 0$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Déterminer la valeur du réel $m$ pour que $(Q_m)$ soit perpendiculaire au plan $(P)$",
+          "hint": "Deux plans sont perpendiculaires si leurs vecteurs normaux sont perpendiculaires : $\\overrightarrow{n}_P \\cdot \\overrightarrow{n}_{Q_m} = 0$."
+        },
+        {
+          "id": "sq3c",
+          "content": "Existe-t-il un plan $(Q_m)$ qui coupe la sphère $(S)$ suivant un cercle de centre $A$ ? Justifier",
+          "hint": "Le cercle d'intersection a pour centre $A$ si et seulement si $A$ est le pied de la perpendiculaire de $\\Omega$ sur $(Q_m)$, soit $\\overrightarrow{\\Omega A}$ est parallèle au vecteur normal de $(Q_m)$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "exponentielles",
+  "title": "Les fonctions exponentielles",
+  "section": "analyse",
+  "quizCount": 25,
+  "revisions": [
+    {
+      "id": "rev-exp-2bac",
+      "title": "Fiche Compléte : Exponentielles",
+      "path": "data/2eme-bac-sc-ex/exponentielles/revisions/fiche_exponentielles_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-analyse-2018-normale-01",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-exp-002",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-exp-003",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-exp-004",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_04.json"
+    },
+    {
+      "id": "ex-exp-005",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_05.json"
+    },
+    {
+      "id": "ex-21",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_06.json"
+    },
+    {
+      "id": "ex-exp-07",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_07.json"
+    },
+    {
+      "id": "ex-exp-08",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_08.json"
+    },
+    {
+      "id": "ex-19",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_09.json"
+    },
+    {
+      "id": "ex-20",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_10.json"
+    },
+    {
+      "id": "ex-22",
+      "path": "data/2eme-bac-sc-ex/exponentielles/exercises/ex_11.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-exponentielles-01",
+      "path": "data/2eme-bac-sc-ex/exponentielles/quiz/exponentielles_quiz.json",
+      "questionsCount": 25
+    }
+  ]
+}

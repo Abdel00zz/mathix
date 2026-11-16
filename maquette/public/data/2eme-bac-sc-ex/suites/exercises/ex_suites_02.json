@@ -1,0 +1,42 @@
+{
+  "id": "ex-suites-02",
+  "theme": "suites",
+  "difficulty": "moyen",
+  "topic": "Suites Numériques",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Représentation Graphique de la suite $u_{n+1} = \\sqrt{3u_n + 4}$ avec $u_0=0$.",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Visualiser la construction des premiers termes.",
+          "hint": "Le graphique montre la construction des termes d'une suite $u_{n+1} = f(u_n)$. En partant de $u_0$ sur l'axe des abscisses, on 'monte' vers la courbe pour trouver $f(u_0)=u_1$, puis on se déplace horizontalement vers la droite $y=x$ pour reporter $u_1$ sur l'axe des abscisses. Répétez le processus. Vers quel point la suite semble-t-elle converger ?"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Démonstration par récurrence",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que pour tout $n$, $0 \\le u_n \\le 4$.",
+          "hint": "Procédez par récurrence. Pour l'hérédité, si $0 \\le u_n \\le 4$, utilisez la croissance de la fonction $f(x)=\\sqrt{3x+4}$ pour encadrer $u_{n+1}$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Calcul de la limite",
+      "subQuestions": [
+        {
+          "id": "sq3",
+          "content": "La suite $(u_n)$ converge. Déterminer sa limite.",
+          "hint": "La suite est croissante et majorée, donc elle converge vers une limite $\\ell$. Comme $f$ est continue, la limite $\\ell$ doit vérifier $f(\\ell) = \\ell$. Résolvez cette équation."
+        }
+      ]
+    }
+  ]
+}

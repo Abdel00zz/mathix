@@ -1,0 +1,72 @@
+{
+  "id": "ds2-s2-v1",
+  "title": "Devoir Surveillé N°2 — V1",
+  "number": 2,
+  "version": "V1",
+  "semestre": 2,
+  "classId": "2eme-bac-sc-ex",
+  "duration": 120,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "ds2s2v1-ex1",
+      "number": 1,
+      "theme": "calcul intégral",
+      "points": 10,
+      "topic": "Intégrales — Calcul et applications",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Calcul d'intégrales",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Calculer $I = \\int_0^1 (2x + 1)e^{x^2 + x}\\,dx$.",
+              "hint": "On pose $u(x) = x^2 + x$, $u'(x) = 2x + 1$. Donc $I = [e^{x^2+x}]_0^1 = e^2 - 1$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Calculer $J = \\int_1^e \\frac{1}{x(1 + \\ln x)^2}\\,dx$.",
+              "hint": "On pose $t = 1 + \\ln x$, $dt = \\frac{1}{x}dx$. Pour $x=1$: $t=1$, $x=e$: $t=2$. $J = \\int_1^2 \\frac{dt}{t^2} = [-\\frac{1}{t}]_1^2 = -\\frac{1}{2} + 1 = \\frac{1}{2}$."
+            },
+            {
+              "id": "sq1c",
+              "content": "Soit $f(x) = xe^{-x}$. Calculer $\\int_0^1 f(x)\\,dx$ par intégration par parties.",
+              "hint": "$u = x$, $v' = e^{-x}$ ⟹ $u' = 1$, $v = -e^{-x}$. $\\int_0^1 xe^{-x}dx = [-xe^{-x}]_0^1 + \\int_0^1 e^{-x}dx = -e^{-1} + [-e^{-x}]_0^1 = -e^{-1} - e^{-1} + 1 = 1 - \\frac{2}{e}$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ds2s2v1-ex2",
+      "number": 2,
+      "theme": "géométrie dans l'espace",
+      "points": 10,
+      "topic": "Droites et plans dans l'espace",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Positions relatives et distances",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Soient $A(1,2,3)$, $B(3,4,1)$ et $C(0,1,-1)$. Montrer que $A$, $B$ et $C$ ne sont pas alignés.",
+              "hint": "$\\overrightarrow{AB} = (2,2,-2)$ et $\\overrightarrow{AC} = (-1,-1,-4)$. $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ ne sont pas colinéaires (pas de $k$ tel que $(2,2,-2) = k(-1,-1,-4)$), donc $A$, $B$, $C$ non alignés."
+            },
+            {
+              "id": "sq1b",
+              "content": "Déterminer une équation cartésienne du plan $(P)$ passant par $A$, $B$ et $C$.",
+              "hint": "$\\overrightarrow{n} = \\overrightarrow{AB} \\wedge \\overrightarrow{AC} = (2 \\cdot (-4) - (-2)(-1),\\; (-2)(-1) - 2(-4),\\; 2(-1)-2(-1)) = (-10, 10, 0)$. Simplifié : $\\overrightarrow{n} = (-1, 1, 0)$. $(P): -x + y + d = 0$ avec $A \\in (P)$: $-1 + 2 + d = 0 \\Rightarrow d = -1$. $(P): -x + y - 1 = 0$."
+            },
+            {
+              "id": "sq1c",
+              "content": "Calculer la distance du point $D(3, 0, 5)$ au plan $(P)$.",
+              "hint": "$d(D, P) = \\frac{|-3 + 0 - 1|}{\\sqrt{1 + 1}} = \\frac{4}{\\sqrt{2}} = 2\\sqrt{2}$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

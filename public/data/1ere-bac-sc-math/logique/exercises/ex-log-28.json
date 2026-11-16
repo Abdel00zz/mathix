@@ -1,0 +1,29 @@
+{
+  "id": "ex-log-28",
+  "theme": "logique",
+  "difficulty": "difficile",
+  "topic": "Logique & Raisonnements — Raisonnement par récurrence",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$\\forall n \\in \\mathbb{N}$ : 9 divise $4^n + 6n - 1$.",
+      "hint": "Exprimez $4^{n+1} + 6(n+1) - 1 = 4 \\cdot 4^n + 6n + 5$ et faites apparaître $4^n + 6n - 1$."
+    },
+    {
+      "id": "q2",
+      "content": "$\\forall n \\in \\mathbb{N}$ : 11 divise $3^{2n} + 2^{4n-5}$.",
+      "hint": "Exprimez $3^{2(n+1)} + 2^{4(n+1)-5} = 9 \\cdot 3^{2n} + 16 \\cdot 2^{4n-5}$ et faites apparaître $3^{2n} + 2^{4n-5}$."
+    },
+    {
+      "id": "q3",
+      "content": "$\\forall n \\in \\mathbb{N}$ : 17 divise $21^n - 2^{2n}$.",
+      "hint": "Exprimez $21^{n+1} - 2^{2(n+1)} = 21 \\cdot 21^n - 4 \\cdot 2^{2n}$ et faites apparaître $21^n - 2^{2n}$."
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que $\\forall n \\in \\mathbb{N}$ : $n(n+1)(n+2)$ est divisible par 6.",
+      "hint": "Parmi trois entiers consécutifs, l'un est divisible par 2 et l'un est divisible par 3. Justifiez par disjonction des cas ou par récurrence."
+    }
+  ]
+}

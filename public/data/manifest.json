@@ -1,0 +1,65 @@
+{
+    "meta":  {
+                 "version":  "4.4",
+                 "lastUpdated":  "2026-04-01"
+             },
+    "classes":  [
+                    {
+                        "id":  "tronc-commun-sc",
+                        "title":  "Tronc Commun Scientifique",
+                        "path":  "data/classes/tronc-commun-sc.json"
+                    },
+                    {
+                        "id":  "1ere-annee-college",
+                        "title":  "1ère année collégiale",
+                        "path":  "data/classes/1ere-annee-college.json"
+                    },
+                    {
+                        "id":  "2eme-annee-college",
+                        "title":  "2ème année collégiale",
+                        "path":  "data/classes/2eme-annee-college.json"
+                    },
+                    {
+                        "id":  "3eme-annee-college",
+                        "title":  "3ème année collégiale",
+                        "path":  "data/classes/3eme-annee-college.json"
+                    },
+                    {
+                        "id":  "1ere-bac-sc-ex",
+                        "title":  "1ère Bac Sciences Expérimentales",
+                        "path":  "data/classes/1ere-bac-sc-ex.json"
+                    },
+                    {
+                        "id":  "1ere-bac-sc-math",
+                        "title":  "1ère Bac Sciences Mathématiques",
+                        "path":  "data/classes/1ere-bac-sc-math.json"
+                    },
+                    {
+                        "id":  "2eme-bac-sc-ex",
+                        "title":  "2ème Bac Sciences Expérimentales",
+                        "path":  "data/classes/2eme-bac-sc-ex.json"
+                    },
+                    {
+                        "id":  "2eme-bac-sc-math",
+                        "title":  "2ème Bac Sciences Mathématiques",
+                        "path":  "data/classes/2eme-bac-sc-math.json"
+                    }
+                ],
+    "concours":  [
+                     {
+                         "id":  "ensa",
+                         "name":  "ENSA",
+                         "manifestPath":  "data/concours/ensa/manifest.json"
+                     },
+                     {
+                         "id":  "ensam",
+                         "name":  "ENSAM",
+                         "manifestPath":  "data/concours/ensam/manifest.json"
+                     },
+                     {
+                         "id":  "medecine",
+                         "name":  "Médecine",
+                         "manifestPath":  "data/concours/medecine/manifest.json"
+                     }
+                 ]
+}

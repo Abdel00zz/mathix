@@ -1,0 +1,26 @@
+{
+  "id": "produit-scalaire-plan",
+  "title": "Le produit scalaire dans le plan et ses applications",
+  "exercises": [
+    {
+      "id": "ex-produit-scalaire-plan-01",
+      "path": "data/1ere-bac-sc-ex/produit-scalaire-plan/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-produit-scalaire-plan-02",
+      "path": "data/1ere-bac-sc-ex/produit-scalaire-plan/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-produit-scalaire-plan-03",
+      "path": "data/1ere-bac-sc-ex/produit-scalaire-plan/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-produit-scalaire-plan-01",
+      "path": "data/1ere-bac-sc-ex/produit-scalaire-plan/quiz/produit-scalaire-plan_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

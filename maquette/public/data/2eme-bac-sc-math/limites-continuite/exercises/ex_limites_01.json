@@ -1,0 +1,32 @@
+{
+  "id": "ex-lim-cont-sm-01",
+  "theme": "limites-continuite",
+  "difficulty": "difficile",
+  "topic": "Limites et Continuité",
+  "context": "Soit $f$ la fonction définie sur $\\mathbb{R}^+$ par : $f(x) = x - 2\\sqrt{x} + 2$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Étude de la bijection",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer que $f$ réalise une bijection de $[1, +\\infty[$ vers un intervalle $J$ à déterminer.",
+          "hint": "\\method $f$ est continue sur $[1, +\\infty[$. Calculons $f'(x) = 1 - \\frac{1}{\\sqrt{x}} = \\frac{\\sqrt{x}-1}{\\sqrt{x}}$.\nSur $]1, +\\infty[$, $\\sqrt{x} > 1$ donc $f'(x) > 0$.\n$f$ est strictement croissante.\n$f(1) = 1$ et $\\lim_{x \\to +\\infty} f(x) = \\lim \\sqrt{x}(\\sqrt{x}-2) + 2 = +\\infty$.\n\\conclusion $f$ est une bijection de $[1, +\\infty[$ vers $J = [1, +\\infty[$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Fonction réciproque",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Déterminer l'expression de $f^{-1}(x)$ pour tout $x \\in J$.",
+          "hint": "On résout $y = x - 2\\sqrt{x} + 2$ avec $x \\ge 1$ (donc $\\sqrt{x} \\ge 1$).\nPosons $X = \\sqrt{x}$. On a $X^2 - 2X + (2-y) = 0$.\nDiscriminant : $\\Delta = 4 - 4(2-y) = 4y - 4 = 4(y-1)$.\nPour $y \\ge 1$, $\\Delta \\ge 0$. $X = \\frac{2 \\pm 2\\sqrt{y-1}}{2} = 1 \\pm \\sqrt{y-1}$.\nComme $X \\ge 1$, on garde $X = 1 + \\sqrt{y-1}$.\nDonc $x = (1 + \\sqrt{y-1})^2$.\n\\conclusion $f^{-1}(x) = (1 + \\sqrt{x-1})^2$."
+        }
+      ]
+    }
+  ]
+}

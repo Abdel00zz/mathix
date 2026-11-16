@@ -1,0 +1,337 @@
+{
+  "id": "nat-2019-r",
+  "title": "Examen National 2019 — Session Rattrapage",
+  "type": "national",
+  "year": 2019,
+  "session": "rattrapage",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 7,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2019r-ex1",
+      "number": 1,
+      "theme": "geometrie-espace",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Produit vectoriel, sphère et plan",
+      "context": "Dans l'espace rapporté à un repère orthonormé direct $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les points $A(1, 2, 2)$, $B(3, -1, 6)$, et $C(1, 1, 3)$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = \\overrightarrow{i} - 2\\overrightarrow{j} - 2\\overrightarrow{k}$.",
+              "bareme": 0.75,
+              "hint": "Calculez les coordonnées des vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$, puis déterminez leur produit vectoriel à l'aide des déterminants."
+            },
+            {
+              "id": "1b",
+              "content": "En déduire que $x - 2y - 2z + 7 = 0$ est une équation cartésienne du plan $(ABC)$.",
+              "bareme": 0.5,
+              "hint": "Le vecteur $\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$ est un vecteur normal au plan. Utilisez les coordonnées du point $A$ pour déterminer la constante $d$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soient les points $E(5, 1, 4)$ et $F(-1, 1, 12)$ et $(S)$ l'ensemble des points $M$ vérifiant $\\overrightarrow{ME} \\cdot \\overrightarrow{MF} = 0$. Montrer que $(S)$ est la sphère de centre $\\Omega(2, 1, 8)$ et de rayon $R = 5$.",
+          "bareme": 0.75,
+          "hint": "Posez $M(x,y,z)$, calculez analytiquement le produit scalaire $\\overrightarrow{ME} \\cdot \\overrightarrow{MF} = 0$, puis regroupez les termes pour faire apparaître l'équation cartésienne réduite de la sphère."
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Calculer $d(\\Omega, (ABC))$ distance du point $\\Omega$ au plan $(ABC)$.",
+              "bareme": 0.5,
+              "hint": "Appliquez la formule de la distance : $d = \\dfrac{|ax_{\\Omega} + by_{\\Omega} + cz_{\\Omega} + d|}{\\sqrt{a^2 + b^2 + c^2}}$ en utilisant l'équation du plan $(ABC)$."
+            },
+            {
+              "id": "3b",
+              "content": "En déduire que le plan $(ABC)$ coupe la sphère $(S)$ selon un cercle $(\\Gamma)$ de rayon $r = 4$.",
+              "bareme": 0.5,
+              "hint": "Comparez la distance $d$ calculée précédemment avec le rayon $R$ de la sphère. Appliquez ensuite le théorème de Pythagore : $r = \\sqrt{R^2 - d^2}$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2019r-ex2",
+      "number": 2,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Nombres complexes — Équation du second degré, forme trigonométrique et rotation",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Résoudre dans l'ensemble $\\mathbb{C}$ des nombres complexes l'équation : $z^2 - 3z + 3 = 0$.",
+              "bareme": 0.75,
+              "hint": "Calculez le discriminant $\\Delta$. Remarquez que $-3 = (i\\sqrt{3})^2$ pour écrire les deux solutions conjuguées."
+            },
+            {
+              "id": "1b",
+              "content": "On pose $a = \\dfrac{3}{2} + \\dfrac{\\sqrt{3}}{2}i$, écrire $a$ sous forme trigonométrique.",
+              "bareme": 0.5,
+              "hint": "Calculez d'abord le module $|a|$. Factorisez ensuite $a$ par ce module pour identifier le cosinus et le sinus de l'argument."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "On considère le nombre complexe $b = \\dfrac{\\sqrt{2}}{2}(1+i)$, vérifier que $b^2 = i$.",
+          "bareme": 0.5,
+          "hint": "Élevez l'expression de $b$ au carré en développant $(1+i)^2$ à l'aide des identités remarquables."
+        },
+        {
+          "id": "q3",
+          "content": "On pose $h = \\cos\\dfrac{\\pi}{12} + i\\sin\\dfrac{\\pi}{12}$, montrer que $h^4 + 1 = a$.",
+          "bareme": 0.5,
+          "hint": "Utilisez la formule de Moivre pour calculer $h^4$, simplifiez l'angle obtenu, puis ajoutez $1$ pour retrouver l'expression algébrique de $a$."
+        },
+        {
+          "id": "q4",
+          "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère le point $B$ d'affixe $b$ et $R$ la rotation de centre $O$ et d'angle $\\dfrac{\\pi}{2}$.",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Soit $c$ l'affixe du point $C$ image du point $B$ par la rotation $R$. Montrer que $c = ib$.",
+              "bareme": 0.5,
+              "hint": "Traduisez la rotation $R$ par l'expression complexe $z_C - z_O = e^{i\\frac{\\pi}{2}}(z_B - z_O)$. Rappelez-vous que $e^{i\\frac{\\pi}{2}} = i$."
+            },
+            {
+              "id": "4b",
+              "content": "En déduire la nature du triangle $OBC$.",
+              "bareme": 0.25,
+              "hint": "Divisez par $b$ pour obtenir $\\dfrac{c}{b} = i$. Interprétez géométriquement le module (rapport de distances) et l'argument (angle orienté) de ce quotient."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2019r-ex3",
+      "number": 3,
+      "theme": "probabilites",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Probabilités — Tirage successif avec remise",
+      "context": "Une urne contient une boule rouge, deux boules blanches et trois boules noires indiscernables au toucher. On tire au hasard successivement et avec remise trois boules de l'urne.\nSoient les événements suivants :\n$A$ : \"les trois boules tirées sont de même couleur\"\n$B$ : \"il n'y a aucune boule blanche parmi les boules tirées\"\n$C$ : \"il y a exactement deux boules blanches parmi les boules tirées\"",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que $p(A) = \\dfrac{1}{6}$ et $p(B) = \\dfrac{8}{27}$.",
+          "bareme": 2,
+          "hint": "L'univers compte $6^3$ éventualités. Pour $A$, additionnez les cas (3 rouges) + (3 blanches) + (3 noires). Pour $B$, sélectionnez 3 boules parmi les 4 qui ne sont pas blanches."
+        },
+        {
+          "id": "q2",
+          "content": "Calculer $p(C)$.",
+          "bareme": 1,
+          "hint": "Identifiez les cas tirant 2 boules blanches et 1 boule d'une autre couleur. Multipliez le résultat par $3$ pour tenir compte de la position de la boule non blanche."
+        }
+      ]
+    },
+    {
+      "id": "nat2019r-ex4",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 11,
+      "topic": "Étude d'une fonction exponentielle, limites, intégration et suite définie par récurrence",
+      "context": "",
+      "questions": [
+        {
+          "id": "p1",
+          "type": "partie",
+          "content": "Soit $f$ la fonction numérique définie sur $\\mathbb{R}^*$ par : $f(x) = 2 + 8\\left(\\dfrac{x - 2}{x}\\right)^2 e^{x-4}$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (unité : $1cm$)."
+        },
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $\\lim_{x \\to -\\infty} f(x) = 2$ et interpréter le résultat géométriquement.",
+              "bareme": 0.5,
+              "hint": "Séparez les limites de $\\dfrac{x-2}{x}$ et de $e^{x-4}$ en $-\\infty$. Une limite finie en l'infini indique une asymptote horizontale."
+            },
+            {
+              "id": "1b",
+              "content": "Vérifier que $\\lim_{x \\to 0} f(x) = +\\infty$ et interpréter le résultat géométriquement.",
+              "bareme": 0.5,
+              "hint": "Étudiez le comportement du carré $\\left(\\dfrac{x-2}{x}\\right)^2$ lorsque $x$ s'approche de $0$. Une limite infinie en un point fini indique une asymptote verticale."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Calculer $\\lim_{x \\to +\\infty} f(x)$.",
+              "bareme": 0.5,
+              "hint": "Rappelez-vous que $\\lim_{x \\to +\\infty} \\dfrac{x-2}{x} = 1$ et que $\\lim_{x \\to +\\infty} e^{x-4} = +\\infty$."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que la courbe $(C)$ admet une branche parabolique de direction l'axe des ordonnées au voisinage de $+\\infty$.",
+              "bareme": 0.5,
+              "hint": "Calculez $\\lim_{x \\to +\\infty} \\dfrac{f(x)}{x}$. Isolez le terme $\\dfrac{e^{x-4}}{x}$ pour montrer que la limite est infinie."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que $f'(x) = \\dfrac{8(x - 2)(x^2 - 2x + 4)e^{x-4}}{x^3}$ pour tout $x$ de $\\mathbb{R}^*$.",
+              "bareme": 0.75,
+              "hint": "Appliquez la formule de dérivation d'un produit $(u \\cdot v)' = u'v + uv'$ en posant $u(x) = \\left(\\dfrac{x-2}{x}\\right)^2$. Mettez ensuite les termes communs en facteur."
+            },
+            {
+              "id": "3b",
+              "content": "Vérifier que pour tout $x$ de $\\mathbb{R}$, $x^2 - 2x + 4 > 0$.",
+              "bareme": 0.25,
+              "hint": "Calculez le discriminant du trinôme ou remarquez que $x^2 - 2x + 4$ peut s'écrire sous la forme canonique $(x-1)^2 + 3$."
+            },
+            {
+              "id": "3c",
+              "content": "Montrer que la fonction $f$ est strictement décroissante sur $]0, 2]$ et strictement croissante sur chacun des intervalles $]-\\infty, 0[$ et $[2, +\\infty[$.",
+              "bareme": 0.75,
+              "hint": "Le trinôme et l'exponentielle étant positifs, déduisez que le signe de $f'(x)$ ne dépend que du quotient $\\dfrac{x-2}{x^3}$."
+            },
+            {
+              "id": "3d",
+              "content": "Dresser le tableau de variations de la fonction $f$ sur $\\mathbb{R}^*$.",
+              "bareme": 0.5,
+              "hint": "Intégrez les signes trouvés précédemment et placez les limites aux bornes des intervalles ainsi que l'image de $2$.\\n\\n$$\\begin{array}{|c|lcccr|}\\hline x & -\\infty & & 0 & & 2 & & +\\infty \\\\\\\\ \\hline f'(x) & & + & || & - & 0 & + & \\\\\\\\ \\hline f & & \\nearrow & || & \\searrow & & \\nearrow & \\\\\\\\ \\hline \\end{array}$$"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "Construire la courbe $(C)$ dans le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$.",
+          "bareme": 1,
+          "hint": "Placez le point minimum $(2, f(2))$, tracez les deux asymptotes ($y=2$ et l'axe des ordonnées), et respectez l'allure de la branche parabolique vers $+\\infty$."
+        },
+        {
+          "id": "q5",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "5a",
+              "content": "Vérifier que la fonction $H : x \\mapsto \\dfrac{1}{x}e^{x-4}$ est une fonction primitive de la fonction $h : x \\mapsto \\dfrac{x-1}{x^2}e^{x-4}$ sur $[2, 4]$.",
+              "bareme": 0.5,
+              "hint": "Dérivez la fonction $H(x)$ en utilisant la règle du produit pour retomber exactement sur l'expression de $h(x)$."
+            },
+            {
+              "id": "5b",
+              "content": "Vérifier que $f(x) = 2 + 8e^{x-4} - 32\\dfrac{(x - 1)}{x^2}e^{x-4}$ pour tout $x$ de $\\mathbb{R}^*$.",
+              "bareme": 0.25,
+              "hint": "Développez le numérateur $(x-2)^2$ dans la définition de $f(x)$, puis séparez la fraction en plusieurs termes pour faire apparaître l'expression souhaitée."
+            },
+            {
+              "id": "5c",
+              "content": "Calculer l'intégrale $\\displaystyle\\int_2^4 e^{x-4}\\,dx$.",
+              "bareme": 0.5,
+              "hint": "La fonction $x \\mapsto e^{x-4}$ est sa propre primitive. Évaluez la différence entre les valeurs en $4$ et en $2$."
+            },
+            {
+              "id": "5d",
+              "content": "Calculer en $cm^2$ l'aire du domaine plan limité par $(C)$, l'axe des abscisses et les droites d'équations $x = 2$ et $x = 4$.",
+              "bareme": 0.75,
+              "hint": "Intégrez $f(x)$ sur $[2, 4]$ en utilisant l'écriture de la question 5b. Utilisez la primitive $H(x)$ pour le dernier terme. Puisque l'unité est de $1 cm$, multipliez le résultat par $1 cm^2$."
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "type": "partie",
+          "content": "On considère la fonction numérique $g$ définie sur $[2, 4]$ par $g(x) = 8(x - 2)e^{x-4} - x^2$."
+        },
+        {
+          "id": "r1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Calculer $g(4)$.",
+              "bareme": 0.25,
+              "hint": "Remplacez simplement $x$ par $4$ dans l'expression de $g(x)$ et calculez."
+            },
+            {
+              "id": "1b",
+              "content": "Vérifier que pour tout $x$ de l'intervalle $[2, 4]$, $g(x) = -(x - 4)^2e^{x-4} + x^2(e^{x-4} - 1)$.",
+              "bareme": 0.5,
+              "hint": "Développez l'expression proposée et regroupez les termes en factorisant judicieusement pour retrouver la définition initiale de $g(x)$."
+            },
+            {
+              "id": "1c",
+              "content": "Vérifier que pour tout $x$ de l'intervalle $[2, 4]$ : $e^{x-4} - 1 \\leq 0$ puis en déduire que pour tout $x$ de l'intervalle $[2, 4] : g(x) \\leq 0$.",
+              "bareme": 0.5,
+              "hint": "Partez de $x \\leq 4$, déduisez que $x-4 \\leq 0$, et passez à l'exponentielle. Utilisez cette information sur l'expression de la question 1b pour conclure sur le signe global d'une somme de termes négatifs."
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Vérifier que pour tout $x$ de l'intervalle $[2, 4]$, $f(x) - x = \\left(\\dfrac{x - 2}{x^2}\\right) g(x)$.",
+              "bareme": 0.5,
+              "hint": "Écrivez $f(x) - x$, remplacez $f(x)$ par son expression, réduisez au même dénominateur $x^2$ puis factorisez par $(x-2)$ pour faire apparaître $g(x)$."
+            },
+            {
+              "id": "2b",
+              "content": "En déduire que pour tout $x$ de l'intervalle $[2, 4]$, $f(x) \\leq x$.",
+              "bareme": 0.25,
+              "hint": "Sur l'intervalle $[2, 4]$, le terme $\\dfrac{x-2}{x^2}$ est positif. Combinez cela avec le signe de $g(x)$ trouvé en 1c."
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "content": "Soit $(u_n)$ la suite numérique définie par : $u_0 = 3$ et $u_{n+1} = f(u_n)$ pour tout $n$ de $\\mathbb{N}$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Monter par récurrence que $2 \\leq u_n \\leq 4$ pour tout $n$ de $\\mathbb{N}$.",
+              "bareme": 0.5,
+              "hint": "L'initialisation se vérifie car $2 \\leq 3 \\leq 4$. Pour l'hérédité, appliquez la fonction $f$ à l'encadrement, en vous justifiant de la stricte croissance de $f$ sur l'intervalle $[2, 4]$ prouvée en Partie I."
+            },
+            {
+              "id": "3b",
+              "content": "Déterminer la monotonie de la suite $(u_n)$ et en déduire qu'elle est convergente.",
+              "bareme": 0.5,
+              "hint": "Étudiez le signe de $u_{n+1} - u_n$ en utilisant le résultat de la question 2b appliqué à $x = u_n$. Une suite décroissante et minorée est convergente."
+            },
+            {
+              "id": "3c",
+              "content": "Calculer la limite de la suite $(u_n)$.",
+              "bareme": 0.75,
+              "hint": "La limite vérifie l'équation $f(l) = l$, ce qui revient à chercher $l$ tel que $g(l) = 0$ (d'après 2a). Trouvez cette valeur en sachant que la suite décroît à partir de $3$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

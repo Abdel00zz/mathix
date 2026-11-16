@@ -1,0 +1,33 @@
+{
+  "id": "calcul-integral",
+  "title": "Calcul intégral",
+  "exercises": [
+    {
+      "id": "ex-calcul-integral-01",
+      "path": "data/2eme-bac-sc-math/calcul-integral/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-calcul-integral-02",
+      "path": "data/2eme-bac-sc-math/calcul-integral/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-calcul-integral-03",
+      "path": "data/2eme-bac-sc-math/calcul-integral/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-calcul-integral-01",
+      "path": "data/2eme-bac-sc-math/calcul-integral/quiz/calcul-integral_quiz.json",
+      "questionsCount": 22
+    }
+  ],
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-calcul-integral-sm",
+      "title": "Fiche Complete : Calcul Integral",
+      "path": "data/2eme-bac-sc-math/calcul-integral/revisions/fiche_calcul_integral_cours.json"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ex-ens-app-13",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Parties d'un ensemble et $\\mathcal{P}(E)$",
+  "requiresRedaction": true,
+  "context": "Les questions 1 et 2 sont indépendantes.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soient $A$ et $B$ deux parties d'un ensemble $E$. Résoudre dans $\\mathcal{P}(E)$ l'équation : $A \\cap X = B$.",
+      "hint": "Une condition nécessaire est $B \\subset A$. Si cette condition est vérifiée, cherchez quels ensembles $X$ vérifient $A \\cap X = B$ : quelles contraintes impose-t-on aux éléments de $A \\setminus B$ et aux éléments de $\\overline{A}$ ?"
+    },
+    {
+      "id": "q2",
+      "content": "Soient $A$ et $B$ deux parties d'un ensemble $E$.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Donner une condition suffisante pour que l'équation $A \\cup X = B$ admette au moins une solution dans l'ensemble $\\mathcal{P}(E)$.",
+          "hint": "Substituez $X = \\varnothing$ : quelle condition sur $A$ et $B$ obtenez-vous ?"
+        },
+        {
+          "id": "sq2b",
+          "content": "Trouver dans ce cas toutes les solutions de l'équation $A \\cup X = B$ dans $\\mathcal{P}(E)$.",
+          "hint": "Si $A \\subset B$, l'équation $A \\cup X = B$ est équivalente à : $X$ doit contenir $B \\setminus A$ et être inclus dans $B$. Décrivez l'ensemble de solutions."
+        }
+      ]
+    }
+  ]
+}

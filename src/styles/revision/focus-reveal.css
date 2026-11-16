@@ -1,0 +1,71 @@
+/* Révélation progressive en mode lecture (slide / diaporama) et réglages
+ * du verrouillage des blancs : ces états restent distincts des blocs du cours. */
+.focus-reveal-hidden {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.focus-reveal-hidden::before,
+.focus-reveal-hidden::after,
+.focus-reveal-hidden * {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Transitions douces quand les étapes apparaissent */
+.chic-focus-container li.math-list-item,
+.chic-focus-container .itemsize-block,
+.chic-focus-container .math-display-node,
+.chic-focus-container .math-env-quote,
+.chic-focus-container .math-env-center,
+.chic-focus-container .math-env-code {
+  transition: opacity 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Neutralisation des soulignements résiduels sur les commandes \st ou étapes */
+.chic-focus-container .math-text-st,
+.chic-focus-container .method-step,
+.chic-focus-container .math-command-step,
+.chic-focus-container .method-step::before,
+.chic-focus-container [class*="step-"],
+.chic-focus-container [class*="-step"] {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.chic-focus-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chic-focus-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chic-focus-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.22);
+  border-radius: 9999px;
+}
+
+.chic-focus-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.36);
+}
+
+/* Réglage tablette prof : « Afficher les blancs » décoché. */
+.math-blanks-locked .math-blank {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+.math-blanks-locked .math-blank::after {
+  opacity: 0.32;
+}
+
+@media print {
+  .focus-reveal-hidden,
+  .focus-reveal-hidden * {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}

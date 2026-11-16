@@ -1,0 +1,36 @@
+{
+  "id": "ex-esp-09",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "moyen",
+  "topic": "Géométrie analytique dans l'espace — Plan, sphère, droite",
+  "requiresRedaction": true,
+  "context": "Dans l'espace rapporté à un repère orthonormé direct $\\left(O;\\overrightarrow{i};\\overrightarrow{j};\\overrightarrow{k}\\right)$. On considère les points $A(-1;0;3)$, $B(3;0;0)$ et $C(7;1;-3)$ et $(S)$ la sphère d'équation : $x^2+y^2+z^2-6x-2y-15 = 0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que : $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = 3\\overrightarrow{i}+4\\overrightarrow{k}$ et en déduire que $3x+4z-9 = 0$ est une équation cartésienne du plan $(ABC)$",
+      "hint": "Calculez $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$, puis le produit vectoriel. Utilisez ensuite le point $A$ et le vecteur normal pour écrire l'équation du plan."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que le centre de la sphère $(S)$ est le point $\\Omega(3;1;0)$ et que son rayon est 5",
+      "hint": "Complétez le carré en $x$, $y$ et $z$."
+    },
+    {
+      "id": "q3",
+      "content": "Soit $(\\Delta)$ la droite passant par le point $\\Omega$ et perpendiculaire au plan $(ABC)$.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Démontrer que $\\begin{cases} x = 3+3t \\\\ y = 1 \\\\ z = 4t \\end{cases}$ $(t \\in \\mathbb{R})$ est une représentation paramétrique de la droite $(\\Delta)$",
+          "hint": "Vérifiez que le vecteur directeur $(3;0;4)$ est bien colinéaire au vecteur normal du plan $(ABC)$ qui est $(3;0;4)$, et que $\\Omega(3;1;0)$ est sur la droite ($t=0$)."
+        },
+        {
+          "id": "sq3b",
+          "content": "Démontrer que la droite $(\\Delta)$ coupe la sphère $(S)$ aux deux points $E(6;1;4)$ et $F(0;1;-4)$",
+          "hint": "Substituez la représentation paramétrique dans l'équation de $(S)$ et résolvez l'équation du second degré en $t$. Vérifiez les deux points en calculant $t$."
+        }
+      ]
+    }
+  ]
+}

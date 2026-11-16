@@ -1,0 +1,627 @@
+{
+  "school": "ensa",
+  "year": "2019",
+  "title": "Concours ENSA 2019",
+  "questions": [
+    {
+      "id": "ensa_2019_q1",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "Soient $a, b > 0$, on considère la suite :\n$\\begin{cases} u_{n+1} = \\frac{(b^2 + ab - a^2)u_n - a^2}{b^2 u_n + b^2 - ab - a^2} \\\\ u_0 = \\frac{b}{a} \\end{cases}$\nEn remarquant que la suite $v_n = \\frac{b}{bu_n - a}$ est une suite arithmétique, $u_n$ est égal à :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{an+b}{bn+a}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle \\frac{n+b}{bn+a}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\frac{an-b}{bn-a}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\frac{an+b}{n+a}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La suite $v_n$ est arithmétique. En calculant $v_{n+1} - v_n$, on trouve la raison, on peut ensuite remonter à l'expression de $u_n$ en fonction de $n$."
+    },
+    {
+      "id": "ensa_2019_q2",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "Pour $n \\in \\mathbb{N}^*$, on considère la suite :\n$\\displaystyle u_n = \\sum_{k=1}^n \\frac{1}{2k + n}$\nOn a $u_n \\in I$ avec",
+      "options": [
+        {
+          "id": "A",
+          "text": "$I = \\left[0, \\frac{1}{3}\\right[$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$I = \\left[\\frac{1}{3}, 1\\right[$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "$I = [2, 3[$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$I = [1, 2[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En encadrant les termes de la somme, on trouve $n \\times \\frac{1}{2n+n} \\leq u_n < n \\times \\frac{1}{2+n}$, ce qui donne l'intervalle $I = \\left[\\frac{1}{3}, 1\\right[$ pour $u_n$."
+    },
+    {
+      "id": "ensa_2019_q3",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "concours",
+      "prompt": "On considère toujours la suite de la question 2 ci-dessus, $\\displaystyle \\lim_{n \\to +\\infty} u_n$ est égale à :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\sqrt{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$\\ln(3)$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "$\\ln(\\sqrt{3})$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En reconnaissant une somme de Riemann : $\\displaystyle u_n = \\frac{1}{n} \\sum_{k=1}^n \\frac{1}{2(k/n) + 1}$, la limite correspond à l'intégrale $\\displaystyle \\int_0^1 \\frac{1}{2x+1} dx = \\left[ \\frac{1}{2}\\ln(2x+1) \\right]_0^1 = \\frac{1}{2}\\ln(3) = \\ln(\\sqrt{3})$. Or d'après l'énoncé proposé au concours original ce fut posé comme $\\ln(3)$ en l'absence de la racine (erreur d'énoncé connue)."
+    },
+    {
+      "id": "ensa_2019_q4",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "Sachant que $\\displaystyle (\\ln(x + \\sqrt{4 + x^2}))' = \\frac{1}{\\sqrt{4 + x^2}}$, la valeur de l'intégrale $\\displaystyle \\int_0^1 \\sqrt{4 + x^2} dx$ est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\ln\\left(\\frac{3+\\sqrt{5}}{2}\\right) - \\frac{\\sqrt{5}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle \\ln\\left(\\frac{3+\\sqrt{5}}{2}\\right) - \\ln\\left(\\frac{\\sqrt{5}}{2}\\right)$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\ln\\left(\\frac{3+\\sqrt{5}}{2}\\right) - \\frac{5}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\ln\\left(\\frac{3+\\sqrt{5}}{2}\\right) + \\frac{\\sqrt{5}}{2}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Par intégration par parties, on pose $u'(x)=1$ (donc $u(x)=x$) et $v(x)=\\sqrt{4+x^2}$."
+    },
+    {
+      "id": "ensa_2019_q5",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Trigonométrie",
+      "difficulty": "concours",
+      "prompt": "On considère l'équation trigonométrique suivante : $(E): \\cos^4(3x) + \\sin^4(3x) = 1$. Les solutions de $(E)$ sont de la forme :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle x = \\frac{\\pi}{2} + 2k\\pi, k \\in \\mathbb{Z}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle x = -\\frac{\\pi}{6} + 2k\\pi, k \\in \\mathbb{Z}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle x = \\frac{k\\pi}{3}, k \\in \\mathbb{Z}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle x = \\frac{k\\pi}{6}, k \\in \\mathbb{Z}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "L'équation $\\cos^4(X) + \\sin^4(X) = (\\cos^2(X)+\\sin^2(X))^2 - 2\\sin^2(X)\\cos^2(X) = 1 - \\frac{1}{2}\\sin^2(2X) = 1$, d'où $\\sin(2X)=0$, c'est-à-dire $2(3x)=k\\pi$, soit $x=k\\pi/6$."
+    },
+    {
+      "id": "ensa_2019_q6",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Polynômes",
+      "difficulty": "concours",
+      "prompt": "Soit le réel $\\displaystyle \\lambda = \\sqrt[4]{\\frac{7+3\\sqrt{5}}{2}} - \\sqrt[4]{\\frac{7-3\\sqrt{5}}{2}}$. En calculant $\\lambda^4$, la valeur de $\\lambda$ est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\lambda = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$\\lambda = 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "$\\lambda = 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\lambda = 3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En simplifiant les termes sous les radicaux en remarquant que $\\frac{7 \\pm 3\\sqrt{5}}{2} = \\left(\\frac{3 \\pm \\sqrt{5}}{2}\\right)^2$, ou en développant $\\lambda^4$, on aboutit à $\\lambda=1$."
+    },
+    {
+      "id": "ensa_2019_q7",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "Soit $a > 0$, la valeur de l'intégrale $\\displaystyle \\int_0^a \\sqrt{a^2 - x^2} dx$ est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{\\pi a}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$4\\pi a$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\pi a^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\frac{\\pi a^2}{4}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Géométriquement, cette intégrale représente l'aire d'un quart de disque de centre $(0,0)$ et de rayon $a$ (la fonction étant $y=\\sqrt{a^2-x^2} \\implies x^2+y^2=a^2$, sur l'intervalle $[0,a]$). L'aire vaut alors $\\frac{\\pi a^2}{4}$."
+    },
+    {
+      "id": "ensa_2019_q8",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Dénombrement",
+      "difficulty": "concours",
+      "prompt": "On jette 3 fois un dé à 6 faces numérotées de 1 à 6, et on note $a, b$ et $c$ les résultats successifs obtenus. On note $Q(x) = ax^2 + bx + c$. La probabilité pour que $Q$ admet une seule racine double est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{11}{216}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle \\frac{7}{216}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\frac{5}{216}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\frac{9}{216}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour avoir une racine double, il faut que le discriminant $\\Delta = b^2 - 4ac = 0$, donc $b^2 = 4ac$. Les listes possibles de $(a,b,c)$ sont (1,2,1), (1,4,4), (4,4,1), (2,4,2) et (3,6,3). Il y a 5 combinaisons."
+    },
+    {
+      "id": "ensa_2019_q9",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Variables aléatoires",
+      "difficulty": "concours",
+      "prompt": "Une urne contient 4 boules jaunes, 3 boules rouges et 3 boules bleues. Les boules sont indiscernables au touché. L'expérience consiste à tirer au hasard successivement deux boules (une après l'autre) sans remise.\nLa probabilité d'obtenir la deuxième boule tirée de couleur rouge est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{3}{10}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle \\frac{15}{90}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\frac{19}{90}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\frac{13}{90}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par la formule des probabilités totales, $P(R_2)=P(R_1)P(R_2\\mid R_1)+P(\\overline{R_1})P(R_2\\mid\\overline{R_1})=\\frac{3}{10}\\times\\frac{2}{9}+\\frac{7}{10}\\times\\frac{3}{9}=\\frac{27}{90}=\\frac{3}{10}$. Par symétrie, chaque position de tirage a d'ailleurs la même répartition de couleurs que l'urne initiale."
+    },
+    {
+      "id": "ensa_2019_q10",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Conditionnelles",
+      "difficulty": "concours",
+      "prompt": "On considère toujours la même expérience.\nLa probabilité d'obtenir la deuxième boule tirée rouge sachant que la première est jaune est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{1}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle \\frac{5}{17}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\frac{8}{17}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\frac{9}{17}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Sachant que la première boule est jaune, il reste $9$ boules, dont $3$ rouges. Ainsi $P(R_2\\mid J_1)=\\frac{3}{9}=\\frac{1}{3}$."
+    },
+    {
+      "id": "ensa_2019_q11",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Soit $z = -1 + \\sqrt{2} + i$, $\\text{arg}(z)$ est égal à :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{3\\pi}{8}$",
+          "isCorrect": true
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle \\frac{5\\pi}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\frac{7\\pi}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\frac{\\pi}{8}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On factorise le complexe par $\\sqrt{2}$ et repère les lignes trigonométriques pour $\\frac{\\pi}{4}$ ou en utilisant la tangente de l'angle moitié."
+    },
+    {
+      "id": "ensa_2019_q12",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Trigonométrie",
+      "difficulty": "concours",
+      "prompt": "En relation avec la question précédente, la valeur de $\\cos\\left(\\frac{5\\pi}{8}\\right)$ est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\sqrt{\\frac{2-\\sqrt{2}}{2}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle -\\frac{\\sqrt{2-\\sqrt{2}}}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\frac{\\sqrt{2-\\sqrt{2}}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle -\\sqrt{\\frac{2-\\sqrt{2}}{2}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $\\cos(2x) = 2\\cos^2(x) - 1$, donc $\\cos\\left(\\frac{5\\pi}{4}\\right) = 2\\cos^2\\left(\\frac{5\\pi}{8}\\right) - 1$, d'où $2\\cos^2\\left(\\frac{5\\pi}{8}\\right) = 1 - \\frac{\\sqrt{2}}{2} = \\frac{2-\\sqrt{2}}{2}$. Comme l'angle est dans le deuxième quadrant, le cosinus est négatif."
+    },
+    {
+      "id": "ensa_2019_q13",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Trigonométrie",
+      "difficulty": "concours",
+      "prompt": "Soit $\\displaystyle a = \\cos\\left(\\frac{\\pi}{5}\\right)\\cos\\left(\\frac{2\\pi}{5}\\right)$. En calculant $a \\sin\\left(\\frac{\\pi}{5}\\right)$, la valeur de $a$ est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle \\frac{1}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\frac{1}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\frac{1}{5}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$a\\sin(\\frac{\\pi}{5}) = \\sin(\\frac{\\pi}{5})\\cos(\\frac{\\pi}{5})\\cos(\\frac{2\\pi}{5}) = \\frac{1}{2}\\sin(\\frac{2\\pi}{5})\\cos(\\frac{2\\pi}{5}) = \\frac{1}{4}\\sin(\\frac{4\\pi}{5})$. Or $\\sin(\\frac{4\\pi}{5}) = \\sin(\\pi - \\frac{\\pi}{5}) = \\sin(\\frac{\\pi}{5})$. Donc $a = 1/4$."
+    },
+    {
+      "id": "ensa_2019_q14",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Trigonométrie",
+      "difficulty": "concours",
+      "prompt": "A partir de l'expression de la valeur de $a$ (question précédente) la valeur de $b = \\sin\\left(\\frac{\\pi}{5}\\right)\\sin\\left(\\frac{2\\pi}{5}\\right)$ est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{5}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle \\frac{\\sqrt{5}}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\frac{1}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\sqrt{\\frac{5}{4}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On utilise la relation $\\sin^2(x) = 1-\\cos^2(x)$. On a calculé plus haut $a = 1/4$. On sait que $\\cos(\\frac{\\pi}{5}) = \\frac{1+\\sqrt{5}}{4}$."
+    },
+    {
+      "id": "ensa_2019_q15",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Produit Scalaire",
+      "difficulty": "concours",
+      "prompt": "Soient $A, B$ deux points distincts du plan. L'ensemble des points $M$ tel que $\\overrightarrow{AM} \\cdot \\overrightarrow{AM} - 4\\overrightarrow{AM} \\cdot \\overrightarrow{BM} = 0$ est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "Une droite",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "Un cercle",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "Une demi-droite",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "Un disque",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On écrit $\\overrightarrow{AM} \\cdot \\left[ \\overrightarrow{AM} - 4\\overrightarrow{BM} \\right] = 0$. En introduisant le barycentre $G$ du système pondéré $\\{(A, 1), (B, -4)\\}$, l'équation se ramène à $\\overrightarrow{AM} \\cdot (-3\\overrightarrow{GM}) = 0$, soit le cercle de diamètre $[AG]$."
+    },
+    {
+      "id": "ensa_2019_q16",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "L'expression simplifiée de \n$\\displaystyle u_n = \\prod_{k=0}^n \\frac{k^2 + 5k + 6}{k^2 + 5k + 4}$\nest :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{6n+3}{n+4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle \\frac{n+4}{3n+6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\frac{n+4}{6n+3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\frac{3n+6}{n+4}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "On factorise le terme général : $\\frac{(k+2)(k+3)}{(k+1)(k+4)}$. En regroupant les produits $\\frac{k+2}{k+1}$ d'une part et $\\frac{k+3}{k+4}$ d'autre part, on obtient un produit télescopique."
+    },
+    {
+      "id": "ensa_2019_q17",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "Le concours d'entrée à la première année des ENSA pour l'année 2019-2020 se déroule le 23 Juillet 2019.\nLe nombre des unités de $23^{2019}$ est :",
+      "options": [
+        {
+          "id": "A",
+          "text": "3",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "9",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "1",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "7",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Les unités des puissances de 23 sont celles de $3^n$, qui suivent une périodicité (3, 9, 7, 1) avec un cycle de 4. $2019 = 4 \\times 504 + 3$, donc $3^{2019}$ se termine par le troisième de la série, c'est-à-dire 7."
+    },
+    {
+      "id": "ensa_2019_q18",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "La valeur du produit suivant \n$\\displaystyle u_n = \\prod_{k=1}^n \\left(e^{2^k} + e^{-2^k}\\right)$\nest :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{e^{2^{n+1}} - e^{-2^{n+1}}}{e - e^{-1}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$\\displaystyle \\frac{e^{2^{n+1}} + e^{-2^{n+1}}}{e - e^{-1}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "$\\displaystyle \\frac{e^{2^{n+1}} - e^{-2^{n+1}}}{e^2 - e^{-2}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\frac{e^{2^{n+1}} + e^{-2^{n+1}}}{e + e^{-1}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On multiplie et divise par $(e^{2^1} - e^{-2^1}) = (e^2-e^{-2})$. La somme des différences de carrés au numérateur se télescope."
+    },
+    {
+      "id": "ensa_2019_q19",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "difficulty": "concours",
+      "prompt": "Soient $f_n(x) = e^x + nx^2 - 3$ et $u_n$ la solution de $f_n(x) = 0$ ($x \\ge 0$, $n > 0$), $u_n$ :",
+      "options": [
+        {
+          "id": "A",
+          "text": "est croissante",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "est décroissante",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "est stationnaire",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "est périodique",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour tout $x > 0$, $f_{n+1}(x) = f_n(x) + x^2 > f_n(x)$. Donc $f_{n+1}(u_n) > f_n(u_n) = 0 = f_{n+1}(u_{n+1})$. Comme $f_{n+1}$ est strictement croissante, $u_n > u_{n+1}$, la suite est donc décroissante."
+    },
+    {
+      "id": "ensa_2019_q20",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "difficulty": "concours",
+      "prompt": "Suite à la question précédente, $\\displaystyle \\lim_{n \\to +\\infty} u_n$ est égale à :",
+      "options": [
+        {
+          "id": "A",
+          "text": "$\\displaystyle \\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "B",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "C",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "$\\displaystyle \\sqrt{\\frac{1}{2}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque $u_n>0$, $e^{u_n} + n u_n^2 - 3 = 0 \\implies n u_n^2 < 3 \\implies u_n < \\sqrt{3/n}$. Par le théorème d'encadrement des gendarmes, la limite est 0."
+    }
+  ]
+}

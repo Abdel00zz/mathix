@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // Workaround for Chrome 130+ Uncaught TypeError: Cannot set property fetch of #<Window> which has only a getter
+    // Some older libraries try to polyfill window.fetch.
+    let _fetch = window.fetch;
+    Object.defineProperty(window, 'fetch', {
+      configurable: true,
+      enumerable: true,
+      get: function() { return _fetch; },
+      set: function(val) { _fetch = val; }
+    });
+  </script>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="referrer" content="no-referrer">
+
+  <!-- PWA & Color Configuration -->
+  <meta name="theme-color" content="#F2F4F8">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Plateforme d'apprentissage interactif des mathematiques pour les classes preparatoires au Maroc">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Apprendre intelligemen">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <!-- manifest injected by VitePWA plugin at build time -->
+
+  <title>Apprendre intelligemen</title>
+
+  <!-- Inline splash screen (harmonisé pixel-pour-pixel avec LoadingSpinner) -->
+  <style>
+    #splash-screen {
+      position: fixed; inset: 0; z-index: 99999;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 16px;
+      background: radial-gradient(circle at 50% 6%, #fffefa 0%, #f6f7f1 48%, #ecefe5 100%);
+      color: #1A1714;
+      text-align: center;
+      opacity: 1;
+      transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #splash-screen.fade-out { opacity: 0; pointer-events: none; }
+    #splash-screen::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(82, 109, 71, 0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(82, 109, 71, 0.055) 1px, transparent 1px);
+      background-size: 44px 44px;
+      pointer-events: none;
+    }
+
+    #splash-card {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; align-items: center;
+      width: min(560px, calc(100vw - 28px));
+      padding: 32px 24px;
+    }
+
+    #splash-brand {
+      width: clamp(160px, calc(142px + 4.4vw), 208px);
+      aspect-ratio: 3 / 2;
+    }
+    #splash-brand[data-lang="ar"] {
+      width: min(clamp(210px, calc(186px + 5.6vw), 276px), 78vw);
+      aspect-ratio: 3 / 1;
+    }
+    #splash-brand img {
+      display: block;
+      width: 100%; height: 100%; object-fit: contain;
+    }
+
+    #splash-track {
+      position: relative;
+      width: min(clamp(192px, calc(168px + 4.5vw), 244px), 70vw);
+      height: 3px;
+      margin-top: 24px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #dfe4d7;
+    }
+    #splash-track::after {
+      content: "";
+      position: absolute;
+      inset-block: 0;
+      inset-inline-start: 0;
+      width: 44%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #526d47 0%, #2d8a6e 60%, #526d47 100%);
+      animation: mp-splash-slide 1.25s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    #splash-eyebrow {
+      margin-top: 18px;
+      font-family: var(--font-ui, system-ui, sans-serif);
+      font-size: 11px; font-weight: 800; letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #476240;
+    }
+
+    @keyframes mp-splash-slide {
+      0% { transform: translateX(-110%); }
+      100% { transform: translateX(260%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #splash-track::after { animation: none !important; width: 62%; transform: none; }
+    }
+  </style>
+
+  <!-- Typography preconnects. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+  <!-- Typography pack: IBM Plex Sans Arabic, Lateef, Plus Jakarta Sans, Roboto Slab, Roboto, Roboto Mono, Cinzel, Cinzel Decorative, Cormorant Garamond, Fira Sans, and Latin Modern serif. -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500;1,7..72,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Barlow:wght@500;600;700&family=Cinzel:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Fira+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Roboto+Slab:wght@400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Lateef:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&family=Itim&family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sugina-dev/latin-modern-web@1.0.1/style/latinmodern-roman.css" />
+
+  <!-- Les icônes UI utilisent Font Awesome, embarqué en SVG tree-shaken dans le bundle. -->
+
+  <!-- Tailwind CSS is compiled at build time via PostCSS (see tailwind.config.js) -->
+
+  <!-- Vite handles all module resolution at build time; no importmap needed -->
+</head>
+
+<body
+  class="bg-[#FAF9F6] text-slate-800 font-sans antialiased selection:bg-amber-200/50 selection:text-amber-900 overflow-x-hidden">
+
+  <!-- Splash screen: visible instantanément avant montage React, masqué sans délai forcé dès __hideSplash() -->
+  <div id="splash-screen" role="status" aria-live="polite" aria-label="Chargement">
+    <div id="splash-card">
+      <div id="splash-brand" aria-label="Apprendre intelligemen">
+        <img id="splash-brand-image" src="/logo.png" alt="" />
+      </div>
+      <div id="splash-track" aria-hidden="true"></div>
+      <span id="splash-eyebrow">Préparation de votre espace</span>
+    </div>
+  </div>
+
+  <div id="root"></div>
+  <script type="module" src="/src/index.tsx"></script>
+
+  <script>
+    (function() {
+      var isArabic = false;
+      try { isArabic = localStorage.getItem('mathplus:lang') === 'ar'; } catch (e) {}
+      if (isArabic) {
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+        var splash = document.getElementById('splash-screen');
+        var logoBrand = document.getElementById('splash-brand');
+        var logoImage = document.getElementById('splash-brand-image');
+        var eyebrow = document.getElementById('splash-eyebrow');
+        if (splash) splash.setAttribute('aria-label', 'جارٍ التحميل');
+        if (logoBrand) logoBrand.setAttribute('data-lang', 'ar');
+        if (logoImage) logoImage.src = '/logo-ar.png';
+        if (eyebrow) eyebrow.textContent = 'جارٍ إعداد فضائك';
+      }
+
+      window.__hideSplash = function() {
+        var splash = document.getElementById('splash-screen');
+        if (!splash || splash._hiding) return;
+        splash._hiding = true;
+        splash.classList.add('fade-out');
+        setTimeout(function() {
+          if (splash.parentNode) splash.parentNode.removeChild(splash);
+        }, 260);
+      };
+    })();
+  </script>
+</body>
+
+</html>

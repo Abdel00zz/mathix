@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Combien y a-t-il de feuilles dans un mille-feuille ?",
+    "subtitle": "Suites géométriques",
+    "context": "Suites numériques"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Combien y a-t-il de feuilles dans un mille-feuille ?",
+          "content": "Pour réaliser un mille-feuille, un pâtissier étale une pâte feuilletée. Chaque fois qu'il plie et étale la pâte, le nombre de feuilles est multiplié par $2$.\\par\\begin{itemize}\\item Au départ (avant tout pliage), la pâte est constituée d'\\textbf{1 feuille}.\\item Après $1$ pliage, la pâte comporte $2$ feuilles.\\item Après $2$ pliages, elle en comporte $4$.\\item Et ainsi de suite\\ldots\\end{itemize}\\par On note $u_n$ le nombre de feuilles après $n$ pliages."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Exprimer $u_n$ en fonction de $n$.\\item Combien de pliages sont nécessaires pour obtenir au moins $1000$ feuilles (justifiant ainsi le nom « mille-feuille ») ?\\item Un pâtissier effectue $7$ pliages. Combien de feuilles obtient-il exactement ?\\item En réalité, la pâte ne peut être pliée plus de $7$ ou $8$ fois à la main. Pourquoi, selon vous ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "$(u_n)$ est une suite géométrique de premier terme $u_0 = 1$ et de raison $q = 2$."
+        },
+        {
+          "type": "hint",
+          "content": "Résolvez $2^n \\geq 1000$ en appliquant $\\log_{10}$ ou $\\ln$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $(u_n)$ est géométrique de raison $2$ et $u_0 = 1$, donc $u_n = 2^n$.\\par\\textbf{2)} $2^n \\geq 1000 \\Leftrightarrow n \\geq \\dfrac{\\ln 1000}{\\ln 2} \\approx \\dfrac{6{,}908}{0{,}693} \\approx 9{,}97$.\\par Il faut donc au moins $\\boxed{10}$ pliages pour obtenir au moins 1 000 feuilles.\\par\\textbf{3)} Après $7$ pliages : $u_7 = 2^7 = \\boxed{128}$ feuilles.\\par\\textbf{4)} Après $7$ pliages l'épaisseur de la pâte est $128$ fois l'épaisseur initiale. La résistance mécanique de la pâte empêche tout nouveau pliage au-delà."
+        }
+      ]
+    }
+  ]
+}

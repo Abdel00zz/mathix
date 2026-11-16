@@ -1,0 +1,255 @@
+{
+  "header": {
+    "title": "Fonctions — Généralités",
+    "subtitle": "Définitions, variations, parité, fonctions usuelles et position relative de courbes",
+    "context": "Tronc Commun Sciences"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre pose les bases de l'\\objectif{étude des fonctions réelles} : domaine de définition, parité, variations (taux d'accroissement), extremums, fonctions du second degré et homographiques, et position relative de courbes. Ces outils permettent de modéliser et de comprendre l'évolution de tout phénomène quantifiable. La \\defi{principale difficulté} est d'interpréter le signe du taux d'accroissement et de maîtriser les nombreuses formules des fonctions usuelles sans les confondre — il faut s'entraîner sur des cas variés. C'est \\savant{Leonhard Euler} qui a, au XVIII\\textsuperscript{e} siècle, popularisé la notation $f(x)$ et posé les fondements de l'analyse des fonctions, un langage utilisé aujourd'hui dans tout modèle scientifique ou économique.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonhard_Euler.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Leonhard Euler (1707–1783)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definitions_domaine",
+      "category": "course",
+      "title": "Définitions et Domaine de définition",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avant d'étudier les propriétés d'une fonction, il faut savoir ce qu'est une fonction et sur quel ensemble elle est définie. On introduit ici le vocabulaire fondamental que l'on utilisera dans tout le chapitre."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une fonction ?",
+          "content": "Une \\textbf{fonction} $f$ est une relation qui associe à chaque réel $x$ d'un ensemble $D$ un unique réel $y$.\\par\\smallskip On dispose de trois notations équivalentes :\\begin{enumerate}\\item $x \\mapsto y$ ou $f : x \\mapsto y$ \\quad (notation flèche)\\item $y = f(x)$ \\quad (notation image)\\item La \\textbf{courbe représentative} $\\mathcal{C}_f = \\{M(x,f(x)) \\mid x \\in D_f\\}$\\end{enumerate}\\par\\smallskip On dit que $y$ est \\textbf{l'image de $x$} par $f$, et que $x$ est \\textbf{un antécédent de $y$} par $f$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le domaine de définition ?",
+          "content": "Le \\textbf{domaine de définition} de $f$, noté $D_f$, est l'ensemble de tous les réels $x$ qui ont une image par $f$.\\par\\smallskip Pour trouver $D_f$, on exclut les valeurs qui posent problème :\\begin{itemize}\\item $\\dfrac{1}{u(x)}$ : exclure les $x$ tels que $u(x) = 0$\\item $\\sqrt{u(x)}$ : exclure les $x$ tels que $u(x) < 0$\\item $\\ln(u(x))$ : exclure les $x$ tels que $u(x) \\leq 0$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons le domaine de définition de $f(x) = \\dfrac{1}{x-3}$ et de $g(x) = \\sqrt{2x-4}$.}\\par\\smallskip Pour $f$ : la fraction est définie quand le dénominateur est \\blank{non nul}. On résout $x - 3 \\neq 0$, donc $x \\neq \\blank{3}$. Ainsi $D_f = \\blank{\\mathbb{R} \\setminus \\{3\\}}$.\\par\\smallskip Pour $g$ : la racine carrée est définie quand l'expression sous le radical est \\blank{positive ou nulle}. On résout $2x - 4 \\geq 0$, d'où $x \\geq 2$. Ainsi $D_g = \\blank{[2 ; +\\infty[}$."
+        },
+        {
+          "type": "definition",
+          "title": "Quand dit-on que deux fonctions sont égales ?",
+          "content": "Soient $f$ et $g$ deux fonctions. On dit que $f = g$ si et seulement si les deux conditions suivantes sont simultanément remplies :\\begin{enumerate}\\item $D_f = D_g$ \\quad (même domaine)\\item Pour tout $x \\in D_f$, on a $f(x) = g(x)$ \\quad (même valeur en tout point)\\end{enumerate}"
+        },
+        {
+          "type": "warning",
+          "content": "Deux fonctions définies par la même formule ne sont \\textbf{pas forcément égales} si leurs domaines diffèrent. Par exemple :\\begin{itemize}\\item $f(x) = \\dfrac{x^2}{x}$ a pour domaine $D_f = \\mathbb{R}^*$\\item $g(x) = x$ a pour domaine $D_g = \\mathbb{R}$\\end{itemize}Même si $f(x) = g(x)$ pour tout $x \\neq 0$, ces deux fonctions \\textbf{ne sont pas égales} car leurs domaines sont différents."
+        }
+      ]
+    },
+    {
+      "id": "parite",
+      "category": "course",
+      "title": "Fonctions paires et fonctions impaires",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait maintenant ce qu'est une fonction et son domaine. On étudie maintenant une propriété de symétrie importante : la parité. Elle permet de réduire le travail d'étude en ne calculant que sur la moitié du domaine."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une fonction paire ? Qu'est-ce qu'une fonction impaire ?",
+          "content": "Soit $f$ une fonction de domaine $D_f$.\\par\\smallskip \\textbf{$f$ est paire} si et seulement si :\\begin{enumerate}\\item Pour tout $x \\in D_f$, on a $-x \\in D_f$ \\quad (domaine symétrique par rapport à 0)\\item Pour tout $x \\in D_f$ : $\\boxed{f(-x) = f(x)}$\\end{enumerate}\\par\\smallskip \\textbf{$f$ est impaire} si et seulement si :\\begin{enumerate}\\item Pour tout $x \\in D_f$, on a $-x \\in D_f$ \\quad (même condition de domaine)\\item Pour tout $x \\in D_f$ : $\\boxed{f(-x) = -f(x)}$\\end{enumerate}\\par\\smallskip \\textbf{Conséquences graphiques :}\\begin{itemize}\\item Courbe d'une fonction paire : symétrique par rapport à l'\\textbf{axe des ordonnées}\\item Courbe d'une fonction impaire : symétrique par rapport à l'\\textbf{origine}\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Étudions la parité de $f(x) = x^4 - 3x^2 + 1$ et de $g(x) = x^3 - 2x$.}\\par\\smallskip \\textbf{Domaine :} $D_f = D_g = \\mathbb{R}$, symétrique par rapport à 0. La condition de domaine est \\blank{remplie} dans les deux cas.\\par\\smallskip \\textbf{Calcul de $f(-x)$ :}\\begin{align*}f(-x) &= (-x)^4 - 3(-x)^2 + 1 = \\blank{x^4 - 3x^2 + 1} = f(x)\\end{align*}Puisque $f(-x) = f(x)$, la fonction $f$ est \\blank{paire}.\\par\\smallskip \\textbf{Calcul de $g(-x)$ :}\\begin{align*}g(-x) &= (-x)^3 - 2(-x) = \\blank{-x^3 + 2x} = -(x^3 - 2x) = \\blank{-g(x)}\\end{align*}Puisque $g(-x) = -g(x)$, la fonction $g$ est impaire."
+        },
+        {
+          "type": "remark",
+          "content": "Quand $f$ est paire ou impaire, on ne travaille que sur $D_f \\cap \\mathbb{R}^+$, puis on déduit le reste par symétrie.\\par\\smallskip Le lien entre parité et variations sur le symétrique $I'$ de $I \\subset \\mathbb{R}^+$ :\\begin{enumerate}\\item Si $f$ est \\textbf{paire} :\\begin{itemize}\\item $f$ croissante sur $I$ $\\Rightarrow$ $f$ \\textbf{décroissante} sur $I'$\\item $f$ décroissante sur $I$ $\\Rightarrow$ $f$ \\textbf{croissante} sur $I'$\\end{itemize}\\item Si $f$ est \\textbf{impaire} :\\begin{itemize}\\item $f$ croissante sur $I$ $\\Rightarrow$ $f$ \\textbf{croissante} sur $I'$\\item $f$ décroissante sur $I$ $\\Rightarrow$ $f$ \\textbf{décroissante} sur $I'$\\end{itemize}\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "variations",
+      "category": "course",
+      "title": "Variations d'une fonction numérique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On connaît maintenant la parité d'une fonction. On étudie ici comment une fonction évolue sur un intervalle : monte-t-elle, descend-t-elle, reste-t-elle constante ? Le taux d'accroissement est l'outil clé pour répondre précisément à cette question."
+        },
+        {
+          "type": "definition",
+          "title": "Comment décrire le sens de variation d'une fonction ?",
+          "content": "Soit $f$ définie sur un intervalle $I$ et soient $x_1, x_2 \\in I$ avec $x_1 < x_2$.\\par\\smallskip On distingue trois cas :\\begin{enumerate}\\item \\textbf{Strictement croissante} : $f(x_1) < f(x_2)$ \\quad — $f$ \\textbf{conserve l'ordre}\\item \\textbf{Strictement décroissante} : $f(x_1) > f(x_2)$ \\quad — $f$ \\textbf{inverse l'ordre}\\item \\textbf{Constante} : il existe $k \\in \\mathbb{R}$ tel que $f(x) = k$ pour tout $x \\in I$\\end{enumerate}\\par\\smallskip Une fonction croissante \\textbf{sur $I$} l'est pour \\textbf{tout} couple $x_1 < x_2$ dans $I$, sans exception."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le taux d'accroissement ?",
+          "content": "Soit $f$ définie sur $I$ et $x_1, x_2 \\in I$ avec $x_1 \\neq x_2$. Le \\textbf{taux d'accroissement} est :\\par\\smallskip$$\\tau = \\frac{f(x_1) - f(x_2)}{x_1 - x_2}$$\\par\\smallskip Le signe de $\\tau$ détermine le sens de variation :\\begin{enumerate}\\item $\\tau > 0$ pour tout $x_1 \\neq x_2$ dans $I$ $\\Rightarrow$ $f$ est \\textbf{strictement croissante} sur $I$\\item $\\tau < 0$ pour tout $x_1 \\neq x_2$ dans $I$ $\\Rightarrow$ $f$ est \\textbf{strictement décroissante} sur $I$\\item $\\tau = 0$ pour tout $x_1 \\neq x_2$ dans $I$ $\\Rightarrow$ $f$ est \\textbf{constante} sur $I$\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $f(x) = -2x + 5$ est strictement décroissante sur $\\mathbb{R}$ par le taux d'accroissement.}\\par\\smallskip Soient $x_1$ et $x_2$ deux réels avec $x_1 < x_2$. On calcule le taux d'accroissement :\\begin{align*}\\frac{f(x_1) - f(x_2)}{x_1 - x_2} &= \\frac{(-2x_1 + 5) - (-2x_2 + 5)}{x_1 - x_2} \\\\&= \\frac{-2x_1 + 2x_2}{x_1 - x_2} \\\\&= \\frac{\\blank{-2(x_1 - x_2)}}{x_1 - x_2} \\\\&= \\blank{-2}\\end{align*}Puisque $x_1 < x_2$, on a $x_1 - x_2 \\blank{< 0}$. Le taux d'accroissement vaut $-2 < 0$, donc $f$ est \\blank{strictement décroissante} sur $\\mathbb{R}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment étudier les variations d'une fonction par le taux d'accroissement ?",
+          "content": "Soient $x_1 < x_2$ deux réels quelconques de $I$.\\begin{enumerate}\\item Calculer $f(x_1) - f(x_2)$ ou le taux $\\dfrac{f(x_1)-f(x_2)}{x_1-x_2}$\\item Simplifier l'expression — si $f$ est polynomiale, factoriser en mettant $(x_1 - x_2)$ en évidence\\item Analyser le signe du résultat :\\begin{itemize}\\item Taux $> 0$ $\\Rightarrow$ $f$ \\textbf{strictement croissante} sur $I$\\item Taux $< 0$ $\\Rightarrow$ $f$ \\textbf{strictement décroissante} sur $I$\\item Taux $= 0$ $\\Rightarrow$ $f$ \\textbf{constante} sur $I$\\end{itemize}\\item Conclure en nommant explicitement l'intervalle $I$\\end{enumerate}\\par\\textbf{Astuce :} pour une fonction polynomiale, on factorise la différence $f(x_1)-f(x_2)$ par $(x_1-x_2)$ pour simplifier rapidement."
+        },
+        {
+          "type": "remark",
+          "content": "Une fonction est dite \\textbf{monotone} sur $I$ si elle est croissante ou décroissante sur tout $I$. Si une fonction est croissante sur $[a;b]$ et décroissante sur $[b;c]$, elle n'est \\textbf{pas monotone} sur $[a;c]$ — les deux intervalles doivent être traités séparément."
+        }
+      ]
+    },
+    {
+      "id": "extremums",
+      "category": "course",
+      "title": "Les extremums d'une fonction numérique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait maintenant analyser le sens de variation d'une fonction. On s'intéresse ici à des valeurs particulières : les extremums, c'est-à-dire les plus grandes ou plus petites valeurs que prend une fonction sur un intervalle."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un maximum et un minimum d'une fonction ?",
+          "content": "Soit $f$ définie sur un intervalle ouvert $I$ et soit $a \\in I$.\\par\\smallskip On distingue deux cas :\\begin{enumerate}\\item $f(a)$ est un \\textbf{maximum} de $f$ sur $I$ si pour tout $x \\in I$ : $f(x) \\leq f(a)$\\quad — la courbe ne dépasse jamais la hauteur $f(a)$\\item $f(a)$ est un \\textbf{minimum} de $f$ sur $I$ si pour tout $x \\in I$ : $f(x) \\geq f(a)$\\quad — la courbe ne descend jamais en dessous de $f(a)$\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = -(x-2)^2 + 5$. Déterminons le maximum de $f$ sur $\\mathbb{R}$ et son antécédent.}\\par\\smallskip On reconnaît une forme canonique. Pour tout $x \\in \\mathbb{R}$, on a $(x-2)^2 \\geq \\blank{0}$, donc $-(x-2)^2 \\leq 0$, d'où :\\begin{align*}f(x) &= -(x-2)^2 + 5 \\leq \\blank{5}\\end{align*}L'égalité est atteinte quand $(x-2)^2 = 0$, c'est-à-dire quand $x = \\blank{2}$.\\par\\smallskip Ainsi, le \\textbf{maximum} de $f$ sur $\\mathbb{R}$ est $\\blank{5}$, atteint en $x = 2$. Le point de la courbe correspondant est $\\blank{W(2;5)}$."
+        }
+      ]
+    },
+    {
+      "id": "fonction_ax2",
+      "category": "course",
+      "title": "Fonction $x \\mapsto ax^2$ et $x \\mapsto ax^2 + bx + c$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On maîtrise maintenant les notions de variations et d'extremums. On les applique ici aux fonctions polynômes du second degré, dont la courbe est une parabole. La forme canonique est l'outil clé pour lire directement le sommet et les variations."
+        },
+        {
+          "type": "property",
+          "title": "Comment passer à la forme canonique d'un trinôme ?",
+          "content": "Soit $f(x) = ax^2 + bx + c$ avec $a \\in \\mathbb{R}^*$. On peut écrire :\\par\\smallskip$$\\boxed{f(x) = a(x - \\alpha)^2 + \\beta}$$\\par\\smallskip où les trois éléments caractéristiques sont :\\begin{enumerate}\\item $\\alpha = -\\dfrac{b}{2a}$ \\quad — \\textbf{abscisse du sommet} et axe de symétrie $x = \\alpha$\\item $\\Delta = b^2 - 4ac$ \\quad — le discriminant\\item $\\beta = -\\dfrac{\\Delta}{4a} = f(\\alpha)$ \\quad — \\textbf{ordonnée du sommet} $W(\\alpha ; \\beta)$\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Mettons $f(x) = 2x^2 - 8x + 3$ sous forme canonique et déterminons son sommet.}\\par\\smallskip On identifie $a = 2$, $b = -8$, $c = 3$. On calcule $\\alpha$ :\\begin{align*}\\alpha &= -\\frac{b}{2a} = -\\frac{-8}{2 \\times 2} = \\blank{2}\\end{align*}On calcule $\\Delta$ : $\\Delta = (-8)^2 - 4 \\times 2 \\times 3 = 64 - 24 = \\blank{40}$.\\par\\smallskip On calcule $\\beta$ :\\begin{align*}\\beta &= -\\frac{\\Delta}{4a} = -\\frac{40}{8} = \\blank{-5}\\end{align*}La forme canonique est donc $f(x) = \\blank{2(x-2)^2 - 5}$.\\par\\smallskip Le sommet de la parabole est $W\\blank{(2 ; -5)}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment dresser le tableau de variations d'un trinôme $ax^2+bx+c$ ?",
+          "content": "Calculer $\\alpha = -\\dfrac{b}{2a}$ et $\\beta = f(\\alpha)$, puis appliquer la règle selon le signe de $a$ :\\begin{enumerate}\\item \\textbf{Si $a > 0$} (parabole tournée vers le haut) :\\begin{itemize}\\item $f$ \\textbf{décroissante} sur $]-\\infty ; \\alpha]$\\item $f$ \\textbf{croissante} sur $[\\alpha ; +\\infty[$\\item $\\beta$ est le \\textbf{minimum} de $f$\\end{itemize}\\item \\textbf{Si $a < 0$} (parabole tournée vers le bas) :\\begin{itemize}\\item $f$ \\textbf{croissante} sur $]-\\infty ; \\alpha]$\\item $f$ \\textbf{décroissante} sur $[\\alpha ; +\\infty[$\\item $\\beta$ est le \\textbf{maximum} de $f$\\end{itemize}\\end{enumerate}\\par\\textbf{Astuce :} $\\beta$ se lit directement dans la forme canonique — pas besoin de recalculer $f(\\alpha)$ séparément."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Étudions les variations de $f(x) = -x^2 + 4x - 1$ et trouvons son extremum.}\\par\\smallskip On a $a = -1 < 0$, donc la parabole est \\blank{tournée vers le bas}. On calcule :\\begin{align*}\\alpha &= -\\frac{4}{2 \\times (-1)} = \\blank{2}\\end{align*}La forme canonique donne $\\beta = f(2) = -4 + 8 - 1 = \\blank{3}$.\\par\\smallskip Puisque $a < 0$, $f$ est croissante sur $\\blank{]-\\infty ; 2]}$ et décroissante sur $[2 ; +\\infty[$. Le \\textbf{maximum} de $f$ vaut $\\blank{3}$ et est atteint en $x = 2$."
+        }
+      ]
+    },
+    {
+      "id": "fonction_1_sur_x",
+      "category": "course",
+      "title": "Fonction $x \\mapsto \\dfrac{a}{x}$ et fonction homographique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On connaît les fonctions polynômes du second degré. On étudie maintenant des fonctions dont le domaine de définition est privé d'un point : les fonctions en $\\frac{a}{x}$ et les fonctions homographiques. Leur courbe est une hyperbole."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les variations de $f(x) = \\dfrac{a}{x}$ ?",
+          "content": "Soit $f(x) = \\dfrac{a}{x}$ avec $a \\in \\mathbb{R}^*$. Le domaine est $D_f = \\mathbb{R}^*$.\\par\\smallskip Selon le signe de $a$ :\\begin{enumerate}\\item \\textbf{Si $a > 0$} : $f$ est strictement \\textbf{décroissante} sur $]-\\infty ; 0[$ et sur $]0 ; +\\infty[$\\item \\textbf{Si $a < 0$} : $f$ est strictement \\textbf{croissante} sur $]-\\infty ; 0[$ et sur $]0 ; +\\infty[$\\end{enumerate}\\par\\smallskip La courbe est une \\textbf{hyperbole} de centre $O$ avec :\\begin{itemize}\\item Asymptote verticale : $x = 0$ (axe des ordonnées)\\item Asymptote horizontale : $y = 0$ (axe des abscisses)\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Comment analyser une fonction homographique ?",
+          "content": "Une \\textbf{fonction homographique} est de la forme $f(x) = \\dfrac{ax+b}{cx+d}$ avec $a \\neq 0$, $c \\neq 0$ et $ad - bc \\neq 0$.\\par\\smallskip On peut l'écrire sous forme réduite : $f(x) = \\beta + \\dfrac{\\gamma}{x - \\alpha}$.\\par\\smallskip Les éléments caractéristiques sont :\\begin{enumerate}\\item $\\alpha = -\\dfrac{d}{c}$ \\quad — asymptote verticale $x = \\alpha$\\item $\\beta = \\dfrac{a}{c}$ \\quad — asymptote horizontale $y = \\beta$\\item Centre de l'hyperbole : $W(\\alpha ; \\beta)$\\end{enumerate}\\par\\smallskip Le sens de variation dépend du \\textbf{déterminant} $\\det f = ad - bc$ :\\begin{itemize}\\item $\\det f > 0$ : $f$ est strictement \\textbf{décroissante} sur chaque intervalle de $D_f$\\item $\\det f < 0$ : $f$ est strictement \\textbf{croissante} sur chaque intervalle de $D_f$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Étudions la fonction $f(x) = \\dfrac{2x+1}{x-3}$.}\\par\\smallskip \\textbf{Domaine :} $x - 3 \\neq 0$, donc $D_f = \\blank{\\mathbb{R} \\setminus \\{3\\}}$.\\par\\smallskip \\textbf{Calcul du déterminant :} $\\det f = \\begin{vmatrix} 2 & 1 \\\\ 1 & -3 \\end{vmatrix} = 2 \\times (-3) - 1 \\times 1 = \\blank{-7}$.\\par\\smallskip Puisque $\\det f = -7 < 0$, $f$ est strictement \\blank{croissante} sur $]-\\infty ; 3[$ et sur $]3 ; +\\infty[$.\\par\\smallskip \\textbf{Asymptotes :} $\\alpha = \\blank{3}$ (asymptote verticale) et $\\beta = \\dfrac{a}{c} = \\dfrac{2}{1} = \\blank{2}$ (asymptote horizontale)."
+        },
+        {
+          "type": "method",
+          "title": "Comment trouver la forme réduite d'une fonction homographique ?",
+          "content": "Pour passer de $f(x) = \\dfrac{ax+b}{cx+d}$ à $\\beta + \\dfrac{\\gamma}{x - \\alpha}$ :\\begin{enumerate}\\item Calculer $\\alpha = -\\dfrac{d}{c}$ et $\\beta = \\dfrac{a}{c}$\\item Au numérateur, écrire $ax + b = a(x - \\alpha) + (a\\alpha + b)$\\item Séparer la fraction : $f(x) = \\dfrac{a(x-\\alpha)}{c(x-\\alpha)} + \\dfrac{a\\alpha+b}{c(x-\\alpha)} = \\beta + \\dfrac{\\gamma}{x-\\alpha}$\\item Identifier $\\gamma = \\dfrac{a\\alpha + b}{c} = \\dfrac{\\det f}{c^2}$\\item \\textbf{Vérification :} développer la forme réduite pour retrouver $f(x)$\\end{enumerate}\\par\\textbf{Astuce :} le signe de $\\gamma$ est celui de $\\det f$ — il détermine directement le sens de variation."
+        },
+        {
+          "type": "warning",
+          "content": "Ne pas confondre les asymptotes de $x \\mapsto \\dfrac{a}{x}$ et celles de la forme réduite :\\begin{itemize}\\item $\\dfrac{a}{x}$ : asymptotes $x = 0$ et $y = 0$, centre $O(0;0)$\\item $\\beta + \\dfrac{\\gamma}{x-\\alpha}$ : asymptotes $x = \\alpha$ et $y = \\beta$, centre $W(\\alpha;\\beta)$\\end{itemize}Le \\textbf{repère de l'hyperbole est décalé} : son centre n'est pas l'origine, sauf si $\\alpha = \\beta = 0$."
+        }
+      ]
+    },
+    {
+      "id": "position_relative",
+      "category": "course",
+      "title": "Position relative de courbes et interprétation graphique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait maintenant étudier chaque type de fonction séparément. On utilise ici ces outils pour comparer deux fonctions : déterminer graphiquement et algébriquement quelle courbe est au-dessus de l'autre et sur quel intervalle."
+        },
+        {
+          "type": "property",
+          "title": "Quel lien y a-t-il entre équations, inéquations et courbes ?",
+          "content": "Soient $\\mathcal{C}_f$ et $\\mathcal{C}_g$ les courbes de $f$ et $g$, et $m$ un réel fixé.\\par\\smallskip Les quatre relations fondamentales :\\begin{enumerate}\\item $f(x) = g(x)$ : les solutions sont les \\textbf{abscisses des points d'intersection} de $\\mathcal{C}_f$ et $\\mathcal{C}_g$\\item $f(x) > g(x)$ : les solutions sont les abscisses des points de $\\mathcal{C}_f$ \\textbf{strictement au-dessus} de $\\mathcal{C}_g$\\item $f(x) < g(x)$ : les solutions sont les abscisses des points de $\\mathcal{C}_f$ \\textbf{strictement en dessous} de $\\mathcal{C}_g$\\item $f(x) = m$ : les solutions sont les abscisses des intersections de $\\mathcal{C}_f$ avec la \\textbf{droite horizontale} $y = m$\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons graphiquement $f(x) \\geq 0$ puis $f(x) = g(x)$, sachant que la courbe de $f$ passe par $(-2, 0)$, $(1, 0)$ et a un maximum en $(0, 3)$, et que $g(x) = -1$.}\\par\\smallskip \\textbf{Résolution de $f(x) = 0$ :} les solutions sont les abscisses des points où la courbe \\blank{coupe l'axe des abscisses}, soit $x = -2$ et $x = 1$.\\par\\smallskip \\textbf{Résolution de $f(x) \\geq 0$ :} on cherche les abscisses des points de $\\mathcal{C}_f$ \\blank{au-dessus ou sur} l'axe $y = 0$. On lit sur le graphe : $x \\in \\blank{[-2 ; 1]}$.\\par\\smallskip \\textbf{Résolution de $f(x) = g(x)$}, soit $f(x) = -1$ : on cherche les points d'intersection de $\\mathcal{C}_f$ avec la droite $y = \\blank{-1}$. D'après le graphe, $f(x) = -1$ a \\blank{deux solutions} symétriques par rapport à $x = 0$."
+        },
+        {
+          "type": "remark",
+          "content": "Pour résoudre une inéquation $f(x) > g(x)$, il \\textbf{n'est pas nécessaire} de trouver les solutions exactes de $f(x) = g(x)$ si on dispose des courbes. Il suffit de lire \\textbf{graphiquement} les intervalles où $\\mathcal{C}_f$ est au-dessus de $\\mathcal{C}_g$. La lecture graphique donne toujours les intervalles de solutions, et le calcul algébrique confirme les bornes exactes."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $f(x) = x^2 - 4$ et $g(x) = x - 2$. Résolvons algébriquement $f(x) = g(x)$ puis déduisons le signe de $f(x) - g(x)$.}\\par\\smallskip On cherche les abscisses des intersections de $\\mathcal{C}_f$ et $\\mathcal{C}_g$ :\\begin{align*}f(x) = g(x) &\\Leftrightarrow x^2 - 4 = x - 2 \\\\&\\Leftrightarrow x^2 - x - \\blank{2} = 0\\end{align*}On résout : $\\Delta = 1 + 8 = 9$, donc $x_1 = \\blank{-1}$ et $x_2 = \\blank{2}$.\\par\\smallskip On étudie le signe de $f(x) - g(x) = x^2 - x - 2 = (x+1)(x-2)$.\\par\\smallskip Sur $]-\\infty ; -1[$, le produit est \\blank{positif}, donc $\\mathcal{C}_f$ est au-dessus de $\\mathcal{C}_g$. Sur $]-1 ; 2[$, le produit est négatif, donc $\\mathcal{C}_f$ est \\blank{en dessous} de $\\mathcal{C}_g$."
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Synthèse et récapitulatif",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a parcouru tous les outils fondamentaux de l'étude des fonctions. Ce récapitulatif regroupe les résultats essentiels à maîtriser pour les exercices et les examens."
+        },
+        {
+          "type": "summary",
+          "title": "Ce qu'il faut retenir sur les fonctions",
+          "content": "\\begin{itemize}\\item $f$ paire $\\Leftrightarrow$ $f(-x) = f(x)$ — courbe symétrique / axe des ordonnées\\item $f$ impaire $\\Leftrightarrow$ $f(-x) = -f(x)$ — courbe symétrique / origine\\item Taux d'accroissement $= \\dfrac{f(x_1)-f(x_2)}{x_1-x_2}$ : positif $\\Rightarrow$ croissante, négatif $\\Rightarrow$ décroissante\\item Trinôme $ax^2+bx+c$ : sommet $W\\!\\left(-\\dfrac{b}{2a} ; -\\dfrac{\\Delta}{4a}\\right)$, axe $x = -\\dfrac{b}{2a}$\\item Homographique : asymptotes $x = -\\dfrac{d}{c}$ et $y = \\dfrac{a}{c}$, $\\det f > 0$ $\\Rightarrow$ décroissante\\item $f(x) = g(x)$ : abscisses des intersections de $\\mathcal{C}_f$ et $\\mathcal{C}_g$\\item $f(x) \\geq g(x)$ : abscisses des points de $\\mathcal{C}_f$ au-dessus de $\\mathcal{C}_g$\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

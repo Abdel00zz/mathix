@@ -1,0 +1,87 @@
+.print-surface { position: relative; color: var(--print-ink, #111827); background: var(--print-paper, #fff); }
+.print-document { box-sizing: border-box; width: 100%; max-width: none; padding: 0 0 18mm; color: var(--print-ink, #111827); background: var(--print-paper, #fff); font-family: var(--print-font-family, "Times New Roman", Georgia, serif); font-size: var(--print-font-size, 10.2pt); line-height: var(--print-line-height, 1.58); orphans: 3; widows: 3; }
+.print-sheet-header { margin: 0 0 9mm; padding-top: 0; break-after: avoid; page-break-after: avoid; }
+.print-sheet-topline { display: flex; align-items: flex-start; justify-content: space-between; gap: 12mm; padding-bottom: 4mm; border-bottom: .45pt solid var(--print-rule, #cbd5e1); }
+.print-brand, .print-brand-caption, .print-class-label, .print-year-label, .print-title, .print-exercise-badge, .print-part-badge { font-family: var(--font-ui), Arial, sans-serif; }
+.print-surface[data-font='serif'] .print-brand, .print-surface[data-font='serif'] .print-brand-caption, .print-surface[data-font='serif'] .print-class-label, .print-surface[data-font='serif'] .print-year-label, .print-surface[data-font='serif'] .print-title, .print-surface[data-font='serif'] .print-exercise-badge { font-family: "Times New Roman", Georgia, serif; }
+.print-brand { margin: 0; color: var(--print-ink, #111827); font-size: calc(var(--print-font-size, 10.2pt) * 1.274 * var(--print-title-scale, 1)); font-weight: 800; line-height: 1; letter-spacing: .2em; text-transform: uppercase; }
+.print-brand-caption { margin: 1.2mm 0 0; color: var(--print-muted, #64748b); font-size: calc(var(--print-font-size, 10.2pt) * .627 * var(--print-title-scale, 1)); font-weight: 650; letter-spacing: .16em; text-transform: uppercase; }
+.print-meta-block { text-align: right; white-space: nowrap; }
+.print-class-label { margin: 0; color: var(--print-ink, #1f2937); font-size: calc(var(--print-font-size, 10.2pt) * .98); font-weight: 700; line-height: 1.2; }
+.print-year-label { margin: 1mm 0 0; color: var(--print-muted, #64748b); font-size: calc(var(--print-font-size, 10.2pt) * .686); font-weight: 600; letter-spacing: .08em; }
+.print-title-wrap { display: flex; justify-content: center; margin-top: 8mm; }
+.print-title-card { min-width: 72mm; max-width: 160mm; padding: 3.8mm 10mm; border: 1.3pt double var(--print-accent, #1f2937); border-radius: 0; background: var(--print-paper, #fff); box-shadow: none; }
+.print-title-card[data-frame='rule'] { border-width: 1.3pt 0; border-style: solid; }
+.print-title-card[data-frame='plain'] { border-color: transparent; }
+.print-title { margin: 0; color: var(--print-ink, #111827); text-align: center; font-size: calc(var(--print-font-size, 10.2pt) * 1.225 * var(--print-title-scale, 1)); font-style: italic; font-weight: 650; line-height: 1.2; letter-spacing: .11em; text-transform: uppercase; }
+.print-title-kicker { display: block; margin-bottom: 1mm; color: var(--print-muted, #64748b); font-size: calc(var(--print-font-size, 10.2pt) * .735 * var(--print-title-scale, 1)); font-style: normal; font-weight: 650; letter-spacing: .18em; }
+.print-exercises { display: block; column-count: var(--print-columns, 1); column-gap: var(--print-column-gap, 8mm); column-rule: var(--print-column-rule, none); }
+.print-exercise { margin: 0 0 8mm; padding-top: 1mm; break-inside: auto; page-break-inside: auto; }
+.print-exercise[data-page-break='true'] { break-after: page; page-break-after: always; }
+.print-exercise:last-child { break-after: auto; page-break-after: auto; }
+.print-exercise + .print-exercise { padding-top: 7mm; border-top: .45pt solid var(--print-rule, #e2e8f0); }
+/* Deux colonnes : la colonne fait moitié moins de large, donc un bloc insécable
+   qui ne tient pas dans la hauteur restante saute entièrement dans la colonne
+   suivante et laisse un trou. On rend sécables les blocs longs (exercice,
+   énoncé, paragraphe, correction) et on ne garde atomiques que les unités
+   courtes : tableau d'une question, sous-question, image, formule affichée,
+   cadre de réponse. `orphans/widows: 2` évite de repousser un paragraphe entier
+   pour respecter un seuil de trois lignes trop haut sur une demi-largeur. */
+.print-surface[data-columns='2'] .print-document { orphans: 2; widows: 2; }
+.print-surface[data-columns='2'] .print-statement,
+.print-surface[data-columns='2'] .print-text-block,
+.print-surface[data-columns='2'] .print-correction { break-inside: auto; page-break-inside: auto; }
+.print-exercise-banner { display: flex; align-items: center; justify-content: flex-start; margin: 0 0 3mm; break-after: avoid; page-break-after: avoid; }
+.print-exercise-badge { display: inline-flex; align-items: center; justify-content: center; min-height: 5.5mm; padding: .8mm 3.2mm; border: 1pt solid var(--print-accent, #0f172a); border-radius: 0; color: var(--print-accent, #0f172a); background: var(--print-paper, #fff); font-size: calc(var(--print-font-size, 10.2pt) * .863 * var(--print-title-scale, 1)); font-weight: 800; letter-spacing: .14em; line-height: 1; text-transform: uppercase; }
+.print-statement { margin: 0 0 3.5mm; padding: 0; border: 0; background: transparent; break-inside: avoid; page-break-inside: avoid; }
+.print-statement-content, .print-text-block, .print-content { color: var(--print-ink, #111827); font-family: var(--print-font-family, "Times New Roman", Georgia, serif); font-size: var(--print-font-size, 10.2pt); line-height: calc(var(--print-line-height, 1.58) * 1.025); }
+.print-text-block { margin: 0 0 3.5mm; color: var(--print-muted, #334155); font-style: normal; break-inside: avoid; page-break-inside: avoid; }
+.print-question-list { display: block; }
+.print-question-block { margin: 0 0 3.8mm; break-inside: auto; page-break-inside: auto; }
+.print-question-table { width: 100%; border-collapse: collapse; table-layout: fixed; break-after: avoid; page-break-after: avoid; }
+.print-question-number-cell, .print-subquestion-label-cell { width: 6.5mm; padding: .2mm 1.5mm .2mm 0; vertical-align: top; }
+.print-content-cell { padding: .2mm 0; vertical-align: top; }
+.print-main-question-cell { font-weight: 600; }
+.print-question-number, .print-subquestion-label { display: inline-block; min-width: 4.5mm; color: var(--print-accent, #0f172a); font-family: var(--print-font-family, "Times New Roman", Georgia, serif); font-size: var(--print-font-size, 10.2pt); font-weight: 700; line-height: calc(var(--print-line-height, 1.58) * 1.025); text-align: left; }
+.print-subquestions { margin-top: 1.5mm; }
+.print-subquestion-item { margin: 0 0 2.5mm 6.5mm; break-inside: avoid; page-break-inside: avoid; }
+.print-part-header { margin: 4.5mm 0 2.5mm; text-align: center; break-after: avoid; page-break-after: avoid; }
+.print-part-row { display: flex; align-items: center; justify-content: center; gap: 3.5mm; }
+.print-part-line { display: inline-block; width: 12mm; height: .4pt; background: var(--print-rule, #aaa39b); }
+.print-part-title { margin: 0; color: var(--print-accent, #000); font-family: var(--font-itim), Itim, cursive, sans-serif; font-size: calc(var(--print-font-size, 10.2pt) * 1.078 * var(--print-title-scale, 1)); font-weight: 400; letter-spacing: .04em; line-height: 1; }
+.print-surface[data-font='serif'] .print-part-title { font-family: "Times New Roman", Georgia, serif; }
+.print-part-content { margin-top: 1.5mm; text-align: center; color: var(--print-ink, #1f2937); font-family: var(--print-font-family, "Times New Roman", Georgia, serif); font-size: var(--print-font-size, 10.2pt); line-height: calc(var(--print-line-height, 1.58) * 1.013); }
+.print-correction { margin: 1.5mm 0 0 10mm; padding-left: 3mm; border-left: .7pt solid var(--print-rule, #cbd5e1); color: var(--print-muted, #475569); font-size: calc(var(--print-font-size, 10.2pt) * .912); line-height: calc(var(--print-line-height, 1.58) * .981); break-inside: avoid; page-break-inside: avoid; }
+.print-empty-state { margin-top: 16mm; padding: 8mm; border: .8pt dashed var(--print-rule, #cbd5e1); color: var(--print-muted, #64748b); text-align: center; font-family: var(--font-ui), Arial, sans-serif; font-size: calc(var(--print-font-size, 10.2pt) * .98); }
+.print-sheet-footer { right: 0; bottom: 0; left: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 1.8mm 0 0; border-top: .45pt solid var(--print-rule, #cbd5e1); color: var(--print-muted, #64748b); background: var(--print-paper, #fff); font-family: var(--font-ui), Arial, sans-serif; font-size: calc(var(--print-font-size, 10.2pt) * .706); letter-spacing: .04em; }
+.print-sheet-footer p { margin: 0; }
+.print-preview .print-sheet-footer { position: absolute; }
+.print-document img { max-width: min(100%, var(--print-image-max-w, 78mm)); max-height: var(--print-image-max-h, 58mm); object-fit: contain; break-inside: avoid; page-break-inside: avoid; }
+.print-document figure, .print-document table, .print-document tr, .print-document td { break-inside: avoid; page-break-inside: avoid; }
+.print-document .katex { font-size: 1.04em; }
+.print-document .katex-display, .print-document .math-display-node { margin: 2.5mm auto; padding: 0; overflow: visible; break-inside: avoid; page-break-inside: avoid; }
+.print-document .math-renderer p, .print-document .math-renderer-inherit p { margin: 0 0 1.8mm; }
+.print-document .math-renderer p:last-child, .print-document .math-renderer-inherit p:last-child { margin-bottom: 0; }
+.print-session-section { margin: 0 0 7mm; break-inside: avoid; page-break-inside: avoid; }
+.print-section-title { margin: 0 0 2mm; padding-bottom: 1.4mm; border-bottom: .45pt solid var(--print-rule, #cbd5e1); color: var(--print-accent, #0f172a); font-family: var(--font-ui), Arial, sans-serif; font-size: calc(var(--print-font-size, 10.2pt) * .902); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.print-section-body { margin: 0; color: var(--print-ink, #1f2937); font-size: calc(var(--print-font-size, 10.2pt) * .98); line-height: calc(var(--print-line-height, 1.58) * 1.013); }
+.print-quiz-item { margin: 0 0 3mm; padding: 2mm 3mm; border-left: .9pt solid var(--print-rule, #94a3b8); break-inside: avoid; page-break-inside: avoid; }
+.print-quiz-q { margin: 0 0 1mm; color: var(--print-ink, #111827); font-size: var(--print-font-size, 10.2pt); line-height: calc(var(--print-line-height, 1.58) * .981); }
+.print-quiz-a { margin: 0; color: var(--print-muted, #334155); font-size: calc(var(--print-font-size, 10.2pt) * .961); line-height: calc(var(--print-line-height, 1.58) * .981); }
+.print-quiz-a-label { color: var(--print-muted, #64748b); font-family: var(--font-ui), Arial, sans-serif; font-size: calc(var(--print-font-size, 10.2pt) * .804); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.print-manuscript-group { display: block; }
+.print-manuscript { margin: 0 0 4mm; padding: 2mm; border: .45pt solid var(--print-rule, #cbd5e1); background: var(--print-paper, #fff); break-inside: avoid; page-break-inside: avoid; }
+.print-manuscript-caption { margin: 0 0 1.5mm; color: var(--print-muted, #64748b); font-family: var(--font-ui), Arial, sans-serif; font-size: calc(var(--print-font-size, 10.2pt) * .745); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.print-answer-box { margin: 2.5mm 0 3mm 6.5mm; min-height: var(--print-answer-height, 24mm); border: .6pt solid #94a3b8; background-color: #fff; break-inside: avoid; page-break-inside: avoid; }
+.print-answer-box[data-style='grid'] { background-image: linear-gradient(rgba(148,163,184,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.22) 1px,transparent 1px); background-size: 5mm 5mm; }
+.print-answer-box[data-style='slate'] { background-image: linear-gradient(rgba(148,163,184,.28) 1px,transparent 1px); background-size: 100% 7mm; }
+.print-answer-box[data-style='seyes'] { background-image: linear-gradient(rgba(148,163,184,.28) 1px,transparent 1px); background-size: 100% 3.5mm; }
+.print-answer-box[data-style='dotted'] { background-image: radial-gradient(rgba(148,163,184,.4) 1px,transparent 1.1px); background-size: 6mm 6mm; }
+.print-answer-box[data-style='blank'] { background-image: none; }
+.print-answer-box[data-color='cream'] { background-color: #fdfaf3; }
+.print-answer-box[data-color='black'] { background-color: #1a1a1a; border-color: #3a3a3a; background-image: none; }
+.print-answer-box[data-color='green'] { background-color: #0f2f1f; border-color: #2f6f4f; background-image: none; }
+.print-answer-box[data-color='blue'] { background-color: #0f1f3a; border-color: #2f4f7f; background-image: none; }
+/* Zone annotée (archive de séance) : l'encre est imprimée à sa place, le cadre
+   épouse le contenu au lieu d'imposer la hauteur d'une zone vierge. */
+.print-answer-box--annotated { min-height: 0; padding: 2mm; }

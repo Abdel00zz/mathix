@@ -1,0 +1,432 @@
+{
+  "id": "nat-2025-n",
+  "title": "Examen National 2025 — Session Normale",
+  "type": "national",
+  "year": 2025,
+  "session": "normale",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 7,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2025n-ex1",
+      "number": 1,
+      "theme": "geometrie-espace",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Sphère, plans et intersections",
+      "context": "Dans l'espace rapporté à un repère orthonormé direct $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les points $A(0, 0, 2)$, $B(2, 0, 0)$ et la sphère $(S)$ de centre $O$ et de rayon $R = 2$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Déterminer l'équation cartésienne de la sphère $(S)$.",
+              "bareme": 0.25,
+              "hint": "Utilisez la définition analytique d'une sphère de centre $O(0,0,0)$ et de rayon $R$ : $x^2 + y^2 + z^2 = R^2$."
+            },
+            {
+              "id": "1b",
+              "content": "Vérifier que les points $A$ et $B$ appartiennent à la sphère $(S)$.",
+              "bareme": 0.5,
+              "hint": "Substituez les coordonnées de chaque point dans l'équation cartésienne de la sphère obtenue à la question précédente."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soit $I$ le milieu du segment $[AB]$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Déterminer l'intersection du plan $(OAB)$ avec la sphère $(S)$.",
+              "bareme": 0.25,
+              "hint": "Puisque $O$ est l'origine du repère, le plan $(OAB)$ passe par le centre de la sphère. L'intersection est donc un grand cercle."
+            },
+            {
+              "id": "2b",
+              "content": "Vérifier que $\\overrightarrow{OI} \\cdot \\overrightarrow{AB} = 0$ puis montrer que $d(O, (AB)) = \\sqrt{2}$.",
+              "bareme": 0.5,
+              "hint": "Calculez les coordonnées de $I$, puis celles des deux vecteurs pour vérifier que leur produit scalaire est nul. Cette orthogonalité signifie que $I$ est le projeté orthogonal de $O$ sur $(AB)$, la distance est donc la norme $|\\overrightarrow{OI}|$."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "On considère un point $M(0, m, 0)$ de l'espace, où $m \\in \\mathbb{R}$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que $\\overrightarrow{AB} \\wedge \\overrightarrow{AM} = 2m\\overrightarrow{i} + 4\\overrightarrow{j} + 2m\\overrightarrow{k}$.",
+              "bareme": 0.5,
+              "hint": "Calculez d'abord les coordonnées des vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AM}$ en fonction de $m$, puis effectuez le produit vectoriel à l'aide des déterminants."
+            },
+            {
+              "id": "3b",
+              "content": "Déduire que $mx + 2y + mz - 2m = 0$ est une équation cartésienne du plan $(ABM)$.",
+              "bareme": 0.25,
+              "hint": "Le produit vectoriel précédent fournit un vecteur normal au plan. Simplifiez-le en divisant par 2, puis utilisez les coordonnées de $A$ ou $B$ pour trouver la constante."
+            },
+            {
+              "id": "3c",
+              "content": "Montrer que $d(O, (ABM)) = \\dfrac{2|m|}{\\sqrt{4 + 2m^2}}$.",
+              "bareme": 0.25,
+              "hint": "Appliquez la formule classique de la distance d'un point à un plan en utilisant l'origine $O(0,0,0)$ et l'équation du plan $(ABM)$ trouvée en 3b."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "Le plan $(ABM)$ coupe la sphère $(S)$ suivant un cercle $(\\Gamma_m)$ de rayon $r$. Montrer que $r = \\sqrt{2 + \\dfrac{4}{2+m^2}}$ et déduire que $\\sqrt{2} < r \\leq 2$, pour tout $m \\in \\mathbb{R}$.",
+          "bareme": 0.5,
+          "hint": "Utilisez le théorème de Pythagore reliant le rayon de la sphère, la distance au plan et le rayon du cercle : $r^2 = R^2 - d^2$. Pour l'encadrement, étudiez les bornes de la quantité $\\dfrac{4}{2+m^2}$ sachant que $m^2 \\geq 0$."
+        }
+      ]
+    },
+    {
+      "id": "nat2025n-ex2",
+      "number": 2,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 3.5,
+      "topic": "Nombres complexes — Équation, géométrie plane, homothétie",
+      "context": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A$, $B$, $C$, $D$ et $\\Omega$ d'affixes respectives $a = 1 + 2i$, $b = \\bar{a}$, $c = \\dfrac{3(3+i)}{2}$, $d = \\dfrac{3(1+i)}{2}$ et $\\omega = \\dfrac{5}{2}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $a + b = 2$ et déduire que l'affixe du point $P$, milieu du segment $[AB]$ est $p = 1$.",
+              "bareme": 0.5,
+              "hint": "Calculez la somme du complexe $a$ et de son conjugué $b$. Le milieu d'un segment a pour affixe la demi-somme des affixes de ses extrémités."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que $a$ et $b$ sont les solutions de l'équation : $z^2 - 2z + 5 = 0$ dans l'ensemble $\\mathbb{C}$.",
+              "bareme": 0.5,
+              "hint": "Vous pouvez soit résoudre l'équation avec le discriminant $\\Delta$, soit utiliser la somme $a+b=2$ et le produit $a \\times b$ pour prouver que ce sont les racines du polynôme."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Vérifier que $|\\omega - a| = |\\omega - b| = |\\omega - c|$.",
+              "bareme": 0.5,
+              "hint": "Calculez d'abord la forme algébrique des trois différences, puis déterminez leurs modules pour montrer qu'ils sont égaux."
+            },
+            {
+              "id": "2b",
+              "content": "Déduire que $\\Omega$ est le centre du cercle circonscrit au triangle $ABC$.",
+              "bareme": 0.25,
+              "hint": "Interprétez géométriquement l'égalité des modules de la question précédente en termes de distances."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que $\\dfrac{d - c}{a - b} = \\dfrac{3}{4}i$.",
+              "bareme": 0.25,
+              "hint": "Remplacez les affixes par leurs valeurs et simplifiez la fraction pour obtenir le résultat purement imaginaire."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que $d - b = (c - a)e^{i\\frac{\\pi}{2}}$ puis déduire que les droites $(DB)$ et $(AC)$ sont perpendiculaires.",
+              "bareme": 0.5,
+              "hint": "Calculez $d - b$ et $c - a$. Rappelez-vous que $e^{i\\frac{\\pi}{2}} = i$. La multiplication par $i$ indique une rotation d'angle $\\dfrac{\\pi}{2}$, ce qui traduit une orthogonalité géométrique."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "Soit $h$ l'homothétie de centre $C$ et de rapport $\\dfrac{2}{3}$ qui transforme chaque point $M$ du plan d'affixe $z$ en un point $M'$ d'affixe $z'$. On pose $h(P) = G$.",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Vérifier que $z' = \\dfrac{2}{3}z + \\dfrac{3}{2} + \\dfrac{1}{2}i$.",
+              "bareme": 0.25,
+              "hint": "La traduction complexe d'une homothétie est $z' - c = k(z - c)$. Substituez le rapport et l'affixe du centre $C$ pour trouver l'expression de $z'$."
+            },
+            {
+              "id": "4b",
+              "content": "Montrer que l'affixe du point $G$ est $g = \\dfrac{13}{6} + \\dfrac{1}{2}i$.",
+              "bareme": 0.25,
+              "hint": "Appliquez la formule obtenue à la question 4a en remplaçant $z$ par l'affixe $p$ du point $P$ trouvée à la question 1a."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "Montrer que les points $\\Omega$, $G$ et $D$ sont alignés.",
+          "bareme": 0.5,
+          "hint": "Calculez le rapport $\\dfrac{d - \\omega}{g - \\omega}$. S'il est réel, cela prouve la colinéarité des vecteurs et donc l'alignement des points."
+        }
+      ]
+    },
+    {
+      "id": "nat2025n-ex3",
+      "number": 3,
+      "theme": "probabilites",
+      "difficulty": "facile",
+      "points": 2.5,
+      "topic": "Probabilités — Tirage simultané, variables aléatoires",
+      "context": "Une urne contient six boules indiscernables au toucher :\nQuatre boules blanches numérotées : 0 ; 1 ; 1 ; 1 et deux boules noires numérotées : 0 ; 1.\nOn tire au hasard et simultanément deux boules de l'urne.\nOn considère les évènements suivants :\n$A$ : « Les deux boules tirées portent le numéro 1 »\n$B$ : « Les deux boules tirées sont de même couleur »",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que $p(A) = \\dfrac{2}{5}$.",
+              "bareme": 0.5,
+              "hint": "Le tirage est simultané (combinaisons). Dénombrez le total de boules portant le numéro '1' dans l'urne. Calculez les cas favorables sur le nombre de tirages possibles."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que $p(B) = \\dfrac{7}{15}$.",
+              "bareme": 0.5,
+              "hint": "Tirer deux boules de même couleur signifie tirer 2 blanches OU 2 noires. Additionnez les combinaisons respectives."
+            },
+            {
+              "id": "1c",
+              "content": "Les évènements $A$ et $B$ sont-ils indépendants ? Justifier.",
+              "bareme": 0.5,
+              "hint": "Calculez d'abord la probabilité de l'intersection $P(A \\cap B)$ (tirer 2 boules portant le numéro 1 qui sont de la même couleur). Comparez ensuite ce résultat avec le produit $P(A) \\times P(B)$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "On répète l'expérience précédente trois fois successives. On considère la variable aléatoire $X$ indiquant le nombre de fois que l'on réalise l'évènement $A$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Recopier et compléter le tableau représentant la loi de probabilités de $X$. (Valeurs $x_i$: 0, 1, 2, 3 ; $p(X=0)=\\frac{27}{125}$ donné).",
+              "bareme": 0.75,
+              "hint": "Il s'agit d'un schéma de Bernoulli de paramètres $n=3$ et $p=P(A)$. Utilisez la formule de la loi binomiale $P(X=k) = C_n^k p^k (1-p)^{n-k}$ pour calculer les probabilités manquantes."
+            },
+            {
+              "id": "2b",
+              "content": "Calculer l'espérance $E(X)$ de la variable aléatoire $X$.",
+              "bareme": 0.25,
+              "hint": "Pour une variable aléatoire suivant une loi binomiale, l'espérance se calcule simplement par la formule $E(X) = n \\times p$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2025n-ex4",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 11,
+      "topic": "Analyse — Problème complet : fonctions logarithme, aires, fonction réciproque et suite récurrente",
+      "context": "",
+      "questions": [
+        {
+          "id": "p1",
+          "type": "partie",
+          "content": "Le graphique du sujet représente les courbes $(C_g)$ et $(C_h)$ des fonctions : $g : x \\mapsto x^2$ et $h : x \\mapsto 2\\ln x - (\\ln x)^2$ sur l'intervalle $]0, +\\infty[$ dans un même repère orthonormé."
+        },
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Justifier graphiquement que pour tout $x$ de $]0, +\\infty[ : g(x) - h(x) > 0$.",
+              "bareme": 0.25,
+              "hint": "Observez la position de la courbe $(C_g)$ par rapport à la courbe $(C_h)$ sur tout l'intervalle $]0, +\\infty[$."
+            },
+            {
+              "id": "1b",
+              "content": "Déduire que pour tout $x$ de $]0, +\\infty[ : \\dfrac{2\\ln x - (\\ln x)^2}{x^2} < 1$.",
+              "bareme": 0.5,
+              "hint": "Transformez l'inégalité issue de la question précédente en remplaçant les fonctions par leurs expressions et en divisant par $x^2$ (strictement positif sur l'intervalle)."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Vérifier que la fonction $H : x \\mapsto x\\ln x - x$ est une primitive de la fonction $x \\mapsto \\ln x$ sur l'intervalle $]0, +\\infty[$, puis déduire que $\\displaystyle\\int_1^e \\ln(x)dx = 1$.",
+              "bareme": 0.5,
+              "hint": "Dérivez $H(x)$ en utilisant la règle du produit. Ensuite, calculez $H(e) - H(1)$ pour l'intégrale."
+            },
+            {
+              "id": "2b",
+              "content": "En utilisant une intégration par parties, montrer que $\\displaystyle\\int_1^e (\\ln x)^2dx = 2e - 2$.",
+              "bareme": 0.5,
+              "hint": "Posez $u(x) = (\\ln x)^2$ et $v'(x) = 1$. N'oubliez pas la dérivée d'une puissance lors du calcul de $u'(x)$ et réutilisez la valeur de l'intégrale de la question 2a."
+            },
+            {
+              "id": "2c",
+              "content": "Résoudre sur l'intervalle $]0, +\\infty[$, l'équation $h(x) = 0$ et déduire les deux points d'intersection de la courbe $(C_h)$ avec l'axe des abscisses.",
+              "bareme": 0.5,
+              "hint": "Factorisez l'expression de $h(x)$ par $\\ln x$. Résolvez l'équation produit nul pour trouver les valeurs de $x$ correspondantes."
+            },
+            {
+              "id": "2d",
+              "content": "Déduire, en unité d'aire, l'aire de la partie du plan délimitée par la courbe $(C_h)$, l'axe des abscisses, et les droites d'équations $x = 1$ et $x = e^2$.",
+              "bareme": 0.5,
+              "hint": "Sur l'intervalle $[1, e^2]$, la courbe $(C_h)$ est au-dessus de l'axe des abscisses (vérifiable sur le graphique et d'après les racines). Calculez l'intégrale de $h(x)$ sur cet intervalle en utilisant la linéarité et les résultats de 2a et 2b."
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "type": "partie",
+          "content": "On considère la fonction numérique $f$ définie sur $]0, +\\infty[$ par $f(x) = x - \\dfrac{(\\ln x)^2}{x}$. Soit $(C_f)$ sa courbe représentative dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$."
+        },
+        {
+          "id": "r1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $\\lim_{x \\to 0^+} f(x) = -\\infty$ et donner une interprétation géométrique de ce résultat.",
+              "bareme": 0.5,
+              "hint": "Écrivez le terme quotient sous la forme $\\dfrac{1}{x} \\times (\\ln x)^2$ et identifiez la limite en $0^+$. Interprétez la limite infinie en $0$ comme une asymptote."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que $\\lim_{x \\to +\\infty} \\dfrac{(\\ln x)^2}{x} = 0$ (On peut poser $t = \\sqrt{x}$), puis calculer $\\lim_{x \\to +\\infty} f(x)$.",
+              "bareme": 0.5,
+              "hint": "Avec le changement de variable $t = \\sqrt{x}$, transformez $\\ln x$ et exprimez le quotient en fonction de $\\dfrac{\\ln t}{t}$, dont la limite usuelle en $+\\infty$ est bien connue."
+            },
+            {
+              "id": "1c",
+              "content": "Déduire que la droite d'équation $y = x$ est une asymptote oblique de $(C_f)$ au voisinage de $+\\infty$.",
+              "bareme": 0.5,
+              "hint": "Étudiez la limite de la différence $f(x) - x$ en $+\\infty$ à l'aide de la limite trouvée à la question 1b."
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que pour tout $x$ de $]0, +\\infty[$, $f'(x) = 1 - \\dfrac{2\\ln x - (\\ln x)^2}{x^2}$.",
+              "bareme": 0.75,
+              "hint": "Dérivez la fonction $f$ terme à terme. Appliquez la dérivée du quotient $\\left(\\dfrac{u}{v}\\right)'$ pour le second terme."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que la fonction $f$ est strictement croissante sur l'intervalle $]0, +\\infty[$. (On peut utiliser la question Partie I-1-b).",
+              "bareme": 0.5,
+              "hint": "Reliez l'expression de $f'(x)$ à l'inégalité démontrée dans la Partie I. Si le terme fractionnaire est strictement inférieur à $1$, que peut-on dire de $1 - \\text{fraction}$ ?"
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que l'équation $f(x) = 0$ admet une solution unique $\\alpha$ dans l'intervalle $]0, +\\infty[$.",
+              "bareme": 0.5,
+              "hint": "Appliquez le théorème de la bijection (ou des valeurs intermédiaires) en rappelant la continuité, la stricte monotonie de $f$, et ses limites aux bornes."
+            },
+            {
+              "id": "3b",
+              "content": "Vérifier que $e^{-1} < \\alpha < 1$ et montrer que $\\ln \\alpha = -\\alpha$.",
+              "bareme": 0.75,
+              "hint": "Calculez $f(e^{-1})$ et $f(1)$ pour vérifier le changement de signe, ce qui prouve l'encadrement. Ensuite, à partir de $f(\\alpha) = 0$, isolez $(\\ln \\alpha)^2$. Puisque $\\alpha < 1$, son logarithme est négatif, d'où le résultat sans la valeur absolue."
+            },
+            {
+              "id": "3c",
+              "content": "Montrer que $f(x) \\leq x$, pour tout $x \\in ]0, +\\infty[$.",
+              "bareme": 0.25,
+              "hint": "Étudiez simplement le signe de la différence $f(x) - x$ sur cet intervalle en observant la nature du numérateur et du dénominateur."
+            },
+            {
+              "id": "3d",
+              "content": "Montrer que $y = x$ est l'équation de la tangente $(T)$ à la courbe $(C_f)$ au point d'abscisse 1.",
+              "bareme": 0.5,
+              "hint": "Appliquez l'équation de la tangente $y = f'(1)(x-1) + f(1)$ en calculant les valeurs nécessaires."
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "content": "Le graphique ci-contre (dans le sujet) représente la courbe $(C_f)$. Soit $\\varphi$ la restriction de $f$ sur l'intervalle $]0, 1]$.",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Montrer que $\\varphi$ admet une fonction réciproque $\\varphi^{-1}$ définie sur un intervalle $J$ que l'on déterminera. (Il n'est pas demandé de déterminer l'expression $\\varphi^{-1}(x)$).",
+              "bareme": 0.5,
+              "hint": "La restriction hérite de la continuité et de la stricte monotonie de $f$. Déterminez $J$ en calculant l'image de l'intervalle $]0, 1]$ par la fonction."
+            },
+            {
+              "id": "4b",
+              "content": "Montrer que $\\varphi^{-1}$ est dérivable en $0$ et que $(\\varphi^{-1})'(0) = \\dfrac{\\alpha}{2+2\\alpha}$.",
+              "bareme": 0.5,
+              "hint": "On sait que $\\varphi(\\alpha) = 0$. Utilisez la formule de la dérivée de la réciproque $(\\varphi^{-1})'(0) = \\dfrac{1}{\\varphi'(\\alpha)}$. Remplacez $\\ln \\alpha$ par $-\\alpha$ dans l'expression de $\\varphi'(\\alpha)$ pour obtenir le résultat."
+            },
+            {
+              "id": "4c",
+              "content": "Recopier la courbe de $\\varphi$ et construire la courbe de $\\varphi^{-1}$ dans le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$.",
+              "bareme": 0.75,
+              "hint": "Tracez la courbe de $\\varphi^{-1}$ en effectuant une symétrie orthogonale de la portion de $(C_f)$ correspondant à $x \\in ]0, 1]$ par rapport à la première bissectrice (la droite d'équation $y=x$)."
+            }
+          ]
+        },
+        {
+          "id": "p3",
+          "type": "partie",
+          "content": "Soit $(u_n)$ la suite numérique définie par $u_0 = e$ et $u_{n+1} = f(u_n)$, pour tout $n \\in \\mathbb{N}$."
+        },
+        {
+          "id": "s1",
+          "content": "Montrer par récurrence que $1 < u_n$, pour tout $n \\in \\mathbb{N}$.",
+          "bareme": 0.5,
+          "hint": "Pour l'hérédité, appliquez la fonction $f$ aux membres de l'inégalité en utilisant la stricte croissance de $f$ sur l'intervalle concerné, et remarquez que $f(1) = 1$."
+        },
+        {
+          "id": "s2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que la suite $(u_n)$ est décroissante. (On peut utiliser la question Partie II-3-c).",
+              "bareme": 0.5,
+              "hint": "Substituez $x$ par $u_n$ dans l'inégalité $f(x) \\leq x$ obtenue à la Partie II pour déduire la comparaison entre $u_{n+1}$ et $u_n$."
+            },
+            {
+              "id": "2b",
+              "content": "En déduire que la suite $(u_n)$ est convergente.",
+              "bareme": 0.25,
+              "hint": "Utilisez le théorème de convergence : toute suite décroissante et minorée (par 1 d'après la récurrence) converge."
+            },
+            {
+              "id": "2c",
+              "content": "Déterminer la limite de la suite $(u_n)$.",
+              "bareme": 0.5,
+              "hint": "La limite $l$ doit être solution de l'équation $f(x) = x$. Résolvez l'équation $\\dfrac{(\\ln x)^2}{x} = 0$ et tenez compte du minorant de la suite pour choisir la bonne valeur."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

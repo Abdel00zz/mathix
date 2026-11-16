@@ -1,0 +1,456 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Soit $f$ une fonction continue sur $[a;b]$ et $F$ une primitive de $f$ sur $[a;b]$. L'intégrale $\\displaystyle\\int_{a}^{b} f(x)\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$F(a)-F(b)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$F(b)-F(a)$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f(b)-f(a)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$F'(b)-F'(a)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par définition, $\\int_a^b f(x)dx = [F(x)]_a^b = F(b)-F(a)$."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "$\\displaystyle\\int_{a}^{b} f(x)\\,dx = -\\int_{b}^{a} f(x)\\,dx$.",
+      "isTrue": true,
+      "explanation": "C'est une conséquence de la définition : $\\int_b^a f = F(a)-F(b) = -\\int_a^b f$."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Interprétation",
+      "prompt": "Si $f$ est continue et positive sur $[a;b]$, alors $\\displaystyle\\int_{a}^{b} f(x)\\,dx$ représente :",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'aire du domaine sous la courbe $y=f(x)$ entre $x=a$ et $x=b$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La longueur de la courbe $\\mathcal{C}_f$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La valeur moyenne de $f$ sur $[a;b]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La primitive de $f$ en $b$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'intégrale d'une fonction positive sur $[a;b]$ est l'aire (en unités d'aire) de la surface comprise entre la courbe, l'axe des abscisses et les droites $x=a$, $x=b$."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Pour tous $a,b,c$ réels, $\\displaystyle\\int_{a}^{c} f(x)\\,dx = \\int_{a}^{b} f(x)\\,dx + \\int_{b}^{c} f(x)\\,dx$.",
+      "isTrue": true,
+      "explanation": "C'est la relation de Chasles, valable pour toute fonction intégrable."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Application",
+      "prompt": "$\\displaystyle\\int_{0}^{1} (2x+1)\\,dx$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac12$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\int_0^1 (2x+1)dx = [x^2+x]_0^1 = 1+1 = 2$."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Méthode",
+      "prompt": "Pour calculer $\\displaystyle\\int_{0}^{1} \\frac{e^x}{e^x+1}\\,dx$, on utilise :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une intégration par parties",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La forme $\\frac{u'}{u}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Un changement de variable $t=e^x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La linéarité",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\frac{e^x}{e^x+1} = \\frac{(e^x+1)'}{e^x+1}$, donc primitive $\\ln(e^x+1)$."
+    },
+    {
+      "id": "q7",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Si $f(x) \\le g(x)$ pour tout $x\\in[a;b]$, alors $\\displaystyle\\int_a^b f(x)dx \\le \\int_a^b g(x)dx$.",
+      "isTrue": true,
+      "explanation": "C'est la propriété de monotonie de l'intégrale."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "$\\displaystyle\\int_{1}^{e} \\frac{\\ln x}{x}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac12$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\int \\frac{\\ln x}{x}dx = \\frac12 (\\ln x)^2$, donc $\\frac12(1^2-0^2)=\\frac12$."
+    },
+    {
+      "id": "q9",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Pour calculer $\\displaystyle\\int_{0}^{1} x e^{x}\\,dx$, on pose $u=x$, $v'=e^{x}$ dans une intégration par parties.",
+      "isTrue": true,
+      "explanation": "C'est l'exemple classique : $\\int x e^x dx = x e^x - \\int e^x dx = (x-1)e^x$."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "La valeur moyenne de $f(x)=x$ sur $[0;2]$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac12$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\mu = \\frac{1}{2-0}\\int_0^2 x dx = \\frac12 \\times 2 = 1$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Interprétation",
+      "prompt": "L'aire du domaine limité par $y=\\sin x$, l'axe des abscisses et $x=0$, $x=\\pi$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\pi$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\int_0^\\pi \\sin x dx = [-\\cos x]_0^\\pi = 1-(-1)=2$. $\\sin x\\ge0$ sur $[0,\\pi]$."
+    },
+    {
+      "id": "q12",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "$\\left|\\int_a^b f(x)dx\\right| \\le \\int_a^b |f(x)|dx$ pour toute fonction continue $f$.",
+      "isTrue": true,
+      "explanation": "C'est l'inégalité triangulaire pour les intégrales."
+    },
+    {
+      "id": "q13",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Les élèves oublient souvent la valeur absolue dans le calcul d'aire.",
+      "prompt": "L'aire du domaine compris entre la courbe $y=x^2-1$ et l'axe des abscisses sur $[-2;2]$ est $\\int_{-2}^{2} (x^2-1)dx$.",
+      "isTrue": false,
+      "explanation": "Il faut prendre la valeur absolue : $\\mathcal{A} = \\int_{-2}^{2} |x^2-1| dx$, car $x^2-1$ est négatif sur $[-1;1]$."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Pour calculer $\\displaystyle\\int_{0}^{2} |x-1|\\,dx$, on utilise :",
+      "options": [
+        {
+          "id": "a",
+          "text": "La linéarité",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La relation de Chasles après avoir coupé au point $x=1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Une intégration par parties",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le changement de variable $t=|x-1|$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|x-1| = 1-x$ sur $[0,1]$, $x-1$ sur $[1,2]$ ; on sépare l'intégrale."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "$\\displaystyle\\int_{0}^{1} x e^{x^2+1}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{e^2- e}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{e^2-1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$e^2- e$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\int x e^{x^2+1}dx = \\frac12 e^{x^2+1}$, donc $\\frac12(e^{1+1}-e^{0+1}) = \\frac12(e^2-e)$."
+    },
+    {
+      "id": "q16",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Si $f$ est continue et positive sur $[0;+\\infty[$, alors $\\int_0^{+\\infty} f(x)dx$ converge ssi $f$ tend vers $0$ en $+\\infty$.",
+      "isTrue": false,
+      "explanation": "Contre-exemple : $f(x)=1/x$ ne tend pas vers $0$ assez vite (intégrale divergente) ; $f$ peut tendre vers $0$ sans que l'intégrale converge ($1/\\sqrt{x}$)."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Le volume du solide engendré par la rotation de $y=\\sqrt{x}$ sur $[0;1]$ autour de l'axe des abscisses est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\pi \\int_0^1 x dx = \\frac{\\pi}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\pi \\int_0^1 \\sqrt{x} dx = \\frac{2\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\int_0^1 x dx = \\frac12$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\pi \\int_0^1 (\\sqrt{x})^2 dx = \\pi \\int_0^1 x dx$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "La formule est $V = \\pi \\int_a^b [f(x)]^2 dx$. Ici $f(x)^2 = x$, donc $V = \\pi [x^2/2]_0^1 = \\pi/2$."
+    },
+    {
+      "id": "q18",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Confondre aire et volume.",
+      "prompt": "L'aire du domaine sous la courbe $y=\\ln x$ sur $[1;e]$ est $\\int_1^e \\ln x dx = 1$ (en unités d'aire).",
+      "isTrue": true,
+      "explanation": "$\\int_1^e \\ln x dx = [x\\ln x - x]_1^e = e - e - (0-1)=1$."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Pour calculer $\\displaystyle\\int_{-1}^{1} \\sqrt{1-x^2}\\,dx$, on peut interpréter géométriquement comme :",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'aire d'un demi-cercle de rayon $1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "L'aire d'un quart de cercle de rayon $1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La longueur d'un demi-cercle",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le volume d'une sphère",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$y=\\sqrt{1-x^2}$ est le demi-cercle supérieur, l'intégrale sur $[-1;1]$ est l'aire du demi-disque = $\\pi/2$."
+    },
+    {
+      "id": "q20",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "$\\displaystyle\\int_{0}^{1} \\frac{1}{x}\\,dx$ converge.",
+      "isTrue": false,
+      "explanation": "Cette intégrale est impropre en $0$ et diverge car $\\int_\\varepsilon^1 1/x dx = -\\ln \\varepsilon \\to +\\infty$."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Soit $I_n = \\displaystyle\\int_{0}^{1} x^n e^{-x}dx$. La suite $(I_n)$ :",
+      "options": [
+        {
+          "id": "a",
+          "text": "est croissante et converge vers $0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "est décroissante et converge vers $0$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "est constante",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "diverge vers $+\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$x^{n+1} \\le x^n$ sur $[0;1]$, donc $I_{n+1}\\le I_n$. De plus $0\\le I_n \\le \\int_0^1 x^n dx = 1/(n+1) \\to 0$."
+    },
+    {
+      "id": "q22",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "$\\displaystyle\\int_{1}^{e} \\frac{dx}{x\\ln x} = \\ln(\\ln e) - \\ln(\\ln 1) = 1$.",
+      "isTrue": false,
+      "explanation": "$\\int \\frac{dx}{x\\ln x} = \\ln|\\ln x| + C$, donc $\\int_1^e = \\ln(1) - \\lim_{a\\to1^+}\\ln(\\ln a)$ diverge car $\\ln(\\ln a)\\to -\\infty$. L'intégrale impropre diverge."
+    }
+  ]
+}

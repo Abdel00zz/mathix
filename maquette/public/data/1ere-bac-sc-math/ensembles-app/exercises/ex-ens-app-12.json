@@ -1,0 +1,70 @@
+{
+  "id": "ex-ens-app-12",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Parties d'un ensemble et $\\mathcal{P}(E)$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soient $A$ et $B$ deux ensembles non vides. A-t-on : $\\mathcal{P}(A \\times B) = \\mathcal{P}(A) \\times \\mathcal{P}(B)$ ? Justifier.",
+      "hint": "Comparez les cardinalités des deux membres si $|A|=|B|=2$."
+    },
+    {
+      "id": "pa",
+      "type": "partie",
+      "content": "Soient $A$, $B$ deux parties d'un ensemble $E$."
+    },
+    {
+      "id": "qA1",
+      "content": "Démontrer que : $A \\subset B \\iff \\mathcal{P}(A) \\subset \\mathcal{P}(B)$",
+      "hint": "Pour $\\Rightarrow$ : si $X \\in \\mathcal{P}(A)$ alors $X \\subset A \\subset B$. Pour $\\Leftarrow$ : raisonnez par contraposée ou considérez $\\{a\\}$ pour $a \\in A$."
+    },
+    {
+      "id": "qA2",
+      "content": "Montrer que : $\\mathcal{P}(A \\cap B) = \\mathcal{P}(A) \\cap \\mathcal{P}(B)$",
+      "hint": "$X \\in \\mathcal{P}(A \\cap B) \\iff X \\subset A \\cap B \\iff X \\subset A$ et $X \\subset B$."
+    },
+    {
+      "id": "qA3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "qA3a",
+          "content": "Montrer que : $\\mathcal{P}(A) \\cup \\mathcal{P}(B) \\subset \\mathcal{P}(A \\cup B)$",
+          "hint": "Si $X \\subset A$, alors $X \\subset A \\cup B$."
+        },
+        {
+          "id": "qA3b",
+          "content": "A-t-on : $\\mathcal{P}(A) \\cup \\mathcal{P}(B) = \\mathcal{P}(A \\cup B)$ ?",
+          "hint": "Cherchez un contre-exemple : prenez $A = \\{1\\}$, $B = \\{2\\}$ et regardez si $\\{1,2\\} \\in \\mathcal{P}(A) \\cup \\mathcal{P}(B)$."
+        }
+      ]
+    },
+    {
+      "id": "pb",
+      "type": "partie",
+      "content": "On considère dans $\\mathcal{P}(E)$ l'équation : $X \\in \\mathcal{P}(E) \\;/\\; (A \\cap X) \\cup (B \\cap \\overline{X}) = \\varnothing \\quad (1)$"
+    },
+    {
+      "id": "qB1",
+      "content": "Montrer que l'équation (1) admet une solution dans $\\mathcal{P}(E)$ si et seulement si $A \\cap B = \\varnothing$.",
+      "hint": "$(A \\cap X) \\cup (B \\cap \\overline{X}) = \\varnothing$ implique $A \\cap X = \\varnothing$ et $B \\cap \\overline{X} = \\varnothing$, soit $A \\subset \\overline{X}$ et $B \\subset X$. Pour que ces deux conditions soient compatibles, que doit-on avoir ?"
+    },
+    {
+      "id": "qB2",
+      "content": "On suppose $A \\cap B = \\varnothing$. Montrer que les solutions de l'équation (1) sont de la forme : $X = (\\overline{A} \\cap Z) \\cup (B \\cup \\overline{Z})$ avec $Z \\in \\mathcal{P}(E)$",
+      "hint": "Les conditions sont $B \\subset X \\subset \\overline{A}$. Posez $X = B \\cup (Z \\cap \\overline{A})$ pour $Z$ quelconque, et vérifiez que cette forme parcourt toutes les solutions."
+    },
+    {
+      "id": "pc",
+      "type": "partie",
+      "content": ""
+    },
+    {
+      "id": "qC1",
+      "content": "On suppose que $B \\subset A$ et $A \\cap C = \\varnothing$. Résoudre dans $\\mathcal{P}(E)$ le système : $\\begin{cases} A \\setminus X = B \\\\ X \\setminus A = C \\end{cases}$",
+      "hint": "$A \\setminus X = B$ signifie $A \\cap \\overline{X} = B$, soit $A \\setminus X = B$. Cherchez $X \\cap A$ et $X \\cap \\overline{A}$ séparément, puis reconstituez $X$."
+    }
+  ]
+}

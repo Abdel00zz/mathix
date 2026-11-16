@@ -1,0 +1,30 @@
+{
+  "id": "ex-ens-app-39",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Exercices de perfectionnement : application $f : \\mathbb{R}^2 \\to \\mathbb{R}^2$ et bijectivité",
+  "requiresRedaction": true,
+  "context": "On considère l'application $f : \\mathbb{R}^2 \\to \\mathbb{R}^2$ définie par : $(x;y) \\mapsto (x+y\\,;\\; xy)$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "L'application $f$ est-elle injective ? Justifier.",
+      "hint": "Testez si $f(x_1;y_1) = f(x_2;y_2)$ implique $(x_1;y_1) = (x_2;y_2)$. $f(1;2) = (3;2)$ et $f(2;1) = (3;2)$ : deux antécédents distincts pour la même image. $f$ n'est pas injective."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que l'application $f$ n'est pas surjective.",
+      "hint": "Cherchez un élément $(s;p) \\in \\mathbb{R}^2$ qui n'est pas dans l'image de $f$. Si $(s;p) = f(x;y)$, alors $x$ et $y$ sont les racines de $t^2 - st + p = 0$. Ce polynôme n'a pas toujours de racines réelles : il faut $s^2 - 4p \\geq 0$. Choisissez $(s;p) = (0;1)$."
+    },
+    {
+      "id": "q3",
+      "content": "On considère les deux ensembles : $A = \\{(x;y) \\in \\mathbb{R}^2 \\mid x \\leq y\\}$ et $B = \\{(x;y) \\in \\mathbb{R}^2 \\mid x^2 - 4y \\geq 0\\}$. Montrer que $f(A) = B$.",
+      "hint": "Pour $f(A) \\subset B$ : si $(x;y) \\in A$ (i.e. $x \\leq y$), calculez le discriminant de $t^2 - st + p = 0$ avec $s = x+y$, $p = xy$ : $\\Delta = (x+y)^2 - 4xy = (x-y)^2 \\geq 0$. Pour $B \\subset f(A)$ : si $(s;p) \\in B$ (i.e. $s^2 - 4p \\geq 0$), les racines $x \\leq y$ de $t^2 - st + p = 0$ existent et vérifient $f(x;y) = (s;p)$."
+    },
+    {
+      "id": "q4",
+      "content": "Soit $g$ la restriction de $f$ à $A$. Montrer que $g$ réalise une bijection de $A$ sur $B$ puis déterminer sa bijection réciproque.",
+      "hint": "Surjectivité : déjà montrée en 3. Injectivité sur $A$ : si $g(x_1;y_1) = g(x_2;y_2)$ avec $x_i \\leq y_i$, alors $x_1 + y_1 = x_2 + y_2$ et $x_1 y_1 = x_2 y_2$. Les couples $(x_i;y_i)$ vérifient le même polynôme $t^2 - st + p = 0$. Avec la contrainte $x \\leq y$, la racine la plus petite est unique : $x = \\dfrac{s - \\sqrt{s^2-4p}}{2}$."
+    }
+  ]
+}

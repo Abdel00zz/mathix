@@ -1,0 +1,64 @@
+{
+  "id": "ex-suites-04",
+  "theme": "suites",
+  "difficulty": "difficile",
+  "topic": "Suites Numériques",
+  "context": "Soit la suite numérique $(u_n)_{n \\in \\mathbb{N}}$ définie par $u_0 = 0$ et pour tout $n \\in \\mathbb{N}$ : $$u_{n+1} = \\dfrac{2u_n + 3}{u_n + 4}$$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Encadrement",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer par récurrence que pour tout $n \\in \\mathbb{N}$, $0 \\le u_n < 1$.",
+          "hint": "\\textbf{Initialisation :} Pour $n=0$, $u_0 = 0$. On a bien $0 \\le 0 < 1$. La propriété est vraie.\n\\textbf{Hérédité :} Supposons $0 \\le u_n < 1$ et montrons que $0 \\le u_{n+1} < 1$.\nOn a $u_n \\ge 0$, donc $2u_n+3 > 0$ et $u_n+4 > 0$. Ainsi $u_{n+1} \\ge 0$. \nÉtudions la différence $u_{n+1} - 1$ :\n$$u_{n+1} - 1 = \\dfrac{2u_n+3}{u_n+4} - 1 = \\dfrac{2u_n+3 - (u_n+4)}{u_n+4} = \\dfrac{u_n - 1}{u_n + 4}$$\n\\conclusion Puisque $u_n < 1$, alors $u_n - 1 < 0$. Le dénominateur est positif. Donc $u_{n+1} - 1 < 0$, soit $u_{n+1} < 1$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Monotonie",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Étudier la monotonie de la suite $(u_n)_{n \\in \\mathbb{N}}$.",
+          "hint": "Calculons la différence $u_{n+1} - u_n$.\n$$u_{n+1} - u_n = \\dfrac{2u_n+3}{u_n+4} - u_n = \\dfrac{2u_n+3 - u_n(u_n+4)}{u_n+4} = \\dfrac{-u_n^2 - 2u_n + 3}{u_n+4}$$\nÉtudions le signe du numérateur $-u_n^2 - 2u_n + 3$. \nLes racines sont $1$ et $-3$. Le polynôme est positif entre les racines, donc sur $[-3, 1]$.\n\\conclusion Comme $0 \\le u_n < 1$, on a $-u_n^2 - 2u_n + 3 > 0$. \nDonc $u_{n+1} - u_n > 0$. La suite est strictement croissante."
+        },
+        {
+          "id": "sq2b",
+          "content": "En déduire que $(u_n)_{n \\in \\mathbb{N}}$ est convergente.",
+          "hint": "\\conclusion La suite $(u_n)$ est croissante et majorée par 1, elle est donc convergente."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Suite Auxiliaire",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Soit la suite $(v_n)_{n \\in \\mathbb{N}}$ définie par $v_n = \\displaystyle\\frac{u_n - 1}{u_n + 3}$. Montrer que $(v_n)$ est une suite géométrique de raison $\\displaystyle\\frac{1}{5}$.",
+          "hint": "$$v_{n+1} = \\dfrac{u_{n+1} - 1}{u_{n+1} + 3} = \\dfrac{\\frac{2u_n+3}{u_n+4} - 1}{\\frac{2u_n+3}{u_n+4} + 3}$$\nSimplifions numérateur et dénominateur en multipliant par $u_n+4$ :\n$$v_{n+1} = \\dfrac{2u_n+3 - (u_n+4)}{2u_n+3 + 3(u_n+4)} = \\dfrac{u_n - 1}{5u_n + 15} = \\dfrac{u_n - 1}{5(u_n + 3)}$$\n\\conclusion On reconnaît l'expression de $v_n$. Donc $v_{n+1} = \\displaystyle\\frac{1}{5} v_n$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Exprimer $v_n$ puis $u_n$ en fonction de $n$.",
+          "hint": "Calculons le premier terme : $v_0 = \\displaystyle\\frac{u_0 - 1}{u_0 + 3} = \\displaystyle\\frac{-1}{3}$.\n$$v_n = v_0 \\times q^n = -\\frac{1}{3} \\left(\\frac{1}{5}\\right)^n$$\nInversons la relation pour trouver $u_n$ : \n$$v_n(u_n + 3) = u_n - 1 \\iff u_n v_n + 3v_n = u_n - 1 \\iff u_n(v_n - 1) = -1 - 3v_n$$\n\\conclusion $$u_n = \\dfrac{1 + 3v_n}{1 - v_n} = \\dfrac{1 - \\left(\\frac{1}{5}\\right)^n}{1 + \\frac{1}{3}\\left(\\frac{1}{5}\\right)^n}$$"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Limite",
+      "subQuestions": [
+        {
+          "id": "sq4",
+          "content": "Calculer la limite de la suite $(u_n)_{n \\in \\mathbb{N}}$.",
+          "hint": "On sait que $\\displaystyle\\lim_{n \\to +\\infty} \\left(\\frac{1}{5}\\right)^n = 0$ car $-1 < \\displaystyle\\frac{1}{5} < 1$.\n$$\\displaystyle\\lim_{n \\to +\\infty} u_n = \\dfrac{1 - 0}{1 + 0} = 1$$\n\\conclusion La suite converge bien vers 1."
+        }
+      ]
+    }
+  ]
+}

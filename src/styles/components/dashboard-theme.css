@@ -1,0 +1,536 @@
+@layer components {
+  /*
+   * Accent commun du dashboard. Les variables relient le fond, la navigation,
+   * les commandes latérales et les cartes sans remplacer les couleurs d'état
+   * (succès, alerte, erreur) ni les couleurs propres aux autres sections.
+   */
+  .dashboard-shell {
+    --dashboard-mauve: #b5369b;
+    --dashboard-mauve-deep: #8f1f7d;
+    --dashboard-mauve-soft: rgba(181, 54, 155, 0.1);
+    --dashboard-mauve-border: rgba(181, 54, 155, 0.2);
+    --dashboard-mauve-wash: #fcf7fb;
+    --dashboard-mauve-frame: #681758;
+    --dashboard-lilac: rgb(149, 112, 252);
+    --dashboard-lilac-soft: rgba(149, 112, 252, 0.1);
+
+    /* Tokens fluides indexés sur le viewport (téléphone, tablette, desktop) */
+    --dash-container-max-w: clamp(68rem, 88vw, 86rem);
+    --dash-container-px: clamp(1rem, 3.2vw, 3rem);
+    --dash-container-pt: clamp(1.25rem, 3vw, 3.25rem);
+    --dash-container-pb: clamp(6rem, 10vw, 9rem);
+    --dash-stage-max-w: clamp(62rem, 86vw, 80rem);
+    --dash-grid-gap: clamp(0.875rem, 1.8vw, 1.5rem);
+    --dash-list-gap: clamp(0.5rem, 1.4vw, 0.875rem);
+    --dash-header-wrap-mb: clamp(0.65rem, 1.8vw, 1.5rem);
+
+    --dash-header-px: clamp(0.875rem, 2.4vw, 2rem);
+    --dash-header-py: clamp(0.75rem, 1.8vw, 1.35rem);
+    --dash-header-gap: clamp(0.4rem, 1.5vw, 1.5rem);
+    --dash-header-radius: clamp(18px, 2vw, 24px);
+    --dash-header-eyebrow-size: clamp(0.5625rem, 0.35vw + 0.48rem, 0.6875rem);
+    --dash-header-title-size: clamp(1.25rem, 1.75vw + 0.75rem, 2.2rem);
+    --dash-header-prof-title-size: clamp(1.375rem, 2vw + 0.8rem, 2.5rem);
+    --dash-header-subtitle-size: clamp(0.75rem, 0.45vw + 0.64rem, 0.96rem);
+    --dash-header-prof-subtitle-size: clamp(0.8125rem, 0.5vw + 0.68rem, 1.05rem);
+    --dash-tip-text-size: clamp(0.8rem, 0.38vw + 0.68rem, 0.95rem);
+
+    --dash-tab-font-size: clamp(0.76rem, 0.35vw + 0.65rem, 0.88rem);
+    --dash-tab-min-w: clamp(6.5rem, 11.5vw, 10.75rem);
+    --dash-tab-min-h: clamp(2.45rem, 2.8vw, 2.75rem);
+    --dash-tab-pad-x: clamp(0.8rem, 1.5vw, 1.35rem);
+
+    --dash-card-radius: clamp(18px, 1.8vw, 24px);
+    --dash-card-px: clamp(1rem, 1.6vw, 1.35rem);
+    --dash-card-py: clamp(0.875rem, 1.4vw, 1.2rem);
+    --dash-card-header-pb: clamp(0.8rem, 1.2vw, 1.05rem);
+    --dash-card-gap: clamp(0.65rem, 1vw, 0.9rem);
+    --dash-card-title-size: clamp(1rem, 0.55vw + 0.85rem, 1.2rem);
+    --dash-card-title-min-h: clamp(2.85rem, 3.2vw, 3.45rem);
+    --dash-badge-size: clamp(0.65rem, 0.25vw + 0.58rem, 0.74rem);
+    --dash-badge-px: clamp(0.55rem, 0.75vw, 0.72rem);
+    --dash-badge-py: clamp(0.22rem, 0.35vw, 0.32rem);
+    --dash-chip-gap: clamp(0.32rem, 0.5vw, 0.45rem);
+    --dash-chip-inner-gap: clamp(0.3rem, 0.45vw, 0.4rem);
+    --dash-chip-px: clamp(0.52rem, 0.7vw, 0.68rem);
+    --dash-chip-py: clamp(0.22rem, 0.35vw, 0.3rem);
+    --dash-progress-label-size: clamp(0.6875rem, 0.25vw + 0.6rem, 0.78rem);
+
+    --dash-step-min-h: clamp(3.25rem, 3.6vw, 3.75rem);
+    --dash-step-gap: clamp(0.65rem, 1vw, 0.85rem);
+    --dash-step-py: clamp(0.42rem, 0.7vw, 0.6rem);
+    --dash-step-icon-size: clamp(2.1rem, 2.3vw, 2.4rem);
+    --dash-step-label-size: clamp(0.84rem, 0.35vw + 0.74rem, 0.96rem);
+    --dash-step-status-size: clamp(0.6875rem, 0.25vw + 0.62rem, 0.76rem);
+
+    --dash-row-px: clamp(0.75rem, 2.8vw, 1.125rem);
+    --dash-row-py: clamp(0.7rem, 2.4vw, 0.95rem);
+    --dash-row-gap: clamp(0.625rem, 2.2vw, 0.9rem);
+    --dash-row-badge-size: clamp(2.125rem, 7vw, 2.5rem);
+    --dash-row-badge-font: clamp(0.75rem, 1.6vw + 0.45rem, 0.875rem);
+    --dash-row-title-size: clamp(0.95rem, 2.2vw + 0.5rem, 1.15rem);
+    --dash-row-pct-w: clamp(2.9rem, 8vw, 3.5rem);
+    --dash-row-pct-size: clamp(0.875rem, 1.8vw + 0.45rem, 1.05rem);
+
+    --dash-module-badge-size: clamp(2.5rem, 3.4vw, 3.1rem);
+    --dash-module-title-size: clamp(1.125rem, 1.3vw + 0.72rem, 1.55rem);
+    --dash-module-eyebrow-size: clamp(0.6rem, 0.3vw + 0.5rem, 0.75rem);
+    --dash-module-row-title-size: clamp(0.95rem, 0.5vw + 0.8rem, 1.15rem);
+    --dash-module-row-px: clamp(0.95rem, 1.8vw, 1.5rem);
+    --dash-module-row-py: clamp(0.9rem, 1.6vw, 1.25rem);
+  }
+
+  .dash-container {
+    max-width: var(--dash-container-max-w);
+    padding-inline: var(--dash-container-px);
+    padding-top: var(--dash-container-pt);
+    padding-bottom: var(--dash-container-pb);
+  }
+
+  .dash-header-wrap {
+    margin-bottom: var(--dash-header-wrap-mb);
+  }
+
+  .dash-stage {
+    max-width: var(--dash-stage-max-w);
+    margin-top: clamp(0.5rem, 1.2vw, 1.1rem);
+  }
+
+  .dash-chapters-stage {
+    margin-top: clamp(0.5rem, 1.6vw, 1.5rem);
+  }
+
+  .dash-module-stage {
+    margin-top: clamp(0.5rem, 1.2vw, 1rem);
+  }
+
+  .dash-chapter-grid {
+    gap: var(--dash-grid-gap);
+  }
+
+  .dash-chapter-list {
+    gap: var(--dash-list-gap);
+  }
+
+  .dash-header {
+    padding: var(--dash-header-py) var(--dash-header-px);
+    gap: var(--dash-header-gap);
+    border-radius: var(--dash-header-radius);
+    margin-bottom: clamp(0.75rem, 1.6vw, 1.25rem);
+  }
+
+  .dash-header__eyebrow {
+    font-size: var(--dash-header-eyebrow-size);
+  }
+
+  .dash-header__title {
+    font-size: var(--dash-header-title-size);
+  }
+
+  .dash-header__title--prof {
+    font-size: var(--dash-header-prof-title-size);
+  }
+
+  .dash-header__subtitle {
+    font-size: var(--dash-header-subtitle-size);
+  }
+
+  .dash-header__subtitle--prof {
+    font-size: var(--dash-header-prof-subtitle-size);
+  }
+
+  .dash-tip-text {
+    font-size: var(--dash-tip-text-size);
+  }
+
+  .dashboard-shell .dashboard-tab-chip {
+    min-width: var(--dash-tab-min-w);
+    min-height: var(--dash-tab-min-h);
+    padding: clamp(0.5rem, 0.9vw, 0.65rem) var(--dash-tab-pad-x);
+    font-size: var(--dash-tab-font-size);
+  }
+
+  .dash-card {
+    border-radius: var(--dash-card-radius);
+  }
+
+  .dash-card__header {
+    padding: var(--dash-card-py) var(--dash-card-px) var(--dash-card-header-pb);
+    gap: var(--dash-card-gap);
+  }
+
+  .dash-card__body {
+    padding: var(--dash-card-py) var(--dash-card-px);
+  }
+
+  .dash-card__badge {
+    padding: var(--dash-badge-py) var(--dash-badge-px);
+    font-size: var(--dash-badge-size);
+  }
+
+  .dash-card__title-wrap {
+    min-height: var(--dash-card-title-min-h);
+  }
+
+  .dash-card__title {
+    font-size: var(--dash-card-title-size);
+  }
+
+  .dash-card__metrics {
+    gap: var(--dash-chip-gap);
+  }
+
+  .dash-card__metric {
+    gap: var(--dash-chip-inner-gap);
+    padding: var(--dash-chip-py) var(--dash-chip-px);
+    font-size: var(--dash-badge-size);
+  }
+
+  .dash-card__progress-row {
+    font-size: var(--dash-progress-label-size);
+  }
+
+  .dash-step {
+    min-height: var(--dash-step-min-h);
+    gap: var(--dash-step-gap);
+    padding-block: var(--dash-step-py);
+  }
+
+  .dash-step__icon {
+    width: var(--dash-step-icon-size);
+    height: var(--dash-step-icon-size);
+  }
+
+  .dash-step__label {
+    font-size: var(--dash-step-label-size);
+  }
+
+  .dash-step__status {
+    font-size: var(--dash-step-status-size);
+  }
+
+  .dash-list-row {
+    border-radius: clamp(14px, 3vw, 18px);
+  }
+
+  .dash-list-row__btn {
+    gap: var(--dash-row-gap);
+    padding: var(--dash-row-py) var(--dash-row-px);
+  }
+
+  .dash-list-row__badge {
+    width: var(--dash-row-badge-size);
+    height: var(--dash-row-badge-size);
+    font-size: var(--dash-row-badge-font);
+  }
+
+  .dash-list-row__title {
+    font-size: var(--dash-row-title-size);
+  }
+
+  .dash-list-row__pct {
+    width: var(--dash-row-pct-w);
+    font-size: var(--dash-row-pct-size);
+  }
+
+  .dash-module-header {
+    padding: var(--dash-module-row-py) var(--dash-module-row-px);
+    gap: clamp(0.65rem, 1.5vw, 1rem);
+  }
+
+  .dash-module-header__badge {
+    width: var(--dash-module-badge-size);
+    height: var(--dash-module-badge-size);
+    font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  }
+
+  .dash-module-header__eyebrow {
+    font-size: var(--dash-module-eyebrow-size);
+  }
+
+  .dash-module-header__title {
+    font-size: var(--dash-module-title-size);
+  }
+
+  .dash-module-row {
+    padding: var(--dash-module-row-py) var(--dash-module-row-px);
+    gap: clamp(0.75rem, 1.5vw, 1rem);
+  }
+
+  .dash-module-row__title {
+    font-size: var(--dash-module-row-title-size);
+  }
+
+  .dashboard-shell__canvas {
+    background: var(--dashboard-mauve-wash);
+  }
+
+  .dashboard-shell .latin-content {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  .dashboard-card-frame {
+    border-color: color-mix(in srgb, var(--dashboard-mauve-frame) 16%, #e2e8f0);
+  }
+
+  .dashboard-card-frame:hover {
+    border-color: color-mix(in srgb, var(--dashboard-mauve-frame) 34%, #cbd5e1);
+  }
+
+  .dashboard-button-frame {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Seyès Notebook Curriculum Theme & Red Margin Path (« Apprendre — Programme ») ── */
+  .dashboard-shell {
+    --seyes-bg: #FBFBF8;
+    --seyes-surface: #ffffff;
+    --seyes-ink: #1A1C25;
+    --seyes-muted: #666B78;
+    --seyes-line: #DEDFE6;
+    --seyes-accent: #1D2B66;
+    --seyes-on-accent: #ffffff;
+    --seyes-rule: rgba(72, 92, 200, 0.12);
+    --seyes-rule2: rgba(72, 92, 200, 0.06);
+    --seyes-margin: rgba(220, 70, 80, 0.38);
+    --seyes-err: #D92D3A;
+    --seyes-serif: "Literata", "Noto Naskh Arabic", Georgia, serif;
+    --seyes-sans: "Hanken Grotesk", "IBM Plex Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--seyes-bg, #FBFBF8) !important;
+    color: var(--seyes-ink, #1A1C25);
+  }
+
+  .dashboard-shell__canvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: var(--seyes-bg, #FBFBF8) !important;
+    background-image:
+      linear-gradient(var(--seyes-rule) 1px, transparent 1px),
+      linear-gradient(var(--seyes-rule2) 1px, transparent 1px),
+      linear-gradient(90deg, var(--seyes-rule) 1px, transparent 1px) !important;
+    background-size: 100% 32px, 100% 8px, 32px 100% !important;
+    -webkit-mask-image: radial-gradient(ellipse 60% 65% at 50% 45%, transparent 25%, #000 100%) !important;
+    mask-image: radial-gradient(ellipse 60% 65% at 50% 45%, transparent 25%, #000 100%) !important;
+    opacity: 1 !important;
+  }
+
+  /* Resume Hero Card */
+  .dash-resume.resume {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 16px auto 26px;
+    padding: 18px 22px;
+    max-width: 760px;
+    background: var(--seyes-surface, #ffffff);
+    border: 1px solid var(--seyes-line, #DEDFE6);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .dash-resume .rt {
+    margin: 0 0 4px;
+    font-family: var(--seyes-serif);
+    font-size: clamp(19px, 2.2vw, 22px);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--seyes-ink, #1A1C25);
+  }
+
+  .dash-resume p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--seyes-muted, #666B78);
+  }
+
+  .dash-resume .bar {
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 2px;
+    background: var(--seyes-line, #DEDFE6);
+    overflow: hidden;
+  }
+
+  .dash-resume .bar i {
+    display: block;
+    height: 100%;
+    background: var(--seyes-accent, #1D2B66);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .dash-resume .btn.primary {
+    height: 42px;
+    padding: 0 18px;
+    border-radius: 12px;
+    background: var(--seyes-accent, #1D2B66);
+    color: var(--seyes-on-accent, #ffffff);
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(29, 43, 102, 0.2);
+    transition: filter 0.15s, transform 0.1s;
+  }
+
+  .dash-resume .btn.primary:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 560px) {
+    .dash-resume.resume {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .dash-resume .btn.primary {
+      width: 100%;
+    }
+  }
+
+  /* Section Title Row */
+  .dash-sec.sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 auto 10px;
+    max-width: 760px;
+    padding-inline: 4px;
+  }
+
+  .dash-sec.sec h2 {
+    margin: 0;
+    font-family: var(--seyes-serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--seyes-ink, #1A1C25);
+  }
+
+  .dash-sec.sec span {
+    font-size: 14px;
+    color: var(--seyes-muted, #666B78);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* The Curriculum Path (Vertical red margin line) */
+  .dash-path.path {
+    position: relative;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .dash-path.path::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    bottom: 24px;
+    inset-inline-start: 15px;
+    width: 1px;
+    background: var(--seyes-margin);
+    transform-origin: top;
+    pointer-events: none;
+    animation: ts-seyes-draw 1.3s cubic-bezier(.2, .7, .2, 1) both;
+  }
+
+  .dash-seyes-ch.ch {
+    position: relative;
+    padding-inline-start: 48px;
+    margin-bottom: 8px;
+    background: transparent;
+    border: none;
+  }
+
+  .dash-seyes-node.node {
+    position: absolute;
+    top: 13px;
+    inset-inline-start: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: conic-gradient(var(--seyes-accent, #1D2B66) calc(var(--p, 0) * 1%), var(--seyes-line, #DEDFE6) 0);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--seyes-ink, #1A1C25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    z-index: 2;
+  }
+
+  .dash-seyes-node.node::before {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--seyes-bg, #FBFBF8);
+  }
+
+  .dash-seyes-node.node > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .dash-seyes-ch.lock .dash-seyes-node.node {
+    background: var(--seyes-line, #DEDFE6);
+    color: var(--seyes-muted, #666B78);
+  }
+
+  .dash-seyes-head.head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 13px 18px;
+    background: var(--seyes-surface, #ffffff);
+    border: 1px solid var(--seyes-line, #DEDFE6);
+    border-radius: 14px;
+    text-align: start;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .dash-seyes-head.head:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .dash-seyes-ch.open .dash-seyes-head.head {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-color: transparent;
+  }
+
+  .dash-seyes-ttl.ttl {
+    font-family: var(--seyes-serif);
+    font-size: 16.5px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--seyes-ink, #1A1C25);
+    transition: color 0.15s;
+  }
+
+  .dash-seyes-head:hover .dash-seyes-ttl.ttl {
+    color: var(--seyes-accent, #1D2B66);
+  }
+
+  .dash-seyes-panel.panel {
+    background: var(--seyes-surface, #ffffff);
+    border: 1px solid var(--seyes-line, #DEDFE6);
+    border-top: none;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    padding: 6px 16px 14px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  }
+}

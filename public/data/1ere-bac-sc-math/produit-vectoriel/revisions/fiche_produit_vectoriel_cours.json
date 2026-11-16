@@ -1,0 +1,139 @@
+{
+  "header": {
+    "title": "Le Produit Vectoriel",
+    "subtitle": "Orientation, calcul analytique et applications géométriques",
+    "context": "1BAC SM"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Le produit vectoriel permet de \\objectif{construire un vecteur orthogonal a deux autres} et de coder a la fois une aire, une orientation et une direction normale. Il devient l'outil naturel pour ecrire un plan, tester un parallelisme ou calculer une aire dans l'espace. La \\defi{difficulte} reside dans la maitrise de ses proprietes algebriques et dans l'interpretation geometrique du sens donne par l'orientation de l'espace. \\savant{Josiah Willard Gibbs} a popularise ce calcul a la fin du XIXe siecle, en le rendant indispensable en mecanique, en electromagnetisme et en geometrie 3D.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Josiah_Willard_Gibbs_-from_MMS-.jpg",
+            "type": "image",
+            "position": "right",
+            "width": "16.5%",
+            "caption": "Josiah Willard Gibbs (1839–1903)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "orientation_et_definition",
+      "category": "course",
+      "title": "Orientation de l'espace et définition géométrique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avant de créer un nouveau vecteur, il faut définir comment l'espace est orienté pour pouvoir décider de son sens exact."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une base directe ?",
+          "content": "L'espace est muni d'un repère $(O; \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$.\\par On imagine un observateur placé sur l'axe $[Oz)$ qui regarde vers l'axe $[Ox)$.\\par\\begin{itemize}\\item Si l'axe $[Oy)$ se trouve à sa gauche, on dit que la base est \\textbf{directe}.\\item Si l'axe $[Oy)$ se trouve à sa droite, la base est \\textbf{indirecte}.\\end{itemize}"
+        },
+        {
+          "type": "intuition",
+          "content": "Pour repérer une base directe rapidement, utilisez la règle de la main droite : votre pouce est $\\overrightarrow{i}$, votre index est $\\overrightarrow{j}$ et votre majeur plié indique naturellement la direction de $\\overrightarrow{k}$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le produit vectoriel géométrique ?",
+          "content": "Soient $\\overrightarrow{u}$ et $\\overrightarrow{v}$ deux vecteurs de l'espace.\\par Le \\textbf{produit vectoriel} de $\\overrightarrow{u}$ et $\\overrightarrow{v}$ est un nouveau vecteur noté $\\overrightarrow{u} \\wedge \\overrightarrow{v}$.\\par\\smallskip Si $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont colinéaires, alors $\\overrightarrow{u} \\wedge \\overrightarrow{v} = \\overrightarrow{0}$.\\par S'ils ne sont pas colinéaires, le vecteur $\\overrightarrow{w} = \\overrightarrow{u} \\wedge \\overrightarrow{v}$ vérifie trois conditions :\\begin{itemize}\\item Il est orthogonal aux deux vecteurs : $\\overrightarrow{w} \\perp \\overrightarrow{u}$ et $\\overrightarrow{w} \\perp \\overrightarrow{v}$\\item La base $(\\overrightarrow{u}, \\overrightarrow{v}, \\overrightarrow{w})$ est directe\\item Sa norme dépend de l'angle géométrique $\\theta$ entre les vecteurs : $$\\boxed{\\|\\overrightarrow{u} \\wedge \\overrightarrow{v}\\| = \\|\\overrightarrow{u}\\| \\cdot \\|\\overrightarrow{v}\\| \\cdot \\sin \\theta}$$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{la norme} de $\\overrightarrow{u} \\wedge \\overrightarrow{v}$ sachant que $\\|\\overrightarrow{u}\\| = 3$, $\\|\\overrightarrow{v}\\| = 4$ et l'angle est $\\frac{\\pi}{6}$.}\\par On applique la formule trigonométrique de la définition :\\begin{align*}\\|\\overrightarrow{u} \\wedge \\overrightarrow{v}\\| &= \\|\\overrightarrow{u}\\| \\times \\|\\overrightarrow{v}\\| \\times \\blank{\\sin\\left(\\frac{\\pi}{6}\\right)} \\\\&= 3 \\times 4 \\times \\blank{\\frac{1}{2}} \\\\&= \\blank{12} \\times \\frac{1}{2} \\\\&= \\blank{6}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "proprietes_et_surfaces",
+      "category": "course",
+      "title": "Propriétés algébriques et calcul de surfaces",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le produit vectoriel a des règles de calcul spécifiques. L'une de ses plus belles applications géométriques est de relier directement la norme obtenue à l'aire d'une surface."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les règles de calcul vectoriel ?",
+          "content": "Le calcul avec le produit vectoriel est distributif, mais attention à l'ordre des vecteurs :\\begin{itemize}\\item \\textbf{Anti-symétrie} : $\\overrightarrow{v} \\wedge \\overrightarrow{u} = -(\\overrightarrow{u} \\wedge \\overrightarrow{v})$\\item \\textbf{Vecteur avec lui-même} : $\\overrightarrow{u} \\wedge \\overrightarrow{u} = \\overrightarrow{0}$\\item \\textbf{Bilinéarité} : $(\\overrightarrow{u} + \\overrightarrow{v}) \\wedge \\overrightarrow{w} = (\\overrightarrow{u} \\wedge \\overrightarrow{w}) + (\\overrightarrow{v} \\wedge \\overrightarrow{w})$\\item \\textbf{Multiplication par un réel} : $(\\lambda\\overrightarrow{u}) \\wedge \\overrightarrow{v} = \\lambda(\\overrightarrow{u} \\wedge \\overrightarrow{v}) = \\overrightarrow{u} \\wedge (\\lambda\\overrightarrow{v})$\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Contrairement au produit usuel, l'ordre compte beaucoup ! Écrire $\\overrightarrow{u} \\wedge \\overrightarrow{v} = \\overrightarrow{v} \\wedge \\overrightarrow{u}$ est une erreur grave qui fausse tout le résultat à cause du signe."
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer une surface avec les vecteurs ?",
+          "content": "La norme du produit vectoriel correspond exactement à des aires géométriques.\\par\\textbf{Pour un parallélogramme} construit sur trois points non alignés $A$, $B$ et $C$ :\\par On calcule la norme directe : $S = \\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$.\\par\\textbf{Pour le triangle} $ABC$ :\\par On calcule la norme et on divise par deux (puisqu'un triangle est la moitié d'un parallélogramme) : $S_{ABC} = \\frac{1}{2}\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifions \\textbf{si les points $A$, $B$} et $C$ sont alignés.}\\par On rappelle que trois points forment un triangle d'aire nulle s'ils sont alignés. Si les points sont sur la même droite, les deux vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ sont forcément $\\blank{colinéaires}$.\\par D'après les propriétés du produit vectoriel, le calcul donne alors $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = \\blank{\\overrightarrow{0}}$.\\par C'est la condition stricte pour affirmer que les trois points sont $\\blank{alignés}$."
+        }
+      ]
+    },
+    {
+      "id": "expression_analytique",
+      "category": "course",
+      "title": "Expression analytique avec coordonnées",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dessiner les angles n'est pas toujours pratique. En travaillant avec les coordonnées dans une base orthonormée directe, on peut calculer le produit vectoriel facilement de façon purement algébrique."
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer le produit vectoriel analytiquement ?",
+          "content": "Soient $\\overrightarrow{u}(x; y; z)$ et $\\overrightarrow{v}(x'; y'; z')$. On utilise des petits déterminants extraits de taille $2 \\times 2$.\\par\\begin{itemize}\\item Pour l'abscisse (sur $\\overrightarrow{i}$) : cacher la 1ère ligne et calculer $\\begin{vmatrix} y & y' \\\\ z & z' \\end{vmatrix}$\\item Pour l'ordonnée (sur $\\overrightarrow{j}$) : cacher la 2ème ligne, calculer $\\begin{vmatrix} x & x' \\\\ z & z' \\end{vmatrix}$ et \\textbf{ajouter un signe moins} devant.\\item Pour la cote (sur $\\overrightarrow{k}$) : cacher la 3ème ligne et calculer $\\begin{vmatrix} x & x' \\\\ y & y' \\end{vmatrix}$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons les coordonnées de $\\overrightarrow{u} \\wedge \\overrightarrow{v}$ sachant que $\\overrightarrow{u}(1; 1; 1)$ et $\\overrightarrow{v}(2; 1; 2)$.}\\par On applique la technique des déterminants par ligne :\\begin{align*}\\overrightarrow{u} \\wedge \\overrightarrow{v} &= \\left( (1 \\times 2) - (1 \\times 1) \\right)\\overrightarrow{i} - \\left( (1 \\times 2) - (1 \\times 2) \\right)\\overrightarrow{j} + \\left( (1 \\times 1) - (1 \\times 2) \\right)\\overrightarrow{k} \\\\&= \\blank{1}\\overrightarrow{i} - \\blank{0}\\overrightarrow{j} + (\\blank{-1})\\overrightarrow{k} \\\\&= \\blank{\\overrightarrow{i} - \\overrightarrow{k}}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "applications_droites_plans",
+      "category": "course",
+      "title": "Applications : Intersections et distances",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le produit vectoriel révèle tout son potentiel dans la résolution de problèmes géométriques dans l'espace, que ce soit pour trouver l'intersection de deux plans ou calculer la distance jusqu'à une droite."
+        },
+        {
+          "type": "method",
+          "title": "Comment trouver la droite d'intersection de deux plans ?",
+          "content": "Objectif : Trouver le vecteur directeur de la droite d'intersection entre deux plans sécants $(P)$ et $(Q)$.\\par\\begin{itemize}\\item Déterminer le vecteur normal $\\overrightarrow{n}$ du plan $(P)$ et le vecteur normal $\\overrightarrow{m}$ du plan $(Q)$.\\item S'assurer qu'ils ne sont pas colinéaires pour confirmer que les plans se coupent bien.\\item Calculer analytiquement le produit vectoriel $\\overrightarrow{n} \\wedge \\overrightarrow{m}$.\\end{itemize}\\par\\textbf{Résultat} : Le vecteur obtenu est exactement le vecteur directeur de la droite d'intersection $\\Delta$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons la direction de l'\\textbf{intersection} des plans $(P)$ et $(Q)$.}\\par Le plan $(P)$ possède le vecteur normal $\\overrightarrow{n}(1; 0; 0)$ et $(Q)$ a pour vecteur normal $\\overrightarrow{m}(0; 1; 0)$. Puisqu'ils ne sont pas colinéaires, on sait que les plans se $\\blank{coupent}$ selon une droite.\\par On cherche le vecteur directeur en calculant $\\overrightarrow{n} \\wedge \\overrightarrow{m}$. Ces vecteurs correspondent à $\\overrightarrow{i}$ et $\\overrightarrow{j}$ dans la base. Le produit de base $\\overrightarrow{i} \\wedge \\overrightarrow{j}$ donne directement $\\blank{\\overrightarrow{k}}$.\\par La droite d'intersection est donc dirigée par $\\blank{\\overrightarrow{k}}$."
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer la distance d'un point à une droite ?",
+          "content": "Soit une droite $(D)$ de l'espace passant par un point $A$ et dirigée par le vecteur $\\overrightarrow{u}$.\\par Pour tout point $M$ de l'espace, la distance entre $M$ et la droite $(D)$ est donnée par : $$\\boxed{d(M; (D)) = \\frac{\\|\\overrightarrow{u} \\wedge \\overrightarrow{AM}\\|}{\\|\\overrightarrow{u}\\|}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons la distance du point $M$ à la droite $D(A; \\overrightarrow{u})$.}\\par On connait la norme du vecteur directeur $\\|\\overrightarrow{u}\\| = 2$. On a déjà calculé le produit vectoriel $\\overrightarrow{u} \\wedge \\overrightarrow{AM}$ dont les coordonnées trouvées sont $(0; 3; 4)$.\\par On calcule d'abord la norme au numérateur : $\\sqrt{0^2 + 3^2 + 4^2} = \\sqrt{\\blank{25}} = \\blank{5}$.\\par On remplace ensuite dans la formule globale : on divise le numérateur par la norme de $\\overrightarrow{u}$ qui vaut $\\blank{2}$.\\par La distance finale est donc égale à $\\blank{\\frac{5}{2}}$."
+        }
+      ]
+    }
+  ]
+}

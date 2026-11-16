@@ -1,0 +1,24 @@
+{
+  "header": {
+    "title": "Mise à niveau",
+    "subtitle": "Rappels indispensables",
+    "context": "Mathématiques"
+  },
+  "sections": [
+    {
+      "id": "section-rappels",
+      "category": "course",
+      "title": "Rappels essentiels",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Cette fiche regroupe les rappels indispensables pour bien démarrer l'année."
+        },
+        {
+          "type": "text",
+          "content": "Contenu à compléter par votre professeur."
+        }
+      ]
+    }
+  ]
+}

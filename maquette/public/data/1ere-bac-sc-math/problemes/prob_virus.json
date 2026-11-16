@@ -1,0 +1,55 @@
+{
+  "header": {
+    "title": "L'évolution d'un virus",
+    "subtitle": "Suites et croissance exponentielle",
+    "context": "Suites numériques"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "L'évolution d'un virus",
+          "content": "Lors d'une épidémie, on modélise la propagation d'un virus. On note $I_n$ le nombre de personnes infectées au jour $n$. On suppose que chaque personne infectée contamine en moyenne $1{,}4$ nouvelles personnes par jour, et que $60$ personnes guérissent chaque jour.\\par La relation de récurrence est : $I_{n+1} = 1{,}4 \\times I_n - 60$.\\par Au jour $0$, on compte $I_0 = 500$ personnes infectées."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Calculer $I_1$, $I_2$ et $I_3$.\\item Trouver le point fixe $L$ de la relation de récurrence ($I_{n+1} = I_n = L$).\\item En posant $w_n = I_n - L$, montrer que $(w_n)$ est géométrique. Exprimer $I_n$ en fonction de $n$.\\item À partir de quel jour le nombre d'infectés dépasse-t-il $2000$ personnes ?\\item Proposez une modification du modèle pour obtenir une décroissance de l'épidémie.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Point fixe : $L = 1{,}4L - 60 \\Rightarrow -0{,}4L = -60 \\Rightarrow L = 150$."
+        },
+        {
+          "type": "hint",
+          "content": "$w_n = I_n - 150$ est géométrique de raison $1{,}4$ et $w_0 = 350$."
+        },
+        {
+          "type": "hint",
+          "content": "Résolvez $150 + 350 \\times 1{,}4^n > 2000$ en appliquant $\\ln$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $I_1 = 700 - 60 = 640$, $I_2 = 896 - 60 = 836$, $I_3 = 1170 - 60 = 1110$.\\par\\textbf{2)} $L = 150$.\\par\\textbf{3)} $w_n = 350 \\times 1{,}4^n$, donc $I_n = 150 + 350 \\times 1{,}4^n$.\\par\\textbf{4)} $150 + 350 \\times 1{,}4^n > 2000 \\Leftrightarrow 1{,}4^n > \\dfrac{1850}{350} \\approx 5{,}29 \\Leftrightarrow n > \\dfrac{\\ln 5{,}29}{\\ln 1{,}4} \\approx \\dfrac{1{,}665}{0{,}336} \\approx 4{,}96$.\\par À partir du \\boxed{jour 5}.\\par\\textbf{5)} Pour obtenir une décroissance, il faut que le taux de transmission soit inférieur à $1$, par exemple en vaccinant suffisamment de personnes pour ramener le facteur en dessous de $1$."
+        }
+      ]
+    }
+  ]
+}

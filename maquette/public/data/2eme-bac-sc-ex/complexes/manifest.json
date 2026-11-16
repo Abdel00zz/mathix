@@ -1,0 +1,74 @@
+{
+  "id": "complexes",
+  "title": "Les nombres complexes",
+  "section": "algebre-geometrie",
+  "quizCount": 27,
+  "revisions": [
+    {
+      "id": "rev-cpx-1",
+      "title": "Fiche Compléte : Complexes",
+      "path": "data/2eme-bac-sc-ex/complexes/revisions/fiche_complexes_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex_01",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_01.json"
+    },
+    {
+      "id": "ex_02",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_02.json"
+    },
+    {
+      "id": "ex_03",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_03.json"
+    },
+    {
+      "id": "ex_04",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_04.json"
+    },
+    {
+      "id": "ex_05",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_05.json"
+    },
+    {
+      "id": "ex_06",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_06.json"
+    },
+    {
+      "id": "ex_07",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_07.json"
+    },
+    {
+      "id": "ex_08",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_08.json"
+    },
+    {
+      "id": "ex_09",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_09.json"
+    },
+    {
+      "id": "ex_10",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_10.json"
+    },
+    {
+      "id": "ex_11",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_11.json"
+    },
+    {
+      "id": "ex_12",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_12.json"
+    },
+    {
+      "id": "ex-complexes-homothetie-alignement",
+      "path": "data/2eme-bac-sc-ex/complexes/exercises/ex_13.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-complexes-01",
+      "path": "data/2eme-bac-sc-ex/complexes/quiz/complexes_quiz.json",
+      "questionsCount": 27
+    }
+  ]
+}

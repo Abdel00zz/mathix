@@ -1,0 +1,20 @@
+{
+  "id": "ex-ensembles-tc-02",
+  "theme": "ensembles-nombres",
+  "difficulty": "moyen",
+  "topic": "Les ensembles de nombres",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Nombres rationnels",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer que le nombre $x = 1,232323...$ est un nombre rationnel en l'écrivant sous la forme d'une fraction irréductible.",
+          "hint": "\\method Posez $x = 1,2323...$. Multipliez par 100 pour obtenir $100x = 123,2323...$. Soustrayez $x$ à $100x$ pour éliminer la partie décimale."
+        }
+      ]
+    }
+  ]
+}

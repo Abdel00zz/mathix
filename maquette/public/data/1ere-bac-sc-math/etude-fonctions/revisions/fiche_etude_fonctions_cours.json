@@ -1,0 +1,244 @@
+{
+  "header": {
+    "title": "Étude de Fonctions",
+    "subtitle": "Branches infinies, concavité et symétrie",
+    "context": "1BAC Sciences Mathématiques"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "L'etude de fonctions vise a \\objectif{dresser le portrait complet d'une courbe} en reliant domaine, limites, variations, tangentes et asymptotes. Ce chapitre synthetise plusieurs outils deja appris pour passer d'une expression algebrique a une lecture graphique claire. La \\defi{difficulte} est dans l'enchainement methodique des etapes : il faut garder le bon ordre, interpreter chaque resultat et ne pas perdre le sens geometrique. \\savant{Rene Descartes} a rendu possible cette lecture des courbes grace a la geometrie analytique, qui relie equations et figures dans un meme langage.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg",
+            "type": "image",
+            "position": "right",
+            "width": "16.5%",
+            "caption": "René Descartes (1596–1650)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "branches_infinies_av_ah",
+      "category": "course",
+      "title": "Asymptotes verticales et horizontales",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Soit $f$ une fonction numérique, $D_f$ son ensemble de définition et $(\\mathcal{C}_f)$ sa courbe dans un repère $(O;\\overrightarrow{i};\\overrightarrow{j})$. On dit que $(\\mathcal{C}_f)$ admet une \\textbf{branche infinie} quand une coordonnée tend vers $\\pm\\infty$. Les asymptotes verticales et horizontales sont les deux premiers types."
+        },
+        {
+          "type": "definition",
+          "title": "Quand \\mathqst{$(\\mathcal{C}_f)$ admet-elle une asymptote verticale ou horizontale}",
+          "content": "$$\\begin{array}{|c|c|c|}\\hline \\textbf{Type} & \\textbf{Condition} & \\textbf{Équation} \\\\\\hline \\text{Asymptote verticale} & \\displaystyle\\lim_{x \\to a^{\\pm}} f(x) = \\pm\\infty & x = a \\\\\\hline \\text{Asymptote horizontale en } +\\infty & \\displaystyle\\lim_{x \\to +\\infty} f(x) = b \\in \\mathbb{R} & y = b \\\\\\hline \\text{Asymptote horizontale en } -\\infty & \\displaystyle\\lim_{x \\to -\\infty} f(x) = b \\in \\mathbb{R} & y = b \\\\\\hline\\end{array}$$\\par\\smallskip\\begin{itemize}\\item L'asymptote verticale $x = a$ correspond à une valeur \\textbf{exclue} de $D_f$ : la courbe monte ou descend sans limite.\\item L'asymptote horizontale $y = b$ signifie que la courbe se rapproche indéfiniment de la droite quand $x \\to \\pm\\infty$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons les asymptotes de $f(x) = \\displaystyle\\frac{2x}{x-1}$ définie sur $\\mathbb{R}\\setminus\\{1\\}$.}\\par D'abord, cherchons l'asymptote horizontale en factorisant par $x$ :\\begin{align*}f(x) &= \\frac{2x}{x-1} \\\\&= \\frac{2}{1 - \\frac{1}{x}}\\end{align*}\\par Comme $\\displaystyle\\lim_{x \\to +\\infty} \\frac{1}{x} = 0$, on obtient $\\displaystyle\\lim_{x \\to +\\infty} f(x) = \\blank{2}$.\\par La droite $y = 2$ est donc asymptote horizontale en $+\\infty$ (et en $-\\infty$).\\par\\smallskip À présent, cherchons l'asymptote verticale au voisinage de $x = 1$ :\\begin{align*}\\lim_{x \\to 1^+} f(x) &= \\frac{2}{0^+} = \\blank{+\\infty} \\\\[6pt]\\lim_{x \\to 1^-} f(x) &= \\frac{2}{0^-} = \\blank{-\\infty}\\end{align*}\\par La droite $x = 1$ est donc asymptote verticale."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons les asymptotes de $g(x) = \\displaystyle\\frac{-2}{x-1}$ définie sur $\\mathbb{R}\\setminus\\{1\\}$.}\\par\\textbf{Asymptote verticale :}\\begin{align*}\\lim_{x \\to 1^+} g(x) &= \\frac{-2}{0^+} = \\blank{-\\infty} \\\\[6pt]\\lim_{x \\to 1^-} g(x) &= \\frac{-2}{0^-} = \\blank{+\\infty}\\end{align*}\\par La droite $x = 1$ est asymptote verticale.\\par\\smallskip\\textbf{Asymptote horizontale :} $\\displaystyle\\lim_{x \\to \\pm\\infty} g(x) = \\blank{0}$.\\par La droite $y = 0$ est asymptote horizontale en $+\\infty$ et en $-\\infty$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{détecter chaque type d'asymptote}",
+          "content": "$$\\begin{array}{|l|l|}\\hline \\textbf{Asymptote verticale} & \\text{Chercher les valeurs } a \\text{ exclues de } D_f \\\\& \\text{puis calculer } \\displaystyle\\lim_{x \\to a^{\\pm}} f(x) \\\\\\hline \\textbf{Asymptote horizontale} & \\text{Calculer } \\displaystyle\\lim_{x \\to \\pm\\infty} f(x) \\\\& \\text{Si le résultat est fini } = b \\text{, alors } y = b \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "remark",
+          "content": "Les branches infinies sont de deux natures : les \\textbf{droites asymptotes} (verticale, horizontale, oblique) et les \\textbf{branches paraboliques}. On les détermine à partir des limites de $f$ aux bornes de $D_f$."
+        }
+      ]
+    },
+    {
+      "id": "asymptote_oblique",
+      "category": "course",
+      "title": "Asymptote oblique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'asymptote horizontale n'existe que si $f(x)$ tend vers un réel fini. Quand $f(x) \\to \\pm\\infty$, la courbe peut néanmoins se rapprocher d'une droite non horizontale $y = ax+b$ : c'est l'asymptote oblique. Ce cas apparaît typiquement pour les fractions rationnelles dont le degré du numérateur dépasse d'une unité celui du dénominateur."
+        },
+        {
+          "type": "definition",
+          "title": "Quand \\mathqst{$y = ax + b$ est-elle asymptote oblique}",
+          "content": "Si $\\displaystyle\\lim_{x \\to +\\infty}\\bigl(f(x) - (ax+b)\\bigr) = \\blank{0}$, la droite $y = ax+b$ est \\textbf{asymptote oblique} à $(\\mathcal{C}_f)$ en $+\\infty$.\\par\\smallskip La distance verticale entre la courbe et la droite tend vers zéro."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{déterminer les coefficients $a$ et $b$}",
+          "content": "On procède en deux étapes :\\par\\smallskip$$\\boxed{a = \\lim_{x \\to +\\infty} \\frac{f(x)}{\\blank{x}}} \\qquad (a \\in \\mathbb{R},\\; a \\neq 0)$$\\par$$\\boxed{b = \\lim_{x \\to +\\infty}\\bigl(f(x) - \\blank{ax}\\bigr)} \\qquad (b \\in \\mathbb{R})$$\\par\\smallskip\\begin{itemize}\\item Si $a = 0$ : pas d'asymptote oblique (peut-être horizontale ou branche parabolique).\\item Si $b = \\pm\\infty$ : pas d'asymptote oblique (branche parabolique de direction $y = ax$).\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{trouver l'asymptote oblique par division euclidienne}",
+          "content": "Pour une fraction rationnelle $f(x) = \\displaystyle\\frac{P(x)}{Q(x)}$ avec $\\deg P = \\deg Q + 1$ :\\par\\smallskip\\begin{enumerate}\\item Effectuer la division euclidienne : $P(x) = Q(x) \\cdot (ax+b) + R(x)$.\\item On obtient $f(x) = ax + b + \\displaystyle\\frac{R(x)}{Q(x)}$.\\item Comme $\\deg R < \\deg Q$, on a $\\displaystyle\\lim_{x \\to \\pm\\infty} \\frac{R(x)}{Q(x)} = 0$.\\item La droite $y = \\blank{ax + b}$ est l'asymptote oblique.\\end{enumerate}\\par Le reste $\\displaystyle\\frac{R(x)}{Q(x)}$ donne la \\textbf{position relative} de la courbe par rapport à l'asymptote."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons \\textbf{l'asymptote oblique} de $f(x) = \\displaystyle\\frac{2x^2+3x-1}{x+2}$ définie sur $\\mathbb{R}\\setminus\\{-2\\}$.}\\par Effectuons la division euclidienne de $2x^2+3x-1$ par $x+2$ :\\begin{align*}2x^2+3x-1 &= (x+2)(\\blank{2x-1}) + 1\\end{align*}\\par On en déduit :\\begin{align*}f(x) &= 2x-1 + \\frac{1}{x+2}\\end{align*}\\par Or $\\displaystyle\\lim_{x \\to \\pm\\infty}\\frac{1}{x+2} = 0$, donc la droite $y = 2x-1$ est asymptote oblique.\\par\\smallskip\\textbf{Position relative.} Le signe de $f(x)-(2x-1) = \\displaystyle\\frac{1}{x+2}$ :\\par$$\\begin{array}{|c|lcccr|}\\hline x & -\\infty & & -2 & & +\\infty \\\\\\hline f(x)-(2x-1) & & - & || & + & \\\\\\hline \\text{Position} & & (\\mathcal{C}_f) \\text{ sous } \\Delta & || & (\\mathcal{C}_f) \\text{ au-dessus } \\Delta & \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons \\textbf{l'asymptote oblique} de $g(x) = \\displaystyle\\frac{x^2 - 3x + 5}{x - 1}$ définie sur $\\mathbb{R}\\setminus\\{1\\}$.}\\par Division euclidienne :\\begin{align*}x^2 - 3x + 5 &= (x - 1)(x - 2) + 3\\end{align*}\\par On obtient : $g(x) = x - 2 + \\displaystyle\\frac{3}{x - 1}$.\\par Comme $\\displaystyle\\lim_{x \\to \\pm\\infty} \\frac{3}{x-1} = 0$, la droite $y = x - 2$ est asymptote oblique.\\par\\smallskip\\textbf{Position relative :} $g(x) - (x-2) = \\displaystyle\\frac{3}{x-1}$.\\begin{itemize}\\item Si $x > 1$ : $\\displaystyle\\frac{3}{x-1} > 0$, donc $(\\mathcal{C}_g)$ est \\textbf{au-dessus} de l'asymptote.\\item Si $x < 1$ : $\\displaystyle\\frac{3}{x-1} < 0$, donc $(\\mathcal{C}_g)$ est \\textbf{en-dessous} de l'asymptote.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "branches_paraboliques",
+      "category": "course",
+      "title": "Branches paraboliques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Quand $f(x) \\to \\pm\\infty$ et qu'il n'y a ni asymptote horizontale ni oblique, la courbe s'écarte de toute droite : c'est une branche parabolique. Sa direction se détermine en calculant $\\displaystyle\\lim \\frac{f(x)}{x}$."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{identifier la direction d'une branche parabolique}",
+          "content": "On suppose $\\displaystyle\\lim_{x \\to +\\infty} f(x) = \\pm\\infty$. On calcule $a = \\displaystyle\\lim_{x \\to +\\infty} \\frac{f(x)}{x}$ :\\par\\smallskip$$\\begin{array}{|c|c|}\\hline \\textbf{Valeur de } a & \\textbf{Résultat} \\\\\\hline a = \\pm\\infty & \\text{Branche parabolique de direction } (Oy) \\\\\\hline a = 0 & \\text{Branche parabolique de direction } (Ox) \\\\\\hline a \\in \\mathbb{R}^* \\text{ et } \\lim(f(x)-ax) = \\pm\\infty & \\text{Branche parabolique de direction } y = ax \\\\\\hline a \\in \\mathbb{R}^* \\text{ et } \\lim(f(x)-ax) = b \\in \\mathbb{R} & \\text{Asymptote oblique } y = ax + b \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quel est \\mathqst{l'arbre de décision pour les branches infinies}",
+          "content": "On suppose $\\displaystyle\\lim f(x) = \\pm\\infty$ et on procède par étapes :\\par\\smallskip$$\\begin{array}{l}\\displaystyle\\lim \\frac{f(x)}{x} = a \\\\[10pt]\\begin{cases}a = \\pm\\infty & \\longrightarrow \\text{ branche parabolique direction } (Oy) \\\\[6pt]a = 0 & \\longrightarrow \\text{ branche parabolique direction } (Ox) \\\\[6pt]a \\in \\mathbb{R}^* & \\longrightarrow \\text{ on calcule } \\displaystyle\\lim(f(x)-ax) = b \\\\& \\quad\\begin{cases}b \\in \\mathbb{R} & \\longrightarrow \\text{ asymptote oblique } y = ax+b \\\\b = \\pm\\infty & \\longrightarrow \\text{ branche parabolique dir. } y = ax\\end{cases}\\end{cases}\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons \\textbf{la nature} de la branche infinie de $f(x) = 2x^3 - x$ en $+\\infty$.}\\par D'abord, $\\displaystyle\\lim_{x \\to +\\infty} f(x) = +\\infty$.\\par Calculons :\\begin{align*}\\frac{f(x)}{x} &= \\frac{2x^3 - x}{x} \\\\&= 2x^2 - 1\\end{align*}\\par Comme $\\displaystyle\\lim_{x \\to +\\infty} (2x^2 - 1) = \\blank{+\\infty}$, la courbe admet une branche parabolique de direction $(Oy)$ en $+\\infty$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons \\textbf{la nature} de la branche infinie de $f(x) = \\sqrt{3x+2}$ en $+\\infty$.}\\par D'abord, $\\displaystyle\\lim_{x \\to +\\infty} f(x) = +\\infty$. Calculons :\\begin{align*}\\frac{f(x)}{x} &= \\frac{\\sqrt{3x+2}}{x} \\\\&= \\sqrt{\\frac{3x+2}{x^2}} \\\\&= \\sqrt{\\frac{3}{x}+\\frac{2}{x^2}}\\end{align*}\\par Comme $\\displaystyle\\lim_{x \\to +\\infty} \\left(\\frac{3}{x}+\\frac{2}{x^2}\\right) = 0$, on obtient $a = \\blank{0}$.\\par La courbe admet une branche parabolique de direction $(Ox)$ en $+\\infty$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons \\textbf{la nature} de la branche infinie de $f(x) = x + \\sqrt{x}$ en $+\\infty$.}\\par D'abord, $\\displaystyle\\lim_{x \\to +\\infty} f(x) = +\\infty$. Calculons :\\begin{align*}\\frac{f(x)}{x} &= 1 + \\frac{1}{\\sqrt{x}}\\end{align*}\\par On obtient $a = \\blank{1}$. Passons à la deuxième étape :\\begin{align*}f(x) - ax &= f(x) - x \\\\&= \\sqrt{x}\\end{align*}\\par Comme $\\displaystyle\\lim_{x \\to +\\infty} \\sqrt{x} = +\\infty$, la limite $b$ est infinie.\\par Il n'y a pas d'asymptote oblique, mais une branche parabolique de direction $y = \\blank{x}$."
+        },
+        {
+          "type": "remark",
+          "content": "Il faut d'abord vérifier que $\\displaystyle\\lim f(x) = \\pm\\infty$ avant d'entamer la procédure. Si $f(x)$ tend vers un réel fini, c'est une asymptote \\textbf{horizontale} et non une branche parabolique."
+        }
+      ]
+    },
+    {
+      "id": "concavite",
+      "category": "course",
+      "title": "Concavité d'une courbe",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les asymptotes décrivent le comportement à l'infini. La concavité décrit la \\textbf{forme locale} de la courbe : tourne-t-elle vers le haut ou vers le bas ? Le signe de $f''$ répond à cette question."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{la convexité, la concavité et un point d'inflexion}",
+          "content": "Soit $f$ deux fois dérivable sur un intervalle $I$.\\par\\smallskip$$\\begin{array}{|c|c|c|}\\hline \\textbf{Notion} & \\textbf{Signe de } f'' & \\textbf{Position par rapport aux tangentes} \\\\\\hline \\text{Convexe} & f''(x) \\geq 0 & (\\mathcal{C}_f) \\text{ au-dessus de ses } \\text{tangentes} \\\\\\hline \\text{Concave} & f''(x) \\leq 0 & (\\mathcal{C}_f) \\text{ en-dessous de ses } \\text{tangentes} \\\\\\hline \\text{Point d'inflexion} & f''(a) = 0 \\text{ avec changement} & \\text{La tangente } \\text{traverse} \\text{ la courbe} \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quel est \\mathqst{le lien entre $f''$ et la concavité}",
+          "content": "Pour $f$ deux fois dérivable sur $I$ :\\par\\smallskip\\begin{itemize}\\item $f''(x) \\geq 0$ sur $I$ : $(\\mathcal{C}_f)$ est \\blank{convexe} sur $I$ (\\textit{creux vers le haut}).\\item $f''(x) \\leq 0$ sur $I$ : $(\\mathcal{C}_f)$ est \\blank{concave} sur $I$ (\\textit{creux vers le bas}).\\item Si $f''(a) = 0$ et $f''$ \\textbf{change de signe} en $a$ : le point $A(a\\,;\\, f(a))$ est un \\textbf{point d'inflexion}.\\end{itemize}\\par\\smallskip Au point d'inflexion, la tangente traverse la courbe. De plus, $f'(a)$ est un \\textbf{extremum} de $f'$ (et non de $f$)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Étudions \\textbf{la concavité} de $f(x) = x^3 - 3x^2 + x + 4$ et déterminons ses points d'inflexion.}\\par D'abord, calculons les dérivées :\\begin{align*}f'(x) &= 3x^2 - 6x + 1 \\\\f''(x) &= 6x - 6 \\\\&= 6(x - \\blank{1})\\end{align*}\\par Étudions le signe de $f''(x)$ :\\par$$\\begin{array}{|c|lcccr|}\\hline x & -\\infty & & 1 & & +\\infty \\\\\\hline f''(x) & & - & 0 & + & \\\\\\hline \\text{Concavité} & & \\text{Concave} & \\text{Inflexion} & \\text{Convexe} & \\\\\\hline\\end{array}$$\\par $f''$ s'annule en $x = 1$ et change de signe.\\par Calculons : $f(1) = 1 - 3 + 1 + 4 = \\blank{3}$.\\par Le point $A(1\\,;\\, 3)$ est un point d'inflexion de $(\\mathcal{C}_f)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Étudions \\textbf{la concavité} de $f(x) = x^4 - 2x^3$.}\\par Calculons la dérivée seconde :\\begin{align*}f'(x) &= 4x^3 - 6x^2 \\\\f''(x) &= 12x^2 - 12x \\\\&= 12x(x - 1)\\end{align*}\\par $f''(x) = 0$ pour $x = 0$ ou $x = 1$.\\par$$\\begin{array}{|c|ccccccc|}\\hline x & -\\infty & & 0 & & 1 & & +\\infty \\\\\\hline f''(x) & & + & 0 & - & 0 & + & \\\\\\hline \\text{Concavité} & & \\text{Convexe} & \\text{Inflexion} & \\text{Concave} & \\text{Inflexion} & \\text{Convexe} & \\\\\\hline\\end{array}$$\\par Ordonnées : $f(0) = 0$ et $f(1) = 1 - 2 = \\blank{-1}$.\\par Les points d'inflexion sont $A(0\\,;\\, 0)$ et $B(1\\,;\\, -1)$."
+        },
+        {
+          "type": "warning",
+          "content": "$f''(a) = 0$ \\textbf{ne suffit pas} pour conclure ! Il faut vérifier que $f''$ \\textbf{change de signe} en $a$.\\par\\smallskip\\textbf{Contre-exemple :} $f(x) = x^4$. On a $f''(x) = 12x^2 \\geq 0$ partout. Bien que $f''(0) = 0$, la dérivée seconde ne change pas de signe : pas de point d'inflexion, et la courbe est convexe sur $\\mathbb{R}$."
+        }
+      ]
+    },
+    {
+      "id": "symetrie",
+      "category": "course",
+      "title": "Éléments de symétrie d'une courbe",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après les branches infinies et la concavité, on cherche une éventuelle symétrie. Si elle existe, on réduit l'étude de moitié : on étudie $f$ sur une partie de $D_f$, puis on complète $(\\mathcal{C}_f)$ par symétrie."
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{$\\Omega(a\\,;\\,b)$ est-il centre de symétrie de $(\\mathcal{C}_f)$}",
+          "content": "Le point $\\Omega(a\\,;\\,b)$ est centre de symétrie de $(\\mathcal{C}_f)$ si, pour tout $x$ tel que $a+x \\in D_f$ :\\par\\smallskip$$\\boxed{\\begin{cases}a - x \\in D_f \\\\f(a+x) + f(a-x) = \\blank{2b}\\end{cases}}$$\\par\\smallskip\\textbf{Cas particulier :} si $f$ est \\textbf{impaire} ($f(-x) = -f(x)$), alors $O(0\\,;\\,0)$ est centre de symétrie."
+        },
+        {
+          "type": "property",
+          "title": "Quand la droite $x = a$ est-elle axe de symétrie de $(\\mathcal{C}_f)$ ?",
+          "content": "La droite $x = a$ est axe de symétrie de $(\\mathcal{C}_f)$ si, pour tout $x$ tel que $a+x \\in D_f$ :\\par\\smallskip$$\\boxed{\\begin{cases}a - x \\in D_f \\\\f(a+x) = \\blank{f(a-x)}\\end{cases}}$$\\par\\smallskip\\textbf{Cas particulier :} si $f$ est \\textbf{paire} ($f(-x) = f(x)$), alors $(Oy)$ est axe de symétrie."
+        },
+        {
+          "type": "property",
+          "title": "Quels sont les cas particuliers classiques ?",
+          "content": "$$\\begin{array}{|l|l|}\\hline \\textbf{Type de fonction} & \\textbf{Symétrie} \\\\\\hline f \\text{ paire : } f(-x) = f(x) & \\text{Axe } (Oy) \\\\\\hline f \\text{ impaire : } f(-x) = -f(x) & \\text{Centre } O(0\\,;\\,0) \\\\\\hline \\text{Homographique } \\displaystyle\\frac{ax+b}{cx+d} & \\text{Centre } \\Omega\\!\\left(\\frac{-d}{c}\\,;\\,\\frac{a}{c}\\right) \\\\\\hline \\text{Trinôme } ax^2+bx+c & \\text{Axe } x = \\frac{-b}{2a} \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $\\Omega(-1\\,;\\, 1)$ est centre de symétrie de la courbe de $f(x) = \\displaystyle\\frac{x}{x+1}$.}\\par On pose $a = -1$, $b = 1$. Vérifions $f(-1+x) + f(-1-x) = 2$.\\par D'abord, calculons $f(-1+x)$ :\\begin{align*}f(-1+x) &= \\frac{-1+x}{(-1+x)+1} \\\\&= \\frac{x-1}{x}\\end{align*}\\par Ensuite, calculons $f(-1-x)$ :\\begin{align*}f(-1-x) &= \\frac{-1-x}{(-1-x)+1} \\\\&= \\frac{-(x+1)}{-x} \\\\&= \\frac{x+1}{x}\\end{align*}\\par La somme vaut :\\begin{align*}f(-1+x) + f(-1-x) &= \\frac{x-1}{x} + \\frac{x+1}{x} \\\\&= \\frac{2x}{x} \\\\&= \\blank{2}\\end{align*}\\par On trouve $2b = 2$. Donc $\\Omega(-1\\,;\\, 1)$ est centre de symétrie."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifions que $x = \\frac{1}{3}$ est axe de symétrie de $(\\mathcal{C}_f)$ pour $f(x) = 3x^2-2x+5$.}\\par Posons $a = \\frac{1}{3}$. Vérifions $f(a+x) = f(a-x)$.\\par Calculons $f\\!\\left(\\frac{1}{3}+x\\right)$ :\\begin{align*}f\\!\\left(\\frac{1}{3}+x\\right) &= 3\\left(\\frac{1}{3}+x\\right)^2 - 2\\left(\\frac{1}{3}+x\\right)+5 \\\\&= 3\\left(\\frac{1}{9}+\\frac{2x}{3}+x^2\\right) - \\frac{2}{3}-2x+5 \\\\&= \\frac{1}{3}+2x+3x^2-\\frac{2}{3}-2x+5 \\\\&= 3x^2+\\frac{14}{3}\\end{align*}\\par Calculons $f\\!\\left(\\frac{1}{3}-x\\right)$ :\\begin{align*}f\\!\\left(\\frac{1}{3}-x\\right) &= 3\\left(\\frac{1}{3}-x\\right)^2 - 2\\left(\\frac{1}{3}-x\\right)+5 \\\\&= \\frac{1}{3}-2x+3x^2-\\frac{2}{3}+2x+5 \\\\&= \\blank{3x^2+\\frac{14}{3}}\\end{align*}\\par Les expressions sont égales : $x = \\frac{1}{3}$ est bien axe de symétrie."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $f(x) = x^3 + x$ est impaire et interprétons.}\\begin{align*}f(-x) &= (-x)^3 + (-x) \\\\&= -x^3 - x \\\\&= -(x^3 + x) \\\\&= \\blank{-f(x)}\\end{align*}\\par $f(-x) = -f(x)$ pour tout $x \\in \\mathbb{R}$ : $f$ est impaire.\\par Géométriquement, $O(0\\,;\\,0)$ est centre de symétrie de $(\\mathcal{C}_f)$."
+        }
+      ]
+    },
+    {
+      "id": "construction_courbe",
+      "category": "course",
+      "title": "Construction d'une courbe",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La construction de $(\\mathcal{C}_f)$ est l'aboutissement de toute l'étude. On rassemble les informations recueillies — asymptotes, concavité, symétrie, points remarquables — pour tracer la courbe complète."
+        },
+        {
+          "type": "method",
+          "title": "Quel est l'ordre d'étude recommandé pour une fonction ?",
+          "content": "$$\\begin{array}{|c|l|}\\hline \\textbf{Étape} & \\textbf{Action} \\\\\\hline 1 & \\text{Déterminer le domaine de définition } D_f \\\\\\hline 2 & \\text{Chercher une symétrie : parité, centre ou axe} \\\\\\hline 3 & \\text{Limites aux bornes} \\to \\text{branches infinies (AV, AH, AO, BP)} \\\\\\hline 4 & \\text{Calculer } f' \\to \\text{tableau de } \\text{variations} \\\\\\hline 5 & \\text{Signe de } f'' \\to \\text{concavité et points d'} \\text{inflexion} \\\\\\hline 6 & \\text{Placer les points remarquables et tracer} \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quels éléments placer sur le graphique ?",
+          "content": "\\begin{itemize}\\item Le repère et l'élément de symétrie s'il existe.\\item Les \\textbf{asymptotes} (verticales, horizontales, obliques) avec positions relatives.\\item Les \\textbf{extremums} : maxima et minima locaux.\\item Les \\textbf{zéros} de $f$ (intersections avec l'axe des abscisses) et $f(0)$.\\item Les \\textbf{points d'inflexion} et les tangentes en ces points.\\item Les \\textbf{branches paraboliques} avec leurs directions.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Réalisons l'étude complète de} $h(x) = 3+\\displaystyle\\frac{x+5}{(x+2)^2}$ définie sur $\\mathbb{R}\\setminus\\{-2\\}$.}\\par\\textbf{Branches infinies.}\\begin{align*}\\lim_{x \\to -2} h(x) &= 3 + \\frac{3}{0^+} = \\blank{+\\infty}\\end{align*}\\par La droite $x = -2$ est asymptote verticale.\\begin{align*}\\lim_{x \\to \\pm\\infty} h(x) &= 3 + 0 = \\blank{3}\\end{align*}\\par La droite $y = 3$ est asymptote horizontale en $+\\infty$ et $-\\infty$.\\par\\smallskip\\textbf{Variations.} Calculons $h'(x)$ :\\begin{align*}h'(x) &= \\frac{(x+2)^2 - 2(x+2)(x+5)}{(x+2)^4} \\\\&= \\frac{(x+2) - 2(x+5)}{(x+2)^3} \\\\&= \\frac{-x-8}{(x+2)^3}\\end{align*}\\par $h'(x) = 0$ pour $x = -8$.\\par$$\\begin{array}{|c|ccccccc|}\\hline x & -\\infty & & -8 & & -2 & & +\\infty \\\\\\hline h'(x) & & - & 0 & + & || & - & \\\\\\hline h(x) & 3 & \\searrow & \\frac{35}{12} & \\nearrow & +\\infty\\; || \\;+\\infty & \\searrow & 3 \\\\\\hline\\end{array}$$\\par Minimum local : $h(-8) = 3 + \\displaystyle\\frac{-3}{36} = 3 - \\frac{1}{12} = \\blank{\\frac{35}{12}}$ en $x = -8$.\\par\\smallskip\\textbf{Points remarquables :} $h(0) = 3 + \\frac{5}{4} = \\frac{17}{4}$. On place ces éléments pour tracer la courbe."
+        },
+        {
+          "type": "remark",
+          "content": "La position relative de $(\\mathcal{C}_f)$ par rapport à une asymptote $y = ax+b$ se détermine en étudiant le signe de $f(x) - (ax+b)$. Ce signe peut changer selon l'intervalle, ce qui signifie que la courbe peut passer d'un côté à l'autre de l'asymptote."
+        }
+      ]
+    }
+  ]
+}

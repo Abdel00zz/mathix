@@ -1,0 +1,56 @@
+{
+  "header": {
+    "title": "La flèche atteindra-t-elle la cible ?",
+    "subtitle": "Trajectoire parabolique",
+    "context": "Analyse · Fonctions"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "La flèche atteindra-t-elle la cible ?",
+          "content": "Un archer tire une flèche depuis le point $O$ d'un repère orthonormé $(O;\\vec{i},\\vec{j})$, où l'unité est le mètre. La trajectoire de la flèche est modélisée par la fonction :\\par$$f(x) = -\\frac{1}{50}x^2 + \\frac{3}{5}x$$\\par où $x$ désigne la distance horizontale parcourue et $f(x)$ la hauteur correspondante.\\par Une cible est placée à $25$ m de l'archer, à une hauteur de $2{,}5$ m du sol.\\par\\begin{enumerate}\\item Quelle est la hauteur maximale atteinte par la flèche ? À quelle distance horizontale est-elle atteinte ?\\item La flèche atteint-elle la cible ?\\item À quelle distance du point de départ la flèche retouche-t-elle le sol ?\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions guidées",
+      "blocks": [
+        {
+          "type": "method",
+          "title": "Comment trouver le sommet d'une parabole ?",
+          "content": "La fonction $f(x) = ax^2 + bx + c$ admet un maximum (si $a < 0$) en $x_S = -\\dfrac{b}{2a}$.\\par La hauteur maximale est alors $f(x_S)$.\\par Pour notre problème : $a = -\\dfrac{1}{50}$, $b = \\dfrac{3}{5}$, $c = 0$."
+        },
+        {
+          "type": "hint",
+          "content": "Calculez $x_S = -\\dfrac{b}{2a}$ avec $a = -\\dfrac{1}{50}$ et $b = \\dfrac{3}{5}$."
+        },
+        {
+          "type": "hint",
+          "content": "Pour vérifier si la flèche atteint la cible, calculez $f(25)$ et comparez à $2{,}5$."
+        },
+        {
+          "type": "hint",
+          "content": "Pour trouver quand la flèche touche le sol, résolvez $f(x) = 0$, c'est-à-dire factoriser $-\\dfrac{1}{50}x^2 + \\dfrac{3}{5}x = 0$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1) Hauteur maximale :}\\par $x_S = -\\dfrac{3/5}{2 \\times (-1/50)} = -\\dfrac{3/5}{-1/25} = 15$ m.\\par $f(15) = -\\dfrac{225}{50} + \\dfrac{45}{5} = -4{,}5 + 9 = 4{,}5$ m.\\par La flèche atteint une hauteur maximale de $\\boxed{4{,}5 \\text{ m}}$ à $15$ m de l'archer.\\par\\par\\textbf{2) La cible est-elle atteinte ?}\\par $f(25) = -\\dfrac{625}{50} + \\dfrac{75}{5} = -12{,}5 + 15 = 2{,}5$ m.\\par Oui, la flèche passe exactement à $2{,}5$ m de hauteur à $25$ m : $\\boxed{\\text{la cible est atteinte}}$.\\par\\par\\textbf{3) Distance de chute au sol :}\\par $f(x) = 0 \\Leftrightarrow x\\left(-\\dfrac{x}{50} + \\dfrac{3}{5}\\right) = 0 \\Leftrightarrow x = 0 \\text{ ou } x = 30$ m.\\par La flèche retouche le sol à $\\boxed{30 \\text{ m}}$ du point de départ."
+        }
+      ]
+    }
+  ]
+}

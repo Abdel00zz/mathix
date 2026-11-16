@@ -1,0 +1,51 @@
+{
+  "id": "/apprendre/Apprendre.html",
+  "name": "MathFlow — Apprendre & Réviser",
+  "short_name": "Apprendre",
+  "description": "Cahier mathématique interactif 2e Bac : fiches de cours, quiz chronométrés et exercices corrigés hors-ligne.",
+  "start_url": "./Apprendre.html#learn",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#09090b",
+  "background_color": "#ffffff",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["education", "books"],
+  "icons": [
+    {
+      "src": "./icons/icone.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/badge.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Programme du Bac",
+      "short_name": "Programme",
+      "url": "./Apprendre.html#learn"
+    },
+    {
+      "name": "Examens Nationaux",
+      "short_name": "Examens",
+      "url": "./Apprendre.html#examens"
+    },
+    {
+      "name": "Problèmes de synthèse",
+      "short_name": "Problèmes",
+      "url": "./Apprendre.html#problemes"
+    },
+    {
+      "name": "Prépa Concours",
+      "short_name": "Prépa",
+      "url": "./Apprendre.html#prepa"
+    }
+  ]
+}

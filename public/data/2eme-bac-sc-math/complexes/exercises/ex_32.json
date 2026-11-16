@@ -1,0 +1,73 @@
+{
+  "id": "ex-complexes-32",
+  "topic": "Nombres complexes - Bac National 2008 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2008,
+  "examenSession": "Normale",
+  "context": "Soit $a$ un nombre complexe non nul et $\\bar a$ le conjugué du nombre $a$.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans l'ensemble $\\mathbb{C}$ l'équation : $(G):iz^2+(a+\\bar a-i)z-\\bar a-ia\\bar a=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q1a",
+          "content": "Vérifier que le discriminant de l'équation $(G)$ est : $\\Delta=(a-\\bar a-i)^2$.",
+          "hint": "Calculez $\\Delta=(a+\\bar a-i)^2+4i(\\bar a+ia\\bar a)$, développez soigneusement et regroupez pour reconnaître le carré proposé."
+        },
+        {
+          "id": "p1q1b",
+          "content": "Résoudre dans l'ensemble $\\mathbb{C}$ l'équation $(G)$.",
+          "hint": "Une racine carrée de $\\Delta$ est $a-\\bar a-i$ ; appliquez la formule des racines avec $\\alpha=i$."
+        }
+      ]
+    },
+    {
+      "id": "p1q2",
+      "content": "Montrer que $a$ est une solution de l'équation $(G)$ si, et seulement si : $\\text{Re}(a)=\\text{Im}(a)$.",
+      "hint": "Remplacez $z=a$ dans $(G)$ et simplifiez ; vous devriez obtenir une expression du type $ia(a-\\bar a)$ ou similaire, à annuler en utilisant $a-\\bar a=2i\\,\\text{Im}(a)$."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe est rapporté à un repère orthonormé $(O,\\vec{u},\\vec{v})$ et on suppose que $\\text{Re}(a)\\ne\\text{Im}(a)$. On considère les points $A$, $B$ et $C$ d'affixes respectives : $a$, $i\\bar a$ et $1+ia$."
+    },
+    {
+      "id": "p2q1",
+      "content": "On pose : $Z=\\dfrac{(1+ia)-a}{i\\bar a-a}$.",
+      "subQuestions": [
+        {
+          "id": "p2q1a",
+          "content": "Vérifier que : $\\bar Z=\\dfrac{(i-1)\\bar a-i}{i\\bar a-a}$.",
+          "hint": "Conjuguez chaque terme de $Z$ un par un ($\\overline{1+ia}=1-i\\bar a$, $\\overline{i\\bar a-a}=-ia-\\bar a$... attention aux signes), puis simplifiez pour retrouver la forme demandée (remarquez que le dénominateur donné reste $i\\bar a-a$, donc factorisez judicieusement)."
+        },
+        {
+          "id": "p2q1b",
+          "content": "Montrer que les points $A$, $B$ et $C$ sont alignés si, et seulement si : $\\text{Im}(a)=\\dfrac12$.",
+          "hint": "L'alignement de $A,B,C$ équivaut à $Z=\\dfrac{c-a}{b-a}\\in\\mathbb{R}$, c'est-à-dire $Z=\\bar Z$ ; utilisez le résultat de la question précédente et simplifiez cette égalité pour isoler une condition sur $\\text{Im}(a)$."
+        }
+      ]
+    },
+    {
+      "id": "p2q2",
+      "content": "On suppose dans cette question que $\\text{Im}(a)\\ne\\dfrac12$. On considère $R_1$ la rotation de centre $A$ et d'angle $-\\dfrac{\\pi}{2}$ et $R_2$ la rotation de centre $A$ et d'angle $\\dfrac{\\pi}{2}$. On pose : $R_1(B)=B'$ et $R_2(C)=C'$. Soit $E$ le milieu du segment $[BC]$.",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Déterminer $b'$ et $c'$ les affixes respectives de $B'$ et $C'$.",
+          "hint": "Appliquez $b'-a=-i(b-a)$ et $c'-a=i(c-a)$ avec $b=i\\bar a$ et $c=1+ia$, puis isolez $b'$ et $c'$."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que les droites $(AE)$ et $(B'C')$ sont perpendiculaires et que : $B'C'=2AE$.",
+          "hint": "Calculez $e-a=\\dfrac{b+c}{2}-a$ et $c'-b'$ à partir des expressions précédentes, puis faites le quotient $\\dfrac{c'-b'}{e-a}$ et montrez qu'il est imaginaire pur de module $2$."
+        }
+      ]
+    }
+  ]
+}

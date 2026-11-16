@@ -1,0 +1,46 @@
+{
+  "id": "ex-derivation-etude-03",
+  "theme": "derivation-etude-fonctions",
+  "difficulty": "moyen",
+  "topic": "Dérivation et étude de fonctions",
+  "context": "On considère la fonction $f$ définie sur $]-\\frac{\\pi}{2}, +\\infty[$ par : $$\\begin{cases} f(x) = (x-3)\\sqrt{x} & ; x \\ge 0 \\\\ f(x) = \\dfrac{\\sin x}{1 + \\sin x} & ; -\\frac{\\pi}{2} < x < 0 \\end{cases}$$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer les limites suivantes : $\\lim_{x \\to +\\infty} f(x)$ et $\\lim_{x \\to (-\\frac{\\pi}{2})^+} f(x)$.",
+      "hint": "En $+\\infty$, regardez les limites des facteurs. En $-\\frac{\\pi}{2}^+$, posez $X = \\sin x$."
+    },
+    {
+      "id": "q2",
+      "content": "Étudier la dérivabilité de $f$ à droite et à gauche en $0$. Interpréter géométriquement.",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "À droite en 0 : Calculer $\\lim_{x \\to 0^+} \\frac{f(x)-f(0)}{x}$.",
+          "hint": "$f(0)=0$. Le taux d'accroissement devient $\\frac{x-3}{\\sqrt{x}}$."
+        },
+        {
+          "id": "sq2",
+          "content": "À gauche en 0 : Calculer $\\lim_{x \\to 0^-} \\frac{f(x)-f(0)}{x}$.",
+          "hint": "Utilisez la limite usuelle $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Calculer $f'(x)$ sur les intervalles $]0, +\\infty[$ et $]-\\frac{\\pi}{2}, 0[$.",
+      "hint": "Pour $x>0$, dérivée d'un produit. Pour $x<0$, dérivée d'un quotient."
+    },
+    {
+      "id": "q4",
+      "content": "Dresser le tableau de variations de $f$.",
+      "hint": "Pour $x>0$, le signe dépend de la dérivée de $(x-3)\\sqrt{x}$. Pour $x<0$, le dénominateur est un carré."
+    },
+    {
+      "id": "q5",
+      "content": "Déterminer l'équation de la tangente $(\\Delta)$ à $(C_f)$ au point d'abscisse $3$.",
+      "hint": "Calculez $f(3)$ et $f'(3)$ avec l'expression valable pour $x \\ge 0$."
+    }
+  ]
+}

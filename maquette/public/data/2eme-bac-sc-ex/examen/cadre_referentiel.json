@@ -1,0 +1,364 @@
+{
+  "header": {
+    "title": "Cadre Référentiel 2026",
+    "subtitle": "2ème BAC Sciences Expérimentales",
+    "context": "Mathématiques"
+  },
+  "sections": [
+    {
+      "id": "domaine_analyse",
+      "category": "domain",
+      "title": "Analyse"
+    },
+    {
+      "id": "sous_domaine_suites",
+      "category": "subdomain",
+      "title": "Suites numériques"
+    },
+    {
+      "id": "suite_arith_geo",
+      "category": "method",
+      "title": "Sais-tu utiliser les suites géométriques et arithmétiques pour étudier des suites de la forme $u_{n+1} = au_n + b$ ou $u_{n+1} = \\frac{au_n + b}{cu_n + d}$ ?"
+    },
+    {
+      "id": "suite_limite_ref",
+      "category": "method",
+      "title": "Maîtrises-tu l'utilisation des limites de référence et des critères de convergence pour déterminer la limite d'une suite ?"
+    },
+    {
+      "id": "suite_limite_composee",
+      "category": "method",
+      "title": "Es-tu capable de déterminer la limite de la composée d'une suite et d'une fonction continue, du type $v_n = f(u_n)$ ?"
+    },
+    {
+      "id": "suite_recurrente_f",
+      "category": "method",
+      "title": "Sais-tu étudier la convergence et déterminer la limite d'une suite récurrente $u_{n+1} = f(u_n)$ avec $f$ continue et $f(I) \\subset I$ ?"
+    },
+    {
+      "id": "suite_problemes",
+      "category": "method",
+      "title": "Parviens-tu à mobiliser les suites pour modéliser et résoudre des problèmes issus de divers contextes ?"
+    },
+    {
+      "id": "sous_domaine_fonctions",
+      "category": "subdomain",
+      "title": "Continuité, dérivation et étude de fonctions"
+    },
+    {
+      "id": "fct_continuite_pt",
+      "category": "method",
+      "title": "As-tu bien assimilé l'étude de la continuité d'une fonction en un point via le calcul des limites ?"
+    },
+    {
+      "id": "fct_image_intervalle",
+      "category": "method",
+      "title": "Sais-tu déterminer l'image d'un segment ou d'un intervalle par une fonction continue, éventuellement strictement monotone ?"
+    },
+    {
+      "id": "fct_tvi_signe",
+      "category": "method",
+      "title": "Comment appliques-tu le théorème des valeurs intermédiaires (TVI) pour étudier des équations, inéquations ou le signe d'expressions ?"
+    },
+    {
+      "id": "fct_tvi_unicite",
+      "category": "method",
+      "title": "Maîtrises-tu l'utilisation du TVI pour prouver l'unicité de la solution de $f(x) = \\lambda$ avec une fonction continue et strictement monotone ?"
+    },
+    {
+      "id": "fct_derivabilite",
+      "category": "method",
+      "title": "Es-tu à l'aise pour étudier la dérivabilité d'une fonction en un point et sur tout un intervalle ?"
+    },
+    {
+      "id": "fct_derivee",
+      "category": "method",
+      "title": "Sais-tu calculer avec aisance la fonction dérivée d'une fonction numérique ?"
+    },
+    {
+      "id": "fct_monotonie",
+      "category": "method",
+      "title": "Parviens-tu à déduire la monotonie d'une fonction à partir de sa dérivée ?"
+    },
+    {
+      "id": "fct_signe_tab",
+      "category": "method",
+      "title": "Sais-tu exploiter un tableau de variations pour en déduire le signe d'une fonction ?"
+    },
+    {
+      "id": "fct_signe_graph",
+      "category": "method",
+      "title": "Es-tu capable de lire le signe d'une fonction directement depuis sa courbe représentative ?"
+    },
+    {
+      "id": "fct_res_graph",
+      "category": "method",
+      "title": "Sais-tu résoudre graphiquement des équations $f(x) = g(x)$ et des inéquations $f(x) \\leq g(x)$ ?"
+    },
+    {
+      "id": "fct_reciproque",
+      "category": "method",
+      "title": "Maîtrises-tu l'étude de la fonction réciproque (dérivée, monotonie) et sa construction graphique ?"
+    },
+    {
+      "id": "fct_min_max",
+      "category": "method",
+      "title": "Parviens-tu à résoudre des problèmes d'optimisation impliquant des valeurs minimales et maximales ?"
+    },
+    {
+      "id": "fct_derivee_sec",
+      "category": "method",
+      "title": "Sais-tu exploiter les dérivées première et seconde pour l'étude complète d'une fonction et la preuve d'inégalités ?"
+    },
+    {
+      "id": "fct_primitives_usuelles",
+      "category": "method",
+      "title": "Connais-tu parfaitement les primitives des fonctions usuelles ?"
+    },
+    {
+      "id": "fct_primitives_formules",
+      "category": "method",
+      "title": "Sais-tu inverser les formules de dérivation pour trouver les primitives d'une fonction composée ?"
+    },
+    {
+      "id": "fct_log_algebrique",
+      "category": "method",
+      "title": "As-tu une bonne maîtrise des règles de calcul algébrique sur les logarithmes ?"
+    },
+    {
+      "id": "fct_log_eq",
+      "category": "method",
+      "title": "Es-tu capable de résoudre sans erreur des équations, inéquations et systèmes logarithmiques ?"
+    },
+    {
+      "id": "fct_log_dec",
+      "category": "method",
+      "title": "Sais-tu utiliser le logarithme décimal pour résoudre des équations $10^x = a$ et inéquations associées ?"
+    },
+    {
+      "id": "fct_log_limites",
+      "category": "method",
+      "title": "Connais-tu sur le bout des doigts les limites usuelles de la fonction $\\ln$ et sais-tu les appliquer ?"
+    },
+    {
+      "id": "fct_exp_eq",
+      "category": "method",
+      "title": "Maîtrises-tu la résolution d'équations, d'inéquations et de systèmes impliquant la fonction exponentielle ?"
+    },
+    {
+      "id": "fct_exp_limites",
+      "category": "method",
+      "title": "As-tu bien assimilé les limites de référence de la fonction exponentielle pour lever les indéterminations ?"
+    },
+    {
+      "id": "fct_etude_globale",
+      "category": "method",
+      "title": "Es-tu capable de mener l'étude globale d'une fonction (domaine, branches infinies, concavité) et de tracer sa courbe ?"
+    },
+    {
+      "id": "equa_diff_1",
+      "category": "method",
+      "title": "Sais-tu résoudre une équation différentielle du premier ordre de la forme $y' = ay + b$ ?"
+    },
+    {
+      "id": "equa_diff_2",
+      "category": "method",
+      "title": "Maîtrises-tu la résolution de l'équation différentielle du second ordre $y'' + ay' + by = 0$ ?"
+    },
+    {
+      "id": "sous_domaine_integral",
+      "category": "subdomain",
+      "title": "Calcul intégral"
+    },
+    {
+      "id": "int_calcul",
+      "category": "method",
+      "title": "Sais-tu calculer une intégrale en utilisant une primitive ou la technique d'intégration par parties ?"
+    },
+    {
+      "id": "int_proprietes",
+      "category": "method",
+      "title": "As-tu bien compris comment appliquer les propriétés de l'intégrale (linéarité, relation de Chasles, ordre) ?"
+    },
+    {
+      "id": "int_aire",
+      "category": "method",
+      "title": "Es-tu capable de calculer l'aire d'un domaine plan délimité par deux courbes ?"
+    },
+    {
+      "id": "int_volume",
+      "category": "method",
+      "title": "Sais-tu déterminer le volume d'un solide de révolution engendré par la rotation d'une courbe autour de l'axe des abscisses ?"
+    },
+    {
+      "id": "domaine_algebre_geo",
+      "category": "domain",
+      "title": "Algèbre et géométrie"
+    },
+    {
+      "id": "sous_domaine_scalaire",
+      "category": "subdomain",
+      "title": "Produit scalaire dans $V_3$"
+    },
+    {
+      "id": "scal_ortho_dem",
+      "category": "method",
+      "title": "Sais-tu démontrer l'orthogonalité de deux vecteurs dans l'espace à l'aide du produit scalaire ?"
+    },
+    {
+      "id": "scal_ortho_vect",
+      "category": "method",
+      "title": "Maîtrises-tu l'expression vectorielle de l'orthogonalité et ses propriétés géométriques ?"
+    },
+    {
+      "id": "scal_ortho_anal",
+      "category": "method",
+      "title": "Es-tu à l'aise avec l'expression analytique du produit scalaire pour prouver l'orthogonalité ?"
+    },
+    {
+      "id": "sous_domaine_scalaire_app",
+      "category": "subdomain",
+      "title": "Applications du produit scalaire dans l'espace"
+    },
+    {
+      "id": "scal_app_plan",
+      "category": "method",
+      "title": "Sais-tu déterminer l'équation cartésienne d'un plan connaissant un point et un vecteur normal ?"
+    },
+    {
+      "id": "scal_app_droite",
+      "category": "method",
+      "title": "Parviens-tu à établir la représentation paramétrique d'une droite orthogonale à un plan ?"
+    },
+    {
+      "id": "scal_app_sphere_eq",
+      "category": "method",
+      "title": "Sais-tu identifier et caractériser l'ensemble des points vérifiant $x^2 + y^2 + z^2 + ax + by + cz + d = 0$ ?"
+    },
+    {
+      "id": "scal_app_sphere_cr",
+      "category": "method",
+      "title": "Es-tu capable de formuler l'équation cartésienne d'une sphère à partir de son centre et de son rayon ?"
+    },
+    {
+      "id": "scal_app_sphere_diam",
+      "category": "method",
+      "title": "Sais-tu reconnaître qu'une relation du type $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = 0$ définit une sphère ?"
+    },
+    {
+      "id": "scal_app_distance",
+      "category": "method",
+      "title": "Maîtrises-tu le calcul de la distance d'un point à un plan pour étudier les positions relatives (sphère/plan, etc.) ?"
+    },
+    {
+      "id": "sous_domaine_vectoriel",
+      "category": "subdomain",
+      "title": "Produit vectoriel"
+    },
+    {
+      "id": "vect_aire",
+      "category": "method",
+      "title": "Sais-tu utiliser la norme du produit vectoriel pour calculer l'aire d'un triangle dans l'espace ?"
+    },
+    {
+      "id": "vect_plan",
+      "category": "method",
+      "title": "Parviens-tu à déterminer l'équation d'un plan passant par trois points non alignés via le produit vectoriel ?"
+    },
+    {
+      "id": "vect_distance",
+      "category": "method",
+      "title": "Es-tu capable de calculer la distance d'un point à une droite pour résoudre des problèmes géométriques ?"
+    },
+    {
+      "id": "vect_app",
+      "category": "method",
+      "title": "Sais-tu mobiliser le produit vectoriel pour répondre à diverses questions de géométrie dans l'espace ?"
+    },
+    {
+      "id": "sous_domaine_complexes",
+      "category": "subdomain",
+      "title": "Nombres complexes"
+    },
+    {
+      "id": "comp_algebrique",
+      "category": "method",
+      "title": "As-tu une parfaite maîtrise du calcul algébrique sur les complexes sous leurs formes algébrique, trigonométrique et exponentielle ?"
+    },
+    {
+      "id": "comp_passage",
+      "category": "method",
+      "title": "Sais-tu basculer aisément de la forme algébrique à la forme trigonométrique d'un nombre complexe ?"
+    },
+    {
+      "id": "comp_linearisation",
+      "category": "method",
+      "title": "Maîtrises-tu la technique de linéarisation des monômes trigonométriques via les formules d'Euler ?"
+    },
+    {
+      "id": "comp_geo_notions",
+      "category": "method",
+      "title": "Sais-tu traduire les notions géométriques (distance, angles, alignement, orthogonalité) en langage complexe ?"
+    },
+    {
+      "id": "comp_geo_transf",
+      "category": "method",
+      "title": "Es-tu capable d'exprimer les transformations géométriques (translation, homothétie, rotation) à l'aide des complexes ?"
+    },
+    {
+      "id": "comp_geo_recog",
+      "category": "method",
+      "title": "Sais-tu identifier la nature et les éléments caractéristiques d'une transformation géométrique depuis son écriture complexe ?"
+    },
+    {
+      "id": "comp_geo_prob",
+      "category": "method",
+      "title": "Parviens-tu à exploiter les nombres complexes pour résoudre efficacement des problèmes de géométrie plane ?"
+    },
+    {
+      "id": "comp_eq_2",
+      "category": "method",
+      "title": "Sais-tu résoudre une équation du second degré $az^2 + bz + c = 0$ à coefficients réels dans $\\mathbb{C}$ ?"
+    },
+    {
+      "id": "comp_eq_ramene",
+      "category": "method",
+      "title": "Maîtrises-tu la résolution d'équations se ramenant au second degré (changement de variable) dans l'ensemble des complexes ?"
+    },
+    {
+      "id": "sous_domaine_proba",
+      "category": "subdomain",
+      "title": "Calcul de probabilités"
+    },
+    {
+      "id": "proba_denombrement",
+      "category": "method",
+      "title": "Sais-tu choisir et utiliser le bon modèle de dénombrement (arrangements, combinaisons) selon la situation ?"
+    },
+    {
+      "id": "proba_base",
+      "category": "method",
+      "title": "Es-tu à l'aise avec le calcul de probabilité de la réunion, de l'intersection et de l'évènement contraire ?"
+    },
+    {
+      "id": "proba_cond",
+      "category": "method",
+      "title": "Sais-tu calculer une probabilité conditionnelle et l'utiliser pour déterminer la probabilité d'une intersection ?"
+    },
+    {
+      "id": "proba_indep",
+      "category": "method",
+      "title": "Maîtrises-tu le concept d'indépendance de deux évènements et sais-tu le vérifier ?"
+    },
+    {
+      "id": "proba_var_alea",
+      "category": "method",
+      "title": "Es-tu capable de déterminer la loi de probabilité d'une variable aléatoire et d'en calculer l'espérance et la variance ?"
+    },
+    {
+      "id": "proba_binomiale",
+      "category": "method",
+      "title": "Sais-tu reconnaître un schéma de Bernoulli et appliquer la loi binomiale pour calculer des probabilités ?"
+    }
+  ]
+}

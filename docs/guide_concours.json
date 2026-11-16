@@ -1,0 +1,121 @@
+{
+  "title": "Guide actif des données Concours",
+  "version": "1.0.0",
+  "status": "normative",
+  "scope": ["ensa", "ensam", "medecine"],
+  "purpose": "Définir la structure JSON réellement chargée par l'application et les règles éditoriales obligatoires des concours.",
+  "precedence": [
+    "src/services/concoursService.ts",
+    "src/services/quizService.ts",
+    "public/data/concours/schools.json",
+    "docs/PROTOCOLE_CONCOURS_ENSA_MEDECINE.md",
+    "docs/guide_concours.json"
+  ],
+  "absolute_rule": {
+    "statement": "Toute question de concours est un QCM à réponse unique.",
+    "allowed_question_types": ["mcq"],
+    "forbidden_question_types": ["boolean", "true-false", "order", "ordering", "error", "error-spotting", "input"],
+    "migration": {
+      "boolean": "Créer un QCM avec des propositions exclusives, par exemple « Vraie » et « Fausse ».",
+      "order": "Créer un QCM proposant des séquences complètes dont une seule est correcte.",
+      "error": "Créer un QCM proposant les étapes du raisonnement ; une seule étape doit être incorrecte.",
+      "input": "Créer un QCM avec la valeur exacte et des distracteurs issus d'erreurs plausibles."
+    }
+  },
+  "loading_model": {
+    "school_registry": "public/data/concours/schools.json",
+    "school_manifest": "public/data/concours/<schoolId>/manifest.json",
+    "annual_session": "Le choix d'une année charge exclusivement le chemin déclaré dans schools.json. Un fichier non déclaré est invisible.",
+    "theme_or_simulation": "Charge les annales, puis fallbackQuizPaths, puis les quizzes du manifest ; les ids sont dédoublonnés à l'échelle de l'école.",
+    "shuffle": "Les questions et l'ordre de leurs options sont mélangés à chaque session.",
+    "theme_constraint": "theme est un slug minuscule présent dans schools[].themes[].id."
+  },
+  "file_structure": {
+    "school_registry": {
+      "path": "public/data/concours/schools.json",
+      "required_school_fields": ["id", "name", "fullName", "color", "icon", "themes", "annales", "questionsPerExam", "timePerQuestion", "description"],
+      "synchronized_fields": ["annales[].count", "themeCounts", "totalQuestions"]
+    },
+    "annual_bank": {
+      "path_pattern": "public/data/concours/<schoolId>/<prefix>_<year>.json",
+      "top_level": ["school", "year", "title", "questions"],
+      "registration": "Ajouter l'annale à schools.json avec year, path et count avant livraison."
+    },
+    "theme_bank": {
+      "path_pattern": "public/data/concours/<schoolId>/quiz/<schoolId>_<theme>_quiz.json",
+      "registration": "Déclarer le fichier dans fallbackQuizPaths et/ou dans manifest.json.quizzes."
+    },
+    "manifest": {
+      "role": "Les quizzes du manifest sont chargés ; les annales qui y figurent sont descriptives et ne remplacent jamais schools.json."
+    }
+  },
+  "question_contract": {
+    "required_fields": {
+      "id": "Identifiant unique dans toute l'école ; exemple ensa-26-01 ou med-fmp-2025-c24.",
+      "type": "Toujours la chaîne mcq.",
+      "theme": "Slug déclaré dans schools.json, en minuscules.",
+      "category": "Classement pédagogique court et cohérent.",
+      "difficulty": "easy, medium, hard ou concours.",
+      "prompt": "Énoncé complet en français, avec LaTeX délimité.",
+      "options": "Tableau de QCM contenant au moins deux choix et exactement une option correcte.",
+      "explanation": "Stratégie, calcul, piège éventuel et conclusion."
+    },
+    "recommended_provenance_fields": {
+      "sourceReference": "Référence humaine de l'épreuve, par exemple FMP 2025 · C.24.",
+      "officialQuestionCode": "Code stable de la question dans la source, par exemple C.24.",
+      "answerValidation": "Trace d'une validation officielle ou d'une correction mathématique explicitement justifiée."
+    },
+    "forbidden_fields": ["isTrue", "items", "correctOrder", "steps", "correctAnswers", "groupId", "groupPrompt"],
+    "options_contract": {
+      "required_fields": ["id", "text", "isCorrect"],
+      "unique_option_ids": true,
+      "correct_answers": 1,
+      "recommended_count": 4,
+      "accepted_counts": "4 ou 5 pour respecter une source ; 2 pour un Vrai/Faux migré ; 6 seulement si une source défectueuse impose une proposition explicite « aucune des réponses A à E ».",
+      "distractors": "Chaque distracteur doit correspondre à une erreur de raisonnement réaliste ; ne jamais inventer un distracteur absurde."
+    }
+  },
+  "latex_contract": {
+    "delimiters": ["$...$ uniquement, y compris pour un calcul isolé"],
+    "json_escaping": "Dans le fichier JSON brut, chaque antislash LaTeX est doublé ; après JSON.parse, KaTeX reçoit un seul antislash.",
+    "fraction_syntax": "Toute division mathématique s'écrit avec \\frac{numérateur}{dénominateur}. Les formes 1/x, a/b, \\frac12 et \\frac ab sont interdites.",
+    "portable_commands": ["\\frac", "\\sqrt", "\\lim", "\\sum", "\\int", "\\mathbb", "\\overline", "\\theta"],
+    "operator_display_style": "Dans toute formule qui contient \\lim, \\sum, \\prod ou \\int, placer \\displaystyle au début de la formule afin de conserver des bornes lisibles.",
+    "prohibitions": ["Commande LaTeX hors de $...$", "Délimiteur $$...$$ : les formules de concours ne sont jamais centrées", "Antislash simple invalide en JSON", "Formule issue d'une extraction PDF non vérifiée"],
+    "source_review": "Les fractions, racines, puissances, modules et arguments extraits d'un PDF doivent être comparés au rendu visuel du PDF avant publication."
+  },
+  "authoring_workflow": [
+    "Lire l'énoncé source et le corrigé ; ne jamais inventer une question de concours.",
+    "Transcrire et vérifier manuellement les notations mathématiques sensibles.",
+    "Définir une unique réponse correcte ; si la source est ambiguë, reformuler les choix ou consigner la correction dans answerValidation.",
+    "Écrire des distracteurs plausibles et une explication pédagogique.",
+    "Vérifier l'unicité de id, de options[].id, le thème et la syntaxe LaTeX.",
+    "Mettre à jour schools.json et manifest.json si une nouvelle banque doit être rendue visible.",
+    "Contrôler JSON, une réponse correcte par QCM, compteurs, rendu KaTeX et type-check avant livraison."
+  ],
+  "validation_checklist": [
+    "Chaque question a exactement type: mcq.",
+    "Aucune question concours ne contient boolean, order, error ou input.",
+    "Chaque QCM a une et une seule option isCorrect: true.",
+    "Chaque id est unique dans l'école et chaque option id est unique dans sa question.",
+    "Chaque theme est autorisé par schools.json.",
+    "Chaque formule KaTeX est délimitée et correctement échappée.",
+    "Les compteurs annuels, themeCounts et totalQuestions sont recalculés.",
+    "Une annale nouvelle est déclarée dans schools.json."
+  ],
+  "canonical_example": {
+    "id": "ensa-26-01",
+    "type": "mcq",
+    "theme": "analyse",
+    "category": "Limites",
+    "difficulty": "concours",
+    "prompt": "La limite $\\displaystyle\\lim_{x \\to 0} \\frac{\\sin(3x)}{\\tan(5x)}$ vaut :",
+    "options": [
+      { "id": "a", "text": "$\\frac{3}{5}$", "isCorrect": true },
+      { "id": "b", "text": "$\\frac{5}{3}$", "isCorrect": false },
+      { "id": "c", "text": "$1$", "isCorrect": false },
+      { "id": "d", "text": "$0$", "isCorrect": false }
+    ],
+    "explanation": "Près de $0$, $\\sin(3x)\\sim3x$ et $\\tan(5x)\\sim5x$. Le quotient tend vers $\\frac{3}{5}$. Le distracteur $\\frac{5}{3}$ inverse le numérateur et le dénominateur."
+  }
+}

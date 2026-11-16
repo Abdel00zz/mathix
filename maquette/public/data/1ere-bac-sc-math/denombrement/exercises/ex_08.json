@@ -1,0 +1,20 @@
+{
+  "id": "ex-denom-08",
+  "theme": "denombrement",
+  "difficulty": "difficile",
+  "topic": "Dénombrement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Tirages successifs sans remise",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Une urne contient 5 boules rouges et 3 boules noires.\nOn tire successivement et sans remise 3 boules de l'urne.\nCombien de tirages différents peut-on obtenir ?",
+          "hint": "Il y a un total de $5 + 3 = 8$ boules dans l'urne.\nOn tire 3 boules successivement et sans remise. L'ordre compte, et il n'y a pas de répétition possible.\n\nC'est donc un arrangement sans répétition de 3 éléments parmi 8, noté $A_8^3$.\n\n$A_8^3 = \\frac{8!}{(8-3)!} = \\frac{8!}{5!} = 8 \\times 7 \\times 6 = 336$.\n\nIl y a 336 tirages différents possibles."
+        }
+      ]
+    }
+  ]
+}

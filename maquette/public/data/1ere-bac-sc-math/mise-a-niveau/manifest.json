@@ -1,0 +1,19 @@
+{
+  "id": "mise-a-niveau",
+  "title": "Mise à niveau",
+  "quizCount": 31,
+  "exercises": [],
+  "quizzes": [
+    {
+      "id": "quiz-mise-a-niveau-01",
+      "path": "data/1ere-bac-sc-math/mise-a-niveau/quiz/mise-a-niveau_quiz.json",
+      "questionsCount": 31
+    }
+  ],
+  "revisions": [
+    {
+      "id": "rev-mise-a-niveau-1bac-sm",
+      "path": "data/1ere-bac-sc-math/mise-a-niveau/revisions/fiche_mise_a_niveau_cours.json"
+    }
+  ]
+}

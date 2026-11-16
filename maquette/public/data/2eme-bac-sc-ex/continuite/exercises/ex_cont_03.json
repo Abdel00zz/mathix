@@ -1,0 +1,87 @@
+{
+  "id": "ex-cont-03",
+  "theme": "continuite",
+  "difficulty": "moyen",
+  "topic": "Analyse",
+  "context": "Soit $f$ la fonction définie sur $\\mathbb{R}^*$ par : $$f(x) = x^2 + \\dfrac{4}{x}$$ On note $\\mathcal{C}_f$ sa courbe représentative.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Limites aux bornes",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Calculer les limites de $f$ aux bornes de $\\mathbb{R}^*$.",
+          "hint": "\\step \\textbf{En $\\pm \\infty$ :} On a $\\lim_{x \\to \\pm \\infty} x^2 = +\\infty$ et $\\lim_{x \\to \\pm \\infty} \\frac{4}{x} = 0$.\n\\conclusion Par somme, $\\lim_{x \\to +\\infty} f(x) = +\\infty$ et $\\lim_{x \\to -\\infty} f(x) = +\\infty$.\n\\step \\textbf{En 0 :} On sait que $\\lim_{x \\to 0} x^2 = 0$. Le terme dominant est $\\frac{4}{x}$.\n\\lim_{x \\to 0^+} f(x) = +\\infty \\quad \\text{et} \\quad \\lim_{x \\to 0^-} f(x) = -\\infty\n\\conclusion La courbe admet l'axe des ordonnées ($x=0$) comme asymptote verticale."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Dérivée",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Déterminer la dérivée $f'(x)$.",
+          "hint": "On dérive la somme : $(x^2)' = 2x$ et $(\\frac{1}{x})' = -\\frac{1}{x^2}$.\nf'(x) = 2x + 4\\left(-\\frac{1}{x^2}\\right) = 2x - \\frac{4}{x^2}\nMettons au même dénominateur pour étudier le signe :\nf'(x) = \\frac{2x^3 - 4}{x^2}"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Point critique",
+      "subQuestions": [
+        {
+          "id": "sq3",
+          "content": "Déterminer la valeur exacte du réel $\\alpha$ pour lequel $f'(\\alpha) = 0$.",
+          "hint": "Le dénominateur $x^2$ est non nul sur le domaine. On résout $2x^3 - 4 = 0$.\n2x^3 = 4 \\iff x^3 = 2 \\iff x = \\sqrt[3]{2}\n\\conclusion Donc $\\alpha = \\sqrt[3]{2}$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Variations",
+      "subQuestions": [
+        {
+          "id": "sq4",
+          "content": "Dresser le tableau de variations complet de $f$.",
+          "hint": "Le signe de $f'(x)$ dépend uniquement du numérateur $2(x^3 - 2)$.\n\\begin{itemize} \\item Si $x < 0$, $x^3 < 0$, donc $f'(x) < 0$. \\item Si $0 < x < \\alpha$, $x^3 < 2$, donc $f'(x) < 0$. \\item Si $x > \\alpha$, $x^3 > 2$, donc $f'(x) > 0$. \\end{itemize}\n$$\\begin{array}{|c|cc||ccc|} \\hline x & -\\infty & & 0 & & \\alpha & & +\\infty \\\\ \\hline f'(x) & & - & || & - & 0 & + & \\\\ \\hline & +\\infty & & || & +\\infty & & & +\\infty \\\\ f & & \\searrow & || & & \\searrow & & \\nearrow & \\\\ & & & -\\infty & || & & f(\\alpha) & \\\\ \\hline \\end{array}$$\nLe minimum local est $f(\\alpha) = \\sqrt[3]{2}^2 + \\frac{4}{\\sqrt[3]{2}} = 3 \\sqrt[3]{4} \\approx 4,76$."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Théorème des Valeurs Intermédiaires",
+      "subQuestions": [
+        {
+          "id": "sq5",
+          "content": "Montrer que $f(x) = 7$ admet une unique solution $\\beta$ dans $[2; 3]$.",
+          "hint": "On sait que $\\alpha = \\sqrt[3]{2} \\approx 1,26$. Donc sur $[2; 3]$, la fonction $f$ est strictement croissante.\nCalculons les images aux bornes :\nf(2) = 2^2 + \\frac{4}{2} = 6 \\quad \\text{et} \\quad f(3) = 3^2 + \\frac{4}{3} = 10,33...\n\\conclusion Comme $f$ est continue, strictement monotone et que $7 \\in [f(2) ; f(3)]$, l'équation $f(x)=7$ admet une unique solution $\\beta$ dans $[2; 3]$."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "Intersection",
+      "subQuestions": [
+        {
+          "id": "sq6",
+          "content": "Déterminer l'intersection avec la courbe de $h(x) = \\frac{4}{x} + 7$ sur $[2; 3]$.",
+          "hint": "On cherche à résoudre $f(x) = h(x)$.\nx^2 + \\frac{4}{x} = \\frac{4}{x} + 7 \\iff x^2 = 7\nLes solutions dans $\\mathbb{R}$ sont $\\sqrt{7}$ et $-\\sqrt{7}$. On cherche une solution dans $[2; 3]$.\n\\conclusion Puisque $2 = \\sqrt{4} < \\sqrt{7} < \\sqrt{9} = 3$, l'abscisse cherchée est $x = \\sqrt{7}$."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "content": "Dérivée composée",
+      "subQuestions": [
+        {
+          "id": "sq7",
+          "content": "On pose $g(x) = \\cos(f(x))$. Déterminer $g'(x)$.",
+          "hint": "La formule est $(v \\circ u)' = u' \\times (v' \\circ u)$.\ng'(x) = -f'(x) \\sin(f(x))\n\\conclusion $$g'(x) = -\\left( \\frac{2x^3-4}{x^2} \\right) \\sin\\left( x^2 + \\frac{4}{x} \\right)$$"
+        }
+      ]
+    }
+  ]
+}

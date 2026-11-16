@@ -1,0 +1,11 @@
+{
+  "id": "mise-a-niveau",
+  "title": "Mise à niveau",
+  "exercises": [],
+  "revisions": [
+    {
+      "id": "rev-mise-a-niveau-tc",
+      "path": "data/tronc-commun-sc/mise-a-niveau/revisions/fiche_mise_a_niveau_cours.json"
+    }
+  ]
+}

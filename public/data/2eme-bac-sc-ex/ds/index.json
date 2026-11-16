@@ -1,0 +1,124 @@
+{
+    "classId":  "2eme-bac-sc-ex",
+    "title":  "Devoirs Surveillés — 2ème Bac Sciences Expérimentales",
+    "semestres":  [
+                      {
+                          "id":  "semestre1",
+                          "title":  "Semestre 1",
+                          "devoirs":  [
+                                          {
+                                              "id":  "ds1-s1-v1",
+                                              "title":  "Devoir Surveillé N°1",
+                                              "version":  "V1",
+                                              "number":  1,
+                                              "semestre":  1,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "continuité",
+                                                             "dérivabilité"
+                                                         ],
+                                              "path":  "data/2eme-bac-sc-ex/ds/semestre1/ds1_v1.json",
+                                              "exerciseCount":  2
+                                          },
+                                          {
+                                              "id":  "ds1-s1-v2",
+                                              "title":  "Devoir Surveillé N°1",
+                                              "version":  "V2",
+                                              "number":  1,
+                                              "semestre":  1,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "continuité",
+                                                             "dérivabilité"
+                                                         ],
+                                              "path":  "data/2eme-bac-sc-ex/ds/semestre1/ds1_v2.json",
+                                              "exerciseCount":  2
+                                          },
+                                          {
+                                              "id":  "ds2-s1-v1",
+                                              "title":  "Devoir Surveillé N°2",
+                                              "version":  "V1",
+                                              "number":  2,
+                                              "semestre":  1,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "suites numériques",
+                                                             "logarithmes"
+                                                         ],
+                                              "path":  "data/2eme-bac-sc-ex/ds/semestre1/ds2_v1.json",
+                                              "exerciseCount":  2
+                                          },
+                                          {
+                                              "id":  "ds3-s1-v1",
+                                              "title":  "Devoir Surveillé N°3",
+                                              "version":  "V1",
+                                              "number":  3,
+                                              "semestre":  1,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "exponentielles",
+                                                             "fonctions primitives"
+                                                         ],
+                                              "path":  "data/2eme-bac-sc-ex/ds/semestre1/ds3_v1.json",
+                                              "exerciseCount":  2
+                                          }
+                                      ]
+                      },
+                      {
+                          "id":  "semestre2",
+                          "title":  "Semestre 2",
+                          "devoirs":  [
+                                          {
+                                              "id":  "ds1-s2-v1",
+                                              "title":  "Devoir Surveillé N°1",
+                                              "version":  "V1",
+                                              "number":  1,
+                                              "semestre":  2,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "nombres complexes",
+                                                             "probabilités"
+                                                         ],
+                                              "path":  "data/2eme-bac-sc-ex/ds/semestre2/ds1_v1.json",
+                                              "exerciseCount":  2
+                                          },
+                                          {
+                                              "id":  "ds2-s2-v1",
+                                              "title":  "Devoir Surveillé N°2",
+                                              "version":  "V1",
+                                              "number":  2,
+                                              "semestre":  2,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "calcul intégral",
+                                                             "géométrie espace"
+                                                         ],
+                                              "path":  "data/2eme-bac-sc-ex/ds/semestre2/ds2_v1.json",
+                                              "exerciseCount":  2
+                                          },
+                                          {
+                                              "id":  "ds3-s2-v1",
+                                              "title":  "Devoir Surveillé N°3",
+                                              "version":  "V1",
+                                              "number":  3,
+                                              "semestre":  2,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "probabilités",
+                                                             "géométrie espace",
+                                                             "nombres complexes"
+                                                         ],
+                                              "path":  "data/2eme-bac-sc-ex/ds/semestre2/ds3_v1.json",
+                                              "exerciseCount":  3
+                                          }
+                                      ]
+                      }
+                  ]
+}

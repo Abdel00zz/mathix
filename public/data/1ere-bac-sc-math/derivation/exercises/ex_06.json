@@ -1,0 +1,30 @@
+{
+  "id": "ex-deriv-06",
+  "theme": "derivation",
+  "difficulty": "moyen",
+  "topic": "Étude de fonction et Inégalités",
+  "context": "Soient $n \\in \\mathbb{N}$ tel que $n \\ge 2$, et $f$ la fonction définie sur $\\mathbb{R}^+$ par : $f(x) = \\dfrac{1+x^n}{(1+x)^n}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $f'(x)$ pour tout $x \\in \\mathbb{R}^+$.",
+      "hint": "Dérivez comme un quotient $\\frac{u}{v}$. Pour simplifier le numérateur final, pensez à factoriser par $(1+x)^{n-1}$."
+    },
+    {
+      "id": "q2",
+      "content": "Dresser le tableau de variation de $f$.",
+      "hint": "Le signe de la dérivée dépend uniquement de $x^{n-1} - 1$. Comparez $x$ à 1 pour déterminer les variations."
+    },
+    {
+      "id": "q3",
+      "content": "En déduire que : $\\forall x \\in \\mathbb{R}^+$, $(1+x)^n \\le 2^{n-1}(1+x^n)$.",
+      "hint": "Utilisez le minimum absolu de $f$ trouvé à la question précédente pour établir une inégalité, puis isolez $(1+x)^n$."
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que : $\\forall a,b \\in \\mathbb{R}^+$, $\\left(\\frac{a+b}{2}\\right)^n \\le \\frac{a^n + b^n}{2}$.",
+      "hint": "Dans l'inégalité de la question 3, posez $x = \\frac{a}{b}$ (si $b \\neq 0$) et simplifiez l'expression."
+    }
+  ]
+}

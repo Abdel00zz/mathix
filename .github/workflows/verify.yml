@@ -1,0 +1,43 @@
+name: Verify Mathix
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            apps/apprendre-next/package-lock.json
+      - run: npm ci
+      - run: npm run verify
+      - run: npm run lint:src
+      - run: npm ci
+        working-directory: apps/apprendre-next
+      - run: npm run verify
+        working-directory: apps/apprendre-next
+      - run: npx playwright install --with-deps chromium
+        working-directory: apps/apprendre-next
+      - name: Check production sidebar and student persistence
+        working-directory: apps/apprendre-next
+        shell: bash
+        run: |
+          npm run start > "$RUNNER_TEMP/mathix-next.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail http://localhost:3100/api/health > /dev/null; then break; fi
+            sleep 1
+          done
+          npm run test:browser

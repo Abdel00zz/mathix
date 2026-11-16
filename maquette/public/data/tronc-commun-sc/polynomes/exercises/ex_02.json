@@ -1,0 +1,20 @@
+{
+  "id": "ex-poly-tc-02",
+  "theme": "polynomes",
+  "difficulty": "moyen",
+  "topic": "Les polynômes",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Égalité de polynômes",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Déterminer les réels $a, b, c$ tels que pour tout $x \\in \\mathbb{R}$, $2x^2 - 3x + 1 = a(x-1)^2 + b(x-1) + c$.",
+          "hint": "\\method Développez le membre de droite, puis identifiez les coefficients des termes de même degré avec ceux du membre de gauche."
+        }
+      ]
+    }
+  ]
+}

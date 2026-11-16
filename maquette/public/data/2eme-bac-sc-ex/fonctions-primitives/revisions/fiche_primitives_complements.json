@@ -1,0 +1,123 @@
+{
+  "header": {
+    "title": "Fonctions Primitives",
+    "subtitle": "Fiche de Cours & Méthodes",
+    "context": "2Bac Sciences Mathématiques"
+  },
+  "sections": [
+    {
+      "id": "def_primitive",
+      "category": "course",
+      "title": "Définition d'une fonction primitive",
+      "content": "\\begin{definition}[Fonction Primitive]Soit $f$ une fonction définie sur un intervalle $I$.\\\\On dit que $F$ est \\textbf{une fonction primitive} de $f$ sur $I$ si :\\begin{itemize}\\item $F$ est \\blank{dérivable} sur $I$\\item $\\forall x \\in I, \\quad F'(x) = \\blank{f(x)}$\\end{itemize}\\end{definition}"
+    },
+    {
+      "id": "existence_primitives",
+      "category": "course",
+      "title": "Existence et unicité des primitives",
+      "content": "\\begin{theorem}[Théorème fondamental]Toute fonction \\blank{continue} sur un intervalle $I$ admet des \\blank{primitives} sur $I$.\\end{theorem}"
+    },
+    {
+      "id": "ensemble_primitives",
+      "category": "course",
+      "title": "Ensemble des primitives",
+      "content": "\\begin{property}[Ensemble des primitives]Si $f$ admet une primitive $F$ sur un intervalle $I$, alors toute fonction $G$ définie sur $I$ par :\\\\$$G(x) = F(x) + k \\quad (k \\in \\mathbb{R})$$\\\\est aussi une \\blank{primitive} de $f$ sur $I$.\\\\\\textbf{Réciproquement :} Toute primitive de $f$ sur $I$ s'écrit sous cette forme.\\end{property}"
+    },
+    {
+      "id": "primitive_condition_initiale",
+      "category": "course",
+      "title": "Primitive avec condition initiale",
+      "content": "\\begin{theorem}[Condition initiale]Soit $f$ une fonction admettant des primitives sur un intervalle $I$.\\\\Soit $x_0$ un élément de $I$ et $y_0$ un réel.\\\\Il existe une \\textbf{unique} primitive $F$ de $f$ sur $I$ vérifiant la condition :\\\\$$F(x_0) = \\blank{y_0}$$\\\\Cette condition s'appelle \\textbf{condition initiale}.\\end{theorem}"
+    },
+    {
+      "id": "linearite_primitives",
+      "category": "course",
+      "title": "Linéarité des primitives",
+      "content": "\\begin{property}[Linéarité]Soient $F$ et $G$ des fonctions primitives respectives de $f$ et $g$ sur un intervalle $I$, et soit $k$ un réel.\\\\Alors :\\begin{itemize}\\item $(F + G)$ est une fonction primitive de \\blank{$(f + g)$} sur $I$\\item $kF$ est une fonction primitive de \\blank{$kf$} sur $I$\\end{itemize}\\end{property}"
+    },
+    {
+      "id": "primitives_usuelles_1",
+      "category": "course",
+      "title": "Primitives des fonctions usuelles - Partie 1",
+      "content": "\\begin{property}[Fonctions usuelles (1)]Tableau des primitives usuelles :\\\\$$\\begin{array}{|c|c|}\\hline \\textbf{Fonction } f(x) & \\textbf{Primitive } F(x) \\\\ \\hline a \\in \\mathbb{R} & \\blank{ax + k} \\\\ \\hline x & \\blank{\\frac{1}{2}x^2 + k} \\\\ \\hline \\frac{1}{x^2} & \\blank{-\\frac{1}{x} + k} \\\\ \\hline \\frac{1}{\\sqrt{x}} & \\blank{2\\sqrt{x} + k} \\\\ \\hline \\end{array}$$\\\\avec $k \\in \\mathbb{R}$ une constante quelconque.\\end{property}"
+    },
+    {
+      "id": "primitives_usuelles_2",
+      "category": "course",
+      "title": "Primitives des fonctions usuelles - Partie 2",
+      "content": "\\begin{property}[Fonctions usuelles (2)]Pour $r \\in \\mathbb{Q}^* \\setminus \\{-1\\}$ :\\\\$$\\begin{array}{|c|c|}\\hline \\textbf{Fonction } f(x) & \\textbf{Primitive } F(x) \\\\ \\hline x^r & \\blank{\\frac{x^{r+1}}{r+1} + k} \\\\ \\hline \\end{array}$$\\\\\\textbf{Cas particulier important :} Pour $r = -1$ :\\\\$$\\begin{array}{|c|c|}\\hline \\frac{1}{x} & \\blank{\\ln|x| + k} \\\\ \\hline \\end{array}$$\\\\avec $k \\in \\mathbb{R}$ une constante quelconque.\\end{property}"
+    },
+    {
+      "id": "primitives_usuelles_3",
+      "category": "course",
+      "title": "Primitives des fonctions trigonométriques",
+      "content": "\\begin{property}[Fonctions trigonométriques]$$\\begin{array}{|c|c|}\\hline \\textbf{Fonction } f(x) & \\textbf{Primitive } F(x) \\\\ \\hline \\sin x & \\blank{-\\cos x + k} \\\\ \\hline \\cos x & \\blank{\\sin x + k} \\\\ \\hline 1 + \\tan^2 x = \\frac{1}{\\cos^2 x} & \\blank{\\tan x + k} \\\\ \\hline \\end{array}$$\\\\avec $k \\in \\mathbb{R}$ une constante quelconque.\\end{property}"
+    },
+    {
+      "id": "primitives_composees_racine",
+      "category": "course",
+      "title": "Primitive de $u'/\\sqrt{u}$",
+      "content": "\\begin{property}[Forme $\\frac{u'}{\\sqrt{u}}$]Soit $u$ une fonction dérivable et \\blank{strictement positive} sur un intervalle $I$.\\\\Une primitive de la fonction $x \\mapsto \\frac{u'(x)}{\\sqrt{u(x)}}$ est :\\\\$$F(x) = \\blank{2\\sqrt{u(x)} + k}$$\\\\avec $k \\in \\mathbb{R}$ une constante quelconque.\\end{property}"
+    },
+    {
+      "id": "primitives_composees_puissance",
+      "category": "course",
+      "title": "Primitive de $u' \\times u^r$",
+      "content": "\\begin{property}[Forme $u' u^r$]Soit $u$ une fonction dérivable sur un intervalle $I$ et $r \\in \\mathbb{Q}^* \\setminus \\{-1\\}$.\\\\Une primitive de la fonction $x \\mapsto u'(x) \\times [u(x)]^r$ est :\\\\$$F(x) = \\blank{\\frac{[u(x)]^{r+1}}{r+1} + k}$$\\\\avec $k \\in \\mathbb{R}$ une constante quelconque.\\\\\\textbf{Condition :} Si $r < 0$, on doit avoir $u(x) \\neq 0$ sur $I$.\\end{property}"
+    },
+    {
+      "id": "primitives_composees_logarithme",
+      "category": "course",
+      "title": "Primitive de $u'/u$",
+      "content": "\\begin{property}[Forme $\\frac{u'}{u}$]Soit $u$ une fonction dérivable sur un intervalle $I$ telle que $u(x) \\neq 0$ sur $I$.\\\\Une primitive de la fonction $x \\mapsto \\frac{u'(x)}{u(x)}$ est :\\\\$$F(x) = \\blank{\\ln|u(x)| + k}$$\\\\avec $k \\in \\mathbb{R}$ une constante quelconque.\\\\\\textbf{Remarque :} Cette formule est fondamentale pour reconnaître les primitives de type quotient.\\end{property}"
+    },
+    {
+      "id": "primitives_composees_trigo_sin",
+      "category": "course",
+      "title": "Primitive de $u' \\times \\sin(u)$",
+      "content": "\\begin{property}[Forme $u'\\sin(u)$]Soit $u$ une fonction dérivable sur un intervalle $I$.\\\\Une primitive de la fonction $x \\mapsto u'(x) \\times \\sin[u(x)]$ est :\\\\$$F(x) = \\blank{-\\cos[u(x)] + k}$$\\\\avec $k \\in \\mathbb{R}$ une constante quelconque.\\end{property}"
+    },
+    {
+      "id": "primitives_composees_trigo_cos",
+      "category": "course",
+      "title": "Primitive de $u' \\times \\cos(u)$",
+      "content": "\\begin{property}[Forme $u'\\cos(u)$]Soit $u$ une fonction dérivable sur un intervalle $I$.\\\\Une primitive de la fonction $x \\mapsto u'(x) \\times \\cos[u(x)]$ est :\\\\$$F(x) = \\blank{\\sin[u(x)] + k}$$\\\\avec $k \\in \\mathbb{R}$ une constante quelconque.\\end{property}"
+    },
+    {
+      "id": "methode_reconnaitre_forme",
+      "category": "method",
+      "title": "Reconnaître la forme d'une primitive",
+      "content": "\\begin{method}[Identifier la forme]\\textbf{Objectif :} Identifier le type de primitive à utiliser pour calculer une primitive de $f$.\\\\\\textbf{Méthode d'analyse :}\\begin{enumerate}\\item \\textbf{Observer la structure de $f(x)$ :}\\begin{itemize}\\item Est-ce une fonction usuelle simple ? Alors utiliser le tableau des primitives usuelles.\\item Y a-t-il une composée $u(x)$ ? Alors chercher si $u'(x)$ apparaît.\\item Y a-t-il un quotient $\\frac{A(x)}{B(x)}$ ? Alors vérifier si $A(x)$ est proportionnel à $B'(x)$.\\end{itemize}\\item \\textbf{Identifier $u$ et $u'$ :}\\begin{itemize}\\item Repérer la fonction composée $u(x)$.\\item Calculer mentalement $u'(x)$.\\item Vérifier si $u'(x)$ (ou $k \\cdot u'(x)$) apparaît comme facteur.\\end{itemize}\\item \\textbf{Appliquer la formule correspondante :}\\begin{itemize}\\item Forme $\\frac{u'}{u}$ donne pour primitive : $\\blank{\\ln|u|}$\\item Forme $\\frac{u'}{\\sqrt{u}}$ donne pour primitive : $\\blank{2\\sqrt{u}}$\\item Forme $u' \\times u^r$ donne pour primitive : $\\blank{\\frac{u^{r+1}}{r+1}}$\\item Forme $u' \\times \\sin(u)$ donne pour primitive : $\\blank{-\\cos(u)}$\\item Forme $u' \\times \\cos(u)$ donne pour primitive : $\\blank{\\sin(u)}$\\end{itemize}\\end{enumerate}\\end{method}"
+    },
+    {
+      "id": "methode_primitive_polynome",
+      "category": "method",
+      "title": "Calculer la primitive d'un polynôme",
+      "content": "\\begin{method}[Polynômes]\\textbf{Objectif :} Calculer une primitive de $f(x) = a_nx^n + a_{n-1}x^{n-1} + \\ldots + a_1x + a_0$.\\\\\\textbf{Méthode :}\\begin{enumerate}\\item Appliquer la \\blank{linéarité} des primitives : on peut calculer la primitive terme par terme.\\item Pour chaque terme $a_kx^k$, utiliser la formule :\\\\$$\\text{Primitive de } a_kx^k = \\blank{a_k \\cdot \\frac{x^{k+1}}{k+1}}$$\\item Additionner toutes les primitives et ajouter la constante $k$.\\end{enumerate}\\end{method}\\begin{application}Calculer une primitive de $f(x) = 3x^2 - 5x + 2$.\\\\\\textbf{Solution :}\\\\On intègre terme à terme en utilisant la linéarité :$$ \\begin{aligned} F(x) &= 3 \\times \\frac{x^3}{3} - 5 \\times \\frac{x^2}{2} + 2x + k \\\\ &= x^3 - \\frac{5}{2}x^2 + 2x + k \\quad (k \\in \\mathbb{R}) \\end{aligned} $$\\end{application}"
+    },
+    {
+      "id": "methode_primitive_quotient",
+      "category": "method",
+      "title": "Reconnaître et calculer une primitive de type $u'/u$",
+      "content": "\\begin{method}[Quotient u'/u]\\textbf{Objectif :} Calculer une primitive d'une fonction de la forme $f(x) = \\frac{A(x)}{B(x)}$.\\\\\\textbf{Méthode :}\\begin{enumerate}\\item \\textbf{Calculer la dérivée du dénominateur :} $B'(x)$.\\item \\textbf{Comparer le numérateur avec $B'(x)$ :}\\begin{itemize}\\item Si $A(x) = k \\cdot B'(x)$ avec $k$ constante, alors on a une forme $\\frac{u'}{u}$.\\item Sinon, cette méthode ne s'applique pas directement.\\end{itemize}\\item \\textbf{Appliquer la formule :} Si $A(x) = k \\cdot B'(x)$, alors :\\\\$$F(x) = \\blank{k \\cdot \\ln|B(x)| + C}$$ avec $C \\in \\mathbb{R}$\\end{enumerate}\\end{method}\\begin{application}\\textbf{Exemple 1 :} Calculer une primitive de $f(x) = \\frac{2x}{x^2 + 1}$.\\\\\\textbf{Solution :}\\\\Posons $u(x) = x^2 + 1$. On a alors $u'(x) = 2x$.\\\\Le numérateur est exactement $u'(x)$, donc $f$ est de la forme $\\frac{u'}{u}$.\\\\Ainsi, une primitive est :$$ F(x) = \\ln|x^2 + 1| + k = \\ln(x^2 + 1) + k $$ (car $x^2 + 1 > 0$ pour tout réel).\\\\\\textbf{Exemple 2 :} Calculer une primitive de $f(x) = \\frac{3x^2 - 6}{x^3 - 6x + 1}$.\\\\\\textbf{Solution :}\\\\Posons $u(x) = x^3 - 6x + 1$. Sa dérivée est $u'(x) = 3x^2 - 6$.\\\\On remarque que le numérateur est exactement $u'(x)$.\\\\Par conséquent :$$ F(x) = \\ln|x^3 - 6x + 1| + k $$\\end{application}"
+    },
+    {
+      "id": "methode_primitive_composee",
+      "category": "method",
+      "title": "Calculer une primitive de fonction composée",
+      "content": "\\begin{method}[Fonctions composées]\\textbf{Objectif :} Calculer une primitive de $f(x) = u'(x) \\times g(u(x))$ avec $g$ une fonction usuelle.\\\\\\textbf{Méthode générale :}\\begin{enumerate}\\item \\textbf{Identifier la fonction composée $u(x)$} et sa dérivée $u'(x)$.\\item \\textbf{Vérifier que $u'(x)$ apparaît comme facteur} (éventuellement avec une constante).\\item \\textbf{Reconnaître le type de $g$ :}\\begin{itemize}\\item Si $g(t) = t^r$, on a la forme $u' \\times u^r$ qui donne pour primitive : $\\blank{\\frac{u^{r+1}}{r+1}}$\\item Si $g(t) = \\frac{1}{t}$, on a la forme $\\frac{u'}{u}$ qui donne pour primitive : $\\blank{\\ln|u|}$\\item Si $g(t) = \\frac{1}{\\sqrt{t}}$, on a la forme $\\frac{u'}{\\sqrt{u}}$ qui donne pour primitive : $\\blank{2\\sqrt{u}}$\\item Si $g(t) = \\sin(t)$, on a la forme $u' \\times \\sin(u)$ qui donne pour primitive : $\\blank{-\\cos(u)}$\\item Si $g(t) = \\cos(t)$, on a la forme $u' \\times \\cos(u)$ qui donne pour primitive : $\\blank{\\sin(u)}$\\end{itemize}\\item \\textbf{Appliquer la formule correspondante} et ajouter la constante $k$.\\end{enumerate}\\end{method}\\begin{application}Calculer une primitive de $f(x) = 6x^2(2x^3 + 1)^5$.\\\\\\textbf{Solution :}\\\\Posons $u(x) = 2x^3 + 1$. Sa dérivée est $u'(x) = 6x^2$.\\\\On reconnaît la forme $u' \\times u^5$ avec $n = 5$.\\\\D'après la formule $\\int u'u^n = \\frac{u^{n+1}}{n+1}$, on obtient :$$ F(x) = \\frac{(2x^3 + 1)^{6}}{6} + k $$\\end{application}"
+    },
+    {
+      "id": "methode_primitive_condition",
+      "category": "method",
+      "title": "Déterminer une primitive avec condition initiale",
+      "content": "\\begin{method}[Condition initiale]\\textbf{Objectif :} Trouver la primitive $F$ de $f$ sur $I$ vérifiant $F(x_0) = y_0$.\\\\\\textbf{Méthode :}\\begin{enumerate}\\item \\textbf{Calculer l'ensemble des primitives :} Déterminer $F(x) + k$ où $F$ est une primitive particulière et $k \\in \\mathbb{R}$.\\item \\textbf{Utiliser la condition initiale :} Remplacer $x$ par $x_0$ dans l'expression :\\\\$$F(x_0) + k = y_0$$\\item \\textbf{Résoudre pour trouver $k$ :} $k = y_0 - F(x_0)$\\item \\textbf{Écrire la primitive cherchée :} $F(x) + k$ avec la valeur de $k$ trouvée.\\end{enumerate}\\end{method}\\begin{application}Déterminer la primitive $F$ de $f(x) = 3x^2 - 2x$ vérifiant $F(1) = 5$.\\\\\\textbf{Solution :}\\\\1. Les primitives de $f$ sont de la forme :$$ F(x) = \\frac{3x^3}{3} - \\frac{2x^2}{2} + k = x^3 - x^2 + k $$\\\\2. On utilise la condition initiale $F(1) = 5$ :$$ \\begin{aligned} F(1) = 5 &\\iff 1^3 - 1^2 + k = 5 \\\\ &\\iff 1 - 1 + k = 5 \\\\ &\\iff k = 5 \\end{aligned} $$\\\\Conclusion : La primitive cherchée est $\\boxed{F(x) = x^3 - x^2 + 5}$.\\end{application}"
+    },
+    {
+      "id": "methode_verification_primitive",
+      "category": "method",
+      "title": "Vérifier qu'une fonction est une primitive",
+      "content": "\\begin{method}[Vérification]\\textbf{Objectif :} Vérifier que $F$ est une primitive de $f$ sur un intervalle $I$.\\\\\\textbf{Méthode :}\\begin{enumerate}\\item \\textbf{Vérifier que $F$ est dérivable sur $I$ :} S'assurer que $F$ ne présente pas de point de non-dérivabilité.\\item \\textbf{Calculer la dérivée $F'(x)$ :} Utiliser les règles de dérivation.\\item \\textbf{Simplifier $F'(x)$ :} Réduire l'expression obtenue.\\item \\textbf{Comparer avec $f(x)$ :}\\begin{itemize}\\item Si $F'(x) = f(x)$ pour tout $x \\in I$, alors $F$ est bien une primitive de $f$.\\item Sinon, $F$ n'est pas une primitive de $f$.\\end{itemize}\\end{enumerate}\\end{method}\\begin{application}Vérifier que $F(x) = \\frac{x^3}{3} - 2x^2 + 5x + 1$ est une primitive de $f(x) = x^2 - 4x + 5$.\\\\\\textbf{Solution :}\\\\$F$ est une fonction polynôme, donc dérivable sur $\\mathbb{R}$. Calculons sa dérivée :$$ \\begin{aligned} F'(x) &= \\frac{1}{3}(3x^2) - 2(2x) + 5 \\\\ &= x^2 - 4x + 5 \\end{aligned} $$\\\\On constate que $F'(x) = f(x)$ pour tout $x \\in \\mathbb{R}$.\\\\Donc $F$ est bien une primitive de $f$ sur $\\mathbb{R}$.\\end{application}"
+    }
+  ]
+}

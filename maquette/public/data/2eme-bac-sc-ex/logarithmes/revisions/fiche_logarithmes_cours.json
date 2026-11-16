@@ -1,0 +1,481 @@
+{
+  "header": {
+    "title": "Fonctions logarithmes",
+    "subtitle": "Définir, calculer, dériver et étudier des fonctions logarithmiques avec des applications distribuées",
+    "context": "2BAC Sciences"
+  },
+  "lexique": [
+    {
+      "term": "Logarithme népérien",
+      "arabic": "اللوغاريتم النيبيري",
+      "category": "concept",
+      "symbol": "\\ln",
+      "definition": "Fonction réciproque de l'exponentielle de base e.",
+      "variants": [
+        "logarithme naturel",
+        "ln"
+      ]
+    },
+    {
+      "term": "Domaine de définition",
+      "arabic": "مجال التعريف",
+      "category": "concept",
+      "definition": "Ensemble des valeurs pour lesquelles une fonction est définie.",
+      "variants": [
+        "ensemble de définition"
+      ]
+    },
+    {
+      "term": "Fonction logarithme",
+      "arabic": "دالة لوغاريتمية",
+      "category": "concept",
+      "definition": "Fonction qui transforme un produit en somme de logarithmes.",
+      "variants": [
+        "fonctions logarithmes",
+        "fonctions logarithmiques"
+      ]
+    },
+    {
+      "term": "Propriété algébrique",
+      "arabic": "خاصية جبرية",
+      "category": "concept",
+      "definition": "Règle de calcul qui relie les logarithmes d'un produit, d'un quotient ou d'une puissance.",
+      "variants": [
+        "propriétés algébriques"
+      ]
+    },
+    {
+      "term": "Fonction réciproque",
+      "arabic": "الدالة العكسية",
+      "category": "concept",
+      "symbol": "\\ln^{-1}=\\exp",
+      "definition": "Fonction qui annule l'effet d'une autre fonction sur son domaine adapté.",
+      "variants": [
+        "fonctions réciproques"
+      ]
+    },
+    {
+      "term": "Exponentielle",
+      "arabic": "الدالة الأسية",
+      "category": "concept",
+      "symbol": "e^x",
+      "definition": "Fonction dont le logarithme népérien est la fonction réciproque.",
+      "variants": [
+        "fonction exponentielle"
+      ]
+    },
+    {
+      "term": "Équation logarithmique",
+      "arabic": "معادلة لوغاريتمية",
+      "category": "concept",
+      "definition": "Équation contenant un logarithme, résolue en respectant la positivité de son argument.",
+      "variants": [
+        "équations logarithmiques"
+      ]
+    },
+    {
+      "term": "Inéquation logarithmique",
+      "arabic": "متراجحة لوغاريتمية",
+      "category": "concept",
+      "definition": "Inégalité contenant un logarithme dont le sens dépend de la croissance de ln.",
+      "variants": [
+        "inéquations logarithmiques"
+      ]
+    },
+    {
+      "term": "Dérivée logarithmique",
+      "arabic": "المشتقة اللوغاريتمية",
+      "category": "concept",
+      "symbol": "(\\ln x)'=1/x",
+      "definition": "Dérivée de la fonction logarithme sur les réels strictement positifs.",
+      "variants": [
+        "dérivée de ln"
+      ]
+    },
+    {
+      "term": "Primitive",
+      "arabic": "دالة أصلية",
+      "category": "concept",
+      "definition": "Fonction dont la dérivée est la fonction donnée.",
+      "variants": [
+        "primitives"
+      ]
+    },
+    {
+      "term": "Limite",
+      "arabic": "نهاية",
+      "category": "concept",
+      "symbol": "\\lim",
+      "definition": "Valeur vers laquelle une fonction se rapproche.",
+      "variants": [
+        "limites"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Tu connais déjà les puissances et l'exponentielle. Le logarithme népérien permet d'\\objectif{défaire l'exponentielle et transformer les produits, quotients et puissances}. La \\defi{difficulté} consiste à penser au domaine avant les calculs, puis à choisir la bonne propriété.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/John_Napier.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "John Napier (1550–1617)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definition_et_domaine",
+      "category": "course",
+      "title": "Définition et domaine du logarithme népérien",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après avoir compris le rôle historique du logarithme népérien, il convient de le définir de manière rigoureuse. Nous allons établir son domaine de définition strictement positif et poser les bases indispensables pour la résolution d'équations."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la fonction logarithme népérien} ?",
+          "content": "On appelle \\textbf{fonction logarithme népérien}, notée $\\ln$, la primitive de la fonction $x\\mapsto \\dfrac{1}{x}$ sur $]0\\,;+\\infty[$ qui s'annule en $1$.\\par\\smallskip Ainsi, pour tout $x>0$ : $$\\boxed{(\\ln)'(x)=\\dfrac{1}{x}\\quad\\text{et}\\quad \\ln(1)=0}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les conséquences immédiates de $\\ln$} ?",
+          "content": "La fonction $\\ln$ est \\textbf{continue} et \\textbf{strictement croissante} sur $]0\\,;+\\infty[$.\\par\\smallskip Pour $a>0$ et $b>0$ :\\begin{itemize}\\item $\\ln(a)=\\ln(b)$ ssi $a=b$.\\item $\\ln(a)<\\ln(b)$ ssi $a<b$.\\item $\\ln(a)<0$ ssi $0<a<1$.\\item $\\ln(a)>0$ ssi $a>1$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{résoudre équations et inéquations avec $\\ln$} ?",
+          "content": "Commence par écrire les \\textbf{conditions d'existence}. Chaque quantité placée dans $\\ln(\\cdot)$ doit être strictement positive.\\par Pour une équation $\\ln(A)=\\ln(B)$, transforme en $A=B$ seulement après avoir gardé $A>0$ et $B>0$.\\par Pour une inéquation, utilise la croissance de $\\ln$ : le sens de l'inégalité ne change pas. Termine par l'intersection avec le domaine."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons dans $\\mathbb{R}$ :\\begin{enumerate}\\item $\\ln(x^2+x+1)=\\ln(x+5)$.\\item $\\ln(2x-1)\\leq \\ln(x)$.\\item $\\ln(x^2-x)\\geq \\ln(2x)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On a $x^2+x+1>0$ pour tout réel $x$ et $x+5>0$, donc $x>\\blank{-5}$.\\begin{align*}x^2+x+1&=x+5\\\\x^2&=\\blank{4}\\\\x&=\\blank{-2}\\quad\\text{ou}\\quad x=\\blank{2}\\end{align*}Ainsi $S_1=\\boxed{\\{-2,2\\}}$.\\item Le domaine est $x>\\blank{\\dfrac{1}{2}}$. Comme $\\ln$ est croissante, $2x-1\\leq x$, donc $x\\leq \\blank{1}$. Ainsi $S_2=\\boxed{]\\dfrac{1}{2}\\,;1]}$.\\item Le domaine impose $x>\\blank{1}$. Puis $x^2-x\\geq 2x$ ssi $x(x-3)\\geq\\blank{0}$. Avec $x>1$, on garde $x\\geq\\blank{3}$. Ainsi $S_3=\\boxed{[3\\,;+\\infty[}$.\\end{enumerate}"
+        },
+        {
+          "type": "warning",
+          "content": "\\itemsize{\\textbf{Réflexe :} si une valeur annule l'intérieur d'un logarithme, elle est interdite même si elle vérifie l'équation transformée. Le domaine reste la première ligne du raisonnement.}\\itemsize{\\textbf{Erreur fréquente :} résoudre d'abord l'équation transformée et vérifier le domaine à la fin. Avec les logarithmes, le domaine se pose dès la première ligne.}"
+        },
+        {
+          "type": "example",
+          "title": "Domaines classiques",
+          "content": "\\itemsize{Pour $f(x)=\\ln x+\\ln(x-1)$, les conditions sont $x>0$ et $x-1>0$. Ainsi $D_f=]1\\,;+\\infty[$.}\\itemsize{Pour $g(x)=\\ln(x^2-x)$, on résout $x(x-1)>0$. Ainsi $D_g=]-\\infty\\,;0[\\cup]1\\,;+\\infty[$.}\\itemsize{Pour $h(x)=\\ln\\!\\left(\\dfrac{x-4}{x+1}\\right)$, on étudie le signe du quotient. Ainsi $D_h=]-\\infty\\,;-1[\\cup]4\\,;+\\infty[$.}"
+        }
+      ]
+    },
+    {
+      "id": "proprietes_algebriques",
+      "category": "course",
+      "title": "Propriétés algébriques de $\\ln$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Maintenant que le logarithme népérien est défini et que nous maîtrisons son domaine d'existence, nous pouvons explorer ses règles de calcul. Nous allons découvrir comment cette fonction transforme les produits en sommes, facilitant ainsi la simplification d'expressions complexes."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les propriétés algébriques de $\\ln$} ?",
+          "content": "Pour $a>0$, $b>0$ et $r\\in\\mathbb{Q}$ :\\begin{itemize}\\item $\\ln(ab)=\\ln(a)+\\ln(b)$,\\item $\\ln\\!\\left(\\dfrac{1}{b}\\right)=-\\ln(b)$,\\item $\\ln\\!\\left(\\dfrac{a}{b}\\right)=\\ln(a)-\\ln(b)$,\\item $\\ln(a^r)=r\\ln(a)$.\\end{itemize}"
+        },
+        {
+          "type": "example",
+          "title": "Exprimer avec $\\ln(2)$ et $\\ln(3)$",
+          "content": "$32=2^5$ et $81=3^4$. Donc :\\par\\smallskip\\begin{align*}\\ln\\!\\left(\\dfrac{32}{81}\\right)&=\\ln(2^5)-\\ln(3^4)\\\\&=5\\ln(2)-4\\ln(3).\\end{align*}"
+        },
+        {
+          "type": "example",
+          "title": "Regrouper deux logarithmes",
+          "content": "\\itemsize{Les deux nombres $3+\\sqrt3$ et $3-\\sqrt3$ sont positifs, donc le regroupement est autorisé.}\\itemsize{On utilise $\\ln a+\\ln b=\\ln(ab)$ :}\\begin{align*}A&=\\ln(3+\\sqrt3)+\\ln(3-\\sqrt3)\\\\&=\\ln((3+\\sqrt3)(3-\\sqrt3))\\\\&=\\ln(6).\\end{align*}\\itemsize{Ainsi $A=\\ln(6)=\\ln(2)+\\ln(3)$.}"
+        },
+        {
+          "type": "warning",
+          "content": "Attention, c’est ici que vous risquez de vous tromper : $\\ln(a+b)\\neq \\ln(a)+\\ln(b)$ en général. Le logarithme transforme un produit, un quotient ou une puissance, jamais une somme."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Simplifions ou exprimons en fonction de $\\ln(2)$ et $\\ln(3)$ :\\begin{enumerate}\\item $B=\\ln(\\sqrt[6]{3})$.\\item $C=\\ln\\!\\left(\\dfrac{2^4\\sqrt3}{9}\\right)$.\\item $D=\\ln((2\\sqrt3)^2)-\\ln(24)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item $B=\\ln(3^{1/6})=\\blank{\\dfrac{1}{6}}\\ln(3)$, donc $B=\\boxed{\\blank{\\dfrac{1}{6}\\ln(3)}}$.\\item\\begin{align*}C&=\\ln(2^4)+\\ln(3^{1/2})-\\ln(3^2)\\\\&=\\blank{4\\ln(2)}+\\blank{\\dfrac{1}{2}\\ln(3)}-\\blank{2\\ln(3)}\\\\&=\\boxed{4\\ln(2)-\\dfrac{3}{2}\\ln(3)}.\\end{align*}\\item Comme $(2\\sqrt3)^2=\\blank{12}$, on a $D=\\ln(12)-\\ln(24)=\\ln\\!\\left(\\blank{\\dfrac{1}{2}}\\right)=\\boxed{-\\ln(2)}$.\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{traiter une équation polynomiale en $\\ln x$} ?",
+          "content": "Dès qu'une équation contient $(\\ln x)^2$, $\\ln x$ et une constante, pose $X=\\ln x$. Tu obtiens une équation du second degré. À la fin, reviens à $x$ avec $x=e^X$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Résolvons dans $\\mathbb{R}$ l'équation $3(\\ln x)^2+2\\ln x-1=0$.}\\par\\smallskip L'équation est définie pour $x>0$. Posons $X=\\blank{\\ln x}$. On obtient :\\begin{align*}3X^2+2X-1&=0\\\\(3X-1)(X+1)&=\\blank{0}.\\end{align*}Donc $X=\\blank{\\dfrac{1}{3}}$ ou $X=\\blank{-1}$. Ainsi $\\ln x=\\dfrac{1}{3}$ ou $\\ln x=-1$, donc $x=\\blank{e^{1/3}}$ ou $x=\\blank{e^{-1}}$.\\par\\smallskip $S=\\boxed{\\{e^{-1},e^{1/3}\\}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons dans $\\mathbb{R}$ l'inéquation $\\ln(x+1)\\geq -\\ln(x+3)+\\ln(x+7)$.}\\par\\smallskip Le domaine impose $x+1>0$, $x+3>0$ et $x+7>0$, donc $x>\\blank{-1}$. Sur ce domaine :\\begin{align*}\\ln(x+1)+\\ln(x+3)&\\geq \\ln(x+7)\\\\\\ln((x+1)(x+3))&\\geq \\blank{\\ln(x+7)}.\\end{align*}Comme $\\ln$ est croissante :\\begin{align*}(x+1)(x+3)&\\geq x+7\\\\x^2+3x-4&\\geq 0\\\\(x+4)(x-1)&\\geq \\blank{0}.\\end{align*}Avec le domaine $x>-1$, on garde $x\\geq\\blank{1}$. Donc $S=\\boxed{[1\\,;+\\infty[}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons dans $\\mathbb{R}^2$ le système : $4\\ln x-3\\ln y=10$ et $2\\ln x+5\\ln y=-8$.}\\par\\smallskip Le système impose $x>0$ et $y>0$. Posons $X=\\blank{\\ln x}$ et $Y=\\blank{\\ln y}$. On résout :\\begin{align*}4X-3Y&=10\\\\2X+5Y&=-8.\\end{align*}Par élimination, on obtient $X=\\blank{1}$ et $Y=\\blank{-2}$. Ainsi $x=\\blank{e}$ et $y=\\blank{e^{-2}}$.\\par\\smallskip $(x,y)=\\boxed{(e,e^{-2})}$."
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{Un produit devient une somme : c'est la transformation la plus utilisée.}\\itemsize{Un quotient devient une différence : le domaine doit être vérifié avant le regroupement.}\\itemsize{Une puissance devient un coefficient : $\\ln(a^r)=r\\ln(a)$ lorsque $a>0$.}",
+          "title": "Trois réflexes à garder"
+        }
+      ]
+    },
+    {
+      "id": "limites_et_croissance",
+      "category": "course",
+      "title": "Limites et croissance comparée",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fois les propriétés algébriques assimilées, il devient nécessaire d'analyser le comportement de la fonction aux bornes de son domaine. Nous allons étudier les limites fondamentales et la croissance comparée pour lever les formes indéterminées."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelles sont \\mathqst{les limites de référence de $\\ln$} ?",
+          "content": "Les limites de référence sont :\\par\\smallskip$$\\boxed{\\displaystyle\\lim_{x\\to+\\infty}\\ln(x)=+\\infty\\quad\\text{et}\\quad\\displaystyle\\lim_{x\\to0^+}\\ln(x)=-\\infty}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{$\\ln$ est dominé par les puissances} ?",
+          "content": "Pour tout entier naturel non nul $n$ :\\par\\smallskip$$\\boxed{\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{\\ln(x)}{x^n}=0\\quad\\text{et}\\quad\\displaystyle\\lim_{x\\to0^+}x^n\\ln(x)=0}$$\\par\\smallskip De plus : $$\\boxed{\\displaystyle\\lim_{x\\to1}\\dfrac{\\ln(x)}{x-1}=1\\quad\\text{et}\\quad\\displaystyle\\lim_{x\\to0}\\dfrac{\\ln(1+x)}{x}=1}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer une limite avec $\\ln$} ?",
+          "content": "Identifie d'abord la zone : près de $0^+$, près de $1$, ou vers $+\\infty$. Cherche ensuite la limite de référence qui ressemble à l'expression.\\par Si tu vois $\\ln(x^k)$ avec $x>0$, écris $\\ln(x^k)=k\\ln(x)$. Vers $+\\infty$, une puissance de $x$ domine $\\ln(x)$ et même $(\\ln x)^2$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{On considère $f(x)=x-\\dfrac{(\\ln x)^2}{x}$ sur $]0\\,;+\\infty[$.\\begin{enumerate}\\item Calculons la limite de $f$ en $0^+$ et interprétons graphiquement.\\item Montrons que $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{(\\ln x)^2}{x}=0$.\\item Calculons $\\displaystyle\\lim_{x\\to+\\infty}f(x)$ et montrons que la droite $\\Delta:y=x$ est asymptote oblique.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Lorsque $x\\to0^+$, on a $\\ln x\\to\\blank{-\\infty}$ et $\\dfrac{(\\ln x)^2}{x}\\to\\blank{+\\infty}$. Donc $f(x)\\to\\blank{-\\infty}$. L'axe des ordonnées est une asymptote verticale.\\item Posons $t=\\sqrt{x}$. Alors $t\\to\\blank{+\\infty}$ et $\\dfrac{(\\ln x)^2}{x}=\\blank{4\\left(\\dfrac{\\ln t}{t}\\right)^2}$. Par croissance comparée, cette expression tend vers $0$.\\item Comme $f(x)=x-\\dfrac{(\\ln x)^2}{x}$, on obtient $f(x)\\to\\boxed{\\blank{+\\infty}}$. De plus $f(x)-x=\\blank{-\\dfrac{(\\ln x)^2}{x}}\\to0$, donc $\\Delta:y=x$ est une asymptote oblique en $+\\infty$.\\end{enumerate}"
+        },
+        {
+          "type": "example",
+          "title": "Limite à l'infini",
+          "content": "On factorise par $x^2$ :\\par\\smallskip\\begin{align*}2x^2-3-x\\ln x&=x^2\\left(2-\\dfrac{3}{x^2}-\\dfrac{\\ln x}{x}\\right).\\end{align*}Comme $\\dfrac{3}{x^2}$ et $\\dfrac{\\ln x}{x}$ tendent vers $0$, la limite vaut $+\\infty$."
+        },
+        {
+          "type": "example",
+          "title": "Limite près de $0^+$",
+          "content": "Pour $x>0$, $\\ln(x^4)=4\\ln(x)$. Donc :\\par\\smallskip$$x^3\\ln(x^4)=4x^3\\ln(x).$$ Comme $x^3\\ln(x)$ tend vers $0$ lorsque $x$ tend vers $0^+$, la limite vaut $0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons les limites suivantes :\\begin{enumerate}\\item $\\displaystyle\\lim_{x\\to0^+}x\\ln\\!\\left(\\dfrac{1}{x}\\right)$.\\item $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{\\ln(x^2+x+1)}{x^3}$.\\item $\\displaystyle\\lim_{x\\to+\\infty}x\\ln\\!\\left(1+\\dfrac{1}{x}\\right)$.\\item $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{(\\ln x)^2}{x}$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item $\\ln(1/x)=\\blank{-\\ln x}$, donc $x\\ln(1/x)=\\blank{-x\\ln x}$ et la limite vaut $\\boxed{0}$.\\item Pour $x$ grand, $x^2+x+1\\leq3x^2$. Ainsi $\\ln(x^2+x+1)\\leq\\blank{\\ln(3x^2)}$ et $\\ln(3x^2)=\\blank{\\ln3+2\\ln x}$, donc la limite vaut $\\boxed{0}$.\\item Posons $t=\\dfrac{1}{x}$. Alors $t\\to\\blank{0^+}$ et $x\\ln(1+1/x)=\\dfrac{\\ln(1+t)}{t}\\to\\blank{1}$. La limite vaut $\\boxed{1}$.\\item En posant $y=\\sqrt{x}$, on obtient $\\dfrac{(\\ln x)^2}{x}=\\blank{4\\left(\\dfrac{\\ln y}{y}\\right)^2}$. La limite vaut $\\boxed{\\blank{0}}$.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{À l'infini, $\\ln(x)$ tend vers $+\\infty$, mais il est négligeable devant toute puissance positive de $x$.}\\itemsize{Près de $0^+$, les expressions du type $x^n\\ln(x)$ tendent vers $0$ lorsque $n\\geq1$.}"
+        }
+      ]
+    },
+    {
+      "id": "nombre_e_et_courbe",
+      "category": "course",
+      "title": "Nombre $e$ et lecture graphique de $\\ln$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après l'étude des limites, nous pouvons dresser le portrait géométrique du logarithme népérien. Nous allons analyser l'allure de sa courbe représentative, comprendre le rôle unique du nombre d'Euler et interpréter graphiquement ses propriétés."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le nombre d'Euler $e$} ?",
+          "content": "L'équation $\\ln(x)=1$ admet une unique solution dans $]0\\,;+\\infty[$. Cette solution est le \\textbf{nombre d'Euler}, noté $e$.\\par\\smallskip$$\\boxed{\\ln(e)=1\\quad\\text{et}\\quad e\\approx2{,}718281828}$$"
+        },
+        {
+          "type": "example",
+          "title": "Résoudre $\\ln(x-1)=1$",
+          "content": "Le domaine impose $x-1>0$, donc $x>1$. Puis :\\par\\smallskip\\begin{align*}\\ln(x-1)=1&=\\ln(e)\\\\x-1&=e\\\\x&=e+1.\\end{align*}Ainsi $S=\\{e+1\\}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Résolvons dans $\\mathbb{R}$ :\\begin{enumerate}\\item $\\ln(2x+3)=1$.\\item $\\ln(x^2-1)=1$.\\item $\\ln(x^2-4x+5)=0$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Le domaine impose $2x+3>0$, soit $x>\\blank{-\\dfrac{3}{2}}$. Puis $2x+3=e$, donc $x=\\blank{\\dfrac{e-3}{2}}$. Ainsi $S_1=\\boxed{\\left\\{\\dfrac{e-3}{2}\\right\\}}$.\\item Le domaine impose $x^2-1>0$, soit $x^2>\\blank{1}$. Puis $x^2-1=e$, donc $x^2=\\blank{e+1}$. Ainsi $S_2=\\boxed{\\{-\\sqrt{e+1},\\sqrt{e+1}\\}}$.\\item Comme $x^2-4x+5=(x-2)^2+1>0$, l'équation devient $x^2-4x+5=\\blank{1}$, donc $(x-2)^2=\\blank{0}$. Ainsi $S_3=\\boxed{\\{2\\}}$.\\end{enumerate}"
+        },
+        {
+          "type": "property",
+          "title": "Quelles lectures \\mathqst{donne la courbe de $\\ln$} ?",
+          "content": "La courbe $C_{\\ln}$ admet l'axe des ordonnées comme \\textbf{asymptote verticale}, car $\\displaystyle\\lim_{x\\to0^+}\\ln(x)=-\\infty$.\\par La tangente au point $A(1,0)$ a pour équation $y=x-1$.\\par Au voisinage de $+\\infty$, $\\dfrac{\\ln x}{x}$ tend vers $0$, donc la courbe monte lentement."
+        },
+        {
+          "type": "example",
+          "title": "Justifier $\\ln(x)\\leq x-1$",
+          "content": "Considérons $\\varphi(x)=x-1-\\ln(x)$ sur $]0\\,;+\\infty[$. Alors :\\par\\smallskip$$\\varphi'(x)=1-\\dfrac{1}{x}=\\dfrac{x-1}{x}.$$ La fonction $\\varphi$ décroît sur $]0\\,;1]$ puis croît sur $[1\\,;+\\infty[$, et son minimum vaut $\\varphi(1)=0$. Donc $\\ln(x)\\leq x-1$ pour tout $x>0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $g(x)=x+\\ln(x)$ définie sur $]0\\,;+\\infty[$.\\begin{enumerate}\\item Montrons que $g$ est strictement croissante.\\item Déterminons $g(]0\\,;+\\infty[)$.\\item Montrons que $g(x)=0$ admet une unique solution $\\alpha$ et vérifions que $0<\\alpha<1$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item $g'(x)=\\blank{1+\\dfrac{1}{x}}>\\blank{0}$ pour tout $x>0$, donc $g$ est strictement croissante.\\item On a $\\displaystyle\\lim_{x\\to0^+}g(x)=\\blank{-\\infty}$ et $\\displaystyle\\lim_{x\\to+\\infty}g(x)=\\blank{+\\infty}$. Par continuité et monotonie, $g(]0\\,;+\\infty[)=\\boxed{\\mathbb{R}}$.\\item Comme $0\\in\\mathbb{R}$, l'équation $g(x)=0$ admet une unique solution $\\alpha$. De plus $g(0^+)=-\\infty$ et $g(1)=\\blank{1}>0$, donc $\\boxed{\\blank{0}<\\alpha<1}$.\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{lier la courbe à une équation} ?",
+          "content": "Quand une fonction $g$ est continue et strictement monotone sur un intervalle, l'équation $g(x)=k$ admet au plus une solution. Pour prouver son existence, on compare deux valeurs de $g$ qui encadrent $k$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{On considère $f(x)=x-\\dfrac{(\\ln x)^2}{x}$ sur $]0\\,;+\\infty[$.\\begin{enumerate}\\item Calculons la limite de $f$ en $0^+$ et interprétons graphiquement.\\item Montrons que $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{(\\ln x)^2}{x}=0$.\\item Calculons $\\displaystyle\\lim_{x\\to+\\infty}f(x)$ et montrons que la droite $\\Delta:y=x$ est asymptote oblique.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Lorsque $x\\to0^+$, on a $\\ln x\\to\\blank{-\\infty}$ et $\\dfrac{(\\ln x)^2}{x}\\to\\blank{+\\infty}$. Donc $f(x)\\to\\blank{-\\infty}$. L'axe des ordonnées est une asymptote verticale.\\item Posons $t=\\sqrt{x}$. Alors $t\\to\\blank{+\\infty}$ et $\\dfrac{(\\ln x)^2}{x}=\\blank{4\\left(\\dfrac{\\ln t}{t}\\right)^2}$. Par croissance comparée, cette expression tend vers $0$.\\item Comme $f(x)=x-\\dfrac{(\\ln x)^2}{x}$, on obtient $f(x)\\to\\boxed{\\blank{+\\infty}}$. De plus $f(x)-x=\\blank{-\\dfrac{(\\ln x)^2}{x}}\\to0$, donc $\\Delta:y=x$ est une asymptote oblique en $+\\infty$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "derivees_et_primitives",
+      "category": "course",
+      "title": "Dérivées et primitives avec logarithme",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La compréhension de la courbe et des limites nous permet à présent d'aborder l'analyse quantitative de ces fonctions. Nous allons apprendre à dériver les expressions composées avec le logarithme et à déterminer leurs primitives sur des intervalles adaptés."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{dériver $\\ln(u)$ et $\\ln|u|$} ?",
+          "content": "Soit $u$ une fonction dérivable et strictement positive sur un intervalle $I$. La fonction $x\\mapsto\\ln(u(x))$ est dérivable sur $I$ et :\\par\\smallskip$$\\boxed{(\\ln(u))'=\\dfrac{u'}{u}}$$\\par Si $u$ ne s'annule pas sur $I$, alors $x\\mapsto\\ln|u(x)|$ a aussi pour dérivée $\\dfrac{u'}{u}$."
+        },
+        {
+          "type": "example",
+          "title": "Étudier $\\ln(x^2+1)$",
+          "content": "Pour $f(x)=\\ln(x^2+1)$, on a $x^2+1>0$ pour tout réel $x$. Sa dérivée est :\\par\\smallskip$$f'(x)=\\dfrac{2x}{x^2+1}.$$ Le dénominateur est positif, donc le signe de $f'(x)$ est celui de $x$. Ainsi $f$ décroît sur $]-\\infty\\,;0]$ et croît sur $[0\\,;+\\infty[$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Pour $f(x)=x-\\dfrac{(\\ln x)^2}{x}$ sur $]0\\,;+\\infty[$, vérifions la dérivée, puis étudions la position de la courbe par rapport à $\\Delta:y=x$.}\\par\\smallskip Pour $q(x)=\\dfrac{(\\ln x)^2}{x}$, la règle du quotient donne :\\begin{align*}q'(x)&=\\blank{\\dfrac{2\\ln x-(\\ln x)^2}{x^2}}.\\end{align*}Donc :\\begin{align*}f'(x)&=1-q'(x)\\\\&=\\boxed{\\blank{1-\\dfrac{2\\ln x-(\\ln x)^2}{x^2}}}.\\end{align*}Si l'on sait que $2\\ln x-(\\ln x)^2<x^2$, alors $q'(x)<\\blank{1}$ et donc $f'(x)>0$. Ainsi $f$ est strictement croissante.\\par\\smallskip Enfin :\\begin{align*}f(x)-x&=\\blank{-\\dfrac{(\\ln x)^2}{x}}\\leq0.\\end{align*}La courbe est donc au-dessous de $\\Delta$, avec égalité lorsque $\\ln x=\\blank{0}$, c'est-à-dire au point $\\boxed{\\blank{(1,1)}}$."
+        },
+        {
+          "type": "warning",
+          "content": "Un point sur lequel vous devez être attentif : la formule $(\\ln u)'=u'/u$ ne remplace pas l'étude du domaine. Avant de dériver, il faut savoir sur quel intervalle $u$ est strictement positive ou ne s'annule pas."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Étudions les variations de $h(x)=\\ln|x^3|$ sur $]-\\infty\\,;0[$ et sur $]0\\,;+\\infty[$.}\\par\\smallskip La fonction est définie sur $\\mathbb{R}^*$. Sur chacun des deux intervalles, $x^3\\neq0$ et :\\begin{align*}h'(x)&=\\dfrac{\\blank{3x^2}}{\\blank{x^3}}\\\\&=\\blank{\\dfrac{3}{x}}.\\end{align*}Sur $]-\\infty\\,;0[$, on a $h'(x)<\\blank{0}$, donc $h$ est strictement $\\blank{décroissante}$. Sur $]0\\,;+\\infty[$, on a $h'(x)>\\blank{0}$, donc $h$ est strictement $\\blank{croissante}$.\\par\\smallskip Le résultat est $\\boxed{h\\text{ décroît sur }]-\\infty\\,;0[\\text{ et croît sur }]0\\,;+\\infty[}$."
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{La formule $u'/u$ sert à dériver $\\ln(u)$, mais aussi à repérer rapidement des primitives.}\\itemsize{La dérivée logarithmique est efficace pour un produit, un quotient ou une puissance compliquée lorsque l'expression est positive.}"
+        },
+        {
+          "type": "technique",
+          "title": "Comment \\mathqst{utiliser la dérivation logarithmique} ?",
+          "content": "Pour une expression positive $g$, on peut écrire $\\ln(g)$, transformer le produit et le quotient en somme et différence, puis dériver. On obtient alors $g'(x)/g(x)$. Enfin, on multiplie par $g(x)$ pour retrouver $g'(x)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Soit $g(x)=\\dfrac{x^{17}\\sqrt[3]{x^6-5x^3+7}}{\\sqrt[32]{x^{32}-32x+1}}$ sur un intervalle où tout est strictement positif. Écrivons sa dérivée logarithmique.}\\par\\smallskip On écrit :\\begin{align*}\\ln g(x)&=17\\ln x+\\blank{\\dfrac{1}{3}\\ln(x^6-5x^3+7)}-\\blank{\\dfrac{1}{32}\\ln(x^{32}-32x+1)}.\\end{align*}Donc :\\begin{align*}\\dfrac{g'(x)}{g(x)}&=\\dfrac{17}{x}+\\dfrac{1}{3}\\cdot\\dfrac{6x^5-15x^2}{x^6-5x^3+7}-\\dfrac{1}{32}\\cdot\\dfrac{32x^{31}-32}{x^{32}-32x+1}\\\\&=\\blank{\\dfrac{17}{x}+\\dfrac{6x^5-15x^2}{3(x^6-5x^3+7)}-\\dfrac{x^{31}-1}{x^{32}-32x+1}}.\\end{align*}Ainsi $g'(x)=\\boxed{\\blank{g(x)\\left(\\dfrac{17}{x}+\\dfrac{6x^5-15x^2}{3(x^6-5x^3+7)}-\\dfrac{x^{31}-1}{x^{32}-32x+1}\\right)}}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{mener une étude complète avec $\\ln$} ?",
+          "content": "Écris d'abord le domaine et les limites aux bornes. Calcule ensuite la dérivée et simplifie son signe. Si une fonction auxiliaire apparaît, utilise-la pour justifier le signe de la dérivée. Termine par les variations, les intersections et la position relative demandée."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Soit $f$ définie sur $[0\\,;+\\infty[$ par $f(0)=0$ et, pour $x>0$, $f(x)=2x\\ln(x)-2x$.\\begin{enumerate}\\item Montrons que $f$ est continue à droite en $0$.\\item Calculons $\\displaystyle\\lim_{x\\to0^+}\\dfrac{f(x)}{x}$ et interprétons.\\item Calculons $f'(x)$ et dressons les variations.\\item Résolvons $f(x)=0$ et $f(x)=x$.\\item Déterminons le minimum de $f$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Comme $x\\ln x\\to\\blank{0}$ lorsque $x\\to0^+$, on a $2x\\ln x-2x\\to\\blank{0}=f(0)$. Donc $f$ est continue à droite en $0$.\\item Pour $x>0$ :\\begin{align*}\\dfrac{f(x)}{x}&=\\blank{2\\ln x-2}.\\end{align*}Cette expression tend vers \\blank{-\\infty}, donc la courbe admet une demi-tangente verticale à l'origine.\\item Pour $x>0$, $f'(x)=2(\\ln x+1)-2=\\blank{2\\ln x}$. Donc $f$ décroît sur $]0\\,;\\blank{1}]$ puis croît sur $[\\blank{1}\\,;+\\infty[$.\\item $f(x)=0$ donne $2x(\\ln x-1)=0$, donc $x=\\blank{e}$. Et $f(x)=x$ donne $2\\ln x=3$, donc $x=\\blank{e^{3/2}}$.\\item Le minimum est atteint en $x=\\blank{1}$ et vaut $f(1)=\\boxed{\\blank{-2}}.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{On considère $f(x)=x\\ln(1+x)+1-x$ sur $]-1\\,;+\\infty[$.\\begin{enumerate}\\item Calculons les limites en $-1^+$ et en $+\\infty$.\\item Montrons les formules de $f'(x)$ et $f''(x)$.\\item Montrons qu'il existe un unique $\\alpha\\in]0\\,;1[$ tel que $f'(\\alpha)=0$.\\item Déduisons les variations de $f$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Posons $t=1+x$. Alors $t\\to0^+$ et $x=t-1$, donc :\\begin{align*}f(x)&=(t-1)\\ln t+2-t.\\end{align*}Comme $-\\ln t\\to+\\infty$, on obtient $f(x)\\to\\blank{+\\infty}$. Lorsque $x\\to+\\infty$, $x\\ln(1+x)-x\\to\\blank{+\\infty}$, donc $f(x)\\to\\blank{+\\infty}$.\\item On dérive :\\begin{align*}f'(x)&=\\blank{\\ln(1+x)+\\dfrac{x}{1+x}-1},\\\\f''(x)&=\\blank{\\dfrac{x+2}{(1+x)^2}}>0.\\end{align*}\\item Comme $f''>0$, la fonction $f'$ est strictement croissante. De plus $f'(0)=\\blank{-1}<0$ et $f'(1)=\\blank{\\ln2-\\dfrac{1}{2}}>0$, donc il existe un unique $\\alpha\\in]0\\,;1[$ tel que $f'(\\alpha)=0$.\\item Ainsi $f$ décroît sur $]-1\\,;\\blank{\\alpha}]$ puis croît sur $[\\blank{\\alpha}\\,;+\\infty[$. Le minimum est atteint en $\\boxed{\\blank{\\alpha}}$.\\end{enumerate}"
+        },
+        {
+          "type": "theorem",
+          "title": "Quelles sont \\mathqst{les primitives de la forme $u'/u$} ?",
+          "content": "Soit $u$ une fonction dérivable et ne s'annulant pas sur un intervalle $I$. Les primitives de $x\\mapsto\\dfrac{u'(x)}{u(x)}$ sur $I$ sont :\\par\\smallskip$$\\boxed{x\\mapsto \\ln|u(x)|+\\lambda,\\quad \\lambda\\in\\mathbb{R}}$$"
+        },
+        {
+          "type": "example",
+          "title": "Primitive immédiate",
+          "content": "Pour $f(x)=\\dfrac{2x}{x^2+2}$, on reconnaît $u(x)=x^2+2$ et $u'(x)=2x$. Comme $u(x)>0$ sur $\\mathbb{R}$, une primitive est :\\par\\smallskip$$F(x)=\\ln(x^2+2).$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons une primitive sur l'intervalle indiqué :\\begin{enumerate}\\item $f(x)=\\dfrac{\\cos x}{\\sin x}$ sur $]-\\pi\\,;0[$.\\item $g(x)=\\dfrac{3}{2x-6}$ sur $]-\\infty\\,;3[$.\\item $h(x)=\\dfrac{4x-2}{2x^2-2x+5}$ sur $\\mathbb{R}$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Sur $]-\\pi\\,;0[$, $\\sin x\\neq\\blank{0}$, donc une primitive est $F(x)=\\boxed{\\blank{\\ln|\\sin x|}}$.\\item On écrit $g(x)=\\blank{\\dfrac{3}{2}}\\cdot\\dfrac{2}{2x-6}$. Une primitive est $G(x)=\\boxed{\\blank{\\dfrac{3}{2}\\ln|2x-6|}}$.\\item Le dénominateur a pour dérivée $\\blank{4x-2}$ et il est strictement positif. Une primitive est $H(x)=\\boxed{\\blank{\\ln(2x^2-2x+5)}}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "autres_logarithmes",
+      "category": "course",
+      "title": "Autres fonctions logarithmes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après avoir maîtrisé le logarithme népérien et ses applications en analyse, nous élargissons notre étude à d'autres bases. Nous allons définir les fonctions logarithmes de base quelconque et explorer leurs applications concrètes, notamment le logarithme décimal."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le logarithme de base $a$} ?",
+          "content": "Soit $a$ un réel strictement positif tel que $a\\neq1$. Le \\textbf{logarithme de base $a$}, noté $\\log_a$, est défini sur $]0\\,;+\\infty[$ par :\\par\\smallskip$$\\boxed{\\log_a(x)=\\dfrac{\\ln(x)}{\\ln(a)}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les propriétés du $\\log_a$} ?",
+          "content": "Pour $a>0$, $a\\neq1$, et pour $x>0$, $y>0$ :\\begin{itemize}\\item $\\log_a(xy)=\\log_a(x)+\\log_a(y)$,\\item $\\log_a\\!\\left(\\dfrac{x}{y}\\right)=\\log_a(x)-\\log_a(y)$,\\item $\\log_a(x^r)=r\\log_a(x)$ pour $r\\in\\mathbb{Q}$,\\item $\\log_a(a)=1$.\\end{itemize}"
+        },
+        {
+          "type": "example",
+          "title": "Calculs directs en base $a$",
+          "content": "\\itemsize{$32=2^5$, donc $\\log_2(32)=5$.}\\itemsize{$\\dfrac{1}{27}=3^{-3}$, donc $\\log_3\\!\\left(\\dfrac{1}{27}\\right)=-3$.}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Résolvons dans $]0\\,;+\\infty[$ :\\begin{enumerate}\\item $\\log_2(x)=3$.\\item $\\log_3(x^2)=4$.\\item $\\log_5(x-1)=2$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item $\\log_2(x)=3$ donne $x=\\blank{2^3}=\\boxed{\\blank{8}}$.\\item $\\log_3(x^2)=4$ donne $x^2=\\blank{3^4}=81$. Comme $x>0$, $x=\\boxed{\\blank{9}}$.\\item Le domaine impose $x>1$. Puis $x-1=\\blank{5^2}=25$, donc $x=\\boxed{\\blank{26}}.\\end{enumerate}"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le logarithme décimal $\\log$} ?",
+          "content": "Le \\textbf{logarithme décimal}, noté $\\log$, est le logarithme de base $10$. Il est défini sur $]0\\,;+\\infty[$ par :\\par\\smallskip$$\\boxed{\\log(x)=\\dfrac{\\ln(x)}{\\ln(10)}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelle est \\mathqst{la propriété fondamentale de $\\log_{10}$} ?",
+          "content": "On a $\\log(10)=1$ et, pour tout $r\\in\\mathbb{Q}$ :\\par\\smallskip$$\\boxed{\\log(10^r)=r}$$\\par Le logarithme décimal sert à mesurer des phénomènes très grands ou très petits, comme le nombre de chiffres, le pH ou la magnitude d'un séisme."
+        },
+        {
+          "type": "example",
+          "title": "Puissances de $10$",
+          "content": "\\itemsize{$1=10^0$, donc $\\log(1)=0$.}\\itemsize{$10=10^1$ et $100=10^2$, donc $\\log(10)=1$ et $\\log(100)=2$.}\\itemsize{$0{,}1=10^{-1}$ et $0{,}01=10^{-2}$, donc $\\log(0{,}1)=-1$ et $\\log(0{,}01)=-2$.}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On rappelle que le nombre de chiffres d'un entier naturel non nul $N$ est $1+E(\\log N)$. Déterminons le nombre de chiffres de $P=2^{77\\,232\\,917}-1$.}\\par\\smallskip Le nombre $2^{77\\,232\\,917}-1$ a le même nombre de chiffres que $2^{77\\,232\\,917}$. On calcule :\\begin{align*}\\log(2^{77\\,232\\,917})&=\\blank{77\\,232\\,917\\log 2}.\\end{align*}Le nombre de chiffres est donc :\\par\\smallskip$$\\boxed{\\blank{1+E(77\\,232\\,917\\log2)}}.$$ Avec la calculatrice, on obtient environ $\\blank{23\\,249\\,425}$ chiffres."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{En sismologie, $M=\\log\\!\\left(\\dfrac{I}{I_0}\\right)$. Calculons $M$ lorsque $I=3{,}98\\times10^7 I_0$.}\\par\\smallskip On a :\\begin{align*}M&=\\log(3{,}98\\times10^7)\\\\&=\\blank{\\log(3{,}98)+\\log(10^7)}\\\\&=\\log(3{,}98)+\\blank{7}.\\end{align*}Comme $3{,}98\\approx10^{\\blank{0{,}6}}$, on obtient $M\\approx\\boxed{\\blank{7{,}6}}$."
+        },
+        {
+          "type": "example",
+          "title": "Équation avec logarithme décimal",
+          "content": "\\itemsize{Le domaine de $\\log(x-5)+\\log(x+2)=1$ impose $x>5$.}\\itemsize{On regroupe : $\\log(x-5)+\\log(x+2)=\\log((x-5)(x+2))$.}\\itemsize{Comme $1=\\log(10)$, on obtient $(x-5)(x+2)=10$, puis $x^2-3x-20=0$.}\\itemsize{Les solutions candidates sont $-4$ et $5$. Aucune ne vérifie $x>5$, donc $S=\\varnothing$.}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{En chimie, $\\mathrm{pH}=-\\log[H^+]$. On sait que $10^{-7{,}4}\\leq[H^+]\\leq10^{-7{,}3}$.\\begin{enumerate}\\item Encadrons $\\log[H^+]$.\\item Déduisons un encadrement du pH.\\item Concluons sur le caractère du sang.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Comme $\\log$ est croissante :\\par\\smallskip$$\\blank{-7{,}4}\\leq\\log[H^+]\\leq\\blank{-7{,}3}.$$\\item En multipliant par $-1$, on inverse l'ordre :\\par\\smallskip$$\\boxed{\\blank{7{,}3}\\leq\\mathrm{pH}\\leq\\blank{7{,}4}}.$$\\item Le pH est supérieur à $\\blank{7}$, donc le sang est légèrement $\\blank{basique}$.\\end{enumerate}"
+        }
+      ]
+    }
+  ]
+}

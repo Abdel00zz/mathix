@@ -1,0 +1,226 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "question": "Quelle est la négation de la proposition : « Pour tout x réel, f(x) > 0 » ?",
+      "options": [
+        {
+          "text": "Pour tout x réel, f(x) ≤ 0",
+          "isCorrect": false
+        },
+        {
+          "text": "Il existe un x réel tel que f(x) ≤ 0",
+          "isCorrect": true
+        },
+        {
+          "text": "Il existe un x réel tel que f(x) < 0",
+          "isCorrect": false
+        },
+        {
+          "text": "Pour tout x réel, f(x) < 0",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La méthode infaillible pour nier une proposition quantifiée comprend deux étapes : 1) Inverser le quantificateur (le 'Pour tout' $\\forall$ devient 'Il existe' $\\exists$). 2) Nier strictement l'inégalité finale (le 'strictement supérieur' $>$ devient 'inférieur ou égal' $\\leq$). C'est comme dire 'Tous les élèves ont eu la moyenne' : il suffit de trouver 'Au moins un élève qui a échoué' pour prouver le contraire."
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "question": "La proposition (P et Q) est vraie si P est vraie et Q est fausse.",
+      "isTrue": false,
+      "explanation": "Gardez en tête que le connecteur logique 'ET' ($\\land$) est extrêmement exigent : il impose que TOUTES les conditions soient remplies simultanément pour que l'ensemble soit Vrai. Si une seule proposition (comme Q ici) est fausse, le château de cartes s'effondre et l'ensemble $(P \\land Q)$ devient Faux."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "L'implication P ⇒ Q est équivalente à :",
+      "options": [
+        {
+          "text": "Q ⇒ P",
+          "isCorrect": false
+        },
+        {
+          "text": "non P ou Q",
+          "isCorrect": true
+        },
+        {
+          "text": "non Q ou P",
+          "isCorrect": false
+        },
+        {
+          "text": "P et non Q",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'équivalence logique fondamentale $(P \\Rightarrow Q) \\equiv (\\overline{P} \\lor Q)$ est cruciale. En pratique, une implication ne ment que dans un seul cas : quand on part d'une vérité ($P$ vraie) pour aboutir à un mensonge ($Q$ fausse). Dire 'Je ne te promets rien ($non P$), OU bien je le fais ($Q$)' couvre exactement les mêmes scénarios de vérité qu'une promesse conditionnelle."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "question": "Quelle est la contraposée de « Si x=2, alors x²=4 » ?",
+      "options": [
+        {
+          "text": "Si x²=4, alors x=2",
+          "isCorrect": false
+        },
+        {
+          "text": "Si x²≠4, alors x≠2",
+          "isCorrect": true
+        },
+        {
+          "text": "Si x≠2, alors x²≠4",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La contraposée renverse complètement la proposition tout en gardant exactement la même valeur de vérité géométrique ou algébrique : $(\\overline{Q} \\Rightarrow \\overline{P})$. Si on affirme que 'La pluie ($P$) mouille le sol ($Q$)', la contraposée imparable est 'Si le sol n'est pas mouillé ($\\overline{Q}$), alors il ne pleut pas ($\\overline{P}$)'. C'est une technique majeure pour prouver des théorèmes mathématiques complexes."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "Complétez la table de vérité : Si P est Faux et Q est Vrai, quelle est la valeur de P ⇒ Q ?",
+      "options": [
+        {
+          "text": "Vrai",
+          "isCorrect": true
+        },
+        {
+          "text": "Faux",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est souvent contre-intuitif pour les élèves : en mathématiques, 'Le Faux implique n'importe quoi'. Si votre point de départ (prémisse P) est absurde ou faux, alors toute l'implication est considérée comme logiquement Vraie (car vous n'avez pas violé la règle qui interdit de déduire le faux à partir du vrai)."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "question": "Que signifie le quantificateur ∃ !",
+      "options": [
+        {
+          "text": "Il n'existe pas",
+          "isCorrect": false
+        },
+        {
+          "text": "Il existe au moins un",
+          "isCorrect": false
+        },
+        {
+          "text": "Il existe un unique",
+          "isCorrect": true
+        },
+        {
+          "text": "Quel que soit",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Attention à la ponctuation ! Le symbole $\\exists$ seul garantit qu'on peut en trouver 'au moins un'. L'ajout du point d'exclamation $\\exists !$ durcit la condition : il faut en trouver un, et PROUVER que c'est le seul et unique qui existe dans tout l'univers (comme la solution d'une équation du premier degré)."
+    },
+    {
+      "id": "q7",
+      "type": "true-false",
+      "question": "Le raisonnement par l'absurde consiste à supposer que la proposition à démontrer est fausse et à aboutir à une contradiction.",
+      "isTrue": true,
+      "explanation": "Le raisonnement par l'absurde est l'arme fatale quand une preuve directe bloque. On joue 'l'avocat du diable' : on suppose l'exact opposé de notre but. Si, en tirant le fil logique, on aboutit à une aberration absolue (comme $0 = 1$ ou $a > a$), alors on a prouvé que notre supposition était un mensonge, et donc que notre but initial était vrai !"
+    },
+    {
+      "id": "q8",
+      "type": "ordering",
+      "question": "Ordonnez les étapes d'un raisonnement par récurrence.",
+      "items": [
+        {
+          "id": "1",
+          "text": "Initialisation (vérifier au rang n0)"
+        },
+        {
+          "id": "2",
+          "text": "Hérédité (Supposer P(n) et montrer P(n+1))"
+        },
+        {
+          "id": "3",
+          "text": "Conclusion (Vrai pour tout n)"
+        }
+      ],
+      "correctOrder": [
+        "1",
+        "2",
+        "3"
+      ],
+      "explanation": "Rappelez-vous de l'image des dominos ! L'Initialisation pousse le premier domino ($P(n_0)$ est vraie). L'Hérédité s'assure que si un domino tombe ($P(n)$), il fera obligatoirement tomber le suivant ($P(n+1)$). La Conclusion confirme alors que l'intégralité de la chaîne va tomber jusqu'à l'infini."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "question": "La négation de (P ou Q) est :",
+      "options": [
+        {
+          "text": "non P ou non Q",
+          "isCorrect": false
+        },
+        {
+          "text": "non P et non Q",
+          "isCorrect": true
+        },
+        {
+          "text": "non P ou Q",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les Lois de De Morgan sont à la logique ce que le développement analytique est à l'algèbre ! Pour nier $(P \\lor Q)$, le 'OU' bascule strictement en 'ET', et le NON se distribue : $\\overline{P \\lor Q} \\equiv \\overline{P} \\land \\overline{Q}$. Exemple : le contraire de 'Boire OU Conduire' est 'Ne pas boire ET ne pas conduire'."
+    },
+    {
+      "id": "q10",
+      "type": "true-false",
+      "question": "Pour montrer que (∀x ∈ E, P(x)) est fausse, un seul contre-exemple suffit.",
+      "isTrue": true,
+      "explanation": "Détruire une règle universelle (le 'Pour Tout' $\\forall$) est mathématiquement 'facile' : il n'y a nul besoin de longues démonstrations, un unique contre-exemple chirurgical suffit à faire s'effondrer toute la théorie. C'est l'essence de la falsifiabilité en sciences rigoureuses."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "question": "Quelle proposition est vraie ?",
+      "options": [
+        {
+          "text": "(∃y ∈ ℝ)(∀x ∈ ℝ) : y > x",
+          "isCorrect": false
+        },
+        {
+          "text": "(∀x ∈ ℝ)(∃y ∈ ℝ) : y > x",
+          "isCorrect": true
+        },
+        {
+          "text": "(∀x ∈ ℝ)(∀y ∈ ℝ) : y > x",
+          "isCorrect": false
+        },
+        {
+          "text": "(∃x ∈ ℝ)(∃y ∈ ℝ) : y > x est impossible",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'ordre des quantificateurs dicte toute la hiérarchie ! Dans $(\\forall x)(\\exists y)$, on choisit d'abord $x$, et on peut toujours ajuster $y$ pour qu'il le dépasse (ex: $y = x+1$). En revanche, dans $(\\exists y)(\\forall x)$, il faudrait trouver un super-nombre $y$ statique qui serait supérieur à absolument tous les réels de l'univers en même temps, ce qui est l'infini absolu et n'appartient pas à $\\mathbb{R}$."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "question": "Parmi les énoncés suivants, lequel est une fonction propositionnelle (et pas une proposition) ?",
+      "options": [
+        {
+          "text": "7 est un nombre premier",
+          "isCorrect": false
+        },
+        {
+          "text": "√2 est un nombre rationnel",
+          "isCorrect": false
+        },
+        {
+          "text": "x^2 = 4",
+          "isCorrect": true
+        },
+        {
+          "text": "La somme des angles d'un triangle vaut 180°",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'expression $x^2 = 4$ est une 'phrase à trou' en attente de sens. Tant que l'on n'a pas injecté de valeur spécifique dans la variable libre $x$ (comme $x=2$ ou $x=3$), ni précisé son quantificateur ($\\forall$ ou $\\exists$), il est strictement impossible de dire si c'est Vrai ou Faux. Contrairement aux autres phrases qui portent en elles une vérité scellée."
+    }
+  ]
+}

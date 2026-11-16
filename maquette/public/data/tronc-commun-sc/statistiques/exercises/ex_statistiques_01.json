@@ -1,0 +1,31 @@
+{
+  "id": "ex-statistiques-01",
+  "theme": "statistiques",
+  "difficulty": "difficile",
+  "topic": "Statistiques",
+  "context": "Voici les notes d'une classe de 20 élèves : \n8, 10, 12, 14, 10, 8, 16, 12, 10, 14, 12, 8, 18, 12, 10, 14, 12, 10, 16, 12.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Organisation des données",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dresser le tableau des effectifs et des effectifs cumulés croissants.",
+          "hint": "Commencez par trier les valeurs uniques. Comptez ensuite le nombre d'occurrences pour chaque valeur (effectif). Enfin, calculez les effectifs cumulés en additionnant les effectifs au fur et à mesure."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Paramètres",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Calculer la moyenne et déterminer la médiane.",
+          "hint": "Pour la moyenne, utilisez la formule de la moyenne pondérée avec les effectifs. Pour la médiane, l'effectif total est pair. Quelle est la méthode pour trouver la médiane dans ce cas en utilisant les effectifs cumulés ?"
+        }
+      ]
+    }
+  ]
+}

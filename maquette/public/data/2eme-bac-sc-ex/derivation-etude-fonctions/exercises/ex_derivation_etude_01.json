@@ -1,0 +1,35 @@
+{
+  "id": "ex-derivation-etude-01",
+  "theme": "derivation-etude-fonctions",
+  "difficulty": "facile",
+  "topic": "Dérivation et étude de fonctions",
+  "context": "Calculer la fonction dérivée $f'(x)$ pour chacune des fonctions suivantes, après avoir précisé l'ensemble de dérivabilité.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$f(x) = \\sqrt{x}(1 + \\cos x)$",
+      "hint": "Utilisez la formule du produit $(uv)' = u'v + uv'$. Rappel : $(\\sqrt{x})' = \\frac{1}{2\\sqrt{x}}$."
+    },
+    {
+      "id": "q2",
+      "content": "$f(x) = \\cos^2 x + \\sin^3 x$",
+      "hint": "Utilisez la formule de la puissance $(u^n)' = n u' u^{n-1}$. Attention aux signes des dérivées de $\\cos$ et $\\sin$."
+    },
+    {
+      "id": "q3",
+      "content": "$f(x) = \\dfrac{x+4}{x^2-3x+2}$",
+      "hint": "Utilisez la formule du quotient $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$. Pensez à simplifier le numérateur à la fin."
+    },
+    {
+      "id": "q4",
+      "content": "$f(x) = \\dfrac{2\\sqrt{x}-1}{\\sqrt{x}-2}$",
+      "hint": "C'est un quotient de fonctions irrationnelles. Posez $u = 2\\sqrt{x}-1$ et $v = \\sqrt{x}-2$. Attention au domaine de définition."
+    },
+    {
+      "id": "q5",
+      "content": "$f(x) = \\dfrac{2\\tan x - 1}{1 - \\tan x}$",
+      "hint": "Utilisez la dérivée de $\\tan x$, puis la formule du quotient."
+    }
+  ]
+}

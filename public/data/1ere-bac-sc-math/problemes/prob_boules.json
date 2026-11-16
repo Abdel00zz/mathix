@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Le tirage de boules dans une urne",
+    "subtitle": "Probabilités et combinaisons",
+    "context": "Probabilités"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le tirage de boules dans une urne",
+          "content": "Une urne contient $5$ boules rouges et $3$ boules bleues, indiscernables au toucher. On tire \\textbf{simultanément} $2$ boules au hasard.\\par On cherche les probabilités de différents événements. On rappelle que le nombre de façons de choisir $2$ boules parmi $8$ est $\\dbinom{8}{2} = 28$, et que les tirages sont équiprobables."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Quelle est la probabilité de tirer \\textbf{deux boules rouges} ?\\item Quelle est la probabilité de tirer \\textbf{deux boules de la même couleur} ?\\item En déduire la probabilité de tirer \\textbf{une boule de chaque couleur}.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Probabilité $= \\dfrac{\\text{nombre de tirages favorables}}{\\text{nombre de tirages possibles}}$. Pour deux rouges : $\\dbinom{5}{2}$ choix favorables sur $\\dbinom{8}{2}$."
+        },
+        {
+          "type": "hint",
+          "content": "« Une de chaque couleur » est l'événement \\textbf{contraire} de « même couleur ». On peut aussi le compter directement : $5 \\times 3$ paires (une rouge et une bleue)."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $P(\\text{2 rouges}) = \\dfrac{\\binom{5}{2}}{\\binom{8}{2}} = \\dfrac{10}{28} = \\boxed{\\dfrac{5}{14}}$.\\par\\textbf{2)} $P(\\text{2 bleues}) = \\dfrac{\\binom{3}{2}}{28} = \\dfrac{3}{28}$. Donc $P(\\text{même couleur}) = \\dfrac{10}{28} + \\dfrac{3}{28} = \\dfrac{13}{28}$.\\par\\textbf{3)} $P(\\text{une de chaque}) = 1 - \\dfrac{13}{28} = \\dfrac{15}{28}$. Vérification directe : $\\dfrac{5\\times 3}{28} = \\dfrac{15}{28}$. $\\checkmark$"
+        }
+      ]
+    }
+  ]
+}

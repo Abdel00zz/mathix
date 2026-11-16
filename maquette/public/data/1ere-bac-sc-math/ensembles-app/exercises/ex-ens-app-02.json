@@ -1,0 +1,20 @@
+{
+  "id": "ex-ens-app-02",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Écriture et description d'ensembles",
+  "requiresRedaction": true,
+  "context": "On considère le diagramme de Venn suivant, avec $E$ l'ensemble universel.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer les ensembles suivants : $A$ ; $B$ ; $C$ ; $A \\cap B$ ; $A \\cap C$ ; $B \\cap C$ ; $A \\cup B$ ; $A \\cup C$",
+      "hint": ""
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer les ensembles suivants : $A \\cap B \\cap C$ ; $A \\setminus B$ ; $B \\setminus A$ ; $A \\setminus C$ ; $C \\setminus A$ ; $\\overline{A}$ ; $C_E^B$ ; $C_E^{A+B}$ ; $C_E^{B+C}$ ; $\\overline{A}\\,\\Delta\\,\\overline{B}$",
+      "hint": "Pour $\\overline{A}\\,\\Delta\\,\\overline{B}$, rappelez que $X \\Delta Y = (X \\setminus Y) \\cup (Y \\setminus X)$."
+    }
+  ]
+}

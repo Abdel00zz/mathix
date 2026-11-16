@@ -1,0 +1,25 @@
+{
+  "id": "ex-log-10",
+  "theme": "logique",
+  "difficulty": "facile",
+  "topic": "Logique & Raisonnements — Raisonnement déductif",
+  "requiresRedaction": true,
+  "context": "Pour tout $x \\in \\mathbb{R}^*$, montrer que :",
+  "questions": [
+    {
+      "id": "qa",
+      "content": "$0 < \\sqrt{1+x^2} - |x| < \\dfrac{1}{2|x|}$",
+      "hint": "Pour la borne inférieure : $\\sqrt{1+x^2} > |x|$. Pour la borne supérieure : multipliez $\\sqrt{1+x^2} - |x|$ par $\\dfrac{\\sqrt{1+x^2}+|x|}{\\sqrt{1+x^2}+|x|}$ et majorez le dénominateur."
+    },
+    {
+      "id": "qb",
+      "content": "En déduire que pour tout $x \\in \\mathbb{R}^*$ : $x + 1 < \\sqrt{x^2+2x+2} < x + 1 + \\dfrac{1}{2x}$",
+      "hint": "Substituez $x$ par $x+1$ dans le résultat de la question a), en veillant aux conditions de validité."
+    },
+    {
+      "id": "qc",
+      "content": "$(\\forall x \\in \\mathbb{R})\\; x^2 + 2|x| - 3 \\geq 0 \\iff |x| \\geq 1$",
+      "hint": "Posez $u = |x| \\geq 0$ et factorisez $u^2 + 2u - 3 = (u+3)(u-1)$."
+    }
+  ]
+}

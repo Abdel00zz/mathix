@@ -1,0 +1,101 @@
+{
+  "id": "ds1-s2-v1",
+  "title": "Devoir Surveillé N°1 — V1",
+  "number": 1,
+  "version": "V1",
+  "semestre": 2,
+  "classId": "1ere-bac-sc-math",
+  "duration": 120,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "ds1s2v1-ex1",
+      "number": 1,
+      "theme": "suites numériques",
+      "points": 10,
+      "topic": "Suites numériques — Convergence et monotonie",
+      "context": "On considère la suite $(u_n)$ définie par $u_0 = 2$ et $u_{n+1} = \\frac{1}{2}u_n + 1$ pour tout $n \\in \\mathbb{N}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Étude de la suite",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Calculer $u_1$, $u_2$ et $u_3$.",
+              "hint": "$u_1 = \\frac{2}{2} + 1 = 2$, $u_2 = 2$, $u_3 = 2$. La suite semble constante."
+            },
+            {
+              "id": "sq1b",
+              "content": "Montrer par récurrence que pour tout $n \\in \\mathbb{N}$, $u_n = 2$.",
+              "hint": "Initialisation : $u_0 = 2$ ✓. Hérédité : si $u_n = 2$ alors $u_{n+1} = \\frac{2}{2} + 1 = 2$ ✓."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Suite auxiliaire",
+          "subQuestions": [
+            {
+              "id": "sq2a",
+              "content": "On pose maintenant $u_0 = 4$. Montrer que la suite $(v_n)$ définie par $v_n = u_n - 2$ est géométrique.",
+              "hint": "$v_{n+1} = u_{n+1} - 2 = \\frac{1}{2}u_n + 1 - 2 = \\frac{1}{2}u_n - 1 = \\frac{1}{2}(u_n - 2) = \\frac{1}{2}v_n$. Raison $q = \\frac{1}{2}$, $v_0 = 2$."
+            },
+            {
+              "id": "sq2b",
+              "content": "En déduire $u_n$ en fonction de $n$ puis déterminer $\\lim u_n$.",
+              "hint": "$v_n = 2 \\cdot \\left(\\frac{1}{2}\\right)^n$ donc $u_n = 2 + 2 \\cdot \\left(\\frac{1}{2}\\right)^n$. $\\lim u_n = 2$."
+            },
+            {
+              "id": "sq2c",
+              "content": "Calculer $S_n = \\sum_{k=0}^{n} u_k$.",
+              "hint": "$S_n = \\sum (2 + 2 \\cdot (\\frac{1}{2})^k) = 2(n+1) + 2 \\cdot \\frac{1 - (\\frac{1}{2})^{n+1}}{\\frac{1}{2}} = 2(n+1) + 4(1 - (\\frac{1}{2})^{n+1})$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ds1s2v1-ex2",
+      "number": 2,
+      "theme": "trigonométrie",
+      "points": 10,
+      "topic": "Trigonométrie — Formules et équations",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Formules de transformation",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Linéariser $\\cos^2(x)$ et $\\sin^2(x)$.",
+              "hint": "$\\cos^2(x) = \\frac{1 + \\cos(2x)}{2}$ et $\\sin^2(x) = \\frac{1 - \\cos(2x)}{2}$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Simplifier $\\cos(x) + \\cos(3x)$.",
+              "hint": "On utilise $\\cos p + \\cos q = 2\\cos\\frac{p+q}{2}\\cos\\frac{p-q}{2}$ : $= 2\\cos(2x)\\cos(x)$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Équations trigonométriques",
+          "subQuestions": [
+            {
+              "id": "sq2a",
+              "content": "Résoudre dans $[0, 2\\pi[$ : $2\\cos^2(x) - 1 = 0$.",
+              "hint": "$\\cos^2(x) = \\frac{1}{2}$, $\\cos(x) = \\pm \\frac{\\sqrt{2}}{2}$. Solutions : $x \\in \\{\\frac{\\pi}{4}, \\frac{3\\pi}{4}, \\frac{5\\pi}{4}, \\frac{7\\pi}{4}\\}$."
+            },
+            {
+              "id": "sq2b",
+              "content": "Résoudre dans $\\mathbb{R}$ : $\\sin(2x) = \\sin(x)$.",
+              "hint": "$\\sin(2x) - \\sin(x) = 0 \\Rightarrow 2\\cos(\\frac{3x}{2})\\sin(\\frac{x}{2}) = 0$. Soit $x = 2k\\pi$ soit $x = \\frac{\\pi}{3} + \\frac{2k\\pi}{3}$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

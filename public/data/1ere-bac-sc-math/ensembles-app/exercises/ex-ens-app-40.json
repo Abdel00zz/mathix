@@ -1,0 +1,45 @@
+{
+  "id": "ex-ens-app-40",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Exercices de perfectionnement : applications et récurrence",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "pA",
+      "content": "Partie A. On considère l'application $f : \\mathbb{R} \\setminus \\{0;1\\} \\to \\mathbb{R} \\setminus \\{0;1\\}$ telle que pour tout $x \\in \\mathbb{R}^* \\setminus \\{1\\}$ : $f\\!\\left(\\dfrac{x-1}{x}\\right) + f(x) = \\dfrac{1}{x} - x + 1$. On pose $g(x) = \\dfrac{x-1}{x}$.",
+      "subQuestions": [
+        {
+          "id": "sq_pA1",
+          "content": "Calculer $g(x)$, $g \\circ g(x)$ et $g \\circ g \\circ g(x)$.",
+          "hint": "$g(x) = \\dfrac{x-1}{x}$. Calculez $g(g(x))$ en substituant, puis $g(g(g(x)))$. Vous devez trouver $g \\circ g \\circ g(x) = x$ : $g$ est d'ordre 3."
+        },
+        {
+          "id": "sq_pA2",
+          "content": "Montrer que pour tout $x \\in \\mathbb{R}^* \\setminus \\{1\\}$ : $f(x) + f(g \\circ g(x)) = \\dfrac{1}{x} - x + 1$",
+          "hint": "Remplacez $x$ par $g(x)$ dans la relation fonctionnelle : $f(g(g(x))) + f(g(x)) = \\dfrac{1}{g(x)} - g(x) + 1$. Puis remplacez à nouveau par $g(g(x))$ pour obtenir une troisième équation. Vous avez maintenant un système de 3 équations."
+        },
+        {
+          "id": "sq_pA3",
+          "content": "En déduire : $\\left(\\forall x \\in \\mathbb{R}^* \\setminus \\{1\\}\\right)\\; f(x) = 1 - x$",
+          "hint": "Les deux équations $f(x) + f(g(x)) = \\frac{1}{x} - x + 1$ et $f(x) + f(g(g(x))) = \\frac{1}{x} - x + 1$ donnent $f(g(x)) = f(g(g(x)))$. Résolvez le système pour isoler $f(x)$."
+        }
+      ]
+    },
+    {
+      "id": "pB_q1",
+      "content": "Partie B. On considère l'application $f : \\mathbb{N} \\to \\mathbb{N}$, $n \\mapsto n + (-1)^n$. Montrer que l'application $f$ est injective.",
+      "hint": "Calculez $f$ sur les premiers entiers : $f(0)=1$, $f(1)=0$, $f(2)=3$, $f(3)=2$... Distinguez deux cas selon la parité de $n$ : si $n$ est pair, $f(n) = n+1$ (impair) ; si $n$ est impair, $f(n) = n-1$ (pair). Ainsi $f(n_1) = f(n_2)$ impose même parité puis $n_1 = n_2$."
+    },
+    {
+      "id": "pB_q2",
+      "content": "Montrer que l'application $f$ est surjective.",
+      "hint": "Soit $m \\in \\mathbb{N}$. Distinguez selon la parité de $m$ : si $m$ est impair, posez $n = m-1$ (pair) ; si $m$ est pair, posez $n = m+1$ (impair). Vérifiez dans chaque cas que $f(n) = m$."
+    },
+    {
+      "id": "pB_q3",
+      "content": "En déduire que $f$ est bijective puis déterminer $f^{-1}$.",
+      "hint": "$f$ bijective car injective et surjective. Pour $f^{-1}$ : remarquez que $f$ échange les paires consécutives $(2k, 2k+1)$, donc $f^{-1} = f$."
+    }
+  ]
+}

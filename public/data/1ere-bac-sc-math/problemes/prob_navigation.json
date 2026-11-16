@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "La navigation d'un bateau",
+    "subtitle": "Loi des cosinus",
+    "context": "Trigonométrie"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "La navigation d'un bateau",
+          "content": "Un bateau quitte le port $P$. Il navigue d'abord $12\\ \\text{km}$ en ligne droite jusqu'à une bouée $A$, puis change de cap et parcourt $8\\ \\text{km}$ jusqu'à une bouée $B$. L'angle entre les deux trajectoires, mesuré au point $A$, vaut $\\widehat{PAB} = 120^\\circ$.\\par On cherche la distance directe $PB$ entre le port et la bouée $B$. On rappelle la \\textbf{loi des cosinus} : $PB^2 = AP^2 + AB^2 - 2\\,AP\\cdot AB\\,\\cos(\\widehat{PAB})$."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item En appliquant la loi des cosinus dans le triangle $PAB$, calculer $PB^2$ puis $PB$ (arrondi à $0{,}1\\ \\text{km}$).\\item À l'aide de la loi des sinus, calculer l'angle $\\widehat{APB}$ que fait la trajectoire de retour direct (au degré près).\\item Si l'angle en $A$ avait été de $90^\\circ$, quelle aurait été la distance $PB$ ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "$\\cos(120^\\circ) = -\\dfrac{1}{2}$. Attention au signe : le terme $-2\\,AP\\cdot AB\\cos(120^\\circ)$ devient positif."
+        },
+        {
+          "type": "hint",
+          "content": "Loi des sinus : $\\dfrac{AB}{\\sin(\\widehat{APB})} = \\dfrac{PB}{\\sin(\\widehat{PAB})}$, donc $\\sin(\\widehat{APB}) = \\dfrac{AB \\sin(120^\\circ)}{PB}$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $PB^2 = 12^2 + 8^2 - 2\\times 12\\times 8 \\times \\cos(120^\\circ) = 144 + 64 - 192\\times\\left(-\\tfrac12\\right) = 208 + 96 = 304$. Donc $PB = \\sqrt{304} \\approx \\boxed{17{,}4\\ \\text{km}}$.\\par\\textbf{2)} $\\sin(\\widehat{APB}) = \\dfrac{8 \\sin(120^\\circ)}{17{,}4} = \\dfrac{8 \\times 0{,}866}{17{,}4} \\approx 0{,}398$, donc $\\widehat{APB} \\approx \\boxed{23{,}5^\\circ}$.\\par\\textbf{3)} Avec un angle de $90^\\circ$ : $\\cos(90^\\circ) = 0$, donc $PB^2 = 144 + 64 = 208$ et $PB = \\sqrt{208} \\approx 14{,}4\\ \\text{km}$ (on retrouve le théorème de Pythagore)."
+        }
+      ]
+    }
+  ]
+}

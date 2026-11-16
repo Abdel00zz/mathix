@@ -1,0 +1,538 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Un espace vectoriel réel est un ensemble muni :",
+      "options": [
+        {
+          "id": "a",
+          "text": "D'une addition interne et d'une multiplication externe par les réels vérifiant les axiomes usuels",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "D'une seule multiplication interne",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "D'une relation d'ordre total",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Uniquement d'un produit scalaire",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'addition combine deux vecteurs de $E$, tandis que la multiplication externe combine un réel et un vecteur. Les axiomes relient ces deux opérations."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "$\\mathbb{R}^n$ muni de l'addition et de la multiplication scalaire usuelles est un espace vectoriel réel.",
+      "isTrue": true,
+      "explanation": "Les opérations coordonnées par coordonnées vérifient tous les axiomes d'un espace vectoriel réel."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Quelle égalité traduit la distributivité par rapport à l'addition des scalaires ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(\\lambda+\\mu)u=\\lambda u+\\mu u$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(\\lambda+\\mu)u=\\lambda\\mu u$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\lambda(u+v)=\\lambda u+v$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\lambda(\\mu u)=(\\lambda+\\mu)u$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La multiplication externe distribue l'addition des scalaires : $(\\lambda+\\mu)u=\\lambda u+\\mu u$."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Tout sous-espace vectoriel $F$ d'un espace vectoriel $E$ contient le vecteur nul de $E$.",
+      "isTrue": true,
+      "explanation": "Un sous-espace doit être non vide et stable par multiplication scalaire. Si $u\\in F$, alors $0u=0_E\\in F$."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Quel critère suffit pour montrer qu'une partie non vide $F$ de $E$ est un sous-espace vectoriel ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\forall u,v\\in F,\\ \\forall\\lambda,\\mu\\in\\mathbb{R},\\ \\lambda u+\\mu v\\in F$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\forall u,v\\in F,\\ u-v\\notin F$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$F$ contient au moins deux vecteurs",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Tous les vecteurs de $F$ ont la même norme",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La stabilité par toutes les combinaisons linéaires de deux vecteurs regroupe la stabilité par addition et par multiplication scalaire."
+    },
+    {
+      "id": "q6",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "L'intersection de deux sous-espaces vectoriels de $E$ est encore un sous-espace vectoriel de $E$.",
+      "isTrue": true,
+      "explanation": "Le vecteur nul appartient aux deux sous-espaces et toute combinaison linéaire de vecteurs communs reste dans chacun d'eux."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Définition",
+      "prompt": "Une combinaison linéaire de $u_1,\\ldots,u_p$ est un vecteur de la forme :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\lambda_1u_1+\\cdots+\\lambda_pu_p$ avec $\\lambda_k\\in\\mathbb{R}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$u_1\\times\\cdots\\times u_p$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$u_1+\\cdots+u_p$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\lambda(u_1+\\cdots+u_p)$ avec un seul coefficient imposé",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Chaque vecteur possède son propre coefficient réel. L'ensemble de toutes ces combinaisons est l'espace engendré par la famille."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Que représente $\\operatorname{Vect}(u_1,\\ldots,u_p)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le plus petit sous-espace vectoriel contenant $u_1,\\ldots,u_p$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "L'ensemble des vecteurs non nuls de la famille",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'union de toutes les droites du plan",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une famille nécessairement libre",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'espace engendré contient toutes les combinaisons linéaires de la famille et est inclus dans tout sous-espace qui contient cette famille."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Avec $u=(1,0,1)$ et $v=(0,1,1)$, le vecteur $w=(2,3,5)$ vérifie :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$w=2u+3v$, donc $w\\in\\operatorname{Vect}(u,v)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$w=3u+2v$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$w\\notin\\operatorname{Vect}(u,v)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$w=u+v$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$2u+3v=(2,0,2)+(0,3,3)=(2,3,5)$. L'égalité fournit directement les coefficients de la combinaison linéaire."
+    },
+    {
+      "id": "q10",
+      "type": "order",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour montrer qu'une partie $F$ est un sous-espace vectoriel.",
+      "items": [
+        {
+          "id": "a",
+          "content": "Vérifier que $0_E\\in F$ ou, au minimum, que $F$ est non vide."
+        },
+        {
+          "id": "b",
+          "content": "Prendre $u,v\\in F$ et $\\lambda,\\mu\\in\\mathbb{R}$."
+        },
+        {
+          "id": "c",
+          "content": "Montrer que $\\lambda u+\\mu v$ satisfait encore la condition définissant $F$."
+        },
+        {
+          "id": "d",
+          "content": "Conclure que $F$ est stable par combinaison linéaire, donc que c'est un sous-espace."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "La preuve doit traiter la non-vacuité puis la stabilité. Énoncer seulement que l'ensemble semble stable ne constitue pas une démonstration."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Une famille génératrice de $F=\\{(x,y,z)\\in\\mathbb{R}^3:x+y+z=0\\}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\bigl((1,0,-1),(0,1,-1)\\bigr)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\bigl((1,1,1)\\bigr)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\bigl((1,0,0),(0,1,0)\\bigr)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\bigl((0,0,1)\\bigr)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La relation donne $z=-x-y$, donc $(x,y,z)=x(1,0,-1)+y(0,1,-1)$."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Définition",
+      "prompt": "Quand une famille $(u_1,\\ldots,u_p)$ est-elle libre ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lorsque $\\lambda_1u_1+\\cdots+\\lambda_pu_p=0$ impose $\\lambda_1=\\cdots=\\lambda_p=0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Lorsque tous ses vecteurs sont non nuls",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Lorsqu'elle engendre toujours l'espace entier",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Lorsque deux coefficients sont égaux",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La liberté signifie qu'il n'existe aucune relation linéaire non triviale entre les vecteurs."
+    },
+    {
+      "id": "q13",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Une famille qui contient le vecteur nul est liée.",
+      "isTrue": true,
+      "explanation": "On obtient une relation non triviale en donnant au vecteur nul un coefficient non nul et aux autres vecteurs le coefficient zéro."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "Deux vecteurs $u$ et $v$ forment une famille liée si et seulement si :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ils sont colinéaires",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Ils sont orthogonaux",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Ils ont la même norme",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Ils appartiennent à un même espace vectoriel",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une relation $\\alpha u+\\beta v=0$ non triviale permet d'exprimer l'un des vecteurs comme multiple de l'autre, et réciproquement."
+    },
+    {
+      "id": "q15",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Identifier l'erreur dans cette preuve de liberté.",
+      "context": "On veut montrer que $(u,v)$ est libre.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On suppose $\\alpha u+\\beta v=0$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Comme le second membre est nul, on affirme immédiatement $\\alpha=\\beta=0$.",
+          "isError": true,
+          "correction": "Cette conclusion est précisément ce qu'il faut démontrer. Il faut exploiter les coordonnées ou une propriété des vecteurs pour établir que les coefficients sont nuls."
+        },
+        {
+          "id": "s3",
+          "text": "On conclut ensuite que la famille est libre.",
+          "isError": false
+        }
+      ],
+      "explanation": "Une preuve de liberté doit résoudre la relation linéaire. Supposer directement la nullité des coefficients est un raisonnement circulaire."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Définition",
+      "prompt": "Une base d'un espace vectoriel $E$ est une famille :",
+      "options": [
+        {
+          "id": "a",
+          "text": "À la fois libre et génératrice de $E$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Libre mais jamais génératrice",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Génératrice mais nécessairement liée",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Formée uniquement du vecteur nul",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La génération assure l'existence des coordonnées ; la liberté assure leur unicité."
+    },
+    {
+      "id": "q17",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "Dans une base donnée, tout vecteur possède une unique famille de coordonnées.",
+      "isTrue": true,
+      "explanation": "L'existence vient du caractère générateur de la base et l'unicité de son caractère libre."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Définition",
+      "prompt": "La dimension d'un espace vectoriel de dimension finie est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le nombre de vecteurs de n'importe laquelle de ses bases",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Le nombre total de vecteurs de l'espace",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Le nombre de ses sous-espaces",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Toujours égal à $1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Toutes les bases d'un espace vectoriel de dimension finie ont le même nombre de vecteurs."
+    },
+    {
+      "id": "q19",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Dans un espace vectoriel de dimension $n$, toute famille libre de $n$ vecteurs est une base.",
+      "isTrue": true,
+      "explanation": "En dimension $n$, une famille libre ne peut comporter plus de $n$ vecteurs. Lorsqu'elle en comporte exactement $n$, elle est aussi génératrice."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Des vecteurs tous non nuls peuvent malgré tout être liés.",
+      "prompt": "Dans $\\mathbb{R}^3$, trois vecteurs non nuls forment-ils nécessairement une base ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non, il faut encore vérifier qu'ils sont libres",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Oui, car il y a trois vecteurs",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Oui, dès qu'ils ont des coordonnées différentes",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non, une base de $\\mathbb{R}^3$ contient toujours quatre vecteurs",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Trois vecteurs peuvent être coplanaires ou colinéaires. En dimension $3$, il suffit de prouver leur liberté pour conclure qu'ils forment une base."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Dans la base $B=((1,1),(1,-1))$ de $\\mathbb{R}^2$, les coordonnées de $(4,2)$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(3,1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(1,3)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(4,2)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(2,2)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On résout $a(1,1)+b(1,-1)=(4,2)$, soit $a+b=4$ et $a-b=2$. On obtient $a=3$ et $b=1$."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Pour $F=\\{(x,y,z)\\in\\mathbb{R}^3:x+y+z=0\\}$, quelle conclusion est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$F$ a pour base $((1,0,-1),(0,1,-1))$ et $\\dim F=2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$F=\\mathbb{R}^3$ et $\\dim F=3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$F$ est une droite et $\\dim F=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$F$ n'est pas un sous-espace car il contient le vecteur nul",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Tout vecteur de $F$ s'écrit $x(1,0,-1)+y(0,1,-1)$. Les deux générateurs ne sont pas colinéaires, donc ils sont libres et forment une base de dimension $2$."
+    }
+  ]
+}

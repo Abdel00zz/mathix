@@ -1,0 +1,1065 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Que représente géométriquement le nombre dérivé $f'(a)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'aire sous la courbe entre $0$ et $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Le coefficient directeur de la tangente en $a$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "L'ordonnée du point d'abscisse $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La valeur de $f''(a)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le nombre dérivé mesure la pente instantanée de la courbe en $a$. C'est donc le coefficient directeur de la tangente en ce point."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si une fonction est dérivable en $a$, alors elle est continue en $a$.",
+      "isTrue": true,
+      "explanation": "La dérivabilité est une condition plus forte que la continuité. Toute fonction dérivable en un point y est nécessairement continue."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Quelle est l'équation de la tangente à $(\\mathcal{C}_f)$ au point d'abscisse $a$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = f'(a)(x-a) + f(a)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = f(a)(x-a) + f'(a)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = f'(x)(x-a) + f(a)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = \\dfrac{f(x)-f(a)}{x-a}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une tangente passe par $(a,f(a))$ et a pour pente $f'(a)$, d'où $y = f'(a)(x-a)+f(a)$."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Dire que $f$ est dérivable en $a$ signifie que :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\lim_{x \\to a} \\dfrac{f(x)-f(a)}{x-a}$ existe et est finie",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f(a)=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f'(a)$ est forcément positif",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f$ est continue sur tout $\\mathbb{R}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La dérivabilité en un point repose sur l'existence d'une limite finie du taux d'accroissement."
+    },
+    {
+      "id": "q5",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si $f'_d(a)$ et $f'_g(a)$ existent, sont finies et égales, alors $f$ est dérivable en $a$.",
+      "isTrue": true,
+      "explanation": "C'est précisément le critère de dérivabilité en un point lorsqu'on compare les dérivées à droite et à gauche."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Quelle est la bonne formule de dérivation d'un quotient $\\dfrac{u}{v}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\dfrac{u'v+uv'}{v^2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\dfrac{u'v-uv'}{v^2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\dfrac{u'}{v'}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\dfrac{u'v-uv'}{u^2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La formule correcte est $\\left(\\dfrac{u}{v}\\right)' = \\dfrac{u'v-uv'}{v^2}$, avec $v\\neq0$."
+    },
+    {
+      "id": "q7",
+      "type": "order",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour dresser un tableau de variations.",
+      "items": [
+        {
+          "id": "a",
+          "content": "Calculer $f'(x)$ et déterminer le domaine de dérivabilité"
+        },
+        {
+          "id": "b",
+          "content": "Résoudre $f'(x)=0$ et étudier le signe de $f'$"
+        },
+        {
+          "id": "c",
+          "content": "Calculer les valeurs remarquables et les limites utiles"
+        },
+        {
+          "id": "d",
+          "content": "Remplir les lignes $x$, $f'(x)$ puis $f$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "On commence par la dérivée, puis on étudie son signe, ensuite on calcule les valeurs utiles et enfin on remplit le tableau."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Si $u$ est dérivable et strictement positive, quelle est la dérivée de $\\sqrt{u(x)}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\dfrac{u'(x)}{2\\sqrt{u(x)}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2\\sqrt{u(x)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\dfrac{1}{2\\sqrt{x}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\dfrac{u(x)}{2\\sqrt{u'(x)}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On applique la dérivation d'une composée : $(\\sqrt{u})' = \\dfrac{u'}{2\\sqrt{u}}$."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Pour pouvoir utiliser la formule de la dérivée de $f^{-1}$ en $f(a)$, quelle condition supplémentaire faut-il vérifier ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'(a)=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f'(a)\\neq 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f(a)=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f''(a)$ existe",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La formule $\\left(f^{-1}\\right)'(f(a))=\\dfrac{1}{f'(a)}$ impose de diviser par $f'(a)$, donc il faut $f'(a)\\neq0$."
+    },
+    {
+      "id": "q10",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Si $f'(x) \\ge 0$ sur un intervalle $I$, alors $f$ est croissante sur $I$.",
+      "isTrue": true,
+      "explanation": "Le signe de la dérivée contrôle les variations de la fonction : une dérivée positive ou nulle correspond à une fonction croissante."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Si $f'(a)=0$ et que $f'$ change de signe de $-$ vers $+$ en $a$, alors $f$ admet en $a$ :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un maximum local",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Un minimum local",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Une asymptote verticale",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un point d'inflexion obligatoirement",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le passage de $-$ à $+$ signifie que la fonction décroît puis croît : on obtient donc un minimum local."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "À quelle condition la droite $x=a$ est-elle une asymptote verticale de $(\\mathcal{C}_f)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\lim_{x \\to a} f(x) = \\pm\\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\lim_{x \\to a} \\dfrac{f(x)}{x} = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f'(a)=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\lim_{x \\to +\\infty} f(x)=a$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une asymptote verticale apparaît quand la fonction tend vers $+\\infty$ ou $-\\infty$ au voisinage d'une valeur interdite ou frontière."
+    },
+    {
+      "id": "q13",
+      "type": "order",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour déterminer une asymptote oblique $y=ax+b$ au voisinage de l'infini.",
+      "items": [
+        {
+          "id": "a",
+          "content": "Calculer $\\lim \\dfrac{f(x)}{x}$ pour trouver $a$"
+        },
+        {
+          "id": "b",
+          "content": "Vérifier que la limite obtenue est un réel non nul"
+        },
+        {
+          "id": "c",
+          "content": "Calculer $\\lim (f(x)-ax)$ pour trouver $b$"
+        },
+        {
+          "id": "d",
+          "content": "Conclure que la droite $y=ax+b$ est asymptote oblique"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "On commence par le coefficient directeur, on vérifie qu'il n'est pas nul, puis on calcule l'ordonnée à l'origine avant de conclure."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "La confusion classique consiste à croire que la seule égalité $f'(a)=0$ suffit toujours pour conclure à un extremum.",
+      "prompt": "Parmi les affirmations suivantes, laquelle est toujours vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Si $f'(a)=0$, alors $f$ admet forcément un extremum local en $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Si $f'(a)=0$ et que $f'$ change de signe en $a$, alors $f$ admet un extremum local en $a$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Si $f'(a)=0$, alors $a$ est toujours un point d'inflexion",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Si $f'(a)=0$, alors $f$ est constante au voisinage de $a$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La condition décisive est le changement de signe de $f'$. L'égalité $f'(a)=0$ seule ne suffit pas."
+    },
+    {
+      "id": "q15",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Identifier l'erreur dans ce raisonnement sur les extremums.",
+      "context": "On sait que $f'(2)=0$. Un élève veut conclure sur la nature du point d'abscisse $2$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Je repère que $f'(2)=0$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "J'en déduis immédiatement que $f$ admet un extremum local en $2$.",
+          "isError": true,
+          "correction": "Il faut encore étudier le signe de $f'$ de part et d'autre de $2$ pour conclure."
+        },
+        {
+          "id": "s3",
+          "text": "Je devrais comparer le signe de $f'$ avant et après $2$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "Le changement de signe permet ensuite de préciser maximum, minimum ou absence d'extremum.",
+          "isError": false
+        }
+      ],
+      "explanation": "L'erreur fréquente consiste à confondre condition nécessaire et condition suffisante. Le changement de signe de $f'$ est indispensable."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Si $f''(x) > 0$ sur un intervalle $I$, que peut-on affirmer ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ est concave sur $I$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(\\mathcal{C}_f)$ est convexe sur $I$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f$ est décroissante sur $I$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f$ admet un extremum en tout point de $I$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le signe positif de la dérivée seconde signifie que la courbe est tournée vers le haut : elle est donc convexe."
+    },
+    {
+      "id": "q17",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Si $f''(a)=0$, alors $A(a;f(a))$ est forcément un point d'inflexion.",
+      "isTrue": false,
+      "explanation": "Il faut aussi que $f''$ change de signe en $a$. Sans changement de signe, il n'y a pas de point d'inflexion."
+    },
+    {
+      "id": "q18",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Identifier l'erreur dans cette recherche d'asymptote.",
+      "context": "On étudie une fonction telle que $\\lim\\limits_{x\\to+\\infty} \\dfrac{f(x)}{x}=0$ et $\\lim\\limits_{x\\to+\\infty} f(x)=3$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Je calcule $\\lim\\limits_{x\\to+\\infty} \\dfrac{f(x)}{x}=0$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Comme le coefficient directeur vaut 0, je conclus à une asymptote oblique $y=0x+3$.",
+          "isError": true,
+          "correction": "Quand le coefficient directeur vaut 0, on ne parle pas d'asymptote oblique mais d'asymptote horizontale $y=3$."
+        },
+        {
+          "id": "s3",
+          "text": "Je remarque aussi que $\\lim\\limits_{x\\to+\\infty} f(x)=3$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "La bonne conclusion est donc : asymptote horizontale d'équation $y=3$.",
+          "isError": false
+        }
+      ],
+      "explanation": "Le cas $a=0$ correspond à une horizontale et non à une oblique. C'est une confusion très fréquente."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Quelle condition caractérise que le point $I(a;b)$ soit un centre de symétrie de $(\\mathcal{C}_f)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(2a-x)=f(x)$ pour tout $x$ du domaine",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f(2a-x)=2b-f(x)$ pour tout $x$ du domaine",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f(-x)=f(x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f'(a)=0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La relation $f(2a-x)=2b-f(x)$ traduit exactement la symétrie centrale de centre $I(a;b)$."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Si $\\lim\\limits_{x\\to+\\infty} f(x)=+\\infty$ et $\\lim\\limits_{x\\to+\\infty} \\dfrac{f(x)}{x}=0$, quelle branche infinie obtient-on ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une asymptote horizontale",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Une branche parabolique de direction l'axe des abscisses",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Une asymptote oblique",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une asymptote verticale",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Quand $f(x)$ devient infinie mais reste négligeable devant $x$, on obtient une branche parabolique de direction $(Ox)$."
+    },
+    {
+      "id": "q21",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Si $\\lim\\limits_{x\\to+\\infty} \\dfrac{f(x)}{x}=+\\infty$, alors la courbe admet une branche parabolique de direction l'axe des ordonnées.",
+      "isTrue": true,
+      "explanation": "Dans ce cas, $f(x)$ croît beaucoup plus vite que $x$, ce qui correspond à une branche parabolique de direction $(Oy)$."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Dans une étude complète, quelle étape doit être menée avant de tracer la courbe ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Étudier le domaine, les limites, les variations et la convexité",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Choisir d'abord des points au hasard",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Tracer d'abord la courbe puis calculer la dérivée",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Chercher uniquement les points où $f(x)=0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le tracé vient à la fin : il s'appuie sur le domaine, les limites, les asymptotes, les variations et la convexité déjà établis."
+    },
+    {
+      "id": "q23",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si $f'(x) > 0$ sur un intervalle $I$, alors la fonction $f$ est strictement décroissante sur cet intervalle.",
+      "isTrue": false,
+      "explanation": "C'est l'inverse ! Une dérivée strictement positive indique que la pente des tangentes est orientée vers le haut, donc la fonction est strictement croissante."
+    },
+    {
+      "id": "q24",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Que signifie géométriquement l'équation $f'(a) = 0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La tangente à la courbe au point d'abscisse $a$ est verticale",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La tangente à la courbe au point d'abscisse $a$ est horizontale",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "La fonction s'annule en $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La courbe traverse l'axe des ordonnées en $a$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La dérivée $f'(a)$ représente le coefficient directeur de la tangente. Un coefficient nul correspond à une droite parfaitement horizontale."
+    },
+    {
+      "id": "q25",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Quand dit-on qu'une droite d'équation $x = a$ est une asymptote verticale à la courbe $\\mathcal{C}_f$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lorsque $\\lim_{x \\to \\pm \\infty} f(x) = a$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Lorsque $\\lim_{x \\to a} f(x) = \\pm \\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Lorsque $\\lim_{x \\to \\infty} \\frac{f(x)}{x} = a$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Lorsque $f(a) = \\pm \\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une asymptote est verticale quand $x$ se rapproche d'une valeur finie $a$, mais que la valeur de la fonction $f(x)$ « explose » vers l'infini."
+    },
+    {
+      "id": "q26",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si $f''(x) > 0$ sur un intervalle, alors la courbe est convexe (en forme de $\\cup$).",
+      "isTrue": true,
+      "explanation": "C'est correct ! Une dérivée seconde positive signifie que les pentes augmentent : la courbe tourne « vers le haut » (bol qui retient l'eau)."
+    },
+    {
+      "id": "q27",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Laquelle de ces définitions correspond à un point d'inflexion ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un point où $f'(x) = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Le sommet exact d'une parabole",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un point où la courbe coupe l'axe des abscisses",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un point où la concavité de la courbe change de sens",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Un point d'inflexion marque un changement de courbure : la courbe passe de convexe à concave (ou inversement), traversant ainsi sa propre tangente."
+    },
+    {
+      "id": "q28",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Que représente la droite d'équation $y = b$ si $\\lim_{x \\to +\\infty} f(x) = b$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une asymptote verticale",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Une asymptote oblique",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Une asymptote horizontale",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Une branche parabolique de direction $(Oy)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque $f(x)$ stagne au niveau $b$ lorsque $x$ devient infiniment grand, la courbe se stabilise et épouse une droite horizontale."
+    },
+    {
+      "id": "q29",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Quelle est la toute première étape canonique pour l'étude complète d'une fonction ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trouver le domaine de définition $D_f$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Calculer la dérivée $f'$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Calculer les limites aux bornes",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Étudier la parité",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le domaine prime, puis vient la réduction par symétrie, ensuite l'étude locale (limites) avant même de toucher à la dérivée."
+    },
+    {
+      "id": "q30",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Soit la fonction $f(x) = x^3 - 3x^2 + 5$. Pour quelles valeurs de $x$ la tangente à sa courbe est-elle horizontale ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 0$ et $x = 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x = 0$ et $x = -2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x = 1$ et $x = -1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x = 3$ uniquement",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On calcule la dérivée : $f'(x) = 3x^2 - 6x$. On résout $f'(x) = 0 \\iff 3x(x - 2) = 0$, donc pour $x = 0$ et $x = 2$."
+    },
+    {
+      "id": "q31",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Si la droite d'équation $x=a$ est axe de symétrie, alors pour tout $x$ du domaine, $f(a-x) = f(x)$.",
+      "isTrue": false,
+      "explanation": "Erreur classique de formule ! L'égalité exacte pour un axe de symétrie en $x=a$ est $f(2a-x) = f(x)$."
+    },
+    {
+      "id": "q32",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Dans l'arbre de décision pour identifier une asymptote oblique $y=ax+b$ en $+\\infty$, quelle limite calcule-t-on juste après avoir vérifié que $\\lim f(x) = \\pm\\infty$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\lim \\frac{f(x)}{x}$ pour trouver $a$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\lim (f(x) - ax)$ pour trouver $b$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\lim f'(x)$ pour trouver la pente",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\lim x f(x)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est l'ordre algorithmique : on vérifie d'abord que la courbe part à l'infini, puis on cherche la pente $a$, et enfin l'ordonnée à l'origine $b$."
+    },
+    {
+      "id": "q33",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Comment détermine-t-on la position relative de la courbe $\\mathcal{C}_f$ par rapport à son asymptote oblique $D : y = ax+b$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "En étudiant le signe de $f'(x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "En regardant si $a > 0$ ou $a < 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "En étudiant le signe de la différence $f(x) - (ax+b)$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "En calculant $\\lim_{x \\to 0} f(x)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si $f(x) - (ax+b) > 0$, la courbe est au-dessus. Si c'est $< 0$, la courbe est en dessous. La différence verticale donne directement la position."
+    },
+    {
+      "id": "q34",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "On sait que $\\lim_{x \\to +\\infty} \\frac{f(x)}{x} = 0$. Quelle est la nature de la branche infinie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une asymptote horizontale",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Une asymptote oblique",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Une branche parabolique de direction l'axe des ordonnées $(Oy)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une branche parabolique de direction l'axe des abscisses $(Ox)$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "La pente 'tendant vers $0$' indique de loin que la courbe s'aplatit sans pour autant plafonner à une asymptote, elle suit donc la direction de l'axe des abscisses."
+    },
+    {
+      "id": "q35",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Un élève calcule la dérivée seconde $f''(x) = 12x^2$ pour la fonction $f(x) = x^4$. Il remarque que $f''(0) = 0$ et conclut que la courbe possède un point d'inflexion en $x=0$. Quelle est son erreur ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La dérivée seconde s'annule mais ne change pas de signe, il n'y a donc pas de point d'inflexion.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La dérivée seconde est fausse, elle vaut $4x^3$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un point d'inflexion nécessite que la dérivée première s'annule, pas la dérivée seconde.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il faut que $f''(0)$ soit strictement positif pour avoir un point d'inflexion.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La condition $f''(x_0)=0$ est nécessaire mais NON SUFFISANTE ! Il faut vérifier le changement de signe. Or ici, $12x^2 \\geq 0$ partout, donc la courbe reste convexe et il n'y a aucun point d'inflexion."
+    },
+    {
+      "id": "q36",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Confondre l'annulation de f' et un extremum réel sans vérifier le changement de signe.",
+      "prompt": "Laquelle de ces propositions est une condition SUFFISANTE pour que $f(a)$ soit un extremum local ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'(a) = 0$ et $f'' > 0$ partout",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f'(a) = 0$ et $f'$ change de signe autour de $a$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f'(a) = 0$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f'(a) = 0$ et $f''(a) = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le changement de signe garantit que la fonction monte puis descend (maximum) ou inversement (minimum). Sans cela (comme $x^3$ en 0), c'est juste un 'palier'."
+    },
+    {
+      "id": "q37",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Soit $f(x)=\\frac{2x^2+1}{x-1}$. On étudie l'asymptote oblique au voisinage de $+\\infty$. Que valent les limites de l'arbre de décision $a$ et $b$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a=1$ et $b=2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$a=2$ et $b=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$a=2$ et $b=2$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$a=2$ et $b=+\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Lim de $\\frac{f(x)}{x} = \\lim \\frac{2x^2}{x^2} = 2 = a$. Lim de $(f(x)-2x) = \\lim (\\frac{2x^2+1-2x^2+2x}{x-1}) \\approx \\frac{2x}{x} = 2 = b$. L'asymptote est $y = 2x+2$."
+    },
+    {
+      "id": "q38",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "Une fonction peut avoir à la fois une asymptote oblique et une asymptote horizontale du même côté (ex: en $+\\infty$).",
+      "isTrue": false,
+      "explanation": "Impossible ! Au voisinage de $+\\infty$, la courbe de la fonction va suivre une et une seule direction principale. Les deux directions sont mutuellement exclusives."
+    },
+    {
+      "id": "q39",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Pour prouver que le point $I(1, 3)$ est centre de symétrie de la courbe, quelle égalité doit-on vérifier pour tout $x$ du domaine ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(2-x) + f(x) = 6$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f(1-x) + f(x) = 3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f(2+x) - f(x) = 6$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f(2-x) = f(x)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La formule du centre $I(a,b)$ est $f(2a-x) + f(x) = 2b$. Avec $a=1$ et $b=3$, on obtient $2(1)-x$ donc $2-x$, et $2(3)$ donc $6$."
+    },
+    {
+      "id": "q40",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Le point A est un point d'inflexion de $\\mathcal{C}_f$. Que fait la tangente à la courbe en ce point ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle rebondit sur la courbe sans la couper",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Elle traverse la courbe",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Elle est systématiquement horizontale",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle n'existe pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est la particularité géométrique du point d'inflexion : ponctuellement, la courbe change de 'bol', ce qui force la ligne droite de la tangente à passer d'un bord à l'autre de la courbe."
+    },
+    {
+      "id": "q41",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Il est possible qu'un point de la courbe soit à la fois un extremum et un point d'inflexion.",
+      "isTrue": false,
+      "explanation": "C'est mathématiquement impossible. En un extremum, la courbe reste entièrement d'un côté de sa tangente horizontale. En un point d'inflexion, elle traverse la tangente. Une courbe ne peut faire les deux simultanément !"
+    },
+    {
+      "id": "q42",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Confusion entre le concept d'axe de symétrie et la périodicité de la fonction.",
+      "prompt": "Si $f(2-x) = f(x)$ pour tout $x$, que peut-on déduire visuellement sur la courbe ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La fonction est paire",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La droite d'équation $x = 1$ est un axe de symétrie",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Le point de coordonnées $(1,0)$ est un centre de symétrie",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La fonction est périodique de période 2",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La formule $f(2a-x) = f(x)$ traduit un axe de symétrie sur $x=a$. Ici $2a=2$ donc $a=1$. L'erreur fréquente est de croire que la fonction est paire (valable uniquement pour $a=0$)."
+    }
+  ]
+}

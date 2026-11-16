@@ -1,0 +1,38 @@
+{
+  "id": "suites-numeriques",
+  "title": "Suites numériques",
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-suites-sm",
+      "title": "Fiche Complète : Suites",
+      "path": "data/2eme-bac-sc-math/suites-numeriques/revisions/fiche_suites_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-suites-numeriques-01",
+      "path": "data/2eme-bac-sc-math/suites-numeriques/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-suites-numeriques-02",
+      "path": "data/2eme-bac-sc-math/suites-numeriques/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-suites-numeriques-03",
+      "path": "data/2eme-bac-sc-math/suites-numeriques/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-suites-sm-01",
+      "path": "data/2eme-bac-sc-math/suites-numeriques/exercises/ex_suites_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-suites-numeriques",
+      "title": "Quiz : Suites Numériques",
+      "path": "data/2eme-bac-sc-math/suites-numeriques/quiz/suites-numeriques_quiz.json",
+      "questionsCount": 22
+    }
+  ]
+}

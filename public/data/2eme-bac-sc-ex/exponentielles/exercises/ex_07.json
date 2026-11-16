@@ -1,0 +1,62 @@
+{
+  "id": "ex-exp-07",
+  "theme": "exponentielles",
+  "difficulty": "moyen",
+  "topic": "Analyse - Fonctions exponentielles",
+  "context": "Soit $f$ la fonction numérique de la variable réelle $x$ définie sur $\\mathbb{R}$ par : $$f(x) = 1 - \\frac{1}{2}x - \\frac{2}{e^x + 1}$$ $(C)$ est la courbe représentative de la fonction $f$ dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Vérifier que : $\\frac{1}{e^{-x} + 1} = 1 - \\frac{1}{e^x + 1}$ pour tout $x$ de $\\mathbb{R}$.",
+          "hint": "Transformez le membre de gauche en multipliant le numérateur et le dénominateur par $e^x$ pour faire disparaître l'exposant négatif. Ensuite, réduisez le membre de droite au même dénominateur et comparez les deux résultats simplifiés."
+        },
+        {
+          "id": "sq1b",
+          "content": "En déduire que $f$ est une fonction impaire.",
+          "hint": "Calculez $f(-x)$ en remplaçant $x$ par $-x$ dans l'expression de $f$. Utilisez l'identité démontrée à la question précédente pour transformer le terme contenant $e^{-x}$. Montrez ensuite que le résultat est égal à $-f(x)$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} f(x)$.",
+      "hint": "Analysez le comportement de chaque terme séparément. Lorsque $x$ tend vers $+\\infty$, le terme $-\\frac{1}{2}x$ tend vers $-\\infty$. Le dénominateur $e^x + 1$ tend vers $+\\infty$, ce qui fait tendre la fraction vers 0. Concluez par somme des limites."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que : $f'(x) = -\\frac{1}{2} \\left( \\frac{e^x - 1}{e^x + 1} \\right)^2$ pour tout $x$ de $\\mathbb{R}$.",
+          "hint": "Dérivez la fonction $f$. La dérivée de la partie affine est constante. Pour la fraction, utilisez la formule de la dérivée de $\\frac{1}{u}$. Mettez ensuite le tout au même dénominateur et factorisez le numérateur pour faire apparaître l'identité remarquable au carré."
+        },
+        {
+          "id": "sq3b",
+          "content": "Donner le tableau de variations de la fonction $f$ sur $\\mathbb{R}^+$.",
+          "hint": "Étudiez le signe de la dérivée trouvée. Un carré étant toujours positif ou nul et le coefficient $-\\frac{1}{2}$ étant négatif, le signe est immédiat. N'oubliez pas de calculer l'image de 0 pour compléter le tableau sur l'intervalle demandé."
+        },
+        {
+          "id": "sq3c",
+          "content": "En déduire que : $1 - \\frac{2}{e^x + 1} \\le \\frac{1}{2}x$ pour tout $x$ de $\\mathbb{R}^+$.",
+          "hint": "Utilisez la décroissance de la fonction sur $\\mathbb{R}^+$. Pour tout $x \\ge 0$, on a $f(x) \\le f(0)$. Calculez $f(0)$, puis réorganisez l'inégalité $f(x) \\le 0$ pour isoler les termes comme demandé."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que : $\\displaystyle \\lim_{x \\to +\\infty} \\left[ f(x) - \\left( 1 - \\frac{1}{2}x \\right) \\right] = 0$ puis interpréter géométriquement ce résultat.",
+      "hint": "Effectuez la soustraction demandée, ce qui devrait simplifier l'expression de $f(x)$ pour ne laisser que le terme fractionnaire. Calculez la limite de ce reste en $+\\infty$. Si cette limite est nulle, cela signifie que la courbe se rapproche indéfiniment d'une droite : c'est une asymptote oblique."
+    },
+    {
+      "id": "q5",
+      "content": "Tracer dans le repère $(O;\\overrightarrow{i};\\overrightarrow{j})$ la droite d'équation $y = 1 - \\frac{1}{2}x$ puis construire la courbe $(C)$.",
+      "hint": "Commencez par tracer la droite asymptote. Notez que la fonction est impaire, donc la courbe est symétrique par rapport à l'origine $O$. Placez le point $O$ (où la dérivée s'annule, donc tangente horizontale). Tracez l'allure en respectant la position de la courbe par rapport à l'asymptote."
+    }
+  ]
+}

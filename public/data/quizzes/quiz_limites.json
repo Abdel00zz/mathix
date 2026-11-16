@@ -1,0 +1,702 @@
+{
+  "metadata": {
+    "title": "Quiz - Limite d'une Suite Numérique",
+    "chapter": "Séance 6 : Limite d'une suite",
+    "level": "2Bac SPC-SVT-STE-STM",
+    "total_questions": 24,
+    "distribution": {
+      "cours_theoremes": "20% (5 questions)",
+      "synthese_reflexion": "30% (7 questions)",
+      "applications": "50% (12 questions)"
+    },
+    "topics": [
+      "Généralités sur les suites",
+      "Suite arithmétique et géométrique (rappel)",
+      "Limite finie d'une suite",
+      "Limite infinie d'une suite",
+      "Convergence et divergence",
+      "Opérations sur les limites",
+      "Critères de convergence (théorème d'encadrement)",
+      "Suites particulières (q^n, n^r, f(u_n), récurrence)"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q1_cours",
+      "type": "true-false",
+      "section": "IV - Limites d'une suite",
+      "category": "Cours - Définition",
+      "question": "On dit que la suite $(u_n)$ converge vers le nombre réel $\\ell$ si pour tout intervalle ouvert de centre $\\ell$, cet intervalle contient tous les termes de la suite à partir d'un certain rang.",
+      "isTrue": true,
+      "explanation": "Vrai ! C'est la définition précise de la convergence : $\\lim_{n \\to +\\infty} u_n = \\ell$ signifie que les termes $u_n$ se rapprochent arbitrairement de $\\ell$ pour $n$ suffisamment grand."
+    },
+    {
+      "id": "q2_cours",
+      "type": "mcq",
+      "section": "IV - Convergence",
+      "category": "Cours - Définition",
+      "question": "Une suite numérique est dite convergente si :",
+      "options": [
+        {
+          "text": "Sa limite est un nombre réel fini",
+          "is_correct": true,
+          "explanation": "Définition exacte : une suite est convergente si et seulement si elle admet une limite finie"
+        },
+        {
+          "text": "Sa limite est $+\\infty$ ou $-\\infty$",
+          "is_correct": false,
+          "explanation": "Si la limite est infinie, la suite est **divergente**, pas convergente"
+        },
+        {
+          "text": "Elle est croissante",
+          "is_correct": false,
+          "explanation": "Une suite croissante peut diverger vers $+\\infty$. Il faut qu'elle soit croissante ET majorée pour être convergente"
+        },
+        {
+          "text": "Tous ses termes sont positifs",
+          "is_correct": false,
+          "explanation": "Le signe des termes ne détermine pas la convergence"
+        }
+      ],
+      "explanation": "**Définition** : Suite convergente $\\Leftrightarrow$ limite finie. Suite divergente $\\Leftrightarrow$ limite infinie ou pas de limite"
+    },
+    {
+      "id": "q3_cours",
+      "type": "mcq",
+      "section": "VI - Critères de convergence",
+      "category": "Cours - Théorème",
+      "question": "Quelle affirmation est vraie concernant la convergence d'une suite ?",
+      "options": [
+        {
+          "text": "Toute suite croissante et majorée est convergente",
+          "is_correct": true,
+          "explanation": "C'est un théorème fondamental : une suite croissante et majorée converge vers une limite finie (borne supérieure)"
+        },
+        {
+          "text": "Toute suite croissante est convergente",
+          "is_correct": false,
+          "explanation": "Faux ! Une suite croissante non majorée diverge vers $+\\infty$. Exemple : $u_n = n$"
+        },
+        {
+          "text": "Toute suite majorée est convergente",
+          "is_correct": false,
+          "explanation": "Faux ! Contre-exemple : $u_n = (-1)^n$ est majorée par 1 mais n'a pas de limite"
+        },
+        {
+          "text": "Toute suite bornée est convergente",
+          "is_correct": false,
+          "explanation": "Faux ! Contre-exemple : $u_n = (-1)^n$ est bornée mais divergente (pas de limite)"
+        }
+      ],
+      "explanation": "**Théorème de convergence monotone** : Suite croissante + majorée $\\Rightarrow$ convergente. Suite décroissante + minorée $\\Rightarrow$ convergente"
+    },
+    {
+      "id": "q4_application",
+      "type": "mcq",
+      "section": "VII - Suites particulières",
+      "category": "Application",
+      "question": "Soit $q \\in \\mathbb{R}$. Calculer $\\lim_{n \\to +\\infty} q^n$ pour $q = \\frac{1}{2}$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\left(\\frac{1}{2}\\right)^n = 0$",
+          "is_correct": true,
+          "explanation": "Si $|q| < 1$, alors $\\lim_{n \\to +\\infty} q^n = 0$. Ici $|\\frac{1}{2}| = \\frac{1}{2} < 1$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\left(\\frac{1}{2}\\right)^n = +\\infty$",
+          "is_correct": false,
+          "explanation": "Non, la suite décroît vers 0 car $\\frac{1}{2} < 1$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\left(\\frac{1}{2}\\right)^n = 1$",
+          "is_correct": false,
+          "explanation": "Seulement si $q = 1$. Ici $q = \\frac{1}{2}$"
+        },
+        {
+          "text": "La limite n'existe pas",
+          "is_correct": false,
+          "explanation": "La limite existe bien et vaut 0"
+        }
+      ],
+      "explanation": "**Règle pour $q^n$** : Si $|q| < 1$ alors $\\lim q^n = 0$. Si $q > 1$ alors $\\lim q^n = +\\infty$. Si $q = 1$ alors $\\lim q^n = 1$. Si $q \\leq -1$ : pas de limite"
+    },
+    {
+      "id": "q5_application",
+      "type": "mcq",
+      "section": "VII - Suites particulières",
+      "category": "Application",
+      "question": "Calculer $\\lim_{n \\to +\\infty} \\frac{1}{n^2}$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{1}{n^2} = 0$",
+          "is_correct": true,
+          "explanation": "Limite usuelle : $\\lim_{n \\to +\\infty} \\frac{1}{n^k} = 0$ pour tout $k \\in \\mathbb{N}^*$. Ici $k = 2$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{1}{n^2} = 1$",
+          "is_correct": false,
+          "explanation": "Non, $\\frac{1}{n^2}$ tend vers 0 quand $n$ tend vers $+\\infty$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{1}{n^2} = +\\infty$",
+          "is_correct": false,
+          "explanation": "Au contraire, $\\frac{1}{n^2}$ tend vers 0 (décroît)"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{1}{n^2} = 2$",
+          "is_correct": false,
+          "explanation": "Erreur : la limite est 0, pas 2"
+        }
+      ],
+      "explanation": "**Limites usuelles** : $\\lim_{n \\to +\\infty} \\frac{1}{n} = 0$, $\\lim_{n \\to +\\infty} \\frac{1}{n^k} = 0$ pour $k \\in \\mathbb{N}^*$, $\\lim_{n \\to +\\infty} \\frac{1}{\\sqrt{n}} = 0$"
+    },
+    {
+      "id": "q6_cours",
+      "type": "mcq",
+      "section": "VII - Suites particulières",
+      "category": "Cours - Limites usuelles",
+      "question": "Pour $r \\in \\mathbb{Q}^*$, quelle est la limite de $n^r$ quand $n \\to +\\infty$ ?",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} n^r = +\\infty$ si $r > 0$",
+          "is_correct": true,
+          "explanation": "Si $r > 0$, alors $n^r$ croît vers $+\\infty$. Par exemple : $n^2$, $n^{1/2} = \\sqrt{n}$, etc."
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} n^r = 0$ pour tout $r$",
+          "is_correct": false,
+          "explanation": "Faux ! Si $r > 0$, la limite est $+\\infty$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} n^r = r$ pour tout $r$",
+          "is_correct": false,
+          "explanation": "Non, la limite dépend du signe de $r$, pas de sa valeur"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} n^r = 1$ pour tout $r$",
+          "is_correct": false,
+          "explanation": "Seulement si $r = 0$ (mais $r \\in \\mathbb{Q}^*$)"
+        }
+      ],
+      "explanation": "**Règle pour $n^r$** : Si $r > 0$ alors $\\lim n^r = +\\infty$. Si $r < 0$ alors $\\lim n^r = 0$ (car $n^r = \\frac{1}{n^{|r|}}$)"
+    },
+    {
+      "id": "q7_application",
+      "type": "mcq",
+      "section": "V - Opérations sur les limites",
+      "category": "Application",
+      "question": "Soit $(u_n)$ telle que $\\lim_{n \\to +\\infty} u_n = 3$ et $(v_n)$ telle que $\\lim_{n \\to +\\infty} v_n = 5$. Calculer $\\lim_{n \\to +\\infty} (u_n + v_n)$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} (u_n + v_n) = 8$",
+          "is_correct": true,
+          "explanation": "Propriété : $\\lim (u_n + v_n) = \\lim u_n + \\lim v_n = 3 + 5 = 8$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} (u_n + v_n) = 15$",
+          "is_correct": false,
+          "explanation": "Erreur : c'est la somme des limites, pas le produit. $3 + 5 = 8$, pas $3 \\times 5 = 15$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} (u_n + v_n) = +\\infty$",
+          "is_correct": false,
+          "explanation": "Non, la somme de deux limites finies est finie"
+        },
+        {
+          "text": "La limite n'existe pas",
+          "is_correct": false,
+          "explanation": "Au contraire, la limite existe et vaut 8"
+        }
+      ],
+      "explanation": "**Opération sur les limites (somme)** : Si $\\lim u_n = L$ et $\\lim v_n = L'$ (limites finies), alors $\\lim (u_n + v_n) = L + L'$"
+    },
+    {
+      "id": "q8_synthese",
+      "type": "mcq",
+      "section": "V - Opérations sur les limites",
+      "category": "Synthèse et réflexion",
+      "question": "Soit $(u_n)$ telle que $\\lim_{n \\to +\\infty} u_n = +\\infty$ et $(v_n)$ telle que $\\lim_{n \\to +\\infty} v_n = 2$. Calculer $\\lim_{n \\to +\\infty} (u_n \\times v_n)$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} (u_n \\times v_n) = +\\infty$",
+          "is_correct": true,
+          "explanation": "Règle : $(+\\infty) \\times L = +\\infty$ si $L > 0$. Ici $L = 2 > 0$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} (u_n \\times v_n) = 2$",
+          "is_correct": false,
+          "explanation": "Non, multiplier par $+\\infty$ donne $+\\infty$ (pas une limite finie)"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} (u_n \\times v_n) = -\\infty$",
+          "is_correct": false,
+          "explanation": "Non, $(+\\infty) \\times (positif) = +\\infty$"
+        },
+        {
+          "text": "Forme indéterminée",
+          "is_correct": false,
+          "explanation": "Ce n'est pas une FI. Les FI sont : $+\\infty - \\infty$, $0 \\times \\infty$, $\\frac{\\infty}{\\infty}$, $\\frac{0}{0}$"
+        }
+      ],
+      "explanation": "**Opération (produit)** : $(+\\infty) \\times L = +\\infty$ si $L > 0$, $(+\\infty) \\times L = -\\infty$ si $L < 0$, $(+\\infty) \\times 0$ = FI"
+    },
+    {
+      "id": "q9_synthese",
+      "type": "mcq",
+      "section": "V - Opérations sur les limites",
+      "category": "Synthèse et réflexion",
+      "question": "Quelle expression représente une **forme indéterminée** (FI) ?",
+      "options": [
+        {
+          "text": "$+\\infty - \\infty$",
+          "is_correct": true,
+          "explanation": "C'est bien une FI ! On ne peut pas conclure directement. Il faut lever l'indétermination"
+        },
+        {
+          "text": "$+\\infty + (+\\infty)$",
+          "is_correct": false,
+          "explanation": "Ce n'est pas une FI : $+\\infty + (+\\infty) = +\\infty$"
+        },
+        {
+          "text": "$+\\infty \\times 3$",
+          "is_correct": false,
+          "explanation": "Ce n'est pas une FI : $(+\\infty) \\times 3 = +\\infty$"
+        },
+        {
+          "text": "$\\frac{5}{+\\infty}$",
+          "is_correct": false,
+          "explanation": "Ce n'est pas une FI : $\\frac{L}{+\\infty} = 0$ pour $L$ fini"
+        }
+      ],
+      "explanation": "**Formes indéterminées** : $+\\infty - \\infty$, $0 \\times \\infty$, $\\frac{\\infty}{\\infty}$, $\\frac{0}{0}$. Il faut transformer l'expression pour lever la FI"
+    },
+    {
+      "id": "q10_application",
+      "type": "mcq",
+      "section": "V - Opérations sur les limites",
+      "category": "Application",
+      "question": "Calculer $\\lim_{n \\to +\\infty} \\frac{3n^2 + 5n - 1}{2n^2 - 7}$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{3n^2 + 5n - 1}{2n^2 - 7} = \\frac{3}{2}$",
+          "is_correct": true,
+          "explanation": "Forme $\\frac{\\infty}{\\infty}$ : on factorise par le plus haut degré ($n^2$). $\\lim \\frac{3 + \\frac{5}{n} - \\frac{1}{n^2}}{2 - \\frac{7}{n^2}} = \\frac{3}{2}$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{3n^2 + 5n - 1}{2n^2 - 7} = 0$",
+          "is_correct": false,
+          "explanation": "Non, les degrés du numérateur et dénominateur sont égaux (2). La limite est le rapport des coefficients dominants"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{3n^2 + 5n - 1}{2n^2 - 7} = +\\infty$",
+          "is_correct": false,
+          "explanation": "Non, car les degrés sont égaux. Si le degré du numérateur était strictement supérieur, alors oui"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{3n^2 + 5n - 1}{2n^2 - 7} = \\frac{5}{-7}$",
+          "is_correct": false,
+          "explanation": "Erreur : ce sont les coefficients de $n^2$ qu'il faut prendre, pas ceux de $n$ et de la constante"
+        }
+      ],
+      "explanation": "**Méthode** : Forme $\\frac{\\infty}{\\infty}$, on factorise par le plus haut degré. Si degrés égaux : $\\lim = \\frac{\\text{coeff dominant num}}{\\text{coeff dominant dénom}}$"
+    },
+    {
+      "id": "q11_cours",
+      "type": "mcq",
+      "section": "VI - Critères de convergence",
+      "category": "Cours - Théorème",
+      "question": "Théorème d'encadrement (théorème des gendarmes) : Soient $(u_n)$, $(v_n)$ et $(w_n)$ trois suites telles que $v_n \\leq u_n \\leq w_n$ à partir d'un certain rang. Si $\\lim v_n = \\lim w_n = \\ell$, alors :",
+      "options": [
+        {
+          "text": "$\\lim u_n = \\ell$",
+          "is_correct": true,
+          "explanation": "C'est le théorème d'encadrement : si $(u_n)$ est encadrée par deux suites convergeant vers la même limite, alors $(u_n)$ converge vers cette limite"
+        },
+        {
+          "text": "$\\lim u_n = +\\infty$",
+          "is_correct": false,
+          "explanation": "Non, la limite de $u_n$ est la même que celles de $v_n$ et $w_n$, c'est-à-dire $\\ell$"
+        },
+        {
+          "text": "$(u_n)$ n'a pas de limite",
+          "is_correct": false,
+          "explanation": "Au contraire, le théorème garantit l'existence de la limite"
+        },
+        {
+          "text": "$\\lim u_n$ peut être différente de $\\ell$",
+          "is_correct": false,
+          "explanation": "Non, le théorème impose que $\\lim u_n = \\ell$"
+        }
+      ],
+      "explanation": "**Théorème d'encadrement** : Si $v_n \\leq u_n \\leq w_n$ et $\\lim v_n = \\lim w_n = \\ell$, alors $\\lim u_n = \\ell$"
+    },
+    {
+      "id": "q12_application",
+      "type": "mcq",
+      "section": "VI - Théorème d'encadrement",
+      "category": "Application",
+      "question": "Soit $(u_n)$ définie par $u_n = \\frac{\\sin(n)}{n}$. Calculer $\\lim_{n \\to +\\infty} u_n$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{\\sin(n)}{n} = 0$",
+          "is_correct": true,
+          "explanation": "On encadre : $-1 \\leq \\sin(n) \\leq 1$ donc $\\frac{-1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$. Or $\\lim \\frac{\\pm 1}{n} = 0$, donc par encadrement $\\lim \\frac{\\sin(n)}{n} = 0$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{\\sin(n)}{n} = 1$",
+          "is_correct": false,
+          "explanation": "Non, $\\sin(n)$ oscille entre -1 et 1, mais $\\frac{\\sin(n)}{n}$ tend vers 0"
+        },
+        {
+          "text": "La limite n'existe pas car $\\sin(n)$ oscille",
+          "is_correct": false,
+          "explanation": "Bien que $\\sin(n)$ oscille, $\\frac{\\sin(n)}{n}$ converge vers 0 (encadrement)"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{\\sin(n)}{n} = +\\infty$",
+          "is_correct": false,
+          "explanation": "Non, le numérateur est borné et le dénominateur tend vers $+\\infty$"
+        }
+      ],
+      "explanation": "**Technique** : Pour $\\frac{\\sin(n)}{n}$ ou $\\frac{\\cos(n)}{n}$, on utilise $-1 \\leq \\sin(n), \\cos(n) \\leq 1$ et le théorème d'encadrement"
+    },
+    {
+      "id": "q13_synthese",
+      "type": "error-spotting",
+      "section": "V - Opérations sur les limites",
+      "category": "Synthèse et réflexion",
+      "question": "Un élève calcule une limite. Trouvez son erreur.",
+      "context": "Calculer $\\lim_{n \\to +\\infty} (2n^2 + 3n - n^2)$",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "$\\lim_{n \\to +\\infty} 2n^2 = +\\infty$ et $\\lim_{n \\to +\\infty} (-n^2) = -\\infty$",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Donc $\\lim_{n \\to +\\infty} (2n^2 - n^2) = +\\infty - \\infty = 0$",
+          "isError": true,
+          "correction": "Erreur ! $+\\infty - \\infty$ est une **forme indéterminée**, on ne peut PAS conclure que c'est 0. Il faut d'abord simplifier : $2n^2 + 3n - n^2 = n^2 + 3n$"
+        },
+        {
+          "id": "s3",
+          "text": "Ensuite on ajoute $+3n$, donc la limite finale est 0",
+          "isError": false
+        }
+      ],
+      "explanation": "**Piège classique** : $+\\infty - \\infty$ est une FI. Il faut factoriser ou simplifier AVANT de calculer la limite. Ici : $\\lim (n^2 + 3n) = +\\infty$"
+    },
+    {
+      "id": "q14_application",
+      "type": "mcq",
+      "section": "VII - Suites particulières",
+      "category": "Application",
+      "question": "Calculer $\\lim_{n \\to +\\infty} \\sqrt{n}$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\sqrt{n} = +\\infty$",
+          "is_correct": true,
+          "explanation": "Limite usuelle : $\\sqrt{n} = n^{1/2}$ avec $\\frac{1}{2} > 0$, donc $\\lim \\sqrt{n} = +\\infty$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\sqrt{n} = 0$",
+          "is_correct": false,
+          "explanation": "Non, $\\sqrt{n}$ croît vers $+\\infty$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\sqrt{n} = 1$",
+          "is_correct": false,
+          "explanation": "Non, $\\sqrt{n}$ croît indéfiniment"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\sqrt{n} = \\frac{1}{2}$",
+          "is_correct": false,
+          "explanation": "Confusion : $\\frac{1}{2}$ est l'exposant, pas la limite"
+        }
+      ],
+      "explanation": "**Limite usuelle** : $\\lim_{n \\to +\\infty} \\sqrt{n} = \\lim_{n \\to +\\infty} n^{1/2} = +\\infty$ car l'exposant est positif"
+    },
+    {
+      "id": "q15_synthese",
+      "type": "mcq",
+      "section": "VII - Suite récurrente",
+      "category": "Synthèse et réflexion",
+      "question": "Soit $(u_n)$ définie par $u_0 = 1$ et $u_{n+1} = f(u_n)$ où $f$ est continue. On suppose que $(u_n)$ converge vers $\\ell$. Alors $\\ell$ vérifie :",
+      "options": [
+        {
+          "text": "$\\ell = f(\\ell)$ (équation du point fixe)",
+          "is_correct": true,
+          "explanation": "Propriété fondamentale : si $u_{n+1} = f(u_n)$ et $\\lim u_n = \\ell$ avec $f$ continue en $\\ell$, alors $\\ell$ est solution de $\\ell = f(\\ell)$"
+        },
+        {
+          "text": "$\\ell = u_0$",
+          "is_correct": false,
+          "explanation": "Non, la limite ne dépend pas nécessairement du premier terme"
+        },
+        {
+          "text": "$\\ell = 0$",
+          "is_correct": false,
+          "explanation": "Non, $\\ell$ peut être n'importe quelle solution de $f(\\ell) = \\ell$"
+        },
+        {
+          "text": "$f(\\ell) = 0$",
+          "is_correct": false,
+          "explanation": "Non, c'est $\\ell = f(\\ell)$, pas $f(\\ell) = 0$"
+        }
+      ],
+      "explanation": "**Théorème du point fixe** : Pour une suite récurrente $u_{n+1} = f(u_n)$ convergente vers $\\ell$, avec $f$ continue, on a $\\ell = f(\\ell)$"
+    },
+    {
+      "id": "q16_application",
+      "type": "mcq",
+      "section": "II - Suite arithmétique (rappel)",
+      "category": "Application",
+      "question": "Soit $(u_n)$ une suite arithmétique de raison $r = 5$ et de premier terme $u_0 = 2$. Calculer $\\lim_{n \\to +\\infty} u_n$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = +\\infty$ car $r > 0$",
+          "is_correct": true,
+          "explanation": "Pour une suite arithmétique : $u_n = u_0 + nr = 2 + 5n$. Comme $r = 5 > 0$, $\\lim u_n = +\\infty$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = 2$",
+          "is_correct": false,
+          "explanation": "Non, la suite diverge vers $+\\infty$ car la raison est positive"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = 5$",
+          "is_correct": false,
+          "explanation": "Non, 5 est la raison, pas la limite"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = 0$",
+          "is_correct": false,
+          "explanation": "Non, la suite croît indéfiniment"
+        }
+      ],
+      "explanation": "**Suite arithmétique** : $u_n = u_0 + nr$. Si $r > 0$ : $\\lim u_n = +\\infty$. Si $r < 0$ : $\\lim u_n = -\\infty$. Si $r = 0$ : suite constante"
+    },
+    {
+      "id": "q17_application",
+      "type": "mcq",
+      "section": "III - Suite géométrique (rappel)",
+      "category": "Application",
+      "question": "Soit $(u_n)$ une suite géométrique de raison $q = \\frac{3}{4}$ et de premier terme $u_0 = 8$. Calculer $\\lim_{n \\to +\\infty} u_n$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = 0$ car $|q| < 1$",
+          "is_correct": true,
+          "explanation": "Pour une suite géométrique : $u_n = u_0 \\times q^n = 8 \\times \\left(\\frac{3}{4}\\right)^n$. Comme $|q| = \\frac{3}{4} < 1$, $\\lim q^n = 0$ donc $\\lim u_n = 0$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = 8$",
+          "is_correct": false,
+          "explanation": "Non, 8 est le premier terme, pas la limite"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = +\\infty$",
+          "is_correct": false,
+          "explanation": "Non, car $|q| < 1$ donc la suite converge vers 0"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = \\frac{3}{4}$",
+          "is_correct": false,
+          "explanation": "Non, $\\frac{3}{4}$ est la raison, pas la limite"
+        }
+      ],
+      "explanation": "**Suite géométrique** : $u_n = u_0 \\times q^n$. Si $|q| < 1$ : $\\lim u_n = 0$. Si $q > 1$ : $\\lim u_n = \\pm\\infty$ (signe de $u_0$). Si $q = 1$ : suite constante"
+    },
+    {
+      "id": "q18_synthese",
+      "type": "mcq",
+      "section": "Synthèse générale",
+      "category": "Synthèse et réflexion",
+      "question": "Calculer $\\lim_{n \\to +\\infty} \\frac{n^3 + 2n}{5n^2 - 3}$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{n^3 + 2n}{5n^2 - 3} = +\\infty$",
+          "is_correct": true,
+          "explanation": "Forme $\\frac{\\infty}{\\infty}$ : degré numérateur (3) > degré dénominateur (2) donc $\\lim = +\\infty$ (signe du coeff dominant : $\\frac{+}{+} = +$)"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{n^3 + 2n}{5n^2 - 3} = 0$",
+          "is_correct": false,
+          "explanation": "Non, la limite est 0 seulement si degré num < degré dénom"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{n^3 + 2n}{5n^2 - 3} = \\frac{1}{5}$",
+          "is_correct": false,
+          "explanation": "Non, ce serait le cas si les degrés étaient égaux"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\frac{n^3 + 2n}{5n^2 - 3} = \\frac{2}{-3}$",
+          "is_correct": false,
+          "explanation": "Erreur : ce sont les coefficients dominants qu'il faut considérer"
+        }
+      ],
+      "explanation": "**Règle** : $\\lim \\frac{P(n)}{Q(n)}$ où $P$ et $Q$ sont des polynômes. Si $\\deg(P) > \\deg(Q)$ : $\\pm\\infty$. Si $\\deg(P) = \\deg(Q)$ : $\\frac{a_P}{a_Q}$. Si $\\deg(P) < \\deg(Q)$ : 0"
+    },
+    {
+      "id": "q19_application",
+      "type": "true-false",
+      "section": "IV - Limites",
+      "category": "Application",
+      "question": "Si une suite converge, alors sa limite est unique.",
+      "isTrue": true,
+      "explanation": "Vrai ! C'est un théorème fondamental : une suite ne peut pas converger vers deux limites différentes."
+    },
+    {
+      "id": "q20_synthese",
+      "type": "mcq",
+      "section": "VI - Théorème d'encadrement",
+      "category": "Synthèse et réflexion",
+      "question": "Soit $(u_n)$ telle que pour tout $n$ : $\\frac{1}{n+1} \\leq u_n \\leq \\frac{1}{n}$. Calculer $\\lim_{n \\to +\\infty} u_n$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = 0$ par le théorème d'encadrement",
+          "is_correct": true,
+          "explanation": "On a $\\lim \\frac{1}{n+1} = 0$ et $\\lim \\frac{1}{n} = 0$, donc par encadrement $\\lim u_n = 0$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = 1$",
+          "is_correct": false,
+          "explanation": "Non, les suites encadrantes tendent vers 0, pas vers 1"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} u_n = +\\infty$",
+          "is_correct": false,
+          "explanation": "Non, $(u_n)$ est encadrée par des suites tendant vers 0"
+        },
+        {
+          "text": "On ne peut pas conclure",
+          "is_correct": false,
+          "explanation": "Au contraire, le théorème d'encadrement permet de conclure"
+        }
+      ],
+      "explanation": "**Application du théorème d'encadrement** : Les deux suites encadrantes convergent vers 0, donc $(u_n)$ aussi"
+    },
+    {
+      "id": "q21_synthese",
+      "type": "ordering",
+      "section": "VII - Suite récurrente",
+      "category": "Synthèse et réflexion",
+      "question": "Pour étudier la convergence d'une suite définie par $u_0$ donné et $u_{n+1} = f(u_n)$, ordonnez les étapes méthodologiques :",
+      "items": [
+        {
+          "id": "1",
+          "text": "Montrer que la suite est bornée (par récurrence si nécessaire)",
+          "correctOrder": 1
+        },
+        {
+          "id": "2",
+          "text": "Étudier la monotonie de la suite (calculer $u_{n+1} - u_n$ ou étudier $f$)",
+          "correctOrder": 2
+        },
+        {
+          "id": "3",
+          "text": "Conclure sur la convergence (suite monotone et bornée $\\Rightarrow$ convergente)",
+          "correctOrder": 3
+        },
+        {
+          "id": "4",
+          "text": "Déterminer la limite $\\ell$ en résolvant $\\ell = f(\\ell)$ (point fixe)",
+          "correctOrder": 4
+        }
+      ],
+      "explanation": "**Méthode complète** : Borné + Monotone $\\Rightarrow$ Convergente, puis résoudre l'équation du point fixe pour trouver $\\ell$"
+    },
+    {
+      "id": "q22_synthese",
+      "type": "mcq",
+      "section": "Synthèse - Analyse complète",
+      "category": "Synthèse et réflexion",
+      "question": "Soit $(u_n)$ définie par $u_0 = 1$ et $u_{n+1} = \\frac{1}{2}u_n + 3$. On a montré que $(u_n)$ converge. Déterminer sa limite $\\ell$ :",
+      "options": [
+        {
+          "text": "$\\ell = 6$ (solution de $\\ell = \\frac{1}{2}\\ell + 3$)",
+          "is_correct": true,
+          "explanation": "À la limite : $\\ell = f(\\ell) = \\frac{1}{2}\\ell + 3$, donc $\\ell - \\frac{1}{2}\\ell = 3$, d'où $\\frac{1}{2}\\ell = 3$ et $\\ell = 6$"
+        },
+        {
+          "text": "$\\ell = 3$",
+          "is_correct": false,
+          "explanation": "Non, vérification : $\\frac{1}{2} \\times 3 + 3 = 4.5 \\neq 3$. Ce n'est pas un point fixe"
+        },
+        {
+          "text": "$\\ell = 1$",
+          "is_correct": false,
+          "explanation": "Non, 1 est le premier terme, pas la limite"
+        },
+        {
+          "text": "$\\ell = +\\infty$",
+          "is_correct": false,
+          "explanation": "Non, on a supposé que la suite converge (limite finie)"
+        }
+      ],
+      "explanation": "**Équation du point fixe** : Si $u_{n+1} = f(u_n)$ et $\\lim u_n = \\ell$, alors $\\ell = f(\\ell)$. Résoudre cette équation pour trouver $\\ell$"
+    },
+    {
+      "id": "q23_application",
+      "type": "mcq",
+      "section": "III - Suite géométrique - Somme",
+      "category": "Application",
+      "question": "Soit $(u_n)$ une suite géométrique de raison $q = \\frac{1}{3}$ et $u_0 = 9$. Calculer $\\lim_{n \\to +\\infty} S_n$ où $S_n = u_0 + u_1 + \\cdots + u_n$ :",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} S_n = \\frac{u_0}{1-q} = \\frac{9}{1 - \\frac{1}{3}} = \\frac{9}{\\frac{2}{3}} = \\frac{27}{2}$",
+          "is_correct": true,
+          "explanation": "Pour une suite géométrique avec $|q| < 1$ : $S_n = u_0 \\times \\frac{1-q^{n+1}}{1-q}$. Quand $n \\to +\\infty$ : $q^{n+1} \\to 0$ donc $\\lim S_n = \\frac{u_0}{1-q}$"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} S_n = 9$",
+          "is_correct": false,
+          "explanation": "Non, c'est le premier terme, pas la limite de la somme"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} S_n = +\\infty$",
+          "is_correct": false,
+          "explanation": "Non, car $|q| < 1$ donc la somme converge vers une limite finie"
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} S_n = 0$",
+          "is_correct": false,
+          "explanation": "Non, c'est $\\lim u_n = 0$, mais la somme converge vers $\\frac{u_0}{1-q}$"
+        }
+      ],
+      "explanation": "**Somme infinie d'une suite géométrique** : Si $|q| < 1$, alors $\\lim_{n \\to +\\infty} (u_0 + u_1 + \\cdots + u_n) = \\frac{u_0}{1-q}$"
+    },
+    {
+      "id": "q24_synthese",
+      "type": "error-spotting",
+      "section": "Synthèse finale",
+      "category": "Synthèse et réflexion",
+      "question": "Un élève étudie la convergence d'une suite. Trouvez son erreur.",
+      "context": "Soit $(u_n)$ définie par $u_n = \\frac{(-1)^n}{n}$. L'élève calcule la limite.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "$(-1)^n$ oscille entre -1 et 1, donc n'a pas de limite",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "$\\frac{1}{n}$ tend vers 0 quand $n \\to +\\infty$",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Donc $u_n = \\frac{(-1)^n}{n}$ n'a pas de limite car le numérateur n'a pas de limite",
+          "isError": true,
+          "correction": "Erreur ! Même si $(-1)^n$ oscille, on peut utiliser l'encadrement : $-1 \\leq (-1)^n \\leq 1$ donc $\\frac{-1}{n} \\leq \\frac{(-1)^n}{n} \\leq \\frac{1}{n}$. Par encadrement : $\\lim u_n = 0$"
+        },
+        {
+          "id": "s4",
+          "text": "Conclusion : la suite diverge",
+          "isError": false
+        }
+      ],
+      "explanation": "**Piège** : Ne pas confondre oscillation et divergence. Ici, l'amplitude des oscillations décroît vers 0, donc la suite converge vers 0"
+    }
+  ]
+}

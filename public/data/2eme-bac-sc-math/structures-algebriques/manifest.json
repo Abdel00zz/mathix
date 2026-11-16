@@ -1,0 +1,61 @@
+{
+  "id": "structures-algebriques",
+  "title": "Structures algébriques",
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-structures-algebriques-sm",
+      "title": "Fiche Complete : Structures algebriques",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/revisions/fiche_structures_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-struct-sm-01",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/exercises/ex_structures_01.json"
+    },
+    {
+      "id": "ex-lois-composition-interne-01",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/exercises/ex_01_lci.json"
+    },
+    {
+      "id": "ex-lois-composition-interne-02",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/exercises/ex_02_lci.json"
+    },
+    {
+      "id": "ex-lois-composition-interne-03",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/exercises/ex_03_lci.json"
+    },
+    {
+      "id": "ex-groupe-anneau-corps-01",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/exercises/ex_01_gac.json"
+    },
+    {
+      "id": "ex-groupe-anneau-corps-02",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/exercises/ex_02_gac.json"
+    },
+    {
+      "id": "ex-groupe-anneau-corps-03",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/exercises/ex_03_gac.json"
+    },
+    {
+      "id": "ex-espaces-vectoriels-reels-01",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/exercises/ex_01_evr.json"
+    },
+    {
+      "id": "ex-espaces-vectoriels-reels-02",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/exercises/ex_02_evr.json"
+    },
+    {
+      "id": "ex-espaces-vectoriels-reels-03",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/exercises/ex_03_evr.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-structures-algebriques-01",
+      "path": "data/2eme-bac-sc-math/structures-algebriques/quiz/structures-algebriques_quiz.json",
+      "questionsCount": 22
+    }
+  ]
+}

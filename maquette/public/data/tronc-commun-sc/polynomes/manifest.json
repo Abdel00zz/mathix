@@ -1,0 +1,34 @@
+{
+  "id": "polynomes",
+  "title": "Les polynômes",
+  "section": "algebre-geometrie",
+  "quizCount": 12,
+  "revisions": [
+    {
+      "id": "rev-poly-tc",
+      "title": "Fiche Complète : Polynômes",
+      "path": "data/tronc-commun-sc/polynomes/revisions/fiche_polynomes_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-poly-tc-01",
+      "path": "data/tronc-commun-sc/polynomes/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-poly-tc-02",
+      "path": "data/tronc-commun-sc/polynomes/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-polynomes-01",
+      "path": "data/tronc-commun-sc/polynomes/exercises/ex_polynomes_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-polynomes-01",
+      "path": "data/tronc-commun-sc/polynomes/quiz/polynomes_quiz.json",
+      "questionsCount": 12
+    }
+  ]
+}

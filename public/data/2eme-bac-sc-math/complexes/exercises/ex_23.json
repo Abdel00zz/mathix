@@ -1,0 +1,72 @@
+{
+  "id": "ex-complexes-23",
+  "topic": "Nombres complexes - Bac National 2009 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2009,
+  "examenSession": "Normale",
+  "context": "Soit $m$ un nombre complexe différent de $1$.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans l'ensemble $\\mathbb{C}$ l'équation d'inconnue $z$ : $(E):z^2-(1-i)(m+1)z-i\\left(m^2+1\\right)=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q1a",
+          "content": "Vérifier que le discriminant de l'équation $(E)$ est : $\\Delta=[(1+i)(m-1)]^2$.",
+          "hint": "Calculez $\\Delta=(1-i)^2(m+1)^2+4i(m^2+1)$, développez $(1-i)^2=-2i$ et regroupez les termes en $m^2$, $m$ et constants."
+        },
+        {
+          "id": "p1q1b",
+          "content": "Résoudre dans $\\mathbb{C}$ l'équation $(E)$.",
+          "hint": "Une racine carrée de $\\Delta$ est $(1+i)(m-1)$ ; appliquez la formule des racines."
+        },
+        {
+          "id": "p1q1c",
+          "content": "Déterminer sous forme algébrique les deux valeurs du complexe $m$ pour lesquelles le produit des deux solutions de l'équation $(E)$ est égal à $1$.",
+          "hint": "Utilisez la relation produit des racines $z_1z_2=-i(m^2+1)$ (terme constant de $(E)$), posez $z_1z_2=1$ et résolvez en $m$."
+        }
+      ]
+    },
+    {
+      "id": "p1q2",
+      "content": "On pose $z_1=1-im$ et $z_2=m-i$. Écrire $z_1$ et $z_2$ sous forme trigonométrique dans le cas où $m=e^{i\\theta}$ avec $\\dfrac{\\pi}{2}<\\theta<\\pi$.",
+      "hint": "Remplacez $m=e^{i\\theta}$ dans $z_1$ et $z_2$, factorisez chacun par l'arc moitié pour faire apparaître un module et un argument explicites."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe $(\\mathcal{P})$ est rapporté à un repère orthonormé direct $\\left(O;\\overrightarrow{e_1};\\overrightarrow{e_2}\\right)$. On considère les points $M$, $M_1$ et $M_2$ d'affixes respectivement $m$, $z_1=1-im$ et $z_2=m-i$."
+    },
+    {
+      "id": "p2q1",
+      "content": "Déterminer l'ensemble des points $M$ pour lesquels les points $M$, $M_1$ et $M_2$ soient alignés.",
+      "hint": "Traduisez l'alignement par $\\dfrac{z_1-m}{z_2-m}\\in\\mathbb{R}$, remplacez $z_1$ et $z_2$ par leurs expressions en fonction de $m$, puis simplifiez pour obtenir une condition sur $m$."
+    },
+    {
+      "id": "p2q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Montrer que la transformation $R$ reliant chaque point $M$ d'affixe $z$ au point $M'$ d'affixe $z'=1-iz$ est une rotation dont on déterminera l'affixe du centre $\\Omega$ et une mesure de son angle.",
+          "hint": "Une application $z\\mapsto\\alpha z+\\beta$ avec $|\\alpha|=1$, $\\alpha\\ne1$, est une rotation ; identifiez $\\alpha=-i$ (donc l'angle) et résolvez $\\omega=\\alpha\\omega+\\beta$ pour trouver le centre."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que le nombre complexe $\\dfrac{z_2-z_1}{z_2-m}$ est un imaginaire pur si et seulement si $\\text{Re}(m)+\\text{Im}(m)=1$.",
+          "hint": "Remplacez $z_1$ et $z_2$ par leurs expressions en fonction de $m$, simplifiez le quotient sous forme algébrique et annulez sa partie réelle."
+        },
+        {
+          "id": "p2q2c",
+          "content": "En déduire l'ensemble des points $M$ tel que les points $\\Omega$, $M$, $M_1$ et $M_2$ soient cocycliques.",
+          "hint": "Rappelez que $\\Omega$ est le centre de la rotation qui envoie $M(m)$ sur $M_1(z_1)$, donc $\\dfrac{z_1-\\Omega}{m-\\Omega}$ est constant ; combinez cela avec la condition sur $\\dfrac{z_2-z_1}{z_2-m}$ pour construire un birapport réel caractéristique de la cocyclicité, qui se traduit par la droite trouvée à la question précédente."
+        }
+      ]
+    }
+  ]
+}

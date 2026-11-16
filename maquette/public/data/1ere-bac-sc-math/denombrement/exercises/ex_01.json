@@ -1,0 +1,20 @@
+{
+  "id": "ex-denom-01",
+  "theme": "denombrement",
+  "difficulty": "facile",
+  "topic": "Dénombrement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Principe fondamental du dénombrement",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Un restaurant propose un menu composé de 3 entrées, 4 plats principaux et 2 desserts.\nCombien de menus différents (entrée + plat + dessert) peut-on composer ?",
+          "hint": "D'après le principe fondamental du dénombrement (principe multiplicatif), le nombre total de menus est le produit du nombre de choix pour chaque étape.\n\nNombre de menus = (Nombre d'entrées) $\\times$ (Nombre de plats) $\\times$ (Nombre de desserts)\n\nNombre de menus = $3 \\times 4 \\times 2 = 24$.\n\nIl y a donc 24 menus différents possibles."
+        }
+      ]
+    }
+  ]
+}

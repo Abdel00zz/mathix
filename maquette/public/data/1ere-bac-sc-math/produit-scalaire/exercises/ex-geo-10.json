@@ -1,0 +1,71 @@
+{
+  "id": "ex-geo-10",
+  "theme": "produit-scalaire",
+  "difficulty": "moyen",
+  "topic": "Géométrie Analytique - Cercle passant par trois points",
+  "requiresRedaction": true,
+  "context": "On considère les points $A(4;-3)$ et $B(11;-2)$. Soit $\\mathcal{D}$ la droite passant par $B$ et perpendiculaire à la droite $(OA)$ et $\\mathcal{C}$ le cercle de centre $A$ et de rayon $R = y$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Écrire une équation cartésienne du cercle $\\mathcal{C}$.",
+      "hint": ""
+    },
+    {
+      "id": "q2",
+      "content": "Calculer la distance $AB$ puis en déduire que le point $B$ est à l'extérieur du cercle $\\mathcal{C}$.",
+      "hint": "Comparez $AB$ et le rayon $R$. Si $AB > R$, le point est à l'extérieur."
+    },
+    {
+      "id": "q3",
+      "content": "Vérifier que $4x - 3y - 50 = 0$ est une équation cartésienne de la droite $\\mathcal{D}$. Montrer que $\\mathcal{D}$ est tangente au cercle $\\mathcal{C}$.",
+      "hint": "Pour vérifier que $\\mathcal{D}$ est tangente : calculez $d(A;\\mathcal{D})$ et comparez au rayon. Pour vérifier l'équation de $\\mathcal{D}$ : confirmez que $B$ appartient à $\\mathcal{D}$ et que $\\mathcal{D} \\perp (OA)$."
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Vérifier que le point $F(7;1)$ appartient à $\\mathcal{C}$.",
+          "hint": ""
+        },
+        {
+          "id": "sq4b",
+          "content": "Donner une équation cartésienne de la tangente $(\\Lambda)$ au cercle $\\mathcal{C}$ au point $F$.",
+          "hint": "La tangente en $F$ est perpendiculaire au rayon $AF$. Le vecteur normal de la tangente est $\\overrightarrow{AF}$."
+        },
+        {
+          "id": "sq4c",
+          "content": "Montrer que les droites $\\mathcal{D}$ et $(\\Lambda)$ sont orthogonales au point $B$.",
+          "hint": "Montrez que $B \\in (\\Lambda)$, puis vérifiez que $\\mathcal{D} \\perp (\\Lambda)$ en utilisant leurs vecteurs normaux."
+        }
+      ]
+    }
+  ],
+  "partieB": {
+    "context": "Écrire une équation cartésienne du cercle $\\mathcal{C}$ de centre $\\Omega$ et de diamètre $[AB]$ dans les cas suivants :",
+    "questions": [
+      {
+        "id": "pB_q1",
+        "content": "$A(1;7)$ et $B(0;-5)$",
+        "hint": "Le centre $\\Omega$ est le milieu de $[AB]$ et le rayon est $R = \\dfrac{AB}{2}$."
+      },
+      {
+        "id": "pB_q2",
+        "content": "$A(3;5)$ et $B(-1;1)$",
+        "hint": ""
+      },
+      {
+        "id": "pB_q3",
+        "content": "$A(-1;3)$ et $B(0;3)$",
+        "hint": ""
+      },
+      {
+        "id": "pB_q4",
+        "content": "$A\\left(1;\\dfrac{3}{2}\\right)$ et $B\\left(\\dfrac{3}{2};\\dfrac{3}{2}\\right)$",
+        "hint": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ex-denom-03",
+  "theme": "denombrement",
+  "difficulty": "facile",
+  "topic": "Dénombrement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Combinaisons",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans une classe de 30 élèves, on doit élire 2 délégués (sans distinction de rôle, les deux sont égaux).\nCombien de paires de délégués peut-on former ?",
+          "hint": "Il s'agit de choisir 2 élèves parmi 30, sans tenir compte de l'ordre (les deux délégués ont le même rôle), et sans répétition.\n\nC'est donc une combinaison de 2 éléments parmi 30, notée $C_{30}^2$.\n\n$C_{30}^2 = \\frac{30!}{2!(30-2)!} = \\frac{30 \\times 29}{2 \\times 1} = 15 \\times 29 = 435$.\n\nIl y a 435 paires de délégués possibles."
+        }
+      ]
+    }
+  ]
+}

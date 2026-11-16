@@ -1,0 +1,20 @@
+{
+  "id": "ex-proj-tc-01",
+  "theme": "projection-plan",
+  "difficulty": "facile",
+  "topic": "La projection dans le plan",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Théorème de Thalès",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Soit $ABC$ un triangle. $M$ est un point de $[AB]$ et $N$ un point de $[AC]$ tels que $(MN) \\parallel (BC)$. Si $AM = 2$, $AB = 5$ et $AC = 7.5$, calculer $AN$.",
+          "hint": "\\method Appliquez le théorème de Thalès direct : $\\frac{AM}{AB} = \\frac{AN}{AC}$."
+        }
+      ]
+    }
+  ]
+}

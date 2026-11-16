@@ -1,0 +1,62 @@
+{
+  "id": "proba-ex02",
+  "theme": "probabilites",
+  "difficulty": "moyen",
+  "chapter": "01 - Dénombrement et probabilités",
+  "topic": "Tirage ordonné sans remise et avec remise",
+  "requiresRedaction": true,
+  "context": "Une urne contient 10 boules : 3 jaunes, 2 vertes et 5 rouges. Les boules sont indiscernables au toucher. On tire au hasard successivement et sans remise 3 boules de l'urne.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer le nombre de tirages.",
+      "hint": "Le tirage est successif et sans remise : l'ordre compte. L'univers est un ensemble d'arrangements : $Card(\\Omega) = A_{10}^3$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer la probabilité de chacun des événements suivants :",
+      "subQuestions": [
+        {
+          "id": "sq2A",
+          "content": "A « Obtenir 3 boules rouges ».",
+          "hint": "L'ordre compte : $Card(A) = A_5^3$ (arrangements de 3 rouges parmi 5)."
+        },
+        {
+          "id": "sq2B",
+          "content": "B « Obtenir 3 boules jaunes ».",
+          "hint": "$Card(B) = A_3^3 = 3!$ (toutes les permutations des 3 jaunes)."
+        },
+        {
+          "id": "sq2C",
+          "content": "C « Obtenir 3 boules de même couleur ».",
+          "hint": "Seules les rouges (5) et les jaunes (3) permettent un tirage de 3 de même couleur. $Card(C) = A_5^3 + A_3^3$."
+        },
+        {
+          "id": "sq2D",
+          "content": "D « Obtenir 2 boules jaunes et 1 boule verte ».",
+          "hint": "L'ordre des 3 boules compte. Le coefficient d'ordre pour 2 jaunes et 1 verte est $\\frac{3!}{2! \\times 1!} = 3$. Donc $Card(D) = 3 \\times (A_3^2 \\times A_2^1)$."
+        },
+        {
+          "id": "sq2E",
+          "content": "E « Obtenir 1 boule de chaque couleur ».",
+          "hint": "1 jaune, 1 verte, 1 rouge dans un ordre quelconque. Le coefficient d'arrangement des couleurs est $3! = 6$. $Card(E) = 6 \\times (A_3^1 \\times A_2^1 \\times A_5^1)$."
+        },
+        {
+          "id": "sq2F",
+          "content": "F « Obtenir au moins 1 boule jaune ».",
+          "hint": "Par complémentaire : $\\bar{F}$ = « aucune boule jaune », soit 3 boules parmi les 7 non-jaunes. $p(F) = 1 - \\frac{A_7^3}{A_{10}^3}$."
+        },
+        {
+          "id": "sq2G",
+          "content": "G « Obtenir exactement 2 couleurs ».",
+          "hint": "$\\bar{G}$ = « obtenir 1 seule couleur ou 3 couleurs ». Calculez $p(C)$ (1 couleur) et $p(E)$ (3 couleurs) déjà obtenus. Alors $p(G) = 1 - p(C) - p(E)$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "On tire au hasard successivement et avec remise 3 boules de l'urne. Déterminer la probabilité des événements précédents.",
+      "hint": "Avec remise, $Card(\\Omega) = 10^3$. Pour chaque événement, le nombre de cas favorables se calcule avec les mêmes coefficients d'ordre, mais les tirages sont indépendants : pour D par exemple, $Card(D) = 3 \\times (3^2 \\times 2^1)$."
+    }
+  ]
+}

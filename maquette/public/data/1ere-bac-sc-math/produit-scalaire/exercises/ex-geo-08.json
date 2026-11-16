@@ -1,0 +1,40 @@
+{
+  "id": "ex-geo-08",
+  "theme": "produit-scalaire",
+  "difficulty": "moyen",
+  "topic": "Géométrie Analytique - Tangente à un cercle et positions relatives",
+  "requiresRedaction": true,
+  "context": "On considère le cercle $\\mathcal{C}$ d'équation $x^2 + y^2 - 2x + 4y = 0$ et la droite $\\mathcal{D}$ d'équation $3x - 4y + m = 0$ où $m \\in \\mathbb{R}$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer le centre $\\Omega$ et le rayon $R$ du cercle $\\mathcal{C}$.",
+      "hint": "Complétez le carré en $x$ et en $y$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer $d(\\Omega;\\mathcal{D})$ puis déterminer les valeurs de $m$ pour lesquelles $\\mathcal{D}$ est tangente au cercle $\\mathcal{C}$.",
+      "hint": "$\\mathcal{D}$ est tangente à $\\mathcal{C}$ si et seulement si $d(\\Omega;\\mathcal{D}) = R$. Exprimez $d(\\Omega;\\mathcal{D})$ en fonction de $m$ et résolvez l'équation."
+    },
+    {
+      "id": "q3",
+      "content": "Résoudre graphiquement le système suivant : $\\begin{cases} x^2 + y^2 - 2y < 0 \\\\ 2x + y - 1 > 0 \\end{cases}$",
+      "hint": "Identifiez la zone intérieure au cercle et le demi-plan défini par la droite. La solution est l'intersection des deux régions."
+    },
+    {
+      "id": "q4",
+      "content": "On considère le cercle $\\mathcal{C}'$ d'équation $x^2 + y^2 - 2x - 4x - 4 = 0$ et la droite $\\mathcal{D}'$ d'équation $x + y - 1 = 0$. Déterminer le centre $\\Omega$ et le rayon $R$ du cercle $\\mathcal{C}'$.",
+      "hint": "Complétez le carré."
+    },
+    {
+      "id": "q5",
+      "content": "Construire le cercle $\\mathcal{C}'$ et la droite $\\mathcal{D}'$.",
+      "hint": ""
+    },
+    {
+      "id": "q6",
+      "content": "Résoudre graphiquement le système : $(x^2 + y^2 - 2x - 4x - 4)(x + y - 1) < 0$",
+      "hint": "Le produit est négatif quand les deux facteurs sont de signes opposés. Analysez les positions relatives de $\\mathcal{C}'$ et $\\mathcal{D}'$ sur la figure."
+    }
+  ]
+}

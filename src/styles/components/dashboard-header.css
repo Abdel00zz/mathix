@@ -1,0 +1,22 @@
+@layer components {
+  /* Bandeau gris neutre : les accents mauves restent réservés au texte et aux
+     actions, sans teinter toute la grande surface. */
+  .dashboard-header {
+    background: #f1f3f6;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  }
+
+  .dashboard-header__title {
+    font-family: "Plus Jakarta Sans", "Segoe UI Variable", "Segoe UI", Arial, sans-serif;
+    font-weight: 500;
+    font-optical-sizing: auto;
+  }
+
+  /* Eyebrow "class" badge: plain bold label, no pill/outline, pulled up
+     tight against the top edge of the card. */
+  .dashboard-header__eyebrow {
+    background: transparent;
+    border: none;
+  }
+}

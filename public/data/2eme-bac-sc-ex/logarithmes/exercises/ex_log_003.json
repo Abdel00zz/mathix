@@ -1,0 +1,123 @@
+{
+  "id": "ex-log-003",
+  "theme": "logarithmes",
+  "difficulty": "facile",
+  "topic": "Analyse - Fonctions logarithmes et continuité",
+  "context": "Soit $f$ la fonction numérique définie sur $]0;+\\infty[$ par : $$\\begin{cases} f(x) = 2x \\ln x - 2x & \\text{si } x > 0 \\\\ f(0) = 0 \\end{cases}$$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i},\\overrightarrow{j})$ (unité : $1$ cm).",
+  "requiresRedaction": true,
+  "sessionDate": "2025-12-25T20:00:00.000Z",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $f$ est continue à droite en $0$.",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "",
+          "hint": "Pour montrer la **continuité à droite**, il faut vérifier que $\\color{blue}{\\displaystyle \\lim_{x \\to 0^+} f(x) = f(0)}$. Calculez d'abord $\\displaystyle \\lim_{x \\to 0^+} (2x \\ln x - 2x)$ en utilisant la limite de référence $\\color{blue}{\\displaystyle\\lim_{x \\to 0^+} x \\ln x = 0}$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} f(x)$.",
+          "hint": "Factorisez $f(x) = 2x(\\ln x - 1)$. Quand $x \\to +\\infty$, on a $\\color{blue}{x \\to +\\infty}$ et $\\color{blue}{\\ln x \\to +\\infty}$, donc le **produit** tend vers $+\\infty$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} \\frac{f(x)}{x}$ puis interpréter le résultat géométriquement.",
+          "hint": "Simplifiez : $\\displaystyle \\frac{f(x)}{x} = \\frac{2x \\ln x - 2x}{x} = 2\\ln x - 2$. Quand $x \\to +\\infty$, cette limite tend vers $\\color{blue}{+\\infty}$. Géométriquement, cela signifie que $(C)$ admet une **branche parabolique de direction** l'axe des ordonnées."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to 0^+} \\frac{f(x)}{x}$ puis interpréter le résultat géométriquement.",
+          "hint": "Simplifiez le quotient : $\\displaystyle \\frac{f(x)}{x} = \\frac{2x \\ln x - 2x}{x} = 2\\ln x - 2$. Utilisez que $\\color{blue}{\\displaystyle\\lim_{x \\to 0^+} \\ln x = -\\infty}$. Géométriquement, une limite infinie du taux d'accroissement indique une **demi-tangente verticale**."
+        },
+        {
+          "id": "sq3b",
+          "content": "Calculer $f'(x)$ pour tout $x$ de l'intervalle $]0; +\\infty[$.",
+          "hint": "Appliquez la **dérivée d'un produit** : $\\color{blue}{(uv)' = u'v + uv'}$. Ici $f(x) = 2x \\ln x - 2x$, donc $\\displaystyle f'(x) = 2\\ln x + 2x \\cdot \\frac{1}{x} - 2$. Simplifiez l'expression obtenue."
+        },
+        {
+          "id": "sq3c",
+          "content": "Dresser le tableau de variations de $f$ sur $]0; +\\infty[$.",
+          "hint": "Étudiez le **signe de $f'(x)$** trouvé précédemment. Résolvez $f'(x) = 0$ pour trouver les **points critiques**. Déterminez les valeurs aux bornes : $\\color{blue}{\\displaystyle\\lim_{x \\to 0^+} f(x)}$ et $\\color{blue}{\\displaystyle\\lim_{x \\to +\\infty} f(x)}$. N'oubliez pas de calculer $f$ au point critique."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Résoudre dans $]0; +\\infty[$ les équations $f(x) = 0$ et $f(x) = x$.",
+          "hint": "Pour $\\color{blue}{f(x) = 0}$ : factorisez $2x(\\ln x - 1) = 0$. Comme $x > 0$, résolvez $\\ln x - 1 = 0$. Pour $\\color{blue}{f(x) = x}$ : l'équation devient $2x \\ln x - 2x = x$, soit $2x \\ln x = 3x$. Divisez par $x$ et résolvez."
+        },
+        {
+          "id": "sq4b",
+          "content": "Construire $(C)$ dans le repère $(O;\\overrightarrow{i},\\overrightarrow{j})$ (on prend $e^1 \\simeq 4.5$).",
+          "hint": "Utilisez le **tableau de variations**, les **points d'intersection** trouvés (avec l'axe des abscisses et la droite $y=x$), et placez quelques **points remarquables**. Tracez la courbe en respectant la concavité et les comportements asymptotiques étudiés."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq5a",
+          "content": "Déterminer la valeur minimale de $f$ sur $]0; +\\infty[$.",
+          "hint": "D'après le **tableau de variations**, le minimum est atteint au point où $\\color{blue}{f'(x) = 0}$. Calculez $f$ en ce point critique pour obtenir la **valeur minimale**."
+        },
+        {
+          "id": "sq5b",
+          "content": "En déduire que pour tout $x$ de $]0; +\\infty[$, $\\ln x \\geq \\dfrac{x-1}{x}$.",
+          "hint": "Utilisez que $\\color{blue}{f(x) \\geq f_{\\text{min}}}$ pour tout $x > 0$. Écrivez $2x \\ln x - 2x \\geq f_{\\text{min}}$, puis **isolez $\\ln x$** en divisant par $2x > 0$. Simplifiez l'inégalité obtenue."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "Soit $g$ la restriction de $f$ sur l'intervalle $[1; +\\infty[$.",
+      "subQuestions": [
+        {
+          "id": "sq6a",
+          "content": "Montrer que $g$ admet une fonction réciproque $g^{-1}$ définie sur un intervalle $J$ à déterminer.",
+          "hint": "Pour qu'une fonction admette une **réciproque**, elle doit être **continue** et **strictement monotone** sur son intervalle. Vérifiez que $g$ est **strictement croissante** sur $[1; +\\infty[$. L'intervalle $J$ est l'image de $I$ par $g$ : $\\color{blue}{J = g(I) = [g(1); \\displaystyle\\lim_{x \\to +\\infty} g(x)]}$."
+        },
+        {
+          "id": "sq6b",
+          "content": "Construire dans le même repère $(O;\\overrightarrow{i},\\overrightarrow{j})$ la courbe représentative de la fonction $g^{-1}$.",
+          "hint": "La courbe de $\\color{blue}{g^{-1}}$ est le **symétrique** de la courbe de $g$ par rapport à la **droite d'équation $y = x$**. Tracez d'abord cette droite, puis effectuez la symétrie des points de $(C)$ pour $x \\geq 1$."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "content": "On considère la fonction $h$ définie sur $\\mathbb{R}$ par : $$\\begin{cases} h(x) = x^3 + 3x & \\text{si } x \\leq 0 \\\\ h(x) = 2x \\ln x - 2x & \\text{si } x > 0 \\end{cases}$$",
+      "subQuestions": [
+        {
+          "id": "sq7a",
+          "content": "Montrer que la fonction $h$ est continue en $0$.",
+          "hint": "Pour la **continuité en $0$**, il faut vérifier trois conditions : (1) $h(0)$ existe, (2) $\\color{blue}{\\displaystyle\\lim_{x \\to 0^-} h(x) = h(0)}$, (3) $\\color{blue}{\\displaystyle\\lim_{x \\to 0^+} h(x) = h(0)}$. Calculez séparément les limites à gauche et à droite, puis comparez à $h(0)$."
+        },
+        {
+          "id": "sq7b",
+          "content": "$f$ est-elle dérivable en $0$ ? Justifier votre réponse.",
+          "hint": "Pour la **dérivabilité en $0$**, calculez les **taux d'accroissement** : $\\color{blue}{\\displaystyle\\lim_{x \\to 0^-} \\frac{h(x) - h(0)}{x}}$ et $\\color{blue}{\\displaystyle\\lim_{x \\to 0^+} \\frac{h(x) - h(0)}{x}}$. La fonction est dérivable en $0$ si et seulement si ces deux limites **existent et sont égales**."
+        }
+      ]
+    }
+  ]
+}

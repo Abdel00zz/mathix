@@ -1,0 +1,26 @@
+{
+  "id": "vecteurs-espace",
+  "title": "Les vecteurs de l'espace",
+  "exercises": [
+    {
+      "id": "ex-vecteurs-espace-01",
+      "path": "data/1ere-bac-sc-ex/vecteurs-espace/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-vecteurs-espace-02",
+      "path": "data/1ere-bac-sc-ex/vecteurs-espace/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-vecteurs-espace-03",
+      "path": "data/1ere-bac-sc-ex/vecteurs-espace/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-vecteurs-espace-01",
+      "path": "data/1ere-bac-sc-ex/vecteurs-espace/quiz/vecteurs-espace_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

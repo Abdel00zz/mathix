@@ -1,0 +1,637 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Limites",
+      "prompt": "La substitution directe dans une limite donne la forme $\\displaystyle \\frac{0}{0}$. Quelle conclusion est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La limite vaut toujours $0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La limite vaut toujours $1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "C'est une forme indéterminée : il faut transformer l'expression.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "La limite n'existe jamais.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La forme $\\displaystyle \\frac{0}{0}$ ne permet pas de conclure directement. On doit simplifier, factoriser, rationaliser ou utiliser une autre transformation adaptée."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Limites",
+      "prompt": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} \\frac{3x^5-2x+1}{-2x^5+x^2}$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle -\\frac{3}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\frac{3}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les deux polynômes sont de degré $5$. La limite est donc le quotient des coefficients dominants : $\\displaystyle \\frac{3}{-2}=-\\frac{3}{2}$."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Limites",
+      "prompt": "Calculer $\\displaystyle \\lim_{x \\to 2} \\frac{x^2-4}{x-2}$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$4$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "La limite n'existe pas.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On factorise $x^2-4=(x-2)(x+2)$. Pour $x\\ne2$, le quotient vaut $x+2$, dont la limite en $2$ est $4$."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Limites",
+      "prompt": "Calculer $\\displaystyle \\lim_{x \\to +\\infty}\\left(\\sqrt{x^2+3x}-x\\right)$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\frac{3}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On multiplie par la quantité conjuguée. L'expression devient $\\displaystyle \\frac{3x}{\\sqrt{x^2+3x}+x}=\\frac{3}{\\sqrt{1+3/x}+1}$, qui tend vers $\\displaystyle \\frac{3}{2}$."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Limites",
+      "prompt": "On sait que $\\displaystyle \\lim_{x \\to a}N(x)=-3$ et $\\displaystyle \\lim_{x \\to a}D(x)=0^+$. Quelle est la limite de $\\displaystyle \\frac{N(x)}{D(x)}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-\\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Près de $a$, le numérateur est négatif et le dénominateur est positif mais arbitrairement petit. Le quotient tend donc vers $-\\infty$."
+    },
+    {
+      "id": "q6",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Limites",
+      "prompt": "Si les limites à gauche et à droite d'une fonction en un point sont finies mais différentes, alors la fonction admet une limite en ce point.",
+      "isTrue": false,
+      "explanation": "Une limite en un point existe seulement si les limites à gauche et à droite existent et sont égales."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Dérivation",
+      "prompt": "Lorsque $f$ est dérivable en $a$, que représente directement $f'(a)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'ordonnée du point de la courbe d'abscisse $a$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Le coefficient directeur de la tangente à la courbe en $a$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "L'aire sous la courbe entre $0$ et $a$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La valeur maximale de la fonction.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f'(a)$ est le coefficient directeur de la tangente à la courbe représentative de $f$ au point d'abscisse $a$."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Dérivation",
+      "prompt": "Soit $\\displaystyle f(x)=\\frac{3x+1}{x-2}$, pour $x\\ne2$. Quelle est sa dérivée ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\frac{7}{(x-2)^2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle -\\frac{7}{(x-2)^2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\frac{3}{x-2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle \\frac{3x-7}{(x-2)^2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par la formule du quotient, $\\displaystyle f'(x)=\\frac{3(x-2)-(3x+1)}{(x-2)^2}=-\\frac{7}{(x-2)^2}$."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Dérivation",
+      "prompt": "Sur un intervalle $I$, on a $f'(x)>0$ pour tout $x\\in I$. Que peut-on conclure ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ est strictement croissante sur $I$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f$ est strictement décroissante sur $I$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f$ est constante sur $I$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f$ admet forcément un maximum sur $I$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le signe strictement positif de la dérivée sur un intervalle entraîne la stricte croissance de la fonction sur cet intervalle."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Dérivation",
+      "prompt": "On sait seulement que $f'(a)=0$. Quelle affirmation est toujours vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ admet un maximum local en $a$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f$ admet un minimum local en $a$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La tangente à la courbe de $f$ en $a$ est horizontale.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$f(a)=0$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La dérivée nulle donne une tangente horizontale. Elle ne suffit pas, à elle seule, à établir l'existence d'un extremum local."
+    },
+    {
+      "id": "q11",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Dérivation",
+      "prompt": "Si $f'$ passe du signe $+$ au signe $-$ au voisinage de $a$, alors $f$ admet un maximum local en $a$.",
+      "isTrue": true,
+      "explanation": "La fonction est croissante avant $a$ puis décroissante après $a$ : elle atteint donc un maximum local en $a$."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Étude de fonction",
+      "prompt": "Que signifie que la droite d'équation $x=a$ est une asymptote verticale de la courbe de $f$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(a)=0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Au moins une limite latérale de $f$ en $a$ est infinie.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f$ est dérivable en $a$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La courbe coupe forcément la droite $x=a$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une asymptote verticale $x=a$ correspond à une limite de $f$ infinie à gauche ou à droite de $a$."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Étude de fonction",
+      "prompt": "Pour montrer que $y=2x-3$ est une asymptote oblique de $f$ en $+\\infty$, quel test est décisif ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\lim_{x\\to+\\infty}f(x)=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\lim_{x\\to+\\infty}[f(x)-(2x-3)]=0$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\lim_{x\\to+\\infty}\\frac{f(x)}{2x-3}=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f(0)=-3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La distance algébrique entre la courbe et la droite est $f(x)-(2x-3)$. Elle doit tendre vers $0$ pour obtenir une asymptote oblique."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Étude de fonction",
+      "prompt": "Si $f''(x)\\ge0$ sur un intervalle $I$, que peut-on conclure ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ est convexe sur $I$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f$ est concave sur $I$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f$ est constante sur $I$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f$ est toujours positive sur $I$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le signe positif ou nul de la dérivée seconde caractérise la convexité de $f$ sur l'intervalle considéré."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Étude de fonction",
+      "prompt": "Quelle condition permet de reconnaître un point d'inflexion d'abscisse $a$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(a)=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f'(a)=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f''(a)=0$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f''$ change de signe au voisinage de $a$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Un point d'inflexion correspond à un changement de convexité. Il est donc reconnu par un changement de signe de $f''$ au voisinage de son abscisse."
+    },
+    {
+      "id": "q16",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Étude de fonction",
+      "prompt": "Pour situer la courbe de $f$ par rapport à la droite $y=ax+b$, on étudie le signe de $f(x)-(ax+b)$.",
+      "isTrue": true,
+      "explanation": "Si cette différence est positive, la courbe est au-dessus de la droite ; si elle est négative, elle est au-dessous."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Suites numériques",
+      "prompt": "Pour étudier directement la monotonie d'une suite $(u_n)$, quelle expression examine-t-on ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$u_{n+1}+u_n$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$u_{n+1}-u_n$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$u_{n+1}u_n$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$u_n^2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le signe de $u_{n+1}-u_n$ indique la monotonie : positif pour une suite croissante, négatif pour une suite décroissante."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Suites numériques",
+      "prompt": "Une suite arithmétique vérifie $u_3=7$ et a pour raison $r=-2$. Quelle est la valeur de $u_8$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$17$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$u_8=u_3+(8-3)r=7+5(-2)=-3$."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Suites numériques",
+      "prompt": "Une suite géométrique vérifie $u_0=3$ et a pour raison $\\displaystyle q=\\frac12$. Quelle est la valeur de $u_4$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\frac{3}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\frac{3}{16}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\frac{1}{16}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$24$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\displaystyle u_4=u_0q^4=3\\left(\\frac12\\right)^4=\\frac{3}{16}$."
+    },
+    {
+      "id": "q20",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Suites numériques",
+      "prompt": "Dire qu'une suite est bornée signifie qu'elle est à la fois majorée et minorée.",
+      "isTrue": true,
+      "explanation": "Une suite bornée possède un minorant et un majorant."
+    },
+    {
+      "id": "q21",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Suites numériques",
+      "prompt": "Si $u_{n+1}=0{,}6u_n+4$ et $v_n=u_n-10$, alors $(v_n)$ est géométrique de raison $0{,}6$.",
+      "isTrue": true,
+      "explanation": "On obtient $v_{n+1}=u_{n+1}-10=0{,}6u_n-6=0{,}6(u_n-10)=0{,}6v_n$. C'est bien une suite géométrique de raison $0{,}6$."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Trigonométrie",
+      "prompt": "Quelle est la solution générale de l'équation $\\cos x=\\cos \\alpha$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x=\\alpha+2k\\pi$, $k\\in\\mathbb{Z}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$x=-\\alpha+2k\\pi$, $k\\in\\mathbb{Z}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x=2k\\pi\\pm\\alpha$, $k\\in\\mathbb{Z}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$x=k\\pi+\\alpha$, $k\\in\\mathbb{Z}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le cosinus est pair et de période $2\\pi$. Les solutions sont donc $x=2k\\pi+\\alpha$ ou $x=2k\\pi-\\alpha$."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Trigonométrie",
+      "prompt": "Quelle est la valeur maximale de $3\\cos x+4\\sin x$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$4$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$5$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$7$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour $a\\cos x+b\\sin x$, la valeur maximale est $\\sqrt{a^2+b^2}$. Ici, $\\sqrt{3^2+4^2}=5$."
+    },
+    {
+      "id": "q24",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Trigonométrie",
+      "prompt": "Quelle identité est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sin(2x)=2\\sin x\\cos x$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\sin(2x)=\\sin^2x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\sin(2x)=2\\sin x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sin(2x)=\\cos^2x-\\sin^2x$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La formule d'angle double pour le sinus est $\\sin(2x)=2\\sin x\\cos x$."
+    },
+    {
+      "id": "q25",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Trigonométrie",
+      "prompt": "Les fonctions sinus et cosinus sont de période $2\\pi$.",
+      "isTrue": true,
+      "explanation": "Pour tout réel $x$, on a $\\sin(x+2\\pi)=\\sin x$ et $\\cos(x+2\\pi)=\\cos x$."
+    },
+    {
+      "id": "q26",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Trigonométrie",
+      "prompt": "Les solutions de $\\tan x=\\tan \\alpha$ sont $x=\\alpha+2k\\pi$, avec $k\\in\\mathbb{Z}$.",
+      "isTrue": false,
+      "explanation": "La tangente est de période $\\pi$. Les solutions sont $x=\\alpha+k\\pi$, avec $k\\in\\mathbb{Z}$."
+    }
+  ]
+}

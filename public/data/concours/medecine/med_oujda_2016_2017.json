@@ -1,0 +1,320 @@
+{
+  "school": "medecine",
+  "year": "2016–2017 · Oujda",
+  "title": "Annale Médecine — 2016–2017 · Oujda",
+  "source": "02_oujda_2016_2017.tex — transcription LaTeX normalisée",
+  "questions": [
+    {
+      "id": "med-oujda_2016_2017-q01",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2016–2017 · Oujda · Q1",
+      "officialQuestionCode": "Q1",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Pour $n\\in\\mathbb{N}^*$, on pose\n$V_n=\\sin\\frac{\\pi}{n}+\\sin\\frac{2\\pi}n+\\cdots+\\sin\\frac{(n-1)\\pi}n, \\qquad z=\\cos\\frac{\\pi}{n}+ {i}\\sin\\frac{\\pi}{n}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1+z+\\cdots+z^{n-1}=1+ {i}\\tan\\frac{\\pi}{{2n}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1+z+\\cdots+z^{n-1}=1+ {i}\\cos\\frac{\\pi}{{2n}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$V_n=\\frac{1}{{\\tan(\\frac{\\pi}{2n})}}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$V_n=\\tan\\frac{\\pi}{{2n}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\displaystyle\\lim_{n\\to+\\infty}\\frac{V_n}{n}=0$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La somme géométrique vaut\n$1+z+\\cdots+z^{n-1}=\\frac{1-z^n}{1-z} =1+ {i}\\cot\\frac{\\pi}{{2n}}.$\nSa partie imaginaire donne\n$V_n=\\cot\\frac{\\pi}{{2n}}=\\frac{1}{{\\tan(\\frac{\\pi}{2n})}}.$\nEn particulier $\\frac{V_n}{n}\\frac{\\to2}{\\pi}$, et non $0$."
+    },
+    {
+      "id": "med-oujda_2016_2017-q02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2016–2017 · Oujda · Q2",
+      "officialQuestionCode": "Q2",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "On pose\n$\\displaystyle S=\\sum_{n\\ge1}\\frac{1}{{n(n+1)}}, \\qquad S_n=\\sum_{k=1}^n\\frac{1}{{k(k+1)}}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$S_n=1+\\frac{1}{{n+1}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La série $S$ diverge.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$S=1$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$S=\\tan\\frac{\\pi}{{2n}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Toutes les réponses proposées sont fausses.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Comme\n$\\frac{1}{{k(k+1)}}=\\frac{1}{k}-\\frac{1}{{k+1}},$\non obtient $S_n=1-\\frac{1}{(n+1)}$ et donc $S=1$."
+    },
+    {
+      "id": "med-oujda_2016_2017-q03",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Algèbre",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2016–2017 · Oujda · Q3",
+      "officialQuestionCode": "Q3",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "La suite $(U_n)$ est définie par\n$U_0= {e}^2, \\qquad U_{n+1}=(1+U_n) {e}^{-2}-1, \\qquad V_n=3(1+U_n).$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(U_n)$ est croissante.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(U_n)$ est arithmétique.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$U_n= {e}^{2n+2}-1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle\\lim_{n\\to+\\infty}V_n=-1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\ln V_0+\\ln V_1+\\cdots+\\ln V_n=(n+1)(2-n+\\ln3)$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "La relation $1+U_{n+1}= {e}^{-2}(1+U_n)$ donne\n$1+U_n= {e}^{2-2n},\\qquad V_n=3 {e}^{2-2n}.$\nAinsi $\\ln V_n=\\ln3+2-2n$, et la somme des $n+1$ premiers termes vaut\n$(n+1)(\\ln3+2-n).$"
+    },
+    {
+      "id": "med-oujda_2016_2017-q06",
+      "type": "mcq",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l’espace",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2016–2017 · Oujda · Q6",
+      "officialQuestionCode": "Q6",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Dans un repère orthonormé de l'espace, on considère\n$A(-1,2,0),\\qquad B(3,0,4),\\qquad C(-2,1,2).$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'aire du triangle $ABC$ est $5\\sqrt2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "L'aire du triangle $ABC$ est $5\\sqrt3$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La hauteur issue de $A$ mesure $\\sqrt5$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La hauteur issue de $A$ mesure $\\sqrt6$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Les points $A,B,C$ sont alignés.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\overrightarrow{AB}=(4,-2,4),\\qquad \\overrightarrow{AC}=(-1,-1,2),$\net\n$\\frac{1}{2}\\|\\overrightarrow{AB}\\wedge\\overrightarrow{AC}\\|=3\\sqrt5.$\nComme $BC=\\sqrt{30}$, la hauteur issue de $A$ vaut\n$\\frac{2\\times3\\sqrt5}{\\sqrt{30}}=\\sqrt6.$"
+    },
+    {
+      "id": "med-oujda_2016_2017-q07",
+      "type": "mcq",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l’espace",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2016–2017 · Oujda · Q7",
+      "officialQuestionCode": "Q7",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Choisir la réponse juste.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le périmètre d'un cercle de rayon $R$ est $\\pi R$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "${e}^{ {i}\\frac{\\pi}{4}}+ {e}^{3 {i}\\frac{\\pi}{4}}=\\frac{ {i}\\sqrt2}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Parmi 9 personnes, on peut choisir un comité de 5 personnes de 256 façons.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "L'hectare est une unité de longueur.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Toutes les réponses proposées sont fausses.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Le périmètre vaut $2\\pi R$, la somme complexe vaut ${i}\\sqrt2$, le nombre de comités vaut $\\binom95=126$, et l'hectare est une unité d'aire."
+    },
+    {
+      "id": "med-oujda_2016_2017-q08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2016–2017 · Oujda · Q8",
+      "officialQuestionCode": "Q8",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Soient\n$\\displaystyle J=\\int_0^{-a}\\cos^3(2t)\\,\\,d t, \\qquad I=2\\int_0^{-a}\\bigl(\\tan^3x+\\tan x\\bigr)\\,\\,d x.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$I=1-\\frac{1}{{\\cos^2a}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$I=2-\\frac{1}{{\\cos^2a}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$J=\\sin a\\left(\\frac{\\cos a\\,\\sin^2(2a)}3+\\cos a\\right)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$J=\\frac{\\sin a}{2}\\left(\\frac{\\cos a\\,\\sin^2(2a)}3+\\cos a\\right)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Toutes les réponses proposées sont fausses.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "On calcule\n$I=\\tan^2a=\\frac{1}{{\\cos^2a}}-1$\net\n$J=\\sin a\\left(\\frac{\\cos a\\,\\sin^2(2a)}3-\\cos a\\right).$\nAucune des expressions A à D ne convient."
+    },
+    {
+      "id": "med-oujda_2016_2017-q09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2016–2017 · Oujda · Q9",
+      "officialQuestionCode": "Q9",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Pour $n\\in\\mathbb{N}$, on définit\n$\\displaystyle I_n=2\\int_0^{\\frac{\\pi}{4}}x^n\\cos x\\,\\,d x.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$I_0=-1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$I_1=\\frac{\\pi}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$I_{n+2}=\\left(\\frac{\\pi}{2}\\right)^{n+1}+(n+1)I_n$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$I_{n+2}=\\left(\\frac{\\pi}{2}\\right)^{n+2}-(n+1)(n+2)I_n$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$I_2=2-\\frac{\\pi^2}{4}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Deux intégrations par parties conduisent à\n$I_{n+2}=\\left(\\frac{\\pi}{2}\\right)^{n+2}-(n+1)(n+2)I_n.$\nOn vérifie aussi $I_0=1$, $I_1=\\frac{\\pi}{2}-1$ et $I_2\\frac{=\\pi^2}{4}-2$."
+    },
+    {
+      "id": "med-oujda_2016_2017-q10",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Oujda 2016–2017 · Oujda · Q10",
+      "officialQuestionCode": "Q10",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Choisir la réponse juste.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\cos^2\\frac{3\\pi}{12}+\\cos^2\\frac{5\\pi}{12}+\\cos^2\\frac{9\\pi}{12}+\\cos^2\\frac{11\\pi}{12}=3$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Le point $I(2,0)$ est un centre de symétrie de la courbe de $f(x)=x^3-6x^2+9x-2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt{1-\\sin^2x}=\\cos^2x$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La fonction $f(x)=1-8\\cos x-4\\cos^2x$ est de période $\\pi$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "La propriété $(g\\circ f)'=f'\\,g'(f)$ est fausse.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les angles se regroupent par couples supplémentaires :\n$\\cos^2\\frac{9\\pi}{12}=\\cos^2\\frac{3\\pi}{12},\\qquad \\cos^2\\frac{11\\pi}{12}=\\cos^2\\frac{\\pi}{{12}}.$\nLe calcul donne $3$. Les autres propositions sont fausses : la racine vaut $|\\cos x|$, la fonction de D n'est pas $\\pi$-périodique et la règle de dérivation de E est vraie."
+    }
+  ]
+}

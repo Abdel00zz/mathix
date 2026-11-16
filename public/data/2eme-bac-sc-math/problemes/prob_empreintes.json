@@ -1,0 +1,83 @@
+{
+  "header": {
+    "title": "Avez-vous les mêmes empreintes qu'un autre ?",
+    "subtitle": "Empreintes digitales",
+    "context": "Dénombrement · Probabilités"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "content": "Pour identifier de manière certaine une personne, plusieurs paramètres biométriques peuvent être utilisés. Par exemple la reconnaissance faciale, la reconnaissance de l'iris ou les empreintes digitales.\\par Une empreinte digitale est le dessin formé par les sillons et crêtes présents sur les doigts, aussi appelés dermatoglyphes. Ces dessins se forment dès les premières semaines de vie du fœtus et sont uniques pour chaque individu, même pour des vrais jumeaux.\\par On vous propose d'étudier les différentes empreintes et de calculer la probabilité d'avoir des empreintes similaires à celles d'un autre individu.\\par Pour décrire une empreinte digitale, on les classe suivant leur structure globale et selon des points singuliers locaux, appelés « minuties ». De plus, chaque minutie a une localisation sur le doigt et une orientation."
+        }
+      ]
+    },
+    {
+      "id": "structure_globale",
+      "category": "course",
+      "title": "Structure globale",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Il existe 5 structures globales dont 3 principales. Voici les pourcentages d'apparition :\\par\\begin{itemize}\\item les boucles, gauches ou droite : 60\\%\\item les spirales : 30\\%\\item les arches : 5\\%\\item les double boucles et tentes sont plus rares.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "points_singuliers",
+      "category": "course",
+      "title": "Points singuliers locaux",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une minutie est une configuration localisée des sillons et crêtes. Il existe 2 types principaux :\\par\\begin{itemize}\\item la terminaison ou arrêt de ligne est la fin d'une crête,\\item la bifurcation est une crête qui se dédouble.\\end{itemize}\\par Grâce à ces deux minuties, on peut obtenir des : îlots, lacs, ponts, crochets, trifurcations, bifurcations opposées, etc."
+        }
+      ]
+    },
+    {
+      "id": "denombrement",
+      "category": "course",
+      "title": "Dénombrement",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Considérons un cas simplifié où, à un emplacement donné du doigt, il y a soit aucune minutie particulière, soit une terminaison, soit une bifurcation et ce dans deux orientations possibles : haut ou bas.\\par\\begin{enumerate}\\item Combien y a-t-il de configurations possibles pour un emplacement sur un doigt ? $\\\\twoheadrightarrow$Indice 1\\item Combien y a-t-il de configurations possibles pour un doigt entier sur lequel on étudie 12 emplacements donnés ? $\\\\twoheadrightarrow$Indice 2\\item Combien d'emplacements faut-il considérer pour que le nombre de configurations possibles dépasse la population mondiale en 2022 : 8 milliards ? $\\\\twoheadrightarrow$Indice 3\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "indices",
+      "category": "course",
+      "title": "Indices",
+      "blocks": [
+        {
+          "type": "hint",
+          "content": "Prenez en compte l'orientation pour chaque minutie."
+        },
+        {
+          "type": "hint",
+          "content": "Prenez en compte la structure générale et les 12 minuties."
+        },
+        {
+          "type": "hint",
+          "content": "Reprenez le calcul précédent et résolvez une inéquation. Vous aurez besoin de la fonction logarithmique."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} Pour chaque emplacement, il a 5 possibilités : une terminaison orientée vers le haut, ou vers le bas, une bifurcation orientée vers le haut, ou vers le bas, ou aucune minutie particulière.\\par\\par\\textbf{2)} Un doigt est une des trois configurations de structure générale : boucle, spirale ou arche. Pour chacune de ces configurations, on étudie 12 emplacements. Pour chaque emplacement, il y a 5 possibilités. Finalement, il y a $3 \\times 5^{12} = 732\\,421\\,875$ possibilités, soit un peu plus de 732 millions.\\par\\par\\textbf{3)} En reprenant le calcul précédent, on cherche le nombre $n$ d'emplacements tels que\\par$$3 \\times 5^n > 8\\,000\\,000\\,000 \\iff n\\ln(5) > \\ln\\left(\\dfrac{8 \\times 10^9}{3}\\right) \\iff n > \\dfrac{1}{\\ln(5)}\\,\\ln\\left(\\dfrac{8 \\times 10^9}{3}\\right)$$\\par Or $\\dfrac{1}{\\ln(5)}\\,\\ln\\left(\\dfrac{8 \\times 10^8}{3}\\right) \\approx 13{,}48$. Donc à partir de 14 emplacements, il y a plus de 8 milliards de configurations d'empreintes possibles pour un doigt."
+        }
+      ]
+    }
+  ]
+}

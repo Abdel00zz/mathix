@@ -1,0 +1,450 @@
+{
+  "header": {
+    "title": "Arithmétique dans $\\mathbb{Z}$",
+    "subtitle": "Divisibilité, PGCD, congruences, nombres premiers et numération",
+    "context": "2BAC Sciences Mathématiques BIOF"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "L'arithmétique dans $\\mathbb{Z}$ permet d'\\objectif{étudier la divisibilité, résoudre des équations entières et calculer modulo un entier}. La \\defi{difficulté} principale consiste à choisir entre division euclidienne, PGCD, identité de Bézout et congruences. \\savant{Carl Friedrich Gauss} donna à l'arithmétique moderne une organisation rigoureuse et développa la notation des congruences encore utilisée aujourd'hui.",
+          "media": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Carl_Friedrich_Gauss.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "15%",
+            "caption": "Carl Friedrich Gauss (1777-1855)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "divisibilite-division-euclidienne",
+      "category": "course",
+      "title": "Divisibilité et division euclidienne dans $\\mathbb{Z}$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'arithmétique commence par la notion de multiple et de diviseur. La division euclidienne complète cette lecture en séparant un entier en quotient et reste."
+        },
+        {
+          "type": "definition",
+          "title": "Quand dit-on que \\mathqst{$a$ divise $b$}",
+          "content": "Soient $a,b\\in\\mathbb{Z}$. On dit que $a$ \\textbf{divise} $b$, et on note $a\\mid b$, s'il existe $k\\in\\mathbb{Z}$ tel que :$$b=ka$$On dit aussi que $a$ est un diviseur de $b$ ou que $b$ est un multiple de $a$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les premières propriétés de la divisibilité}",
+          "content": "Pour tous entiers $a,b,c$ :\\begin{itemize}\\item $a\\mid0$ et $1\\mid a$ ;\\item $a\\mid1$ implique $a\\in\\{-1,1\\}$ ;\\item $a\\mid b$ et $b\\mid a$ impliquent $a=\\pm b$ ;\\item $a\\mid b$ et $b\\mid c$ impliquent $a\\mid c$ ;\\item si $d\\mid a$ et $d\\mid b$, alors $d\\mid ma+nb$ pour tous $m,n\\in\\mathbb{Z}$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Montrons que deux entiers consécutifs sont \\textbf{premiers entre eux}.}\\par\\smallskip Soit $d$ un diviseur commun de $n$ et $n+1$. Comme un diviseur commun divise toute combinaison linéaire, on a :$$d\\mid\\blank{(n+1)-n}$$Donc $d\\mid\\blank{1}$. Les seuls diviseurs entiers de $1$ sont $-1$ et $1$. Le seul diviseur commun positif est ainsi :$$\\boxed{\\blank{1}}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Que garantit \\mathqst{la division euclidienne de $a$ par $b$}",
+          "content": "Soient $a\\in\\mathbb{Z}$ et $b\\in\\mathbb{N}^{*}$. Il existe un unique couple $(q,r)\\in\\mathbb{Z}^{2}$ tel que :$$\\large\\boxed{a=bq+r\\quad\\text{et}\\quad0\\leq r<b}$$L'entier $q$ est le quotient et $r$ le reste."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{déterminer correctement le quotient et le reste}",
+          "content": "Écrire d'abord $a=bq+r$ avec un entier $q$ proche de $a/b$. Vérifier ensuite que le reste satisfait $0\\leq r<b$. Si le reste est négatif, diminuer le quotient d'une unité et ajouter $b$ au reste.\\par\\textbf{Attention :} une égalité de la forme $a=bq+r$ n'est pas encore une division euclidienne tant que l'encadrement du reste n'est pas vérifié."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons le quotient et le reste de la division euclidienne de $-5000$ par $17$.}\\par\\smallskip On part de :$$5000=17\\times\\blank{294}+2$$Donc :$$-5000=17\\times(-294)-2$$Le reste $-2$ est négatif. On diminue alors le quotient d'une unité et on ajoute $17$ au reste :$$-5000=17\\times(-295)+\\blank{15}$$Comme $0\\leq15<\\blank{17}$, on obtient :$$\\boxed{q=\\blank{-295}\\quad\\text{et}\\quad r=15}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Une erreur très fréquente, que vous ne devez pas commettre : ne pas confondre une identité algébrique avec une division euclidienne. Le reste doit toujours être positif ou nul et strictement inférieur au diviseur."
+        }
+      ]
+    },
+    {
+      "id": "pgcd-ppcm-euclide",
+      "category": "course",
+      "title": "PGCD, PPCM et algorithme d'Euclide",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La divisibilité permet de comparer les facteurs de plusieurs entiers. Le PGCD mesure leurs diviseurs communs et l'algorithme d'Euclide le calcule efficacement."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le PGCD de deux entiers}",
+          "content": "Soient $a,b\\in\\mathbb{Z}$, non tous deux nuls. Le \\textbf{plus grand diviseur commun positif} de $a$ et $b$ est appelé leur PGCD et se note $\\operatorname{PGCD}(a,b)$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{réduire un PGCD par division euclidienne}",
+          "content": "On dispose des cas immédiats :\\begin{itemize}\\item $\\operatorname{PGCD}(a,0)=|a|$ ;\\item $\\operatorname{PGCD}(a,1)=1$ ;\\item si $b\\mid a$, alors $\\operatorname{PGCD}(a,b)=|b|$ ;\\item $\\operatorname{PGCD}(a,b)=\\operatorname{PGCD}(|a|,|b|)$.\\end{itemize}Si $a=bq+r$, alors :$$\\large\\boxed{\\operatorname{PGCD}(a,b)=\\operatorname{PGCD}(b,r)}$$"
+        },
+        {
+          "type": "proof",
+          "title": "Pourquoi le PGCD reste-t-il inchangé ?",
+          "content": "Supposons $a=bq+r$. Tout diviseur commun de $a$ et $b$ divise la combinaison linéaire $a-bq=r$. Il est donc aussi un diviseur commun de $b$ et $r$. Réciproquement, tout diviseur commun de $b$ et $r$ divise $bq+r=a$. Les couples $(a,b)$ et $(b,r)$ possèdent ainsi exactement les mêmes diviseurs communs positifs. On en déduit :$$\\boxed{\\operatorname{PGCD}(a,b)=\\operatorname{PGCD}(b,r)}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer un PGCD par l'algorithme d'Euclide}",
+          "content": "Diviser le plus grand entier par le plus petit. Remplacer ensuite le couple par le diviseur et le reste. Recommencer jusqu'à obtenir un reste nul. Le dernier reste non nul est le PGCD.\\par\\textbf{Avantage :} cette méthode évite de chercher tous les diviseurs."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $\\operatorname{PGCD}(9945,3003)$ par l'algorithme d'Euclide.}\\par\\smallskip On effectue les divisions successives :\\begin{align*}9945&=3003\\times\\blank{3}+936,\\\\3003&=936\\times3+195,\\\\936&=195\\times4+156,\\\\195&=156\\times1+\\blank{39},\\\\156&=39\\times4.\\end{align*}Le dernier reste non nul est $39$. Ainsi :$$\\boxed{\\operatorname{PGCD}(9945,3003)=\\blank{39}}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{le PPCM de deux entiers non nuls}",
+          "content": "Soient $a,b\\in\\mathbb{Z}^{*}$. Le \\textbf{plus petit multiple strictement positif} commun à $a$ et $b$ est appelé leur PPCM et se note $\\operatorname{PPCM}(a,b)$."
+        },
+        {
+          "type": "property",
+          "title": "Quel lien unit \\mathqst{le PGCD et le PPCM}",
+          "content": "Pour tous $a,b\\in\\mathbb{Z}^{*}$ :$$\\large\\boxed{\\operatorname{PGCD}(a,b)\\operatorname{PPCM}(a,b)=|ab|}$$En particulier, si $a$ et $b$ sont premiers entre eux, alors $\\operatorname{PPCM}(a,b)=|ab|$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\operatorname{PPCM}(84,126)$.}\\par\\smallskip On a $126=84+42$ et $84=2\\times42$, donc $\\operatorname{PGCD}(84,126)=\\blank{42}$. Alors :\\begin{align*}\\operatorname{PPCM}(84,126)&=\\dfrac{|84\\times126|}{\\blank{42}}\\\\&=\\boxed{\\blank{252}}.\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "bezout-gauss",
+      "category": "course",
+      "title": "Identité de Bézout et théorème de Gauss",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'algorithme d'Euclide fournit le PGCD, mais il peut aussi être remonté. Cette remontée produit une combinaison linéaire utile pour les inverses et les équations entières."
+        },
+        {
+          "type": "theorem",
+          "title": "Que fournit \\mathqst{l'identité de Bézout}",
+          "content": "Soient $a,b\\in\\mathbb{Z}$, non tous deux nuls, et $d=\\operatorname{PGCD}(a,b)$. Il existe $u,v\\in\\mathbb{Z}$ tels que :$$\\large\\boxed{au+bv=d}$$Les entiers $u$ et $v$ sont appelés coefficients de Bézout."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{obtenir des coefficients de Bézout}",
+          "content": "Appliquer l'algorithme d'Euclide à $a$ et $b$. Partir de l'égalité contenant le dernier reste non nul. Remplacer ensuite les restes successivement, de bas en haut. Regrouper enfin les coefficients de $a$ et de $b$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons des coefficients de Bézout pour $600$ et $124$.}\\par\\smallskip L'algorithme d'Euclide donne :$$600=124\\times4+104,\\quad124=104+20,\\quad104=20\\times5+\\blank{4}$$On remonte :\\begin{align*}4&=104-\\blank{20\\times5}\\\\&=104-(124-104)\\times5\\\\&=\\blank{6}\\times104-5\\times124\\\\&=6(600-4\\times124)-5\\times124\\\\&=6\\times600-29\\times124.\\end{align*}Ainsi :$$\\boxed{(u,v)=(6,\\blank{-29})}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Quand deux entiers sont-ils \\mathqst{premiers entre eux}",
+          "content": "Pour $a,b\\in\\mathbb{Z}$ non tous deux nuls :$$\\large\\boxed{\\operatorname{PGCD}(a,b)=1\\quad\\Longleftrightarrow\\quad\\exists(u,v)\\in\\mathbb{Z}^{2},\\ au+bv=1}$$"
+        },
+        {
+          "type": "proof",
+          "title": "Démonstration de la caractérisation de Bézout",
+          "content": "\\begin{enumerate}\\item \\textbf{Sens direct.} Supposons $\\operatorname{PGCD}(a,b)=1$. L'identité de Bézout assure alors l'existence de $u,v\\in\\mathbb{Z}$ tels que :$$au+bv=1$$\\item \\textbf{Réciproque.} Supposons qu'il existe $u,v\\in\\mathbb{Z}$ tels que $au+bv=1$. Tout diviseur commun positif de $a$ et $b$ divise alors $au+bv$, donc il divise $1$. Ce diviseur commun est nécessairement égal à $1$.\\end{enumerate}Ainsi :$$\\boxed{\\operatorname{PGCD}(a,b)=1\\iff\\exists(u,v)\\in\\mathbb{Z}^{2},\\ au+bv=1}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Quand le théorème de \\mathqst{Gauss permet-il de simplifier}",
+          "content": "Soient $a,b,c\\in\\mathbb{Z}$. Si $a\\mid bc$ et $\\operatorname{PGCD}(a,b)=1$, alors :$$\\large\\boxed{a\\mid c}$$En particulier, si un nombre premier $p$ divise un produit, alors il divise au moins l'un de ses facteurs."
+        },
+        {
+          "type": "proof",
+          "title": "Démonstration du théorème de Gauss",
+          "content": "Supposons $a\\mid bc$ et $\\operatorname{PGCD}(a,b)=1$. D'après Bézout, il existe $u,v\\in\\mathbb{Z}$ tels que :$$au+bv=1$$En multipliant par $c$, on obtient :$$acu+bcv=c$$Le nombre $a$ divise $acu$. Il divise aussi $bcv$, puisque $a\\mid bc$. Il divise donc leur somme $c$. Ainsi :$$\\boxed{a\\mid c}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Deux choses à ne surtout pas confondre : les conditions $a\\mid c$ et $b\\mid c$ ne suffisent pas pour conclure que $ab\\mid c$. Il faut aussi vérifier que $a$ et $b$ sont premiers entre eux."
+        }
+      ]
+    },
+    {
+      "id": "equations-diophantiennes",
+      "category": "course",
+      "title": "Équations diophantiennes $ax+by=c$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bézout transforme le PGCD en combinaison linéaire. Cette idée permet maintenant de décider l'existence des solutions entières et de les décrire toutes."
+        },
+        {
+          "type": "theorem",
+          "title": "Quand l'équation \\mathqst{$ax+by=c$ admet-elle des solutions entières}",
+          "content": "Soient $a,b,c\\in\\mathbb{Z}$ et $d=\\operatorname{PGCD}(a,b)$. L'équation $ax+by=c$ admet des solutions entières si et seulement si $d\\mid c$. Si $(x_0,y_0)$ est une solution particulière, toutes les solutions sont :$$\\large\\boxed{x=x_0+\\dfrac{b}{d}k,\\qquad y=y_0-\\dfrac{a}{d}k,\\qquad k\\in\\mathbb{Z}}$$"
+        },
+        {
+          "type": "proof",
+          "title": "Pourquoi le PGCD décide-t-il de l'existence ?",
+          "content": "Posons $d=\\operatorname{PGCD}(a,b)$.\\begin{enumerate}\\item \\textbf{Sens direct.} Supposons que $(x,y)$ soit une solution de $ax+by=c$. Comme $d\\mid a$ et $d\\mid b$, on a $d\\mid ax+by$. Donc $d\\mid c$.\\item \\textbf{Réciproque.} Supposons que $d\\mid c$ et écrivons $c=dt$. Bézout fournit $u,v\\in\\mathbb{Z}$ tels que $au+bv=d$. En multipliant par $t$, on obtient :$$a(ut)+b(vt)=c$$Le couple $(ut,vt)$ est donc une solution particulière.\\end{enumerate}Soit maintenant $(x_0,y_0)$ une solution particulière et $(x,y)$ une autre solution. En soustrayant les deux égalités :$$a(x-x_0)+b(y-y_0)=0$$Après division par $d$, les entiers $a/d$ et $b/d$ sont premiers entre eux. Le théorème de Gauss montre alors que $a/d$ divise $y-y_0$. Il existe donc $k\\in\\mathbb{Z}$ tel que :$$y-y_0=-\\dfrac{a}{d}k$$En remplaçant dans l'égalité précédente, on obtient :$$x-x_0=\\dfrac{b}{d}k$$Ainsi, toutes les solutions sont :$$\\boxed{x=x_0+\\dfrac{b}{d}k,\\\\qquad y=y_0-\\dfrac{a}{d}k,\\qquad k\\in\\mathbb{Z}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{résoudre une équation diophantienne}",
+          "content": "Calculer d'abord $d=\\operatorname{PGCD}(a,b)$ et vérifier que $d\\mid c$. Trouver ensuite une identité de Bézout pour $a$ et $b$. La multiplier par $c/d$ afin d'obtenir une solution particulière. Écrire enfin la famille complète des solutions avec un paramètre entier."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Résolvons dans $\\mathbb{Z}^{2}$ l'équation $161x+368y=115$.}\\par\\smallskip On a $\\operatorname{PGCD}(161,368)=\\blank{23}$ et $115=5\\times23$. Des solutions existent. La remontée fournit :$$23=\\blank{7}\\times161-3\\times368$$Donc :$$115=\\blank{35}\\times161-15\\times368$$Une solution particulière est $(35,-15)$. Toutes les solutions sont :$$\\boxed{x=35+\\blank{16}k,\\qquad y=-15-7k,\\qquad k\\in\\mathbb{Z}}$$"
+        },
+        {
+          "type": "remark",
+          "content": "\\textbf{Lecture essentielle :} le PGCD décide d'abord de l'existence. Une identité de Bézout fournit ensuite une solution particulière, puis le paramètre entier décrit toute la famille."
+        }
+      ]
+    },
+    {
+      "id": "congruences-calculs",
+      "category": "course",
+      "title": "Congruences et calculs modulo $n$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une congruence conserve le reste utile et élimine le quotient. Elle simplifie ainsi les divisibilités, les grandes puissances et certaines équations."
+        },
+        {
+          "type": "definition",
+          "title": "Quand deux entiers sont-ils \\mathqst{congrus modulo $n$}",
+          "content": "Soit $n\\in\\mathbb{N}^{*}$. Deux entiers $a$ et $b$ sont \\textbf{congrus modulo $n$} lorsque $n\\mid(a-b)$. On écrit :$$a\\equiv b\\pmod n$$Cela équivaut à dire que $a$ et $b$ ont le même reste dans leur division euclidienne par $n$."
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi la congruence est-elle \\mathqst{une relation d'équivalence}",
+          "content": "Pour tous $a,b,c\\in\\mathbb{Z}$ :\\begin{itemize}\\item $a\\equiv a\\pmod n$ ;\\item $a\\equiv b\\pmod n$ implique $b\\equiv a\\pmod n$ ;\\item $a\\equiv b\\pmod n$ et $b\\equiv c\\pmod n$ impliquent $a\\equiv c\\pmod n$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Comparons $21$ et $6$ modulo $5$.}\\par\\smallskip On a :$$21=5\\times4+\\blank{1}\\quad\\text{et}\\quad6=5\\times1+1$$Les deux entiers ont le même reste, égal à $\\blank{1}$. Ainsi :$$\\boxed{21\\equiv\\blank{6}\\pmod5}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment les congruences se combinent-elles avec \\mathqst{les opérations}",
+          "content": "Si $a\\equiv b\\pmod n$ et $a'\\equiv b'\\pmod n$, alors :\\begin{itemize}\\item $a+a'\\equiv b+b'\\pmod n$ ;\\item $a-a'\\equiv b-b'\\pmod n$ ;\\item $aa'\\equiv bb'\\pmod n$ ;\\item $a^{p}\\equiv b^{p}\\pmod n$ pour tout $p\\in\\mathbb{N}$.\\end{itemize}"
+        },
+        {
+          "type": "proof",
+          "title": "Pourquoi les opérations respectent-elles les congruences ?",
+          "content": "Supposons $a\\equiv b\\pmod n$ et $a'\\equiv b'\\pmod n$. Alors $n\\mid(a-b)$ et $n\\mid(a'-b')$.\\par\\smallskip Pour l'addition :$$(a+a')-(b+b')=(a-b)+(a'-b')$$Cette différence est divisible par $n$, donc $a+a'\\equiv b+b'\\pmod n$.\\par\\smallskip Pour la soustraction :$$(a-a')-(b-b')=(a-b)-(a'-b')$$On obtient ainsi $a-a'\\equiv b-b'\\pmod n$.\\par\\smallskip Pour le produit :$$aa'-bb'=a(a'-b')+b'(a-b)$$Chaque terme du second membre est divisible par $n$. Donc $aa'\\equiv bb'\\pmod n$.\\par\\smallskip La propriété sur les puissances s'en déduit par récurrence à partir de la compatibilité du produit."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer le reste d'une grande puissance}",
+          "content": "Réduire la base modulo $n$. Chercher ensuite une petite puissance congrue à $1$, à $-1$ ou à un reste simple. Décomposer l'exposant selon le cycle obtenu. Réduire enfin le produit modulo $n$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons les restes de $2^{456}$ modulo $5$ et de $2^{437}$ modulo $7$.}\\par\\smallskip Modulo $5$, $2^{\\blank{4}}\\equiv1$ et $456=4\\times114$, donc :$$2^{456}\\equiv\\boxed{\\blank{1}}\\pmod5$$Modulo $7$, $2^{\\blank{3}}\\equiv1$ et $437=3\\times145+2$, donc :$$2^{437}\\equiv(2^{3})^{145}2^{2}\\equiv\\boxed{\\blank{4}}\\pmod7$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons les entiers naturels $n$ tels que $n+1$ divise $3n^{2}+15n+1$.}\\par\\smallskip Modulo $n+1$, on a $n\\equiv\\blank{-1}$. Donc :\\begin{align*}3n^{2}+15n+1&\\equiv3(-1)^{2}+15(-1)+1\\\\&\\equiv\\blank{-11}\\pmod{n+1}.\\end{align*}La divisibilité équivaut à $n+1\\mid\\blank{11}$. Comme $n+1>0$, on a $n+1\\in\\{1,11\\}$. Ainsi :$$\\boxed{n\\in\\{\\blank{0},10\\}}$$"
+        }
+      ]
+    },
+    {
+      "id": "simplification-classes-inverses",
+      "category": "course",
+      "title": "Simplification, classes modulo $n$ et inversibilité",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les congruences peuvent être regroupées en classes ayant le même reste. La simplification et l'inversibilité demandent toutefois une condition de primalité relative."
+        },
+        {
+          "type": "property",
+          "title": "Quand peut-on \\mathqst{simplifier une congruence par $c$}",
+          "content": "Soient $a,b,c\\in\\mathbb{Z}$, $n\\in\\mathbb{N}^{*}$ et $d=\\operatorname{PGCD}(c,n)$. Si $ac\\equiv bc\\pmod n$, alors :$$\\large\\boxed{a\\equiv b\\pmod{n/d}}$$En particulier, si $\\operatorname{PGCD}(c,n)=1$, on peut simplifier par $c$ modulo $n$."
+        },
+        {
+          "type": "proof",
+          "title": "Démonstration de la simplification générale",
+          "content": "Supposons $ac\\equiv bc\\pmod n$ et posons $d=\\operatorname{PGCD}(c,n)$. Écrivons $c=dc_1$ et $n=dn_1$, avec $\\operatorname{PGCD}(c_1,n_1)=1$. La congruence donnée signifie que :$$n\\mid c(a-b)$$Ainsi :$$dn_1\\mid dc_1(a-b)$$Donc $n_1\\mid c_1(a-b)$. Comme $c_1$ et $n_1$ sont premiers entre eux, le théorème de Gauss donne $n_1\\mid(a-b)$. Or $n_1=n/d$. Ainsi :$$\\boxed{a\\equiv b\\pmod{n/d}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Résolvons la congruence $3x\\equiv5\\pmod4$.}\\par\\smallskip On réduit le second membre :$$5\\equiv\\blank{1}\\pmod4$$Or $3\\times\\blank{3}=9\\equiv1\\pmod4$. En multipliant les deux membres par $3$ :$$x\\equiv3\\pmod4$$Les solutions sont :$$\\boxed{x=3+\\blank{4}k,\\qquad k\\in\\mathbb{Z}}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la classe de $a$ modulo $n$}",
+          "content": "Soient $n\\in\\mathbb{N}^{*}$ et $a\\in\\mathbb{Z}$. La \\textbf{classe de $a$ modulo $n$} est :$$\\overline a=\\{x\\in\\mathbb{Z}\\mid x\\equiv a\\pmod n\\}=\\{a+kn\\mid k\\in\\mathbb{Z}\\}$$Chaque entier appartient à une unique classe canonique parmi $\\overline0,\\overline1,\\ldots,\\overline{n-1}$.\\par\\smallskip Dans $\\mathbb{Z}/3\\mathbb{Z}$ : $\\overline0=\\{3k\\}$, $\\overline1=\\{3k+1\\}$ et $\\overline2=\\{3k+2\\}$, avec $k\\in\\mathbb{Z}$."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{les opérations dans $\\mathbb{Z}/n\\mathbb{Z}$}",
+          "content": "Pour $x,y\\in\\mathbb{Z}$, on pose :$$\\overline x+\\overline y=\\overline{x+y}\\quad\\text{et}\\quad\\overline x\\,\\overline y=\\overline{xy}$$Ces définitions ne dépendent pas des représentants choisis."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Calculons $\\overline4+\\overline5$ et $\\overline4\\,\\overline5$ dans $\\mathbb{Z}/6\\mathbb{Z}$.}\\par\\smallskip On réduit chaque résultat modulo $6$ :\\begin{align*}\\overline4+\\overline5&=\\overline9=\\overline{\\blank{3}},\\\\\\overline4\\,\\overline5&=\\overline{20}=\\overline{\\blank{2}}.\\end{align*}Ainsi :$$\\boxed{\\overline4+\\overline5=\\overline{\\blank{3}}\\quad\\text{et}\\quad\\overline4\\,\\overline5=\\overline2}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Quand une classe possède-t-elle \\mathqst{un inverse modulo $n$}",
+          "content": "Soient $a\\in\\mathbb{Z}$ et $n\\in\\mathbb{N}^{*}$. Les assertions suivantes sont équivalentes :\\begin{itemize}\\item $\\operatorname{PGCD}(a,n)=1$ ;\\item il existe $m\\in\\mathbb{Z}$ tel que $am\\equiv1\\pmod n$ ;\\item la classe $\\overline a$ est inversible dans $\\mathbb{Z}/n\\mathbb{Z}$.\\end{itemize}Si $p$ est premier, toute classe non nulle de $\\mathbb{Z}/p\\mathbb{Z}$ est inversible."
+        },
+        {
+          "type": "proof",
+          "title": "Pourquoi l'inversibilité équivaut-elle à la primalité relative ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Sens direct.} Supposons $\\operatorname{PGCD}(a,n)=1$. Bézout donne $u,v\\in\\mathbb{Z}$ tels que :$$au+nv=1$$En réduisant modulo $n$, on obtient $au\\equiv1\\pmod n$. La classe $\\overline u$ est donc un inverse de $\\overline a$.\\item \\textbf{Réciproque.} Supposons que $\\overline a$ soit inversible. Il existe alors $m\\in\\mathbb{Z}$ tel que $am\\equiv1\\pmod n$. On peut donc écrire $am-kn=1$ pour un certain $k\\in\\mathbb{Z}$. Tout diviseur commun de $a$ et $n$ divise le membre de gauche, donc il divise $1$. Ainsi $\\operatorname{PGCD}(a,n)=1$.\\end{enumerate}On obtient finalement :$$\\boxed{\\overline a\\text{ est inversible dans }\\mathbb{Z}/n\\mathbb{Z}\\iff\\operatorname{PGCD}(a,n)=1}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Utilisons l'inversibilité dans deux situations.\\begin{enumerate}\\item Déterminons l'inverse de $\\overline5$ dans $\\mathbb{Z}/7\\mathbb{Z}$.\\item Résolvons $\\overline7\\,\\overline x=\\overline5$ dans $\\mathbb{Z}/11\\mathbb{Z}$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item L'identité $3\\times5-2\\times7=\\blank{1}$ donne $3\\times5\\equiv1\\pmod7$. Ainsi :$$\\boxed{\\overline5^{-1}=\\overline{\\blank{3}}}$$\\item Comme $8\\times7=56\\equiv1\\pmod{11}$, l'inverse de $\\overline7$ est $\\overline{\\blank{8}}$. Donc :$$\\overline x=\\overline8\\,\\overline5=\\overline{40}=\\boxed{\\overline{\\blank{7}}}$$\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "nombres-premiers-fermat",
+      "category": "course",
+      "title": "Nombres premiers et petit théorème de Fermat",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les nombres premiers sont les briques de la multiplication entière. Ils contrôlent les factorisations et créent des cycles simples dans les calculs modulo un nombre premier."
+        },
+        {
+          "type": "definition",
+          "title": "Quand un entier est-il \\mathqst{un nombre premier}",
+          "content": "Un entier naturel $p\\geq2$ est \\textbf{premier} lorsqu'il possède exactement deux diviseurs positifs : $1$ et $p$."
+        },
+        {
+          "type": "property",
+          "title": "Jusqu'où faut-il tester \\mathqst{les diviseurs de $n$}",
+          "content": "Si $n>1$ n'est pas premier, alors il possède un diviseur premier $p$ tel que $p\\leq\\sqrt n$. Pour tester la primalité de $n$, il suffit donc d'essayer les nombres premiers inférieurs ou égaux à $\\sqrt n$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons si $391$ est premier.}\\par\\smallskip Comme $\\sqrt{391}\\approx\\blank{19{,}8}$, il suffit de tester les nombres premiers jusqu'à $\\blank{19}$. On trouve :$$391=\\blank{17}\\times23$$Ainsi :$$\\boxed{391\\ \\text{n'est pas premier}}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Que sait-on sur \\mathqst{le nombre de nombres premiers}",
+          "content": "Il existe une infinité de nombres premiers."
+        },
+        {
+          "type": "theorem",
+          "title": "Que permet \\mathqst{le petit théorème de Fermat}",
+          "content": "Si $p$ est premier, alors pour tout $a\\in\\mathbb{Z}$ :$$a^{p}\\equiv a\\pmod p$$Si, de plus, $p\\nmid a$, alors :$$\\large\\boxed{a^{p-1}\\equiv1\\pmod p}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Montrons que, pour tout $n\\in\\mathbb{N}$, le nombre $3^{6n}-\\blank{1}$ est divisible par $7$.}\\par\\smallskip Comme $7$ est premier et $7\\nmid\\blank{3}$, le petit théorème de Fermat donne :$$3^{\\blank{6}}\\equiv1\\pmod7$$Donc :$$3^{6n}=(3^{6})^{\\blank{n}}\\equiv1^{n}\\equiv1\\pmod7$$Ainsi :$$\\boxed{7\\mid(3^{6n}-1)}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Attention, c’est une erreur très fréquente que vous devez absolument éviter : la relation $a^{p-1}\\equiv1\\pmod p$ exige que $p$ soit premier et que $p$ ne divise pas $a$."
+        }
+      ]
+    },
+    {
+      "id": "factorisation-diviseurs",
+      "category": "course",
+      "title": "Factorisation première, diviseurs, PGCD et PPCM",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La primalité permet de décomposer chaque entier en facteurs élémentaires. Les exposants obtenus décrivent alors les diviseurs, le PGCD et le PPCM."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment s'écrit \\mathqst{la décomposition première d'un entier}",
+          "content": "Tout entier naturel $n\\geq2$ s'écrit de manière unique, à l'ordre des facteurs près, sous la forme :$$\\large\\boxed{n=p_1^{\\alpha_1}p_2^{\\alpha_2}\\cdots p_r^{\\alpha_r}}$$Les nombres $p_i$ sont premiers distincts et les exposants $\\alpha_i$ sont strictement positifs."
+        },
+        {
+          "type": "property",
+          "title": "Comment lire \\mathqst{les diviseurs, le PGCD et le PPCM}",
+          "content": "Si $a=\\prod p_i^{\\alpha_i}$ et $b=\\prod p_i^{\\beta_i}$, en autorisant des exposants nuls, alors :\\begin{itemize}\\item un diviseur positif de $a$ est de la forme $\\prod p_i^{\\gamma_i}$ avec $0\\leq\\gamma_i\\leq\\alpha_i$ ;\\item $\\operatorname{PGCD}(a,b)=\\prod p_i^{\\min(\\alpha_i,\\beta_i)}$ ;\\item $\\operatorname{PPCM}(a,b)=\\prod p_i^{\\max(\\alpha_i,\\beta_i)}$ ;\\item le nombre de diviseurs positifs de $a$ est $\\prod(\\alpha_i+1)$.\\end{itemize}"
+        },
+        {
+          "type": "proof",
+          "title": "Pourquoi le nombre de diviseurs vaut-il un produit ?",
+          "content": "Soit :$$a=p_1^{\\alpha_1}p_2^{\\alpha_2}\\cdots p_r^{\\alpha_r}$$Tout diviseur positif de $a$ s'écrit de manière unique sous la forme :$$p_1^{\\gamma_1}p_2^{\\gamma_2}\\cdots p_r^{\\gamma_r}$$avec $0\\leq\\gamma_i\\leq\\alpha_i$. Pour chaque indice $i$, l'exposant $\\gamma_i$ possède donc $\\alpha_i+1$ valeurs possibles. Les choix des différents exposants sont indépendants. Le principe multiplicatif donne alors :$$\\boxed{\\operatorname{card}(D_a^{+})=\\prod_{i=1}^{r}(\\alpha_i+1)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons tous les diviseurs positifs de $132$.}\\par\\smallskip On factorise :$$132=2^{\\blank{2}}\\times3\\times11$$Tout diviseur positif est de la forme $2^{\\alpha}3^{\\beta}11^{\\gamma}$ avec $0\\leq\\alpha\\leq\\blank{2}$ et $0\\leq\\beta,\\gamma\\leq1$. Le nombre de diviseurs vaut :$$(2+1)(1+1)(1+1)=\\blank{12}$$On obtient :$$\\boxed{1,2,3,\\blank{4},6,11,12,22,33,44,66,132}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{minimiser un entier ayant un nombre fixé de diviseurs}",
+          "content": "Décomposer d'abord le nombre de diviseurs sous forme de produits. Chaque facteur donne un exposant augmenté de $1$. Associer ensuite les plus grands exposants aux plus petits nombres premiers. Comparer enfin les entiers obtenus.\\par\\textbf{Principe :} pour minimiser le produit, les exposants décroissent quand les nombres premiers augmentent."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Déterminons le plus petit entier naturel possédant exactement $28$ diviseurs positifs.}\\par\\smallskip Les schémas d'exposants possibles sont :$$27,\\qquad(13,1),\\qquad(\\blank{6},3),\\qquad(6,1,1)$$Ils donnent respectivement :$$2^{27},\\quad2^{13}\\times3,\\quad2^{6}\\times\\blank{3}^{3},\\quad2^{6}\\times3\\times5$$Le plus petit est $2^{6}\\times3\\times5=\\blank{960}$, et :$$(6+1)(1+1)(1+1)=\\blank{28}$$Ainsi :$$\\boxed{960}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Attention, c’est ici que vous risquez de vous tromper : la formule $\\prod(\\alpha_i+1)$ compte les diviseurs positifs. Elle ne donne ni la valeur de l'entier ni la somme de ses diviseurs."
+        }
+      ]
+    },
+    {
+      "id": "numeration-criteres",
+      "category": "course",
+      "title": "Numération en base $b$ et critères de divisibilité",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'écriture d'un entier dépend de la base choisie. Les critères usuels de divisibilité proviennent ensuite de la réduction des puissances de la base modulo le diviseur."
+        },
+        {
+          "type": "definition",
+          "title": "Comment s'écrit \\mathqst{un entier naturel en base $b$}",
+          "content": "Soit $b\\geq2$. Tout entier naturel non nul s'écrit de manière unique :$$\\overline{a_na_{n-1}\\cdots a_0}^{(b)}=a_nb^{n}+a_{n-1}b^{n-1}+\\cdots+a_1b+a_0$$avec $0\\leq a_i<b$ et $a_n\\neq0$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{convertir entre la base $10$ et la base $b$}",
+          "content": "De la base $b$ vers la base $10$, développer selon les puissances de $b$. De la base $10$ vers la base $b$, effectuer des divisions euclidiennes successives par $b$. Lire les restes de la dernière division vers la première.\\par\\textbf{Attention :} chaque chiffre doit être strictement inférieur à la base."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Convertissons $110111_{(2)}$ et $231_{(5)}$ en base $10$.}\\par\\smallskip Pour le premier nombre :\\begin{align*}110111_{(2)}&=1\\times2^{\\blank{5}}+1\\times2^{4}+0\\times2^{3}+1\\times2^{2}+1\\times2+1\\\\&=\\boxed{\\blank{55}}.\\end{align*}Pour le second :\\begin{align*}231_{(5)}&=2\\times5^{\\blank{2}}+3\\times5+1\\\\&=\\boxed{\\blank{66}}.\\end{align*}"
+        },
+        {
+          "type": "property",
+          "title": "Quels sont \\mathqst{les critères usuels de divisibilité}",
+          "content": "Pour un entier décimal $x$ :\\begin{itemize}\\item $5\\mid x$ si et seulement si son dernier chiffre est $0$ ou $5$ ;\\item $4\\mid x$ si et seulement si ses deux derniers chiffres forment un multiple de $4$ ;\\item $25\\mid x$ si et seulement si ses deux derniers chiffres sont $00$, $25$, $50$ ou $75$ ;\\item $3\\mid x$ ou $9\\mid x$ si et seulement si la somme de ses chiffres est divisible par $3$ ou par $9$ ;\\item $11\\mid x$ si et seulement si la somme alternée de ses chiffres est divisible par $11$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Justifions le critère de divisibilité par $9$.}\\par\\smallskip Comme $10\\equiv\\blank{1}\\pmod9$, on a pour tout $k\\in\\mathbb{N}$ :$$10^{k}\\equiv1\\pmod9$$Si $x=a_n10^{n}+\\cdots+a_1 10+a_0$, alors :$$x\\equiv\\blank{a_n+a_{n-1}+\\cdots+a_0}\\pmod9$$Donc :$$\\boxed{9\\mid x\\quad\\Longleftrightarrow\\quad9\\mid\\blank{(a_n+\\cdots+a_0)}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons le reste de $32064512$ dans la division euclidienne par $11$.}\\par\\smallskip Modulo $11$, les puissances de $10$ alternent entre $1$ et $\\blank{-1}$. On calcule la somme alternée à partir du chiffre des unités :$$2-1+5-4+6-0+2-3=\\blank{7}$$Donc :$$32064512\\equiv7\\pmod{11}$$Le reste recherché est :$$\\boxed{\\blank{7}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Beaucoup d’élèves se trompent ici, ne faites pas comme eux : dans une écriture en base $b$, aucun chiffre ne peut être supérieur ou égal à $b$. Un critère de divisibilité doit toujours être justifié par une congruence adaptée."
+        }
+      ]
+    }
+  ]
+}

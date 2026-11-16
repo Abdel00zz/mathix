@@ -1,0 +1,63 @@
+{
+  "id": "ex-esp-03",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "facile",
+  "topic": "Géométrie analytique dans l'espace — Triangle, sphère, plans parallèles",
+  "requiresRedaction": true,
+  "context": "Dans l'espace rapporté à un repère orthonormé direct $\\left(O,\\overrightarrow{i},\\overrightarrow{j},\\overrightarrow{k}\\right)$, on considère les points $A(0,1,4)$, $B(2,1,2)$, $C(2,5,0)$ et $\\Omega(3,4,4)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = 4(2\\overrightarrow{i}+\\overrightarrow{j}+2\\overrightarrow{k})$",
+          "hint": "Calculez $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$, puis le produit vectoriel."
+        },
+        {
+          "id": "sq1b",
+          "content": "En déduire l'aire du triangle $ABC$ et la distance $d(B,(AC))$",
+          "hint": "Aire $= \\dfrac{1}{2}\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$. Pour $d(B,(AC))$ : utilisez Aire $= \\dfrac{1}{2} \\cdot AC \\cdot d(B,(AC))$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soit $D$ le milieu du segment $[AC]$.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Vérifier que $\\overrightarrow{D\\Omega} = \\dfrac{1}{4}\\left(\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\right)$",
+          "hint": "Calculez les coordonnées de $D$ (milieu de $[AC]$), puis $\\overrightarrow{D\\Omega}$, et comparez à $\\dfrac{1}{4}\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$."
+        },
+        {
+          "id": "sq2b",
+          "content": "En déduire que $d(\\Omega,(ABC)) = 3$",
+          "hint": "$\\overrightarrow{D\\Omega}$ est colinéaire au vecteur normal du plan $(ABC)$, donc $D$ est le pied de la perpendiculaire de $\\Omega$ sur $(ABC)$. $d(\\Omega,(ABC)) = \\|\\overrightarrow{D\\Omega}\\|$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Soit $(S)$ la sphère d'équation $x^2+y^2+z^2-6x-8y-8z+32 = 0$.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Déterminer le centre et le rayon de la sphère $(S)$",
+          "hint": "Complétez le carré en $x$, $y$ et $z$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que le plan $(ABC)$ est tangent à la sphère $(S)$ en un point que l'on déterminera",
+          "hint": "Comparez $d(\\Omega,(ABC))$ au rayon. Le point de tangence est le pied de la perpendiculaire de $\\Omega$ sur $(ABC)$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Soient $(Q_1)$ et $(Q_2)$ les deux plans parallèles à $(ABC)$ tels que chacun d'eux coupe $(S)$ suivant un cercle de rayon $\\sqrt{5}$. Déterminer une équation cartésienne pour chacun des deux plans $(Q_1)$ et $(Q_2)$.",
+      "hint": "Un plan parallèle à $(ABC)$ a la même équation à une constante près : $2x+y+2z+c = 0$. La distance du centre $\\Omega$ à ce plan est $d = \\sqrt{R^2 - r^2} = \\sqrt{R^2-5}$. Résolvez pour $c$."
+    }
+  ]
+}

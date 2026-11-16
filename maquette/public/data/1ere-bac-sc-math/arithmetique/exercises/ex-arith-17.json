@@ -1,0 +1,31 @@
+{
+  "id": "ch05-ex01",
+  "theme": "arithmetique",
+  "difficulty": "facile",
+  "chapter": "05 - Congruence modulo n ; l'ensemble Z/nZ et opérations",
+  "topic": "Congruences - Calculs directs et restes",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer le chiffre d'unités du nombre $247^{349}$.",
+      "hint": "Le chiffre d'unités de $247^{349}$ est le reste de la division de $247^{349}$ par $10$. Étudiez les puissances successives de $7$ modulo $10$ : une période apparaît rapidement."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer le reste de la division euclidienne du nombre $(2792)^{2017}$ par $5$.",
+      "hint": "Réduisez d'abord $2792$ modulo $5$. Cherchez ensuite la période des puissances de ce résidu modulo $5$, puis réduisez l'exposant $2017$ modulo cette période."
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer le reste de la division euclidienne du nombre $19^{52} \\times 23^{41}$ par $7$.",
+      "hint": "Réduisez d'abord $19$ et $23$ modulo $7$. Cherchez les périodes des puissances obtenues modulo $7$, puis réduisez les exposants $52$ et $41$ modulo ces périodes."
+    },
+    {
+      "id": "q4",
+      "content": "Déterminer le reste de la division euclidienne de $22^{33} + 33^{22}$ par $5$.",
+      "hint": "Réduisez $22$ et $33$ modulo $5$, cherchez les périodes de leurs puissances modulo $5$, puis calculez chaque terme séparément."
+    }
+  ]
+}

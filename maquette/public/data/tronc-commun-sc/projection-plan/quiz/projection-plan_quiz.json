@@ -1,0 +1,207 @@
+{
+  "questions": [
+    {
+      "id": "q1_fond_def",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Comment définit-on la projection d'un point $M$ sur une droite $(D)$ parallèlement à une droite $(\\Delta)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "C'est l'intersection de $(D)$ et de la perpendiculaire à $(D)$ passant par $M$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "C'est l'intersection de $(D)$ et de la parallèle à $(\\Delta)$ passant par $M$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "C'est l'intersection de $(\\Delta)$ et de la parallèle à $(D)$ passant par $M$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "C'est le milieu du segment joignant $M$ à $(D)$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La définition géométrique est très précise : on trace la droite parallèle à $(\\Delta)$ passant par le point $M$, et on regarde où elle coupe la droite $(D)$ sur laquelle on projette. La projection n'est perpendiculaire que si $(D)$ et $(\\Delta)$ sont perpendiculaires (projection orthogonale)."
+    },
+    {
+      "id": "q2_fond_point_sur_droite",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Si le point $M$ appartient déjà à la droite $(D)$, sa projection sur $(D)$ parallèlement à $(\\Delta)$ est le point $M$ lui-même.",
+      "isTrue": true,
+      "explanation": "Puisque $M$ est sur $(D)$, la droite parallèle à $(\\Delta)$ passant par $M$ coupe $(D)$... exactement en $M$ ! On dit que les points de $(D)$ sont invariants par cette projection."
+    },
+    {
+      "id": "q3_cons_thales_vect",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Soit $p$ une projection dans le plan. Si les vecteurs vérifient $\\overrightarrow{AB} = 3\\overrightarrow{CD}$, quelle relation lie leurs projetés $A', B', C'$ et $D'$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overrightarrow{A'B'} = -3\\overrightarrow{C'D'}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\overrightarrow{A'B'} = 3\\overrightarrow{C'D'}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\overrightarrow{A'B'} = \\dfrac{1}{3}\\overrightarrow{C'D'}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Les vecteurs projetés ne sont plus forcément colinéaires.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est le sommet de ce chapitre : le théorème de Thalès vectoriel stipule que la projection \\textbf{conserve le coefficient de colinéarité}. Le coefficient scalaire (ici 3) reste parfaitement identique après la projection."
+    },
+    {
+      "id": "q4_cons_conservation",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Laquelle de ces propriétés géométriques N'EST PAS systématiquement conservée par la projection ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'alignement des points",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Le milieu d'un segment",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La longueur d'un segment",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Le barycentre approché",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La projection conserve l'alignement, le milieu et les barycentres (propriété fondamentale de conservation de la colinéarité). En revanche, l'ombre projetée d'un segment sur un mur oblique n'a absolument aucune raison de mesurer la même longueur que le segment d'origine !"
+    },
+    {
+      "id": "q5_cons_milieu_proj",
+      "type": "error",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Identifier l'erreur d'un élève tentant de justifier que $I'$ est le milieu de $[A'B']$ sachant que $I$ est le milieu de $[AB]$ :",
+      "context": "Soient $A', B'$ et $I'$ les projetés respectifs de $A, B$ et $I$ sur une droite $(D)$ parallèlement à $(\\Delta)$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "L'élève écrit la définition vectorielle du milieu : $\\overrightarrow{AI} = \\overrightarrow{IB}$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "L'élève utilise le théorème de Thalès sous sa forme vectorielle de conservation.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Puisque l'égalité vectorielle stipulait un coefficient $k=1$, la projection donne directement $\\overrightarrow{A'I'} = \\overrightarrow{I'B'}$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "L'élève conclut : la projection conserve les longueurs, d'où $A'I' = I'B'$, faisant de $I'$ un milieu.",
+          "isError": true,
+          "correction": "L'égalité de longueur ne désigne pas un milieu sans alignement, et la vraie erreur est d'affirmer que la 'projection conserve les longueurs'. Le milieu est conservé grâce au THÉORÈME DE THALÈS VECTORIEL (conservation des coefficients), jamais grâce aux longueurs brutes."
+        }
+      ],
+      "explanation": "Affirmer que la projection conserve les longueurs est la faute conceptuelle la plus grave du chapitre."
+    },
+    {
+      "id": "q6_maitrise_barycentre",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Un barycentre peut paraître complexe, mais la conservation est totale.",
+      "prompt": "Si $G$ vérifie l'égalité $2\\overrightarrow{GA} + 3\\overrightarrow{GB} = \\overrightarrow{0}$, alors ses projetés vérifient l'égalité $2\\overrightarrow{G'A'} + 3\\overrightarrow{G'B'} = \\overrightarrow{0}$.",
+      "isTrue": true,
+      "explanation": "C'est l'application suprême du principe de conservation du barycentre. La projection préserve la colinéarité et les sommes vectorielles, tous les coefficients (poids barycentriques) sont intacts devant les vecteurs transformés."
+    },
+    {
+      "id": "q7_maitrise_point_confondu",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Que se passe-t-il si la droite $(AB)$ est strictement parallèle à la droite de direction $(\\Delta)$ lors d'une projection sur $(D)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Les projetés $A'$ et $B'$ sont infiniment éloignés.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Les projetés $A'$ et $B'$ sont confondus au même point sur $(D)$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Le coefficient de colinéarité s'inverse.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La projection de Thalès vectoriel devient fausse.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Magnifique cas limite géométrique. Si le segment $[AB]$ est lui-même parallèle à la direction de projection, les parallèles tracées depuis $A$ et $B$ pour aller chercher la droite $(D)$ sont exactement la SUR MÊME DROITE. Ainsi, le rayon de projection commun frappe $(D)$ en un unique point. Le projeté de tout le segment est \"écrasé\" en un point. Le coefficient est alors $k=0$ pour $\\overrightarrow{A'B'} = \\overrightarrow{0}$."
+    },
+    {
+      "id": "q8_depassement_ordre",
+      "type": "order",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Reconstituez la démarche d'un élève s'appuyant sur une projection pour prouver qu'une droite passe par le milieu d'un segment :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Identifier une droite de réception (D) et une direction de projection (Δ) connues du contexte."
+        },
+        {
+          "id": "b",
+          "content": "Trouver un segment original [AB] admettant un milieu connu I."
+        },
+        {
+          "id": "c",
+          "content": "Réaliser la projection de A, I, B parallèlement à (Δ) menant à leurs projetés A', I', B'."
+        },
+        {
+          "id": "d",
+          "content": "Affirmer que I' est le milieu de [A'B'] en vertu de la conservation du milieu par la projection affine."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Toute démonstration nécessitant d'affirmer un nouveau milieu par projection nécessite un repérage préalable des deux droites clés (D et $\\Delta$), le segment-source et son milieu, puis l'application du théorème."
+    }
+  ]
+}

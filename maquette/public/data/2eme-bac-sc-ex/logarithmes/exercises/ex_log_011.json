@@ -1,0 +1,100 @@
+{
+  "id": "ex-log-011",
+  "theme": "logarithmes",
+  "difficulty": "difficile",
+  "topic": "Analyse - Logarithmes",
+  "context": "Le problème est constitué de deux parties.\nPartie I : Étude d'une fonction auxiliaire $g$.\nPartie II : Étude de la fonction principale $f$.",
+  "requiresRedaction": true,
+  "sessionDate": "2026-02-10T10:00:00.000Z",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "header",
+      "content": ""
+    },
+    {
+      "id": "q1",
+      "content": "Soit $g$ la fonction définie sur $]0; +\\infty[$ par : $g(x) = x^2 + 1 - \\ln x$.",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Calculer $g'(x)$ et étudier son signe.",
+          "hint": "Dérivez terme à terme. Pour étudier le signe de $2x - \\frac{1}{x}$, mettez l'expression au même dénominateur. Sur $]0, +\\infty[$, le signe dépend du numérateur $2x^2 - 1$."
+        },
+        {
+          "id": "sq2",
+          "content": "Dresser le tableau de variations de $g$ et calculer sa valeur minimale.",
+          "hint": "La dérivée s'annule en $x = \\frac{1}{\\sqrt{2}}$. Calculez $g(\\frac{1}{\\sqrt{2}})$ et vérifiez que cette valeur minimale est strictement positive."
+        },
+        {
+          "id": "sq3",
+          "content": "En déduire que pour tout $x > 0$, $g(x) > 0$.",
+          "hint": "Si le minimum absolu de la fonction sur l'intervalle est strictement positif, alors la fonction est positive partout."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "header",
+      "content": ""
+    },
+    {
+      "id": "q2",
+      "content": "On considère la fonction $f$ définie sur $]0; +\\infty[$ par : $f(x) = x + \\frac{1 + \\ln x}{x}$.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to 0^+} f(x)$ et interpréter le résultat géométriquement.",
+          "hint": "Analysez le terme $\\frac{\\ln x}{x}$ en 0. Attention, ce n'est pas une forme indéterminée en 0 (c'est $-\\infty \\times +\\infty$). L'interprétation concerne une asymptote verticale."
+        },
+        {
+          "id": "sq2b",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} f(x)$.",
+          "hint": "Utilisez la croissance comparée : $\\lim_{x \\to +\\infty} \\frac{\\ln x}{x} = 0$."
+        },
+        {
+          "id": "sq2c",
+          "content": "Montrer que la droite $(\\Delta)$ d'équation $y = x$ est une asymptote oblique à la courbe $(C_f)$ au voisinage de $+\\infty$.",
+          "hint": "Calculez la limite de $f(x) - x$ quand $x \\to +\\infty$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Position relative et Variations",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Étudier la position relative de la courbe $(C_f)$ et de l'asymptote $(\\Delta)$.",
+          "hint": "Étudiez le signe de la différence $f(x) - x = \\frac{1 + \\ln x}{x}$. Le dénominateur est positif, le signe dépend de $1 + \\ln x$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que pour tout $x > 0$, $f'(x) = \\frac{g(x)}{x^2}$.",
+          "hint": "Dérivez $f(x)$. Pour la fraction $\\frac{1 + \\ln x}{x}$, utilisez la formule $(u/v)'$. Mettez tout au même dénominateur $x^2$ et identifiez l'expression de $g(x)$ au numérateur."
+        },
+        {
+          "id": "sq3c",
+          "content": "En déduire le tableau de variations de $f$.",
+          "hint": "Utilisez le résultat de la Partie I : on sait que $g(x) > 0$. Concluez sur le signe de $f'(x)$ et le sens de variation de $f$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Calcul d'aire",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Montrer que la fonction $H: x \\mapsto \\frac{1}{2}(\\ln x)^2$ est une primitive de $h: x \\mapsto \\frac{\\ln x}{x}$.",
+          "hint": "Dérivez $H(x)$ en utilisant la règle de la chaîne (dérivée de $u^2$). Vous devriez retrouver $h(x)$."
+        },
+        {
+          "id": "sq4b",
+          "content": "Calculer l'aire du domaine délimité par $(C_f)$, la droite $(\\Delta)$ et les droites d'équations $x = 1$ et $x = e$.",
+          "hint": "L'aire est donnée par $\\int_1^e |f(x) - x| dx$. Utilisez la position relative étudiée plus tôt pour enlever la valeur absolue, puis utilisez la primitive trouvée en 4a et le fait que $\\int \\frac{1}{x} dx = \\ln x$."
+        }
+      ]
+    }
+  ]
+}

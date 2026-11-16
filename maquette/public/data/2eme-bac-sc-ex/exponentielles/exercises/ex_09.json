@@ -1,0 +1,119 @@
+{
+  "id": "ex-19",
+  "theme": "exponentielles",
+  "difficulty": "difficile",
+  "topic": "Étude de fonction - Fonction auxiliaire, variations, suite récurrente",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "Soit $g$ la fonction numérique définie sur $\\mathbb{R}$ par : $g(x) = e^{-x} + x - 1$."
+    },
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Calculer $g'(x)$ pour tout $x$ de $\\mathbb{R}$ et en déduire que $g$ est strictement décroissante sur $]-\\infty;0]$ et strictement croissante sur $[0;+\\infty[$.",
+          "hint": "Calculez $g'(x) = -e^{-x} + 1$ et étudiez son signe selon le signe de $x$. On a $g'(x) = 0 \\Leftrightarrow e^{-x} = 1 \\Leftrightarrow x = 0$."
+        },
+        {
+          "id": "q1b",
+          "content": "Montrer que : $g(x) \\geq 0$ pour tout $x$ de $\\mathbb{R}$, (remarquer que : $g(0) = 0$) et en déduire que $e^{-x} + x \\geq 1$ pour tout $x$ de $\\mathbb{R}$.",
+          "hint": "Le tableau de variations montre que $g$ admet un minimum global en $x = 0$. Calculez $g(0)$ pour conclure sur le signe de $g$, puis déduisez l'inégalité demandée."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Soit $f$ la fonction numérique de la variable réelle $x$ définie par : $f(x) = \\dfrac{x}{x + e^{-x}}$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$."
+    },
+    {
+      "id": "r1",
+      "content": "Montrer que l'ensemble de définition de $f$ est $\\mathbb{R}$ (on peut utiliser le résultat de la question I-2).",
+      "hint": "$f$ est définie là où $x + e^{-x} \\neq 0$. La question I-2 établit que $e^{-x} + x \\geq 1 > 0$ pour tout $x$, ce qui conclut."
+    },
+    {
+      "id": "r2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "r2a",
+          "content": "Montrer que : $f(x) = \\dfrac{1}{1 + \\dfrac{1}{xe^x}}$ pour tout $x$ de $\\mathbb{R}^*$.",
+          "hint": "Divisez numérateur et dénominateur de $\\dfrac{x}{x+e^{-x}}$ par $x$. Remarquez que $\\dfrac{e^{-x}}{x} = \\dfrac{1}{xe^x}$."
+        },
+        {
+          "id": "r2b",
+          "content": "Montrer que : $\\displaystyle\\lim_{x \\to -\\infty} f(x) = 0$ et $\\displaystyle\\lim_{x \\to +\\infty} f(x) = 1$ et interpréter géométriquement ces deux résultats.",
+          "hint": "Utilisez la forme $f(x) = \\dfrac{1}{1 + \\frac{1}{xe^x}}$. Quand $x \\to +\\infty$, $xe^x \\to +\\infty$ donc $\\dfrac{1}{xe^x} \\to 0$. Quand $x \\to -\\infty$, étudiez le signe et la valeur de $xe^x$."
+        }
+      ]
+    },
+    {
+      "id": "r3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "r3a",
+          "content": "Montrer que : $f'(x) = \\dfrac{(x+1)e^{-x}}{(x + e^{-x})^2}$ pour tout $x$ de $\\mathbb{R}$.",
+          "hint": "Dérivez $f = \\dfrac{u}{v}$ avec $u = x$ et $v = x + e^{-x}$. On a $v' = 1 - e^{-x}$. Simplifiez le numérateur $u'v - uv'$ en factorisant par $e^{-x}$."
+        },
+        {
+          "id": "r3b",
+          "content": "Étudier le signe de $f'(x)$ et dresser le tableau de variations de $f$.",
+          "hint": "Le signe de $f'(x)$ est celui de $(x+1)e^{-x}$. Puisque $e^{-x} > 0$ toujours, le signe dépend uniquement du facteur $x + 1$."
+        }
+      ]
+    },
+    {
+      "id": "r4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "r4a",
+          "content": "Donner une équation de la tangente à $(C)$ au point $O$.",
+          "hint": "La tangente en $O$ a pour pente $f'(0)$ et passe par $(0, f(0))$. Calculez $f(0)$ et $f'(0)$ directement."
+        },
+        {
+          "id": "r4b",
+          "content": "Vérifier que : $x - f(x) = \\dfrac{xg(x)}{g(x)+1}$ pour tout $x$ de $\\mathbb{R}$ et étudier le signe de $x - f(x)$ sur $\\mathbb{R}$.",
+          "hint": "Calculez $x - f(x) = x - \\dfrac{x}{x+e^{-x}}$ en réduisant au même dénominateur. Pour le signe, analysez séparément le signe de $x$, de $g(x)$ et de $g(x)+1$."
+        },
+        {
+          "id": "r4c",
+          "content": "En déduire la position relative de $(C)$ et la droite $(\\Delta)$ d'équation : $y = x$.",
+          "hint": "Le signe de $x - f(x)$ traduit directement la position de $(C)$ par rapport à $(\\Delta)$. Utilisez le tableau de signe établi en 4b."
+        }
+      ]
+    },
+    {
+      "id": "r5",
+      "content": "Tracer $(\\Delta)$ et $(C)$ dans le repère $(O;\\overrightarrow{i};\\overrightarrow{j})$ (on prend : $\\dfrac{1}{1-e} \\approx -0{,}6$).",
+      "hint": ""
+    },
+    {
+      "id": "p3",
+      "type": "partie",
+      "content": "On considère la suite numérique $(u_n)$ définie par : $u_0 = 1$ et $u_{n+1} = f(u_n)$ pour tout $n$ de $\\mathbb{N}$."
+    },
+    {
+      "id": "s1",
+      "content": "Montrer par récurrence que : $0 \\leq u_n \\leq 1$ pour tout $n$ de $\\mathbb{N}$.",
+      "hint": "Initialisation : $u_0 = 1 \\in [0;1]$. Hérédité : si $u_n \\in [0;1]$, utilisez le tableau de variations de $f$ pour montrer que $f(u_n) \\in [0;1]$."
+    },
+    {
+      "id": "s2",
+      "content": "Montrer que la suite $(u_n)$ est décroissante (on peut utiliser la question II-4b).",
+      "hint": "Montrez que $u_{n+1} - u_n = f(u_n) - u_n \\leq 0$. La question II-4b établit le signe de $x - f(x)$ pour $x \\geq 0$ ; appliquez-le pour $x = u_n$."
+    },
+    {
+      "id": "s3",
+      "content": "En déduire que la suite $(u_n)$ est convergente puis calculer sa limite.",
+      "hint": "Une suite décroissante et minorée (par $0$) est convergente. Si $\\ell = \\lim u_n$, passez à la limite dans $u_{n+1} = f(u_n)$ : on obtient $\\ell = f(\\ell)$. Résolvez en utilisant II-4b."
+    }
+  ]
+}

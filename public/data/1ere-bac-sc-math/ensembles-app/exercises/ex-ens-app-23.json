@@ -1,0 +1,46 @@
+{
+  "id": "ex-ens-app-23",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Applications et Fonctions — Application : image, antécédent, restriction",
+  "requiresRedaction": true,
+  "context": "On considère l'application définie de $\\mathbb{R}$ dans $\\mathbb{Z}$ par $f(x) = E\\!\\left(\\dfrac{x}{2}\\right)$ (partie entière).",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $f\\left([0;5[\\right)$ et $f\\!\\left(\\left[-3;\\dfrac{5}{2}\\right]\\right)$.",
+      "hint": "Pour chaque intervalle, identifiez les valeurs entières que prend $E\\!\\left(\\frac{x}{2}\\right)$ quand $x$ parcourt l'intervalle."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer $f^{-1}\\left(\\{-1;0;1\\}\\right)$ et $f^{-1}\\left(\\{-3;5\\}\\right)$.",
+      "hint": "$f^{-1}(\\{k\\}) = \\{x \\in \\mathbb{R} \\mid E\\!\\left(\\frac{x}{2}\\right) = k\\} = [2k ; 2k+2[$. Appliquez pour chaque valeur."
+    },
+    {
+      "id": "q3",
+      "content": "L'application $f$ est-elle injective ? surjective ? bijective ? Justifier votre réponse.",
+      "hint": "Injectivité : deux éléments distincts peuvent-ils avoir la même image ? Surjectivité : tout entier de $\\mathbb{Z}$ est-il atteint ?"
+    },
+    {
+      "id": "q4",
+      "content": "Partie B. On considère l'application $f : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto x^4 - 3x^2 - 4$. Résoudre dans $\\mathbb{R}$ l'équation $f(x) = 0$.",
+      "hint": "Posez $X = x^2$ pour obtenir une équation du second degré en $X$. Gardez uniquement les solutions $X \\geq 0$."
+    },
+    {
+      "id": "q5",
+      "content": "On considère l'application $f : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto x^4 - 3x^2 - 10$.",
+      "subQuestions": [
+        {
+          "id": "sq5a",
+          "content": "Déterminer $f^{-1}\\left(\\{-6\\}\\right)$. Que peut-on en déduire ?",
+          "hint": "Résoudre $x^4 - 3x^2 - 10 = -6$, soit $x^4 - 3x^2 - 4 = 0$. Reconnaissez l'équation de la question précédente."
+        },
+        {
+          "id": "sq5b",
+          "content": "Déterminer $f(\\mathbb{R})$. L'application $f$ est-elle surjective ? Justifier.",
+          "hint": "Étudiez les variations de $f$ (posez $X = x^2$) pour déterminer le minimum de $f$. L'image de $\\mathbb{R}$ est $[\\min f ; +\\infty[$."
+        }
+      ]
+    }
+  ]
+}

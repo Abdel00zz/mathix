@@ -1,0 +1,30 @@
+{
+  "id": "ex-log-19",
+  "theme": "logique",
+  "difficulty": "moyen",
+  "topic": "Logique & Raisonnements — Raisonnement par l'absurde",
+  "requiresRedaction": true,
+  "context": "Soient $a_1, a_2, \\ldots, a_9$ neuf entiers naturels tels que $a_1 + a_2 + \\cdots + a_9 = 90$.",
+  "questions": [
+    {
+      "id": "qa",
+      "content": "Prouver que tous les nombres $a_1, b, c$ sont distincts de 1.",
+      "hint": "Supposez par l'absurde que l'un d'eux, disons $a_1 = 1$. Montrez que cela conduit à une contradiction avec la somme égale à 90."
+    },
+    {
+      "id": "qb",
+      "content": "Montrer qu'au moins un des nombres $a_1, a_2, \\ldots, a_9$ est inférieur à 1.",
+      "hint": "Supposez par l'absurde que tous les $a_i \\geq 11$. Quelle serait alors la valeur minimale de leur somme ?"
+    },
+    {
+      "id": "qc",
+      "content": "Prouver qu'il existe trois de ces neuf nombres dont la somme est supérieure à 30.",
+      "hint": "Raisonnez par l'absurde : si toute somme de trois termes est $\\leq 30$, que peut-on dire de la somme totale des 9 termes ?"
+    },
+    {
+      "id": "qd",
+      "content": "Soit $a$, $b$ et $c$ trois réels positifs. Montrer que l'un au moins des trois réels $a(1-b)$, $b(1-c)$, $c(1-a)$ est inférieur ou égal à $\\dfrac{1}{4}$.",
+      "hint": "Supposez par l'absurde que tous les trois sont strictement supérieurs à $\\dfrac{1}{4}$. Multipliez les trois inégalités et utilisez AM-GM : $a(1-b) \\cdot b(1-c) \\cdot c(1-a) \\leq \\left(\\dfrac{abc(1-a)(1-b)(1-c)}{1}\\right)$."
+    }
+  ]
+}

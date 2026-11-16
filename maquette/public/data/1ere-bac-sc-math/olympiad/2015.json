@@ -1,0 +1,65 @@
+{
+  "id": "olympiad-1ere-bac-sc-math-2015",
+  "title": "Olympiade Mathématique Marocaine 2015 — Épreuve nationale",
+  "year": 2015,
+  "classId": "1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "badge": "national",
+  "source": "https://www.men.gov.ma/",
+  "duration": 180,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2015-ex1",
+      "number": 1,
+      "theme": "algebre",
+      "points": 5,
+      "topic": "Inégalités et réels",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soient $a, b$ et $c$ des nombres réels strictement positifs tels que $a+b+c=3$. Montrer que :\n$$\\frac{a}{1+b^2} + \\frac{b}{1+c^2} + \\frac{c}{1+a^2} \\geq \\frac{3}{2}$$"
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2015-ex2",
+      "number": 2,
+      "theme": "arithmetique",
+      "points": 5,
+      "topic": "Équations diophantiennes",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Déterminer tous les couples d'entiers naturels $(m, n)$ tels que :\n$$2^m - 3^n = 1$$"
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2015-ex3",
+      "number": 3,
+      "theme": "geometrie",
+      "points": 5,
+      "topic": "Relations métriques",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $ABC$ un triangle rectangle en $A$. Soit $H$ le pied de la hauteur issue de $A$. On note $r, r_1, r_2$ les rayons des cercles inscrits respectivement dans les triangles $ABC, ABH$ et $ACH$. Montrer que $r^2 = r_1^2 + r_2^2$."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2015-ex4",
+      "number": 4,
+      "theme": "combinatoire",
+      "points": 5,
+      "topic": "Dénombrement",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Dans un tournoi de tennis, chaque joueur a rencontré exactement une fois tous les autres joueurs. On sait qu'il n'y a pas eu de match nul. Montrer qu'il existe un joueur $P$ tel que pour tout autre joueur $Q$, soit $P$ a battu $Q$, soit $P$ a battu un joueur qui a battu $Q$."
+        }
+      ]
+    }
+  ]
+}

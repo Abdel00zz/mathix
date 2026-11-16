@@ -1,0 +1,35 @@
+{
+  "id": "ex-log-34",
+  "theme": "logique",
+  "difficulty": "difficile",
+  "topic": "Logique & Raisonnements — Exercices de perfectionnement",
+  "requiresRedaction": true,
+  "context": "Soit $n \\in \\mathbb{N}^*$. On pose $S_n = (n+1)(n+2)\\cdots(n+n)$ et $T_n = 2^n \\times 1 \\times 3 \\times 5 \\times \\cdots \\times (2n-1)$.",
+  "questions": [
+    {
+      "id": "pA",
+      "content": "Partie A. Montrer par récurrence que $(\\forall n \\in \\mathbb{N}^*)$ : $S_n = T_n$.",
+      "hint": "Au rang $n+1$ : $S_{n+1} = \\dfrac{(2n+2)!}{(n+1)!} \\cdot \\dfrac{1}{1}$... Comparez le rapport $\\dfrac{S_{n+1}}{S_n}$ au rapport $\\dfrac{T_{n+1}}{T_n}$. On a $\\dfrac{S_{n+1}}{S_n} = \\dfrac{(2n+1)(2n+2)}{(n+1)^2} \\cdot \\dfrac{?}{?}$."
+    },
+    {
+      "id": "pB_q1",
+      "content": "Partie B. On pose $f(n) = n!$ (factorielle). Calculer $f(1)$, $f(2)$ et $f(3)$.",
+      "hint": ""
+    },
+    {
+      "id": "pB_q2",
+      "content": "Montrer que $f(1) + 2f(2) + \\cdots + nf(n) = f(n+1) - 1$.",
+      "hint": "Montrez par récurrence. Au rang $n+1$, le membre gauche devient $f(n+1) - 1 + (n+1)f(n+1) = (n+2)f(n+1) - 1 = f(n+2) - 1$."
+    },
+    {
+      "id": "pB_q3",
+      "content": "Montrer que $f(n) \\geq 2^{n-1}$.",
+      "hint": "Par récurrence. Au rang $n+1$ : $f(n+1) = (n+1)f(n) \\geq (n+1) \\cdot 2^{n-1} \\geq 2 \\cdot 2^{n-1} = 2^n$ car $n+1 \\geq 2$."
+    },
+    {
+      "id": "pC",
+      "content": "Partie C. Montrer que : $\\dfrac{1 \\times 3 \\times \\cdots \\times (2n-1)}{2 \\times 4 \\times \\cdots \\times (2n)} \\leq \\dfrac{1}{\\sqrt{3n+1}}$",
+      "hint": "Posez $u_n = \\dfrac{1 \\times 3 \\times \\cdots \\times (2n-1)}{2 \\times 4 \\times \\cdots \\times (2n)}$ et montrez $u_n^2(3n+1) \\leq 1$ par récurrence. Utilisez $u_{n+1} = u_n \\cdot \\dfrac{2n+1}{2n+2}$."
+    }
+  ]
+}

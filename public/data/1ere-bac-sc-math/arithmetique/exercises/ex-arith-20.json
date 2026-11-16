@@ -1,0 +1,31 @@
+{
+  "id": "ch05-ex04",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "chapter": "05 - Congruence modulo n ; l'ensemble Z/nZ et opérations",
+  "topic": "Congruences - Puissances et congruences",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $17^{400} \\equiv 1\\ [5]$.",
+      "hint": "Calculez d'abord $17 \\mod 5$. Ensuite, quelle propriété de la congruence permet d'élever les deux membres à la puissance $400$ ?"
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que : $8^{2001} \\equiv 8\\ [11]$.",
+      "hint": "Cherchez l'ordre de $8$ modulo $11$, c'est-à-dire le plus petit entier $k$ tel que $8^k \\equiv 1\\ [11]$. Ensuite, décomposez l'exposant $2001$ selon ce $k$."
+    },
+    {
+      "id": "q3",
+      "content": "Établir que : $\\forall n \\in \\mathbb{N},\\ 3^{4n+2} + 2^{6n+3} \\equiv 0\\ [17]$.",
+      "hint": "Calculez $3^2 \\mod 17$ et $2^3 \\mod 17$, puis étudiez les puissances de $3^4$ et $2^6$ modulo $17$. Factorisez l'expression pour faire apparaître la somme nulle modulo $17$."
+    },
+    {
+      "id": "q4",
+      "content": "On pose : $a = 2 \\times 7^{2018} + 3 \\times 5^{2018} - 5$. Montrer que : $a \\equiv 0\\ [8]$ et $a \\equiv 0\\ [3]$.",
+      "hint": "Pour $a \\equiv 0\\ [8]$ : étudiez les puissances de $7$ et $5$ modulo $8$ (leurs périodes sont courtes). Pour $a \\equiv 0\\ [3]$ : réduisez $7^{2018}$ et $5^{2018}$ modulo $3$ de la même façon."
+    }
+  ]
+}

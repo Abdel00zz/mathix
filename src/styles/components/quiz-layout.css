@@ -1,0 +1,123 @@
+/* Hauteur utile = viewport dynamique − en-tête − actions − zones sûres.
+   Les actions occupent leur propre ligne flex ; seules les questions défilent.
+   Les unités cqh mesurent la place réellement laissée par l'en-tête (y compris
+   le panneau professeur), et non une hauteur de téléphone supposée. */
+.quiz-viewport {
+  height: 100%;
+  height: 100dvh;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.quiz-core-shell {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  container: quiz / size;
+}
+
+.quiz-scroll-region {
+  flex: 1 1 0%;
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scroll-padding-block: 1rem;
+}
+
+.quiz-scroll-region:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: -2px;
+}
+
+.quiz-content {
+  --quiz-gap: clamp(1rem, 2cqh, 1.5rem);
+  --quiz-card-y: clamp(1rem, 2.4cqh, 1.6rem);
+  --quiz-card-x: clamp(1rem, 3.4cqw, 1.9rem);
+  --quiz-question-font: clamp(1.06rem, .95rem + .4cqw, 1.22rem);
+  --quiz-choice-font: clamp(1.04rem, .96rem + .25cqw, 1.16rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--quiz-gap);
+  width: 100%;
+  max-width: 840px;
+  margin-inline: auto;
+  padding: 1.25rem max(.875rem, env(safe-area-inset-right)) 1rem max(.875rem, env(safe-area-inset-left));
+}
+
+.quiz-question-body { padding: var(--quiz-card-y) var(--quiz-card-x); }
+.quiz-question-text { font-size: var(--quiz-question-font); line-height: 1.5; }
+.quiz-group-prompt { margin-bottom: .75rem; }
+.quiz-essential-formula { margin-block: .625rem; line-height: 1.5; }
+.quiz-timer { top: -.875rem; right: 1rem; padding: .25rem .75rem; }
+
+.quiz-options { gap: .875rem; }
+.quiz-choice {
+  min-height: 58px;
+  padding: .8rem var(--quiz-card-x);
+  gap: .875rem;
+}
+.quiz-choice-text { font-size: var(--quiz-choice-font); line-height: 1.45; overflow-wrap: anywhere; }
+.quiz-boolean-choice { min-height: 88px; padding: .875rem; gap: .5rem; }
+.quiz-feedback { padding: var(--quiz-card-y) var(--quiz-card-x); }
+.quiz-feedback h3 { line-height: 1.4; }
+.quiz-feedback-text { font-size: 1.02rem; line-height: 1.55; }
+
+/* Marges mathématiques locales : aucune réduction des fractions, matrices ou
+   limites par transform/zoom, aucune hauteur fixe ni troncature du contenu. */
+.quiz-content .math-display-node,
+.quiz-content .katex-display { margin-block: .5em; }
+
+/* Actions : **dans le flux du contenu**, pas de barre. L'élève les atteint en
+   fin de question, avec un vrai souffle au-dessus, et la zone sûre en dessous
+   du dernier bouton. Rien à masquer : il n'y a plus de bandeau à traverser. */
+.quiz-actions {
+  position: relative;
+  z-index: 30;
+  margin-top: .25rem;
+  padding: 0 0 max(1.5rem, env(safe-area-inset-bottom));
+}
+.quiz-actions-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  width: 100%;
+  min-width: 0;
+}
+.quiz-actions-primary { display: flex; align-items: center; gap: .625rem; min-width: 0; }
+.quiz-actions button { min-width: 48px; min-height: 48px; touch-action: manipulation; }
+.quiz-actions[dir='rtl'] button { letter-spacing: normal; }
+.quiz-actions button:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+.quiz-action-secondary { padding: .625rem .5rem; font-size: .78rem; letter-spacing: .035em; }
+.quiz-action-main { padding: .75rem 1.6rem; font-size: .84rem; }
+
+.quiz-order-options,
+.quiz-error-options { display: flex; flex-direction: column; gap: .875rem; width: 100%; }
+.quiz-order-choice { padding: .625rem .75rem; gap: .625rem; }
+.quiz-order-controls { display: flex; gap: .25rem; }
+.quiz-order-controls button { min-width: 44px; min-height: 44px; }
+.quiz-order-text { min-width: 0; font-size: var(--quiz-choice-font); line-height: 1.4; }
+.quiz-error-choice { min-height: 52px; padding: .75rem; gap: .625rem; }
+
+@container quiz (max-height: 620px) {
+  .quiz-content { --quiz-gap: .75rem; --quiz-card-y: .875rem; padding-block: 1.25rem .75rem; }
+  .quiz-options, .quiz-order-options, .quiz-error-options { gap: .75rem; }
+  .quiz-choice { min-height: 52px; padding-block: .625rem; }
+}
+
+@media (min-width: 640px) {
+  .quiz-content { padding-inline: max(1.5rem, env(safe-area-inset-left)) max(1.5rem, env(safe-area-inset-right)); }
+  /* Les actions vivent dans le contenu : c'est lui qui porte la marge latérale. */
+  .quiz-actions { padding-inline: 0; }
+  .quiz-actions-primary { gap: .875rem; }
+  .quiz-action-secondary { padding-inline: .875rem; font-size: .84rem; }
+  .quiz-action-main { padding-inline: 1.75rem; }
+  .quiz-core-shell[data-professor] .quiz-content { padding-right: max(4.75rem, env(safe-area-inset-right)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quiz-content *, .quiz-actions * { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,222 @@
+{
+  "header": {
+    "title": "Trigonométrie",
+    "subtitle": "Cercle trigonométrique, formules et équations",
+    "context": "Tronc Commun Scientifique"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie la \\objectif{trigonométrie sur le cercle} : mesure des angles en radians, cosinus, sinus et tangente de tout angle réel, formules de symétrie, équations et inéquations trigonométriques. Grâce au cercle trigonométrique, on étend ces rapports bien au-delà du triangle rectangle pour atteindre n'importe quel angle. La \\defi{principale difficulté} est de visualiser les formules plutôt que de les mémoriser mécaniquement — dessiner un cercle au brouillon à chaque exercice est indispensable. C'est \\savant{Al-Battani} (IX\\textsuperscript{e} siècle) qui a perfectionné les tables de sinus et de tangente, un héritage qui fonde aujourd'hui le traitement du signal, la 5G et la synthèse sonore numérique.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Bet%27s_al-Battani.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Al-Battani (~858–929)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cercle_et_radian",
+      "category": "course",
+      "title": "Le Cercle Trigonométrique et le Radian",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour étudier les angles de façon plus mathématique, on abandonne souvent les degrés pour une nouvelle unité de mesure : le radian, qui est directement lié à la longueur d'un arc sur un cercle de rayon 1."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le radian et le cercle trigonométrique ?",
+          "content": "Le \\textbf{cercle trigonométrique} est un cercle de centre $O$ et de rayon $R=1$, muni d'un sens de parcours : le sens \\textbf{direct} (inverse des aiguilles d'une montre).\\par\\smallskip Le \\textbf{radian} (rad) est la mesure d'un angle au centre qui intercepte un arc de longueur 1 sur ce cercle. Un tour complet du cercle ($360^\\circ$) correspond au périmètre $2\\pi \\times 1 = 2\\pi$ radians."
+        },
+        {
+          "type": "property",
+          "title": "Comment passer des degrés aux radians ?",
+          "content": "Les mesures en degrés et en radians sont strictement proportionnelles. À $180^\\circ$ correspond $\\pi$ radians.\\par\\smallskip Si $x$ est la mesure en radians et $y$ la mesure en degrés, on a :\\par $$\\boxed{\\frac{x}{\\pi} = \\frac{y}{180}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment convertir une mesure d'angle ?",
+          "content": "On utilise la formule de proportionnalité avec un produit en croix.\\par Pour passer en radians, on multiplie l'angle en degrés par $\\pi$ et on divise par $180$, puis on simplifie la fraction au maximum.\\par Pour passer en degrés, on remplace simplement $\\pi$ par $180$ dans l'expression et on calcule."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Exprimons l'angle de $135^\\circ$ en radians.}\\par \\begin{itemize}\\item Soit $x$ la mesure cherchée en radians. En appliquant la règle, on écrit l'égalité : $\\frac{x}{\\pi} = \\frac{\\blank{135}}{180}$.\\item On isole $x$ pour obtenir $x = \\frac{135\\pi}{180}$.\\item En simplifiant la fraction (on peut diviser par $\\blank{45}$ en haut et en bas), on trouve finalement $x = \\blank{\\frac{3\\pi}{4}}$ rad.\\end{itemize}"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une abscisse curviligne principale ?",
+          "content": "Sur le cercle trigonométrique, un point peut être atteint en faisant plusieurs tours. S'il correspond à l'angle $\\alpha$, il correspond aussi à $\\alpha + 2k\\pi$ (avec $k \\in \\mathbb{Z}$). Toutes ces valeurs sont ses \\textbf{abscisses curvilignes}.\\par\\smallskip Parmi toutes ces valeurs, il y en a exactement une qui tombe dans l'intervalle $]-\\pi ; \\pi]$. C'est ce qu'on appelle l'\\textbf{abscisse curviligne principale}."
+        },
+        {
+          "type": "method",
+          "title": "Comment trouver l'abscisse curviligne principale ?",
+          "content": "On cherche à extraire les \"tours complets\" de la fraction.\\par Écrire le numérateur de la fraction comme le multiple du dénominateur le plus proche.\\par Séparer la fraction en deux : un nombre pair de $\\pi$ (qui représente des tours complets $2k\\pi$) et un reste.\\par Le reste est l'abscisse principale si et seulement s'il appartient à $]-\\pi ; \\pi]$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons l'abscisse curviligne principale de $\\displaystyle\\frac{21\\pi}{4}$.}\\par \\begin{itemize}\\item On décompose $21\\pi$ en cherchant un multiple de 4 proche. Le plus adapté est $24\\pi$, mais un nombre pair de $\\pi$ après division s'obtient avec $16\\pi$ ou $24\\pi$. Prenons $24\\pi$ : $\\frac{21\\pi}{4} = \\frac{24\\pi - 3\\pi}{4}$.\\item On sépare : $\\frac{24\\pi}{4} - \\blank{\\frac{3\\pi}{4}} = 6\\pi - \\frac{3\\pi}{4}$.\\item Puisque $6\\pi$ correspond à 3 tours complets, l'abscisse principale est $\\blank{-\\frac{3\\pi}{4}}$ car elle est bien située dans l'intervalle $\\blank{]-\\pi, \\pi]}$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "rapports_trigonometriques",
+      "category": "course",
+      "title": "Les rapports trigonométriques : Cosinus, Sinus et Tangente",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On repère désormais un point sur le cercle par son abscisse curviligne $x$. Ses coordonnées dans le plan géométrique vont nous donner directement son cosinus et son sinus."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le cosinus, le sinus et la tangente sur le cercle ?",
+          "content": "Soit un point $M$ sur le cercle trigonométrique associé à l'abscisse curviligne $x$.\\begin{itemize}\\item L'abscisse du point $M$ (sur l'axe horizontal) est le \\textbf{cosinus} de $x$, noté $\\cos x$\\item L'ordonnée du point $M$ (sur l'axe vertical) est le \\textbf{sinus} de $x$, noté $\\sin x$\\item L'intersection de la droite $(OM)$ avec l'axe des tangentes (droite verticale passant par $x=1$) donne la \\textbf{tangente} de $x$, notée $\\tan x$ (définie si $x \\neq \\frac{\\pi}{2} + k\\pi$)\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les valeurs remarquables à connaître ?",
+          "content": "Il faut mémoriser ce tableau fondamental pour le premier quadrant :\\par\\smallskip $$\\begin{array}{|c|c|c|c|c|c|}\\hline x & 0 & \\frac{\\pi}{6} & \\frac{\\pi}{4} & \\frac{\\pi}{3} & \\frac{\\pi}{2} \\\\\\hline \\cos x & 1 & \\frac{\\sqrt{3}}{2} & \\frac{\\sqrt{2}}{2} & \\frac{1}{2} & 0 \\\\\\hline \\sin x & 0 & \\frac{1}{2} & \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{3}}{2} & 1 \\\\\\hline \\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons l'expression $A = \\cos\\left(\\dfrac{\\pi}{3}\\right) + \\sin\\left(\\dfrac{\\pi}{6}\\right)$.}\\par \\begin{itemize}\\item On lit directement les valeurs dans le tableau de référence.\\item On a $\\cos\\left(\\frac{\\pi}{3}\\right) = \\blank{\\frac{1}{2}}$ et $\\sin\\left(\\frac{\\pi}{6}\\right) = \\blank{\\frac{1}{2}}$.\\item On additionne les deux résultats : $A = \\frac{1}{2} + \\frac{1}{2} = \\blank{1}$.\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les formules fondamentales de la trigonométrie ?",
+          "content": "Pour tout nombre réel $x$, on a les relations suivantes :\\begin{itemize}\\item $$\\boxed{\\cos^2 x + \\sin^2 x = 1}$$\\item $-1 \\leq \\cos x \\leq 1$ \\quad et \\quad $-1 \\leq \\sin x \\leq 1$\\item $\\tan x = \\displaystyle\\frac{\\sin x}{\\cos x}$ \\quad (si $\\cos x \\neq 0$)\\item $1 + \\tan^2 x = \\displaystyle\\frac{1}{\\cos^2 x}$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons $\\sin x$ sachant que $\\cos x = \\dfrac{4}{5}$ et que $x \\in \\left[0, \\dfrac{\\pi}{2}\\right]$.}\\par \\begin{itemize}\\item On utilise la formule fondamentale : $\\sin^2 x = 1 - \\cos^2 x$.\\item On remplace par la valeur donnée : $\\sin^2 x = 1 - \\left(\\blank{\\frac{4}{5}}\\right)^2 = 1 - \\frac{16}{25} = \\blank{\\frac{9}{25}}$.\\item L'angle $x$ appartient au premier quadrant $\\left[0, \\frac{\\pi}{2}\\right]$, zone où le sinus est strictement $\\blank{\\text{positif}}$.\\item On prend donc la racine carrée positive : $\\sin x = \\blank{\\frac{3}{5}}$.\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Comment connaître le signe de cosinus et sinus selon le quadrant ?",
+          "content": "Le cercle est divisé en quatre quadrants qui déterminent les signes :\\begin{itemize}\\item \\textbf{1er quadrant} $\\left[0, \\frac{\\pi}{2}\\right]$ : $\\cos x > 0$ et $\\sin x > 0$\\item \\textbf{2ème quadrant} $\\left[\\frac{\\pi}{2}, \\pi\\right]$ : $\\cos x < 0$ et $\\sin x > 0$\\item \\textbf{3ème quadrant} $\\left[\\pi, \\frac{3\\pi}{2}\\right]$ : $\\cos x < 0$ et $\\sin x < 0$\\item \\textbf{4ème quadrant} $\\left[\\frac{-\\pi}{2}, 0\\right]$ : $\\cos x > 0$ et $\\sin x < 0$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons les signes de $\\cos\\left(\\dfrac{4\\pi}{3}\\right)$ et $\\sin\\left(\\dfrac{5\\pi}{6}\\right)$.}\\par \\begin{itemize}\\item L'angle $\\frac{4\\pi}{3}$ se situe dans le 3ème quadrant (entre $\\pi$ et $\\frac{3\\pi}{2}$), donc on peut affirmer que $\\cos\\left(\\frac{4\\pi}{3}\\right) \\blank{< 0}$.\\item L'angle $\\frac{5\\pi}{6}$ se situe dans le 2ème quadrant (entre $\\frac{\\pi}{2}$ et $\\pi$), donc on sait que $\\sin\\left(\\frac{5\\pi}{6}\\right) \\blank{> 0}$.\\item De plus, $\\tan\\left(\\frac{4\\pi}{3}\\right)$ qui est le quotient d'un sinus négatif et d'un cosinus négatif sera $\\blank{> 0}$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "angles_associes",
+      "category": "course",
+      "title": "Angles associés : Les relations de transformation",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le cercle trigonométrique possède de nombreuses symétries. Celles-ci permettent de calculer le cosinus et le sinus de n'importe quel angle en le ramenant à un angle du premier quadrant."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les formules de symétrie des angles associés ?",
+          "content": "Il faut visualiser les symétries sur le cercle pour retenir ces égalités :\\begin{itemize}\\item \\textbf{Angles opposés (symétrie axe horizontal)} : $\\cos(-x) = \\cos x$ et $\\sin(-x) = -\\sin x$\\item \\textbf{Demi-tour (symétrie centrale)} : $\\cos(x+\\pi) = -\\cos x$ et $\\sin(x+\\pi) = -\\sin x$\\item \\textbf{Symétrie axe vertical} : $\\cos(\\pi-x) = -\\cos x$ et $\\sin(\\pi-x) = \\sin x$\\item \\textbf{Angles complémentaires} : $\\cos\\left(\\frac{\\pi}{2}-x\\right) = \\sin x$ et $\\sin\\left(\\frac{\\pi}{2}-x\\right) = \\cos x$\\item \\textbf{Quart de tour} : $\\cos\\left(x+\\frac{\\pi}{2}\\right) = -\\sin x$ et $\\sin\\left(x+\\frac{\\pi}{2}\\right) = \\cos x$\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment simplifier une grande expression trigonométrique ?",
+          "content": "Observer chaque terme de l'expression et identifier à quelle formule d'angle associé il correspond (ex: $\\pi - x$, $\\frac{\\pi}{2} + x$).\\par Remplacer chaque terme par son expression simplifiée en utilisant uniquement $x$.\\par Regrouper les $\\cos x$ ensemble et les $\\sin x$ ensemble, puis effectuer les additions et soustractions pour réduire l'expression au maximum."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Simplifions l'expression $A = \\cos(\\pi + x) + \\cos(\\pi - x) + \\sin(-x)$.}\\par \\begin{itemize}\\item On traite chaque terme séparément avec les formules de symétrie : $\\cos(\\pi + x)$ devient $\\blank{-\\cos x}$, le terme $\\cos(\\pi - x)$ devient $\\blank{-\\cos x}$, et enfin $\\sin(-x)$ se simplifie en $\\blank{-\\sin x}$.\\item On rassemble tout : $A = -\\cos x - \\cos x - \\sin x$.\\item Le résultat final simplifié est $A = \\blank{-2\\cos x - \\sin x}$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons la valeur exacte de $\\cos\\left(\\dfrac{5\\pi}{4}\\right)$.}\\par \\begin{itemize}\\item On décompose la fraction astucieusement pour faire apparaître $\\pi$ : $\\frac{5\\pi}{4} = \\pi + \\blank{\\frac{\\pi}{4}}$.\\item On utilise la formule du demi-tour $\\cos(\\pi + x) = -\\cos x$, ce qui nous donne $\\cos\\left(\\pi + \\frac{\\pi}{4}\\right) = \\blank{-\\cos\\left(\\frac{\\pi}{4}\\right)}$.\\item D'après le tableau des valeurs remarquables, on obtient le résultat $\\blank{-\\frac{\\sqrt{2}}{2}}$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "equations_trigonometriques",
+      "category": "course",
+      "title": "Les équations trigonométriques élémentaires",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On cherche maintenant à trouver tous les angles $x$ qui correspondent à une valeur de cosinus, sinus ou tangente donnée. Le cercle montre qu'il y a souvent une infinité de solutions à cause des tours complets."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment résoudre l'équation cos(x) = a ?",
+          "content": "Si $a \\notin [-1, 1]$, l'équation n'a aucune solution ($S = \\emptyset$).\\par Si $a \\in [-1, 1]$, on cherche d'abord un angle $\\alpha$ tel que $\\cos(\\alpha) = a$. L'équation s'écrit alors $\\cos x = \\cos \\alpha$, et les solutions sont :\\par $$\\boxed{x = \\alpha + 2k\\pi \\quad \\text{ou} \\quad x = -\\alpha + 2k\\pi \\quad \\text{avec } k \\in \\mathbb{Z}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'équation $\\cos x = \\dfrac{1}{2}$ dans $\\mathbb{R}$.}\\par \\begin{itemize}\\item On sait d'après le cours que $\\frac{1}{2} = \\cos\\left(\\blank{\\frac{\\pi}{3}}\\right)$.\\item L'équation devient donc $\\cos x = \\cos\\left(\\frac{\\pi}{3}\\right)$.\\item En appliquant le théorème, on trouve les deux familles de solutions : $x = \\frac{\\pi}{3} + \\blank{2k\\pi}$ ou bien $x = \\blank{-\\frac{\\pi}{3}} + 2k\\pi$ (avec $k \\in \\mathbb{Z}$).\\end{itemize}"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment résoudre l'équation sin(x) = a ?",
+          "content": "Si $a \\notin [-1, 1]$, l'équation n'a aucune solution.\\par Si $a \\in [-1, 1]$, on cherche un angle $\\alpha$ tel que $\\sin(\\alpha) = a$. L'équation devient $\\sin x = \\sin \\alpha$, avec pour solutions :\\par $$\\boxed{x = \\alpha + 2k\\pi \\quad \\text{ou} \\quad x = \\pi - \\alpha + 2k\\pi \\quad \\text{avec } k \\in \\mathbb{Z}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'équation $\\sin x = \\dfrac{\\sqrt{2}}{2}$ dans $\\mathbb{R}$.}\\par \\begin{itemize}\\item La valeur remarquable donne $\\frac{\\sqrt{2}}{2} = \\sin\\left(\\blank{\\frac{\\pi}{4}}\\right)$.\\item Les solutions s'écrivent $x = \\frac{\\pi}{4} + 2k\\pi$ ou $x = \\pi - \\frac{\\pi}{4} + 2k\\pi$.\\item Après réduction au même dénominateur, la deuxième solution se simplifie en $x = \\blank{\\frac{3\\pi}{4}} + \\blank{2k\\pi}$.\\end{itemize}"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment résoudre l'équation tan(x) = a ?",
+          "content": "Pour tout réel $a$, on cherche un angle $\\alpha$ tel que $\\tan(\\alpha) = a$. L'équation s'écrit $\\tan x = \\tan \\alpha$.\\par À la différence de cos et sin, il n'y a qu'une seule famille de solutions (qui se répète tous les demi-tours) :\\par $$\\boxed{x = \\alpha + k\\pi \\quad \\text{avec } k \\in \\mathbb{Z}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'équation $\\tan x = 1$ dans $\\mathbb{R}$.}\\par \\begin{itemize}\\item On identifie la valeur remarquable : $1 = \\tan\\left(\\blank{\\frac{\\pi}{4}}\\right)$.\\item Il suffit d'appliquer la formule directe de la tangente, ce qui donne l'unique famille de solutions : $x = \\frac{\\pi}{4} + \\blank{k\\pi}$ avec $k \\in \\blank{\\mathbb{Z}}$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "inequations_trigonometriques",
+      "category": "course",
+      "title": "Les inéquations trigonométriques élémentaires",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Résoudre une inéquation trigonométrique demande de visualiser les zones sur le cercle. C'est un exercice très visuel qui repose entièrement sur le placement correct des points."
+        },
+        {
+          "type": "method",
+          "title": "Comment résoudre une inéquation sur le cercle trigonométrique ?",
+          "content": "Commencer par résoudre \\textbf{l'équation correspondante} (l'égalité) pour trouver les points limites.\\par Placer ces points limites précisément sur le cercle trigonométrique.\\par Colorier sur l'axe concerné (horizontal pour cos, vertical pour sin) la zone qui respecte l'inégalité (ex: supérieur à $\\frac{1}{2}$).\\par En déduire et surligner l'\\textbf{arc de cercle} correspondant, puis lire l'intervalle solution en respectant le domaine d'étude donné."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'inéquation $\\sin x \\ge \\dfrac{1}{2}$ dans l'intervalle $[0, 2\\pi]$.}\\par \\begin{itemize}\\item L'égalité $\\sin x = \\frac{1}{2}$ nous donne les deux points frontières sur l'intervalle $[0, 2\\pi]$ qui sont $\\frac{\\pi}{6}$ et $\\blank{\\frac{5\\pi}{6}}$.\\item L'axe des sinus étant l'axe \\textbf{vertical}, on cherche les angles dont l'ordonnée est au-dessus de $\\frac{1}{2}$.\\item On parcourt le cercle et on relève l'arc qui relie ces deux valeurs par le haut. L'ensemble des solutions est $S = \\blank{\\left[\\frac{\\pi}{6}, \\frac{5\\pi}{6}\\right]}$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'inéquation $\\cos x \\ge \\dfrac{\\sqrt{2}}{2}$ sur l'intervalle $]-\\pi, \\pi]$.}\\par \\begin{itemize}\\item La résolution de l'égalité nous donne sur cet intervalle les angles $\\frac{\\pi}{4}$ et $\\blank{-\\frac{\\pi}{4}}$.\\item On se place sur l'axe des cosinus, c'est-à-dire l'axe \\textbf{horizontal}. L'inégalité nous demande de regarder la zone à droite de $\\frac{\\sqrt{2}}{2}$.\\item La partie du cercle correspondante est l'arc contenant le point zéro. L'ensemble des solutions est donc $S = \\blank{\\left[-\\frac{\\pi}{4}, \\frac{\\pi}{4}\\right]}$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'inéquation $\\tan x \\ge 1$ sur l'intervalle $]-\\frac{\\pi}{2}, \\frac{\\pi}{2}[$.}\\par \\begin{itemize}\\item L'équation $\\tan x = 1$ admet pour solution $x = \\blank{\\frac{\\pi}{4}}$ dans ce domaine.\\item On trace la droite des tangentes et on s'intéresse à la partie supérieure à $1$. L'arc de cercle associé commence à $\\frac{\\pi}{4}$ et monte vers la valeur interdite.\\item La borne supérieure de notre arc est cette valeur interdite, soit $\\blank{\\frac{\\pi}{2}}$. L'ensemble des solutions est donc $S = \\blank{\\left[\\frac{\\pi}{4}, \\frac{\\pi}{2}\\right[}$.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

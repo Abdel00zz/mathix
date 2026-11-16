@@ -1,0 +1,484 @@
+{
+  "header": {
+    "title": "Géométrie dans l'Espace",
+    "subtitle": "Produit scalaire, produit vectoriel, plans et sphères",
+    "context": "2BAC Sciences"
+  },
+  "lexique": [
+    {
+      "term": "Repère orthonormé",
+      "arabic": "معلم متعامد ومتجانس",
+      "category": "concept",
+      "definition": "Repère dont les axes sont perpendiculaires et utilisent la même unité.",
+      "variants": [
+        "repère orthonormé direct"
+      ]
+    },
+    {
+      "term": "Vecteur",
+      "arabic": "شعاع",
+      "category": "concept",
+      "definition": "Objet géométrique caractérisé par une direction, un sens et une norme.",
+      "variants": [
+        "vecteurs"
+      ]
+    },
+    {
+      "term": "Produit scalaire",
+      "arabic": "الجداء السلمي",
+      "category": "concept",
+      "definition": "Nombre qui relie deux vecteurs, leurs normes et l'angle qu'ils forment.",
+      "variants": [
+        "produits scalaires"
+      ]
+    },
+    {
+      "term": "Produit vectoriel",
+      "arabic": "الجداء المتجهي",
+      "category": "concept",
+      "definition": "Vecteur perpendiculaire à deux vecteurs de l'espace.",
+      "variants": [
+        "produits vectoriels"
+      ]
+    },
+    {
+      "term": "Plan",
+      "arabic": "مستوى",
+      "category": "concept",
+      "definition": "Surface plane infinie déterminée notamment par un point et deux directions.",
+      "variants": [
+        "plans"
+      ]
+    },
+    {
+      "term": "Droite",
+      "arabic": "مستقيم",
+      "category": "concept",
+      "definition": "Ensemble infini de points dirigé par un vecteur non nul.",
+      "variants": [
+        "droites"
+      ]
+    },
+    {
+      "term": "Vecteur normal",
+      "arabic": "شعاع ناظم",
+      "category": "concept",
+      "definition": "Vecteur perpendiculaire à toutes les directions d'un plan.",
+      "variants": [
+        "vecteur normal au plan"
+      ]
+    },
+    {
+      "term": "Représentation paramétrique",
+      "arabic": "تمثيل وسيطي",
+      "category": "concept",
+      "definition": "Écriture d'une droite ou d'un plan à l'aide de paramètres.",
+      "variants": [
+        "représentation paramétrique d'une droite",
+        "représentation paramétrique d'un plan"
+      ]
+    },
+    {
+      "term": "Équation cartésienne",
+      "arabic": "معادلة ديكارتية",
+      "category": "concept",
+      "definition": "Équation en coordonnées qui caractérise les points d'une figure.",
+      "variants": [
+        "équations cartésiennes"
+      ]
+    },
+    {
+      "term": "Sphère",
+      "arabic": "كرة",
+      "category": "concept",
+      "definition": "Ensemble des points de l'espace situés à une même distance d'un centre.",
+      "variants": [
+        "sphères"
+      ]
+    },
+    {
+      "term": "Distance",
+      "arabic": "مسافة",
+      "category": "concept",
+      "definition": "Longueur minimale entre deux objets géométriques.",
+      "variants": [
+        "distance d'un point à un plan",
+        "distance d'un point à une droite"
+      ]
+    },
+    {
+      "term": "Positions relatives",
+      "arabic": "الأوضاع النسبية",
+      "category": "concept",
+      "definition": "Manières dont deux droites, plans ou sphères peuvent se situer l'un par rapport à l'autre.",
+      "variants": [
+        "position relative",
+        "intersection"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "La géométrie dans l'espace permet d'\\objectif{calculer des distances, des angles, des équations de plans et des positions relatives de sphères dans un repère orthonormé}. La \\defi{difficulté} principale est de choisir le bon outil à chaque étape : produit scalaire pour l'orthogonalité et les angles, produit vectoriel pour fabriquer un vecteur normal, formule de distance pour conclure sur une tangence ou un cercle.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Josiah_Willard_Gibbs_-from_MMS-.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "J. W. Gibbs (1839–1903)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "produit_scalaire",
+      "category": "course",
+      "title": "Produit scalaire dans l'espace",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'espace est muni d'un repère orthonormé $(O\\,;\\overrightarrow{i}\\,;\\overrightarrow{j}\\,;\\overrightarrow{k})$. L'exploration de départ montre que la bilinéarité et la symétrie du produit scalaire permettent d'obtenir une formule directe à partir des coordonnées : c'est le socle de toute mesure dans l'espace."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le produit scalaire dans un repère orthonormé} ?",
+          "content": "Dans un repère orthonormé, pour $\\overrightarrow{u}(x\\,;y\\,;z)$ et $\\overrightarrow{v}(x'\\,;y'\\,;z')$, le \\textbf{produit scalaire} est le réel :\\par$$\\boxed{\\overrightarrow{u} \\cdot \\overrightarrow{v} = xx' + yy' + zz'}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer norme, distance et orthogonalité} avec les coordonnées ?",
+          "content": "Dans un repère orthonormé :\\begin{itemize}\\item $\\|\\overrightarrow{u}\\| = \\sqrt{x^2 + y^2 + z^2}$\\item Pour $A(x_A\\,;y_A\\,;z_A)$ et $B(x_B\\,;y_B\\,;z_B)$ : $AB = \\sqrt{(x_B-x_A)^2+(y_B-y_A)^2+(z_B-z_A)^2}$\\item $\\overrightarrow{u} \\perp \\overrightarrow{v}$ si et seulement si $\\overrightarrow{u} \\cdot \\overrightarrow{v} = 0$\\item Pour l'angle $\\theta$ entre $\\overrightarrow{u}$ et $\\overrightarrow{v}$ non nuls : $\\cos\\theta = \\dfrac{\\overrightarrow{u} \\cdot \\overrightarrow{v}}{\\|\\overrightarrow{u}\\|\\,\\|\\overrightarrow{v}\\|}$\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{analyser une figure de l'espace avec des vecteurs} ?",
+          "content": "Identifier les \\textbf{points utiles} et former les vecteurs nécessaires issus du même point.\\par Utiliser la \\textbf{norme} pour une longueur, le \\textbf{produit scalaire} pour l'orthogonalité ou un angle.\\par Pour un angle : calculer $\\cos\\theta = \\dfrac{\\overrightarrow{u} \\cdot \\overrightarrow{v}}{\\|\\overrightarrow{u}\\|\\,\\|\\overrightarrow{v}\\|}$, puis interpréter le signe.\\par\\textbf{Réflexe :} face à trois points, commencer par former deux vecteurs issus du même sommet avant tout autre calcul."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Dans un repère orthonormé, soient $A(1\\,;2\\,;-1)$, $B(4\\,;0\\,;1)$ et $C(3\\,;5\\,;2)$.\\begin{enumerate}\\item Calculons les coordonnées de $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$.\\item Calculons les longueurs $AB$ et $AC$.\\item Vérifions si $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ sont orthogonaux.\\end{enumerate}}\\par\\smallskip\\textbf{1.} En soustrayant les coordonnées :\\begin{align*}\\overrightarrow{AB} &= \\blank{(3\\,;-2\\,;2)}, \\quad \\overrightarrow{AC} = \\blank{(2\\,;3\\,;3)}\\end{align*}\\par\\smallskip\\textbf{2.}\\begin{align*}AB &= \\sqrt{9+4+4} = \\blank{\\sqrt{17}}, \\quad AC = \\sqrt{4+9+9} = \\blank{\\sqrt{22}}\\end{align*}\\par\\smallskip\\textbf{3.}\\begin{align*}\\overrightarrow{AB} \\cdot \\overrightarrow{AC} &= 3\\times 2 + (-2)\\times 3 + 2\\times 3 = \\blank{6}\\end{align*}\\par Le produit scalaire est non nul : les deux vecteurs ne sont $\\boxed{\\text{pas orthogonaux}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{On considère $\\overrightarrow{u}(2\\,;-1\\,;2)$ et $\\overrightarrow{v}(1\\,;2\\,;0)$.\\begin{enumerate}\\item Calculons $\\overrightarrow{u} \\cdot \\overrightarrow{v}$.\\item Déterminons $\\cos\\theta$, où $\\theta$ est l'angle entre $\\overrightarrow{u}$ et $\\overrightarrow{v}$.\\item Interprétons le résultat.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}\\overrightarrow{u} \\cdot \\overrightarrow{v} &= 2\\times 1 + (-1)\\times 2 + 2\\times 0 = \\blank{0}\\end{align*}\\par\\smallskip\\textbf{2.} Le produit scalaire est nul, donc $\\cos\\theta = \\blank{0}$.\\par\\smallskip\\textbf{3.} Les deux directions sont $\\boxed{\\text{perpendiculaires}}$ : l'angle entre $\\overrightarrow{u}$ et $\\overrightarrow{v}$ est droit."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $A(2\\,;-1\\,;1)$, $B(5\\,;3\\,;1)$ et $C(6\\,;-4\\,;1)$.\\begin{enumerate}\\item Calculons les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$.\\item Montrons que le triangle $ABC$ est rectangle en $A$.\\item Vérifions si ce triangle est aussi isocèle.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}\\overrightarrow{AB} &= \\blank{(3\\,;4\\,;0)}, \\quad \\overrightarrow{AC} = \\blank{(4\\,;-3\\,;0)}\\end{align*}\\par\\smallskip\\textbf{2.}\\begin{align*}\\overrightarrow{AB} \\cdot \\overrightarrow{AC} &= 12 + (-12) + 0 = \\blank{0}\\end{align*}\\par Les côtés $[AB]$ et $[AC]$ sont perpendiculaires : le triangle est \\textbf{rectangle en} $A$.\\par\\smallskip\\textbf{3.}\\begin{align*}AB &= \\sqrt{9+16} = \\blank{5}, \\quad AC = \\sqrt{16+9} = \\blank{5}\\end{align*}\\par $AB = AC$ : le triangle est $\\boxed{\\text{rectangle isocèle en } A}$."
+        }
+      ]
+    },
+    {
+      "id": "equation_plan",
+      "category": "course",
+      "title": "Équation cartésienne d'un plan",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait calculer le produit scalaire et tester l'orthogonalité. Pour contrôler l'appartenance d'un point $M$ à un plan, une seule idée suffit : $M$ est dans le plan si et seulement si le vecteur $\\overrightarrow{AM}$ est orthogonal au vecteur normal."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le vecteur normal à un plan} ?",
+          "content": "Un vecteur non nul $\\overrightarrow{n}(a\\,;b\\,;c)$ est \\textbf{normal} au plan $(P)$ lorsqu'il est orthogonal à tout vecteur contenu dans ce plan.\\par\\smallskip Si $(P)$ passe par $A(x_A\\,;y_A\\,;z_A)$ et admet $\\overrightarrow{n}(a\\,;b\\,;c)$ comme normal, alors :\\par$$M(x\\,;y\\,;z) \\in (P) \\Leftrightarrow \\overrightarrow{AM} \\cdot \\overrightarrow{n} = 0$$\\par Après développement, une \\textbf{équation cartésienne} de $(P)$ est de la forme :\\par$$\\boxed{ax + by + cz + d = 0}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{écrire l'équation d'un plan} à partir d'un point et d'un vecteur normal ?",
+          "content": "Poser la forme $ax + by + cz + d = 0$ avec les coefficients de $\\overrightarrow{n}(a\\,;b\\,;c)$.\\par Substituer les coordonnées du point connu pour calculer $d$.\\par\\textbf{Vérification :} substituer les coordonnées du point de départ dans l'équation : on doit obtenir $0$.\\par\\textbf{Attention :} dans $ax+by+cz+d=0$, le vecteur $(a\\,;b\\,;c)$ est le \\textbf{normal}, pas un vecteur directeur du plan."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Soient $A(1\\,;-2\\,;3)$ et $\\overrightarrow{n}(1\\,;-3\\,;-2)$.\\begin{enumerate}\\item Écrivons une équation cartésienne du plan $(P)$ passant par $A$ et de vecteur normal $\\overrightarrow{n}$.\\item Vérifions si le point $B(3\\,;-1\\,;3)$ appartient à $(P)$.\\end{enumerate}}\\par\\smallskip\\textbf{1.} Le plan a pour forme $x - 3y - 2z + d = 0$. Avec $A(1\\,;-2\\,;3)$ :\\begin{align*}1 - 3(-2) - 2(3) + d &= 0 \\\\1 + 6 - 6 + d &= 0 \\\\d &= \\blank{-1}\\end{align*}\\par$$\\boxed{(P) : x - 3y - 2z - 1 = 0}$$\\par\\smallskip\\textbf{2.} Pour $B(3\\,;-1\\,;3)$ : $3 - 3(-1) - 2(3) - 1 = 3+3-6-1 = \\blank{-1} \\neq 0$. Le point $B$ \\textbf{n'appartient pas} à $(P)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{On considère le plan $(P) : 2x - y + 3z - 5 = 0$.\\begin{enumerate}\\item Donnons un vecteur normal à $(P)$.\\item Déterminons si les points $A(1\\,;0\\,;1)$ et $B(2\\,;2\\,;1)$ appartiennent à $(P)$.\\item Construisons un point de $(P)$ dont les coordonnées $y$ et $z$ sont nulles.\\end{enumerate}}\\par\\smallskip\\textbf{1.} Un vecteur normal est $\\overrightarrow{n} = \\blank{(2\\,;-1\\,;3)}$.\\par\\smallskip\\textbf{2.} Pour $A$ : $2(1) - 0 + 3(1) - 5 = \\blank{0}$, donc $A \\in (P)$. Pour $B$ : $2(2) - 2 + 3(1) - 5 = \\blank{0}$, donc $B \\in (P)$.\\par\\smallskip\\textbf{3.} Avec $y = z = 0$ : $2x - 5 = 0$, d'où $x = \\blank{\\dfrac{5}{2}}$. Le point $C\\!\\left(\\dfrac{5}{2}\\,;0\\,;0\\right)$ appartient à $\\boxed{(P)}$."
+        },
+        {
+          "type": "warning",
+          "content": "Dans $ax + by + cz + d = 0$, le vecteur $(a\\,;b\\,;c)$ est \\textbf{normal} au plan : il est perpendiculaire à toutes les directions du plan. Un vecteur \\textbf{directeur} est au contraire contenu dans le plan, donc orthogonal au normal."
+        }
+      ]
+    },
+    {
+      "id": "produit_vectoriel",
+      "category": "course",
+      "title": "Produit vectoriel",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait écrire l'équation d'un plan dès qu'on dispose d'un vecteur normal. L'exploration montre que si $\\overrightarrow{n}$ doit être orthogonal à deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ d'un même plan, le produit vectoriel donne directement ce vecteur perpendiculaire : c'est l'outil manquant pour traiter les plans définis par trois points."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{calculer le produit vectoriel $\\overrightarrow{u} \\wedge \\overrightarrow{v}$} ?",
+          "content": "Dans un repère orthonormé \\textbf{direct}, pour $\\overrightarrow{u}(a\\,;b\\,;c)$ et $\\overrightarrow{v}(a'\\,;b'\\,;c')$ :\\par$$\\boxed{\\overrightarrow{u} \\wedge \\overrightarrow{v} = (bc'-cb'\\,;\\; ca'-ac'\\,;\\; ab'-ba')}$$\\par Ce vecteur est orthogonal à $\\overrightarrow{u}$ et à $\\overrightarrow{v}$."
+        },
+        {
+          "type": "property",
+          "title": "Quels sont les \\mathqst{trois usages géométriques du produit vectoriel} ?",
+          "content": "Soient $A$, $B$, $C$ trois points :\\begin{itemize}\\item $A$, $B$, $C$ sont \\textbf{alignés} si et seulement si $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = \\overrightarrow{0}$\\item Si $A$, $B$, $C$ ne sont pas alignés, $\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$ est un \\textbf{vecteur normal} au plan $(ABC)$\\item L'\\textbf{aire} du triangle $ABC$ vaut $\\mathcal{A}_{ABC} = \\dfrac{1}{2}\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$\\end{itemize}"
+        },
+        {
+          "type": "intuition",
+          "content": "Le produit vectoriel $\\overrightarrow{u} \\wedge \\overrightarrow{v}$ est le vecteur qui pointe perpendiculairement au plan formé par $\\overrightarrow{u}$ et $\\overrightarrow{v}$. Sa norme est égale à l'aire du parallélogramme construit sur $\\overrightarrow{u}$ et $\\overrightarrow{v}$ : le triangle correspondant en est la moitié."
+        },
+        {
+          "type": "warning",
+          "content": "L'\\textbf{ordre} du produit vectoriel compte : $\\overrightarrow{v} \\wedge \\overrightarrow{u} = -\\overrightarrow{u} \\wedge \\overrightarrow{v}$. On peut toujours prendre le vecteur opposé comme normal à un plan : l'équation obtenue est différente mais décrit le même plan."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Soient $\\overrightarrow{u}(0\\,;1\\,;-2)$ et $\\overrightarrow{v}(-3\\,;1\\,;2)$.\\begin{enumerate}\\item Calculons $\\overrightarrow{u} \\wedge \\overrightarrow{v}$.\\item Vérifions que le vecteur obtenu est bien orthogonal à $\\overrightarrow{u}$ et à $\\overrightarrow{v}$.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}\\overrightarrow{u} \\wedge \\overrightarrow{v} &= (1\\times 2 - (-2)\\times 1\\,;\\; (-2)(-3) - 0\\times 2\\,;\\; 0\\times 1 - 1\\times(-3)) \\\\&= \\blank{(4\\,;6\\,;3)}\\end{align*}\\par\\smallskip\\textbf{2.} Produits scalaires de contrôle :\\begin{align*}(4\\,;6\\,;3) \\cdot (0\\,;1\\,;-2) &= 0+6-6 = \\blank{0}\\\\(4\\,;6\\,;3) \\cdot (-3\\,;1\\,;2) &= -12+6+6 = \\blank{0}\\end{align*}\\par Le vecteur $\\overrightarrow{u} \\wedge \\overrightarrow{v} = \\boxed{(4\\,;6\\,;3)}$ est bien orthogonal aux deux vecteurs."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Dans un repère orthonormé, soient $A(0\\,;1\\,;4)$, $B(2\\,;1\\,;2)$ et $C(2\\,;5\\,;0)$.\\begin{enumerate}\\item Calculons $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$.\\item Montrons que $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = 4(2\\,;1\\,;2)$.\\item Déduisons que $A$, $B$ et $C$ ne sont pas alignés.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}\\overrightarrow{AB} &= \\blank{(2\\,;0\\,;-2)}, \\quad \\overrightarrow{AC} = \\blank{(2\\,;4\\,;-4)}\\end{align*}\\par\\smallskip\\textbf{2.}\\begin{align*}\\overrightarrow{AB} \\wedge \\overrightarrow{AC} &= (0\\times(-4)-(-2)\\times 4\\,;\\;(-2)\\times 2-2\\times(-4)\\,;\\;2\\times 4-0\\times 2)\\\\&= (8\\,;4\\,;8) = \\blank{4(2\\,;1\\,;2)}\\end{align*}\\par\\smallskip\\textbf{3.} Ce vecteur est \\textbf{non nul}, donc $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ ne sont pas colinéaires : $\\boxed{A, B, C \\text{ ne sont pas alignés}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $A(2\\,;4\\,;-5)$, $B(1\\,;0\\,;4)$ et $C(0\\,;3\\,;1)$.\\begin{enumerate}\\item Construisons un vecteur normal au plan $(ABC)$.\\item Déterminons une équation cartésienne du plan $(ABC)$.\\item Vérifions l'équation avec les trois points $A$, $B$, $C$.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}\\overrightarrow{AB} &= \\blank{(-1\\,;-4\\,;9)}, \\quad \\overrightarrow{AC} = \\blank{(-2\\,;-1\\,;6)}\\end{align*}\\begin{align*}\\overrightarrow{AB} \\wedge \\overrightarrow{AC} &= (-24+9\\,;\\;-18+6\\,;\\;1-8) = \\blank{(-15\\,;-12\\,;-7)}\\end{align*}\\par On prend $\\overrightarrow{n} = (15\\,;12\\,;7)$.\\par\\smallskip\\textbf{2.} Plan : $15x+12y+7z+d=0$. Avec $A(2\\,;4\\,;-5)$ : $30+48-35+d=0$, d'où $d=\\blank{-43}$.\\par$$\\boxed{(ABC) : 15x + 12y + 7z - 43 = 0}$$\\par\\textbf{3.} Les substitutions de $A$, $B$ et $C$ donnent toutes $0$ : l'équation est vérifiée."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $A(-1\\,;2\\,;0)$, $B(3\\,;0\\,;4)$ et $C(-2\\,;1\\,;2)$.\\begin{enumerate}\\item Calculons $\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$.\\item Déduisons l'aire du triangle $ABC$.\\item Interprétons géométriquement le résultat.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}\\overrightarrow{AB} &= (4\\,;-2\\,;4), \\quad \\overrightarrow{AC} = (-1\\,;-1\\,;2)\\end{align*}\\begin{align*}\\overrightarrow{AB} \\wedge \\overrightarrow{AC} &= \\blank{(0\\,;-12\\,;-6)}\\end{align*}\\par\\smallskip\\textbf{2.}\\begin{align*}\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\| &= \\sqrt{0+144+36} = \\blank{6\\sqrt{5}}\\end{align*}\\par$$\\mathcal{A}_{ABC} = \\dfrac{1}{2} \\times 6\\sqrt{5} = \\boxed{3\\sqrt{5}}$$\\par\\textbf{3.} Le produit vectoriel mesure l'aire du parallélogramme construit sur $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ ; le triangle $ABC$ en est exactement la \\textbf{moitié}."
+        }
+      ]
+    },
+    {
+      "id": "orthogonalite_distance",
+      "category": "course",
+      "title": "Orthogonalité, distance et projection",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On dispose du produit vectoriel pour construire des normaux. L'exploration montre que la distance d'un point à un plan se mesure toujours selon la direction perpendiculaire au plan : en décomposant $\\overrightarrow{AB}$ sur le normal $\\overrightarrow{n}$ et une direction du plan, on obtient une formule ne dépendant que des coefficients de l'équation et des coordonnées du point."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{tester l'orthogonalité ou le parallélisme de deux plans} ?",
+          "content": "Soient deux plans de vecteurs normaux respectifs $\\overrightarrow{n}$ et $\\overrightarrow{n}'$ :\\begin{itemize}\\item Ils sont \\textbf{orthogonaux} si et seulement si $\\overrightarrow{n} \\cdot \\overrightarrow{n}' = 0$\\item Ils sont \\textbf{parallèles} si et seulement si $\\overrightarrow{n}$ et $\\overrightarrow{n}'$ sont colinéaires\\item Deux droites de vecteurs directeurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ ont des directions orthogonales si $\\overrightarrow{u} \\cdot \\overrightarrow{v} = 0$\\end{itemize}"
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle est la \\mathqst{formule de la distance d'un point à un plan} ?",
+          "content": "Soit $(P) : ax + by + cz + d = 0$ et le point $A(x_A\\,;y_A\\,;z_A)$.\\par\\smallskip$$\\boxed{d\\bigl(A,(P)\\bigr) = \\dfrac{|ax_A + by_A + cz_A + d|}{\\sqrt{a^2+b^2+c^2}}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{déterminer le projeté orthogonal} d'un point sur un plan ?",
+          "content": "Écrire la droite passant par $A$ de vecteur directeur $\\overrightarrow{n}(a\\,;b\\,;c)$ :\\par$$x = x_A + ta, \\quad y = y_A + tb, \\quad z = z_A + tc$$\\par Substituer dans l'équation du plan pour trouver $t$.\\par Calculer les coordonnées du projeté $H$ en remplaçant $t$.\\par\\textbf{Vérification :} $H$ doit vérifier l'équation du plan."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{On considère $(P) : 2x + z - 1 = 0$ et $(Q) : x - 2y - 2z + 1 = 0$.\\begin{enumerate}\\item Donnons un vecteur normal à chacun des deux plans.\\item Vérifions si les plans $(P)$ et $(Q)$ sont orthogonaux.\\end{enumerate}}\\par\\smallskip\\textbf{1.} $\\overrightarrow{n}_P = \\blank{(2\\,;0\\,;1)}$ et $\\overrightarrow{n}_Q = \\blank{(1\\,;-2\\,;-2)}$.\\par\\smallskip\\textbf{2.}\\begin{align*}\\overrightarrow{n}_P \\cdot \\overrightarrow{n}_Q &= 2\\times 1 + 0\\times(-2) + 1\\times(-2) = \\blank{0}\\end{align*}\\par Les vecteurs normaux sont orthogonaux : $\\boxed{(P) \\text{ et } (Q) \\text{ sont orthogonaux}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit le plan $(P) : x + y + z + 1 = 0$ et le point $A(1\\,;2\\,;0)$.\\begin{enumerate}\\item Calculons la distance $d(A,(P))$.\\item Déterminons le projeté orthogonal $H$ de $A$ sur $(P)$.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}d(A,(P)) &= \\dfrac{|1+2+0+1|}{\\sqrt{1+1+1}} = \\dfrac{\\blank{4}}{\\blank{\\sqrt{3}}} = \\boxed{\\dfrac{4}{\\sqrt{3}}}\\end{align*}\\par\\smallskip\\textbf{2.} Droite normale en $A$ : $x = 1+t$, $y = 2+t$, $z = t$. Dans le plan :\\begin{align*}(1+t)+(2+t)+t+1 &= 0 \\\\4+3t &= 0 \\\\t &= \\blank{-\\dfrac{4}{3}}\\end{align*}\\par$$H = \\boxed{\\left(-\\dfrac{1}{3}\\,;\\,\\dfrac{2}{3}\\,;\\,-\\dfrac{4}{3}\\right)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit la droite $\\Delta$ passant par $A(1\\,;-1\\,;1)$ et de vecteur directeur $\\overrightarrow{u}(2\\,;-2\\,;1)$. Soit $\\Omega(3\\,;0\\,;-1)$.\\begin{enumerate}\\item Calculons $\\Omega A$ et les coordonnées de $\\overrightarrow{A\\Omega}$.\\item Vérifions si le segment $[A\\Omega]$ est perpendiculaire à $\\Delta$.\\item Déduisons la distance de $\\Omega$ à la droite $\\Delta$.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}\\overrightarrow{A\\Omega} &= \\blank{(2\\,;1\\,;-2)}, \\quad \\Omega A = \\sqrt{4+1+4} = \\blank{3}\\end{align*}\\par\\smallskip\\textbf{2.}\\begin{align*}\\overrightarrow{A\\Omega} \\cdot \\overrightarrow{u} &= 4+(-2)+(-2) = \\blank{0}\\end{align*}\\par $\\overrightarrow{A\\Omega}$ est orthogonal à $\\overrightarrow{u}$ : $[A\\Omega] \\perp \\Delta$.\\par\\smallskip\\textbf{3.} $A \\in \\Delta$ et $[A\\Omega] \\perp \\Delta$, donc $d(\\Omega,\\Delta) = \\Omega A = \\boxed{3}$."
+        }
+      ]
+    },
+    {
+      "id": "sphere",
+      "category": "course",
+      "title": "Sphère",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On maîtrise maintenant le calcul de distances. Une sphère est entièrement déterminée par son centre et son rayon : toute question de position relative, de tangence ou d'intersection se ramène à comparer une distance calculée avec ce rayon."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{l'équation d'une sphère} de centre $\\Omega$ et de rayon $R$ ?",
+          "content": "La \\textbf{sphère} de centre $\\Omega(a\\,;b\\,;c)$ et de rayon $R > 0$ est l'ensemble des points $M(x\\,;y\\,;z)$ vérifiant $\\Omega M = R$. Son équation est :\\par$$\\boxed{(x-a)^2 + (y-b)^2 + (z-c)^2 = R^2}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{retrouver le centre et le rayon d'une sphère} sous forme développée ?",
+          "content": "Une équation $x^2+y^2+z^2+Ax+By+Cz+D=0$ se traite par \\textbf{complétion des carrés} sur chaque variable.\\par Le centre est $\\Omega\\!\\left(-\\dfrac{A}{2}\\,;-\\dfrac{B}{2}\\,;-\\dfrac{C}{2}\\right)$ et $R^2 = \\dfrac{A^2+B^2+C^2}{4}-D$.\\par\\textbf{Attention :} vérifier $R^2 > 0$ pour s'assurer qu'on a bien une sphère."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\question{Soit la sphère de centre $\\Omega(2\\,;-1\\,;3)$ et de rayon $4$.\\begin{enumerate}\\item Écrivons une équation cartésienne de cette sphère.\\item Vérifions si le point $A(2\\,;3\\,;3)$ appartient à cette sphère.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\par$$\\boxed{(x-2)^2+(y+1)^2+(z-3)^2=16}$$\\par\\smallskip\\textbf{2.} Pour $A(2\\,;3\\,;3)$ :\\begin{align*}(2-2)^2+(3+1)^2+(3-3)^2 &= 0 + 16 + 0 = \\blank{16}\\end{align*}\\par Comme $\\Omega A^2 = R^2 = 16$ : $\\boxed{A \\text{ appartient à la sphère}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{On considère $(S) : x^2+y^2+z^2-2y+3z+2=0$.\\begin{enumerate}\\item Réécrivons l'équation sous forme centrée par complétion des carrés.\\item Déterminons le centre et le rayon de $(S)$.\\end{enumerate}}\\par\\smallskip\\textbf{1.} Complétion des carrés :\\begin{align*}y^2-2y &= (y-1)^2 - \\blank{1}\\\\z^2+3z &= \\left(z+\\dfrac{3}{2}\\right)^2 - \\blank{\\dfrac{9}{4}}\\end{align*}\\par L'équation devient :\\par$$x^2+(y-1)^2+\\left(z+\\dfrac{3}{2}\\right)^2 = 1+\\dfrac{9}{4}-2 = \\blank{\\dfrac{5}{4}}$$\\par\\smallskip\\textbf{2.}\\par$$\\boxed{\\Omega\\!\\left(0\\,;1\\,;-\\dfrac{3}{2}\\right), \\quad R = \\dfrac{\\sqrt{5}}{2}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{un point appartient-il à la sphère de diamètre $[AB]$} ?",
+          "content": "$M(x\\,;y\\,;z)$ appartient à la sphère de diamètre $[AB]$ si et seulement si :\\par$$\\boxed{\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = 0}$$\\par Cette condition traduit que le triangle $AMB$ est rectangle en $M$ (théorème de Thalès dans l'espace)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $A(-1\\,;3\\,;2)$ et $B(-3\\,;1\\,;0)$.\\begin{enumerate}\\item Écrivons une équation de la sphère de diamètre $[AB]$ à l'aide du produit scalaire.\\item Développons l'équation obtenue.\\item Retrouvons son centre et son rayon.\\end{enumerate}}\\par\\smallskip\\textbf{1.} $M \\in (S) \\Leftrightarrow \\overrightarrow{MA} \\cdot \\overrightarrow{MB} = 0$, soit :\\begin{align*}(x+1)(x+3)+(y-3)(y-1)+(z-2)z &= 0\\end{align*}\\par\\smallskip\\textbf{2.} Après développement :\\par$$x^2+y^2+z^2+\\blank{4x-4y-2z}+6=0$$\\par\\smallskip\\textbf{3.} Le centre est le milieu de $[AB]$ : $\\Omega = \\blank{(-2\\,;2\\,;1)}$.\\par $AB = \\sqrt{4+4+4} = 2\\sqrt{3}$, donc $R = \\boxed{\\sqrt{3}}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{étudier la position d'un plan et d'une sphère} ?",
+          "content": "Repérer le centre $\\Omega$ et le rayon $R$ de la sphère.\\par Calculer $d(\\Omega,(P))$ avec la formule de distance point-plan.\\par Comparer avec $R$ :\\begin{itemize}\\item $d > R$ : le plan est \\textbf{extérieur} à la sphère\\item $d = R$ : le plan est \\textbf{tangent}\\item $d < R$ : l'intersection est un \\textbf{cercle} de rayon $r = \\sqrt{R^2-d^2}$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $(S) : x^2+y^2+z^2+2x-2y+2z-1=0$ et $(P) : 2x+y+2z-3=0$.\\begin{enumerate}\\item Déterminons le centre et le rayon de $(S)$.\\item Calculons la distance du centre au plan $(P)$.\\item Déduisons la position relative de $(P)$ et $(S)$.\\end{enumerate}}\\par\\smallskip\\textbf{1.} Complétion : $(x+1)^2+(y-1)^2+(z+1)^2=\\blank{4}$, donc $\\Omega(-1\\,;1\\,;-1)$ et $R=\\blank{2}$.\\par\\smallskip\\textbf{2.}\\begin{align*}d(\\Omega,(P)) &= \\dfrac{|2(-1)+1+2(-1)-3|}{\\sqrt{4+1+4}} = \\dfrac{\\blank{6}}{\\blank{3}} = 2\\end{align*}\\par\\textbf{3.} Comme $d(\\Omega,(P)) = R = 2$ : $\\boxed{\\text{le plan est tangent à la sphère}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Dans un repère orthonormé, soit $\\Omega(2\\,;-1\\,;0)$, $R=5$ et le plan $(P) : 2x-2y+z+3=0$.\\begin{enumerate}\\item Calculons $d(\\Omega,(P))$.\\item Montrons que le plan coupe la sphère suivant un cercle.\\item Calculons le rayon de ce cercle.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}d(\\Omega,(P)) &= \\dfrac{|4+2+0+3|}{\\sqrt{4+4+1}} = \\dfrac{\\blank{9}}{\\blank{3}} = 3\\end{align*}\\par\\smallskip\\textbf{2.} Comme $3 < 5$ : le plan \\textbf{coupe} la sphère, l'intersection est un cercle.\\par\\smallskip\\textbf{3.}\\begin{align*}r &= \\sqrt{R^2-d^2} = \\sqrt{25-9} = \\boxed{4}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "distances_intersections",
+      "category": "course",
+      "title": "Distance point-droite et intersection de plans",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le produit vectoriel ne sert pas seulement à construire un vecteur normal. Sa norme mesure une aire, et cette aire fournit une distance : c'est le lien entre le produit vectoriel et la distance d'un point à une droite, ou encore la direction d'intersection de deux plans."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer la distance d'un point à une droite} par le produit vectoriel ?",
+          "content": "Soit $(D)$ passant par $A$ de vecteur directeur non nul $\\overrightarrow{u}$. Pour tout point $M$ :\\par$$\\boxed{d(M,(D)) = \\dfrac{\\|\\overrightarrow{AM} \\wedge \\overrightarrow{u}\\|}{\\|\\overrightarrow{u}\\|}}$$\\par De plus, si deux plans de normaux $\\overrightarrow{n}$ et $\\overrightarrow{n}'$ non colinéaires se coupent, la droite d'intersection a pour vecteur directeur $\\overrightarrow{n} \\wedge \\overrightarrow{n}'$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit la droite $(D)$ passant par $A(1\\,;0\\,;2)$ et de vecteur directeur $\\overrightarrow{u}(2\\,;-1\\,;2)$. Soit $M(3\\,;2\\,;1)$.\\begin{enumerate}\\item Calculons $\\overrightarrow{AM}$.\\item Calculons $\\overrightarrow{AM} \\wedge \\overrightarrow{u}$.\\item Déduisons $d(M,(D))$.\\end{enumerate}}\\par\\smallskip\\textbf{1.} $\\overrightarrow{AM} = \\blank{(2\\,;2\\,;-1)}$.\\par\\smallskip\\textbf{2.}\\begin{align*}\\overrightarrow{AM} \\wedge \\overrightarrow{u} &= (2\\times 2-(-1)(-1)\\,;\\;(-1)\\times 2-2\\times 2\\,;\\;2(-1)-2\\times 2)\\\\&= \\blank{(3\\,;-6\\,;-6)}\\end{align*}\\par\\smallskip\\textbf{3.}\\begin{align*}d(M,(D)) &= \\dfrac{\\sqrt{9+36+36}}{\\sqrt{4+1+4}} = \\dfrac{\\blank{9}}{\\blank{3}} = \\boxed{3}\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On considère $(P) : x-y+z-2=0$ et $(Q) : 2x+y-z+1=0$.\\begin{enumerate}\\item Donnons un vecteur normal à chaque plan.\\item Calculons un vecteur directeur de leur droite d'intersection.\\item Trouvons un point de cette droite.\\end{enumerate}}\\par\\smallskip\\textbf{1.} $\\overrightarrow{n} = \\blank{(1\\,;-1\\,;1)}$ et $\\overrightarrow{n}' = \\blank{(2\\,;1\\,;-1)}$.\\par\\smallskip\\textbf{2.}\\begin{align*}\\overrightarrow{n} \\wedge \\overrightarrow{n}' &= \\blank{(0\\,;3\\,;3)}\\end{align*}\\par On prend $\\overrightarrow{d} = (0\\,;1\\,;1)$.\\par\\smallskip\\textbf{3.} Avec $z=0$ : système $x-y=2$ et $2x+y=-1$. En additionnant : $3x=1$, d'où $x=\\dfrac{1}{3}$ et $y=\\blank{-\\dfrac{5}{3}}$.\\par$$\\text{Point : } \\boxed{A\\!\\left(\\dfrac{1}{3}\\,;-\\dfrac{5}{3}\\,;0\\right)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On considère la droite $(D) : x=1+t$, $y=1$, $z=-t$ ($t \\in \\mathbb{R}$) et le point $M(3\\,;2\\,;1)$.\\begin{enumerate}\\item Donnons un point $A$ et un vecteur directeur de $(D)$.\\item Calculons la distance de $M$ à $(D)$.\\item Interprétons cette distance dans une situation de trajectoire.\\end{enumerate}}\\par\\smallskip\\textbf{1.} Pour $t=0$ : $A(1\\,;1\\,;0)$. Vecteur directeur : $\\overrightarrow{u} = \\blank{(1\\,;0\\,;-1)}$.\\par\\smallskip\\textbf{2.}\\begin{align*}\\overrightarrow{AM} &= (2\\,;1\\,;1), \\quad \\overrightarrow{AM} \\wedge \\overrightarrow{u} = \\blank{(-1\\,;3\\,;-1)}\\end{align*}\\begin{align*}d(M,(D)) &= \\dfrac{\\sqrt{1+9+1}}{\\sqrt{2}} = \\boxed{\\sqrt{\\dfrac{11}{2}}}\\end{align*}\\par\\textbf{3.} Cette valeur est la \\textbf{plus courte distance} entre le point fixe $M$ et la trajectoire rectiligne : c'est la distance minimale de passage."
+        }
+      ]
+    },
+    {
+      "id": "position_droite_sphere",
+      "category": "course",
+      "title": "Position relative d'une droite et d'une sphère",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait calculer la distance d'un point à une droite. Pour étudier la position d'une droite et d'une sphère, la stratégie est invariable : calculer la distance du centre à la droite, la comparer au rayon, et seulement alors substituer la représentation paramétrique si une intersection existe."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{étudier la position d'une droite et d'une sphère} ?",
+          "content": "Repérer le centre $\\Omega$ et le rayon $R$.\\par Calculer $d(\\Omega,(D))$ par la formule du produit vectoriel.\\par Comparer avec $R$ :\\begin{itemize}\\item $d > R$ : \\textbf{aucun} point commun\\item $d = R$ : la droite est \\textbf{tangente}\\item $d < R$ : la droite coupe la sphère en \\textbf{deux points} ; substituer la représentation paramétrique dans l'équation de la sphère\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{On reprend la droite $(D) : x=1+t$, $y=1$, $z=-t$ et la sphère de centre $\\Omega(3\\,;2\\,;1)$ et de rayon $R=3$.\\begin{enumerate}\\item Comparons $d(\\Omega,(D))$ avec le rayon.\\item Montrons que la droite coupe la sphère en deux points.\\item Déterminons les valeurs du paramètre $t$ correspondantes.\\end{enumerate}}\\par\\smallskip\\textbf{1.} Avec $A(1\\,;1\\,;0)$, $\\overrightarrow{u}=(1\\,;0\\,;-1)$ et $\\overrightarrow{A\\Omega}=(2\\,;1\\,;1)$ :\\begin{align*}\\overrightarrow{A\\Omega} \\wedge \\overrightarrow{u} &= \\blank{(-1\\,;3\\,;-1)}, \\quad \\|\\overrightarrow{A\\Omega} \\wedge \\overrightarrow{u}\\| = \\sqrt{11}\\end{align*}\\begin{align*}d(\\Omega,(D)) &= \\dfrac{\\sqrt{11}}{\\sqrt{2}} = \\sqrt{\\dfrac{11}{2}} \\approx 2{,}35 < 3 = R\\end{align*}\\par\\textbf{2.} Comme $d < R$ : la droite \\textbf{coupe} la sphère en deux points.\\par\\smallskip\\textbf{3.} On substitue $x=1+t$, $y=1$, $z=-t$ dans $(x-3)^2+(y-2)^2+(z-1)^2=9$ :\\begin{align*}(t-2)^2+1+(t+1)^2 &= 9 \\\\2t^2-2t-3 &= \\blank{0}\\end{align*}\\par$$t = \\boxed{\\dfrac{1 \\pm \\sqrt{7}}{2}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit la sphère $(S)$ de centre $\\Omega(1\\,;1\\,;2)$ et de rayon $R=\\sqrt{2}$, et le plan $(P) : x+z-1=0$.\\begin{enumerate}\\item Calculons la distance de $\\Omega$ au plan $(P)$.\\item Déduisons la position relative du plan et de la sphère.\\item Déterminons le point de contact.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}d(\\Omega,(P)) &= \\dfrac{|1+2-1|}{\\sqrt{1+0+1}} = \\dfrac{\\blank{2}}{\\blank{\\sqrt{2}}} = \\sqrt{2}\\end{align*}\\par\\textbf{2.} Comme $d = R = \\sqrt{2}$ : $\\boxed{\\text{le plan est tangent à la sphère}}$.\\par\\smallskip\\textbf{3.} Droite normale en $\\Omega$ : $x=1+t$, $y=1$, $z=2+t$. Dans le plan :\\begin{align*}(1+t)+(2+t)-1 &= 0 \\\\2+2t &= 0 \\\\t &= \\blank{-1}\\end{align*}\\par Point de contact : $H = \\boxed{(0\\,;1\\,;1)}$."
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Exercices complets de type national",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un exercice national de géométrie dans l'espace s'articule comme une chaîne : produit vectoriel pour obtenir le normal, équation de plan, distance pour conclure sur la tangence ou le cercle d'intersection, puis substitution paramétrique si un point d'intersection est demandé. Il faut lire cette chaîne avant de commencer les calculs."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Dans un repère orthonormé direct, soient $A(0\\,;1\\,;1)$, $B(1\\,;2\\,;0)$, $C(-1\\,;1\\,;2)$ et la sphère $(S)$ de centre $\\Omega(1\\,;1\\,;2)$ et de rayon $\\sqrt{2}$.\\begin{enumerate}\\item Montrons que $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = (1\\,;0\\,;1)$.\\item Déduisons une équation cartésienne du plan $(ABC)$.\\item Montrons que le plan $(ABC)$ est tangent à $(S)$ en $A$.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}\\overrightarrow{AB} &= \\blank{(1\\,;1\\,;-1)}, \\quad \\overrightarrow{AC} = \\blank{(-1\\,;0\\,;1)}\\end{align*}\\begin{align*}\\overrightarrow{AB} \\wedge \\overrightarrow{AC} &= (1\\times 1-(-1)\\times 0\\,;\\;(-1)(-1)-1\\times 1\\,;\\;1\\times 0-1\\times(-1)) = \\blank{(1\\,;0\\,;1)}\\end{align*}\\par\\smallskip\\textbf{2.} Plan : $x+z+d=0$. Avec $A(0\\,;1\\,;1)$ : $0+1+d=0$, d'où $d=\\blank{-1}$.\\par$$\\boxed{(ABC) : x+z-1=0}$$\\par\\textbf{3.} $d(\\Omega,(ABC)) = \\dfrac{|1+2-1|}{\\sqrt{2}} = \\blank{\\sqrt{2}} = R$. Le plan est tangent. De plus $\\Omega A = \\sqrt{1+0+1} = \\sqrt{2}$ : $\\boxed{A \\text{ est le point de tangence}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $A(2\\,;0\\,;0)$, $B(0\\,;0\\,;2)$ et la sphère $(S)$ de centre $O(0\\,;0\\,;0)$ et de rayon $2$.\\begin{enumerate}\\item Écrivons une équation de $(S)$.\\item Vérifions que $A$ et $B$ appartiennent à $(S)$.\\item Calculons la distance de $O$ à la droite $(AB)$.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\par$$\\boxed{x^2+y^2+z^2=4}$$\\par\\smallskip\\textbf{2.} Pour $A$ : $4+0+0=\\blank{4}$. Pour $B$ : $0+0+4=\\blank{4}$. Les deux points appartiennent à $(S)$.\\par\\smallskip\\textbf{3.} Le milieu de $[AB]$ est $I(1\\,;0\\,;1)$. $\\overrightarrow{AB}=(-2\\,;0\\,;2)$ et $\\overrightarrow{OI}=(1\\,;0\\,;1)$.\\begin{align*}\\overrightarrow{OI} \\cdot \\overrightarrow{AB} &= -2+0+2 = \\blank{0}\\end{align*}\\par $(OI) \\perp (AB)$, donc $d(O,(AB)) = OI = \\sqrt{1+0+1} = \\boxed{\\sqrt{2}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Soient $A(0\\,;3\\,;3)$, $B(1\\,;2\\,;1)$, $C(2\\,;3\\,;1)$, $\\overrightarrow{n}(1\\,;-1\\,;1)$ et le plan $(P) : x-y+z-6=0$.\\begin{enumerate}\\item Montrons que $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = 2\\overrightarrow{n}$.\\item Déduisons que les plans $(ABC)$ et $(P)$ sont parallèles.\\item Calculons la distance du point $A$ au plan $(P)$.\\end{enumerate}}\\par\\smallskip\\textbf{1.}\\begin{align*}\\overrightarrow{AB} &= \\blank{(1\\,;-1\\,;-2)}, \\quad \\overrightarrow{AC} = \\blank{(2\\,;0\\,;-2)}\\end{align*}\\begin{align*}\\overrightarrow{AB} \\wedge \\overrightarrow{AC} &= (2-0\\,;\\;-4+2\\,;\\;0+2) = (2\\,;-2\\,;2) = \\blank{2\\overrightarrow{n}}\\end{align*}\\par\\smallskip\\textbf{2.} $\\overrightarrow{n}$ est normal à $(ABC)$ et à $(P)$ : leurs normaux sont colinéaires, donc $\\boxed{(ABC) \\parallel (P)}$.\\par\\smallskip\\textbf{3.}\\begin{align*}d(A,(P)) &= \\dfrac{|0-3+3-6|}{\\sqrt{1+1+1}} = \\dfrac{\\blank{6}}{\\blank{\\sqrt{3}}} = \\boxed{2\\sqrt{3}}\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\question{On considère $(S) : x^2+y^2+z^2-6x-8y-8z+32=0$ et le plan $(P)$ passant par $A(0\\,;1\\,;4)$, $B(2\\,;1\\,;2)$ et $C(2\\,;5\\,;0)$.\\begin{enumerate}\\item Déterminons le centre et le rayon de $(S)$.\\item Construisons un vecteur normal au plan $(P)$ par produit vectoriel.\\item Montrons que $(P)$ est tangent à $(S)$.\\end{enumerate}}\\par\\smallskip\\textbf{1.} Complétion des carrés :\\begin{align*}(x-3)^2+(y-4)^2+(z-4)^2 &= 9+16+16-32 = \\blank{9}\\end{align*}\\par Donc $\\Omega(3\\,;4\\,;4)$ et $R=\\blank{3}$.\\par\\smallskip\\textbf{2.} $\\overrightarrow{AB}=(2\\,;0\\,;-2)$, $\\overrightarrow{AC}=(2\\,;4\\,;-4)$ :\\begin{align*}\\overrightarrow{AB} \\wedge \\overrightarrow{AC} &= \\blank{4(2\\,;1\\,;2)}\\end{align*}\\par Normal $\\overrightarrow{n}=(2\\,;1\\,;2)$. Plan $2x+y+2z+d=0$. Avec $A$ : $d=\\blank{-9}$, donc $(P) : 2x+y+2z-9=0$.\\par\\smallskip\\textbf{3.}\\begin{align*}d(\\Omega,(P)) &= \\dfrac{|6+4+8-9|}{\\sqrt{4+1+4}} = \\dfrac{\\blank{9}}{\\blank{3}} = 3 = R\\end{align*}\\par$$\\boxed{\\text{Le plan }(P)\\text{ est tangent à la sphère }(S)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{On considère le plan $(P) : 2x-z-2=0$ et la sphère $(S) : x^2+y^2+z^2+2x-2z-7=0$.\\begin{enumerate}\\item Montrons que le centre de $(S)$ est $\\Omega(-1\\,;0\\,;1)$ et que son rayon est $3$.\\item Calculons la distance de $\\Omega$ au plan $(P)$.\\item Déduisons le rayon du cercle d'intersection.\\end{enumerate}}\\par\\smallskip\\textbf{1.} Complétion des carrés :\\begin{align*}(x+1)^2+y^2+(z-1)^2 &= 1+0+1+7 = \\blank{9}\\end{align*}\\par Donc $\\Omega(-1\\,;0\\,;1)$ et $R=\\blank{3}$.\\par\\smallskip\\textbf{2.}\\begin{align*}d(\\Omega,(P)) &= \\dfrac{|2(-1)-1-2|}{\\sqrt{4+0+1}} = \\dfrac{\\blank{5}}{\\blank{\\sqrt{5}}} = \\sqrt{5}\\end{align*}\\par\\textbf{3.} Comme $\\sqrt{5} < 3$ : le plan coupe la sphère. Le rayon du cercle est :\\begin{align*}r &= \\sqrt{R^2-d^2} = \\sqrt{9-5} = \\boxed{2}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "synthese_formules",
+      "category": "course",
+      "title": "Synthèse des formules et méthodes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Voici le récapitulatif de toutes les notions du chapitre. Chaque calcul dans l'espace est guidé par le même principe : identifier le bon objet géométrique, choisir l'outil correspondant, puis conclure par comparaison."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{choisir l'outil selon ce que demande l'exercice} ?",
+          "content": "Face à une question de \\textbf{longueur, angle ou orthogonalité} : utiliser le produit scalaire et la norme.\\par Face à une question d'\\textbf{équation de plan} : identifier ou construire un vecteur normal (donné ou calculé par produit vectoriel).\\par Face à une question de \\textbf{sphère, tangence ou intersection} : retrouver le centre et le rayon, calculer une distance, comparer.\\par\\textbf{Réflexe général :} nommer le bon objet dès le début : vecteur directeur pour une droite, vecteur normal pour un plan, centre et rayon pour une sphère."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{toutes les formules essentielles} du chapitre ?",
+          "content": "\\begin{itemize}\\item \\textbf{Produit scalaire :} $\\overrightarrow{u} \\cdot \\overrightarrow{v} = xx'+yy'+zz'$\\item \\textbf{Norme :} $\\|\\overrightarrow{u}\\| = \\sqrt{x^2+y^2+z^2}$\\item \\textbf{Orthogonalité :} $\\overrightarrow{u} \\cdot \\overrightarrow{v} = 0$\\item \\textbf{Plan point-normal :} $a(x-x_A)+b(y-y_A)+c(z-z_A)=0$\\item \\textbf{Plan cartésien :} $ax+by+cz+d=0$, normal $(a\\,;b\\,;c)$\\item \\textbf{Distance point-plan :} $\\dfrac{|ax_A+by_A+cz_A+d|}{\\sqrt{a^2+b^2+c^2}}$\\item \\textbf{Sphère :} $(x-a)^2+(y-b)^2+(z-c)^2=R^2$\\item \\textbf{Produit vectoriel :} $\\overrightarrow{u} \\wedge \\overrightarrow{v} = (bc'-cb'\\,;\\; ca'-ac'\\,;\\; ab'-ba')$\\item \\textbf{Plan par trois points :} $\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$ donne un vecteur normal\\item \\textbf{Aire triangle :} $\\mathcal{A}_{ABC} = \\dfrac{1}{2}\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$\\item \\textbf{Distance point-droite :} $\\dfrac{\\|\\overrightarrow{AM} \\wedge \\overrightarrow{u}\\|}{\\|\\overrightarrow{u}\\|}$\\item \\textbf{Plan et sphère :} comparer $d(\\Omega,(P))$ avec $R$ ; cercle de rayon $r=\\sqrt{R^2-d^2}$ si $d < R$\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Ces pièges classiques sont à éviter absolument : \\par Dans $ax+by+cz+d=0$, le vecteur $(a\\,;b\\,;c)$ est \\textbf{normal} au plan, pas directeur.\\par L'ordre du produit vectoriel compte : $\\overrightarrow{v} \\wedge \\overrightarrow{u} = -\\overrightarrow{u} \\wedge \\overrightarrow{v}$.\\par Pour une sphère développée, toujours compléter les carrés avant de lire le centre et le rayon.\\par Pour une tangence plan-sphère, comparer la distance du \\textbf{centre} au plan avec le rayon.\\par Pour un plan par trois points, s'assurer d'abord que les points ne sont pas alignés (produit vectoriel non nul)."
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{La clé d'une bonne rédaction est de nommer le bon objet dès le début : vecteur directeur pour une droite, vecteur normal pour un plan, centre et rayon pour une sphère. Chaque calcul se rattache ensuite à une propriété précise.}\\itemsize{Dans les exercices nationaux, la chaîne typique est : produit vectoriel pour le normal, équation de plan, distance pour la tangence ou le cercle, puis substitution paramétrique si une intersection est demandée.}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ex-derivation-etude-02",
+  "theme": "derivation-etude-fonctions",
+  "difficulty": "moyen",
+  "topic": "Dérivation et étude de fonctions",
+  "context": "Soit $g$ la fonction définie sur $\\mathbb{R}$ par : $g(x) = 2x + \\sqrt{4x^2+1}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $\\lim_{x \\to +\\infty} g(x)$ et $\\lim_{x \\to -\\infty} g(x)$.",
+      "hint": "En $+\\infty$, c'est une somme de termes positifs. En $-\\infty$, utilisez l'expression conjuguée ou la factorisation par $|x|$."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que $g$ est dérivable sur $\\mathbb{R}$ et que pour tout $x \\in \\mathbb{R}$, $g'(x) = \\dfrac{2\\sqrt{4x^2+1} + 4x}{\\sqrt{4x^2+1}}$.",
+      "hint": "La fonction sous la racine $4x^2+1$ est toujours strictement positive. Utilisez $(\\sqrt{u})' = \\frac{u'}{2\\sqrt{u}}$."
+    },
+    {
+      "id": "q3",
+      "content": "Étudier le signe de $g'(x)$ et dresser le tableau de variations de $g$.",
+      "hint": "Étudiez le signe du numérateur. Remarquez que $\\sqrt{4x^2+1} > |2x| \\ge -2x$."
+    },
+    {
+      "id": "q4",
+      "content": "Déterminer l'équation de la tangente $(T)$ à la courbe $(C_g)$ au point d'abscisse $0$.",
+      "hint": "Utilisez la formule $y = g'(0)(x-0) + g(0)$."
+    }
+  ]
+}

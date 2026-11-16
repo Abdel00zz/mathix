@@ -1,0 +1,243 @@
+/* ============================================================================
+ * MathFlow — Dashboard & Bibliothèque : Onglets, Bannière, Grille Cahier & Cartes
+ * ============================================================================ */
+
+/* Grille cahier Seyès subtile sur #learn et #lib */
+body[data-v="learn"],
+body[data-v="lib"] {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(to right, transparent 0, transparent 96px, var(--margin) 96px, var(--margin) 97px, transparent 97px),
+    linear-gradient(to right, var(--rule) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--rule) 1px, transparent 1px),
+    linear-gradient(to right, var(--rule2) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--rule2) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px, 8px 8px, 8px 8px;
+  background-attachment: fixed;
+}
+
+body[data-v="learn"] main,
+body[data-v="lib"] main {
+  max-width: 960px;
+  padding-top: 22px;
+  padding-bottom: 72px;
+}
+
+/* Bannière de salutation ouverte sur le cahier (sans cadre) */
+.mf-greet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 720px;
+  padding: 6px 0 14px;
+  margin: 0 auto 22px;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.mf-greet-txt {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+  font: 400 14.5px/1.4 var(--sans);
+  color: var(--muted);
+}
+
+.mf-greet-txt strong {
+  font: 700 15.5px/1.3 var(--sans);
+  color: var(--ink);
+}
+
+.mf-greet-cls {
+  font-weight: 500;
+  color: color-mix(in srgb, var(--ink) 78%, var(--muted));
+}
+
+.mf-greet-sep {
+  opacity: 0.55;
+}
+
+.mf-greet-act {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mf-cls-picker {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 4px 20px 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%231D2B66' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 6px center;
+  color: var(--accent);
+  font: 600 12.5px/1.2 var(--sans);
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.mf-cls-picker:hover,
+.mf-cls-picker:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 25%, var(--line));
+  background-color: color-mix(in srgb, var(--accent) 6%, transparent);
+  outline: none;
+}
+
+/* Barre d'onglets segmentée centrée (les onglets) */
+.mf-tabs-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 30px;
+}
+
+.mf-tabs-dock {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  padding: 5px;
+  border: 1px solid color-mix(in srgb, var(--ink) 7%, var(--line));
+  border-radius: 14px;
+  background: #efefe7;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.mf-tabs-dock::-webkit-scrollbar { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .mf-tabs-dock {
+    background: #181b26;
+  }
+}
+
+:root[data-theme="dark"] .mf-tabs-dock {
+  background: #181b26;
+}
+
+.mf-tab-pill {
+  flex: none;
+  padding: 9px 20px;
+  border-radius: 10px;
+  color: var(--muted);
+  font: 500 13.5px/1.2 var(--sans);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.16s, color 0.16s, box-shadow 0.16s;
+}
+
+.mf-tab-pill:hover {
+  color: var(--ink);
+}
+
+.mf-tab-pill[aria-current="page"] {
+  background: #292e26;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .mf-tab-pill[aria-current="page"] {
+    background: #eef0f6;
+    color: #12141c;
+  }
+}
+
+:root[data-theme="dark"] .mf-tab-pill[aria-current="page"] {
+  background: #eef0f6;
+  color: #12141c;
+}
+
+/* Colonne centrale du programme et de la bibliothèque */
+.mf-stage-col {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* En-tête Programme */
+#learn .sec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.mf-sec-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Parcours éditorial ouvert sur le cahier (sans cadres autour des chapitres) */
+#learn .path {
+  display: grid;
+  gap: 4px;
+}
+
+#learn .path .ch {
+  padding-inline-start: 48px;
+}
+
+#learn .path .ch + .ch {
+  border-top: 1px solid color-mix(in srgb, var(--line) 55%, transparent);
+}
+
+#learn .path .node {
+  top: 14px;
+}
+
+.ch-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.ch-card .head {
+  padding: 14px 0;
+}
+
+.ch.open .ch-card .steps {
+  padding-top: 4px;
+  padding-bottom: 12px;
+}
+
+.stp.is-last-step .tx b {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stp-last {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  font: 600 10.5px/1.2 var(--sans);
+  font-style: normal;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 640px) {
+  .mf-greet {
+    padding: 4px 0 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .mf-tab-pill { padding: 8px 14px; font-size: 13px; }
+}

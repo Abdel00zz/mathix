@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Math+ — vidéo promotionnelle</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #111a38; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { display: grid; place-items: center; padding: 20px; overflow: auto; }
+    .stage { width: min(100%, 540px); }
+    .preview { position: relative; width: 100%; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 28px; box-shadow: 0 30px 80px rgba(0,0,0,.34); background: #f8f7f3; }
+    canvas { display: block; width: 100%; height: 100%; }
+    .controls { display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap; }
+    button { border: 0; border-radius: 999px; padding: 11px 18px; color: #fff; background:#b5369b; font: 700 13px/1 Inter, sans-serif; cursor:pointer; box-shadow:0 8px 24px rgba(181,54,155,.25); }
+    button.secondary { background:#26335e; }
+    button:disabled { opacity:.55; cursor:wait; }
+    .status { color:#dce3ff; text-align:center; font-size:12px; margin-top:10px; min-height:18px; }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <div class="preview"><canvas id="video" width="540" height="960" aria-label="Aperçu vidéo Math+"></canvas></div>
+    <div class="controls">
+      <button id="record">Générer la vidéo 30 s</button>
+      <button id="restart" class="secondary">Rejouer l’aperçu</button>
+    </div>
+    <div class="status" id="status">Aperçu en cours…</div>
+  </main>
+  <script>
+    (() => {
+      const canvas = document.getElementById('video');
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width, H = canvas.height;
+      const duration = 30;
+      const logo = new Image();
+      logo.src = 'logo.png';
+      let start = performance.now();
+      let loopId = 0;
+      let recording = false;
+      let recordedChunks = [];
+
+      const C = {
+        navy: '#1e2548', navy2: '#111a38', ink: '#1d2240', muted: '#69708e', paper: '#fbfaf7',
+        pink: '#b5369b', pink2: '#e773bf', gold: '#e7b45d', mint: '#55c6a3', sky: '#70a8ff', line: '#e9e7ee', white:'#ffffff'
+      };
+      const TAU = Math.PI * 2;
+      const clamp = (v, a=0, b=1) => Math.max(a, Math.min(b, v));
+      const ease = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+      const smooth = (t, a, b) => ease(clamp((t-a)/(b-a)));
+      const sceneAlpha = (t, a, b) => clamp((t-a)/.65) * clamp((b-t)/.65);
+      const rounded = (x,y,w,h,r,fill,stroke) => { ctx.beginPath(); ctx.roundRect(x,y,w,h,r); if(fill){ctx.fillStyle=fill;ctx.fill();} if(stroke){ctx.strokeStyle=stroke;ctx.stroke();} };
+      const txt = (str,x,y,size,color=C.ink,weight=600,align='left',font='Inter, ui-sans-serif, system-ui, sans-serif') => { ctx.font = `${weight} ${size}px ${font}`; ctx.fillStyle=color; ctx.textAlign=align; ctx.textBaseline='alphabetic'; ctx.fillText(str,x,y); };
+      const line = (x1,y1,x2,y2,color,width=2) => { ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.strokeStyle=color; ctx.lineWidth=width; ctx.stroke(); };
+      const circle = (x,y,r,fill,stroke) => { ctx.beginPath(); ctx.arc(x,y,r,0,TAU); if(fill){ctx.fillStyle=fill;ctx.fill();} if(stroke){ctx.strokeStyle=stroke;ctx.stroke();} };
+      const pill = (label,x,y,w,color,bg) => { rounded(x,y,w,30,15,bg); txt(label,x+w/2,y+20,12,color,800,'center'); };
+
+      function backdrop(t, accent=C.pink) {
+        const g = ctx.createLinearGradient(0,0,W,H); g.addColorStop(0,C.paper); g.addColorStop(1,'#f3eef7'); ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+        ctx.globalAlpha=.22;
+        for(let i=0;i<15;i++) { const x=40+((i*97 + t*18)%520), y=80+((i*149 + t*11)%900); circle(x,y,2.3,accent); }
+        ctx.globalAlpha=1;
+        ctx.strokeStyle='rgba(181,54,155,.07)'; ctx.lineWidth=1;
+        for(let x=-30;x<W+80;x+=54) line(x,0,x+210,H,'rgba(181,54,155,.07)',1);
+        for(let y=70;y<H;y+=54) line(0,y,W,y,'rgba(181,54,155,.045)',1);
+      }
+
+      function topBrand(progress, dark=false) {
+        ctx.globalAlpha=.95; rounded(28,28,W-56,42,21,dark?'rgba(255,255,255,.1)':'rgba(255,255,255,.76)'); ctx.globalAlpha=1;
+        circle(49,49,12,C.pink); txt('+',49,55,19,C.white,900,'center'); txt('Math+',71,55,17,dark?C.white:C.navy,850);
+        txt('0:30',W-48,54,12,dark?'#dce3ff':C.muted,800,'right');
+        rounded(28,82,W-56,4,2,dark?'rgba(255,255,255,.16)':'#e7e2eb'); rounded(28,82,(W-56)*clamp(progress),4,2,C.pink);
+      }
+
+      function appShell(x,y,w,h,title,sub,accent=C.pink) {
+        ctx.shadowColor='rgba(31,37,72,.16)'; ctx.shadowBlur=22; ctx.shadowOffsetY=12; rounded(x,y,w,h,25,C.white); ctx.shadowColor='transparent';
+        rounded(x,y,w,54,25,accent); ctx.fillStyle=accent; ctx.fillRect(x,y+27,w,27);
+        txt(title,x+22,y+34,17,C.white,850); txt(sub,x+w-22,y+33,11,'rgba(255,255,255,.85)',700,'right');
+      }
+
+      function drawDashboard(t) {
+        const p = smooth(t,3.2,4.4);
+        const x=35+p*10,y=170+(1-p)*18,w=W-70,h=535;
+        appShell(x,y,w,h,'Mon parcours','1ère Bac · Sciences Math',C.navy);
+        txt('Bonjour, Lina 👋',x+24,y+92,24,C.ink,850);
+        txt('Chaque séance te rapproche de ton objectif.',x+24,y+117,13,C.muted,550);
+        rounded(x+24,y+141,w-48,93,20,'#f6f3fb');
+        txt('Progression globale',x+42,y+170,12,C.muted,700);
+        txt('68%',x+42,y+212,36,C.pink,900);
+        ctx.beginPath(); ctx.arc(x+w-72,y+187,27,-Math.PI/2,-Math.PI/2+TAU*.68); ctx.strokeStyle='#e8d7e5'; ctx.lineWidth=7; ctx.stroke(); ctx.beginPath(); ctx.arc(x+w-72,y+187,27,-Math.PI/2,-Math.PI/2+TAU*.68); ctx.strokeStyle=C.pink; ctx.lineWidth=7; ctx.lineCap='round'; ctx.stroke(); ctx.lineCap='butt';
+        txt('Continue ton parcours',x+24,y+275,16,C.ink,850);
+        const cards=[['Révision','Cours interactif',C.pink,'68%'],['Quiz','Teste tes acquis',C.sky,'12/16'],['Exercices','Passe à la pratique',C.mint,'8/10']];
+        cards.forEach((c,i)=>{ const cy=y+296+i*64; rounded(x+24,cy,w-48,50,15,'#fff',C.line); circle(x+48,cy+25,15,c[2]); txt(i===0?'↗':i===1?'?':'✓',x+48,cy+31,16,C.white,900,'center'); txt(c[0],x+74,cy+23,13,C.ink,800); txt(c[1],x+74,cy+40,11,C.muted,550); txt(c[3],x+w-46,cy+30,12,c[2],850,'right'); });
+        const tabY=y+h-46; line(x+24,tabY-10,x+w-24,tabY-10,C.line,1); ['Apprendre','Examens','Concours'].forEach((s,i)=>{txt(s,x+66+i*118,tabY+12,11,i===0?C.pink:C.muted,800,'center');});
+      }
+
+      function drawRevision(t) {
+        const p=smooth(t,8.4,9.5); const x=32+(1-p)*30,y=165+(1-p)*15,w=W-64,h=560;
+        appShell(x,y,w,h,'Révision active','Fonctions',C.pink);
+        pill('Leçon 02',x+22,y+75,82,C.pink,'#fceaf6'); txt('Comprendre la dérivée',x+22,y+142,22,C.ink,900); txt('Une idée claire. Un exemple. Une méthode.',x+22,y+170,12,C.muted,550);
+        rounded(x+22,y+194,w-44,148,18,'#f8f9ff');
+        txt('f′(x) mesure la variation de f',x+w/2,y+243,22,C.navy,800,'center','Georgia, serif');
+        txt('au voisinage de x.',x+w/2,y+278,21,C.navy,800,'center','Georgia, serif');
+        line(x+54,y+309,x+w-54,y+309,'#d5dcf2',2);
+        txt('À retenir',x+22,y+382,14,C.pink,850); txt('Le signe de la dérivée permet de lire',x+22,y+411,14,C.ink,650); txt('les variations de la fonction.',x+22,y+433,14,C.ink,650);
+        rounded(x+22,y+465,w-44,57,16,'#fff7e7'); circle(x+49,y+493,14,C.gold); txt('★',x+49,y+499,13,C.white,900,'center'); txt('Astuce : observe d’abord la courbe.',x+74,y+498,12,'#8b641d',750);
+        rounded(x+22,y+h-36,w-44,6,3,'#ece9f1'); rounded(x+22,y+h-36,(w-44)*.72,6,3,C.pink); txt('72% de la séance',x+w-22,y+h-43,10,C.muted,700,'right');
+      }
+
+      function drawQuiz(t) {
+        const p=smooth(t,13.4,14.5); const x=30+(1-p)*25,y=170+(1-p)*18,w=W-60,h=520;
+        appShell(x,y,w,h,'Quiz express','Question 4 / 10',C.sky);
+        txt('Si f(x)=x², alors f′(x)= ?',x+24,y+105,20,C.ink,850);
+        txt('Choisis la bonne réponse.',x+24,y+132,12,C.muted,550);
+        const opts=[['A','x'],['B','2x'],['C','x²'],['D','2']];
+        opts.forEach((o,i)=>{ const oy=y+162+i*57; const correct=i===1; rounded(x+24,oy,w-48,43,13,correct?'#e9fbf5':'#fbfbfd',correct?C.mint:C.line); circle(x+48,oy+21,13,correct?C.mint:'#eef0f8'); txt(o[0],x+48,oy+26,11,correct?C.white:C.navy,850,'center'); txt(o[1],x+78,oy+27,18,C.ink,800,'left','Georgia, serif'); if(correct){txt('✓ Correct',x+w-30,oy+27,11,C.mint,850,'right');} });
+        pill('Réponse expliquée',x+24,y+h-58,133,C.pink,'#fceaf6'); txt('Comprends tes erreurs, pas seulement ton score.',x+24,y+h-29,11,C.muted,600);
+      }
+
+      function drawExercises(t) {
+        const p=smooth(t,18.4,19.5); const x=34+(1-p)*24,y=170+(1-p)*12,w=W-68,h=510;
+        appShell(x,y,w,h,'Exercices','Niveau progressif',C.mint);
+        txt('Passe à la pratique',x+24,y+102,24,C.ink,900); txt('Des exercices ciblés pour consolider tes acquis.',x+24,y+130,12,C.muted,550);
+        const ex=[['Départ','Calculer une dérivée',C.mint,'✓'],['Challenge','Étudier les variations',C.gold,'→'],['Maîtrise','Problème type examen',C.pink,'+']];
+        ex.forEach((e,i)=>{ const ey=y+160+i*72; rounded(x+24,ey,w-48,55,16,'#fff',C.line); rounded(x+39,ey+13,29,29,10,e[2]); txt(e[3],x+53,ey+34,16,C.white,900,'center'); txt(e[0],x+84,ey+24,10,e[2],850); txt(e[1],x+84,ey+42,13,C.ink,750); txt(i===0?'Terminé':i===1?'À faire':'Bientôt',x+w-40,ey+33,10,i===0?C.mint:C.muted,750,'right'); });
+        rounded(x+24,y+h-68,w-48,42,14,C.navy); txt('8 exercices résolus cette semaine',x+w/2,y+h-41,12,C.white,800,'center');
+      }
+
+      function drawExam(t) {
+        const p=smooth(t,23.4,24.5); const x=29+(1-p)*25,y=165+(1-p)*20,w=W-58,h=560;
+        appShell(x,y,w,h,'Objectif : l’excellence','Examens & concours',C.gold);
+        txt('Prêt pour le jour J ?',x+24,y+103,25,C.ink,900); txt('Entraîne-toi sur les vrais formats.',x+24,y+132,12,C.muted,550);
+        rounded(x+24,y+160,w-48,92,19,'#fff7e7'); txt('Examens Nationaux',x+45,y+194,16,'#8b641d',850); txt('Sujets, corrigés et séances chronométrées',x+45,y+221,11,'#a27c37',600); txt('2020 → 2025',x+w-44,y+204,11,'#8b641d',850,'right');
+        rounded(x+24,y+274,w-48,92,19,'#ecfbf6'); txt('Prépa Concours',x+45,y+308,16,'#18765c',850); txt('ENSA · ENSAM · Médecine',x+45,y+335,11,'#3b9279',650); txt('Mode défi',x+w-44,y+318,11,'#18765c',850,'right');
+        txt('Ta régularité fait la différence',x+24,y+420,15,C.ink,800); for(let i=0;i<7;i++){const bar=18+(i%3)*10; rounded(x+24+i*39,y+456-bar,24,bar,8,i<5?C.pink:'#e8e5ed');} txt('5 jours de suite',x+24,y+497,11,C.muted,650);
+        pill('Voir mon objectif',x+24,y+523,128,C.navy,'#e9edf9');
+      }
+
+      function drawHook(t) {
+        const p=smooth(t,0,1.3); const dark=C.navy2;
+        ctx.fillStyle=dark; ctx.fillRect(0,0,W,H);
+        ctx.globalAlpha=.18; for(let i=0;i<14;i++){circle(60+(i*83+t*23)%520,130+(i*121+t*9)%800,2,C.pink2);} ctx.globalAlpha=1;
+        ctx.strokeStyle='rgba(112,168,255,.12)'; ctx.lineWidth=1; for(let x=20;x<W;x+=46) line(x,130,x,H,'rgba(112,168,255,.12)',1); for(let y=140;y<H;y+=46) line(0,y,W,y,'rgba(112,168,255,.08)',1);
+        topBrand(0.08,true);
+        circle(W/2,300,75,'rgba(181,54,155,.18)'); circle(W/2,300,60,C.pink); txt('+',W/2,320,92,C.white,900,'center');
+        txt('Les maths,',W/2,464,38,C.white,850,'center'); txt('autrement.',W/2,515,50,C.pink2,900,'center');
+        txt('Cours interactifs · quiz corrigés · exercices',W/2,580,14,'#dce3ff',650,'center');
+        rounded(94,650,W-188,56,28,'rgba(255,255,255,.11)'); txt('Apprendre intelligemment',W/2,685,16,C.white,800,'center');
+        txt('Une méthode claire pour progresser chaque jour.',W/2,800,13,'#aeb9e2',600,'center');
+        const r=clamp((t-.8)/.7); ctx.globalAlpha=r; txt('Math+ accompagne ton prochain déclic.',W/2,858,17,C.white,800,'center'); ctx.globalAlpha=1;
+      }
+
+      function drawCta(t) {
+        const p=smooth(t,27.5,28.7); ctx.fillStyle=C.navy2; ctx.fillRect(0,0,W,H);
+        ctx.globalAlpha=.15; for(let i=0;i<10;i++) circle(40+(i*79+t*21)%520,100+(i*147)%850,2.5,C.pink2); ctx.globalAlpha=1;
+        topBrand(1,true);
+        const s=.86+.14*p; ctx.save(); ctx.translate(W/2,330); ctx.scale(s,s); circle(0,0,66,C.pink); txt('+',0,23,88,C.white,900,'center'); ctx.restore();
+        txt('Math+',W/2,474,48,C.white,900,'center'); txt('Apprendre intelligemment.',W/2,526,21,C.pink2,800,'center');
+        rounded(78,614,W-156,62,31,C.pink); txt('Commence maintenant',W/2,653,17,C.white,850,'center');
+        txt('Révise. Entraîne-toi. Réussis.',W/2,756,15,'#dce3ff',700,'center');
+        txt('mathplus.ma',W/2,850,14,'#aeb9e2',800,'center');
+      }
+
+      function frame(elapsed) {
+        const t = Math.min(duration, elapsed);
+        ctx.clearRect(0,0,W,H);
+        if(t < 3.3) drawHook(t);
+        else if(t < 8.5) { backdrop(t,C.pink); topBrand(t/duration); drawDashboard(t); }
+        else if(t < 13.5) { backdrop(t,C.pink); topBrand(t/duration); drawRevision(t); }
+        else if(t < 18.5) { backdrop(t,C.sky); topBrand(t/duration); drawQuiz(t); }
+        else if(t < 23.5) { backdrop(t,C.mint); topBrand(t/duration); drawExercises(t); }
+        else if(t < 27.5) { backdrop(t,C.gold); topBrand(t/duration); drawExam(t); }
+        else drawCta(t);
+        if(!recording) document.getElementById('status').textContent = `Aperçu · ${t.toFixed(1)} s / 30 s`;
+      }
+
+      function loop(now) { const elapsed=(now-start)/1000; frame(elapsed%duration); loopId=requestAnimationFrame(loop); }
+      function restart() { cancelAnimationFrame(loopId); start=performance.now(); recording=false; loopId=requestAnimationFrame(loop); }
+      function downloadBlob(blob) { const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='mathplus-promo-30s.webm'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),5000); }
+      async function record() {
+        if(recording) return; recording=true; recordedChunks=[]; document.getElementById('record').disabled=true; document.getElementById('restart').disabled=true; document.getElementById('status').textContent='Génération de la vidéo…';
+        const stream=canvas.captureStream(30); const mime=MediaRecorder.isTypeSupported('video/webm;codecs=vp9')?'video/webm;codecs=vp9':'video/webm'; const rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:5_000_000});
+        rec.ondataavailable=e=>{if(e.data.size) recordedChunks.push(e.data);};
+        const done=new Promise(resolve=>rec.onstop=resolve); rec.start(250); const recStart=performance.now();
+        await new Promise(resolve=>{ const tick=()=>{ const elapsed=(performance.now()-recStart)/1000; frame(elapsed); if(elapsed<duration){requestAnimationFrame(tick);} else resolve(); }; tick(); });
+        rec.stop(); await done; const blob=new Blob(recordedChunks,{type:'video/webm'}); downloadBlob(blob); document.getElementById('status').textContent='Vidéo générée et téléchargée : mathplus-promo-30s.webm'; document.getElementById('record').disabled=false; document.getElementById('restart').disabled=false; recording=false;
+      }
+      document.getElementById('record').addEventListener('click',record); document.getElementById('restart').addEventListener('click',restart); restart();
+    })();
+  </script>
+</body>
+</html>

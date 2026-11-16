@@ -1,0 +1,20 @@
+{
+  "id": "ex-06",
+  "theme": "calcul-integral",
+  "difficulty": "moyen",
+  "topic": "Calcul Intégral - Primitive et calcul d'aire (Session Juillet 2012)",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction définie sur $\\mathbb{R}$ par : $f(x) = x + \\dfrac{e^x - 1}{e^x + 1}$. Soit $(C_f)$ la courbe de $f$ dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que la fonction $H : x \\mapsto x - \\ln(e^x + 1)$ est une primitive de la fonction $x \\mapsto \\dfrac{1}{e^x + 1}$ sur $\\mathbb{R}$.",
+      "hint": "\\method Calculez $H'(x)$ en dérivant $x - \\ln(e^x+1)$. \\tip La dérivée de $\\ln(e^x+1)$ est de la forme $\\frac{u'}{u}$ avec $u = e^x+1$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer l'aire du domaine plan limité par $(C_f)$, la droite $(D)$ d'équation $y = x + 1$, et les droites d'équations $x = 0$ et $x = \\ln 2$.",
+      "hint": "\\method Commencez par étudier le signe de $f(x) - (x+1)$ sur $[0;\\ln 2]$. \\tip $f(x) - (x+1) = \\frac{e^x-1}{e^x+1} - 1$. Simplifiez cette expression, puis utilisez la primitive $H$ établie en question 1."
+    }
+  ]
+}

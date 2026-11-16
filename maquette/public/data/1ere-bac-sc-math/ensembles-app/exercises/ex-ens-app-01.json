@@ -1,0 +1,56 @@
+{
+  "id": "ex-ens-app-01",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Écriture et description d'ensembles",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Écrire en compréhension :",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "L'ensemble des entiers naturels qui sont des multiples de 7.",
+          "hint": ""
+        },
+        {
+          "id": "sq1b",
+          "content": "L'ensemble des rationnels dont le carré est supérieur ou égal à 29.",
+          "hint": ""
+        },
+        {
+          "id": "sq1c",
+          "content": "L'ensemble des diviseurs positifs de 360.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Écrire en extension :",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "L'ensemble des nombres premiers compris entre 15 et 50.",
+          "hint": ""
+        },
+        {
+          "id": "sq2b",
+          "content": "L'ensemble des entiers naturels $n$ tels que $n^2 \\leq 40$ et $\\sqrt{n+1} \\in \\mathbb{N}$.",
+          "hint": "Cherchez les valeurs de $n$ satisfaisant simultanément les deux conditions."
+        },
+        {
+          "id": "sq2c",
+          "content": "L'ensemble des réels $x$ tels que $|2x + 3| \\leq 7$.",
+          "hint": "Traduisez $|2x+3| \\leq 7$ en un encadrement double, puis résolvez."
+        },
+        {
+          "id": "sq2d",
+          "content": "L'ensemble des entiers relatifs $x$ tels que $\\dfrac{6}{x} \\in \\mathbb{Z}$.",
+          "hint": "Cherchez tous les diviseurs entiers (positifs et négatifs) de 6."
+        }
+      ]
+    }
+  ]
+}

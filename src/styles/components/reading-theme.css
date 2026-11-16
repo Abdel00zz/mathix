@@ -1,0 +1,47 @@
+/* Thème de lecture (onglet « Apparence ») : papier, police et échelle des
+   documents de révision, quiz et exercices. Les variables sont pilotées par
+   `useAppSettings` via `data-reading-paper` / `data-reading-font` sur <html>,
+   et `--reading-doc-scale` en propriété personnalisée. Thème clair uniquement. */
+
+:root {
+  --reading-page-from: #fcfbf9;
+  --reading-page-via: #faf9f6;
+  --reading-page-to: #f3f1ed;
+  --reading-shell: #f4f3ed;
+  --reading-paper: #ffffff;
+  --reading-paper-border: #e2e8f0;
+  --reading-doc-scale: 1;
+}
+
+html[data-reading-paper='blanc'] {
+  --reading-page-from: #ffffff;
+  --reading-page-via: #ffffff;
+  --reading-page-to: #f8fafc;
+  --reading-shell: #f4f3ed;
+  --reading-paper: #ffffff;
+  --reading-paper-border: #e2e8f0;
+}
+
+html[data-reading-paper='creme'] {
+  --reading-page-from: #fdf8ec;
+  --reading-page-via: #fbf3e2;
+  --reading-page-to: #f6e9d2;
+  --reading-shell: #f7f1e6;
+  --reading-paper: #fdf9f0;
+  --reading-paper-border: #e8dcc4;
+}
+
+html[data-reading-paper='ardoise'] {
+  --reading-page-from: #eef2f6;
+  --reading-page-via: #e9eef3;
+  --reading-page-to: #dfe6ec;
+  --reading-shell: #e6ecf2;
+  --reading-paper: #eef2f6;
+  --reading-paper-border: #c3ceda;
+}
+
+/* Le sélecteur redéfinit --font-exercise comme .vercel-font redéfinit les
+   polices du studio : les documents `.typo-exercise` suivent la police choisie.
+   Le défaut `serif` (Lora) est celui qui fusionne avec KaTeX. */
+html[data-reading-font='sans'] { --font-exercise: var(--font-ui); }
+html[data-reading-font='ronde'] { --font-exercise: var(--font-itim); }

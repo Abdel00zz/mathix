@@ -1,0 +1,110 @@
+{
+  "id": "ex-exp-004",
+  "theme": "exponentielles",
+  "difficulty": "facile",
+  "topic": "Analyse - Fonctions exponentielles",
+  "context": "Soit $g$ la fonction numérique définie sur $\\mathbb{R}$ par : $$g(x) = 1 - (x+1)^2 e^x$$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "pI",
+      "content": "",
+      "type": "header"
+    },
+    {
+      "id": "q1",
+      "content": "Vérifier que $g(0) = 0$.",
+      "hint": "Rappelez-vous que $e^0 = 1$. Remplacez simplement $x$ par $0$ dans l'expression de $g(x)$."
+    },
+    {
+      "id": "q2",
+      "content": "À partir de la représentation graphique de la fonction $g$ (voir figure ci-contre), montrer que $g(x) \\geq 0$ pour tout $x$ appartenant à l'intervalle $]-\\infty; 0]$ et que $g(x) \\leq 0$ pour tout $x$ appartenant à l'intervalle $[0; +\\infty[$.",
+      "media": {
+        "src": "/data/2eme-bac-sc-ex/pictures/ex_4_courbe.png",
+        "position": "float-right",
+        "width": "43%",
+        "alt": "Courbe représentative de g",
+        "caption": "Courbe de la fonction $g$",
+        "style": {
+          "shadow": "md",
+          "rounded": true,
+          "border": true
+        }
+      },
+      "hint": "Observez la position de la courbe par rapport à l'axe des abscisses. Comment le fait que $g(0)=0$ et le sens de variation de $g$ (visible sur le graphe) vous aident-ils à déterminer le signe de $g(x)$ ?"
+    },
+    {
+      "id": "pII",
+      "content": "",
+      "type": "header"
+    },
+    {
+      "id": "q3",
+      "content": "On considère la fonction numérique $f$ définie sur $\\mathbb{R}$ par : $f(x) = x + 1 - (x^2 + 1)e^x$ et $(C_f)$ sa courbe représentative (unité : 2 cm).",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Vérifier que $f(x) = x + 1 - 4\\left(\\frac{x}{2}e^{\\frac{x}{2}}\\right)^2 - e^x$ pour tout $x$ de $\\mathbb{R}$ puis déduire que $\\displaystyle \\lim_{x \\to -\\infty} f(x) = +\\infty$.",
+          "hint": "Pour la limite, rappelez-vous de la limite de croissance comparée $\\lim_{u \\to -\\infty} u^n e^u = 0$. Quel est le terme qui l'emporte dans l'expression de $f(x)$ en $-\\infty$ ?"
+        },
+        {
+          "id": "sq3b",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to -\\infty} [f(x) - (x+1)]$ en déduire que la droite $(D)$ d'équation $y = x + 1$ est une asymptote à la courbe $(C_f)$ au voisinage de $-\\infty$.",
+          "hint": "Calculez la limite de la différence $f(x) - (x+1)$. Quelle est la définition d'une asymptote oblique ?"
+        },
+        {
+          "id": "sq3c",
+          "content": "Montrer que la courbe $(C_f)$ est au-dessous de la droite $(D)$.",
+          "hint": "Étudiez le signe de $f(x) - (x+1)$. Quels sont les signes de $x^2+1$ et de $e^x$ ?"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Montrer que $\\displaystyle \\lim_{x \\to +\\infty} f(x) = -\\infty$ (on pourra écrire $f(x)$ sous la forme $x\\left[1 + \\frac{1}{x} - \\left(x + \\frac{1}{x}\\right)e^x\\right]$).",
+          "hint": "Factorisez $f(x)$ par $x$ comme suggéré. Quelle est la limite du terme entre crochets lorsque $x \\to +\\infty$ ? Rappelez-vous que l'exponentielle l'emporte sur les polynômes."
+        },
+        {
+          "id": "sq4b",
+          "content": "Montrer que la courbe $(C_f)$ admet au voisinage de $+\\infty$ une branche parabolique dont on précisera la direction.",
+          "hint": "Pour une branche parabolique de direction $(Oy)$, quelle limite faut-il calculer ? Utilisez les croissances comparées."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq5a",
+          "content": "Montrer que $f'(x) = g(x)$ pour tout réel $x$.",
+          "hint": "\\method Dérivez $f(x)$ en utilisant la règle du produit $(uv)'$ pour le terme $(x^2+1)e^x$. Factorisez le résultat par $e^x$ et comparez avec $g(x)$."
+        },
+        {
+          "id": "sq5b",
+          "content": "Montrer que la fonction $f$ est croissante sur $]-\\infty; 0]$ et décroissante sur $[0; +\\infty[$ et dresser le tableau de variations de $f$ sur $\\mathbb{R}$.",
+          "hint": "Quel est le lien entre le signe de $f'(x)$ et les variations de $f$ ? Utilisez le signe de $g(x)$ trouvé en Partie I."
+        },
+        {
+          "id": "sq5c",
+          "content": "Montrer que la courbe $(C_f)$ possède deux points d'inflexion d'abscisses respectives $-3$ et $-1$.",
+          "hint": "Un point d'inflexion est un point où la dérivée seconde s'annule en changeant de signe. Calculez $f''(x) = g'(x)$ et étudiez son signe."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "Construire dans le même repère $(O;\\overrightarrow{i},\\overrightarrow{j})$, la droite $(D)$ et la courbe $(C_f)$ (on prendra $f(-3) \\simeq -2.5$ et $f(-1) \\simeq -0.7$).",
+      "hint": "\\step Tracez l'asymptote, placez le maximum et les points d'inflexion, puis esquissez la courbe en respectant la position relative et la branche parabolique."
+    },
+    {
+      "id": "q7",
+      "content": "Vérifier que la fonction $H : x \\mapsto (x-1)e^x$ est une primitive de la fonction $h : x \\mapsto xe^x$ sur $\\mathbb{R}$.",
+      "hint": "\\method Pour vérifier une primitive, il suffit de dériver. Calculez $H'(x)$ en utilisant la règle du produit et comparez le résultat à $h(x)$."
+    }
+  ]
+}

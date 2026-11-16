@@ -1,0 +1,30 @@
+{
+  "id": "ex-log-04",
+  "theme": "logique",
+  "difficulty": "facile",
+  "topic": "Logique & Raisonnements — Logique propositionnelle",
+  "requiresRedaction": true,
+  "context": "On considère la fonction propositionnelle $P(x;y) : x > y$. Déterminer la valeur de vérité de chacune des propositions suivantes :",
+  "questions": [
+    {
+      "id": "qa",
+      "content": "$P_1 : (\\forall x \\in \\mathbb{R})(\\forall y \\in \\mathbb{R})\\; P(x;y)$",
+      "hint": ""
+    },
+    {
+      "id": "qb",
+      "content": "$P_2 : (\\exists x \\in \\mathbb{R})(\\exists y \\in \\mathbb{R})$; $P(x;y)$",
+      "hint": ""
+    },
+    {
+      "id": "qc",
+      "content": "$P_3 : (\\forall x \\in \\mathbb{R})(\\exists y \\in \\mathbb{R})$; $P(x;y)$",
+      "hint": ""
+    },
+    {
+      "id": "qd",
+      "content": "$P_4 : (\\exists x \\in \\mathbb{R})(\\forall y \\in \\mathbb{R})$; $P(x;y)$",
+      "hint": ""
+    }
+  ]
+}

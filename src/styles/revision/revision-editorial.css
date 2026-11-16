@@ -1,0 +1,497 @@
+/* Revision editorial theme — Calme, cohérent, anti-distraction & respectant --reading-doc-scale */
+.revision-editorial {
+  --font-editorial-text: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+  --font-editorial: var(--font-editorial-text);
+  --font-math: 'Latin Modern Roman', 'Latin Modern Math', 'KaTeX_Main', 'Computer Modern', 'CMU Serif', serif;
+  --edition-ink: #1e293b;
+  --edition-muted: #64748b;
+  --edition-rule: color-mix(in srgb, var(--reading-paper-border, #e2e8f0) 80%, #94a3b8);
+  color: var(--edition-ink);
+  font-family: var(--font-editorial);
+}
+
+.revision-editorial .revision-surface,
+.revision-editorial .revision-reading-block,
+.revision-editorial .revision-block-body,
+.revision-editorial .text-block-body,
+.revision-editorial .math-renderer,
+.revision-editorial .math-renderer-flow,
+.revision-editorial .latex-text,
+.revision-editorial .math-paragraph,
+.revision-editorial p,
+.revision-editorial li,
+.revision-editorial .math-list-text,
+.revision-editorial .revision-reveal-content-shell {
+  font-family: var(--font-editorial-text);
+}
+
+.revision-editorial .revision-badge,
+.revision-editorial .badge,
+.revision-editorial .revision-badge-number,
+.revision-editorial .revision-reveal-toggle,
+.revision-editorial .step-num,
+.revision-editorial .math-list-marker {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif !important;
+}
+
+.revision-editorial .revision-correction-toggle,
+.revision-editorial .revision-correction-toggle-label,
+.revision-editorial .revision-correction-toggle * {
+  font-family: var(--font-button-fira, 'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif) !important;
+}
+
+.revision-editorial .revision-hero {
+  margin-bottom: clamp(1.75rem, 4.5vw, 4rem);
+}
+
+.revision-editorial .revision-section {
+  margin-bottom: clamp(2.5rem, 5.5vw, 5rem);
+}
+
+.revision-editorial .revision-section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(0.55rem, 1.4vw, 1.2rem);
+  border: none !important;
+  padding-top: 0 !important;
+  margin-bottom: clamp(1.4rem, 3vw, 2.25rem);
+}
+
+.revision-editorial .revision-section-index {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  font-family: var(--font-paragraph-number, var(--font-majestic, 'History Channel', 'History Channels', 'History', 'Franklin Gothic Heavy', 'Franklin Gothic Bold', 'Franklin Gothic Medium', 'Franklin Gothic', 'Cinzel Decorative', 'Cinzel', 'Trajan Pro', 'Trajan', serif, sans-serif)) !important;
+  font-size: calc(var(--rev-fluid-section-index, clamp(1.75rem, calc(1.4rem + 1.55vw), 3.05rem)) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em;
+  color: #ca8a04 !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #ca8a04 !important;
+  user-select: none;
+  align-self: baseline;
+}
+
+.revision-editorial .revision-section-title {
+  color: #0f172a;
+  font-size: calc(var(--rev-fluid-section-title, clamp(1.35rem, calc(1.22rem + 0.65vw), 1.9rem)) * var(--reading-doc-scale, 1));
+  line-height: 1.32;
+  font-weight: 650;
+  font-family: var(--font-display) !important;
+}
+
+.revision-editorial .revision-section-body {
+  width: 100%;
+}
+
+.revision-editorial .revision-section-content > div + div {
+  margin-top: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+.revision-editorial .revision-intro {
+  margin-block: 0;
+  padding: 0;
+  color: #334155;
+  font-size: var(--revision-body-size);
+  line-height: var(--revision-body-leading);
+}
+
+.revision-editorial .revision-reading-block {
+  color: #1e293b;
+  font-size: var(--revision-body-size);
+  line-height: var(--revision-body-leading);
+}
+
+.revision-editorial :is(
+  .revision-section-title,
+  .revision-title-text,
+  .revision-reveal-header h3,
+  .revision-text-question,
+  .revision-block-header h4,
+  .revision-application-header h4,
+  .revision-method-holo,
+  .revision-reveal-method .revision-reveal-header h3,
+  .revision-block-method .revision-block-header h4
+) {
+  font-family: var(--font-display) !important;
+  font-style: normal;
+}
+
+.revision-editorial :is(.revision-reveal-header h3, .revision-section-title, .revision-title-text, .revision-text-question, .revision-block-header h4, .revision-application-header h4, .revision-method-holo, .revision-reveal-method .revision-reveal-header h3, .revision-block-method .revision-block-header h4) :is(.math-renderer, .math-renderer-flow, .math-renderer-inherit, .latex-text, .math-paragraph, p, .math-mathqst, .mathqst-colored) {
+  font-family: inherit !important;
+}
+
+.revision-editorial :is(
+  .revision-method-holo,
+  .revision-reveal-method .revision-reveal-header h3,
+  .revision-block-method .revision-block-header h4
+) {
+  font-size: calc(var(--rev-fluid-heading, clamp(1.06rem, calc(0.99rem + 0.35vw), 1.34rem)) * var(--reading-doc-scale, 1));
+  font-weight: 620;
+  font-style: normal;
+  line-height: 1.42;
+  letter-spacing: -0.012em;
+  color: #0f172a;
+}
+
+.revision-editorial :is(
+  .revision-practice-content,
+  .revision-application-content,
+  .revision-example-content,
+  .revision-course-block-method,
+  .revision-reveal-content-shell,
+  .core-reveal-content-balance,
+  .revision-surface .math-question
+) {
+  font-family: var(--font-editorial-text);
+  font-size: var(--revision-box-size);
+  line-height: var(--revision-box-leading);
+  color: #1e293b;
+}
+
+.revision-editorial .revision-content-enlarged {
+  font-size: 1.03em;
+}
+
+/* Cartes d'étude épurées — sans blur GPU coûteux, sans sauts de layout hover */
+.revision-editorial .revision-reveal-card:not(.revision-reveal-method) {
+  background: var(--mathqst-fill, #ffffff);
+  border: 1px solid var(--mathqst-border, rgba(148, 163, 184, 0.24));
+  border-radius: clamp(14px, 1.4vw, 16px);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.025);
+  padding: var(--rev-fluid-card-pad-y, clamp(12px, calc(10px + 0.5vw), 18px)) var(--rev-fluid-card-pad-x, clamp(14px, calc(11px + 0.85vw), 24px));
+  margin: var(--rev-fluid-card-gap, clamp(0.9rem, calc(0.75rem + 0.7vw), 1.35rem)) auto;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  position: relative;
+  overflow: visible;
+  transition:
+    border-color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 200ms ease;
+  isolation: isolate;
+}
+
+.revision-editorial .revision-reveal-card.revision-card-expanded:not(.revision-reveal-method) {
+  padding: clamp(13px, calc(11px + 0.55vw), 19px) var(--rev-fluid-card-pad-x, clamp(14px, calc(11px + 0.85vw), 24px)) clamp(14px, calc(12px + 0.6vw), 21px);
+  border-color: color-mix(in srgb, var(--mathqst-color, #4f46e5) 28%, var(--mathqst-border, rgba(148, 163, 184, 0.24)));
+  box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.05);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .revision-editorial .revision-reveal-card.revision-card-collapsed:not(.revision-reveal-method):hover {
+    border-color: color-mix(in srgb, var(--mathqst-color, #4f46e5) 36%, var(--mathqst-border, rgba(148, 163, 184, 0.25)));
+    box-shadow: 0 4px 14px -4px rgba(15, 23, 42, 0.05);
+  }
+}
+
+.revision-editorial .revision-reveal-card:not(.revision-reveal-method):focus-within {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--mathqst-color, #6b5ce7) 18%, transparent);
+}
+
+.revision-editorial .revision-reveal-badge-row {
+  position: relative;
+  width: 100%;
+  z-index: 4;
+  margin: 0 0 clamp(9px, 1.1vw, 13px) 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1;
+}
+
+.revision-editorial .revision-reveal-header {
+  gap: clamp(0.65rem, 1.2vw, 1rem);
+}
+
+.revision-editorial .revision-reveal-header h3 {
+  font-family: var(--font-display) !important;
+  color: #0f172a;
+  font-size: calc(var(--rev-fluid-heading, clamp(1.06rem, calc(0.99rem + 0.35vw), 1.34rem)) * var(--reading-doc-scale, 1));
+  font-weight: 620;
+  line-height: 1.42;
+  letter-spacing: -0.012em;
+}
+
+.revision-editorial .revision-question-mark-linked {
+  color: var(--mathqst-color, currentColor) !important;
+  font-family: 'Caveat', 'Itim', 'Playpen Sans', 'Cormorant Garamond', cursive, serif !important;
+  font-size: clamp(1.42em, 1.56em, 1.75em) !important;
+  font-style: normal !important;
+}
+
+.revision-editorial .revision-reveal-divider,
+.revision-editorial .revision-reveal-divider.is-visible,
+.revision-editorial .revision-reveal-divider::before,
+.revision-editorial .revision-reveal-divider::after,
+.revision-editorial .revision-reveal-divider span {
+  display: none !important;
+  border: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.revision-editorial .revision-text-disclosure .revision-reveal-content-shell {
+  padding: clamp(0.95rem, calc(0.8rem + 0.7vw), 1.35rem) clamp(1rem, calc(0.85rem + 0.8vw), 1.5rem);
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+}
+
+.revision-editorial .revision-reveal-card .katex-display {
+  padding-block: 0.4rem;
+}
+
+.revision-editorial .revision-card-flat .revision-reveal-badge-row {
+  margin-bottom: 0.55rem;
+}
+
+/* Bloc Application — Zone teintée aérée & Badge structuré haute lisibilité */
+.revision-editorial :is(.revision-course-block-application, .revision-block-application, .revision-application-block) {
+  background: linear-gradient(180deg, rgba(239, 246, 255, 0.78) 0%, rgba(248, 250, 252, 0.94) 100%) !important;
+  border: 1px solid rgba(0, 86, 210, 0.14) !important;
+  border-radius: 16px !important;
+  padding: clamp(0.95rem, calc(0.8rem + 0.55vw), 1.35rem) clamp(1.05rem, calc(0.85rem + 0.7vw), 1.55rem) !important;
+  margin: clamp(1rem, 2vw, 1.45rem) auto !important;
+  box-shadow: 0 2px 12px -4px rgba(0, 86, 210, 0.055), inset 0 1px 0 rgba(255, 255, 255, 0.85) !important;
+  --mathqst-color: #0284c7;
+  isolation: isolate;
+}
+
+.revision-editorial .revision-application-header > div:first-child {
+  padding-right: clamp(2.5rem, 4.5vw, 4.5rem);
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+/* Badge Application — pilule claire contrastée sur la zone azur */
+.revision-editorial :is(.revision-badge-application, .revision-application-header .revision-badge, .revision-course-block-application .revision-badge, .revision-block-application .revision-badge) {
+  background: #ffffff !important;
+  background-image: none !important;
+  color: #0056d2 !important;
+  border: 1px solid rgba(0, 86, 210, 0.24) !important;
+  border-radius: 9999px !important;
+  padding: var(--rev-fluid-badge-pad-y, clamp(3px, 0.35vw, 5px)) var(--rev-fluid-badge-pad-x, clamp(9px, calc(8px + 0.35vw), 13px)) !important;
+  height: auto !important;
+  min-height: var(--rev-fluid-badge-min-h, clamp(23px, calc(21px + 0.38vw), 28px)) !important;
+  font-size: calc(var(--rev-fluid-badge-font, clamp(0.64rem, calc(0.61rem + 0.1vw), 0.74rem)) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 1px 2px rgba(0, 86, 210, 0.06) !important;
+}
+
+.revision-editorial :is(.revision-badge-application, .revision-application-header .revision-badge, .revision-course-block-application .revision-badge, .revision-block-application .revision-badge) span {
+  color: #0056d2 !important;
+  font-weight: 650 !important;
+}
+
+.revision-editorial :is(.revision-badge-application, .revision-application-header .revision-badge, .revision-course-block-application .revision-badge, .revision-block-application .revision-badge) .revision-badge-number {
+  color: #0041a8 !important;
+  font-weight: 700 !important;
+}
+
+.revision-editorial .revision-badge-number {
+  background: transparent !important;
+  color: currentColor !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  display: inline-block !important;
+  font-weight: 700 !important;
+  margin-left: 0.28rem !important;
+  padding: 0 !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.revision-editorial .revision-course-block-remark {
+  padding: 0.45rem 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.revision-editorial .revision-course-block-intuition {
+  padding: clamp(1rem, calc(0.85rem + 0.6vw), 1.35rem) clamp(1.1rem, calc(0.9rem + 0.8vw), 1.65rem);
+  border: 1px solid rgba(196, 181, 253, 0.55) !important;
+  border-left: 3px solid #7c3aed !important;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #f9f7ff 100%);
+  box-shadow: 0 2px 10px -4px rgba(124, 58, 237, 0.08);
+}
+
+.revision-editorial .revision-course-block-proof {
+  padding: 0.4rem 0.6rem 0.4rem clamp(0.95rem, 1.5vw, 1.3rem);
+  border: 0;
+  border-left: 2px solid rgba(148, 163, 184, 0.45);
+  font-style: italic;
+  font-size: calc(clamp(0.94rem, calc(0.9rem + 0.16vw), 1.08rem) * var(--reading-doc-scale, 1));
+  line-height: 1.72;
+  color: #334155;
+}
+
+.revision-editorial .revision-media-canvas {
+  background: #ffffff;
+  background-image: none;
+  border-radius: 12px;
+}
+
+.revision-card-art,
+.revision-badge-icon {
+  display: none;
+}
+
+.revision-editorial :is(.revision-reveal-card, .revision-course-block-warning) > .revision-card-art {
+  display: block;
+  position: absolute;
+  right: 1rem;
+  top: 0.8rem;
+  width: clamp(74px, 9vw, 114px);
+  max-width: 26%;
+  height: clamp(58px, 7vw, 88px);
+  color: var(--mathqst-color, #6851a6);
+  opacity: 0.032;
+  pointer-events: none;
+  z-index: -1;
+  stroke-width: 0.9;
+  mask-image: linear-gradient(115deg, transparent, #000 85%);
+  transition: opacity 250ms ease;
+}
+
+.revision-question-glyph {
+  display: inline !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-style: normal !important;
+}
+
+.revision-question-glyph svg {
+  display: none !important;
+}
+
+.revision-question-art {
+  display: inline !important;
+  font-family: inherit !important;
+}
+
+.revision-editorial .revision-reveal-card .revision-badge {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: clamp(5px, 0.6vw, 7px) !important;
+  height: auto !important;
+  min-height: var(--rev-fluid-badge-min-h, clamp(23px, calc(21px + 0.38vw), 28px)) !important;
+  padding: var(--rev-fluid-badge-pad-y, clamp(3px, 0.35vw, 5px)) var(--rev-fluid-badge-pad-x, clamp(9px, calc(8px + 0.35vw), 13px)) !important;
+  background: var(--mathqst-fill-soft, #f0edff) !important;
+  border: 1px solid var(--mathqst-border, rgba(107, 92, 231, 0.18)) !important;
+  border-radius: 9999px !important;
+  color: var(--mathqst-color, #6b5ce7) !important;
+  font-size: calc(var(--rev-fluid-badge-font, clamp(0.64rem, calc(0.61rem + 0.1vw), 0.74rem)) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 620 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  margin-bottom: 0 !important;
+  cursor: default !important;
+  white-space: nowrap !important;
+}
+
+.revision-editorial .revision-reveal-card .revision-badge::before {
+  content: none !important;
+  display: none !important;
+}
+
+.revision-editorial .revision-card-expanded > .revision-card-art {
+  opacity: 0.018;
+}
+
+.revision-editorial .revision-reveal-toggle[aria-expanded='true'] {
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.05) !important;
+}
+
+@media (max-width: 640px) {
+  .revision-editorial .revision-reveal-header:not(.revision-method-header) {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .revision-editorial .revision-application-header > div:first-child {
+    padding-right: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .revision-editorial :is(
+    .revision-reveal-header h3,
+    .revision-method-holo,
+    .revision-reveal-method .revision-reveal-header h3,
+    .revision-block-method .revision-block-header h4,
+    .revision-application-header h4
+  ) {
+    line-height: 1.4;
+    overflow-wrap: break-word;
+  }
+
+  .revision-editorial .revision-reveal-card > .revision-card-art {
+    opacity: 0.025;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 560px) and (max-width: 1600px) and (orientation: landscape) {
+  .revision-editorial.revision-prof-tablet-surface :is(.revision-content-stage, .revision-section-body) {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revision-editorial *,
+  .revision-editorial *::before,
+  .revision-editorial *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .revision-card-art {
+    display: none !important;
+  }
+  .revision-editorial {
+    background: white;
+  }
+  .revision-editorial .revision-surface {
+    --revision-body-size: calc(1rem * var(--reading-doc-scale, 1));
+    --revision-box-size: calc(1rem * var(--reading-doc-scale, 1));
+  }
+  .revision-editorial .revision-content-stage {
+    width: 100%;
+    padding: 0;
+  }
+  .revision-editorial .revision-reveal-card {
+    box-shadow: none !important;
+  }
+}

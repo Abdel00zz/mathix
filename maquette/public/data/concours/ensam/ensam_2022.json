@@ -1,0 +1,410 @@
+{
+  "school": "ensam",
+  "year": "2022",
+  "title": "Concours ENSAM 2022",
+  "questions": [
+    {
+      "id": "ensam-22-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "concours",
+      "prompt": "$\\displaystyle\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "DL d'ordre $2$ : $e^x = 1+x+\\frac{x^2}{2}+o(x^2)$. Donc $\\frac{e^x-1-x}{x^2} \\to \\frac{1}{2}$. Aussi par L'Hôpital deux fois."
+    },
+    {
+      "id": "ensam-22-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "difficulty": "concours",
+      "prompt": "Soit $f(x) = x\\ln x - x$ pour $x > 0$. Alors $f'(x)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln x$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\ln x + 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln x - 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f'(x) = \\ln x + x \\cdot \\frac{1}{x} - 1 = \\ln x + 1 - 1 = \\ln x$. $f$ est une primitive de $\\ln x$."
+    },
+    {
+      "id": "ensam-22-03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "$\\displaystyle\\int_0^{\\pi/4} \\tan(x)\\,dx$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\ln 2}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\ln 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\displaystyle \\int \\tan x\\,dx = -\\ln|\\cos x| + C$. $[-\\ln(\\cos x)]_0^{\\pi/4} = -\\ln(\\frac{\\sqrt{2}}{2}) + 0 = \\ln\\sqrt{2} = \\frac{\\ln 2}{2}$."
+    },
+    {
+      "id": "ensam-22-04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "La série $\\displaystyle\\sum_{n=1}^{+\\infty} \\frac{1}{n(n+1)}$ converge vers :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Décomposition : $\\frac{1}{n(n+1)} = \\frac{1}{n} - \\frac{1}{n+1}$. Somme télescopique : $S_N = 1 - \\frac{1}{N+1} \\to 1$."
+    },
+    {
+      "id": "ensam-22-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Exponentielle",
+      "difficulty": "concours",
+      "prompt": "L'équation $xe^x = 1$ admet sur $\\mathbb{R}$ :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Exactement une solution",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Aucune solution",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Exactement deux solutions",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une infinité de solutions",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Soit $g(x) = xe^x - 1$. $g'(x) = (x+1)e^x > 0$ pour $x > -1$. $g(0) = -1 < 0$, $g(1) = e-1 > 0$. Par le TVI et la stricte croissance sur $]0,+\\infty[$, il y a exactement une racine."
+    },
+    {
+      "id": "ensam-22-06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Equations différentielles",
+      "difficulty": "concours",
+      "prompt": "Les solutions de $y'' + 4y = 0$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = A\\cos(2x) + B\\sin(2x)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = Ae^{2x} + Be^{-2x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = (A+Bx)e^{-2x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = A\\cos(4x) + B\\sin(4x)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Equation caractéristique : $r^2 + 4 = 0 \\Rightarrow r = \\pm 2i$. Solutions réelles : $\\cos(2x)$ et $\\sin(2x)$. Discriminant négatif $\\Rightarrow$ oscillations."
+    },
+    {
+      "id": "ensam-22-07",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "La forme algébrique de $\\frac{1}{(1+i)^2}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\frac{i}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{i}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\frac{1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$(1+i)^2 = 1+2i+i^2 = 2i$. Donc $\\frac{1}{2i} = \\frac{-i}{2i \\cdot (-i)} = \\frac{-i}{2}$."
+    },
+    {
+      "id": "ensam-22-08",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "Le nombre de diviseurs positifs de $60$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$12$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$6$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$10$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$8$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$60 = 2^2 \\times 3 \\times 5$. Nombre de diviseurs : $(2+1)(1+1)(1+1) = 12$. Formule : si $n = p_1^{a_1} \\cdots p_k^{a_k}$, alors $\\displaystyle \\tau(n) = \\prod(a_i+1)$."
+    },
+    {
+      "id": "ensam-22-09",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Espaces vectoriels",
+      "difficulty": "concours",
+      "prompt": "Le déterminant $\\begin{vmatrix} 1 & 1 & 1 \\\\ a & b & c \\\\ a^2 & b^2 & c^2 \\end{vmatrix}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(b-a)(c-a)(c-b)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(a-b)(a-c)(b-c)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$abc$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(a+b+c)(abc)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est le déterminant de Vandermonde : $\\displaystyle V = \\prod_{j>i}(x_j - x_i) = (b-a)(c-a)(c-b)$. Ce déterminant est non nul ssi les $a,b,c$ sont deux à deux distincts."
+    },
+    {
+      "id": "ensam-22-10",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "difficulty": "concours",
+      "prompt": "Le groupe $(\\mathbb{Z}/4\\mathbb{Z}, +)$ est-il cyclique ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, engendré par $\\bar{1}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Non, car $4$ n'est pas premier",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Oui, engendré uniquement par $\\bar{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non, il n'a pas de générateur",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|\\bar{1}| = 4$ car $\\bar{1}+\\bar{1}+\\bar{1}+\\bar{1} = \\bar{0}$ est la plus petite puissance nulle. Tout $(\\mathbb{Z}/n\\mathbb{Z}, +)$ est cyclique. Les générateurs sont les $\\bar{k}$ avec $\\text{PGCD}(k,n)=1$, ici $\\bar{1}$ et $\\bar{3}$."
+    },
+    {
+      "id": "ensam-22-11",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "L'ensemble des $z \\in \\mathbb{C}$ tels que $|z-1| = 2$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le cercle de centre $1$ et de rayon $2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Le disque de centre $1$ et de rayon $2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La droite $\\text{Re}(z) = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le cercle de centre $0$ et de rayon $2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|z-1| = 2$ signifie que la distance de $z$ au point $1$ vaut $2$. C'est la définition du cercle de centre $1$ et rayon $2$. Si c'était $\\leq 2$, ce serait un disque."
+    },
+    {
+      "id": "ensam-22-12",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "La décomposition de $252$ en facteurs premiers est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^2 \\times 3^2 \\times 7$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2^2 \\times 63$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$4 \\times 9 \\times 7$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2 \\times 3 \\times 42$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$252 = 2 \\times 126 = 2^2 \\times 63 = 2^2 \\times 9 \\times 7 = 2^2 \\times 3^2 \\times 7$. Les réponses b, c, d ne sont pas des décompositions en facteurs premiers."
+    },
+    {
+      "id": "ensam-22-13",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Espaces vectoriels",
+      "difficulty": "concours",
+      "prompt": "L'image de $f(x,y,z) = (x+y, y+z)$ est de dimension :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La matrice de $f$ est $\\begin{pmatrix} 1&1&0 \\\\ 0&1&1\\end{pmatrix}$. Les deux lignes sont indépendantes donc $\\text{rg}(f) = 2$. L'image est $\\mathbb{R}^2$ tout entier."
+    }
+  ]
+}

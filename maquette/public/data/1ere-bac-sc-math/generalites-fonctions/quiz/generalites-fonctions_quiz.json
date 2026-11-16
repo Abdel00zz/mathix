@@ -1,0 +1,90 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "true-false",
+      "question": "Une fonction impaire admet l'axe des ordonnées comme axe de symétrie.",
+      "isTrue": false,
+      "explanation": "Une fonction paire est symetrique par rapport a l'axe des ordonnees. Une fonction impaire est symetrique par rapport a l'origine $O$."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "question": "Soit f une fonction croissante sur I. Si a < b, alors :",
+      "options": [
+        {
+          "text": "f(a) < f(b)",
+          "isCorrect": false
+        },
+        {
+          "text": "f(a) ≤ f(b)",
+          "isCorrect": true
+        },
+        {
+          "text": "f(a) > f(b)",
+          "isCorrect": false
+        },
+        {
+          "text": "f(a) ≥ f(b)",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une fonction croissante (au sens large) conserve l'ordre : $a < b$ implique $f(a) \\leq f(b)$."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "question": "La composée de deux fonctions décroissantes est :",
+      "options": [
+        {
+          "text": "Décroissante",
+          "isCorrect": false
+        },
+        {
+          "text": "Croissante",
+          "isCorrect": true
+        },
+        {
+          "text": "Constante",
+          "isCorrect": false
+        },
+        {
+          "text": "On ne peut pas savoir",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Deux fonctions de meme sens de variation donnent une composee croissante. Deux inversions de l'ordre se compensent."
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "question": "Si f est majorée par 3, alors l'équation f(x) = 4 n'a pas de solution.",
+      "isTrue": true,
+      "explanation": "$f$ majoree par $3$ signifie $f(x) \\leq 3$ pour tout $x$, donc $f(x) = 4$ est impossible."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "question": "Quelle est la période de la fonction x ↦ cos(2x) ?",
+      "options": [
+        {
+          "text": "2π",
+          "isCorrect": false
+        },
+        {
+          "text": "π",
+          "isCorrect": true
+        },
+        {
+          "text": "π/2",
+          "isCorrect": false
+        },
+        {
+          "text": "4π",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La periode de $\\cos(ax)$ est $\\dfrac{2\\pi}{a}$. Ici $a = 2$, donc $T = \\pi$."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "ds1-s1-v2",
+  "title": "Devoir Surveillé N°1 — V2",
+  "number": 1,
+  "version": "V2",
+  "semestre": 1,
+  "classId": "2eme-bac-sc-ex",
+  "duration": 120,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "ds1s1v2-ex1",
+      "number": 1,
+      "theme": "continuité",
+      "points": 10,
+      "topic": "Continuité, TVI et prolongement par continuité",
+      "context": "On considère la fonction $h$ définie sur $\\mathbb{R} \\setminus \\{1\\}$ par :\n$$h(x) = \\frac{\\sqrt{x + 3} - 2}{x - 1}$$",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Prolongement par continuité",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Déterminer le domaine de définition de $h$.",
+              "hint": "Il faut $x + 3 \\geq 0$ soit $x \\geq -3$ et $x \\neq 1$. Donc $D_h = [-3, 1[ \\cup ]1, +\\infty[$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Calculer $\\lim_{x \\to 1} h(x)$ en multipliant par l'expression conjuguée.",
+              "hint": "$h(x) = \\frac{(\\sqrt{x+3}-2)(\\sqrt{x+3}+2)}{(x-1)(\\sqrt{x+3}+2)} = \\frac{x+3-4}{(x-1)(\\sqrt{x+3}+2)} = \\frac{1}{\\sqrt{x+3}+2}$. Donc $\\lim_{x \\to 1} h(x) = \\frac{1}{4}$."
+            },
+            {
+              "id": "sq1c",
+              "content": "En déduire que $h$ admet un prolongement par continuité en $1$. Préciser ce prolongement.",
+              "hint": "Poser $\\tilde{h}(x) = h(x)$ si $x \\neq 1$ et $\\tilde{h}(1) = \\frac{1}{4}$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ds1s1v2-ex2",
+      "number": 2,
+      "theme": "dérivabilité",
+      "points": 10,
+      "topic": "Dérivabilité d'une fonction définie par morceaux",
+      "context": "Soit $f$ la fonction définie sur $\\mathbb{R}$ par :\n$$f(x) = \\begin{cases} x^2 \\sin\\left(\\frac{1}{x}\\right) & \\text{si } x \\neq 0 \\\\ 0 & \\text{si } x = 0 \\end{cases}$$",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Étude en $x = 0$",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Montrer que $f$ est continue en $0$.",
+              "hint": "On a $|f(x)| = |x^2 \\sin(1/x)| \\leq x^2$ car $|\\sin| \\leq 1$. Comme $\\lim_{x \\to 0} x^2 = 0$, par encadrement $\\lim_{x \\to 0} f(x) = 0 = f(0)$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Étudier la dérivabilité de $f$ en $0$ en calculant $\\lim_{x \\to 0} \\frac{f(x) - f(0)}{x - 0}$.",
+              "hint": "$\\frac{f(x) - 0}{x} = x \\sin(1/x)$. On a $|x \\sin(1/x)| \\leq |x| \\to 0$, donc $f'(0) = 0$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "ex-seq-004",
+  "theme": "suites",
+  "difficulty": "moyen",
+  "topic": "Suites Numériques",
+  "context": "On considère la suite $(u_n)_{n \\in \\mathbb{N}}$ définie par $u_0 = 0$ et $u_{n+1} = \\displaystyle\\frac{u_n - 2}{2u_n + 5}$ pour tout $n \\in \\mathbb{N}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Minoration",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer que pour tout $n \\in \\mathbb{N}$, $u_n > -1$.",
+          "hint": "\\method Par récurrence. $u_0 = 0 > -1$.\n$$u_{n+1} - (-1) = \\frac{u_n - 2}{2u_n + 5} + 1 = \\frac{u_n - 2 + 2u_n + 5}{2u_n + 5} = \\frac{3u_n + 3}{2u_n + 5} = \\frac{3(u_n+1)}{2u_n+5}$$\nSi $u_n > -1$, alors $u_n+1 > 0$ et $2u_n+5 > 3 > 0$. Donc $u_{n+1} > -1$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Variations et convergence",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Montrer que la suite est décroissante et convergente.",
+          "hint": "$$u_{n+1} - u_n = \\frac{u_n - 2 - u_n(2u_n+5)}{2u_n+5} = \\frac{-2u_n^2 - 4u_n - 2}{2u_n+5} = \\frac{-2(u_n+1)^2}{2u_n+5}$$\n\\conclusion Le numérateur est toujours négatif, le dénominateur est positif (car $u_n > -1$). Donc la suite est décroissante. Minorée par -1, elle converge."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Suite auxiliaire",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que $(v_n)$ définie par $v_n = \\displaystyle\\frac{3}{1+u_n}$ est arithmétique de raison 2.",
+          "hint": "$$v_{n+1} = \\frac{3}{1 + \\frac{u_n-2}{2u_n+5}} = \\frac{3}{\\frac{2u_n+5 + u_n-2}{2u_n+5}} = \\frac{3(2u_n+5)}{3u_n+3} = \\frac{2u_n+5}{u_n+1}$$\n$$v_{n+1} - v_n = \\frac{2u_n+5}{u_n+1} - \\frac{3}{u_n+1} = \\frac{2u_n+2}{u_n+1} = 2$$\n\\conclusion C'est une suite arithmétique de raison $r=2$. Premier terme $v_0 = \\displaystyle\\frac{3}{1+0} = 3$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Calculer la limite de $(u_n)$.",
+          "hint": "$v_n = 3 + 2n$. Comme $\\displaystyle\\lim_{n \\to +\\infty} v_n = +\\infty$ et $v_n = \\displaystyle\\frac{3}{1+u_n}$, alors $1+u_n \\to 0$.\n$$u_n = \\frac{3}{v_n} - 1 \\implies \\displaystyle\\lim_{n \\to +\\infty} u_n = 0 - 1 = -1$$"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Somme de termes",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Nature de la suite $(w_n)$ définie par $w_n = e^{3-v_n}$.",
+          "hint": "$w_n = e^{3 - (3+2n)} = e^{-2n} = \\left(e^{-2}\\right)^n$\n\\conclusion C'est une suite géométrique de raison $q = e^{-2}$ (ou $\\displaystyle\\frac{1}{e^2}$). Premier terme $w_0 = e^{3-3} = 1$."
+        },
+        {
+          "id": "sq4b",
+          "content": "Calculer la limite de la somme $S_n = \\displaystyle\\sum_{k=0}^{n} w_k$.",
+          "hint": "$$S_n = w_0 \\frac{1-q^{n+1}}{1-q} = 1 \\times \\frac{1-(e^{-2})^{n+1}}{1-e^{-2}}$$\n\\conclusion Comme $0 < e^{-2} < 1$, la limite de la somme quand $n \\to +\\infty$ est par passage à la limite : $$\\displaystyle\\lim_{n \\to +\\infty} S_n = \\displaystyle\\frac{1}{1-e^{-2}}$$"
+        }
+      ]
+    }
+  ]
+}

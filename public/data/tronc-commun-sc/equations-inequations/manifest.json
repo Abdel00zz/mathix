@@ -1,0 +1,34 @@
+{
+  "id": "equations-inequations",
+  "title": "Équations, inéquations et systèmes",
+  "section": "algebre-geometrie",
+  "quizCount": 11,
+  "revisions": [
+    {
+      "id": "rev-eq-tc",
+      "title": "Fiche Complète : Équations & Inéquations",
+      "path": "data/tronc-commun-sc/equations-inequations/revisions/fiche_equations_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-eq-tc-01",
+      "path": "data/tronc-commun-sc/equations-inequations/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-eq-tc-02",
+      "path": "data/tronc-commun-sc/equations-inequations/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-equations-inequations-01",
+      "path": "data/tronc-commun-sc/equations-inequations/exercises/ex_equations_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-equations-inequations-01",
+      "path": "data/tronc-commun-sc/equations-inequations/quiz/equations-inequations_quiz.json",
+      "questionsCount": 11
+    }
+  ]
+}

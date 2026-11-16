@@ -1,0 +1,47 @@
+{
+  "id": "ex-02",
+  "theme": "calcul-integral",
+  "difficulty": "facile",
+  "topic": "Calcul Intégral - Calcul d'intégrales couplées, intégration par parties (Exercice 42)",
+  "requiresRedaction": true,
+  "context": "On considère les intégrales : $I = \\displaystyle\\int_0^1 \\frac{dx}{\\sqrt{x^2+2}}$, $J = \\displaystyle\\int_0^1 \\frac{x^2}{\\sqrt{x^2+2}}\\,dx$ et $K = \\displaystyle\\int_0^1 \\sqrt{x^2+2}\\,dx$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calcul de l'intégrale $I$ :",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Soit $f$ la fonction définie sur $\\mathbb{R}$ par : $f(x) = \\ln(x + \\sqrt{x^2+2})$. Calculer $f'(x)$ pour tout $x \\in \\mathbb{R}$.",
+          "hint": "\\method Dérivez la composition $\\ln(u)$ avec $u = x + \\sqrt{x^2+2}$. \\tip Simplifiez $u'/u$ en remarquant que $\\sqrt{x^2+2}$ apparaît au dénominateur après réduction."
+        },
+        {
+          "id": "sq1b",
+          "content": "En déduire la valeur de l'intégrale $I$.",
+          "hint": "Le résultat de la question précédente montre que $f'(x)$ est précisément l'intégrande de $I$. Évaluez $[f(x)]_0^1$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Calcule $J$ et $K$ :",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Vérifier que : $J + 2I = K$.",
+          "hint": "\\method Vérifiez que $\\frac{x^2}{\\sqrt{x^2+2}} + \\frac{2}{\\sqrt{x^2+2}} = \\sqrt{x^2+2}$. \\tip Réduisez au même dénominateur $\\sqrt{x^2+2}$ et simplifiez le numérateur."
+        },
+        {
+          "id": "sq2b",
+          "content": "Montrer, en utilisant une intégration par parties, que : $K = \\sqrt{3} - J$.",
+          "hint": "\\method Posez $u = \\sqrt{x^2+2}$ et $v' = 1$. \\tip Après l'IPP, la nouvelle intégrale fait apparaître $J$. Isolez-le pour conclure."
+        },
+        {
+          "id": "sq2c",
+          "content": "En déduire la valeur de chacune des intégrales $J$ et $K$.",
+          "hint": "\\method Vous disposez de deux équations : $J + 2I = K$ et $K = \\sqrt{3} - J$. \\tip Substituez la valeur de $I$ trouvée en 1b, puis résolvez le système en $J$ et $K$."
+        }
+      ]
+    }
+  ]
+}

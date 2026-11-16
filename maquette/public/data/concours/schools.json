@@ -1,0 +1,271 @@
+{
+  "schools": [
+    {
+      "id": "ensa",
+      "name": "ENSA",
+      "fullName": "Ecoles Nationales des Sciences Appliquées",
+      "color": "#2563eb",
+      "icon": "GraduationCap",
+      "themes": [
+        {
+          "id": "analyse",
+          "name": "Analyse"
+        },
+        {
+          "id": "algebre",
+          "name": "Algèbre & Géométrie"
+        },
+        {
+          "id": "probabilites",
+          "name": "Probabilités"
+        }
+      ],
+      "annales": [
+        {
+          "year": "2025",
+          "path": "data/concours/ensa/ensa_2025.json",
+          "count": 20
+        },
+        {
+          "year": "2024",
+          "path": "data/concours/ensa/ensa_2024.json",
+          "count": 20
+        },
+        {
+          "year": "2023",
+          "path": "data/concours/ensa/ensa_2023.json",
+          "count": 15
+        },
+        {
+          "year": "2022",
+          "path": "data/concours/ensa/ensa_2022.json",
+          "count": 15
+        },
+        {
+          "year": "2021",
+          "path": "data/concours/ensa/ensa_2021.json",
+          "count": 15
+        },
+        {
+          "year": "2020",
+          "path": "data/concours/ensa/ensa_2020.json",
+          "count": 5
+        },
+        {
+          "year": "2019",
+          "path": "data/concours/ensa/ensa_2019.json",
+          "count": 20
+        }
+      ],
+      "questionsPerExam": 30,
+      "timePerQuestion": 45,
+      "description": "Concours d'accès aux ENSA — QCM Mathématiques",
+      "themeCounts": {
+        "analyse": 72,
+        "algebre": 54,
+        "probabilites": 29
+      },
+      "totalQuestions": 155
+    },
+    {
+      "id": "ensam",
+      "name": "ENSAM",
+      "fullName": "Ecole Nationale Supérieure des Arts et Métiers",
+      "color": "#059669",
+      "icon": "Wrench",
+      "themes": [
+        {
+          "id": "analyse",
+          "name": "Analyse"
+        },
+        {
+          "id": "algebre",
+          "name": "Algèbre"
+        }
+      ],
+      "annales": [
+        {
+          "year": "2023",
+          "path": "data/concours/ensam/ensam_2023.json",
+          "count": 13
+        },
+        {
+          "year": "2022",
+          "path": "data/concours/ensam/ensam_2022.json",
+          "count": 13
+        },
+        {
+          "year": "2021",
+          "path": "data/concours/ensam/ensam_2021.json",
+          "count": 13
+        }
+      ],
+      "questionsPerExam": 25,
+      "timePerQuestion": 50,
+      "description": "Concours d'accès à l'ENSAM — QCM Mathématiques",
+      "themeCounts": {
+        "analyse": 33,
+        "algebre": 31
+      },
+      "totalQuestions": 64
+    },
+    {
+      "id": "medecine",
+      "name": "Faculté Médecine",
+      "fullName": "Faculté de Médecine et de Pharmacie",
+      "color": "#dc2626",
+      "icon": "Heart",
+      "themes": [
+        {
+          "id": "analyse",
+          "name": "Analyse"
+        },
+        {
+          "id": "algebre",
+          "name": "Algèbre"
+        },
+        {
+          "id": "complexes",
+          "name": "Nombres complexes"
+        },
+        {
+          "id": "geometrie-espace",
+          "name": "Géométrie de l’espace"
+        },
+        {
+          "id": "probabilites",
+          "name": "Probabilités & Statistiques"
+        }
+      ],
+      "annales": [
+        {
+          "year": "2017–2018 · Oujda",
+          "path": "data/concours/medecine/med_oujda_2017_2018.json",
+          "count": 9
+        },
+        {
+          "year": "2025",
+          "path": "data/concours/medecine/med_2025.json",
+          "count": 14
+        },
+        {
+          "year": "2024",
+          "path": "data/concours/medecine/med_2024.json",
+          "count": 14
+        },
+        {
+          "year": "2023",
+          "path": "data/concours/medecine/med_2023.json",
+          "count": 36
+        },
+        {
+          "year": "2022",
+          "path": "data/concours/medecine/med_2022.json",
+          "count": 30
+        },
+        {
+          "year": "2021",
+          "path": "data/concours/medecine/med_2021.json",
+          "count": 40
+        },
+        {
+          "year": "2020",
+          "path": "data/concours/medecine/med_2020.json",
+          "count": 20
+        },
+        {
+          "year": "2019",
+          "path": "data/concours/medecine/med_2019.json",
+          "count": 39
+        },
+        {
+          "year": "2018",
+          "path": "data/concours/medecine/med_2018.json",
+          "count": 22
+        },
+        {
+          "year": "2017",
+          "path": "data/concours/medecine/med_2017.json",
+          "count": 22
+        },
+        {
+          "year": "2016–2017 · Oujda",
+          "path": "data/concours/medecine/med_oujda_2016_2017.json",
+          "count": 8
+        },
+        {
+          "year": "2016 · Rabat",
+          "path": "data/concours/medecine/med_rabat_2016.json",
+          "count": 11
+        },
+        {
+          "year": "2016",
+          "path": "data/concours/medecine/med_2016.json",
+          "count": 22
+        },
+        {
+          "year": "2015–2016 · Oujda",
+          "path": "data/concours/medecine/med_oujda_2015_2016.json",
+          "count": 10
+        },
+        {
+          "year": "2015 · Marrakech",
+          "path": "data/concours/medecine/med_marrakech_2015.json",
+          "count": 10
+        },
+        {
+          "year": "2013",
+          "path": "data/concours/medecine/med_2013.json",
+          "count": 22
+        },
+        {
+          "year": "2012–2013 · Épreuve",
+          "path": "data/concours/medecine/med_epreuve_2012_2013.json",
+          "count": 10
+        },
+        {
+          "year": "2012 · Épreuve",
+          "path": "data/concours/medecine/med_epreuve_2012.json",
+          "count": 10
+        },
+        {
+          "year": "2010–2011 · Épreuve",
+          "path": "data/concours/medecine/med_epreuve_2010_2011.json",
+          "count": 10
+        },
+        {
+          "year": "2009–2010 · Épreuve",
+          "path": "data/concours/medecine/med_epreuve_2009_2010.json",
+          "count": 10
+        },
+        {
+          "year": "2009 · Marrakech",
+          "path": "data/concours/medecine/med_marrakech_2009.json",
+          "count": 11
+        }
+      ],
+      "fallbackQuizPaths": [
+        {
+          "themeId": "analyse",
+          "path": "data/concours/medecine/quiz/med_analyse_quiz.json"
+        },
+        {
+          "themeId": "probabilites",
+          "path": "data/concours/medecine/quiz/med_probabilites_quiz.json"
+        }
+      ],
+      "questionsPerExam": 20,
+      "timePerQuestion": 60,
+      "description": "Concours d'accès aux Facultés de Médecine — QCM Mathématiques",
+      "themeCounts": {
+        "analyse": 261,
+        "probabilites": 45,
+        "complexes": 52,
+        "algebre": 28,
+        "geometrie-espace": 17
+      },
+      "totalQuestions": 403
+    }
+  ],
+  "sourceClass": "2eme-bac-sc-math"
+}

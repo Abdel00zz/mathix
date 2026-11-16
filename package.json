@@ -1,0 +1,68 @@
+{
+  "name": "monprof",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "overrides": {
+    "glob": "^10.3.10",
+    "rimraf": "^5.0.0",
+    "inflight": "npm:lru-cache@^10.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "npm run validate:content -- --quiet",
+    "build": "vite build && node scripts/copy-maquette-dist.mjs",
+    "build:all": "npm run maquette:sync && vite build && node scripts/copy-maquette-dist.mjs",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "validate:content": "node scripts/validate-content.mjs",
+    "maquette:sync": "node scripts/sync-maquette-data.mjs",
+    "validate": "npm run type-check && npm run validate:content",
+    "lint:src": "eslint src api tests",
+    "verify": "npm run type-check && npm run test && npm run build",
+    "clean": "rimraf dist node_modules/.vite",
+    "analyze:unused": "knip"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.3.1",
+    "@fortawesome/free-regular-svg-icons": "^7.3.1",
+    "@fortawesome/free-solid-svg-icons": "^7.3.1",
+    "@fortawesome/react-fontawesome": "^3.5.0",
+    "@upstash/redis": "^1.37.0",
+    "katex": "^0.16.45",
+    "lucide-react": "^0.562.0",
+    "motion": "^12.38.0",
+    "perfect-freehand": "^1.2.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "resend": "^6.6.0",
+    "roughjs": "^4.6.6",
+    "vite-plugin-pwa": "^1.2.0",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.2.3",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.24",
+    "eslint": "^9.39.3",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.1",
+    "globals": "^17.6.0",
+    "knip": "^6.12.2",
+    "postcss": "^8.5.6",
+    "rimraf": "^5.0.0",
+    "tailwindcss": "^3.4.19",
+    "typescript": "~5.8.2",
+    "typescript-eslint": "^8.57.0",
+    "vite": "^6.2.0",
+    "vitest": "4.1.12"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "ex-01",
+  "theme": "calcul-integral",
+  "difficulty": "facile",
+  "topic": "Calcul Intégral - Suites définies par une intégrale",
+  "requiresRedaction": true,
+  "context": "Soit $(u_n)$ la suite définie par : $u_n = \\displaystyle\\int_0^1 \\frac{x^{2n+1}}{x^2+1}\\,dx$ où $n \\in \\mathbb{N}$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $u_0$.",
+      "hint": "\\method Remplacez $n=0$ dans l'expression de $u_n$. \\tip L'intégrale obtenue se calcule par décomposition ou reconnaissance d'une dérivée classique."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que : $(\\forall n \\in \\mathbb{N})\\,;\\, u_n \\geq 0$",
+      "hint": "\\method Observez le signe de l'intégrande sur $[0;1]$. \\tip Une intégrale d'une fonction positive sur un intervalle est positive."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que la suite $(u_n)$ est décroissante et en déduire sa convergence.",
+      "hint": "\\method Étudiez le signe de $u_{n+1} - u_n$ en l'écrivant comme une intégrale. \\tip Comparez $x^{2n+3}$ et $x^{2n+1}$ pour $x \\in [0;1]$. Pour la convergence, utilisez le résultat de la question précédente."
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Montrer que : $(\\forall x \\in [0;1])\\,;\\, 0 \\leq \\dfrac{x^{2n+1}}{x^2+1} \\leq x^{2n+1}$",
+          "hint": "\\method Encadrez $x^2+1$ sur $[0;1]$. \\tip Sur $[0;1]$ on a $x^2+1 \\geq 1$, ce qui permet de majorer la fraction."
+        },
+        {
+          "id": "sq4b",
+          "content": "En déduire la limite de la suite $(u_n)$.",
+          "hint": "\\method Intégrez l'encadrement établi en 4a. \\tip Calculez $\\displaystyle\\int_0^1 x^{2n+1}\\,dx$ puis appliquez le théorème des gendarmes quand $n \\to +\\infty$."
+        }
+      ]
+    }
+  ]
+}

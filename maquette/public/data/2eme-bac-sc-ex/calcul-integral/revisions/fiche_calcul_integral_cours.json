@@ -1,0 +1,459 @@
+{
+  "header": {
+    "title": "Calcul intégral",
+    "subtitle": "Calculer une intégrale, interpréter une aire et appliquer les méthodes classiques",
+    "context": "2e Baccalauréat scientifique"
+  },
+  "lexique": [
+    {
+      "term": "Intégrale",
+      "arabic": "تكامل",
+      "category": "concept",
+      "symbol": "\\int_a^b f(x)\\,dx",
+      "definition": "Nombre qui mesure une accumulation, notamment une aire algébrique.",
+      "variants": [
+        "intégrales"
+      ]
+    },
+    {
+      "term": "Primitive",
+      "arabic": "دالة أصلية",
+      "category": "concept",
+      "definition": "Fonction dont la dérivée est la fonction à intégrer.",
+      "variants": [
+        "primitives"
+      ]
+    },
+    {
+      "term": "Intervalle d'intégration",
+      "arabic": "مجال التكامل",
+      "category": "concept",
+      "definition": "Intervalle fermé sur lequel on calcule une intégrale.",
+      "variants": [
+        "sur l'intervalle"
+      ]
+    },
+    {
+      "term": "Bornes d'intégration",
+      "arabic": "حدود التكامل",
+      "category": "concept",
+      "definition": "Valeurs qui délimitent l'intervalle d'une intégrale définie.",
+      "variants": [
+        "borne inférieure",
+        "borne supérieure"
+      ]
+    },
+    {
+      "term": "Aire algébrique",
+      "arabic": "مساحة جبرية",
+      "category": "concept",
+      "definition": "Aire comptée avec un signe selon la position par rapport à l'axe des abscisses.",
+      "variants": [
+        "aire sous la courbe",
+        "aires algébriques"
+      ]
+    },
+    {
+      "term": "Linéarité",
+      "arabic": "خطية",
+      "category": "concept",
+      "definition": "Propriété qui permet de séparer une somme et de sortir un coefficient d'une intégrale.",
+      "variants": [
+        "linéarité de l'intégrale"
+      ]
+    },
+    {
+      "term": "Relation de Chasles",
+      "arabic": "علاقة شال",
+      "category": "concept",
+      "definition": "Propriété qui découpe une intégrale sur deux intervalles successifs.",
+      "variants": [
+        "Chasles"
+      ]
+    },
+    {
+      "term": "Intégration par parties",
+      "arabic": "التكامل بالتجزئة",
+      "category": "concept",
+      "definition": "Méthode qui transforme l'intégrale d'un produit à l'aide de dérivées et primitives.",
+      "variants": [
+        "IPP"
+      ]
+    },
+    {
+      "term": "Valeur moyenne",
+      "arabic": "القيمة المتوسطة",
+      "category": "concept",
+      "definition": "Valeur constante ayant la même intégrale qu'une fonction sur un intervalle.",
+      "variants": [
+        "valeur moyenne d'une fonction"
+      ]
+    },
+    {
+      "term": "Fonction intégrable",
+      "arabic": "دالة قابلة للتكامل",
+      "category": "concept",
+      "definition": "Fonction pour laquelle l'intégrale sur l'intervalle considéré est définie.",
+      "variants": [
+        "intégrable"
+      ]
+    },
+    {
+      "term": "Changement de variable",
+      "arabic": "تغيير المتغير",
+      "category": "concept",
+      "definition": "Transformation qui simplifie une intégrale en remplaçant la variable.",
+      "variants": [
+        "substitution"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans ce chapitre, on apprend à calculer des grandeurs accumulées : une aire, une valeur moyenne ou un volume de révolution. L’idée centrale est de relier une \\textbf{intégrale} à une \\textbf{primitive}, puis de choisir la bonne technique selon la forme de la fonction."
+        },
+        {
+          "type": "remark",
+          "content": "\\textbf{Fil conducteur :} calculer une intégrale demande toujours trois réflexes : vérifier la \\textbf{continuité}, trouver une \\textbf{primitive} adaptée, puis utiliser correctement les \\textbf{bornes}."
+        }
+      ]
+    },
+    {
+      "id": "definition_integrale",
+      "category": "course",
+      "title": "Intégrale d’une fonction continue",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On commence par donner le sens calculatoire de l’intégrale. Cette définition permet de transformer un calcul d’intégrale en calcul de primitive."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{\\displaystyle\\int_a^b f(x)\\,dx}",
+          "content": "Soit $f$ une fonction \\textbf{continue} sur un intervalle $I$, et soient $a$ et $b$ deux éléments de $I$.\\par\\smallskip On appelle \\textbf{intégrale de $f$ de $a$ à $b$} le nombre réel :\\par\\smallskip $$\\boxed{\\displaystyle\\int_a^b f(x)\\,dx=F(b)-F(a)}$$ où $F$ est une primitive quelconque de $f$ sur $I$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{écrire le calcul avec les bornes}",
+          "content": "Si $F$ est une primitive de $f$ sur $I$, alors :\\par\\smallskip $$\\boxed{\\displaystyle\\int_a^b f(x)\\,dx=\\left[F(x)\\right]_a^b=F(b)-F(a)}$$\\par\\smallskip La variable d’intégration est \\textbf{muette} : $$\\displaystyle\\int_a^b f(x)\\,dx=\\int_a^b f(t)\\,dt=\\int_a^b f(u)\\,du.$$"
+        },
+        {
+          "type": "warning",
+          "content": "Un piège à éviter absolument : le symbole $dx$ ne se supprime pas. Il indique la variable d’intégration et aide à choisir la primitive correcte."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer une intégrale par primitive}",
+          "content": "Vérifier d’abord que la fonction est \\textbf{continue} sur l’intervalle d’intégration. Chercher ensuite une \\textbf{primitive} $F$ de la fonction. Appliquer enfin la formule $F(b)-F(a)$.\\par\\smallskip \\textbf{Astuce :} retenir la phrase : \\textbf{continuité, primitive, bornes}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{intégrale polynomiale} : $\\displaystyle\\int_{-2}^{2}x^2\\,dx$.}\\par\\smallskip La fonction $x\\mapsto x^2$ est continue sur $\\mathbb{R}$, donc elle est continue sur $[-2,2]$. Une primitive de $x^2$ est $\\displaystyle F(x)=\\frac{x^3}{3}$.\\par\\smallskip\\begin{align*}\\int_{-2}^{2}x^2\\,dx&=\\left[\\frac{x^3}{3}\\right]_{-2}^{2}\\\\&=\\frac{2^3}{3}-\\frac{(-2)^3}{3}\\\\&=\\frac{8}{3}+\\frac{8}{3}\\\\&=\\boxed{\\blank{\\frac{16}{3}}}.\n\\end{align*}\\par\\smallskip Le résultat est positif, ce qui est cohérent car $x^2\\geq 0$ sur $[-2,2]$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{intégrale logarithmique} : $\\displaystyle\\int_{1}^{e}\\frac{1}{x}\\,dx$.}\\par\\smallskip Sur $[1,e]$, on a $x>0$, donc la fonction $x\\mapsto \\frac{1}{x}$ est continue. Sa primitive naturelle est $x\\mapsto \\ln x$.\\par\\smallskip\\begin{align*}\\int_{1}^{e}\\frac{1}{x}\\,dx&=\\left[\\ln x\\right]_{1}^{e}\\\\&=\\ln(e)-\\ln(1)\\\\&=\\blank{1}-\\blank{0}\\\\&=\\boxed{\\blank{1}}.\n\\end{align*}\\par\\smallskip Ici, les bornes $1$ et $e$ sont choisies pour utiliser directement $\\ln(e)=1$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{intégrale avec racine} : $\\displaystyle\\int_{1}^{2}\\sqrt{x}\\,dx$.}\\par\\smallskip On écrit $\\sqrt{x}=x^{\\frac12}$. Une primitive de $x^{\\frac12}$ sur $]0,+\\infty[$ est $\\displaystyle\\frac{x^{\\frac32}}{\\frac32}=\\frac{2}{3}x^{\\frac32}$.\\par\\smallskip\\begin{align*}\\int_{1}^{2}\\sqrt{x}\\,dx&=\\left[\\frac{2}{3}x^{\\frac32}\\right]_{1}^{2}\\\\&=\\frac{2}{3}\\cdot 2^{\\frac32}-\\frac{2}{3}\\cdot 1^{\\frac32}\\\\&=\\frac{2}{3}\\left(2\\sqrt{2}-1\\right)\\\\&=\\boxed{\\blank{\\frac{2}{3}(2\\sqrt{2}-1)}}.\n\\end{align*}\\par\\smallskip La puissance $\\frac32$ vient de la règle : on ajoute $1$ à l’exposant."
+        }
+      ]
+    },
+    {
+      "id": "proprietes_integrales",
+      "category": "course",
+      "title": "Propriétés de base des intégrales",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après la définition, on utilise les propriétés pour simplifier les calculs. Ces règles permettent de changer l’ordre des bornes, de découper un intervalle et de séparer une somme."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{utiliser les bornes et la relation de Chasles}",
+          "content": "Soit $f$ une fonction continue sur un intervalle $I$, et soient $a$, $b$ et $c$ trois éléments de $I$. On a :\\par\\smallskip $$\\boxed{\\displaystyle\\int_a^a f(x)\\,dx=0}$$ $$\\boxed{\\displaystyle\\int_a^b f(x)\\,dx=-\\int_b^a f(x)\\,dx}$$ $$\\boxed{\\displaystyle\\int_a^b f(x)\\,dx=\\int_a^c f(x)\\,dx+\\int_c^b f(x)\\,dx}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{intégrer une somme et un multiple}",
+          "content": "Soient $f$ et $g$ deux fonctions continues sur $[a,b]$, et soit $\\alpha\\in\\mathbb{R}$. Par \\textbf{linéarité} :\\par\\smallskip $$\\boxed{\\displaystyle\\int_a^b (f+g)(x)\\,dx=\\int_a^b f(x)\\,dx+\\int_a^b g(x)\\,dx}$$ $$\\boxed{\\displaystyle\\int_a^b (\\alpha f)(x)\\,dx=\\alpha\\int_a^b f(x)\\,dx}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{découper une intégrale avec une valeur absolue}",
+          "content": "Repérer les points où l’expression à l’intérieur de la valeur absolue peut changer de signe. Découper l’intervalle avec la \\textbf{relation de Chasles}. Remplacer ensuite $|u(x)|$ par $u(x)$ quand $u(x)\\geq0$, et par $-u(x)$ quand $u(x)\\leq0$.\\par\\smallskip \\textbf{Astuce :} valeur absolue signifie souvent \\textbf{tableau de signe avant intégration}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{intégrale avec valeur absolue} : $\\displaystyle\\int_{-1}^{2}|x^3|\\,dx$.}\\par\\smallskip Le signe de $x^3$ est celui de $x$. Ainsi $x^3\\leq0$ sur $[-1,0]$ et $x^3\\geq0$ sur $[0,2]$.\\par\\smallskip On enlève donc la valeur absolue en découpant :\\par\\smallskip\\begin{align*}\\int_{-1}^{2}|x^3|\\,dx&=\\int_{-1}^{0}(-x^3)\\,dx+\\int_{0}^{2}x^3\\,dx\\\\&=\\left[-\\frac{x^4}{4}\\right]_{-1}^{0}+\\left[\\frac{x^4}{4}\\right]_{0}^{2}\\\\&=\\left(0+\\frac{1}{4}\\right)+\\left(\\frac{16}{4}-0\\right)\\\\&=\\frac14+4\\\\&=\\boxed{\\blank{\\frac{17}{4}}}.\n\\end{align*}\\par\\smallskip Le découpage en $0$ est obligatoire car $x^3$ change de signe en $0$."
+        },
+        {
+          "type": "warning",
+          "content": "Restez vigilant sur ce point : il ne faut pas écrire directement $\\displaystyle\\int |x^3|\\,dx=\\left|\\int x^3\\,dx\\right|$. Cette égalité est fausse en général."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{intégrale par linéarité} : $\\displaystyle\\int_{0}^{2}(3e^x-4x)\\,dx$.}\\par\\smallskip La fonction $x\\mapsto 3e^x-4x$ est continue sur $\\mathbb{R}$. On utilise la linéarité pour séparer les deux termes.\\par\\smallskip\\begin{align*}\\int_0^2(3e^x-4x)\\,dx&=3\\int_0^2 e^x\\,dx-4\\int_0^2x\\,dx\\\\&=3\\left[e^x\\right]_0^2-4\\left[\\frac{x^2}{2}\\right]_0^2\\\\&=3(e^2-1)-4\\cdot2\\\\&=3e^2-3-8\\\\&=\\boxed{\\blank{3e^2-11}}.\n\\end{align*}\\par\\smallskip La linéarité sert ici à éviter une primitive écrite trop vite."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{comparer des intégrales}",
+          "content": "Soient $f$ et $g$ deux fonctions continues sur $[a,b]$ avec $a\\leq b$.\\par\\smallskip $$\\begin{array}{c|c}\\text{Hypothèse sur }[a,b] & \\text{Conclusion}\\\\ \\hline f(x)\\geq0 & \\displaystyle\\int_a^b f(x)\\,dx\\geq0\\\\ f(x)\\leq0 & \\displaystyle\\int_a^b f(x)\\,dx\\leq0\\\\ f(x)\\geq g(x)&\\displaystyle\\int_a^b f(x)\\,dx\\geq\\int_a^b g(x)\\,dx\\\\ \\end{array}$$\\par\\smallskip On a aussi : $$\\boxed{\\displaystyle\\left|\\int_a^b f(x)\\,dx\\right|\\leq\\int_a^b |f(x)|\\,dx}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Un piège de logique à ne pas laisser passer : si $\\displaystyle\\int_a^b f(x)\\,dx\\geq0$, cela ne prouve pas que $f(x)\\geq0$ sur $[a,b]$. Une intégrale positive peut venir d’une compensation entre zones positives et négatives."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Utilisons une \\textbf{comparaison} pour encadrer une intégrale : $\\displaystyle\\int_0^1\\frac{x^2}{x+1}\\,dx$.}\\par\\smallskip Pour $x\\in[0,1]$, on a $1\\leq x+1\\leq2$. Comme $x^2\\geq0$, on obtient :\\par\\smallskip $$\\frac{x^2}{2}\\leq\\frac{x^2}{x+1}\\leq x^2.$$\\par\\smallskip En intégrant membre à membre sur $[0,1]$ :\\par\\smallskip\\begin{align*}\\int_0^1\\frac{x^2}{2}\\,dx&\\leq\\int_0^1\\frac{x^2}{x+1}\\,dx\\leq\\int_0^1x^2\\,dx\\\\\\left[\\frac{x^3}{6}\\right]_0^1&\\leq\\int_0^1\\frac{x^2}{x+1}\\,dx\\leq\\left[\\frac{x^3}{3}\\right]_0^1.\n\\end{align*}\\par\\smallskip Donc :\\par\\smallskip $$\\boxed{\\blank{\\frac16}\\leq\\displaystyle\\int_0^1\\frac{x^2}{x+1}\\,dx\\leq\\blank{\\frac13}}.$$"
+        }
+      ]
+    },
+    {
+      "id": "primitives_usuelles",
+      "category": "course",
+      "title": "Choisir une primitive adaptée",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le calcul intégral dépend surtout de la reconnaissance des formes. Plus on reconnaît vite la primitive, plus le calcul devient court et sûr."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les \\mathqst{primitives usuelles à reconnaître}",
+          "content": "Les primitives suivantes sont les plus utilisées :\\par\\smallskip $$\\begin{array}{c|c}\\text{Fonction }f(x)&\\text{Une primitive }F(x)\\\\ \\hline a&ax\\\\ x^n\\;(n\\neq-1)&\\displaystyle\\frac{x^{n+1}}{n+1}\\\\ \\displaystyle\\frac1x&\\ln|x|\\\\ e^x&e^x\\\\ \\cos(ax+b)&\\displaystyle\\frac1a\\sin(ax+b)\\\\ \\sin(ax+b)&\\displaystyle-\\frac1a\\cos(ax+b)\\\\ \\displaystyle\\frac{u'(x)}{u(x)}&\\ln|u(x)|\\\\ u'(x)e^{u(x)}&e^{u(x)}\\\\ u'(x)u(x)^r&\\displaystyle\\frac{u(x)^{r+1}}{r+1}\\;(r\\neq-1)\\end{array}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{reconnaître une forme composée}",
+          "content": "Chercher d’abord une fonction intérieure $u(x)$. Vérifier ensuite si son dérivé $u'(x)$ apparaît, éventuellement à un facteur constant près. Si oui, utiliser une primitive composée.\\par\\smallskip \\textbf{Astuce mnémotechnique :} quand on voit $\\frac{u'}{u}$, on pense \\textbf{logarithme}; quand on voit $u'e^u$, on pense \\textbf{exponentielle}; quand on voit $u'u^r$, on pense \\textbf{puissance}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{intégrale de type logarithme} : $\\displaystyle\\int_0^1\\frac{2x+1}{x^2+x+1}\\,dx$.}\\par\\smallskip On reconnaît $u(x)=x^2+x+1$. Alors $u'(x)=2x+1$, exactement le numérateur.\\par\\smallskip\\begin{align*}\\int_0^1\\frac{2x+1}{x^2+x+1}\\,dx&=\\left[\\ln(x^2+x+1)\\right]_0^1\\\\&=\\ln(3)-\\ln(1)\\\\&=\\boxed{\\blank{\\ln 3}}.\n\\end{align*}\\par\\smallskip Le dénominateur est strictement positif sur $[0,1]$, donc le logarithme est bien défini."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{intégrale avec racine composée} : $\\displaystyle\\int_{-2}^{1}\\frac{1}{\\sqrt{x+3}}\\,dx$.}\\par\\smallskip On écrit $\\displaystyle\\frac{1}{\\sqrt{x+3}}=(x+3)^{-\\frac12}$. La fonction intérieure est $u(x)=x+3$ et $u'(x)=1$.\\par\\smallskip\\begin{align*}\\int_{-2}^{1}\\frac{1}{\\sqrt{x+3}}\\,dx&=\\int_{-2}^{1}(x+3)^{-\\frac12}\\,dx\\\\&=\\left[2\\sqrt{x+3}\\right]_{-2}^{1}\\\\&=2\\sqrt4-2\\sqrt1\\\\&=4-2\\\\&=\\boxed{\\blank{2}}.\n\\end{align*}\\par\\smallskip La borne $-2$ donne $x+3=1>0$, donc il n’y a pas de problème de définition."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{intégrale exponentielle composée} : $\\displaystyle\\int_{0}^{1}\\frac{e^x}{(e^x+1)^2}\\,dx$.}\\par\\smallskip On pose mentalement $u(x)=e^x+1$. Alors $u'(x)=e^x$. L’intégrale devient une forme $\\displaystyle\\int \\frac{u'}{u^2}$.\\par\\smallskip\\begin{align*}\\int_0^1\\frac{e^x}{(e^x+1)^2}\\,dx&=\\left[-\\frac{1}{e^x+1}\\right]_0^1\\\\&=-\\frac{1}{e+1}+\\frac{1}{2}\\\\&=\\frac{e+1-2}{2(e+1)}\\\\&=\\boxed{\\blank{\\frac{e-1}{2(e+1)}}}.\n\\end{align*}\\par\\smallskip On a utilisé que $\\left(-\\frac1u\\right)'=\\frac{u'}{u^2}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{intégrale trigonométrique composée} : $\\displaystyle\\int_{-\\frac{\\pi}{3}}^{0}\\cos x\\,e^{\\sin x}\\,dx$.}\\par\\smallskip Ici, $u(x)=\\sin x$ et $u'(x)=\\cos x$. On reconnaît la forme $u'e^u$.\\par\\smallskip\\begin{align*}\\int_{-\\frac{\\pi}{3}}^{0}\\cos x\\,e^{\\sin x}\\,dx&=\\left[e^{\\sin x}\\right]_{-\\frac{\\pi}{3}}^{0}\\\\&=e^{\\sin 0}-e^{\\sin(-\\frac{\\pi}{3})}\\\\&=1-e^{-\\frac{\\sqrt3}{2}}\\\\&=\\boxed{\\blank{1-e^{-\\frac{\\sqrt3}{2}}}}.\n\\end{align*}\\par\\smallskip Le choix de $\\sin x$ comme fonction intérieure est naturel car sa dérivée $\\cos x$ est présente."
+        }
+      ]
+    },
+    {
+      "id": "integration_par_parties",
+      "category": "course",
+      "title": "Intégration par parties",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certaines intégrales ne se calculent pas par une primitive immédiate. L’intégration par parties sert quand le produit contient un facteur que l’on veut dériver et un autre que l’on veut intégrer."
+        },
+        {
+          "type": "property",
+          "title": "Quand utiliser \\mathqst{l’intégration par parties}",
+          "content": "Soient $u$ et $v$ deux fonctions dérivables sur un intervalle $I$, telles que $u'$ et $v'$ soient continues sur $I$. Pour $a,b\\in I$, on a :\\par\\smallskip $$\\boxed{\\displaystyle\\int_a^b u'(x)v(x)\\,dx=\\left[u(x)v(x)\\right]_a^b-\\int_a^b u(x)v'(x)\\,dx}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{choisir les deux fonctions dans une intégration par parties}",
+          "content": "Choisir comme $v(x)$ le facteur qui devient plus simple quand on le dérive : souvent $x$, $x^2$, $\\ln x$. Choisir comme $u'(x)$ le facteur que l’on sait intégrer facilement : souvent $e^x$, $\\sin x$, $\\cos x$.\\par\\smallskip \\textbf{Astuce :} dans un produit avec $x$ ou $\\ln x$, on dérive souvent ce facteur."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons par \\textbf{intégration par parties} : $\\displaystyle I=\\int_0^{\\frac{\\pi}{2}}x\\sin x\\,dx$.}\\par\\smallskip On dérive $v(x)=x$ car cela donne $v'(x)=1$. On intègre $u'(x)=\\sin x$, donc $u(x)=-\\cos x$.\\par\\smallskip $$\\begin{array}{c|c}u'(x)=\\sin x&u(x)=-\\cos x\\\\ v(x)=x&v'(x)=1\\end{array}$$\\par\\smallskip\\begin{align*}I&=\\left[-x\\cos x\\right]_0^{\\frac{\\pi}{2}}-\\int_0^{\\frac{\\pi}{2}}(-\\cos x)\\,dx\\\\&=0+\\int_0^{\\frac{\\pi}{2}}\\cos x\\,dx\\\\&=\\left[\\sin x\\right]_0^{\\frac{\\pi}{2}}\\\\&=\\boxed{\\blank{1}}.\n\\end{align*}\\par\\smallskip Le premier terme vaut $0$ car $\\cos\\left(\\frac{\\pi}{2}\\right)=0$ et $x=0$ à l’autre borne."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une intégrale du type \\textbf{polynôme fois exponentielle} : $\\displaystyle I=\\int_1^2(2-x)e^{-x}\\,dx$.}\\par\\smallskip On choisit $v(x)=2-x$, donc $v'(x)=-1$. On choisit $u'(x)=e^{-x}$, donc $u(x)=-e^{-x}$.\\par\\smallskip\\begin{align*}I&=\\left[-(2-x)e^{-x}\\right]_1^2-\\int_1^2(-e^{-x})(-1)\\,dx\\\\&=\\left(0+e^{-1}\\right)-\\int_1^2 e^{-x}\\,dx\\\\&=e^{-1}-\\left[-e^{-x}\\right]_1^2\\\\&=e^{-1}-(-e^{-2}+e^{-1})\\\\&=\\boxed{\\blank{e^{-2}}}.\n\\end{align*}\\par\\smallskip Le produit devient plus simple après dérivation de $2-x$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une intégrale avec \\textbf{logarithme} : $\\displaystyle I=\\int_2^e x\\ln(x-1)\\,dx$.}\\par\\smallskip Le logarithme se simplifie quand on le dérive. On prend donc $v(x)=\\ln(x-1)$ et $u'(x)=x$. Alors $u(x)=\\frac{x^2}{2}$ et $v'(x)=\\frac{1}{x-1}$.\\par\\smallskip\\begin{align*}I&=\\left[\\frac{x^2}{2}\\ln(x-1)\\right]_2^e-\\int_2^e\\frac{x^2}{2(x-1)}\\,dx.\n\\end{align*}\\par\\smallskip Pour continuer, on simplifie le quotient : $$\\frac{x^2}{x-1}=x+1+\\frac{1}{x-1}.$$\\par\\smallskip Donc :\\par\\smallskip\\begin{align*}I&=\\frac{e^2}{2}\\ln(e-1)-0-\\frac12\\int_2^e\\left(x+1+\\frac1{x-1}\\right)dx\\\\&=\\frac{e^2}{2}\\ln(e-1)-\\frac12\\left[\\frac{x^2}{2}+x+\\ln(x-1)\\right]_2^e.\n\\end{align*}\\par\\smallskip Cette forme est déjà structurée. Elle montre clairement le rôle de l’intégration par parties et de la simplification algébrique."
+        },
+        {
+          "type": "warning",
+          "content": "Prenez garde à ce piège, il est facile d’y tomber : dans l’intégration par parties, il ne suffit pas de choisir deux facteurs. Il faut aussi vérifier que la nouvelle intégrale est plus simple que l’intégrale de départ."
+        }
+      ]
+    },
+    {
+      "id": "interpretation_geometrique",
+      "category": "course",
+      "title": "Interprétation géométrique de l’intégrale",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une intégrale ne sert pas seulement à calculer un nombre. Elle peut représenter une aire, à condition de tenir compte du signe de la fonction."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{interpréter l’aire quand $f\\geq0$}",
+          "content": "Si $f$ est continue et positive sur $[a,b]$, alors l’aire du domaine limité par $\\mathcal{C}_f$, l’axe des abscisses et les droites $x=a$, $x=b$ est :\\par\\smallskip $$\\boxed{\\mathcal{A}=\\displaystyle\\int_a^b f(x)\\,dx}$$ en unité d’aire. Si les unités graphiques sont $\\|\\vec i\\|$ et $\\|\\vec j\\|$, alors l’aire en $\\mathrm{cm}^2$ est multipliée par $\\|\\vec i\\|\\times\\|\\vec j\\|$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{aire sous une courbe positive}.}\\par\\smallskip Soit $f(x)=x^3+6$. On veut l’aire du domaine limité par $\\mathcal{C}_f$, l’axe des abscisses et les droites $x=-1$ et $x=2$, avec $\\|\\vec i\\|=2\\,\\mathrm{cm}$ et $\\|\\vec j\\|=1\\,\\mathrm{cm}$.\\par\\smallskip Sur $[-1,2]$, on a $x^3\\geq -1$, donc $x^3+6\\geq5>0$. Ainsi :\\par\\smallskip\\begin{align*}\\mathcal{A}_{u.a.}&=\\int_{-1}^{2}(x^3+6)\\,dx\\\\&=\\left[\\frac{x^4}{4}+6x\\right]_{-1}^{2}\\\\&=\\left(4+12\\right)-\\left(\\frac14-6\\right)\\\\&=\\frac{87}{4}.\n\\end{align*}\\par\\smallskip Comme $1$ unité d’aire vaut $2\\times1=2\\,\\mathrm{cm}^2$, alors :\\par\\smallskip $$\\boxed{\\mathcal{A}=\\blank{\\frac{87}{2}\\,\\mathrm{cm}^2}}.$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{interpréter l’aire quand $f\\leq0$}",
+          "content": "Si $f$ est continue et négative sur $[a,b]$, l’intégrale $\\displaystyle\\int_a^b f(x)\\,dx$ est négative. L’aire, elle, doit être positive :\\par\\smallskip $$\\boxed{\\mathcal{A}=\\displaystyle\\int_a^b -f(x)\\,dx=-\\int_a^b f(x)\\,dx}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Attention au signe, c’est là que les erreurs arrivent : une aire est toujours positive. Si la courbe est sous l’axe des abscisses, on change le signe de l’intégrale."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{aire sous l’axe des abscisses}.}\\par\\smallskip Soit $f(x)=e^{-x}-x$. On admet que $f$ est négative sur $[1,2]$. L’aire cherchée est donc $\\displaystyle\\int_1^2(x-e^{-x})\\,dx$.\\par\\smallskip\\begin{align*}\\mathcal{A}_{u.a.}&=\\int_1^2(x-e^{-x})\\,dx\\\\&=\\left[\\frac{x^2}{2}+e^{-x}\\right]_1^2\\\\&=\\left(2+e^{-2}\\right)-\\left(\\frac12+e^{-1}\\right)\\\\&=\\frac32+e^{-2}-e^{-1}.\n\\end{align*}\\par\\smallskip Si $\\|\\vec i\\|=1.5\\,\\mathrm{cm}$ et $\\|\\vec j\\|=2\\,\\mathrm{cm}$, alors une unité d’aire vaut $3\\,\\mathrm{cm}^2$. Donc :\\par\\smallskip $$\\boxed{\\mathcal{A}=\\blank{3\\left(\\frac32+e^{-2}-e^{-1}\\right)\\,\\mathrm{cm}^2}}.$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer l’aire quand le signe change}",
+          "content": "Si $f$ est continue sur $[a,b]$, alors l’aire entre $\\mathcal{C}_f$ et l’axe des abscisses est :\\par\\smallskip $$\\boxed{\\mathcal{A}=\\displaystyle\\int_a^b |f(x)|\\,dx}$$\\par\\smallskip En pratique, on étudie le \\textbf{signe} de $f$, puis on découpe l’intégrale."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une aire quand la fonction \\textbf{change de signe} : $f(x)=x^3-2x$ sur $[0,2]$.}\\par\\smallskip On factorise : $$f(x)=x(x^2-2)=x(x-\\sqrt2)(x+\\sqrt2).$$\\par\\smallskip Sur $[0,2]$, les changements de signe utiles sont $0$ et $\\sqrt2$. Donc $f(x)\\leq0$ sur $[0,\\sqrt2]$ et $f(x)\\geq0$ sur $[\\sqrt2,2]$.\\par\\smallskip\\begin{align*}\\mathcal{A}_{u.a.}&=\\int_0^{\\sqrt2}-(x^3-2x)\\,dx+\\int_{\\sqrt2}^{2}(x^3-2x)\\,dx\\\\&=\\left[-\\frac{x^4}{4}+x^2\\right]_0^{\\sqrt2}+\\left[\\frac{x^4}{4}-x^2\\right]_{\\sqrt2}^{2}\\\\&=\\left(-1+2\\right)+\\left((4-4)-(1-2)\\right)\\\\&=1+1\\\\&=2.\n\\end{align*}\\par\\smallskip Si $\\|\\vec i\\|=1.5\\,\\mathrm{cm}$ et $\\|\\vec j\\|=2\\,\\mathrm{cm}$, alors :\\par\\smallskip $$\\boxed{\\mathcal{A}=\\blank{6\\,\\mathrm{cm}^2}}.$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer l’aire entre deux courbes}",
+          "content": "Soient $f$ et $g$ deux fonctions continues sur $[a,b]$. L’aire du domaine limité par $\\mathcal{C}_f$, $\\mathcal{C}_g$ et les droites $x=a$, $x=b$ est :\\par\\smallskip $$\\boxed{\\mathcal{A}=\\displaystyle\\int_a^b |f(x)-g(x)|\\,dx}$$\\par\\smallskip Si $f\\geq g$ sur $[a,b]$, alors $\\mathcal{A}=\\displaystyle\\int_a^b(f(x)-g(x))\\,dx$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{choisir la courbe du dessus}",
+          "content": "Comparer $f(x)$ et $g(x)$ sur l’intervalle. Étudier le signe de $f(x)-g(x)$. Si ce signe change, découper l’intervalle aux points d’intersection.\\par\\smallskip \\textbf{Astuce :} aire entre deux courbes = \\textbf{dessus moins dessous}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{aire entre deux courbes} : $f(x)=x^2$ et $g(x)=\\sqrt{x}$ sur $[0,2]$.}\\par\\smallskip Les courbes se coupent quand $x^2=\\sqrt{x}$, avec $x\\geq0$. On obtient $x^4=x$, donc $x(x^3-1)=0$, ainsi $x=0$ ou $x=1$.\\par\\smallskip Sur $[0,1]$, on a $\\sqrt{x}\\geq x^2$. Sur $[1,2]$, on a $x^2\\geq\\sqrt{x}$.\\par\\smallskip\\begin{align*}\\mathcal{A}_{u.a.}&=\\int_0^1(\\sqrt{x}-x^2)\\,dx+\\int_1^2(x^2-\\sqrt{x})\\,dx\\\\&=\\left[\\frac{2}{3}x^{\\frac32}-\\frac{x^3}{3}\\right]_0^1+\\left[\\frac{x^3}{3}-\\frac{2}{3}x^{\\frac32}\\right]_1^2\\\\&=\\frac13+\\left(\\frac{8}{3}-\\frac{4\\sqrt2}{3}-\\frac13+\\frac23\\right)\\\\&=\\frac{10-4\\sqrt2}{3}.\n\\end{align*}\\par\\smallskip Si l’unité graphique est $\\|\\vec i\\|=2\\,\\mathrm{cm}$ dans un repère orthonormé, alors une unité d’aire vaut $4\\,\\mathrm{cm}^2$.\\par\\smallskip $$\\boxed{\\mathcal{A}=\\blank{\\frac{40-16\\sqrt2}{3}\\,\\mathrm{cm}^2}}.$$ "
+        }
+      ]
+    },
+    {
+      "id": "valeur_moyenne",
+      "category": "course",
+      "title": "Valeur moyenne d’une fonction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La valeur moyenne transforme une aire sous une courbe en hauteur constante équivalente. Elle sert à résumer une fonction continue par un seul nombre sur un intervalle."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{la valeur moyenne d’une fonction}",
+          "content": "Soit $f$ une fonction continue sur $[a,b]$ avec $a\\neq b$. La \\textbf{valeur moyenne} de $f$ sur $[a,b]$ est le nombre :\\par\\smallskip $$\\boxed{\\displaystyle \\mu=\\frac{1}{b-a}\\int_a^b f(x)\\,dx}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{encadrer une intégrale avec des bornes}",
+          "content": "Si $m\\leq f(x)\\leq M$ pour tout $x\\in[a,b]$, alors :\\par\\smallskip $$\\boxed{m(b-a)\\leq\\displaystyle\\int_a^b f(x)\\,dx\\leq M(b-a)}$$\\par\\smallskip Si $|f(x)|\\leq k$ sur $[a,b]$, alors :\\par\\smallskip $$\\boxed{\\displaystyle\\left|\\int_a^b f(x)\\,dx\\right|\\leq k|b-a|}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{la valeur moyenne est atteinte}",
+          "content": "Si $f$ est continue sur $[a,b]$, alors il existe au moins un réel $c\\in[a,b]$ tel que :\\par\\smallskip $$\\boxed{f(c)=\\mu}$$ c’est-à-dire : $$\\boxed{(b-a)f(c)=\\displaystyle\\int_a^b f(x)\\,dx}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{valeur moyenne} : $f(x)=x\\sqrt{x^2+1}$ sur $[-1,0]$.}\\par\\smallskip La fonction est continue sur $[-1,0]$. La longueur de l’intervalle vaut $0-(-1)=1$. Donc :\\par\\smallskip\\begin{align*}\\mu&=\\frac{1}{1}\\int_{-1}^{0}x\\sqrt{x^2+1}\\,dx.\n\\end{align*}\\par\\smallskip On reconnaît $u(x)=x^2+1$ et $u'(x)=2x$. Ainsi :\\par\\smallskip\\begin{align*}\\int x\\sqrt{x^2+1}\\,dx&=\\frac12\\int 2x(x^2+1)^{\\frac12}\\,dx\\\\&=\\frac12\\cdot\\frac{(x^2+1)^{\\frac32}}{\\frac32}\\\\&=\\frac13(x^2+1)^{\\frac32}.\n\\end{align*}\\par\\smallskip Donc :\\par\\smallskip\\begin{align*}\\mu&=\\left[\\frac13(x^2+1)^{\\frac32}\\right]_{-1}^{0}\\\\&=\\frac13-\\frac13(2)^{\\frac32}\\\\&=\\boxed{\\blank{\\frac{1-2\\sqrt2}{3}}}.\n\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{valeur moyenne avec exponentielle} : $f(x)=(x-1)e^x$ sur $[0,1]$.}\\par\\smallskip On applique la formule : $$\\displaystyle \\mu=\\int_0^1(x-1)e^x\\,dx,$$ car $b-a=1$.\\par\\smallskip Une primitive de $(x-1)e^x$ est $(x-2)e^x$, car $\\big((x-2)e^x\\big)'=e^x+(x-2)e^x=(x-1)e^x$.\\par\\smallskip\\begin{align*}\\mu&=\\left[(x-2)e^x\\right]_0^1\\\\&=(-1)e-(-2)\\\\&=\\boxed{\\blank{2-e}}.\n\\end{align*}\\par\\smallskip Le résultat est positif car $2-e<0$ est faux : en réalité $2-e<0$. Comme $(x-1)e^x\\leq0$ sur $[0,1]$, la valeur moyenne est bien négative. On garde donc : $$\\boxed{\\mu=2-e}.$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Contrôle rapide :} la valeur moyenne doit rester entre le minimum et le maximum de la fonction sur l’intervalle. C’est un bon test pour détecter une erreur de signe."
+        }
+      ]
+    },
+    {
+      "id": "volume_revolution",
+      "category": "course",
+      "title": "Volume de révolution",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les intégrales permettent aussi de calculer des volumes. Quand un domaine tourne autour de l’axe des abscisses, chaque tranche devient un disque."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer un volume de révolution}",
+          "content": "Soit $f$ une fonction continue sur $[a,b]$. Le volume du solide obtenu par rotation autour de l’axe des abscisses du domaine sous la courbe est :\\par\\smallskip $$\\boxed{\\displaystyle V=\\pi\\int_a^b (f(x))^2\\,dx}$$ en unité de volume. Si les unités du repère valent $\\|\\vec i\\|$, $\\|\\vec j\\|$ et $\\|\\vec k\\|$, on multiplie par $\\|\\vec i\\|\\times\\|\\vec j\\|\\times\\|\\vec k\\|$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{ne pas confondre aire et volume}",
+          "content": "Pour une \\textbf{aire sous une courbe}, on intègre $|f(x)|$. Pour un \\textbf{volume de révolution}, on intègre $(f(x))^2$ puis on multiplie par $\\pi$.\\par\\smallskip \\textbf{Astuce :} aire = hauteur ; volume de révolution = disque, donc rayon au carré."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons une \\textbf{aire puis un volume de révolution} avec $f(x)=e^x$ sur $[\\ln2,\\ln3]$.}\\par\\smallskip D’abord, l’aire sous la courbe vaut :\\par\\smallskip\\begin{align*}\\mathcal{A}&=\\int_{\\ln2}^{\\ln3}e^x\\,dx\\\\&=\\left[e^x\\right]_{\\ln2}^{\\ln3}\\\\&=3-2\\\\&=\\boxed{\\blank{1\\,\\mathrm{cm}^2}}.\n\\end{align*}\\par\\smallskip Ensuite, le volume engendré par la rotation autour de l’axe des abscisses vaut :\\par\\smallskip\\begin{align*}V&=\\pi\\int_{\\ln2}^{\\ln3}(e^x)^2\\,dx\\\\&=\\pi\\int_{\\ln2}^{\\ln3}e^{2x}\\,dx\\\\&=\\pi\\left[\\frac12e^{2x}\\right]_{\\ln2}^{\\ln3}\\\\&=\\frac{\\pi}{2}\\left(e^{2\\ln3}-e^{2\\ln2}\\right)\\\\&=\\frac{\\pi}{2}(9-4)\\\\&=\\boxed{\\blank{\\frac{5\\pi}{2}\\,\\mathrm{cm}^3}}.\n\\end{align*}"
+        },
+        {
+          "type": "warning",
+          "content": "Un piège classique dans lequel vous ne devez pas tomber : dans le volume, on n’intègre pas $f(x)$ mais $(f(x))^2$. Oublier le carré change totalement le résultat."
+        }
+      ]
+    },
+    {
+      "id": "synthese_methodes",
+      "category": "course",
+      "title": "Synthèse des choix de méthode",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "À la fin du chapitre, l’objectif est de choisir rapidement la bonne stratégie. Le tableau suivant aide à reconnaître le type de calcul à effectuer."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{choisir la bonne technique}",
+          "content": "$$\\begin{array}{c|c|c}\\text{Situation} & \\text{Indice à repérer} & \\text{Outil conseillé}\\\\ \\hline \\text{Primitive directe} & x^n,\\ e^x,\\ \\sin x,\\ \\cos x & \\text{Table des primitives}\\\\ \\text{Forme composée} & u',u \\text{ apparaissent ensemble} & u'/u,\\ u'e^u,\\ u'u^r\\\\ \\text{Produit} & x\\sin x,\\ x e^x,\\ x\\ln x & \\text{Intégration par parties}\\\\ \\text{Valeur absolue} & |f(x)| & \\text{Tableau de signe puis Chasles}\\\\ \\text{Aire entre deux courbes} & f-g & \\text{Dessus moins dessous}\\\\ \\text{Volume de révolution} & \\text{rotation autour de }Ox & \\pi\\int(f(x))^2 dx\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Mini-synthèse : choisissons la \\textbf{méthode adaptée} sans calculer entièrement.}\\par\\smallskip $$\\begin{array}{c|c|c}\\text{Intégrale} & \\text{Observation} & \\text{Méthode}\\\\ \\hline \\displaystyle\\int_0^1\\frac{2x}{x^2+1}\\,dx & \\frac{u'}{u} & \\blank{\\ln|u|}\\\\ \\displaystyle\\int_0^1 x e^x\\,dx & \\text{produit }x\\cdot e^x & \\blank{\\text{intégration par parties}}\\\\ \\displaystyle\\int_0^2|x^2-1|\\,dx & \\text{valeur absolue} & \\blank{\\text{signe puis Chasles}}\\\\ \\displaystyle\\pi\\int_1^2(\\sqrt{x})^2\\,dx & \\text{volume} & \\blank{\\text{carré du rayon}}\\end{array}$$\\par\\smallskip Cette lecture rapide évite de commencer un calcul avec une méthode inadaptée."
+        }
+      ]
+    }
+  ]
+}

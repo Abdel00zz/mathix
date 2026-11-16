@@ -1,0 +1,35 @@
+{
+  "id": "ex-log-36",
+  "theme": "logique",
+  "difficulty": "difficile",
+  "topic": "Logique & Raisonnements — Exercices de perfectionnement",
+  "requiresRedaction": true,
+  "context": "Soit $a \\in \\mathbb{R}$ un réel positif. Soit $ABCD$ un parallélogramme de centre $O$, $I$ le milieu de $[AB]$ et $J$ le point défini par $\\overrightarrow{BJ} = \\dfrac{2}{3}\\overrightarrow{BC}$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que les droites $(AB)$ et $(IJ)$ ne sont pas parallèles.",
+      "hint": "Exprimez $\\overrightarrow{IJ}$ en fonction des vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{BC}$. Deux droites sont parallèles si et seulement si leurs vecteurs directeurs sont colinéaires."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que la droite $(IJ)$ ne passe pas par $O$.",
+      "hint": "Exprimez $\\overrightarrow{IO}$ en fonction de $\\overrightarrow{AB}$ et $\\overrightarrow{BC}$, et vérifiez qu'il n'est pas colinéaire à $\\overrightarrow{IJ}$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer par récurrence que pour tout entier $n \\geq 2$ : $(1+a)^n \\geq 1 + na + \\dfrac{n(n-1)}{2}a^2$.",
+      "hint": "Au rang $n+1$ : $(1+a)^{n+1} = (1+a)^n(1+a) \\geq \\left(1 + na + \\dfrac{n(n-1)}{2}a^2\\right)(1+a)$. Développez et majorez."
+    },
+    {
+      "id": "q4",
+      "content": "En déduire que pour tout entier $n \\geq 2$ : $\\left(1 + \\dfrac{1}{2n}\\right)^n \\geq \\dfrac{1}{8}\\left(13 - \\dfrac{1}{n}\\right)$.",
+      "hint": "Appliquez la question 3 avec $a = \\dfrac{1}{2n}$ : $(1+\\frac{1}{2n})^n \\geq 1 + n \\cdot \\frac{1}{2n} + \\frac{n(n-1)}{2} \\cdot \\frac{1}{4n^2} = 1 + \\frac{1}{2} + \\frac{n-1}{8n}$. Simplifiez."
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que tout entier $n \\geq 2$ admet au moins un diviseur premier.",
+      "hint": "Si $n$ est premier, c'est terminé. Sinon, $n$ admet un diviseur $d$ avec $1 < d < n$. Par récurrence forte (ou descente infinie), le plus petit diviseur de $n$ supérieur à 1 est premier."
+    }
+  ]
+}

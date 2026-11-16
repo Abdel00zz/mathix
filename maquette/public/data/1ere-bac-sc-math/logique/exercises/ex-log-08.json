@@ -1,0 +1,19 @@
+{
+  "id": "ex-log-08",
+  "theme": "logique",
+  "difficulty": "facile",
+  "topic": "Logique & Raisonnements — Logique propositionnelle",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "qa",
+      "content": "On considère la proposition : $S : (\\exists x \\in \\mathbb{R}^*)$; $\\left(x^2 \\leq x \\text{ ou } 1 + \\dfrac{1}{x} < 0\\right)$. Déterminer la valeur de vérité de $S$. Donner la négation de $S$.",
+      "hint": "Pour montrer que $S$ est vraie, il suffit de trouver un $x \\in \\mathbb{R}^*$ vérifiant au moins l'une des deux conditions."
+    },
+    {
+      "id": "qb",
+      "content": "On considère ensuite : $P : (\\forall y \\in \\mathbb{R}^*)(\\exists x \\in \\mathbb{R})$; $x^2 - xy + y^2 = 0$. Déterminer la négation de $P$. Montrer que $P$ est fausse.",
+      "hint": "Pour montrer que $P$ est fausse, montrez que $x^2 - xy + y^2 > 0$ pour tout $x \\in \\mathbb{R}$ et tout $y \\neq 0$ : complétez le carré."
+    }
+  ]
+}

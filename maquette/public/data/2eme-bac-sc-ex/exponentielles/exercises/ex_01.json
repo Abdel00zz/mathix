@@ -1,0 +1,109 @@
+{
+  "id": "ex-analyse-2018-normale-01",
+  "theme": "analyse",
+  "difficulty": "difficile",
+  "topic": "Fonction auxiliaire, asymptote, position relative et points d’inflexion",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "pI",
+      "content": "Soit $g$ la fonction numérique définie sur $\\mathbb{R}$ par $g(x)=e^x-x^2+3x-1$. Le tableau ci-contre est le tableau de variations de la fonction $g$.",
+      "type": "header"
+    },
+    {
+      "id": "qI1",
+      "content": "Vérifier que $g(0)=0$.",
+      "hint": "Remplacez $x$ par $0$ dans l’expression de $g$."
+    },
+    {
+      "id": "qI2",
+      "content": "Déterminer le signe de $g(x)$ sur chacun des intervalles $]-\\infty,0]$ et $[0,+\\infty[$.",
+      "hint": "Utilisez le tableau de variations fourni et la valeur $g(0)=0$."
+    },
+    {
+      "id": "pII",
+      "content": "Soit $f$ la fonction définie sur $\\mathbb{R}$ par $f(x)=(x^2-x)e^{-x}+x$. On note $(C)$ sa courbe représentative dans un repère orthonormé.",
+      "type": "header"
+    },
+    {
+      "id": "qII1",
+      "subQuestions": [
+        {
+          "id": "sqII1a",
+          "content": "Vérifier que $f(x)=\\dfrac{x^2}{e^x}-\\dfrac{x}{e^x}+x$ pour tout $x\\in\\mathbb{R}$, puis montrer que $\\displaystyle\\lim_{x\\to+\\infty}f(x)=+\\infty$.",
+          "hint": "Réécrivez $e^{-x}=1/e^x$ et utilisez les limites classiques de $x^k/e^x$."
+        },
+        {
+          "id": "sqII1b",
+          "content": "Calculer $\\displaystyle\\lim_{x\\to+\\infty}(f(x)-x)$, puis en déduire que $(C)$ admet au voisinage de $+\\infty$ une asymptote $(D)$ d’équation $y=x$.",
+          "hint": "La différence $f(x)-x$ vaut $(x^2-x)e^{-x}$."
+        },
+        {
+          "id": "sqII1c",
+          "content": "Vérifier que $f(x)=\\dfrac{x^2-x+xe^x}{e^x}$ pour tout $x\\in\\mathbb{R}$, puis calculer $\\displaystyle\\lim_{x\\to-\\infty}f(x)$.",
+          "hint": "Mettez l’expression au dénominateur $e^x$ et étudiez le terme dominant quand $e^x\\to0^+$."
+        },
+        {
+          "id": "sqII1d",
+          "content": "Montrer que $\\displaystyle\\lim_{x\\to-\\infty}\\dfrac{f(x)}{x}=-\\infty$ et interpréter géométriquement le résultat.",
+          "hint": "Divisez l’expression adaptée par $x$ ; une limite infinie du quotient signale une branche parabolique."
+        }
+      ]
+    },
+    {
+      "id": "qII2",
+      "subQuestions": [
+        {
+          "id": "sqII2a",
+          "content": "Montrer que $f(x)-x$ et $x^2-x$ ont le même signe pour tout $x\\in\\mathbb{R}$.",
+          "hint": "Comme $e^{-x}>0$, le signe de $(x^2-x)e^{-x}$ est celui de $x^2-x$."
+        },
+        {
+          "id": "sqII2b",
+          "content": "En déduire que $(C)$ est au-dessus de $(D)$ sur $]-\\infty,0]$ et $[1,+\\infty[$, et en dessous de $(D)$ sur $[0,1]$.",
+          "hint": "La position relative se lit à partir du signe de $f(x)-x$."
+        }
+      ]
+    },
+    {
+      "id": "qII3",
+      "subQuestions": [
+        {
+          "id": "sqII3a",
+          "content": "Montrer que $f'(x)=g(x)e^{-x}$ pour tout $x\\in\\mathbb{R}$.",
+          "hint": "Dérivez $(x^2-x)e^{-x}+x$ et factorisez par $e^{-x}$."
+        },
+        {
+          "id": "sqII3b",
+          "content": "En déduire que $f$ est décroissante sur $]-\\infty,0]$ et croissante sur $[0,+\\infty[$.",
+          "hint": "Le facteur $e^{-x}$ est positif ; le signe de $f'$ est celui de $g$."
+        },
+        {
+          "id": "sqII3c",
+          "content": "Dresser le tableau de variations de $f$.",
+          "hint": "Combinez le signe de $f'$ avec les limites déjà calculées."
+        }
+      ]
+    },
+    {
+      "id": "qII4",
+      "subQuestions": [
+        {
+          "id": "sqII4a",
+          "content": "Vérifier que $f''(x)=(x^2-5x+4)e^{-x}$ pour tout $x\\in\\mathbb{R}$.",
+          "hint": "Dérivez $f'(x)$ ou directement l’expression de $f$ une seconde fois, puis factorisez."
+        },
+        {
+          "id": "sqII4b",
+          "content": "En déduire que $(C)$ admet deux points d’inflexion d’abscisses respectives $1$ et $4$.",
+          "hint": "Résolvez $x^2-5x+4=0$ et vérifiez le changement de signe de $f''$."
+        }
+      ]
+    },
+    {
+      "id": "qII5",
+      "content": "Construire $(D)$ et $(C)$ dans le même repère, en prenant $f(4)\\simeq4{,}2$.",
+      "hint": "Placez l’asymptote $y=x$, les variations, les positions relatives et les points d’inflexion."
+    }
+  ]
+}

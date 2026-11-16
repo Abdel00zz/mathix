@@ -1,0 +1,26 @@
+{
+  "id": "suites",
+  "title": "Les suites numériques",
+  "exercises": [
+    {
+      "id": "ex-suites-01",
+      "path": "data/1ere-bac-sc-ex/suites/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-suites-02",
+      "path": "data/1ere-bac-sc-ex/suites/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-suites-03",
+      "path": "data/1ere-bac-sc-ex/suites/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-suites-01",
+      "path": "data/1ere-bac-sc-ex/suites/quiz/suites_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

@@ -1,0 +1,563 @@
+{
+  "header": {
+    "title": "Limite d'une suite numérique",
+    "subtitle": "Limites usuelles, opérations, ordre, encadrement, convergence monotone, comparaison et suites récurrentes",
+    "context": "2BAC Sciences"
+  },
+  "lexique": [
+    {
+      "term": "Suite numérique",
+      "arabic": "متتالية عددية",
+      "category": "concept",
+      "definition": "Liste ordonnée de nombres repérés par un indice entier.",
+      "variants": [
+        "suites numériques"
+      ]
+    },
+    {
+      "term": "Terme général",
+      "arabic": "الحد العام",
+      "category": "concept",
+      "symbol": "u_n",
+      "definition": "Expression qui donne le terme d'indice n d'une suite.",
+      "variants": [
+        "termes de la suite"
+      ]
+    },
+    {
+      "term": "Indice",
+      "arabic": "فهرس",
+      "category": "concept",
+      "definition": "Entier qui repère la position d'un terme dans une suite.",
+      "variants": [
+        "indices"
+      ]
+    },
+    {
+      "term": "Suite convergente",
+      "arabic": "متتالية متقاربة",
+      "category": "concept",
+      "definition": "Suite dont les termes se rapprochent d'une limite finie.",
+      "variants": [
+        "convergence",
+        "convergente"
+      ]
+    },
+    {
+      "term": "Suite divergente",
+      "arabic": "متتالية متباعدة",
+      "category": "concept",
+      "definition": "Suite qui ne possède pas de limite finie.",
+      "variants": [
+        "divergence",
+        "divergente"
+      ]
+    },
+    {
+      "term": "Limite d'une suite",
+      "arabic": "نهاية متتالية",
+      "category": "concept",
+      "symbol": "\\lim_{n\\to+\\infty}u_n",
+      "definition": "Nombre approché par les termes lorsque n devient très grand.",
+      "variants": [
+        "limites de suites"
+      ]
+    },
+    {
+      "term": "Suite majorée",
+      "arabic": "متتالية محدودة من الأعلى",
+      "category": "concept",
+      "definition": "Suite dont tous les termes restent inférieurs à une même borne.",
+      "variants": [
+        "majorée"
+      ]
+    },
+    {
+      "term": "Suite minorée",
+      "arabic": "متتالية محدودة من الأسفل",
+      "category": "concept",
+      "definition": "Suite dont tous les termes restent supérieurs à une même borne.",
+      "variants": [
+        "minorée"
+      ]
+    },
+    {
+      "term": "Suite monotone",
+      "arabic": "متتالية رتيبة",
+      "category": "concept",
+      "definition": "Suite toujours croissante ou toujours décroissante.",
+      "variants": [
+        "monotone"
+      ]
+    },
+    {
+      "term": "Suite arithmétique",
+      "arabic": "متتالية حسابية",
+      "category": "concept",
+      "definition": "Suite dont la différence entre deux termes consécutifs est constante.",
+      "variants": [
+        "suites arithmétiques",
+        "raison arithmétique"
+      ]
+    },
+    {
+      "term": "Suite géométrique",
+      "arabic": "متتالية هندسية",
+      "category": "concept",
+      "definition": "Suite dont le quotient de deux termes consécutifs est constant.",
+      "variants": [
+        "suites géométriques",
+        "raison géométrique"
+      ]
+    },
+    {
+      "term": "Suite récurrente",
+      "arabic": "متتالية معرفة بالتراجع",
+      "category": "concept",
+      "definition": "Suite définie à partir d'un terme précédent.",
+      "variants": [
+        "suites récurrentes",
+        "relation de récurrence"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Les limites de suites permettent d'\\objectif{prévoir le comportement d'une suite lorsque le rang devient très grand}. La \\defi{difficulté} est de choisir la bonne méthode : calcul direct, encadrement, comparaison, monotonie ou transformation. Ce chapitre t'apprend à lire une suite, à justifier une convergence et à rédiger une solution d'examen sans sauter les étapes essentielles.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Augustin-Louis_Cauchy_1901.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "15%",
+            "caption": "Augustin-Louis Cauchy (1789–1857)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rappels_structure_suite",
+      "category": "course",
+      "title": "Identifier la nature et les contraintes d'une suite",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avant de calculer une limite, on identifie la nature de la suite et ses contraintes. Les notions de borne, de monotonie, de suite arithmétique et de suite géométrique donnent les premiers outils de lecture."
+        },
+        {
+          "type": "definition",
+          "content": "Soit $(u_n)_{n\\in I}$ une suite numérique. Elle est \\textbf{majorée} lorsqu'il existe un réel $M$ tel que, pour tout $n\\in I$, $u_n\\leq M$.\\par Elle est \\textbf{minorée} lorsqu'il existe un réel $m$ tel que, pour tout $n\\in I$, $m\\leq u_n$.\\par Elle est \\textbf{bornée} lorsqu'elle est à la fois majorée et minorée.",
+          "title": "Quand une suite est-elle \\mathqst{majorée, minorée ou bornée} ?"
+        },
+        {
+          "type": "example",
+          "content": "Pour $n\\geq 2$, posons $u_n=\\dfrac{1}{\\sqrt{n-1}}$. Comme $n-1\\geq 1$, on a $\\sqrt{n-1}\\geq 1$. Donc $0<u_n\\leq 1$. La suite est minorée par $0$, majorée par $1$, donc bornée.",
+          "title": "Suite bornée par lecture directe"
+        },
+        {
+          "type": "method",
+          "content": "\\textbf{D'abord}, vérifier le signe du numérateur et du dénominateur. \\textbf{Ensuite}, transformer l'inégalité en gardant le même sens seulement si le dénominateur est positif. \\textbf{Enfin}, conclure clairement : minorée, majorée, donc bornée.",
+          "title": "Comment \\mathqst{encadrer un terme explicite} ?"
+        },
+        {
+          "type": "application",
+          "content": "\\question{Soit $(u_n)_{n\\geq1}$ définie par $u_n=\\dfrac{2n+1}{n+3}$.\\begin{enumerate}\\item Établir l'encadrement $0<u_n<2$ pour tout $n\\geq1$.\\item Préciser deux bornes explicites de la suite $(u_n)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour montrer la positivité, on remarque que $2n+1>0$ et $n+3>0$, donc $\\blank{u_n>0}$. Pour montrer la majoration, comme $n+3>0$, on écrit :\\[\\dfrac{2n+1}{n+3}<2 \\Longleftrightarrow 2n+1<\\blank{2n+6}.\\] Cette inégalité est vraie, donc $0<u_n<2$.\\item La suite est minorée par $0$ et majorée par $2$, donc $\\boxed{(u_n)\\text{ est bornée}}$.\\end{enumerate}",
+          "difficulty": 1
+        },
+        {
+          "type": "definition",
+          "content": "Une suite $(u_n)$ est \\textbf{croissante} si $u_n\\leq u_{n+1}$ pour tout rang considéré.\\par Elle est \\textbf{décroissante} si $u_{n+1}\\leq u_n$ pour tout rang considéré.\\par Elle est \\textbf{constante} si $u_{n+1}=u_n$ pour tout rang considéré.",
+          "title": "Comment reconnaître \\mathqst{une suite monotone} ?"
+        },
+        {
+          "type": "method",
+          "content": "\\textbf{D'abord}, observer la forme de la suite. \\textbf{Ensuite}, pour une fraction, calculer souvent $u_{n+1}-u_n$ ; pour une suite positive avec puissances, comparer parfois $\\dfrac{u_{n+1}}{u_n}$ à $1$. \\textbf{Enfin}, pour une suite récurrente, utiliser l'encadrement déjà démontré.",
+          "title": "Quel test choisir pour \\mathqst{la monotonie} ?"
+        },
+        {
+          "type": "application",
+          "content": "\\question{Soit $(v_n)_{n\\geq1}$ définie par $v_n=4\\left(\\dfrac13\\right)^n$. Déterminer le sens de variation de $(v_n)$ à l'aide de $v_{n+1}-v_n$.}\\par\\smallskip\\textbf{D'abord}, on compare deux termes consécutifs en calculant la différence :\\[v_{n+1}-v_n=4\\left(\\dfrac13\\right)^n\\left(\\blank{\\dfrac13-1}\\right)=\\blank{-\\dfrac83\\left(\\dfrac13\\right)^n}.\\]\\textbf{Ensuite}, comme $\\left(\\dfrac13\\right)^n>0$, cette différence est strictement négative. \\textbf{Donc} les termes diminuent quand $n$ augmente, et l'on obtient $\\boxed{(v_n)\\text{ est strictement décroissante}}$.",
+          "difficulty": 2
+        },
+        {
+          "type": "definition",
+          "content": "Une suite $(u_n)$ est \\textbf{arithmétique} lorsqu'il existe un réel $r$ tel que $u_{n+1}=u_n+r$.\\par Une suite $(v_n)$ est \\textbf{géométrique} lorsqu'il existe un réel $q$ tel que $v_{n+1}=qv_n$.",
+          "title": "Quelles sont \\mathqst{les suites arithmétiques et géométriques} ?"
+        },
+        {
+          "type": "property",
+          "content": "\\itemsize{Si $(u_n)$ est arithmétique de raison $r$, alors $u_n=u_p+(n-p)r$.}\\itemsize{Si $(u_n)$ est géométrique de raison $q$, alors $u_n=u_pq^{n-p}$.}\\itemsize{Si $q\\neq1$, alors $u_0+u_1+\\cdots+u_n=u_0\\dfrac{1-q^{n+1}}{1-q}$.}",
+          "title": "Comment écrire \\mathqst{le terme général} ?"
+        },
+        {
+          "type": "example",
+          "content": "\\itemsize{Si $(u_n)$ est arithmétique de raison $\\dfrac12$ et $u_2=-3$, alors $u_n=u_2+(n-2)\\dfrac12=\\dfrac n2-4$.}\\itemsize{Si $(v_n)$ est géométrique avec $v_1=1$ et $v_4=\\dfrac1{27}$, alors $v_4=v_1q^3$, donc $q^3=\\dfrac1{27}$ et $q=\\dfrac13$.}",
+          "title": "Deux lectures rapides"
+        },
+        {
+          "type": "application",
+          "content": "\\question{On définit $u_0=2$ et $u_{n+1}=u_n+5$.\\begin{enumerate}\\item Identifier la nature de $(u_n)$ et sa raison.\\item Exprimer le terme général $u_n$ en fonction de $n$.\\item Calculer la somme $S_n=u_0+u_1+\\cdots+u_n$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour reconnaître la nature, on lit $u_{n+1}=u_n+\\blank{5}$. Donc $(u_n)$ est arithmétique de raison $5$.\\item Pour écrire le terme général, on utilise $u_n=u_0+5n$, d'où $u_n=\\blank{2+5n}$.\\item Pour calculer la somme, on applique la formule d'une suite arithmétique :\\[S_n=\\dfrac{n+1}{2}(u_0+u_n)=\\boxed{\\dfrac{(n+1)(5n+4)}{2}}.\\]\\end{enumerate}",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "limite_convergence",
+      "category": "course",
+      "title": "Définir la convergence et les limites usuelles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La convergence décrit la stabilisation d'une suite autour d'un réel. Les limites usuelles servent ensuite de briques de base pour traiter les expressions plus complexes."
+        },
+        {
+          "type": "definition",
+          "content": "Une suite numérique $(u_n)$ est \\textbf{convergente} si elle admet une limite réelle $\\ell$. On écrit :\\par$$\\boxed{\\lim_{n\\to+\\infty}u_n=\\ell}$$Dans le cas contraire, on dit que la suite est \\textbf{divergente}.",
+          "title": "Quand une suite \\mathqst{converge-t-elle} ?"
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{Une suite divergente ne tend pas forcément vers $+\\infty$ ou $-\\infty$.}\\itemsize{La suite $u_n=(-1)^n$ est divergente, car ses termes alternent entre $1$ et $-1$.}"
+        },
+        {
+          "type": "example",
+          "content": "Pour $u_n=(-1)^n$, les termes pairs valent $u_{2p}=1$ et les termes impairs valent $u_{2p+1}=-1$. Les deux sous-suites ont des limites différentes. La suite $(u_n)$ n'admet donc pas de limite réelle.",
+          "title": "Une suite divergente sans limite infinie"
+        },
+        {
+          "type": "property",
+          "content": "Pour tout entier $p\\geq1$ et tout réel $k$, on a :\\par$$\\boxed{\\lim_{n\\to+\\infty}\\dfrac{k}{n^p}=0\\quad\\text{et}\\quad\\lim_{n\\to+\\infty}\\dfrac{k}{\\sqrt n}=0}$$",
+          "title": "Quelles sont \\mathqst{les limites usuelles} ?"
+        },
+        {
+          "type": "property",
+          "content": "Soit $(u_n)$ une suite numérique et soit $\\ell\\in\\mathbb{R}$. Alors :\\par$$\\boxed{\\lim_{n\\to+\\infty}u_n=\\ell\\Longleftrightarrow\\lim_{n\\to+\\infty}(u_n-\\ell)=0}$$et aussi :\\par$$\\boxed{\\lim_{n\\to+\\infty}u_n=\\ell\\Longleftrightarrow\\lim_{n\\to+\\infty}|u_n-\\ell|=0}$$",
+          "title": "Comment \\mathqst{ramener une limite à zéro} ?"
+        },
+        {
+          "type": "example",
+          "content": "Pour $u_n=\\dfrac{3n^2+(-1)^n}{n^2}$, on écrit $u_n=3+\\dfrac{(-1)^n}{n^2}$. Comme $-1\\leq(-1)^n\\leq1$, le terme $\\dfrac{(-1)^n}{n^2}$ tend vers $0$. Donc $u_n$ tend vers $3$.",
+          "title": "Terme oscillant écrasé"
+        },
+        {
+          "type": "application",
+          "content": "\\question{Soit $(u_n)_{n\\geq1}$ définie par $u_n=2+\\dfrac{\\sin n}{n^2}$. Prouver la convergence de $(u_n)$ en majorant $|u_n-2|$, puis déterminer sa limite.}\\par\\smallskip\\textbf{D'abord}, on isole l'écart avec la limite attendue :\\[|u_n-2|=\\left|\\blank{\\dfrac{\\sin n}{n^2}}\\right|.\\]\\textbf{Ensuite}, puisque $|\\sin n|\\leq1$, on a $|u_n-2|\\leq\\blank{\\dfrac1{n^2}}$. \\textbf{Or} $\\dfrac1{n^2}$ tend vers $0$, donc $|u_n-2|\\to0$. \\textbf{Ainsi}, la suite converge et $\\boxed{\\lim_{n\\to+\\infty}u_n=2}$.",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "operations_limites",
+      "category": "course",
+      "title": "Calculer une limite par opérations et transformations",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les opérations sur les limites permettent un calcul direct lorsque la forme est régulière. Dès qu'une forme indéterminée apparaît, il faut transformer l'expression avant de conclure."
+        },
+        {
+          "type": "theorem",
+          "content": "Si $\\lim u_n=\\ell$ et $\\lim v_n=\\ell'$, les opérations autorisées se lisent ainsi :\\par$$\\begin{array}{c|c}\\textbf{Expression} & \\textbf{Limite obtenue} \\\\u_n+v_n & \\ell+\\ell' \\\\\\lambda u_n & \\lambda\\ell \\\\u_nv_n & \\ell\\ell' \\\\\\dfrac{u_n}{v_n} & \\dfrac{\\ell}{\\ell'}\\quad(\\ell'\\neq0)\\end{array}$$Ce tableau s'applique seulement lorsque les limites inscrites existent et ne créent pas de forme indéterminée.",
+          "title": "Comment \\mathqst{organiser les opérations sur les limites} ?"
+        },
+        {
+          "type": "example",
+          "content": "Pour $u_n=3-\\dfrac1n+\\dfrac4{\\sqrt n}$, les termes $\\dfrac1n$ et $\\dfrac4{\\sqrt n}$ tendent vers $0$. Donc $u_n$ tend vers $3$.",
+          "title": "Somme de limites simples"
+        },
+        {
+          "type": "method",
+          "content": "\\textbf{D'abord}, repérer la puissance dominante de $n$. \\textbf{Ensuite}, diviser le numérateur et le dénominateur par cette puissance. \\textbf{Après simplification}, utiliser les limites usuelles comme $\\dfrac1n\\to0$ et $\\dfrac1{\\sqrt n}\\to0$.",
+          "title": "Comment \\mathqst{traiter une fraction rationnelle en $n$} ?"
+        },
+        {
+          "type": "application",
+          "content": "\\question{Pour $a_n=\\dfrac{2\\sqrt n-7}{7\\sqrt n+3}$, calculer $\\lim_{n\\to+\\infty}a_n$ en divisant par la puissance dominante $\\sqrt n$.}\\par\\smallskip\\textbf{D'abord}, on divise le numérateur et le dénominateur par $\\sqrt n$ pour faire apparaître les termes négligeables :\\[a_n=\\dfrac{2-\\blank{\\dfrac7{\\sqrt n}}}{7+\\blank{\\dfrac3{\\sqrt n}}}.\\]\\textbf{Ensuite}, les deux fractions contenant $\\sqrt n$ tendent vers $0$. \\textbf{Donc} le quotient tend vers le quotient des termes dominants, et $\\boxed{\\lim_{n\\to+\\infty}a_n=\\dfrac27}$.",
+          "difficulty": 2
+        },
+        {
+          "type": "method",
+          "content": "\\textbf{D'abord}, reconnaître la forme $\\sqrt{A_n}-B_n$. \\textbf{Ensuite}, multiplier par la quantité conjuguée $\\sqrt{A_n}+B_n$. \\textbf{Puis}, simplifier avec $A_n-B_n^2$. \\textbf{Enfin}, factoriser par la puissance dominante.",
+          "title": "Comment \\mathqst{enlever une racine avec soustraction} ?"
+        },
+        {
+          "type": "example",
+          "content": "Pour $w_n=\\sqrt{4n^2+2n+1}-2n$, on multiplie par $\\sqrt{4n^2+2n+1}+2n$. On obtient $w_n=\\dfrac{2n+1}{\\sqrt{4n^2+2n+1}+2n}$, puis la limite vaut $\\dfrac12$.",
+          "title": "Quantité conjuguée"
+        },
+        {
+          "type": "application",
+          "content": "\\question{Pour $b_n=\\sqrt{9n^2-4n+5}-3n+2$, lever l'indétermination $+\\infty-\\infty$ par la quantité conjuguée, puis calculer la limite.}\\par\\smallskip\\textbf{D'abord}, on traite la partie indéterminée avec la quantité conjuguée :\\[\\sqrt{9n^2-4n+5}-3n=\\dfrac{\\blank{-4n+5}}{\\sqrt{9n^2-4n+5}+3n}.\\]\\textbf{Ensuite}, en divisant le numérateur et le dénominateur par $n$, cette partie tend vers $\\blank{-\\dfrac23}$. \\textbf{Enfin}, comme $b_n=\\left(\\sqrt{9n^2-4n+5}-3n\\right)+2$, on obtient $\\boxed{\\lim_{n\\to+\\infty}b_n=\\dfrac43}$.",
+          "difficulty": 3
+        },
+        {
+          "type": "warning",
+          "content": "Attention, c’est ici que vous risquez de vous tromper : les formes $+\\infty-\\infty$, $0\\times\\infty$, $\\dfrac{\\infty}{\\infty}$ et $\\dfrac00$ ne se calculent pas par simple opération. Il faut transformer : factoriser, conjuguer, encadrer ou comparer."
+        },
+        {
+          "type": "property",
+          "content": "Les formes indéterminées demandent un réflexe précis :\\par$$\\begin{array}{c|c}\\textbf{Situation} & \\textbf{Transformation utile} \\\\\\text{fraction rationnelle en } n & \\text{diviser par la puissance dominante} \\\\\\sqrt{A_n}-B_n & \\text{multiplier par la quantité conjuguée} \\\\(-1)^n,\\,\\sin n,\\,\\cos n & \\text{encadrer entre deux bornes simples} \\\\\\text{somme de termes} & \\text{encadrer chaque terme puis additionner}\\end{array}$$",
+          "title": "Comment \\mathqst{choisir la transformation adaptée} ?"
+        }
+      ]
+    },
+    {
+      "id": "ordre_encadrement",
+      "category": "course",
+      "title": "Exploiter les inégalités et le théorème d'encadrement",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les inégalités permettent de contrôler une suite sans connaître son expression exacte. Le théorème d'encadrement devient alors l'outil central pour prouver une limite."
+        },
+        {
+          "type": "theorem",
+          "content": "Les inégalités conservées à partir d'un certain rang passent à la limite avec prudence :\\par$$\\begin{array}{c|c}\\textbf{Hypothèse} & \\textbf{Conséquence sur la limite} \\\\u_n\\geq0 & \\lim u_n\\geq0 \\\\u_n\\leq v_n & \\lim u_n\\leq\\lim v_n\\end{array}$$L'inégalité stricte peut devenir large après passage à la limite.",
+          "title": "Comment \\mathqst{passer à la limite dans une inégalité} ?"
+        },
+        {
+          "type": "warning",
+          "content": "Une erreur très fréquente, que vous ne devez pas commettre : une inégalité stricte peut devenir large à la limite. Par exemple, $\\dfrac1n>0$ pour tout $n\\geq1$, mais $\\lim_{n\\to+\\infty}\\dfrac1n=0$."
+        },
+        {
+          "type": "theorem",
+          "content": "Si, à partir d'un certain rang, $v_n\\leq u_n\\leq w_n$ et si :\\par$$\\boxed{\\lim_{n\\to+\\infty}v_n=\\lim_{n\\to+\\infty}w_n=\\ell}$$alors $(u_n)$ converge et $\\lim_{n\\to+\\infty}u_n=\\ell$.",
+          "title": "Quand utiliser \\mathqst{le théorème d'encadrement} ?"
+        },
+        {
+          "type": "method",
+          "content": "\\textbf{D'abord}, encadrer l'élément qui gêne : $(-1)^n$, $\\sin n$, $\\cos n$ ou un terme borné. \\textbf{Ensuite}, multiplier ou diviser en respectant le signe. \\textbf{Puis}, calculer les limites des deux bornes. \\textbf{Enfin}, conclure seulement si les deux limites sont égales.",
+          "title": "Comment \\mathqst{réussir un encadrement} ?"
+        },
+        {
+          "type": "example",
+          "content": "Pour $u_n=\\dfrac{n+\\cos n}{n^2+1}$, on utilise $-1\\leq\\cos n\\leq1$. Ainsi $\\dfrac{n-1}{n^2+1}\\leq u_n\\leq\\dfrac{n+1}{n^2+1}$. Les deux bornes tendent vers $0$, donc $u_n$ tend vers $0$.",
+          "title": "Cosinus encadré"
+        },
+        {
+          "type": "application",
+          "content": "\\question{Soit $(u_n)$ telle que, pour tout $n\\geq1$, $0<u_n\\leq\\dfrac3n$. Utiliser le théorème d'encadrement pour établir la convergence et déterminer la limite.}\\par\\smallskip\\textbf{D'abord}, on remplace l'inégalité stricte par une inégalité large compatible avec l'encadrement : $0\\leq u_n\\leq\\blank{\\dfrac3n}$. \\textbf{Ensuite}, les deux bornes $0$ et $\\dfrac3n$ tendent vers $\\blank{0}$. \\textbf{Donc}, par le théorème d'encadrement, la suite converge et $\\boxed{\\lim_{n\\to+\\infty}u_n=0}$.",
+          "difficulty": 2
+        },
+        {
+          "type": "application",
+          "content": "\\question{On considère $u_n=\\dfrac{3n+\\cos\\left(\\dfrac5n\\right)}{n+1}$.\\begin{enumerate}\\item Encadrer $u_n$ à l'aide de $-1\\leq\\cos(5/n)\\leq1$.\\item Déduire $\\lim_{n\\to+\\infty}u_n$ par encadrement.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour encadrer le numérateur, on utilise $-1\\leq\\cos\\left(\\dfrac5n\\right)\\leq1$, donc $3n-1\\leq3n+\\cos\\left(\\dfrac5n\\right)\\leq\\blank{3n+1}$. Comme $n+1>0$, on divise sans changer le sens des inégalités.\\item Les deux bornes tendent vers $\\blank{3}$. Par encadrement, $\\boxed{\\lim_{n\\to+\\infty}u_n=3}$.\\end{enumerate}",
+          "difficulty": 3
+        },
+        {
+          "type": "application",
+          "content": "\\question{On considère $u_n=\\dfrac1{n+\\sqrt1}+\\dfrac1{n+\\sqrt2}+\\cdots+\\dfrac1{n+\\sqrt n}$.\\begin{enumerate}\\item Encadrer chaque terme de la somme.\\item Additionner les inégalités pour encadrer $u_n$.\\item Déterminer la limite par le théorème d'encadrement.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour encadrer chaque terme, soit $k\\in\\{1,2,\\ldots,n\\}$. Comme $1\\leq\\sqrt k\\leq\\sqrt n$, on a $n+1\\leq n+\\sqrt k\\leq n+\\sqrt n$.\\item En inversant les inégalités, on obtient $\\blank{\\dfrac1{n+\\sqrt n}}\\leq\\dfrac1{n+\\sqrt k}\\leq\\blank{\\dfrac1{n+1}}$.\\item En additionnant pour $k=1$ à $n$, on trouve $\\dfrac n{n+\\sqrt n}\\leq u_n\\leq\\dfrac n{n+1}$. Les deux bornes tendent vers $1$, donc $\\boxed{\\lim_{n\\to+\\infty}u_n=1}$.\\end{enumerate}",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "id": "monotonie_convergence",
+      "category": "course",
+      "title": "Démontrer la convergence par monotonie et bornes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La monotonie et les bornes permettent de prouver l'existence d'une limite. Cette étape précède souvent le calcul de la valeur de la limite."
+        },
+        {
+          "type": "theorem",
+          "content": "\\itemsize{Toute suite croissante majorée est convergente.}\\itemsize{Toute suite décroissante minorée est convergente.}\\par Le théorème garantit l'existence de la limite, mais il ne donne pas directement sa valeur.",
+          "title": "Pourquoi \\mathqst{une suite monotone bornée converge} ?"
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{Pour déterminer la limite, on utilise ensuite une équation, un encadrement ou une transformation.}\\itemsize{Une suite bornée seule n'est pas forcément convergente, il faut une information supplémentaire comme la monotonie.}"
+        },
+        {
+          "type": "example",
+          "content": "Pour $u_0=0$ et $u_{n+1}=\\sqrt{2+u_n}$, on montre par récurrence que $0\\leq u_n\\leq2$. Puis $u_{n+1}-u_n=\\dfrac{(u_n+1)(2-u_n)}{\\sqrt{2+u_n}+u_n}\\geq0$. La suite est croissante et majorée par $2$, donc elle converge.",
+          "title": "Récurrence avec racine"
+        },
+        {
+          "type": "application",
+          "content": "\\question{On définit $u_0=-\\dfrac32$ et $u_{n+1}=\\dfrac{3u_n+4}{u_n+6}$.\\begin{enumerate}\\item Démontrer par récurrence l'encadrement $-4<u_n<1$.\\item Étudier le signe de $u_{n+1}-u_n$.\\item Conclure sur la convergence de $(u_n)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour initialiser, on vérifie $-4<-\\dfrac32<1$. Supposons ensuite $-4<u_n<1$. Alors $u_n+6>0$, puis $u_{n+1}-1=\\blank{\\dfrac{2u_n-2}{u_n+6}}<0$ et $u_{n+1}+4=\\blank{\\dfrac{7(u_n+4)}{u_n+6}}>0$. Donc $-4<u_{n+1}<1$.\\item Pour étudier la monotonie, on calcule $u_{n+1}-u_n=\\dfrac{-(u_n+4)(u_n-1)}{u_n+6}$. Avec $-4<u_n<1$, cette différence est positive.\\item La suite est croissante et majorée par $1$, donc $\\boxed{(u_n)\\text{ est convergente}}$.\\end{enumerate}",
+          "difficulty": 4
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Réflexe examen :} avant une récurrence, vérifier l'encadrement au rang initial. Une initialisation fausse rend toute la preuve impossible."
+        }
+      ]
+    },
+    {
+      "id": "comparaison_infinies",
+      "category": "course",
+      "title": "Établir une limite infinie par comparaison",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour établir une divergence vers l'infini, on compare la suite avec une suite de référence. Le sens de l'inégalité doit être choisi selon que l'on vise $+\\infty$ ou $-\\infty$."
+        },
+        {
+          "type": "theorem",
+          "content": "Si $u_n\\leq v_n$ à partir d'un certain rang et si $u_n$ tend vers $+\\infty$, alors $v_n$ tend vers $+\\infty$.\\par Si $u_n\\leq v_n$ à partir d'un certain rang et si $v_n$ tend vers $-\\infty$, alors $u_n$ tend vers $-\\infty$.",
+          "title": "Comment \\mathqst{comparer vers l'infini} ?"
+        },
+        {
+          "type": "example",
+          "content": "\\itemsize{Pour $u_n=-n+\\cos\\sqrt n-1$, on a $u_n\\leq-n$. Comme $-n$ tend vers $-\\infty$, $(u_n)$ tend vers $-\\infty$.}\\itemsize{Pour $v_n=\\sqrt[3]{n^6+1-\\sin n}$, on a $v_n\\geq\\sqrt[3]{n^6}=n^2$, donc $(v_n)$ tend vers $+\\infty$.}",
+          "title": "Deux comparaisons typiques"
+        },
+        {
+          "type": "application",
+          "content": "\\question{Déterminer les limites de $a_n=5n+3\\sin n-1$ et $b_n=-4\\sqrt n+3\\cos^2 n+2(-1)^n$ par comparaison avec des suites de référence.}\\par\\smallskip\\itemsize{\\textbf{Pour $a_n$}, on exploite la minoration $\\sin n\\geq -1$. Alors $a_n\\geq 5n-3-1=\\blank{5n-4}$. Comme $5n-4$ tend vers $+\\infty$, on obtient $\\boxed{a_n\\to+\\infty}$.}\\itemsize{\\textbf{Pour $b_n$}, on utilise les majorations $\\cos^2 n\\leq 1$ et $(-1)^n\\leq 1$. Ainsi $b_n\\leq -4\\sqrt n+3+2=\\blank{-4\\sqrt n+5}$. Comme cette borne tend vers $-\\infty$, on conclut que $\\boxed{b_n\\to-\\infty}$.}",
+          "difficulty": 2
+        }
+      ]
+    },
+    {
+      "id": "limite_geometrique",
+      "category": "course",
+      "title": "Déterminer la limite d'une suite géométrique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une suite géométrique se lit à partir de sa raison. La position de cette raison par rapport à $-1$, $1$ et $0$ décide du comportement de $q^n$."
+        },
+        {
+          "type": "property",
+          "content": "Soit $q$ un réel non nul. La limite de $(q^n)$ dépend de la position de $q$ :\\par$$\\begin{array}{c|c}\\textbf{Condition sur }q & \\textbf{Comportement de }q^n \\\\q>1 & q^n\\to+\\infty \\\\-1<q<1 & q^n\\to0 \\\\q=1 & q^n\\to1 \\\\q\\leq -1 & (q^n)\\text{ n'admet pas de limite}\\end{array}$$",
+          "title": "Quelle est \\mathqst{la limite de $q^n$} ?"
+        },
+        {
+          "type": "example",
+          "content": "\\itemsize{Comme $-1<\\dfrac{\\sqrt3}{2}<1$, la suite $\\left(\\dfrac{\\sqrt3}{2}\\right)^n$ tend vers $0$.}\\itemsize{Comme $-1<-\\dfrac14<1$, la suite $\\left(-\\dfrac14\\right)^n$ tend vers $0$.}\\itemsize{Comme $\\dfrac32>1$, la suite $\\left(\\dfrac32\\right)^n$ tend vers $+\\infty$.}",
+          "title": "Trois raisons différentes"
+        },
+        {
+          "type": "application",
+          "content": "\\question{Déterminer les limites de $a_n=\\left(\\dfrac23\\right)^n$, $b_n=\\left(-\\dfrac35\\right)^n$, $c_n=\\dfrac{4^n}{3^{2n}}$ et $d_n=\\dfrac{2^n-1}{2^n+4}$ en identifiant la raison dominante.}\\par\\smallskip\\itemsize{\\textbf{Pour $a_n$}, on a $-1<\\dfrac23<1$, donc $\\boxed{a_n\\to0}$.}\\itemsize{\\textbf{Pour $b_n$}, on a $-1<-\\dfrac35<1$, donc $\\boxed{b_n\\to0}$.}\\itemsize{\\textbf{Pour $c_n$}, on réécrit $c_n=\\left(\\blank{\\dfrac49}\\right)^n$. Comme $-1<\\dfrac49<1$, on obtient $\\boxed{c_n\\to0}$.}\\itemsize{\\textbf{Pour $d_n$}, on divise par $2^n$ : $d_n=\\dfrac{1-\\blank{\\dfrac1{2^n}}}{1+\\blank{\\dfrac4{2^n}}}$. Les deux termes exponentiels tendent vers $0$, donc $\\boxed{d_n\\to1}$.}",
+          "difficulty": 2
+        },
+        {
+          "type": "application",
+          "content": "\\question{Pour $u_n=\\dfrac{2^n+5^n}{3^n-5^n}$, factoriser par la puissance dominante $5^n$, puis calculer la limite.}\\par\\smallskip\\textbf{D'abord}, on compare les puissances en divisant le numérateur et le dénominateur par $5^n$ :\\[u_n=\\dfrac{\\left(\\dfrac25\\right)^n+1}{\\left(\\dfrac35\\right)^n-1}.\\]\\textbf{Ensuite}, comme $\\left(\\dfrac25\\right)^n\\to\\blank{0}$ et $\\left(\\dfrac35\\right)^n\\to\\blank{0}$, le numérateur tend vers $1$ et le dénominateur tend vers $-1$. \\textbf{Donc} $\\boxed{\\lim_{n\\to+\\infty}u_n=-1}$.",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "composition_continue",
+      "category": "course",
+      "title": "Utiliser la continuité dans une suite composée",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une suite composée demande deux lectures. On calcule d'abord la limite de la suite intérieure, puis on utilise la continuité de la fonction extérieure."
+        },
+        {
+          "type": "theorem",
+          "content": "Si $(u_n)$ converge vers $\\ell$ et si $f$ est continue en $\\ell$, alors la suite définie par $v_n=f(u_n)$ converge vers :\\par$$\\boxed{f(\\ell)}$$",
+          "title": "Quand peut-on \\mathqst{composer avec une fonction continue} ?"
+        },
+        {
+          "type": "example",
+          "content": "Pour $v_n=\\tan\\left(\\dfrac{\\pi n+1}{3n+2}\\right)$, on pose $u_n=\\dfrac{\\pi n+1}{3n+2}$. On obtient $u_n\\to\\dfrac\\pi3$. Comme la fonction tangente est continue en $\\dfrac\\pi3$, on a $v_n\\to\\sqrt3$.",
+          "title": "Tangente d'une suite convergente"
+        },
+        {
+          "type": "application",
+          "content": "\\question{Déterminer les limites de $u_n=\\sqrt[3]{\\dfrac{24n^4-n+1}{3n^4-n^2-7}}$ et $v_n=\\cos\\left(\\dfrac{n\\pi-2}{n^2+1}\\right)$ en utilisant la continuité de la fonction extérieure.}\\par\\smallskip\\itemsize{\\textbf{Pour $u_n$}, on commence par la limite intérieure : $\\dfrac{24n^4-n+1}{3n^4-n^2-7}\\to\\blank{8}$. Par continuité de $x\\mapsto\\sqrt[3]x$, on obtient $\\boxed{u_n\\to2}$.}\\itemsize{\\textbf{Pour $v_n$}, on étudie d'abord l'argument : $\\dfrac{n\\pi-2}{n^2+1}\\to\\blank{0}$. Par continuité du cosinus en $0$, on obtient $\\boxed{v_n\\to1}$.}",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "suites_recurrentes",
+      "category": "course",
+      "title": "Étudier une suite récurrente par intervalle stable",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une suite récurrente se traite par une stratégie stable : intervalle invariant, monotonie, convergence, puis point fixe. On ne calcule la limite qu'après avoir justifié son existence."
+        },
+        {
+          "type": "theorem",
+          "content": "Soit $f$ une fonction continue sur un intervalle $I$ telle que $f(I)\\subset I$. Si $(u_n)$ est définie par $u_0\\in I$, $u_{n+1}=f(u_n)$ et si $(u_n)$ converge vers $\\ell\\in I$, alors :\\par$$\\boxed{f(\\ell)=\\ell}$$",
+          "title": "Quel rôle joue \\mathqst{le point fixe} ?"
+        },
+        {
+          "type": "method",
+          "content": "\\textbf{D'abord}, déterminer l'intervalle $I$ où la suite doit rester. \\textbf{Ensuite}, montrer par récurrence que $u_n\\in I$. \\textbf{Puis}, étudier $u_{n+1}-u_n$ ou comparer $f(x)$ à $x$. \\textbf{Après cela}, utiliser la convergence monotone. \\textbf{Enfin}, résoudre $f(x)=x$ dans l'intervalle.",
+          "title": "Comment \\mathqst{étudier $u_{n+1}=f(u_n)$} ?"
+        },
+        {
+          "type": "example",
+          "content": "Pour $f(x)=\\dfrac{x^2+4}{2x}$ sur $[2,3]$ et $u_{n+1}=f(u_n)$, on montre que $f([2,3])\\subset[2,3]$. Ensuite $u_{n+1}-u_n=\\dfrac{4-u_n^2}{2u_n}\\leq0$. La suite est décroissante et minorée par $2$, donc elle converge vers le point fixe $2$.",
+          "title": "Point fixe dans un intervalle"
+        },
+        {
+          "type": "application",
+          "content": "\\question{On considère $u_0=2$ et $u_{n+1}=\\dfrac{3u_n+2}{2u_n+3}$.\\begin{enumerate}\\item Prouver que $u_n\\geq1$ pour tout $n$.\\item Montrer que $(u_n)$ est décroissante.\\item Justifier la convergence puis déterminer la limite par l'équation du point fixe.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour l'encadrement, on vérifie $u_0\\geq1$. Si $u_n\\geq1$, alors $u_{n+1}-1=\\blank{\\dfrac{u_n-1}{2u_n+3}}\\geq0$, donc $u_{n+1}\\geq1$.\\item Pour la monotonie, on calcule $u_{n+1}-u_n=\\blank{\\dfrac{2(1-u_n^2)}{2u_n+3}}\\leq0$. La suite est donc décroissante et minorée par $1$.\\item La suite converge. Si $\\ell$ est sa limite, alors $\\ell=\\dfrac{3\\ell+2}{2\\ell+3}$, donc $\\ell^2=1$. Comme $\\ell\\geq1$, $\\boxed{\\ell=1}$.\\end{enumerate}",
+          "difficulty": 4
+        },
+        {
+          "type": "application",
+          "content": "\\question{On considère $u_0=\\dfrac32$ et $u_{n+1}=\\dfrac{3u_n+2}{2+u_n}$.\\begin{enumerate}\\item Réécrire $u_{n+1}$ sous la forme $3-\\dfrac4{2+u_n}$.\\item Prouver que $0<u_n<2$ pour tout $n$.\\item Étudier la monotonie, puis déterminer la limite.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour vérifier la forme demandée, on écrit $3-\\dfrac4{2+u_n}=\\blank{\\dfrac{3u_n+2}{2+u_n}}$.\\item Pour l'encadrement, supposons $0<u_n<2$. Alors $2<2+u_n<4$, donc $1<\\dfrac4{2+u_n}<2$ et $1<u_{n+1}<2$.\\item Pour la monotonie, $u_{n+1}-u_n=\\blank{\\dfrac{(1+u_n)(2-u_n)}{2+u_n}}>0$. La suite est croissante et majorée par $2$, donc elle converge. Sa limite vérifie $(\\ell-2)(\\ell+1)=0$. Comme $0\\leq\\ell\\leq2$, $\\boxed{\\ell=2}$.\\end{enumerate}",
+          "difficulty": 4
+        },
+        {
+          "type": "property",
+          "content": "Si $\\alpha\\in\\mathbb{R}$, $0<k<1$ et $|u_{n+1}-\\alpha|\\leq k|u_n-\\alpha|$, alors on cherche à prouver :\\par$$\\boxed{|u_n-\\alpha|\\leq k^n|u_0-\\alpha|}$$Comme $k^n$ tend vers $0$, on obtient $u_n\\to\\alpha$.",
+          "title": "Comment \\mathqst{utiliser une contraction} ?"
+        },
+        {
+          "type": "application",
+          "content": "\\question{Soient $\\alpha\\in\\mathbb{R}$, $0<k<1$ et $(u_n)$ telle que $|u_{n+1}-\\alpha|\\leq k|u_n-\\alpha|$. Démontrer l'estimation $|u_n-\\alpha|\\leq k^n|u_0-\\alpha|$, puis prouver que $u_n$ converge vers $\\alpha$.}\\par\\smallskip\\textbf{D'abord}, on établit l'inégalité par récurrence. Au rang $0$, elle est vraie. Si $|u_n-\\alpha|\\leq k^n|u_0-\\alpha|$, alors\\[|u_{n+1}-\\alpha|\\leq k|u_n-\\alpha|\\leq \\blank{k^{n+1}|u_0-\\alpha|}.\\]\\textbf{Ensuite}, on obtient pour tout $n$ : $|u_n-\\alpha|\\leq k^n|u_0-\\alpha|$. Comme $0<k<1$, $k^n\\to0$, et $0\\leq |u_n-\\alpha|\\leq\\blank{k^n|u_0-\\alpha|}$. \\textbf{Par encadrement}, $|u_n-\\alpha|\\to0$, donc $\\boxed{u_n\\to\\alpha}$.",
+          "difficulty": 4
+        },
+        {
+          "type": "application",
+          "content": "\\question{On considère $f(x)=\\dfrac{x}{\\sqrt x-1}$ sur $I=[4,+\\infty[$ et $u_0=5$, $u_{n+1}=f(u_n)$.\\begin{enumerate}\\item Étudier les variations de $f$ sur $I$.\\item Vérifier que $f(x)\\leq x$ sur $I$ et que $f(I)\\subset I$.\\item Conclure sur la convergence et déterminer la limite.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour étudier $f$, on calcule $f'(x)=\\dfrac{x-2\\sqrt x}{2\\sqrt x(\\sqrt x-1)^2}$. Sur $I$, cette dérivée est positive, donc $f$ est croissante.\\item Pour comparer $f(x)$ et $x$, on écrit $f(x)\\leq x \\Longleftrightarrow \\dfrac1{\\sqrt x-1}\\leq1 \\Longleftrightarrow \\blank{x\\geq4}$. Comme $f(4)=4$, on a $f(I)\\subset I$.\\item Par récurrence, $u_n\\geq4$, et comme $u_{n+1}=f(u_n)\\leq u_n$, la suite est décroissante et minorée. Elle converge.\\item Si $\\ell$ est sa limite, alors $\\ell=\\dfrac{\\ell}{\\sqrt\\ell-1}$. Comme $\\ell\\geq4$, on obtient $\\blank{\\ell=4}$, donc $\\boxed{\\lim_{n\\to+\\infty}u_n=4}$.\\end{enumerate}",
+          "difficulty": 5
+        },
+        {
+          "type": "warning",
+          "content": "\\itemsize{Ne pas passer à la limite dans une relation récurrente avant d'avoir prouvé la convergence.}\\itemsize{Ne pas multiplier une inégalité par une quantité dont le signe est inconnu.}\\itemsize{Ne pas confondre une suite bornée avec une suite convergente.}"
+        }
+      ]
+    },
+    {
+      "id": "transformer_recurrente",
+      "category": "course",
+      "title": "Linéariser une suite récurrente avec une suite auxiliaire",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certaines récurrences deviennent simples après un changement de suite. La suite auxiliaire révèle souvent une structure arithmétique ou géométrique."
+        },
+        {
+          "type": "method",
+          "content": "\\textbf{D'abord}, repérer le point fixe $a$ quand il existe. \\textbf{Ensuite}, essayer $v_n=u_n-a$ ou $v_n=\\dfrac1{u_n-a}$. \\textbf{Puis}, calculer $v_{n+1}$ en remplaçant $u_{n+1}$. \\textbf{Enfin}, revenir à $u_n$ et calculer la limite.",
+          "title": "Comment \\mathqst{trouver une suite auxiliaire} ?"
+        },
+        {
+          "type": "example",
+          "content": "Pour $u_0=2$ et $u_{n+1}=\\dfrac15u_n+\\dfrac45$, on écrit $u_{n+1}-1=\\dfrac15(u_n-1)$. En posant $v_n=u_n-1$, on obtient $v_{n+1}=\\dfrac15v_n$. Donc $v_n=\\left(\\dfrac15\\right)^n$ et $u_n=1+\\left(\\dfrac15\\right)^n$.",
+          "title": "Transformation géométrique"
+        },
+        {
+          "type": "application",
+          "content": "\\question{On considère $u_1=5$, $u_{n+1}=\\dfrac{5u_n-4}{1+u_n}$ et $v_n=\\dfrac3{u_n-2}$.\\begin{enumerate}\\item Prouver que $u_n>2$ pour tout $n\\geq1$.\\item Montrer que $(v_n)$ est arithmétique et préciser sa raison.\\item Exprimer $u_n$ en fonction de $n$, puis déterminer sa limite.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour l'encadrement, $u_1=5>2$. Si $u_n>2$, alors $u_{n+1}-2=\\blank{\\dfrac{3(u_n-2)}{1+u_n}}>0$, donc $u_{n+1}>2$.\\item Pour la suite auxiliaire, on calcule :\\[v_{n+1}=\\dfrac3{u_{n+1}-2}=\\dfrac{1+u_n}{u_n-2}=1+\\blank{\\dfrac3{u_n-2}}=v_n+1.\\] Donc $(v_n)$ est arithmétique de raison $1$.\\item Comme $v_1=1$, on a $v_n=n$. Ainsi $\\dfrac3{u_n-2}=n$, donc $u_n=\\blank{2+\\dfrac3n}$ et $\\boxed{u_n\\to2}$.\\end{enumerate}",
+          "difficulty": 4
+        },
+        {
+          "type": "application",
+          "content": "\\question{Soit $(u_n)$ définie par $u_0=4$ et $u_{n+1}=\\dfrac25u_n+3$.\\begin{enumerate}\\item Montrer que $u_n<5$ et que $(u_n)$ est croissante.\\item Poser $v_n=5-u_n$ et déterminer la nature de $(v_n)$.\\item En déduire $u_n$ en fonction de $n$ et sa limite.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour la majoration, $u_0<5$. Si $u_n<5$, alors $u_{n+1}<\\dfrac25\\cdot5+3=5$. De plus, $u_{n+1}-u_n=\\blank{\\dfrac35(5-u_n)}>0$, donc $(u_n)$ est croissante.\\item Pour transformer la récurrence, posons $v_n=5-u_n$. Alors $v_{n+1}=5-u_{n+1}=\\blank{\\dfrac25(5-u_n)}=\\dfrac25v_n$. Donc $v_n=\\left(\\dfrac25\\right)^n$ et $\\boxed{u_n=5-\\left(\\dfrac25\\right)^n}$. Par suite $\\boxed{u_n\\to5}$.\\end{enumerate}",
+          "difficulty": 4
+        }
+      ]
+    }
+  ]
+}

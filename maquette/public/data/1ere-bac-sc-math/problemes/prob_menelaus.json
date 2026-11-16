@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Autour du théorème de Pappus",
+    "subtitle": "Théorème de Ménélaüs",
+    "context": "Géométrie"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Autour du théorème de Pappus",
+          "content": "Le théorème de \\textbf{Pappus} (géométrie projective) se démontre à l'aide d'un outil fondamental : le théorème de \\textbf{Ménélaüs}.\\par \\textbf{Théorème de Ménélaüs.} Dans un triangle $ABC$, soit $X$ un point de la droite $(BC)$, $Y$ un point de $(AC)$ et $Z$ un point de $(AB)$, distincts des sommets. Alors $X$, $Y$, $Z$ sont \\textbf{alignés} si et seulement si :\\par $$\\dfrac{XB}{XC} \\times \\dfrac{YC}{YA} \\times \\dfrac{ZA}{ZB} = 1.$$"
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item \\textbf{Idée de preuve (sens direct).} On suppose $X$, $Y$, $Z$ alignés sur une droite $\\Delta$. On trace par $A$ la parallèle à $\\Delta$, qui coupe $(BC)$ en $A'$. En appliquant le théorème de Thalès dans les triangles $ZXB$ puis $YXC$, exprimer $\\dfrac{XB}{XC}$ et conclure.\\item \\textbf{Vérification.} Dans le triangle $A(0;0)$, $B(6;0)$, $C(0;6)$, on considère la droite d'équation $x + 2y = 4$. Déterminer ses points d'intersection $Z$ avec $(AB)$, $Y$ avec $(AC)$, $X$ avec $(BC)$, puis vérifier que le produit de Ménélaüs vaut $1$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Avec $(AA') \\parallel \\Delta$ : dans $ZXB$, Thalès donne $\\dfrac{XB}{AA'} = \\dfrac{ZB}{ZA}$ ; dans $YXC$, $\\dfrac{XC}{AA'} = \\dfrac{YC}{YA}$. Le rapport $\\dfrac{XB}{XC}$ fait disparaître $AA'$."
+        },
+        {
+          "type": "hint",
+          "content": "$(AB)$ est l'axe $y=0$, $(AC)$ l'axe $x=0$, et $(BC)$ a pour équation $x+y=6$. Résolvez chaque intersection avec $x+2y=4$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} Avec $(AA')\\parallel\\Delta$ : Thalès dans $ZXB$ donne $\\dfrac{XB}{AA'} = \\dfrac{ZB}{ZA}$, et dans $YXC$ donne $\\dfrac{XC}{AA'} = \\dfrac{YC}{YA}$. En divisant : $\\dfrac{XB}{XC} = \\dfrac{ZB}{ZA}\\times\\dfrac{YA}{YC}$, d'où $\\dfrac{XB}{XC}\\times\\dfrac{YC}{YA}\\times\\dfrac{ZA}{ZB} = 1$.\\par\\textbf{2)} Intersections de $x+2y=4$ avec : $(AB)$ ($y=0$) : $Z(4;0)$ ; $(AC)$ ($x=0$) : $Y(0;2)$ ; $(BC)$ ($x+y=6$) : $X(8;-2)$. Calcul des rapports : $\\dfrac{XB}{XC} = \\dfrac{2\\sqrt2}{8\\sqrt2} = \\dfrac14$ ; $\\dfrac{YC}{YA} = \\dfrac{4}{2} = 2$ ; $\\dfrac{ZA}{ZB} = \\dfrac{4}{2} = 2$. Produit : $\\dfrac14 \\times 2 \\times 2 = \\boxed{1}$. Les trois points sont bien alignés, conformément à Ménélaüs."
+        }
+      ]
+    }
+  ]
+}

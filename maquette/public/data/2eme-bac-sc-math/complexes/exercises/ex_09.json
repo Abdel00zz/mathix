@@ -1,0 +1,62 @@
+{
+  "id": "ex-complexes-09",
+  "topic": "Nombres complexes - Bac National 2020 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2020,
+  "examenSession": "Rattrapage",
+  "context": "Soit $m$ un nombre réel non nul. On considère dans l'ensemble des nombres complexes $\\mathbb{C}$ les deux équations : $(E):z^2+2z+1+m^2=0$ et $(F):z^3+2(i-1)z^2+\\left(1+m^2-4i\\right)z-2i\\left(1+m^2\\right)=0$",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": ""
+    },
+    {
+      "id": "p1q1",
+      "content": "Résoudre dans $\\mathbb{C}$ l'équation $(E)$.",
+      "hint": "Mettez $(E)$ sous la forme $(z+1)^2=-m^2$ pour trouver directement les deux racines."
+    },
+    {
+      "id": "p1q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q2a",
+          "content": "Montrer que l'équation $(F)$ admet une solution imaginaire pure que l'on déterminera.",
+          "hint": "Cherchez une solution de la forme $z=i\\beta$ avec $\\beta$ réel : injectez-la dans $(F)$ et séparez partie réelle et partie imaginaire pour obtenir un système en $\\beta$."
+        },
+        {
+          "id": "p1q2b",
+          "content": "Résoudre dans $\\mathbb{C}$ l'équation $(F)$.",
+          "hint": "Factorisez $(F)$ par $(z-\\text{solution imaginaire pure trouvée})$, puis résolvez le facteur du second degré restant (vous devriez retrouver un lien avec l'équation $(E)$)."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "On considère les deux points : $A(-1+im)$ et $B(-1-im)$. Soient $\\Omega$ le milieu du segment $[AB]$, $A'$ le milieu du segment $[OB]$ et $B'$ le milieu du segment $[OA]$. La rotation de centre $\\Omega$ et d'angle $\\left(-\\dfrac{\\pi}{2}\\right)$ transforme $A$ en $P(p)$, la rotation de centre $A'$ et d'angle $\\left(-\\dfrac{\\pi}{2}\\right)$ transforme $B$ en $Q(q)$ et la rotation de centre $B'$ et d'angle $\\left(-\\dfrac{\\pi}{2}\\right)$ transforme $O$ en $R(r)$."
+    },
+    {
+      "id": "p2q1",
+      "content": "Montrer que : $p=-1+m$, $q=\\dfrac{1-i}{2}(-1-im)$ et $r=\\bar{q}$.",
+      "hint": "Appliquez la formule de rotation $\\text{image}-\\text{centre}=-i(\\text{point}-\\text{centre})$ à chaque cas, en calculant d'abord $\\Omega$, $A'$, $B'$ comme milieux."
+    },
+    {
+      "id": "p2q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Vérifier que : $q-r=-ip$.",
+          "hint": "Remarquez que $r=\\bar q$, donc $q-r=q-\\bar q=2i\\,\\text{Im}(q)$ ; calculez la partie imaginaire de $q$ et comparez-la à $p$."
+        },
+        {
+          "id": "p2q2b",
+          "content": "En déduire que : $OP=QR$ et que les deux droites $(OP)$ et $(QR)$ sont orthogonales.",
+          "hint": "La relation $q-r=-ip=-i(p-0)$ compare le vecteur $\\overrightarrow{RQ}$ au vecteur $\\overrightarrow{OP}$ tourné de $-\\pi/2$ : que peut-on en conclure sur leurs longueurs et leur angle ?"
+        }
+      ]
+    }
+  ]
+}

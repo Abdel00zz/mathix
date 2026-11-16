@@ -1,0 +1,35 @@
+{
+  "id": "ex-11",
+  "theme": "calcul-integral",
+  "difficulty": "moyen",
+  "topic": "Calcul Intégral - Intégrale paramétrique, décomposition en éléments simples",
+  "requiresRedaction": true,
+  "context": "Soit la fonction $f$ définie par $f(x) = e^{-x}\\ln(1+e^x)$. On se propose de calculer : $I(\\lambda) = \\displaystyle\\int_0^{\\lambda} f(x)\\,dx$, où $\\lambda \\in \\mathbb{R}^+$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Quel est le signe de $I(\\lambda)$ ?",
+      "hint": "\\method Étudiez le signe de $f(x)$ sur $\\mathbb{R}^+$. \\tip $e^{-x} > 0$ et $\\ln(1+e^x) > 0$ pour tout $x$. Que peut-on en déduire sur $I(\\lambda)$ ?"
+    },
+    {
+      "id": "q2",
+      "content": "Trouver deux nombres réels $a$ et $b$ tels que pour tout réel $x$, $\\dfrac{e^x}{1+e^x} = a + \\dfrac{b}{1+e^x}$",
+      "hint": "\\method Écrivez $\\frac{e^x}{1+e^x} = \\frac{(1+e^x) - 1}{1+e^x}$ et simplifiez. \\tip Cette décomposition est immédiate par simple manipulation algébrique."
+    },
+    {
+      "id": "q3",
+      "content": "Calculer $J(\\lambda) = \\displaystyle\\int_0^{\\lambda} \\frac{1}{1+e^x}\\,dx$",
+      "hint": "\\method Utilisez la décomposition trouvée en question 2 pour écrire $\\frac{1}{1+e^x}$ en fonction de $\\frac{e^x}{1+e^x}$. \\tip $\\frac{e^x}{1+e^x}$ est une dérivée classique. Exprimez $J(\\lambda)$ à partir de $\\displaystyle\\int_0^\\lambda \\frac{e^x}{1+e^x}\\,dx$."
+    },
+    {
+      "id": "q4",
+      "content": "$f'$ étant la fonction dérivée de $f$, calculer $f + f'$",
+      "hint": "\\method Calculez $f'(x)$ en dérivant $e^{-x}\\ln(1+e^x)$ par la règle du produit. \\tip Simplifiez $f(x) + f'(x)$ en regroupant les termes. Le résultat doit faire apparaître $\\frac{e^x}{1+e^x}$, lié au résultat de la question 2."
+    },
+    {
+      "id": "q5",
+      "content": "Calculer $I(\\lambda)$.",
+      "hint": "\\method Remarquez que si $(fg)' = f + f'$, alors $\\displaystyle\\int_0^\\lambda (f+f')(x)\\,dx = [f(x)\\cdot \\text{qch}]_0^\\lambda$. \\tip Utilisez les résultats des questions 3 et 4 : la relation $f + f' = \\frac{e^x}{1+e^x}$ permet d'exprimer $I(\\lambda)$ via une IPP ou une relation directe."
+    }
+  ]
+}

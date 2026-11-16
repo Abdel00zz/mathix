@@ -1,0 +1,260 @@
+{
+  "id": "2eme-bac-sc-math",
+  "title": "2ème Bac Sciences Mathématiques",
+  "chapters": [
+    {
+      "id": "mise-a-niveau",
+      "title": "Mise à niveau",
+      "pinned": true,
+      "quizCount": 41,
+      "manifestPath": "data/2eme-bac-sc-math/mise-a-niveau/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-mise-a-niveau-2bac-sm",
+          "path": "data/2eme-bac-sc-math/mise-a-niveau/revisions/fiche_mise_a_niveau_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-mise-a-niveau",
+          "path": "data/2eme-bac-sc-math/mise-a-niveau/quiz/mise-a-niveau_quiz.json",
+          "questionsCount": 41
+        }
+      ]
+    },
+    {
+      "id": "limites-continuite",
+      "title": "Limites et continuité",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/limites-continuite/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-lim-cont-sm",
+          "path": "data/2eme-bac-sc-math/limites-continuite/revisions/fiche_limites_continuite_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-limites-continuite",
+          "path": "data/2eme-bac-sc-math/limites-continuite/quiz/limites-continuite_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "suites-numeriques",
+      "title": "Suites numériques",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/suites-numeriques/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-suites-sm",
+          "path": "data/2eme-bac-sc-math/suites-numeriques/revisions/fiche_suites_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-suites-numeriques",
+          "path": "data/2eme-bac-sc-math/suites-numeriques/quiz/suites-numeriques_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "derivation-etude",
+      "title": "Dérivation et étude des fonctions",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/derivation-etude/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-deriv-sm",
+          "path": "data/2eme-bac-sc-math/derivation-etude/revisions/fiche_derivation_cours.json"
+        },
+        {
+          "id": "rev-deriv-etude-sm-2",
+          "path": "data/2eme-bac-sc-math/derivation-etude/revisions/fiche_derivation_etude_cours.json",
+          "title": "Dérivation et étude des fonctions — Nombre dérivé, calculs, variations, convexité, asymptotes, symétries et étude complète"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-derivation-etude",
+          "path": "data/2eme-bac-sc-math/derivation-etude/quiz/derivation-etude_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "fonctions-logarithmes",
+      "title": "Fonctions logarithmes",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/fonctions-logarithmes/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-fonctions-logarithmes-sm",
+          "path": "data/2eme-bac-sc-math/fonctions-logarithmes/revisions/fiche_fonctions_logarithmes_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-fonctions-logarithmes-01",
+          "path": "data/2eme-bac-sc-math/fonctions-logarithmes/quiz/fonctions-logarithmes_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "fonctions-exponentielles",
+      "title": "Fonctions exponentielles",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/fonctions-exponentielles/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-fonctions-exponentielles-sm",
+          "path": "data/2eme-bac-sc-math/fonctions-exponentielles/revisions/fiche_fonctions_exponentielles_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-fonctions-exponentielles-01",
+          "path": "data/2eme-bac-sc-math/fonctions-exponentielles/quiz/fonctions-exponentielles_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "calcul-integral",
+      "title": "Calcul intégral",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/calcul-integral/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-calcul-integral-sm",
+          "path": "data/2eme-bac-sc-math/calcul-integral/revisions/fiche_calcul_integral_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-calcul-integral-01",
+          "path": "data/2eme-bac-sc-math/calcul-integral/quiz/calcul-integral_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "equations-differentielles",
+      "title": "Équations différentielles",
+      "quizCount": 13,
+      "manifestPath": "data/2eme-bac-sc-math/equations-differentielles/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-equations-differentielles-sm",
+          "path": "data/2eme-bac-sc-math/equations-differentielles/revisions/fiche_equations_differentielles_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-equations-differentielles-01",
+          "path": "data/2eme-bac-sc-math/equations-differentielles/quiz/equations-differentielles_quiz.json",
+          "questionsCount": 13
+        }
+      ]
+    },
+    {
+      "id": "complexes",
+      "title": "Les nombres complexes",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/complexes/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-complexes-sm",
+          "path": "data/2eme-bac-sc-math/complexes/revisions/fiche_complexes_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-complexes",
+          "path": "data/2eme-bac-sc-math/complexes/quiz/complexes_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "arithmetique",
+      "title": "Arithmétique dans $\\mathbb{Z}$",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/arithmetique/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-arith-sm",
+          "path": "data/2eme-bac-sc-math/arithmetique/revisions/fiche_arithmetique_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-arithmetique",
+          "path": "data/2eme-bac-sc-math/arithmetique/quiz/arithmetique_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "calcul-probabilites",
+      "title": "Calcul de probabilités",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/calcul-probabilites/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-calcul-probabilites-sm",
+          "path": "data/2eme-bac-sc-math/calcul-probabilites/revisions/fiche_calcul_probabilites_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-calcul-probabilites-01",
+          "path": "data/2eme-bac-sc-math/calcul-probabilites/quiz/calcul-probabilites_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "structures-algebriques",
+      "title": "Structures algébriques",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/structures-algebriques/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-structures-algebriques-sm",
+          "path": "data/2eme-bac-sc-math/structures-algebriques/revisions/fiche_structures_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-structures-algebriques-01",
+          "path": "data/2eme-bac-sc-math/structures-algebriques/quiz/structures-algebriques_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "espaces-vectoriels-reels",
+      "title": "Espaces vectoriels réels",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-math/espaces-vectoriels-reels/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-espaces-vectoriels-reels-sm",
+          "path": "data/2eme-bac-sc-math/espaces-vectoriels-reels/revisions/fiche_espaces_vectoriels_reels_cours.json",
+          "title": "Espaces Vectoriels — Sous-espaces, combinaisons linéaires et bases"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-espaces-vectoriels-reels-01",
+          "path": "data/2eme-bac-sc-math/espaces-vectoriels-reels/quiz/espaces-vectoriels-reels_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    }
+  ]
+}

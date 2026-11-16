@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Analyser les notes d'une classe",
+    "subtitle": "Moyenne, médiane et écart-type",
+    "context": "Statistiques"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Analyser les notes d'une classe",
+          "content": "Lors d'un contrôle, huit élèves ont obtenu les notes suivantes (sur $20$) :\\par $$8,\\quad 12,\\quad 9,\\quad 14,\\quad 7,\\quad 10,\\quad 13,\\quad 11.$$\\par On souhaite résumer cette série par des indicateurs de \\textbf{position} (moyenne, médiane) et de \\textbf{dispersion} (variance, écart-type)."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Calculer la moyenne $\\bar{x}$ de la série.\\item Ranger les notes par ordre croissant et déterminer la médiane.\\item Calculer la variance $V$ puis l'écart-type $\\sigma$ (arrondi au centième). Que mesure l'écart-type ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Moyenne : $\\bar{x} = \\dfrac{1}{8}\\sum x_i$. Pour la médiane d'un effectif pair, prendre la moyenne des deux valeurs centrales."
+        },
+        {
+          "type": "hint",
+          "content": "Variance : $V = \\dfrac{1}{8}\\sum (x_i - \\bar{x})^2$, et écart-type $\\sigma = \\sqrt{V}$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} Somme $= 8+12+9+14+7+10+13+11 = 84$, donc $\\bar{x} = \\dfrac{84}{8} = \\boxed{10{,}5}$.\\par\\textbf{2)} Série triée : $7, 8, 9, 10, 11, 12, 13, 14$. Les deux valeurs centrales sont $10$ et $11$ : médiane $= \\dfrac{10+11}{2} = \\boxed{10{,}5}$.\\par\\textbf{3)} $V = \\dfrac{1}{8}\\big[(8-10{,}5)^2 + \\cdots + (11-10{,}5)^2\\big] = \\dfrac{42}{8} = 5{,}25$, donc $\\sigma = \\sqrt{5{,}25} \\approx \\boxed{2{,}29}$. L'écart-type mesure la dispersion des notes \\textbf{autour de la moyenne} : ici, les notes s'écartent en moyenne d'environ $2{,}3$ points de $10{,}5$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ex_12",
+  "theme": "complexes",
+  "difficulty": "difficile",
+  "topic": "Nombres Complexes",
+  "context": "On considère dans l'ensemble des nombres complexes $\\mathbb{C}$, l'équation : $$z^2 - 2\\sqrt{3}(1+i)z + 8i = 0$$ On désigne par $z_1$ et $z_2$ les deux solutions de cette équation telles que $\\text{Re}(z_1) > \\text{Re}(z_2)$.",
+  "requiresRedaction": true,
+  "sessionDate": "2026-02-06T10:00:00.000Z",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $z_1$ et $z_2$ (remarquer que : $(1-i)^2 = -2i$).",
+      "hint": "Calculer $\\Delta = [-2\\sqrt{3}(1+i)]^2 - 32i$. Utiliser l'identité donnée pour trouver $\\delta$ tel que $\\delta^2 = \\Delta$. Les racines sont $\\frac{-b \\pm \\delta}{2a}$."
+    },
+    {
+      "id": "q2",
+      "content": "Relations et formes trigonométriques",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que : $z_1^2 = 4(\\sqrt{3}+i)$ et $z_2 = i \\overline{z_1}$.",
+          "hint": "Calculer $z_1^2$ directement. Pour la deuxième égalité, comparer $z_2$ avec le produit de $i$ et du conjugué de $z_1$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Écrire sous forme trigonométrique le nombre complexe : $4(\\sqrt{3}+i)$.",
+          "hint": "Mettre le module $8$ en facteur : $8(\\frac{\\sqrt{3}}{2} + i\\frac{1}{2})$."
+        },
+        {
+          "id": "sq2c",
+          "content": "En déduire une forme trigonométrique de chacun des deux nombres complexes $z_1$ et $z_2$.",
+          "hint": "De $z_1^2 = 8e^{i\\frac{\\pi}{6}}$, déduire le module et l'argument de $z_1$ (attention au signe de la partie réelle). Pour $z_2$, utiliser $z_2 = e^{i\\frac{\\pi}{2}} \\overline{z_1}$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "On considère dans le plan rapporté à un repère orthonormé direct $(O; \\overrightarrow{u}, \\overrightarrow{v})$, les deux points $A$ et $B$ d'affixes respectives $z_1$ et $z_2$. Calculer $\\arg\\left(\\frac{z_2}{z_1}\\right)$ puis en déduire que le triangle $OAB$ est équilatéral.",
+      "hint": "Utiliser les formes trigonométriques trouvées : $\\arg(z_2/z_1) = \\arg(z_2) - \\arg(z_1)$. Vérifier aussi que $|z_1| = |z_2|$."
+    }
+  ]
+}

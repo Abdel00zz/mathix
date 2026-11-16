@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Gestion automatique des couleurs & Color Scheme */
+  color-scheme: light;
+  forced-color-adjust: none;
+
+  /* Safe areas pour les écrans Android (Samsung One UI / Google Pixel) */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+
+  /* Échelle fluide continue (mobile 320px → tablette 768px → laptop 1280px → desktop 1600px+) */
+  --ui-gutter: clamp(1rem, calc(0.65rem + 1.8vw), 2.25rem);
+  --ui-card-pad: clamp(0.95rem, calc(0.75rem + 0.9vw), 1.65rem);
+  --ui-card-radius: clamp(0.85rem, calc(0.76rem + 0.35vw), 1.25rem);
+  --ui-control-radius: clamp(0.55rem, calc(0.5rem + 0.2vw), 0.75rem);
+  --ui-control-height: clamp(2.65rem, calc(2.5rem + 0.4vw), 3rem);
+  --ui-text-xs: clamp(0.7rem, calc(0.66rem + 0.14vw), 0.78rem);
+  --ui-text-sm: clamp(0.8rem, calc(0.76rem + 0.18vw), 0.9rem);
+  --ui-text-base: clamp(0.92rem, calc(0.87rem + 0.2vw), 1.04rem);
+  --ui-text-lg: clamp(1.06rem, calc(0.98rem + 0.35vw), 1.25rem);
+  --ui-heading-md: clamp(1.3rem, calc(1.1rem + 0.9vw), 1.85rem);
+  --ui-heading-lg: clamp(1.85rem, calc(1.35rem + 2.2vw), 3.15rem);
+}
+
+/* Optimisation Wide-Gamut pour dalles AMOLED Samsung & OLED Google Pixel */
+@supports (color: color(display-p3 1 1 1)) {
+  :root {
+    color-interpolation-filters: sRGB;
+  }
+}
+
+html {
+  font-size: clamp(0.9375rem, calc(0.90625rem + 0.16vw), 1.0625rem);
+  scroll-behavior: smooth;
+  /* Lissage optimal des polices de caractères */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-synthesis: none;
+
+  /* Prévention du gonflement intempestif des polices sur Chrome Android et Samsung Internet */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  /* Gestion des couleurs */
+  color-scheme: light;
+  color-rendering: optimizeQuality;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-ui);
+  color: #1C223E;
+  background-color: #FAF9F6;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overscroll-behavior-y: contain;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ACCÉLÉRATION MATÉRIELLE GPU — Fluidité 90Hz / 120Hz sur Android
+   ══════════════════════════════════════════════════════════════ */
+.hardware-accelerated,
+.revision-reveal-card,
+.revision-course-block,
+.revision-reveal-toggle,
+.revision-correction-toggle,
+.revision-correction-receipt,
+.app-modal,
+.modal-ui {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.tree-node {
+  display: inline-block;
+  padding: 0.08em 0.44em;
+  border: 1.5px solid #94a3b8;
+  border-radius: 0.25em;
+  background: #f1f5f9;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Base custom generic items */
+.ease-out-back {
+  transition-timing-function: cubic-bezier(.34, 1.85, .64, 1) !important;
+}
+
+@media print {
+  html {
+    font-size: 100%;
+  }
+}

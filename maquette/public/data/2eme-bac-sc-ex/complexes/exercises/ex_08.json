@@ -1,0 +1,57 @@
+{
+  "id": "ex_08",
+  "theme": "complexes",
+  "difficulty": "moyen",
+  "topic": "Nombres Complexes",
+  "context": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points A et B d'affixes respectives $a = \\sqrt{3}(1-i)$ et $b = 2+\\sqrt{3}+i$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Vérifier que $|a| = \\sqrt{6}$ et que $\\arg(a) \\equiv -\\frac{\\pi}{4} [2\\pi]$.",
+      "hint": "Écrivez d'abord $a$ sous forme algébrique $a = \\sqrt{3} - i\\sqrt{3}$. Calculez le module $|a| = \\sqrt{x^2+y^2}$. Ensuite, factorisez par le module pour trouver le cosinus et le sinus de l'argument."
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que $\\frac{b}{a} = \\frac{3+\\sqrt{3}}{6} + \\left(\\frac{1+\\sqrt{3}}{2}\\right)i$ puis vérifier que $\\frac{b}{a} = \\frac{3+\\sqrt{3}}{3} e^{i\\frac{\\pi}{3}}$.",
+          "hint": "Pour la première partie, calculez le quotient en multipliant le numérateur et le dénominateur par le conjugué de $a$. Pour la vérification, développez la forme exponentielle en utilisant $\\cos(\\pi/3)$ et $\\sin(\\pi/3)$ et comparez les parties réelles et imaginaires."
+        },
+        {
+          "id": "b",
+          "content": "En déduire une forme trigonométrique du complexe $b$ puis vérifier que $b^{24}$ est un nombre réel.",
+          "hint": "Utilisez $\\arg(b) = \\arg(\\frac{b}{a}) + \\arg(a)$ et $|b| = |\\frac{b}{a}| \\times |a|$. Pour vérifier que $b^{24}$ est réel, calculez son argument en utilisant la formule de Moivre et montrez que c'est un multiple de $\\pi$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Soit R la rotation de centre O et d'angle $\\frac{\\pi}{6}$, qui transforme chaque point M du plan d'affixe $z$ en un point M' d'affixe $z'$. On pose $R(B)=B'$, $R(A)=A'$ et $R(A')=A''$.",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $z' = \\frac{1}{2}(\\sqrt{3}+i)z$ et que $\\arg(a') = -\\frac{\\pi}{12} [2\\pi]$ où $a'$ est l'affixe du point A'.",
+          "hint": "L'écriture complexe de la rotation est $z' = z e^{i\\theta}$. Calculez $e^{i\\pi/6}$. Pour l'argument de $a'$, utilisez $\\arg(a') = \\arg(a) + \\arg(e^{i\\pi/6})$."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que l'affixe du point A\" est $a'' = \\sqrt{6}e^{i\\frac{\\pi}{12}}$ et en déduire que les points O, A\" et B sont alignés.",
+          "hint": "$A''$ est l'image de $A'$ par la même rotation. Appliquez à nouveau la transformation. Pour prouver l'alignement, montrez que les vecteurs $\\overrightarrow{OA''}$ et $\\overrightarrow{OB}$ sont colinéaires, c'est-à-dire que $\\arg(a''/b)$ est un multiple de $\\pi$."
+        },
+        {
+          "id": "c",
+          "content": "Montrer que $b'$, l'affixe du point B', vérifie $b' = \\left(\\frac{3+\\sqrt{3}}{3}\\right)\\overline{a}$.",
+          "hint": "Calculez $b' = R(b) = b \\cdot e^{i\\pi/6}$. Utilisez l'expression de $\\frac{b}{a}$ de la question 2.a pour exprimer $b$ en fonction de $a$. Simplifiez ensuite l'expression en utilisant le fait que $a \\cdot e^{i\\pi/3} = \\overline{a}$."
+        },
+        {
+          "id": "d",
+          "content": "En déduire que le triangle OAB' est rectangle en O.",
+          "hint": "Pour prouver que le triangle est rectangle en O, il faut montrer que l'angle $(\\overrightarrow{OA}, \\overrightarrow{OB'})$ est droit. Calculez l'argument du quotient $\\frac{b'}{a}$ en utilisant le résultat de la question 3.c."
+        }
+      ]
+    }
+  ]
+}

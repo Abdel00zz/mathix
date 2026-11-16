@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Combien y a-t-il de bitcoins ?",
+    "subtitle": "Suite géométrique et série",
+    "context": "Suites"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Combien y a-t-il de bitcoins ?",
+          "content": "Le bitcoin est une cryptomonnaie créée en 2008. De nouveaux bitcoins sont émis en récompense du « minage » de blocs, selon une règle précise :\\par $\\bullet$ chaque bloc miné rapporte une récompense ;\\par $\\bullet$ le premier bloc rapporte $50$ bitcoins ;\\par $\\bullet$ tous les $210\\,000$ blocs, la récompense est \\textbf{divisée par deux}.\\par On note $g_m$ la récompense pendant la $m$-ième « ère » (la première ère est $m = 0$)."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Exprimer $g_m$ en fonction de $m$. Quelle est la nature de la suite $(g_m)$ ?\\item Quelle quantité totale de bitcoins $B_m$ est émise pendant l'ère $m$ (qui comporte $210\\,000$ blocs) ?\\item La quantité totale de bitcoins est $S = \\displaystyle\\sum_{m=0}^{+\\infty} B_m$. Calculer $S$ à l'aide de la somme d'une suite géométrique. Retrouve-t-on la limite annoncée de $21$ millions ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "La récompense est divisée par $2$ à chaque ère : $g_m = 50 \\times \\left(\\dfrac{1}{2}\\right)^m$. C'est une suite géométrique de raison $\\dfrac{1}{2}$."
+        },
+        {
+          "type": "hint",
+          "content": "$\\displaystyle\\sum_{m=0}^{+\\infty} \\left(\\dfrac{1}{2}\\right)^m = \\dfrac{1}{1 - \\frac{1}{2}} = 2$ (somme d'une suite géométrique de raison $\\tfrac12$, avec $|q|<1$)."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $g_m = 50 \\times \\left(\\dfrac{1}{2}\\right)^m$ : suite géométrique de premier terme $50$ et de raison $\\dfrac{1}{2}$.\\par\\textbf{2)} L'ère $m$ comporte $210\\,000$ blocs valant chacun $g_m$ : $B_m = 210\\,000 \\times 50 \\times \\left(\\dfrac{1}{2}\\right)^m$.\\par\\textbf{3)} $S = \\displaystyle\\sum_{m=0}^{+\\infty} 210\\,000 \\times 50 \\times \\left(\\dfrac{1}{2}\\right)^m = 210\\,000 \\times 50 \\times \\dfrac{1}{1-\\frac12} = 210\\,000 \\times 50 \\times 2 = \\boxed{21\\,000\\,000}$. On retrouve exactement le plafond de $21$ millions de bitcoins : c'est la somme d'une série géométrique convergente."
+        }
+      ]
+    }
+  ]
+}

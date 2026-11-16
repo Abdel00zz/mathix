@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="310" viewBox="0 0 600 310" role="img" aria-labelledby="title desc">
+  <title id="title">Le produit scalaire par projection orthogonale</title>
+  <desc id="desc">H est le projeté orthogonal de C sur la droite AB. Dans cette configuration, H est entre A et B. Les vecteurs AB et AH ont le même sens et le produit scalaire AB avec AC est égal à AB fois AH.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#3d6655" stroke-width="1.5"/></marker></defs>
+  <rect width="600" height="310" rx="12" fill="#fafbf7"/>
+  <g font-family="Arial, sans-serif" fill="#344d41">
+    <text x="26" y="33" font-size="12" letter-spacing="2">VOIR POUR COMPRENDRE</text>
+    <path d="M68 210H540" stroke="#bdc8bb" stroke-width="1.5"/>
+    <path d="M85 210L340 80L340 210Z" fill="#e7eee2"/>
+    <path d="M85 210H490M85 210L340 80" fill="none" stroke="#3d6655" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <path d="M340 80V210" stroke="#b27045" stroke-width="2" stroke-dasharray="5 5"/>
+    <path d="M325 210V195H340" fill="none" stroke="#b27045" stroke-width="1.5"/>
+    <path d="M85 243V250H340V243" fill="none" stroke="#b27045" stroke-width="1.5"/>
+    <g font-size="19" font-family="Georgia, serif" font-style="italic"><text x="68" y="198">A</text><text x="492" y="197">B</text><text x="349" y="80">C</text><text x="348" y="234">H</text></g>
+    <circle cx="85" cy="210" r="3.5" fill="#3d6655"/><circle cx="340" cy="210" r="4" fill="#b27045"/>
+    <text x="213" y="278" text-anchor="middle" font-size="16" fill="#9b5b35">AH : longueur projetée</text>
+    <text x="369" y="137" font-size="14" fill="#9b5b35">CH ⟂ AB</text>
+  </g>
+</svg>

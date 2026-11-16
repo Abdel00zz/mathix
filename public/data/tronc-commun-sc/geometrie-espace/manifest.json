@@ -1,0 +1,30 @@
+{
+  "id": "geometrie-espace",
+  "title": "La géométrie dans l'espace",
+  "section": "algebre-geometrie",
+  "quizCount": 6,
+  "revisions": [
+    {
+      "id": "rev-espace-tc",
+      "title": "Fiche Complète : Espace",
+      "path": "data/tronc-commun-sc/geometrie-espace/revisions/fiche_espace_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-espace-tc-01",
+      "path": "data/tronc-commun-sc/geometrie-espace/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-geometrie-espace-01",
+      "path": "data/tronc-commun-sc/geometrie-espace/exercises/ex_espace_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-geometrie-espace-01",
+      "path": "data/tronc-commun-sc/geometrie-espace/quiz/geometrie-espace_quiz.json",
+      "questionsCount": 6
+    }
+  ]
+}

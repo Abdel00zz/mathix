@@ -1,0 +1,145 @@
+@layer base {
+  :root {
+    /* Hauteur réelle de la barre de navigation du bas, publiée par
+       ControlBlade (0 sur desktop où la navigation est latérale). */
+    --app-nav-h: 0px;
+  }
+}
+
+@layer components {
+  /* ── Coquille de page plein écran ────────────────────────────────────────
+     Une page = un en-tête figé, une barre d'outils optionnelle, UNE seule
+     zone défilante, et une barre d'actions optionnelle. Empiler plusieurs
+     conteneurs défilants casse l'inertie tactile et rend le bas de page
+     inatteignable : c'est exactement ce qu'on évite ici. */
+  .app-page {
+    min-height: 0;
+  }
+
+  /* Barre de défilement : visible et discrète au pointeur (on doit voir où
+     l'on se trouve dans une longue page de réglages), masquée sur écran
+     tactile où le doigt suffit et où elle ne ferait qu'encombrer. */
+  .app-page__scroll {
+    /* La déclaration d'overflow appartient à la classe, pas au JSX : c'est
+       elle qui fait de ce bloc LA zone défilante de la page. */
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--modal-accent-border, #c3cad3) transparent;
+  }
+
+  .app-page__scroll::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .app-page__scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .app-page__scroll::-webkit-scrollbar-thumb {
+    background-color: var(--modal-accent-border, #c3cad3);
+    border: 3px solid transparent;
+    background-clip: content-box;
+    border-radius: 999px;
+  }
+
+  .app-page__scroll::-webkit-scrollbar-thumb:hover {
+    background-color: var(--modal-accent, #9aa4b1);
+  }
+
+  @media (pointer: coarse) {
+    .app-page__scroll {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .app-page__scroll::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* Réserve la hauteur de la barre du bas pour que le dernier élément de la
+     page reste atteignable au pouce et non masqué par la navigation. */
+  .app-page__nav-gap {
+    padding-bottom: calc(var(--app-nav-h) + 1.5rem);
+  }
+
+  .app-page__footer {
+    padding-bottom: calc(var(--app-nav-h) + 0.75rem);
+  }
+
+  /* Rail horizontal (onglets, filtres) : défilement à l'inertie, sans barre
+     visible.
+
+     Pas de `scroll-snap` ici : l'accroche annule les défilements programmés
+     en douceur (le rail revenait à sa position), ce qui empêchait de ramener
+     l'onglet actif dans le champ de vision. Elle n'apportait rien sur une
+     rangée d'onglets. */
+  .app-page__rail {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .app-page__rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Un onglet tranché net en bord d'écran passe pour un défaut d'affichage.
+     Le dégradé de bord dit « ça continue » au lieu de « c'est cassé ». */
+  .app-page__rail--fade {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 20px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 20px), transparent 100%);
+  }
+
+  /* Onglet moderne façon capsule : indicateur doux, tactile et fluide. */
+  .app-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-shrink: 0;
+    padding: 0.45rem 0.85rem;
+    margin-right: 0.35rem;
+    white-space: nowrap;
+    border-radius: 0.75rem;
+    color: var(--modal-muted, #6e6472);
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all .2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .app-tab:last-child {
+    margin-right: 0;
+  }
+
+  .app-tab:hover {
+    color: var(--modal-ink, #1f1f1f);
+    background: rgba(181, 54, 155, 0.04);
+  }
+
+  .app-tab[aria-selected='true'] {
+    color: var(--modal-accent-deep, #8f1f7d);
+    background: #ffffff;
+    border-color: rgba(181, 54, 155, 0.2);
+    box-shadow: 0 2px 8px -1px rgba(181, 54, 155, 0.12), 0 1px 2px rgba(0, 0, 0, 0.02);
+    font-weight: 600;
+  }
+
+  .app-tab:focus-visible {
+    outline: 2px solid var(--modal-accent, #b5369b);
+    outline-offset: 2px;
+    border-radius: 0.75rem;
+  }
+
+  /* Cible tactile minimale recommandée (Android/iOS) + pas de flash bleu. */
+  .app-tap {
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

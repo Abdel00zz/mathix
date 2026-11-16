@@ -1,0 +1,21 @@
+{
+  "id": "proba-ex15",
+  "theme": "probabilites",
+  "difficulty": "moyen",
+  "chapter": "01 - Dénombrement et probabilités",
+  "topic": "Normale 2019 - Tirage simultané, au moins deux de même couleur",
+  "requiresRedaction": true,
+  "context": "Une urne contient dix boules : trois boules vertes, six boules rouges et une boule noire indiscernables au toucher. On tire au hasard et simultanément trois boules de l'urne. On considère les événements suivants : $A$ : « Obtenir trois boules vertes » ; $B$ : « Obtenir trois boules de même couleur » ; $C$ : « Obtenir au moins deux boules de même couleur ».",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $p(A) = \\dfrac{1}{120}$ et $p(B) = \\dfrac{7}{40}$.",
+      "hint": "$Card(\\Omega) = C_{10}^3 = 120$. Pour $A$ : $C_3^3 = 1$. Pour $B$ : trois vertes ou trois rouges (la noire est seule, impossible d'en tirer 3). $Card(B) = C_3^3 + C_6^3 = 1 + 20 = 21$. Vérifiez : $\\frac{21}{120} = \\frac{7}{40}$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer $p(C)$.",
+      "hint": "Passez par le complémentaire : $\\bar{C}$ = « les 3 boules sont toutes de couleurs différentes ». Avec 3V, 6R, 1N, le seul triplet de couleurs différentes possibles est (V, R, N). $Card(\\bar{C}) = C_3^1 \\times C_6^1 \\times C_1^1 = 18$. Donc $p(C) = 1 - \\frac{18}{120}$."
+    }
+  ]
+}

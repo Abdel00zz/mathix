@@ -1,0 +1,57 @@
+{
+  "id": "ex-esp-12",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "difficile",
+  "topic": "Géométrie analytique dans l'espace — Sphère, plan tangent en O, droite d'intersection",
+  "requiresRedaction": true,
+  "context": "On considère dans l'espace la sphère $(S)$ et le plan $(P)$, tels que : $(P) : x-y-z-1 = 0$ et $(S) : x^2+y^2+z^2-2x-2y = 0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer les coordonnées du point $\\Omega$ le centre de la sphère $(S)$, et son rayon $R$.",
+      "hint": "Complétez le carré en $x$, $y$ et $z$."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que le plan $(P)$ coupe de la sphère $(S)$ suivant un cercle $(C)$ dont on déterminera le rayon $r$ et le centre $\\omega$.",
+      "hint": "Calculez $d(\\Omega,(P))$. Si $d < R$, le plan est sécant et le cercle a rayon $r = \\sqrt{R^2-d^2}$. Le centre $\\omega$ est le pied de la perpendiculaire de $\\Omega$ sur $(P)$."
+    },
+    {
+      "id": "q3",
+      "content": "Soit $(Q)$ le plan tangent à la sphère $(S)$ au point $O$ (origine du repère).",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Déterminer une équation cartésienne du plan $(Q)$.",
+          "hint": "Le plan tangent en $O$ est perpendiculaire au rayon $\\Omega O$. Son vecteur normal est $\\overrightarrow{\\Omega O} = -\\overrightarrow{O\\Omega}$ et il passe par $O$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Déterminer une représentation paramétrique de la droite $(\\Delta)$ l'intersection des deux plans $(P)$ et $(Q)$.",
+          "hint": "$(\\Delta)$ est perpendiculaire aux vecteurs normaux de $(P)$ et $(Q)$. Son vecteur directeur est $\\overrightarrow{n}_P \\wedge \\overrightarrow{n}_Q$. Trouvez un point commun aux deux plans."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Déterminer les coordonnées du point $H$ le projeté orthogonal du point $O$ sur la droite $(\\Delta)$.",
+          "hint": "Paramétrez $(\\Delta)$ et cherchez le paramètre $t$ tel que $\\overrightarrow{OH}$ soit orthogonal à $\\overrightarrow{u}$ le vecteur directeur de $(\\Delta)$."
+        },
+        {
+          "id": "sq4b",
+          "content": "Montrer que $H$ est aussi le projeté orthogonal du point $\\omega$ sur la droite $(\\Delta)$.",
+          "hint": "Calculez $\\overrightarrow{\\omega H}$ et vérifiez qu'il est orthogonal au vecteur directeur de $(\\Delta)$."
+        },
+        {
+          "id": "sq4c",
+          "content": "Montrer que les points $\\omega$, $\\Omega$, $O$ et $H$ sont coplanaires.",
+          "hint": "Montrez que les vecteurs $\\overrightarrow{O\\Omega}$, $\\overrightarrow{O\\omega}$ et $\\overrightarrow{OH}$ sont coplanaires, c'est-à-dire que leur déterminant est nul."
+        }
+      ]
+    }
+  ]
+}

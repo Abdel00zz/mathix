@@ -1,0 +1,32 @@
+{
+  "id": "ch04-ex03",
+  "theme": "arithmetique",
+  "difficulty": "moyen",
+  "chapter": "04 - Algorithme d'Euclide",
+  "topic": "Algorithme d'Euclide - PGCD et sommes classiques",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Pour tout entier $n \\geq 2$, on pose : $A(n) = 1 + 2 + \\ldots + n$ et $B(n) = 1^2 + 2^2 + \\ldots + n^2$. Montrer que pour tout $n \\in \\mathbb{N}$ : $A(n) = \\dfrac{n(n+1)}{2}$ et $B(n) = \\dfrac{n(n+1)(2n+1)}{6}$.",
+      "hint": "Procédez par récurrence pour chacune des deux formules. Pour l'hérédité, exprimez $A(n+1) = A(n) + (n+1)$ et $B(n+1) = B(n) + (n+1)^2$, puis simplifiez algébriquement."
+    },
+    {
+      "id": "q2",
+      "content": "On suppose que : $n \\equiv 0\\ [3]$.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Déterminer $A(n) \\wedge B(n)$.",
+          "hint": "Posez $n = 3k$ et substituez dans les formules de la question 1. Simplifiez $A(n)$ et $B(n)$, puis calculez leur PGCD en isolant les facteurs communs."
+        },
+        {
+          "id": "sq2b",
+          "content": "En déduire la valeur de $A(21) \\wedge B(21)$.",
+          "hint": "Vérifiez que $21 \\equiv 0\\ [3]$, puis appliquez directement le résultat de la question a) avec $n = 21$."
+        }
+      ]
+    }
+  ]
+}

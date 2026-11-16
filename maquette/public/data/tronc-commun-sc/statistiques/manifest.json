@@ -1,0 +1,30 @@
+{
+  "id": "statistiques",
+  "title": "Statistiques",
+  "section": "analyse",
+  "quizCount": 6,
+  "revisions": [
+    {
+      "id": "rev-stats-tc",
+      "title": "Fiche Complète : Statistiques",
+      "path": "data/tronc-commun-sc/statistiques/revisions/fiche_statistiques_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-stats-tc-01",
+      "path": "data/tronc-commun-sc/statistiques/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-statistiques-01",
+      "path": "data/tronc-commun-sc/statistiques/exercises/ex_statistiques_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-statistiques-01",
+      "path": "data/tronc-commun-sc/statistiques/quiz/statistiques_quiz.json",
+      "questionsCount": 6
+    }
+  ]
+}

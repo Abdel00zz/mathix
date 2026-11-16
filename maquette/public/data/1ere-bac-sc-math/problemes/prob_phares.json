@@ -1,0 +1,55 @@
+{
+  "header": {
+    "title": "Pourquoi les phares de voiture ont-ils cette forme ?",
+    "subtitle": "Parabole et réflexion",
+    "context": "Analyse · Fonctions du second degré"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Pourquoi les phares de voiture ont-ils cette forme ?",
+          "content": "Les réflecteurs des phares de voiture ont une forme parabolique. Cette forme particulière permet de concentrer la lumière émise par une ampoule placée en un point précis — le \\textbf{foyer} de la parabole — en un faisceau de rayons parallèles.\\par On modélise le réflecteur par la parabole d'équation :\\par$$y = \\frac{x^2}{8}$$\\par dans un repère orthonormé $(O;\\vec{i},\\vec{j})$ où l'unité est le centimètre. Le foyer de cette parabole est le point $F(0, 2)$.\\par Un rayon lumineux émis depuis $F$ frappe le réflecteur au point $M(x_0, y_0)$."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Vérifier que le point $M(4, 2)$ appartient à la parabole.\\item Calculer la pente de la tangente à la parabole au point $M(4, 2)$ (on admettra que $f'(x) = \\dfrac{x}{4}$).\\item La propriété de réflexion de la parabole stipule que le rayon réfléchi en $M$ est parallèle à l'axe de symétrie (l'axe des ordonnées). Vérifier graphiquement cette propriété pour $M(4,2)$ en calculant les angles d'incidence et de réflexion par rapport à la normale en $M$.\\item En quoi cette propriété est-elle utile pour concevoir un phare de voiture ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Calculez $f(4) = \\dfrac{16}{8} = 2$. Oui, $M(4,2)$ est bien sur la parabole."
+        },
+        {
+          "type": "hint",
+          "content": "La tangente en $M(4,2)$ a pour pente $f'(4) = \\dfrac{4}{4} = 1$, soit un angle de $45°$ avec l'horizontale."
+        },
+        {
+          "type": "hint",
+          "content": "La normale en $M$ est perpendiculaire à la tangente. Calculez les angles que font $\\overrightarrow{FM}$ et le rayon réfléchi avec la normale."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $f(4) = \\dfrac{16}{8} = 2$ : le point $M(4,2)$ appartient bien à la parabole. $\\checkmark$\\par\\textbf{2)} La tangente en $M$ a pour pente $f'(4) = 1$, elle fait un angle de $45°$ avec l'axe des abscisses.\\par\\textbf{3)} La normale en $M$ est perpendiculaire à la tangente, de pente $-1$. Le vecteur $\\overrightarrow{FM} = (4,0)$ est horizontal. Par la propriété de réflexion des paraboles, l'angle du rayon incident avec la normale est égal à l'angle du rayon réfléchi, et ce dernier est vertical (parallèle à l'axe $Oy$). $\\checkmark$\\par\\textbf{4)} Tous les rayons issus du foyer $F$ sont réfléchis parallèlement à l'axe de la parabole : le phare émet un faisceau \\boxed{\\text{parallèle et concentré}}, idéal pour éclairer loin devant."
+        }
+      ]
+    }
+  ]
+}

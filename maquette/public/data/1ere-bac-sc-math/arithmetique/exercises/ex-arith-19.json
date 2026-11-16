@@ -1,0 +1,31 @@
+{
+  "id": "ch05-ex03",
+  "theme": "arithmetique",
+  "difficulty": "moyen",
+  "chapter": "05 - Congruence modulo n ; l'ensemble Z/nZ et opérations",
+  "topic": "Congruences - Divisibilité par récurrence",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que : $\\forall n \\in \\mathbb{N},\\ 3 / 4^n - 1$.",
+      "hint": "Procédez par récurrence. Pour le passage de $n$ à $n+1$, écrivez $4^{n+1} - 1 = 4 \\cdot 4^n - 1$ et faites apparaître $4^n - 1$."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que : $\\forall n \\in \\mathbb{N},\\ 9 / 7^{2n} - 1$.",
+      "hint": "Par récurrence, ou remarquez que $7^{2n} - 1 = 49^n - 1$. Pour l'hérédité, écrivez $49^{n+1} - 1 = 49 \\cdot 49^n - 1$ et faites apparaître $49^n - 1$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que : $\\forall n \\in \\mathbb{N},\\ 7 / 3^{2n} - 2^n$.",
+      "hint": "Par récurrence. Au rang $n+1$, écrivez $3^{2(n+1)} - 2^{n+1} = 9 \\cdot 3^{2n} - 2 \\cdot 2^n$ et faites apparaître l'hypothèse de récurrence en ajoutant et retranchant $9 \\cdot 2^n$."
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que : $\\forall n \\in \\mathbb{N},\\ (m^2 + 4m + 1) \\wedge (m + 4) = 1$.",
+      "hint": "Si $d$ divise à la fois $m^2 + 4m + 1$ et $m + 4$, alors $d$ divise toute combinaison linéaire de ces deux expressions. Calculez $m^2 + 4m + 1 - m(m+4)$ et voyez ce que cela donne."
+    }
+  ]
+}

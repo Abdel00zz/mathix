@@ -1,0 +1,57 @@
+{
+  "id": "ex_04",
+  "theme": "complexes",
+  "difficulty": "facile",
+  "topic": "Nombres Complexes",
+  "requiresRedaction": true,
+  "sessionDate": "2026-01-25T13:30:00.000Z",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "On considère le nombre complexe $a = \\frac{\\sqrt{3}}{2} + \\frac{3}{2}i$.",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que : $a = \\sqrt{3}\\left(\\cos\\frac{\\pi}{3} + i\\sin\\frac{\\pi}{3}\\right)$.",
+          "hint": "Commencez par calculer le module $|a|$. Ensuite, mettez $|a|$ en facteur pour faire apparaître les valeurs remarquables de cosinus et sinus qui vous permettront d'identifier l'argument."
+        },
+        {
+          "id": "b",
+          "content": "Déduire que : $a^{2022}$ est un nombre réel.",
+          "hint": "Utilisez la forme trigonométrique ou exponentielle de $a$. Appliquez la formule de Moivre. Un nombre complexe est réel si et seulement si sa partie imaginaire est nulle. Pensez à la valeur de $\\sin(k\\pi)$ pour tout entier $k$ et vérifiez si $2022/3$ est un entier."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A$ et $B$ d'affixes respectives $a$ et $\\overline{a}$.\\parDéterminer une mesure de l'angle de la rotation $R$ de centre $O$ et qui transforme $B$ en $A$.",
+      "hint": "La rotation $R$ transforme $B$ en $A$. Son angle $\\theta$ est donc $\\arg(z_A) - \\arg(z_B)$, ce qui correspond à $\\arg(a) - \\arg(\\overline{a})$. Utilisez la forme exponentielle de $a$ et $\\overline{a}$ pour calculer la différence des arguments."
+    },
+    {
+      "id": "q3",
+      "content": "On considère dans $\\mathbb{C}$ l'équation $(E_\\alpha) : z^2 - \\sqrt{3}z + \\alpha = 0$ où $\\alpha$ est un nombre réel non nul.\\parOn suppose que l'équation $(E_\\alpha)$ admet deux racines complexes conjuguées non réelles $z$ et $\\overline{z}$.\\parSoient les points $M(z)$, $N(\\overline{z})$ et $P(\\sqrt{3})$ du plan complexe.",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Sans résoudre l'équation $(E_\\alpha)$, justifier que $\\alpha > \\frac{3}{4}$ et que $\\alpha = z\\overline{z}$.",
+          "hint": "Pour qu'une équation du second degré à coefficients réels ait des racines complexes conjuguées non réelles, que doit-on imposer sur le signe de son discriminant $\\Delta$ ? Pour la deuxième partie, souvenez-vous de la relation entre les coefficients d'un polynôme et le produit de ses racines."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que $|z| = |z - \\sqrt{3}|$.",
+          "hint": "Utilisez la relation entre la somme des racines ($z + \\overline{z}$) et les coefficients de l'équation. Exprimez $\\overline{z}$ en fonction de $z$. Ensuite, utilisez la propriété fondamentale $|z| = |\\overline{z}|$ pour conclure."
+        },
+        {
+          "id": "c",
+          "content": "En déduire que les points $M$ et $N$ appartiennent à la médiatrice $(\\Delta)$ du segment $[OP]$.",
+          "hint": "Interprétez l'égalité des modules $|z| = |z - \\sqrt{3}|$ en termes de distances géométriques. Rappelez-vous que $|z_A - z_B|$ est la distance $AB$. Que représente géométriquement l'ensemble des points $M$ tels que $OM = PM$ ?"
+        },
+        {
+          "id": "d",
+          "content": "Déterminer la valeur de $\\alpha$ pour laquelle $|z - \\sqrt{3}| = \\sqrt{3}$ et déduire dans ce cas, les points d'intersection de la droite $(\\Delta)$ et du cercle de centre $P$ et de rayon $\\sqrt{3}$.",
+          "hint": "Utilisez le résultat de la question 3.b pour trouver la valeur de $|z|$. Déduisez-en $\\alpha$ grâce à la question 3.a. Pour trouver les points d'intersection, traduisez géométriquement les deux conditions : $M$ est sur la médiatrice de $[OP]$ et $M$ est sur un cercle de centre $P$. Écrivez les équations correspondantes (l'une cartésienne, l'autre complexe) et résolvez le système."
+        }
+      ]
+    }
+  ]
+}

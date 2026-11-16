@@ -1,0 +1,101 @@
+{
+  "id": "ex-log-002",
+  "theme": "logarithmes",
+  "difficulty": "facile",
+  "topic": "Analyse - Logarithmes",
+  "context": "Soit $f$ la fonction définie sur $[0, +\\infty[$ par : $$\\begin{cases} f(x) = x^4(\\ln x - 1)^2 & \\text{si } x > 0 \\\\ f(0) = 0 \\end{cases}$$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O; \\overrightarrow{i}, \\overrightarrow{j})$ (unité : 1 cm).",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} f(x)$ puis déterminer la branche infinie de $(C)$ au voisinage de $+\\infty$.",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "",
+          "hint": "On a $\\displaystyle \\lim_{x \\to +\\infty} x^4 = +\\infty$ et $\\displaystyle \\lim_{x \\to +\\infty} (\\ln x - 1)^2 = +\\infty$.\\\\\\textbf{Réflexion :} Pour la branche infinie, étudiez le rapport $\\displaystyle \\frac{f(x)}{x} = x^3(\\ln x - 1)^2$. Quelle forme indéterminée ou limite usuelle reconnaissez-vous ?"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que $f$ est continue à droite en $0$.",
+          "hint": "Écrivez $f(x) = (x^2(\\ln x - 1))^2$. Pour trouver la limite, utilisez la limite de référence $\\lim_{x \\to 0^+} x^n \\ln x = 0$. Comparez le résultat à $f(0)$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Étudier la dérivabilité de $f$ à droite en $0$ puis interpréter le résultat géométriquement.",
+          "hint": "Analysez le taux d'accroissement : $\\displaystyle \\lim_{x \\to 0^+} \\frac{f(x)}{x} = \\lim_{x \\to 0^+} x^3(\\ln x - 1)^2$. En posant $X = x^{1.5}(\\ln x - 1)$, que devient cette limite ?\\\\ \\textbf{Interprétation :} Si la limite est finie, que dire de la tangente à l'origine ?"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que $f'(x) = 2x^3(\\ln x - 1)(2\\ln x - 1)$ pour tout $x$ de l'intervalle $]0; +\\infty[$.",
+          "hint": "Dérivez $f$ comme un produit de la forme $u \\cdot v^2$. On obtient : $\\displaystyle f'(x) = 4x^3(\\ln x - 1)^2 + x^4 \\cdot 2(\\ln x - 1) \\cdot \\frac{1}{x}$.\\\\\\textbf{Action :} Factorisez intelligemment par $2x^3(\\ln x - 1)$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Dresser le tableau de variations de $f$.",
+          "hint": "Le signe dépend du produit $(\\ln x - 1)(2\\ln x - 1)$. Résolvez $\\ln x = 1$ et $\\ln x = 1/2$.\\\\$$\\begin{array}{|c|cccccc|} \\hline x & 0 & & \\sqrt{e} & & e & & +\\infty \\\\ \\hline f'(x) & 0 & + & 0 & - & 0 & + \\\\ \\hline f & 0 & \\nearrow & \\text{Max} & \\searrow & 0 & \\nearrow \\\\ \\hline \\end{array}$$"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Sachant que $f''(x) = 2x^2(6\\ln x - 5)\\ln x$ pour tout $x$ de l'intervalle $]0; +\\infty[$, étudier le signe de $f''(x)$ sur $]0; +\\infty[$.",
+          "hint": "Le signe de $f''$ dépend uniquement du produit $\\ln x(6\\ln x - 5)$.\\\\\n\\textbf{Analyse :} Où s'annule $\\ln x$ ? Où s'annule $6\\ln x - 5$ ? Dressez un tableau de signes."
+        },
+        {
+          "id": "sq4b",
+          "content": "Déduire que la courbe $(C)$ admet deux points d'inflexions dont on déterminera les abscisses.",
+          "hint": "Un point d'inflexion existe si la dérivée seconde s'annule en \\textbf{changeant de signe}. Combien de changements de signe observez-vous dans le tableau précédent ?"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq5a",
+          "content": "Construire la courbe $(C)$ dans le repère $(O; \\overrightarrow{i}, \\overrightarrow{j})$ (on prend : $\\sqrt{e} \\simeq 1,6$ et $e^2 \\simeq 7,2$).",
+          "hint": "**Éléments à placer sur le graphe :**\n\n• **Origine** $O(0, 0)$ avec tangente horizontale (car $f'_d(0) = 0$)\n\n• **Maximum local** en $A(\\sqrt{e}, f(\\sqrt{e}))$ ≈ $(1.6, 0.68)$\n\n• **Point d'intersection** avec $Ox$ : $B(e, 0)$ car $f(e) = 0$\n\n• **Points d'inflexion** : aux abscisses $x = 1$ et $x = e^{5/6}$\n\n• **Branche parabolique** de direction $(Oy)$ en $+\\infty$\n\n• **Concavité** : tournée vers le haut sur $]0, 1[$, vers le bas sur $]1, e^{5/6}[$\n"
+        },
+        {
+          "id": "sq5b",
+          "content": "En utilisant la courbe $(C)$, déterminer le nombre de solutions de l'équation $x^2(\\ln x - 1) = -1$.",
+          "hint": "\\textbf{Transformation :} L'équation équivaut à $x^4(\\ln x - 1)^2 = 1$ (en élevant au carré, attention aux signes). Cela revient à résoudre $f(x) = 1$.\\\\\n\\textbf{Observation :} Tracez la droite $y=1$ sur le graphe. Combien de fois coupe-t-elle la courbe $(C)$ ?"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "On considère la fonction $g$ définie sur $\\mathbb{R}$ par $g(x) = f(|x|)$.",
+      "subQuestions": [
+        {
+          "id": "sq6a",
+          "content": "Montrer que la fonction $g$ est paire.",
+          "hint": "Pour tout $x$, vérifiez que $g(-x) = f(|-x|) = f(|x|) = g(x)$."
+        },
+        {
+          "id": "sq6b",
+          "content": "Construire $(C_g)$ la courbe représentative de $g$ dans le même repère $(O; \\overrightarrow{i}, \\overrightarrow{j})$.",
+          "hint": "Sur $\\mathbb{R}^+$, $(C_g)$ est identique à $(C)$. Sur $\\mathbb{R}^-$, effectuez une \\textbf{symétrie axiale} par rapport à l'axe des ordonnées $(Oy)$."
+        }
+      ]
+    }
+  ]
+}

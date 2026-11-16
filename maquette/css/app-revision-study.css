@@ -1,0 +1,362 @@
+/* ============================================================================
+ * MathFlow — Fiche de révision (#les) · v2 « page de manuel LaTeX »
+ *
+ * Plan de design
+ *  Couleur  : Papier #FFF · Encre #000 · Gris texte #38393D · Gris discret #5C5D62 · Filet #D8D8D8 · Lavis #F3F3F3
+ *             (sombre : papier #16171A, encre #F2F2F2). Aucune couleur d'accent.
+ *  Type     : empilement « Latin Modern / CMU / STIX / Libertinus » → Literata (voir --tex-serif), titres en gras,
+ *             corps justifié + césures (lang="fr"), mathématiques KaTeX (Computer Modern) → même colorimétrie que pdfLaTeX.
+ *  Structure: seuls DÉFINITION et MÉTHODE sont encadrées (cadre fin noir / lavis gris + barre).
+ *             Les autres blocs se distinguent par la typographie (gras, italique), des filets et la numérotation.
+ *  Mouvement: amélioration progressive, jamais requise. Gestes (ouvrir un bloc, révéler un trou, sommaire, plein écran)
+ *             = transitions ; un seul moment orchestré à l'arrivée (le filet du titre se trace) ; filets de section et
+ *             apparition des blocs pilotés par le défilement (CSS pur). Tout est coupé si l'utilisateur réduit les animations.
+ * ============================================================================ */
+
+@keyframes mf-rp { to { transform: scaleX(1); } }
+@keyframes mf-rule { from { transform: scaleX(0); } }
+@keyframes mf-fade { from { opacity: 0; } }
+@keyframes mf-reveal { from { opacity: 0; translate: 0 .5rem; } }
+@keyframes mf-pop { from { opacity: 0; scale: .985; translate: 0 .35rem; } }
+
+/* ── Bureau gris + feuille blanche ───────────────────────────────────────── */
+body[data-v="les"] { --desk: light-dark(#ebebeb, #0d0e10); background: var(--desk); }
+body[data-v="les"] .sheet { display: none; }
+html:has(body[data-v="les"]) { scrollbar-gutter: stable; }
+
+#les {
+  /* Jetons locaux — redéfinissent aussi les jetons globaux pour que liens, anneaux et popovers restent monochromes */
+  --paper: light-dark(#fff, #16171a);
+  --ink: light-dark(#000, #f2f2f2);
+  --ink-2: light-dark(#38393d, #cfd0d3);
+  --muted: light-dark(#5c5d62, #9b9ca1);
+  --hair: light-dark(#d8d8d8, #34353a);
+  --hair-2: light-dark(#b0b0b0, #5a5b61);
+  --wash: light-dark(#f3f3f3, #1f2024);
+  --shade: light-dark(rgb(0 0 0 / .08), rgb(0 0 0 / .55));
+  --surface: var(--paper); --line: var(--hair); --accent: var(--ink); --on-accent: var(--paper);
+  --ring: color-mix(in srgb, var(--ink) 40%, transparent);
+  --g: var(--ink-2); --bl: var(--ink-2); --v: var(--ink-2); --am: var(--muted); --r: var(--ink);
+
+  --tex-serif: "Latin Modern Roman", "LM Roman 10", "CMU Serif", "Computer Modern Serif", "STIX Two Text", "Libertinus Serif", var(--serif);
+  --rev-sans: "Inter", var(--sans);
+  --rev-ease: cubic-bezier(.22, 1, .36, 1);
+  --rev-pad-x: clamp(20px, 5vw, 64px);
+  --rev-pad-y: clamp(22px, 3.6vw, 44px);
+  --rev-body: clamp(1.02rem, .98rem + .22vw, 1.18rem);
+  --rev-sec-title: clamp(1.35rem, 1.2rem + .7vw, 1.85rem);
+  --rev-hero-title: clamp(2rem, 1.45rem + 2.6vw, 3.5rem);
+  --measure: 44rem;
+  interpolate-size: allow-keywords;
+
+  position: relative;
+  max-width: 100%;
+  margin: 14px auto 0;
+  padding: var(--rev-pad-y) var(--rev-pad-x) calc(var(--rev-pad-y) * 1.6);
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--hair);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px var(--shade), 0 22px 50px -22px var(--shade);
+  font-family: var(--doc-serif);
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  text-rendering: optimizeLegibility;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  overflow-wrap: break-word;
+}
+/* Police du document : « latex » (défaut) → pile Latin Modern ; « sans / system » → réglage utilisateur conservé */
+:root:not([data-doc-font="sans"]):not([data-doc-font="system"]) #les { --doc-serif: var(--tex-serif); }
+
+#les math { font-size: 1.06em; }
+#les .katex { font-size: 1.08em; }
+#les .lt .katex, #les .toc-sec-ttl .katex { font-size: .92em; line-height: 1; }
+#les .katex-display { margin: 1.1em 0; padding: .3em 0; overflow: auto hidden; scrollbar-width: thin; }
+#les .katex-display > .katex { text-align: center; }
+
+/* ── Progression de lecture (filet de 2 px, aucune dépendance JS quand le navigateur sait faire) ── */
+.rp { position: fixed; inset: 0 0 auto; z-index: 6; height: 2px; pointer-events: none; }
+.rp i { display: block; height: 100%; background: var(--ink); transform: scaleX(var(--rp, 0)); transform-origin: var(--ox, left); }
+#les:dir(rtl) { --ox: right; }
+@supports (animation-timeline: scroll()) {
+  .rp i { animation: mf-rp linear both; animation-timeline: scroll(root); transform: scaleX(0); }
+}
+
+/* ── Barre supérieure : titre courant (comme l'en-tête d'une page LaTeX) ─── */
+#les .top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 4;
+  display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.1rem;
+  margin: calc(-1 * var(--rev-pad-y)) calc(-1 * var(--rev-pad-x)) clamp(1.5rem, 4vw, 2.4rem);
+  padding: .55rem var(--rev-pad-x);
+  border-bottom: 1px solid var(--hair);
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  font: 500 .85rem/1.2 var(--rev-sans);
+}
+#les .back { display: inline-flex; align-items: center; gap: .3rem; color: var(--muted); text-decoration: none; }
+#les .back:hover { color: var(--ink); }
+#les .back:dir(rtl) svg { scale: -1 1; }
+.sheet-tabs { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+.sheet-tab { padding: .2rem 0; border-bottom: 1.5px solid transparent; color: var(--muted); font: 500 .85rem var(--rev-sans); text-decoration: none; }
+.sheet-tab:hover { color: var(--ink); }
+.sheet-tab.active, .sheet-tab[aria-current="page"] { color: var(--ink); border-bottom-color: var(--ink); }
+#les .rh { flex: 1 1 8rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; color: var(--ink-2); font: italic 400 .95rem/1.2 var(--doc-serif); }
+#les .rh:empty { display: none; }
+#les .cnt { display: inline-flex; align-items: center; gap: .2rem; margin-inline-start: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+#les #rt { margin-inline-end: .5rem; }
+#les .ib { border-radius: 3px; }
+.les-loading, .les-error { padding: 40px 20px; text-align: center; color: var(--muted); font-family: var(--rev-sans); }
+
+/* ── Titre & résumé ──────────────────────────────────────────────────────── */
+#les > :is(.kick, .lt, .intro, .ls, .end2) { max-inline-size: var(--measure); margin-inline: auto; }
+.kick { margin: 0 0 .45rem; font: 500 .9rem/1.3 var(--rev-sans); color: var(--muted); }
+.lt { position: relative; margin: 0 auto 2.6rem; padding-bottom: 1.15rem; font: 700 var(--rev-hero-title)/1.1 var(--doc-serif); letter-spacing: -.012em; color: var(--ink); text-wrap: balance; hyphens: manual; }
+.lt b { font-weight: inherit; color: inherit; }
+.lt::after { content: ""; position: absolute; inset: auto 0 0; border-bottom: 2px solid var(--ink); transform-origin: var(--ox, left); }
+
+.intro { margin-bottom: clamp(2.4rem, 5vw, 3.6rem); padding-inline: clamp(0rem, 3vw, 1.75rem); }
+.lede, .lead, .bx, .il li { font: 400 calc(var(--rev-body) * var(--doc-scale, 1))/1.72 var(--doc-serif); }
+.lede { margin: 0; color: var(--ink); text-align: justify; text-justify: inter-word; text-wrap: pretty; }
+.lede p { margin: 0 0 .8em; }
+.lede p:last-child { margin-bottom: 0; }
+.note { margin: 1.4rem 0 0; font: 400 .92rem/1.6 var(--rev-sans); color: var(--muted); }
+.note::before { content: ""; display: block; width: 3.5rem; margin-bottom: .65rem; border-top: 1px solid var(--hair-2); }
+.note p { margin: 0 0 .5em; }
+
+/* ── Sections ────────────────────────────────────────────────────────────── */
+.ls { margin-bottom: clamp(2.8rem, 6vw, 4.4rem); scroll-margin-top: calc(var(--top-h, 56px) + 1.25rem); }
+.lh { position: relative; display: flex; align-items: baseline; gap: 1rem; margin: 0 0 1.25rem; padding-bottom: .6rem; font: 700 var(--rev-sec-title)/1.2 var(--doc-serif); letter-spacing: -.005em; color: var(--ink); text-wrap: balance; hyphens: manual; }
+.lh::after { content: ""; position: absolute; inset: auto 0 0; border-bottom: 1px solid var(--hair-2); transform-origin: var(--ox, left); }
+.ltr { flex: none; min-inline-size: 1.4em; font-weight: 400; color: var(--muted); font-variant-numeric: lining-nums tabular-nums; }
+.lht, .toc-sec-ttl { flex: 1; min-width: 0; }
+.lead { margin: 0 0 1.5rem; color: var(--ink-2); text-align: justify; text-wrap: pretty; }
+.subsec { margin: 2rem 0; scroll-margin-top: calc(var(--top-h, 56px) + 1rem); }
+.subh { display: flex; align-items: baseline; gap: .8rem; margin: 0 0 .8rem; font: 700 clamp(1.1rem, 1.04rem + .3vw, 1.3rem)/1.3 var(--doc-serif); color: var(--ink); }
+.subh .sn { flex: none; font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
+.end2 { margin: 3rem auto 1rem; text-align: center; font: 400 .9rem var(--rev-sans); }
+#les .link { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: .25em; }
+
+/* ── Texte courant ───────────────────────────────────────────────────────── */
+.bx { text-align: justify; text-justify: inter-word; text-wrap: pretty; }
+.bx p { margin: 0 0 .85em; }
+.bx p:last-child { margin: 0; }
+.bx ul, .bx ol { margin: .6em 0; padding-inline-start: 1.6em; }
+.bx li { margin: .3em 0; }
+.bx ul ul { list-style-type: "–  "; }
+.bx li::marker { color: var(--ink-2); }
+.il { counter-reset: n; margin: .9em 0 0; padding: 0; list-style: none; }
+.il li { position: relative; counter-increment: n; margin: .7em 0; padding-inline-start: 2.2em; }
+.il li::before { content: counter(n) "."; position: absolute; inset-inline-start: 0; top: 0; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+#les .math-question { margin: .5em 0 .8em; }
+#les .bx table { margin: 1.1em auto; border-collapse: collapse; font-size: .95em; }
+#les .bx th, #les .bx td { padding: .4em .9em; text-align: center; }
+#les .bx table { border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+#les .bx thead tr, #les .bx tr:has(> th) { border-bottom: 1px solid var(--ink); }
+
+/* Marqueurs typographiques (monochromes) : ==important==  ++à retenir++  ^^petites capitales^^ */
+.cr, .cg { font-weight: 700; }
+.cr { background: linear-gradient(transparent 62%, color-mix(in srgb, var(--ink) 14%, transparent) 62%); }
+.cg { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+.ru { font-variant-caps: all-small-caps; letter-spacing: .04em; }
+
+/* ── Blocs : base commune ────────────────────────────────────────────────── */
+.blk { position: relative; margin: 1.6rem 0; scroll-margin-top: calc(var(--top-h, 56px) + 1rem); }
+.bx { position: static; }
+.blk > .bx { margin-top: .5rem; }
+.bh { display: flex; align-items: baseline; gap: .7rem; }
+.bt { font-weight: 700; color: var(--ink); }
+.q { color: var(--ink); }
+.btitle { margin: 0 0 .5rem; font-weight: 700; }
+.dif { font: 400 .78rem/1 var(--rev-sans); letter-spacing: .12em; color: var(--ink-2); }
+.bt + .q::before { content: "("; }
+.bt + .q::after { content: ")"; }
+
+/* Disclosure (details) : libellé en ligne + chevron discret */
+details.blk > summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .6rem; list-style: none; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; font-size: calc(var(--rev-body) * var(--doc-scale, 1)); line-height: 1.4; }
+details.blk > summary::-webkit-details-marker, .sol > summary::-webkit-details-marker { display: none; }
+details.blk > summary:focus-visible, .sol > summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+details.blk > summary svg.chev, .sol > summary svg.chev { flex: none; align-self: center; width: 1rem; height: 1rem; margin-inline-start: auto; color: var(--muted); }
+details.blk > summary:hover svg.chev, .sol > summary:hover svg.chev { color: var(--ink); }
+details.blk[open] > summary .chev, .sol[open] > summary .chev { rotate: 180deg; }
+
+/* ■ ENCADRÉ 1 — Définition : cadre noir fin, en-tête séparé par un filet */
+details.blk-def { border: 1px solid var(--ink); background: var(--paper); }
+details.blk-def > summary { padding: .65rem 1rem; }
+details.blk-def[open] > summary { border-bottom: 1px solid var(--hair-2); }
+details.blk-def > .bx { margin: 0; padding: .9rem 1rem 1.05rem; }
+
+/* ■ ENCADRÉ 2 — Méthode : cadre gris, lavis, barre noire en début de ligne */
+details.blk-method { border: 1px solid var(--hair-2); border-inline-start: 4px solid var(--ink); background: var(--wash); }
+details.blk-method > summary { padding: .65rem 1rem .65rem .85rem; }
+details.blk-method > summary > .q:first-child { font-weight: 700; }
+details.blk-method > summary > .q:first-child::before, details.blk-method > summary > .q:first-child::after { content: none; }
+details.blk-method[open] > summary { border-bottom: 1px dashed var(--hair-2); }
+details.blk-method > .bx { margin: 0; padding: .85rem 1rem 1rem .85rem; }
+
+/* Théorème · propriété · proposition · lemme · corollaire : pas de cadre, corps en italique (amsthm « plain ») */
+.blk-stmt > .bx { font-style: italic; }
+.blk-stmt > .bx :is(.katex, .blank, .math-blank, [data-blank], code) { font-style: normal; }
+.blk-stmt > summary { padding-block: .15rem; }
+
+/* Démonstration · indice · solution : intitulé en italique, fin de preuve ∎ */
+.blk[data-t="proof"], .blk[data-t="hint"], .blk[data-t="solution"] { margin: 1.1rem 0; }
+.blk[data-t="proof"] > summary, .blk[data-t="hint"] > summary, .blk[data-t="solution"] > summary { justify-content: flex-start; }
+.blk[data-t="proof"] > summary .q, .blk[data-t="hint"] > summary .q, .blk[data-t="solution"] > summary .q { font-style: italic; }
+.blk[data-t="proof"] > summary .q::after, .blk[data-t="hint"] > summary .q::after, .blk[data-t="solution"] > summary .q::after { content: "."; }
+.blk[data-t="proof"] > summary .chev, .blk[data-t="hint"] > summary .chev, .blk[data-t="solution"] > summary .chev { margin-inline-start: .1rem; }
+.blk[data-t="proof"] > .bx::after { content: "∎"; display: block; margin-top: .4rem; text-align: end; color: var(--ink-2); }
+
+/* Exercices : filet supérieur (séparation), pas de cadre */
+.blk[data-t="application"], .blk[data-t="problem"] { margin: 2.2rem 0; padding-top: .9rem; border-top: 1px solid var(--hair-2); }
+.blk[data-t="example"] { margin: 1.8rem 0; }
+.blk[data-t="example"] .bt::after, .blk[data-t="application"] .bt::after, .blk[data-t="problem"] .bt::after { content: "."; }
+
+/* Remarques & compléments : plus discrets */
+.blk[data-t="remark"] > .bx, .blk[data-t="savant"] > .bx, .blk[data-t="exploration"] > .bx { color: var(--ink-2); font-size: calc(var(--rev-body) * .96 * var(--doc-scale, 1)); }
+.blk[data-t="remark"] .bt { font-weight: 400; font-style: italic; }
+.blk[data-t="remark"] .bt::after { content: "."; }
+.blk[data-t="intuition"] .bt, .blk[data-t="consequence"] .bt, .blk[data-t="objectif"] .bt { font-style: italic; }
+.blk[data-t="intuition"] .bt::after, .blk[data-t="consequence"] .bt::after, .blk[data-t="objectif"] .bt::after { content: "."; }
+
+/* Attention : pastille « ! » typographique (pas de couleur, pas de cadre) */
+.bh-warn { flex-wrap: wrap; gap: .3rem .5rem; }
+.bw-lbl { display: inline-flex; align-items: center; font-weight: 700; color: var(--ink); }
+.bw-lbl::before { content: "!"; display: inline-grid; place-items: center; width: 1.2em; height: 1.2em; margin-inline-end: .5em; border: 1.5px solid currentColor; border-radius: 50%; font: 700 .78em/1 var(--rev-sans); }
+.bw-sep { color: var(--muted); }
+.bw-ttl { font-weight: 700; }
+
+/* À retenir : entre deux filets */
+.blk[data-t="rappel"], .blk[data-t="summary"], .blk[data-t="cela_permet_de"] { padding: .85rem 0; border-block: 1px solid var(--ink); }
+
+/* Cours repliable avec titre */
+.blk-txt { padding-block: .6rem; border-block: 1px solid var(--hair); }
+.blk-txt > summary { justify-content: space-between; align-items: center; }
+.blk-txt .q { font-weight: 700; }
+.tgl { font: 500 .8rem var(--rev-sans); color: var(--muted); }
+details.blk-txt > summary:hover .tgl { color: var(--ink); }
+details.blk-txt[open] .tgl-off, details.blk-txt:not([open]) .tgl-on { display: none; }
+.blk.blk-bare { margin: .9rem 0; }
+.blk.blk-bare > .bx { margin-top: 0; }
+
+/* Corrections (.sol) : lien souligné + contenu sans cadre */
+.sol { margin-top: 1rem; }
+.sol > summary { display: inline-flex; align-items: center; gap: .45rem; width: max-content; padding: .15rem 0; border-bottom: 1px solid var(--ink); color: var(--ink); font: 600 .9rem/1.3 var(--rev-sans); list-style: none; cursor: pointer; user-select: none; }
+.sol > summary .chev { margin-inline-start: 0; width: .9rem; height: .9rem; }
+.sol[open] > .bx { margin-top: .9rem; padding-inline-start: 1rem; border-inline-start: 1px solid var(--hair-2); }
+.cor { display: flex; align-items: center; gap: .7rem; margin: 0 0 .8rem; font: 500 .82rem var(--rev-sans); color: var(--muted); }
+.cor::after { content: ""; flex: 1; border-top: 1px dotted var(--hair-2); }
+.sol .ghost { margin-top: .6rem; padding: .2rem 0; font: 500 .82rem var(--rev-sans); color: var(--muted); text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1px; }
+.sol .ghost:hover { color: var(--ink); }
+
+/* ── Trous à compléter : « ______ » → mot révélé ────────────────────────── */
+#les :is(.blank, .math-blank, [data-blank="true"]) {
+  display: inline-block; min-inline-size: 2.6em; padding: 0 .2em; border-radius: 0; text-align: center; cursor: pointer;
+  border-bottom: 1px dotted var(--muted); background: transparent;
+}
+#les :is(.blank, .math-blank, [data-blank="true"]):not(.on):not(.revealed) { color: transparent; border-bottom: 1.5px solid var(--ink); background: var(--wash); user-select: none; }
+#les :is(.blank, .math-blank, [data-blank="true"]):focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* ── Plein écran (bouton ⤢) : visible au survol, dans la marge, sur grand écran à pointeur fin ── */
+.fx { display: none; }
+@media (hover: hover) and (min-width: 1000px) {
+  .fx { position: absolute; top: .3rem; inset-inline-end: -2.5rem; display: grid; place-items: center; width: 1.9rem; height: 1.9rem; padding: 0; border: 0; border-radius: 3px; background: none; color: var(--muted); cursor: pointer; opacity: 0; }
+  .blk:hover > .bx > .fx, .blk:focus-within > .bx > .fx, .fx:focus-visible { opacity: 1; }
+  .fx:hover { color: var(--ink); background: var(--wash); }
+}
+
+/* ── Recherche : surlignage sans cadre ───────────────────────────────────── */
+.blk.hit { background: var(--wash); box-shadow: -.9rem 0 0 var(--wash), .9rem 0 0 var(--wash); }
+
+/* ── Sommaire / recherche (popover natif) ────────────────────────────────── */
+#toc { inset: auto; top: calc(var(--top-h, 52px) + env(safe-area-inset-top, 0px) + .4rem); inset-inline-end: 1rem; margin: 0; width: min(22rem, calc(100vw - 2rem)); max-height: min(74dvh, 34rem); overflow-y: auto; padding: .6rem; border: 1px solid var(--hair-2); border-radius: 3px; background: var(--paper); color: var(--ink); box-shadow: 0 22px 44px -16px var(--shade); font-family: var(--rev-sans); }
+#tqs { width: 100%; height: 2.25rem; padding: 0 .25rem; border: 0; border-bottom: 1px solid var(--hair-2); border-radius: 0; background: transparent; color: var(--ink); font: 400 .95rem var(--rev-sans); }
+#tqs:focus { border-bottom-color: var(--ink); outline: none; }
+#tqs:focus-visible { box-shadow: 0 1px 0 0 var(--ink); }
+#toc .ctx { margin: .7rem 0 .2rem; padding: 0 .25rem; font: 500 .8rem var(--rev-sans); color: var(--muted); }
+#toc-results, #toc-sections { display: grid; gap: .1rem; }
+#toc button { display: flex; align-items: baseline; gap: .7rem; width: 100%; padding: .5rem .5rem; background: none; border: 0; border-radius: 3px; text-align: start; font: 400 .9rem/1.35 var(--rev-sans); color: var(--ink); cursor: pointer; }
+#toc button:hover { background: var(--wash); }
+#toc b { flex: none; min-inline-size: 1.6rem; font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
+.toc-sec-btn.is-active, #toc button.active, #toc button.is-active, #toc button[aria-current="true"] { background: var(--wash); font-weight: 600; box-shadow: inset 2px 0 0 var(--ink); }
+.toc-hit { flex-direction: column; gap: .15rem !important; }
+.toc-hit-sec { font-weight: 600; font-size: .8rem; }
+.toc-hit-snip, .toc-snippet { display: block; font-size: .8rem; color: var(--muted); line-height: 1.4; }
+.toc-empty { margin: .8rem 0 .3rem; text-align: center; font-size: .85rem; color: var(--muted); }
+
+/* ── Mode focus (<dialog> natif : piège à focus, Échap, arrière-plan inerte) ── */
+#focus-overlay-modal { width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; color: var(--ink); overflow: hidden; }
+#focus-overlay-modal[open] { display: grid; place-items: center; padding: 1rem; }
+#focus-overlay-modal::backdrop { background: rgb(0 0 0 / .55); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+.focus-dialog { width: min(94vw, 46rem); max-height: min(90dvh, 54rem); overflow-y: auto; padding: 1.3rem 1.7rem 1.8rem; border: 1px solid var(--hair-2); border-radius: 3px; background: var(--paper); box-shadow: 0 30px 70px -20px rgb(0 0 0 / .45); }
+.focus-head { display: flex; justify-content: space-between; align-items: center; gap: .75rem; margin-bottom: 1rem; padding-bottom: .7rem; border-bottom: 1px solid var(--hair); }
+.focus-badge { font: 500 .85rem var(--rev-sans); color: var(--muted); }
+.focus-body { --rev-body: clamp(1.1rem, 1rem + .45vw, 1.32rem); }
+#focus-overlay-modal .blk { margin: 0; }
+#focus-overlay-modal .fx { display: none; }
+body.focus-open { overflow: hidden; }
+
+/* ══════════════ MOUVEMENT — uniquement si l'utilisateur ne demande pas à réduire ══════════════ */
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-reduce-motion="true"]) body:not([data-reduce-motion="true"]) {
+
+    /* 1 · Le seul moment orchestré : le filet du titre se trace, puis le résumé apparaît */
+    & #les .lt::after { animation: mf-rule .8s var(--rev-ease) .1s backwards; }
+    & #les .intro { animation: mf-fade .5s ease .45s backwards; }
+
+    /* 2 · Gestes de l'utilisateur */
+    & #les details.blk > summary svg.chev, & #les .sol > summary svg.chev { transition: rotate .3s var(--rev-ease), color .15s; }
+    & #les :is(.blank, .math-blank, [data-blank="true"]) { transition: color .3s ease, background-color .3s ease, border-color .3s ease; }
+    & #les .blk { transition: background-color .25s ease, box-shadow .25s ease; }
+    & #les .fx { transition: opacity .18s ease, color .15s, background-color .15s; }
+    & #les .sheet-tab, & #les .back { transition: color .15s, border-color .15s; }
+
+    /* 3 · Ouverture/fermeture fluide des <details> (::details-content + interpolate-size) */
+    @supports selector(::details-content) {
+      & #les :is(details.blk, details.sol)::details-content { block-size: 0; overflow: clip; transition: block-size .34s var(--rev-ease), content-visibility .34s allow-discrete; }
+      & #les :is(details.blk, details.sol)[open]::details-content { block-size: auto; }
+    }
+
+    /* 4 · Sommaire (popover) et mode focus (dialog) : entrée en transition */
+    & #toc { opacity: 0; translate: 0 -.4rem; transition: opacity .18s ease, translate .22s var(--rev-ease), overlay .22s allow-discrete, display .22s allow-discrete; }
+    & #toc:popover-open { opacity: 1; translate: 0 0; }
+    @starting-style { & #toc:popover-open { opacity: 0; translate: 0 -.4rem; } }
+    & #focus-overlay-modal[open] .focus-dialog { animation: mf-pop .26s var(--rev-ease) backwards; }
+
+    /* 5 · Piloté par le défilement (CSS pur, sans JavaScript) */
+    @supports (animation-timeline: view()) {
+      & #les .lh::after { animation: mf-rule linear both; animation-timeline: view(); animation-range: entry 5% entry 70%; }
+      & #les .blk { animation: mf-reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 24%; }
+      & #focus-overlay-modal .blk { animation: none; }
+    }
+
+    /* 6 · Changement de fiche (View Transitions) */
+    &::view-transition-old(root), &::view-transition-new(root) { animation-duration: .24s; }
+  }
+}
+
+/* ── Écrans étroits ──────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  #les { --rev-pad-x: 18px; --rev-pad-y: 16px; margin-top: 0; border-inline: 0; border-top: 0; border-radius: 0; box-shadow: none; }
+  #les .top { border-radius: 0; }
+  .bx, .lede, .lead { text-align: start; }
+  .intro { padding-inline: 0; }
+  details.blk-def > summary, details.blk-def > .bx { padding-inline: .8rem; }
+  .focus-dialog { padding: 1.1rem 1rem 1.4rem; }
+}
+
+/* ── Impression : page de manuel propre (tout est déplié, sans interface) ── */
+@media print {
+  @page { margin: 18mm 16mm; }
+  body[data-v="les"] { background: #fff; }
+  #les { color-scheme: light; padding: 0; border: 0; box-shadow: none; border-radius: 0; font-size: 11pt; }
+  #les .top, .rp, #toc, #focus-overlay-modal, .fx, .end2, .sol .ghost, details > summary .chev { display: none !important; }
+  #les, #les * { animation: none !important; transition: none !important; }
+  #les > :is(.kick, .lt, .intro, .ls, .end2) { max-inline-size: none; }
+  .ls { break-before: auto; } .lh { break-after: avoid; }
+  .blk-def, .blk-method, .blk[data-t="theorem"], .blk[data-t="application"] { break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+  @supports selector(::details-content) {
+    details:not([open])::details-content { content-visibility: visible; block-size: auto; }
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "id": "nat-2021-n",
+  "title": "Examen National 2021 — Session Normale",
+  "type": "national",
+  "year": 2021,
+  "session": "normale",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 7,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2021n-ex1",
+      "number": 1,
+      "theme": "analyse",
+      "difficulty": "facile",
+      "points": 2,
+      "topic": "Équations et inéquations exponentielles, limites et théorème des valeurs intermédiaires",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Résoudre dans $\\mathbb{R}$ l'équation : $e^{2x} - 4e^x + 3 = 0$",
+              "bareme": 0.5,
+              "hint": "Posez le changement de variable $t = e^x$ pour vous ramener à la résolution d'une équation du second degré en $t$."
+            },
+            {
+              "id": "1b",
+              "content": "Résoudre dans $\\mathbb{R}$ l'inéquation : $e^{2x} - 4e^x + 3 \\leq 0$",
+              "bareme": 0.5,
+              "hint": "Utilisez les racines trouvées à la question précédente pour déterminer le signe du trinôme en $t = e^x$, puis encadrez $e^x$ avant de passer au logarithme."
+            },
+            {
+              "id": "1c",
+              "content": "Calculer $\\lim_{x \\to 0} \\dfrac{e^{2x} - 4e^x + 3}{e^{2x} - 1}$",
+              "bareme": 0.5,
+              "hint": "La substitution directe donne une forme indéterminée. Factorisez le numérateur (grâce aux racines calculées) et le dénominateur (identité remarquable) pour lever l'indétermination."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Montrer que l'équation $e^{2x} + e^x + 4x = 0$ admet une solution dans l'intervalle $[-1, 0]$",
+          "bareme": 0.5,
+          "hint": "Considérez la fonction $f(x) = e^{2x} + e^x + 4x$. Justifiez sa continuité et calculez $f(-1)$ et $f(0)$ pour vérifier les hypothèses du théorème des valeurs intermédiaires."
+        }
+      ]
+    },
+    {
+      "id": "nat2021n-ex2",
+      "number": 2,
+      "theme": "suites-numeriques",
+      "difficulty": "moyen",
+      "points": 4,
+      "topic": "Suites numériques — Récurrence, monotonie, convergence et suite auxiliaire",
+      "context": "Soit $(u_n)$ la suite numérique définie par : $u_0 = \\dfrac{1}{2}$ et $u_{n+1} = \\dfrac{u_n}{3 - 2u_n}$ pour tout $n$ de $\\mathbb{N}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Calculer $u_1$",
+          "bareme": 0.25,
+          "hint": "Remplacez simplement $n$ par $0$ dans la relation de récurrence et utilisez la valeur de $u_0$ donnée."
+        },
+        {
+          "id": "q2",
+          "content": "Montrer par récurrence que pour tout $n$ de $\\mathbb{N}$ : $0 < u_n \\leq \\dfrac{1}{2}$",
+          "bareme": 0.5,
+          "hint": "Pour l'hérédité, montrez séparément que $u_{n+1} > 0$ et étudiez le signe de la différence $u_{n+1} - \\dfrac{1}{2}$ en utilisant l'hypothèse de récurrence."
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que pour tout $n$ de $\\mathbb{N}$ : $\\dfrac{u_{n+1}}{u_n} \\leq \\dfrac{1}{2}$",
+              "bareme": 0.5,
+              "hint": "Remplacez $u_{n+1}$ par son expression et simplifiez la fraction par $u_n$ (justifié car $u_n > 0$). Majorez ensuite l'expression obtenue à l'aide de l'encadrement trouvé en question 2."
+            },
+            {
+              "id": "3b",
+              "content": "En déduire la monotonie de la suite $(u_n)$",
+              "bareme": 0.5,
+              "hint": "Puisque $u_n > 0$, l'inégalité $\\dfrac{u_{n+1}}{u_n} \\leq \\dfrac{1}{2} < 1$ vous permet de conclure directement sur le sens de variation de la suite."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Montrer que pour tout $n$ de $\\mathbb{N} : 0 < u_n \\leq \\left(\\dfrac{1}{2}\\right)^{n+1}$ ; puis calculer la limite de la suite $(u_n)$",
+              "bareme": 0.75,
+              "hint": "Procédez par récurrence ou en multipliant membre à membre les inégalités obtenues en 3a de $0$ à $n-1$. Utilisez ensuite le théorème des gendarmes pour déterminer la limite."
+            },
+            {
+              "id": "4b",
+              "content": "On pose $v_n = \\ln(3 - 2u_n)$ pour tout $n$ de $\\mathbb{N}$, calculer $\\lim_{n \\to +\\infty} v_n$",
+              "bareme": 0.5,
+              "hint": "Substituez la limite de la suite $(u_n)$ dans l'expression de $v_n$, en invoquant la continuité de la fonction logarithme népérien au point obtenu."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "5a",
+              "content": "Vérifier que pour tout $n$ de $\\mathbb{N}$ : $\\dfrac{1}{u_{n+1}} - 1 = 3\\left(\\dfrac{1}{u_n} - 1\\right)$",
+              "bareme": 0.5,
+              "hint": "Partez de l'expression de $\\dfrac{1}{u_{n+1}}$, remplacez par la définition inverse de la relation de récurrence, soustrayez 1, puis factorisez par 3."
+            },
+            {
+              "id": "5b",
+              "content": "En déduire $u_n$ en fonction de $n$ pour tout $n$ de $\\mathbb{N}$.",
+              "bareme": 0.5,
+              "hint": "La question précédente prouve que la suite définie par $w_n = \\dfrac{1}{u_n} - 1$ est géométrique. Exprimez $w_n$ en fonction de $n$, puis déduisez-en $u_n$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2021n-ex3",
+      "number": 3,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 5,
+      "topic": "Nombres complexes — Équation, homothétie, rotation et propriétés géométriques",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Résoudre dans l'ensemble $\\mathbb{C}$ des nombres complexes, l'équation : $z^2 - \\sqrt{3}z + 1 = 0$",
+          "bareme": 0.75,
+          "hint": "Calculez le discriminant $\\Delta$. S'il est négatif, l'équation admettra deux solutions complexes conjuguées."
+        },
+        {
+          "id": "q2",
+          "content": "Soient les nombres complexes $a = e^{i\\frac{\\pi}{6}}$ et $b = \\dfrac{3}{2} + i\\dfrac{\\sqrt{3}}{2}$",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Écrire $a$ sous forme algébrique.",
+              "bareme": 0.25,
+              "hint": "Développez l'exponentielle complexe en utilisant les valeurs usuelles de $\\cos(\\frac{\\pi}{6})$ et $\\sin(\\frac{\\pi}{6})$."
+            },
+            {
+              "id": "2b",
+              "content": "Vérifier que $\\bar{a}b = \\sqrt{3}$",
+              "bareme": 0.5,
+              "hint": "Déterminez le conjugué de l'affixe $a$ trouvée précédemment, multipliez-le par $b$ et développez le produit."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A, B$ et $C$ d'affixes respectives $a, b$ et $\\bar{a}$.\\nMontrer que le point $B$ est l'image du point $A$ par une homothétie $h$ de centre $O$ dont on déterminera le rapport.",
+          "bareme": 0.5,
+          "hint": "L'expression complexe d'une homothétie de centre $O$ est $z' = kz$. Utilisez le résultat de la question 2b et la propriété $a\\bar{a} = |a|^2 = 1$ pour exprimer $b$ en fonction de $a$."
+        },
+        {
+          "id": "q4",
+          "content": "Soient $z$ l'affixe d'un point $M$ du plan et $z'$ l'affixe du point $M'$ image de $M$ par la rotation $R$ de centre $A$ et d'angle $\\dfrac{\\pi}{2}$",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Écrire $z'$ en fonction de $z$ et $a$",
+              "bareme": 0.25,
+              "hint": "Appliquez la formule générale de la rotation : $z' - z_A = e^{i\\theta}(z - z_A)$. N'oubliez pas que $e^{i\\frac{\\pi}{2}} = i$."
+            },
+            {
+              "id": "4b",
+              "content": "Soit $d$ l'affixe du point $D$ image de $C$ par la rotation $R$, montrer que $d = a + 1$.",
+              "bareme": 0.5,
+              "hint": "Substituez $z$ par $c = \\bar{a}$ dans l'expression de la rotation trouvée en 4a. Remplacez $\\bar{a}$ par sa forme algébrique pour mener à bien le calcul."
+            },
+            {
+              "id": "4c",
+              "content": "Soit $I$ le point d'affixe le nombre $1$, montrer que $ADIO$ est un losange.",
+              "bareme": 0.75,
+              "hint": "Prouvez d'abord que $ADIO$ est un parallélogramme en vérifiant que les vecteurs $\\overrightarrow{AD}$ et $\\overrightarrow{OI}$ ont la même affixe. Concluez en montrant que deux côtés consécutifs (comme $OA$ et $OI$) ont la même longueur."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "5a",
+              "content": "Vérifier que $d - b = \\dfrac{\\sqrt{3} - 1}{2}(1 - i)$ ; en déduire un argument du nombre $d - b$",
+              "bareme": 0.5,
+              "hint": "Soustrayez les formes algébriques de $b$ à $d$. Pour l'argument, remarquez que le coefficient $\\dfrac{\\sqrt{3} - 1}{2}$ est un réel strictement positif ; il n'affecte donc pas l'argument de $(1-i)$."
+            },
+            {
+              "id": "5b",
+              "content": "Ecrire le nombre $1 - b$ sous forme trigonométrique.",
+              "bareme": 0.5,
+              "hint": "Déterminez la forme algébrique de $1-b$. Calculez son module, puis factorisez par ce module pour identifier l'angle associé."
+            },
+            {
+              "id": "5c",
+              "content": "Déduire une mesure de l'angle $(\\overrightarrow{BI}, \\overrightarrow{BD})$",
+              "bareme": 0.5,
+              "hint": "L'angle géométrique $(\\overrightarrow{BI}, \\overrightarrow{BD})$ correspond à l'argument du quotient $\\dfrac{d-b}{z_I-b}$. Utilisez la formule $\\arg\\left(\\frac{Z}{Z'}\\right) = \\arg(Z) - \\arg(Z')$ avec les résultats des questions 5a et 5b."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2021n-ex4",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 9,
+      "topic": "Étude complète d'une fonction avec logarithme : limites, dérivée, intégration par parties et fonction réciproque",
+      "context": "Soit la fonction $f$ définie sur $[0, +\\infty[$ par : $f(0) = 0$ et $f(x) = 2x\\ln x - 2x$ si $x > 0$ et $(C_f)$ sa courbe représentative dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (unité $1cm$)",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que $f$ est continue à droite au point 0.",
+          "bareme": 0.5,
+          "hint": "Déterminez la limite de $f(x)$ quand $x$ tend vers $0^+$ en utilisant la limite de référence $\\lim_{x \\to 0^+} x\\ln x = 0$ et vérifiez qu'elle coïncide avec $f(0)$."
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Calculer $\\lim_{x \\to +\\infty} f(x)$",
+              "bareme": 0.5,
+              "hint": "Factorisez l'expression de $f(x)$ par $2x$ pour lever l'indétermination de la forme $+\\infty - \\infty$."
+            },
+            {
+              "id": "2b",
+              "content": "Calculer $\\lim_{x \\to +\\infty} \\dfrac{f(x)}{x}$ puis interpréter géométriquement le résultat.",
+              "bareme": 0.5,
+              "hint": "Formez le quotient et simplifiez par $x$. La limite infinie obtenue met en évidence une branche parabolique dont vous préciserez la direction."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Calculer $\\lim_{x \\to 0^+} \\dfrac{f(x)}{x}$ et interpréter géométriquement le résultat.",
+              "bareme": 0.75,
+              "hint": "Le taux d'accroissement de $f$ en $0$ tend vers $-\\infty$. Déduisez-en la nature de la demi-tangente à l'origine de la courbe."
+            },
+            {
+              "id": "3b",
+              "content": "Calculer $f'(x)$ pour tout $x$ de $]0, +\\infty[$",
+              "bareme": 0.5,
+              "hint": "Appliquez la formule de dérivation du produit pour le terme $2x\\ln x$, et n'oubliez pas la dérivée de $-2x$."
+            },
+            {
+              "id": "3c",
+              "content": "Dresser le tableau de variations de la fonction $f$ sur $[0, +\\infty[$",
+              "bareme": 0.5,
+              "hint": "L'expression de $f'(x)$ est proportionnelle à $\\ln x$. Déduisez-en son signe sur $]0, 1]$ et sur $[1, +\\infty[$, puis reportez les limites et la valeur minimale $f(1)$.\\n\\n$$\\begin{array}{|c|lcccr|}\\hline x & 0 & & 1 & & +\\infty \\\\\\\\ \\hline f'(x) & || & - & 0 & + & \\\\\\\\ \\hline f & 0 & \\searrow & -2 & \\nearrow & +\\infty \\\\\\\\ \\hline \\end{array}$$"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Résoudre dans l'intervalle $]0, +\\infty[$ les équations $f(x) = 0$ et $f(x) = x$.",
+              "bareme": 1,
+              "hint": "Mettez $x$ en facteur dans les deux équations. Puisque $x > 0$, l'annulation ne peut provenir que du facteur impliquant le logarithme. Isolez ensuite $\\ln x$ et passez à l'exponentielle."
+            },
+            {
+              "id": "4b",
+              "content": "Construire la courbe $(C_f)$ dans le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (on prend : $e^{\\frac{3}{2}} \\simeq 4,5$)",
+              "bareme": 1,
+              "hint": "Indiquez la demi-tangente verticale en $0$, marquez le point minimum $(1, -2)$, placez les points d'intersection avec l'axe $(Ox)$ et la droite $y=x$, puis tracez la branche parabolique de direction $(Oy)$."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "5a",
+              "content": "En utilisant une intégration par parties, montrer que $\\displaystyle\\int_1^e x\\ln x \\,dx = \\dfrac{1 + e^2}{4}$",
+              "bareme": 0.5,
+              "hint": "Posez $u(x) = \\ln x$ et $v'(x) = x$. L'intégrale résiduelle $\\int u'v$ sera un polynôme simple à évaluer."
+            },
+            {
+              "id": "5b",
+              "content": "En déduire : $\\displaystyle\\int_1^e f(x)\\,dx$",
+              "bareme": 0.5,
+              "hint": "Séparez l'intégrale en deux parties par linéarité : $2 \\int_1^e x\\ln x \\,dx - \\int_1^e 2x \\,dx$. Substituez le résultat trouvé à la question précédente."
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "6a",
+              "content": "Déterminer le minimum de $f$ sur $]0, +\\infty[$",
+              "bareme": 0.25,
+              "hint": "Identifiez l'abscisse où la dérivée s'annule en changeant de signe dans le tableau de variations, puis donnez l'ordonnée correspondante."
+            },
+            {
+              "id": "6b",
+              "content": "En déduire que pour tout $x$ de $]0, +\\infty[$, $\\ln x \\geq \\dfrac{x-1}{x}$",
+              "bareme": 0.5,
+              "hint": "L'existence d'un minimum permet d'écrire $f(x) \\geq -2$ pour tout $x > 0$. Remplacez $f(x)$ par son expression, divisez l'inégalité par $2x$ (strictement positif), et isolez $\\ln x$."
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "content": "Soit $g$ la restriction de la fonction $f$ à l'intervalle $[1, +\\infty[$",
+          "subQuestions": [
+            {
+              "id": "7a",
+              "content": "Montrer que la fonction $g$ admet une fonction réciproque $g^{-1}$ définie sur un intervalle $J$ qu'on déterminera.",
+              "bareme": 0.5,
+              "hint": "Argumentez que la fonction $g$ est continue et strictement croissante sur l'intervalle restreint $[1, +\\infty[$. Déterminez $J = g([1, +\\infty[)$."
+            },
+            {
+              "id": "7b",
+              "content": "Construire dans le même repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$ la courbe représentative de la fonction $g^{-1}$",
+              "bareme": 0.75,
+              "hint": "Appliquez une symétrie axiale par rapport à la première bissectrice (la droite $y = x$) uniquement sur la portion de la courbe $(C_f)$ qui correspond aux abscisses $x \\geq 1$."
+            }
+          ]
+        },
+        {
+          "id": "q8",
+          "content": "On considère la fonction $h$ définie sur $\\mathbb{R}$ par $\\begin{cases} h(x) = x^3 + 3x & ; x \\leq 0 \\\\ h(x) = 2x\\ln x - 2x & ; x > 0 \\end{cases}$",
+          "subQuestions": [
+            {
+              "id": "8a",
+              "content": "Étudier la continuité de $h$ au point $0$",
+              "bareme": 0.5,
+              "hint": "Calculez $\\lim_{x \\to 0^-} h(x)$ et $\\lim_{x \\to 0^+} h(x)$ (cette dernière équivaut à la limite de $f$ trouvée en Q1). Vérifiez qu'elles sont toutes deux égales à $h(0)$."
+            },
+            {
+              "id": "8b",
+              "content": "Étudier la dérivabilité de la fonction $h$ à gauche au point $0$ puis interpréter géométriquement le résultat.",
+              "bareme": 0.5,
+              "hint": "Calculez le taux d'accroissement $\\lim_{x \\to 0^-} \\dfrac{h(x) - h(0)}{x}$. Le résultat, qui sera fini, représente le coefficient directeur de la demi-tangente à gauche en $0$."
+            },
+            {
+              "id": "8c",
+              "content": "La fonction $h$ est-elle dérivable au point $0$ ? justifier.",
+              "bareme": 0.25,
+              "hint": "Rappelez-vous le résultat de la limite du taux d'accroissement à droite en $0$ calculé à la question 3a pour la fonction $f$. Concluez en comparant avec le résultat de la question précédente."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

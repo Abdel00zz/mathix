@@ -1,0 +1,52 @@
+{
+  "id": "ex-esp-13",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "difficile",
+  "topic": "Géométrie analytique dans l'espace — Plan médiateur, droite, sphère",
+  "requiresRedaction": true,
+  "context": "On considère les points $A(-2;1;2)$, $B(2;3;0)$ et $C(-2;0;1)$. Soit $(P)$ l'ensemble des points $M$ de l'espace tel que : $AM = BM$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $(P)$ est un plan d'équation : $2x+y-z-1 = 0$.",
+      "hint": "$AM = BM \\iff AM^2 = BM^2$. Développez en coordonnées et simplifiez : vous obtenez l'équation d'un plan (plan médiateur de $[AB]$)."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer une équation cartésienne du plan $(Q)$ passant par $C$ et parallèle au plan $(P)$.",
+      "hint": "$(Q)$ a le même vecteur normal que $(P)$ : $(2;1;-1)$. Utilisez le point $C$ pour déterminer la constante."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Déterminer une représentation paramétrique de la droite $(D)$ passant par $C$ et orthogonale au plan $(P)$.",
+          "hint": "La droite a pour vecteur directeur le vecteur normal de $(P)$ : $(2;1;-1)$, et passe par $C(-2;0;1)$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Calculer la distance entre le point $A$ et la droite $(D)$, et la distance entre le point $A$ et le plan $(P)$.",
+          "hint": "Pour $d(A,(D))$ : utilisez $d = \\dfrac{\\|\\overrightarrow{CA} \\wedge \\overrightarrow{u}\\|}{\\|\\overrightarrow{u}\\|}$. Pour $d(A,(P))$ : utilisez la formule point-plan."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Déterminer une équation cartésienne de la sphère $(S)$ de diamètre $[AB]$.",
+          "hint": "Le centre est le milieu $I$ de $[AB]$ et le rayon est $R = \\dfrac{AB}{2}$."
+        },
+        {
+          "id": "sq4b",
+          "content": "Déterminer l'intersection $(P)$ et de la sphère $(S)$.",
+          "hint": "Le plan $(P)$ est le plan médiateur de $[AB]$, donc il passe par le centre $I$ de $(S)$. Calculez $d(I,(P))$ et comparez à $R$."
+        }
+      ]
+    }
+  ]
+}

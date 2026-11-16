@@ -1,0 +1,20 @@
+{
+  "id": "ex-stats-tc-01",
+  "theme": "statistiques",
+  "difficulty": "facile",
+  "topic": "Statistiques",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Moyenne et médiane",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Voici les notes d'un élève : 12, 15, 8, 14, 10, 15. Calculer la moyenne et déterminer la médiane de cette série.",
+          "hint": "\\method Pour la moyenne, faites la somme divisée par l'effectif total. Pour la médiane, ordonnez d'abord les valeurs par ordre croissant."
+        }
+      ]
+    }
+  ]
+}

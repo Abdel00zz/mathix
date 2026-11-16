@@ -1,0 +1,53 @@
+{
+  "id": "olympiad-1ere-bac-sc-math-2022",
+  "title": "Olympiade Internationale de Mathématiques (IMO) 2022 — Sujet officiel",
+  "year": 2022,
+  "classId": "1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "badge": "international",
+  "source": "https://www.imo-official.org/problems.aspx",
+  "duration": 240,
+  "totalPoints": 42,
+  "exercises": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2022-ex1",
+      "number": 1,
+      "theme": "combinatoire",
+      "points": 7,
+      "topic": "Algorithme et pièces de monnaie",
+      "context": "La Banque d'Oslo émet deux types de pièces : aluminium (A) et bronze (B). Marianne possède $n$ pièces d'aluminium et $n$ pièces de bronze, disposées en ligne dans un ordre initial arbitraire.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Une chaîne est une suite de pièces consécutives du même type. Pour un entier $k$ fixé, Marianne effectue l'opération suivante : elle identifie la plus longue chaîne contenant la $k$-ième pièce depuis la gauche et déplace toutes les pièces de cette chaîne à l'extrémité gauche de la ligne. Trouver tous les couples $(n, k)$ tels que, quel que soit l'ordre initial, les $n$ premières pièces finissent par être toutes du même type."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2022-ex2",
+      "number": 2,
+      "theme": "algebre",
+      "points": 7,
+      "topic": "Équations fonctionnelles",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $\\mathbb{R}^+$ l'ensemble des nombres réels strictement positifs. Déterminer toutes les fonctions $f : \\mathbb{R}^+ \\to \\mathbb{R}^+$ telles que pour chaque $x \\in \\mathbb{R}^+$, il existe exactement un $y \\in \\mathbb{R}^+$ vérifiant :\n$$xf(y) + yf(x) \\leq 2$$"
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2022-ex3",
+      "number": 3,
+      "theme": "arithmetique",
+      "points": 7,
+      "topic": "Théorie des nombres",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $k$ un entier positif et $S$ un ensemble fini de nombres premiers. Montrer qu'il existe un entier positif $n$ tel que $n$ possède au moins $k$ facteurs premiers distincts, et que chaque facteur premier de $2^n - 1$ appartient à $S$."
+        }
+      ]
+    }
+  ]
+}

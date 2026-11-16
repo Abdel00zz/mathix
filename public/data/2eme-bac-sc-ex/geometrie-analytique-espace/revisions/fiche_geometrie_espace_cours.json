@@ -1,0 +1,197 @@
+{
+  "header": {
+    "title": "Produit vectoriel dans l'espace",
+    "subtitle": "De l'orientation à l'équation d'un plan",
+    "context": "2BAC Sciences"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Le produit vectoriel permet d'\\objectif{orienter l'espace, calculer des aires et manipuler des vecteurs en géométrie tridimensionnelle}. La \\defi{difficulté} principale est de maîtriser le calcul en coordonnées par la règle des déterminants et de distinguer les bases directes des bases indirectes.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Ampere_Andre_1825.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "André-Marie Ampère (1775–1836)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "orientation_espace",
+      "category": "course",
+      "title": "Orientation dans l'espace",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour définir le produit vectoriel, il faut d'abord orienter l'espace. On fixe un sens de rotation grâce à la notion de trièdre et à la règle du bonhomme d'Ampère."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un \\mathqst{trièdre} ?",
+          "content": "Trois demi-droites $[O x)$, $[O y)$ et $[O z)$ de même origine $O$, non coplanaires et prises dans cet ordre, forment un \\textbf{trièdre}, noté $(O x\\,; O y\\,; O z)$.\\par\\smallskip Les demi-droites $[O x)$, $[O y)$ et $[O z)$ sont les \\textbf{arêtes} du trièdre. Les plans $x O y$, $x O z$ et $y O z$ en sont les \\textbf{faces}."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{distinguer un trièdre direct d'un trièdre indirect} ?",
+          "content": "On utilise la règle du \\textbf{bonhomme d'Ampère}. On imagine un personnage debout sur la troisième arête $[O K)$, pieds à l'origine, regardant la première arête $[O I)$.\\par\\smallskip Si $[O I)$ est à \\textbf{gauche} du bonhomme, le trièdre $(O I\\,; O J\\,; O K)$ est \\textbf{direct}.\\par Si $[O I)$ est à \\textbf{droite} du bonhomme, le trièdre est \\textbf{indirect}."
+        },
+        {
+          "type": "property",
+          "title": "Quand un repère est-il \\mathqst{direct} ou indirect ?",
+          "content": "Un repère $(O\\,; \\overrightarrow{i}\\,; \\overrightarrow{j}\\,; \\overrightarrow{k})$ (ou sa base $(\\overrightarrow{i}\\,; \\overrightarrow{j}\\,; \\overrightarrow{k})$) est dit \\textbf{direct} si le trièdre $(O I\\,; O J\\,; O K)$ est direct. Il est \\textbf{indirect} dans le cas contraire.\\par\\smallskip \\textbf{Permutations circulaires :} si $(\\overrightarrow{i}\\,; \\overrightarrow{j}\\,; \\overrightarrow{k})$ est direct, alors $(\\overrightarrow{j}\\,; \\overrightarrow{k}\\,; \\overrightarrow{i})$ et $(\\overrightarrow{k}\\,; \\overrightarrow{i}\\,; \\overrightarrow{j})$ le sont aussi. Les permutations avec échange de deux vecteurs donnent un repère indirect."
+        },
+        {
+          "type": "warning",
+          "content": "La règle du bonhomme d'Ampère est un moyen mnémotechnique. Dans la pratique, on retient qu'un repère orthonormé direct vérifie que $\\overrightarrow{i} \\land \\overrightarrow{j} = \\overrightarrow{k}$."
+        }
+      ]
+    },
+    {
+      "id": "definition_produit",
+      "category": "course",
+      "title": "Définition du produit vectoriel",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On dispose maintenant d'un espace orienté. On va définir une opération qui, à deux vecteurs, associe un troisième vecteur orthogonal aux deux premiers."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le \\mathqst{produit vectoriel} $\\overrightarrow{u} \\land \\overrightarrow{v}$ ?",
+          "content": "Soient $\\overrightarrow{u} = \\overrightarrow{O A}$ et $\\overrightarrow{v} = \\overrightarrow{O B}$ deux vecteurs de l'espace orienté. Leur \\textbf{produit vectoriel}, noté $\\overrightarrow{u} \\land \\overrightarrow{v}$, est le vecteur défini comme suit.\\par\\smallskip \\begin{itemize}\\item Si $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont \\textbf{colinéaires}, alors $\\overrightarrow{u} \\land \\overrightarrow{v} = \\overrightarrow{0}$.\\item Sinon :\\begin{itemize}\\item $\\overrightarrow{u} \\land \\overrightarrow{v}$ est \\textbf{orthogonal} à $\\overrightarrow{u}$ et à $\\overrightarrow{v}$ ;\\item le triplet $(\\overrightarrow{u}\\,; \\overrightarrow{v}\\,; \\overrightarrow{u} \\land \\overrightarrow{v})$ forme une \\textbf{base directe} ;\\item sa norme vaut $\\boxed{\\|\\overrightarrow{u} \\land \\overrightarrow{v}\\| = \\|\\overrightarrow{u}\\| \\cdot \\|\\overrightarrow{v}\\| \\cdot \\sin \\theta}$ où $\\theta$ est l'angle géométrique $\\widehat{A O B}$.\\end{itemize}\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Comment tester la \\mathqst{colinéarité} avec le produit vectoriel ?",
+          "content": "Deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont \\textbf{colinéaires} si et seulement si $\\overrightarrow{u} \\land \\overrightarrow{v} = \\overrightarrow{0}$.\\par De même, trois points $A$, $B$ et $C$ sont \\textbf{alignés} si et seulement si $\\overrightarrow{A B} \\land \\overrightarrow{A C} = \\overrightarrow{0}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons $\\|\\overrightarrow{u} \\land \\overrightarrow{v}\\|$ sachant que $\\|\\overrightarrow{u}\\| = 2$, $\\|\\overrightarrow{v}\\| = 5$ et $\\overrightarrow{u} \\cdot \\overrightarrow{v} = 5$.}\\par\\smallskip On a $\\cos \\theta = \\dfrac{\\overrightarrow{u} \\cdot \\overrightarrow{v}}{\\|\\overrightarrow{u}\\| \\cdot \\|\\overrightarrow{v}\\|} = \\dfrac{5}{10} = \\blank{\\dfrac{1}{2}}$.\\par Donc $\\sin \\theta = \\sqrt{1 - \\cos^2 \\theta} = \\sqrt{1 - \\dfrac{1}{4}} = \\blank{\\dfrac{\\sqrt{3}}{2}}$.\\par\\smallskip Ainsi $\\|\\overrightarrow{u} \\land \\overrightarrow{v}\\| = 2 \\times 5 \\times \\dfrac{\\sqrt{3}}{2} = \\boxed{5\\sqrt{3}}$."
+        }
+      ]
+    },
+    {
+      "id": "interpretation_geometrique",
+      "category": "course",
+      "title": "Interprétation géométrique du produit vectoriel",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Au-delà de la définition algébrique, le produit vectoriel a une signification géométrique immédiate : sa norme mesure une aire."
+        },
+        {
+          "type": "theorem",
+          "title": "Que mesure \\mathqst{$\\|\\overrightarrow{A B} \\land \\overrightarrow{A C}\\|$} ?",
+          "content": "Soient $A$, $B$ et $C$ trois points non alignés de l'espace.\\par\\smallskip La norme $\\|\\overrightarrow{A B} \\land \\overrightarrow{A C}\\|$ est égale à l'\\textbf{aire du parallélogramme} construit sur les vecteurs $\\overrightarrow{A B}$ et $\\overrightarrow{A C}$.\\par\\smallskip L'\\textbf{aire du triangle} $A B C$ vaut donc : $$\\boxed{\\mathcal{A}_{A B C} = \\dfrac{1}{2}\\,\\|\\overrightarrow{A B} \\land \\overrightarrow{A C}\\|}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons l'\\textbf{aire} d'un parallélogramme $A B C D$ tel que $A B = 6$, $A D = 4$ et $\\widehat{B A D} = \\dfrac{\\pi}{6}$.}\\par\\smallskip L'aire du parallélogramme est :\\par $\\mathcal{A} = \\|\\overrightarrow{A B} \\land \\overrightarrow{A D}\\| = A B \\times A D \\times \\sin \\widehat{B A D}$\\par $= 6 \\times 4 \\times \\sin \\dfrac{\\pi}{6} = 6 \\times 4 \\times \\blank{\\dfrac{1}{2}} = \\boxed{12}$."
+        }
+      ]
+    },
+    {
+      "id": "proprietes_analytiques",
+      "category": "course",
+      "title": "Propriétés analytiques du produit vectoriel",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans un repère orthonormé direct, le produit vectoriel se calcule simplement à l'aide des coordonnées des vecteurs. On va en déduire les formules pratiques."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer le produit vectoriel en coordonnées} ?",
+          "content": "Soient $\\overrightarrow{u}(x_1\\,; y_1\\,; z_1)$ et $\\overrightarrow{v}(x_2\\,; y_2\\,; z_2)$ dans un repère orthonormé direct. Alors :\\par\\smallskip $$\\boxed{\\overrightarrow{u} \\land \\overrightarrow{v} = \\left( \\begin{vmatrix} y_1 & z_1 \\\\ y_2 & z_2 \\end{vmatrix} \\,;\\; \\begin{vmatrix} z_1 & x_1 \\\\ z_2 & x_2 \\end{vmatrix} \\,;\\; \\begin{vmatrix} x_1 & y_1 \\\\ x_2 & y_2 \\end{vmatrix} \\right)}$$\\par\\smallskip Autrement dit, en notant $\\overrightarrow{i}$, $\\overrightarrow{j}$, $\\overrightarrow{k}$ la base :\\par $\\overrightarrow{u} \\land \\overrightarrow{v} = \\begin{vmatrix} y_1 & y_2 \\\\ z_1 & z_2 \\end{vmatrix} \\overrightarrow{i} - \\begin{vmatrix} x_1 & x_2 \\\\ z_1 & z_2 \\end{vmatrix} \\overrightarrow{j} + \\begin{vmatrix} x_1 & x_2 \\\\ y_1 & y_2 \\end{vmatrix} \\overrightarrow{k}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons $\\overrightarrow{u} \\land \\overrightarrow{v}$ pour $\\overrightarrow{u}(1\\,; -2\\,; 3)$ et $\\overrightarrow{v}(3\\,; 1\\,; -1)$.}\\par\\smallskip On applique la formule des déterminants :\\par\\begin{align*}\\overrightarrow{u} \\land \\overrightarrow{v} &= \\begin{vmatrix} -2 & 1 \\\\ 3 & -1 \\end{vmatrix} \\overrightarrow{i} - \\begin{vmatrix} 1 & 3 \\\\ 3 & -1 \\end{vmatrix} \\overrightarrow{j} + \\begin{vmatrix} 1 & 3 \\\\ -2 & 1 \\end{vmatrix} \\overrightarrow{k} \\\\&= \\big( (-2)(-1) - 1 \\times 3 \\big) \\overrightarrow{i} - \\big( 1 \\times (-1) - 3 \\times 3 \\big) \\overrightarrow{j} + \\big( 1 \\times 1 - 3 \\times (-2) \\big) \\overrightarrow{k} \\\\&= (2 - 3)\\,\\overrightarrow{i} - (-1 - 9)\\,\\overrightarrow{j} + (1 + 6)\\,\\overrightarrow{k} \\\\&= \\boxed{-\\overrightarrow{i} + 10\\,\\overrightarrow{j} + 7\\,\\overrightarrow{k}}\\end{align*}"
+        },
+        {
+          "type": "warning",
+          "content": "L'ordre des vecteurs est crucial : $\\overrightarrow{v} \\land \\overrightarrow{u} = -\\, \\overrightarrow{u} \\land \\overrightarrow{v}$. Le produit vectoriel est \\textbf{antisymétrique}."
+        }
+      ]
+    },
+    {
+      "id": "applications_plan",
+      "category": "course",
+      "title": "Applications : équation d'un plan",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le produit vectoriel permet de trouver un vecteur normal à un plan défini par trois points, ce qui donne immédiatement une équation cartésienne de ce plan."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{trouver une équation cartésienne d'un plan $(A B C)$} ?",
+          "content": "Soient $A$, $B$, $C$ trois points non alignés.\\par Le vecteur $\\overrightarrow{n} = \\overrightarrow{A B} \\land \\overrightarrow{A C}$ est \\textbf{normal} au plan $(A B C)$.\\par\\smallskip Pour tout point $M(x\\,; y\\,; z)$ de l'espace, $M \\in (A B C) \\iff \\overrightarrow{A M} \\cdot \\overrightarrow{n} = 0$. Cette relation donne l'équation cartésienne du plan."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons une \\textbf{équation cartésienne} du plan $(A B C)$ avec $A(1\\,; -1\\,; 0)$, $B(2\\,; -2\\,; 3)$ et $C(3\\,; 3\\,; 1)$.}\\par\\smallskip On calcule $\\overrightarrow{A B}(1\\,; -1\\,; 3)$ et $\\overrightarrow{A C}(2\\,; 2\\,; 1)$.\\par $\\overrightarrow{n} = \\overrightarrow{A B} \\land \\overrightarrow{A C} = \\begin{vmatrix} -1 & 2 \\\\ 3 & 1 \\end{vmatrix} \\overrightarrow{i} - \\begin{vmatrix} 1 & 2 \\\\ 3 & 1 \\end{vmatrix} \\overrightarrow{j} + \\begin{vmatrix} 1 & 2 \\\\ -1 & 2 \\end{vmatrix} \\overrightarrow{k}$\\par $= (-1 \\times 1 - 2 \\times 3)\\,\\overrightarrow{i} - (1 \\times 1 - 2 \\times 3)\\,\\overrightarrow{j} + (1 \\times 2 - 2 \\times (-1))\\,\\overrightarrow{k}$\\par $= \\blank{-7\\,\\overrightarrow{i} + 5\\,\\overrightarrow{j} + 4\\,\\overrightarrow{k}}$.\\par\\smallskip L'équation s'écrit : $\\overrightarrow{A M} \\cdot \\overrightarrow{n} = 0 \\iff -7(x - 1) + 5(y + 1) + 4z = 0$.\\par En développant : $-7x + 5y + 4z + 12 = 0$, soit $\\boxed{-7x + 5y + 4z + 12 = 0}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{utiliser le produit vectoriel pour obtenir l'équation d'un plan} ?",
+          "content": "Calculer $\\overrightarrow{A B}$ et $\\overrightarrow{A C}$ à partir de trois points donnés.\\par Effectuer le \\textbf{produit vectoriel} $\\overrightarrow{n} = \\overrightarrow{A B} \\land \\overrightarrow{A C}$ pour obtenir un vecteur normal.\\par Écrire $\\overrightarrow{A M} \\cdot \\overrightarrow{n} = 0$ et développer pour obtenir l'équation cartésienne du plan."
+        }
+      ]
+    },
+    {
+      "id": "distance_point_droite",
+      "category": "course",
+      "title": "Application : distance d'un point à une droite",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le produit vectoriel intervient aussi dans le calcul de la distance la plus courte entre un point et une droite de l'espace, une situation fréquente en géométrie."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle est la \\mathqst{formule de la distance d'un point à une droite} ?",
+          "content": "Soit $(\\mathcal{D})$ une droite passant par $A$ et dirigée par $\\overrightarrow{u}$, et $M$ un point quelconque de l'espace. La distance de $M$ à $(\\mathcal{D})$ est :\\par\\smallskip $$\\boxed{d\\big(M\\,; (\\mathcal{D})\\big) = \\dfrac{\\|\\overrightarrow{A M} \\land \\overrightarrow{u}\\|}{\\|\\overrightarrow{u}\\|}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons la \\textbf{distance} du point $M(-1\\,; 0\\,; 1)$ à la droite $(\\mathcal{D})$ de représentation paramétrique $\\left\\{\\begin{array}{l} x = 1 + t \\\\ y = -1 - t \\\\ z = 2t \\end{array}\\right.\\;(t \\in \\mathbb{R})$.}\\par\\smallskip La droite passe par $A(1\\,; -1\\,; 0)$ et a pour vecteur directeur $\\overrightarrow{u}(2\\,; -1\\,; 2)$.\\par On calcule $\\overrightarrow{A M}(-2\\,; 1\\,; 1)$.\\par $\\overrightarrow{A M} \\land \\overrightarrow{u} = \\begin{vmatrix} 1 & -1 \\\\ 1 & 2 \\end{vmatrix} \\overrightarrow{i} - \\begin{vmatrix} -2 & 2 \\\\ 1 & 2 \\end{vmatrix} \\overrightarrow{j} + \\begin{vmatrix} -2 & 2 \\\\ 1 & -1 \\end{vmatrix} \\overrightarrow{k}$\\par $= (2 + 1)\\,\\overrightarrow{i} - (-4 - 2)\\,\\overrightarrow{j} + (2 - 2)\\,\\overrightarrow{k} = 3\\,\\overrightarrow{i} + 6\\,\\overrightarrow{j}$.\\par\\smallskip $\\|\\overrightarrow{A M} \\land \\overrightarrow{u}\\| = \\sqrt{9 + 36} = \\sqrt{45} = 3\\sqrt{5}$.\\par $\\|\\overrightarrow{u}\\| = \\sqrt{4 + 1 + 4} = 3$.\\par Donc $d = \\dfrac{3\\sqrt{5}}{3} = \\boxed{\\sqrt{5}}$."
+        }
+      ]
+    },
+    {
+      "id": "intersection_plans",
+      "category": "course",
+      "title": "Application : intersection de deux plans",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lorsque deux plans sont sécants, leur droite d'intersection peut être facilement caractérisée grâce au produit vectoriel de leurs vecteurs normaux."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{trouver un vecteur directeur de l'intersection de deux plans} ?",
+          "content": "Soient deux plans $(\\mathcal{P})$ et $(\\mathcal{P}')$ sécants suivant une droite $(\\mathcal{D})$. Si $\\overrightarrow{n}$ et $\\overrightarrow{n'}$ sont des vecteurs normaux respectifs à $(\\mathcal{P})$ et $(\\mathcal{P}')$, alors :\\par\\smallskip $\\overrightarrow{n} \\land \\overrightarrow{n'}$ est un \\textbf{vecteur directeur} de la droite d'intersection $(\\mathcal{D})$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons un \\textbf{vecteur directeur} de la droite intersection des plans $\\mathcal{P}: x + y + z = 1$ et $\\mathcal{P}': 2x - y + 3z = 4$.}\\par\\smallskip Les vecteurs normaux sont $\\overrightarrow{n}(1\\,; 1\\,; 1)$ et $\\overrightarrow{n'}(2\\,; -1\\,; 3)$.\\par $\\overrightarrow{n} \\land \\overrightarrow{n'} = \\begin{vmatrix} 1 & 1 \\\\ -1 & 3 \\end{vmatrix} \\overrightarrow{i} - \\begin{vmatrix} 1 & 1 \\\\ 2 & 3 \\end{vmatrix} \\overrightarrow{j} + \\begin{vmatrix} 1 & 2 \\\\ 1 & -1 \\end{vmatrix} \\overrightarrow{k}$\\par $= (3 + 1)\\,\\overrightarrow{i} - (3 - 2)\\,\\overrightarrow{j} + (-1 - 2)\\,\\overrightarrow{k} = \\boxed{4\\,\\overrightarrow{i} - \\overrightarrow{j} - 3\\,\\overrightarrow{k}}$.\\par La droite d'intersection a donc pour vecteur directeur $\\overrightarrow{u}(4\\,; -1\\,; -3)$."
+        }
+      ]
+    }
+  ]
+}

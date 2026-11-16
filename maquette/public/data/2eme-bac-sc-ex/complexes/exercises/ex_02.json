@@ -1,0 +1,21 @@
+{
+  "id": "ex_02",
+  "theme": "complexes",
+  "difficulty": "facile",
+  "topic": "Nombres Complexes",
+  "context": "On souhaite linéariser l'expression $A = \\cos^4(x)$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Linéarisation",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "En utilisant les formules d'Euler, montrer que $\\cos^4(x) = \\frac{1}{8}\\cos(4x) + \\frac{1}{2}\\cos(2x) + \\frac{3}{8}$.",
+          "hint": "\\method $\\cos x = \\frac{\\e^{\\i x} + \\e^{-\\i x}}{2}$.\n$\\cos^4 x = \\frac{1}{16}(\\e^{\\i x} + \\e^{-\\i x})^4 = \\frac{1}{16}(\\e^{\\i 4x} + 4\\e^{\\i 2x} + 6 + 4\\e^{-\\i 2x} + \\e^{-\\i 4x})$\n$= \\frac{1}{16}(2\\cos(4x) + 8\\cos(2x) + 6) = \\frac{1}{8}\\cos(4x) + \\frac{1}{2}\\cos(2x) + \\frac{3}{8}$."
+        }
+      ]
+    }
+  ]
+}

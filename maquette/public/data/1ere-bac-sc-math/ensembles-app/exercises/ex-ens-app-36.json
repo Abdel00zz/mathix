@@ -1,0 +1,35 @@
+{
+  "id": "ex-ens-app-36",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Applications et conditions fonctionnelles",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "pA",
+      "content": "Soit $f$ une application de $\\mathbb{R}^* \\setminus \\{1\\}$ dans $\\mathbb{R}$ telle que pour tout $x \\in \\mathbb{R}^* \\setminus \\{1\\}$ : $f\\!\\left(\\dfrac{x-1}{x}\\right) + f(x) = \\dfrac{1}{x} - x + 1$",
+      "subQuestions": [
+        {
+          "id": "sq_pA1",
+          "content": "Calculer $g \\circ g(x)$ et $g \\circ g \\circ g(x)$ pour tout $x \\in \\mathbb{R}^*$.",
+          "hint": "Posez $g(x) = \\dfrac{x-1}{x} = 1 - \\dfrac{1}{x}$. Calculez $g(g(x))$ puis $g(g(g(x)))$ et simplifiez. Vous devriez trouver que $g$ est d'ordre 3 : $g \\circ g \\circ g = \\text{Id}$."
+        },
+        {
+          "id": "sq_pA2",
+          "content": "Montrer que pour tout $x \\in \\mathbb{R}^* \\setminus \\{1\\}$ : $f(x) + f\\!\\left(g \\circ g(x)\\right) = \\dfrac{1}{x} - x + 1$",
+          "hint": "Remplacez $x$ par $g(x)$ dans la relation fonctionnelle de départ pour obtenir une seconde équation, puis remarquez le lien entre $f(g(x)) + f(g(g(x)))$ et l'expression cherchée."
+        },
+        {
+          "id": "sq_pA3",
+          "content": "En déduire que $\\left(\\forall x \\in \\mathbb{R}^* \\setminus \\{1\\}\\right)\\; f(x) = 1 - x$",
+          "hint": "Vous disposez de deux équations en $f(x)$, $f(g(x))$ et $f(g(g(x)))$. En utilisant $g \\circ g \\circ g = \\text{Id}$, obtenez un système de 3 équations et résolvez pour $f(x)$."
+        }
+      ]
+    },
+    {
+      "id": "pB",
+      "content": "Partie B. Soit $f$ une application de $\\overline{\\mathbb{R}}$ dans $\\overline{\\mathbb{R}}$ telle que : $\\left(\\forall x \\in \\mathbb{R}\\right)$; $f(x+1) + 2f(1-x) = 3x - 2$. Déterminer l'expression de $f(x)$ en fonction de $x$.",
+      "hint": "Écrivez la relation en $x$ : $f(x+1) + 2f(1-x) = 3x-2$ (équation 1). Remplacez $x$ par $-x$ : $f(1-x) + 2f(1+x) = -3x-2$ (équation 2). Résolvez le système en $f(x+1)$ et $f(1+x)$ (même terme), puis posez $t = x+1$."
+    }
+  ]
+}

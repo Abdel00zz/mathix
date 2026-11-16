@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Quel jour de la semaine ?",
+    "subtitle": "Congruences modulo 7",
+    "context": "Arithmétique"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Quel jour de la semaine ?",
+          "content": "Les jours de la semaine se répètent avec une période de $7$ : c'est un problème de \\textbf{congruences modulo $7$}. On code les jours de $0$ à $6$ : $\\text{lundi} = 0$, $\\text{mardi} = 1$, \\dots, $\\text{dimanche} = 6$.\\par On sait que le \\textbf{$1^{er}$ janvier 2024 était un lundi}. On rappelle qu'une année compte $365$ jours, et $366$ si elle est bissextile (comme $2024$)."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Calculer $365 \\bmod 7$ et $366 \\bmod 7$. Que signifie ce reste pour le décalage du jour d'une année à l'autre ?\\item Sachant que $2024$ est bissextile ($366$ jours), quel jour de la semaine sera le $1^{er}$ janvier 2025 ?\\item Le $100^e$ jour de l'année 2024 : quel jour de la semaine est-ce ? (On compte le $1^{er}$ janvier comme le jour $1$.)\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "$365 = 52\\times 7 + 1$, donc $365 \\equiv 1 \\pmod 7$ : une année ordinaire décale le jour de $1$. Une année bissextile ($366 \\equiv 2$) le décale de $2$."
+        },
+        {
+          "type": "hint",
+          "content": "Du jour $1$ au jour $100$, il s'écoule $99$ jours. Le jour cherché est $(0 + 99) \\bmod 7$ après lundi."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $365 = 52\\times 7 + 1$ donc $365 \\equiv 1 \\pmod 7$ ; $366 \\equiv 2 \\pmod 7$. Une année ordinaire décale le jour de la semaine de $+1$, une année bissextile de $+2$.\\par\\textbf{2)} $2024$ étant bissextile, le décalage est $+2$ : lundi $(0) + 2 = 2 = $ \\textbf{mercredi}. Le $1^{er}$ janvier 2025 sera un $\\boxed{\\text{mercredi}}$.\\par\\textbf{3)} Du jour $1$ au jour $100$ il s'écoule $99$ jours, et $99 = 14\\times 7 + 1$, donc $99 \\equiv 1 \\pmod 7$. Le jour est $0 + 1 = 1 = $ \\textbf{mardi}. Le $100^e$ jour de 2024 est un $\\boxed{\\text{mardi}}$."
+        }
+      ]
+    }
+  ]
+}

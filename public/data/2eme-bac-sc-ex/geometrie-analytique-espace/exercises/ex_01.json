@@ -1,0 +1,57 @@
+{
+  "id": "ex-esp-01",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "facile",
+  "topic": "Géométrie analytique dans l'espace — Plan, sphère, droite",
+  "requiresRedaction": true,
+  "context": "Dans l'espace rapporté à un repère orthonormé direct $\\left(O,\\overrightarrow{i},\\overrightarrow{j},\\overrightarrow{k}\\right)$, on considère les points $A(0,1,1)$, $B(1,2,0)$ et $C(-1,1,2)$ et $(E;2;4)7$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = \\overrightarrow{i} + \\overrightarrow{k}$",
+          "hint": "Calculez les coordonnées de $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$, puis appliquez la formule du produit vectoriel."
+        },
+        {
+          "id": "sq1b",
+          "content": "En déduire que $x + z - 1 = 0$ est une équation cartésienne du plan $(ABC)$",
+          "hint": "Le vecteur normal au plan $(ABC)$ est $\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$. Utilisez le point $A$ pour écrire l'équation."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soit $(S)$ la sphère de centre $\\Omega(1,1,2)$ et de rayon $R = \\sqrt{2}$. Déterminer une équation de la sphère $(S)$.",
+      "hint": "L'équation d'une sphère de centre $\\Omega(a;b;c)$ et de rayon $R$ est $(x-a)^2+(y-b)^2+(z-c)^2 = R^2$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que le plan $(ABC)$ est tangent à la sphère $(S)$ au point $A$.",
+      "hint": "Calculez $d(\\Omega, (ABC))$ et vérifiez qu'elle est égale à $R$. Puis vérifiez que $A$ appartient à la fois au plan et à la sphère."
+    },
+    {
+      "id": "q4",
+      "content": "On considère la droite $(\\Delta)$ passant par le point $C$ et perpendiculaire au plan $(ABC)$.",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Déterminer une représentation paramétrique de la droite $(\\Delta)$",
+          "hint": "La droite est perpendiculaire au plan $(ABC)$, donc son vecteur directeur est le vecteur normal du plan : $(1;0;1)$."
+        },
+        {
+          "id": "sq4b",
+          "content": "Montrer que la droite $(\\Delta)$ est tangente à la sphère $(S)$ en un point $D$ dont on déterminera les coordonnées.",
+          "hint": "Substituez la représentation paramétrique dans l'équation de la sphère et résolvez. Si le discriminant est nul, la droite est tangente."
+        },
+        {
+          "id": "sq4c",
+          "content": "Calculer le produit scalaire $\\overrightarrow{AC} \\cdot \\left(\\overrightarrow{i}+\\overrightarrow{k}\\right)$, puis en déduire la distance $d(A,(\\Delta))$",
+          "hint": "$d(A,(\\Delta)) = \\dfrac{|\\overrightarrow{AC} \\cdot \\overrightarrow{u}|}{\\|\\overrightarrow{u}\\|}$ où $\\overrightarrow{u}$ est le vecteur directeur de $(\\Delta)$... ou utilisez la formule de la distance d'un point à une droite."
+        }
+      ]
+    }
+  ]
+}

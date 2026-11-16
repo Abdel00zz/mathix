@@ -1,0 +1,36 @@
+{
+  "id": "ex-ens-app-28",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Deux bijections et composition",
+  "requiresRedaction": true,
+  "context": "On considère les deux applications : $f : ]1;+\\infty[ \\to ]1;+\\infty[$, $x \\mapsto 1 + \\dfrac{2}{\\sqrt{x-1}}$ et $g : ]1;+\\infty[ \\to ]1;+\\infty[$, $x \\mapsto \\left(\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-1}\\right)^2$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $f\\left([2;4]\\right)$ et $g^{-1}\\left(\\{9\\}\\right)$.",
+      "hint": "Pour $f([2;4])$ : calculez $f(2)$ et $f(4)$, et utilisez la monotonie de $f$. Pour $g^{-1}(\\{9\\})$ : résolvez $g(x) = 9$."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que l'application $f$ réalise une bijection de $]1;+\\infty[$ sur $]1;+\\infty[$ puis déterminer $f^{-1}$.",
+      "hint": "Utilisez le tableau de variation de $f$ sur $]1;+\\infty[$ : $f$ est strictement décroissante de $+\\infty$ vers $1^+$. Pour $f^{-1}$ : résolvez $y = 1 + \\dfrac{2}{\\sqrt{x-1}}$ en $x$."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Vérifier que pour tout $x \\in ]1;+\\infty[$ : $g(x) = \\left(f(x)\\right)^2$.",
+          "hint": "Calculez $(f(x))^2 = \\left(1 + \\dfrac{2}{\\sqrt{x-1}}\\right)^2$ et développez. Puis simplifiez $\\left(\\dfrac{\\sqrt{x}+1}{\\sqrt{x}-1}\\right)^2$ et comparez."
+        },
+        {
+          "id": "sq3b",
+          "content": "En déduire que $g$ est bijective de $]1;+\\infty[$ sur $]1;+\\infty[$ puis déterminer $g^{-1}$.",
+          "hint": "$g = f \\circ f$ (composée de deux bijections) est bijective. $g^{-1} = (f \\circ f)^{-1} = f^{-1} \\circ f^{-1}$. Calculez en substituant."
+        }
+      ]
+    }
+  ]
+}

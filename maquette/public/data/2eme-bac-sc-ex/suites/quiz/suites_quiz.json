@@ -1,0 +1,482 @@
+{
+  "questions": [
+    {
+      "id": "q1_suite_majoree",
+      "type": "mcq",
+      "category": "Définition",
+      "difficulty": "facile",
+      "question": "Une suite $(u_n)_{n≥n_0}$ est majorée par un réel $M$ si et seulement si :",
+      "options": [
+        {
+          "text": "$\\forall n \\geq n_0 : u_n \\leq M$",
+          "isCorrect": true
+        },
+        {
+          "text": "$\\exists n \\geq n_0 : u_n \\leq M$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\forall n \\geq n_0 : u_n < M$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\forall n \\geq n_0 : u_n \\geq M$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Tous les termes doivent verifier $u_n \\leq M$, d'ou le quantificateur universel $\\forall$."
+    },
+    {
+      "id": "q2_suite_bornee",
+      "type": "true-false",
+      "category": "Définition",
+      "difficulty": "facile",
+      "question": "Une suite bornée est nécessairement une suite qui est à la fois majorée et minorée.",
+      "isTrue": true,
+      "explanation": "Bornee signifie majoree et minoree, soit $\\left|u_n\\right| \\leq A$ pour un certain $A \\geq 0$."
+    },
+    {
+      "id": "q3_suite_croissante",
+      "type": "mcq",
+      "category": "Définition",
+      "difficulty": "facile",
+      "question": "Une suite $(u_n)_{n≥n_0}$ est strictement croissante si :",
+      "options": [
+        {
+          "text": "$\\forall n \\geq n_0 : u_n \\leq u_{n+1}$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\forall n \\geq n_0 : u_n < u_{n+1}$",
+          "isCorrect": true
+        },
+        {
+          "text": "$\\forall n \\geq n_0 : u_n \\geq u_{n+1}$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\exists n \\geq n_0 : u_n < u_{n+1}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'inegalite doit etre stricte ($<$) et verifiee pour tout $n$, pas seulement pour un seul."
+    },
+    {
+      "id": "q4_suite_arithmetique",
+      "type": "mcq",
+      "category": "Propriété",
+      "difficulty": "facile",
+      "question": "Pour une suite arithmétique de raison $r$ et de premier terme $u_{n_0}$, le terme général est :",
+      "options": [
+        {
+          "text": "$u_n = u_{n_0} + (n - n_0) \\times r$",
+          "isCorrect": true
+        },
+        {
+          "text": "$u_n = u_{n_0} \\times r^{n - n_0}$",
+          "isCorrect": false
+        },
+        {
+          "text": "$u_n = u_{n_0} + n \\times r$",
+          "isCorrect": false
+        },
+        {
+          "text": "$u_n = r \\times (n - n_0)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Chaque terme s'obtient en ajoutant $(n - n_0)$ fois la raison $r$ au premier terme."
+    },
+    {
+      "id": "q5_somme_arithmetique",
+      "type": "mcq",
+      "category": "Application",
+      "difficulty": "moyen",
+      "question": "La somme des $n$ premiers termes d'une suite arithmétique $S_n = u_p + u_{p+1} + ... + u_n$ est égale à :",
+      "options": [
+        {
+          "text": "$S_n = \\dfrac{u_p + u_n}{2} \\times (n - p + 1)$",
+          "isCorrect": true
+        },
+        {
+          "text": "$S_n = (u_p + u_n) \\times n$",
+          "isCorrect": false
+        },
+        {
+          "text": "$S_n = \\dfrac{u_p \\times u_n}{2}$",
+          "isCorrect": false
+        },
+        {
+          "text": "$S_n = u_p + u_n$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Somme d'une suite arithmetique : $\\dfrac{\\text{premier terme} + \\text{dernier terme}}{2} \\times \\text{nombre de termes}$."
+    },
+    {
+      "id": "q6_suite_geometrique",
+      "type": "mcq",
+      "category": "Définition",
+      "difficulty": "moyen",
+      "question": "Une suite géométrique de raison $q$ et de premier terme $u_{n_0}$ vérifie :",
+      "options": [
+        {
+          "text": "$\\forall n \\geq n_0 : u_n = u_{n_0} \\times q^{(n-n_0)}$",
+          "isCorrect": true
+        },
+        {
+          "text": "$\\forall n \\geq n_0 : u_n = u_{n_0} + q^{n}$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\forall n \\geq n_0 : u_{n+1} = u_n + q$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\forall n \\geq n_0 : u_n = q^n$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Chaque terme s'obtient en multipliant le premier terme par $q^{(n-n_0)}$."
+    },
+    {
+      "id": "q7_somme_geometrique",
+      "type": "mcq",
+      "category": "Propriété",
+      "difficulty": "moyen",
+      "question": "Pour une suite géométrique de raison $q \\neq 1$, la somme $S_n = u_p + u_{p+1} + ... + u_n$ est :",
+      "options": [
+        {
+          "text": "$S_n = \\dfrac{q^{(n-p+1)} - 1}{q - 1} \\times u_p$",
+          "isCorrect": true
+        },
+        {
+          "text": "$S_n = u_p \\times (n - p + 1)$",
+          "isCorrect": false
+        },
+        {
+          "text": "$S_n = \\dfrac{u_p + u_n}{2}$",
+          "isCorrect": false
+        },
+        {
+          "text": "$S_n = q^n \\times u_p$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour $q \\neq 1$ : $S = u_p \\times \\dfrac{q^{(n-p+1)} - 1}{q - 1}$. Si $q = 1$, la somme vaut $u_p(n-p+1)$."
+    },
+    {
+      "id": "q8_limite_finie",
+      "type": "true-false",
+      "category": "Définition",
+      "difficulty": "moyen",
+      "question": "On dit que la limite de la suite $(u_n)$ est $\\ell$ (zéro) lorsque $n$ tend vers $+\\infty$ si pour tout intervalle ouvert $I$ de centre $0$ contient tous les termes de la suite à partir d'un certain rang.",
+      "isTrue": true,
+      "explanation": "La suite converge vers $\\ell$ si tous ses termes entrent dans tout intervalle ouvert centre en $\\ell$ a partir d'un certain rang."
+    },
+    {
+      "id": "q9_propriete_limite",
+      "type": "mcq",
+      "category": "Propriété",
+      "difficulty": "moyen",
+      "question": "Parmi les propriétés suivantes, laquelle est FAUSSE ?",
+      "options": [
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\dfrac{1}{n} = 0$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\dfrac{1}{n^2} = 0$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\dfrac{1}{\\sqrt{n}} = 1$",
+          "isCorrect": true
+        },
+        {
+          "text": "$\\lim_{n \\to +\\infty} \\dfrac{1}{n^i} = 0$ pour $i \\in \\mathbb{N}^*$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\dfrac{1}{\\sqrt{n}} \\to 0$ quand $n \\to +\\infty$, et non $1$."
+    },
+    {
+      "id": "q10_convergence_definition",
+      "type": "true-false",
+      "category": "Définition",
+      "difficulty": "moyen",
+      "question": "Si la limite de la suite $(u_n)$ est infinie ou si la suite n'a pas de limite, on dit que la suite est convergente.",
+      "isTrue": false,
+      "explanation": "Une suite est convergente uniquement si sa limite est finie. Sinon, elle est divergente."
+    },
+    {
+      "id": "q11_suite_convergente_propriete",
+      "type": "mcq",
+      "category": "Propriété",
+      "difficulty": "moyen",
+      "question": "Quelle affirmation est correcte concernant les suites convergentes ?",
+      "options": [
+        {
+          "text": "Toute suite croissante et majorée est convergente",
+          "isCorrect": true
+        },
+        {
+          "text": "Toute suite croissante est convergente",
+          "isCorrect": false
+        },
+        {
+          "text": "Toute suite majorée est convergente",
+          "isCorrect": false
+        },
+        {
+          "text": "Toute suite bornée est convergente",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le theoreme des suites monotones bornees : croissante et majoree implique convergente. La monotonie seule ou le bornage seul ne suffisent pas."
+    },
+    {
+      "id": "q12_operations_limites",
+      "type": "mcq",
+      "category": "Méthode",
+      "difficulty": "moyen",
+      "question": "Si $\\lim_{n \\to +\\infty} u_n = \\ell$ et $\\lim_{n \\to +\\infty} v_n = -\\infty$, alors $\\lim_{n \\to +\\infty} (u_n + v_n)$ est :",
+      "options": [
+        {
+          "text": "$-\\infty$",
+          "isCorrect": true
+        },
+        {
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\ell$",
+          "isCorrect": false
+        },
+        {
+          "text": "Forme indéterminée",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "D'apres les operations sur les limites : $\\ell + (-\\infty) = -\\infty$."
+    },
+    {
+      "id": "q13_theoreme_gendarmes",
+      "type": "mcq",
+      "category": "Méthode",
+      "difficulty": "difficile",
+      "question": "Quelle est la condition finale pour conclure que $\\lim_{n \\to +\\infty} u_n = \\ell$ en utilisant le théorème des gendarmes, sachant que $v_n \\leq u_n \\leq w_n$ ?",
+      "options": [
+        {
+          "text": "Il faut que $\\lim_{n \\to +\\infty} v_n = \\ell$ et $\\lim_{n \\to +\\infty} w_n = \\ell$",
+          "isCorrect": true
+        },
+        {
+          "text": "Il suffit que $\\lim_{n \\to +\\infty} v_n = \\ell$",
+          "isCorrect": false
+        },
+        {
+          "text": "Il faut que $v_n$ et $w_n$ soient des suites constantes",
+          "isCorrect": false
+        },
+        {
+          "text": "Il faut que $\\lim_{n \\to +\\infty} (w_n - v_n) = \\ell$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On encadre $u_n$ entre deux suites de même limite $\\ell$, puis on conclut par le théorème des gendarmes."
+    },
+    {
+      "id": "q14_erreur_calcul_limite",
+      "type": "mcq",
+      "category": "Application",
+      "difficulty": "difficile",
+      "question": "Un étudiant encadre $v_n = \\frac{(-1)^n}{n} - 5$ par $\\frac{-1}{n} - 5 \\leq v_n \\leq \\frac{1}{n} - 5$. Il affirme ensuite que $\\lim_{n \\to +\\infty} (\\frac{-1}{n} - 5) = -5$ et $\\lim_{n \\to +\\infty} (\\frac{1}{n} - 5) = 0$. Quelle est son erreur ?",
+      "options": [
+        {
+          "text": "La limite de $\\frac{1}{n} - 5$ est $-5$ et non $0$.",
+          "isCorrect": true
+        },
+        {
+          "text": "L'encadrement initial est faux car $(-1)^n$ n'est pas compris entre $-1$ et $1$.",
+          "isCorrect": false
+        },
+        {
+          "text": "Le théorème des gendarmes ne s'applique pas aux suites avec $(-1)^n$.",
+          "isCorrect": false
+        },
+        {
+          "text": "La limite de $\\frac{-1}{n} - 5$ est $0$ et non $-5$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'erreur est dans le calcul de $\\lim (\\dfrac{1}{n} - 5)$ : c'est $0 - 5 = -5$ et non $0$. Les deux bornes tendent vers $-5$."
+    },
+    {
+      "id": "q15_limite_qn",
+      "type": "mcq",
+      "category": "Propriété",
+      "difficulty": "difficile",
+      "question": "Pour la suite $u_n = q^n$ avec $q \\in \\mathbb{R}$, quelle condition sur $q$ garantit que $\\lim_{n \\to +\\infty} q^n = 0$ ?",
+      "options": [
+        {
+          "text": "$-1 < q < 1$",
+          "isCorrect": true
+        },
+        {
+          "text": "$q > 1$",
+          "isCorrect": false
+        },
+        {
+          "text": "$q = 1$",
+          "isCorrect": false
+        },
+        {
+          "text": "$q \\leq -1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$q^n \\to 0$ ssi $\\left|q\\right| < 1$. Si $q > 1$, $q^n \\to +\\infty$. Si $\\left|q\\right| \\geq 1$ et $q \\neq 1$, pas de limite finie."
+    },
+    {
+      "id": "q16_limite_nr",
+      "type": "mcq",
+      "category": "Propriété",
+      "difficulty": "difficile",
+      "question": "Pour la suite $u_n = n^r$ avec $r \\in \\mathbb{Q}^*$, quelle est la condition sur $r$ pour que $\\lim_{n \\to +\\infty} n^r = +\\infty$ ?",
+      "options": [
+        {
+          "text": "$r > 0$",
+          "isCorrect": true
+        },
+        {
+          "text": "$r < 0$",
+          "isCorrect": false
+        },
+        {
+          "text": "$r = 0$",
+          "isCorrect": false
+        },
+        {
+          "text": "Pour tout $r$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si $r > 0$, $n^r \\to +\\infty$. Si $r < 0$, $n^r = \\dfrac{1}{n^{\\left|r\\right|}} \\to 0$."
+    },
+    {
+      "id": "q17_suite_fonction",
+      "type": "true-false",
+      "category": "Méthode",
+      "difficulty": "difficile",
+      "question": "Si une suite $(u_n)$ converge vers $\\ell$ et si $f$ est une fonction continue en $\\ell$, alors la suite $(v_n)$ définie par $v_n = f(u_n)$ converge vers $f(\\ell)$.",
+      "isTrue": true,
+      "explanation": "Si $u_n \\to \\ell$ et $f$ continue en $\\ell$, alors $f(u_n) \\to f(\\ell)$."
+    },
+    {
+      "id": "q18_suite_recurrente",
+      "type": "mcq",
+      "category": "Méthode",
+      "difficulty": "difficile",
+      "question": "Lors de l'étude d'une suite récurrente $u_{n+1} = f(u_n)$, après avoir prouvé que la suite converge vers une limite $\\ell$ et que $f$ est continue, comment détermine-t-on la valeur de $\\ell$ ?",
+      "options": [
+        {
+          "text": "En résolvant l'équation $f(x) = x$",
+          "isCorrect": true
+        },
+        {
+          "text": "En calculant $f(u_0)$",
+          "isCorrect": false
+        },
+        {
+          "text": "En calculant $\\lim_{n \\to +\\infty} f(n)$",
+          "isCorrect": false
+        },
+        {
+          "text": "En résolvant l'équation $f(x) = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On vérifie d'abord la stabilité de l'intervalle, puis la convergence (monotonie + bornage), et enfin on résout $f(x) = x$."
+    },
+    {
+      "id": "q19_reflexion_ambiguite",
+      "type": "mcq",
+      "category": "Réflexion",
+      "difficulty": "difficile",
+      "question": "Considérons la suite $u_n = \\frac{1}{n^3} + 7$ pour $n \\geq 1$. Un étudiant affirme que cette suite est décroissante car $\\frac{1}{n^3}$ diminue. Quelle est l'analyse correcte ?",
+      "options": [
+        {
+          "text": "L'étudiant a raison : la suite est décroissante car $(\\frac{1}{n})^3 > 0$ et diminue",
+          "isCorrect": true
+        },
+        {
+          "text": "L'étudiant a tort : la suite est croissante car $n^3$ augmente",
+          "isCorrect": false
+        },
+        {
+          "text": "La suite est constante car la limite est 7",
+          "isCorrect": false
+        },
+        {
+          "text": "On ne peut pas déterminer la monotonie sans calculer plusieurs termes",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$u_{n+1} - u_n = \\dfrac{1}{(n+1)^3} - \\dfrac{1}{n^3} < 0$ car $(n+1)^3 > n^3$. La suite est bien decroissante."
+    },
+    {
+      "id": "q20_erreur_demonstration",
+      "type": "mcq",
+      "category": "Application",
+      "difficulty": "difficile",
+      "question": "Dans une récurrence pour prouver $0 \\leq u_{n+1} \\leq 3$ avec $u_{n+1} = \\sqrt{6 + u_n}$, on arrive à $\\sqrt{6} \\leq u_{n+1} \\leq 3$. Quelle justification permet de conclure ?",
+      "options": [
+        {
+          "text": "Puisque $\\sqrt{6} > 0$, on a bien $0 < \\sqrt{6} \\leq u_{n+1} \\leq 3$, ce qui implique $0 \\leq u_{n+1} \\leq 3$.",
+          "isCorrect": true
+        },
+        {
+          "text": "On arrondit $\\sqrt{6}$ à $0$.",
+          "isCorrect": false
+        },
+        {
+          "text": "La racine carrée d'un nombre positif est toujours supérieure ou égale à $0$.",
+          "isCorrect": false
+        },
+        {
+          "text": "L'inégalité stricte n'est pas nécessaire, $\\sqrt{6}$ est équivalent à $0$ en limite.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le passage de $\\sqrt{6} \\leq u_{n+1}$ à $0 \\leq u_{n+1}$ nécessite de préciser que $\\sqrt{6} > 0$ pour conclure rigoureusement."
+    },
+    {
+      "id": "q21_synthese_reflexion",
+      "type": "mcq",
+      "category": "Réflexion",
+      "difficulty": "difficile",
+      "question": "Soit la suite $u_n = 2n + \\cos(n)$ pour $n \\geq 0$. Quelle affirmation est vraie ?",
+      "options": [
+        {
+          "text": "La suite diverge vers $+\\infty$ car le terme dominant est $2n$",
+          "isCorrect": true
+        },
+        {
+          "text": "La suite converge car $\\cos(n)$ est bornée",
+          "isCorrect": false
+        },
+        {
+          "text": "La suite n'a pas de limite car $\\cos(n)$ oscille",
+          "isCorrect": false
+        },
+        {
+          "text": "On ne peut pas conclure sans étudier le théorème des gendarmes",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$2n - 1 \\leq u_n \\leq 2n + 1$ et les deux bornes tendent vers $+\\infty$. Par le theoreme des gendarmes, $u_n \\to +\\infty$."
+    }
+  ]
+}

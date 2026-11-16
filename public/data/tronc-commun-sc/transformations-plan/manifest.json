@@ -1,0 +1,30 @@
+{
+  "id": "transformations-plan",
+  "title": "Transformation dans le plan",
+  "section": "algebre-geometrie",
+  "quizCount": 8,
+  "revisions": [
+    {
+      "id": "rev-transfo-tc",
+      "title": "Fiche Complète : Transformations",
+      "path": "data/tronc-commun-sc/transformations-plan/revisions/fiche_transformations_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-transfo-tc-01",
+      "path": "data/tronc-commun-sc/transformations-plan/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-transformations-plan-01",
+      "path": "data/tronc-commun-sc/transformations-plan/exercises/ex_transformations_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-transformations-plan-01",
+      "path": "data/tronc-commun-sc/transformations-plan/quiz/transformations-plan_quiz.json",
+      "questionsCount": 8
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+{
+  "header": {
+    "title": "Probabilités",
+    "subtitle": "Dénombrer, modéliser, calculer, justifier et rédiger comme en examen",
+    "context": "2BAC Sciences"
+  },
+  "lexique": [
+    {
+      "term": "Expérience aléatoire",
+      "arabic": "تجربة عشوائية",
+      "category": "concept",
+      "definition": "Expérience dont le résultat ne peut pas être prévu avec certitude.",
+      "variants": [
+        "expériences aléatoires"
+      ]
+    },
+    {
+      "term": "Univers",
+      "arabic": "مجموعة الإمكانيات",
+      "category": "concept",
+      "symbol": "\\Omega",
+      "definition": "Ensemble de toutes les issues possibles d'une expérience aléatoire.",
+      "variants": [
+        "univers des possibles"
+      ]
+    },
+    {
+      "term": "Événement",
+      "arabic": "حادث",
+      "category": "concept",
+      "definition": "Ensemble d'issues auquel on peut attribuer une probabilité.",
+      "variants": [
+        "événements"
+      ]
+    },
+    {
+      "term": "Équiprobabilité",
+      "arabic": "تساوي الإمكانيات",
+      "category": "concept",
+      "definition": "Situation où toutes les issues élémentaires ont la même probabilité.",
+      "variants": [
+        "équiprobable"
+      ]
+    },
+    {
+      "term": "Probabilité conditionnelle",
+      "arabic": "احتمال مشروط",
+      "category": "concept",
+      "symbol": "P_A(B)",
+      "definition": "Probabilité d'un événement sachant qu'un autre événement est réalisé.",
+      "variants": [
+        "conditionnelle"
+      ]
+    },
+    {
+      "term": "Événements indépendants",
+      "arabic": "حادثان مستقلان",
+      "category": "concept",
+      "definition": "Événements dont la réalisation de l'un ne modifie pas la probabilité de l'autre.",
+      "variants": [
+        "indépendance"
+      ]
+    },
+    {
+      "term": "Événements incompatibles",
+      "arabic": "حادثان متنافيان",
+      "category": "concept",
+      "definition": "Événements qui ne peuvent pas se réaliser simultanément.",
+      "variants": [
+        "incompatibles"
+      ]
+    },
+    {
+      "term": "Événement contraire",
+      "arabic": "الحادث المخالف",
+      "category": "concept",
+      "definition": "Événement qui se réalise exactement lorsque l'événement considéré ne se réalise pas.",
+      "variants": [
+        "événement complémentaire",
+        "contraire"
+      ]
+    },
+    {
+      "term": "Arbre de probabilités",
+      "arabic": "شجرة الاحتمالات",
+      "category": "concept",
+      "definition": "Schéma qui organise des étapes aléatoires et leurs probabilités.",
+      "variants": [
+        "arbre pondéré",
+        "arbres"
+      ]
+    },
+    {
+      "term": "Variable aléatoire",
+      "arabic": "متغير عشوائي",
+      "category": "concept",
+      "definition": "Nombre associé à chaque issue d'une expérience aléatoire.",
+      "variants": [
+        "variables aléatoires"
+      ]
+    },
+    {
+      "term": "Loi de probabilité",
+      "arabic": "قانون الاحتمال",
+      "category": "concept",
+      "definition": "Tableau ou règle qui associe une probabilité à chaque valeur d'une variable aléatoire.",
+      "variants": [
+        "loi de X",
+        "lois de probabilité"
+      ]
+    },
+    {
+      "term": "Espérance",
+      "arabic": "الأمل الرياضي",
+      "category": "concept",
+      "symbol": "E(X)",
+      "definition": "Moyenne théorique des valeurs d'une variable aléatoire.",
+      "variants": [
+        "espérance mathématique"
+      ]
+    },
+    {
+      "term": "Variance",
+      "arabic": "التباين",
+      "category": "concept",
+      "symbol": "V(X)",
+      "definition": "Mesure de la dispersion des valeurs autour de l'espérance.",
+      "variants": [
+        "variances"
+      ]
+    },
+    {
+      "term": "Loi binomiale",
+      "arabic": "قانون ثنائي الحدين",
+      "category": "concept",
+      "definition": "Loi qui compte les succès dans une répétition d'épreuves de Bernoulli indépendantes.",
+      "variants": [
+        "binomiale",
+        "schéma de Bernoulli"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En probabilités, on ne réussit pas grâce à une formule isolée, mais grâce à une chaîne de décisions : identifier l'expérience, choisir le bon modèle de tirage, compter les cas possibles, compter les cas favorables, puis rédiger une conclusion claire. Ce chapitre demande de la rigueur dans le choix du modèle — c'est là que la plupart des erreurs se produisent. Il faut déjà connaître les combinaisons et les arrangements vus en dénombrement. Le plus délicat sera de distinguer les situations où l'ordre compte de celles où il ne compte pas, mais avec de la méthode, chaque type de problème devient reconnaissable."
+        }
+      ]
+    },
+    {
+      "id": "denombrement",
+      "category": "course",
+      "title": "Comment compter sans oublier de cas ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avant de calculer une probabilité, il faut savoir compter correctement. On commence par organiser les choix successifs, puis on choisit le bon outil : arrangement ou combinaison."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le principe fondamental de dénombrement} ?",
+          "content": "Si une situation nécessite $p$ choix successifs et si ces choix peuvent se faire respectivement de $n_1, n_2, \\ldots, n_p$ manières, alors le \\textbf{nombre total de possibilités} est$$\\boxed{N = n_1 \\times n_2 \\times \\cdots \\times n_p.}$$"
+        },
+        {
+          "type": "example",
+          "content": "Un code contient une voyelle puis un chiffre parmi $1, 2, 3$. Pour chaque voyelle, on a trois chiffres possibles. Comme il y a six voyelles, on obtient $6 \\times 3 = 18$ codes possibles."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{compter par étapes} quand une condition s'applique ?",
+          "content": "On repère les étapes dans l'ordre utile, pas forcément dans l'ordre d'écriture du nombre.\\par Lorsqu'une condition porte sur le dernier chiffre, la couleur finale ou la dernière place, on commence par cette contrainte : on fixe d'abord les positions imposées, puis on compte librement les autres.\\par\\textbf{Astuce :} une position imposée ne compte pas comme un choix libre — on ne lui attribue pas de facteur."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Avec les chiffres $2, 3, 4, 5, 6$, on veut former des entiers naturels de trois chiffres distincts deux à deux. Calculons le nombre total d'entiers possibles, le nombre d'entiers pairs et le nombre de multiples de $5$.}\\par\\smallskip\\textbf{Nombre total.} Le chiffre des centaines se choisit de $\\blank{5}$ manières, celui des dizaines de $\\blank{4}$ manières, puis celui des unités de $3$ manières. Donc$$N = 5 \\times 4 \\times 3 = \\blank{60}.$$\\textbf{Entiers pairs.} Le chiffre des unités doit être $2$, $4$ ou $6$, donc $\\blank{3}$ choix. Après ce choix, il reste $4$ choix pour les centaines puis $3$ choix pour les dizaines. Ainsi$$N_{\\text{pairs}} = 3 \\times 4 \\times 3 = \\blank{36}.$$\\textbf{Multiples de $5$.} Le chiffre des unités est obligatoirement $5$. Il reste $4$ choix pour les centaines et $3$ pour les dizaines, donc$$N_5 = 1 \\times 4 \\times 3 = 12.$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Un numéro d'appel est formé de huit chiffres, chaque chiffre étant choisi parmi $0, 1, \\ldots, 9$. Calculons la capacité totale du réseau, puis le nombre de numéros qui commencent par $06$.}\\par\\smallskip\\textbf{Nombre total.} Chaque position possède $\\blank{10}$ choix et les répétitions sont autorisées. Donc$$N = \\blank{10^8}.$$\\textbf{Numéros commençant par $06$.} Les deux premiers chiffres sont imposés. Il reste $\\blank{6}$ chiffres libres, donc$$N_{06} = \\blank{10^6}.$$Quand des positions sont imposées, on ne les compte pas comme des choix libres."
+        }
+      ]
+    },
+    {
+      "id": "arrangements_combinaisons",
+      "category": "course",
+      "title": "Quand utiliser arrangements et combinaisons ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait maintenant compter par étapes. Le choix du modèle dépend de deux questions : l'ordre compte-t-il ? La répétition est-elle autorisée ?"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un \\mathqst{arrangement sans répétition} ?",
+          "content": "Un \\textbf{arrangement sans répétition} de $p$ éléments parmi $n$ est une liste ordonnée de $p$ éléments distincts.\\par\\smallskip Son nombre est$$\\boxed{A_n^p = n(n-1)\\cdots(n-p+1) = \\frac{n!}{(n-p)!}.}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une \\mathqst{combinaison} ?",
+          "content": "Une \\textbf{combinaison} de $p$ éléments parmi $n$ est un choix de $p$ éléments sans tenir compte de l'ordre.\\par\\smallskip Son nombre est$$\\boxed{C_n^p = \\frac{A_n^p}{p!} = \\frac{n!}{p!(n-p)!}.}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{choisir le bon modèle} selon la situation ?",
+          "content": "$$\\begin{array}{|l|c|c|l|}\\hline \\textbf{Situation} & \\textbf{Ordre} & \\textbf{Répétition} & \\textbf{Modèle} \\\\\\hline \\text{Code de } p \\text{ caractères} & \\text{oui} & \\text{oui} & n^p \\\\\\hline \\text{Classement de } p \\text{ personnes} & \\text{oui} & \\text{non} & A_n^p \\\\\\hline \\text{Comité de } p \\text{ personnes} & \\text{non} & \\text{non} & C_n^p \\\\\\hline \\text{Tirage simultané de } p \\text{ boules} & \\text{non} & \\text{non} & C_n^p \\\\\\hline \\text{Tirage successif sans remise} & \\text{oui} & \\text{non} & A_n^p \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Un club de $32$ membres élit un président, un secrétaire et un trésorier. Une personne ne peut pas occuper deux postes. Justifions le modèle et calculons le nombre de bureaux possibles.}\\par\\smallskip\\textbf{Choix du modèle.} Les postes sont différents, donc l'ordre \\blank{intervient}. Une même personne ne peut pas occuper deux postes, donc il n'y a pas de répétition. Il s'agit d'un \\blank{arrangement sans répétition} de $3$ éléments parmi $32$.\\par\\smallskip\\textbf{Calcul.}$$N = A_{32}^3 = 32 \\times 31 \\times 30 = \\blank{29760}.$$Il y a $29760$ bureaux possibles."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Dans une classe de $32$ élèves, on compte $19$ garçons et $13$ filles. On choisit deux délégués sans préciser de poste. Calculons le nombre total de choix, le nombre de choix mixtes et le nombre de choix composés de deux garçons.}\\par\\smallskip\\textbf{Choix du modèle.} On choisit deux délégués sans distinguer premier et deuxième. L'ordre n'intervient donc pas : c'est une \\blank{combinaison}.\\par\\smallskip\\textbf{Nombre total.}$$C_{32}^2 = \\frac{32 \\times 31}{2} = \\blank{496}.$$\\textbf{Un garçon et une fille.} On choisit $1$ garçon parmi $19$ et $1$ fille parmi $13$ :$$C_{19}^1 \\times C_{13}^1 = 19 \\times 13 = \\blank{247}.$$\\textbf{Deux garçons.}$$C_{19}^2 = \\frac{19 \\times 18}{2} = \\blank{171}.$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Une urne contient $4$ boules rouges, $3$ boules noires et $1$ boule blanche. On tire simultanément trois boules. Calculons le nombre de tirages possibles, le nombre de tirages contenant exactement deux boules noires, et le nombre de tirages contenant une boule de chaque couleur.}\\par\\smallskip\\textbf{Modèle.} Tirage simultané, donc l'ordre n'intervient pas.$$\\text{Card}(\\Omega) = C_8^3 = \\blank{56}.$$\\textbf{Exactement deux noires.} On choisit $2$ noires parmi $3$ et $1$ non noire parmi les $5$ autres :$$C_3^2 \\times C_5^1 = 3 \\times 5 = \\blank{15}.$$\\textbf{Une de chaque couleur.}$$C_4^1 \\times C_3^1 \\times C_1^1 = \\blank{12}.$$"
+        }
+      ]
+    },
+    {
+      "id": "univers_evenements",
+      "category": "course",
+      "title": "Comment écrire proprement un univers et des événements ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait maintenant compter les cas. Avant de calculer une probabilité, il faut modéliser correctement la situation : nommer l'univers $\\Omega$, puis décrire les événements comme des parties de $\\Omega$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{l'univers et un événement} ?",
+          "content": "Une \\textbf{expérience aléatoire} est une expérience dont le résultat n'est pas connu à l'avance.\\par\\smallskip L'ensemble de tous les résultats possibles est l'\\textbf{univers}, noté $\\Omega$.\\par\\smallskip Un \\textbf{événement} est une partie de $\\Omega$. L'\\textbf{événement contraire} de $A$ est noté $\\bar{A}$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{combiner deux événements} ?",
+          "content": "Soient $A$ et $B$ deux événements de $\\Omega$ :\\begin{itemize}\\item $A \\cap B$ signifie : $A$ \\textbf{et} $B$ se réalisent simultanément\\item $A \\cup B$ signifie : $A$ \\textbf{ou} $B$ se réalise (au moins l'un des deux)\\item $A$ et $B$ sont \\textbf{incompatibles} lorsque $A \\cap B = \\emptyset$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Une urne contient trois boules notées $R$, $N$ et $V$. On tire successivement et avec remise deux boules. Dressons l'univers $\\Omega$, puis déterminons les événements :\\begin{itemize}\\item $A$ : « les deux boules sont de couleurs différentes »\\item $B$ : « la première boule est rouge »\\end{itemize}ainsi que $A \\cap B$.}\\par\\smallskip\\textbf{Univers.} Chaque issue est un couple ordonné. Comme le tirage est avec remise, une même couleur peut apparaître deux fois. Le nombre total d'issues est $\\blank{3} \\times 3 = \\blank{9}$ :$$\\Omega = \\{(R,R),(R,N),(R,V),(N,R),(N,N),(N,V),(V,R),(V,N),(V,V)\\}.$$\\textbf{Événement $A$.} Les deux couleurs doivent être différentes :$$A = \\{(R,N),(R,V),(N,R),(N,V),(V,R),(V,N)\\}.$$\\textbf{Événement $B$.} La première boule est rouge :$$B = \\{\\blank{(R,R),(R,N),(R,V)}\\}.$$\\textbf{Intersection.} On garde les issues communes à $A$ et $B$. La première boule est rouge, et les deux couleurs sont différentes :$$A \\cap B = \\{\\blank{(R,N),(R,V)}\\}.$$"
+        }
+      ]
+    },
+    {
+      "id": "equiprobabilite",
+      "category": "course",
+      "title": "Comment calculer une probabilité sous équiprobabilité ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait modéliser un univers. Lorsque tous les résultats élémentaires ont la même chance d'apparaître, on utilise la fraction des cas favorables."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{calculer une probabilité sous équiprobabilité} ?",
+          "content": "Si les événements élémentaires de $\\Omega$ sont \\textbf{équiprobables}, alors pour tout événement $A$ :$$\\boxed{\\mathbb{P}(A) = \\frac{\\text{Card}(A)}{\\text{Card}(\\Omega)}.}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Une urne contient six boules indiscernables au toucher : quatre boules blanches numérotées $0, 1, 1, 1$ et deux boules noires numérotées $0, 1$. On tire simultanément deux boules. On pose :\\begin{itemize}\\item $A$ : « les deux boules portent le numéro $1$ »\\item $B$ : « les deux boules sont de même couleur »\\end{itemize}Montrons que $\\mathbb{P}(A) = \\dfrac{2}{5}$ et $\\mathbb{P}(B) = \\dfrac{7}{15}$. Les événements $A$ et $B$ sont-ils indépendants ?}\\par\\smallskip\\textbf{Univers.} Tirage simultané, boules indiscernables : on travaille sous équiprobabilité.$$\\text{Card}(\\Omega) = C_6^2 = \\blank{15}.$$\\textbf{Probabilité de $A$.} Il y a quatre boules portant le numéro $1$ :$$\\text{Card}(A) = C_4^2 = 6, \\quad \\mathbb{P}(A) = \\frac{6}{15} = \\blank{\\frac{2}{5}}.$$\\textbf{Probabilité de $B$.} Même couleur signifie deux blanches ou deux noires :$$\\text{Card}(B) = C_4^2 + C_2^2 = 6 + 1 = \\blank{7}, \\quad \\mathbb{P}(B) = \\frac{7}{15}.$$\\textbf{Indépendance.} Pour avoir deux boules portant $1$ et de même couleur, il faut deux blanches numérotées $1$ (il n'y a qu'une noire portant $1$) :$$\\mathbb{P}(A \\cap B) = \\frac{C_3^2}{15} = \\frac{3}{15} = \\frac{1}{5}.$$Or $\\mathbb{P}(A)\\mathbb{P}(B) = \\dfrac{2}{5} \\times \\dfrac{7}{15} = \\dfrac{14}{75} \\neq \\dfrac{1}{5}$. Donc $A$ et $B$ \\blank{ne sont pas indépendants}."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Une urne contient $8$ boules : $4$ blanches, $3$ noires et $1$ verte. On tire successivement et sans remise trois boules. Vérifions que le nombre de tirages possibles est $336$, calculons la probabilité de tirer trois boules blanches, montrons que la probabilité de tirer trois boules de même couleur est $\\dfrac{5}{56}$, puis calculons la probabilité d'obtenir au moins deux couleurs différentes.}\\par\\smallskip\\textbf{Modèle.} Tirage successif sans remise : l'ordre intervient.$$\\text{Card}(\\Omega) = A_8^3 = 8 \\times 7 \\times 6 = \\blank{336}.$$\\textbf{Trois blanches.}$$\\mathbb{P}(A) = \\frac{A_4^3}{336} = \\frac{4 \\times 3 \\times 2}{336} = \\blank{\\frac{1}{14}}.$$\\textbf{Trois de même couleur.} Les trois peuvent être blanches ou noires. Trois vertes est impossible car il n'y a qu'une boule verte.$$\\mathbb{P}(B) = \\frac{A_4^3 + A_3^3}{336} = \\frac{24 + 6}{336} = \\frac{30}{336} = \\blank{\\frac{5}{56}}.$$\\textbf{Au moins deux couleurs différentes.} C'est le contraire de « trois boules de même couleur ».$$\\mathbb{P}(C) = 1 - \\mathbb{P}(B) = 1 - \\frac{5}{56} = \\blank{\\frac{51}{56}}.$$"
+        }
+      ]
+    },
+    {
+      "id": "probabilite_conditionnelle",
+      "category": "course",
+      "title": "Comment utiliser une probabilité conditionnelle ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait calculer $\\mathbb{P}(A)$ dans $\\Omega$ tout entier. Lorsqu'on sait qu'un événement $B$ est réalisé, l'univers de travail change : il se restreint à $B$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la probabilité conditionnelle de $A$ sachant $B$} ?",
+          "content": "Si $\\mathbb{P}(B) > 0$, la \\textbf{probabilité de $A$ sachant $B$} est$$\\boxed{\\mathbb{P}_B(A) = \\mathbb{P}(A \\mid B) = \\frac{\\mathbb{P}(A \\cap B)}{\\mathbb{P}(B)}.}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer une probabilité d'intersection} avec la formule du produit ?",
+          "content": "Si $\\mathbb{P}(B) > 0$, alors$$\\boxed{\\mathbb{P}(A \\cap B) = \\mathbb{P}(B) \\times \\mathbb{P}_B(A).}$$Cette formule est directement utilisable sur un arbre de probabilités : on multiplie les probabilités sur un chemin."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Un sac contient $4$ boules blanches et $3$ boules noires. On tire successivement et sans remise deux boules. On pose :\\begin{itemize}\\item $N_1$ : « la première boule est noire »\\item $B_2$ : « la deuxième boule est blanche »\\end{itemize}Calculons $\\mathbb{P}(N_1 \\cap B_2)$, montrons que $\\mathbb{P}(B_2) = \\dfrac{4}{7}$, puis déduisons $\\mathbb{P}_{B_2}(N_1)$.}\\par\\smallskip\\textbf{Probabilité de $N_1 \\cap B_2$.} Pour obtenir noire puis blanche, on multiplie les probabilités sur ce chemin :$$\\mathbb{P}(N_1 \\cap B_2) = \\frac{3}{7} \\times \\frac{4}{6} = \\blank{\\frac{2}{7}}.$$\\textbf{Probabilité de $B_2$.} La deuxième boule est blanche dans deux chemins : $B_1B_2$ et $N_1B_2$.$$\\mathbb{P}(B_2) = \\frac{4}{7} \\times \\frac{3}{6} + \\frac{3}{7} \\times \\frac{4}{6} = \\frac{12}{42} + \\frac{12}{42} = \\blank{\\frac{4}{7}}.$$\\textbf{Probabilité conditionnelle.}$$\\mathbb{P}_{B_2}(N_1) = \\frac{\\mathbb{P}(N_1 \\cap B_2)}{\\mathbb{P}(B_2)} = \\frac{\\frac{2}{7}}{\\frac{4}{7}} = \\blank{\\frac{1}{2}}.$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Une urne $U_1$ contient les nombres $0, 0, 1, 1, 1, 2$. Une urne $U_2$ contient les nombres $1, 1, 1, 2, 2$. On tire une boule de $U_1$ portant le nombre $a$, puis on la place dans $U_2$, et on tire une boule de $U_2$ portant le nombre $b$. On pose :\\begin{itemize}\\item $A$ : « $a = 1$ »\\item $B$ : « $ab = 2$ »\\end{itemize}Calculons $\\mathbb{P}(A)$, montrons à l'aide d'un arbre que $\\mathbb{P}(B) = \\dfrac{1}{4}$, puis calculons $\\mathbb{P}_B(A)$.}\\par\\smallskip\\textbf{Probabilité de $A$.} Dans $U_1$, trois boules sur six portent le nombre $1$ :$$\\mathbb{P}(A) = \\frac{3}{6} = \\blank{\\frac{1}{2}}.$$\\textbf{Probabilité de $B$.} Le produit vaut $2$ dans deux chemins : soit $a = 1$ puis $b = 2$, soit $a = 2$ puis $b = 1$.\\begin{align*}\\mathbb{P}(B) &= \\mathbb{P}(a=1) \\times \\mathbb{P}(b=2 \\mid a=1) + \\mathbb{P}(a=2) \\times \\mathbb{P}(b=1 \\mid a=2)\\\\&= \\frac{3}{6} \\times \\frac{2}{6} + \\frac{1}{6} \\times \\frac{3}{6} = \\frac{6}{36} + \\frac{3}{36} = \\blank{\\frac{1}{4}}.\\end{align*}\\textbf{Probabilité conditionnelle.} Il faut $a = 1$ puis $b = 2$ :$$\\mathbb{P}(A \\cap B) = \\frac{3}{6} \\times \\frac{2}{6} = \\blank{\\frac{1}{6}}, \\quad \\mathbb{P}_B(A) = \\frac{\\frac{1}{6}}{\\frac{1}{4}} = \\blank{\\frac{2}{3}}.$$"
+        }
+      ]
+    },
+    {
+      "id": "independance",
+      "category": "course",
+      "title": "Comment reconnaître l'indépendance ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait calculer $\\mathbb{P}(A \\mid B)$. Deux événements sont indépendants lorsque la réalisation de l'un ne modifie pas la probabilité de l'autre."
+        },
+        {
+          "type": "definition",
+          "title": "Quand dit-on que \\mathqst{deux événements sont indépendants} ?",
+          "content": "Deux événements $A$ et $B$ sont \\textbf{indépendants} lorsque$$\\boxed{\\mathbb{P}(A \\cap B) = \\mathbb{P}(A) \\times \\mathbb{P}(B).}$$Lorsque $\\mathbb{P}(B) > 0$, cela équivaut à $\\mathbb{P}_B(A) = \\mathbb{P}(A)$ : connaître $B$ ne change pas la probabilité de $A$."
+        },
+        {
+          "type": "warning",
+          "content": "Ne pas confondre \\textbf{événements incompatibles} et \\textbf{événements indépendants}. Si $A$ et $B$ sont incompatibles ($A \\cap B = \\emptyset$) et non nuls, alors $\\mathbb{P}(A \\cap B) = 0 \\neq \\mathbb{P}(A)\\mathbb{P}(B)$ : ils ne sont \\textbf{pas} indépendants."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{tester l'indépendance de deux événements} ?",
+          "content": "On calcule séparément $\\mathbb{P}(A \\cap B)$, $\\mathbb{P}(A)$ et $\\mathbb{P}(B)$.\\par On compare ensuite $\\mathbb{P}(A \\cap B)$ et $\\mathbb{P}(A) \\times \\mathbb{P}(B)$.\\begin{itemize}\\item Si les deux valeurs sont \\textbf{égales} : $A$ et $B$ sont indépendants\\item Si les deux valeurs sont \\textbf{différentes} : $A$ et $B$ ne sont pas indépendants\\end{itemize}\\textbf{Attention :} ne jamais conclure sans avoir calculé les trois valeurs et les avoir comparées explicitement."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Une urne contient $7$ boules : quatre portent le numéro $1$, deux portent le numéro $2$ et une porte le numéro $3$. On tire simultanément deux boules. On pose :\\begin{itemize}\\item $A$ : « les deux boules portent le même numéro »\\item $B$ : « la somme des numéros vaut $4$ »\\end{itemize}Montrons que $\\mathbb{P}(A) = \\dfrac{1}{3}$ et $\\mathbb{P}(B) = \\dfrac{5}{21}$, puis déterminons si $A$ et $B$ sont indépendants.}\\par\\smallskip\\textbf{Univers.}$$\\text{Card}(\\Omega) = C_7^2 = \\blank{21}.$$\\textbf{Probabilité de $A$.} Même numéro signifie deux $1$ ou deux $2$ ; deux $3$ est impossible.$$\\mathbb{P}(A) = \\frac{C_4^2 + C_2^2}{21} = \\frac{6+1}{21} = \\blank{\\frac{1}{3}}.$$\\textbf{Probabilité de $B$.} La somme vaut $4$ si on obtient $(1,3)$ ou $(2,2)$ :$$\\text{Card}(B) = C_4^1 \\cdot C_1^1 + C_2^2 = 4 + 1 = \\blank{5}, \\quad \\mathbb{P}(B) = \\frac{5}{21}.$$\\textbf{Test d'indépendance.} Il faut à la fois même numéro et somme $4$, donc deux boules portant $2$ :$$\\mathbb{P}(A \\cap B) = \\frac{1}{21}.$$Or $\\mathbb{P}(A) \\times \\mathbb{P}(B) = \\dfrac{1}{3} \\times \\dfrac{5}{21} = \\dfrac{5}{63} \\neq \\dfrac{1}{21}$. Donc $A$ et $B$ \\blank{ne sont pas indépendants}."
+        }
+      ]
+    },
+    {
+      "id": "variable_aleatoire",
+      "category": "course",
+      "title": "Comment construire une variable aléatoire ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait calculer des probabilités d'événements. Dans plusieurs exercices, on s'intéresse non pas à une issue brute, mais à un gain, un nombre de boules, un produit : une variable aléatoire transforme chaque issue en nombre."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la loi de probabilité d'une variable aléatoire} ?",
+          "content": "Une \\textbf{variable aléatoire} $X$ associe à chaque issue de $\\Omega$ un nombre réel.\\par\\smallskip Sa \\textbf{loi de probabilité} est le tableau qui donne, pour chaque valeur $x_i$ prise par $X$, la probabilité $\\mathbb{P}(X = x_i)$.\\par\\smallskip On vérifie toujours que $\\displaystyle\\sum_i \\mathbb{P}(X = x_i) = 1$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer l'espérance, la variance et l'écart-type} de $X$ ?",
+          "content": "Si $X$ prend les valeurs $x_1, \\ldots, x_r$ avec les probabilités $p_1, \\ldots, p_r$, alors$$\\boxed{\\mathbb{E}(X) = \\sum_{i=1}^r x_i p_i}$$$$\\boxed{\\text{V}(X) = \\sum_{i=1}^r x_i^2 p_i - [\\mathbb{E}(X)]^2}$$$$\\boxed{\\sigma(X) = \\sqrt{\\text{V}(X)}.}$$L'espérance représente la valeur moyenne sur un grand nombre d'expériences. La variance mesure la dispersion autour de cette moyenne."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Un jeu consiste à tirer successivement et sans remise deux boules d'un sac contenant $4$ boules blanches et $3$ boules noires. Si les deux boules sont blanches, on gagne $5$ points ; si elles sont noires, on perd $5$ points ; si elles sont de couleurs différentes, on marque $0$. Soit $X$ le score. Déterminons la loi de $X$ et calculons $\\mathbb{E}(X)$.}\\par\\smallskip\\textbf{Valeurs de $X$.} $X \\in \\{-5, 0, 5\\}$. Tirage successif sans remise : $\\text{Card}(\\Omega) = A_7^2 = \\blank{42}$.\\par\\smallskip\\textbf{Calcul des probabilités.}$$\\mathbb{P}(X = 5) = \\frac{A_4^2}{42} = \\frac{12}{42} = \\blank{\\frac{2}{7}}, \\quad \\mathbb{P}(X = -5) = \\frac{A_3^2}{42} = \\frac{6}{42} = \\frac{1}{7}.$$Pour des couleurs différentes : blanche puis noire, ou noire puis blanche :$$\\mathbb{P}(X = 0) = \\frac{4 \\times 3 + 3 \\times 4}{42} = \\blank{\\frac{4}{7}}.$$\\textbf{Loi de $X$.}$$\\begin{array}{|c|c|c|c|}\\hline x_i & -5 & 0 & 5 \\\\\\hline \\mathbb{P}(X=x_i) & \\frac{1}{7} & \\frac{4}{7} & \\frac{2}{7} \\\\\\hline\\end{array}$$\\textbf{Espérance.}$$\\mathbb{E}(X) = (-5) \\times \\frac{1}{7} + 0 \\times \\frac{4}{7} + 5 \\times \\frac{2}{7} = \\blank{\\frac{5}{7}}.$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Une urne contient $10$ boules : $3$ blanches, $3$ vertes et $4$ rouges. On tire simultanément trois boules. Soit $X$ le nombre de boules rouges obtenues. Déterminons la loi de $X$, calculons $\\mathbb{P}(X \\geq 2)$, puis calculons $\\mathbb{E}(X)$, $\\text{V}(X)$ et $\\sigma(X)$.}\\par\\smallskip\\textbf{Valeurs.} $X \\in \\{0, 1, 2, 3\\}$. Tirage simultané :$$\\text{Card}(\\Omega) = C_{10}^3 = \\blank{120}.$$\\textbf{Loi de $X$.} Pour $k \\in \\{0,1,2,3\\}$ : on choisit $k$ rouges parmi $4$ et $3-k$ non rouges parmi $6$ :$$\\mathbb{P}(X = k) = \\frac{C_4^k \\cdot C_6^{3-k}}{120}.$$$$\\begin{array}{|c|c|c|c|c|}\\hline k & 0 & 1 & 2 & 3 \\\\\\hline \\mathbb{P}(X=k) & \\frac{1}{6} & \\frac{1}{2} & \\frac{3}{10} & \\frac{1}{30} \\\\\\hline\\end{array}$$\\textbf{Probabilité $X \\geq 2$.}$$\\mathbb{P}(X \\geq 2) = \\frac{3}{10} + \\frac{1}{30} = \\blank{\\frac{1}{3}}.$$\\textbf{Espérance.}$$\\mathbb{E}(X) = 0 \\times \\frac{1}{6} + 1 \\times \\frac{1}{2} + 2 \\times \\frac{3}{10} + 3 \\times \\frac{1}{30} = \\blank{\\frac{6}{5}}.$$\\textbf{Variance.} On calcule $\\mathbb{E}(X^2)$ :$$\\mathbb{E}(X^2) = 0 + \\frac{1}{2} + \\frac{12}{10} + \\frac{9}{30} = 2.$$Donc$$\\text{V}(X) = 2 - \\left(\\frac{6}{5}\\right)^2 = 2 - \\frac{36}{25} = \\blank{\\frac{14}{25}}, \\quad \\sigma(X) = \\frac{\\sqrt{14}}{5}.$$"
+        }
+      ]
+    },
+    {
+      "id": "loi_binomiale",
+      "category": "course",
+      "title": "Comment reconnaître et utiliser une loi binomiale ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait construire la loi d'une variable aléatoire générale. Lorsqu'on répète plusieurs fois la même expérience de façon indépendante, une structure cachée apparaît : la loi binomiale."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la loi binomiale $\\mathcal{B}(n,p)$} ?",
+          "content": "On dit que $X$ suit la \\textbf{loi binomiale} de paramètres $n$ et $p$, et on note $X \\sim \\mathcal{B}(n, p)$, lorsque $X(\\Omega) = \\{0, 1, 2, \\ldots, n\\}$ et, pour tout $k \\in \\{0, 1, \\ldots, n\\}$ :$$\\boxed{\\mathbb{P}(X = k) = C_n^k \\, p^k (1-p)^{n-k}.}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{l'espérance et la variance d'une loi binomiale} ?",
+          "content": "Si $X \\sim \\mathcal{B}(n, p)$, alors$$\\boxed{\\mathbb{E}(X) = np, \\quad \\text{V}(X) = np(1-p), \\quad \\sigma(X) = \\sqrt{np(1-p)}.}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{reconnaître une loi binomiale} ?",
+          "content": "On vérifie quatre points :\\begin{enumerate}\\item Une \\textbf{même expérience} est répétée $n$ fois\\item Chaque répétition a exactement \\textbf{deux issues} : succès ou échec\\item La \\textbf{probabilité du succès} est constante, égale à $p$, à chaque répétition\\item Les répétitions sont \\textbf{indépendantes} les unes des autres\\end{enumerate}Alors $X$, le nombre de succès, suit $\\mathcal{B}(n, p)$.\\par\\textbf{Astuce :} la remise dans un tirage garantit l'indépendance des répétitions."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{On lance une pièce équilibrée $5$ fois. Soit $X$ le nombre de piles obtenues. Vérifions que $X$ suit une loi binomiale, puis calculons $\\mathbb{P}(X = 3)$, $\\mathbb{E}(X)$ et $\\text{V}(X)$.}\\par\\smallskip\\textbf{Vérification.} On répète $5$ fois la même expérience. Le succès est « obtenir pile », de probabilité $p = \\dfrac{1}{2}$. Les lancers sont indépendants. Donc $X \\sim \\mathcal{B}\\left(\\blank{5}, \\blank{\\frac{1}{2}}\\right)$.\\par\\smallskip\\textbf{Calcul.}$$\\mathbb{P}(X = 3) = C_5^3 \\left(\\frac{1}{2}\\right)^3 \\left(\\frac{1}{2}\\right)^2 = 10 \\times \\frac{1}{32} = \\blank{\\frac{5}{16}}.$$\\textbf{Espérance et variance.}$$\\mathbb{E}(X) = 5 \\times \\frac{1}{2} = \\blank{\\frac{5}{2}}, \\quad \\text{V}(X) = 5 \\times \\frac{1}{2} \\times \\frac{1}{2} = \\blank{\\frac{5}{4}}.$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Une urne contient $7$ boules blanches et $3$ boules noires. On tire une boule, on la remet dans l'urne, puis on recommence $6$ fois au total. Soit $X$ le nombre de boules blanches obtenues. Précisons la loi de $X$, calculons $\\mathbb{P}(X = 5)$, $\\mathbb{P}(X \\leq 4)$, $\\mathbb{E}(X)$ et $\\text{V}(X)$.}\\par\\smallskip\\textbf{Vérification.} On répète $6$ tirages avec remise. Le succès est « obtenir une boule blanche », de probabilité $p = \\dfrac{7}{10}$. La remise rend les tirages indépendants. Donc$$X \\sim \\mathcal{B}\\left(\\blank{6}, \\blank{\\frac{7}{10}}\\right).$$\\textbf{Exactement $5$ blanches.}$$\\mathbb{P}(X = 5) = C_6^5 \\left(\\frac{7}{10}\\right)^5 \\left(\\frac{3}{10}\\right).$$\\textbf{Au plus $4$ blanches.} On utilise l'événement contraire :$$\\mathbb{P}(X \\leq 4) = 1 - \\mathbb{P}(X = 5) - \\mathbb{P}(X = 6) = 1 - C_6^5\\left(\\frac{7}{10}\\right)^5\\frac{3}{10} - \\blank{\\left(\\frac{7}{10}\\right)^6}.$$\\textbf{Espérance et variance.}$$\\mathbb{E}(X) = 6 \\times \\frac{7}{10} = \\blank{\\frac{21}{5}}, \\quad \\text{V}(X) = 6 \\times \\frac{7}{10} \\times \\frac{3}{10} = \\blank{\\frac{63}{50}}.$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On a montré que $\\mathbb{P}(A) = \\dfrac{2}{5}$ pour l'événement $A$ : « les deux boules tirées portent le numéro $1$ » dans une urne à six boules. On répète l'expérience trois fois avec remise des deux boules. Soit $X$ le nombre de réalisations de $A$. Vérifions que $X \\sim \\mathcal{B}\\left(3, \\dfrac{2}{5}\\right)$, complétons la loi de probabilité de $X$ et calculons $\\mathbb{E}(X)$.}\\par\\smallskip\\textbf{Vérification.} On répète $3$ fois la même expérience, avec remise après chaque expérience : les répétitions sont indépendantes. Le succès $A$ a pour probabilité $p = \\dfrac{2}{5}$. Donc $X \\sim \\mathcal{B}\\left(\\blank{3}, \\blank{\\frac{2}{5}}\\right)$.\\par\\smallskip\\textbf{Loi.} Pour $k \\in \\{0,1,2,3\\}$ :$$\\mathbb{P}(X = k) = C_3^k \\left(\\frac{2}{5}\\right)^k \\left(\\frac{3}{5}\\right)^{3-k}.$$$$\\begin{array}{|c|c|c|c|c|}\\hline k & 0 & 1 & 2 & 3 \\\\\\hline \\mathbb{P}(X=k) & \\frac{27}{125} & \\frac{54}{125} & \\frac{36}{125} & \\frac{8}{125} \\\\\\hline\\end{array}$$\\textbf{Espérance.}$$\\mathbb{E}(X) = np = 3 \\times \\frac{2}{5} = \\blank{\\frac{6}{5}}.$$"
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Exercices de synthèse",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les exercices suivants mélangent dénombrement, probabilité, indépendance, variable aléatoire et loi binomiale. Chaque correction montre comment enchaîner les idées comme en devoir : vérifier le modèle, compter les cas, calculer, conclure."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Une urne contient $10$ boules : $3$ vertes, $6$ rouges et $1$ noire. On tire simultanément trois boules. On pose :\\begin{itemize}\\item $A$ : « trois vertes »\\item $B$ : « trois de même couleur »\\item $C$ : « au moins deux boules de même couleur »\\end{itemize}Montrons que $\\mathbb{P}(A) = \\dfrac{1}{120}$ et $\\mathbb{P}(B) = \\dfrac{7}{40}$, puis calculons $\\mathbb{P}(C)$.}\\par\\smallskip\\textbf{Univers.}$$\\text{Card}(\\Omega) = C_{10}^3 = \\blank{120}.$$\\textbf{Probabilité de $A$.} Il faut choisir les trois boules vertes :$$\\mathbb{P}(A) = \\frac{C_3^3}{120} = \\blank{\\frac{1}{120}}.$$\\textbf{Probabilité de $B$.} Trois de même couleur : trois vertes ou trois rouges ; trois noires est impossible.$$\\mathbb{P}(B) = \\frac{C_3^3 + C_6^3}{120} = \\frac{1 + 20}{120} = \\blank{\\frac{7}{40}}.$$\\textbf{Probabilité de $C$.} Avoir au moins deux boules de même couleur est le contraire d'avoir trois couleurs toutes différentes. Trois couleurs différentes : $1$ verte, $1$ rouge, $1$ noire :$$\\mathbb{P}(\\bar{C}) = \\frac{C_3^1 \\cdot C_6^1 \\cdot C_1^1}{120} = \\frac{18}{120} = \\frac{3}{20}.$$Donc $\\mathbb{P}(C) = 1 - \\dfrac{3}{20} = \\blank{\\dfrac{17}{20}}.$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Une urne contient $10$ boules portant les nombres $1, 2, 2, 3, 3, 3, 4, 4, 4, 4$. On tire successivement et sans remise deux boules. Soit $A$ : « obtenir deux nombres pairs ». Montrons que $\\mathbb{P}(A) = \\dfrac{1}{3}$, puis on répète l'expérience trois fois avec remise des deux boules. Soit $X$ le nombre de réalisations de $A$. Déterminons la loi de $X$.}\\par\\smallskip\\textbf{Probabilité de $A$.} Les nombres pairs sont $2, 2, 4, 4, 4, 4$ : $\\blank{6}$ boules paires sur $10$. Tirage successif sans remise :$$\\mathbb{P}(A) = \\frac{6}{10} \\times \\frac{\\blank{5}}{\\blank{9}} = \\frac{30}{90} = \\blank{\\frac{1}{3}}.$$\\textbf{Loi binomiale.} On répète $3$ fois la même expérience avec remise ; les répétitions sont indépendantes. Le succès $A$ a pour probabilité $\\dfrac{1}{3}$. Donc $X \\sim \\mathcal{B}\\left(3, \\dfrac{1}{3}\\right)$.\\par\\smallskip\\textbf{Loi de $X$.}$$\\mathbb{P}(X=k) = C_3^k \\left(\\frac{1}{3}\\right)^k \\left(\\frac{2}{3}\\right)^{3-k}.$$$$\\begin{array}{|c|c|c|c|c|}\\hline k & 0 & 1 & 2 & 3 \\\\\\hline \\mathbb{P}(X=k) & \\frac{8}{27} & \\frac{12}{27} & \\frac{6}{27} & \\frac{1}{27} \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Une urne contient $5$ boules blanches, $3$ rouges et $2$ vertes. On tire simultanément quatre boules. Soit $X$ le nombre de boules vertes tirées. Montrons que $\\mathbb{P}(X = 2) = \\dfrac{2}{15}$, déterminons la loi de $X$ et montrons que $\\mathbb{E}(X) = \\dfrac{4}{5}$.}\\par\\smallskip\\textbf{Univers.}$$\\text{Card}(\\Omega) = C_{10}^4 = \\blank{210}.$$\\textbf{Probabilité de $X = 2$.} Il faut choisir les deux boules vertes et deux boules non vertes parmi les $8$ autres :$$\\mathbb{P}(X = 2) = \\frac{C_2^2 \\cdot C_8^2}{210} = \\frac{28}{210} = \\blank{\\frac{2}{15}}.$$\\textbf{Loi de $X$.} Les valeurs possibles sont $0, 1, 2$ (on ne peut pas tirer plus de $2$ vertes).$$\\mathbb{P}(X = k) = \\frac{C_2^k \\cdot C_8^{4-k}}{210}.$$$$\\begin{array}{|c|c|c|c|}\\hline k & 0 & 1 & 2 \\\\\\hline \\mathbb{P}(X=k) & \\frac{1}{3} & \\frac{8}{15} & \\frac{2}{15} \\\\\\hline\\end{array}$$\\textbf{Espérance.}$$\\mathbb{E}(X) = 0 \\times \\frac{1}{3} + 1 \\times \\frac{8}{15} + 2 \\times \\frac{2}{15} = \\frac{12}{15} = \\blank{\\frac{4}{5}}.$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\question{Une urne contient $12$ boules : $3$ rouges portant $1$, $3$ rouges portant $2$ et $6$ vertes portant $2$. On tire simultanément deux boules. On pose :\\begin{itemize}\\item $A$ : « deux boules portent le même nombre »\\item $B$ : « deux boules sont de couleurs différentes »\\end{itemize}Montrons que $\\mathbb{P}(A) = \\dfrac{13}{22}$ et $\\mathbb{P}(B) = \\dfrac{6}{11}$, montrons que $\\mathbb{P}(A \\cap B) = \\dfrac{3}{11}$, et testons l'indépendance de $A$ et $B$.}\\par\\smallskip\\textbf{Univers.}$$\\text{Card}(\\Omega) = C_{12}^2 = 66.$$Il y a $3$ boules portant $1$ et $9$ boules portant $2$.\\par\\smallskip\\textbf{Probabilité de $A$.} Même numéro : deux boules portant $1$ ou deux boules portant $2$.$$\\mathbb{P}(A) = \\frac{C_3^2 + C_9^2}{66} = \\frac{3 + 36}{66} = \\blank{\\frac{13}{22}}.$$\\textbf{Probabilité de $B$.} Couleurs différentes : une rouge et une verte. Il y a $6$ rouges et $6$ vertes.$$\\mathbb{P}(B) = \\frac{C_6^1 \\cdot C_6^1}{66} = \\frac{36}{66} = \\blank{\\frac{6}{11}}.$$\\textbf{Probabilité de $A \\cap B$.} Même numéro et couleurs différentes : il faut une rouge portant $2$ et une verte portant $2$.$$\\mathbb{P}(A \\cap B) = \\frac{3 \\times 6}{66} = \\blank{\\frac{3}{11}}.$$\\textbf{Indépendance.}$$\\mathbb{P}(A) \\times \\mathbb{P}(B) = \\frac{13}{22} \\times \\frac{6}{11} = \\frac{39}{121} \\neq \\frac{3}{11}.$$Donc $A$ et $B$ ne sont pas indépendants."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Une urne contient $3$ boules blanches, $4$ rouges et $5$ vertes. On tire simultanément trois boules. Soit $X$ le nombre de boules vertes tirées. Déterminons la loi de $X$ et calculons la probabilité d'obtenir au moins deux boules vertes.}\\par\\smallskip\\textbf{Univers.}$$\\text{Card}(\\Omega) = C_{12}^3 = \\blank{220}.$$\\textbf{Loi de $X$.} $X \\in \\{0, 1, 2, 3\\}$. Pour $k$ boules vertes, on choisit $k$ parmi $5$ vertes et $3-k$ parmi $\\blank{7}$ non vertes :$$\\mathbb{P}(X = k) = \\frac{C_5^k \\cdot C_7^{3-k}}{220}.$$$$\\begin{array}{|c|c|c|c|c|}\\hline k & 0 & 1 & 2 & 3 \\\\\\hline \\mathbb{P}(X=k) & \\frac{35}{220} & \\frac{105}{220} & \\frac{70}{220} & \\frac{10}{220} \\\\\\hline\\end{array}$$\\textbf{Au moins deux vertes.} On additionne les probabilités pour $k = 2$ et $k = 3$ :$$\\mathbb{P}(X \\geq 2) = \\frac{\\blank{70}}{220} + \\frac{\\blank{10}}{220} = \\frac{80}{220} = \\blank{\\frac{4}{11}}.$$"
+        }
+      ]
+    },
+    {
+      "id": "synthese_visuelle",
+      "category": "course",
+      "title": "Synthèse visuelle : comment choisir la méthode ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a maintenant tous les outils. Cette section récapitule comment choisir la bonne méthode face à un énoncé, et comment rédiger une correction rigoureuse."
+        },
+        {
+          "type": "strategy",
+          "title": "Comment \\mathqst{choisir la bonne méthode} face à un énoncé ?",
+          "content": "On lit l'énoncé et on pose les bonnes questions :\\begin{itemize}\\item \\textbf{L'ordre compte-t-il ?} Mots-clés : « successivement », « code », « classement », « postes différents » $\\to$ arrangement ou arbre\\item \\textbf{L'ordre ne compte-t-il pas ?} Mots-clés : « simultanément », « comité », « groupe », « lot » $\\to$ combinaison\\item \\textbf{Y a-t-il une information « sachant que » ?} Mots-clés : « sachant que », « condition », « deuxième étape » $\\to$ probabilité conditionnelle\\item \\textbf{Faut-il tester une influence ?} Question : « justifier l'indépendance » $\\to$ comparer $\\mathbb{P}(A \\cap B)$ et $\\mathbb{P}(A)\\mathbb{P}(B)$\\item \\textbf{Répète-t-on la même expérience ?} Mots-clés : « $n$ fois », « avec remise », « indépendantes » $\\to$ loi binomiale\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{rédiger une correction complète} en probabilités ?",
+          "content": "Une bonne copie suit quatre étapes :\\begin{enumerate}\\item \\textbf{Vérifier le modèle} — préciser le type de tirage (simultané, successif avec ou sans remise), en déduire le bon outil ($A_n^p$ ou $C_n^p$), et calculer $\\text{Card}(\\Omega)$\\item \\textbf{Calculer les cas possibles} — énoncer la formule utilisée avant de la calculer\\item \\textbf{Calculer les cas favorables} — décrire l'événement, compter ses éléments, calculer la probabilité\\item \\textbf{Conclure} — énoncer le résultat avec une phrase courte\\end{enumerate}\\textbf{Attention :} ne jamais écrire la formule finale sans avoir justifié le modèle au préalable."
+        }
+      ]
+    }
+  ]
+}

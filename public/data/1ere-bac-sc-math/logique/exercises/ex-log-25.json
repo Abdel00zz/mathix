@@ -1,0 +1,30 @@
+{
+  "id": "ex-log-25",
+  "theme": "logique",
+  "difficulty": "difficile",
+  "topic": "Logique & Raisonnements — Raisonnement par récurrence",
+  "requiresRedaction": true,
+  "context": "Montrer par récurrence les égalités suivantes :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$\\forall n \\in \\mathbb{N}^* : 1^3 + 2^3 + \\cdots + n^3 = \\dfrac{n^2(n+1)^2}{4}$",
+      "hint": "Au rang $n+1$, ajoutez $(n+1)^3$ au membre gauche et vérifiez que la somme est $\\dfrac{(n+1)^2(n+2)^2}{4}$."
+    },
+    {
+      "id": "q2",
+      "content": "$\\forall n \\in \\mathbb{N}^* : 1 - 2^2 + \\cdots + (-1)^{n-1}n^2 = (-1)^{n-1}\\dfrac{n(n+1)}{2}$",
+      "hint": "Au rang $n+1$, le terme supplémentaire est $(-1)^n(n+1)^2$. Factorisez par $(-1)^n(n+1)$."
+    },
+    {
+      "id": "q3",
+      "content": "$\\forall n \\in \\mathbb{N} : 1 - \\dfrac{1}{3} + \\dfrac{1}{9} - \\cdots + \\left(-\\dfrac{1}{3}\\right)^n = \\dfrac{3}{4} - \\dfrac{(-1)^n}{4 \\times 3^n}$",
+      "hint": "C'est une série géométrique de raison $-\\dfrac{1}{3}$. Au rang $n+1$, ajoutez $\\left(-\\dfrac{1}{3}\\right)^{n+1}$ et simplifiez."
+    },
+    {
+      "id": "q4",
+      "content": "$\\forall n \\in \\mathbb{N}^* : 1 \\times 2 + 2 \\times 3 + \\cdots + n(n+1) = \\dfrac{n(n+1)(n+2)}{3}$",
+      "hint": "Au rang $n+1$, le terme supplémentaire est $(n+1)(n+2)$. Factorisez par $\\dfrac{(n+1)(n+2)}{3}$."
+    }
+  ]
+}

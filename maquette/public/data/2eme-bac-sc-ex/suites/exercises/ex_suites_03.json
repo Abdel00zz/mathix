@@ -1,0 +1,37 @@
+{
+  "id": "ex-suites-03",
+  "theme": "suites",
+  "difficulty": "difficile",
+  "topic": "Suites Numériques",
+  "context": "Soit la suite $(u_n)$ définie par $u_0 = 6$ et la relation de récurrence : $$u_{n+1} = \\dfrac{1}{2}u_n + 1$$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Suite Auxiliaire",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "On pose $v_n = u_n - 2$. Montrer que $(v_n)$ est géométrique.",
+          "hint": "Pour montrer que $(v_n)$ est géométrique, calculez $v_{n+1}$ en fonction de $u_{n+1}$, puis remplacez $u_{n+1}$ par sa définition. Factorisez l'expression pour faire apparaître $v_n$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Terme général et Limite",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Donner l'expression de $u_n$ en fonction de $n$.",
+          "hint": "Vous connaissez le premier terme $v_0$ et la raison $q$. Utilisez la formule du terme général d'une suite géométrique. Ensuite, exprimez $u_n$ en fonction de $v_n$ à partir de la définition de $v_n$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Calculer la limite de $(u_n)$.",
+          "hint": "Quelle est la condition sur la raison $q$ pour que la limite d'une suite géométrique soit 0 ? Utilisez les opérations sur les limites pour en déduire la limite de $u_n$."
+        }
+      ]
+    }
+  ]
+}

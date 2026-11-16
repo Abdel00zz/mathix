@@ -1,0 +1,40 @@
+{
+  "id": "ex-ens-app-21",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Applications et Fonctions — Notion d'application : image et antécédent",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Les diagrammes suivants présentent des relations. Lesquels présentent une application et pourquoi ?",
+      "hint": "Une relation est une application si et seulement si chaque élément de l'ensemble de départ possède exactement un antécédent dans l'ensemble d'arrivée. Vérifiez pour chaque diagramme : tout élément de gauche a-t-il une et une seule flèche sortante ?"
+    },
+    {
+      "id": "q2",
+      "content": "Soit $f$ une application de $E$ dans $E$. On dit qu'un élément $x \\in E$ est \\textit{invariant} par $f$ si $f(x) = x$. Déterminer l'ensemble des points invariants par l'application $f$ dans chacun des cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq2_1",
+          "content": "$f : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto x^2$",
+          "hint": "Résoudre $f(x) = x$, c'est-à-dire $x^2 = x$."
+        },
+        {
+          "id": "sq2_2",
+          "content": "$f : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto \\sqrt{2x+3}$",
+          "hint": "Résoudre $\\sqrt{2x+3} = x$ en tenant compte du domaine de définition ($2x+3 \\geq 0$ et $x \\geq 0$)."
+        },
+        {
+          "id": "sq2_3",
+          "content": "$f : \\mathcal{P}(E) \\to \\mathcal{P}(E)$, $X \\mapsto X \\cap A$ $(A \\subset E)$",
+          "hint": "Résoudre $X \\cap A = X$. Quelle relation ensembliste cela impose-t-il entre $X$ et $A$ ?"
+        },
+        {
+          "id": "sq2_4",
+          "content": "$f : \\mathcal{P}(E) \\to \\mathcal{P}(E)$, $X \\mapsto \\overline{X}$",
+          "hint": "Résoudre $\\overline{X} = X$. Quel ensemble vérifie cette propriété ?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "ex-etude-fct-06",
+  "theme": "etude-fonctions",
+  "difficulty": "moyen",
+  "topic": "Analyse - Étude complète, concavité et symétrie",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction définie par : $f(x)=\\frac{3x}{x^2+1}+2$\n\nEt soit $(\\mathcal{C}_f)$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que $D_f = \\mathbb{R}$ puis calculer les limites de $f$ aux bornes de $D_f$",
+          "hint": "Le dénominateur $x^2+1$ ne s'annule jamais sur $\\mathbb{R}$. Pour les limites en l'infini, $\\frac{3x}{x^2+1}$ se comporte comme $\\frac{3x}{x^2} = \\frac{3}{x}$."
+        },
+        {
+          "id": "b",
+          "content": "Etudier les branches infinies de la courbe $(\\mathcal{C}_f)$",
+          "hint": "Puisque les limites en $+\\infty$ et $-\\infty$ sont finies et égales à 2, déduisez-en l'existence d'une asymptote horizontale."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que le point $I(0;2)$ est un centre de symétrie de $(\\mathcal{C}_f)$",
+      "hint": "Vérifiez la condition de symétrie centrale : $f(2\\times 0 - x) + f(x) = 2\\times 2$, c'est-à-dire $f(-x) + f(x) = 4$."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que : $(\\forall x \\in \\mathbb{R}) \\quad f'(x)=-\\frac{3(x^2-1)}{(x^2+1)^2}$",
+          "hint": "Dérivez le terme $\\frac{3x}{x^2+1}$ à l'aide de la formule $\\left(\\frac{u}{v}\\right)'$. La dérivée de la constante 2 est nulle."
+        },
+        {
+          "id": "b",
+          "content": "Dresser le tableau de variations de $f$",
+          "hint": "Le dénominateur est toujours positif. Étudiez le signe du numérateur $-3(x^2-1)$ (trinôme du second degré)."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que : $(\\forall x \\in \\mathbb{R}) \\quad f''(x)=\\frac{6x(x^2-3)}{(x^2+1)^3}$",
+          "hint": "Dérivez $f'(x)$. Factorisez le numérateur par $(x^2+1)$ avant de simplifier l'expression pour obtenir le résultat demandé."
+        },
+        {
+          "id": "b",
+          "content": "Etudier la concavité de $(\\mathcal{C}_f)$ en précisant ses points d'inflexions s'ils existent.",
+          "hint": "Étudiez le signe de $f''(x)$. Les points d'inflexion sont les points où la dérivée seconde s'annule en changeant de signe."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Donner une équation cartésienne de la tangente $(T)$ à $(\\mathcal{C}_f)$ au point $I$.",
+      "hint": "Utilisez la formule $y = f'(0)(x-0) + f(0)$."
+    },
+    {
+      "id": "q6",
+      "content": "Construire la courbe $(\\mathcal{C}_f)$.",
+      "hint": "Tracez l'asymptote horizontale $y=2$, la tangente au point $I$, et placez les extremums locaux."
+    },
+    {
+      "id": "q7",
+      "content": "Soit $m \\in \\mathbb{R}$, déterminer graphiquement le nombre de solutions de l'équation $f(x)=m$",
+      "hint": "Imaginez une droite horizontale $y=m$ qui balaie le plan verticalement. Comptez les intersections avec la courbe selon les valeurs de $m$ par rapport aux extremums."
+    },
+    {
+      "id": "q8",
+      "content": "Rappeler les méthodes de construction des courbes $(\\mathcal{C}_g)$ et $(\\mathcal{C}_h)$ des fonctions $g:x \\mapsto f(|x|)$ et $h:x \\mapsto -f(x)$",
+      "hint": "Pour $g$, utilisez la parité (symétrie axiale par rapport à l'axe des ordonnées). Pour $h$, utilisez la symétrie par rapport à l'axe des abscisses."
+    }
+  ]
+}

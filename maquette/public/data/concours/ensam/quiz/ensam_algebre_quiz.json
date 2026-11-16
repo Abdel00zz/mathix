@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "ensam-al-01",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "prompt": "Le conjugué de $z = \\frac{2+i}{1-i}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2} + \\frac{3}{2}i$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2} - \\frac{3}{2}i$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{3}{2} + \\frac{1}{2}i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\frac{1}{2} + \\frac{3}{2}i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$z = \\frac{(2+i)(1+i)}{(1-i)(1+i)} = \\frac{1+3i}{2} = \\frac{1}{2}+\\frac{3}{2}i$. Le conjugué est $\\bar{z} = \\frac{1}{2}-\\frac{3}{2}i$."
+    },
+    {
+      "id": "ensam-al-02",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "prompt": "L'inverse de $\\bar{3}$ dans $(\\mathbb{Z}/7\\mathbb{Z}, \\times)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\bar{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\bar{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\bar{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\bar{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$3 \\times 5 = 15 \\equiv 1 \\pmod{7}$. Bézout : $3 \\times 5 - 7 \\times 2 = 1$."
+    },
+    {
+      "id": "ensam-al-03",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "prompt": "Les solutions de $z^2 = -4i$ dans $\\mathbb{C}$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{2}(1-i)$ et $-\\sqrt{2}(1-i)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2i$ et $-2i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2(1+i)$ et $-2(1+i)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt{2}(1+i)$ et $-\\sqrt{2}(1+i)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$-4i = 4e^{-i\\pi/2}$, racines carrées : $2e^{-i\\pi/4} = \\sqrt{2}(1-i)$ et son opposé. Vérification : $(\\sqrt{2}(1-i))^2 = 2(-2i) = -4i$."
+    },
+    {
+      "id": "ensam-al-04",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "prompt": "Soit $\\star$ sur $\\mathbb{R}^*_+$ : $a \\star b = \\frac{ab}{a+b}$. Cette loi admet-elle un élément neutre ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non, car $\\frac{ae}{a+e}=a$ n'a pas de solution universelle $e$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Oui, $e = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Oui, $e = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non, car la loi n'est pas commutative",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\frac{ae}{a+e} = a$ donne $ae = a^2 + ae$, soit $a^2 = 0$, impossible pour tout $a > 0$. La loi est commutative et associative (via $1/(a\\star b) = 1/a+1/b$) mais sans neutre."
+    },
+    {
+      "id": "ensam-al-05",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "prompt": "Le nombre $91$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non premier, $91 = 7 \\times 13$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Premier",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Non premier, $91 = 9 \\times 11$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non premier, $91 = 7 \\times 14$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On teste les premiers $\\leq \\sqrt{91} \\approx 9{,}5$ : $91/7 = 13$. Piège classique : $91$ semble premier mais $91 = 7 \\times 13$."
+    },
+    {
+      "id": "ensam-al-06",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Espaces vectoriels",
+      "prompt": "$f: \\mathbb{R}^2 \\to \\mathbb{R}$ définie par $f(x,y) = x^2 + y$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non linéaire",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Linéaire",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Linéaire et injective",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Linéaire et surjective",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(2,0)=4$ mais $2f(1,0)=2$. L'homogénéité est violée par le terme $x^2$. Une application linéaire vérifie $f(\\lambda u) = \\lambda f(u)$."
+    },
+    {
+      "id": "ensam-al-07",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "prompt": "La partie réelle de $(1+i)^{10}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$32$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-32$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$16$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$(1+i)^2 = 2i$. $(1+i)^{10} = (2i)^5 = 32i^5 = 32i$. Partie réelle : $0$, partie imaginaire : $32$."
+    },
+    {
+      "id": "ensam-al-08",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "prompt": "$\\varphi: (\\mathbb{R}^*, \\times) \\to (\\mathbb{R}^*_+, \\times)$ avec $\\varphi(x) = x^2$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un morphisme surjectif non injectif",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un isomorphisme",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un morphisme injectif non surjectif",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Pas un morphisme",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Morphisme : $\\varphi(xy)=(xy)^2=x^2y^2$. Surjectif : $\\varphi(\\sqrt{a})=a$ pour $a>0$. Non injectif : $\\varphi(x)=\\varphi(-x)$. $\\ker\\varphi = \\{\\pm 1\\}$."
+    },
+    {
+      "id": "ensam-al-09",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "prompt": "$\\begin{cases} x \\equiv 2 \\pmod{3} \\\\ x \\equiv 3 \\pmod{5} \\end{cases}$ a pour solution :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x \\equiv 8 \\pmod{15}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x \\equiv 5 \\pmod{15}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x \\equiv 13 \\pmod{15}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x \\equiv 2 \\pmod{15}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Restes chinois ($\\text{PGCD}(3,5)=1$). $x=3+5k$, $3+5k \\equiv 2 \\pmod{3}$, $2k \\equiv 2 \\pmod{3}$, $k \\equiv 1$. $k=1 \\Rightarrow x=8$."
+    },
+    {
+      "id": "ensam-al-10",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Espaces vectoriels",
+      "prompt": "La dimension de $\\mathbb{R}_2[X] = \\{P : \\deg P \\leq 2\\}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Base canonique : $\\{1, X, X^2\\}$, soit $3$ vecteurs. Tout $P = aX^2+bX+c$ de manière unique, donc $\\dim = 3$."
+    }
+  ]
+}

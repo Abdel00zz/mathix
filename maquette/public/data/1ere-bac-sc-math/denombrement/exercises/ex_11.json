@@ -1,0 +1,20 @@
+{
+  "id": "ex-denom-11",
+  "theme": "denombrement",
+  "difficulty": "difficile",
+  "topic": "Dénombrement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Tirages avec au moins une condition",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Une urne contient 5 boules rouges et 3 boules noires.\nOn tire simultanément 3 boules de l'urne.\nCombien de tirages différents contenant au moins une boule rouge peut-on obtenir ?",
+          "hint": "Pour avoir au moins une boule rouge, il faut :\n- Soit tirer exactement 1 boule rouge et 2 noires : $C_5^1 \\times C_3^2 = 5 \\times 3 = 15$.\n- Soit tirer exactement 2 boules rouges et 1 noire : $C_5^2 \\times C_3^1 = 10 \\times 3 = 30$.\n- Soit tirer exactement 3 boules rouges et 0 noire : $C_5^3 \\times C_3^0 = 10 \\times 1 = 10$.\n\nLe nombre total de tirages est la somme des possibilités pour chaque cas.\nNombre de tirages = $15 + 30 + 10 = 55$.\n\nIl y a 55 tirages différents contenant au moins une boule rouge."
+        }
+      ]
+    }
+  ]
+}

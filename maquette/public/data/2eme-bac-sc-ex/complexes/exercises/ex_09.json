@@ -1,0 +1,37 @@
+{
+  "id": "ex_09",
+  "theme": "complexes",
+  "difficulty": "moyen",
+  "topic": "Nombres Complexes",
+  "context": "On considère dans l'ensemble des nombres complexes $\\mathbb{C}$ l'équation suivante : $$(E) : z^2 + 2z + 1 + i = 0$$",
+  "requiresRedaction": true,
+  "sessionDate": "2026-02-05T10:00:00.000Z",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $z_1$ et $z_2$ les deux solutions de l'équation $(E)$ sachant que $\\text{Im}(z_1) > 0$.",
+      "hint": "Calculer le discriminant $\\Delta$. Remarquer que $(1-i)^2 = -2i$. Utiliser cette égalité pour extraire une racine carrée de $\\Delta$."
+    },
+    {
+      "id": "q2",
+      "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O; \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A$, $B$, $M_1$ et $M_2$ d'affixes respectives : $$a = -1, \\quad b = -\\frac{\\sqrt{2}}{2} + i\\frac{\\sqrt{2}}{2}, \\quad z_1 \\quad \\text{et} \\quad z_2$$",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Écrire le nombre complexe $b$ sous forme trigonométrique.",
+          "hint": "Identifier le module et l'argument usuels correspondants aux valeurs $\\frac{\\sqrt{2}}{2}$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Vérifier que $\\overrightarrow{AM_1} = \\overrightarrow{OB}$ et que $A$ est le milieu du segment $[M_1M_2]$. Construire les points sur une figure.",
+          "hint": "Calculer $z_1 - a$ et comparer avec $b$. Pour le milieu, vérifier si $a = \\frac{z_1 + z_2}{2}$ en utilisant la somme des racines de l'équation."
+        },
+        {
+          "id": "sq2c",
+          "content": "En déduire que le quadrilatère $AOBM_1$ est un losange et que $\\arg(z_1) \\equiv \\frac{7\\pi}{8} [2\\pi]$.",
+          "hint": "Un parallélogramme ayant deux côtés consécutifs de même longueur est un losange. Vérifier $OA = OB$. Pour l'argument, utiliser la propriété des diagonales d'un losange qui sont les bissectrices des angles, ou observer la somme des vecteurs $\\overrightarrow{OA}$ et $\\overrightarrow{OB}$."
+        }
+      ]
+    }
+  ]
+}

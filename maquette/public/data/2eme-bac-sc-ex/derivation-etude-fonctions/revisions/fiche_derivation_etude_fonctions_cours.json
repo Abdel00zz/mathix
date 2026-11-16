@@ -1,0 +1,385 @@
+{
+  "header": {
+    "title": "Dérivation et étude de fonctions",
+    "subtitle": "Dérivabilité, calcul de dérivées, variations, convexité, asymptotes",
+    "context": "2BAC Sciences (PC/SVT)"
+  },
+  "lexique": [
+    {
+      "term": "Dérivée",
+      "arabic": "مشتقة",
+      "category": "concept",
+      "symbol": "f'(x)",
+      "definition": "Nombre ou fonction qui mesure la variation instantanée d'une fonction.",
+      "variants": [
+        "dérivées",
+        "fonction dérivée"
+      ]
+    },
+    {
+      "term": "Nombre dérivé",
+      "arabic": "عدد مشتق",
+      "category": "concept",
+      "symbol": "f'(a)",
+      "definition": "Pente de la tangente à la courbe au point d'abscisse a.",
+      "variants": [
+        "nombres dérivés"
+      ]
+    },
+    {
+      "term": "Tangente",
+      "arabic": "مماس",
+      "category": "concept",
+      "definition": "Droite qui approche localement une courbe en un point.",
+      "variants": [
+        "droite tangente",
+        "tangentes"
+      ]
+    },
+    {
+      "term": "Dérivable",
+      "arabic": "قابلة للاشتقاق",
+      "category": "concept",
+      "definition": "Se dit d'une fonction qui possède une dérivée au point étudié.",
+      "variants": [
+        "dérivabilité"
+      ]
+    },
+    {
+      "term": "Sens de variation",
+      "arabic": "منحى التغير",
+      "category": "concept",
+      "definition": "Manière dont une fonction augmente ou diminue sur un intervalle.",
+      "variants": [
+        "variations"
+      ]
+    },
+    {
+      "term": "Strictement croissante",
+      "arabic": "متزايدة تمامًا",
+      "category": "concept",
+      "definition": "Fonction dont les images augmentent lorsque les antécédents augmentent.",
+      "variants": [
+        "croissante"
+      ]
+    },
+    {
+      "term": "Strictement décroissante",
+      "arabic": "متناقصة تمامًا",
+      "category": "concept",
+      "definition": "Fonction dont les images diminuent lorsque les antécédents augmentent.",
+      "variants": [
+        "décroissante"
+      ]
+    },
+    {
+      "term": "Extremum",
+      "arabic": "قيمة حدية",
+      "category": "concept",
+      "definition": "Valeur maximale ou minimale prise par une fonction.",
+      "variants": [
+        "extremums",
+        "maximum local",
+        "minimum local"
+      ]
+    },
+    {
+      "term": "Tableau de variation",
+      "arabic": "جدول التغيرات",
+      "category": "concept",
+      "definition": "Tableau qui résume le signe de la dérivée et les variations d'une fonction.",
+      "variants": [
+        "tableaux de variation"
+      ]
+    },
+    {
+      "term": "Convexité",
+      "arabic": "تحدب",
+      "category": "concept",
+      "definition": "Propriété décrivant la courbure d'une fonction à l'aide de sa dérivée seconde.",
+      "variants": [
+        "convexe",
+        "concavité",
+        "concave"
+      ]
+    },
+    {
+      "term": "Point d'inflexion",
+      "arabic": "نقطة انعطاف",
+      "category": "concept",
+      "definition": "Point où la courbe change de convexité.",
+      "variants": [
+        "points d'inflexion"
+      ]
+    },
+    {
+      "term": "Asymptote",
+      "arabic": "مقارب",
+      "category": "concept",
+      "definition": "Droite dont une branche de la courbe se rapproche indéfiniment.",
+      "variants": [
+        "asymptotes"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ce chapitre vous apprend à mesurer la pente d'une courbe en un point, à calculer des dérivées avec les formules usuelles et à utiliser la dérivée pour étudier les variations, les extremums et la convexité d'une fonction. C'est un outil fondamental pour l'optimisation et la modélisation. Les exercices d'examen national demandent souvent une étude complète : domaine, limites, dérivée, tableau de signes, variations, asymptotes et convexité. La rigueur dans le calcul et l'interprétation sont essentielles."
+        }
+      ]
+    },
+    {
+      "id": "derivabilite-point",
+      "category": "course",
+      "title": "Dérivabilité en un point",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait calculer la pente d'une droite. La dérivée généralise cette idée à une courbe : elle mesure la pente de la tangente en un point."
+        },
+        {
+          "type": "definition",
+          "title": "Quand dit-on qu'une fonction est \\mathqst{dérivable en un point} ?",
+          "content": "Soit $f$ définie sur un intervalle ouvert contenant $x_0$. $f$ est \\textbf{dérivable en $x_0$} s'il existe un réel $\\ell$ tel que :\\[\\lim_{x \\to x_0} \\frac{f(x)-f(x_0)}{x-x_0} = \\ell.\\] Le nombre $\\ell$ est appelé \\textbf{nombre dérivé} de $f$ en $x_0$ et se note $f'(x_0)$."
+        },
+        {
+          "type": "example",
+          "content": "Soit $f(x)=2x^2$. Étudions la dérivabilité en $x_0=2$.\\par\\smallskip On calcule le taux de variation :\\[\\frac{f(x)-f(2)}{x-2} = \\frac{2x^2-8}{x-2} = \\frac{2(x-2)(x+2)}{x-2}=2(x+2).\\] Sa limite quand $x\\to 2$ vaut $2\\times(2+2)=8$. Donc $f$ est dérivable en $2$ et $f'(2)=8$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{trouver l'équation de la tangente} ?",
+          "content": "Si $f$ est dérivable en $x_0$, la tangente à la courbe $(C_f)$ au point d'abscisse $x_0$ a pour équation :\\[\\boxed{y = f'(x_0)(x-x_0) + f(x_0)}.\\]"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Soit $f(x)=\\dfrac{2}{x+1}$. \\textbf{Étudier} la dérivabilité de $f$ en $x_0=1$ puis \\textbf{donner} l'équation de la tangente en ce point.}\\par\\smallskip On calcule le taux de variation : \\[\\frac{f(x)-f(1)}{x-1} = \\frac{\\frac{2}{x+1} - 1}{x-1} = \\frac{2 - (x+1)}{(x+1)(x-1)} = \\frac{-(x-1)}{(x+1)(x-1)} = \\frac{-1}{x+1}.\\] Sa limite quand $x\\to 1$ vaut $\\frac{-1}{\\blank{2}}$. Donc $f$ est dérivable en $1$ et $f'(1) = \\blank{-\\frac12}$.\\par\\smallskip L'équation de la tangente : $y = f'(1)(x-1)+f(1) = -\\frac12(x-1)+1 = \\blank{-\\frac{x}{2}+\\frac{3}{2}}$."
+        }
+      ]
+    },
+    {
+      "id": "derivees-laterales",
+      "category": "course",
+      "title": "Dérivabilité à gauche et à droite",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certaines fonctions, comme la valeur absolue, ne sont pas dérivables partout. On étudie alors séparément la limite à gauche et à droite du taux de variation."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{les dérivées à gauche et à droite} ?",
+          "content": "Soit $f$ définie sur un intervalle contenant $x_0$.\\begin{itemize}\\item $f$ est \\textbf{dérivable à droite} en $x_0$ si $\\displaystyle\\lim_{x\\to x_0^+}\\frac{f(x)-f(x_0)}{x-x_0} = \\ell_d \\in \\mathbb{R}$ ; on note $f'_d(x_0)=\\ell_d$.\\item $f$ est \\textbf{dérivable à gauche} en $x_0$ si $\\displaystyle\\lim_{x\\to x_0^-}\\frac{f(x)-f(x_0)}{x-x_0} = \\ell_g \\in \\mathbb{R}$ ; on note $f'_g(x_0)=\\ell_g$.\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{une fonction est-elle dérivable} en un point ?",
+          "content": "$f$ est dérivable en $a$ si et seulement si $f$ est dérivable à droite et à gauche en $a$ et $f'_d(a) = f'_g(a)$."
+        },
+        {
+          "type": "example",
+          "content": "Soit $f(x)=|x^2-1|$ en $x_0=1$.\\par\\smallskip \\textbf{À droite :} pour $x>1$, $|x^2-1|=x^2-1$ ; $\\lim_{x\\to1^+}\\frac{x^2-1}{x-1}=2$.\\par\\smallskip \\textbf{À gauche :} pour $x<1$, $|x^2-1|=-(x^2-1)$ ; $\\lim_{x\\to1^-}\\frac{-(x^2-1)}{x-1}=-2$.\\par Les deux limites sont différentes, donc $f$ n'est pas dérivable en $1$ (point anguleux)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x)=\\begin{cases} x-3\\sqrt[3]{x-1} & \\text{si } x\\ge 1 \\\\ \\dfrac{1}{\\sqrt{x}} & \\text{si } x<1 \\end{cases}$. \\textbf{Étudier} la dérivabilité en $x_0=1$ et \\textbf{interpréter} géométriquement.}\\par\\smallskip \\textbf{Dérivée à droite :} $\\displaystyle\\lim_{x\\to1^+}\\frac{(x-3\\sqrt[3]{x-1})-0}{x-1} = \\lim_{x\\to1^+}\\left(1 - \\frac{3\\sqrt[3]{x-1}}{x-1}\\right) = 1 - \\lim_{t\\to0^+}\\frac{3}{t^{2/3}} = \\blank{-\\infty}$ (demi-tangente verticale vers le bas).\\par\\smallskip \\textbf{Dérivée à gauche :} $\\displaystyle\\lim_{x\\to1^-}\\frac{\\frac{1}{\\sqrt{x}}-1}{x-1} = \\lim_{x\\to1^-}\\frac{1-\\sqrt{x}}{\\sqrt{x}(x-1)} = \\lim_{x\\to1^-}\\frac{-1}{\\sqrt{x}(\\sqrt{x}+1)} = \\blank{-\\frac12}$ (demi-tangente oblique).\\par\\smallskip Les deux dérivées latérales sont différentes, donc $f$ \\textbf{n'est pas dérivable} en $1$ ; la courbe a un point anguleux avec une demi-tangente verticale à droite et une demi-tangente oblique à gauche."
+        }
+      ]
+    },
+    {
+      "id": "continuite-derivabilite",
+      "category": "course",
+      "title": "Lien entre continuité et dérivabilité",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction dérivable est nécessairement continue, mais la réciproque est fausse. Voici comment vérifier la continuité et la dérivabilité d'une fonction définie par morceaux."
+        },
+        {
+          "type": "property",
+          "title": "Quel est \\mathqst{le lien entre dérivabilité et continuité} ?",
+          "content": "Toute fonction dérivable en $a$ est continue en $a$.\\par La réciproque est fausse : $x\\mapsto|x|$ est continue en $0$ mais pas dérivable en $0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $g(x)=\\begin{cases} \\dfrac{\\sqrt{x^2+1}-1}{x} & \\text{si } x\\neq0 \\\\ 0 & \\text{si } x=0 \\end{cases}$. \\textbf{Étudier} la continuité et la dérivabilité de $g$ en $0$.}\\par\\smallskip \\textbf{Continuité :} $\\displaystyle\\lim_{x\\to0}\\frac{\\sqrt{x^2+1}-1}{x} = \\lim_{x\\to0}\\frac{x^2}{x(\\sqrt{x^2+1}+1)} = \\lim_{x\\to0}\\frac{x}{\\sqrt{x^2+1}+1}=0 = g(0)$. Donc $g$ est continue en $0$.\\par\\smallskip \\textbf{Dérivabilité :} $\\displaystyle\\lim_{x\\to0}\\frac{g(x)-g(0)}{x-0} = \\lim_{x\\to0}\\frac{\\sqrt{x^2+1}-1}{x^2} = \\lim_{x\\to0}\\frac{1}{\\sqrt{x^2+1}+1} = \\frac12$. Donc $g$ est dérivable en $0$ et $g'(0)=\\blank{\\frac12}$."
+        }
+      ]
+    },
+    {
+      "id": "fonction-derivee",
+      "category": "course",
+      "title": "Fonction dérivée et formules usuelles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Quand une fonction est dérivable en tout point d'un intervalle, on peut définir sa fonction dérivée. Voici les dérivées des fonctions de base à connaître par cœur."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la fonction dérivée} ?",
+          "content": "Soit $f$ dérivable sur un intervalle $I$. La \\textbf{fonction dérivée} de $f$, notée $f'$, associe à chaque $x\\in I$ le nombre dérivé $f'(x)$. Si $f'$ est elle-même dérivable, sa dérivée est la \\textbf{dérivée seconde} $f''$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les dérivées des fonctions usuelles} ?",
+          "content": "$$\n\\begin{array}{|c|c|c|}\n\\hline\nf(x) & f'(x) & \\text{Domaine} \\\\\n\\hline\na\\ (\\text{constante}) & 0 & \\mathbb{R} \\\\\nax+b & a & \\mathbb{R} \\\\\nx^n\\ (n\\in\\mathbb{N}^*) & nx^{n-1} & \\mathbb{R} \\\\\n\\frac1x & -\\frac1{x^2} & \\mathbb{R}\\setminus\\{0\\} \\\\\n\\sqrt{x} & \\frac1{2\\sqrt{x}} & ]0,+\\infty[ \\\\\n\\sin x & \\cos x & \\mathbb{R} \\\\\n\\cos x & -\\sin x & \\mathbb{R} \\\\\n\\tan x & \\frac1{\\cos^2 x} & ]-\\frac\\pi2+k\\pi,\\frac\\pi2+k\\pi[ \\\\\n\\sin(ax+b) & a\\cos(ax+b) & \\mathbb{R} \\\\\n\\cos(ax+b) & -a\\sin(ax+b) & \\mathbb{R} \\\\\n\\hline\n\\end{array}\n$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{dériver une somme, un produit, un quotient} ?",
+          "content": "Soient $f,g$ dérivables sur $I$, $k\\in\\mathbb{R}$, $a\\neq0$.\\[\\begin{array}{ll}\n(f+g)' = f'+g' & (kf)' = k f' \\\\\n(fg)' = f'g + fg' & \\left(\\frac1g\\right)' = -\\frac{g'}{g^2}\\ (g\\neq0)\\\\\n\\left(\\frac{f}{g}\\right)' = \\frac{f'g - fg'}{g^2}\\ (g\\neq0) & (f^n)' = n f' f^{n-1}\\ (n\\in\\mathbb{N}^*)\\\\\n(\\sqrt{f})' = \\frac{f'}{2\\sqrt{f}}\\ (f>0) & \\bigl(f(ax+b)\\bigr)' = a f'(ax+b)\n\\end{array}\\]"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{dériver efficacement} ?",
+          "content": "\\textbf{D'abord}, déterminer le domaine de définition et vérifier que la fonction est dérivable sur l'intervalle considéré.\\par\\textbf{Ensuite}, reconnaître la forme de l'expression : somme, produit, quotient, composée.\\par\\textbf{Puis}, appliquer la formule correspondante en dérivant chaque morceau séparément.\\par\\textbf{Enfin}, simplifier l'écriture si possible."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminer la dérivée des fonctions suivantes sur leur domaine de dérivabilité.\\begin{enumerate}\\item $f(x)=2x^2-5$\\item $f(x)=-\\frac{8}{3}x^5-5x^3-2x+9$\\item $f(x)=\\dfrac{-2}{2x-2}$\\item $f(x)=\\dfrac{x^2+x-1}{x+2}$\\item $f(x)=\\dfrac{2-\\sqrt{x}}{2+\\sqrt{x}}$\\item $f(x)=\\cos^3(2x-3)-\\sqrt{x^2-2x}$\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item $f'(x)=\\blank{4x}$\\item $f'(x)=\\blank{-\\frac{40}{3}x^4-15x^2-2}$\\item $f'(x)=\\dfrac{4}{(2x-2)^2}=\\blank{\\dfrac{1}{(x-1)^2}}$\\item $f'(x)=\\dfrac{x^2+4x+3}{(x+2)^2}=\\blank{\\dfrac{(x+1)(x+3)}{(x+2)^2}}$\\item $f'(x)=\\dfrac{-2}{\\sqrt{x}(2+\\sqrt{x})^2}$\\item $f'(x)=\\blank{-6\\cos^2(2x-3)\\sin(2x-3)-\\dfrac{x-1}{\\sqrt{x^2-2x}}}$\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "complements-derivation",
+      "category": "course",
+      "title": "Compléments : composée, réciproque, racine n-ième",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a vu les dérivées des fonctions usuelles. Maintenant, on étend ces outils à des fonctions plus complexes : composition, réciproque et racines d'ordre quelconque."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{dériver une composée $g\\circ f$} ?",
+          "content": "Si $f$ est dérivable sur $I$ et $g$ dérivable sur $f(I)$, alors $g\\circ f$ est dérivable sur $I$ et :\\[\\boxed{(g\\circ f)'(x) = g'\\bigl(f(x)\\bigr) \\cdot f'(x)}.\\]"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $f(x)=\\dfrac{x-1}{x+2}$ et $g(x)=\\sqrt{x}$. Sans calculer $f\\circ g$, montrer que $f\\circ g$ est dérivable sur $]0,+\\infty[$ et calculer $(f\\circ g)'(x)$.}\\par\\smallskip $g$ est dérivable sur $]0,+\\infty[$ avec $g'(x)=\\dfrac{1}{2\\sqrt{x}}$. $g(]0,+\\infty[)=]0,+\\infty[$. $f$ est dérivable sur $\\mathbb{R}\\setminus\\{-2\\}$, donc sur $]0,+\\infty[$, avec $f'(x)=\\dfrac{3}{(x+2)^2}$.\\par Donc $(f\\circ g)'(x)=f'(g(x))\\cdot g'(x)=\\dfrac{3}{(\\sqrt{x}+2)^2}\\cdot\\dfrac{1}{2\\sqrt{x}}=\\boxed{\\dfrac{3}{2\\sqrt{x}(\\sqrt{x}+2)^2}}$."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{dériver une fonction réciproque} ?",
+          "content": "Soit $f$ continue et strictement monotone sur $I$, dérivable en $a\\in I$ avec $f'(a)\\neq0$. Alors $f^{-1}$ est dérivable en $f(a)$ et :\\[\\boxed{(f^{-1})'\\bigl(f(a)\\bigr) = \\frac{1}{f'(a)}}.\\] De façon générale, pour $x\\in f(I)$ : $(f^{-1})'(x) = \\dfrac{1}{f'\\bigl(f^{-1}(x)\\bigr)}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Soit $f(x)=x^3-3x$ sur $]1,+\\infty[$. Montrer que $f$ admet une réciproque, déterminer son domaine $J$, puis calculer $(f^{-1})'(-\\sqrt2)$.}\\par\\smallskip $f'(x)=3x^2-3 = 3(x^2-1) >0$ sur $]1,+\\infty[$, donc $f$ est strictement \\textbf{croissante} et continue, elle admet une réciproque sur $J=f(]1,+\\infty[)=\\blank{] -2 , +\\infty[}$.\\par $f(\\sqrt2)=2\\sqrt2-3\\sqrt2=\\blank{-\\sqrt2}$, donc $f^{-1}(-\\sqrt2)=\\blank{\\sqrt2}$.\\par $f'(\\sqrt2)=3(2-1)=\\blank{3}$.\\par $(f^{-1})'(-\\sqrt2)=\\dfrac{1}{f'(\\sqrt2)}=\\boxed{\\dfrac13}$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{dériver une racine n-ième} ?",
+          "content": "Pour $n\\ge2$ entier, la fonction $x\\mapsto\\sqrt[n]{x}$ est dérivable sur $]0,+\\infty[$ et :\\[\\bigl(\\sqrt[n]{x}\\bigr)' = \\frac{1}{n\\,\\sqrt[n]{x^{\\,n-1}}}.\\] Si $u$ est dérivable et strictement positive sur $I$, alors :\\[\\bigl(\\sqrt[n]{u(x)}\\bigr)' = \\frac{u'(x)}{n\\,\\bigl(\\sqrt[n]{u(x)}\\bigr)^{\\,n-1}}.\\]"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculer les dérivées suivantes :\\begin{enumerate}\\item $f(x)=\\sqrt[3]{3+\\cos^2 x}$\\item $f(x)=\\sqrt[3]{(x^3-1)^4}$\\item $f(x)=\\sin\\left(\\sqrt[3]{x^2+x+1}\\right)$\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item $f'(x)=\\dfrac{-\\sin(2x)}{4\\sqrt[3]{(3+\\cos^2 x)^3}}$\\item $f'(x)=4x^2\\sqrt[3]{x^3-1}$\\item $f'(x)=\\cos\\left(\\sqrt[3]{x^2+x+1}\\right)\\cdot\\dfrac{2x+1}{3\\sqrt[3]{(x^2+x+1)^2}}$\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "variations-extremums",
+      "category": "course",
+      "title": "Variations et extremums",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le signe de la dérivée permet de connaître le sens de variation de la fonction, et les points où la dérivée s'annule peuvent être des extremums locaux."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{le signe de $f'$ détermine-t-il les variations} ?",
+          "content": "Soit $f$ dérivable sur un intervalle $I$.\\[\\begin{array}{ll}\nf'(x)=0\\ \\forall x\\in I & \\Rightarrow f\\ \\text{constante sur } I\\\\\nf'(x)\\ge0\\ \\forall x\\in I & \\Rightarrow f\\ \\text{croissante sur } I\\\\\nf'(x)\\le0\\ \\forall x\\in I & \\Rightarrow f\\ \\text{décroissante sur } I\n\\end{array}\\]"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{reconnaître un extremum local} ?",
+          "content": "Soit $f$ dérivable sur un intervalle ouvert $I$ et $a\\in I$.\\begin{itemize}\\item Si $f$ admet un extremum local en $a$, alors $f'(a)=0$.\\item Si $f'(a)=0$ et $f'$ \\textbf{change de signe} au voisinage de $a$, alors $f$ admet un extremum local en $a$.\\item Si $f'(a)=0$ et $f'$ ne change pas de signe, $a$ est un point d'inflexion (pas d'extremum).\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{dresser le tableau de variations} d'une fonction ?",
+          "content": "\\textbf{D'abord}, déterminer le domaine de définition et vérifier la dérivabilité.\\par\\textbf{Ensuite}, calculer $f'(x)$ et résoudre $f'(x)=0$.\\par\\textbf{Puis}, étudier le signe de $f'(x)$ entre les racines.\\par\\textbf{Enfin}, calculer les valeurs de $f$ aux points critiques et aux bornes, puis compléter le tableau."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Soit $f(x)=x-\\sqrt[3]{x+1}$ définie sur $[-1,+\\infty[$. Calculer $\\displaystyle\\lim_{x\\to+\\infty}f(x)$, étudier la dérivabilité à droite en $-1$, puis dresser le tableau de variations de $f$.}\\par\\smallskip \\textbf{Limite :} $\\displaystyle f(x)=x\\left(1-\\frac{\\sqrt[3]{x+1}}{x}\\right) = x\\left(1-\\frac{\\sqrt[3]{1+1/x}}{x^{2/3}}\\right) \\to \\blank{+\\infty}$.\\par\\smallskip \\textbf{Dérivabilité en $-1$ :} $\\displaystyle\\lim_{x\\to-1^+}\\frac{f(x)-f(-1)}{x+1} = \\lim_{x\\to-1^+}\\frac{x-\\sqrt[3]{x+1}+1}{x+1} = \\lim_{x\\to-1^+}\\left(\\frac{x+1}{x+1} - \\frac{\\sqrt[3]{x+1}}{x+1}\\right) = 1 - \\lim_{t\\to0^+}\\frac{1}{t^{2/3}} = \\blank{-\\infty}$ : demi-tangente verticale vers le bas.\\par\\smallskip \\textbf{Dérivée pour $x>-1$ :} $f'(x)=1-\\frac{1}{3\\sqrt[3]{(x+1)^2}}$.\\par $f'(x)=0 \\iff \\sqrt[3]{(x+1)^2} = \\frac13 \\iff (x+1)^2 = \\frac1{27} \\iff x = -1+\\frac{1}{3\\sqrt[3]{3}} \\approx -0.79$.\\par\\smallskip \\textbf{Tableau de variations :}\\[\\begin{array}{|c|ccccc|}\\hline x & -1 & & x_0 & & +\\infty \\\\\\hline f'(x) & & - & 0 & + & \\\\\\hline f & -1 & \\searrow & f(x_0) & \\nearrow & +\\infty \\\\\\hline\\end{array}\\] où $x_0 = -1+\\frac{1}{3\\sqrt[3]{3}}$ et $f(x_0)$ est le minimum."
+        }
+      ]
+    },
+    {
+      "id": "convexite-asymptotes",
+      "category": "course",
+      "title": "Convexité et asymptotes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La dérivée seconde renseigne sur la courbure de la courbe (convexe ou concave). Les asymptotes décrivent le comportement à l'infini."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{la convexité se lit sur $f''$} ?",
+          "content": "Soit $f$ deux fois dérivable sur $I$.\\begin{itemize}\\item Si $f''(x)>0$ sur $I$, alors $(C_f)$ est \\textbf{convexe} (forme de bol $\\cup$).\\item Si $f''(x)<0$ sur $I$, alors $(C_f)$ est \\textbf{concave} (forme de dôme $\\cap$).\\item Si $f''(a)=0$ et $f''$ change de signe en $a$, le point $I(a;f(a))$ est un \\textbf{point d'inflexion} : la tangente traverse la courbe.\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{détecter les asymptotes} ?",
+          "content": "$$\n\\begin{array}{|l|l|}\n\\hline\n\\displaystyle\\lim_{x\\to a}f(x)=\\pm\\infty & \\text{Asymptote verticale } x=a \\\\\n\\displaystyle\\lim_{x\\to\\pm\\infty}f(x)=b & \\text{Asymptote horizontale } y=b \\\\\n\\displaystyle\\lim_{x\\to\\pm\\infty}\\frac{f(x)}{x}=a\\neq0\\text{ et }\\lim_{x\\to\\pm\\infty}(f(x)-ax)=b & \\text{Asymptote oblique } y=ax+b \\\\\n\\displaystyle\\lim_{x\\to\\pm\\infty}\\frac{f(x)}{x}=\\pm\\infty & \\text{Branche parabolique verticale} \\\\\n\\displaystyle\\lim_{x\\to\\pm\\infty}\\frac{f(x)}{x}=0 & \\text{Branche parabolique horizontale} \\\\\n\\hline\n\\end{array}\n$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Étudier la convexité de $f(x)=\\dfrac{x}{x^2+1}$ et de $g(x)=(x-1)\\sqrt[3]{x-1}$. Déterminer leurs points d'inflexion.}\\par\\smallskip \\textbf{Pour $f$ :} $f''(x)=\\dfrac{2x(x^2-3)}{(x^2+1)^3}$. $f''(x)=0 \\iff x\\in\\{0,\\pm\\sqrt3\\}$. Signe :\\[\\begin{array}{|c|ccccccc|}\\hline x & -\\infty & & -\\sqrt3 & & 0 & & \\sqrt3 & & +\\infty\\\\\\hline f''(x) & & - & 0 & + & 0 & - & 0 & + \\\\\\hline \\text{convexité} & \\text{concave} & & \\text{conv.} & & \\text{conc.} & & \\text{conv.} \\\\\\hline\\end{array}\\] Points d'inflexion en $x=-\\sqrt3,\\ 0,\\ \\sqrt3$.\\par\\smallskip \\textbf{Pour $g$ :} $g(x)=(x-1)^{4/3}$, $g''(x)=\\dfrac{4}{9\\sqrt[3]{(x-1)^2}}>0$ pour $x\\neq1$. Donc $g$ est convexe sur $\\mathbb{R}\\setminus\\{1\\}$, pas de point d'inflexion."
+        }
+      ]
+    },
+    {
+      "id": "etude-polynome",
+      "category": "course",
+      "title": "Étude complète d'un polynôme",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Voici une étude complète type examen national pour une fonction polynôme. On applique toutes les notions vues précédemment."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Soit $g(x)=x^3-3x-3$. \\begin{enumerate}\\item Étudier les variations de $g$ et dresser son tableau de variations.\\item Montrer que $g(x)=0$ admet une unique solution $\\alpha$ dans $[1,+\\infty[$, et que $2<\\alpha<3$.\\item En déduire le signe de $g(x)$ sur $\\mathbb{R}$.\\item Montrer que $I(0;-3)$ est un point d'inflexion de $(C_g)$ et déterminer la tangente en $I$.\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item $g'(x)=3x^2-3=3(x-1)(x+1)$. Tableau :\\[\\begin{array}{|c|cccccc|}\\hline x & -\\infty & & -1 & & 1 & & +\\infty\\\\\\hline g'(x) & & + & 0 & - & 0 & + \\\\\\hline g & -\\infty & \\nearrow & -1 & \\searrow & -5 & \\nearrow & +\\infty\\\\\\hline\\end{array}\\]\\item $g$ continue et strictement croissante sur $[1,+\\infty[$, $g(1)=-5<0$, $\\lim_{x\\to+\\infty}g(x)=+\\infty$, donc une unique racine $\\alpha>1$. $g(2)=-1<0$, $g(3)=15>0$, donc $2<\\alpha<3$.\\item Sur $]-\\infty,1]$, $g$ a son maximum en $-1$ qui vaut $-1<0$ donc $g(x)<0$. Sur $[1,+\\infty[$, $g(x)<0$ pour $x<\\alpha$, $g(x)\\ge0$ pour $x\\ge\\alpha$.\\item $g''(x)=6x$ s'annule en $0$ et change de signe, donc $I(0;g(0))=(0;-3)$ est point d'inflexion. Tangente : $y=g'(0)x+g(0)=-3x-3$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "etude-rationnelle",
+      "category": "course",
+      "title": "Étude complète d'une fonction rationnelle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Terminons par l'étude d'une fonction rationnelle, qui combine asymptotes, variations et convexité."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\question{Soit $f(x)=x+\\dfrac{3}{x}+\\dfrac{3}{2x^2}$ définie sur $\\mathbb{R}^*$. \\begin{enumerate}\\item Calculer les limites aux bornes de $D_f$ et vérifier que $y=x$ est asymptote oblique.\\item Montrer que $f'(x)=\\dfrac{g(x)}{x^3}$ où $g$ est le polynôme précédent.\\item Étudier le signe de $f'(x)$ et dresser le tableau de variations de $f$.\\item Étudier la position de $(C_f)$ par rapport à $\\Delta:y=x$.\\item Déterminer le point d'inflexion de $(C_f)$.\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item $\\lim_{x\\to0^\\pm}f(x)=+\\infty$ (asymptote verticale $x=0$). $\\lim_{x\\to\\pm\\infty}(f(x)-x)=\\lim_{x\\to\\pm\\infty}\\left(\\frac{3}{x}+\\frac{3}{2x^2}\\right)=0$, donc $y=x$ asymptote oblique.\\item $f'(x)=1-\\frac{3}{x^2}-\\frac{3}{x^3}=\\frac{x^3-3x-3}{x^3}=\\frac{g(x)}{x^3}$.\\item Signe de $f'$ :\\[\\begin{array}{|c|ccccccc|}\\hline x & -\\infty & & 0 & & \\alpha & & +\\infty\\\\\\hline x^3 & & - & & + & + & +\\\\ g(x) & & - & & - & 0 & +\\\\ f'(x) & & + & || & - & 0 & +\\\\ f & \\nearrow & & || & \\searrow & & \\nearrow\\\\\\hline\\end{array}\\] où $\\alpha\\approx2.1$ est la racine de $g$.\\item $f(x)-x = \\frac{3(2x+1)}{2x^2}$. Signe :\\[\\begin{array}{|c|cccccc|}\\hline x & -\\infty & & -\\frac12 & & 0 & & +\\infty\\\\\\hline f(x)-x & & + & 0 & - & || & +\\\\\\hline\\end{array}\\] $(C_f)$ au-dessus de $\\Delta$ sur $]-\\infty,-\\frac12[\\cup]0,+\\infty[$, en dessous sur $]-\\frac12,0[$, intersection en $(-\\frac12;-\\frac12)$.\\item $f''(x)=\\frac{6}{x^3}+\\frac{9}{x^4}=\\frac{3(2x+3)}{x^4}$. $f''(x)=0 \\iff x=-\\frac32$ et change de signe. Point d'inflexion $\\left(-\\frac32;f(-\\frac32)\\right)=\\left(-\\frac32;-\\frac{17}{6}\\right)$.\\end{enumerate}"
+        }
+      ]
+    }
+  ]
+}

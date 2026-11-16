@@ -1,0 +1,387 @@
+/* Revision questions, qpart rows, lists and itemsize bullets. */
+
+.math-question {
+  display: block;
+  width: 100%;
+  max-width: none;
+  place-self: stretch;
+  justify-self: stretch;
+  margin: 0.95rem 0;
+  padding: 0.35rem 0 0.35rem 1rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--mathqst-color, #2c2b29);
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif));
+  font-size: var(--revision-box-size, 1.09rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--revision-box-leading, 1.74);
+  letter-spacing: normal;
+  opacity: 1;
+  position: relative;
+  text-align: left;
+  text-shadow: none;
+  text-wrap: pretty;
+  hanging-punctuation: allow-end;
+}
+
+.math-question::before,
+.math-question::after {
+  content: none;
+}
+
+.math-question-body {
+  min-width: 0;
+}
+
+.math-strong {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.math-emphasis {
+  font-style: italic;
+}
+
+.math-question ol,
+.math-question ul {
+  margin-top: 0.45em;
+  margin-bottom: 0.1em;
+}
+
+.math-question ol li,
+.math-question ul li {
+  margin-bottom: 0.22em;
+}
+
+.math-question + .math-question {
+  margin-top: 0.35rem;
+  border-top: 0;
+}
+
+.qpart-section {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.55rem, 0.9vw, 0.8rem);
+  margin: clamp(0.65rem, 1.2vw, 0.9rem) 0 clamp(0.25rem, 0.5vw, 0.35rem);
+}
+
+.qpart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: clamp(1.65rem, calc(1.5rem + 0.35vw), 1.95rem);
+  height: clamp(1.65rem, calc(1.5rem + 0.35vw), 1.95rem);
+  margin-top: 0.12rem;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #0891b2 0%, #0e7490 100%);
+  box-shadow: 0 2px 8px rgba(14, 116, 144, 0.28);
+  color: #fff;
+  font-size: clamp(0.74rem, calc(0.7rem + 0.1vw), 0.84rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  user-select: none;
+}
+
+.qpart-content {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0.05rem;
+}
+
+/* Single source of truth: bullets are real DOM nodes, never pseudo-elements. */
+
+.itemsize-block,
+.math-list-item {
+  --rev-list-accent: #000000;
+  --rev-list-accent-strong: color-mix(in srgb, var(--mathqst-color, #394cc9) 82%, black 18%);
+  --rev-list-accent-cool: #2f97d4;
+  --rev-list-marker-box: 1.85rem;
+  --rev-list-number-box: 1.82rem;
+  --rev-list-marker-size: 1.45rem;
+  --rev-list-number-size: 0.81em;
+  --rev-list-marker-line: 1.74rem;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 0.62rem;
+}
+
+.itemsize-block {
+  padding: 0.1rem 0;
+}
+
+.itemsize-content,
+.math-list-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemsize-bullet,
+.math-list-marker {
+  display: inline-flex;
+  flex: 0 0 var(--rev-list-marker-box);
+  width: var(--rev-list-marker-box);
+  height: var(--rev-list-marker-line);
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-top: var(--rev-list-marker-offset, 0);
+  color: var(--rev-list-accent);
+  line-height: 1;
+  user-select: none;
+}
+
+.itemsize-bullet,
+.math-list-marker-unordered {
+  color: var(--rev-list-accent);
+  filter: none;
+}
+
+.itemsize-bullet svg,
+.math-list-marker-unordered svg {
+  width: var(--rev-list-marker-size);
+  height: var(--rev-list-marker-size);
+  display: block;
+  flex-shrink: 0;
+  overflow: visible;
+  filter: none;
+}
+
+.math-list-marker-ordered {
+  flex-basis: var(--rev-list-number-box);
+  width: var(--rev-list-number-box);
+  min-width: var(--rev-list-number-box);
+  height: var(--rev-list-ordered-marker-line, 1.65em);
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: var(--rev-list-ordered-marker-offset, 0);
+  padding-top: 0;
+  color: var(--rev-list-accent-strong);
+  font-size: var(--rev-list-number-size);
+  font-weight: 760;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: right;
+  transform: translateY(0.015em);
+}
+
+.math-list-item-display-start > .math-list-marker-ordered {
+  height: var(--rev-list-display-marker-line, clamp(3rem, 2.25rem + 2vw, 4.25rem));
+  margin-top: var(--rev-list-display-marker-offset, 0);
+  align-items: center;
+  transform: none;
+}
+
+.math-list-item-display-start > .math-list-marker-unordered,
+.itemsize-block-display-start > .itemsize-bullet {
+  height: var(--rev-list-display-marker-line, clamp(2.8rem, 2.1rem + 1.7vw, 3.9rem));
+  margin-top: var(--rev-list-display-marker-offset, 0);
+  align-items: center;
+  transform: none;
+}
+
+.math-list {
+  margin: 0.78rem 0 0.38rem;
+  padding-left: 0.35rem;
+  list-style: none;
+}
+
+/* Sous-liste : le marqueur est une lettre (`a. b. c.`) — gouttière plus étroite
+   que celle des nombres, et la sous-liste se resserre sur son item parent. */
+.math-list .math-list {
+  margin: 0.42rem 0 0.22rem;
+  padding-left: 0;
+}
+
+.math-list .math-list > .math-list-item {
+  --rev-list-number-box: 1.42rem;
+  --rev-list-marker-box: 1.42rem;
+}
+
+.revision-surface .math-list .math-list > .math-list-item {
+  --rev-list-number-box: 1.5rem;
+  --rev-list-marker-box: 1.3rem;
+}
+
+.math-list-item {
+  margin: 0.25rem 0;
+  line-height: 1.65;
+}
+
+.revision-surface .math-list {
+  margin: 0.64rem 0 0.32rem;
+  padding-left: 0;
+}
+
+.revision-surface .math-list-item,
+.revision-surface .itemsize-block {
+  --rev-list-marker-box: clamp(1.32rem, calc(1.24rem + 0.25vw), 1.56rem);
+  --rev-list-number-box: clamp(1.7rem, calc(1.6rem + 0.35vw), 2.05rem);
+  --rev-list-marker-size: clamp(0.76rem, calc(0.72rem + 0.14vw), 0.9rem);
+  --rev-list-number-size: 0.81em;
+  --rev-list-marker-line: clamp(1.7rem, calc(1.62rem + 0.25vw), 1.95rem);
+
+  gap: clamp(0.5rem, calc(0.44rem + 0.2vw), 0.7rem);
+  color: #1e293b;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  text-align: left;
+}
+
+.revision-surface .math-list-item {
+  margin: 0.32rem 0;
+}
+
+.revision-surface .itemsize-block {
+  margin: 0.34rem 0;
+}
+
+.revision-surface .itemsize-bullet,
+.revision-surface .math-list-marker-unordered {
+  font-size: 0.78em;
+  height: auto;
+  color: color-mix(in srgb, var(--mathqst-color, #394cc9) 85%, black 15%);
+  -webkit-text-fill-color: color-mix(in srgb, var(--mathqst-color, #394cc9) 85%, black 15%);
+}
+
+/* Unordered items: baseline aligns the bullet with first text line */
+.revision-surface .math-list-unordered .math-list-item,
+.revision-surface .itemsize-block {
+  align-items: baseline;
+}
+
+.revision-surface .math-list-marker-ordered {
+  color: var(--rev-list-accent-strong);
+  font-size: var(--rev-list-number-size);
+  font-weight: 760;
+}
+
+/* Ordered lists share one marker system with progressive step badges */
+.revision-surface .math-list-ordered .math-list-item {
+  font-size: inherit;
+  line-height: inherit;
+  gap: clamp(0.62rem, calc(0.52rem + 0.35vw), 0.92rem);
+  align-items: flex-start;
+  padding: clamp(0.28rem, 0.5vw, 0.38rem) clamp(0.38rem, 0.7vw, 0.6rem);
+  border-radius: 12px;
+  transition: background 0.22s ease;
+}
+
+.revision-surface .math-list-ordered .math-list-item:hover {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+/* Items starting with a display math block: fall back to top alignment */
+.revision-surface .math-list-ordered .math-list-item-display-start {
+  align-items: flex-start;
+}
+
+.revision-surface .math-list-ordered .math-list-marker-ordered {
+  --rev-ordered-badge-size: calc(clamp(22px, calc(20px + 0.45vw), 27px) * var(--reading-doc-scale, 1));
+  flex: 0 0 var(--rev-ordered-badge-size);
+  width: var(--rev-ordered-badge-size);
+  min-width: var(--rev-ordered-badge-size);
+  height: var(--rev-ordered-badge-size);
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--mathqst-color, #6b5ce7) 14%, rgba(255, 255, 255, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid color-mix(in srgb, var(--mathqst-color, #6b5ce7) 22%, transparent);
+  color: var(--mathqst-color, #6b5ce7) !important;
+  -webkit-text-fill-color: var(--mathqst-color, #6b5ce7) !important;
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif)) !important;
+  font-size: calc(clamp(0.76rem, calc(0.72rem + 0.12vw), 0.86rem) * var(--reading-doc-scale, 1));
+  font-weight: 700;
+  letter-spacing: 0;
+  text-align: center;
+  padding: 0;
+  margin-top: 0.15rem;
+  user-select: none;
+}
+
+.revision-surface .math-list-text,
+.revision-surface .itemsize-content,
+.revision-surface .math-list .katex {
+  color: #1e293b;
+}
+
+.revision-surface .math-list-text,
+.revision-surface .itemsize-content {
+  line-height: inherit;
+}
+
+.revision-example-content .math-list,
+.revision-example-content .math-question ol,
+.revision-example-content .math-question ul {
+  margin-top: 0.52em;
+  margin-bottom: 0.2em;
+}
+
+.revision-example-content .math-list-item,
+.revision-example-content .itemsize-block {
+  --rev-list-marker-box: clamp(1.3rem, calc(1.22rem + 0.22vw), 1.48rem);
+  --rev-list-number-box: clamp(1.68rem, calc(1.58rem + 0.28vw), 1.92rem);
+  --rev-list-marker-size: clamp(0.78rem, calc(0.74rem + 0.12vw), 0.88rem);
+  --rev-list-number-size: 0.83em;
+  --rev-list-marker-line: clamp(1.78rem, calc(1.7rem + 0.24vw), 2.02rem);
+  gap: clamp(0.48rem, calc(0.42rem + 0.18vw), 0.62rem);
+  margin-block: 0.24rem;
+}
+
+.revision-example-content .itemsize-bullet,
+.revision-example-content .math-list-marker-unordered {
+  transform: translateY(0.005rem);
+}
+
+.revision-example-content .math-list-marker-ordered {
+  height: 1.82rem;
+  font-size: var(--rev-list-number-size);
+  transform: translateY(0);
+}
+
+.revision-example-content .math-list-item-display-start > .math-list-marker-ordered {
+  height: var(--rev-list-display-marker-line, clamp(2.9rem, 2.2rem + 1.8vw, 4rem));
+  margin-top: var(--rev-list-display-marker-offset, 0);
+  transform: none;
+}
+
+.revision-application-content .math-list-item,
+.revision-application-content .itemsize-block {
+  --rev-list-marker-box: clamp(1.36rem, calc(1.28rem + 0.24vw), 1.58rem);
+  --rev-list-number-box: clamp(1.74rem, calc(1.64rem + 0.35vw), 2.08rem);
+  --rev-list-marker-size: clamp(0.8rem, calc(0.76rem + 0.12vw), 0.9rem);
+  --rev-list-number-size: 0.81em;
+  --rev-list-marker-line: clamp(1.8rem, calc(1.72rem + 0.22vw), 1.98rem);
+  gap: clamp(0.52rem, calc(0.46rem + 0.2vw), 0.66rem);
+}
+
+.revision-application-content .itemsize-bullet,
+.revision-application-content .math-list-marker-unordered {
+  transform: translateY(0);
+}
+
+.revision-application-content .math-list-marker-ordered {
+  height: 1.78rem;
+  transform: translateY(0);
+}
+
+.revision-application-content .math-list-item-display-start > .math-list-marker-ordered {
+  height: var(--rev-list-display-marker-line, clamp(3.1rem, 2.35rem + 2vw, 4.45rem));
+  margin-top: var(--rev-list-display-marker-offset, 0);
+  transform: none;
+}
+
+.math-list-text .math-display-node,
+.itemsize-content .math-display-node {
+  width: 100%;
+  margin-inline: auto;
+}

@@ -1,0 +1,35 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAccountOwner(accountId) {
+      return isSignedIn() && (
+        request.auth.uid == accountId ||
+        request.auth.token.sub == accountId
+      );
+    }
+
+    // Comptes utilisateurs : lecture seule cote client pour le proprietaire.
+    // Toutes les ecritures canoniques (roles, authVersion, Google linking) passent par /api/auth.
+    match /users/{accountId} {
+      allow read: if isAccountOwner(accountId);
+      allow write: if false;
+    }
+
+    // Etat CRDT synchronise pour Apprendre.html / Next.js :
+    // lecture proprietaire autorisee, ecriture directe verrouillee au serveur (/api/sync).
+    match /apprendre_states/{accountId} {
+      allow read: if isAccountOwner(accountId);
+      allow write: if false;
+    }
+
+    // Journaux d'audit et caches internes strictement reserves au Service Account serveur.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

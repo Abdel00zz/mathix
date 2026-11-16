@@ -1,0 +1,30 @@
+{
+  "id": "ex-12",
+  "theme": "calcul-integral",
+  "difficulty": "difficile",
+  "topic": "Équations différentielles - Résolution et calcul d'intégrales par ED",
+  "requiresRedaction": true,
+  "context": "Soit l'équation différentielle : $(E): y'' - 4y' + 13y = 0$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Résoudre dans $\\mathbb{R}$ l'équation $(E)$",
+      "hint": "\\method Résolvez l'équation caractéristique $r^2 - 4r + 13 = 0$. \\tip Le discriminant est négatif. Les solutions font intervenir une partie réelle et une partie imaginaire, menant à des solutions de la forme $e^{\\alpha x}(A\\cos\\beta x + B\\sin\\beta x)$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer la solution $g$ de $(E)$ telle que : $g(0) = 0$ et $g'(0) = 3$",
+      "hint": "\\method Partez de la forme générale trouvée en question 1 et appliquez les conditions initiales. \\tip Deux équations, deux inconnues $A$ et $B$. Calculez $g'(x)$ avant d'évaluer en $x=0$."
+    },
+    {
+      "id": "q3",
+      "content": "Déduire que $\\displaystyle\\int_0^{\\pi} \\sin(3x)\\, e^{2x}\\,dx = \\dfrac{3}{13}(1 + e^{2\\pi})$",
+      "hint": "\\method Exprimez $g(x)$ explicitement grâce à la question 2. \\tip $g$ vérifie $(E)$, donc $g'' - 4g' + 13g = 0$. Intégrez cette relation sur $[0;\\pi]$ et identifiez les intégrales qui apparaissent."
+    },
+    {
+      "id": "q4",
+      "content": "Calculer l'intégrale $\\displaystyle\\int_0^{\\pi} \\cos(3x)\\, e^{2x}\\,dx$",
+      "hint": "\\method Utilisez la même technique qu'en question 3, mais en repartant d'une solution de $(E)$ faisant intervenir $\\cos(3x)$. \\tip Ou bien utilisez le résultat de la question 3 : la relation entre $\\int e^{2x}\\sin(3x)\\,dx$ et $\\int e^{2x}\\cos(3x)\\,dx$ peut s'obtenir en dérivant l'une des expressions."
+    }
+  ]
+}

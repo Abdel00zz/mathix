@@ -1,0 +1,153 @@
+{
+  "id": "medecine",
+  "name": "Faculté Médecine",
+  "fullName": "Faculté de Médecine et de Pharmacie",
+  "description": "Concours d'accès aux Facultés de Médecine — QCM Mathématiques",
+  "color": "#dc2626",
+  "questionsPerExam": 20,
+  "timePerQuestion": 60,
+  "annales": [
+    {
+      "id": "med_oujda_2017_2018",
+      "year": "2017–2018 · Oujda",
+      "path": "data/concours/medecine/med_oujda_2017_2018.json",
+      "questionsCount": 9
+    },
+    {
+      "id": "med_oujda_2016_2017",
+      "year": "2016–2017 · Oujda",
+      "path": "data/concours/medecine/med_oujda_2016_2017.json",
+      "questionsCount": 8
+    },
+    {
+      "id": "med_rabat_2016",
+      "year": "2016 · Rabat",
+      "path": "data/concours/medecine/med_rabat_2016.json",
+      "questionsCount": 11
+    },
+    {
+      "id": "med_oujda_2015_2016",
+      "year": "2015–2016 · Oujda",
+      "path": "data/concours/medecine/med_oujda_2015_2016.json",
+      "questionsCount": 10
+    },
+    {
+      "id": "med_marrakech_2015",
+      "year": "2015 · Marrakech",
+      "path": "data/concours/medecine/med_marrakech_2015.json",
+      "questionsCount": 10
+    },
+    {
+      "id": "med_epreuve_2012_2013",
+      "year": "2012–2013 · Épreuve",
+      "path": "data/concours/medecine/med_epreuve_2012_2013.json",
+      "questionsCount": 10
+    },
+    {
+      "id": "med_epreuve_2012",
+      "year": "2012 · Épreuve",
+      "path": "data/concours/medecine/med_epreuve_2012.json",
+      "questionsCount": 10
+    },
+    {
+      "id": "med_epreuve_2010_2011",
+      "year": "2010–2011 · Épreuve",
+      "path": "data/concours/medecine/med_epreuve_2010_2011.json",
+      "questionsCount": 10
+    },
+    {
+      "id": "med_epreuve_2009_2010",
+      "year": "2009–2010 · Épreuve",
+      "path": "data/concours/medecine/med_epreuve_2009_2010.json",
+      "questionsCount": 10
+    },
+    {
+      "id": "med_marrakech_2009",
+      "year": "2009 · Marrakech",
+      "path": "data/concours/medecine/med_marrakech_2009.json",
+      "questionsCount": 11
+    },
+    {
+      "id": "med_2025",
+      "year": "2025",
+      "path": "data/concours/medecine/med_2025.json",
+      "questionsCount": 14
+    },
+    {
+      "id": "med_2024",
+      "year": "2024",
+      "path": "data/concours/medecine/med_2024.json",
+      "questionsCount": 14
+    },
+    {
+      "id": "med_2023",
+      "year": "2023",
+      "path": "data/concours/medecine/med_2023.json",
+      "questionsCount": 36
+    },
+    {
+      "id": "med_2022",
+      "year": "2022",
+      "path": "data/concours/medecine/med_2022.json",
+      "questionsCount": 30
+    },
+    {
+      "id": "med_2021",
+      "year": "2021",
+      "path": "data/concours/medecine/med_2021.json",
+      "questionsCount": 40
+    },
+    {
+      "id": "med_2020",
+      "year": "2020",
+      "path": "data/concours/medecine/med_2020.json",
+      "questionsCount": 20
+    },
+    {
+      "id": "med_2019",
+      "year": "2019",
+      "path": "data/concours/medecine/med_2019.json",
+      "questionsCount": 39
+    },
+    {
+      "id": "med_2018",
+      "year": "2018",
+      "path": "data/concours/medecine/med_2018.json",
+      "questionsCount": 22
+    },
+    {
+      "id": "med_2017",
+      "year": "2017",
+      "path": "data/concours/medecine/med_2017.json",
+      "questionsCount": 22
+    },
+    {
+      "id": "med_2016",
+      "year": "2016",
+      "path": "data/concours/medecine/med_2016.json",
+      "questionsCount": 22
+    },
+    {
+      "id": "med_2013",
+      "year": "2013",
+      "path": "data/concours/medecine/med_2013.json",
+      "questionsCount": 22
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "med-analyse",
+      "theme": "analyse",
+      "title": "Analyse",
+      "path": "data/concours/medecine/quiz/med_analyse_quiz.json",
+      "questionsCount": 13
+    },
+    {
+      "id": "med-probabilites",
+      "theme": "probabilites",
+      "title": "Probabilités & Statistiques",
+      "path": "data/concours/medecine/quiz/med_probabilites_quiz.json",
+      "questionsCount": 10
+    }
+  ]
+}

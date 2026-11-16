@@ -1,0 +1,645 @@
+{
+  "header": {
+    "title": "Structures algébriques",
+    "subtitle": "Lois de composition interne, groupes, anneaux, corps et matrices",
+    "context": "2BAC Sciences Mathématiques / Sciences Expérimentales"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Les structures algébriques permettent d'\\objectif{organiser des ensembles munis d'opérations} et de reconnaître les propriétés qui restent vraies dans des contextes différents. La \\defi{difficulté} principale consiste à distinguer clairement loi interne, groupe, anneau et corps, puis à vérifier chaque condition dans le bon ordre. Les matrices fournissent ensuite un cadre concret pour appliquer ces structures. \\savant{Évariste Galois} a placé la notion de groupe au cœur de l'algèbre moderne et l'a reliée à l'étude des équations.",
+          "media": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/7/7b/%C3%89variste_Galois_par_son_fr%C3%A8re.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Évariste Galois (1811-1832)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "loi-composition-interne",
+      "category": "course",
+      "title": "Loi de composition interne sur $E$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'addition et la multiplication combinent deux éléments pour en produire un troisième. Cette section précise la condition nécessaire pour que le résultat reste dans le même ensemble."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une \\mathqst{loi de composition interne sur $E$} ?",
+          "content": "Une \\textbf{loi de composition interne} sur un ensemble $E$ est une application de $E\\times E$ dans $E$ :\\par\\smallskip$$\\boxed{\\star:E\\times E\\longrightarrow E,\\qquad (x,y)\\longmapsto x\\star y}$$L'ensemble $E$ muni de cette loi est appelé un \\textbf{magma}, noté $(E,\\star)$."
+        },
+        {
+          "type": "remark",
+          "content": "Les symboles $+$, $\\times$ ou $\\cdot$ peuvent désigner une loi abstraite. Leur écriture ne garantit pas qu'il s'agit de l'addition ou de la multiplication usuelles."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons, dans chaque cas, si l'opération proposée est une loi de composition interne.\\begin{enumerate}\\item L'addition sur $\\mathbb{R}$.\\item La division sur $\\mathbb{R}$.\\item La division sur $\\mathbb{R}^{*}$.\\item L'union et l'intersection sur $\\mathcal{P}(E)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour $x,y\\in\\mathbb{R}$, on a $x+y\\in\\blank{\\mathbb{R}}$. L'addition est donc une lci sur $\\mathbb{R}$.\\item Le quotient $x/y$ n'est pas défini lorsque $\\blank{y=0}$. La division n'est donc pas une lci sur $\\mathbb{R}$.\\item Pour $x,y\\in\\mathbb{R}^{*}$, le quotient $x/y$ est défini et \\blank{non nul}. La division est donc une lci sur $\\mathbb{R}^{*}$.\\item Pour $A,B\\in\\mathcal{P}(E)$, les ensembles $\\blank{A\\cup B}$ et $\\blank{A\\cap B}$ appartiennent encore à $\\mathcal{P}(E)$. Les deux opérations sont donc internes.\\end{enumerate}\\par\\smallskip$$\\boxed{+,\\ \\cup\\ \\text{et}\\ \\cap\\ \\text{sont internes dans les ensembles indiqués, tandis que }/\\text{ ne l'est pas sur }\\mathbb{R}.}$$"
+        }
+      ]
+    },
+    {
+      "id": "associativite-commutativite",
+      "category": "course",
+      "title": "Associativité et commutativité de $\\star$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une loi interne ne possède pas automatiquement les propriétés des opérations usuelles. On examine maintenant l'ordre des calculs et l'ordre des éléments."
+        },
+        {
+          "type": "definition",
+          "title": "Quand une loi est-elle \\mathqst{associative dans un magma} ?",
+          "content": "Dans un magma $(E,\\star)$, la loi $\\star$ est \\textbf{associative} lorsque :\\par\\smallskip$$\\boxed{\\forall x,y,z\\in E,\\quad (x\\star y)\\star z=x\\star(y\\star z)}$$Dans ce cas, les parenthèses peuvent être supprimées dans un produit de plusieurs éléments."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{la commutativité de la loi $\\star$} ?",
+          "content": "Dans un magma $(E,\\star)$, la loi $\\star$ est \\textbf{commutative} lorsque :\\par\\smallskip$$\\boxed{\\forall x,y\\in E,\\quad x\\star y=y\\star x}$$"
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi peut-on \\mathqst{réordonner un produit fini} ?",
+          "content": "Si une loi est associative et commutative, on peut modifier librement le parenthésage et l'ordre des facteurs. Pour une famille finie $(x_i)_{i\\in I}$, on peut alors écrire $\\prod_{i\\in I}x_i$. En notation additive, on écrit plutôt $\\sum_{i\\in I}x_i$."
+        },
+        {
+          "type": "warning",
+          "content": "Dans une loi notée additivement, $nx$ désigne la somme de $n$ exemplaires de $x$. Ce symbole ne représente pas nécessairement le produit réel de $n$ par $x$."
+        }
+      ]
+    },
+    {
+      "id": "element-neutre-inverse",
+      "category": "course",
+      "title": "Élément neutre $e$ et inverse $x^{-1}$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après l'ordre des calculs, on cherche les éléments qui ne modifient pas le résultat et ceux qui permettent d'annuler l'effet d'un élément."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un \\mathqst{élément neutre pour $\\star$} ?",
+          "content": "Un élément $e\\in E$ est un \\textbf{élément neutre} du magma $(E,\\star)$ lorsque :\\par\\smallskip$$\\boxed{\\forall x\\in E,\\quad x\\star e=e\\star x=x}$$Dans un magma non commutatif, les égalités à gauche et à droite doivent être vérifiées."
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{l'élément neutre est-il unique} ?",
+          "content": "Lorsqu'un magma possède un élément neutre, celui-ci est unique."
+        },
+        {
+          "type": "proof",
+          "content": "Soient $e$ et $e'$ deux éléments neutres de $(E,\\star)$. Comme $e$ est neutre, on a $e\\star e'=e'$. Comme $e'$ est également neutre, on a $e\\star e'=e$. Les deux égalités donnent alors :$$\\boxed{e=e'}$$L'élément neutre, lorsqu'il existe, est donc unique.",
+          "title": "Unicité de l'élément neutre"
+        },
+        {
+          "type": "definition",
+          "title": "Quand un élément possède-t-il \\mathqst{un inverse dans un magma} ?",
+          "content": "Supposons que $(E,\\star)$ possède un élément neutre $e$. Un élément $y\\in E$ est un \\textbf{inverse} de $x$ lorsque :\\par\\smallskip$$\\boxed{x\\star y=y\\star x=e}$$Un élément qui possède un inverse est dit \\textbf{inversible}."
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{l'inverse est-il unique sous associativité} ?",
+          "content": "Dans un magma associatif muni d'un élément neutre, l'inverse d'un élément, lorsqu'il existe, est unique."
+        },
+        {
+          "type": "proof",
+          "content": "Soient $y$ et $y'$ deux inverses d'un élément $x$. En utilisant l'élément neutre et l'associativité :$$y=y\\star e=y\\star(x\\star y')=(y\\star x)\\star y'=e\\star y'=y'$$Ainsi :$$\\boxed{y=y'}$$L'inverse d'un élément, lorsqu'il existe, est donc unique.",
+          "title": "Unicité de l'inverse d'un élément"
+        },
+        {
+          "type": "property",
+          "title": "Quelles règles permet \\mathqst{l'existence des inverses} ?",
+          "content": "Dans un magma associatif muni d'un neutre, si les éléments concernés sont inversibles, on dispose des règles suivantes :\\begin{itemize}\\item $x\\star y=x\\star z$ entraîne $y=z$ ;\\item $y\\star x=z\\star x$ entraîne $y=z$ ;\\item $(x\\star y)^{-1}=y^{-1}\\star x^{-1}$ ;\\item $(x^{-1})^{-1}=x$.\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Pour la loi $\\cap$ sur $\\mathcal{P}(E)$, seul $E$ est inversible. Pour la loi $\\cup$, seul $\\varnothing$ est inversible. Le complémentaire d'un ensemble n'est pas son inverse pour ces deux lois."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Sur $\\mathbb{R}^{2}$, on définit $(x,y)\\star(x',y')=(xx'-yy',xy'+yx')$. Montrons que $\\star$ est interne, commutative, associative et possède un élément neutre.}\\par\\smallskip\\textbf{Stabilité :} pour deux couples réels, les deux coordonnées $xx'-yy'$ et $xy'+yx'$ sont réelles. La loi est donc interne.\\par\\smallskip\\textbf{Commutativité :}$$ (x,y)\\star(x',y')=(xx'-yy',xy'+yx')=(x',y')\\star(x,y).$$\\textbf{Associativité :} pour $X=(x,y)$, $Y=(x',y')$ et $Z=(x'',y'')$, le calcul des deux membres donne :$$ (X\\star Y)\\star Z=\\bigl(xx'x''-yy'x''-xy'y''-yx'y'',\\ xx'y''-yy'y''+xy'x''+yx'x''\\bigr),$$$$X\\star(Y\\star Z)=\\bigl(xx'x''-xy'y''-yx'y''-yy'x'',\\ xx'y''+xy'x''+yx'x''-yy'y''\\bigr).$$Les coordonnées sont égales, donc la loi est associative.\\par\\smallskip\\textbf{Neutre :} le couple $\\blank{(1,0)}$ vérifie :$$(x,y)\\star(1,0)=(1,0)\\star(x,y)=(x,y).$$Ainsi :$$\\boxed{\\star\\text{ est une lci commutative et associative, de neutre }\\blank{(1,0)}.}$$"
+        }
+      ]
+    },
+    {
+      "id": "groupes-definition",
+      "category": "course",
+      "title": "Groupe $(G,\\star)$ : définition et propriétés",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les notions précédentes se réunissent dans une structure centrale de l'algèbre. Un groupe est un magma dans lequel les calculs peuvent être composés et annulés."
+        },
+        {
+          "type": "definition",
+          "title": "Quelles conditions définissent \\mathqst{un groupe $(G,\\star)$} ?",
+          "content": "Un \\textbf{groupe} est un magma $(G,\\star)$ tel que :\\begin{itemize}\\item $G$ est non vide ;\\item la loi $\\star$ est associative ;\\item le groupe possède un élément neutre ;\\item tout élément de $G$ est inversible.\\end{itemize}Si la loi est commutative, le groupe est dit \\textbf{commutatif} ou \\textbf{abélien}."
+        },
+        {
+          "type": "property",
+          "title": "Quelles propriétés sont \\mathqst{toujours valables dans un groupe} ?",
+          "content": "Dans tout groupe $(G,\\star)$ :\\begin{itemize}\\item le neutre et chaque inverse sont uniques ;\\item les simplifications à gauche et à droite sont valides ;\\item $(x\\star y)^{-1}=y^{-1}\\star x^{-1}$ ;\\item $(x^{-1})^{-1}=x$.\\end{itemize}"
+        },
+        {
+          "type": "proof",
+          "content": "Supposons que $x\\star y=x\\star z$. En composant les deux membres à gauche par $x^{-1}$, on obtient :$$x^{-1}\\star(x\\star y)=x^{-1}\\star(x\\star z)$$L'associativité donne alors :$$(x^{-1}\\star x)\\star y=(x^{-1}\\star x)\\star z$$Donc $e\\star y=e\\star z$, puis :$$\\boxed{y=z}$$La simplification à droite s'établit de la même manière.",
+          "title": "Simplification dans un groupe"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Sur $]-1,1[$, on définit $x\\star y=\\dfrac{x+y}{1+xy}$. Montrons que $(]-1,1[,\\star)$ est un groupe commutatif.}\\par\\smallskip\\textbf{Stabilité :} pour $x,y\\in]-1,1[$, on a $\\blank{1+xy>0}$. De plus, $x+y<1+xy$ et $x+y>-1-xy$. En divisant par le nombre positif $1+xy$, on obtient :$$-1<\\frac{x+y}{1+xy}<1.$$Ainsi, $x\\star y\\in]-1,1[$.\\par\\smallskip\\textbf{Commutativité :} la symétrie de l'expression donne $x\\star y=y\\star x$.\\par\\smallskip\\textbf{Associativité :}$$ (x\\star y)\\star z=\\frac{x+y+z+xyz}{1+xy+xz+yz}=x\\star(y\\star z).$$\\textbf{Neutre :} $x\\star\\blank{0}=x$, donc le neutre est $0$.\\par\\smallskip\\textbf{Inverse :} $x\\star\\blank{(-x)}=0$, et $-x\\in]-1,1[$.\\par\\smallskip$$\\boxed{(]-1,1[,\\star)\\text{ est un groupe commutatif de neutre }0\\text{ et }x^{-1}=\\blank{-x}.}$$"
+        }
+      ]
+    },
+    {
+      "id": "puissances-groupe",
+      "category": "course",
+      "title": "Puissances $a^n$ dans un groupe",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La répétition d'une même opération conduit à une notation de puissance. Cette notation reste valable pour les exposants positifs, nuls et négatifs."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{$a^n$ pour tout entier $n$} ?",
+          "content": "Soit $(G,\\cdot)$ un groupe de neutre $e$, avec $a\\in G$ et $n\\in\\mathbb{Z}$. On définit :$$\\boxed{a^{0}=e,\\qquad a^{n}=a\\cdot a^{n-1}\\ \\text{si }n>0,\\qquad a^{n}=(a^{-n})^{-1}\\ \\text{si }n<0.}$$Pour $n<0$, on a aussi $a^{n}=(a^{-1})^{-n}$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles règles vérifient \\mathqst{les puissances dans un groupe} ?",
+          "content": "Pour $a\\in G$ et $p,q\\in\\mathbb{Z}$ :$$\\boxed{a^{p}a^{q}=a^{p+q}\\qquad\\text{et}\\qquad (a^{p})^{q}=a^{pq}.}$$Si $a$ et $b$ commutent, alors $(ab)^n=a^nb^n$ pour tout entier $n$."
+        },
+        {
+          "type": "warning",
+          "content": "Lorsque $a$ et $b$ ne commutent pas, la formule $(ab)^n=a^nb^n$ n'est pas valable en général."
+        }
+      ]
+    },
+    {
+      "id": "sous-groupes",
+      "category": "course",
+      "title": "Sous-groupes de $(G,\\star)$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un groupe peut contenir des parties qui conservent la même structure. Le critère suivant évite de reprendre séparément tous les axiomes."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un \\mathqst{sous-groupe de $(G,\\star)$} ?",
+          "content": "Soit $(G,\\star)$ un groupe. Un \\textbf{sous-groupe} de $G$ est une partie $H\\subset G$ telle que $(H,\\star)$ soit un groupe pour la loi induite."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment reconnaître \\mathqst{un sous-groupe avec un seul critère} ?",
+          "content": "Soit $(G,\\star)$ un groupe de neutre $e$ et soit $H\\subset G$. Alors $(H,\\star)$ est un sous-groupe de $G$ si et seulement si :$$\\boxed{e\\in H\\qquad\\text{et}\\qquad \\forall x,y\\in H,\\ x\\star y^{-1}\\in H.}$$"
+        },
+        {
+          "type": "proof",
+          "content": "\\begin{enumerate}\\item \\textbf{Sens direct.} Supposons que $H$ soit un sous-groupe de $G$. Pour tous $x,y\\in H$, l'inverse $y^{-1}$ appartient à $H$, puis la stabilité de $H$ donne $x\\star y^{-1}\\in H$.\\item \\textbf{Réciproque.} Supposons que $H$ soit non vide et que $x\\star y^{-1}\\in H$ pour tous $x,y\\in H$. Choisissons $a\\in H$. En prenant $x=y=a$, on obtient $a\\star a^{-1}=e\\in H$. Pour $x\\in H$, en prenant $x=e$ et $y=x$, on obtient $x^{-1}=e\\star x^{-1}\\in H$. Enfin, si $x,y\\in H$, alors $y^{-1}\\in H$ et le critère appliqué à $x$ et $y^{-1}$ donne $x\\star(y^{-1})^{-1}=x\\star y\\in H$. L'associativité est héritée de $G$, donc $H$ est un sous-groupe.\\end{enumerate}",
+          "title": "Critère de sous-groupe"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{prouver efficacement qu'une partie est un sous-groupe} ?",
+          "content": "Pour montrer qu'une partie $H$ est un sous-groupe, on procède ainsi :\\begin{enumerate}\\item identifier un groupe ambiant contenant $H$ ;\\item vérifier que son neutre appartient à $H$ ;\\item prendre $x,y\\in H$ et montrer que $xy^{-1}\\in H$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $U=\\{z\\in\\mathbb{C}\\mid |z|=1\\}$. Montrons que $(U,\\times)$ est un groupe.}\\par\\smallskipOn travaille dans le groupe $(\\mathbb{C}^{*},\\times)$. On a $\\blank{1}\\in U$ puisque $|1|=1$. Soient $z,w\\in U$. Alors :$$\\left|zw^{-1}\\right|=\\frac{|z|}{|w|}=\\frac{1}{1}=\\blank{1}.$$Donc $\\blank{zw^{-1}\\in U}$. Le critère de sous-groupe est vérifié, d'où :$$\\boxed{(U,\\times)\\text{ est un sous-groupe de }(\\mathbb{C}^{*},\\times).}$$"
+        }
+      ]
+    },
+    {
+      "id": "morphismes-groupes",
+      "category": "course",
+      "title": "Morphismes de groupes $\\varphi:G\\to G'$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Deux groupes peuvent être reliés par une application qui respecte leur loi. Une telle application transporte automatiquement le neutre, les inverses et les puissances."
+        },
+        {
+          "type": "definition",
+          "title": "Quand une application est-elle \\mathqst{un morphisme de groupes} ?",
+          "content": "Soient $(G,\\star)$ et $(G',\\star')$ deux groupes. Une application $\\varphi:G\\to G'$ est un \\textbf{morphisme de groupes} lorsque :$$\\boxed{\\forall x,y\\in G,\\quad \\varphi(x\\star y)=\\varphi(x)\\star'\\varphi(y).}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Les éléments $x$ et $y$ appartiennent au groupe de départ et utilisent sa loi. Les images $\\varphi(x)$ et $\\varphi(y)$ appartiennent au groupe d'arrivée et utilisent la loi de ce second groupe."
+        },
+        {
+          "type": "theorem",
+          "title": "Que préserve \\mathqst{un morphisme de groupes} ?",
+          "content": "Si $\\varphi:(G,\\star)\\to(G',\\star')$ est un morphisme et si $e,e'$ sont les neutres, alors :$$\\boxed{\\varphi(e)=e'\\qquad\\text{et}\\qquad \\varphi(x^{-1})=\\varphi(x)^{-1}.}$$"
+        },
+        {
+          "type": "proof",
+          "content": "Soit $\\varphi:G\\to G'$ un morphisme de groupes. On a :$$\\varphi(e)=\\varphi(e\\star e)=\\varphi(e)\\star'\\varphi(e)$$La simplification dans $G'$ donne :$$\\boxed{\\varphi(e)=e'}$$Ensuite :$$\\varphi(x)\\star'\\varphi(x^{-1})=\\varphi(x\\star x^{-1})=\\varphi(e)=e'$$De même, $\\varphi(x^{-1})\\star'\\varphi(x)=e'$. Ainsi $\\varphi(x^{-1})$ est l'inverse de $\\varphi(x)$, donc :$$\\boxed{\\varphi(x^{-1})=\\varphi(x)^{-1}}$$",
+          "title": "Image du neutre et de l'inverse par un morphisme"
+        },
+        {
+          "type": "property",
+          "title": "Comment un morphisme agit-il sur \\mathqst{les puissances et les compositions} ?",
+          "content": "Pour tout $p\\in\\mathbb{Z}$ et tout $x\\in G$ :$$\\boxed{\\varphi(x^{p})=\\varphi(x)^{p}.}$$La composée de deux morphismes de groupes est encore un morphisme de groupes."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment les morphismes transportent-ils \\mathqst{les sous-groupes} ?",
+          "content": "L'image d'un sous-groupe de $G$ par un morphisme $\\varphi:G\\to G'$ est un sous-groupe de $G'$. L'image réciproque d'un sous-groupe de $G'$ est un sous-groupe de $G$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Soit $(G,\\cdot)$ un groupe et $a\\in G$. Montrons que $f:\\mathbb{Z}\\to G$, définie par $f(p)=a^{p}$, est un morphisme de groupes.}\\par\\smallskipLe groupe de départ est $(\\mathbb{Z},+)$ et le groupe d'arrivée est $(G,\\cdot)$. Pour $p,q\\in\\mathbb{Z}$ :$$f(p+q)=a^{p+q}=\\blank{a^{p}a^{q}}=f(p)f(q).$$Ainsi :$$\\boxed{f:(\\mathbb{Z},+)\\longrightarrow(G,\\cdot)\\text{ est }\\blank{\\text{un morphisme de groupes}}.}$$"
+        }
+      ]
+    },
+    {
+      "id": "isomorphismes-groupes",
+      "category": "course",
+      "title": "Isomorphismes et automorphismes de groupes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certains morphismes relient un groupe à lui-même ou permettent de transporter toute une structure vers un autre groupe. On distingue trois cas particuliers."
+        },
+        {
+          "type": "definition",
+          "title": "Comment distinguer \\mathqst{endomorphisme, isomorphisme et automorphisme} ?",
+          "content": "Un \\textbf{endomorphisme} est un morphisme d'un groupe dans lui-même. Un \\textbf{isomorphisme} est un morphisme bijectif. Un \\textbf{automorphisme} est un isomorphisme d'un groupe dans lui-même."
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{l'inverse d'un isomorphisme reste un isomorphisme} ?",
+          "content": "L'application réciproque d'un isomorphisme de groupes est encore un isomorphisme de groupes."
+        },
+        {
+          "type": "proof",
+          "content": "Soit $\\varphi:G\\to G'$ un isomorphisme. Pour $x',y'\\in G'$, posons $x=\\varphi^{-1}(x')$ et $y=\\varphi^{-1}(y')$. Comme $\\varphi$ est un morphisme :$$\\varphi(x\\star y)=\\varphi(x)\\star'\\varphi(y)=x'\\star' y'$$En appliquant $\\varphi^{-1}$ aux deux membres :$$\\varphi^{-1}(x'\\star' y')=x\\star y=\\varphi^{-1}(x')\\star\\varphi^{-1}(y')$$Ainsi, $\\varphi^{-1}$ respecte les lois. C'est donc un morphisme.",
+          "title": "La réciproque d'un isomorphisme est un morphisme"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Montrons que l'ensemble $\\operatorname{Aut}(G)$ des automorphismes d'un groupe $(G,\\cdot)$ est un groupe pour la composition.}\\par\\smallskipLa composée de deux automorphismes est un morphisme, et elle est bijective comme composée de bijections. La loi de composition est donc interne sur $\\operatorname{Aut}(G)$. Elle est associative. L'application identité $\\blank{\\operatorname{Id}_{G}}$ est le neutre. Enfin, l'application réciproque d'un automorphisme est encore un automorphisme et constitue \\blank{son inverse pour la composition}.\\par\\smallskip$$\\boxed{(\\operatorname{Aut}(G),\\circ)\\text{ est }\\blank{\\text{un groupe}}.}$$"
+        }
+      ]
+    },
+    {
+      "id": "anneaux-definition",
+      "category": "course",
+      "title": "Anneaux $(A,+,\\times)$ et intégrité",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un anneau combine une addition de groupe et une multiplication associative. La distributivité relie ces deux opérations."
+        },
+        {
+          "type": "definition",
+          "title": "Quelles conditions définissent \\mathqst{un anneau unitaire} ?",
+          "content": "Un ensemble $A$ muni de deux lois $+$ et $\\times$ est un \\textbf{anneau} lorsque :\\begin{itemize}\\item $(A,+)$ est un groupe commutatif ;\\item la multiplication est associative ;\\item la multiplication est distributive sur l'addition à gauche et à droite ;\\item la multiplication possède un élément neutre, noté $1_A$.\\end{itemize}Le neutre additif est noté $0_A$. Si la multiplication est commutative, l'anneau est commutatif."
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi le zéro est-il \\mathqst{absorbant dans un anneau} ?",
+          "content": "Dans tout anneau et pour tous $x,y\\in A$ :$$\\boxed{0_Ax=x0_A=0_A\\qquad\\text{et}\\qquad (-x)y=-(xy)=x(-y).}$$"
+        },
+        {
+          "type": "proof",
+          "content": "Dans un anneau $A$, la distributivité donne :$$0_Ax=(0_A+0_A)x=0_Ax+0_Ax$$En simplifiant dans le groupe additif $(A,+)$, on obtient :$$\\boxed{0_Ax=0_A}$$De même, $x0_A=0_A$.\\par\\smallskipEnsuite :$$(-x)y+xy=(-x+x)y=0_Ay=0_A$$Le terme $(-x)y$ est donc l'opposé de $xy$. Ainsi :$$\\boxed{(-x)y=-(xy)}$$De la même manière, $x(-y)=-(xy)$.",
+          "title": "Produit par zéro et produit par un opposé"
+        },
+        {
+          "type": "definition",
+          "title": "Quand un anneau est-il \\mathqst{intègre} ?",
+          "content": "Un anneau $A$ est \\textbf{intègre} lorsque :$$\\boxed{\\forall a,b\\in A,\\quad ab=0_A\\Longrightarrow a=0_A\\ \\text{ou}\\ b=0_A.}$$"
+        },
+        {
+          "type": "remark",
+          "content": "Les anneaux $\\mathbb{Z}$, $\\mathbb{Q}$, $\\mathbb{R}$, $\\mathbb{C}$ et $\\mathbb{R}[X]$ sont intègres. Un anneau de fonctions peut ne pas être intègre lorsque deux fonctions non nulles ont un produit nul."
+        }
+      ]
+    },
+    {
+      "id": "formules-anneaux",
+      "category": "course",
+      "title": "Formules de calcul dans un anneau",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La distributivité s'étend aux sommes finies. Lorsque deux éléments commutent, les formules usuelles des puissances restent disponibles."
+        },
+        {
+          "type": "property",
+          "title": "Comment distribuer \\mathqst{un produit sur une somme finie} ?",
+          "content": "Pour une famille finie $(a_i)_{i\\in I}$ d'éléments de $A$ et pour $x\\in A$ :$$\\boxed{x\\left(\\sum_{i\\in I}a_i\\right)=\\sum_{i\\in I}xa_i\\qquad\\text{et}\\qquad \\left(\\sum_{i\\in I}a_i\\right)x=\\sum_{i\\in I}a_ix.}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment factoriser \\mathqst{$a^n-b^n$ dans un anneau} ?",
+          "content": "Si $a$ et $b$ commutent et si $n\\in\\mathbb{N}^{*}$, alors :$$\\boxed{a^{n}-b^{n}=(a-b)\\sum_{i=0}^{n-1}a^{i}b^{n-i-1}.}$$En particulier, $a^{n}-1_A=(a-1_A)\\sum_{i=0}^{n-1}a^{i}$."
+        },
+        {
+          "type": "proof",
+          "content": "Dans un anneau commutatif, développons :$$(a-b)\\sum_{i=0}^{n-1}a^{\\,n-1-i}b^i$$On obtient :$$\\sum_{i=0}^{n-1}a^{\\,n-i}b^i-\\sum_{i=0}^{n-1}a^{\\,n-1-i}b^{i+1}$$Tous les termes intermédiaires se compensent. Il reste seulement le premier terme de la première somme et le dernier terme de la seconde :$$\\boxed{a^n-b^n=(a-b)\\sum_{i=0}^{n-1}a^{\\,n-1-i}b^i}$$",
+          "title": "Factorisation de $a^n-b^n$"
+        },
+        {
+          "type": "theorem",
+          "title": "Quand peut-on appliquer \\mathqst{le binôme de Newton dans un anneau} ?",
+          "content": "Si $a$ et $b$ commutent et si $n\\in\\mathbb{N}$, alors la formule du binôme reste valable :$$\\boxed{(a+b)^n=\\sum_{i=0}^{n}\\binom{n}{i}a^ib^{n-i}.}$$"
+        },
+        {
+          "type": "warning",
+          "content": "La commutation $ab=ba$ est indispensable dans les deux formules précédentes. Pour des matrices quelconques, elle doit être vérifiée avant d'utiliser le binôme."
+        }
+      ]
+    },
+    {
+      "id": "sous-anneaux",
+      "category": "course",
+      "title": "Sous-anneaux de $(A,+,\\times)$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Comme pour les groupes, une partie d'un anneau peut conserver les deux opérations. Il faut contrôler simultanément la structure additive, l'unité et la multiplication."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un \\mathqst{sous-anneau de $A$} ?",
+          "content": "Soit $(A,+,\\times)$ un anneau. Un \\textbf{sous-anneau} est une partie $B\\subset A$ telle que $(B,+,\\times)$ soit un anneau pour les lois induites."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment caractériser \\mathqst{un sous-anneau de $A$} ?",
+          "content": "Une partie $B\\subset A$ est un sous-anneau si et seulement si :\\begin{itemize}\\item $(B,+)$ est un sous-groupe de $(A,+)$ ;\\item $1_A\\in B$ ;\\item $B$ est stable par multiplication.\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Pour un entier fixé $n\\geq1$, l'ensemble des polynômes de degré au plus $n$ n'est pas stable par multiplication. Il ne constitue donc pas un sous-anneau de $\\mathbb{R}[X]$."
+        },
+        {
+          "type": "remark",
+          "content": "L'ensemble des fonctions continues de $\\mathbb{R}$ dans $\\mathbb{R}$ et l'ensemble des suites réelles convergeant vers zéro sont stables pour l'addition et la multiplication usuelles."
+        }
+      ]
+    },
+    {
+      "id": "morphismes-anneaux",
+      "category": "course",
+      "title": "Morphismes d'anneaux $\\varphi:A\\to A'$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un morphisme d'anneaux doit respecter l'addition, la multiplication et l'unité. Il transporte alors les sous-anneaux comme un morphisme de groupes transporte les sous-groupes."
+        },
+        {
+          "type": "definition",
+          "title": "Quand une application est-elle \\mathqst{un morphisme d'anneaux} ?",
+          "content": "Soient $(A,+,\\times)$ et $(A',+',\\times')$ deux anneaux. Une application $\\varphi:A\\to A'$ est un \\textbf{morphisme d'anneaux} lorsque :\\begin{itemize}\\item $\\varphi$ est un morphisme de groupes additifs ;\\item $\\varphi(1_A)=1_{A'}$ ;\\item $\\varphi(ab)=\\varphi(a)\\varphi(b)$ pour tous $a,b\\in A$.\\end{itemize}"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment un morphisme transporte-t-il \\mathqst{les sous-anneaux} ?",
+          "content": "L'image d'un sous-anneau par un morphisme d'anneaux est un sous-anneau. L'image réciproque d'un sous-anneau est aussi un sous-anneau."
+        },
+        {
+          "type": "property",
+          "title": "Quel morphisme relie \\mathqst{$\\mathbb{Z}$ à tout anneau $A$} ?",
+          "content": "Pour tout anneau $A$, l'application$$\\boxed{\\varphi:\\mathbb{Z}\\longrightarrow A,\\qquad n\\longmapsto n\\,1_A}$$est un morphisme d'anneaux. Son noyau est de la forme $m\\mathbb{Z}$. L'entier $m$ est appelé la \\textbf{caractéristique} de $A$."
+        },
+        {
+          "type": "exploration",
+          "content": "La conjugaison complexe respecte $1$, l'addition et la multiplication : $\\overline{z+w}=\\overline z+\\overline w$ et $\\overline{zw}=\\overline z\\,\\overline w$. Elle constitue donc un automorphisme de l'anneau $\\mathbb{C}$."
+        }
+      ]
+    },
+    {
+      "id": "anneau-quotient-znz",
+      "category": "course",
+      "title": "L'anneau $\\mathbb{Z}/n\\mathbb{Z}$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La congruence regroupe les entiers qui ont le même reste dans une division euclidienne. Les classes obtenues héritent naturellement d'une addition et d'une multiplication."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{l'ensemble $\\mathbb{Z}/n\\mathbb{Z}$} ?",
+          "content": "Pour $n\\geq2$, on définit $k\\equiv\\ell\\pmod n$ lorsque $k-\\ell\\in n\\mathbb{Z}$. La classe de $k$ est notée $\\overline{k}$, et l'ensemble des classes est :$$\\boxed{\\mathbb{Z}/n\\mathbb{Z}=\\{\\overline0,\\overline1,\\ldots,\\overline{n-1}\\}.}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment définir \\mathqst{les opérations dans $\\mathbb{Z}/n\\mathbb{Z}$} ?",
+          "content": "On définit :$$\\overline{k}+\\overline{\\ell}=\\overline{k+\\ell},\\qquad \\overline{k}\\,\\overline{\\ell}=\\overline{k\\ell}.$$Ces opérations font de $\\mathbb{Z}/n\\mathbb{Z}$ un anneau commutatif, de neutre additif $\\overline0$ et d'unité $\\overline1$. L'application $k\\mapsto\\overline{k}$ est un morphisme surjectif d'anneaux."
+        },
+        {
+          "type": "theorem",
+          "title": "Quand une classe est-elle \\mathqst{inversible modulo $n$} ?",
+          "content": "Pour $k\\in\\mathbb{Z}$, la classe $\\overline{k}$ est inversible dans $\\mathbb{Z}/n\\mathbb{Z}$ si et seulement si :$$\\boxed{\\gcd(k,n)=1.}$$"
+        },
+        {
+          "type": "corollary",
+          "title": "Quand $\\mathbb{Z}/n\\mathbb{Z}$ devient-il \\mathqst{un corps} ?",
+          "content": "L'anneau $\\mathbb{Z}/n\\mathbb{Z}$ est un corps si et seulement si $n$ est premier. Pour un nombre premier $p$, ce corps est noté $\\mathbb{F}_{p}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Dans $\\mathbb{Z}/7\\mathbb{Z}$, calculons $\\overline9+\\overline3$ et $\\overline9\\,\\overline3$.}\\par\\smallskipOn réduit les résultats modulo $7$ :$$\\overline9+\\overline3=\\overline{12}=\\blank{\\overline5},$$$$\\overline9\\,\\overline3=\\overline{27}=\\blank{\\overline6}.$$Ainsi :$$\\boxed{\\overline9+\\overline3=\\overline5\\qquad\\text{et}\\qquad \\overline9\\,\\overline3=\\overline6.}$$"
+        }
+      ]
+    },
+    {
+      "id": "corps-definition",
+      "category": "course",
+      "title": "Corps commutatifs $(K,+,\\times)$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un corps est un anneau dans lequel toute division par un élément non nul est possible. Cette structure affine les propriétés déjà rencontrées."
+        },
+        {
+          "type": "definition",
+          "title": "Quelles conditions définissent \\mathqst{un corps commutatif} ?",
+          "content": "Un ensemble $K$ muni de $+$ et $\\times$ est un \\textbf{corps commutatif} lorsque :\\begin{itemize}\\item $(K,+,\\times)$ est un anneau commutatif ;\\item $0_K\\neq1_K$ ;\\item tout élément non nul possède un inverse multiplicatif.\\end{itemize}"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment reconnaître \\mathqst{un corps avec ses deux groupes} ?",
+          "content": "En notant $K^{*}=K\\setminus\\{0_K\\}$, une définition équivalente est :\\begin{itemize}\\item $(K,+)$ est un groupe commutatif ;\\item $(K^{*},\\times)$ est un groupe commutatif ;\\item la multiplication est distributive sur l'addition.\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "Les ensembles $\\mathbb{Q}$, $\\mathbb{R}$ et $\\mathbb{C}$ sont des corps. L'anneau $\\mathbb{Z}$ et l'anneau $\\mathbb{R}[X]$ ne sont pas des corps, car certains éléments non nuls n'y sont pas inversibles. Le corps $\\mathbb{R}(X)$ des fractions rationnelles est un corps."
+        }
+      ]
+    },
+    {
+      "id": "sous-corps-morphismes",
+      "category": "course",
+      "title": "Sous-corps et morphismes de corps",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les critères de sous-groupe et de sous-anneau se combinent pour reconnaître un sous-corps. Les morphismes de corps sont exactement les morphismes d'anneaux entre deux corps."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un \\mathqst{sous-corps de $K$} ?",
+          "content": "Soit $(K,+,\\times)$ un corps. Un \\textbf{sous-corps} est une partie $K'\\subset K$ telle que $(K',+,\\times)$ soit un corps pour les lois induites."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment caractériser \\mathqst{un sous-corps de $K$} ?",
+          "content": "Une partie $K'\\subset K$ est un sous-corps si et seulement si :\\begin{itemize}\\item $1_K\\in K'$ ;\\item pour tous $x,y\\in K'$, $x-y\\in K'$ ;\\item pour tous $x,y\\in K'^{*}$, $xy^{-1}\\in K'^{*}$.\\end{itemize}"
+        },
+        {
+          "type": "definition",
+          "title": "Quand une application est-elle \\mathqst{un morphisme de corps} ?",
+          "content": "Une application entre deux corps est un \\textbf{morphisme de corps} lorsqu'elle est un morphisme d'anneaux. Elle préserve donc l'addition, la multiplication, l'unité et les inverses des éléments non nuls."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Montrons que $K'=\\{a+ib\\mid a,b\\in\\mathbb{Q}\\}$ est un sous-corps de $\\mathbb{C}$.}\\par\\smallskipOn a $\\blank{1=1+i0}\\in K'$. Soient $z=a+ib$ et $w=c+id$ dans $K'$. Alors :$$z-w=\\blank{(a-c)+i(b-d)}\\in K'.$$Si $w\\neq0$, alors :$$\\frac{z}{w}=\\frac{(a+ib)(c-id)}{c^{2}+d^{2}}=\\frac{ac+bd}{c^{2}+d^{2}}+i\\frac{bc-ad}{c^{2}+d^{2}}.$$Les deux coefficients sont rationnels, donc $\\blank{zw^{-1}\\in K'}$. Ainsi :$$\\boxed{K'\\text{ est un sous-corps de }\\mathbb{C}.}$$"
+        }
+      ]
+    },
+    {
+      "id": "matrices-ordre-deux",
+      "category": "course",
+      "title": "Matrices carrées $M_2(\\mathbb{R})$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les matrices fournissent un exemple concret d'anneau non commutatif. On commence par définir leurs opérations à l'ordre deux."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une \\mathqst{matrice carrée d'ordre $2$} ?",
+          "content": "Une \\textbf{matrice carrée d'ordre $2$} à coefficients réels est un tableau de la forme :$$\\boxed{A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix},\\qquad a,b,c,d\\in\\mathbb{R}.}$$L'ensemble de ces matrices est noté $M_2(\\mathbb{R})$."
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer \\mathqst{la somme et le produit de deux matrices} ?",
+          "content": "Pour $A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ et $B=\\begin{pmatrix}x&y\\\\z&t\\end{pmatrix}$ :$$A+B=\\begin{pmatrix}a+x&b+y\\\\c+z&d+t\\end{pmatrix},$$$$AB=\\begin{pmatrix}ax+bz&ay+bt\\\\cx+dz&cy+dt\\end{pmatrix}.$$Deux matrices sont égales lorsque leurs coefficients placés aux mêmes positions sont égaux."
+        },
+        {
+          "type": "property",
+          "title": "Quelles matrices jouent \\mathqst{le rôle de neutres dans $M_2(\\mathbb{R})$} ?",
+          "content": "La matrice unité et la matrice nulle sont :$$I_2=\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix},\\qquad O_2=\\begin{pmatrix}0&0\\\\0&0\\end{pmatrix}.$$Elles vérifient $AI_2=I_2A=A$ et $A+O_2=A$."
+        },
+        {
+          "type": "property",
+          "title": "Quelle structure possède \\mathqst{$M_2(\\mathbb{R})$ avec ses opérations} ?",
+          "content": "Le groupe $(M_2(\\mathbb{R}),+)$ est commutatif. En revanche, toutes les matrices ne sont pas inversibles pour la multiplication, donc $(M_2(\\mathbb{R}),\\times)$ n'est pas un groupe. L'ensemble $(M_2(\\mathbb{R}),+,\\times)$ est un anneau unitaire."
+        }
+      ]
+    },
+    {
+      "id": "matrices-ordre-trois",
+      "category": "course",
+      "title": "Matrices carrées $M_3(\\mathbb{R})$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les mêmes opérations s'étendent aux tableaux de neuf coefficients. Le produit s'obtient en combinant chaque ligne de la première matrice avec chaque colonne de la seconde."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une \\mathqst{matrice carrée d'ordre $3$} ?",
+          "content": "Une \\textbf{matrice carrée d'ordre $3$} à coefficients réels est un tableau :$$\\boxed{A=\\begin{pmatrix}a&d&g\\\\b&e&h\\\\c&f&i\\end{pmatrix}.}$$L'ensemble de ces matrices est noté $M_3(\\mathbb{R})$."
+        },
+        {
+          "type": "property",
+          "title": "Comment obtenir \\mathqst{chaque coefficient d'un produit matriciel} ?",
+          "content": "L'addition se fait coefficient par coefficient. Pour le produit, le coefficient situé à la ligne $r$ et à la colonne $s$ est la somme des produits des coefficients de la ligne $r$ de la première matrice par ceux de la colonne $s$ de la seconde."
+        },
+        {
+          "type": "property",
+          "title": "Quelles matrices sont \\mathqst{l'unité et le zéro dans $M_3(\\mathbb{R})$} ?",
+          "content": "Les matrices neutres sont :$$I_3=\\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{pmatrix},\\qquad O_3=\\begin{pmatrix}0&0&0\\\\0&0&0\\\\0&0&0\\end{pmatrix}.$$On a $AI_3=I_3A=A$ et $A+O_3=A$."
+        },
+        {
+          "type": "property",
+          "title": "Quelle structure possède \\mathqst{$M_3(\\mathbb{R})$ avec ses opérations} ?",
+          "content": "Le groupe $(M_3(\\mathbb{R}),+)$ est commutatif. Le magma multiplicatif n'est pas un groupe, car toutes les matrices ne sont pas inversibles. L'ensemble $(M_3(\\mathbb{R}),+,\\times)$ est un anneau unitaire."
+        }
+      ]
+    },
+    {
+      "id": "puissances-matrices",
+      "category": "course",
+      "title": "Puissances matricielles $A^n$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les premiers produits d'une matrice peuvent révéler une régularité. Une récurrence ou une identité nilpotente permet ensuite d'obtenir la puissance générale."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{déterminer une formule pour $A^n$} ?",
+          "content": "Pour déterminer $A^n$, on calcule d'abord quelques puissances afin de repérer une forme stable. On formule ensuite le résultat général et on le démontre par récurrence. Lorsque $A=I+B$ avec une puissance de $B$ nulle, on utilise le binôme de Newton après avoir vérifié que $I$ et $B$ commutent."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{On considère $A=\\begin{pmatrix}1&-1\\\\-1&1\\end{pmatrix}$ et $B=\\begin{pmatrix}1&1\\\\0&2\\end{pmatrix}$. Calculons $A^2$, $A^3$, $B^2$, $B^3$, puis déterminons $A^n$ et $B^n$ pour $n\\geq1$.}\\par\\smallskipOn obtient :$$A^2=\\begin{pmatrix}2&-2\\\\-2&2\\end{pmatrix},\\qquad A^3=\\begin{pmatrix}4&-4\\\\-4&4\\end{pmatrix}.$$La régularité conduit à :$$A^n=\\blank{\\begin{pmatrix}2^{n-1}&-2^{n-1}\\\\-2^{n-1}&2^{n-1}\\end{pmatrix}}.$$La formule est vraie au rang $1$. Si elle est vraie au rang $n$, la multiplication par $A$ multiplie chaque coefficient non nul par $2$, ce qui donne le rang $n+1$.\\par\\smallskipDe même :$$B^2=\\begin{pmatrix}1&3\\\\0&4\\end{pmatrix},\\qquad B^3=\\begin{pmatrix}1&7\\\\0&8\\end{pmatrix},$$puis une récurrence donne :$$B^n=\\blank{\\begin{pmatrix}1&2^n-1\\\\0&2^n\\end{pmatrix}}.$$Ainsi :$$\\boxed{A^n=\\begin{pmatrix}2^{n-1}&-2^{n-1}\\\\-2^{n-1}&2^{n-1}\\end{pmatrix},\\qquad B^n=\\begin{pmatrix}1&2^n-1\\\\0&2^n\\end{pmatrix}.}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $A=\\begin{pmatrix}1&1&0\\\\0&1&1\\\\0&0&1\\end{pmatrix}$, $I=I_3$ et $B=A-I$. Calculons $B^n$, puis déterminons $A^n$.}\\par\\smallskipOn a :$$B=\\begin{pmatrix}0&1&0\\\\0&0&1\\\\0&0&0\\end{pmatrix},\\qquad B^2=\\begin{pmatrix}0&0&1\\\\0&0&0\\\\0&0&0\\end{pmatrix},\\qquad B^3=\\blank{O_3}.$$Par récurrence, $B^n=O_3$ pour tout $n\\geq3$. Puisque $A=I+B$ et que $IB=BI$, le binôme donne :$$A^n=\\blank{I+nB+\\binom n2B^2}.$$Donc :$$\\boxed{A^n=\\begin{pmatrix}1&n&\\blank{\\dfrac{n(n-1)}2}\\\\0&1&n\\\\0&0&1\\end{pmatrix}.}$$"
+        }
+      ]
+    },
+    {
+      "id": "inversibilite-matrices",
+      "category": "course",
+      "title": "Inversibilité d'une matrice $A$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une matrice inversible autorise la simplification dans une égalité matricielle. Une relation polynomiale peut aussi fournir directement son inverse."
+        },
+        {
+          "type": "property",
+          "title": "Comment utiliser \\mathqst{la simplification pour tester l'inversibilité} ?",
+          "content": "Si $A$ est inversible et si $AB=AC$, alors la multiplication à gauche par $A^{-1}$ donne $B=C$. Par contraposée, si $AB=AC$ avec $B\\neq C$, alors $A$ n'est pas inversible."
+        },
+        {
+          "type": "method",
+          "title": "Comment déduire \\mathqst{$A^{-1}$ d'une relation polynomiale} ?",
+          "content": "Si une identité s'écrit $A\\,P(A)=I$, alors $A$ est inversible et $A^{-1}=P(A)$. Si elle s'écrit $A\\,P(A)=\\lambda I$ avec $\\lambda\\neq0$, alors $A^{-1}=\\lambda^{-1}P(A)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{On considère $A=\\begin{pmatrix}1&0&0\\\\0&1&1\\\\3&1&1\\end{pmatrix}$, $B=\\begin{pmatrix}1&1&1\\\\0&1&0\\\\1&0&0\\end{pmatrix}$ et $C=\\begin{pmatrix}1&1&1\\\\1&2&1\\\\0&-1&-1\\end{pmatrix}$. Calculons $AB$, $AC$, décidons si $A$ est inversible, puis déterminons les matrices $F$ telles que $AF=O_3$.}\\par\\smallskipLe calcul donne :$$\\blank{AB=AC}=\\begin{pmatrix}1&1&1\\\\1&1&0\\\\4&4&3\\end{pmatrix}.$$Comme $\\blank{B\\neq C}$, la matrice $A$ ne peut pas être inversible.\\par\\smallskipPosons $F=\\begin{pmatrix}a&b&c\\\\d&e&f\\\\g&h&i\\end{pmatrix}$. Alors :$$AF=\\begin{pmatrix}a&b&c\\\\d+g&e+h&f+i\\\\3a+d+g&3b+e+h&3c+f+i\\end{pmatrix}.$$L'égalité $AF=O_3$ impose $\\blank{a=b=c=0}$, puis $d=-g$, $e=-h$ et $f=-i$. Ainsi :$$\\boxed{F=\\blank{\\begin{pmatrix}0&0&0\\\\d&e&f\\\\-d&-e&-f\\end{pmatrix}},\\qquad d,e,f\\in\\mathbb{R}.}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Pour chacune des matrices suivantes, utilisons la relation indiquée pour établir l'inversibilité et déterminer l'inverse.\\begin{enumerate}\\item $A=\\begin{pmatrix}-1&1&1\\\\1&-1&1\\\\1&1&-1\\end{pmatrix}$ et $A^2=2I_3-A$.\\item $A=\\begin{pmatrix}1&0&2\\\\0&-1&1\\\\1&-2&0\\end{pmatrix}$ et $A^3-A=4I_3$.\\item $A=\\begin{pmatrix}0&1&-1\\\\-1&2&-1\\\\1&-1&2\\end{pmatrix}$ et $A^2-3A+2I_3=O_3$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item De $A^2=2I_3-A$, on déduit $A^2+A=2I_3$, donc :$$A\\left(\\frac{A+I_3}{2}\\right)=I_3.$$Ainsi, $\\boxed{A^{-1}=\\blank{\\dfrac{A+I_3}{2}}}$.\\item De $A^3-A=4I_3$, on déduit :$$A\\left(\\frac{A^2-I_3}{4}\\right)=I_3.$$Ainsi :$$\\boxed{A^{-1}=\\blank{\\frac14(A^2-I_3)}=\\frac14\\begin{pmatrix}2&-4&2\\\\1&-2&-1\\\\1&2&-1\\end{pmatrix}.}$$\\item De $A^2-3A+2I_3=O_3$, on obtient $A(A-3I_3)=-2I_3$, donc :$$A\\left(-\\frac12(A-3I_3)\\right)=I_3.$$Ainsi, $\\boxed{A^{-1}=\\blank{-\\dfrac12(A-3I_3)}}$.\\end{enumerate}"
+        }
+      ]
+    }
+  ]
+}

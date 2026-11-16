@@ -1,0 +1,162 @@
+{
+  "school": "ensa",
+  "year": "2020",
+  "title": "Concours ENSA 2020",
+  "questions": [
+    {
+      "id": "ensa-20-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "La valeur de l'intégrale $\\displaystyle I = \\int_0^1 \\frac{e^x}{1 + e^x} dx$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln(1+e) - \\ln 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\ln(1+e)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\frac{1}{1+e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln 2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La fonction à intégrer est de la forme $\\frac{u'}{u}$ avec $u(x) = 1 + e^x$. Une primitive est donc $\\ln(1 + e^x)$. Évaluée entre 0 et 1, cela donne $\\ln(1+e) - \\ln(2)$."
+    },
+    {
+      "id": "ensa-20-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "Soit la suite $(u_n)$ définie par $u_n = \\displaystyle \\sum_{k=1}^n \\frac{1}{\\sqrt{n^2 + k}}$. La limite de $(u_n)$ en $+\\infty$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par encadrement, on a $\\frac{n}{\\sqrt{n^2+n}} \\leq u_n \\leq \\frac{n}{\\sqrt{n^2+1}}$. Les deux bornes tendent vers 1 quand $n \\to +\\infty$."
+    },
+    {
+      "id": "ensa-20-03",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Soit $z = e^{i \\frac{2\\pi}{3}}$. La valeur de $\\displaystyle S = 1 + z + z^2$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il s'agit de la somme des premiers termes d'une suite géométrique de raison $z \\neq 1$. $S = \\frac{1 - z^3}{1 - z} = \\frac{1 - 1}{1 - z} = 0$."
+    },
+    {
+      "id": "ensa-20-04",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Variables aléatoires",
+      "difficulty": "concours",
+      "prompt": "Une variable aléatoire $X$ suit une loi binomiale $\\mathcal{B}(n, p)$. On sait que $E(X) = 2$ et $V(X) = 1{,}6$. Les paramètres $n$ et $p$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$n = 10$, $p = 0{,}2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$n = 5$, $p = 0{,}4$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$n = 8$, $p = 0{,}25$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$n = 20$, $p = 0{,}1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $np = 2$ et $np(1-p) = 1{,}6$. En divisant les deux, on obtient $1-p = 0{,}8$, donc $p = 0{,}2$. Ensuite, $n = \\frac{2}{0{,}2} = 10$."
+    },
+    {
+      "id": "ensa-20-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "concours",
+      "prompt": "La limite $\\displaystyle L = \\lim_{x \\to 0} \\frac{\\sin(3x)}{\\ln(1+2x)}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\frac{3}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\frac{2}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Au voisinage de 0, on sait que $\\sin(3x) \\sim 3x$ et $\\ln(1+2x) \\sim 2x$. Le rapport équivaut donc à $\\frac{3x}{2x} = \\frac{3}{2}$."
+    }
+  ]
+}

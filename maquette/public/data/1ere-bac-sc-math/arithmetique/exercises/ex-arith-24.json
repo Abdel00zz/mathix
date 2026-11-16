@@ -1,0 +1,43 @@
+{
+  "id": "ch05-ex08",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "chapter": "05 - Congruence modulo n ; l'ensemble Z/nZ et opérations",
+  "topic": "Congruences - Preuves théoriques avec puissances de 2",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soit $a$ et $b$ deux entiers naturels non nuls tels que : $a \\geq 3$ et $a$ impair. On pose : $d = (2^a - 1) \\wedge (2^b + 1)$.",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que : $2^{ab} \\equiv 1\\ [d]$ puis que $2^{ab} \\equiv -1\\ [d]$.",
+          "hint": "Puisque $d / 2^a - 1$, on a $2^a \\equiv 1\\ [d]$, donc $2^{ab} = (2^a)^b \\equiv 1^b = 1\\ [d]$. Puisque $d / 2^b + 1$, on a $2^b \\equiv -1\\ [d]$, donc $2^{ab} = (2^b)^a \\equiv (-1)^a\\ [d]$. Utilisez la parité de $a$."
+        },
+        {
+          "id": "sq1b",
+          "content": "En déduire que $d = 1$.",
+          "hint": "D'après la question précédente, $2^{ab} \\equiv 1\\ [d]$ et $2^{ab} \\equiv -1\\ [d]$. Soustrayez : $d / 2$. Mais $d$ divise $2^a - 1$ qui est impair, donc $d$ est impair. Concluez."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soit $n \\in \\mathbb{Z}$. On pose : $\\alpha_n = n^4 - n^2 + 16$. Montrer que $\\alpha_n$ n'est pas premier.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que les entiers $n^2 - 3n + 4$ et $n^2 + 3n + 4$ sont pairs.",
+          "hint": "Étudiez la parité selon que $n$ est pair ou impair. Notez que $n^2$ et $n$ ont toujours la même parité."
+        },
+        {
+          "id": "sq2b",
+          "content": "En déduire que $\\alpha_n$ n'est pas premier.",
+          "hint": "Vérifiez que $\\alpha_n = (n^2 - 3n + 4)(n^2 + 3n + 4)$. Les deux facteurs sont pairs d'après a), donc $\\geq 2$. Concluez."
+        }
+      ]
+    }
+  ]
+}

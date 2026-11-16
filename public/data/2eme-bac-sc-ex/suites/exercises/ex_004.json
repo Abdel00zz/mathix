@@ -1,0 +1,78 @@
+{
+  "id": "ex-004",
+  "theme": "suites",
+  "difficulty": "facile",
+  "topic": "Suites",
+  "context": "On considère la suite $(u_n)$ définie par $$ u_0 = 2 \\quad \\text{et} \\quad \\forall n \\in \\mathbb{N}, \\; u_{n+1} = \\dfrac{1}{2}u_n + 1 $$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calcul des premiers termes",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Calculer $u_1$, $u_2$ et $u_3$.",
+          "hint": "Utilisez la relation de récurrence pour exprimer $u_1, u_2, u_3$ en fonction du terme précédent. Que remarquez-vous sur les valeurs obtenues ?"
+        },
+        {
+          "id": "sq1b",
+          "content": "Conjecturer la limite de $(u_n)$.",
+          "hint": "D'après les premiers termes, vers quelle valeur la suite semble-t-elle tendre ?"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Étude d'une suite auxiliaire",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "On pose $v_n = u_n - 2$. Montrer que $(v_n)$ est géométrique.",
+          "hint": "Pour montrer que $(v_n)$ est géométrique, calculez $v_{n+1}$ en fonction de $u_{n+1}$, puis remplacez $u_{n+1}$ par sa définition. Factorisez l'expression pour faire apparaître $v_n$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Exprimer $v_n$ puis $u_n$ en fonction de $n$.",
+          "hint": "Vous connaissez le premier terme $v_0$ et la raison $q$. Utilisez la formule du terme général d'une suite géométrique. Ensuite, exprimez $u_n$ en fonction de $v_n$ à partir de la définition de $v_n$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Généralisation (avec $u_0 = 4$)",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Calculer $v_0$ et exprimer $v_n$ en fonction de $n$.",
+          "hint": "Recalculez $v_0$ avec la nouvelle valeur de $u_0$. La raison de la suite $(v_n)$ reste la même. Appliquez la formule du terme général."
+        },
+        {
+          "id": "sq3b",
+          "content": "En déduire $u_n$ et sa limite.",
+          "hint": "Exprimez $u_n$ en fonction de $v_n$. Pour la limite, quelle est la condition sur la raison $q$ pour que la limite d'une suite géométrique soit 0 ?"
+        },
+        {
+          "id": "sq3c",
+          "content": "Étudier le sens de variation de $(u_n)$.",
+          "hint": "\\method Pour étudier la monotonie, analysez le signe de la différence $u_{n+1} - u_n$. Utilisez l'expression de $u_n$ trouvée précédemment pour simplifier."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Somme des termes",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Calculer $S_n = \\sum_{k=0}^{n} v_k$.",
+          "hint": "Appliquez la formule de la somme des termes d'une suite géométrique. Attention au nombre de termes."
+        },
+        {
+          "id": "sq4b",
+          "content": "En déduire $\\sum u_k$ et sa limite.",
+          "hint": "Utilisez la relation $u_k = v_k + 2$. Par linéarité, $\\sum u_k = \\sum v_k + \\sum 2$. Quelle est la limite de cette somme quand $n \\to +\\infty$ ?"
+        }
+      ]
+    }
+  ]
+}

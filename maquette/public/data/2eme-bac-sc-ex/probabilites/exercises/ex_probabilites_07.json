@@ -1,0 +1,37 @@
+{
+  "id": "proba-ex04",
+  "theme": "probabilites",
+  "difficulty": "moyen",
+  "chapter": "02 - Probabilité conditionnelle et indépendance",
+  "topic": "Tirage sans remise - Probabilité conditionnelle",
+  "requiresRedaction": true,
+  "context": "Un sac contient 11 boules : 5 blanches numérotées 1,1,1,0,0 ; 4 rouges numérotées 1,1,0,0 ; 2 vertes numérotées 1,0. Toutes les boules sont indiscernables au toucher. On tire au hasard successivement et sans remise 3 boules du sac.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer la probabilité de chacun des événements :",
+      "subQuestions": [
+        {
+          "id": "sq1A",
+          "content": "A « Obtenir 3 boules de même couleur ».",
+          "hint": "L'ordre compte ($Card(\\Omega) = A_{11}^3$). Seules les blanches (5) et les rouges (4) permettent 3 boules de même couleur. $Card(A) = A_5^3 + A_4^3$."
+        },
+        {
+          "id": "sq1B",
+          "content": "B « Obtenir 3 boules qui portent le même numéro ».",
+          "hint": "Numéro 1 : 3B + 2R + 1V = 6 boules portent le numéro 1. Numéro 0 : 2B + 2R + 1V = 5 boules portent le numéro 0. $Card(B) = A_6^3 + A_5^3$."
+        },
+        {
+          "id": "sq1C",
+          "content": "C « Obtenir 1 boule de chaque couleur ».",
+          "hint": "1 blanche parmi 5, 1 rouge parmi 4, 1 verte parmi 2, arrangées dans tous les ordres possibles. $Card(C) = 3! \\times (A_5^1 \\times A_4^1 \\times A_2^1)$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Calculer la probabilité d'obtenir 3 boules qui portent le même numéro sachant qu'elles sont de mêmes couleurs.",
+      "hint": "On cherche $P_A(B) = \\frac{P(A \\cap B)}{P(A)}$. L'événement $A \\cap B$ correspond à : 3 boules de même couleur ET même numéro. Listez les seuls cas possibles : (B,B,B) toutes numérotées 1 ou toutes 0, idem pour (R,R,R)."
+    }
+  ]
+}

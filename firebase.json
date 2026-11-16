@@ -1,0 +1,44 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/apprendre",
+        "destination": "/apprendre/Apprendre.html"
+      },
+      {
+        "source": "/apprendre/",
+        "destination": "/apprendre/Apprendre.html"
+      },
+      {
+        "source": "!/{api,assets,data,apprendre}/**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/apprendre/sw-apprendre.js",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+          { "key": "Service-Worker-Allowed", "value": "/apprendre/" }
+        ]
+      },
+      {
+        "source": "/apprendre/apprendre.webmanifest",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+          { "key": "Content-Type", "value": "application/manifest+json; charset=utf-8" }
+        ]
+      }
+    ]
+  }
+}

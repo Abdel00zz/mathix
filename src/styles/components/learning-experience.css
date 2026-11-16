@@ -1,0 +1,177 @@
+/* Editorial paper + colored notes. Shared by student and teaching surfaces. */
+.mp-auth-experience, .dashboard-shell {
+  --learning-ink: #252923;
+  --learning-muted: #61675e;
+  --learning-paper: #f8f8f3;
+  --learning-line: #dedfd5;
+  --font-ui: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+}
+.mp-auth-experience[dir='rtl'], .dashboard-shell[dir='rtl'] { --font-ui: var(--font-arabic-ui); }
+.learning-study-stats { display: flex; flex-wrap: wrap; gap: clamp(5px, 0.5vw, 8px); margin-top: clamp(11px, 1.3vw, 16px); }
+.learning-study-stats span { border: 1px solid #daddd2; background: #ffffff85; color: #52594e; border-radius: clamp(6px, 0.6vw, 8px); padding: clamp(4px, 0.45vw, 6px) clamp(7px, 0.8vw, 10px); font-size: clamp(10.5px, calc(10px + 0.14vw), 12px); font-weight: 500; font-variant-numeric: tabular-nums; }
+.learning-progress {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.065);
+  box-shadow: inset 0 1px 1px rgba(15, 23, 42, 0.04);
+}
+.learning-progress > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent, #41765d) 0%, color-mix(in srgb, var(--accent, #41765d) 82%, #ffffff) 100%);
+  transition: width 560ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: width;
+}
+
+/* Natural document flow keeps the hero and both entry points visible at any zoom. */
+.mp-auth-experience .mp-split-landing { background: var(--learning-paper); color: var(--learning-ink); }
+.mp-auth-experience .mp-split-header { position: relative; min-height: clamp(62px, 6.2vw, 80px); padding: clamp(12px, 1.5vw, 20px) clamp(16px, 4.5vw, 64px); }
+.mp-auth-experience .mp-split-login { color: #fff; background: #252923; border-color: #252923; box-shadow: none; }
+.mp-auth-experience .mp-split-login:hover { background: #41483c; }
+.mp-auth-experience .mp-split-header .mp-language-control { color: #50574d; border-color: #dcdfd5; background: #fff9; box-shadow: none; }
+.mp-auth-experience .learning-intro {
+  position: relative; top: auto; left: auto; transform: none; z-index: 1;
+  display: flex; flex-direction: column; gap: 0; width: min(100%, clamp(620px, 76vw, 980px)); margin: clamp(14px, 2.2vw, 28px) auto clamp(20px, 2.8vw, 34px); padding: 0 clamp(16px, 3vw, 28px);
+  border: 0; border-radius: 0; background: none; box-shadow: none; backdrop-filter: none; color: var(--learning-ink);
+}
+.learning-intro-kicker { display: inline-flex; align-items: center; gap: clamp(6px, 0.7vw, 9px); padding: clamp(5px, 0.5vw, 7px) clamp(10px, 1vw, 14px); border: 1px solid #dfe2d5; border-radius: 99px; background: #edf0e4; color: #515d42; font-size: clamp(10.5px, calc(10px + 0.14vw), 12px); font-weight: 600; }
+.mp-auth-experience .learning-intro h1 { margin: clamp(12px, 1.8vw, 20px) 0 clamp(10px, 1.2vw, 14px); color: #252923; font-family: var(--font-ui); font-size: clamp(28px, calc(21px + 2.1vw), 48px); font-weight: 550; line-height: 1.15; letter-spacing: -.055em; text-wrap: balance; }
+.mp-auth-experience .learning-intro h1 em { font-family: var(--font-editorial); font-weight: 400; color: #56724e; }
+.mp-auth-experience .learning-intro p { margin: 0; max-width: min(100%, 48ch); color: #656b60; font-size: clamp(13px, calc(12.3px + 0.18vw), 15.5px); font-weight: 400; line-height: 1.7; }
+.mp-auth-experience .mp-split-main { grid-template-columns: repeat(2, minmax(0, clamp(340px, 34vw, 460px))); justify-content: center; gap: clamp(14px, 2vw, 26px); min-height: 0; padding: clamp(4px, 0.8vw, 10px) clamp(16px, 2.8vw, 32px) clamp(36px, 4.5vw, 58px); }
+.mp-auth-experience .mp-split-space { min-height: 0; padding: 0; border: 0; background: transparent; overflow: visible; contain: none; }
+.mp-auth-experience .mp-split-squares-pattern { display: none; }
+.mp-auth-experience .mp-split-glass-card {
+  --note-surface: #fcf3d4;
+  width: 100%; height: auto; aspect-ratio: auto; min-height: clamp(220px, 22vw, 290px);
+  background: linear-gradient(145deg, #fff9e8, var(--note-surface)); border: 1px solid #e3dbc1; border-radius: clamp(16px, 1.8vw, 22px);
+  box-shadow: 0 2px 3px #333b2910, 0 14px 30px -20px #38392230, inset 0 1px 0 #fff9;
+  transition: transform 230ms cubic-bezier(.2,.8,.2,1), box-shadow 230ms ease, border-color 230ms ease;
+}
+.mp-auth-experience .mp-split-card-teacher { --note-surface: #dfeadb; background: linear-gradient(145deg, #f0f5eb, var(--note-surface)); border-color: #d2ddce; }
+.mp-auth-experience .mp-split-glass-card::after { content: ''; position: absolute; inset-block-start: 0; inset-inline-end: 0; width: clamp(36px, 3.6vw, 48px); height: clamp(36px, 3.6vw, 48px); background: linear-gradient(225deg, #fff7 49%, #5a664917 50%, transparent 53%); clip-path: polygon(0 0, 100% 0, 100% 100%); pointer-events: none; }
+.mp-auth-experience .mp-split-card-copy { padding: clamp(20px, 2.4vw, 30px) clamp(20px, 2.5vw, 32px) 0; }
+.learning-eyebrow { margin-bottom: clamp(8px, 1vw, 13px); color: #69704f; font-size: clamp(9.5px, calc(9px + 0.12vw), 11px); font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
+.mp-auth-experience .mp-split-glass-card h2 { color: #252923; font-family: var(--font-ui); font-size: clamp(21px, calc(18px + 1vw), 31px); font-weight: 650; text-shadow: none; line-height: 1.15; letter-spacing: -.04em; }
+.mp-auth-experience .mp-split-glass-card p { color: #656957; font-size: clamp(12.5px, calc(11.8px + 0.16vw), 14px); line-height: 1.75; text-shadow: none; margin: clamp(9px, 1vw, 13px) 0 0; }
+.mp-auth-experience .mp-split-glass-card p strong { color: #3e4538; font-weight: 600; }
+.mp-auth-experience .mp-split-glass-card small { color: #626d5c; font-size: clamp(10px, calc(9.5px + 0.14vw), 11.5px); text-align: center; }
+.mp-auth-experience .mp-split-card-actions { padding: clamp(10px, 1.2vw, 14px) clamp(20px, 2.5vw, 32px) clamp(20px, 2.2vw, 28px); }
+.mp-auth-experience .mp-split-glass-card .mp-btn-action { min-height: clamp(44px, calc(42px + 0.45vw), 50px); border-radius: clamp(10px, 1vw, 13px); background: #252923; color: #fffef7; border: 1px solid #252923; box-shadow: 0 2px 4px #25292312; font-weight: 600; font-size: clamp(12px, calc(11.3px + 0.18vw), 14px); letter-spacing: 0; transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease; }
+.mp-auth-experience .mp-split-glass-card .mp-btn-action:hover { background: #41483c; color: white; box-shadow: 0 5px 14px #25292320; }
+.mp-auth-experience .mp-split-card-teacher .mp-btn-action { background: #ffffffb3; color: #303d2b; border: 1px solid #b9c8b0; box-shadow: none; }
+.mp-auth-experience .mp-split-card-teacher .mp-btn-action:hover { background: #fff; color: #303d2b; box-shadow: 0 5px 14px #2529230c; }
+.mp-auth-experience .mp-split-glass-card .mp-btn-action:active { transform: scale(.98); box-shadow: none; }
+.mp-btn-action svg { transition: translate 200ms ease; }
+.mp-btn-action:hover svg { translate: 3px 0; }
+[dir='rtl'] .mp-btn-action:hover svg { translate: -3px 0; }
+.mp-auth-experience.is-role-preview .mp-split-main { grid-template-columns: minmax(0, clamp(720px, 84vw, 1120px)); padding-top: clamp(18px, 2.2vw, 28px); }
+.mp-auth-experience .mp-split-space.is-preview-active { padding: clamp(8px, 1vw, 12px) 0 clamp(18px, 2.2vw, 26px); min-height: 0; }
+.learning-onboarding-art { width: min(clamp(18rem, 42vw, 26.25rem), 100%); margin: auto; padding: clamp(0.75rem, 2.2vw, 1.5rem); text-align: center; }
+.learning-onboarding-art h2 { font-size: clamp(1.125rem, calc(0.9rem + 1.15vw), 1.75rem); font-weight: 600; color: #252923; margin: clamp(4px, 0.9vw, 12px) 0; letter-spacing: -.035em; }
+.learning-onboarding-art p { font-size: clamp(0.75rem, calc(0.68rem + 0.35vw), 0.95rem); color: #61675e; line-height: 1.6; }
+.mp-auth-experience .mp-expanded-registration-visual { display: flex; align-items: center; justify-content: center; background: #f3f4e9; border-color: #e0e3d3; }
+
+/* The tint identifies the topic. Course content itself stays on a neutral surface. */
+.dashboard-shell .dashboard-shell__canvas { background: #f8f8f3; }
+.dashboard-shell .dashboard-shell__canvas > div { opacity: .02; }
+.dashboard-shell .dashboard-header { background: linear-gradient(120deg, #fffefa, #f0f2e7); border-color: #e1e4d8; box-shadow: 0 6px 24px -18px #333b2930; border-radius: 22px; }
+.dashboard-shell .dashboard-header__title { font-family: var(--font-ui); color: #252923; font-weight: 550; letter-spacing: -.045em; }
+.dashboard-shell .dashboard-header__eyebrow { color: #5e7054; letter-spacing: .04em; }
+.dashboard-shell .dashboard-tab-dock__inner { background: #efefe7; border-color: #e3e3d8; border-radius: 14px; padding: 5px; }
+.dashboard-shell .dashboard-tab-chip { border-radius: 10px; color: #666d60; font-weight: 600; }
+.dashboard-shell .dashboard-tab-chip--active, .dashboard-shell .dashboard-tab-chip--active:hover { background: #292e26; color: #fff; box-shadow: 0 2px 5px #25292315; }
+.dashboard-shell .dashboard-card-frame {
+  border-color: #e3e4dc;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.03),
+    0 10px 24px -18px rgba(15, 23, 42, 0.14);
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .dashboard-shell .dashboard-card-frame:hover {
+    border-color: color-mix(in srgb, var(--border-accent, #64748b) 36%, #cbd5e1);
+    box-shadow:
+      0 2px 6px rgba(15, 23, 42, 0.04),
+      0 18px 34px -20px rgba(15, 23, 42, 0.18);
+  }
+}
+.dashboard-shell .learning-chapter-card, .dashboard-shell .learning-chapter-row { border-color: var(--note-line) !important; border-radius: 20px; }
+.learning-chapter-card, .learning-chapter-row { --note-surface: #faf8f0; --note-line: #e1e2d8; }
+.learning-chapter-header { background: linear-gradient(145deg, color-mix(in srgb, var(--note-surface) 68%, white), var(--note-surface)); position: relative; }
+.learning-chapter-header::after { content: ''; position: absolute; inset-block-start: 14px; inset-inline-end: 17px; width: 20px; height: 5px; border-block: 1px solid #53594235; pointer-events: none; }
+.learning-chapter-header h3 { font-family: var(--font-ui); color: #2b3027; font-weight: 600; letter-spacing: -.03em; }
+.learning-chapter-header > div:first-child > div:first-child { color: #5e6354; border-color: #656c4922; background: #ffffff65; font-weight: 600; box-shadow: none; }
+.learning-chapter-header > div[aria-label] > div { background: #ffffff80; border-color: #656c4917; color: #5d6458; font-size: clamp(10px, calc(9.5px + 0.12vw), 11.5px); }
+.learning-chapter-row > button { background: var(--note-surface); }
+.learning-chapter-row > div { background: #fffefb; }
+
+/* Unified loading page & subtle skeletons (harmonized with #splash-screen). */
+.mp-loading-page {
+  background: radial-gradient(circle at 50% 6%, #fffefa 0%, #f6f7f1 48%, #ecefe5 100%);
+}
+.mp-loading-page__grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(82, 109, 71, 0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(82, 109, 71, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.mp-loading-brand {
+  width: clamp(160px, calc(142px + 4.4vw), 208px);
+  aspect-ratio: 3 / 2;
+}
+.mp-loading-brand--ar {
+  width: min(clamp(210px, calc(186px + 5.6vw), 276px), 78vw);
+  aspect-ratio: 3 / 1;
+}
+.mp-loading-track {
+  position: relative;
+  width: min(clamp(192px, calc(168px + 4.5vw), 244px), 70vw);
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dfe4d7;
+}
+.mp-loading-track--compact {
+  width: min(148px, 52vw);
+}
+.mp-loading-bar {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 44%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #526d47 0%, #2d8a6e 60%, #526d47 100%);
+  animation: mp-loading-slide 1.25s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes mp-loading-slide {
+  0% { transform: translateX(-110%); }
+  100% { transform: translateX(260%); }
+}
+.learning-skeleton { position: relative; overflow: hidden; background: #e9ece3; border-radius: 12px; }
+.learning-skeleton::after { content: ''; position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, #ffffffa6, transparent); animation: learning-shimmer 1.6s ease-in-out infinite; }
+.learning-summary-actions button { border-radius: 14px; min-height: 48px; transition: transform 180ms ease, background 180ms ease; }
+.learning-summary-actions button:active { transform: scale(.98); }
+@keyframes learning-shimmer { to { transform: translateX(100%); } }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .mp-auth-experience .mp-split-glass-card:hover { transform: translateY(-4px); border-color: #b7c0aa; box-shadow: 0 4px 6px #333b2910, 0 24px 40px -22px #303b3038; }
+  .dashboard-shell .learning-chapter-card:hover { border-color: #acb89f !important; box-shadow: 0 16px 28px -18px #303b3038; }
+}
+@media (max-width: 760px) {
+  .mp-auth-experience .mp-split-main { grid-template-columns: minmax(0, min(440px, 100%)); gap: clamp(14px, 4vw, 20px); padding: 0 clamp(16px, 4.5vw, 24px) clamp(28px, 7vw, 40px); }
+  .mp-auth-experience .learning-intro { margin: clamp(12px, 3vw, 20px) auto clamp(18px, 4vw, 26px); }
+  .mp-auth-experience .learning-intro h1 { max-width: 380px; line-height: 1.18; }
+  .mp-auth-experience .learning-intro p { max-width: min(100%, 40ch); }
+  .mp-auth-experience .mp-split-glass-card { width: 100%; min-height: 0; height: auto; }
+  .mp-auth-experience .mp-split-card-copy { padding: clamp(18px, 4.8vw, 24px) clamp(18px, 4.8vw, 24px) 0; }
+  .mp-auth-experience .mp-split-card-actions { padding: clamp(10px, 2.5vw, 14px) clamp(18px, 4.8vw, 24px) clamp(18px, 4.8vw, 24px); }
+  .mp-auth-experience .mp-expanded-registration-visual { height: auto; min-height: 0; margin-bottom: clamp(8px, 2.5vw, 12px); }
+}
+/* Apply the same visible focus to controls which remove their own outline. */
+:is(button, a, input, select, textarea, [role='button']):focus-visible { outline: 3px solid #526d47; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

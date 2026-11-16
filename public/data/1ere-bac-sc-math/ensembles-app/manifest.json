@@ -1,0 +1,187 @@
+{
+  "id": "ensembles-app",
+  "title": "Ensembles et applications",
+  "section": "algebre-geometrie",
+  "revisions": [
+    {
+      "id": "rev-ens-app-1",
+      "title": "Fiche Complète : Ensembles & Applications",
+      "path": "data/1ere-bac-sc-math/ensembles-app/revisions/fiche_ensembles_app_cours.json"
+    },
+    {
+      "id": "rev-ens-app-2",
+      "path": "data/1ere-bac-sc-math/ensembles-app/revisions/fiche_ensembles_app.json",
+      "title": "Applications et Ensembles — Cours & Définitions"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-ens-app-01",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-01.json"
+    },
+    {
+      "id": "ex-ens-app-02",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-02.json"
+    },
+    {
+      "id": "ex-ens-app-03",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-03.json"
+    },
+    {
+      "id": "ex-ens-app-04",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-04.json"
+    },
+    {
+      "id": "ex-ens-app-05",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-05.json"
+    },
+    {
+      "id": "ex-ens-app-06",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-06.json"
+    },
+    {
+      "id": "ex-ens-app-07",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-07.json"
+    },
+    {
+      "id": "ex-ens-app-08",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-08.json"
+    },
+    {
+      "id": "ex-ens-app-09",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-09.json"
+    },
+    {
+      "id": "ex-ens-app-10",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-10.json"
+    },
+    {
+      "id": "ex-ens-app-11",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-11.json"
+    },
+    {
+      "id": "ex-ens-app-12",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-12.json"
+    },
+    {
+      "id": "ex-ens-app-13",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-13.json"
+    },
+    {
+      "id": "ex-ens-app-14",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-14.json"
+    },
+    {
+      "id": "ex-ens-app-15",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-15.json"
+    },
+    {
+      "id": "ex-ens-app-16",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-16.json"
+    },
+    {
+      "id": "ex-ens-app-17",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-17.json"
+    },
+    {
+      "id": "ex-ens-app-18",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-18.json"
+    },
+    {
+      "id": "ex-ens-app-19",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-19.json"
+    },
+    {
+      "id": "ex-ens-app-20",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-20.json"
+    },
+    {
+      "id": "ex-ens-app-21",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-21.json"
+    },
+    {
+      "id": "ex-ens-app-22",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-22.json"
+    },
+    {
+      "id": "ex-ens-app-23",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-23.json"
+    },
+    {
+      "id": "ex-ens-app-24",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-24.json"
+    },
+    {
+      "id": "ex-ens-app-25",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-25.json"
+    },
+    {
+      "id": "ex-ens-app-26",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-26.json"
+    },
+    {
+      "id": "ex-ens-app-27",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-27.json"
+    },
+    {
+      "id": "ex-ens-app-28",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-28.json"
+    },
+    {
+      "id": "ex-ens-app-29",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-29.json"
+    },
+    {
+      "id": "ex-ens-app-30",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-30.json"
+    },
+    {
+      "id": "ex-ens-app-31",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-31.json"
+    },
+    {
+      "id": "ex-ens-app-32",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-32.json"
+    },
+    {
+      "id": "ex-ens-app-33",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-33.json"
+    },
+    {
+      "id": "ex-ens-app-34",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-34.json"
+    },
+    {
+      "id": "ex-ens-app-35",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-35.json"
+    },
+    {
+      "id": "ex-ens-app-36",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-36.json"
+    },
+    {
+      "id": "ex-ens-app-37",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-37.json"
+    },
+    {
+      "id": "ex-ens-app-38",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-38.json"
+    },
+    {
+      "id": "ex-ens-app-39",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-39.json"
+    },
+    {
+      "id": "ex-ens-app-40",
+      "path": "data/1ere-bac-sc-math/ensembles-app/exercises/ex-ens-app-40.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-ensembles-app-01",
+      "path": "data/1ere-bac-sc-math/ensembles-app/quiz/ensembles-app_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

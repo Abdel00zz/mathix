@@ -1,0 +1,33 @@
+{
+  "id": "equations-differentielles",
+  "title": "Équations différentielles",
+  "quizCount": 13,
+  "revisions": [
+    {
+      "id": "rev-equations-differentielles-sm",
+      "title": "Fiche Complete : Equations differentielles",
+      "path": "data/2eme-bac-sc-math/equations-differentielles/revisions/fiche_equations_differentielles_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-equations-differentielles-01",
+      "path": "data/2eme-bac-sc-math/equations-differentielles/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-equations-differentielles-02",
+      "path": "data/2eme-bac-sc-math/equations-differentielles/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-equations-differentielles-03",
+      "path": "data/2eme-bac-sc-math/equations-differentielles/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-equations-differentielles-01",
+      "path": "data/2eme-bac-sc-math/equations-differentielles/quiz/equations-differentielles_quiz.json",
+      "questionsCount": 13
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "projection-plan",
+  "title": "La projection dans le plan",
+  "section": "algebre-geometrie",
+  "quizCount": 8,
+  "revisions": [
+    {
+      "id": "rev-proj-tc",
+      "title": "Fiche Complète : Projection",
+      "path": "data/tronc-commun-sc/projection-plan/revisions/fiche_projection_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-proj-tc-01",
+      "path": "data/tronc-commun-sc/projection-plan/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-projection-plan-01",
+      "path": "data/tronc-commun-sc/projection-plan/exercises/ex_projection_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-projection-plan-01",
+      "path": "data/tronc-commun-sc/projection-plan/quiz/projection-plan_quiz.json",
+      "questionsCount": 8
+    }
+  ]
+}

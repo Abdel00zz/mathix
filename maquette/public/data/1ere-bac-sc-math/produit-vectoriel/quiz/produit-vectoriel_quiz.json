@@ -1,0 +1,495 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quelle est la nature du résultat du produit vectoriel $\\overrightarrow{u} \\wedge \\overrightarrow{v}$ de deux vecteurs de l'espace ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un vecteur de l'espace",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un nombre réel (scalaire)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un plan",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une droite",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le produit vectoriel cree un nouveau vecteur, contrairement au produit scalaire qui donne un nombre reel."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Si deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont colinéaires, alors leur produit vectoriel $\\overrightarrow{u} \\wedge \\overrightarrow{v}$ est égal au vecteur nul $\\overrightarrow{0}$.",
+      "isTrue": true,
+      "explanation": "Vecteurs colineaires implique $\\sin \\theta = 0$, donc $\\|\\overrightarrow{u} \\wedge \\overrightarrow{v}\\| = 0$ et $\\overrightarrow{u} \\wedge \\overrightarrow{v} = \\overrightarrow{0}$."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Quelle est la formule de la norme du produit vectoriel $\\|\\overrightarrow{u} \\wedge \\overrightarrow{v}\\|$ (où $\\theta$ est l'angle géométrique entre les vecteurs) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\|\\overrightarrow{u}\\| \\cdot \\|\\overrightarrow{v}\\| \\cdot \\sin \\theta$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\|\\overrightarrow{u}\\| \\cdot \\|\\overrightarrow{v}\\| \\cdot \\cos \\theta$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\|\\overrightarrow{u}\\| \\cdot \\|\\overrightarrow{v}\\|$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}\\|\\overrightarrow{u}\\| \\cdot \\|\\overrightarrow{v}\\| \\cdot \\sin \\theta$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La norme du produit vectoriel fait intervenir le sinus de l'angle, pas le cosinus (qui est reserve au produit scalaire)."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Le produit vectoriel est commutatif, c'est-à-dire que $\\overrightarrow{u} \\wedge \\overrightarrow{v} = \\overrightarrow{v} \\wedge \\overrightarrow{u}$.",
+      "isTrue": false,
+      "explanation": "Le produit vectoriel est anti-symetrique : $\\overrightarrow{v} \\wedge \\overrightarrow{u} = -(\\overrightarrow{u} \\wedge \\overrightarrow{v})$. L'ordre des vecteurs est crucial."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Que vaut le produit vectoriel d'un vecteur par lui-même, $\\overrightarrow{u} \\wedge \\overrightarrow{u}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overrightarrow{0}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\|\\overrightarrow{u}\\|^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2\\overrightarrow{u}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un vecteur est colineaire a lui-meme, donc $\\overrightarrow{u} \\wedge \\overrightarrow{u} = \\overrightarrow{0}$."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Dans un repère $(O; \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, comment vérifier rapidement si la base est directe en utilisant la règle de la main droite ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le pouce est $\\overrightarrow{i}$, l'index est $\\overrightarrow{j}$, le majeur est $\\overrightarrow{k}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Le pouce est $\\overrightarrow{k}$, l'index est $\\overrightarrow{i}$, le majeur est $\\overrightarrow{j}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'index est $\\overrightarrow{i}$, le majeur est $\\overrightarrow{j}$, l'annulaire est $\\overrightarrow{k}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le pouce est $\\overrightarrow{j}$, l'index est $\\overrightarrow{k}$, le majeur est $\\overrightarrow{i}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Regle de la main droite : pouce $= \\overrightarrow{i}$, index $= \\overrightarrow{j}$, majeur plie $= \\overrightarrow{k}$ pour une base directe."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Comment calculer l'aire d'un parallélogramme construit sur trois points non alignés $A$, $B$ et $C$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2}\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\overrightarrow{AB} \\cdot \\overrightarrow{AC}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\|\\overrightarrow{AB}\\| \\times \\|\\overrightarrow{AC}\\|$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'aire du parallelogramme est directement $\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$, sans facteur $\\dfrac{1}{2}$."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Comment calculer l'aire du triangle $ABC$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}(\\overrightarrow{AB} \\cdot \\overrightarrow{AC})$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\|\\overrightarrow{AB}\\| + \\|\\overrightarrow{AC}\\|$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un triangle est la moitie d'un parallelogramme, donc $S_{ABC} = \\dfrac{1}{2}\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$."
+    },
+    {
+      "id": "q9",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour calculer l'aire d'un triangle $ABC$ avec le produit vectoriel :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Calculer le vecteur $\\overrightarrow{w} = \\overrightarrow{AB} \\wedge \\overrightarrow{AC}$"
+        },
+        {
+          "id": "b",
+          "content": "Calculer la norme $\\|\\overrightarrow{w}\\|$"
+        },
+        {
+          "id": "c",
+          "content": "Conclure : Aire $(ABC) = \\frac{1}{2} \\|\\overrightarrow{w}\\|$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Produit vectoriel, puis norme, puis division par 2 pour obtenir l'aire du triangle."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "Lors du calcul analytique de $\\overrightarrow{u}(x; y; z) \\wedge \\overrightarrow{v}(x'; y'; z')$, comment obtient-on la composante sur $\\overrightarrow{i}$ (l'abscisse) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "En calculant le déterminant $\\begin{vmatrix} y & y' \\\\ z & z' \\end{vmatrix}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "En calculant le déterminant $\\begin{vmatrix} x & x' \\\\ z & z' \\end{vmatrix}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "En calculant le déterminant $\\begin{vmatrix} x & x' \\\\ y & y' \\end{vmatrix}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "En multipliant $x$ par $x'$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour la composante sur $\\overrightarrow{i}$, on cache la 1ere ligne ($x$) et on calcule $yz' - zy'$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "Quelle est la particularité du calcul de la composante sur $\\overrightarrow{j}$ (l'ordonnée) lors du produit vectoriel analytique ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Il faut ajouter un signe moins devant le déterminant",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Il faut multiplier par 2",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Il faut inverser les colonnes du déterminant",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il n'y a aucune particularité",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La composante sur $\\overrightarrow{j}$ porte un signe moins : $-\\begin{vmatrix} x & x' \\\\\\ z & z' \\end{vmatrix}$. L'oubli de ce signe est une erreur frequente."
+    },
+    {
+      "id": "q12",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour calculer un produit vectoriel analytiquement :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Disposer les coordonnées des vecteurs en colonne"
+        },
+        {
+          "id": "b",
+          "content": "Calculer les déterminants $2 \\times 2$ pour chaque composante"
+        },
+        {
+          "id": "c",
+          "content": "Appliquer la formule avec le signe moins sur la composante en $\\overrightarrow{j}$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "On dispose les coordonnees, on extrait les determinants $2 \\times 2$, puis on assemble avec le signe moins sur $\\overrightarrow{j}$."
+    },
+    {
+      "id": "q13",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Le produit vectoriel est bilinéaire, ce qui signifie par exemple que $(\\overrightarrow{u} + \\overrightarrow{v}) \\wedge \\overrightarrow{w} = (\\overrightarrow{u} \\wedge \\overrightarrow{w}) + (\\overrightarrow{v} \\wedge \\overrightarrow{w})$.",
+      "isTrue": true,
+      "explanation": "Le produit vectoriel se distribue sur l'addition, comme la multiplication classique."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Quelle est la condition stricte utilisant le produit vectoriel pour affirmer que trois points $A, B$ et $C$ sont alignés ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = \\overrightarrow{0}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\overrightarrow{AB} \\cdot \\overrightarrow{AC} = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\| = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = \\overrightarrow{BC}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Points alignes signifie vecteurs colineaires, donc produit vectoriel nul (aire du triangle nulle)."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Quelle est la formule de la distance $d$ d'un point $M$ à une droite $(D)$ passant par $A$ et de vecteur directeur $\\overrightarrow{u}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$d(M; (D)) = \\dfrac{\\|\\overrightarrow{u} \\wedge \\overrightarrow{AM}\\|}{\\|\\overrightarrow{u}\\|}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$d(M; (D)) = \\dfrac{\\|\\overrightarrow{u} \\cdot \\overrightarrow{AM}\\|}{\\|\\overrightarrow{u}\\|}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$d(M; (D)) = \\|\\overrightarrow{u} \\wedge \\overrightarrow{AM}\\|$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$d(M; (D)) = \\dfrac{\\|\\overrightarrow{AM}\\|}{\\|\\overrightarrow{u}\\|}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$d(M, (D)) = \\dfrac{\\|\\overrightarrow{u} \\wedge \\overrightarrow{AM}\\|}{\\|\\overrightarrow{u}\\|}$ : norme du produit vectoriel divisee par la norme du vecteur directeur."
+    },
+    {
+      "id": "q16",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour calculer la distance d'un point $M$ à une droite de repère $(A, \\overrightarrow{u})$ :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Calculer le vecteur $\\overrightarrow{AM} \\wedge \\overrightarrow{u}$"
+        },
+        {
+          "id": "b",
+          "content": "Calculer la norme du résultat $\\|\\overrightarrow{AM} \\wedge \\overrightarrow{u}\\|$"
+        },
+        {
+          "id": "c",
+          "content": "Diviser par la norme de $\\overrightarrow{u}$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Produit vectoriel, puis norme du resultat, puis division par $\\|\\overrightarrow{u}\\|$."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Comment trouver le vecteur directeur de la droite d'intersection entre deux plans sécants de vecteurs normaux $\\overrightarrow{n}$ et $\\overrightarrow{m}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "En calculant le produit vectoriel $\\overrightarrow{n} \\wedge \\overrightarrow{m}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "En calculant la somme $\\overrightarrow{n} + \\overrightarrow{m}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "En calculant le produit scalaire $\\overrightarrow{n} \\cdot \\overrightarrow{m}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "En calculant $\\dfrac{\\overrightarrow{n}}{\\|\\overrightarrow{m}\\|}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La droite d'intersection est orthogonale aux deux normales, donc dirigee par $\\overrightarrow{n} \\wedge \\overrightarrow{m}$."
+    },
+    {
+      "id": "q18",
+      "type": "error",
+      "category": "Application",
+      "prompt": "Identifier l'erreur dans ce calcul analytique de produit vectoriel :",
+      "context": "On calcule $\\overrightarrow{w} = \\overrightarrow{u} \\wedge \\overrightarrow{v}$. Les déterminants extraits donnent : $D_x = 3$, $D_y = -2$, $D_z = 5$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "La composante sur $\\overrightarrow{i}$ est $D_x = 3$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "La composante sur $\\overrightarrow{j}$ est $D_y = -2$.",
+          "isError": true,
+          "correction": "La composante sur $\\overrightarrow{j}$ est $-D_y = -(-2) = 2$."
+        },
+        {
+          "id": "s3",
+          "text": "La composante sur $\\overrightarrow{k}$ est $D_z = 5$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "Le vecteur final est $\\overrightarrow{w}(3; -2; 5)$.",
+          "isError": false
+        }
+      ],
+      "explanation": "La composante sur $\\overrightarrow{j}$ porte toujours un signe moins : on ecrit $-D_y$, pas $D_y$ directement."
+    },
+    {
+      "id": "q19",
+      "type": "error",
+      "category": "Propriété",
+      "prompt": "Identifier l'erreur dans cette simplification d'expression :",
+      "context": "On cherche à simplifier $\\overrightarrow{X} = (\\overrightarrow{u} \\wedge \\overrightarrow{v}) + (\\overrightarrow{v} \\wedge \\overrightarrow{u})$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On sait que le produit vectoriel est commutatif.",
+          "isError": true,
+          "correction": "Le produit vectoriel est anti-symétrique : $\\overrightarrow{v} \\wedge \\overrightarrow{u} = -(\\overrightarrow{u} \\wedge \\overrightarrow{v})$."
+        },
+        {
+          "id": "s2",
+          "text": "Donc $\\overrightarrow{v} \\wedge \\overrightarrow{u} = \\overrightarrow{u} \\wedge \\overrightarrow{v}$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "On remplace : $\\overrightarrow{X} = (\\overrightarrow{u} \\wedge \\overrightarrow{v}) + (\\overrightarrow{u} \\wedge \\overrightarrow{v})$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "Le résultat est $\\overrightarrow{X} = 2(\\overrightarrow{u} \\wedge \\overrightarrow{v})$.",
+          "isError": false
+        }
+      ],
+      "explanation": "Le produit vectoriel est anti-symetrique, donc $(\\overrightarrow{u} \\wedge \\overrightarrow{v}) + (\\overrightarrow{v} \\wedge \\overrightarrow{u}) = \\overrightarrow{0}$, pas $2(\\overrightarrow{u} \\wedge \\overrightarrow{v})$."
+    },
+    {
+      "id": "q20",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Si le produit vectoriel de deux vecteurs est nul ($\\overrightarrow{u} \\wedge \\overrightarrow{v} = \\overrightarrow{0}$), alors obligatoirement $\\overrightarrow{u} = \\overrightarrow{0}$ ou $\\overrightarrow{v} = \\overrightarrow{0}$.",
+      "isTrue": false,
+      "explanation": "$\\overrightarrow{u} \\wedge \\overrightarrow{v} = \\overrightarrow{0}$ signifie que les vecteurs sont colineaires, meme s'ils sont tous les deux non nuls."
+    }
+  ]
+}

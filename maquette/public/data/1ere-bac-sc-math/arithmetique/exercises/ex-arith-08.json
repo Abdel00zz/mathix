@@ -1,0 +1,41 @@
+{
+  "id": "ch03-ex01",
+  "theme": "arithmetique",
+  "difficulty": "facile",
+  "chapter": "03 - PPCM et PGCD ; propriétés",
+  "topic": "PGCD/PPCM - Calcul direct et trouver des entiers",
+  "requiresRedaction": true,
+  "context": "Trouver les valeurs des entiers naturels $x$ et $y$ dans chacun des cas suivants :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$x \\wedge y = 16$ et $x + y = 256$.",
+      "hint": "Posez $x = 16a$ et $y = 16b$ avec $a \\wedge b = 1$. La condition $x + y = 256$ devient $a + b = 16$. Cherchez les couples $(a, b)$ avec $a + b = 16$ et $a \\wedge b = 1$."
+    },
+    {
+      "id": "q2",
+      "content": "$x \\wedge y = 17$ et $xy = 1734$.",
+      "hint": "Posez $x = 17a$ et $y = 17b$ avec $a \\wedge b = 1$. La condition $xy = 1734$ donne $17^2 ab = 1734$, soit $ab = \\frac{1734}{289}$. Calculez ce quotient puis listez les couples $(a,b)$ avec $a \\wedge b = 1$."
+    },
+    {
+      "id": "q3",
+      "content": "$x \\wedge y = 17$ et $x^2 - y^2 = 1445$.",
+      "hint": "Posez $x = 17a$, $y = 17b$ avec $a \\wedge b = 1$. Factorisez $x^2 - y^2 = 17^2(a^2 - b^2) = 1445$. Calculez $a^2 - b^2$, puis factorisez $(a-b)(a+b)$ pour trouver $a$ et $b$."
+    },
+    {
+      "id": "q4",
+      "content": "$x \\vee y = 252$ et $xy = 1512$.",
+      "hint": "Utilisez la relation $x \\wedge y = \\frac{xy}{x \\vee y}$ pour calculer $x \\wedge y$. Posez ensuite $x = da'$, $y = db'$ avec $d = x \\wedge y$ et $a' \\wedge b' = 1$."
+    },
+    {
+      "id": "q5",
+      "content": "$x \\wedge y = 5$ et $x \\vee y = 60$.",
+      "hint": "Posez $x = 5a$, $y = 5b$ avec $a \\wedge b = 1$ et $a \\vee b = 12$. Comme $a \\wedge b = 1$, on a $a \\vee b = ab = 12$. Cherchez les couples $(a, b)$ avec $ab = 12$ et $a \\wedge b = 1$."
+    },
+    {
+      "id": "q6",
+      "content": "$x \\wedge y = 12$ et $x \\vee y = 360$.",
+      "hint": "Posez $x = 12a$, $y = 12b$ avec $a \\wedge b = 1$. La condition $x \\vee y = 360$ donne $12 \\cdot ab = 360$, soit $ab = 30$. Cherchez les couples $(a, b)$ avec $ab = 30$ et $a \\wedge b = 1$."
+    }
+  ]
+}

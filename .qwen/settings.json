@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcopy *)",
+      "Bash(copy *)",
+      "Bash(get-childitem *)",
+      "Bash(select-object *)",
+      "Bash(format-table *)",
+      "Bash(write-output *)",
+      "Bash(npm run *)",
+      "Bash(npx *)",
+      "Bash(del *)",
+      "Bash(get-content *)",
+      "Bash(measure-object *)"
+    ]
+  },
+  "$version": 4
+}

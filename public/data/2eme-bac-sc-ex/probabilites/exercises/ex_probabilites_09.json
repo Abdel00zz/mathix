@@ -1,0 +1,37 @@
+{
+  "id": "proba-ex16",
+  "theme": "probabilites",
+  "difficulty": "difficile",
+  "chapter": "02 - Probabilité conditionnelle et indépendance",
+  "topic": "Rattrapage 2018 - Boules numérotées, indépendance, probabilité conditionnelle",
+  "requiresRedaction": true,
+  "context": "Une urne contient 12 boules indiscernables au toucher : 3 boules de couleur rouge portant chacune le numéro 1, et 3 boules de couleur rouge portant chacune le numéro 2, et 6 boules de couleur verte portant chacune le numéro 2. On tire au hasard et simultanément deux boules de l'urne. On considère les événements suivants : $A$ : « Obtenir deux boules portant le même numéro » ; $B$ : « Obtenir deux boules de couleurs différentes » ; $C$ : « Obtenir deux boules portant deux numéros dont la somme est égale à 3 ».",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $p(A) = \\dfrac{13}{22}$ et $p(B) = \\dfrac{6}{11}$ et calculer $p(C)$.",
+      "hint": "$Card(\\Omega) = C_{12}^2 = 66$. Pour $A$ : deux boules portant le numéro 1 (parmi 3) ou deux portant le numéro 2 (parmi 9). $Card(A) = C_3^2 + C_9^2 = 3 + 36 = 39$. Pour $B$ : 1 rouge parmi 6 et 1 verte parmi 6. $Card(B) = C_6^1 \\times C_6^1 = 36$. Pour $C$ : somme = 3 nécessite une boule numérotée 1 et une numérotée 2. $Card(C) = C_3^1 \\times C_9^1 = 27$."
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que $p(A \\cap B) = \\dfrac{3}{11}$.",
+          "hint": "$A \\cap B$ : deux boules de couleurs différentes ET même numéro. Seul le numéro 2 permet cela (3 rouges portant le 2 et 6 vertes portant le 2). $Card(A \\cap B) = C_3^1 \\times C_6^1 = 18$. Vérifiez : $\\frac{18}{66} = \\frac{3}{11}$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Les événements $A$ et $B$ sont-ils indépendants ? Justifier la réponse.",
+          "hint": "Calculez $p(A) \\times p(B)$ et comparez à $p(A \\cap B)$. $A$ et $B$ sont indépendants si et seulement si $p(A \\cap B) = p(A) \\times p(B)$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Sachant que l'événement $B$ est réalisé, calculer la probabilité d'obtenir deux boules portant le même numéro.",
+      "hint": "On cherche $p_B(A) = \\frac{p(A \\cap B)}{p(B)}$. Utilisez les résultats des questions précédentes."
+    }
+  ]
+}

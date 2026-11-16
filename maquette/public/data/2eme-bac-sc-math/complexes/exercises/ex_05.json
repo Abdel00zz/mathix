@@ -1,0 +1,63 @@
+{
+  "id": "ex-complexes-05",
+  "topic": "Nombres complexes - Bac National 2010 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2010,
+  "examenSession": "Normale",
+  "context": "Le plan complexe est muni d'un repère orthonormé direct $(O;\\vec{u},\\vec{v})$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Déterminer les deux racines carrées du nombre complexe $3+4i$.",
+          "hint": "Cherchez une racine carrée $x+iy$ en résolvant $x^2-y^2=3$, $2xy=4$ et $x^2+y^2=|3+4i|=5$."
+        },
+        {
+          "id": "q1b",
+          "content": "Résoudre dans l'ensemble $\\mathbb{C}$ l'équation : $(E):4z^2-10iz-7-i=0$.",
+          "hint": "Calculez $\\Delta=-100+16(7+i)=12+16i$ et essayez de le relier au carré $3+4i$ trouvé précédemment (facteur commun à trouver)."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soient $a$ et $b$ les solutions de l'équation $(E)$ avec $\\text{Re}(a)<0$ et soient $A$ et $B$ leurs points images respectifs dans le plan complexe.",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Vérifier que : $\\dfrac{b}{a}=1-i$.",
+          "hint": "Calculez directement le quotient $b/a$ à partir des valeurs numériques de $a$ et $b$ trouvées à la question précédente."
+        },
+        {
+          "id": "q2b",
+          "content": "En déduire que le triangle $AOB$ est rectangle et isocèle en $A$.",
+          "hint": "Le quotient $\\dfrac{b-a}{o-a}=\\dfrac{b}{a}-1$ (avec $O$ origine) permet de conclure sur l'angle en $A$ et l'égalité des longueurs $AO$ et $AB$ ; calculez-le à partir de $b/a=1-i$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Soient $C$ un point du plan différent du point $A$ ayant pour affixe $c$ et $D$ l'image du point $B$ par la rotation de centre $C$ et d'angle $\\dfrac{\\pi}{2}$ ; et soit $L$ l'image du point $D$ par la translation de vecteur $\\overrightarrow{AO}$.",
+      "subQuestions": [
+        {
+          "id": "q3a",
+          "content": "Déterminer en fonction de $c$ le nombre complexe $d$ affixe du point $D$.",
+          "hint": "Appliquez la formule de rotation $d-c=i(b-c)$ et isolez $d$."
+        },
+        {
+          "id": "q3b",
+          "content": "Déterminer en fonction de $c$ le nombre complexe $l$ affixe de $L$.",
+          "hint": "Une translation de vecteur $\\overrightarrow{AO}$ (d'affixe $-a$) donne $l=d-a$ ; remplacez $d$ par l'expression trouvée."
+        },
+        {
+          "id": "q3c",
+          "content": "Déterminer la forme algébrique du nombre complexe $\\dfrac{\\ell-c}{a-c}$ ; en déduire la nature du triangle $ACL$.",
+          "hint": "Calculez $\\ell-c=d-a-c$ à partir des expressions précédentes, puis le quotient par $a-c$ ; regardez si le résultat a un module $1$ et un argument remarquable."
+        }
+      ]
+    }
+  ]
+}

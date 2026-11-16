@@ -1,0 +1,63 @@
+{
+  "id": "ex-esp-04",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "facile",
+  "topic": "Géométrie analytique dans l'espace — Plan, sphère, droite perpendiculaire",
+  "requiresRedaction": true,
+  "context": "L'espace est rapporté à un repère orthonormé direct $\\left(O,\\overrightarrow{i},\\overrightarrow{j},\\overrightarrow{k}\\right)$. Soient les points $A(2;1;2)$, $B(-2;0;5)$, $C(4;-5;7)$ et $\\Omega(1;-1;0)$. Soit $(S)$ la sphère de centre $\\Omega$ et de rayon $R = 3$. On pose $\\overrightarrow{u} = \\overrightarrow{\\Omega A}$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que : $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = 13\\overrightarrow{u}$ et déduire que les points $A$, $B$ et $C$ ne sont pas alignés",
+          "hint": "Calculez $\\overrightarrow{AB}$, $\\overrightarrow{AC}$ et leur produit vectoriel. Puis vérifiez que $\\overrightarrow{\\Omega A} = (1;2;2)$ et comparez."
+        },
+        {
+          "id": "sq1b",
+          "content": "Vérifier que $x + 2y + 2z - 8 = 0$ est une équation cartésienne du plan $(ABC)$",
+          "hint": "Le vecteur normal est $\\overrightarrow{u}(1;2;2)$. Vérifiez que $A$, $B$, $C$ vérifient l'équation."
+        },
+        {
+          "id": "sq1c",
+          "content": "Montrer que le plan $(ABC)$ est tangent à la sphère $(S)$ au point $A$",
+          "hint": "Calculez $d(\\Omega,(ABC))$ et vérifiez qu'elle vaut $R = 3$. Vérifiez aussi que $A$ est sur $(S)$ et sur $(ABC)$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soient $(P)$ le plan d'équation $3x+4y+z+1 = 0$ et $(\\Delta)$ la droite passant par $A$ et orthogonale au plan $(P)$.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que $(\\Delta)$ coupe $(P)$ au point $H\\left(\\dfrac{1}{2};-1;\\dfrac{3}{2}\\right)$",
+          "hint": "La représentation paramétrique de $(\\Delta)$ est $(x;y;z) = (2;1;2) + t(3;4;1)$. Substituez dans l'équation de $(P)$ pour trouver $t$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Déterminer les coordonnées de $D$ tel que $H$ soit milieu de $[AD]$",
+          "hint": "Si $H$ est milieu de $[AD]$, alors $D = 2H - A$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Soit $(Q)$ le plan passant par $D$ et de vecteur normal $\\overrightarrow{\\Omega D}$.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que le plan $(Q)$ est tangent à la sphère $(S)$ en $D$",
+          "hint": "Calculez $d(\\Omega,(Q))$ et comparez à $R$. Si $d(\\Omega,(Q)) = R$, le plan est tangent."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que les plans $(Q)$ et $(ABC)$ se coupent suivant la droite $(BC)$",
+          "hint": "Montrez que $B$ et $C$ appartiennent aux deux plans $(Q)$ et $(ABC)$."
+        }
+      ]
+    }
+  ]
+}

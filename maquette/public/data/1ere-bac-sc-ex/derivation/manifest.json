@@ -1,0 +1,26 @@
+{
+  "id": "derivation",
+  "title": "La dérivation et ses applications",
+  "exercises": [
+    {
+      "id": "ex-derivation-01",
+      "path": "data/1ere-bac-sc-ex/derivation/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-derivation-02",
+      "path": "data/1ere-bac-sc-ex/derivation/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-derivation-03",
+      "path": "data/1ere-bac-sc-ex/derivation/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-derivation-01",
+      "path": "data/1ere-bac-sc-ex/derivation/quiz/derivation_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

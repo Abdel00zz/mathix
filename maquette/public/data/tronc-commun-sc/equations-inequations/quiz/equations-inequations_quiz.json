@@ -1,0 +1,303 @@
+{
+  "questions": [
+    {
+      "id": "q1_fond_discriminant",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Pour l'équation du second degré $ax^2 + bx + c = 0$, quelle est la formule exacte du discriminant $\\Delta$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\Delta = b^2 + 4ac$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\Delta = -b \\pm \\sqrt{b^2 - 4ac}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\Delta = b^2 - 4ac$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\Delta = (b - 4ac)^2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La définition canonique du discriminant est $b^2 - 4ac$. Attention au signe moins !"
+    },
+    {
+      "id": "q2_fond_nombre_solutions",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si le discriminant $\\Delta$ d'une équation du second degré est strictement négatif ($\\Delta < 0$), cette équation possède une unique solution.",
+      "isTrue": false,
+      "explanation": "Si $\\Delta < 0$, l'équation ne possède aucune solution dans l'ensemble des réels ($\\mathbb{R}$). C'est lorsque $\\Delta = 0$ qu'elle possède une unique solution."
+    },
+    {
+      "id": "q3_fond_equation_incomplete",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Méthode",
+      "prompt": "Pour résoudre $x^2 - 9 = 0$, quelle est la méthode la plus rapide et pertinente ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculer le discriminant $\\Delta$ avec $a=1, b=0, c=-9$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Isoler $x^2 = 9$ et en déduire $x = 3$ ou $x = -3$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Isoler $x^2 = 9$ et en déduire $x = 3$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Utiliser la méthode de Cramer",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour les équations simples où $b=0$, utiliser $\\Delta$ est une perte de temps inutile. On isole $x^2 = k$ pour déduire $x = \\sqrt{k}$ ou $x = -\\sqrt{k}$."
+    },
+    {
+      "id": "q4_cons_somme_produit",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Si l'équation $ax^2+bx+c=0$ admet deux solutions $x_1$ et $x_2$, que vaut leur produit $x_1 \\times x_2$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\dfrac{b}{a}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\dfrac{c}{a}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$-\\dfrac{c}{a}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\dfrac{b}{a}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La relation entre coefficients et racines stipule que le produit des racines vaut toujours $c/a$, tandis que leur somme vaut $-b/a$."
+    },
+    {
+      "id": "q5_cons_signe_trinome",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Comment se comporte le signe du trinôme $ax^2+bx+c$ (avec $\\Delta > 0$) à l'intérieur de l'intervalle formé par ses deux racines ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Il est toujours positif",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Il est toujours négatif",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Il prend le même signe que le coefficient $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il prend le signe opposé à celui du coefficient $a$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "La règle du signe est mnémonique : le trinôme est du signe de $a$ à l'extérieur des racines, et du signe *opposé* à l'intérieur de cet intervalle fermé."
+    },
+    {
+      "id": "q6_cons_cramer_determinant",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Quel est le calcul correct pour le déterminant principal $\\Delta$ du système $\\begin{cases} 3x - 2y = 5 \\\\ x + 4y = 7 \\end{cases}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(3 \\times 4) + (-2 \\times 1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(3 \\times 4) - (-2 \\times 1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$(3 \\times 7) - (5 \\times 1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$12 - 2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le déterminant d'une matrice $2 \\times 2$ formée des coefficients est $\\begin{vmatrix} 3 & -2 \\\\ 1 & 4 \\end{vmatrix}$. On fait la différence des produits en croix : $(3)(4) - (-2)(1) = 12 - (-2) = 14$."
+    },
+    {
+      "id": "q7_maitrise_signe_produit_ac",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Les élèves oublient que si ac < 0 alors -4ac > 0, ce qui garantit que delta est la somme de deux nombres positifs.",
+      "prompt": "Pour l'équation $ax^2+bx+c=0$, si les coefficients $a$ et $c$ sont de signes contraires, alors le calcul du discriminant $\\Delta$ est inutile : il y a d'office deux solutions distinctes.",
+      "isTrue": true,
+      "explanation": "Si $a$ et $c$ sont de signes contraires, leur produit $ac$ est strictement négatif. Ainsi, $-4ac$ est strictement positif. Or $\\Delta = b^2 - 4ac$. Puisque $b^2$ est positif ou nul, l'ajout d'une valeur strictement positive garantit formellement que $\\Delta > 0$."
+    },
+    {
+      "id": "q8_maitrise_erreur_isolement",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Identifiez une erreur fréquente dans la résolution de l'équation incomplète $x^2 - 16 = 0$ :",
+      "context": "Résolution rapide vue en classe.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On déplace la constante : $x^2 = 16$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "On applique la racine carrée aux deux membres : $\\sqrt{x^2} = \\sqrt{16}$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Puisque $\\sqrt{x^2}=x$, on en déduit directement $x = 4$. L'unique solution est $4$.",
+          "isError": true,
+          "correction": "L'égalité $\\sqrt{x^2}=x$ est fausse si $x$ est négatif (c'est $|x|$ la vraie formule). La véritable déduction logique depuis $x^2=16$ donne $x=4$ OU $x=-4$."
+        },
+        {
+          "id": "s4",
+          "text": "On valide finalement son résultat par remplacement.",
+          "isError": false
+        }
+      ],
+      "explanation": "Oublier la racine négative est un classique indémodable. Isoler un carré implique toujours l'apparition du symbole $\\pm$ et l'ouverture sur deux scénarios (un positif, un négatif)."
+    },
+    {
+      "id": "q9_maitrise_cramer_cas_limite",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Dans un système linéaire, vous appliquez Cramer et trouvez $\\Delta = 0$ et $\\Delta_x = 7$. Que pouvez-vous en déduire géométriquement des deux droites ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elles sont sécantes en un point.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Elles sont confondues (c'est la même droite).",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Elles sont strictement parallèles, il n'y a aucune solution.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Il faut calculer $\\Delta_y$ pour statuer.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si le déterminant principal $\\Delta$ est nul, le système n'admet pas de point unique de croisement (droites parallèles). S'il s'avère qu'ensuite l'un des sous-déterminants (comme $\\Delta_x$) est NON nul, c'est la preuve irrémédiable d'une incongruité algébrique : les équations représentent deux lignes formellement disjointes."
+    },
+    {
+      "id": "q10_depassement_ordre_cramer",
+      "type": "order",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Ordonnez la démarche intégrale pour utiliser la méthode de Cramer d'un système à équivalences garanties :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Rédiger le système en colonnes standards (variables x et y à gauche = constantes c à droite)."
+        },
+        {
+          "id": "b",
+          "content": "Calculer le déterminant principal (Delta) de la matrice des coefficients ax+by."
+        },
+        {
+          "id": "c",
+          "content": "Calculer Delta_x et Delta_y en substituant itérativement la colonne de chaque inconnue par la colonne des constantes."
+        },
+        {
+          "id": "d",
+          "content": "Effectuer les divisions (x = Delta_x / Delta ; y = Delta_y / Delta) à condition que Delta soit non nul."
+        },
+        {
+          "id": "e",
+          "content": "Valider le couple solution par contrôle direct."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "explanation": "Avant même de tracer le moindre déterminant de Cramer, il faut ranger la chambre : si les variables et les constantes ne sont pas ordonnées dans le format matriciel attendu, tout sera faux avec des problèmes de signe inextricables."
+    },
+    {
+      "id": "q11_depassement_infiny",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "ambiguity_note": "Avoir 0 au déterminant donne toujours le sentiment 'c'est mort, aucune solution'. C'est incomplet.",
+      "prompt": "Si dans un système, les trois déterminants évalués valent simultanément $0$ ($\\Delta = \\Delta_x = \\Delta_y = 0$), alors...",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'ensemble de solutions est dramatiquement vide, l'erreur divise par zéro.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Le système présente pour seul couple-solution valide (0; 0).",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Il existe une infinité de couples-solutions, car les équations masquent la même droite.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "C'est mathématiquement irréductible et non défini.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si les trois déterminants s'annulent, cela démontre que les deux équations sont proportionnelles (multipliées par un même facteur). Géométriquement, ce sont deux droites superposées. N'importe quel point la traversant incarne une solution légale."
+    }
+  ]
+}

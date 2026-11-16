@@ -1,0 +1,523 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Le principe fondamental du dénombrement (ou règle du produit) stipule que si une expérience comporte $p$ étapes successives avec $n_1$ choix à la première étape, $n_2$ à la seconde, …, alors le nombre total d'issues est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$n_1 + n_2 + \\dots + n_p$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$n_1 \\times n_2 \\times \\dots \\times n_p$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\max(n_1, n_2, \\dots, n_p)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{n_1 + n_2 + \\dots + n_p}{p}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le principe multiplicatif : le nombre total est le produit des nombres de choix à chaque étape."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Un arbre de choix permet de visualiser toutes les issues possibles d'une expérience aléatoire composée de plusieurs étapes successives.",
+      "isTrue": true,
+      "explanation": "L'arbre est un outil graphique de dénombrement et de calcul de probabilités."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Le nombre d'arrangements avec répétition de $p$ éléments choisis parmi $n$ (chaque élément peut être répété) est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$A_n^p = \\frac{n!}{(n-p)!}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$n^p$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$p^n$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$C_n^p$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec répétition et ordre, chaque position a $n$ choix, donc $n^p$."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Le nombre d'arrangements sans répétition de $p$ éléments parmi $n$ (ordre important, sans remise) est $A_n^p = \\frac{n!}{(n-p)!}$.",
+      "isTrue": true,
+      "explanation": "C'est la formule classique des arrangements."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Une combinaison de $p$ éléments parmi $n$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un tirage ordonné sans répétition",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Un tirage non ordonné sans répétition",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Un tirage avec répétition et ordre",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un tirage avec remise",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les combinaisons négligent l'ordre et ne comportent pas de répétition."
+    },
+    {
+      "id": "q6",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "La stabilité de la fréquence d'un événement aléatoire signifie que, pour un grand nombre de répétitions de l'expérience, la fréquence observée se rapproche de la probabilité théorique.",
+      "isTrue": true,
+      "explanation": "C'est la loi des grands nombres, interprétation fréquentiste de la probabilité."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "On lance une pièce équilibrée trois fois de suite. Le nombre total d'issues (suites de Pile/Face) est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^3 = 8$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$3^2 = 9$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\binom{3}{2}=3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3! = 6$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Principe multiplicatif : 2 choix à chaque lancer → $2\\times2\\times2=8$."
+    },
+    {
+      "id": "q8",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Sous l'hypothèse d'équiprobabilité, la probabilité d'un événement $A$ est $\\frac{\\text{nombre de cas favorables}}{\\text{nombre de cas possibles}}$.",
+      "isTrue": true,
+      "explanation": "C'est la définition classique de Laplace."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "On tire au hasard une boule dans une urne contenant 5 boules rouges et 3 boules bleues. La probabilité d'obtenir une boule rouge est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{5}{8}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{5}{3}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Équiprobabilité : 5 rouges sur 8 boules."
+    },
+    {
+      "id": "q10",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Pour deux événements $A$ et $B$, la probabilité de leur réunion est $P(A\\cup B) = P(A) + P(B) - P(A\\cap B)$.",
+      "isTrue": true,
+      "explanation": "Formule de Poincaré (additivité pour les événements non nécessairement disjoints)."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "On lance un dé équilibré. La probabilité d'obtenir un nombre pair ou un nombre supérieur à 4 est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{3}{6} + \\frac{2}{6} - \\frac{1}{6} = \\frac{4}{6}=\\frac{2}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{6}+\\frac{2}{6}=\\frac{5}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2}{6}=\\frac{1}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{6}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pairs : {2,4,6} ; >4 : {5,6} ; intersection {6} → 1/6."
+    },
+    {
+      "id": "q12",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Définition",
+      "prompt": "La probabilité conditionnelle $P(A|B)$ est définie par $\\frac{P(A\\cap B)}{P(B)}$ lorsque $P(B)>0$.",
+      "isTrue": true,
+      "explanation": "C'est la définition standard."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Distinguer indépendance et incompatibilité.",
+      "prompt": "On tire une boule d'une urne contenant 4 boules numérotées 1,2,3,4. On considère $A$ : \"le numéro est pair\" et $B$ : \"le numéro est multiple de 3\". Les événements $A$ et $B$ sont-ils indépendants ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Non, car $P(A\\cap B) = 0 \\neq \\frac{1}{8} = P(A)P(B)$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Oui, car ils sont disjoints",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non, mais ils sont incompatibles",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$A=\\{2,4\\}$, $B=\\{3\\}$, donc $A\\cap B = \\emptyset$ et $P(A\\cap B)=0$. Or $P(A)P(B)=\\frac{1}{2}\\times\\frac{1}{4}=\\frac{1}{8}\\neq 0$. Les événements ne sont pas indépendants."
+    },
+    {
+      "id": "q14",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Si $A$ et $B$ sont indépendants, alors $P(A\\cup B) = P(A) + P(B) - P(A)P(B)$.",
+      "isTrue": true,
+      "explanation": "Indépendance → $P(A\\cap B)=P(A)P(B)$, puis formule de l'union."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Une variable aléatoire $X$ prend les valeurs $-1$, $0$, $2$ avec probabilités $0,2$ ; $0,5$ ; $0,3$. Son espérance $E(X)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-1\\times0.2 + 0\\times0.5 + 2\\times0.3 = -0.2+0.6=0.4$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{-1+0+2}{3}=\\frac{1}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(-1)^2\\times0.2+0^2\\times0.5+2^2\\times0.3 = 0.2+1.2=1.4$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$E(X)=\\sum x_i p_i$."
+    },
+    {
+      "id": "q16",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Définition",
+      "prompt": "L'écart type d'une variable aléatoire $X$ est la racine carrée de sa variance : $\\sigma_X = \\sqrt{V(X)}$.",
+      "isTrue": true,
+      "explanation": "Définition de l'écart type."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Soit $X$ une variable aléatoire suivant la loi binomiale $\\mathcal{B}(10; 0,3)$. Son espérance et sa variance sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$E(X)=3$, $V(X)=2,1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$E(X)=3$, $V(X)=3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$E(X)=10$, $V(X)=3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$E(X)=0,3$, $V(X)=0,21$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$E(X)=np=10\\times0,3=3$, $V(X)=np(1-p)=10\\times0,3\\times0,7=2,1$."
+    },
+    {
+      "id": "q18",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "Pour une variable aléatoire $X$ quelconque, on a $V(X)=E(X^2)-[E(X)]^2$.",
+      "isTrue": true,
+      "explanation": "Formule de König-Huygens."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Reconnaître une situation de loi binomiale.",
+      "prompt": "On lance 8 fois un dé équilibré. On note $X$ le nombre de fois où l'on obtient un 6. La loi de $X$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathcal{B}(8; \\frac{1}{6})$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\mathcal{B}(\\frac{1}{6}; 8)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\mathcal{P}(\\frac{8}{6})$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une loi uniforme",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Répétition d'épreuves de Bernoulli indépendantes avec probabilité $p=1/6$ de succès."
+    },
+    {
+      "id": "q20",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "L'indépendance de deux épreuves signifie que le résultat de la première n'influe pas sur la probabilité de la seconde.",
+      "isTrue": true,
+      "explanation": "C'est la définition de l'indépendance pour des épreuves successives."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Un sac contient 5 billes blanches et 3 billes noires. On tire deux billes successivement sans remise. La probabilité que la première soit blanche et la seconde noire est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{5}{8} \\times \\frac{3}{7} = \\frac{15}{56}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{5}{8} \\times \\frac{3}{8} = \\frac{15}{64}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{3}{8} \\times \\frac{5}{7} = \\frac{15}{56}$ (même)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{C_5^1 C_3^1}{C_8^2} = \\frac{15}{28}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Probabilité conditionnelle : $P(B_1 \\cap N_2)=P(B_1)P(N_2|B_1)=\\frac{5}{8}\\cdot\\frac{3}{7}$."
+    },
+    {
+      "id": "q22",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "La formule de Bayes permet de calculer $P(A|B)$ à partir de $P(B|A)$ et des probabilités a priori.",
+      "isTrue": true,
+      "explanation": "$P(A|B)=\\frac{P(B|A)P(A)}{P(B)}$."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Une urne contient 2 boules roses et 3 boules violettes. On effectue deux tirages avec remise. La probabilité d'obtenir exactement une rose est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2 \\times \\frac{2}{5} \\times \\frac{3}{5} = \\frac{12}{25}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{2}{5} \\times \\frac{3}{5} = \\frac{6}{25}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2}{5} \\times \\frac{2}{5} + \\frac{3}{5} \\times \\frac{3}{5} = \\frac{13}{25}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{C_2^1 C_3^1}{C_5^2} = \\frac{6}{10}=0,6$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Loi binomiale $n=2$, $p=2/5$, $k=1$ : $C_2^1 (2/5)(3/5)=12/25$."
+    },
+    {
+      "id": "q24",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Pour une variable aléatoire discrète, la somme des probabilités de toutes les valeurs est égale à 1.",
+      "isTrue": true,
+      "explanation": "Axiome des probabilités."
+    },
+    {
+      "id": "q25",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Reconnaître le schéma hypergéométrique.",
+      "prompt": "Une urne contient 10 boules, dont 4 rouges et 6 vertes. On tire simultanément 3 boules. La probabilité d'avoir exactement 2 rouges est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{C_4^2 \\times C_6^1}{C_{10}^3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{C_4^2}{C_{10}^3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{4}{10}\\times\\frac{3}{9}\\times\\frac{6}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\left(\\frac{4}{10}\\right)^2 \\times \\frac{6}{10}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Loi hypergéométrique (tirage sans remise simultané) : combinaisons."
+    },
+    {
+      "id": "q26",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "L'espérance d'une variable aléatoire constante $c$ est égale à $c$.",
+      "isTrue": true,
+      "explanation": "$E(c)=c\\times1=c$."
+    },
+    {
+      "id": "q27",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Pour toute variable aléatoire $X$, $E\\left(\\frac{X}{a}\\right)=\\frac{E(X)}{a}$ pour $a\\neq 0$.",
+      "isTrue": true,
+      "explanation": "Linéarité de l'espérance."
+    }
+  ]
+}

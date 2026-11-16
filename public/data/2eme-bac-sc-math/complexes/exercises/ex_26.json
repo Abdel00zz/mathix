@@ -1,0 +1,63 @@
+{
+  "id": "ex-complexes-26",
+  "topic": "Nombres complexes - Bac National 2021 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2021,
+  "examenSession": "Normale",
+  "context": "Soient $a$, $b$ et $c$ trois nombres complexes non nuls tels que : $a+b\\ne c$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Résoudre dans l'ensemble $\\mathbb{C}$ l'équation d'inconnue $z$ $(E):z^2-(a+b+c)z+c(a+b)=0$.",
+          "hint": "Repérez que $c$ et $a+b$ apparaissent comme somme et produit possibles des racines ; vérifiez que $z=c$ est solution évidente et factorisez."
+        },
+        {
+          "id": "q1b",
+          "content": "On suppose dans cette question que : $a=i$, $b=e^{i\\pi/3}$ et $c=a-b$. Écrire les deux solutions de l'équation $(E)$ sous forme exponentielle.",
+          "hint": "D'après la question précédente les solutions sont $c$ et $a+b$ ; calculez chacune sous forme algébrique puis passez à la forme exponentielle."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Le plan complexe est rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. On considère les trois points $A(a)$, $B(b)$ et $C(c)$ qu'on suppose non alignés. Soient $P(p)$ le centre de la rotation d'angle $\\dfrac{\\pi}{2}$ qui transforme $B$ en $A$ et $Q(q)$ le centre de la rotation d'angle $\\left(-\\dfrac{\\pi}{2}\\right)$ qui transforme $C$ en $A$ et $D(d)$ le milieu du segment $[BC]$.",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Montrer que : $2p=b+a+(a-b)i$ et $2q=c+a+(c-a)i$.",
+          "hint": "$P$ est centre de la rotation d'angle $\\pi/2$ qui envoie $B$ sur $A$ : cela signifie $a-p=i(b-p)$ ; isolez $p$ (procédez de même pour $q$ avec l'angle $-\\pi/2$)."
+        },
+        {
+          "id": "q2b",
+          "content": "Calculer : $\\dfrac{p-d}{q-d}$.",
+          "hint": "Utilisez $2d=b+c$ pour exprimer $2(p-d)$ et $2(q-d)$ à partir du résultat précédent, puis simplifiez le quotient."
+        },
+        {
+          "id": "q2c",
+          "content": "En déduire la nature du triangle $PDQ$.",
+          "hint": "Regardez si le quotient obtenu est de module $1$ et d'argument $\\pm\\pi/2$ : que cela signifie-t-il pour les longueurs $DP$, $DQ$ et l'angle en $D$ ?"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Soient $E$ le symétrique de $B$ par rapport à $P$ et $F$ le symétrique de $C$ par rapport à $Q$ et $K$ le milieu du segment $[EF]$.",
+      "subQuestions": [
+        {
+          "id": "q3a",
+          "content": "Montrer que l'affixe de $K$ est $k=a+\\dfrac{i}{2}(c-b)$.",
+          "hint": "Un symétrique par rapport à $P$ vérifie $e=2p-b$ ; faites de même pour $f=2q-c$, puis calculez $k=\\dfrac{e+f}{2}$ en réutilisant les expressions de $p$ et $q$."
+        },
+        {
+          "id": "q3b",
+          "content": "Montrer que les points $K$, $P$, $Q$ et $D$ sont cocycliques.",
+          "hint": "Calculez le birapport $\\dfrac{k-p}{k-q}\\div\\dfrac{d-p}{d-q}$ (ou un birapport équivalent) et montrez qu'il est réel en utilisant les expressions déjà obtenues de $p$, $q$, $d$, $k$."
+        }
+      ]
+    }
+  ]
+}

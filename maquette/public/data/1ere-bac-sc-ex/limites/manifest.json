@@ -1,0 +1,26 @@
+{
+  "id": "limites",
+  "title": "Limites d'une fonction numérique",
+  "exercises": [
+    {
+      "id": "ex-limites-01",
+      "path": "data/1ere-bac-sc-ex/limites/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-limites-02",
+      "path": "data/1ere-bac-sc-ex/limites/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-limites-03",
+      "path": "data/1ere-bac-sc-ex/limites/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-limites-01",
+      "path": "data/1ere-bac-sc-ex/limites/quiz/limites_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

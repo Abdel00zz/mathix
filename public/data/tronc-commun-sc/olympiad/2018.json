@@ -1,0 +1,40 @@
+{
+  "id": "olympiad-tronc-commun-sc-2018",
+  "title": "Olympiade Internationale de Mathématiques (IMO) 2018 — Sujet officiel",
+  "year": 2018,
+  "classId": "tronc-commun-sc",
+  "gradeLevel": "tronc-commun-sc",
+  "badge": "international",
+  "source": "https://www.imo-official.org/problems.aspx",
+  "duration": 240,
+  "totalPoints": 42,
+  "exercises": [
+    {
+      "id": "olympiad-tronc-commun-sc-2018-ex1",
+      "number": 1,
+      "theme": "algebre",
+      "points": 7,
+      "topic": "preuve",
+      "context": "Rédiger une solution claire et structurée.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Établir un invariant puis conclure."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-tronc-commun-sc-2018-ex2",
+      "number": 2,
+      "theme": "geometrie",
+      "points": 7,
+      "topic": "raisonnement",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer la propriété géométrique demandée."
+        }
+      ]
+    }
+  ]
+}

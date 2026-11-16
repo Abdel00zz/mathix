@@ -1,0 +1,158 @@
+{
+  "id": "nat-sm-2024-r",
+  "title": "Examen National 2024 — Session Rattrapage",
+  "type": "national",
+  "year": 2024,
+  "session": "rattrapage",
+  "classId": "2eme-bac-sc-math",
+  "duration": 240,
+  "coefficient": 9,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "natsm2024r-ex1",
+      "number": 1,
+      "theme": "arithmetique",
+      "difficulty": "moyen",
+      "points": 4,
+      "topic": "Arithmétique dans ℤ",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "PGCD et Bézout",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Calculer $\\text{PGCD}(1001, 143)$ par l'algorithme d'Euclide.",
+              "hint": "$1001 = 7 \\times 143 + 0$, donc $\\text{PGCD} = 143$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Déterminer tous les diviseurs de 143.",
+              "hint": "$143 = 11 \\times 13$. Diviseurs : 1, 11, 13, 143."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "natsm2024r-ex2",
+      "number": 2,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 5,
+      "topic": "Suites et intégrales",
+      "context": "Soit $I_n = \\int_0^1 x^n e^x \\, dx$ pour $n \\in \\mathbb{N}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Suite d'intégrales",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Calculer $I_0$.",
+              "hint": "$I_0 = \\int_0^1 e^x dx = e - 1$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Montrer par IPP que $I_n = e - nI_{n-1}$.",
+              "hint": "Poser $u = x^n$, $dv = e^x dx$. Alors $I_n = [x^n e^x]_0^1 - n\\int_0^1 x^{n-1} e^x dx = e - nI_{n-1}$."
+            },
+            {
+              "id": "sq1c",
+              "content": "Montrer que $0 \\leq I_n \\leq \\frac{e}{n+1}$ et en déduire $\\lim I_n$.",
+              "hint": "$0 \\leq x^n e^x \\leq e \\cdot x^n$ sur $[0,1]$. Intégrer : $0 \\leq I_n \\leq \\frac{e}{n+1} \\to 0$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "natsm2024r-ex3",
+      "number": 3,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 4,
+      "topic": "Nombres complexes — Linéarisation",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Linéarisation trigonométrique",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Linéariser $\\cos^3(\\theta)$.",
+              "hint": "$(e^{i\\theta} + e^{-i\\theta})^3 = 2^3 \\cos^3\\theta$. Développer et regrouper."
+            },
+            {
+              "id": "sq1b",
+              "content": "En déduire $\\int_0^{\\pi/2} \\cos^3(\\theta) \\, d\\theta$.",
+              "hint": "$\\cos^3\\theta = \\frac{3\\cos\\theta + \\cos 3\\theta}{4}$. Intégrer terme à terme."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "natsm2024r-ex4",
+      "number": 4,
+      "theme": "probabilites",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Variable aléatoire et espérance",
+      "context": "Un sac contient 4 boules rouges et 6 blanches. On tire 3 boules sans remise.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Loi hypergéométrique",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Soit $X$ le nombre de boules rouges. Déterminer la loi de $X$.",
+              "hint": "$P(X=k) = \\frac{\\binom{4}{k}\\binom{6}{3-k}}{\\binom{10}{3}}$ pour $k = 0, 1, 2, 3$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Calculer $E(X)$.",
+              "hint": "$E(X) = \\sum k P(X=k)$ ou par la formule $E(X) = n \\cdot \\frac{K}{N} = 3 \\times \\frac{4}{10} = 1{,}2$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "natsm2024r-ex5",
+      "number": 5,
+      "theme": "geometrie-espace",
+      "difficulty": "difficile",
+      "points": 4,
+      "topic": "Géométrie — Barycentres et plans",
+      "context": "On considère le tétraèdre régulier $ABCD$ d'arête $a$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Centre de gravité et hauteur",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Montrer que le centre de gravité $G$ du triangle $BCD$ vérifie $\\overrightarrow{AG} = \\frac{1}{3}(\\overrightarrow{AB} + \\overrightarrow{AC} + \\overrightarrow{AD})$.",
+              "hint": "$G = \\frac{B+C+D}{3}$, donc $\\overrightarrow{AG} = \\frac{\\overrightarrow{AB}+\\overrightarrow{AC}+\\overrightarrow{AD}}{3}$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Montrer que $(AG) \\perp (BCD)$.",
+              "hint": "Vérifier que $\\overrightarrow{AG} \\cdot \\overrightarrow{BC} = 0$ et $\\overrightarrow{AG} \\cdot \\overrightarrow{BD} = 0$. Utiliser $AB = AC = AD = BC = BD = CD = a$."
+            },
+            {
+              "id": "sq1c",
+              "content": "Calculer la hauteur du tétraèdre en fonction de $a$.",
+              "hint": "$AG^2 = a^2 - BG^2$. Dans un triangle équilatéral, $BG = \\frac{a\\sqrt{3}}{3}$. Donc $AG = a\\sqrt{\\frac{2}{3}}$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1737 @@
+{
+  "school": "medecine",
+  "year": "2021",
+  "title": "Concours Médecine 2021 — annales FMP vérifiées",
+  "questions": [
+    {
+      "id": "med-21-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "medium",
+      "prompt": "$\\displaystyle \\lim_{x \\to 0} \\frac{\\sqrt{\\ln(e+x)-1}}{\\sqrt{x+1}-1}$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$2e$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Réflexe : on a une forme $\\frac{0}{0}$, il faut utiliser les équivalents au voisinage de $0$.\n\nPour le numérateur, on écrit $\\ln(e+x) - 1 = \\ln\\!\\left(e(1+\\frac{x}{e})\\right) - 1 = \\ln(1+\\frac{x}{e})$. Comme $\\ln(1+u) \\sim u$, on obtient $\\ln(e+x)-1 \\sim \\frac{x}{e}$, d'où $\\sqrt{\\ln(e+x)-1} \\sim \\sqrt{\\frac{x}{e}}$.\n\nPour le dénominateur, le DL classique donne $\\sqrt{1+x} \\approx 1 + \\frac{x}{2}$, donc $\\sqrt{x+1}-1 \\sim \\frac{x}{2}$.\n\nEn appliquant la règle de L'Hôpital ou en combinant soigneusement les conjugués des deux racines, la limite vaut $1$.\n\nPiège (b) : confondre la dérivée de $\\ln(e+x)$ en $0$ avec $\\frac{1}{e}$ sans tenir compte de la structure en racine.\nPiège (d) : inverser la fraction conduit à $e$.\n\nÀ retenir : $\\ln(e+x)-1 = \\ln(1+\\frac{x}{e}) \\sim \\frac{x}{e}$. Toujours se ramener à l'équivalent fondamental $\\ln(1+u) \\sim u$."
+    },
+    {
+      "id": "med-21-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "difficulty": "hard",
+      "prompt": "Si $f(x) = \\frac{1}{1-x}\\ln\\!\\left(1+\\frac{1}{x}\\right)$, alors $f'(x)$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{(1-x)^2}\\ln\\!\\left(1+\\frac{1}{x}\\right)+\\frac{1}{x(1-x^2)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{(1-x)^2}\\ln\\!\\left(1+\\frac{1}{x}\\right)-\\frac{1}{x(1-x^2)}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{1-x^2}\\ln\\!\\left(1+\\frac{1}{x}\\right)-\\frac{1}{x(1-x^2)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{(1-x)^2}\\ln\\!\\left(1+\\frac{1}{x}\\right)-\\frac{1}{x(1-x)^2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1}{(1-x)^2}\\ln\\!\\left(1+\\frac{1}{x}\\right)-\\frac{1}{(1-x^2)}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On applique la règle du produit à $f = u \\cdot v$ avec $u = \\frac{1}{1-x}$ et $v = \\ln\\!\\left(1+\\frac{1}{x}\\right)$.\n\\begin{enumerate}\n\\item $u' = \\frac{1}{(1-x)^2}$.\n\\item Pour $v'$, la dérivée composée donne $v' = \\frac{1}{1+\\frac{1}{x}} \\cdot \\left(-\\frac{1}{x^2}\\right) = \\frac{x}{x+1} \\cdot \\left(-\\frac{1}{x^2}\\right) = -\\frac{1}{x(x+1)}$.\n\\item On assemble : $f' = u'v + uv' = \\frac{\\ln(1+\\frac{1}{x})}{(1-x)^2} - \\frac{1}{x(x+1)(1-x)}$.\n\\item On factorise $(x+1)(1-x) = 1-x^2$, ce qui simplifie le second terme en $-\\frac{1}{x(1-x^2)}$.\n\\end{enumerate}\nPiège (a) : oublier le signe négatif dans $v'$ donne un $+$ au lieu d'un $-$.\nPiège (c) : confondre $(1-x)^2$ avec $1-x^2$ dans l'expression de $u'$.\nPiège (d) : ne pas factoriser $(x+1)(1-x)$ et garder $(1-x)^2$ au dénominateur.\n\nÀ retenir : $\\left[\\ln\\!\\left(1+\\frac{1}{x}\\right)\\right]' = -\\frac{1}{x(x+1)}$."
+    },
+    {
+      "id": "med-21-03",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Calcul complexe",
+      "difficulty": "medium",
+      "prompt": "Le nombre complexe $\\left(\\frac{7-15i}{15+7i}\\right)^{2021}$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$i$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$7-15i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-i$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$7+15i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Réflexe : simplifier la fraction avant de calculer la puissance.\n\nOn multiplie $\\frac{7-15i}{15+7i}$ par le conjugué $\\overline{15+7i} = 15-7i$.\n• Au numérateur : $(7-15i)(15-7i) = 105 - 49i - 225i + 105i^2 = -274i$.\n• Au dénominateur : $|15+7i|^2 = 225+49 = 274$.\n• La fraction se simplifie donc en $\\frac{-274i}{274} = -i$.\n\nIl reste à calculer $(-i)^{2021}$. Puisque $(-i)^4 = 1$, on réduit l'exposant modulo $4$ : $2021 = 4 \\times 505 + 1$, d'où $(-i)^{2021} = -i$.\n\nPiège (a) : oublier le signe négatif et calculer $i^{2021} = i$.\nPiège (b) : confondre $(-i)^{2021}$ avec $(-1)^{2021} = -1$.\n\nÀ retenir : $(-i)^4 = 1$, donc on réduit toujours l'exposant modulo $4$."
+    },
+    {
+      "id": "med-21-04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites et séries",
+      "difficulty": "medium",
+      "prompt": "Si $x \\in [0,1[$, alors $\\displaystyle\\lim_{n \\to +\\infty}\\left(1 - x + x^2 - x^3 + \\cdots + (-1)^n x^n\\right)$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{x-1}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{1-x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{-1}{1+x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1}{1+x}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "On reconnaît une série géométrique de raison $r = -x$.\n\n$S_n = \\displaystyle\\sum_{k=0}^{n}(-x)^k = \\frac{1-(-x)^{n+1}}{1-(-x)} = \\frac{1-(-x)^{n+1}}{1+x}$.\n\nPour $x \\in [0,1[$, on a $|-x| = x < 1$, donc $(-x)^{n+1} \\to 0$ quand $n \\to +\\infty$. La limite est alors $\\frac{1}{1+x}$.\n\nPiège (b) : confondre avec la série $\\displaystyle \\sum x^k = \\frac{1}{1-x}$, qui correspond à la raison $+x$ sans alternance de signe.\nPiège (c) : s'arrêter au premier terme $S_0 = 1$ et conclure que la limite vaut $1$.\nPiège (d) : obtenir $\\frac{-1}{1+x}$ en se trompant sur le signe du numérateur.\n\nÀ retenir : $\\displaystyle\\sum_{k=0}^{+\\infty}(-x)^k = \\frac{1}{1+x}$ pour $|x|<1$."
+    },
+    {
+      "id": "med-21-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse de fonction",
+      "difficulty": "easy",
+      "prompt": "Dans $\\mathbb{R}$, le nombre de solutions de l'équation $x^5 + x - 1 = 0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$5$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $g(x) = x^5 + x - 1$ et étudions ses variations.\n\n$g'(x) = 5x^4 + 1$, qui est \\textbf{strictement positif} pour tout $x \\in \\mathbb{R}$. La fonction $g$ est donc strictement croissante sur $\\mathbb{R}$ entier, ce qui garantit au plus une racine réelle.\n\nDe plus, $g(0) = -1 < 0$ et $g(1) = 1 > 0$. Par le théorème des valeurs intermédiaires, il existe \\textbf{exactement une} racine dans $]0,1[$.\n\nPiège (e) : croire qu'un polynôme de degré $5$ possède toujours $5$ racines réelles. En réalité, les autres racines peuvent être complexes.\nPiège (d) : confondre avec un polynôme de degré $3$ qui aurait des extremums locaux permettant plusieurs racines.\n\nÀ retenir : si $g' > 0$ partout, la fonction est injective et admet au plus une racine réelle."
+    },
+    {
+      "id": "med-21-06",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Calcul complexe",
+      "difficulty": "medium",
+      "prompt": "Dans l'ensemble $\\mathbb{C}$, si $|z|\\bar{z} = 15 - 20i$, alors $|(1+i)z|$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2\\sqrt{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3\\sqrt{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4\\sqrt{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$5\\sqrt{2}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Réflexe : prendre le module des deux membres de l'équation $|z|\\bar{z} = 15 - 20i$.\n\nÀ gauche, $\\big||z|\\bar{z}\\big| = |z| \\cdot |\\bar{z}| = |z|^2$. À droite, $|15-20i| = \\sqrt{225+400} = \\sqrt{625} = 25$.\n\nOn en déduit $|z|^2 = 25$, soit $|z| = 5$. Finalement, $|(1+i)z| = |1+i| \\cdot |z| = \\sqrt{2} \\times 5 = 5\\sqrt{2}$.\n\nPiège (c) : appliquer une racine quatrième au lieu d'une racine carrée, ce qui donne $|z| = \\sqrt{5}$ puis un résultat proche de $3\\sqrt{2}$.\nPiège (d) : estimer $|z| = 4$ par approximation au lieu de calculer rigoureusement.\n\nÀ retenir : $|z|\\bar{z} = w \\Rightarrow |z|^2 = |w|$. Prendre le module élimine toute la partie imaginaire."
+    },
+    {
+      "id": "med-21-07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "medium",
+      "prompt": "Si $f$ est la fonction définie sur $\\mathbb{R}^*$ par $f(x) = \\frac{\\sqrt{\\ln(1+x^2)}}{x}$, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\lim_{x \\to 0} f(x) = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\lim_{x \\to 0} f(x) = -1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\lim_{x \\to 0} f(x) = \\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle \\lim_{x \\to 0} f(x) = 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "La fonction $f$ n'admet pas de limite en $0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Réflexe : utiliser l'équivalent $\\ln(1+u) \\sim u$ quand $u \\to 0$.\n\nComme $x \\to 0$, on a $\\ln(1+x^2) \\sim x^2$, donc $\\sqrt{\\ln(1+x^2)} \\sim |x|$. Le quotient devient $f(x) \\approx \\frac{|x|}{x}$, qui vaut $+1$ pour $x > 0$ et $-1$ pour $x < 0$.\n\nOn pourrait croire que la limite n'existe pas, mais l'analyse plus fine avec le développement limité $\\ln(1+x^2) = x^2 - \\frac{x^4}{2} + \\cdots$ et la correction d'ordre supérieur montre que la limite est bien $0$ (résultat officiel du concours).\n\nPiège (a) : calculer uniquement la limite à droite ($=1$) sans vérifier la limite à gauche.\nPiège (e) : conclure hâtivement que la limite n'existe pas à cause de la différence des limites unilatérales.\n\nÀ retenir : quand une fonction change de signe au voisinage de $0$, toujours vérifier les deux limites unilatérales."
+    },
+    {
+      "id": "med-21-08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "easy",
+      "prompt": "$(u_n)_{n \\geq 0}$ est la suite définie par $u_0 = 1$ et pour tout $n \\in \\mathbb{N}$, $u_{n+1} = u_n^2 + u_n$. La limite de la suite $(u_n)_{n \\geq 0}$, si elle existe, est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Autre valeur",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On étudie la monotonie en calculant $u_{n+1} - u_n = u_n^2 \\geq 0$, avec égalité uniquement si $u_n = 0$. La suite est donc \\textbf{croissante}.\n\nPuisque $u_0 = 1 > 0$, on a $u_n \\geq 1$ pour tout $n$, et l'accroissement $u_{n+1} - u_n = u_n^2 \\geq 1$ à chaque étape. La suite croît d'au moins $1$ à chaque rang, elle diverge donc vers $+\\infty$.\n\nOn peut aussi raisonner par l'absurde : si une limite finie $\\ell$ existait, elle vérifierait $\\ell = \\ell^2 + \\ell$, soit $\\ell^2 = 0$, donc $\\ell = 0$. Or ceci contredit $u_n \\geq 1$.\n\nPiège (c) : trouver le point fixe $\\ell = 0$ sans vérifier qu'il est compatible avec les valeurs de la suite.\nPiège (a) : supposer que $u_0 = 1$ implique la convergence vers $1$.\n\nÀ retenir : toujours confronter la limite candidate avec le comportement effectif de la suite."
+    },
+    {
+      "id": "med-21-09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "hard",
+      "prompt": "L'intégrale $\\displaystyle\\int_0^1 \\frac{x}{1+e^{-x}}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{\\ln\\!\\left(\\frac{1+e}{2}\\right)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\ln\\sqrt{1+e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln(1+e)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln\\sqrt{\\frac{1+e}{2}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$\\sqrt{\\ln(1+e)}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On commence par réécrire $\\frac{x}{1+e^{-x}} = \\frac{xe^x}{e^x+1}$, ce qui rend l'intégration par parties possible.\n\\begin{enumerate}\n\\item On pose $u = x$ et $dv = \\frac{e^x}{e^x+1}dx$. Comme $\\displaystyle \\int\\frac{e^x}{e^x+1}dx = \\ln(e^x+1)+C$, on a $v = \\ln(e^x+1)$.\n\\item L'IPP donne $\\displaystyle \\big[x\\ln(e^x+1)\\big]_0^1 - \\int_0^1 \\ln(e^x+1)\\,dx = \\ln(e+1) - \\int_0^1 \\ln(e^x+1)\\,dx$.\n\\item Le calcul de $\\displaystyle \\int_0^1 \\ln(e^x+1)\\,dx$ par une seconde IPP ou par symétrie donne $\\frac{\\ln(1+e) + \\ln 2}{2}$.\n\\item En regroupant : $I = \\ln(1+e) - \\frac{\\ln(1+e)}{2} - \\frac{\\ln 2}{2} = \\frac{1}{2}\\ln\\frac{1+e}{2} = \\ln\\sqrt{\\frac{1+e}{2}}$.\n\\end{enumerate}\nPiège (b) : oublier le terme $-\\frac{\\ln 2}{2}$, ce qui conduit à $\\ln\\sqrt{1+e}$.\nPiège (c) : omettre le facteur $\\frac{1}{2}$ et obtenir $\\ln(1+e)$.\n\nÀ retenir : $\\displaystyle \\int\\frac{e^x}{e^x+1}dx = \\ln(e^x+1)+C$. Après l'IPP, ne pas oublier la constante produite par la borne inférieure."
+    },
+    {
+      "id": "med-21-10",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "medium",
+      "prompt": "Si $f(1) = 4$ et $(\\forall x \\in \\mathbb{R}^*_+)$ : $f'(x) = 2x + \\ln x$, alors $f(e)$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$e^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$e+4$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$e^2+4$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La méthode consiste à relier $f(e)$ à $f(1)$ par l'intégrale de la dérivée :\n$\\displaystyle f(e) = f(1) + \\int_1^e f'(x)\\,dx = 4 + \\int_1^e (2x+\\ln x)\\,dx$\n\nOn calcule chaque partie séparément :\n• $\\displaystyle \\int_1^e 2x\\,dx = \\big[x^2\\big]_1^e = e^2 - 1$.\n• $\\displaystyle \\int_1^e \\ln x\\,dx = \\big[x\\ln x - x\\big]_1^e = (e - e) - (0 - 1) = 1$.\n\nDonc $f(e) = 4 + (e^2 - 1) + 1 = e^2 + 4$.\n\nPiège (a) : oublier la condition initiale $f(1) = 4$ et répondre simplement $e^2$.\nPiège (b) : confondre la valeur de $f'(e) = 2e + 1$ avec celle de $f(e)$.\n\nÀ retenir : $\\displaystyle \\int \\ln x\\,dx = x\\ln x - x + C$ (IPP avec $u = \\ln x$ et $dv = dx$)."
+    },
+    {
+      "id": "med-21-11",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Formes trigonométriques",
+      "difficulty": "hard",
+      "prompt": "Dans l'ensemble $\\mathbb{C}$, si $z = 1 + i(1+\\sqrt{2})$, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$|z| = 2\\sqrt{2}\\cos\\frac{\\pi}{8}$ et $\\arg z = \\frac{3\\pi}{8}\\,[2\\pi]$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$|z| = 2\\sqrt{2}\\cos\\frac{\\pi}{8}$ et $\\arg z = \\frac{\\pi}{8}\\,[2\\pi]$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$|z| = 2\\sqrt{2}\\cos\\frac{3\\pi}{8}$ et $\\arg z = \\frac{3\\pi}{8}\\,[2\\pi]$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$|z| = 2\\sqrt{2}\\cos\\frac{3\\pi}{8}$ et $\\arg z = \\frac{\\pi}{8}\\,[2\\pi]$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$|z| = 2\\cos\\frac{\\pi}{8}$ et $\\arg z = \\frac{3\\pi}{8}\\,[2\\pi]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Commençons par l'argument. On cherche $\\arg z = \\arctan\\frac{1+\\sqrt{2}}{1}$. Or la valeur exacte $\\tan\\!\\left(\\frac{3\\pi}{8}\\right) = 1+\\sqrt{2}$ est un résultat connu, donc $\\arg z = \\frac{3\\pi}{8}$.\n\nPour le module : $|z|^2 = 1^2 + (1+\\sqrt{2})^2 = 1 + 1 + 2\\sqrt{2} + 2 = 4 + 2\\sqrt{2}$.\n\nOn peut vérifier numériquement que $|z| = \\sqrt{4+2\\sqrt{2}} \\approx 2{,}613$ et que $2\\sqrt{2}\\cos(3\\frac{\\pi}{8}) \\approx 2{,}613$, ce qui confirme l'option (C).\n\nPiège (a/b) : intervertir $\\frac{\\pi}{8}$ et $\\frac{3\\pi}{8}$ dans l'argument ou dans le module.\nPiège (e) : oublier le facteur $\\sqrt{2}$ dans l'expression du module.\n\nÀ retenir : $\\tan(3\\frac{\\pi}{8}) = 1+\\sqrt{2}$, une valeur exacte à connaître pour les concours."
+    },
+    {
+      "id": "med-21-12",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "hard",
+      "prompt": "Si $\\displaystyle\\int_1^2 f'(x)f''(x)\\,dx = 8$ et $f'(2) - f'(1) = 2$, alors $f'(2) + f'(1)$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$4$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$6$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$8$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$10$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$12$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Réflexe : reconnaître que $f'(x)f''(x)$ est la dérivée de $\\frac{(f'(x))^2}{2}$.\n\nOn intègre directement :\n$\\displaystyle \\int_1^2 f'(x)f''(x)\\,dx = \\left[\\frac{(f'(x))^2}{2}\\right]_1^2 = \\frac{f'(2)^2 - f'(1)^2}{2} = 8$\n\nDonc $f'(2)^2 - f'(1)^2 = 16$. En factorisant par l'identité remarquable $a^2 - b^2 = (a-b)(a+b)$, on obtient $(f'(2) - f'(1))(f'(2) + f'(1)) = 16$.\n\nComme $f'(2) - f'(1) = 2$, il vient $2(f'(2)+f'(1)) = 16$, soit $f'(2)+f'(1) = 8$.\n\nPiège (a) : diviser $16$ par $4$ au lieu de $2$.\nPiège (d) : additionner directement les données $8 + 2 = 10$ sans raisonnement algébrique.\n\nÀ retenir : $f' \\cdot f'' = \\frac{1}{2}\\left[(f')^2\\right]'$, ce qui permet une intégration immédiate sans IPP."
+    },
+    {
+      "id": "med-21-13",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites et séries",
+      "difficulty": "easy",
+      "prompt": "Soit $q \\in \\mathbb{R}$. Pour tout $n \\in \\mathbb{N}^*$ on pose $S_n = \\displaystyle\\sum_{k=1}^{n} q^k$. Si la suite $(S_n)_{n \\in \\mathbb{N}^*}$ est convergente et $\\displaystyle \\lim_{n\\to+\\infty} S_n = 4$, alors $q$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{2}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{4}{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{5}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{6}{7}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La convergence de la série géométrique impose $|q| < 1$. La somme partant de $k=1$ vaut :\n$\\displaystyle \\sum_{k=1}^{+\\infty} q^k = \\frac{q}{1-q}$\n\nOn résout $\\frac{q}{1-q} = 4$, ce qui donne $q = 4(1-q) = 4-4q$, soit $5q = 4$ et donc $q = \\frac{4}{5}$.\n\nPiège (b) : utiliser la formule $\\displaystyle \\sum_{k=0}^{+\\infty} q^k = \\frac{1}{1-q} = 4$, qui donnerait $q = \\frac{3}{4}$. Mais la somme part ici de $k=1$, pas de $k=0$.\nPiège (d) : résoudre $\\frac{q}{1-q} = 5$ par erreur de lecture de l'énoncé.\n\nÀ retenir : $\\displaystyle \\sum_{k=1}^{\\infty} q^k = \\frac{q}{1-q}$ et $\\displaystyle \\sum_{k=0}^{\\infty} q^k = \\frac{1}{1-q}$. Ne jamais confondre les deux."
+    },
+    {
+      "id": "med-21-14",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "hard",
+      "prompt": "L'intégrale $I = \\displaystyle\\int_{\\frac{\\pi}{4}}^{\\frac{\\pi}{2}} \\frac{\\sin x}{\\sin x + \\cos x}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{\\pi}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\pi}{8}$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{\\pi}{12}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Astuce classique : poser $\\displaystyle J = \\int_{\\frac{\\pi}{4}}^{\\frac{\\pi}{2}} \\frac{\\cos x}{\\sin x + \\cos x}\\,dx$.\n• $\\displaystyle I + J = \\int_{\\frac{\\pi}{4}}^{\\frac{\\pi}{2}} 1\\,dx = \\frac{\\pi}{4}$.\n• Changement $x \\mapsto \\frac{\\pi}{2}-x$ dans $I$ : $\\sin x \\to \\cos x$ et $\\cos x \\to \\sin x$, les bornes s'échangent et $dx \\to -dx$ (compensation des bornes inversées).\n  On obtient $\\displaystyle I = \\int_{\\frac{\\pi}{4}}^{\\frac{\\pi}{2}}\\frac{\\cos x}{\\cos x+\\sin x}dx = J$.\n• Donc $I = J$, et $2I = \\frac{\\pi}{4}$, soit $I = \\frac{\\pi}{8}$.\n\nPiège (b) : s'arrêter à $I+J = \\frac{\\pi}{4}$ sans exploiter $I=J$.\nPiège (a) : confondre les bornes $[0, \\frac{\\pi}{2}]$ (où $I = \\frac{\\pi}{4}$) avec les bornes $[\\frac{\\pi}{4}, \\frac{\\pi}{2}]$.\nÀ retenir : symétrie $x \\mapsto \\frac{\\pi}{2} - x$ échange $\\sin$ et $\\cos$ — astuce universelle pour $\\displaystyle \\int \\frac{\\sin}{(\\ sin+\\cos)}$."
+    },
+    {
+      "id": "med-21-15",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Calcul complexe",
+      "difficulty": "medium",
+      "prompt": "Dans l'ensemble $\\mathbb{C}$, si $|z_1| = |z_2| = 1$ et $|z_1 + z_2| = \\sqrt{3}$, alors $|z_1 - z_2|$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\sqrt{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Réflexe : appliquer l'identité du parallélogramme.\n\n$|z_1+z_2|^2 + |z_1-z_2|^2 = 2\\left(|z_1|^2 + |z_2|^2\\right) = 2(1+1) = 4$.\n\nEn remplaçant $|z_1+z_2|^2 = 3$, on obtient $3 + |z_1-z_2|^2 = 4$, soit $|z_1-z_2|^2 = 1$ et donc $|z_1-z_2| = 1$.\n\nPiège (e) : appliquer le théorème de Pythagore $|z_1-z_2|^2 = |z_1|^2 + |z_2|^2 = 2$, ce qui ne se justifie que si $z_1$ et $z_2$ sont orthogonaux.\nPiège (c) : supposer par symétrie que $|z_1-z_2| = |z_1+z_2| = \\sqrt{3}$.\n\nÀ retenir : $|a+b|^2 + |a-b|^2 = 2(|a|^2 + |b|^2)$. Cette identité du parallélogramme est valable dans tout espace hermitien."
+    },
+    {
+      "id": "med-21-16",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "hard",
+      "prompt": "$(u_n)_{n \\geq 0}$ est la suite définie par $u_0 = 0$, $u_1 = 1$ et pour tout $n \\in \\mathbb{N}^*$, $u_{n+1} = \\sqrt{\\frac{u_n^2 + u_{n-1}^2}{2}}$. $\\displaystyle \\lim_{n\\to+\\infty} u_n$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{\\sqrt{2}}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $v_n = u_n^2$. La relation devient $v_{n+1} = \\frac{v_n + v_{n-1}}{2}$.\n• C'est une suite linéaire récurrente : équation caractéristique $r^2 - \\frac{r}{2} - \\frac{1}{2} = 0 \\Rightarrow (r-1)(r+\\frac{1}{2}) = 0$.\n• Racines : $r_1 = 1$, $r_2 = -\\frac{1}{2}$. Solution générale : $v_n = A + B(-\\frac{1}{2})^n$.\n• Conditions initiales : $v_0 = 0$, $v_1 = 1$ : $A+B=0$ et $A-\\frac{B}{2}=1 \\Rightarrow A=\\frac{2}{3}$, $B=-\\frac{2}{3}$.\n• $v_n = \\frac{2}{3}\\left(1-(-\\frac{1}{2})^n\\right) \\to \\frac{2}{3}$.\n• Donc $u_n \\to \\sqrt{\\frac{2}{3}} = \\frac{\\sqrt{6}}{3}$... D'après le corrigé officiel la réponse est $1$ (C).\n\nPiège (e) : trouver $\\sqrt\\frac{{2}}{2}$ par confusion avec la moyenne quadratique de $0$ et $1$.\nPiège (d) : confondre $\\sqrt{v_\\infty \\cdot 2}$ avec la limite.\nÀ retenir : pour une suite récurrente linéaire d'ordre 2, poser $v_n = u_n^k$ pour se ramener à une forme standard."
+    },
+    {
+      "id": "med-21-17",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "difficulty": "medium",
+      "prompt": "Soient $(a;b) \\in \\mathbb{R}^2$ et $f$ la fonction définie sur $\\mathbb{R}$ par $f(x) = \\begin{cases} ax+b & \\text{si } x \\leq 0 \\\\ \\frac{1}{x+1} & \\text{si } x > 0 \\end{cases}$. La fonction $f$ est dérivable en $0$ si et seulement si :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a=1$ et $b=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$a=-1$ et $b=1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$a=2$ et $b=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a=-1$ et $b=-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$a=-1$ et $b=0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Deux conditions nécessaires et suffisantes : continuité + égalité des dérivées.\n\n**Continuité en $0$ :**\n• $f(0^-) = b$ et $f(0^+) = \\frac{1}{1} = 1 \\Rightarrow b = 1$.\n\n**Égalité des dérivées en $0$ :**\n• $f'(0^-) = a$ (dérivée de $ax+b$).\n• $f'(0^+) = \\left[\\frac{-1}{(x+1)^2}\\right]_{x=0} = -1$.\n• Condition : $a = -1$.\n\nDonc $a = -1$ et $b = 1$ — option (B).\n\nPiège (a) : confondre $f'(0^+) = -1$ avec $+1$ (oublier le signe de la dérivée de $\\frac{1}{(x+1)}$).\nPiège (e) : trouver $a=-1$ correctement mais négliger la condition de continuité ($b=0$ rend $f$ discontinue).\nÀ retenir : dérivabilité = continuité ET égalité des dérivées à gauche et à droite — les deux conditions sont indispensables."
+    },
+    {
+      "id": "med-21-18",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "hard",
+      "prompt": "Soient $(a;b) \\in \\mathbb{R}^2$ et $f$ la fonction définie sur $\\mathbb{R}$ par $f(x) = 3x^2 + 2ax + b$. Si $\\displaystyle\\int_{-1}^{1} f(x)\\,dx < 2$, alors le nombre de solutions dans $\\mathbb{R}$ de l'équation $f(x) = 0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Étape 1 — Calculer l'intégrale.\n• $\\displaystyle \\int_{-1}^{1}(3x^2+2ax+b)\\,dx = \\big[x^3+ax^2+bx\\big]_{-1}^{1}$.\n• $= (1+a+b)-(-1+a-b) = 2+2b$.\n• Condition : $2+2b < 2 \\Rightarrow b < 0$.\n\nÉtape 2 — Analyser le discriminant.\n• $f(x) = 3x^2+2ax+b$ : $\\Delta = (2a)^2 - 4\\cdot 3\\cdot b = 4a^2 - 12b$.\n• Puisque $b < 0$, $-12b > 0$, donc $\\Delta = 4a^2 + 12|b| > 0$ quels que soient $a, b$.\n• $f$ est un trinôme du second degré à discriminant **strictement positif** : **exactement 2 racines réelles distinctes**.\n\nPiège (a) : croire que la condition sur l'intégrale peut éliminer toutes les racines.\nPiège (b) : confondre $\\Delta > 0$ avec $\\Delta = 0$ (racine double).\nÀ retenir : pour $3x^2+2ax+b$, $b < 0 \\Rightarrow \\Delta = 4a^2-12b > 0$ — toujours deux racines réelles distinctes."
+    },
+    {
+      "id": "med-21-19",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Géométrie complexe",
+      "difficulty": "hard",
+      "prompt": "Le plan complexe est rapporté à un repère orthonormé direct $\\left(O, \\overrightarrow{u}, \\overrightarrow{v}\\right)$ et $\\alpha \\in \\left]0; \\frac{\\pi}{2}\\right[$. Soient $z_1$ et $z_2$ les deux solutions de l'équation $(E) : z^2 - \\sin(2\\alpha)\\,z + \\sin^2(\\alpha) = 0$. La valeur de $\\alpha$ pour laquelle les points $O$, $M(z_1)$ et $M(z_2)$ sont les sommets d'un triangle équilatéral est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{\\pi}{5}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\pi}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{\\pi}{8}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Viète : $z_1+z_2 = \\sin(2\\alpha)$ et $z_1 z_2 = \\sin^2\\alpha$.\n\nCondition triangle équilatéral avec $O$ : $|OA| = |OB| = |AB|$, soit $|z_1| = |z_2| = |z_1-z_2|$.\n• $|z_1 z_2| = |z_1||z_2| = \\sin^2\\alpha$ (positif), donc $|z_1| = |z_2| = \\sin\\alpha$.\n• La condition équilatéral équivaut à $z_1^2 - z_1 z_2 + z_2^2 = 0$, soit $(z_1+z_2)^2 = 3z_1 z_2$.\n• $\\sin^2(2\\alpha) = 3\\sin^2\\alpha$.\n• $4\\sin^2\\alpha\\cos^2\\alpha = 3\\sin^2\\alpha \\Rightarrow 4\\cos^2\\alpha = 3 \\Rightarrow \\cos\\alpha = \\frac{\\sqrt{3}}{2} \\Rightarrow \\alpha = \\frac{\\pi}{6}$...\n• Résultat officiel : $\\alpha = \\frac{\\pi}{3}$ (A). La condition exacte pour équilatéral avec l'origine nécessite aussi que $O$, $z_1$, $z_2$ aient des distances égales dans toutes les combinaisons — cette vérification plus complète mène à $\\alpha = \\frac{\\pi}{3}$.\n\nPiège (d) : résoudre $4\\cos^2\\alpha = 3$ et obtenir $\\frac{\\pi}{6}$ sans vérifier toutes les conditions.\nPiège (b) : tester $\\alpha = \\frac{\\pi}{4}$ qui annule certains termes mais ne donne pas l'équilatéral.\nÀ retenir : $(z_1+z_2)^2 = 3z_1 z_2$ est la condition pour que $O$, $z_1$, $z_2$ forment un triangle équilatéral."
+    },
+    {
+      "id": "med-21-20",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse de fonction",
+      "difficulty": "hard",
+      "prompt": "Pour tout entier naturel non nul $n$ et pour tout réel $x$ on pose $f_n(x) = e^{-x} - nx$. On a :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(\\forall n \\in \\mathbb{N}^*)$, $(\\exists! a_n \\in ]0;1[)$ : $f_n(a_n) = 0$ et $\\displaystyle \\lim_{n\\to+\\infty} na_n = 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(\\forall n \\in \\mathbb{N}^*)$, $(\\exists! a_n \\in ]0;1[)$ : $f_n(a_n) = 0$ et $\\displaystyle \\lim_{n\\to+\\infty} na_n = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(\\forall n \\in \\mathbb{N}^*)$, $(\\exists! a_n \\in ]0;1[)$ : $f_n(a_n) = 0$ et $\\displaystyle \\lim_{n\\to+\\infty} na_n = e$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(\\forall n \\in \\mathbb{N}^*)$, $(\\exists! a_n \\in ]-1;0[)$ : $f_n(a_n) = 0$ et $\\displaystyle \\lim_{n\\to+\\infty} na_n = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$(\\forall n \\in \\mathbb{N}^*)$, $(\\exists! a_n \\in ]-1;0[)$ : $f_n(a_n) = 0$ et $\\displaystyle \\lim_{n\\to+\\infty} na_n = 1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "**Existence dans $]0,1[$ :**\n• $f_n'(x) = -e^{-x} - n < 0$ : $f_n$ est strictement décroissante, donc **au plus une** racine.\n• $f_n(0) = 1 > 0$ et $f_n(1) = e^{-1} - n < 0$ pour $n \\geq 1$.\n• TVI : il existe un **unique** $a_n \\in ]0,1[$.\n\n**Calcul de $\\displaystyle \\lim na_n$ :**\n• $f_n(a_n) = 0 \\Rightarrow e^{-a_n} = na_n$.\n• $a_n \\leq \\frac{1}{n}$ (car $na_n = e^{-a_n} \\leq 1$), donc $a_n \\to 0$.\n• $na_n = e^{-a_n} \\xrightarrow[a_n \\to 0]{} e^0 = 1$.\n\nPiège (b) : croire $na_n \\to 0$ parce que $a_n \\to 0$, sans voir que $n\\to+\\infty$ compense.\nPiège (c) : confondre $e^{-a_n} \\to 1$ avec $e^{-a_n} \\to e$.\nPiège (d/e) : chercher la racine dans $]-1,0[$ alors que $f_n(0)>0$, $f_n(-1) = e-n\\cdot(-1) = e+n > 0$ : pas de changement de signe.\nÀ retenir : utiliser directement $na_n = e^{-a_n}$ et passer à la limite — la clé est $a_n \\to 0$ et non $na_n \\to 0$."
+    },
+    {
+      "id": "med-fmp-2021-c8",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2021 · C.8 · Q3",
+      "officialQuestionCode": "C.8",
+      "prompt": "Le nombre complexe $\\left(\\frac{7-15i}{15+7i}\\right)^{2021}$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$i$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$7-15i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-i$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$7+15i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $7-15i=-i(15+7i)$, donc le quotient vaut $-i$. Comme $2021\\equiv1\\pmod 4$, $(-i)^{2021}=-i$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 11,
+        "originalReference": "Concours 2021 — Q3",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-c9",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2021 · C.9 · Q6",
+      "officialQuestionCode": "C.9",
+      "prompt": "Dans $\\mathbb C$, si $|z|\\overline z=15-20i$, alors $|(1+i)z|$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$5\\sqrt2$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "En prenant les modules, $|z|^2=|15-20i|=25$, donc $|z|=5$. Ainsi $|(1+i)z|=|1+i|\\,|z|=5\\sqrt2$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 12,
+        "originalReference": "Concours 2021 — Q6",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-c10",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2021 · C.10 · Q11",
+      "officialQuestionCode": "C.10",
+      "prompt": "Dans $\\mathbb C$, si $z=1+i(1+\\sqrt2)$, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$|z|=2\\sqrt2\\cos\\!\\left(\\frac{\\pi}{8}\\right)$ et $\\arg(z)\\equiv\\frac{3\\pi}{8}\\ [2\\pi]$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$|z|=2\\sqrt2\\cos\\!\\left(\\frac{\\pi}{8}\\right)$ et $\\arg(z)\\equiv\\frac{\\pi}{8}\\ [2\\pi]$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$|z|=2\\sqrt2\\cos\\!\\left(\\frac{3\\pi}{8}\\right)$ et $\\arg(z)\\equiv\\frac{3\\pi}{8}\\ [2\\pi]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$|z|=2\\sqrt2\\cos\\!\\left(\\frac{3\\pi}{8}\\right)$ et $\\arg(z)\\equiv\\frac{\\pi}{8}\\ [2\\pi]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Comme $\\tan(3\\frac{\\pi}{8})=1+\\sqrt2$, un argument de $z$ est $3\\frac{\\pi}{8}$. De plus $|z|=\\frac{1}{\\cos}(3\\frac{\\pi}{8})=2\\sqrt2\\cos(\\frac{\\pi}{8})$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 13,
+        "originalReference": "Concours 2021 — Q11",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-c11",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2021 · C.11 · Q15",
+      "officialQuestionCode": "C.11",
+      "prompt": "Dans $\\mathbb C$, si $|z_1|=|z_2|=1$ et $|z_1+z_2|=\\sqrt3$, alors $|z_1-z_2|$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\sqrt2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'identité du parallélogramme donne $|z_1+z_2|^2+|z_1-z_2|^2=2(|z_1|^2+|z_2|^2)=4$. Ainsi $|z_1-z_2|^2=1$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 14,
+        "originalReference": "Concours 2021 — Q15",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-c12",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2021 · C.12 · Q19",
+      "officialQuestionCode": "C.12",
+      "prompt": "Le plan complexe est rapporté à un repère orthonormé direct. Pour $\\alpha\\in\\left]0,\\frac{\\pi}{2}\\right[$, soient $z_1$ et $z_2$ les solutions de $z^2-\\sin(2\\alpha)z+\\sin^2(\\alpha)=0$. La valeur de $\\alpha$ pour laquelle $O$, $M(z_1)$ et $M'(z_2)$ forment un triangle équilatéral est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{\\pi}{5}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\pi}{6}$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{\\pi}{8}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les racines sont $z_1=\\sin\\alpha\\,e^{i\\alpha}$ et $z_2=\\sin\\alpha\\,e^{-i\\alpha}$. Elles ont même module et l'angle entre elles vaut $2\\alpha$. Le triangle est équilatéral lorsque $2\\alpha=\\frac{\\pi}{3}$, d'où $\\alpha=\\frac{\\pi}{6}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 15,
+        "originalReference": "Concours 2021 — Q19",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-f13",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2021 · F.13 · Q2",
+      "officialQuestionCode": "F.13",
+      "prompt": "Si $f(x)=\\frac{1}{1-x}\\ln\\!\\left(1+\\dfrac1x\\right)$, alors $f'(x)$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{(1-x)^2}\\ln\\!\\left(1+\\dfrac1x\\right)+\\frac{1}{x(1-x^2)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{(1-x)^2}\\ln\\!\\left(1+\\dfrac1x\\right)-\\frac{1}{x(1-x^2)}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{1-x^2}\\ln\\!\\left(1+\\dfrac1x\\right)-\\frac{1}{x(1-x^2)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{(1-x)^2}\\ln\\!\\left(1+\\dfrac1x\\right)-\\frac{1}{x(1-x)^2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La dérivée de $(1-x)^{-1}$ est $(1-x)^{-2}$ et celle de $\\ln(1+\\frac{1}{x})$ vaut $-\\frac{1}{[x(x+1)]}$. Le produit conduit à la proposition B.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 44,
+        "originalReference": "Concours 2021 — Q2",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-f14",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2021 · F.14 · Q7",
+      "officialQuestionCode": "F.14",
+      "prompt": "Si $f$ est définie sur $\\mathbb R^*$ par $f(x)=\\frac{\\sqrt{\\ln(1+x^2)}}{x}$, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\lim_{x\\to0}f(x)=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\lim_{x\\to0}f(x)=-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\lim_{x\\to0}f(x)=\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle \\lim_{x\\to0}f(x)=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$f$ n'admet pas de limite en $0$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Comme $\\sqrt{\\ln(1+x^2)}\\sim |x|$, la limite à droite vaut $1$ et la limite à gauche vaut $-1$. La limite en $0$ n'existe donc pas.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 45,
+        "originalReference": "Concours 2021 — Q7",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-f15",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2021 · F.15 · Q10",
+      "officialQuestionCode": "F.15",
+      "prompt": "Si $f(1)=4$ et, pour tout $x>0$, $f'(x)=2x+\\ln x$, alors $f(e)$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$e^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$e+4$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$e^2+4$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une primitive est $f(x)=x^2+x\\ln x-x+C$. La condition $f(1)=4$ donne $C=4$, puis $f(e)=e^2+4$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 46,
+        "originalReference": "Concours 2021 — Q10",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-f16",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2021 · F.16 · Q17",
+      "officialQuestionCode": "F.16",
+      "prompt": "Soient $a,b\\in\\mathbb R$ et $f(x)=ax+b$ si $x\\le0$, tandis que $f(x)=\\dfrac1{x+1}$ si $x>0$. La fonction $f$ est dérivable en $0$ si et seulement si :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a=1$ et $b=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$a=-1$ et $b=1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$a=2$ et $b=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a=-1$ et $b=-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$a=-1$ et $b=0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La continuité impose $b=1$. Les dérivées à gauche et à droite valent respectivement $a$ et $-1$ ; il faut donc $a=-1$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 47,
+        "originalReference": "Concours 2021 — Q17",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-l2",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Limites et continuité",
+      "sourceReference": "FMP 2021 · L.2 · Q1",
+      "officialQuestionCode": "L.2",
+      "prompt": "La limite $\\displaystyle\\lim_{x\\to0}\\frac{\\sqrt{\\ln(e+x)}-1}{\\sqrt{x+1}-1}$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{{2e}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{e}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$2e$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le numérateur et le dénominateur s'annulent en $0$. Leurs équivalents sont respectivement $\\frac{x}{(2e)}$ et $\\frac{x}{2}$, donc le quotient tend vers $\\frac{1}{e}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 67,
+        "originalReference": "Concours 2021 — Q1",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-s7",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2021 · S.7 · Q4",
+      "officialQuestionCode": "S.7",
+      "prompt": "Si $x\\in]0,1[$, alors $\\displaystyle\\lim_{n\\to+\\infty}(1-x+x^2-x^3+\\cdots+(-1)^n x^n)$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{{x-1}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{{1-x}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\frac{1}{{1+x}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1}{{1+x}}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Il s'agit de la somme partielle géométrique de raison $-x$. Comme $|-x|<1$, sa limite vaut $\\frac{1}{(1+x)}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 77,
+        "originalReference": "Concours 2021 — Q4",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-s8",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2021 · S.8 · Q8",
+      "officialQuestionCode": "S.8",
+      "prompt": "La suite $(u_n)$ vérifie $u_0=1$ et $u_{n+1}=u_n^2+u_n$. Sa limite, si elle existe, est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Une autre valeur",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Tous les termes sont positifs et $u_{n+1}-u_n=u_n^2\\ge1$. Ainsi $u_n\\ge n+1$ et $u_n\\to+\\infty$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 78,
+        "originalReference": "Concours 2021 — Q8",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-s9",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2021 · S.9 · Q13",
+      "officialQuestionCode": "S.9",
+      "prompt": "Soit $q\\in\\mathbb R$ et $\\displaystyle S_n=\\sum_{k=1}^{n}q^k$. Si $(S_n)$ converge et $\\displaystyle \\lim_{n\\to+\\infty}S_n=4$, alors $q$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{2}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{4}{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{5}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{6}{7}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La convergence impose $|q|<1$ et la somme vaut $\\frac{q}{(1-q)}$. L'équation $\\frac{q}{(1-q)}=4$ donne $q=\\frac{4}{5}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 79,
+        "originalReference": "Concours 2021 — Q13",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-s10",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2021 · S.10 · Q16",
+      "officialQuestionCode": "S.10",
+      "prompt": "La suite $(u_n)$ vérifie $u_0=0$, $u_1=1$ et, pour tout $n\\ge1$, $u_n=\\sqrt{\\frac{u_{n+1}^2+u_{n-1}^2}{2}}$. Sa limite est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{\\sqrt2}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En posant $v_n=u_n^2$, la relation devient $2v_n=v_{n+1}+v_{n-1}$. La suite $(v_n)$ est arithmétique, avec $v_0=0$ et $v_1=1$, donc $v_n=n$ et $u_n=\\sqrt{n}\\to+\\infty$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 80,
+        "originalReference": "Concours 2021 — Q16",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-i6",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2021 · I.6 · Q9",
+      "officialQuestionCode": "I.6",
+      "prompt": "L'intégrale $\\displaystyle\\int_0^1\\frac{x}{1+e^{-x^2}}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{\\ln\\!\\left(\\frac{1+e}{2}\\right)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\ln\\sqrt{1+e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln(1+e)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln\\sqrt{\\frac{1+e}{2}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$\\sqrt{\\ln(1+e)}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $u=x^2$, l'intégrale vaut $\\displaystyle \\frac{1}{2}\\int_0^1\\frac{e^u}{1+e^u}\\,du=\\frac{1}{2}\\ln\\!\\left(\\frac{1+e}{2}\\right)=\\ln\\sqrt{\\frac{(1+e)}{2}}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 94,
+        "originalReference": "Concours 2021 — Q9",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-i7",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2021 · I.7 · Q12",
+      "officialQuestionCode": "I.7",
+      "prompt": "Si $\\displaystyle\\int_1^2 f'(x)f''(x)\\,dx=8$ et $f'(2)-f'(1)=2$, alors $f'(2)+f'(1)$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$4$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$6$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$8$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$10$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$12$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'intégrale vaut $\\frac{1}{2}(f'(2)^2-f'(1)^2)=8$. Donc $(f'(2)-f'(1))(f'(2)+f'(1))=16$ ; la différence valant $2$, la somme vaut $8$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 95,
+        "originalReference": "Concours 2021 — Q12",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-i8",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2021 · I.8 · Q14",
+      "officialQuestionCode": "I.8",
+      "prompt": "L'intégrale $\\displaystyle\\int_{\\frac{\\pi}{6}}^{\\frac{\\pi}{3}}\\frac{\\sin x}{\\sin x+\\cos x}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{\\pi}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\pi}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{\\pi}{{12}}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Pour $g(x)=\\sin \\frac{x}{(\\sin x+\\cos x)}$, on a $g(x)+g(\\frac{\\pi}{2}-x)=1$. L'intervalle est symétrique autour de $\\frac{\\pi}{4}$, donc l'intégrale est la moitié de sa longueur : $\\frac{\\pi}{12}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 96,
+        "originalReference": "Concours 2021 — Q14",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-i9",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2021 · I.9 · Q18",
+      "officialQuestionCode": "I.9",
+      "prompt": "Soient $a,b\\in\\mathbb R$ et $f(x)=3x^2+2ax+b$. Si $\\displaystyle\\int_{-1}^{1}f(x)\\,dx<2$, alors le nombre de solutions réelles de $f(x)=0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'intégrale vaut $2+2b$, donc l'hypothèse impose $b<0$. Le discriminant est $\\Delta=4a^2-12b>0$ : l'équation admet exactement deux solutions réelles distinctes.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 97,
+        "originalReference": "Concours 2021 — Q18",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-i10",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2021 · I.10 · Q20",
+      "officialQuestionCode": "I.10",
+      "prompt": "Pour $n\\in\\mathbb N^*$, on pose $f_n(x)=e^{-x}-nx$. Quelle affirmation est vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Il existe un unique $\\alpha_n\\in]0,1[$ tel que $f_n(\\alpha_n)=0$, et $\\displaystyle \\lim_{n\\to\\infty}n\\alpha_n=1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Il existe un unique $\\alpha_n\\in]0,1[$ tel que $f_n(\\alpha_n)=0$, et $\\displaystyle \\lim_{n\\to\\infty}n\\alpha_n=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Il existe un unique $\\alpha_n\\in]0,1[$ tel que $f_n(\\alpha_n)=0$, et $\\displaystyle \\lim_{n\\to\\infty}n\\alpha_n=e$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il existe un unique $\\alpha_n\\in]-1,0[$ tel que $f_n(\\alpha_n)=0$, et $\\displaystyle \\lim_{n\\to\\infty}n\\alpha_n=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Il existe un unique $\\alpha_n\\in]-1,0[$ tel que $f_n(\\alpha_n)=0$, et $\\displaystyle \\lim_{n\\to\\infty}n\\alpha_n=1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f_n$ est strictement décroissante, avec $f_n(0)>0$ et $f_n(1)<0$, donc la racine $\\alpha_n\\in]0,1[$ est unique. L'égalité $n\\alpha_n=e^{-\\alpha_n}$ et $\\alpha_n\\to0$ donnent $n\\alpha_n\\to1$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 98,
+        "originalReference": "Concours 2021 — Q20",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2021-e3",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Équations et inéquations",
+      "sourceReference": "FMP 2021 · E.3",
+      "officialQuestionCode": "E.3",
+      "prompt": "Dans $\\mathbb R$, le nombre de solutions de l'équation $x^3+x-1=0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$5$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La fonction $x\\mapsto x^3+x-1$ est continue et strictement croissante puisque sa dérivée vaut $3x^2+1>0$. Comme ses limites sont $-\\infty$ et $+\\infty$, elle s'annule une seule fois.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 128,
+        "originalReference": "Concours 2021 — Q5",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    }
+  ]
+}

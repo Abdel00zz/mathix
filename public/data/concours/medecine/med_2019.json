@@ -1,0 +1,1517 @@
+{
+  "questions": [
+    {
+      "id": "med-19-01",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "algebre",
+      "prompt": "Pour $A>0$ et $B>0$, quelle identité logarithmique est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln\\left(\\frac{A}{B}\\right)=\\ln A-\\ln B$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\ln\\left(\\frac{A}{B}\\right)=\\ln A+\\ln B$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln\\left(\\frac{A}{B}\\right)=\\frac{\\ln A}{\\ln B}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln\\left(\\frac{A}{B}\\right)=B\\ln A$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• Le logarithme transforme les quotients en soustractions et les produits en additions.\n• Cette propriété est indispensable pour simplifier les expressions logarithmiques complexes, comme on le verra dans les calculs numériques de ce concours."
+    },
+    {
+      "id": "med-19-02",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "analyse",
+      "prompt": "Laquelle de ces règles donne l'expression correcte de la dérivée de la fonction composée $x \\mapsto e^{u(x)}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$u'(x)e^{u(x)}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$e^{u'(x)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$u(x)e^{u'(x)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e^{u(x)}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• Lors de la dérivation d'une exponentielle composée, la dérivée de l'exposant \"descend\" en facteur.\n• Omettre $u'(x)$ est une erreur fréquente qui fausse totalement l'étude des variations (comme on le verra sur la fonction $x^2e^x$)."
+    },
+    {
+      "id": "med-19-03",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Méthode",
+      "theme": "analyse",
+      "prompt": "Quelle méthode lève correctement l'indétermination de $\\sqrt{x^2+1}-x$ lorsque $x\\to+\\infty$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Multiplier par l'expression conjuguée $\\sqrt{x^2+1}+x$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Conclure directement que la limite vaut $+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Factoriser par $x$ puis remplacer la parenthèse par $1-1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Remplacer $\\sqrt{x^2+1}$ par $x^2+1$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Analyse de la méthode :\n• Si on factorise par $x$, on obtient $x\\left(\\sqrt{1+\\frac{1}{x^2}} - 1\\right)$. En l'infini, cela donne $+\\infty \\times (1 - 1) = +\\infty \\times 0$, ce qui est une NOUVELLE forme indéterminée.\n• Dans ce cas précis, la multiplication par l'expression conjuguée est obligatoire."
+    },
+    {
+      "id": "med-19-04",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "theme": "geometrie-espace",
+      "prompt": "Dans l'espace muni d'un repère orthonormé, si un plan coupe les axes de coordonnées aux points $A(a,0,0)$, $B(0,b,0)$ et $C(0,0,c)$, quelle est son équation cartésienne (dite segmentaire) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{x}{a} + \\frac{y}{b} + \\frac{z}{c} = 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$ax + by + cz = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{x}{a} + \\frac{y}{b} - \\frac{z}{c} = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x+y+z = a+b+c$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est une formule d'application directe ultra-rapide. En remplaçant $x=a, y=0, z=0$, on obtient bien $1=1$. Elle permet d'identifier l'équation d'un plan sans passer par le produit vectoriel lorsque les trois points sont sur les axes."
+    },
+    {
+      "id": "med-19-05",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "analyse",
+      "prompt": "Quelle condition est indispensable pour qu'une fonction définie par morceaux soit dérivable en $x_0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle doit être continue en $x_0$ et ses dérivées à gauche et à droite doivent être égales.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "L'égalité des dérivées latérales suffit même en cas de discontinuité.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Seule la dérivée à droite doit exister.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une discontinuité garantit l'existence d'une tangente verticale.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• La dérivabilité implique OBLIGATOIREMENT la continuité.\n• Si une courbe présente un saut (discontinuité) en un point, il est impossible d'y tracer une tangente unique, rendant toute notion de dérivabilité caduque à cet endroit."
+    },
+    {
+      "id": "med-19-06",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "complexes",
+      "prompt": "Pour $z=x+iy$, quelle identité est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$|z|^2=z\\overline z=x^2+y^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$|z|^2=z^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$|z|^2=\\overline z^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$|z|^2=x^2-y^2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le calcul le prouve : $(x+iy)(x-iy) = x^2 - (iy)^2 = x^2 - i^2y^2 = x^2+y^2$, ce qui correspond exactement au carré du module. Cette relation est la clé pour résoudre les problèmes de distances (comme l'identité du parallélogramme)."
+    },
+    {
+      "id": "med-19-07",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "algebre",
+      "prompt": "Le nombre $A = \\ln(6) - 2\\ln(\\sqrt{2}) + \\ln(12) - \\ln(4)$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2\\ln(3)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\ln(2)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3\\ln(2)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Décomposition étape par étape :\n• $2\\ln(\\sqrt{2}) = \\ln((\\sqrt{2})^2) = \\ln(2)$.\n• On décompose tout en bases premières : $\\ln(6) = \\ln(2)+\\ln(3)$, $\\ln(12) = 2\\ln(2)+\\ln(3)$, $\\ln(4) = 2\\ln(2)$.\n• On remplace : $(\\ln(2)+\\ln(3)) - \\ln(2) + (2\\ln(2)+\\ln(3)) - 2\\ln(2)$.\n• Les termes en $\\ln(2)$ s'annulent. Il reste $2\\ln(3)$ (qui équivaut aussi à $\\ln(9)$)."
+    },
+    {
+      "id": "med-19-08",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "L'ensemble de solutions de l'équation $(E) : e^{x^3-x} = 1$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{-1; 0; 1\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\{0; e\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\emptyset$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\{0\\}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Analyse de l'équation :\n• Puisque $e^0 = 1$, l'équation équivaut strictement à $x^3 - x = 0$.\n• On factorise : $x(x^2 - 1) = 0$.\n• On factorise à nouveau avec l'identité remarquable : $x(x - 1)(x + 1) = 0$.\nLes trois solutions réelles sont donc $-1$, $0$ et $1$."
+    },
+    {
+      "id": "med-19-09",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "theme": "analyse",
+      "prompt": "Quelle démarche détermine la tangente à $f(x)=x\\cos(x^2)$ au point d'abscisse $0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculer $f(0)=0$, trouver $f'(x)=\\cos(x^2)-2x^2\\sin(x^2)$, donc $f'(0)=1$ et la tangente $y=x$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Prendre $f(0)=0$ comme pente et conclure que la tangente est $y=0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Dériver $x\\cos(x^2)$ en $-2x^2\\sin(x^2)$, puis obtenir $y=0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Résoudre $x\\cos(x^2)=0$ et prendre toutes les racines comme équations de tangentes.",
+          "isCorrect": false
+        }
+      ],
+      "items": [
+        {
+          "id": "a",
+          "content": "Calculer l'ordonnée du point de contact : $f(0) = 0 \\times \\cos(0) = 0$."
+        },
+        {
+          "id": "b",
+          "content": "Dériver en utilisant la formule du produit : $f'(x) = \\cos(x^2) - 2x^2\\sin(x^2)$."
+        },
+        {
+          "id": "c",
+          "content": "Évaluer la dérivée en zéro pour obtenir la pente : $f'(0) = \\cos(0) - 0 = 1$."
+        },
+        {
+          "id": "d",
+          "content": "Remplacer dans l'équation cartésienne : $y = f'(0)(x-0) + f(0)$."
+        },
+        {
+          "id": "e",
+          "content": "Simplifier pour obtenir la forme finale : $y = 1 \\times x + 0 = x$."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "explanation": "Structurer son brouillon selon cet ordre précis évite la confusion courante entre l'expression de la fonction dérivée $f'(x)$ et le nombre dérivé ponctuel $f'(0)$."
+    },
+    {
+      "id": "med-19-10",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "La dérivée seconde de la fonction $f(x) = \\frac{x^2}{e^{-x}}$ (que l'on peut réécrire $x^2e^x$) vérifie :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f''(x) = \\frac{x^2+4x+2}{e^{-x}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f''(x) = \\frac{4x^2}{e^{-x}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f'(x) = \\frac{x^2+2x}{e^{-x}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f''(x) = \\frac{x^2+4}{e^{-x}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Dérivation successive (règle du produit) :\n1) $f'(x) = 2xe^x + x^2e^x = (x^2+2x)e^x$ (Ceci correspond au distracteur C, qui est la dérivée première, pas seconde).\n2) $f''(x) = (2x+2)e^x + (x^2+2x)e^x = (x^2+4x+2)e^x$.\nEn repassant sous forme fractionnaire, on retrouve exactement l'option A."
+    },
+    {
+      "id": "med-19-11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "complexes",
+      "prompt": "Le nombre complexe $z = 1 + e^{i\\frac{\\pi}{2}}$ vérifie :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$|z| = \\sqrt{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$|z| = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$z = 1 - i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\arg(z) = \\frac{\\pi}{2} \\ [2\\pi]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Conversion d'Euler à la forme algébrique :\n• Par définition, $e^{i\\frac{\\pi}{2}} = \\cos(\\frac{\\pi}{2}) + i\\sin(\\frac{\\pi}{2}) = i$.\n• Le nombre est donc $z = 1 + i$.\n• Son module est $\\sqrt{1^2 + 1^2} = \\sqrt{2}$. Son argument (distracteur d) vaut en réalité $\\frac{\\pi}{4}$."
+    },
+    {
+      "id": "med-19-12",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "algebre",
+      "prompt": "Soit la suite définie par $u_0 = 4$ et $u_{n+1} = 3u_n - 2$. On pose $v_n = u_n - 1$. La suite $(v_n)$ est une suite géométrique de raison :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La méthode classique des suites auxiliaires :\n• On calcule $v_{n+1} = u_{n+1} - 1$.\n• On remplace $u_{n+1}$ : $v_{n+1} = (3u_n - 2) - 1 = 3u_n - 3$.\n• On met le coefficient en facteur : $v_{n+1} = 3(u_n - 1)$.\n• On reconnaît $v_n$ dans la parenthèse : $v_{n+1} = 3v_n$. La raison est 3."
+    },
+    {
+      "id": "med-19-13",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "theme": "probabilites",
+      "prompt": "Une urne contient 3 boules blanches et 5 noires. Quelle démarche donne la probabilité de tirer simultanément deux boules de même couleur ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculer $C_8^2=28$, puis $C_3^2+C_5^2=13$ cas favorables, d'où $\\frac{13}{28}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Calculer $C_3^2\\times C_5^2$ cas favorables, puis diviser par $C_8^2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Diviser $3+5$ par $2$ car deux boules sont tirées.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Prendre $\\frac{3}{8}+\\frac{5}{8}=1$ comme probabilité cherchée.",
+          "isCorrect": false
+        }
+      ],
+      "items": [
+        {
+          "id": "a",
+          "content": "Modéliser l'univers mathématique total : choisir 2 boules parmi 8 (calcul de $C_8^2 = 28$)."
+        },
+        {
+          "id": "b",
+          "content": "Traduire l'événement : tirer 2 blanches parmi 3 OU tirer 2 noires parmi 5."
+        },
+        {
+          "id": "c",
+          "content": "Calculer les combinaisons de ces cas favorables : $C_3^2 = 3$ et $C_5^2 = 10$."
+        },
+        {
+          "id": "d",
+          "content": "Additionner ces combinaisons indépendantes pour obtenir les 13 tirages valides."
+        },
+        {
+          "id": "e",
+          "content": "Diviser ce total par le cardinal de l'univers pour conclure que la probabilité est $\\frac{13}{28}$."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "explanation": "Ces étapes illustrent la loi des probabilités élémentaires. L'oubli de l'une des deux couleurs dans l'addition de l'étape 4 est l'erreur la plus sanctionnée aux examens."
+    },
+    {
+      "id": "med-19-14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "Quelle affirmation calcule correctement $\\displaystyle \\lim_{x\\to+\\infty}(\\sqrt{x^2+1}-x)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Après multiplication par le conjugué, l'expression devient $\\frac{1}{\\sqrt{x^2+1}+x}$ ; la limite vaut $0$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Le facteur $x$ impose à lui seul une limite $+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt{x^2+1}-x$ est égal à $1$ pour tout $x$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La forme $\\infty\\times0$ vaut automatiquement $0$.",
+          "isCorrect": false
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On évalue les termes : $\\sqrt{x^2+1}$ tend vers $+\\infty$ et $-x$ tend vers $-\\infty$. Il y a indétermination.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Pour forcer la factorisation, j'extrais $x^2$ de la racine : cela donne $x\\sqrt{1+\\frac{1}{x^2}} - x$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Je mets $x$ en facteur commun pour toute l'expression : $x\\left(\\sqrt{1+\\frac{1}{x^2}} - 1\\right)$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "Comme $x$ tend vers l'infini, c'est ce terme qui domine et impose sa limite à l'ensemble, le résultat est donc $+\\infty$.",
+          "isError": true,
+          "correction": "L'infini ne 'domine' pas automatiquement zéro ! La parenthèse tend vers $1-1=0$, créant l'indétermination stricte $\\infty \\times 0$. Dès que les coefficients dominants s'annulent ($x-x=0$), la factorisation échoue : l'expression conjuguée est obligatoire."
+        }
+      ],
+      "explanation": "La \"règle du plus fort\" ne s'applique pas lorsque les coefficients des termes dominants s'annihilent mutuellement. Il faut passer à un ordre de développement supérieur via la quantité conjuguée."
+    },
+    {
+      "id": "med-19-15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "ambiguity_note": "La forme $\\infty \\times 0$ piège l'étudiant intuitif. Le conjugué est la seule voie algébrique de rigueur.",
+      "prompt": "La limite exacte de $\\displaystyle \\lim_{x \\to +\\infty} (\\sqrt{x^2+1} - x)$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Calcul par la quantité conjuguée :\n• $\\sqrt{x^2+1} - x = \\frac{(\\sqrt{x^2+1} - x)(\\sqrt{x^2+1} + x)}{\\sqrt{x^2+1} + x}$.\n• Le numérateur devient $(x^2+1) - x^2 = 1$.\n• La fraction est $\\frac{1}{\\sqrt{x^2+1} + x}$.\n• Le dénominateur tend vers $+\\infty$, donc le quotient tend vers $0$."
+    },
+    {
+      "id": "med-19-16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "ambiguity_note": "Il faut démontrer que la différence $f(x) - (ax+b)$ s'écrase. La présence du logarithme intimide mais le dénominateur polynomial l'emporte par croissances comparées.",
+      "prompt": "Soit la fonction $f(x) = \\frac{\\ln(x^2+1)}{x+4} + x - 1$. La courbe représentative de $f$ admet une asymptote oblique d'équation :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = x - 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = x + 3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = x + 4$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x = -4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour justifier l'asymptote oblique, on étudie $\\displaystyle \\lim_{x \\to +\\infty} f(x) - (x-1)$.\n• Cette différence vaut $\\frac{\\ln(x^2+1)}{x+4}$.\n• En $+\\infty$, le polynôme $x$ au dénominateur croît beaucoup plus vite que le logarithme au numérateur (croissances comparées). La limite de cet écart est $0$.\n• La droite d'équation $y = x - 1$ est bien asymptote."
+    },
+    {
+      "id": "med-19-17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "Pour $f(x)=2x+a$ si $x\\leq1$ et $f(x)=bx^2-1$ si $x>1$, quels paramètres rendent $f$ dérivable en $1$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$b=1$ et $a=-2$, après égalité des dérivées et continuité en $1$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$b=1$ et $a$ arbitraire.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$a=-2$ et $b$ arbitraire.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a=2$ et $b=-1$.",
+          "isCorrect": false
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Pour que la fonction soit dérivable en 1, il faut vérifier les conditions sur les dérivées à gauche et à droite.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Je calcule $f'(x) = 2$ pour $x \\leq 1$ et $f'(x) = 2bx$ pour $x > 1$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "J'égalise ces deux expressions au point critique $x=1$, ce qui me donne $2 = 2b(1)$, d'où je tire la valeur $b=1$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "Puisque la dérivée de $2x+a$ vaut 2 (indépendante de $a$), je conclus que le paramètre $a$ peut prendre n'importe quelle valeur.",
+          "isError": true,
+          "correction": "Erreur fondamentale de logique mathématique : la dérivabilité présuppose la CONTINUITÉ ! Il faut obligatoirement égaliser les fonctions d'origine en $1$ ($2(1)+a = b(1)^2-1$) pour contraindre et trouver $a$."
+        }
+      ],
+      "explanation": "On ne peut pas coller deux morceaux de courbes avec la même inclinaison (dérivée) s'ils ne se touchent pas physiquement (continuité). Cette omission est le piège classique des fonctions à paramètres."
+    },
+    {
+      "id": "med-19-18",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "prompt": "En corrigeant l'erreur précédente, quelles sont les valeurs exactes de $a$ et $b$ pour que la fonction $f$ ($2x+a$ si $x \\leq 1$, $bx^2-1$ si $x > 1$) soit continue et dérivable en $x_0 = 1$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a = -2 \\ ; \\ b = 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$a = -1 \\ ; \\ b = 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$a = -2 \\ ; \\ b = 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a = 2 \\ ; \\ b = 1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Résolution du système :\n1) Dérivabilité : $f'(1^-) = f'(1^+) \\implies 2 = 2b \\implies b=1$.\n2) Continuité : $f(1^-) = f(1^+) \\implies 2(1)+a = b(1^2)-1$.\n3) Substitution de $b$ : $2+a = 1 - 1 \\implies 2+a = 0 \\implies a=-2$.\nLe couple validé est $(-2; 1)$."
+    },
+    {
+      "id": "med-19-19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "complexes",
+      "prompt": "Dans $\\mathbb{C}$, l'ensemble de solutions de l'équation $z^2 - 2z + 2 = 0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "\\{1-i \\ ; \\ 1+i\\}",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "\\{1+i \\ ; \\ -1+i\\}",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "\\{-1-i \\ ; \\ -1+i\\}",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\{\\sqrt{2}e^{i\\frac{\\pi}{4}} \\ ; \\ \\sqrt{2}e^{-i\\frac{\\pi}{2}}\\}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Calculs du discriminant :\n• $\\Delta = b^2 - 4ac = (-2)^2 - 4(1)(2) = 4 - 8 = -4$.\n• $\\Delta < 0$, il y a deux racines complexes conjuguées : $z_1 = \\frac{2 - i\\sqrt{4}}{2} = \\frac{2-2i}{2} = 1-i$.\n• L'autre est $\\overline{z_1} = 1+i$."
+    },
+    {
+      "id": "med-19-20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "geometrie-espace",
+      "prompt": "Dans l'espace orthonormé, on considère les points $A(1;0;0)$, $B(0;1;0)$ et $C(0;0;-1)$. L'équation cartésienne du plan $(ABC)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x + y - z - 1 = 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x - y + z + 1 = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x + y - z = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x + y - z + 1 = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Application de la formule des intercepts (vue en Q4) :\n• L'équation est $\\frac{x}{1} + \\frac{y}{1} + \\frac{z}{-1} = 1$.\n• Ce qui se simplifie instantanément en $x + y - z = 1$, soit $x + y - z - 1 = 0$.\nCela évite le calcul laborieux de $\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$."
+    },
+    {
+      "id": "med-19-21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "geometrie-espace",
+      "prompt": "Dans l'espace, les plans $(P): x+y=1$ et $(Q): x-y+z=1$ se coupent selon une droite $(\\Delta)$. Une représentation paramétrique de cette droite est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\begin{cases} x=t \\\\ y=1-t \\\\ z=2-2t \\end{cases} \\ (t \\in \\mathbb{R})$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\begin{cases} x=t \\\\ y=-t \\\\ z=1 \\end{cases} \\ (t \\in \\mathbb{R})$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\begin{cases} x=1+t \\\\ y=-t \\\\ z=1-2t \\end{cases} \\ (t \\in \\mathbb{R})$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\begin{cases} x=t \\\\ y=t \\\\ z=0 \\end{cases} \\ (t \\in \\mathbb{R})$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il faut que les coordonnées satisfassent simultanément les DEUX équations de plans.\n• On pose arbitrairement $x=t$.\n• Le plan $(P)$ impose $y = 1-x$, donc $y = 1-t$.\n• Le plan $(Q)$ impose $z = 1 - x + y$. En substituant : $z = 1 - t + (1-t) = 2 - 2t$.\nSeul le système A valide parfaitement les deux conditions. Le distracteur C échoue sur le plan $(Q)$."
+    },
+    {
+      "id": "med-19-22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "complexes",
+      "prompt": "Soient $z_1$ et $z_2$ deux nombres complexes. En développant l'expression géométrique $|z_1+z_2|^2 + |z_1-z_2|^2$ via les conjugués, on obtient systématiquement :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2(|z_1|^2 + |z_2|^2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$|z_1|^2 + |z_2|^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2(|z_1|^2 - |z_2|^2)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2(|\\overline{z_1}|^2 - |\\overline{z_2}|^2)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est l'identité du parallélogramme (la somme des carrés des diagonales égale la somme des carrés des quatre côtés).\nDémonstration algébrique : $(z_1+z_2)(\\overline{z_1}+\\overline{z_2}) + (z_1-z_2)(\\overline{z_1}-\\overline{z_2})$.\nLes doubles produits croisés $z_1\\overline{z_2}$ et $\\overline{z_1}z_2$ s'annulent avec leurs opposés du deuxième terme. Il reste $2z_1\\overline{z_1} + 2z_2\\overline{z_2}$."
+    },
+    {
+      "id": "med-19-23",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "algebre",
+      "prompt": "Soit $(u_n)_{n \\in \\mathbb{N}}$ une suite arithmétique de raison $r=2$ et de premier terme $u_0 = -3$. Laquelle de ces affirmations est exacte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le terme de rang 10 vaut $u_{10} = 17$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La suite converge vers $0$ car sa raison est paire.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La somme des 10 premiers termes est $9 \\times \\frac{u_0 + u_9}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La formule explicite est $u_n = -3n + 2$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Calculs vérificatoires :\n• Formule générale : $u_n = u_0 + nr = -3 + 2n$ (réfute le distracteur d qui inverse raison et amorce).\n• Pour $n=10$, $u_{10} = -3 + 2(10) = 17$.\n• Le distracteur sur la somme est faux : il y a 10 termes de $u_0$ à $u_9$, la formule correcte serait $10 \\times \\frac{u_0+u_9}{2}$."
+    },
+    {
+      "id": "med-19-24",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "complexes",
+      "prompt": "Soit le nombre complexe $z = 1 + e^{i\\frac{\\pi}{2}}$. Lequel de ces résultats est mathématiquement correct après résolution géométrique ou algébrique ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$|z| = \\sqrt{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$|z| = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\arg(z) = \\frac{\\pi}{2} \\ [2\\pi]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$z = \\sqrt{2}e^{-i\\frac{\\pi}{4}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Synthèse Euler-Cartésien-Polaire :\n1) $e^{i\\frac{\\pi}{2}}$ représente le nombre imaginaire pur $i$.\n2) Le nombre est donc $z = 1 + i$.\n3) Son module est $\\sqrt{1^2+1^2} = \\sqrt{2}$.\n4) Son argument est $\\frac{\\pi}{4}$ (car $\\cos(\\theta)=\\sin(\\theta)=\\frac{1}{\\sqrt{2}}$). Le distracteur d propose le mauvais signe sur l'argument."
+    },
+    {
+      "id": "med-fmp-2019-c1",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2019 · C.1 · Q4",
+      "officialQuestionCode": "C.1",
+      "prompt": "Soit $Z=\\frac{(1+i)^{21}(1+i\\sqrt{3})^{19}}{(1-i)^9}$. Un argument de $Z$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{11\\pi}{6}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$-\\frac{\\pi}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\pi$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{2\\pi}{3}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $\\arg Z\\equiv21\\frac{\\pi}{4}+19\\frac{\\pi}{3}-9\\left(-\\frac{\\pi}{4}\\right)=\\frac{83\\pi}{6}\\equiv\\frac{11\\pi}{6}\\pmod{2\\pi}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-c2",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2019 · C.2 · Q8",
+      "officialQuestionCode": "C.2",
+      "prompt": "Dans le plan complexe, l’ensemble des points $M(z)$ vérifiant $|z-2|=|z-i|$ est la droite d’équation :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-4x+2y+3=0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y=-2x-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y=-2x+3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y=2x-\\dfrac32$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$y=2x+1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En écrivant $z=x+iy$, $(x-2)^2+y^2=x^2+(y-1)^2$, d’où $-4x+2y+3=0$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-c3",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2019 · C.3 · Q11",
+      "officialQuestionCode": "C.3",
+      "prompt": "Soit $z$ un nombre complexe tel que $|z|=1$. Le nombre $|\\sqrt2+z|^2+|\\sqrt2-\\overline z|^2$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-2\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$6$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$-\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\sqrt2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les termes en $\\operatorname{Re}(z)$ s’annulent : la somme vaut $2+|z|^2+2+|z|^2=6$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-e1",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Équations et inéquations",
+      "sourceReference": "FMP 2019 · E.1 · Q2",
+      "officialQuestionCode": "E.1",
+      "prompt": "L’ensemble des solutions de l’inéquation $x\\ln(x+1)>0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]-1,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$]-1,0[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$]-1,0[\\,\\cup\\,]0,+\\infty[$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$]0,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$]-1,1[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le domaine est $x>-1$. Sur $]-1,0[$, les deux facteurs sont négatifs; sur $]0,+\\infty[$, ils sont positifs. Le point $0$ est exclu.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-e2",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Équations et inéquations",
+      "sourceReference": "FMP 2019 · E.2 · Q13",
+      "officialQuestionCode": "E.2",
+      "prompt": "L’équation $\\ln(-2\\sqrt2+\\ln x)+\\ln(2\\sqrt2+\\ln x)=0$ admet :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une seule solution différente de $e^3$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Deux solutions distinctes",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Aucune solution",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une seule solution : $S=\\{e^3\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Trois solutions distinctes",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le domaine impose $\\ln x>2\\sqrt2$. L’équation donne $(\\ln x)^2-8=1$, donc $\\ln x=\\pm3$; seule la valeur $3$ appartient au domaine. Ainsi $S=\\{e^3\\}$.",
+      "answerValidation": {
+        "status": "verified-and-disambiguated",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-f1",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2019 · F.1 · Q1",
+      "officialQuestionCode": "F.1",
+      "prompt": "Le domaine de définition de $f(x)=\\frac{\\ln(4-x^2)}{\\ln(x+1)}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$[2,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$]-1,0[\\,\\cup\\,]0,2[$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$]-1,2[$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$[0,1[$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$[-2,-1]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il faut $4-x^2>0$, $x+1>0$ et $\\ln(x+1)\\ne0$. L’intersection est $]-1,2[\\setminus\\{0\\}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-f2",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2019 · F.2 · Q7",
+      "officialQuestionCode": "F.2",
+      "prompt": "La courbe de $f(x)=\\frac{\\ln(x+1)}{x+e^x}$ admet au point $O(0,0)$ une tangente d’équation :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y=x+1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$y=x$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$y=2x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y=-2x$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$y=x-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $f(0)=0$ et, par dérivation du quotient, $f'(0)=1$. La tangente est donc $y=x$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-f3",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2019 · F.3 · Q14",
+      "officialQuestionCode": "F.3",
+      "prompt": "La courbe de $f(x)=2x+1+\\frac{\\sqrt{4x^2+x-1}}{1-x}$ admet au voisinage de $+\\infty$ une asymptote oblique d’équation :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y=-2x-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$y=2x+1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y=2x-1$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$y=-2x+2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$y=-2x-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Comme $\\frac{\\sqrt{4x^2+x-1}}{1-x}\\to-2$, on obtient $f(x)-(2x-1)\\to0$. L’asymptote est $y=2x-1$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-f4",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2019 · F.4 · Q15",
+      "officialQuestionCode": "F.4",
+      "prompt": "Pour $f(x)=-x^2+\\ln(1+x^2)$, quelle proposition caractérise sa symétrie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$D_f=\\mathbb R$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\lim_{x\\to+\\infty}f(x)=-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f'(0)=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f$ est paire",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$f(0)=1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Comme $f(-x)=-(-x)^2+\\ln(1+(-x)^2)=f(x)$, la fonction est paire : c’est précisément la propriété de symétrie demandée. L’énoncé FMP original contenait aussi d’autres affirmations vraies ; la formulation a été resserrée pour conserver un QCM à réponse unique.",
+      "answerValidation": {
+        "status": "verified-rephrased-for-unique-mcq",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-g1",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l’espace",
+      "sourceReference": "FMP 2019 · G.1 · Q9",
+      "officialQuestionCode": "G.1",
+      "prompt": "Dans un repère orthonormé, on considère $(P):x-z+1=0$, $(Q):x+y+1=0$ et un point $M(x_0,y_0,z_0)$ équidistant de $(P)$ et $(Q)$. Ses coordonnées vérifient :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y_0+z_0=0$ ou $2x_0+y_0-z_0+2=0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y_0+z_0=0$ ou $y_0-z_0=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2x_0+y_0=0$ ou $y_0-z_0=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2x_0+y_0=0$ ou $y_0+z_0=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$y_0-z_0=0$ ou $2x_0+y_0-z_0+2=0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les deux normales ont la même norme. L’équidistance équivaut à $|x_0-z_0+1|=|x_0+y_0+1|$, ce qui donne les deux équations de A.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-i1",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2019 · I.1 · Q6",
+      "officialQuestionCode": "I.1",
+      "prompt": "L’intégrale $\\displaystyle\\int_1^e(\\ln x)(-x+x\\ln x)\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln3$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\dfrac12$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\ln 3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $u=\\ln x$, l’intégrale devient $\\displaystyle \\int_0^1 e^{2u}(u^2-u)\\,du=-\\frac{1}{2}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-l1",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Limites et continuité",
+      "sourceReference": "FMP 2019 · L.1 · Q3",
+      "officialQuestionCode": "L.1",
+      "prompt": "La limite $\\displaystyle\\lim_{x\\to0^+}\\frac{e^x-x^2-1}{x\\sin x}$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le numérateur est équivalent à $x$ et le dénominateur à $x^2$ lorsque $x\\to0^+$. Le quotient est donc équivalent à $\\frac{1}{x}$ et tend vers $+\\infty$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-p1",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "probabilites",
+      "category": "Probabilités et dénombrement",
+      "sourceReference": "FMP 2019 · P.1 · Q10",
+      "officialQuestionCode": "P.1",
+      "prompt": "Une urne contient quatre boules rouges numérotées $1,1,2,2$ et trois boules vertes numérotées $1,1,2$. On tire successivement sans remise deux boules. La probabilité d’obtenir deux numéros différents sachant que les boules ont la même couleur est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\dfrac5{42}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\dfrac2{21}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{10}{42}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\dfrac37$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\dfrac23$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Parmi les $\\binom42+\\binom32=9$ paires de même couleur, $2\\times2+2\\times1=6$ ont des numéros différents. La probabilité conditionnelle vaut $\\frac{6}{9}=\\frac{2}{3}$. Le corrigé PDF indique C, mais cette clé est erronée.",
+      "answerValidation": {
+        "status": "corrected-source-key",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-s1",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2019 · S.1 · Q5",
+      "officialQuestionCode": "S.1",
+      "prompt": "Soit $u_n=\\frac{2^n+n^2}{n^2e^n+1}$. La limite de $(u_n)$ en $+\\infty$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $\\frac{2^n}{e^n}=(\\frac{2}{e})^n\\to0$ et $\\frac{n^2}{(n^2e^n)}=e^{-n}\\to0$. Ainsi $u_n\\to0$. Le corrigé PDF indique B mais se contredit dans son calcul.",
+      "answerValidation": {
+        "status": "corrected-source-key",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2019-s2",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2019 · S.2 · Q12",
+      "officialQuestionCode": "S.2",
+      "prompt": "Pour la suite $u_n=\\dfrac1{\\sqrt{1+n^2}}$, quelle est la valeur de $\\displaystyle\\lim_{n\\to+\\infty}u_n$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La limite n’existe pas",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\displaystyle \\lim_{n\\to+\\infty}u_n=0$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Lorsque $n\\to+\\infty$, on a $\\sqrt{1+n^2}\\to+\\infty$. Son inverse tend donc vers $0$. Les affirmations « minorée » et « $u_n\\le1$ » de la version FMP originale étaient elles aussi vraies : la question a été reformulée sur la limite pour obtenir une réponse unique.",
+      "answerValidation": {
+        "status": "verified-rephrased-for-unique-mcq",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    }
+  ],
+  "school": "medecine",
+  "year": "2019",
+  "title": "Concours Médecine 2019 — banque enrichie et annales FMP"
+}

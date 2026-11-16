@@ -1,0 +1,64 @@
+{
+  "id": "ex-func-003",
+  "theme": "suites",
+  "difficulty": "facile",
+  "topic": "Fonctions & Suites",
+  "context": "On considère la fonction $f(x) = \\sqrt{x+6}$ et la suite $(u_n)$ définie par $u_0 = 2$ et $u_{n+1} = \\sqrt{6+u_n}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Variations de $f$",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Donner le tableau de variation de $f$.",
+          "hint": "La fonction $x \\mapsto x+6$ est croissante sur $[-6, +\\infty[$. La fonction racine carrée est croissante sur $\\R^+$.\n\\conclusion Par composition, $f$ est strictement croissante sur son domaine de définition $[-6, +\\infty[$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Image d'intervalle",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Déterminer $f(I)$ avec $I=[0, 3]$.",
+          "hint": "$f$ étant continue et croissante : $f([0,3]) = [f(0), f(3)]$. \nf(0) = \\sqrt{6} \\approx 2{,}45, \\quad f(3) = \\sqrt{9} = 3\n\\conclusion Donc $f(I) = [\\sqrt{6}, 3]$. Comme $\\sqrt{6} > 0$, on remarque que $f(I) \\subset I$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Étude de la suite $(u_n)$",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que $\\forall n \\in \\N, 0 \\le u_n \\le 3$.",
+          "hint": "\\method Par récurrence. $u_0 = 2 \\in [0,3]$. Si $u_n \\in [0,3]$, alors $u_{n+1} = f(u_n) \\in f([0,3]) \\subset [0,3]$ (d'après Q2)."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que la suite $(u_n)$ est croissante.",
+          "hint": "On peut faire une récurrence ou utiliser le fait que $f(x) \\ge x$ sur $[2, 3]$. Vérifions $u_1$ : $u_1 = \\sqrt{8} \\approx 2{,}82 > u_0$.\nSupposons $u_{n+1} \\ge u_n$. Comme $f$ est croissante, $f(u_{n+1}) \\ge f(u_n) \\implies u_{n+2} \\ge u_{n+1}$.\n\\conclusion La suite est croissante."
+        },
+        {
+          "id": "sq3c",
+          "content": "Convergence",
+          "hint": "\\conclusion La suite est croissante et majorée par 3, donc elle est convergente vers une limite $\\ell$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Limite",
+      "subQuestions": [
+        {
+          "id": "sq4",
+          "content": "Déterminer la limite de la suite.",
+          "hint": "La limite $\\ell$ vérifie $\\ell = f(\\ell)$ car $f$ est continue.\n\\ell = \\sqrt{\\ell + 6} \\implies \\ell^2 = \\ell + 6 \\implies \\ell^2 - \\ell - 6 = 0\nLes racines sont $\\ell = -2$ (rejeté car $\\ell \\ge 0$) et $\\ell = 3$.\n\\conclusion Donc $\\lim u_n = 3$."
+        }
+      ]
+    }
+  ]
+}

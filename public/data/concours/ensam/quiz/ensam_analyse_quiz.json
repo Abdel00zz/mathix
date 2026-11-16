@@ -1,0 +1,454 @@
+{
+  "questions": [
+    {
+      "id": "ensam-an-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "prompt": "La limite $\\displaystyle\\lim_{x \\to 0} \\frac{e^{\\sin x} - 1}{x}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$e$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{e}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Équivalents : $\\sin x \\sim x$ en $0$, puis $e^u - 1 \\sim u$ en $0$. Donc $\\frac{e^{\\sin x}-1}{x} \\sim \\frac{x}{x} = 1$."
+    },
+    {
+      "id": "ensam-an-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "prompt": "Soit $f(x) = (\\ln x)^2$. L'équation $f'(x) = 0$ a pour solution :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x = e$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x = e^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x = \\frac{1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f'(x) = \\frac{2\\ln x}{x}$. $f'(x) = 0 \\Leftrightarrow \\ln x = 0 \\Leftrightarrow x = 1$. Le facteur $1/x > 0$ pour $x > 0$."
+    },
+    {
+      "id": "ensam-an-03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "prompt": "La limite de $u_n = \\frac{n^2+3n}{n^2-1}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On divise par $n^2$ : $u_n = \\frac{1+3/n}{1-1/n^2} \\to 1$. Technique systématique pour les quotients de polynômes de même degré."
+    },
+    {
+      "id": "ensam-an-04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "La valeur de $\\displaystyle\\int_0^{\\ln 2} e^{2x}\\,dx$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{3}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\left[\\frac{e^{2x}}{2}\\right]_0^{\\ln 2} = \\frac{e^{2\\ln 2}}{2} - \\frac{1}{2} = \\frac{4}{2} - \\frac{1}{2} = \\frac{3}{2}$. On utilise $e^{2\\ln 2} = 4$."
+    },
+    {
+      "id": "ensam-an-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Continuité",
+      "prompt": "La fonction $f(x) = \\frac{|x|}{x}$ est continue sur :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathbb{R}^*$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb{R}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\mathbb{R}^+$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$]-\\infty, 0]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(x)=1$ si $x>0$, $f(x)=-1$ si $x<0$. Continue sur chaque demi-droite. En $0$ : $\\displaystyle \\lim_{0^-}=-1 \\neq 1=\\lim_{0^+}$, discontinuité de saut."
+    },
+    {
+      "id": "ensam-an-06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Exponentielle",
+      "prompt": "L'ensemble des solutions de $e^{2x} - 3e^x + 2 \\leq 0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$[0, \\ln 2]$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$]-\\infty, \\ln 2]$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{0, \\ln 2\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$[\\ln 2, +\\infty[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $t = e^x > 0$. $(t-1)(t-2) \\leq 0 \\Rightarrow 1 \\leq t \\leq 2$, soit $0 \\leq x \\leq \\ln 2$. Substitution classique pour les inéquations exponentielles."
+    },
+    {
+      "id": "ensam-an-07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "prompt": "La tangente à $y = e^x$ au point d'abscisse $0$ a pour équation :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = x + 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = ex$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = e + x$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(0)=1$, $f'(0)=1$. Tangente : $y = f'(0)(x-0) + f(0) = x+1$."
+    },
+    {
+      "id": "ensam-an-08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Equations différentielles",
+      "prompt": "La solution de $y' = 2y$ vérifiant $y(0) = 5$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = 5e^{2x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = 2e^{5x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = 5e^{-2x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = e^{10x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Solution générale : $y = Ce^{2x}$. $y(0) = C = 5$, donc $y = 5e^{2x}$. ED linéaire du premier ordre à coefficients constants."
+    },
+    {
+      "id": "ensam-an-09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "$\\displaystyle\\int_1^e \\frac{\\ln x}{x}\\,dx$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $u = \\ln x$, $du = dx/x$. Bornes : $0 \\to 1$. $\\displaystyle I = \\int_0^1 u\\,du = [u^2/2]_0^1 = 1/2$."
+    },
+    {
+      "id": "ensam-an-10",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "prompt": "$(u_n)$ géométrique de raison $q = 2/3$ et $u_0 = 9$. $\\displaystyle \\sum_{k=0}^{+\\infty} u_k$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$27$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$9$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$18$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Diverge",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|q| < 1$ donc convergence. $S = \\frac{u_0}{1-q} = \\frac{9}{1/3} = 27$. Formule des séries géométriques."
+    },
+    {
+      "id": "ensam-an-11",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Logarithme",
+      "prompt": "L'ensemble des solutions de $\\ln(x-1) + \\ln(x+1) < \\ln 3$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]1, 2[$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$]-2, 2[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$]0, 2[$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$]1, +\\infty[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Domaine : $x > 1$. $\\ln(x^2-1) < \\ln 3 \\Rightarrow x^2 < 4 \\Rightarrow x < 2$. Intersection : $x \\in ]1, 2[$."
+    },
+    {
+      "id": "ensam-an-12",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "La primitive de $\\ln x$ sur $]0,+\\infty[$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x\\ln x - x + C$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{x} + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{(\\ln x)^2}{2} + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x\\ln x + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "IPP avec $u = \\ln x$, $v' = 1$ : $\\displaystyle \\int \\ln x\\,dx = x\\ln x - x + C$. Vérification : $(x\\ln x - x)' = \\ln x$."
+    },
+    {
+      "id": "ensam-an-13",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "prompt": "$\\displaystyle\\lim_{x \\to +\\infty} x(e^{1/x} - 1)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$e$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $t = 1/x \\to 0^+$. On obtient $\\frac{e^t-1}{t} \\to 1$. C'est le taux d'accroissement de $e^x$ en $0$."
+    },
+    {
+      "id": "ensam-an-14",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "Soit $\\displaystyle F(x) = \\int_0^x \\frac{dt}{1+t^2}$. La valeur de $F(1)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\arctan 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$F(x) = \\arctan x$, donc $F(1) = \\arctan 1 = \\pi/4$. Primitive immédiate de $1/(1+t^2)$."
+    },
+    {
+      "id": "ensam-an-15",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Exponentielle",
+      "prompt": "$f(x) = xe^{-x}$ atteint son maximum sur $[0,+\\infty[$ en :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 1$, avec $f(1) = 1/e$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x = 0$, avec $f(0) = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x = e$, avec $f(e) = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Pas de maximum",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f'(x) = (1-x)e^{-x}$. $f'>0$ sur $]0,1[$, $f'<0$ sur $]1,+\\infty[$. Maximum en $x=1$ : $f(1)=1/e$."
+    }
+  ]
+}

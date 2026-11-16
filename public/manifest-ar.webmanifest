@@ -1,0 +1,32 @@
+{
+  "id": "/monprof-pwa",
+  "name": "تعلم بذكاء",
+  "short_name": "تعلم بذكاء",
+  "description": "منصة تفاعلية لتعلم الرياضيات بالمغرب.",
+  "theme_color": "#f5f0e8",
+  "background_color": "#f5f0e8",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["education", "productivity"],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "لوحة المتابعة",
+      "short_name": "الواجهة",
+      "url": "/",
+      "icons": [{ "src": "/icone-ar.png", "sizes": "1254x1254" }]
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icone-ar.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "ch05-ex06",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "chapter": "05 - Congruence modulo n ; l'ensemble Z/nZ et opérations",
+  "topic": "Congruences - Équations et systèmes dans Z/nZ",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Résoudre dans $\\mathbb{Z}$ : $2x \\equiv 3\\ [6]$.",
+      "hint": "Une congruence $ax \\equiv b\\ [n]$ a des solutions si et seulement si $a \\wedge n$ divise $b$. Vérifiez d'abord cette condition avant de chercher les solutions."
+    },
+    {
+      "id": "q2",
+      "content": "Résoudre dans $\\mathbb{Z}/5\\mathbb{Z} = \\{\\bar{0} ; \\bar{1} ; \\bar{2} ; \\bar{3} ; \\bar{4}\\}$ les équations : $(E_1) : \\bar{4}x - \\bar{3} = \\bar{0}$ et $(E_2) : x^2 - x - \\bar{2} = \\bar{0}$.",
+      "hint": "Pour $(E_1)$ : isolez $x$ en multipliant par l'inverse de $\\bar{4}$ dans $\\mathbb{Z}/5\\mathbb{Z}$ (quel élément fois $\\bar{4}$ donne $\\bar{1}$ ?). Pour $(E_2)$ : testez les $5$ éléments $\\bar{0}, \\bar{1}, \\bar{2}, \\bar{3}, \\bar{4}$ un par un."
+    },
+    {
+      "id": "q3",
+      "content": "Résoudre dans $(\\mathbb{Z}/5\\mathbb{Z})^2$ le système suivant : $(S) : \\begin{cases} \\bar{3}x + \\bar{2}y = \\bar{1} \\\\ \\bar{2}x + \\bar{4}y = \\bar{3} \\end{cases}$.",
+      "hint": "Utilisez la méthode d'élimination dans $\\mathbb{Z}/5\\mathbb{Z}$. Multipliez la première équation par $\\bar{2}$ et la seconde par $\\bar{3}$, puis soustrayez pour éliminer $x$. Tous les calculs se font modulo $5$."
+    },
+    {
+      "id": "q4",
+      "content": "Résoudre dans $\\mathbb{Z}/31\\mathbb{Z}$ l'équation : $x^2 + \\bar{33}x - \\bar{3} = \\bar{0}$.",
+      "hint": "Réduisez d'abord $\\bar{33}$ modulo $31$. Cherchez ensuite deux éléments $\\bar{r}$ et $\\bar{s}$ de $\\mathbb{Z}/31\\mathbb{Z}$ tels que $\\bar{r} + \\bar{s} = -\\bar{33}$ et $\\bar{r} \\cdot \\bar{s} = -\\bar{3}$ (factorisation)."
+    },
+    {
+      "id": "q5",
+      "content": "Déterminer le plus petit entier naturel $p$ tel que : $p \\geq 3$ et le reste de la division euclidienne de $p$ par $12$ et par $18$ sont égaux à $3$.",
+      "hint": "Les conditions signifient $p \\equiv 3\\ [12]$ et $p \\equiv 3\\ [18]$, soit $12 / p-3$ et $18 / p-3$. Donc $\\text{ppcm}(12, 18) / p - 3$. Calculez ce PPCM, puis cherchez le plus petit $p \\geq 3$."
+    }
+  ]
+}

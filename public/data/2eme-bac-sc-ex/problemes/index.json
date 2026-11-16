@@ -1,0 +1,20 @@
+{
+  "classId": "2eme-bac-sc-ex",
+  "title": "Problèmes — 2ème Bac Sciences Expérimentales",
+  "themes": [
+    { "id": "denombrement", "name": "Dénombrement" },
+    { "id": "probabilites", "name": "Probabilités" },
+    { "id": "suites", "name": "Suites" },
+    { "id": "analyse", "name": "Analyse" }
+  ],
+  "problemes": [
+    {
+      "id": "prob-empreintes",
+      "title": "Avez-vous les mêmes empreintes qu'un autre ?",
+      "subtitle": "Problème 2.1 — Empreintes digitales",
+      "theme": "denombrement",
+      "difficulty": "moyen",
+      "path": "data/2eme-bac-sc-ex/problemes/prob_empreintes.json"
+    }
+  ]
+}

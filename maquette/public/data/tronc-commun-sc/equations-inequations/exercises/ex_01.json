@@ -1,0 +1,20 @@
+{
+  "id": "ex-eq-tc-01",
+  "theme": "equations-inequations",
+  "difficulty": "facile",
+  "topic": "Équations, inéquations et systèmes",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Équation du second degré",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Résoudre dans $\\mathbb{R}$ l'équation : $2x^2 - 5x + 3 = 0$.",
+          "hint": "\\method Calculez le discriminant $\\Delta = b^2 - 4ac$. S'il est positif, appliquez les formules $x_1, x_2 = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ex-produit-scalaire-01",
+  "theme": "produit-scalaire",
+  "difficulty": "difficile",
+  "topic": "Produit Scalaire",
+  "context": "Soit un triangle $ABC$ équilatéral de côté $a$. Soit $I$ le milieu de $[BC]$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculs",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Calculer $\\overrightarrow{AB} \\cdot \\overrightarrow{AC}$.",
+          "hint": "Le triangle est équilatéral, donc $\\hat{A} = \\frac{\\pi}{3}$.\n$\\overrightarrow{AB} \\cdot \\overrightarrow{AC} = AB \\times AC \\times \\cos(\\frac{\\pi}{3}) = a \\times a \\times \\frac{1}{2} = \\frac{a^2}{2}$."
+        },
+        {
+          "id": "sq2",
+          "content": "Calculer $\\overrightarrow{AI} \\cdot \\overrightarrow{BC}$.",
+          "hint": "Dans un triangle équilatéral, la médiane $[AI]$ est aussi hauteur.\nDonc $(AI) \\perp (BC)$.\n\\conclusion Le produit scalaire est nul : $\\overrightarrow{AI} \\cdot \\overrightarrow{BC} = 0$."
+        }
+      ]
+    }
+  ]
+}

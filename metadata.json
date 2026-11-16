@@ -1,0 +1,8 @@
+{
+  "name": "monProf",
+  "description": "A focused, progressive disclosure mathematics learning platform inspired by active recall principles. Features AI-generated exercises and interactive steps.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "id": "ex-log-005",
+  "theme": "logarithmes",
+  "difficulty": "moyen",
+  "topic": "Analyse - Fonctions logarithmes, primitives et suites",
+  "context": "On considère la fonction $f$ définie sur l'intervalle $[0;+\\infty[$ par : $$\\begin{cases} f(x) = x - x^2 \\ln(x) & , x > 0 \\\\ f(0) = 0 \\end{cases}$$ On note $(C_f)$ sa courbe représentative dans un repère orthonormé $(O,\\overrightarrow{i},\\overrightarrow{j})$ d'unité $2$ cm.",
+  "requiresRedaction": true,
+  "sessionDate": "2025-12-25T20:00:00.000Z",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $f$ est continue à droite en $0$.",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "",
+          "hint": "Pour montrer la **continuité à droite** en $0$, il faut vérifier que $\\color{blue}{\\displaystyle \\lim_{x \\to 0^+} f(x) = f(0) = 0}$. Calculez $\\displaystyle \\lim_{x \\to 0^+} (x - x^2 \\ln x)$ en factorisant par $x$ : $x(1 - x \\ln x)$. Utilisez le résultat classique $\\color{blue}{\\lim_{x \\to 0^+} x \\ln x = 0}$ (croissances comparées)."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que $f$ est dérivable à droite en $0$.",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "",
+          "hint": "Calculez le **taux d'accroissement** à droite : $\\color{blue}{\\displaystyle \\lim_{x \\to 0^+} \\frac{f(x) - f(0)}{x - 0} = \\lim_{x \\to 0^+} \\frac{x - x^2 \\ln x}{x}}$. Simplifiez en $1 - x \\ln x$. Utilisez encore que $\\color{blue}{\\lim_{x \\to 0^+} x \\ln x = 0}$ pour conclure que la limite vaut $1$, donc $f$ est **dérivable à droite** en $0$ avec $f'_d(0) = 1$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que la courbe $(C_f)$ présente une branche parabolique au voisinage de $+\\infty$ dont on précisera la direction.",
+      "subQuestions": [
+        {
+          "id": "sq3",
+          "content": "",
+          "hint": "Calculez d'abord $\\color{blue}{\\displaystyle \\lim_{x \\to +\\infty} f(x)}$ : factorisez $f(x) = x(1 - x \\ln x)$. Puis calculez $\\color{blue}{\\displaystyle \\lim_{x \\to +\\infty} \\frac{f(x)}{x}}$ : cela donne $1 - x \\ln x \\to -\\infty$. Enfin, comme cette limite est **infinie**, la courbe admet une **branche parabolique de direction** l'axe des ordonnées (direction verticale)."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Montrer que pour tout $x$ de $]0; +\\infty[$ : $f'(x) = 1 - x - 2x \\ln(x)$.",
+          "hint": "Dérivez $f(x) = x - x^2 \\ln x$ en utilisant $\\color{blue}{(uv)' = u'v + uv'}$ pour le terme $x^2 \\ln x$. On a : $(x^2 \\ln x)' = 2x \\ln x + x^2 \\cdot \\frac{1}{x} = 2x \\ln x + x$. Donc $f'(x) = 1 - (2x \\ln x + x)$. Simplifiez pour obtenir le résultat."
+        },
+        {
+          "id": "sq4b",
+          "content": "Déduire que $f$ est strictement croissante sur $]0; 1[$ et qu'elle est strictement décroissante sur $]1; +\\infty[$.",
+          "hint": "Étudiez le **signe de $f'(x) = 1 - x - 2x \\ln x$**. Posez $g(x) = f'(x)$ et calculez $g(1) = 1 - 1 - 0 = 0$. Montrez que $\\color{blue}{g'(x) = -1 - 2\\ln x - 2}$, puis étudiez son signe : $g'(x) < 0$ sur $]0; 1[$ et $g'(x) < 0$ sur $]1; +\\infty[$. Donc $f'(x) > 0$ sur $]0; 1[$ (fonction **strictement croissante**) et $f'(x) < 0$ sur $]1; +\\infty[$ (fonction **strictement décroissante**)."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Dresser le tableau de variations de $f$ sur $[0; +\\infty[$.",
+      "subQuestions": [
+        {
+          "id": "sq5",
+          "content": "",
+          "hint": "Utilisez les résultats précédents : **continuité** et **dérivabilité** à droite en $0$, **monotonie** sur $]0; 1[$ et $]1; +\\infty[$. Calculez $\\color{blue}{f(1) = 1 - 1^2 \\ln 1 = 1}$ (valeur du **maximum**). Indiquez les limites : $f(0) = 0$, $\\lim_{x \\to +\\infty} f(x) = -\\infty$. Précisez $f'_d(0) = 1$ (pente de la tangente à droite)."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "Montrer que l'équation $f(x) = 0$ admet une seule solution $\\alpha$ dans $]\\sqrt{e}; 2[$.",
+      "subQuestions": [
+        {
+          "id": "sq6",
+          "content": "",
+          "hint": "Utilisez le **théorème des valeurs intermédiaires** (TVI). La fonction $f$ est **continue** et **strictement décroissante** sur $]1; +\\infty[$. Calculez $\\color{blue}{f(\\sqrt{e})}$ et $\\color{blue}{f(2)}$ : vérifiez que $f(\\sqrt{e}) > 0$ et $f(2) < 0$. Comme $f$ change de signe et est strictement monotone, il existe une **unique** solution $\\alpha$ dans $]\\sqrt{e}; 2[$."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq7a",
+          "content": "Donner une équation cartésienne de $(T)$ la demi-tangente à la courbe $(C_f)$ au point d'abscisse $0$.",
+          "hint": "La **demi-tangente** en $0$ a pour pente $\\color{blue}{f'_d(0) = 1}$ (calculé à la question 2) et passe par le point $\\color{blue}{(0, f(0)) = (0, 0)}$. L'équation de la tangente est donc : $\\color{blue}{y = f'_d(0) \\cdot x = x}$, soit $(T) : y = x$ pour $x \\geq 0$."
+        },
+        {
+          "id": "sq7b",
+          "content": "Montrer que : $(\\forall x \\in ]0; 1[)$ $0 < -x^2 \\ln(x)$, et que : $(\\forall x \\in ]1; +\\infty[)$ $-x^2 \\ln(x) < 0$.",
+          "hint": "Étudiez le **signe de $-x^2 \\ln x$**. Le signe dépend uniquement de $\\color{blue}{\\ln x}$ (car $-x^2 < 0$). Sur $]0; 1[$, on a $\\ln x < 0$ donc $-x^2 \\ln x > 0$. Sur $]1; +\\infty[$, on a $\\ln x > 0$ donc $-x^2 \\ln x < 0$."
+        },
+        {
+          "id": "sq7c",
+          "content": "En déduire la position relative de la courbe $(C_f)$ et la demi droite $(T)$ sur $[0; +\\infty[$.",
+          "hint": "Calculez $\\color{blue}{f(x) - x = (x - x^2 \\ln x) - x = -x^2 \\ln x}$. D'après la question précédente : sur $]0; 1[$, $f(x) - x > 0$ donc $(C_f)$ est **au-dessus** de $(T)$. Sur $]1; +\\infty[$, $f(x) - x < 0$ donc $(C_f)$ est **en dessous** de $(T)$. Le point $(1, 1)$ est un **point d'intersection**."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "content": "Construire la courbe $(C_f)$ et la demi-droite $(T)$ dans le repère $(O,\\overrightarrow{i},\\overrightarrow{j})$.",
+      "subQuestions": [
+        {
+          "id": "sq8",
+          "content": "",
+          "hint": "**Éléments à placer sur le graphe :**\n\n• **Origine** $O(0, 0)$ avec demi-tangente de pente $1$ (car $f'_d(0) = 1$)\n\n• **Maximum** en $A(1, 1)$ avec tangente horizontale\n\n• **Demi-droite** $(T)$ : $y = x$ pour $x \\geq 0$\n\n• **Position relative** : $(C_f)$ au-dessus de $(T)$ sur $]0, 1[$, en dessous sur $]1, +\\infty[$\n\n• **Zéro** $\\alpha \\in ]\\sqrt{e}, 2[$ où $(C_f)$ coupe $(Ox)$\n\n• **Branche parabolique** de direction $(Oy)$ vers $-\\infty$\n"
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq9a",
+          "content": "Montrer que la fonction $x \\longmapsto \\dfrac{1}{3}x^3 \\ln(x) - \\dfrac{1}{9}x^3$ est une primitive sur $]0; +\\infty[$ de la fonction $x \\longmapsto x^2 \\ln(x)$.",
+          "hint": "Dérivez $F(x) = \\frac{1}{3}x^3 \\ln x - \\frac{1}{9}x^3$ en utilisant la **dérivée d'un produit** : $\\color{blue}{(\\frac{1}{3}x^3 \\ln x)' = \\frac{1}{3} \\cdot 3x^2 \\ln x + \\frac{1}{3}x^3 \\cdot \\frac{1}{x} = x^2 \\ln x + \\frac{1}{3}x^2}$. Ensuite : $F'(x) = x^2 \\ln x + \\frac{1}{3}x^2 - \\frac{1}{3}x^2 = x^2 \\ln x$. Donc $F$ est bien une **primitive** de $x^2 \\ln x$."
+        },
+        {
+          "id": "sq9b",
+          "content": "Déterminer la primitive de $f$ sur $]0; +\\infty[$ qui s'annule en $1$.",
+          "hint": "Une primitive de $f(x) = x - x^2 \\ln x$ est $\\color{blue}{F(x) = \\frac{x^2}{2} - (\\frac{1}{3}x^3 \\ln x - \\frac{1}{9}x^3)}$ (d'après la question précédente). La primitive générale est $F(x) + C$. Pour qu'elle s'annule en $1$, imposez $\\color{blue}{F(1) + C = 0}$. Calculez $F(1)$ et déduisez $C$."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "content": "On considère la suite $(u_n)$ définie par : $u_0 = \\dfrac{1}{2}$ et $u_{n+1} = f(u_n)$, $n \\geq 0$",
+      "subQuestions": [
+        {
+          "id": "sq10a",
+          "content": "Montrer que pour tout $n$ de $\\mathbb{N}$ : $0 < u_n \\leq 1$.",
+          "hint": "**Raisonnement par récurrence**. (1) **Initialisation** : $u_0 = \\frac{1}{2} \\in ]0; 1]$. (2) **Hérédité** : Supposons $0 < u_n \\leq 1$. Comme $f$ est croissante sur $]0; 1]$ avec $\\color{blue}{f(0^+) = 0}$ et $\\color{blue}{f(1) = 1}$, on a $0 < f(u_n) \\leq 1$, soit $0 < u_{n+1} \\leq 1$."
+        },
+        {
+          "id": "sq10b",
+          "content": "Montrer que la suite $(u_n)$ est croissante.",
+          "hint": "Étudiez le signe de $\\color{blue}{u_{n+1} - u_n = f(u_n) - u_n}$. D'après la question 7c, sur $]0; 1[$, on a $f(x) - x > 0$. Comme $u_n \\in ]0; 1]$, on a $f(u_n) - u_n \\geq 0$, donc $u_{n+1} \\geq u_n$. La suite est **croissante**."
+        },
+        {
+          "id": "sq10c",
+          "content": "En déduire que $(u_n)$ est convergente, et déterminer sa limite.",
+          "hint": "La suite $(u_n)$ est **croissante** et **majorée** par $1$ (question 10a), donc elle est **convergente** (théorème de la convergence monotone). Soit $\\ell$ sa limite. Par continuité de $f$, on a $\\color{blue}{\\ell = f(\\ell)}$, c'est-à-dire $\\ell = \\ell - \\ell^2 \\ln \\ell$. Simplifiez : $\\ell^2 \\ln \\ell = 0$. Comme $\\ell > 0$, on a $\\ln \\ell = 0$, donc $\\color{blue}{\\ell = 1}$."
+        }
+      ]
+    }
+  ]
+}

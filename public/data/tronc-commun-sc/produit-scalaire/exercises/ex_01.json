@@ -1,0 +1,20 @@
+{
+  "id": "ex-scal-tc-01",
+  "theme": "produit-scalaire",
+  "difficulty": "facile",
+  "topic": "Le produit scalaire",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calcul analytique",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans un repère orthonormé, on donne $\\overrightarrow{u}(2, -3)$ et $\\overrightarrow{v}(4, 1)$. Calculer $\\overrightarrow{u} \\cdot \\overrightarrow{v}$, puis déterminer si les vecteurs sont orthogonaux.",
+          "hint": "\\method Utilisez l'expression analytique du produit scalaire : $\\overrightarrow{u} \\cdot \\overrightarrow{v} = xx' + yy'$. Deux vecteurs sont orthogonaux si leur produit scalaire est nul."
+        }
+      ]
+    }
+  ]
+}

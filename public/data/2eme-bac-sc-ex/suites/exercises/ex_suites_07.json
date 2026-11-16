@@ -1,0 +1,44 @@
+{
+  "id": "ex-suites-007",
+  "theme": "suites",
+  "difficulty": "difficile",
+  "topic": "Suites numériques",
+  "context": "On considère la suite numérique $(u_n)_{n \\in \\mathbb{N}}$ définie par $u_0 = 1$ et pour tout $n \\in \\mathbb{N}$ : $u_{n+1} = \\displaystyle\\frac{7u_n + 6}{u_n + 2}$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $(\\forall n \\in \\mathbb{N})$ : $0 < u_n < 6$.",
+      "hint": "**Par récurrence :**\\par\\par• **Initialisation :** $u_0 = 1$, donc $0 < 1 < 6$. Vrai pour $n = 0$.\\par\\par• **Hérédité :** Supposons $0 < u_n < 6$ pour un certain $n \\in \\mathbb{N}$.\\par\\parMontrons que $0 < u_{n+1} < 6$.\\par\\parComme $u_n > 0$, on a $u_n + 2 > 0$ et $7u_n + 6 > 0$, donc $u_{n+1} = \\displaystyle\\frac{7u_n + 6}{u_n + 2} > 0$.\\par\\par$$u_{n+1} - 6 = \\frac{7u_n + 6}{u_n + 2} - 6 = \\frac{7u_n + 6 - 6u_n - 12}{u_n + 2} = \\frac{u_n - 6}{u_n + 2}$$\\par\\parComme $u_n < 6$, on a $u_n - 6 < 0$ et $u_n + 2 > 0$, donc $u_{n+1} - 6 < 0$, soit $u_{n+1} < 6$.\\par\\par**Conclusion :** $(\\forall n \\in \\mathbb{N})$ : $\\boxed{0 < u_n < 6}$."
+    },
+    {
+      "id": "q2",
+      "content": "Étudier la monotonie de la suite $(u_n)_{n \\in \\mathbb{N}}$.",
+      "hint": "Calculons $u_{n+1} - u_n$ :\\par\\par$$u_{n+1} - u_n = \\frac{7u_n + 6}{u_n + 2} - u_n = \\frac{7u_n + 6 - u_n(u_n + 2)}{u_n + 2}$$\\par$$= \\frac{7u_n + 6 - u_n^2 - 2u_n}{u_n + 2} = \\frac{-u_n^2 + 5u_n + 6}{u_n + 2}$$\\par$$= \\frac{-(u_n^2 - 5u_n - 6)}{u_n + 2} = \\frac{-(u_n - 6)(u_n + 1)}{u_n + 2}$$\\par\\parComme $0 < u_n < 6$ :\\par- $u_n - 6 < 0$\\par- $u_n + 1 > 0$\\par- $u_n + 2 > 0$\\par\\parDonc $$u_{n+1} - u_n = \\frac{-(-)\\times(+)}{(+)} = \\frac{(+)}{(+)} > 0$$.\\par\\par**Conclusion :** La suite $(u_n)$ est $\\boxed{\\text{strictement croissante}}$."
+    },
+    {
+      "id": "q3",
+      "content": "Soit $(v_n)_{n \\in \\mathbb{N}}$ la suite numérique définie par : $(\\forall n \\in \\mathbb{N})$ $v_n = \\displaystyle\\frac{u_n - 6}{u_n + 1}$. Montrer que $(v_n)$ est une suite géométrique.",
+      "hint": "Calculons $v_{n+1}$ :\\par$$v_{n+1} = \\frac{u_{n+1} - 6}{u_{n+1} + 1} = \\frac{\\frac{7u_n + 6}{u_n + 2} - 6}{\\frac{7u_n + 6}{u_n + 2} + 1}$$\\par\\par$$= \\frac{\\frac{7u_n + 6 - 6(u_n + 2)}{u_n + 2}}{\\frac{7u_n + 6 + u_n + 2}{u_n + 2}} = \\frac{7u_n + 6 - 6u_n - 12}{8u_n + 8}$$\\par\\par$$= \\frac{u_n - 6}{8(u_n + 1)} = \\frac{1}{8} \\cdot \\frac{u_n - 6}{u_n + 1} = \\frac{1}{8} v_n$$\\par\\parDonc $(v_n)$ est une suite géométrique de raison $q = \\displaystyle\\frac{1}{8}$.\\par\\parPremier terme : $v_0 = \\displaystyle\\frac{u_0 - 6}{u_0 + 1} = \\displaystyle\\frac{1-6}{1+1} = -\\displaystyle\\frac{5}{2}$."
+    },
+    {
+      "id": "q4",
+      "content": "Déterminer $v_n$ puis $u_n$ en fonction de $n$.",
+      "hint": "**Expression de $v_n$ :**\\par$$v_n = v_0 \\cdot q^n = -\\frac{5}{2} \\cdot \\left(\\frac{1}{8}\\right)^n = \\boxed{-\\frac{5}{2^{3n+1}}}$$\\par\\par**Expression de $u_n$ :**\\parDe $v_n = \\displaystyle\\frac{u_n - 6}{u_n + 1}$, on tire :\\par$$v_n(u_n + 1) = u_n - 6 \\iff v_n u_n + v_n = u_n - 6$$\\par$$v_n + 6 = u_n - v_n u_n = u_n(1 - v_n) \\iff u_n = \\frac{v_n + 6}{1 - v_n}$$\\par\\parEn remplaçant $v_n$ :\\par$$u_n = \\frac{-\\frac{5}{2^{3n+1}} + 6}{1 + \\frac{5}{2^{3n+1}}} = \\frac{\\frac{-5 + 6 \\cdot 2^{3n+1}}{2^{3n+1}}}{\\frac{2^{3n+1} + 5}{2^{3n+1}}} = \\boxed{\\frac{6 \\cdot 2^{3n+1} - 5}{2^{3n+1} + 5}}$$"
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que $(\\forall n \\in \\mathbb{N})$ : $|u_{n+1} - 6| = \\displaystyle\\frac{1}{2}|u_n - 6|$ (relation approchée).",
+      "hint": "D'après les calculs précédents :\\par$$u_{n+1} - 6 = \\frac{u_n - 6}{u_n + 2}$$\\par\\parComme $0 < u_n < 6$, on a $2 < u_n + 2 < 8$.\\par\\par**Note :** La relation donnée est un encadrement ou une simplification. En effet, :\\par\\par$$|u_{n+1} - 6| = \\frac{|u_n - 6|}{u_n + 2}$$\\par\\parPuisque $u_n + 2 > 2$, alors $\\displaystyle\\frac{1}{u_n+2} < \\displaystyle\\frac{1}{2}$, d'où :\\par$$|u_{n+1} - 6| \\le \\frac{1}{2}|u_n - 6|$$"
+    },
+    {
+      "id": "q6",
+      "content": "En déduire que $(\\forall n \\in \\mathbb{N})$ : $|u_n - 6| \\le 5\\left(\\displaystyle\\frac{1}{2}\\right)^n$ et trouver la limite de $(u_n)$.",
+      "hint": "Cette relation découle de la question précédente par récurrence :\\par\\par$|u_0 - 6| = |1 - 6| = 5 \\le 5 \\cdot \\left(\\displaystyle\\frac{1}{2}\\right)^0$ (vrai)\\par\\parSi $|u_n - 6| \\le 5\\left(\\displaystyle\\frac{1}{2}\\right)^n$, alors :\\par$$|u_{n+1} - 6| \\le \\frac{1}{2}|u_n - 6| \\le \\frac{1}{2} \\cdot 5\\left(\\frac{1}{2}\\right)^n = 5\\left(\\frac{1}{2}\\right)^{n+1}$$\\par\\parDonc $\\boxed{|u_n - 6| \\le \\frac{5}{2^n}}$ pour tout $n \\in \\mathbb{N}$.\\par\\parPuisque $\\displaystyle\\lim_{n \\to +\\infty} \\frac{5}{2^n} = 0$, on en déduit par comparaison que :\\par$$\\lim_{n \\to +\\infty} u_n = 6$$"
+    },
+    {
+      "id": "q7",
+      "content": "On pose $S_n = \\displaystyle\\sum_{k=0}^{n} v_k$ et $T_n = \\displaystyle\\sum_{k=0}^{n} \\displaystyle\\frac{7}{u_k + 1}$. Déterminer $S_n$ et l'expression de $T_n$ en fonction de $n$.",
+      "hint": "**Calcul de $S_n$ :**\\par$(v_n)$ est géométrique de raison $q = \\displaystyle\\frac{1}{8}$ et de premier terme $v_0 = -\\displaystyle\\frac{5}{2}$.\\par\\par$$S_n = v_0 \\cdot \\frac{1 - q^{n+1}}{1 - q} = -\\frac{5}{2} \\cdot \\frac{1 - \\frac{1}{8^{n+1}}}{1 - \\frac{1}{8}}$$\\par$$= -\\frac{5}{2} \\cdot \\frac{8}{7} \\cdot \\left(1 - \\frac{1}{8^{n+1}}\\right) = \\boxed{-\\frac{20}{7}\\left(1 - \\frac{1}{8^{n+1}}\\right)}$$\\par\\par**Calcul de $T_n$ :**\\parOn remarque d'après les définitions de $v_k$ :\n$$v_k = \\frac{u_k - 6}{u_k + 1} = \\frac{u_k + 1 - 7}{u_k + 1} = 1 - \\frac{7}{u_k + 1}$$\\par\nD'où $$\\frac{7}{u_k + 1} = 1 - v_k$$. En sommant :\n$$T_n = \\sum_{k=0}^{n} (1 - v_k) = (n+1) - S_n = \\boxed{(n+1) + \\frac{20}{7}\\left(1 - \\frac{1}{8^{n+1}}\\right)}$$"
+    }
+  ]
+}

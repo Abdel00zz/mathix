@@ -1,0 +1,153 @@
+{
+  "classId": "1ere-bac-sc-math",
+  "title": "Olympiad — 1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "years": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "items": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2014",
+      "year": 2014,
+      "title": "Olympiade Internationale de Mathématiques (IMO) 2014 — Sujet officiel",
+      "badge": "international",
+      "source": "https://www.imo-official.org/problems.aspx",
+      "duration": 240,
+      "totalPoints": 42,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2014.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2015",
+      "year": 2015,
+      "title": "Olympiade Mathématique Marocaine 2015 — Épreuve nationale",
+      "badge": "national",
+      "source": "https://www.men.gov.ma/",
+      "duration": 180,
+      "totalPoints": 20,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2015.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2016",
+      "year": 2016,
+      "title": "Olympiade Internationale de Mathématiques (IMO) 2016 — Sujet officiel",
+      "badge": "international",
+      "source": "https://www.imo-official.org/problems.aspx",
+      "duration": 240,
+      "totalPoints": 42,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2016.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2017",
+      "year": 2017,
+      "title": "Olympiade Mathématique Marocaine 2017 — Épreuve nationale",
+      "badge": "national",
+      "source": "https://www.men.gov.ma/",
+      "duration": 180,
+      "totalPoints": 20,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2017.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2018",
+      "year": 2018,
+      "title": "Olympiade Internationale de Mathématiques (IMO) 2018 — Sujet officiel",
+      "badge": "international",
+      "source": "https://www.imo-official.org/problems.aspx",
+      "duration": 240,
+      "totalPoints": 42,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2018.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2019",
+      "year": 2019,
+      "title": "Olympiade Mathématique Marocaine 2019 — Épreuve nationale",
+      "badge": "national",
+      "source": "https://www.men.gov.ma/",
+      "duration": 180,
+      "totalPoints": 20,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2019.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2020",
+      "year": 2020,
+      "title": "Olympiade Internationale de Mathématiques (IMO) 2020 — Sujet officiel",
+      "badge": "international",
+      "source": "https://www.imo-official.org/problems.aspx",
+      "duration": 240,
+      "totalPoints": 42,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2020.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2021",
+      "year": 2021,
+      "title": "Olympiade Mathématique Marocaine 2021 — Épreuve nationale",
+      "badge": "national",
+      "source": "https://www.men.gov.ma/",
+      "duration": 180,
+      "totalPoints": 20,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2021.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2022",
+      "year": 2022,
+      "title": "Olympiade Internationale de Mathématiques (IMO) 2022 — Sujet officiel",
+      "badge": "international",
+      "source": "https://www.imo-official.org/problems.aspx",
+      "duration": 240,
+      "totalPoints": 42,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2022.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2023",
+      "year": 2023,
+      "title": "Olympiade Mathématique Marocaine 2023 — Épreuve nationale",
+      "badge": "national",
+      "source": "https://www.men.gov.ma/",
+      "duration": 180,
+      "totalPoints": 20,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2023.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2024",
+      "year": 2024,
+      "title": "Olympiade Internationale de Mathématiques (IMO) 2024 — Sujet officiel",
+      "badge": "international",
+      "source": "https://www.imo-official.org/problems.aspx",
+      "duration": 240,
+      "totalPoints": 42,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2024.json"
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2025",
+      "year": 2025,
+      "title": "Olympiade Mathématique Marocaine 2025 — Épreuve nationale",
+      "badge": "national",
+      "source": "https://www.men.gov.ma/",
+      "duration": 180,
+      "totalPoints": 20,
+      "exerciseCount": 2,
+      "path": "data/1er-bac-sc-math/olympiad/2025.json"
+    }
+  ]
+}

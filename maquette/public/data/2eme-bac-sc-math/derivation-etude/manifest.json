@@ -1,0 +1,43 @@
+{
+  "id": "derivation-etude",
+  "title": "Dérivation et étude des fonctions",
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-deriv-sm",
+      "title": "Fiche Complète : Dérivation",
+      "path": "data/2eme-bac-sc-math/derivation-etude/revisions/fiche_derivation_cours.json"
+    },
+    {
+      "id": "rev-deriv-etude-sm-2",
+      "path": "data/2eme-bac-sc-math/derivation-etude/revisions/fiche_derivation_etude_cours.json",
+      "title": "Dérivation et étude des fonctions — Nombre dérivé, calculs, variations, convexité, asymptotes, symétries et étude complète"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-derivation-etude-01",
+      "path": "data/2eme-bac-sc-math/derivation-etude/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-derivation-etude-02",
+      "path": "data/2eme-bac-sc-math/derivation-etude/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-derivation-etude-03",
+      "path": "data/2eme-bac-sc-math/derivation-etude/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-deriv-sm-01",
+      "path": "data/2eme-bac-sc-math/derivation-etude/exercises/ex_derivation_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-derivation-etude",
+      "title": "Quiz : Dérivation et Étude de Fonctions",
+      "path": "data/2eme-bac-sc-math/derivation-etude/quiz/derivation-etude_quiz.json",
+      "questionsCount": 22
+    }
+  ]
+}

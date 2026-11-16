@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Le sondage des langues vivantes",
+    "subtitle": "Cardinaux et réunion d'ensembles",
+    "context": "Ensembles"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le sondage des langues vivantes",
+          "content": "Dans une classe de $30$ élèves, on étudie les langues vivantes choisies. On note $A$ l'ensemble des élèves qui étudient l'anglais et $E$ l'ensemble de ceux qui étudient l'espagnol.\\par On sait que : $18$ élèves étudient l'anglais, $15$ étudient l'espagnol, et $7$ étudient \\textbf{les deux} langues. Chaque élève étudie au moins une de ces deux langues ou aucune."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Combien d'élèves étudient l'anglais \\textbf{ou} l'espagnol (au moins une des deux) ?\\item Combien d'élèves n'étudient \\textbf{aucune} de ces deux langues ?\\item Combien d'élèves étudient l'anglais \\textbf{seulement} ? l'espagnol seulement ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Formule du crible : $\\text{card}(A \\cup E) = \\text{card}(A) + \\text{card}(E) - \\text{card}(A \\cap E)$."
+        },
+        {
+          "type": "hint",
+          "content": "« Anglais seulement » correspond à $\\text{card}(A) - \\text{card}(A\\cap E)$ ; un diagramme de Venn aide à visualiser les zones."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $\\text{card}(A \\cup E) = 18 + 15 - 7 = \\boxed{26}$ élèves étudient au moins une langue.\\par\\textbf{2)} Aucune langue : $30 - 26 = \\boxed{4}$ élèves.\\par\\textbf{3)} Anglais seulement : $18 - 7 = \\boxed{11}$ ; espagnol seulement : $15 - 7 = \\boxed{8}$. Vérification : $11 + 7 + 8 + 4 = 30$. $\\checkmark$"
+        }
+      ]
+    }
+  ]
+}

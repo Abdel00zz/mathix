@@ -1,0 +1,238 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Pour deux ensembles quelconques $A$ et $B$, on a toujours $\\text{Card}(A \\cup B) = \\text{Card}(A) + \\text{Card}(B)$.",
+      "isTrue": false,
+      "explanation": "C'est faux en général ! Cette formule n'est vraie que si les ensembles sont disjoints ($A \\cap B = \\emptyset$). S'ils ont des éléments en commun, on les compte deux fois, il faut donc soustraire $\\text{Card}(A \\cap B)$."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Quel est le nombre total de parties (sous-ensembles) que l'on peut former à partir d'un ensemble de $n$ éléments ?",
+      "options": [
+        { "id": "a", "text": "$n^2$", "isCorrect": false },
+        { "id": "b", "text": "$2^n$", "isCorrect": true },
+        { "id": "c", "text": "$n!$", "isCorrect": false },
+        { "id": "d", "text": "$2n$", "isCorrect": false }
+      ],
+      "explanation": "L'ensemble des parties $\\mathcal{P}(E)$ a pour cardinal $2^n$. Pour chaque élément, on a 2 choix indépendants : soit on le prend dans le sous-ensemble, soit on ne le prend pas."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Quelle est la principale différence entre un arrangement et une combinaison ?",
+      "options": [
+        { "id": "a", "text": "Dans une combinaison l'ordre des éléments est important", "isCorrect": false },
+        { "id": "b", "text": "Dans un arrangement l'ordre des éléments est important", "isCorrect": true },
+        { "id": "c", "text": "Un arrangement utilise toujours tous les éléments", "isCorrect": false },
+        { "id": "d", "text": "Une combinaison autorise toujours les répétitions d'éléments", "isCorrect": false }
+      ],
+      "explanation": "C'est la règle d'or du dénombrement : Dès que l'ordre compte (un classement, un podium, un code), c'est un arrangement. Si on sélectionne juste un groupe en vrac, c'est une combinaison."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "On considère le calcul des factorielles : $0!$ vaut $0$.",
+      "isTrue": false,
+      "explanation": "Par convention mathématique stricte pour que toutes les formules fonctionnent, on a posé $0! = 1$. (Il y a exactement une façon de classer zéro élément : ne rien faire)."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Pour créer un mot de passe de 4 lettres, on choisit chaque lettre parmi les 26 de l'alphabet. Combien y a-t-il de codes possibles ?",
+      "options": [
+        { "id": "a", "text": "$\\frac{26!}{22!}$", "isCorrect": false },
+        { "id": "b", "text": "$26 \\times 4$", "isCorrect": false },
+        { "id": "c", "text": "$26^4$", "isCorrect": true },
+        { "id": "d", "text": "$4^{26}$", "isCorrect": false }
+      ],
+      "explanation": "Il s'agit d'arrangements avec répétitions. À chaque position, on a 26 choix. C'est le principe multiplicatif : $26 \\times 26 \\times 26 \\times 26$."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Combien y a-t-il de façons de faire asseoir 6 personnes sur 6 chaises alignées ?",
+      "options": [
+        { "id": "a", "text": "$6^6 = 46656$", "isCorrect": false },
+        { "id": "b", "text": "$6! = 720$", "isCorrect": true },
+        { "id": "c", "text": "$6$ façons", "isCorrect": false },
+        { "id": "d", "text": "$120$ façons", "isCorrect": false }
+      ],
+      "explanation": "On utilise tous les éléments ($p = n = 6$), sans répétition et l'ordre compte. C'est une permutation : $6! = 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1 = 720$."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Quelle est la première question fondamentale à se poser pour choisir la bonne formule de dénombrement ?",
+      "options": [
+        { "id": "a", "text": "L'ordre des éléments choisis est-il important ?", "isCorrect": true },
+        { "id": "b", "text": "Utilise-t-on la totalité des éléments ou seulement une partie ?", "isCorrect": false },
+        { "id": "c", "text": "Les répétitions sont-elles autorisées ?", "isCorrect": false },
+        { "id": "d", "text": "Combien y a-t-il d'éléments au total ?", "isCorrect": false }
+      ],
+      "explanation": "Pour démêler la situation, il faut éliminer d'abord la question de l'ordre (qui divise le problème en moitiés : combinaison vs arrangement), puis la taille, puis la réutilisation."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "De combien de façons peut-on élire un comité de 3 membres dans un groupe de 15 personnes (sans rôle spécifique) ?",
+      "options": [
+        { "id": "a", "text": "$A_{15}^3 = 2730$", "isCorrect": false },
+        { "id": "b", "text": "$C_{15}^3 = 455$", "isCorrect": true },
+        { "id": "c", "text": "$15^3 = 3375$", "isCorrect": false },
+        { "id": "d", "text": "$15 \\times 3 = 45$", "isCorrect": false }
+      ],
+      "explanation": "Il n'y a pas de rôles spécifiques ni d'ordre, donc c'est une combinaison pure de 3 éléments parmi 15 : $\\frac{15 \\times 14 \\times 13}{3 \\times 2 \\times 1}$."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Grâce au triangle de Pascal (ou à la formule $C_n^k$), que vaut la somme totale $\\sum_{k=0}^{n} C_n^k$ ?",
+      "options": [
+        { "id": "a", "text": "$0$", "isCorrect": false },
+        { "id": "b", "text": "$2^n$", "isCorrect": true },
+        { "id": "c", "text": "$n!$", "isCorrect": false },
+        { "id": "d", "text": "$n^2$", "isCorrect": false }
+      ],
+      "explanation": "Cette somme compte tous les sous-ensembles possibles allant de taille 0 à la taille $n$. Elle est issue de la formule du binôme $(1+1)^n = 2^n$."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Pour calculer le nombre de podiums ordonnés possibles (1er, 2e, 3e) pour une course comportant 8 concurrents, quelle formule faut-il utiliser ?",
+      "options": [
+        { "id": "a", "text": "$A_8^3 = 336$", "isCorrect": true },
+        { "id": "b", "text": "$C_8^3 = 56$", "isCorrect": false },
+        { "id": "c", "text": "$8^3 = 512$", "isCorrect": false },
+        { "id": "d", "text": "$8! = 40320$", "isCorrect": false }
+      ],
+      "explanation": "Puisque l'ordre a de l'importance (la 1ère place n'est pas la 2ème place), c'est un arrangement (classement sans répétition). Il faut utiliser $A_8^3 = 8 \\times 7 \\times 6 = 336$."
+    },
+    {
+      "id": "q11",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "L'égalité $C_n^p = C_n^{n-p}$ est toujours vraie.",
+      "isTrue": true,
+      "explanation": "C'est une propriété de symétrie absolue. Intuitivement, choisir une équipe de $p$ membres, c'est exactement la même chose qu'exclure les $n-p$ autres personnes !"
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "ambiguity_note": "Il ne faut pas confondre la notation A(n,p) et l'opération de la division par p!",
+      "prompt": "Quelle relation mathématique relie exactement les combinaisons $C_n^p$ et les arrangements $A_n^p$ ?",
+      "options": [
+        { "id": "a", "text": "$C_n^p = A_n^p \\times p!$", "isCorrect": false },
+        { "id": "b", "text": "$A_n^p = C_n^p \\times p!$", "isCorrect": true },
+        { "id": "c", "text": "$A_n^p = \\frac{C_n^p}{(n-p)!}$", "isCorrect": false },
+        { "id": "d", "text": "$C_n^p = A_n^p + p!$", "isCorrect": false }
+      ],
+      "explanation": "Pour fabriquer un classement ordonné de $p$ éléments ($A_n^p$), on peut d'abord choisir un groupe en vrac ($C_n^p$) puis ordonner ses membres de toutes les façons possibles, soit $p!$ façons."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "On lance une pièce de monnaie (Pile ou Face) 5 fois de suite. Combien y a-t-il de résultats ordonnés possibles ?",
+      "options": [
+        { "id": "a", "text": "$5^2 = 25$", "isCorrect": false },
+        { "id": "b", "text": "$2 \\times 5 = 10$", "isCorrect": false },
+        { "id": "c", "text": "$2^5 = 32$", "isCorrect": true },
+        { "id": "d", "text": "$5! = 120$", "isCorrect": false }
+      ],
+      "explanation": "Chaque lancer a 2 issues possibles (Pile ou Face) et les 5 lancers sont indépendants. C'est l'expérience type de l'arrangement avec répétition : $2 \\times 2 \\times 2 \\times 2 \\times 2$."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "ambiguity_note": "Confusion classique entre les anagrammes simples et ceux incluant des lettres répétées",
+      "prompt": "Combien existe-il d'anagrammes distinctes du mot BABA ?",
+      "options": [
+        { "id": "a", "text": "$4! = 24$", "isCorrect": false },
+        { "id": "b", "text": "$\\frac{4!}{2! \\times 2!} = 6$", "isCorrect": true },
+        { "id": "c", "text": "$2^4 = 16$", "isCorrect": false },
+        { "id": "d", "text": "$A_4^2 = 12$", "isCorrect": false }
+      ],
+      "explanation": "Il y a 4 lettres au total, mais la lettre 'A' apparaît 2 fois, et la lettre 'B' apparaît 2 fois. Pour palier aux doublons, la formule de la permutation se modifie : $\\frac{4!}{2! \\times 2!} = \\frac{24}{4} = 6$."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Que donne la somme de Gauss $\\sum_{k=0}^n (-1)^k C_n^k = C_n^0 - C_n^1 + C_n^2 - C_n^3 ...$ (pour $n \\geq 1$) ?",
+      "options": [
+        { "id": "a", "text": "$1$", "isCorrect": false },
+        { "id": "b", "text": "$2^n$", "isCorrect": false },
+        { "id": "c", "text": "$0$", "isCorrect": true },
+        { "id": "d", "text": "$-n$", "isCorrect": false }
+      ],
+      "explanation": "On applique la formule du binôme $(1 - 1)^n = 0^n = 0$. Il y a strictement autant de probabilités de tirer un groupe de taille paire qu'un groupe de taille impaire !"
+    },
+    {
+      "id": "q16",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Un tirage simultané de $p$ boules parmi $n$ équivaut mathématiquement à un tirage successif sans remise vis-à-vis du nombre de possibilités (l'ordre en moins).",
+      "isTrue": true,
+      "explanation": "En effet ! Le tirage successif sans remise correspond à un Arrangement $A_n^p$. Le tirage simultané correspond à la Combinaison $C_n^p$. Le second est simplement l'annulation du critère d'ordre du premier (division par $p!$)."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Que vaut le célèbre développement du binôme $(x+y)^3$ pour tout réels $x, y$ ?",
+      "options": [
+        { "id": "a", "text": "$x^3 + y^3$", "isCorrect": false },
+        { "id": "b", "text": "$x^3 + 3xy^2 + y^3$", "isCorrect": false },
+        { "id": "c", "text": "$x^3 + 3x^2y + 3xy^2 + y^3$", "isCorrect": true },
+        { "id": "d", "text": "$x^3 + 2x^2y + 2xy^2 + y^3$", "isCorrect": false }
+      ],
+      "explanation": "On utilise la matrice du triangle de Pascal pour le niveau 3 : les coefficients des $\\binom{3}{k}$ sont 1, 3, 3, et 1."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Si un sac contient 5 boules rouges et 3 boules bleues. On doit en piocher 2 simultanément. Combien y'a-t-il de tirages de 2 boules rouges ?",
+      "options": [
+        { "id": "a", "text": "$C_5^2 = 10$", "isCorrect": true },
+        { "id": "b", "text": "$A_5^2 = 20$", "isCorrect": false },
+        { "id": "c", "text": "$C_8^2 = 28$", "isCorrect": false },
+        { "id": "d", "text": "$5 \\times 5 = 25$", "isCorrect": false }
+      ],
+      "explanation": "On ignore simplement les boules bleues. Il s'agit de séléctionner 2 boules PARMI le sous-ensemble de 5 boules rouges (et non des 8 au total !), de manière non-ordonnée puisqu'elles sont piochées simultanément."
+    }
+  ]
+}

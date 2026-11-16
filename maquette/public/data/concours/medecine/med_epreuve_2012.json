@@ -1,0 +1,398 @@
+{
+  "school": "medecine",
+  "year": "2012 · Épreuve",
+  "title": "Annale Médecine — 2012 · Épreuve",
+  "source": "10_epreuve_2012.tex — transcription LaTeX normalisée",
+  "questions": [
+    {
+      "id": "med-epreuve_2012-q01",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012 · Épreuve · Q1",
+      "officialQuestionCode": "Q1",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Deux machines $L_1$ et $L_2$ produisent respectivement $70\\\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{3}{{38}}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{5}{{38}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{70}{380}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{A_3^2}{70}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{C_3^2}{70}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si $N$ désigne la non-conformité,\n$P(N)=0{,}7\\times0{,}05+0{,}3\\times0{,}01=0{,}038,$\net\n$P(L_2\\mid N)=\\frac{0{,}3\\times0{,}01}{0{,}038}=\\frac{3}{{38}}.$"
+    },
+    {
+      "id": "med-epreuve_2012-q02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012 · Épreuve · Q2",
+      "officialQuestionCode": "Q2",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Calculer la limite de\n$\\displaystyle S_n=\\sum_{k=1}^n\\frac{1}{{\\sqrt{k}}}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "${e}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$1$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour $1\\le k\\le n$, $\\frac{1}{\\sqrt{k}}\\ge\\frac{1}{\\sqrt{n}}$, donc $S_n\\ge\\sqrt{n}\\longrightarrow+\\infty$."
+    },
+    {
+      "id": "med-epreuve_2012-q03",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012 · Épreuve · Q3",
+      "officialQuestionCode": "Q3",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Résoudre dans $\\mathbb{C}$ l'équation\n$z^2=\\frac{8}{z}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{2,-1+ {i}\\sqrt3,-1- {i}\\sqrt3\\}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\{2,1+ {i}\\sqrt3,1- {i}\\sqrt3\\}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{2,1+ {i}\\sqrt3,-1- {i}\\sqrt3\\}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\{2 {i},1+ {i}\\sqrt3,-1- {i}\\sqrt3\\}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\{-2,1+ {i}\\sqrt3,-1- {i}\\sqrt3\\}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'équation équivaut à $z^3=8$. Les trois racines cubiques sont\n$2, \\qquad -1+ {i}\\sqrt3, \\qquad -1- {i}\\sqrt3.$"
+    },
+    {
+      "id": "med-epreuve_2012-q04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012 · Épreuve · Q4",
+      "officialQuestionCode": "Q4",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Déterminer le domaine de\n$f(x)=\\sqrt{|\\ln x-1|-1}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]0,+\\infty[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$]0,1[\\cup[ {e}^2,+\\infty[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$]0,1]\\cup[ {e}^2,+\\infty[$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$]-\\infty,1]\\cup[ {e}^2,+\\infty[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$[ {e}^2,+\\infty[$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il faut $x>0$ et $|\\ln x-1|\\ge1$, soit\n$\\ln x\\le0\\quad\\text{ou}\\quad\\ln x\\ge2.$\nD'où $D_f=]0,1]\\cup[ {e}^2,+\\infty[$."
+    },
+    {
+      "id": "med-epreuve_2012-q05",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012 · Épreuve · Q5",
+      "officialQuestionCode": "Q5",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "On considère la sphère de centre $\\Omega(1,-2,0)$ et de rayon $3$, et le plan\n$(P):x+y+z+3\\sqrt3+1=0.$\nLeur intersection est :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "un segment ;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "un cercle ;",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "un point ;",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "vide ;",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "un demi-cercle.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$d(\\Omega,P)=\\frac{|1-2+0+3\\sqrt3+1|}{\\sqrt3}=3,$\négal au rayon. Le plan est tangent à la sphère."
+    },
+    {
+      "id": "med-epreuve_2012-q06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012 · Épreuve · Q6",
+      "officialQuestionCode": "Q6",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Calculer\n$\\displaystyle \\lim_{x\\to2}\\frac{ {e}^{2x}- {e}^4}{x-2}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$4$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "${e}^4$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2 {e}^4$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$0$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il s'agit du taux d'accroissement de $x\\mapsto {e}^{2x}$ en $2$ :\n$\\displaystyle \\lim_{x\\to2}\\frac{ {e}^{2x}- {e}^4}{x-2}=2 {e}^4.$"
+    },
+    {
+      "id": "med-epreuve_2012-q07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012 · Épreuve · Q7",
+      "officialQuestionCode": "Q7",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Calculer\n$\\displaystyle I=\\int_2^ {e}\\frac{\\ln2}{x(\\ln x)^2}\\,\\,d x.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1+\\ln2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1-\\ln4$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1+\\ln4$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1-\\ln2$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "${e}-\\ln2$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$I=\\ln2\\left[-\\frac{1}{{\\ln x}}\\right]_2^ {e} =\\ln2\\left(-1+\\frac{1}{{\\ln2}}\\right)=1-\\ln2.$"
+    },
+    {
+      "id": "med-epreuve_2012-q08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012 · Épreuve · Q8",
+      "officialQuestionCode": "Q8",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Résoudre\n$10^{2x}-3\\cdot10^x-4>0.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]0,\\frac{\\ln2}{\\ln}10]$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$]0,\\frac{\\ln10}{\\ln}2]$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$[\\frac{\\ln10}{\\ln}2,+\\infty[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$]\\frac{\\ln4}{\\ln}10,+\\infty[$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$[\\frac{\\ln4}{\\ln}10,+\\infty[$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En posant $X=10^x>0$,\n$X^2-3X-4=(X+1)(X-4)>0\\iff X>4.$\nDonc $x>\\frac{\\ln4}{\\ln}10$."
+    },
+    {
+      "id": "med-epreuve_2012-q09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012 · Épreuve · Q9",
+      "officialQuestionCode": "Q9",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Calculer la limite de\n$U_n=\\frac{(-1)^n(n+2^n)}{n2^{n+1}}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$0$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "$|U_n|\\le\\frac{1}{{2^{n+1}}}+\\frac{1}{{2n}}\\longrightarrow0.$"
+    },
+    {
+      "id": "med-epreuve_2012-q10",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012 · Épreuve · Q10",
+      "officialQuestionCode": "Q10",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Une population bactérienne vérifie\n$P'(t)=2P(t),\\qquad P(0)=10.$\nQuel temps faut-il pour atteindre $10^{21}$ bactéries ?\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$10\\ln10$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$10^{10}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(\\ln10)^{10}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(10\\ln10)^{10}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$10(\\ln2)^{10}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$P(t)=10 {e}^{2t}$. L'équation $P(t)=10^{21}$ donne\n${e}^{2t}=10^{20}, \\qquad 2t=20\\ln10, \\qquad t=10\\ln10.$"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "ex-complexes-06",
+  "topic": "Nombres complexes - Bac National 2018 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2018,
+  "examenSession": "Rattrapage",
+  "context": "Pour tout nombre complexe $z$ différent de $i$ on pose : $h(z)=i\\left(\\dfrac{z-2i}{z-i}\\right)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Vérifier que : $h(z)=z\\Leftrightarrow z^2-2iz-2=0$.",
+          "hint": "Posez $h(z)=z$, multipliez les deux membres par $(z-i)$ (non nul) et développez pour retrouver l'équation demandée."
+        },
+        {
+          "id": "q1b",
+          "content": "Résoudre dans $\\mathbb{C}$ l'équation : $(E):z^2-2iz-2=0$.",
+          "hint": "Calculez $\\Delta=(2i)^2+8=4$, qui est un carré réel positif, ce qui simplifie beaucoup la résolution."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Le plan complexe est rapporté au repère orthonormé direct $\\left(O,\\overrightarrow{e_1},\\overrightarrow{e_2}\\right)$. On désigne par $a$ et $b$ les solutions de l'équation $(E)$ telles que $\\text{Re}(a)=1$. Soit $z$ un nombre complexe différent de $i$, de $a$ et de $b$ et soient les points $M(z)$, $M'(h(z))$, $A(a)$ et $B(b)$.",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Montrer que $\\dfrac{h(z)-a}{h(z)-b}=\\dfrac{z-a}{z-b}$.",
+          "hint": "Remplacez $h(z)$ par son expression, mettez chaque numérateur et dénominateur au même dénominateur $(z-i)$, puis simplifiez ; utilisez le fait que $a$ et $b$ sont solutions de $h(z)=z$."
+        },
+        {
+          "id": "q2b",
+          "content": "En déduire que : $\\left(\\overrightarrow{M'B},\\overrightarrow{M'A}\\right)\\equiv\\pi+\\left(\\overrightarrow{MB},\\overrightarrow{MA}\\right)[2\\pi]$.",
+          "hint": "Prenez l'argument de l'égalité précédente : l'argument d'un quotient d'affixes correspond à un angle orienté de vecteurs ; comparez les deux membres et repérez d'où vient le décalage de $\\pi$ (regardez comment $h(z)-a$ se compare à $z-a$ via le module $i$)."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q3a",
+          "content": "Montrer que si les points $M$, $A$ et $B$ sont alignés alors les points $M$, $A$, $B$ et $M'$ sont aussi alignés.",
+          "hint": "Si $M,A,B$ alignés alors $(\\overrightarrow{MB},\\overrightarrow{MA})\\equiv0[\\pi]$ ; reportez cela dans la relation d'angles précédente pour conclure sur $(\\overrightarrow{M'B},\\overrightarrow{M'A})$."
+        },
+        {
+          "id": "q3b",
+          "content": "Montrer que si les points $M$, $A$ et $B$ ne sont pas alignés alors les points $M$, $A$, $B$ et $M'$ sont cocycliques.",
+          "hint": "Rappelez le critère de cocyclicité par les angles inscrits : $M$ et $M'$ voient $[AB]$ sous des angles égaux ou supplémentaires ; comparez à la relation d'angles établie plus haut."
+        }
+      ]
+    }
+  ]
+}

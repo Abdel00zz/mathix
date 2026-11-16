@@ -1,0 +1,41 @@
+{
+  "id": "ex-derivation-etude-04",
+  "theme": "derivation-etude-fonctions",
+  "difficulty": "difficile",
+  "topic": "Dérivation et étude de fonctions",
+  "context": "Soit la fonction $f$ définie par : $$\\begin{cases} f(x) = \\frac{1}{3}x^3 - \\frac{1}{2}x^2 & ; x \\ge 0 \\\\ f(x) = \\dfrac{1 - \\cos x}{x} & ; x < 0 \\end{cases}$$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Étudier la dérivabilité de $f$ en $x_0 = 0$.",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Calculer la limite du taux d'accroissement à droite en 0.",
+          "hint": "$f(0) = 0$. Factorisez par $x$."
+        },
+        {
+          "id": "sq2",
+          "content": "Calculer la limite du taux d'accroissement à gauche en 0.",
+          "hint": "On cherche $\\lim_{x \\to 0^-} \\frac{1-\\cos x}{x^2}$."
+        },
+        {
+          "id": "sq3",
+          "content": "Conclure sur la dérivabilité en 0.",
+          "hint": "Comparez les limites à gauche et à droite."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Interpréter géométriquement les résultats en 0.",
+      "hint": "Si les dérivées à gauche et à droite sont différentes, il s'agit d'un point anguleux."
+    },
+    {
+      "id": "q3",
+      "content": "Calculer $f'(x)$ pour $x < 0$.",
+      "hint": "Dérivée de $\\frac{1-\\cos x}{x}$. Utilisez la formule du quotient."
+    }
+  ]
+}

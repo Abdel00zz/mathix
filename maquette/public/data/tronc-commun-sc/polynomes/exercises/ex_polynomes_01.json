@@ -1,0 +1,37 @@
+{
+  "id": "ex-polynomes-01",
+  "theme": "polynomes",
+  "difficulty": "difficile",
+  "topic": "Polynômes",
+  "context": "Soit $P(x) = x^3 - 4x^2 + x + 6$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Racine évidente",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Calculer $P(-1)$.",
+          "hint": "Comment vérifie-t-on si un nombre est une racine d'un polynôme ? Remplacez $x$ par $-1$ dans l'expression de $P(x)$."
+        },
+        {
+          "id": "sq2",
+          "content": "Déterminer le polynôme $Q(x)$ tel que $P(x) = (x+1)Q(x)$.",
+          "hint": "Si $-1$ est une racine, alors $P(x)$ est divisible par $(x+1)$. Comment trouver le polynôme $Q(x)$ ? Pensez à la division euclidienne ou à l'identification des coefficients."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Factorisation complète",
+      "subQuestions": [
+        {
+          "id": "sq3",
+          "content": "Factoriser $Q(x)$ puis $P(x)$ en produits de facteurs du premier degré.",
+          "hint": "Vous avez un polynôme du second degré $Q(x)$. Comment trouver ses racines pour le factoriser ?"
+        }
+      ]
+    }
+  ]
+}

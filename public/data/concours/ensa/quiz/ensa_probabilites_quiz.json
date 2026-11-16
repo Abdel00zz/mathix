@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "ensa-pr-01",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Dénombrement",
+      "prompt": "Le nombre de façons de choisir un comité de $3$ personnes parmi $10$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$120$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$720$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1000$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$30$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Combinaison sans ordre : $\\binom{10}{3} = \\frac{10!}{3! \\cdot 7!} = \\frac{10 \\times 9 \\times 8}{6} = 120$. On divise par $3!$ car l'ordre n'importe pas."
+    },
+    {
+      "id": "ensa-pr-02",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "prompt": "On lance deux dés équilibrés. La probabilité d'obtenir une somme égale à $7$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{6}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{7}{36}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{12}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{5}{36}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Univers : $36$ couples. Cas favorables : $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$, soit $6$. $P = 6/36 = 1/6$. La somme $7$ est la plus probable."
+    },
+    {
+      "id": "ensa-pr-03",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités conditionnelles",
+      "prompt": "Une urne contient $5$ blanches et $3$ noires. On tire $2$ boules sans remise. $P(B_2 | N_1)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{5}{7}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{5}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{4}{7}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{3}{7}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Après tirage d'une noire, il reste $7$ boules dont $5$ blanches. $P(B_2|N_1) = 5/7$. Le tirage sans remise modifie la composition : probabilité conditionnelle."
+    },
+    {
+      "id": "ensa-pr-04",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "prompt": "$A$ et $B$ indépendants avec $P(A)=0{,}4$ et $P(B)=0{,}3$. $P(A \\cup B)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}58$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}70$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}12$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0{,}52$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Indépendance : $P(A \\cap B) = 0{,}4 \\times 0{,}3 = 0{,}12$. Poincaré : $P(A \\cup B) = 0{,}4 + 0{,}3 - 0{,}12 = 0{,}58$."
+    },
+    {
+      "id": "ensa-pr-05",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités totales",
+      "prompt": "$M_1$ produit $60\\%$ des pièces ($2\\%$ défauts), $M_2$ produit $40\\%$ ($5\\%$ défauts). La probabilité qu'une pièce soit défectueuse est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}032$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}035$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}07$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0{,}02$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Probabilités totales : $P(D) = 0{,}6 \\times 0{,}02 + 0{,}4 \\times 0{,}05 = 0{,}012 + 0{,}020 = 0{,}032$. Système complet $\\{M_1, M_2\\}$."
+    },
+    {
+      "id": "ensa-pr-06",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Bayes",
+      "prompt": "Même contexte. Sachant qu'une pièce est défectueuse, la probabilité qu'elle vienne de $M_2$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{5}{8}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2}{5}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Bayes : $P(M_2|D) = \\frac{0{,}05 \\times 0{,}4}{0{,}032} = \\frac{0{,}020}{0{,}032} = \\frac{5}{8}$. Bayes inverse le conditionnement."
+    },
+    {
+      "id": "ensa-pr-07",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Dénombrement",
+      "prompt": "Le nombre d'anagrammes du mot MATHS est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$120$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$60$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$24$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$720$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$5$ lettres distinctes : $5! = 120$ permutations. S'il y avait des lettres répétées, on diviserait par les factorielles des répétitions."
+    },
+    {
+      "id": "ensa-pr-08",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "prompt": "On tire une carte d'un jeu de $52$. $P(\\text{As ou Pique})$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{4}{13}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{17}{52}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{13}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Inclusion-exclusion : $P = \\frac{4}{52} + \\frac{13}{52} - \\frac{1}{52} = \\frac{16}{52} = \\frac{4}{13}$. On retire l'As de Pique compté deux fois."
+    },
+    {
+      "id": "ensa-pr-09",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Variables aléatoires",
+      "prompt": "$X$ prend les valeurs $1, 2, 3$ avec $P(X=k) = k/6$. L'espérance $E(X)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{7}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{5}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Vérification : $1/6+2/6+3/6=1$. $E(X) = 1 \\times 1/6 + 2 \\times 2/6 + 3 \\times 3/6 = (1+4+9)/6 = 14/6 = 7/3$."
+    },
+    {
+      "id": "ensa-pr-10",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Variables aléatoires",
+      "prompt": "$X \\sim \\mathcal{B}(0{,}3)$ (Bernoulli). La variance $V(X)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}21$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}09$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0{,}7$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Loi de Bernoulli : $V(X) = p(1-p) = 0{,}3 \\times 0{,}7 = 0{,}21$. Formule fondamentale."
+    }
+  ]
+}

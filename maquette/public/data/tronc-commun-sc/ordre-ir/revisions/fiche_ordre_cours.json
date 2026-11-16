@@ -1,0 +1,235 @@
+{
+  "header": {
+    "title": "L'ordre dans \\(\\mathbb{R}\\)",
+    "subtitle": "Comparaison, valeur absolue, intervalles, encadrement et approximation",
+    "context": "Tronc Commun Sciences"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie l'\\objectif{ordre dans $\\mathbb{R}$} : comparaison de réels, propriétés des inégalités, valeur absolue, intervalles, encadrements et approximations décimales. Ces outils sont le socle de tout raisonnement rigoureux en analyse et permettent d'évaluer la précision d'un résultat numérique. La \\defi{principale difficulté} est d'observer systématiquement le signe du multiplicateur avant toute opération sur une inégalité — multiplier par un négatif ou passer à l'inverse inverse le sens, une erreur très fréquente. C'est \\savant{Richard Dedekind} qui a, en 1872, formalisé rigoureusement la droite réelle et la notion de coupure, fondant ainsi toute l'analyse moderne sur un ordre précis.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Dedekind.jpeg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Richard Dedekind (1831–1916)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ordre_comparaison",
+      "category": "course",
+      "title": "L'ordre dans \\(\\mathbb{R}\\) et comparaison",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Comparer deux réels $a$ et $b$, c'est chercher lequel est le plus grand — ou s'ils sont égaux. La clé est simple : tout se ramène à étudier le signe de la différence $a - b$."
+        },
+        {
+          "type": "definition",
+          "title": "Comment comparer deux réels avec une inégalité ?",
+          "content": "Soient $a$ et $b$ deux réels. Comparer $a$ et $b$ revient à étudier le signe de $a - b$ :\\begin{enumerate}\\item $a \\leq b$ \\quad $\\Leftrightarrow$ \\quad $b - a \\geq 0$\\item $a \\geq b$ \\quad $\\Leftrightarrow$ \\quad $b - a \\leq 0$\\item $a < b$ \\quad $\\Leftrightarrow$ \\quad $b - a > 0$ \\quad (strictement inférieur)\\item $a > b$ \\quad $\\Leftrightarrow$ \\quad $b - a < 0$ \\quad (strictement supérieur)\\end{enumerate}\\par\\smallskip $$\\boxed{\\text{Comparer } a \\text{ et } b \\Leftrightarrow \\text{étudier le signe de } a - b}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Comparons les réels suivants en étudiant le signe de leur différence : $\\frac{3}{4}$ et $\\frac{5}{7}$, puis $\\sqrt{3}$ et $1{,}73$.}\\par\\smallskip \\textbf{Comparaison de $\\frac{3}{4}$ et $\\frac{5}{7}$ :} On calcule la différence en réduisant au même dénominateur :\\begin{align*}\\frac{3}{4} - \\frac{5}{7} &= \\frac{21}{28} - \\frac{\\blank{20}}{28} = \\frac{\\blank{1}}{28}\\end{align*}Puisque $\\frac{1}{28} > 0$, on conclut que $\\frac{3}{4}$ \\blank{$>$} $\\frac{5}{7}$.\\par\\smallskip \\textbf{Comparaison de $\\sqrt{3}$ et $1{,}73$ :} On étudie le signe de $\\sqrt{3} - 1{,}73$. Puisque $1{,}73^2 = \\blank{2{,}9929}$ et $\\sqrt{3}^2 = 3$, on a $1{,}73^2 < 3$, donc $1{,}73 < \\sqrt{3}$, d'où $\\sqrt{3} - 1{,}73 \\blank{> 0}$."
+        },
+        {
+          "type": "property",
+          "title": "Comment les opérations interagissent-elles avec les inégalités ?",
+          "content": "Soient $a \\leq b$ et $c$, $d$ des réels.\\begin{enumerate}\\item \\textbf{Addition} :\\begin{itemize}\\item $a + c \\leq b + c$ et $a - c \\leq b - c$ \\quad (le sens ne change pas)\\item Si $c \\leq d$ aussi : $a + c \\leq b + d$\\end{itemize}\\item \\textbf{Multiplication} :\\begin{itemize}\\item Si $c \\geq 0$ : $ac \\leq bc$ \\quad (le sens est \\textbf{conservé})\\item Si $c \\leq 0$ : $ac \\geq bc$ \\quad (le sens est \\textbf{inversé})\\end{itemize}\\item \\textbf{Produit de deux réels de même signe} : $ab \\geq 0$\\item \\textbf{Racines carrées} (si $0 \\leq a \\leq b$) : $a^2 \\leq b^2$ et $\\sqrt{a} \\leq \\sqrt{b}$\\item \\textbf{Inverse} (si $ab > 0$, même signe) : $a \\leq b \\Rightarrow \\dfrac{1}{a} \\geq \\dfrac{1}{b}$ \\quad (le sens est \\textbf{inversé})\\end{enumerate}"
+        },
+        {
+          "type": "warning",
+          "content": "Deux opérations \\textbf{inversent le sens de l'inégalité} — c'est la source principale d'erreurs :\\begin{enumerate}\\item \\textbf{Multiplication par un réel négatif :} si $a \\leq b$ et $c < 0$, alors $ac \\geq bc$\\item \\textbf{Passage à l'inverse :} si $0 < a \\leq b$, alors $\\dfrac{1}{a} \\geq \\dfrac{1}{b}$\\end{enumerate}\\par\\smallskip Exemple concret : $2 \\leq 5$, mais $-2 \\times 2 = -4 \\geq -10 = -2 \\times 5$, et $\\dfrac{1}{2} \\geq \\dfrac{1}{5}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'inéquation $-3x + 7 > 1$.}\\par\\smallskip On soustrait $7$ des deux membres : $-3x > 1 - 7$, donc $-3x > \\blank{-6}$.\\par\\smallskip On divise par $-3$. Puisque $-3 < 0$, le sens de l'inégalité \\blank{s'inverse} :\\begin{align*}x < \\frac{-6}{-3} = \\blank{2}\\end{align*}L'ensemble solution est $\\blank{]-\\infty ; 2[}$.\\par\\smallskip Vérification : pour $x = 0$, on a $-3(0) + 7 = 7 > 1$. Le résultat est \\blank{cohérent}."
+        },
+        {
+          "type": "method",
+          "title": "Comment résoudre une inéquation du premier degré ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Regrouper} les termes en $x$ d'un côté et les constantes de l'autre\\item \\textbf{Appliquer additions et soustractions} — le sens ne change pas\\item \\textbf{Diviser ou multiplier} pour isoler $x$ :\\begin{itemize}\\item Par un réel \\textbf{positif} : le sens \\textbf{ne change pas}\\item Par un réel \\textbf{négatif} : le sens \\textbf{s'inverse} — toujours vérifier ce signe\\end{itemize}\\item \\textbf{Écrire la solution} sous forme d'intervalle\\item \\textbf{Vérifier} avec une valeur simple (par ex. $x = 0$)\\end{enumerate}\\par\\textbf{Astuce :} si $x$ apparaît des deux côtés, déplacer tous les termes en $x$ à gauche avant de diviser — on est alors sûr du signe du coefficient."
+        }
+      ]
+    },
+    {
+      "id": "valeur_absolue",
+      "category": "course",
+      "title": "La valeur absolue",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait comparer deux réels. On introduit maintenant la valeur absolue, qui mesure la distance d'un réel à zéro — et plus généralement la distance entre deux réels sur la droite graduée."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que la valeur absolue d'un réel ?",
+          "content": "Pour tout $x \\in \\mathbb{R}$ :\\par\\smallskip$$\\boxed{|x| = \\begin{cases} x & \\text{si } x \\geq 0 \\\\ -x & \\text{si } x < 0 \\end{cases}}$$\\par\\smallskip Deux propriétés fondamentales :\\begin{itemize}\\item $|x| \\geq 0$ pour tout $x$ — la valeur absolue est toujours positive ou nulle\\item $|x| = 0 \\Leftrightarrow x = 0$\\end{itemize}\\par\\smallskip \\textbf{Interprétation géométrique :} $|x|$ est la \\textbf{distance} entre le point d'abscisse $x$ et l'origine, et $|a - b|$ est la distance entre les points d'abscisses $a$ et $b$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les propriétés de calcul de la valeur absolue ?",
+          "content": "Pour tout $x, y \\in \\mathbb{R}$ et $a \\in \\mathbb{R}^+$ :\\par\\smallskip \\textbf{Propriétés algébriques :}\\begin{enumerate}\\item $|x^2| = x^2$ \\quad (toujours positif)\\item $\\sqrt{x^2} = |x|$ \\quad (et \\textbf{non} $x$ en général)\\item $|xy| = |x| \\cdot |y|$\\item $\\left|\\dfrac{x}{y}\\right| = \\dfrac{|x|}{|y|}$ \\quad ($y \\neq 0$)\\end{enumerate}\\par\\smallskip \\textbf{Inégalités avec la valeur absolue :}\\begin{enumerate}\\item $-|x| \\leq x \\leq |x|$\\item $|x + y| \\leq |x| + |y|$ \\quad (\\textbf{inégalité triangulaire})\\end{enumerate}\\par\\smallskip \\textbf{Équations :}\\begin{itemize}\\item $|x| = a \\Leftrightarrow x = a$ ou $x = -a$ \\quad ($a \\geq 0$)\\item $|x| = |y| \\Leftrightarrow x = y$ ou $x = -y$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons $|{-5}|$, $|3 - 7|$, $\\sqrt{(-4)^2}$ et simplifions $|x - 2|$ pour $x < 2$.}\\par\\smallskip $|{-5}| = \\blank{5}$ car $-5 < 0$.\\par\\smallskip $|3 - 7| = |{-4}| = \\blank{4}$ : c'est la distance entre 3 et 7 sur la droite graduée.\\par\\smallskip $\\sqrt{(-4)^2} = \\sqrt{16} = 4 = \\blank{|-4|}$ : on applique $\\sqrt{x^2} = |x|$.\\par\\smallskip Pour $x < 2$ : $x - 2 < 0$, donc $|x - 2| = \\blank{-(x-2)} = \\blank{2 - x}$."
+        },
+        {
+          "type": "definition",
+          "title": "Quel lien y a-t-il entre valeur absolue et intervalles ?",
+          "content": "Soient $x \\in \\mathbb{R}$, $a \\in \\mathbb{R}$ et $r > 0$.\\par\\smallskip Les deux équivalences fondamentales :\\begin{enumerate}\\item $$\\boxed{|x| \\leq r \\Leftrightarrow -r \\leq x \\leq r \\Leftrightarrow x \\in [-r ; r]}$$\\item $$\\boxed{|x| \\geq r \\Leftrightarrow x \\geq r \\text{ ou } x \\leq -r \\Leftrightarrow x \\in ]-\\infty ; -r] \\cup [r ; +\\infty[}$$\\end{enumerate}\\par\\smallskip En particulier, $|x - a| \\leq r$ signifie que $x$ est à distance au plus $r$ de $a$ : $x \\in [a-r ; a+r]$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons les inéquations : $|2x - 3| \\leq 5$ et $|x + 1| > 4$.}\\par\\smallskip \\textbf{Résolution de $|2x-3| \\leq 5$ :} On applique $|u| \\leq r \\Leftrightarrow -r \\leq u \\leq r$ :\\begin{align*}-5 \\leq 2x - 3 &\\leq 5 \\\\-5 + 3 \\leq 2x &\\leq 5 + 3 \\\\\\blank{-2} \\leq 2x &\\leq \\blank{8} \\\\x &\\in \\blank{[-1 ; 4]}\\end{align*}\\par\\smallskip \\textbf{Résolution de $|x+1| > 4$ :} On applique $|u| > r \\Leftrightarrow u > r$ ou $u < -r$ :\\par $x + 1 > 4$ donne $x > 3$, et $x + 1 < -4$ donne $x < \\blank{-5}$.\\par La solution est $x \\in \\blank{]-\\infty ; -5[ \\cup ]3 ; +\\infty[}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment résoudre une inéquation avec valeur absolue ?",
+          "content": "Identifier le type d'inéquation, puis appliquer la transformation correspondante :\\begin{enumerate}\\item \\textbf{$|u| \\leq r$} (ou $< r$) : transformer en double inégalité $-r \\leq u \\leq r$\\begin{itemize}\\item Résoudre le système en isolant $u$\\item La solution est un \\textbf{intervalle borné}\\end{itemize}\\item \\textbf{$|u| \\geq r$} (ou $> r$) : transformer en deux cas $u \\geq r$ ou $u \\leq -r$\\begin{itemize}\\item Résoudre chaque inéquation séparément\\item La solution est une \\textbf{réunion de deux intervalles}\\end{itemize}\\item \\textbf{$|u| = r$} : transformer en deux équations $u = r$ ou $u = -r$\\end{enumerate}\\par\\textbf{Attention :} si $r < 0$, alors $|u| \\leq r$ n'a \\textbf{aucune solution} (la valeur absolue est toujours positive)."
+        },
+        {
+          "type": "warning",
+          "content": "$\\sqrt{x^2}$ ne vaut \\textbf{pas} $x$ en général — c'est l'une des erreurs les plus fréquentes :\\begin{enumerate}\\item $\\sqrt{x^2} = |x|$ \\quad (toujours)\\item $\\sqrt{x^2} = x$ \\quad seulement si $x \\geq 0$\\item $\\sqrt{x^2} = -x$ \\quad si $x < 0$\\end{enumerate}\\par\\smallskip Exemple : $\\sqrt{(-3)^2} = \\sqrt{9} = 3 = |-3|$, et non $-3$. Ne jamais simplifier $\\sqrt{x^2}$ par $x$ sans vérifier le signe."
+        }
+      ]
+    },
+    {
+      "id": "intervalles",
+      "category": "course",
+      "title": "Les intervalles dans \\(\\mathbb{R}\\)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait manier les inégalités et la valeur absolue. On formalise maintenant les intervalles, qui sont les ensembles de solutions les plus fréquents en lycée. Maîtriser leur notation est indispensable pour écrire correctement les réponses aux exercices."
+        },
+        {
+          "type": "definition",
+          "title": "Quels sont les différents types d'intervalles ?",
+          "content": "Soient $a$ et $b$ deux réels avec $a < b$.\\par\\smallskip$$\\begin{array}{|c|c|c|}\\hline \\textbf{Notation} & \\textbf{Inégalité} & \\textbf{Bornes} \\\\\\hline [a;b] & a \\leq x \\leq b & \\text{fermé des deux côtés} \\\\\\hline ]a;b[ & a < x < b & \\text{ouvert des deux côtés} \\\\\\hline ]a;b] & a < x \\leq b & \\text{ouvert à gauche, fermé à droite} \\\\\\hline [a;b[ & a \\leq x < b & \\text{fermé à gauche, ouvert à droite} \\\\\\hline [a;+\\infty[ & x \\geq a & \\text{infini : toujours ouvert} \\\\\\hline ]a;+\\infty[ & x > a & \\text{infini : toujours ouvert} \\\\\\hline ]-\\infty;b] & x \\leq b & \\text{infini : toujours ouvert} \\\\\\hline ]-\\infty;b[ & x < b & \\text{infini : toujours ouvert} \\\\\\hline\\end{array}$$\\par\\smallskip Pour un intervalle borné $[a;b]$ ou $]a;b[$ :\\begin{itemize}\\item Milieu : $\\dfrac{a+b}{2}$\\item Amplitude : $b - a$\\item Rayon : $\\dfrac{b-a}{2}$\\end{itemize}"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que l'intersection et la réunion de deux intervalles ?",
+          "content": "Soient $I$ et $J$ deux intervalles.\\begin{enumerate}\\item L'\\textbf{intersection} $I \\cap J$ est l'ensemble des réels appartenant \\textbf{à la fois} à $I$ et à $J$\\item La \\textbf{réunion} $I \\cup J$ est l'ensemble des réels appartenant \\textbf{à $I$ ou à $J$} (ou aux deux)\\end{enumerate}\\par\\smallskip Les éléments de $I \\cap J$ appartiennent aussi à $I \\cup J$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons $I \\cap J$ et $I \\cup J$ avec $I = [-3 ; 5[$ et $J = ]1 ; 8]$.}\\par\\smallskip Pour $I \\cap J$ : on cherche les réels appartenant aux deux intervalles à la fois. On prend la borne gauche la plus grande et la borne droite la plus petite :\\par La borne gauche vaut $\\max(-3 ; 1) = \\blank{1}$ (\\textbf{exclue} car exclue de $J$). La borne droite vaut $\\min(5 ; 8) = \\blank{5}$ (\\textbf{exclue} car exclue de $I$). Donc $I \\cap J = \\blank{]1 ; 5[}$.\\par\\smallskip Pour $I \\cup J$ : on prend la borne gauche la plus petite et la borne droite la plus grande :\\par $I \\cup J = \\blank{[-3 ; 8]}$ car les deux intervalles se chevauchent et il n'y a \\blank{pas de trou} entre eux."
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer l'intersection et la réunion de deux intervalles ?",
+          "content": "\\textbf{Étape préliminaire :} représenter les deux intervalles sur une droite graduée.\\begin{enumerate}\\item \\textbf{Intersection $I \\cap J$} — garder la partie commune :\\begin{itemize}\\item Borne gauche : prendre la \\textbf{plus grande} des deux bornes gauches\\item Borne droite : prendre la \\textbf{plus petite} des deux bornes droites\\item Si borne gauche $\\geq$ borne droite : l'intersection est \\textbf{vide} ($\\emptyset$)\\item Conserver le crochet le plus restrictif (ouvert prioritaire si l'une est ouverte)\\end{itemize}\\item \\textbf{Réunion $I \\cup J$} — regrouper toute la partie couverte :\\begin{itemize}\\item Si les intervalles se \\textbf{chevauchent ou se touchent} : écrire un seul intervalle avec la plus petite borne gauche et la plus grande borne droite\\item S'il y a un \\textbf{trou} (aucun point commun) : garder la forme $I \\cup J$ séparée\\end{itemize}\\end{enumerate}\\par\\textbf{Astuce :} la représentation graphique est toujours plus rapide — dessiner avant de calculer."
+        }
+      ]
+    },
+    {
+      "id": "encadrement",
+      "category": "course",
+      "title": "Encadrement et opérations",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On maîtrise les intervalles. On apprend maintenant à encadrer le résultat d'une opération à partir des encadrements de chaque terme. C'est la technique fondamentale pour estimer une valeur numérique inconnue."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un encadrement d'un réel ?",
+          "content": "Réaliser un \\textbf{encadrement} du réel $x$, c'est trouver deux réels $a \\leq x \\leq b$ (ou avec des inégalités strictes).\\par\\smallskip Les trois notions liées :\\begin{enumerate}\\item \\textbf{Amplitude} : $b - a$ — plus elle est petite, plus l'encadrement est précis\\item \\textbf{Valeur approchée par défaut} : $a$ (la borne inférieure)\\item \\textbf{Valeur approchée par excès} : $b$ (la borne supérieure)\\end{enumerate}"
+        },
+        {
+          "type": "property",
+          "title": "Comment encadrer une somme et un produit ?",
+          "content": "Soient $x$ et $y$ des réels avec $a < x < b$ et $c < y < d$.\\begin{enumerate}\\item \\textbf{Addition} : on additionne membre à membre :\\par$$a + c < x + y < b + d$$\\par Pour une \\textbf{différence} $x - y$ : encadrer d'abord $-y$ en inversant les bornes de $y$ ($-d < -y < -c$), puis additionner.\\item \\textbf{Multiplication} (pour $x, y > 0$, i.e. $0 < a < x < b$ et $0 < c < y < d$) :\\par$$\\boxed{ac < xy < bd}$$\\par Il suffit de multiplier les bornes correspondantes.\\par Pour une \\textbf{division} : encadrer d'abord l'inverse en inversant les bornes et le sens, puis multiplier.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On sait que $1{,}4 < \\sqrt{2} < 1{,}5$ et $2{,}2 < \\sqrt{5} < 2{,}3$. Donnons un encadrement de $\\sqrt{2} + \\sqrt{5}$ et de $\\sqrt{2} \\times \\sqrt{5}$.}\\par\\smallskip \\textbf{Addition :} on ajoute membre à membre :\\begin{align*}1{,}4 + 2{,}2 &< \\sqrt{2} + \\sqrt{5} < 1{,}5 + 2{,}3 \\\\\\blank{3{,}6} &< \\sqrt{2} + \\sqrt{5} < \\blank{3{,}8}\\end{align*}\\par\\smallskip \\textbf{Multiplication :} les deux réels sont positifs, on multiplie les bornes :\\begin{align*}1{,}4 \\times 2{,}2 &< \\sqrt{2} \\times \\sqrt{5} < 1{,}5 \\times 2{,}3 \\\\\\blank{3{,}08} &< \\sqrt{10} < \\blank{3{,}45}\\end{align*}\\par\\smallskip L'amplitude du deuxième encadrement est $3{,}45 - 3{,}08 = \\blank{0{,}37}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On sait que $3{,}1 < \\sqrt{10} < 3{,}2$. Encadrons $\\dfrac{1}{\\sqrt{10}}$ et donnons sa valeur approchée par défaut à $0{,}1$ près.}\\par\\smallskip Puisque $3{,}1 < \\sqrt{10} < 3{,}2$ et que les bornes sont strictement \\blank{positives}, on passe à l'inverse en inversant le sens des inégalités :\\begin{align*}\\frac{1}{\\blank{3{,}2}} < \\frac{1}{\\sqrt{10}} < \\frac{1}{\\blank{3{,}1}}\\end{align*}On calcule : $\\frac{1}{3{,}2} \\approx \\blank{0{,}3125}$ et $\\frac{1}{3{,}1} \\approx 0{,}3226$.\\par\\smallskip Donc l'amplitude de l'encadrement est $0{,}3226 - 0{,}3125 = 0{,}0101$. La valeur approchée par défaut à $0{,}1$ près est \\blank{$0{,}3$}."
+        },
+        {
+          "type": "method",
+          "title": "Comment encadrer le résultat d'une opération complexe ?",
+          "content": "Selon l'opération à encadrer :\\begin{enumerate}\\item \\textbf{Somme $A + B$} : encadrer $A$ et $B$ séparément, puis additionner membre à membre\\item \\textbf{Différence $A - B$} : encadrer $A$, puis encadrer $-B$ (inverser les bornes de $B$), puis additionner\\item \\textbf{Produit $A \\times B$} (termes positifs) : multiplier les bornes correspondantes\\item \\textbf{Quotient $\\frac{A}{B}$} :\\begin{itemize}\\item Encadrer $\\frac{1}{B}$ d'abord (inverser les bornes de $B$ et le sens)\\item Puis multiplier par $A$\\end{itemize}\\end{enumerate}\\par\\textbf{Règle d'or :} toujours \\textbf{vérifier le signe} des réels avant de multiplier ou d'inverser des encadrements. Les règles de multiplication et d'inversion ne s'appliquent qu'à des réels de même signe."
+        }
+      ]
+    },
+    {
+      "id": "valeur_approchee",
+      "category": "course",
+      "title": "Valeur approchée et approximation décimale",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait encadrer un réel à partir d'opérations. On précise maintenant le vocabulaire de l'approximation : valeur approchée par défaut ou par excès, et approximation décimale à une précision donnée."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une valeur approchée d'un réel ?",
+          "content": "Soient $a$ et $x$ deux réels, et $r > 0$.\\par\\smallskip $a$ est une \\textbf{valeur approchée de $x$ à $r$ près} si $|x - a| \\leq r$, c'est-à-dire $a - r \\leq x \\leq a + r$.\\par\\smallskip On distingue deux cas selon la position de $a$ par rapport à $x$ :\\begin{enumerate}\\item \\textbf{Par défaut} : $a \\leq x \\leq a + r$ \\quad — $a$ est en dessous de $x$\\item \\textbf{Par excès} : $a - r \\leq x \\leq a$ \\quad — $a$ est au-dessus de $x$\\end{enumerate}"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une approximation décimale ?",
+          "content": "Soient $x \\in \\mathbb{R}$, $N \\in \\mathbb{Z}$ et $p \\in \\mathbb{N}$.\\par\\smallskip Si $N \\times 10^{-p} \\leq x \\leq (N+1) \\times 10^{-p}$, alors :\\begin{enumerate}\\item $N \\times 10^{-p}$ est l'\\textbf{approximation décimale par défaut} de $x$ à $10^{-p}$ près\\item $(N+1) \\times 10^{-p}$ est l'\\textbf{approximation décimale par excès} de $x$ à $10^{-p}$ près\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On sait que $1{,}38 < \\sqrt{2} < 1{,}42$. Vérifions que $1{,}40$ est une valeur approchée de $\\sqrt{2}$ à $0{,}02$ près, puis précisons si c'est par défaut ou par excès.}\\par\\smallskip On vérifie l'encadrement centré en $1{,}40$ :\\begin{align*}1{,}40 - 0{,}02 &< \\sqrt{2} < 1{,}40 + 0{,}02 \\\\\\blank{1{,}38} &< \\sqrt{2} < \\blank{1{,}42}\\end{align*}La condition $|\\sqrt{2} - 1{,}40| \\leq 0{,}02$ est vérifiée, donc $1{,}40$ est une valeur approchée de $\\sqrt{2}$ à $\\blank{0{,}02}$ près.\\par\\smallskip Puisque $1{,}40 \\leq \\sqrt{2}$, la valeur $1{,}40$ est une approximation \\blank{par défaut}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On sait que $0{,}333333 < \\frac{1}{3} < 0{,}333334$. Donnons l'approximation décimale de $\\frac{1}{3}$ par défaut et par excès à $10^{-6}$ près.}\\par\\smallskip On identifie $p = \\blank{6}$ et on cherche $N$ tel que $N \\times 10^{-6} \\leq \\frac{1}{3} \\leq (N+1) \\times 10^{-6}$.\\par\\smallskip L'encadrement se réécrit : $\\blank{333333} \\times 10^{-6} \\leq \\frac{1}{3} \\leq \\blank{333334} \\times 10^{-6}$.\\par\\smallskip L'approximation \\textbf{par défaut} à $10^{-6}$ près est $\\blank{333333 \\times 10^{-6}}$, soit $0{,}333333$.\\par\\smallskip L'approximation \\textbf{par excès} à $10^{-6}$ près est $\\blank{333334 \\times 10^{-6}}$, soit $0{,}333334$."
+        },
+        {
+          "type": "method",
+          "title": "Comment identifier et exprimer une approximation décimale ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Disposer d'un encadrement} $a \\leq x \\leq b$ d'amplitude $b - a = 10^{-p}$\\item \\textbf{Identifier $p$} — c'est le nombre de décimales de la précision souhaitée\\item \\textbf{Lire les approximations} :\\begin{itemize}\\item Borne \\textbf{inférieure} $a$ : approximation \\textbf{par défaut}\\item Borne \\textbf{supérieure} $b$ : approximation \\textbf{par excès}\\end{itemize}\\end{enumerate}\\par\\textbf{Astuce numérique :} pour un réel $x$ à écriture décimale longue :\\begin{itemize}\\item Approximation par défaut à $10^{-p}$ : \\textbf{tronquer} au rang $p$ (supprimer les chiffres suivants)\\item Approximation par excès à $10^{-p}$ : \\textbf{arrondir au-dessus} si le $(p+1)$\\textsuperscript{e} chiffre est $\\geq 5$\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "Il ne faut pas confondre \\textbf{troncature} et \\textbf{arrondi} :\\begin{enumerate}\\item \\textbf{Troncature} à $10^{-p}$ : supprimer tous les chiffres après le rang $p$, sans regarder ce qui suit — donne l'approximation par défaut\\item \\textbf{Arrondi} à $10^{-p}$ : regarder le $(p+1)$\\textsuperscript{e} chiffre :\\begin{itemize}\\item $< 5$ : même résultat que la troncature\\item $\\geq 5$ : augmenter le dernier chiffre conservé de 1\\end{itemize}\\end{enumerate}\\par\\smallskip Exemple avec $\\pi = 3{,}14159\\ldots$\\begin{itemize}\\item Troncature à $10^{-2}$ : $3{,}14$ (approximation par défaut)\\item Arrondi à $10^{-2}$ : $3{,}14$ (car le 3\\textsuperscript{e} chiffre est $1 < 5$)\\item Troncature à $10^{-3}$ : $3{,}141$\\item Arrondi à $10^{-3}$ : $3{,}142$ (car le 4\\textsuperscript{e} chiffre est $5$)\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Synthèse",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a parcouru tous les outils de l'ordre dans $\\mathbb{R}$ : comparaison, valeur absolue, intervalles, encadrement et approximation. Ce récapitulatif regroupe les points essentiels à maîtriser."
+        },
+        {
+          "type": "summary",
+          "title": "Ce qu'il faut retenir sur l'ordre dans \\(\\mathbb{R}\\)",
+          "content": "\\begin{itemize}\\item Comparer $a$ et $b$ : étudier le signe de $a - b$\\item Multiplier une inégalité par un réel négatif $\\Rightarrow$ le sens \\textbf{s'inverse}\\item Passer à l'inverse (même signe) $\\Rightarrow$ le sens \\textbf{s'inverse}\\item $|x| = x$ si $x \\geq 0$ ; $|x| = -x$ si $x < 0$ ; toujours $|x| \\geq 0$\\item $\\sqrt{x^2} = |x|$ (pas $x$ en général)\\item $|x| \\leq r \\Leftrightarrow x \\in [-r ; r]$ \\quad ; \\quad $|x| \\geq r \\Leftrightarrow x \\in ]-\\infty ; -r] \\cup [r ; +\\infty[$\\item Milieu de $[a;b]$ : $\\frac{a+b}{2}$ \\quad ; \\quad amplitude : $b-a$ \\quad ; \\quad rayon : $\\frac{b-a}{2}$\\item Encadrement somme : additionner membre à membre\\item Encadrement produit (termes positifs) : multiplier les bornes\\item Approx. par défaut à $10^{-p}$ : borne inférieure (troncature)\\item Approx. par excès à $10^{-p}$ : borne supérieure\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

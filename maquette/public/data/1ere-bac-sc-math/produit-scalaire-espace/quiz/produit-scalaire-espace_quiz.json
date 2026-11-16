@@ -1,0 +1,495 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quelle est la nature du résultat du produit scalaire $\\overrightarrow{u} \\cdot \\overrightarrow{v}$ de deux vecteurs de l'espace ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un nombre réel (scalaire)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un vecteur de l'espace",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un plan",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une droite",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le produit scalaire associe a deux vecteurs un nombre reel, contrairement au produit vectoriel qui donne un vecteur."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ de l'espace sont orthogonaux si et seulement si leur produit scalaire est égal à $1$.",
+      "isTrue": false,
+      "explanation": "Deux vecteurs sont orthogonaux si et seulement si $\\overrightarrow{u} \\cdot \\overrightarrow{v} = 0$."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quelle est la formule géométrique du produit scalaire $\\overrightarrow{u} \\cdot \\overrightarrow{v}$ pour deux vecteurs non nuls ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\|\\overrightarrow{u}\\| \\times \\|\\overrightarrow{v}\\| \\times \\cos(\\overrightarrow{u}, \\overrightarrow{v})$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\|\\overrightarrow{u}\\| \\times \\|\\overrightarrow{v}\\| \\times \\sin(\\overrightarrow{u}, \\overrightarrow{v})$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\|\\overrightarrow{u}\\| \\times \\|\\overrightarrow{v}\\|$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}\\|\\overrightarrow{u}\\| \\times \\|\\overrightarrow{v}\\| \\times \\cos(\\overrightarrow{u}, \\overrightarrow{v})$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le produit scalaire fait intervenir le cosinus de l'angle entre les deux vecteurs, pas le sinus."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Le produit scalaire est symétrique, c'est-à-dire que pour tous vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$, on a $\\overrightarrow{u} \\cdot \\overrightarrow{v} = \\overrightarrow{v} \\cdot \\overrightarrow{u}$.",
+      "isTrue": true,
+      "explanation": "La symetrie est une propriete calculatoire fondamentale : l'ordre des vecteurs n'importe pas."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Dans un repère orthonormé, quelle est l'expression analytique du produit scalaire de $\\overrightarrow{u}(x; y; z)$ et $\\overrightarrow{v}(x'; y'; z')$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$xx' + yy' + zz'$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$xx' - yy' + zz'$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$xy' + yz' + zx'$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt{xx' + yy' + zz'}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On multiplie les coordonnees correspondantes et on additionne : $xx' + yy' + zz'$."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Comment calcule-t-on la norme d'un vecteur $\\overrightarrow{u}(x; y; z)$ dans un repère orthonormé ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{x^2 + y^2 + z^2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x^2 + y^2 + z^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$|x| + |y| + |z|$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt{x + y + z}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\|\\overrightarrow{u}\\| = \\sqrt{\\overrightarrow{u} \\cdot \\overrightarrow{u}} = \\sqrt{x^2 + y^2 + z^2}$."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "Quelle formule (dite de polarisation) permet de calculer $\\overrightarrow{AB} \\cdot \\overrightarrow{AC}$ en utilisant uniquement des longueurs ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}(AB^2 + AC^2 - BC^2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2}(AB^2 + BC^2 - AC^2)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$AB^2 + AC^2 - BC^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt{AB^2 + AC^2 - BC^2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Cette formule permet de calculer le produit scalaire a partir des trois cotes du triangle, sans connaitre d'angle."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Qu'est-ce qu'un vecteur normal à un plan $(P)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un vecteur non nul orthogonal à tous les vecteurs formés par les points de ce plan",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un vecteur contenu dans le plan $(P)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un vecteur de norme $1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un vecteur parallèle au plan $(P)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un vecteur normal est orthogonal a deux vecteurs non colineaires du plan, ce qui definit la direction perpendiculaire au plan."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Quelle est la forme générale de l'équation cartésienne d'un plan dans l'espace ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$ax + by + cz + d = 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = ax + b$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$ax^2 + by^2 + cz^2 + d = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x + y + z = d^2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un plan est defini par une equation lineaire $ax + by + cz + d = 0$, et $\\overrightarrow{n}(a; b; c)$ est un vecteur normal."
+    },
+    {
+      "id": "q10",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour déterminer l'équation cartésienne d'un plan passant par $A$ et de vecteur normal $\\overrightarrow{n}(a; b; c)$ :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Identifier les coefficients $a, b, c$ à partir du vecteur normal $\\overrightarrow{n}$"
+        },
+        {
+          "id": "b",
+          "content": "Écrire l'équation sous la forme $ax + by + cz + d = 0$"
+        },
+        {
+          "id": "c",
+          "content": "Déterminer $d$ en remplaçant $x, y, z$ par les coordonnées du point $A$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Le vecteur normal donne les coefficients $a, b, c$, puis on remplace les coordonnees du point $A$ pour trouver $d$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Quelle est la formule de la distance d'un point $A(x_A; y_A; z_A)$ à un plan $(P)$ d'équation $ax + by + cz + d = 0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{|ax_A + by_A + cz_A + d|}{\\sqrt{a^2 + b^2 + c^2}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{ax_A + by_A + cz_A + d}{a^2 + b^2 + c^2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$|ax_A + by_A + cz_A + d| \\times \\sqrt{a^2 + b^2 + c^2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\sqrt{ax_A + by_A + cz_A + d}}{a^2 + b^2 + c^2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$d(A, (P)) = \\dfrac{\\left|ax_A + by_A + cz_A + d\\right|}{\\sqrt{a^2 + b^2 + c^2}}$ : valeur absolue au numerateur, norme du vecteur normal au denominateur."
+    },
+    {
+      "id": "q12",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour calculer la distance d'un point $M$ à un plan $(P)$ :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Identifier l'équation cartésienne du plan $ax+by+cz+d=0$"
+        },
+        {
+          "id": "b",
+          "content": "Remplacer les coordonnées de $M$ dans l'équation pour calculer le numérateur (en valeur absolue)"
+        },
+        {
+          "id": "c",
+          "content": "Diviser par la norme du vecteur normal $\\sqrt{a^2+b^2+c^2}$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "On identifie l'equation du plan, on evalue au point $M$ en valeur absolue, puis on divise par $\\|\\overrightarrow{n}\\|$."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quelle est l'équation cartésienne d'une sphère de centre $\\Omega(a; b; c)$ et de rayon $R$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(x - a)^2 + (y - b)^2 + (z - c)^2 = R^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(x + a)^2 + (y + b)^2 + (z + c)^2 = R^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x^2 + y^2 + z^2 = R^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(x - a) + (y - b) + (z - c) = R$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'equation traduit $\\Omega M = R$, soit $\\Omega M^2 = R^2$ : $(x-a)^2 + (y-b)^2 + (z-c)^2 = R^2$."
+    },
+    {
+      "id": "q14",
+      "type": "boolean",
+      "category": "Définition",
+      "prompt": "L'ensemble des points $M$ de l'espace vérifiant $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = 0$ est la sphère de diamètre $[AB]$.",
+      "isTrue": true,
+      "explanation": "$\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = 0$ signifie que l'angle $\\widehat{AMB}$ est droit, donc $M$ appartient a la sphere de diametre $[AB]$."
+    },
+    {
+      "id": "q15",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour retrouver le centre et le rayon d'une sphère à partir d'une équation développée (ex: $x^2 + y^2 + z^2 + \\alpha x + \\dots = 0$) :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Regrouper les termes en $x$, en $y$ et en $z$"
+        },
+        {
+          "id": "b",
+          "content": "Utiliser le début des identités remarquables pour factoriser (ex: $x^2 + \\alpha x = (x + \\frac{\\alpha}{2})^2 - (\\frac{\\alpha}{2})^2$)"
+        },
+        {
+          "id": "c",
+          "content": "Identifier le centre et le carré du rayon à partir de la forme canonique obtenue"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "On complete le carre pour chaque variable afin de retrouver la forme $(x-a)^2 + (y-b)^2 + (z-c)^2 = R^2$."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Soit $(S)$ une sphère de rayon $R$ et $(P)$ un plan. Si la distance $d$ entre le centre de la sphère et le plan vérifie $d < R$, quelle est l'intersection ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un cercle de rayon $r = \\sqrt{R^2 - d^2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un point unique",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'ensemble vide",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une droite",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si $d < R$, le plan coupe la sphere suivant un cercle de rayon $r = \\sqrt{R^2 - d^2}$ (theoreme de Pythagore)."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Comment caractériser un point $M$ appartenant au plan tangent à une sphère de centre $\\Omega$ en un point de contact $A$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overrightarrow{AM} \\cdot \\overrightarrow{A\\Omega} = 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\overrightarrow{AM} \\wedge \\overrightarrow{A\\Omega} = \\overrightarrow{0}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\Omega M = \\Omega A$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\overrightarrow{AM} \\cdot \\overrightarrow{\\Omega M} = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le plan tangent en $A$ est perpendiculaire au rayon $[\\Omega A]$, donc $\\overrightarrow{A\\Omega}$ est vecteur normal a ce plan."
+    },
+    {
+      "id": "q18",
+      "type": "error",
+      "category": "Application",
+      "prompt": "Identifier l'erreur dans ce calcul de la distance du point $A(1; 1; 1)$ au plan $(P): 2x - y + 2z - 1 = 0$ :",
+      "context": "On applique la formule de la distance d'un point à un plan.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Le numérateur est $|2(1) - 1(1) + 2(1) - 1| = |2 - 1 + 2 - 1| = 2$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Le dénominateur est $2^2 + (-1)^2 + 2^2 = 4 + 1 + 4 = 9$.",
+          "isError": true,
+          "correction": "Le dénominateur doit être la **racine carrée** de la somme des carrés : $\\sqrt{2^2 + (-1)^2 + 2^2} = \\sqrt{9} = 3$."
+        },
+        {
+          "id": "s3",
+          "text": "La distance est $d = \\frac{2}{9}$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "Le point $A$ n'appartient pas au plan.",
+          "isError": false
+        }
+      ],
+      "explanation": "Le denominateur est $\\sqrt{a^2 + b^2 + c^2}$, pas $a^2 + b^2 + c^2$. Oublier la racine carree est une erreur frequente."
+    },
+    {
+      "id": "q19",
+      "type": "error",
+      "category": "Application",
+      "prompt": "Identifier l'erreur dans la détermination de l'équation de la sphère de diamètre $[AB]$ :",
+      "context": "On cherche l'équation de la sphère de diamètre $[AB]$ avec $A(1; 0; 0)$ et $B(0; 1; 0)$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Soit $M(x; y; z)$ un point de la sphère.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "On doit avoir $\\overrightarrow{MA} + \\overrightarrow{MB} = \\overrightarrow{0}$.",
+          "isError": true,
+          "correction": "La condition pour qu'un point $M$ appartienne à la sphère de diamètre $[AB]$ est $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = 0$."
+        },
+        {
+          "id": "s3",
+          "text": "Cela donne $(1-x) + (0-x) = 0$, etc.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "L'équation trouvée est fausse.",
+          "isError": false
+        }
+      ],
+      "explanation": "$\\overrightarrow{MA} + \\overrightarrow{MB} = \\overrightarrow{0}$ definit le milieu de $[AB]$, pas la sphere. La bonne condition est $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = 0$."
+    },
+    {
+      "id": "q20",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Si la distance $d$ entre le centre d'une sphère de rayon $R$ et un plan est exactement égale à $R$ ($d = R$), alors l'intersection est un cercle de rayon $R$.",
+      "isTrue": false,
+      "explanation": "Si $d = R$, le plan est tangent a la sphere : l'intersection est un unique point, pas un cercle."
+    }
+  ]
+}

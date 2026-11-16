@@ -1,0 +1,138 @@
+{
+  "id": "ex-analyse-bac-001",
+  "theme": "derivation",
+  "difficulty": "difficile",
+  "topic": "Analyse - Étude de fonctions et continuité",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "p1",
+      "content": "Soit $f$ la fonction définie par : $$f(x)=\\frac{x^2}{x^2+(1-x)^2}$$",
+      "type": "header"
+    },
+    {
+      "id": "q1",
+      "content": "Vérifier que $\\forall x \\in \\mathbb{R}: x^2+(1-x)^2 = 2\\left(x-\\frac{1}{2}\\right)^2 + \\frac{1}{2}$ puis déduire que $D_f = \\mathbb{R}$",
+      "hint": "Développez l'expression de droite en utilisant l'identité remarquable $(a-b)^2 = a^2 - 2ab + b^2$ pour retrouver le membre de gauche. Pour le domaine, observez que $2(x-\\frac{1}{2})^2 + \\frac{1}{2}$ est une somme de termes positifs qui ne s'annule jamais."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} f(x)$ et $\\displaystyle \\lim_{x \\to -\\infty} f(x)$",
+      "hint": "Pour lever l'indétermination d'une fraction rationnelle en l'infini, factorisez le numérateur et le dénominateur par le terme de plus haut degré : $\\lim_{x \\to \\infty} \\frac{P(x)}{Q(x)} = \\lim_{x \\to \\infty} \\frac{a_n x^n}{b_m x^m}$."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que $f$ est dérivable sur $\\mathbb{R}$ et $$\\forall x \\in \\mathbb{R}: f'(x)=\\frac{-2x(x-1)}{(2x^2-2x+1)^2}$$",
+          "hint": "Utilisez la formule de la dérivée d'un quotient $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$ avec $u(x)=x^2$ et $v(x)=x^2+(1-x)^2$. Pensez à simplifier le dénominateur développé $2x^2-2x+1$ avant de dériver."
+        },
+        {
+          "id": "b",
+          "content": "Dresser le tableau de variations de $f$",
+          "hint": "Étudiez le signe de $f'(x)$. Le dénominateur étant un carré strictement positif, le signe de la dérivée est celui du numérateur $-2x(x-1)$. Utilisez un tableau de signes pour le trinôme du second degré."
+        },
+        {
+          "id": "c",
+          "content": "En déduire les extremums de $f$ sur $\\mathbb{R}$",
+          "hint": "Les extremums locaux sont atteints lorsque la dérivée s'annule en changeant de signe. Calculez les images $f(x)$ correspondantes dans le tableau de variations."
+        },
+        {
+          "id": "d",
+          "content": "Calculer $f'(1)$ et interpréter le résultat graphiquement.",
+          "hint": "Calculez la valeur numérique de $f'(1)$. Si le nombre dérivé est nul, la courbe admet une tangente horizontale au point d'abscisse 1."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Déterminer $f([0;1])$ et $f(\\mathbb{R})$",
+      "hint": "Pour une fonction continue, l'image d'un intervalle fermé $[a,b]$ est l'intervalle $[m, M]$ où $m$ et $M$ sont le minimum et le maximum de la fonction sur cet intervalle. Aidez-vous du tableau de variations."
+    },
+    {
+      "id": "p2",
+      "content": "Soit $g$ et $h$ les fonctions définies par : $$\\begin{cases} g(x)=\\frac{x-\\sqrt{x^2-x}}{2x-1} & ; \\ x \\notin \\left\\{0;\\frac{1}{2}\\right\\} \\\\ g(x)=x & ; \\ x \\in \\left\\{0;\\frac{1}{2}\\right\\} \\end{cases} \\quad \\text{et} \\quad h(x)= \\frac{\\sqrt{x}}{\\sqrt{x}+\\sqrt{1-x}}$$",
+      "type": "header"
+    },
+    {
+      "id": "q5",
+      "content": "Montrer par l'absurde que $\\forall x \\in \\mathbb{R}: \\sqrt{x} + \\sqrt{1-x} \\neq 0$",
+      "hint": "Supposer que la somme est nulle : $\\sqrt{A} + \\sqrt{B} = 0 \\iff A=0 \\text{ et } B=0$. Vérifiez si $x$ et $1-x$ peuvent être nuls simultanément."
+    },
+    {
+      "id": "q6",
+      "content": "Montrer soigneusement que $D_g = D_h = [0;1]$",
+      "hint": "Pour le domaine, assurez-vous que les expressions sous les racines carrées sont positives ou nulles ($U \\ge 0$ pour $\\sqrt{U}$). Pour $h$, il faut $x \\ge 0$ et $1-x \\ge 0$."
+    },
+    {
+      "id": "q7",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que $\\displaystyle \\lim_{x \\to 0} g(x) = g(0)$",
+          "hint": "Pour lever l'indétermination de type $\\frac{0}{0}$, multipliez le numérateur et le dénominateur par l'expression conjuguée $x+\\sqrt{x^2-x}$."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que $\\forall x \\notin \\left\\{0;\\frac{1}{2}\\right\\}: g(x) = \\frac{\\sqrt{x}}{\\sqrt{x}+\\sqrt{1-x}}$",
+          "hint": "Partez de l'expression initiale de $g(x)$. Utilisez l'expression conjuguée et factorisez les termes sous la racine en remarquant que sur le domaine, $\\sqrt{x^2} = |x| = x$."
+        },
+        {
+          "id": "c",
+          "content": "En déduire que $\\displaystyle \\lim_{x \\to \\frac{1}{2}} g(x) = g\\left(\\frac{1}{2}\\right)$",
+          "hint": "Utilisez l'expression simplifiée de $g(x)$ obtenue à la question précédente pour calculer la limite par simple substitution."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "content": "Montrer que $\\forall x \\in [0;1]: g(x)=h(x)$",
+      "hint": "Comparez l'expression simplifiée de $g(x)$ obtenue en 3.b avec la définition de $h(x)$. Vérifiez également l'égalité pour les valeurs particulières $x=0$ et $x=1/2$ définies par morceaux."
+    },
+    {
+      "id": "q9",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Etudier la dérivabilité de $g$ à droite en 0 puis interpréter graphiquement le résultat.",
+          "hint": "Calculez la limite du taux d'accroissement $\\lim_{x \\to 0^+} \\frac{g(x)-g(0)}{x-0}$. Si cette limite est infinie, la courbe admet une demi-tangente verticale en ce point."
+        },
+        {
+          "id": "b",
+          "content": "Vérifier que $\\forall x \\in [0;1]: g(1-x) = g(x)$",
+          "hint": "Remplacez $x$ par $(1-x)$ dans l'expression de $h(x)$ (puisque $g=h$) et simplifiez pour voir si l'on retrouve l'expression originale."
+        },
+        {
+          "id": "c",
+          "content": "Déduire que $g$ n'est pas dérivable à gauche en 1",
+          "hint": "Exploitez la symétrie démontrée à la question précédente. Si la courbe a une tangente verticale en 0, elle aura un comportement symétrique en 1."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que $g$ est dérivable sur $]0;1[$ et que : $$\\forall x \\in ]0;1[: g'(x) = \\frac{1}{2\\sqrt{x}\\sqrt{1-x}(\\sqrt{x}+\\sqrt{1-x})^2}$$",
+          "hint": "Dérivez la fonction $h(x)$ en utilisant la règle $\\left(\\frac{u}{v}\\right)'$. Rappelez-vous que $(\\sqrt{u})' = \\frac{u'}{2\\sqrt{u}}$. Attention au signe lors de la dérivation de $\\sqrt{1-x}$."
+        },
+        {
+          "id": "b",
+          "content": "En déduire le tableau de variations de $g$ sur $]0;1[$",
+          "hint": "Analysez le signe de chaque facteur de la dérivée $g'(x)$. Comme les racines carrées et les carrés sont positifs, le signe est immédiat."
+        },
+        {
+          "id": "c",
+          "content": "Déduire l'équation de la tangente à $(\\mathcal{C}_f)$ au point d'abscisse $\\frac{1}{2}$",
+          "hint": "Utilisez l'équation de la tangente $y = g'(a)(x-a) + g(a)$ avec $a=\\frac{1}{2}$. Notez que l'énoncé mentionne $(\\mathcal{C}_f)$ mais demande la tangente pour la fonction étudiée ici ($g$)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "id": "limites",
+  "title": "Limites d'une fonction numérique",
+  "section": "analyse",
+  "quizCount": 24,
+  "session_dates": [
+    "2026-01-25T20:00:00.000Z",
+    "2026-01-26T20:00:00.000Z",
+    "2026-01-28T20:00:00.000Z"
+  ],
+  "revisions": [
+    {
+      "id": "rev-limites-1",
+      "title": "Fiche Complète : Limites",
+      "path": "data/1ere-bac-sc-math/limites/revisions/fiche_limites_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex_01",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_01.json"
+    },
+    {
+      "id": "ex_02",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_02.json"
+    },
+    {
+      "id": "ex_03",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_03.json"
+    },
+    {
+      "id": "ex_04",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_04.json"
+    },
+    {
+      "id": "ex_05",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_05.json"
+    },
+    {
+      "id": "ex_06",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_06.json"
+    },
+    {
+      "id": "ex_07",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_07.json"
+    },
+    {
+      "id": "ex_08",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_08.json"
+    },
+    {
+      "id": "ex_09",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_09.json"
+    },
+    {
+      "id": "ex_10",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_10.json"
+    },
+    {
+      "id": "ex_11",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_11.json"
+    },
+    {
+      "id": "ex_12",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_12.json"
+    },
+    {
+      "id": "ex_13",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_13.json"
+    },
+    {
+      "id": "ex_14",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_14.json"
+    },
+    {
+      "id": "ex_15",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_15.json"
+    },
+    {
+      "id": "ex_16",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_16.json"
+    },
+    {
+      "id": "ex_17",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_17.json"
+    },
+    {
+      "id": "ex_18",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_18.json"
+    },
+    {
+      "id": "ex_19",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_19.json"
+    },
+    {
+      "id": "ex_20",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_20.json"
+    },
+    {
+      "id": "ex_21",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_21.json"
+    },
+    {
+      "id": "ex_22",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_22.json"
+    },
+    {
+      "id": "ex_23",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_23.json"
+    },
+    {
+      "id": "ex_24",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_24.json"
+    },
+    {
+      "id": "ex_25",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_25.json"
+    },
+    {
+      "id": "ex_26",
+      "path": "data/1ere-bac-sc-math/limites/exercises/ex_26.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-limites-01",
+      "path": "data/1ere-bac-sc-math/limites/quiz/limites_quiz.json",
+      "questionsCount": 24
+    }
+  ]
+}

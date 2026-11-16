@@ -1,0 +1,625 @@
+{
+  "header": {
+    "title": "Limites et continuité",
+    "subtitle": "Calculer des limites, établir la continuité, étudier les fonctions réciproques et manipuler $\\operatorname{Arctan}$",
+    "context": "2BAC Sciences Mathématiques BIOF"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "\\objectif{Maîtriser les limites et la continuité pour étudier le comportement d'une fonction près d'un point ou aux bornes de son domaine.} Une expression indéterminée ne donne pas encore la limite : elle indique qu'une transformation est nécessaire. \\defi{Le travail essentiel consiste à reconnaître rapidement l'outil adapté, puis à rédiger chaque justification dans un ordre logique.} \\savant{Augustin-Louis Cauchy} a contribué à donner aux notions de limite et de continuité une formulation rigoureuse qui structure encore l'analyse moderne. La progression conduit enfin à la fonction Arctangente, obtenue comme fonction réciproque de la tangente sur un intervalle adapté."
+        }
+      ]
+    },
+    {
+      "id": "limites_a_infini",
+      "category": "course",
+      "title": "Calcul des limites à l'infini",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les opérations usuelles suffisent lorsque chaque limite se combine directement. Lorsqu'une forme indéterminée apparaît, on transforme l'expression avant de conclure."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{repérer une forme indéterminée}",
+          "content": "\\textbf{Propriété :} Les quatre formes indéterminées usuelles sont :\\itemsize{$\\dfrac{0}{0}$}\\itemsize{$\\dfrac{\\infty}{\\infty}$}\\itemsize{$\\infty-\\infty$}\\itemsize{$0\\times\\infty$} Leur présence ne signifie pas que la limite n'existe pas. Elle impose seulement de modifier l'écriture."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{isoler le terme dominant}",
+          "content": "À $+\\infty$ ou à $-\\infty$, on conserve le terme de plus haut degré d'un polynôme. Pour une fraction rationnelle, on compare les termes de plus haut degré du numérateur et du dénominateur. Cette méthode ne s'utilise qu'à l'infini."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle \\lim_{x \\to +\\infty}\\dfrac{2x+5x^2-7x^4}{x-10x^2+14x^3}$.} Les termes de plus haut degré gouvernent le quotient. On obtient :\\par\\smallskip\\begin{align*}\\lim_{x \\to +\\infty}\\dfrac{2x+5x^2-7x^4}{x-10x^2+14x^3}&=\\lim_{x \\to +\\infty}\\dfrac{\\blank{-7x^4}}{14x^3}\\\\&=\\lim_{x \\to +\\infty}-\\dfrac{x}{\\blank{2}}\\\\&=\\boxed{\\blank{-\\infty}}.\\end{align*}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{conjuguer deux racines carrées}",
+          "content": "Devant une différence de racines carrées, on multiplie par la quantité conjuguée. On utilise alors $(\\sqrt{a}-\\sqrt{b})(\\sqrt{a}+\\sqrt{b})=a-b$, puis on simplifie avant de passer à la limite."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons $\\displaystyle \\lim_{x \\to +\\infty}\\left(\\sqrt{x^2+x}-x\\right)$.} L'expression est de la forme $\\infty-\\infty$. On la multiplie par sa quantité conjuguée :\\par\\smallskip\\begin{align*}\\sqrt{x^2+x}-x&=\\dfrac{x}{\\blank{\\sqrt{x^2+x}+x}}\\\\&=\\dfrac{x}{x\\blank{\\sqrt{1+\\frac1x}}+x}\\\\&=\\dfrac{\\blank{1}}{\\sqrt{1+\\frac1x}+1}.\\end{align*} Ainsi :\\par\\smallskip$$\\boxed{\\displaystyle \\lim_{x \\to +\\infty}\\left(\\sqrt{x^2+x}-x\\right)=\\blank{\\dfrac12}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Deux pièges fréquents :} la règle du terme dominant est réservée aux limites à l'infini. De plus, $\\sqrt{x^2}=|x|$ ; à $-\\infty$, on a donc $\\sqrt{x^2}=-x$."
+        }
+      ]
+    },
+    {
+      "id": "limites_en_un_point",
+      "category": "course",
+      "title": "Limites en un point et limites trigonométriques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "À proximité d'un réel, le terme dominant ne permet plus de conclure. On cherche plutôt une factorisation ou une limite trigonométrique de référence."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{lever la forme $\\dfrac{0}{0}$ par factorisation}",
+          "content": "Si $P(a)=Q(a)=0$, alors $x-a$ est un facteur commun de $P(x)$ et de $Q(x)$. On factorise, on simplifie pour $x\\ne a$, puis on calcule la limite de l'expression simplifiée."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle \\lim_{x \\to 1}\\dfrac{x^2-6x+5}{x-1}$.} Le numérateur s'annule en $1$, donc on le factorise :\\par\\smallskip\\begin{align*}\\dfrac{x^2-6x+5}{x-1}&=\\dfrac{\\blank{(x-1)(x-5)}}{x-1}\\\\&=x\\blank{-5},\\qquad x\\ne1.\\end{align*} Par conséquent :\\par\\smallskip$$\\boxed{\\displaystyle \\lim_{x \\to 1}\\dfrac{x^2-6x+5}{x-1}=\\blank{-4}}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Quelles sont \\mathqst{les limites trigonométriques de référence}",
+          "content": "\\textbf{Théorème :} Au voisinage de $0$, on dispose des résultats suivants :\\itemsize{$\\displaystyle \\lim_{x \\to 0}\\dfrac{\\sin x}{x}=1$}\\itemsize{$\\displaystyle \\lim_{x \\to 0}\\dfrac{\\tan x}{x}=1$}\\itemsize{$\\displaystyle \\lim_{x \\to 0}\\dfrac{1-\\cos x}{x^2}=\\dfrac12$} Plus généralement, si $u(x)$ tend vers $0$ et reste non nul au voisinage du point considéré, alors $\\displaystyle \\lim_{x \\to a} \\dfrac{\\sin u(x)}{u(x)}=1$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{ramener une limite trigonométrique en zéro}",
+          "content": "Lorsque la variable tend vers un réel $a\\ne0$, on pose $t=x-a$. On réécrit alors toute l'expression en fonction de $t$, puis on utilise les limites de référence lorsque $t$ tend vers $0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Traitons deux limites indépendantes.\\begin{enumerate}\\item Calculer $\\displaystyle \\lim_{x \\to \\frac{\\pi}{4}}\\dfrac{\\tan x-1}{x-\\frac{\\pi}{4}}$.\\item Calculer $\\displaystyle \\lim_{x \\to0}\\dfrac{\\sqrt{1+x}-1}{\\tan x}$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Posons $t=x-\\dfrac{\\pi}{4}$. Comme $\\tan\\left(t+\\dfrac{\\pi}{4}\\right)=\\dfrac{1+\\tan t}{1-\\tan t}$, on obtient :\\end{enumerate}\\begin{align*}\\dfrac{\\tan x-1}{x-\\frac{\\pi}{4}}&=\\dfrac{\\blank{2}}{1-\\tan t}\\cdot\\dfrac{\\tan t}{t}.\\end{align*} Les deux facteurs tendent respectivement vers $2$ et $1$, donc la première limite vaut $\\blank{2}$.\\par\\smallskip\\begin{enumerate}\\item Pour la seconde limite, on sépare deux quotients de référence :\\end{enumerate}\\begin{align*}\\dfrac{\\sqrt{1+x}-1}{\\tan x}&=\\dfrac{\\sqrt{1+x}-1}{x}\\cdot\\dfrac{x}{\\tan x}\\\\&=\\dfrac{\\blank{1}}{\\sqrt{1+x}+1}\\cdot\\dfrac{x}{\\tan x}.\\end{align*} Ainsi, la seconde limite vaut $\\blank{\\dfrac12}$. Les résultats sont : $\\boxed{2}$ et $\\boxed{\\dfrac12}$."
+        }
+      ]
+    },
+    {
+      "id": "comparaison_encadrement",
+      "category": "course",
+      "title": "Comparaison et encadrement",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certaines expressions contiennent un facteur oscillant ou une partie entière. Dans ce cas, on ne calcule pas directement : on mesure l'écart à la limite attendue et on l'encadre."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{conclure par encadrement}",
+          "content": "\\textbf{Théorème d'encadrement :} Si, au voisinage de $a$, on a $|f(x)-\\ell|\\le g(x)$ et si $\\displaystyle \\lim_{x \\to a}g(x)=0$, alors :\\par\\smallskip$$\\large\\boxed{\\displaystyle \\lim_{x \\to a}f(x)=\\ell}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles \\mathqst{majorations utiliser immédiatement}",
+          "content": "\\textbf{Propriété :} Pour tout réel $u$ :\\itemsize{$|\\sin u|\\le1$}\\itemsize{$|\\cos u|\\le1$}\\itemsize{$u-1<E(u)\\le u$}\\itemsize{$|E(u)-u|<1$} Ici, $E(u)$ désigne la partie entière de $u$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{encadrer l'écart à la limite}",
+          "content": "On choisit d'abord le réel $\\ell$ qui semble être la limite. On calcule ensuite $|f(x)-\\ell|$, puis on utilise une majoration simple qui tend vers $0$. Le théorème d'encadrement donne alors la limite."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions deux fonctions oscillantes près de $0$.\\begin{enumerate}\\item Pour $f(x)=2+x^2\\sin\\left(\\dfrac1x\\right)$, déterminer $\\displaystyle \\lim_{x \\to0}f(x)$.\\item Pour $g(x)=\\dfrac{x}{2}E\\left(\\dfrac3x\\right)$, déterminer $\\displaystyle \\lim_{x \\to0}g(x)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Comme $|\\sin(1/x)|\\le1$, on a\\end{enumerate}$$|f(x)-2|=x^2\\left|\\sin\\left(\\dfrac1x\\right)\\right|\\le\\blank{x^2}.$ Le majorant tend vers $0$, donc $\\displaystyle \\lim_{x \\to0}f(x)=\\blank{2}$.\\par\\smallskip\\begin{enumerate}\\item La propriété de la partie entière donne\\end{enumerate}\\begin{align*}\\left|g(x)-\\dfrac32\\right|&=\\dfrac{|x|}{2}\\left|\\blank{E\\left(\\dfrac3x\\right)-\\dfrac3x}\\right|\\\\&\\le\\dfrac{|x|}{2}.\\end{align*} Ce majorant tend vers $0$, donc $\\displaystyle \\lim_{x \\to0}g(x)=\\blank{\\dfrac32}$. Les résultats sont : $\\boxed{2}$ et $\\boxed{\\dfrac32}$."
+        },
+        {
+          "type": "warning",
+          "content": "Une fonction oscillante peut avoir une limite lorsqu'elle est multipliée par un facteur qui tend vers $0$. Il faut encadrer l'amplitude de l'oscillation, et non chercher une limite séparée du facteur oscillant."
+        }
+      ]
+    },
+    {
+      "id": "continuite_en_un_point",
+      "category": "course",
+      "title": "Continuité en un point $a$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une limite décrit le comportement de la fonction près d'un point. La continuité ajoute une exigence : ce comportement doit coïncider avec la valeur réellement prise par la fonction.",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/limites-continuite/revisions/figures/continuite-trois-types.svg",
+            "alt": "Trois graphiques côte à côte : une courbe percée d'un trou, une fonction en marche présentant un saut, et une branche infinie le long de l'axe des ordonnées.",
+            "position": "bottom",
+            "width": "100%",
+            "lazy": false,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": true
+            },
+            "caption": "Trois façons de perdre la continuité en un point : un trou que l'on peut combler, un saut, une limite infinie.",
+            "captionStyle": {
+              "align": "center",
+              "size": "md"
+            }
+          }
+        },
+        {
+          "type": "definition",
+          "title": "Quand \\mathqst{une fonction est-elle continue en $a$}",
+          "content": "\\textbf{Définition :} Soit $f$ définie sur un intervalle ouvert contenant $a$. On dit que $f$ est \\textbf{continue en $a$} lorsque :\\par\\smallskip$$\\large\\boxed{\\displaystyle \\lim_{x \\to a}f(x)=f(a)}$$ Pour vérifier cette égalité, il faut s'assurer que $f(a)$ existe, que la limite est finie et que les deux valeurs coïncident."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{définir la continuité latérale}",
+          "content": "\\textbf{Définition :} La fonction $f$ est \\textbf{continue à droite en $a$} si $\\displaystyle \\lim_{x \\to a^+}f(x)=f(a)$. Elle est \\textbf{continue à gauche en $a$} si $\\displaystyle \\lim_{x \\to a^-}f(x)=f(a)$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{réunir les deux limites latérales}",
+          "content": "\\textbf{Propriété :} Une fonction est continue en $a$ si et seulement si :\\par\\smallskip$$\\large\\boxed{\\displaystyle \\lim_{x \\to a^-}f(x)=\\lim_{x \\to a^+}f(x)=f(a)}$$ Cette caractérisation est l'outil naturel pour une fonction définie par morceaux."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions la continuité en $2$ de la fonction définie par $f(x)=\\dfrac{2x+1}{7-3x}$ si $x\\le2$, et $f(x)=\\dfrac{x^2+x-6}{x-2}$ si $x>2$.} On calcule d'abord la valeur au point :$$f(2)=\\dfrac{5}{1}=\\blank{5}.$$ À gauche, la première expression est continue en $2$, donc $\\displaystyle \\lim_{x \\to2^-}f(x)=5$. À droite, on factorise :\\begin{align*}\\lim_{x \\to2^+}f(x)&=\\lim_{x \\to2^+}\\dfrac{\\blank{(x-2)(x+3)}}{x-2}\\\\&=\\lim_{x \\to2^+}(x+\\blank{3})=5.\\end{align*} Les deux limites latérales et $f(2)$ coïncident, donc $\\boxed{f\\text{ est \\blank{\\text{continue}} en }2}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{déterminer un paramètre de continuité}",
+          "content": "On calcule la limite de l'expression au point concerné. On impose ensuite que cette limite soit égale à la valeur donnée par la branche contenant le paramètre. L'égalité obtenue détermine la valeur du paramètre."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $f(x)=\\dfrac{\\sin(\\pi x)}{x-1}$ pour $x\\ne1$ et $f(1)=m$. Déterminons $m$ pour que $f$ soit continue en $1$.} Posons $t=x-1$. Alors :\\begin{align*}\\dfrac{\\sin(\\pi x)}{x-1}&=\\dfrac{\\sin(\\pi t+\\pi)}{t}\\\\&=\\blank{-\\dfrac{\\sin(\\pi t)}{t}}\\\\&=-\\pi\\,\\dfrac{\\sin(\\pi t)}{\\blank{\\pi t}}.\\end{align*} Lorsque $t$ tend vers $0$, le dernier quotient tend vers $\\blank{1}$. La limite vaut donc $\\blank{-\\pi}$. La continuité en $1$ impose :$$\\boxed{m=-\\pi}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Calculer seulement la limite ne suffit pas pour conclure à la continuité. Il faut toujours vérifier que la fonction est définie au point et comparer la limite à $f(a)$."
+        }
+      ]
+    },
+    {
+      "id": "prolongement_par_continuite",
+      "category": "course",
+      "title": "Prolongement par continuité",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction peut ne pas être définie en un point tout en possédant une limite finie à cet endroit. On peut alors compléter sa définition sans modifier ses valeurs ailleurs.",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/limites-continuite/revisions/figures/continuite-prolongement.svg",
+            "alt": "Courbe de sin(x)/x : la courbe tend vers la droite y = 1 et présente un trou à l'origine, alors que la limite vaut 1.",
+            "position": "bottom",
+            "width": "84%",
+            "lazy": false,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": true
+            },
+            "caption": "En $0$, la limite vaut $1$ alors que $f(0)$ n'existe pas : le trou se comble en posant $f(0)=1$.",
+            "captionStyle": {
+              "align": "center",
+              "size": "md"
+            }
+          }
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le prolongement par continuité}",
+          "content": "\\textbf{Définition :} Soit $f$ définie sur $I\\setminus\\{a\\}$. Si $\\displaystyle \\lim_{x \\to a}f(x)=\\ell$ avec $\\ell\\in\\mathbb{R}$, on définit :\\par\\smallskip$$\\widetilde f(x)=\\begin{cases}f(x)&\\text{si }x\\ne a,\\\\\\ell&\\text{si }x=a.\\end{cases}$$ La fonction $\\widetilde f$ est alors continue en $a$ et constitue le \\textbf{prolongement par continuité} de $f$."
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{le prolongement est-il impossible}",
+          "content": "\\textbf{Propriété :} Le prolongement est impossible dans deux situations :\\itemsize{la limite en $a$ est infinie ;}\\itemsize{la limite en $a$ n'existe pas.} Dans les deux cas, aucune valeur réelle attribuée en $a$ ne peut rendre la fonction continue."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{tester un prolongement possible}",
+          "content": "On vérifie d'abord que le point n'appartient pas au domaine initial. On calcule ensuite la limite en ce point. Si cette limite est un réel $\\ell$, on complète la fonction par la valeur $\\widetilde f(a)=\\ell$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions les prolongements possibles de $f(x)=\\dfrac{x^3+1}{x^2+3x+2}$ aux points exclus de son domaine.} Le domaine est $\\mathbb{R}\\setminus\\{-1,-2\\}$. Pour $x\\ne-1$, on simplifie :\\begin{align*}f(x)&=\\dfrac{(x+1)\\blank{(x^2-x+1)}}{(x+1)(x+2)}\\\\&=\\dfrac{x^2-x+1}{x+2}.\\end{align*} Ainsi, $\\displaystyle \\lim_{x \\to-1}f(x)=\\blank{3}$, donc on peut poser $\\widetilde f(-1)=3$. En revanche, lorsque $x$ tend vers $-2$, le numérateur tend vers $\\blank{7}$ et le dénominateur vers $0$, donc $|f(x)|$ devient arbitrairement grand. Aucun prolongement réel n'est possible en $-2$. Le seul prolongement obtenu est $\\boxed{\\widetilde f(-1)=\\blank{3}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Prolongeons en $0$ la fonction $f(x)=\\dfrac{1-\\cos x}{x}$ définie pour $x\\ne0$.} On utilise la limite trigonométrique de référence :\\begin{align*}\\dfrac{1-\\cos x}{x}&=\\dfrac{1-\\cos x}{\\blank{x^2}}\\cdot x.\\end{align*} Le premier facteur tend vers $\\blank{\\dfrac12}$ et le second vers $0$. La limite vaut donc $0$, et le prolongement est obtenu en posant :$$\\boxed{\\widetilde f(0)=\\blank{0}}$$"
+        }
+      ]
+    },
+    {
+      "id": "continuite_sur_intervalle",
+      "category": "course",
+      "title": "Continuité sur un intervalle $I$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après avoir étudié la continuité en un point, on l'étend à tous les points d'un intervalle. Les fonctions usuelles et les opérations permettent souvent de conclure sans calculer de limite."
+        },
+        {
+          "type": "definition",
+          "title": "Quand \\mathqst{une fonction est-elle continue sur $I$}",
+          "content": "\\textbf{Définition :} Une fonction $f$ est \\textbf{continue sur un intervalle $I$} si elle est continue en tout point de $I$. À une borne gauche incluse, on utilise la continuité à droite ; à une borne droite incluse, on utilise la continuité à gauche."
+        },
+        {
+          "type": "property",
+          "title": "Quelles \\mathqst{fonctions sont continues sur leur domaine}",
+          "content": "\\textbf{Propriété :} Sont continues sur leur domaine de définition :\\itemsize{les fonctions polynômes ;}\\itemsize{les fonctions rationnelles ;}\\itemsize{la fonction $x\\mapsto\\sqrt{x}$ sur $[0,+\\infty[$ ;}\\itemsize{les fonctions $\\sin$ et $\\cos$ sur $\\mathbb{R}$ ;}\\itemsize{la fonction $\\tan$ sur chaque intervalle de son domaine.}"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{conserver la continuité par opérations}",
+          "content": "\\textbf{Propriété :} Si $f$ et $g$ sont continues sur $I$, alors :\\itemsize{$f+g$, $\\lambda f$, $fg$ et $|f|$ sont continues sur $I$ ;}\\itemsize{$\\dfrac{f}{g}$ est continue aux points où $g$ ne s'annule pas ;}\\itemsize{si $f\\ge0$, alors $\\sqrt{f}$ est continue sur $I$ ;}\\itemsize{si $f(I)\\subset J$ et $g$ est continue sur $J$, alors $g\\circ f$ est continue sur $I$.}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{reconnaître une fonction composée continue}",
+          "content": "On identifie une fonction intérieure $f$ et une fonction extérieure $g$. On vérifie la continuité de $f$ sur l'intervalle étudié, celle de $g$ sur un intervalle contenant $f(I)$, puis on conclut pour $g\\circ f$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Montrons que $h(x)=\\cos(2x^2-3x+4)$ est continue sur $\\mathbb{R}$.} La fonction $f(x)=2x^2-3x+4$ est un \\blank{\\text{polynôme}}, donc elle est continue sur $\\mathbb{R}$. La fonction $g(x)=\\blank{\\cos x}$ est également continue sur $\\mathbb{R}$. Comme $h=\\blank{g\\circ f}$, on obtient :$$\\boxed{h\\text{ est \\blank{\\text{continue}} sur }\\mathbb{R}}$$ Aucun calcul de limite n'est nécessaire."
+        },
+        {
+          "type": "warning",
+          "content": "La réciproque de la propriété de composition est fausse. La fonction $g\\circ f$ peut être continue alors que $f$ ne l'est pas, par exemple lorsque $g$ est constante."
+        }
+      ]
+    },
+    {
+      "id": "image_intervalle",
+      "category": "course",
+      "title": "Image d'un intervalle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La continuité contrôle aussi les valeurs prises par une fonction sur un intervalle. Lorsque la fonction est monotone, l'image se détermine directement à partir des bornes.",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/limites-continuite/revisions/figures/continuite-image-segment.svg",
+            "alt": "Courbe continue sur [a, b] comprise entre son minimum m et son maximum M, ces deux bornes étant effectivement atteintes.",
+            "position": "bottom",
+            "width": "69%",
+            "lazy": false,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": true
+            },
+            "caption": "Le segment de départ $[a\\,;\\,b]$ est mis en évidence sur l'axe des abscisses, son image $[m\\,;\\,M]$ sur l'axe des ordonnées.",
+            "captionStyle": {
+              "align": "center",
+              "size": "md"
+            }
+          }
+        },
+        {
+          "type": "theorem",
+          "title": "Que devient \\mathqst{l'image d'un intervalle continu}",
+          "content": "\\textbf{Théorème :} L'image d'un intervalle par une fonction continue est un intervalle."
+        },
+        {
+          "type": "theorem",
+          "title": "Que garantit \\mathqst{la continuité sur un segment}",
+          "content": "\\textbf{Théorème :} Si $f$ est continue sur $[a,b]$, alors elle atteint un minimum $m$ et un maximum $M$. On a :\\par\\smallskip$$\\large\\boxed{f([a,b])=[m,M]}$$ En particulier, $f$ est bornée sur $[a,b]$ et atteint ses bornes."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{lire l'image d'un intervalle monotone}",
+          "content": "\\textbf{Propriété :} Si $f$ est continue et strictement monotone sur $I$, l'image se lit dans le même ordre que les variations :\\itemsize{sur $[a,b]$, une fonction croissante donne $[f(a),f(b)]$, tandis qu'une fonction décroissante donne $[f(b),f(a)]$ ;}\\itemsize{sur $[a,b[$, la valeur en $a$ est incluse et la limite en $b^-$ ne l'est pas ;}\\itemsize{sur $[a,+\\infty[$, la valeur en $a$ est incluse et la limite en $+\\infty$ détermine l'autre borne.}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $f(x)=\\dfrac{2x-3}{x+1}$ sur $]-1,+\\infty[$. Déterminons $f([0,1])$ et $f([2,+\\infty[)$.} On écrit $f(x)=2-\\dfrac{\\blank{5}}{x+1}$. Sur $]-1,+\\infty[$, la fonction est strictement \\blank{\\text{croissante}}. Ainsi :\\begin{align*}f([0,1])&=[f(0),f(1)]=\\blank{\\left[-3,-\\dfrac12\\right]},\\\\f([2,+\\infty[)&=\\left[f(2),\\lim_{x \\to+\\infty}f(x)\\right[=\\left[\\dfrac13,\\blank{2}\\right[.\\end{align*} Les images cherchées sont $\\boxed{\\left[-3,-\\dfrac12\\right]}$ et $\\boxed{\\left[\\dfrac13,2\\right[}$."
+        },
+        {
+          "type": "remark",
+          "content": "Le crochet dépend de l'appartenance de la borne à l'intervalle de départ et de l'atteinte réelle de la valeur limite. Une limite finie à une borne exclue ne devient pas automatiquement une valeur prise par la fonction."
+        }
+      ]
+    },
+    {
+      "id": "theoreme_valeurs_intermediaires",
+      "category": "course",
+      "title": "Théorème des valeurs intermédiaires",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction continue ne peut pas passer d'une valeur à une autre sans prendre toutes les valeurs intermédiaires. Cette idée permet de prouver l'existence d'une solution sans la calculer explicitement.",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/limites-continuite/revisions/figures/continuite-tvi-existence.svg",
+            "alt": "Courbe continue croissant de f(a) à f(b) et coupant la droite y = k au point d'abscisse c.",
+            "position": "bottom",
+            "width": "68%",
+            "lazy": false,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": true
+            },
+            "caption": "L'existence d'un tel $c$ est garantie ; son unicité ne l'est pas.",
+            "captionStyle": {
+              "align": "center",
+              "size": "md"
+            }
+          }
+        },
+        {
+          "type": "theorem",
+          "title": "Que garantit \\mathqst{le théorème des valeurs intermédiaires}",
+          "content": "\\textbf{Théorème des valeurs intermédiaires :} Si $f$ est continue sur $[a,b]$ et si $k$ est compris entre $f(a)$ et $f(b)$, alors il existe au moins un réel $c\\in[a,b]$ tel que :\\par\\smallskip$$\\large\\boxed{f(c)=k}$$"
+        },
+        {
+          "type": "corollary",
+          "title": "Quand \\mathqst{une équation possède-t-elle une racine}",
+          "content": "Si $f$ est continue sur $[a,b]$ et si $f(a)f(b)<0$, alors l'équation $f(x)=0$ admet au moins une solution dans $]a,b[$. Si $f$ est en plus strictement monotone sur $[a,b]$, cette solution est unique."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{rédiger une preuve d'existence et d'unicité}",
+          "content": "\\begin{enumerate}\\item Poser $g(x)=f(x)-k$ lorsque l'équation est $f(x)=k$.\\item Justifier que $g$ est continue sur $[a,b]$.\\item Calculer $g(a)$ et $g(b)$, puis vérifier que leur produit est négatif.\\item Appliquer le théorème des valeurs intermédiaires pour obtenir l'existence.\\item Établir la stricte monotonie seulement lorsque l'unicité est demandée.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Montrons que l'équation $x^3+x-1=0$ admet une unique solution $\\alpha$ dans $]0,1[$, puis déterminons le signe du membre de gauche.} Posons $f(x)=x^3+x-1$. La fonction $f$ est continue sur $[0,1]$ car elle est polynomiale. De plus :$$f(0)=\\blank{-1}<0\\qquad\\text{et}\\qquad f(1)=\\blank{1}>0.$$ Le théorème des valeurs intermédiaires assure l'existence d'une solution $\\alpha\\in]0,1[$. La fonction est strictement \\blank{\\text{croissante}} sur $\\mathbb{R}$ comme somme de fonctions strictement croissantes, donc cette solution est \\blank{\\text{unique}}. Ainsi :\\itemsize{$f(x)<0$ sur $]-\\infty,\\alpha[$ ;}\\itemsize{$f(\\alpha)=0$ ;}\\itemsize{$f(x)>0$ sur $]\\alpha,+\\infty[$.} On obtient $\\boxed{\\alpha\\in]0,1[\\text{ et elle est unique}}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{obtenir une moyenne de valeurs}",
+          "content": "Pour une fonction continue sur $[a,b]$, on encadre chaque valeur entre le minimum $m$ et le maximum $M$. Toute moyenne de valeurs de $f$ appartient alors à $[m,M]$. Le théorème des valeurs intermédiaires garantit qu'elle est elle-même une valeur prise par $f$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $f$ continue sur $[a,b]$ et $x_1,x_2,x_3\\in[a,b]$. Montrons qu'il existe $x\\in[a,b]$ tel que $3f(x)=f(x_1)+f(x_2)+f(x_3)$.} Comme $f$ est continue sur le segment $[a,b]$, elle atteint un \\blank{\\text{minimum}} $m$ et un maximum $M$. Pour chaque $i\\in\\{1,2,3\\}$, on a $m\\le f(x_i)\\le M$. En additionnant puis en divisant par $3$, on obtient :$$m\\le\\dfrac{\\blank{f(x_1)+f(x_2)+f(x_3)}}3\\le M.$$ Toute valeur comprise entre $m$ et $M$ est prise par $f$. Il existe donc $x\\in[a,b]$ tel que :$$\\boxed{3f(x)=\\blank{f(x_1)+f(x_2)+f(x_3)}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Le théorème des valeurs intermédiaires donne l'existence d'une solution, mais pas son unicité. Pour obtenir l'unicité, il faut ajouter un argument de stricte monotonie.",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/limites-continuite/revisions/figures/continuite-tvi-non-unicite.svg",
+            "alt": "Courbe coupant la droite y = k en trois points distincts de l'intervalle ]a, b[.",
+            "position": "bottom",
+            "width": "69%",
+            "lazy": false,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": true
+            },
+            "caption": "Trois solutions distinctes dans $]a\\,;\\,b[$ : le théorème n'en promet qu'une.",
+            "captionStyle": {
+              "align": "center",
+              "size": "md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "fonction_reciproque",
+      "category": "course",
+      "title": "Fonction réciproque $f^{-1}$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On travaille désormais dans un repère orthonormé. Une fonction continue et strictement monotone sur un intervalle peut être inversée sur son image, ce qui permet de retrouver l'antécédent à partir de l'image.",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/limites-continuite/revisions/figures/continuite-reciproque-symetrie.svg",
+            "alt": "Courbes de f et de sa réciproque, symétriques par rapport à la droite y = x, avec un point et son symétrique.",
+            "position": "bottom",
+            "width": "70%",
+            "lazy": false,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": true
+            },
+            "caption": "Continue et strictement monotone, $f$ admet une réciproque ; les deux courbes sont symétriques par rapport à $y=x$.",
+            "captionStyle": {
+              "align": "center",
+              "size": "md"
+            }
+          }
+        },
+        {
+          "type": "theorem",
+          "title": "Quand \\mathqst{une fonction admet-elle une réciproque}",
+          "content": "\\textbf{Théorème :} Si $f$ est continue et strictement monotone sur un intervalle $I$, alors elle réalise une bijection de $I$ sur $J=f(I)$. Sa fonction réciproque $f^{-1}:J\\to I$ est continue et possède le même sens de variation que $f$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles \\mathqst{relations caractérisent $f^{-1}$}",
+          "content": "\\textbf{Propriété :} Pour tout $x\\in I$ et tout $y\\in J$ :\\itemsize{$y=f(x)$ si et seulement si $x=f^{-1}(y)$ ;}\\itemsize{$f^{-1}(f(x))=x$ ;}\\itemsize{$f(f^{-1}(y))=y$ ;}\\itemsize{les courbes de $f$ et de $f^{-1}$ sont symétriques par rapport à la droite d'équation $y=x$.}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{déterminer l'expression de $f^{-1}$}",
+          "content": "\\begin{enumerate}\\item Vérifier que $f$ est continue et strictement monotone sur $I$.\\item Déterminer l'intervalle $J=f(I)$.\\item Résoudre l'équation $y=f(x)$ d'inconnue $x$.\\item Remplacer ensuite $y$ par $x$ dans l'expression obtenue et préciser le domaine $J$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $f(x)=\\sqrt{2x-1}$ sur $I=\\left[\\dfrac12,+\\infty\\right[$. Déterminons sa fonction réciproque.} La fonction $f$ est continue et strictement croissante sur $I$. Comme $f(1/2)=\\blank{0}$ et que $f(x)$ tend vers $+\\infty$, on a $J=\\blank{[0,+\\infty[}$. Pour $y\\ge0$ :\\begin{align*}y=\\sqrt{2x-1}&\\iff y^2=2x-1\\\\&\\iff x=\\dfrac{y^2+1}{2}.\\end{align*} Ainsi :$$\\boxed{f^{-1}(x)=\\blank{\\dfrac{x^2+1}{2}}\\quad\\text{pour }x\\in[0,+\\infty[}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $f(x)=\\dfrac{2x-3}{x+1}$ sur $I=]-1,+\\infty[$. Montrons que $f$ admet une réciproque et déterminons-la.} La fonction est continue et strictement croissante sur $I$. Son image est $J=\\blank{]-\\infty,2[}$. Résolvons $y=f(x)$ :\\begin{align*}y&=\\dfrac{2x-3}{x+1}\\\\y(x+1)&=2x-3\\\\x(y-2)&=\\blank{-(y+3)}\\\\x&=\\dfrac{y+3}{\\blank{2-y}}.\\end{align*} Par conséquent :$$\\boxed{f^{-1}(x)=\\blank{\\dfrac{x+3}{2-x}}\\quad\\text{pour }x\\in]-\\infty,2[}$$"
+        }
+      ]
+    },
+    {
+      "id": "racines_n_iemes_regles",
+      "category": "course",
+      "title": "Racines $n$-ièmes et règles de calcul",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La fonction réciproque conduit naturellement aux racines n-ièmes. Leur manipulation exige de respecter les conditions de signe et de comparer les indices avec méthode.",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/limites-continuite/revisions/figures/racines-n-iemes-parite.svg",
+            "alt": "Deux graphiques : pour n impair la courbe coupe toute droite horizontale en un point ; pour n pair elle la coupe deux fois ou pas du tout.",
+            "position": "bottom",
+            "width": "100%",
+            "lazy": false,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": true
+            },
+            "caption": "Lorsque $n$ est impair, l'équation $x^n=a$ admet une seule solution ; lorsque $n$ est pair, elle en admet deux, une ou aucune.",
+            "captionStyle": {
+              "align": "center",
+              "size": "md"
+            }
+          }
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la racine n-ième de $a$}",
+          "content": "\\textbf{Définition :} Soit $a\\ge0$ et $n\\in\\mathbb{N}^*$. La \\textbf{racine n-ième} de $a$, notée $\\sqrt[n]{a}$, est l'unique réel positif $b$ tel que $b^n=a$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les règles de calcul des radicaux}",
+          "content": "\\textbf{Propriété :} Pour des réels compatibles avec les expressions :\\itemsize{$\\sqrt[n]{a}\\,\\sqrt[n]{b}=\\sqrt[n]{ab}$ ;}\\itemsize{$\\sqrt[n]{\\dfrac ab}=\\dfrac{\\sqrt[n]{a}}{\\sqrt[n]{b}}$ lorsque $b>0$ ;}\\itemsize{$\\sqrt[m]{\\sqrt[n]{a}}=\\sqrt[mn]{a}$ ;}\\itemsize{$(\\sqrt[n]{a})^p=\\sqrt[n]{a^p}=a^{p/n}$.} Si $p<0$, on impose en plus $a>0$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{comparer deux radicaux d'indices différents}",
+          "content": "On choisit comme indice commun le plus petit multiple commun des deux indices. On transforme ensuite chaque radical sans changer sa valeur, puis on compare les nombres placés sous les radicaux de même indice."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Comparons $\\sqrt[5]{2}$ et $\\sqrt[7]{3}$.} L'indice commun est $\\blank{35}$. On écrit :\\begin{align*}\\sqrt[5]{2}&=\\sqrt[35]{2^7}=\\sqrt[35]{\\blank{128}},\\\\\\sqrt[7]{3}&=\\sqrt[35]{3^5}=\\sqrt[35]{\\blank{243}}.\\end{align*} Comme $128<243$ et que la racine trente-cinquième est croissante sur $[0,+\\infty[$, on obtient :$$\\boxed{\\sqrt[5]{2}\\blank{<}\\sqrt[7]{3}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{résoudre l'équation $x^n=a$}",
+          "content": "\\textbf{Propriété :} Le nombre de solutions dépend de la parité de $n$ :\\itemsize{si $n$ est impair, l'équation possède une unique solution réelle ; elle vaut $\\sqrt[n]{a}$ pour $a\\ge0$ et $-\\sqrt[n]{|a|}$ pour $a<0$ ;}\\itemsize{si $n$ est pair et $a>0$, les solutions sont $-\\sqrt[n]{a}$ et $\\sqrt[n]{a}$ ;}\\itemsize{si $n$ est pair et $a=0$, l'unique solution est $0$ ;}\\itemsize{si $n$ est pair et $a<0$, il n'existe aucune solution réelle.}"
+        },
+        {
+          "type": "warning",
+          "content": "Les règles sur les racines exigent des conditions de définition. En particulier, une racine d'indice pair porte sur un réel positif ou nul, et un dénominateur sous un radical ne doit pas s'annuler."
+        }
+      ]
+    },
+    {
+      "id": "racines_n_iemes_limites_equations",
+      "category": "course",
+      "title": "Limites et équations avec radicaux",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les radicaux peuvent aussi créer des formes indéterminées. On utilise alors une identité algébrique adaptée ou un changement de variable qui transforme l'expression en calcul polynomial."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{utiliser le conjugué cubique}",
+          "content": "Pour une différence de racines cubiques, on applique l'identité $a^3-b^3=(a-b)(a^2+ab+b^2)$. Elle permet d'isoler $a-b$, de simplifier la forme indéterminée, puis de calculer la limite."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $\\displaystyle \\lim_{x \\to0}\\dfrac{\\sqrt[3]{1+x}-1}{x}$.} Posons $a=\\sqrt[3]{1+x}$ et $b=1$. Comme $a^3-b^3=\\blank{x}$, on a :\\begin{align*}\\dfrac{a-b}{x}&=\\dfrac{a^3-b^3}{x(\\blank{a^2+ab+b^2})}\\\\&=\\dfrac{1}{a^2+ab+b^2}.\\end{align*} Lorsque $x$ tend vers $0$, $a$ tend vers $\\blank{1}$. Le dénominateur tend donc vers $\\blank{3}$, d'où :$$\\boxed{\\displaystyle \\lim_{x \\to0}\\dfrac{\\sqrt[3]{1+x}-1}{x}=\\blank{\\dfrac13}$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{résoudre une équation avec un radical}",
+          "content": "On remplace le radical répété par une nouvelle inconnue positive. L'équation devient polynomiale, puis on résout cette équation en tenant compte de la condition de signe avant de revenir à la variable initiale."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Résolvons $(\\sqrt[5]{x})^2-5\\sqrt[5]{x}+6=0$.} Posons $t=\\sqrt[5]{x}$. Comme la racine cinquième est définie sur $\\mathbb{R}$, $t$ est réel. L'équation devient :\\begin{align*}t^2-5t+6&=0\\\\\\blank{(t-2)(t-3)}&=0.\\end{align*} Ainsi, $t=2$ ou $t=\\blank{3}$. On revient à $x$ :$$x=2^5=\\blank{32}\\qquad\\text{ou}\\qquad x=3^5=\\blank{243}.$$ L'ensemble des solutions est $\\boxed{\\{32,243\\}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Calculons $\\displaystyle \\lim_{x \\to1}\\dfrac{\\sqrt[3]{x}-1}{\\sqrt{x}-1}$.} Posons $x=\\blank{t^6}$. Lorsque $x$ tend vers $1$, $t$ tend vers $1$. Le quotient devient :\\begin{align*}\\dfrac{t^2-1}{t^3-1}&=\\dfrac{\\blank{(t-1)(t+1)}}{(t-1)(t^2+t+1)}\\\\&=\\dfrac{t+1}{\\blank{t^2+t+1}}.\\end{align*} En faisant tendre $t$ vers $1$, on obtient :$$\\boxed{\\displaystyle \\lim_{x \\to1}\\dfrac{\\sqrt[3]{x}-1}{\\sqrt{x}-1}=\\blank{\\dfrac23}$"
+        }
+      ]
+    },
+    {
+      "id": "fonction-arctangente",
+      "category": "course",
+      "title": "Fonction $\\operatorname{Arctan}$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La fonction tangente n'est pas bijective sur tout $\\mathbb{R}$, mais elle le devient sur $\\left]-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right[$. Sa fonction réciproque permet d'associer à tout réel un unique angle appartenant à cet intervalle.",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/limites-continuite/revisions/figures/arctan-graphe.svg",
+            "alt": "Courbe de la tangente sur ]−π/2 ; π/2[ et courbe de Arctan, symétriques par rapport à y = x, encadrées par les asymptotes y = ±π/2.",
+            "position": "bottom",
+            "width": "68%",
+            "lazy": false,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": true
+            },
+            "caption": "$\\tan$ est continue et strictement croissante sur $]-\\pi/2\\,;\\,\\pi/2[$ : sa réciproque $\\operatorname{Arctan}$ a pour asymptotes $y=\\pm\\pi/2$.",
+            "captionStyle": {
+              "align": "center",
+              "size": "md"
+            }
+          }
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{définir $\\operatorname{Arctan}$}",
+          "content": "\\textbf{Définition :} La fonction $\\tan$ est continue et strictement croissante sur $\\left]-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right[$, et son image est $\\mathbb{R}$. Sa fonction réciproque est appelée \\textbf{fonction Arctangente} :\\par\\smallskip$$\\large\\boxed{\\operatorname{Arctan}:\\mathbb{R}\\longrightarrow \\left]-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right[}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles \\mathqst{relations caractérisent $\\operatorname{Arctan}$}",
+          "content": "\\textbf{Propriété :} Pour tout réel $x$ et tout $u\\in\\left]-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right[$ :\\itemsize{$\\tan(\\operatorname{Arctan}x)=x$ ;}\\itemsize{$\\operatorname{Arctan}(\\tan u)=u$ ;}\\itemsize{$\\operatorname{Arctan}$ est impaire ;}\\itemsize{$\\operatorname{Arctan}$ est continue et strictement croissante sur $\\mathbb{R}$.}La seconde égalité exige que l'angle $u$ appartienne à l'intervalle de bijection de la tangente."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{réduire $\\operatorname{Arctan}(\\tan \\theta)$}",
+          "content": "\\begin{enumerate}\\item Utiliser la période $\\pi$ de la tangente pour remplacer $\\theta$ par un angle de même tangente.\\item Choisir cet angle dans $\\left]-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right[$.\\item Appliquer alors la relation $\\operatorname{Arctan}(\\tan u)=u$.\\end{enumerate}\\textbf{Attention :} on ne peut pas supprimer directement $\\operatorname{Arctan}$ et $\\tan$ sans vérifier l'appartenance de l'angle à l'intervalle principal."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $\\operatorname{Arctan}\\!\\left(\\tan\\!\\left(\\dfrac{2007\\pi}{5}\\right)\\right)$.} La tangente est $\\pi$-périodique. On cherche donc un angle équivalent situé dans l'intervalle principal :\\par\\smallskip\\begin{align*}\\dfrac{2007\\pi}{5}&=\\blank{401}\\pi+\\dfrac{2\\pi}{5},\\\\\\tan\\!\\left(\\dfrac{2007\\pi}{5}\\right)&=\\tan\\!\\left(\\dfrac{2\\pi}{5}\\right).\\end{align*}Or $\\dfrac{2\\pi}{5}\\in\\blank{\\left]-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right[}$. On peut donc appliquer la définition de la fonction réciproque :\\par\\smallskip$$\\boxed{\\operatorname{Arctan}\\!\\left(\\tan\\!\\left(\\dfrac{2007\\pi}{5}\\right)\\right)=\\blank{\\dfrac{2\\pi}{5}}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{exploiter la formule de $\\tan(a+b)$}",
+          "content": "\\textbf{Propriété :} Lorsque les expressions sont définies et que $1-\\tan a\\tan b\\ne0$, on a :\\par\\smallskip$$\\large\\boxed{\\tan(a+b)=\\dfrac{\\tan a+\\tan b}{1-\\tan a\\tan b}}$$Cette formule permet de reconnaître une somme d'Arctangentes en calculant sa tangente, puis en contrôlant l'intervalle auquel appartient la somme."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Montrons que $\\operatorname{Arctan}\\!\\left(\\dfrac12\\right)+\\operatorname{Arctan}\\!\\left(\\dfrac13\\right)=\\dfrac{\\pi}{4}$.} Posons $a=\\operatorname{Arctan}\\!\\left(\\dfrac12\\right)$ et $b=\\operatorname{Arctan}\\!\\left(\\dfrac13\\right)$. Comme $0<\\dfrac13<\\dfrac12<1$ et que $\\operatorname{Arctan}$ est \\blank{\\text{croissante}}, on a $a,b\\in\\blank{\\left]0,\\dfrac{\\pi}{4}\\right[}$. Ainsi, $a+b\\in\\blank{\\left]0,\\dfrac{\\pi}{2}\\right[}$.\\par\\smallskip D'autre part :\\begin{align*}\\tan(a+b)&=\\dfrac{\\tan a+\\tan b}{1-\\tan a\\tan b}\\\\&=\\dfrac{\\dfrac12+\\dfrac13}{\\blank{1-\\dfrac16}}\\\\&=\\dfrac{\\dfrac56}{\\dfrac56}\\\\&=1.\\end{align*}Or $\\tan\\!\\left(\\dfrac{\\pi}{4}\\right)=1$ et la tangente est injective sur $\\left]-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right[$. On en déduit :\\par\\smallskip$$\\boxed{\\operatorname{Arctan}\\!\\left(\\dfrac12\\right)+\\operatorname{Arctan}\\!\\left(\\dfrac13\\right)=\\blank{\\dfrac{\\pi}{4}}$"
+        },
+        {
+          "type": "warning",
+          "content": "Une erreur classique, que vous ne devez pas commettre : l'égalité $\\operatorname{Arctan}(\\tan x)=x$ n'est pas vraie pour tout réel $x$. Elle est valable seulement lorsque $x\\in\\left]-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right[$ ; ailleurs, il faut d'abord réduire l'angle modulo $\\pi$."
+        }
+      ]
+    }
+  ]
+}

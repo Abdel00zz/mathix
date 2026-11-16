@@ -1,0 +1,166 @@
+{
+  "id": "logique",
+  "title": "Logique et raisonnements mathématiques",
+  "section": "algebre-geometrie",
+  "quizCount": 12,
+  "revisions": [
+    {
+      "id": "rev-logique-1",
+      "title": "Fiche Complète : Logique",
+      "path": "data/1ere-bac-sc-math/logique/revisions/fiche_logique_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-log-01",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-01.json"
+    },
+    {
+      "id": "ex-log-02",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-02.json"
+    },
+    {
+      "id": "ex-log-03",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-03.json"
+    },
+    {
+      "id": "ex-log-04",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-04.json"
+    },
+    {
+      "id": "ex-log-05",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-05.json"
+    },
+    {
+      "id": "ex-log-06",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-06.json"
+    },
+    {
+      "id": "ex-log-07",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-07.json"
+    },
+    {
+      "id": "ex-log-08",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-08.json"
+    },
+    {
+      "id": "ex-log-09",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-09.json"
+    },
+    {
+      "id": "ex-log-10",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-10.json"
+    },
+    {
+      "id": "ex-log-11",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-11.json"
+    },
+    {
+      "id": "ex-log-12",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-12.json"
+    },
+    {
+      "id": "ex-log-13",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-13.json"
+    },
+    {
+      "id": "ex-log-14",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-14.json"
+    },
+    {
+      "id": "ex-log-15",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-15.json"
+    },
+    {
+      "id": "ex-log-16",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-16.json"
+    },
+    {
+      "id": "ex-log-17",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-17.json"
+    },
+    {
+      "id": "ex-log-18",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-18.json"
+    },
+    {
+      "id": "ex-log-19",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-19.json"
+    },
+    {
+      "id": "ex-log-20",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-20.json"
+    },
+    {
+      "id": "ex-log-21",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-21.json"
+    },
+    {
+      "id": "ex-log-22",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-22.json"
+    },
+    {
+      "id": "ex-log-23",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-23.json"
+    },
+    {
+      "id": "ex-log-24",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-24.json"
+    },
+    {
+      "id": "ex-log-25",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-25.json"
+    },
+    {
+      "id": "ex-log-26",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-26.json"
+    },
+    {
+      "id": "ex-log-27",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-27.json"
+    },
+    {
+      "id": "ex-log-28",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-28.json"
+    },
+    {
+      "id": "ex-log-29",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-29.json"
+    },
+    {
+      "id": "ex-log-30",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-30.json"
+    },
+    {
+      "id": "ex-log-31",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-31.json"
+    },
+    {
+      "id": "ex-log-32",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-32.json"
+    },
+    {
+      "id": "ex-log-33",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-33.json"
+    },
+    {
+      "id": "ex-log-34",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-34.json"
+    },
+    {
+      "id": "ex-log-35",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-35.json"
+    },
+    {
+      "id": "ex-log-36",
+      "path": "data/1ere-bac-sc-math/logique/exercises/ex-log-36.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-logique-01",
+      "path": "data/1ere-bac-sc-math/logique/quiz/logique_quiz.json",
+      "questionsCount": 12
+    }
+  ]
+}

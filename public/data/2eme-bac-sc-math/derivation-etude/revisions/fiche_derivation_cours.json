@@ -1,0 +1,582 @@
+{
+  "header": {
+    "title": "La dérivation et l'étude des fonctions",
+    "subtitle": "Du nombre dérivé à l'analyse complète d'une courbe",
+    "context": "2BAC Sciences Mathématiques BIOF"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "\\objectif{Comprendre le nombre dérivé, maîtriser les règles de dérivation et exploiter $f'$ puis $f''$ pour étudier une fonction.} La difficulté principale consiste à relier correctement le calcul, le signe des dérivées et la géométrie de la courbe. \\defi{Chaque conclusion doit être appuyée par une hypothèse précise : continuité, dérivabilité, signe ou changement de signe.} \\savant{Gottfried Wilhelm Leibniz} a introduit une notation différentielle devenue essentielle pour exprimer les variations instantanées et organiser les calculs de dérivation."
+        }
+      ]
+    },
+    {
+      "id": "nombre_derive",
+      "category": "course",
+      "title": "Nombre dérivé $f'(a)$ et taux d'accroissement",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La dérivation commence par l'étude du taux d'accroissement près d'un point. Sa limite, lorsqu'elle existe et reste finie, mesure la variation instantanée de la fonction."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le nombre dérivé $f'(a)$}",
+          "content": "Soit $f$ définie sur un intervalle ouvert contenant $a$. On dit que $f$ est \\textbf{dérivable en $a$} lorsque la limite suivante existe et est finie :\\par\\smallskip$$\\large\\boxed{f'(a)=\\displaystyle\\lim_{x\\to a}\\dfrac{f(x)-f(a)}{x-a}}$$ Le réel obtenu est appelé \\textbf{nombre dérivé de $f$ en $a$}."
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi \\mathqst{deux écritures sont-elles équivalentes}",
+          "content": "En posant $h=x-a$, on obtient une seconde écriture du même nombre :\\par\\smallskip$$\\large\\boxed{f'(a)=\\displaystyle\\lim_{h\\to0}\\dfrac{f(a+h)-f(a)}{h}}$$ La première écriture favorise les factorisations par $x-a$. La seconde ramène les expressions trigonométriques et les radicaux au voisinage de $0$."
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Condition indispensable :} la limite du taux d'accroissement doit être \\textbf{finie}. Une limite égale à $+\\infty$ ou à $-\\infty$ ne définit pas un nombre dérivé."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{choisir l'écriture du taux d'accroissement}",
+          "content": "On utilise l'écriture en $x$ lorsqu'une factorisation par $x-a$ est naturelle. On préfère l'écriture en $h$ lorsqu'une quantité conjuguée ou une limite de référence en $0$ apparaît. Dans les deux cas, on simplifie avant de passer à la limite."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Montrons par la définition que $f(x)=2x^2+x-3$ est dérivable en $2$, puis déterminons $f'(2)$.} On calcule d'abord $f(2)=7$. Pour $x\\ne2$, le taux d'accroissement vaut :\\par\\smallskip\\begin{align*}\\dfrac{f(x)-f(2)}{x-2}&=\\dfrac{\\blank{2x^2+x-10}}{x-2}\\\\&=\\dfrac{\\blank{(x-2)(2x+5)}}{x-2}\\\\&=\\blank{2x+5}.\\end{align*} Ainsi :\\par\\smallskip\\begin{align*}f'(2)&=\\lim_{x\\to2}(2x+5)\\\\&=\\boxed{\\blank{9}}.\\end{align*} La limite existe et elle est finie, donc $f$ est dérivable en $2$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{traiter un radical dans le taux}",
+          "content": "On sépare les termes dont le taux d'accroissement est immédiat. Pour une différence de racines carrées, on multiplie par la quantité conjuguée afin de faire apparaître le facteur $x-a$, puis on simplifie."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions la dérivabilité en $1$ de $g(x)=\\sqrt{x^2+1}+x$.} Le terme $x$ fournit un taux d'accroissement égal à $1$. Pour le radical, on utilise la quantité conjuguée :\\par\\smallskip\\begin{align*}\\dfrac{\\sqrt{x^2+1}-\\sqrt2}{x-1}&=\\dfrac{\\blank{x^2-1}}{(x-1)\\left(\\blank{\\sqrt{x^2+1}+\\sqrt2}\\right)}\\\\&=\\dfrac{\\blank{x+1}}{\\sqrt{x^2+1}+\\sqrt2}.\\end{align*} Ce quotient tend vers $\\dfrac{2}{2\\sqrt2}=\\dfrac{\\sqrt2}{2}$. En ajoutant la contribution du terme $x$, on obtient :\\par\\smallskip$$\\boxed{g'(1)=1+\\blank{\\dfrac{\\sqrt2}{2}}}$$"
+        }
+      ]
+    },
+    {
+      "id": "derivees_unilaterales",
+      "category": "course",
+      "title": "Dérivées à droite et à gauche en $a$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction définie par morceaux peut avoir des comportements différents de chaque côté du point de raccordement. On étudie alors séparément les taux d'accroissement à droite et à gauche."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{définir $f'_d(a)$ et $f'_g(a)$}",
+          "content": "La fonction $f$ est \\textbf{dérivable à droite en $a$} si la limite $\\displaystyle\\lim_{x\\to a^+}\\dfrac{f(x)-f(a)}{x-a}$ existe et est finie ; elle se note $f'_d(a)$. Elle est \\textbf{dérivable à gauche en $a$} si la limite analogue lorsque $x\\to a^-$ existe et est finie ; elle se note $f'_g(a)$."
+        },
+        {
+          "type": "theorem",
+          "title": "Quand \\mathqst{les deux dérivées se recollent-elles}",
+          "content": "Soit $f$ définie sur un intervalle ouvert contenant $a$. Alors :\\par\\smallskip$$\\large\\boxed{f\\text{ est dérivable en }a\\Longleftrightarrow f'_d(a)=f'_g(a)\\text{ et ces deux nombres existent}}$$ Dans ce cas, leur valeur commune est $f'(a)$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{examiner un raccordement en $a$}",
+          "content": "On vérifie d'abord que $f(a)$ et les deux limites latérales coïncident, car la continuité est nécessaire. On calcule ensuite $f'_g(a)$ avec l'expression située à gauche, puis $f'_d(a)$ avec l'expression située à droite. La fonction est dérivable seulement si ces deux nombres sont égaux."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Étudions la dérivabilité en $1$ de la fonction définie par $f(x)=2x^2+x$ pour $x\\le1$ et $f(x)=\\dfrac{4x+2}{x+1}$ pour $x>1$.} On a $f(1)=3$ et la limite à droite vaut aussi $3$ ; la fonction est continue en $1$.\\par\\smallskip À gauche :\\begin{align*}\\dfrac{f(x)-f(1)}{x-1}&=\\dfrac{2x^2+x-3}{x-1}\\\\&=\\blank{2x+3},\\end{align*} donc $f'_g(1)=\\blank{5}$.\\par\\smallskip À droite :\\begin{align*}\\dfrac{f(x)-f(1)}{x-1}&=\\dfrac{1}{x-1}\\left(\\dfrac{4x+2}{x+1}-3\\right)\\\\&=\\dfrac{1}{\\blank{x+1}},\\end{align*} donc $f'_d(1)=\\blank{\\dfrac12}$. Les deux nombres sont différents. Ainsi :\\par\\smallskip$$\\boxed{f\\text{ n'est pas dérivable en }1}$$"
+        },
+        {
+          "type": "remark",
+          "content": "Le recours aux dérivées unilatérales est particulièrement adapté aux fonctions définies par morceaux et aux expressions contenant une valeur absolue qui s'annule au point étudié."
+        }
+      ]
+    },
+    {
+      "id": "tangentes",
+      "category": "course",
+      "title": "Tangentes, demi-tangentes et lecture géométrique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le nombre dérivé possède une interprétation géométrique immédiate. Il donne le coefficient directeur de la droite qui approche le mieux la courbe au voisinage du point considéré."
+        },
+        {
+          "type": "property",
+          "title": "Quelle est \\mathqst{l'équation de la tangente en $a$}",
+          "content": "Si $f$ est dérivable en $a$, la courbe $(C_f)$ admet au point $A(a\\,;f(a))$ une tangente $(T)$ de coefficient directeur $f'(a)$ :\\par\\smallskip$$\\large\\boxed{(T):\\ y=f'(a)(x-a)+f(a)}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{écrire les deux demi-tangentes}",
+          "content": "Lorsque les nombres dérivés unilatéraux existent, la courbe admet :\\itemsize{$(T_d):\\ y=f'_d(a)(x-a)+f(a)$ avec $x\\ge a$}\\itemsize{$(T_g):\\ y=f'_g(a)(x-a)+f(a)$ avec $x\\le a$} La condition portée sur $x$ est indispensable : elle distingue une demi-droite d'une droite entière."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Déterminons les demi-tangentes en $A(1\\,;0)$ à la courbe de $f(x)=|-2x^2+x+1|$.} On factorise $-2x^2+x+1=\\blank{(1-x)(2x+1)}$. Au voisinage de $1$ :\\itemsize{$f(x)=-2x^2+x+1$ pour $x\\le1$}\\itemsize{$f(x)=2x^2-x-1$ pour $x\\ge1$}\\par\\smallskip À gauche :\\begin{align*}\\lim_{x \\to 1^-}\\dfrac{f(x)-f(1)}{x-1}&=\\lim_{x \\to 1^-}-(2x+1)=\\blank{-3}.\\end{align*} À droite :\\begin{align*}\\lim_{x \\to 1^+}\\dfrac{f(x)-f(1)}{x-1}&=\\lim_{x \\to 1^+}(2x+1)=\\blank{3}.\\end{align*} Donc $f'_g(1)=-3$ et $f'_d(1)=3$. La courbe présente un point anguleux et admet :\\par\\smallskip$$\\boxed{(T_g):\\ y=\\blank{-3(x-1)},\\ x\\le1\\qquad (T_d):\\ y=3(x-1),\\ x\\ge1}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{la tangente devient-elle verticale}",
+          "content": "Si $\\displaystyle\\lim_{x\\to a}\\dfrac{f(x)-f(a)}{x-a}=+\\infty$ ou $-\\infty$, alors $f$ n'est pas dérivable en $a$. Cependant, $(C_f)$ admet en $A(a\\,;f(a))$ une tangente verticale d'équation $x=a$. Une limite infinie d'un seul côté donne une demi-tangente verticale."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions la dérivabilité à droite en $-1$ de $f(x)=x^2\\sqrt{1+x}$.} La fonction est définie sur $[-1\\,;+\\infty[$ et $f(-1)=0$. Pour $x>-1$ :\\par\\smallskip\\begin{align*}\\dfrac{f(x)-f(-1)}{x+1}&=\\dfrac{\\blank{x^2\\sqrt{1+x}}}{1+x}\\\\&=\\dfrac{x^2}{\\blank{\\sqrt{1+x}}}.\\end{align*} Le numérateur tend vers $1$ et le dénominateur vers $0^+$, donc le quotient tend vers $\\blank{+\\infty}$. Ainsi, $f$ n'est pas dérivable à droite en $-1$, mais la courbe admet :\\par\\smallskip$$\\boxed{x=-1\\text{ comme demi-tangente \\blank{\\text{verticale}}}}$$"
+        }
+      ]
+    },
+    {
+      "id": "approximation_affine",
+      "category": "course",
+      "title": "Fonction affine tangente et approximation locale",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La tangente ne sert pas uniquement à représenter la courbe. Près du point de contact, sa fonction affine fournit une approximation numérique simple et souvent très précise."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{fonction affine tangente}",
+          "content": "Si $f$ est dérivable en $a$, la fonction $u(x)=f'(a)(x-a)+f(a)$ est appelée \\textbf{fonction affine tangente à $f$ en $a$}. Pour $x$ proche de $a$ :\\par\\smallskip$$f(x)\\simeq f(a)+f'(a)(x-a)$$ De manière équivalente, pour $h$ petit : $f(a+h)\\simeq f(a)+hf'(a)$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{obtenir une valeur approchée}",
+          "content": "On choisit un point $a$ proche de la valeur étudiée et pour lequel $f(a)$ ainsi que $f'(a)$ sont connus. On écrit la valeur sous la forme $a+h$, avec $h$ petit, puis on utilise $f(a+h)\\simeq f(a)+hf'(a)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Donnons une valeur approchée de $\\sin 3$ sans calculatrice.} Le réel remarquable le plus proche de $3$ est $\\pi$. On pose $h=3-\\pi$, donc $3=\\pi+h$. Comme $\\sin\\pi=0$ et $\\cos\\pi=-1$ :\\par\\smallskip\\begin{align*}\\sin3&=\\sin(\\pi+h)\\\\&\\simeq\\blank{\\sin\\pi+h\\cos\\pi}\\\\&=\\blank{-(3-\\pi)}\\\\&=\\blank{\\pi-3}.\\end{align*} Avec $\\pi\\simeq3{,}1416$, on obtient :\\par\\smallskip$$\\boxed{\\sin3\\simeq\\blank{0{,}1416}}$$"
+        }
+      ]
+    },
+    {
+      "id": "derivabilite_continuite",
+      "category": "course",
+      "title": "Lien logique entre dérivabilité et continuité",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La dérivabilité impose une régularité plus forte que la continuité. Cette relation permet d'écarter immédiatement certains points avant tout calcul de taux d'accroissement."
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{dérivable implique continue}",
+          "content": "Si $f$ est dérivable en $a$, alors $f$ est continue en $a$ :\\par\\smallskip$$\\large\\boxed{f\\text{ dérivable en }a\\Longrightarrow f\\text{ continue en }a}$$"
+        },
+        {
+          "type": "proof",
+          "title": "Justification par le taux d'accroissement",
+          "content": "Pour $x\\ne a$, on écrit :\\par\\smallskip\\begin{align*}f(x)-f(a)&=(x-a)\\dfrac{f(x)-f(a)}{x-a}.\\end{align*} Lorsque $x$ tend vers $a$, le premier facteur tend vers $0$ et le second vers le réel $f'(a)$. Leur produit tend donc vers $0$. Ainsi $f(x)-f(a)$ tend vers $0$, ce qui donne $\\displaystyle\\lim_{x\\to a}f(x)=f(a)$."
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{La réciproque est fausse :} la continuité en $a$ ne garantit pas la dérivabilité. Par exemple, $f(x)=|x|$ est continue en $0$, mais son taux d'accroissement tend vers $-1$ à gauche et vers $1$ à droite."
+        },
+        {
+          "type": "exploration",
+          "title": "Ordre de traitement d'un raccordement paramétré",
+          "content": "Pour une fonction définie par morceaux avec deux paramètres, on impose d'abord la continuité au point de raccordement. On impose ensuite l'égalité des nombres dérivés à droite et à gauche. Les deux relations obtenues forment le système qui détermine les paramètres."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to1}\\dfrac{x^n-1}{x-1}$ sans factoriser, où $n\\in\\mathbb N^*$.} Le quotient est le taux d'accroissement en $1$ de la fonction $f(x)=x^n$. Comme $f'(x)=\\blank{nx^{n-1}}$ :\\par\\smallskip\\begin{align*}\\lim_{x\\to1}\\dfrac{x^n-1}{x-1}&=\\blank{f'(1)}\\\\&=n\\times1^{n-1}\\\\&=\\boxed{\\blank{n}}.\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "fonction_derivee",
+      "category": "course",
+      "title": "Fonction dérivée et formules usuelles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lorsque le nombre dérivé existe en chaque point d'un intervalle, ces valeurs forment une nouvelle fonction. Les formules usuelles évitent alors de revenir à la définition pour chaque calcul."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la fonction dérivée $f'$}",
+          "content": "Si $f$ est dérivable en tout point d'un intervalle ouvert $I$, la fonction qui associe à chaque $x\\in I$ le nombre $f'(x)$ est appelée \\textbf{fonction dérivée de $f$ sur $I$}."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les dérivées de référence}",
+          "content": "Les formules suivantes s'utilisent sur les intervalles où les fonctions sont dérivables :\\par\\smallskip$$\\begin{array}{c|c}f(x)&f'(x)\\\\\\hline C&0\\\\x&1\\\\x^n&nx^{n-1}\\\\\\dfrac1x&-\\dfrac1{x^2}\\\\\\sqrt{x}&\\dfrac1{2\\sqrt{x}}\\\\\\sin x&\\cos x\\\\\\cos x&-\\sin x\\\\\\tan x&1+\\tan^2x=\\dfrac1{\\cos^2x}\\end{array}$$\\itemsize{$x^n$ est dérivable sur $\\mathbb R$ pour $n\\in\\mathbb N^*$.}\\itemsize{$\\dfrac1x$ est dérivable sur $]-\\infty\\,;0[$ et $]0\\,;+\\infty[$.}\\itemsize{$\\sqrt{x}$ est dérivable sur $]0\\,;+\\infty[$ seulement.}\\itemsize{$\\tan x$ est dérivable sur chaque intervalle ne contenant aucun $\\dfrac\\pi2+k\\pi$.}"
+        },
+        {
+          "type": "warning",
+          "content": "La fonction $x\\mapsto\\sqrt{x}$ est définie en $0$, mais elle n'y est pas dérivable. Son taux d'accroissement vaut $\\dfrac1{\\sqrt{x}}$ à droite et tend vers $+\\infty$ ; la courbe possède une demi-tangente verticale."
+        }
+      ]
+    },
+    {
+      "id": "operations_derivation",
+      "category": "course",
+      "title": "Sommes, produits, quotients et radicaux",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les fonctions étudiées sont souvent construites à partir de plusieurs expressions simples. Les règles opératoires permettent de dériver l'ensemble sans développer inutilement les calculs."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{dériver les opérations usuelles}",
+          "content": "Soient $f$ et $g$ dérivables sur un intervalle $I$, et $\\lambda\\in\\mathbb R$ :\\itemsize{$(f+g)'=f'+g'$ et $(\\lambda f)'=\\lambda f'$}\\itemsize{$(fg)'=f'g+fg'$}\\itemsize{$\\left(\\dfrac1g\\right)'=-\\dfrac{g'}{g^2}$ si $g\\ne0$}\\itemsize{$\\left(\\dfrac fg\\right)'=\\dfrac{f'g-fg'}{g^2}$ si $g\\ne0$}\\itemsize{$(f^n)'=nf'f^{n-1}$}\\itemsize{$(\\sqrt f)'=\\dfrac{f'}{2\\sqrt f}$ aux points où $f>0$}\\itemsize{$\\bigl(f(ax+b)\\bigr)'=a f'(ax+b)$}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{organiser la dérivée d'un quotient}",
+          "content": "On identifie le numérateur $u$ et le dénominateur $v$, puis on calcule séparément $u'$ et $v'$. On applique ensuite $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$ avant de simplifier le numérateur."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Dérivons $f(x)=\\dfrac{x^2+x+1}{x-1}$ sur son domaine.} On pose $u(x)=x^2+x+1$ et $v(x)=x-1$. Alors $u'(x)=\\blank{2x+1}$ et $v'(x)=1$. Pour $x\\ne1$ :\\par\\smallskip\\begin{align*}f'(x)&=\\dfrac{\\blank{(2x+1)(x-1)-(x^2+x+1)}}{(x-1)^2}\\\\&=\\dfrac{\\blank{x^2-2x-2}}{(x-1)^2}.\\end{align*} Ainsi :\\par\\smallskip$$\\boxed{f'(x)=\\dfrac{x^2-2x-2}{(x-1)^2}\\quad\\text{pour }x\\ne1}$$"
+        }
+      ]
+    },
+    {
+      "id": "derivee_composee",
+      "category": "course",
+      "title": "Dérivation en chaîne des fonctions composées",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction composée contient une expression intérieure placée dans une fonction extérieure. La dérivation doit tenir compte des variations des deux niveaux."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle est \\mathqst{la formule de dérivation en chaîne}",
+          "content": "Si $u$ est dérivable en $x$ et si $g$ est dérivable en $u(x)$, alors $g\\circ u$ est dérivable en $x$ et :\\par\\smallskip$$\\large\\boxed{(g\\circ u)'(x)=g'(u(x))\\,u'(x)}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles formes \\mathqst{reconnaître immédiatement}",
+          "content": "Pour toute fonction $u$ dérivable :\\itemsize{$(\\sin u)'=u'\\cos u$}\\itemsize{$(\\cos u)'=-u'\\sin u$}\\itemsize{$(\\tan u)'=u'(1+\\tan^2u)$}\\itemsize{$(u^n)'=nu'u^{n-1}$}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{ne pas oublier la dérivée intérieure}",
+          "content": "On repère d'abord l'expression intérieure $u$. On dérive la fonction extérieure en conservant $u$ à sa place, puis on multiplie par $u'$. Ce dernier facteur est indispensable."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Dérivons trois fonctions composées indépendantes.\\begin{enumerate}\\item $f(x)=\\sin(2x^2+1)$.\\item $g(x)=\\cos\\!\\left(\\dfrac1{x^2+1}\\right)$.\\item $h(x)=\\tan(\\cos x)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour $f$, on prend $u(x)=2x^2+1$, donc $u'(x)=\\blank{4x}$ :\\end{enumerate}\\begin{align*}f'(x)&=4x\\cos(2x^2+1).\\end{align*}\\begin{enumerate}\\item Pour $g$, on pose $u(x)=\\dfrac1{x^2+1}$, d'où $u'(x)=\\blank{-\\dfrac{2x}{(x^2+1)^2}}$ :\\end{enumerate}\\begin{align*}g'(x)&=\\dfrac{2x}{(x^2+1)^2}\\sin\\!\\left(\\dfrac1{x^2+1}\\right).\\end{align*}\\begin{enumerate}\\item Pour $h$, on prend $u(x)=\\cos x$, donc $u'(x)=\\blank{-\\sin x}$ :\\end{enumerate}\\begin{align*}h'(x)&=-\\sin x\\left(1+\\tan^2(\\cos x)\\right).\\end{align*} Comme $\\cos x\\in[-1\\,;1]\\subset\\blank{\\left]-\\dfrac\\pi2\\,;\\dfrac\\pi2\\right[}$, la fonction $h$ est dérivable sur $\\mathbb R$."
+        }
+      ]
+    },
+    {
+      "id": "derivee_reciproque",
+      "category": "course",
+      "title": "Dérivée de la fonction réciproque $f^{-1}$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction continue et strictement monotone possède une réciproque sur son intervalle image. La dérivée de cette réciproque se calcule à partir de la dérivée de la fonction initiale."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{dériver $f^{-1}$ sans l'expliciter}",
+          "content": "Soit $f$ continue et strictement monotone sur un intervalle $I$, et $J=f(I)$. Si $f$ est dérivable sur $I$ et si $f'$ ne s'annule pas, alors $f^{-1}$ est dérivable sur $J$ et :\\par\\smallskip$$\\large\\boxed{(f^{-1})'(x)=\\dfrac1{f'\\!\\left(f^{-1}(x)\\right)}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer $(f^{-1})'(x_0)$ directement}",
+          "content": "On cherche le réel $y_0$ tel que $f(y_0)=x_0$. On calcule ensuite $f'(y_0)$, puis on prend son inverse. Cette démarche évite de déterminer une expression explicite de $f^{-1}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $f(x)=x^3+x^2$ sur $\\mathbb R_+$. Calculons $(f^{-1})'(2)$ sans résoudre une équation du troisième degré.} On a $f'(x)=\\blank{3x^2+2x}=x(3x+2)$. La fonction est strictement croissante sur $\\mathbb R_+$ et son image est $\\mathbb R_+$. On remarque que $f(1)=2$, donc $f^{-1}(2)=\\blank{1}$. Par conséquent :\\par\\smallskip\\begin{align*}(f^{-1})'(2)&=\\dfrac1{\\blank{f'(1)}}\\\\&=\\dfrac1{3+2}\\\\&=\\boxed{\\blank{\\dfrac15}}.\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Soit $g(x)=\\cos(2x)$ sur $I=\\left]0\\,;\\dfrac\\pi2\\right[$. Déterminons le domaine de $g^{-1}$ puis sa dérivée.} Sur $I$, on a $g'(x)=\\blank{-2\\sin(2x)}<0$, donc $g$ est continue et strictement décroissante. De plus, $g(I)=\\blank{]-1\\,;1[}$. Ainsi, $g^{-1}$ est définie sur $]-1\\,;1[$.\\par\\smallskip Pour $x\\in]-1\\,;1[$ :\\begin{align*}(g^{-1})'(x)&=\\dfrac1{\\blank{-2\\sin\\!\\left(2g^{-1}(x)\\right)}}.\\end{align*} Posons $\\alpha=g^{-1}(x)$. Comme $2\\alpha\\in]0\\,;\\pi[$, son sinus est positif. Or $\\cos(2\\alpha)=x$, donc $\\sin(2\\alpha)=\\blank{\\sqrt{1-x^2}}$. Finalement :\\par\\smallskip$$\\boxed{(g^{-1})'(x)=\\blank{-\\dfrac1{2\\sqrt{1-x^2}}}}$$"
+        }
+      ]
+    },
+    {
+      "id": "derivee_fonction_inverse_tan",
+      "category": "course",
+      "title": "Dérivée de la fonction $\\operatorname{Arctan}$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La fonction Arctangente est la réciproque de la tangente restreinte à un intervalle où celle-ci est bijective. Sa dérivée découle directement de la formule de dérivation d'une fonction réciproque."
+        },
+        {
+          "type": "property",
+          "title": "Que vaut \\mathqst{$\\operatorname{Arctan}'(x)$}",
+          "content": "La fonction $\\operatorname{Arctan}$ est dérivable sur $\\mathbb R$ et :\\par\\smallskip$$\\large\\boxed{\\forall x\\in\\mathbb R,\\quad \\operatorname{Arctan}'(x)=\\dfrac1{1+x^2}}$$"
+        },
+        {
+          "type": "proof",
+          "title": "Justification par la fonction réciproque",
+          "content": "La fonction $\\tan$ réalise une bijection de $\\left]-\\dfrac\\pi2\\,;\\dfrac\\pi2\\right[$ sur $\\mathbb R$, et sa dérivée $1+\\tan^2x$ ne s'annule jamais. Ainsi :\\par\\smallskip\\begin{align*}\\operatorname{Arctan}'(x)&=\\dfrac1{1+\\tan^2\\!\\left(\\operatorname{Arctan}x\\right)}\\\\&=\\dfrac1{1+x^2}.\\end{align*}"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{dériver $\\operatorname{Arctan}(u)$}",
+          "content": "Si $u$ est dérivable sur un intervalle $I$, alors $\\operatorname{Arctan}(u)$ est dérivable sur $I$ et :\\par\\smallskip$$\\large\\boxed{\\left(\\operatorname{Arctan}(u(x))\\right)'=\\dfrac{u'(x)}{1+u(x)^2}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Une erreur très fréquente, que vous ne devez pas commettre : le numérateur doit contenir $u'(x)$. Écrire seulement $\\dfrac1{1+u(x)^2}$ revient à oublier la dérivation en chaîne."
+        }
+      ]
+    },
+    {
+      "id": "identites_fonction_inverse_tan",
+      "category": "course",
+      "title": "Identités obtenues avec $\\operatorname{Arctan}$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La dérivée de la fonction Arctangente permet aussi d'établir des identités sans utiliser directement les formules d'addition. On montre que deux expressions diffèrent d'une constante, puis on détermine cette constante en un point simple."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{prouver qu'une somme est constante}",
+          "content": "On dérive la fonction sur l'intervalle considéré. Si la dérivée est identiquement nulle, la fonction est constante sur cet intervalle. Une valeur particulière suffit ensuite pour identifier cette constante."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Montrons que $f(x)=\\operatorname{Arctan}x+\\operatorname{Arctan}\\!\\left(\\dfrac1x\\right)$ est constante sur $]0\\,;+\\infty[$, puis déterminons sa valeur.} Pour $x>0$ :\\par\\smallskip\\begin{align*}f'(x)&=\\dfrac1{1+x^2}+\\dfrac{\\blank{-\\frac1{x^2}}}{1+\\frac1{x^2}}\\\\&=\\dfrac1{1+x^2}-\\dfrac1{x^2+1}\\\\&=0.\\end{align*} La fonction est donc constante sur $]0\\,;+\\infty[$. En prenant $x=1$ :\\par\\smallskip\\begin{align*}f(1)&=2\\operatorname{Arctan}(\\blank{1})\\\\&=2\\times\\blank{\\dfrac\\pi4}\\\\&=\\boxed{\\blank{\\dfrac\\pi2}}.\\end{align*} Ainsi, pour tout $x>0$, $\\operatorname{Arctan}x+\\operatorname{Arctan}\\!\\left(\\dfrac1x\\right)=\\dfrac\\pi2$."
+        },
+        {
+          "type": "technique",
+          "title": "Comment \\mathqst{identifier une différence de fonctions}",
+          "content": "Lorsque deux fonctions ont la même dérivée sur un intervalle, leur différence est constante. On calcule cette constante en choisissant une valeur simple appartenant à l'intervalle."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $F(x)=\\operatorname{Arctan}\\!\\left(\\dfrac{1-x}{1+x}\\right)$. Montrons que $F(x)=\\dfrac\\pi4-\\operatorname{Arctan}x$ pour $x>-1$.} Posons $u(x)=\\dfrac{1-x}{1+x}$. On obtient :\\par\\smallskip\\begin{align*}u'(x)&=\\blank{-\\dfrac2{(1+x)^2}},\\\\1+u(x)^2&=\\blank{\\dfrac{2(1+x^2)}{(1+x)^2}}.\\end{align*} Ainsi :\\par\\smallskip\\begin{align*}F'(x)&=\\dfrac{u'(x)}{\\blank{1+u(x)^2}}\\\\&=-\\dfrac1{1+x^2}\\\\&=\\left(-\\operatorname{Arctan}x\\right)'.\\end{align*} La fonction $F(x)+\\operatorname{Arctan}x$ est donc constante sur $]-1\\,;+\\infty[$. En $x=0$, elle vaut $\\operatorname{Arctan}(1)=\\blank{\\dfrac\\pi4}$. D'où :\\par\\smallskip$$\\boxed{F(x)=\\blank{\\dfrac\\pi4-\\operatorname{Arctan}x}}$$"
+        }
+      ]
+    },
+    {
+      "id": "racines_puissances",
+      "category": "course",
+      "title": "Racines $n$-ièmes et puissances rationnelles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les dérivées des puissances entières se prolongent aux exposants rationnels sur les intervalles où les expressions sont strictement positives. Le domaine de dérivabilité doit être distingué du domaine de définition."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{dériver une racine $n$-ième}",
+          "content": "Pour $n\\in\\mathbb N^*$ et $x>0$ :\\par\\smallskip$$\\large\\boxed{\\left(\\sqrt[n]{x}\\right)'=\\dfrac1{n\\left(\\sqrt[n]{x}\\right)^{n-1}}}$$ Si $u$ est dérivable et strictement positive sur $I$ :\\par\\smallskip$$\\left(\\sqrt[n]{u(x)}\\right)'=\\dfrac{u'(x)}{n\\left(\\sqrt[n]{u(x)}\\right)^{n-1}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{dériver $x^r$ pour $r\\in\\mathbb Q$}",
+          "content": "Pour tout $r\\in\\mathbb Q$, la fonction $x\\mapsto x^r$ est dérivable sur $]0\\,;+\\infty[$ et :\\par\\smallskip$$\\large\\boxed{(x^r)'=rx^{r-1}}$$ Si $u$ est dérivable et strictement positive, alors $(u^r)'=ru'u^{r-1}$. Cette formule redonne notamment la dérivée de $\\sqrt{x}$ pour $r=\\dfrac12$ et celle de $\\dfrac1x$ pour $r=-1$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{déterminer le domaine de dérivabilité}",
+          "content": "On détermine d'abord le domaine de définition en imposant que le radicande soit positif ou nul. Pour appliquer la formule de dérivation, on conserve ensuite les points où ce radicande est strictement positif. Les zéros du radicande peuvent correspondre à des demi-tangentes verticales."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Déterminons le domaine de dérivabilité et la dérivée de $f(x)=\\sqrt[3]{3x^2+x-4}$.} On factorise :\\par\\smallskip$$3x^2+x-4=\\blank{(x-1)(3x+4)}.$$ Le radicande est positif ou nul pour $x\\le-\\dfrac43$ ou $x\\ge1$. Ainsi :\\par\\smallskip$$D_f=\\blank{\\left]-\\infty\\,;-\\dfrac43\\right]\\cup[1\\,;+\\infty[}.$$ La formule de dérivation exige un radicande strictement positif, donc :\\par\\smallskip$$D_{f'}=\\blank{\\left]-\\infty\\,;-\\dfrac43\\right[\\cup]1\\,;+\\infty[}.$$ Avec $u(x)=3x^2+x-4$ et $u'(x)=6x+1$ :\\par\\smallskip$$\\boxed{f'(x)=\\blank{\\dfrac{6x+1}{3\\left(\\sqrt[3]{3x^2+x-4}\\right)^2}}}$$ Aux points $-\\dfrac43$ et $1$, le dénominateur tend vers $0$ tandis que le numérateur ne s'annule pas ; la courbe admet des demi-tangentes verticales."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sqrt[5]{1+x}-1}{x}$ en reconnaissant un nombre dérivé.} Posons $g(x)=(1+x)^{\\blank{1/5}}$. Le quotient est le taux d'accroissement de $g$ en $0$. Or :\\par\\smallskip\\begin{align*}g'(x)&=\\dfrac15(1+x)^{\\blank{-4/5}},\\\\g'(0)&=\\blank{\\dfrac15}.\\end{align*} Par conséquent :\\par\\smallskip$$\\boxed{\\displaystyle\\lim_{x\\to0}\\dfrac{\\sqrt[5]{1+x}-1}{x}=\\dfrac15}$$"
+        }
+      ]
+    },
+    {
+      "id": "variations_extremums",
+      "category": "course",
+      "title": "Variations et extremums grâce au signe de $f'$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La dérivée première transforme l'étude des variations en une étude de signe. Les changements de signe de $f'$ permettent ensuite d'identifier les extremums locaux."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{$f'$ commande-t-elle les variations}",
+          "content": "Soit $f$ dérivable sur un intervalle $I$ :\\itemsize{si $f'(x)>0$ sur $I$, alors $f$ est strictement croissante sur $I$ ;}\\itemsize{si $f'(x)<0$ sur $I$, alors $f$ est strictement décroissante sur $I$ ;}\\itemsize{si $f'(x)=0$ sur $I$, alors $f$ est constante sur $I$.}"
+        },
+        {
+          "type": "warning",
+          "content": "Le mot \\textbf{intervalle} est essentiel. Une dérivée nulle sur $\\mathbb R^*$ n'impose pas une seule constante sur tout $\\mathbb R^*$, car cet ensemble n'est pas un intervalle. De plus, l'annulation isolée de $f'$ ne détruit pas nécessairement la stricte monotonie."
+        },
+        {
+          "type": "theorem",
+          "title": "Quand \\mathqst{$f'$ produit-elle un extremum local}",
+          "content": "Soit $x_0$ intérieur à l'intervalle d'étude. Si $f'(x_0)=0$ et si $f'$ change de signe en $x_0$, alors $f$ admet un extremum local :\\itemsize{passage de $+$ à $-$ : maximum local ;}\\itemsize{passage de $-$ à $+$ : minimum local.}"
+        },
+        {
+          "type": "warning",
+          "content": "L'égalité $f'(x_0)=0$ ne suffit pas. Pour $f(x)=x^3$, on a $f'(0)=0$, mais $f'(x)=3x^2$ reste positive de part et d'autre de $0$ ; il n'y a donc aucun extremum."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{construire un tableau de variations}",
+          "content": "On calcule puis on factorise $f'$. On place ses zéros et les points interdits, puis on détermine son signe sur chaque intervalle. On traduit enfin ce signe par les variations de $f$ et on calcule les valeurs aux points critiques."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions les variations et les extremums de $f(x)=\\dfrac13x^3+\\dfrac12x^2-2x$.} On dérive :\\par\\smallskip\\begin{align*}f'(x)&=\\blank{x^2+x-2}\\\\&=\\blank{(x-1)(x+2)}.\\end{align*} Le trinôme est positif sur $]-\\infty\\,;-2[$ et $]1\\,;+\\infty[$, puis négatif sur $]-2\\,;1[$. On obtient :\\par\\smallskip$$\\begin{array}{c|ccccccc}x&-\\infty&&-2&&1&&+\\infty\\\\\\hline f'(x)&&+&0&-&0&+&\\\\\\hline f(x)&&\\nearrow&\\frac{10}{3}&\\searrow&-\\frac76&\\nearrow&\\end{array}$$ La dérivée passe de $+$ à $-$ en $-2$, donc $f$ admet un maximum local de valeur $\\blank{\\dfrac{10}{3}}$. Elle passe de $-$ à $+$ en $1$, donc $f$ admet un minimum local de valeur $\\blank{-\\dfrac76}$."
+        }
+      ]
+    },
+    {
+      "id": "concavite_inflexion",
+      "category": "course",
+      "title": "Concavité et points d'inflexion grâce à $f''$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La dérivée seconde décrit la manière dont les pentes évoluent. Son signe indique de quel côté des tangentes se situe la courbe et ses changements de signe révèlent les points d'inflexion."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{lire la convexité avec $f''$}",
+          "content": "Soit $f$ deux fois dérivable sur un intervalle $I$ :\\itemsize{si $f''(x)\\ge0$ sur $I$, la courbe $(C_f)$ est \\textbf{convexe} et se situe au-dessus de ses tangentes ;}\\itemsize{si $f''(x)\\le0$ sur $I$, la courbe $(C_f)$ est \\textbf{concave} et se situe au-dessous de ses tangentes.}"
+        },
+        {
+          "type": "definition",
+          "title": "Quand obtient-on \\mathqst{un point d'inflexion}",
+          "content": "Le point $A(x_0\\,;f(x_0))$ est un \\textbf{point d'inflexion} lorsque $f''$ change de signe en $x_0$. La courbe change alors de concavité et traverse sa tangente en ce point."
+        },
+        {
+          "type": "warning",
+          "content": "L'annulation de $f''(x_0)$ ne suffit pas. Pour $f(x)=x^4$, on a $f''(0)=0$, mais $f''(x)=12x^2$ reste positive des deux côtés ; la courbe est convexe et ne possède aucun point d'inflexion en $0$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{étudier les changements de concavité}",
+          "content": "On calcule $f''$, puis on résout $f''(x)=0$ sur l'intervalle considéré. On étudie son signe de part et d'autre de chaque solution. Seules les solutions où le signe change fournissent des points d'inflexion."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Étudions la concavité de $f(x)=\\sin^2x$ sur $[0\\,;\\pi]$ et déterminons ses points d'inflexion.} On dérive deux fois :\\par\\smallskip\\begin{align*}f'(x)&=2\\sin x\\cos x=\\blank{\\sin(2x)},\\\\f''(x)&=\\blank{2\\cos(2x)}.\\end{align*} Sur $[0\\,;\\pi]$, la dérivée seconde s'annule pour $x=\\dfrac\\pi4$ et $x=\\blank{\\dfrac{3\\pi}4}$. Son signe donne :\\par\\smallskip$$\\begin{array}{c|ccccc}x&0&\\frac\\pi4&&\\frac{3\\pi}4&\\pi\\\\\\hline f''(x)&+&0&-&0&+\\\\\\hline (C_f)&\\text{convexe}&&\\text{concave}&&\\text{convexe}\\end{array}$$ Le signe change aux deux valeurs. Comme $\\sin^2\\!\\left(\\dfrac\\pi4\\right)=\\sin^2\\!\\left(\\dfrac{3\\pi}4\\right)=\\blank{\\dfrac12}$, les points d'inflexion sont :\\par\\smallskip$$\\boxed{\\left(\\dfrac\\pi4\\,;\\dfrac12\\right)\\text{ et }\\left(\\dfrac{3\\pi}4\\,;\\dfrac12\\right)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Soit $f(x)=4\\sin x+\\cos(2x)$. Factorisons $f''(x)$ puis déterminons les abscisses des points d'inflexion.} On a :\\par\\smallskip\\begin{align*}f'(x)&=\\blank{4\\cos x-2\\sin(2x)},\\\\f''(x)&=-4\\sin x-4\\cos(2x)\\\\&=-4\\sin x-4(1-2\\sin^2x)\\\\&=\\blank{4(2\\sin^2x-\\sin x-1)}\\\\&=\\blank{4(2\\sin x+1)(\\sin x-1)}.\\end{align*} Le facteur $\\sin x-1$ s'annule sans changer de signe. Le changement de signe provient donc de $2\\sin x+1=0$, soit $\\sin x=\\blank{-\\dfrac12}$. Les abscisses recherchées sont :\\par\\smallskip$$\\boxed{x=\\blank{-\\dfrac\\pi6}+2k\\pi\\quad\\text{ou}\\quad x=\\dfrac{7\\pi}6+2k\\pi,\\ k\\in\\mathbb Z}$$"
+        }
+      ]
+    },
+    {
+      "id": "branches_infinies",
+      "category": "course",
+      "title": "Asymptotes et branches infinies d'une courbe",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Aux bornes du domaine, la courbe peut s'approcher d'une droite ou adopter une direction parabolique. Les limites permettent de distinguer précisément ces comportements."
+        },
+        {
+          "type": "property",
+          "title": "Quels sont \\mathqst{les quatre comportements à l'infini}",
+          "content": "\\begin{enumerate}\\item Si $\\displaystyle\\lim_{x\\to a}f(x)=\\pm\\infty$, la droite $x=a$ est une asymptote verticale.\\item Si $\\displaystyle\\lim_{x\\to\\pm\\infty}f(x)=b\\in\\mathbb R$, la droite $y=b$ est une asymptote horizontale.\\item Si $\\displaystyle\\lim_{x\\to\\pm\\infty}\\bigl(f(x)-(\\alpha x+\\beta)\\bigr)=0$, la droite $y=\\alpha x+\\beta$ est une asymptote oblique.\\item Si $f(x)\\to\\pm\\infty$ et $\\displaystyle\\lim\\dfrac{f(x)}x=0$, la branche est parabolique de direction $(Ox)$ ; si cette limite vaut $\\pm\\infty$, sa direction est $(Oy)$.\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{chercher une asymptote oblique}",
+          "content": "Lorsque $f(x)$ tend vers l'infini avec $x$, on calcule $\\alpha=\\displaystyle\\lim\\dfrac{f(x)}x$. Si $\\alpha$ est fini et non nul, on calcule $\\beta=\\displaystyle\\lim\\bigl(f(x)-\\alpha x\\bigr)$. Si $\\beta$ est fini, la droite $y=\\alpha x+\\beta$ est l'asymptote. Pour une fraction rationnelle, la division euclidienne fournit souvent directement sa partie affine."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Étudions les branches infinies de $f(x)=\\sqrt{x^2-x-2}$.} Le radicande se factorise en $(x-2)(x+1)$, donc :\\par\\smallskip$$D_f=\\blank{]-\\infty\\,;-1]\\cup[2\\,;+\\infty[}.$$\\par\\smallskip En $+\\infty$, comme $x>0$ :\\begin{align*}\\lim_{x \\to +\\infty}\\dfrac{f(x)}x&=\\lim_{x \\to +\\infty}\\sqrt{1-\\dfrac1x-\\dfrac2{x^2}}=\\blank{1},\\\\\\lim_{x \\to +\\infty}\\left[f(x)-x\\right]&=\\lim_{x \\to +\\infty}\\dfrac{-x-2}{\\sqrt{x^2-x-2}+x}=\\blank{-\\dfrac12}.\\end{align*} La droite $y=x-\\dfrac12$ est asymptote en $+\\infty$.\\par\\smallskip En $-\\infty$, $\\sqrt{x^2}=|x|=-x$, donc $\\lim_{x \\to -\\infty}\\dfrac{f(x)}x=\\blank{-1}$. Puis :\\begin{align*}\\lim_{x \\to -\\infty}\\left[f(x)+x\\right]&=\\lim_{x \\to -\\infty}\\dfrac{-x-2}{\\sqrt{x^2-x-2}-x}=\\dfrac12.\\end{align*} La droite $y=-x+\\dfrac12$ est asymptote en $-\\infty$.\\par\\smallskip Aux bornes $2^+$ et $-1^-$, les taux d'accroissement deviennent infinis. La courbe admet donc deux demi-tangentes \\blank{\\text{verticales}}."
+        },
+        {
+          "type": "warning",
+          "content": "Lors d'une étude en $-\\infty$, il faut utiliser $\\sqrt{x^2}=|x|=-x$. Remplacer $\\sqrt{x^2}$ par $x$ modifierait le coefficient directeur et conduirait à une asymptote incorrecte."
+        }
+      ]
+    },
+    {
+      "id": "symetries_periodicite",
+      "category": "course",
+      "title": "Parité, périodicité et éléments de symétrie",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certaines régularités permettent de réduire le domaine d'étude avant tout calcul détaillé. La courbe complète se reconstruit ensuite par une symétrie ou une translation."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{réduire l'étude par parité ou périodicité}",
+          "content": "\\itemsize{Si $f(-x)=f(x)$, la fonction est paire et $(C_f)$ est symétrique par rapport à $(Oy)$.}\\itemsize{Si $f(-x)=-f(x)$, la fonction est impaire et $(C_f)$ est symétrique par rapport à l'origine $O$.}\\itemsize{Si $f(x+T)=f(x)$, la fonction est périodique de période $T$ ; on l'étudie sur un intervalle de longueur $T$, puis on translate la courbe par les vecteurs $kT\\overrightarrow{Oi}$.}"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{caractériser un axe ou un centre}",
+          "content": "La droite $x=a$ est un axe de symétrie de $(C_f)$ lorsque, pour tout $x$ du domaine, $2a-x$ appartient aussi au domaine et $f(2a-x)=f(x)$. Le point $\\Omega(a\\,;b)$ est un centre de symétrie lorsque $f(2a-x)+f(x)=2b$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{vérifier une symétrie annoncée}",
+          "content": "On calcule d'abord $2a-x$ et on vérifie que le domaine est stable par cette transformation. Pour un axe, on compare $f(2a-x)$ à $f(x)$. Pour un centre, on simplifie la somme $f(2a-x)+f(x)$ et on vérifie qu'elle vaut $2b$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Vérifions deux symétries indépendantes.\\begin{enumerate}\\item Montrer que $x=\\dfrac12$ est un axe de symétrie de $f(x)=\\sqrt{x-x^2}$ sur $[0\\,;1]$.\\item Montrer que $\\Omega\\!\\left(\\dfrac\\pi4\\,;0\\right)$ est un centre de symétrie de $g(x)=\\sin x-\\cos x$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour $a=\\dfrac12$, on a $2a-x=\\blank{1-x}\\in[0\\,;1]$. De plus :\\end{enumerate}\\begin{align*}f(1-x)&=\\sqrt{(1-x)-(1-x)^2}\\\\&=\\blank{\\sqrt{x-x^2}}\\\\&=f(x).\\end{align*} La droite $x=\\dfrac12$ est donc un axe de symétrie.\\par\\smallskip\\begin{enumerate}\\item Pour $a=\\dfrac\\pi4$, on a $2a-x=\\blank{\\dfrac\\pi2-x}$. Alors :\\end{enumerate}\\begin{align*}g\\!\\left(\\dfrac\\pi2-x\\right)+g(x)&=(\\cos x-\\sin x)+(\\sin x-\\cos x)\\\\&=\\blank{0}.\\end{align*} Comme $0=2\\times0$, le point $\\Omega\\!\\left(\\dfrac\\pi4\\,;0\\right)$ est un \\blank{\\text{centre de symétrie}}."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{déterminer une période adaptée}",
+          "content": "On cherche un réel $T>0$ tel que l'argument de la fonction trigonométrique augmente d'une période complète lorsque $x$ est remplacé par $x+T$. On choisit ensuite un intervalle d'étude de longueur $T$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons une période de $f(x)=2\\cos\\!\\left(2x+\\dfrac\\pi4\\right)$ et un intervalle d'étude possible.} Pour tout $x$ :\\par\\smallskip\\begin{align*}f(x+\\blank{\\pi})&=2\\cos\\!\\left(2x+2\\pi+\\dfrac\\pi4\\right)\\\\&=2\\cos\\!\\left(2x+\\dfrac\\pi4\\right)\\\\&=f(x).\\end{align*} Ainsi, $\\pi$ est une \\blank{\\text{période}}. Il suffit donc d'étudier la fonction sur un intervalle de longueur $\\pi$, par exemple :\\par\\smallskip$$\\boxed{\\blank{\\left[-\\dfrac\\pi2\\,;\\dfrac\\pi2\\right]}}$$"
+        }
+      ]
+    },
+    {
+      "id": "plan_etude",
+      "category": "course",
+      "title": "Organisation complète de l'étude d'une fonction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une étude de fonction devient plus sûre lorsque les recherches sont menées dans un ordre stable. Chaque résultat prépare le suivant et évite les calculs inutiles."
+        },
+        {
+          "type": "method",
+          "title": "Dans quel ordre \\mathqst{étudier une fonction}",
+          "content": "\\begin{enumerate}\\item Déterminer le domaine de définition et, si nécessaire, le domaine de dérivabilité.\\item Chercher une réduction par parité, périodicité, axe ou centre de symétrie.\\item Calculer les limites aux bornes du domaine, y compris les limites latérales.\\item Identifier les branches infinies et étudier la position par rapport aux asymptotes.\\item Calculer $f'$, étudier son signe et préciser les tangentes aux points particuliers.\\item Construire le tableau de variations avec les limites et les valeurs remarquables.\\item Étudier, selon le besoin, les extremums, les intersections, $f''$ et les points d'inflexion.\\item Placer les asymptotes, les tangentes et quelques points avant de tracer la courbe.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Soit $f(x)=\\dfrac{x^2+x+1}{x-1}$. Déterminons ses asymptotes, sa position par rapport à l'asymptote oblique et un centre de symétrie de $(C_f)$.} La division euclidienne donne :\\par\\smallskip\\begin{align*}f(x)&=\\blank{x+2+\\dfrac3{x-1}}.\\end{align*} Comme $\\dfrac3{x-1}$ devient infini lorsque $x$ tend vers $1$, la droite $x=\\blank{1}$ est une asymptote verticale. Comme ce reste tend vers $0$ à l'infini, la droite $y=\\blank{x+2}$ est une asymptote oblique.\\par\\smallskip La position de la courbe dépend du signe de :\\begin{align*}f(x)-(x+2)&=\\blank{\\dfrac{3}{x-1}}.\\end{align*} La courbe est donc au-dessous de l'asymptote pour $x<1$ et au-dessus pour $x>1$.\\par\\smallskip Enfin :\\begin{align*}f(2-x)+f(x)&=6\\\\&=2\\times3.\\end{align*} Ainsi :\\par\\smallskip$$\\boxed{\\Omega(1\\,;\\blank{3})\\text{ est un centre de symétrie de }(C_f)}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Voici les points de vigilance à ne pas oublier : ne pas confondre domaine de définition et domaine de dérivabilité ; ne pas conclure à un extremum avec la seule égalité $f'(x_0)=0$ ; ne pas conclure à une inflexion avec la seule égalité $f''(x_0)=0$ ; ne pas étudier la dérivabilité en un point où la fonction n'est pas continue."
+        }
+      ]
+    }
+  ]
+}

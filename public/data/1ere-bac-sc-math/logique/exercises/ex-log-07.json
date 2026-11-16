@@ -1,0 +1,45 @@
+{
+  "id": "ex-log-07",
+  "theme": "logique",
+  "difficulty": "facile",
+  "topic": "Logique & Raisonnements — Logique propositionnelle",
+  "requiresRedaction": true,
+  "context": "Soient $P$, $Q$ et $R$ trois propositions. Montrer que les propositions suivantes sont des lois logiques :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$(P \\Rightarrow Q) \\Rightarrow [(Q \\Rightarrow R) \\Rightarrow (P \\Rightarrow R)]$",
+      "hint": "Dressez la table de vérité ou raisonnez : supposez $P \\Rightarrow Q$ vraie et $Q \\Rightarrow R$ vraie, et montrez $P \\Rightarrow R$."
+    },
+    {
+      "id": "q2",
+      "content": "$(P \\Rightarrow Q) \\Rightarrow [(P \\text{ et } R) \\Rightarrow (Q \\text{ et } R)]$",
+      "hint": ""
+    },
+    {
+      "id": "q3",
+      "content": "$(P \\Rightarrow Q) \\Rightarrow [(P \\text{ ou } R) \\Rightarrow (Q \\text{ ou } R)]$",
+      "hint": ""
+    },
+    {
+      "id": "q4",
+      "content": "$[P \\Rightarrow (Q \\text{ ou } R)] \\iff [(P \\text{ et } \\overline{Q}) \\Rightarrow R]$",
+      "hint": "Utilisez que $P \\Rightarrow (Q \\text{ ou } R)$ est équivalente à $(P \\text{ et } \\overline{Q}) \\Rightarrow R$."
+    },
+    {
+      "id": "q5",
+      "content": "$P \\Rightarrow (\\overline{P} \\Rightarrow Q)$",
+      "hint": "Si $P$ est vraie et $\\overline{P}$ l'est aussi, on aboutit à une contradiction — toute implication ex falso est vraie."
+    },
+    {
+      "id": "q6",
+      "content": "$(P \\Rightarrow Q) \\iff (\\overline{P} \\text{ et } Q)$ ou $(\\overline{P} \\text{ et } \\overline{Q})$",
+      "hint": "Dressez la table de vérité des deux membres."
+    },
+    {
+      "id": "q7",
+      "content": "$[P \\Rightarrow (Q \\text{ ou } \\overline{R})] \\iff [Q \\text{ ou } (P \\Rightarrow \\overline{R})]$",
+      "hint": ""
+    }
+  ]
+}

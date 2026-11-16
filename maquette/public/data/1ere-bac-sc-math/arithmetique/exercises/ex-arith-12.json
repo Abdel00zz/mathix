@@ -1,0 +1,26 @@
+{
+  "id": "ch03-ex05",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "chapter": "03 - PPCM et PGCD ; propriétés",
+  "topic": "PGCD/PPCM - PGCD paramétrique et ensemble solution",
+  "requiresRedaction": true,
+  "context": "Pour tout $n \\in \\mathbb{N}^*$, on pose : $a = 5n^2 + 7$ et $b = n^2 + 2$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que : $(d / a\\ \\text{et}\\ d / b) \\Rightarrow d / 3$.",
+      "hint": "Si $d$ divise $a$ et $b$, il divise toute combinaison linéaire de $a$ et $b$. Calculez $a - 5b$ et voyez ce que cela donne."
+    },
+    {
+      "id": "q2",
+      "content": "On suppose dans cette question que : $a \\wedge b = 3$. Montrer que : $(\\exists k \\in \\mathbb{N}),\\ n^2 - 1 = 3k$.",
+      "hint": "Si $a \\wedge b = 3$, alors $3 / b$, soit $3 / n^2 + 2$. Écrivez $n^2 + 2 = n^2 - 1 + 3$ et concluez."
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer l'ensemble : $H = \\{n \\in \\mathbb{N}^* / a \\wedge b = 3\\}$.",
+      "hint": "D'après la question précédente, $a \\wedge b = 3$ implique $3 / n^2 - 1 = (n-1)(n+1)$. Étudiez les résidus de $n$ modulo $3$ pour déterminer quand $3$ divise $(n-1)(n+1)$."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "ex-deriv-10",
+  "theme": "derivation",
+  "difficulty": "difficile",
+  "topic": "Dérivabilité, valeur absolue et radical",
+  "context": "Soit $f$ la fonction définie par : $f(x) = |x-1|\\sqrt{x+2}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $D_f$, le domaine de définition de $f$.",
+      "hint": "La fonction racine carrée est définie pour les expressions positives ou nulles."
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Étudier la dérivabilité de $f$ à droite en $-2$.",
+          "hint": "Calculez la limite du taux d'accroissement $\\displaystyle\\lim_{x \\to -2^+} \\frac{f(x)-f(-2)}{x+2}$. Pensez à simplifier par $\\sqrt{x+2}$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Donner une interprétation géométrique du résultat obtenu.",
+          "hint": "Une limite infinie pour le taux d'accroissement correspond à une demi-tangente verticale."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Étudier la dérivabilité de $f$ à droite et à gauche en $1$.",
+          "hint": "Exprimez $|x-1|$ sans valeur absolue selon le signe de $x-1$, puis calculez les limites des taux d'accroissement en $1^+$ et $1^-$."
+        },
+        {
+          "id": "sq3b",
+          "content": "La fonction $f$ est-elle dérivable en $1$ ? Interpréter géométriquement.",
+          "hint": "Comparez les nombres dérivés à droite et à gauche. S'ils sont différents, la courbe admet un point anguleux."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Calculer $f'(x)$ pour $x \\in ]-2; 1[$ et pour $x \\in ]1; +\\infty[$.",
+      "hint": "Utilisez la formule de dérivation d'un produit $(uv)' = u'v + uv'$. Attention au signe de $x-1$ sur chaque intervalle."
+    },
+    {
+      "id": "q5",
+      "content": "Dresser le tableau de variations complet de $f$.",
+      "hint": "Étudiez le signe de $f'(x)$ sur chaque intervalle. N'oubliez pas d'inclure les valeurs aux bornes et les points remarquables."
+    }
+  ]
+}

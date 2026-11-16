@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "version": "4.4",
+    "lastUpdated": "2026-04-01"
+  },
+  "classes": [
+    {
+      "id": "tronc-commun-sc",
+      "title": "Tronc Commun Scientifique",
+      "name": "Tronc Commun Scientifique",
+      "shortName": "Tronc Commun",
+      "path": "data/classes/tronc-commun-sc.json"
+    },
+    {
+      "id": "1ere-bac-sc-ex",
+      "title": "1ère Bac Sciences Expérimentales",
+      "name": "1ère Bac Sciences Expérimentales",
+      "shortName": "1Bac Sc. Ex",
+      "path": "data/classes/1ere-bac-sc-ex.json"
+    },
+    {
+      "id": "1ere-bac-sc-math",
+      "title": "1ère Bac Sciences Mathématiques",
+      "name": "1ère Bac Sciences Mathématiques",
+      "shortName": "1Bac Sc. Math",
+      "path": "data/classes/1ere-bac-sc-math.json"
+    },
+    {
+      "id": "2eme-bac-sc-ex",
+      "title": "2ème Bac Sciences Expérimentales",
+      "name": "2ème Bac Sciences Expérimentales",
+      "shortName": "2Bac Sc. Ex",
+      "path": "data/classes/2eme-bac-sc-ex.json"
+    },
+    {
+      "id": "2eme-bac-sc-math",
+      "title": "2ème Bac Sciences Mathématiques",
+      "name": "2ème Bac Sciences Mathématiques",
+      "shortName": "2Bac Sc. Math",
+      "path": "data/classes/2eme-bac-sc-math.json"
+    }
+  ],
+  "concours": [
+    {
+      "id": "ensa",
+      "name": "ENSA",
+      "fullName": "Ecoles Nationales des Sciences Appliquées",
+      "description": "Concours d'accès aux ENSA — QCM Mathématiques",
+      "manifestPath": "data/concours/ensa/manifest.json",
+      "color": "#2563eb",
+      "questionsPerExam": 30,
+      "timePerQuestion": 45,
+      "annalesCount": 7,
+      "quizzesCount": 3,
+      "questionsCount": 155
+    },
+    {
+      "id": "ensam",
+      "name": "ENSAM",
+      "fullName": "Ecole Nationale Supérieure des Arts et Métiers",
+      "description": "Concours d'accès à l'ENSAM — QCM Mathématiques",
+      "manifestPath": "data/concours/ensam/manifest.json",
+      "color": "#059669",
+      "questionsPerExam": 25,
+      "timePerQuestion": 50,
+      "annalesCount": 3,
+      "quizzesCount": 2,
+      "questionsCount": 64
+    },
+    {
+      "id": "medecine",
+      "name": "Faculté Médecine",
+      "fullName": "Faculté de Médecine et de Pharmacie",
+      "description": "Concours d'accès aux Facultés de Médecine — QCM Mathématiques",
+      "manifestPath": "data/concours/medecine/manifest.json",
+      "color": "#dc2626",
+      "questionsPerExam": 20,
+      "timePerQuestion": 60,
+      "annalesCount": 21,
+      "quizzesCount": 2,
+      "questionsCount": 403
+    }
+  ]
+}

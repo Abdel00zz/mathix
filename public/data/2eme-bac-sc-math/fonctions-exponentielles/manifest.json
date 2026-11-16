@@ -1,0 +1,33 @@
+{
+  "id": "fonctions-exponentielles",
+  "title": "Fonctions exponentielles",
+  "exercises": [
+    {
+      "id": "ex-fonctions-exponentielles-01",
+      "path": "data/2eme-bac-sc-math/fonctions-exponentielles/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-fonctions-exponentielles-02",
+      "path": "data/2eme-bac-sc-math/fonctions-exponentielles/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-fonctions-exponentielles-03",
+      "path": "data/2eme-bac-sc-math/fonctions-exponentielles/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-fonctions-exponentielles-01",
+      "path": "data/2eme-bac-sc-math/fonctions-exponentielles/quiz/fonctions-exponentielles_quiz.json",
+      "questionsCount": 22
+    }
+  ],
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-fonctions-exponentielles-sm",
+      "title": "Fiche Complete : Fonctions exponentielles",
+      "path": "data/2eme-bac-sc-math/fonctions-exponentielles/revisions/fiche_fonctions_exponentielles_cours.json"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "ex-complexes-14",
+  "topic": "Nombres complexes - Bac National 2013 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2013,
+  "examenSession": "Rattrapage",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "Soit $a$ un nombre complexe différent de $1$. On considère dans l'ensemble $\\mathbb{C}$ l'équation : $(E):2z^2-2(a-1)z+(a-1)^2=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "Montrer que : $z_1=\\dfrac{(a-1)}{2}(1+i)$ et $z_2=\\dfrac{(a-1)}{2}(1-i)$ sont les deux solutions de l'équation $(E)$.",
+      "hint": "Calculez le discriminant $\\Delta=4(a-1)^2-8(a-1)^2=-4(a-1)^2$, une racine carrée est $2(a-1)i$, puis appliquez la formule des racines."
+    },
+    {
+      "id": "p1q2",
+      "content": "On prend $a=e^{i\\theta}$ avec $0<\\theta<\\pi$.",
+      "subQuestions": [
+        {
+          "id": "p1q2a",
+          "content": "Montrer que : $a-1=2\\sin\\dfrac{\\theta}{2}e^{i\\left(\\frac{\\theta+\\pi}{2}\\right)}$.",
+          "hint": "Factorisez $e^{i\\theta}-1$ par l'arc moitié $e^{i\\theta/2}$, ce qui fait apparaître $e^{i\\theta/2}-e^{-i\\theta/2}=2i\\sin(\\theta/2)$."
+        },
+        {
+          "id": "p1q2b",
+          "content": "En déduire la forme trigonométrique de $Z_1$ et $Z_2$.",
+          "hint": "Remplacez $a-1$ par l'expression trouvée dans $z_1=\\frac{a-1}2(1+i)$ et $z_2=\\frac{a-1}2(1-i)$, puis mettez $1+i$ et $1-i$ sous forme exponentielle pour combiner les angles."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe étant rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. On admet que $\\text{Re}(a)<0$ et on considère les points $A(a)$, $B(-i)$, $C(i)$ et $B'(1)$."
+    },
+    {
+      "id": "p2q1",
+      "content": "Déterminer en fonction de $a$, les affixes des points $J$ et $K$ milieux respectifs de $[AC]$ et $[AB]$.",
+      "hint": "Utilisez simplement $j=\\dfrac{a+i}{2}$ et $k=\\dfrac{a-i}{2}$."
+    },
+    {
+      "id": "p2q2",
+      "content": "Soit $r_1$ la rotation de centre $J$ et d'angle $\\dfrac{\\pi}{2}$ et $r_2$ la rotation de centre $K$ et d'angle $\\dfrac{\\pi}{2}$. On pose $C'=r_1(C)$ et $A'=r_2(A)$ et soient $c'$ l'affixe de $C'$ et $a'$ l'affixe de $A'$. Montrer que : $a'=z_1$ et $c'=z_2$.",
+      "hint": "Appliquez $c'-j=i(c-j)$ et $a'-k=i(a-k)$ en utilisant les valeurs de $j$ et $k$ trouvées précédemment, puis comparez aux expressions de $z_1$ et $z_2$ de la Partie 1."
+    },
+    {
+      "id": "p2q3",
+      "content": "Calculer $\\dfrac{a'-c'}{a-1}$ et en déduire que la droite $(AB')$ est une hauteur du triangle $A'B'C'$.",
+      "hint": "Remplacez $a'=z_1$ et $c'=z_2$ par leurs expressions en fonction de $a$ et simplifiez le quotient ; une hauteur en $A'$ (issue de $B'$... vérifiez le sommet visé) correspond à une perpendicularité entre $(AB')$ et $(A'C')$, à traduire via ce quotient imaginaire pur."
+    }
+  ]
+}

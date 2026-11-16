@@ -1,0 +1,347 @@
+{
+  "id": "nat-2018-r",
+  "title": "Examen National 2018 — Session Rattrapage",
+  "type": "national",
+  "year": 2018,
+  "session": "rattrapage",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 7,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2018r-ex1",
+      "number": 1,
+      "theme": "geometrie-espace",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Sphère, plan et intersection",
+      "context": "Dans l'espace rapporté à un repère orthonormé direct $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère la sphère $(S)$ de centre $\\Omega(2, 1, 2)$ et de rayon $3$, et le plan $(P)$ passant par le point $A(-1, 0, 3)$ et dont $\\overrightarrow{u}(4, 0, -3)$ est un vecteur normal à $(P)$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que $x^2 + y^2 + z^2 - 4x - 2y - 4z = 0$ est une équation cartésienne de la sphère $(S)$.",
+          "bareme": 0.5,
+          "hint": "Exprimez que la distance $\\Omega M$ d'un point $M(x,y,z)$ au centre de la sphère est égale au rayon $3$. Élevez au carré et développez les identités remarquables."
+        },
+        {
+          "id": "q2",
+          "content": "Vérifier que $4x - 3z + 13 = 0$ est une équation cartésienne du plan $(P)$.",
+          "bareme": 0.5,
+          "hint": "Un point $M(x,y,z)$ appartient à $(P)$ si et seulement si le vecteur $\\overrightarrow{AM}$ est orthogonal au vecteur normal $\\overrightarrow{u}$. Traduisez cela par un produit scalaire nul."
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que $\\begin{cases} x = 2 + 4t \\\\ y = 1 \\quad (t \\in \\mathbb{R}) \\\\ z = 2 - 3t \\end{cases}$ est une représentation paramétrique de la droite $(\\Delta)$ passant par $\\Omega$ et perpendiculaire à plan $(P)$.",
+              "bareme": 0.5,
+              "hint": "La droite étant perpendiculaire à $(P)$, le vecteur normal $\\overrightarrow{u}$ de $(P)$ lui sert de vecteur directeur. Utilisez les coordonnées de $\\Omega$ comme point de passage."
+            },
+            {
+              "id": "3b",
+              "content": "Déterminer les coordonnées du point $H$, point d'intersection de la droite $(\\Delta)$ et du plan $(P)$.",
+              "bareme": 0.5,
+              "hint": "Substituez les expressions de $x$, $y$ et $z$ issues de la représentation paramétrique de $(\\Delta)$ dans l'équation cartésienne de $(P)$ pour trouver la valeur du paramètre $t$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Calculer $d(\\Omega, (P))$",
+              "bareme": 0.25,
+              "hint": "Appliquez la formule de la distance d'un point à un plan en utilisant les coordonnées de $\\Omega$ et l'équation cartésienne de $(P)$."
+            },
+            {
+              "id": "4b",
+              "content": "Montrer que le plan $(P)$ est tangent à la sphère $(S)$ en un point que l'on déterminera.",
+              "bareme": 0.75,
+              "hint": "Comparez la distance $d(\\Omega, (P))$ avec le rayon de la sphère. Le point de contact est la projection orthogonale de $\\Omega$ sur $(P)$, que vous avez déjà étudiée à la question 3b."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2018r-ex2",
+      "number": 2,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Nombres complexes — Équation, rotation, translation et distances",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Résoudre, dans l'ensemble $\\mathbb{C}$ des nombres complexes, l'équation : $z^2 - 2\\sqrt{2}z + 4 = 0$.",
+          "bareme": 0.75,
+          "hint": "Calculez le discriminant $\\Delta$. S'il est strictement négatif, l'équation admet deux solutions complexes conjuguées."
+        },
+        {
+          "id": "q2",
+          "content": "Dans le plan complexe, rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère le point $A$ d'affixe $a = \\sqrt{2}(1 - i)$ et $R$ la rotation de centre $O$ et d'angle $\\dfrac{\\pi}{3}$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Écrire, sous forme trigonométrique, le nombre complexe $a$.",
+              "bareme": 0.25,
+              "hint": "Calculez d'abord le module $|a|$. Factorisez ensuite l'expression algébrique par ce module pour faire apparaître le cosinus et le sinus d'un angle remarquable."
+            },
+            {
+              "id": "2b",
+              "content": "Vérifier que l'affixe du point $B$ image du point $A$ par la rotation $R$ est $b = 2\\left(\\cos\\left(\\dfrac{\\pi}{12}\\right) + i\\sin\\left(\\dfrac{\\pi}{12}\\right)\\right)$",
+              "bareme": 0.5,
+              "hint": "La traduction complexe de la rotation est $b = a e^{i\\frac{\\pi}{3}}$. Utilisez la forme trigonométrique de $a$ et multipliez en additionnant les arguments."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "On considère le point $C$ d'affixe $c = 1 + i$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que $b^2 - c^2 = 2\\sqrt{3}$.",
+              "bareme": 0.5,
+              "hint": "Calculez $b^2$ à l'aide de la formule de Moivre. Pour $c^2$, utilisez l'identité remarquable $(1+i)^2$. Effectuez ensuite la différence."
+            },
+            {
+              "id": "3b",
+              "content": "Soit $t$ la translation de vecteur $\\overrightarrow{OC}$, et le point $D$ l'image du point $B$ par la translation $t$. Montrer que $OD = |b + c|$",
+              "bareme": 0.5,
+              "hint": "Exprimez l'affixe $d$ du point $D$ par la relation de la translation : $d = b + c$. La distance $OD$ correspond au module de $d$."
+            },
+            {
+              "id": "3c",
+              "content": "En déduire que $OD \\times BC = 2\\sqrt{3}$.",
+              "bareme": 0.5,
+              "hint": "La distance $BC$ s'écrit $|c-b|$. En multipliant avec $OD$, vous obtenez $|b+c| \\times |c-b|$. Utilisez les propriétés du module et de l'identité remarquable pour relier ce produit au résultat de la question 3a."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2018r-ex3",
+      "number": 3,
+      "theme": "probabilites",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Probabilités — Tirage simultané et probabilités conditionnelles",
+      "context": "Une urne contient 12 boules, indiscernables au toucher, réparties comme suit : 3 boules rouges portant chacune le nombre 1, 3 boules rouges portant chacune le nombre 2 et 6 boules vertes portant chacune le nombre 2.\nOn tire, au hasard et simultanément, deux boules de l'urne. Et on considère les événements suivants :\n$A$: \"Les deux boules tirées portent le même nombre.\"\n$B$: \"Les deux boules tirées sont de couleurs différentes.\"\n$C$: \"Les deux boules tirées portent deux nombres dont la somme est égale à 3.\"",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que $p(A) = \\dfrac{13}{22}$ et $p(B) = \\dfrac{6}{11}$ et calculer $p(C)$.",
+          "bareme": 1.5,
+          "hint": "Le tirage est simultané : utilisez les combinaisons $C_n^k$. Pour $A$, calculez les cas de tirer deux boules '1' OU deux boules '2'. Pour $B$, tirez une rouge ET une verte. Pour $C$, la seule façon d'avoir une somme de 3 est de tirer une boule '1' ET une boule '2'."
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $p(A \\cap B) = \\dfrac{3}{11}$.",
+              "bareme": 0.5,
+              "hint": "L'événement $A \\cap B$ se réalise si vous tirez deux boules de couleurs différentes portant le même numéro. Comme seules les rouges portent le '1', il faut obligatoirement tirer une rouge '2' et une verte '2'."
+            },
+            {
+              "id": "2b",
+              "content": "Les événements $A$ et $B$ sont-ils indépendants ? justifier votre réponse.",
+              "bareme": 0.5,
+              "hint": "Deux événements sont indépendants si et seulement si $p(A \\cap B) = p(A) \\times p(B)$. Calculez ce produit et comparez avec le résultat précédent."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Sachant que l'événement $B$ est réalisé, calculer la probabilité de tirer deux boules qui portent le même nombre.",
+          "bareme": 0.5,
+          "hint": "Traduisez cette phrase par une probabilité conditionnelle : on cherche $P_B(A)$. Utilisez la formule de Bayes : $P_B(A) = \\dfrac{P(A \\cap B)}{P(B)}$."
+        }
+      ]
+    },
+    {
+      "id": "nat2018r-ex4",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "facile",
+      "points": 2,
+      "topic": "Calcul intégral et intégration par parties",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que la fonction $H : x \\mapsto xe^x$ est une primitive de la fonction $h : x \\mapsto (x + 1)e^x$ sur $\\mathbb{R}$.",
+              "bareme": 0.5,
+              "hint": "Calculez la dérivée de $H(x)$ en appliquant la formule de la dérivée d'un produit $(uv)' = u'v + uv'$ pour retrouver exactement l'expression de $h(x)$."
+            },
+            {
+              "id": "1b",
+              "content": "En déduire que $\\displaystyle\\int_0^1 (x + 1)e^x dx = e$",
+              "bareme": 0.5,
+              "hint": "Puisque $H$ est une primitive de la fonction sous l'intégrale, l'intégrale est simplement égale à la différence $H(1) - H(0)$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "A l'aide d'une intégration par partie, Calculer $\\displaystyle\\int_0^1 (x^2 + 2x - 1)e^x dx$.",
+          "bareme": 1,
+          "hint": "Posez $u(x) = x^2 + 2x - 1$ et $v'(x) = e^x$. En dérivant $u(x)$, remarquez que vous pouvez factoriser par 2 pour faire apparaître l'intégrale calculée à la question 1b."
+        }
+      ]
+    },
+    {
+      "id": "nat2018r-ex5",
+      "number": 5,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 9,
+      "topic": "Étude d'une fonction avec ln, asymptotes, et suite associée",
+      "context": "",
+      "questions": [
+        {
+          "id": "p1",
+          "type": "partie",
+          "content": "Soit $g$ la fonction numérique définie sur $]0; +\\infty[$ par : $g(x) = x^3 - 1 - 2\\ln^2 x + 2\\ln x$\\nVoila, le tableau de variations de la fonction $g$ sur l'intervalle $]0; +\\infty[$\\n\\n$$\\begin{array}{|c|lcccr|}\\hline x & 0 & & & & +\\infty \\\\\\\\ \\hline g'(x) & & & + & & \\\\\\\\ \\hline g(x) & & & \\nearrow & & +\\infty \\\\\\\\ & -\\infty & & & & \\\\\\\\ \\hline \\end{array}$$"
+        },
+        {
+          "id": "q1",
+          "content": "Calculer $g(1)$.",
+          "bareme": 0.25,
+          "hint": "Remplacez $x$ par $1$ dans l'expression algébrique de $g(x)$ en vous rappelant que $\\ln(1) = 0$."
+        },
+        {
+          "id": "q2",
+          "content": "À partir de ce tableau, déterminer le signe de $g(x)$ sur chacun des intervalles $]0; 1]$ et $[1; +\\infty[$.",
+          "bareme": 0.5,
+          "hint": "La fonction $g$ est strictement croissante. Comparez un réel $x$ par rapport à $1$ puis appliquez la fonction $g$ de part et d'autre de l'inégalité."
+        },
+        {
+          "id": "p2",
+          "type": "partie",
+          "content": "On considère la fonction numérique $f$ définie sur l'intervalle $]0; +\\infty[$ par : $f(x) = x - \\dfrac{1}{2} + \\dfrac{1}{2x^2} + \\left(\\dfrac{\\ln x}{x}\\right)^2$\\nEt soit $(C)$ sa courbe représentative dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$."
+        },
+        {
+          "id": "r1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $\\lim_{x \\to +\\infty} f(x) = +\\infty$",
+              "bareme": 0.5,
+              "hint": "Analysez la limite de chaque terme de $f(x)$ séparément au voisinage de $+\\infty$, en utilisant la limite usuelle $\\lim_{x \\to +\\infty} \\dfrac{\\ln x}{x} = 0$."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que la droite $(D)$ d'équation $y = x - \\dfrac{1}{2}$ est une asymptote à la courbe $(C)$ au voisinage $+\\infty$",
+              "bareme": 0.5,
+              "hint": "Calculez la différence $f(x) - (x - \\dfrac{1}{2})$. Montrez que la limite de cette différence en $+\\infty$ est égale à zéro."
+            },
+            {
+              "id": "1c",
+              "content": "Déterminer la position relative de la droite $(D)$ et la courbe $(C)$.",
+              "bareme": 0.25,
+              "hint": "Étudiez le signe de la différence $f(x) - y$. Remarquez que l'expression obtenue est une somme de termes strictement positifs."
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "content": "Montrer que $\\lim_{x \\to 0^+} f(x) = +\\infty$ et interpréter le résultat géométriquement.",
+          "bareme": 0.75,
+          "hint": "Étudiez le comportement en $0^+$ de $\\dfrac{\\ln x}{x}$. L'élévation au carré lève l'indétermination de signe. Une limite infinie en un point fini traduit une asymptote verticale."
+        },
+        {
+          "id": "r3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que $f'(x) = \\dfrac{g(x)}{x^3}$ pour tout $x$ de l'intervalle $]0; +\\infty[$",
+              "bareme": 1,
+              "hint": "Dérivez chaque terme de $f(x)$. Pour le dernier terme, appliquez la formule $(u^2)' = 2u'u$. Factorisez ensuite pour tout mettre sur le même dénominateur $x^3$ et faire apparaître $g(x)$."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que la fonction $f$ est décroissante sur $]0; 1]$ et croissante sur $[1; +\\infty[$.",
+              "bareme": 0.5,
+              "hint": "Puisque $x^3 > 0$ sur $]0; +\\infty[$, le signe de $f'(x)$ est strictement le même que celui de $g(x)$. Utilisez les conclusions de la Partie I - question 2."
+            },
+            {
+              "id": "3c",
+              "content": "Dresser le tableau de variations de la fonction $f$ sur l'intervalle $]0; +\\infty[$.",
+              "bareme": 0.5,
+              "hint": "Reportez le signe de la dérivée, les limites calculées en $0^+$ et $+\\infty$, et l'image du minimum $f(1)$.\\n\\n$$\\begin{array}{|c|lcccr|}\\hline x & 0 & & 1 & & +\\infty \\\\\\\\ \\hline f'(x) & || & - & 0 & + & \\\\\\\\ \\hline f & +\\infty & \\searrow & 1 & \\nearrow & +\\infty \\\\\\\\ \\hline \\end{array}$$"
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "content": "Construire dans le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$ la droite $(D)$ et la courbe $(C)$ (unité: $1 cm$)",
+          "bareme": 1,
+          "hint": "Placez le minimum $(1, 1)$, tracez l'asymptote verticale $x=0$, l'asymptote oblique $(D)$ en $+\\infty$, et assurez-vous que la courbe reste au-dessus de $(D)$."
+        },
+        {
+          "id": "p3",
+          "type": "partie",
+          "content": "On considère la fonction numérique $h$ définie sur $]0; +\\infty[$ par : $h(x) = f(x) - x$"
+        },
+        {
+          "id": "s1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $h(1) = 0$",
+              "bareme": 0.25,
+              "hint": "Calculez simplement la valeur de $f(1)$ puis soustrayez $1$."
+            },
+            {
+              "id": "1b",
+              "content": "Sur la figure fournie sur le sujet, $(C_h)$ est la représentation graphique de la fonction $h$.\\nDéterminer le signe de $h(x)$ sur chacun des intervalles $]0; 1]$ et $[1; +\\infty[$, puis en déduire que :\\n$f(x) \\leq x$ pour tout $x$ de l'intervalle $[1; +\\infty[$",
+              "bareme": 0.75,
+              "hint": "Lisez graphiquement la position de la courbe $(C_h)$ par rapport à l'axe des abscisses. Utilisez ensuite l'inégalité $h(x) \\leq 0$ sur le bon intervalle pour en déduire la comparaison entre $f(x)$ et $x$."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "content": "On considère la suite numérique $(u_n)$ définie par : $u_0 = e$ et $u_{n+1} = f(u_n)$ pour tout $n$ de $\\mathbb{N}$",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer, par récurrence, que : $1 \\leq u_n \\leq e$ pour tout $n$ de $\\mathbb{N}$.",
+              "bareme": 0.75,
+              "hint": "L'initialisation est vérifiée car $1 \\leq e \\leq e$. Pour l'hérédité, appliquez la fonction $f$ aux termes de l'inégalité en justifiant sa croissance sur l'intervalle considéré. Remarquez que $f(e) \\leq e$ selon la question III-1b."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que la suite $(u_n)$ est décroissante.\\n$\\left( \\text{On pourra utiliser le résultat de la question III- 1- b) } \\right)$",
+              "bareme": 0.75,
+              "hint": "Exprimez $u_{n+1} - u_n$ en fonction de $h(u_n)$. Utilisez l'encadrement trouvé précédemment pour situer $u_n$, ce qui vous donnera le signe de $h(u_n)$."
+            },
+            {
+              "id": "2c",
+              "content": "En déduire que la suite $(u_n)$ est convergente et déterminer sa limite.",
+              "bareme": 0.75,
+              "hint": "Une suite décroissante et minorée converge vers un réel $l$. Ce réel est solution de l'équation $f(l) = l$, ce qui équivaut à $h(l) = 0$. Identifiez cette valeur dans l'intervalle $[1; e]$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

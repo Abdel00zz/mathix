@@ -1,0 +1,20 @@
+{
+  "id": "ex-denom-07",
+  "theme": "denombrement",
+  "difficulty": "moyen",
+  "topic": "Dénombrement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Tirages simultanés avec condition",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Une urne contient 5 boules rouges et 3 boules noires.\nOn tire simultanément 3 boules de l'urne.\nCombien de tirages différents contenant exactement 2 boules rouges peut-on obtenir ?",
+          "hint": "Pour avoir exactement 2 boules rouges, il faut tirer 2 boules parmi les 5 rouges, ET 1 boule parmi les 3 noires.\n\nLe nombre de façons de choisir 2 boules rouges parmi 5 est $C_5^2$.\n$C_5^2 = \\frac{5!}{2!(5-2)!} = \\frac{5 \\times 4}{2 \\times 1} = 10$.\n\nLe nombre de façons de choisir 1 boule noire parmi 3 est $C_3^1$.\n$C_3^1 = 3$.\n\nD'après le principe multiplicatif, le nombre total de tirages est le produit des deux.\nNombre de tirages = $C_5^2 \\times C_3^1 = 10 \\times 3 = 30$.\n\nIl y a 30 tirages différents contenant exactement 2 boules rouges."
+        }
+      ]
+    }
+  ]
+}

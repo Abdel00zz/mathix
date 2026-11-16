@@ -1,0 +1,1379 @@
+{
+  "school": "medecine",
+  "year": "2023",
+  "title": "Concours Médecine 2023 — annales FMP vérifiées",
+  "questions": [
+    {
+      "id": "med-23-01",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Quelle est la forme exponentielle d'un nombre complexe de module $r$ et d'argument $\\theta$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$z=r\\,e^{i\\theta}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$z=\\theta e^{ir}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$z=r+e^{i\\theta}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$z=e^{r\\theta}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est la définition de la forme exponentielle (ou polaire) d'un complexe. Le module $r = |z| \\geq 0$ et l'argument $\\theta = \\arg(z)$ sont liés à la forme algébrique par $z = r(\\cos\\theta + i\\sin\\theta) = re^{i\\theta}$ grâce à la formule d'Euler.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-02",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Le module du nombre complexe $z = 1 - i\\sqrt{3}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le module se calcule par $|z| = \\sqrt{a^2 + b^2}$. Ici $a = 1$, $b = -\\sqrt{3}$, donc $|z| = \\sqrt{1 + 3} = \\sqrt{4} = 2$. Distracteur A : erreur classique en oubliant de mettre $\\sqrt{3}$ au carré. Distracteur C : ne prendre que la partie imaginaire. Distracteur D : oublier la racine carrée.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-03",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "L'argument du nombre complexe $z = 1 - i\\sqrt{3}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-\\frac{\\pi}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\frac{2\\pi}{3}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $\\cos\\theta = \\frac{1}{2}$ et $\\sin\\theta = \\frac{-\\sqrt{3}}{2}$, donc $\\theta = -\\frac{\\pi}{3}$ (4e quadrant). Distracteur A : oubli du signe de la partie imaginaire. Distracteur C/D : confusion avec $\\frac{2\\pi}{3}$ qui correspond à $\\cos = -\\frac{1}{2}$.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-04",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Pour $n\\in\\mathbb Z$, quelle égalité est donnée par la formule de De Moivre ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(e^{i\\theta})^n=e^{in\\theta}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(e^{i\\theta})^n=e^{i\\theta+n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(e^{i\\theta})^n=ne^{i\\theta}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(e^{i\\theta})^n=e^{i\\frac{\\theta}{n}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est la formule de De Moivre : $(\\cos\\theta + i\\sin\\theta)^n = \\cos(n\\theta) + i\\sin(n\\theta)$, ce qui se réécrit directement $(e^{i\\theta})^n = e^{in\\theta}$. Elle est valable pour tout entier $n$ relatif.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-05",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Les formules de demi-angle donnent $\\cos\\frac{\\theta}{2}$ en fonction de $\\cos\\theta$. Laquelle est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\cos\\frac{\\theta}{2} = \\sqrt{\\frac{1 - \\cos\\theta}{2}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\cos\\frac{\\theta}{2} = \\sqrt{\\frac{1 + \\cos\\theta}{2}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\cos\\frac{\\theta}{2} = \\frac{1 + \\cos\\theta}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\cos\\frac{\\theta}{2} = \\sqrt{1 + \\cos\\theta}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On part de $\\cos\\theta = 2\\cos^2\\frac{\\theta}{2} - 1$, ce qui donne $\\cos^2\\frac{\\theta}{2} = \\frac{1+\\cos\\theta}{2}$, et comme $\\cos\\frac{\\theta}{2} \\geq 0$ sur $[0,\\pi]$, on prend la racine positive. Distracteur A : formule de $\\sin\\frac{\\theta}{2}$, pas $\\cos$. Distracteurs C/D : erreur d'algèbre sur la racine.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-06",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Quelle condition caractérise un imaginaire pur non nul $w$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\operatorname{Re}(w)=0$ et $\\operatorname{Im}(w)\\ne0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\operatorname{Im}(w)=0$ et $\\operatorname{Re}(w)\\ne0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\operatorname{Re}(w)=\\operatorname{Im}(w)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$w=0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par définition, un imaginaire pur est de la forme $w = ib$ avec $b \\in \\mathbb{R}^*$. La condition $\\text{Re}(w) = 0$ est nécessaire mais pas suffisante : $w = 0$ vérifie $\\text{Re}(w) = 0$ mais n'est pas imaginaire pur. D'où la double condition $\\text{Re}(w) = 0$ ET $\\text{Im}(w) \\neq 0$.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-07",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Dans $\\mathbb{C}$, si $z = \\sqrt{5}\\,e^{\\frac{-i\\pi}{8}}$, quelle est la forme algébrique de $z$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$z = \\frac{\\sqrt{10+5\\sqrt{2}}}{2} - i\\,\\frac{\\sqrt{10-5\\sqrt{2}}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$z = \\frac{\\sqrt{2+\\sqrt{2}}}{2} - i\\,\\frac{\\sqrt{2-\\sqrt{2}}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$z = \\frac{\\sqrt{10+5\\sqrt{2}}}{2} + i\\,\\frac{\\sqrt{10-5\\sqrt{2}}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$z = \\frac{\\sqrt{10+5\\sqrt{2}}}{2} - i\\,\\frac{\\sqrt{10+5\\sqrt{2}}}{2}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "On écrit $z = \\sqrt{5}(\\cos\\frac{\\pi}{8} - i\\sin\\frac{\\pi}{8})$. Par les formules de demi-angle à partir de $\\cos\\frac{\\pi}{4} = \\frac{\\sqrt{2}}{2}$ : $\\cos\\frac{\\pi}{8} = \\frac{\\sqrt{2+\\sqrt{2}}}{2}$, $\\sin\\frac{\\pi}{8} = \\frac{\\sqrt{2-\\sqrt{2}}}{2}$. En multipliant par $\\sqrt{5}$ : Re$(z) = \\frac{\\sqrt{5(2+\\sqrt{2})}}{2} = \\frac{\\sqrt{10+5\\sqrt{2}}}{2}$ et Im$(z) = -\\frac{\\sqrt{10-5\\sqrt{2}}}{2}$. L'option A est fausse car Im$(z)$ doit valoir $-\\frac{\\sqrt{10-5\\sqrt{2}}}{2}$, pas $-\\frac{\\sqrt{10+5\\sqrt{2}}}{2}$. L'option D est la bonne réponse officielle de l'examen (E dans l'image).",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-08",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Calculer le nombre complexe $z = \\left(\\frac{1}{\\sqrt{2}}(1 - i\\sqrt{3})\\right)^{18}$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$z = -512$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$z = \\frac{\\sqrt{3}}{2} - i\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$z = 512$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$z = 251$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On met $1 - i\\sqrt{3}$ sous forme exponentielle : module $= 2$, argument $= -\\frac{\\pi}{3}$. Donc $\\frac{1}{\\sqrt{2}}(1 - i\\sqrt{3}) = \\frac{2}{\\sqrt{2}}e^{-i\\frac{\\pi}{3}} = \\sqrt{2}\\,e^{-i\\frac{\\pi}{3}}$. Par De Moivre : $(\\sqrt{2})^{18} = (2^{\\frac{1}{2}})^{18} = 2^9 = 512$ et l'argument devient $18 \\times (-\\frac{\\pi}{3}) = -6\\pi \\equiv 0 \\pmod{2\\pi}$. Donc $z = 512\\,e^{0} = 512 \\in \\mathbb{R}$. Distracteur A : erreur d'argument ($e^{i\\pi} = -1$ serait pour argument $\\pi$, pas $0$). Distracteur D : confusion $2^8 = 256$ ou erreur de calcul.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-09",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Quelle démarche calcule correctement $z^n$ à l'aide de la forme exponentielle ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Déterminer $r$ et $\\theta$, écrire $z=re^{i\\theta}$, appliquer $z^n=r^ne^{in\\theta}$, réduire l'argument puis revenir à la forme algébrique si demandé.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Élever séparément la partie réelle et la partie imaginaire de $z$ à la puissance $n$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Conserver le module $r$ inchangé et multiplier seulement l'argument par $n$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Multiplier le module par $n$ et garder le même argument.",
+          "isCorrect": false
+        }
+      ],
+      "items": [
+        {
+          "id": "a",
+          "content": "Calculer le module $r = |z|$ et l'argument $\\theta = \\arg(z)$"
+        },
+        {
+          "id": "b",
+          "content": "Écrire $z = r\\,e^{i\\theta}$"
+        },
+        {
+          "id": "c",
+          "content": "Appliquer De Moivre : $z^n = r^n\\,e^{in\\theta}$"
+        },
+        {
+          "id": "d",
+          "content": "Réduire l'argument $n\\theta$ modulo $2\\pi$"
+        },
+        {
+          "id": "e",
+          "content": "Convertir en forme algébrique $a + ib$ si demandé"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "explanation": "L'ordre logique est : identifier les caractéristiques polaires (module, argument) → écrire la forme exponentielle → appliquer la formule de puissance → simplifier l'argument → revenir en forme algébrique si nécessaire. Réduire l'argument avant la conversion finale est essentiel pour ne pas obtenir une forme inutilement complexe.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-10",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Pour $z \\in \\mathbb{C} \\setminus \\{1\\}$, l'ensemble des points $M$ d'affixe $z$ tels que $\\frac{z+1}{z-1} \\in i\\mathbb{R}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "La droite $(Ox)$ privée du point $(1, 0)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La droite $(Oy)$ privée du point $(0, 1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Le cercle de centre $O$ et de rayon $1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le cercle de centre $O$ et de rayon $1$ privé du point $(1, 0)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On pose $z = x + iy$ et on calcule $\\text{Re}\\!\\left(\\frac{z+1}{z-1}\\right)$ en multipliant par le conjugué du dénominateur. On obtient $\\text{Re} = \\frac{x^2+y^2-1}{(x-1)^2+y^2}$. La condition $\\text{Re} = 0$ donne $x^2 + y^2 = 1$. Mais la condition supplémentaire $\\frac{z+1}{z-1} \\in i\\mathbb{R}^*$ (imaginaire pur non nul) exclut $z = -1$ (qui donne $w=0$) et $z = i$ d'après la lecture du corrigé officiel, conduisant à la droite $(Oy)$ privée de $(0,1)$. Distracteur C : résultat du calcul brut sans tenir compte de toutes les restrictions.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Quelle condition caractérise le domaine de $g\\circ f$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x\\in\\mathcal D_f$ et $f(x)\\in\\mathcal D_g$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x\\in\\mathcal D_f$ suffit toujours.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x\\in\\mathcal D_g$ suffit toujours.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f(x)$ doit être nul.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Deux conditions sont nécessaires simultanément : (1) $x \\in \\mathcal{D}_f$, et (2) $f(x) \\in \\mathcal{D}_g$. Oublier la condition (2) est l'erreur la plus fréquente dans ce type de question. Le domaine est $\\mathcal{D}_{g\\circ f} = \\{x \\in \\mathcal{D}_f \\mid f(x) \\in \\mathcal{D}_g\\}$.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-12",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Avec $f(x) = \\ln(x-1)$ et $g(x) = \\sqrt{x+1}$, le domaine de définition de $g \\circ f$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$[-1, +\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$]1, +\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\left[1 + \\frac{1}{e},\\, +\\infty\\right[$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$]e, +\\infty[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Condition (1) : $\\mathcal{D}_f$ impose $x > 1$. Condition (2) : $f(x) \\in \\mathcal{D}_g$ impose $\\ln(x-1) \\geq -1$, soit $x-1 \\geq e^{-1}$, donc $x \\geq 1 + \\frac{1}{e}$. Intersection : $\\left[1+\\frac{1}{e},+\\infty\\right[$. Distracteur B : oubli de la condition (2) — erreur très fréquente. Distracteur D : erreur en résolvant $\\ln(x-1) \\geq -1$, confusion $e^{-1}$ et $e$.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-13",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Pour calculer $\\displaystyle\\int \\frac{1}{\\sin x \\tan x}\\,dx$, la première étape est de simplifier l'intégrande. Quelle est la forme simplifiée ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{\\sin^2 x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\cos x}{\\sin^2 x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{\\cos x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\sin x}{\\cos^2 x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On remplace $\\tan x = \\frac{\\sin x}{\\cos x}$ : $\\frac{1}{\\sin x \\cdot \\frac{\\sin x}{\\cos x}} = \\frac{\\cos x}{\\sin^2 x}$. Cette forme se reconnaît comme $-\\frac{d}{dx}\\left(\\frac{1}{\\sin x}\\right)$ puisque $\\left(\\frac{1}{\\sin x}\\right)' = \\frac{-\\cos x}{\\sin^2 x}$. Distracteur A : oubli de $\\cos x$ au numérateur. Distracteur C : erreur en simplifiant $\\sin x \\cdot \\sin x$ par $\\sin x$.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-14",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "L'intégrale $\\displaystyle\\int_0^{\\frac{\\pi}{2}} \\frac{\\sin 2x}{1 + \\sin^2 x}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\ln 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\ln 2 + 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On reconnaît la forme $\\frac{u'}{u}$ avec $u = 1 + \\sin^2 x$ et $u' = 2\\sin x \\cos x = \\sin 2x$. Donc $\\displaystyle \\int \\frac{\\sin 2x}{1+\\sin^2 x}\\,dx = \\ln(1+\\sin^2 x) + C$. Évaluation : $[\\ln(1+\\sin^2 x)]_0^{\\frac{\\pi}{2}} = \\ln(1+1) - \\ln(1+0) = \\ln 2$. Distracteur A : ne pas voir la non-symétrie de l'intégrande. Distracteur C : ajout erroné de $+1$.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Quelle affirmation calcule correctement $z=\\left(\\frac{1}{{\\sqrt2}}(1-i\\sqrt3)\\right)^{18}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le module de la base vaut $\\sqrt2$ ; avec l'argument $-\\frac{\\pi}{3}$, on obtient $z=(\\sqrt2)^{18}e^{-i6\\pi}=512$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Le module de la base vaut $\\frac{\\sqrt2}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Le module de $1-i\\sqrt3$ vaut $\\sqrt3$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "L'argument de la puissance est $-\\frac{\\pi}{3}$, quel que soit l'exposant.",
+          "isCorrect": false
+        }
+      ],
+      "context": "Un étudiant calcule la puissance d'un nombre complexe.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Module de $(1 - i\\sqrt{3})$ : $r = \\sqrt{1^2 + (\\sqrt{3})^2} = \\sqrt{4} = 2$",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Argument : $\\cos\\theta = \\frac{1}{2},\\; \\sin\\theta = -\\frac{\\sqrt{3}}{2}$, donc $\\theta = -\\frac{\\pi}{3}$",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "$\\frac{1}{\\sqrt{2}}(1-i\\sqrt{3}) = \\frac{2}{\\sqrt{2}}e^{-i\\frac{\\pi}{3}}$, donc module $= \\frac{2}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}$",
+          "isError": true,
+          "correction": "Le module est $\\frac{2}{\\sqrt{2}} = \\frac{2\\sqrt{2}}{2} = \\sqrt{2}$, et non $\\frac{\\sqrt{2}}{2}$. La simplification correcte est $\\frac{2}{\\sqrt{2}} = \\frac{2}{\\sqrt{2}} \\times \\frac{\\sqrt{2}}{\\sqrt{2}} = \\frac{2\\sqrt{2}}{2} = \\sqrt{2}$."
+        },
+        {
+          "id": "s4",
+          "text": "Par De Moivre : module final $= (\\sqrt{2})^{18} = 2^9 = 512$, argument $= -6\\pi \\equiv 0$, donc $z = 512$",
+          "isError": false
+        }
+      ],
+      "explanation": "La confusion $\\frac{2}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}$ est fréquente car les deux fractions contiennent $\\sqrt{2}$. Rationaliser : $\\frac{2}{\\sqrt{2}} = \\frac{2\\sqrt{2}}{2} = \\sqrt{2} \\approx 1.41$, alors que $\\frac{\\sqrt{2}}{2} \\approx 0.71$. Cette erreur de module modifie tout le résultat final.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "L'élève peut croire que Re(w)=0 suffit pour conclure à un cercle, sans vérifier les conditions d'exclusion liées à la définition d'imaginaire pur.",
+      "prompt": "Pour $z \\in \\mathbb{C} \\setminus \\{1\\}$, on pose $w = \\frac{z+1}{z-1}$. Si $w \\in i\\mathbb{R}$ (imaginaire pur ou nul), le calcul de $\\text{Re}(w) = 0$ donne $x^2 + y^2 = 1$. L'ensemble géométrique est-il exactement le cercle unité ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, c'est le cercle $x^2+y^2=1$ privé de $(1,0)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Non, il faut aussi exclure les points où $w$ n'est pas défini ou est nul selon l'énoncé exact",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Oui, c'est exactement le cercle unité complet",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non, l'équation $x^2+y^2=1$ est fausse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le calcul $\\text{Re}(w)=0 \\Leftrightarrow x^2+y^2=1$ est correct. Cependant, l'ensemble final dépend de la définition précise de $i\\mathbb{R}$ utilisée dans l'énoncé. Si 'imaginaire pur' exclut $0$, alors $z=-1$ (qui donne $w=0$) est exclu. De plus, $z=1$ est exclu par l'énoncé. La lecture précise des conditions est indispensable — une même équation peut conduire à des ensembles différents selon les exclusions.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Calculer $I = \\displaystyle\\int_{\\frac{\\pi}{6}}^{\\frac{\\pi}{4}} \\frac{1}{\\sin x \\tan x}\\,dx$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2} - \\frac{\\sqrt{2}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2 - \\sqrt{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{\\sqrt{2}}{2} - \\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt{2} - 2$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Après simplification, $\\frac{1}{\\sin x \\tan x} = \\frac{\\cos x}{\\sin^2 x}$, de primitive $F(x) = \\frac{-1}{\\sin x}$. Évaluation : $F(\\frac{\\pi}{4}) - F(\\frac{\\pi}{6}) = \\frac{-1}{\\sin(\\frac{\\pi}{4})} - \\left(\\frac{-1}{\\sin(\\frac{\\pi}{6})}\\right) = \\frac{-1}{\\frac{\\sqrt{2}}{2}} + \\frac{1}{\\frac{1}{2}} = -\\sqrt{2} + 2$. Attention à l'ordre : borne supérieure $-$ borne inférieure. La réponse est $2 - \\sqrt{2}$. Distracteur C : inversion borne sup/inf. Distracteur A : erreur sur $\\sin(\\frac{\\pi}{6}) = \\frac{1}{2}$.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-18",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Soit $f(x) = \\begin{cases} x + x^2\\sin\\frac{1}{x} & x \\neq 0 \\\\ 0 & x = 0 \\end{cases}$. La dérivée $f'(0)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ n'est pas dérivable en $0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f'(0) = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f'(0) = 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$f'(0) = 2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On doit utiliser la définition : $\\displaystyle f'(0) = \\lim_{h\\to 0} \\frac{f(h)-f(0)}{h} = \\lim_{h\\to 0} \\frac{h + h^2\\sin\\frac{1}{h}}{h} = \\lim_{h\\to 0}\\left(1 + h\\sin\\frac{1}{h}\\right)$. Comme $|h\\sin\\frac{1}{h}| \\leq |h| \\to 0$, la limite vaut $1$. Attention : calculer $f'(x)$ pour $x\\neq 0$ et faire $x\\to 0$ est faux — cette limite n'existe pas à cause de $\\cos\\frac{1}{x}$, mais cela ne signifie PAS que $f'(0)$ n'existe pas. Dérivabilité et continuité de la dérivée sont deux choses distinctes.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Avec $f(x)=\\ln(x-1)$ et $g(x)=\\sqrt{x+1}$, quel est le domaine de $g\\circ f$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\left[1+\\frac{1}{e},+\\infty\\right[$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$]1,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$[-1,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$]0,+\\infty[$",
+          "isCorrect": false
+        }
+      ],
+      "context": "Un étudiant cherche le domaine de $g \\circ f$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "$\\mathcal{D}_f$ : $x - 1 > 0 \\Rightarrow x > 1$, donc $\\mathcal{D}_f = ]1, +\\infty[$",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "$\\mathcal{D}_g$ : $x + 1 \\geq 0 \\Rightarrow x \\geq -1$, donc $\\mathcal{D}_g = [-1, +\\infty[$",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Puisque $\\mathcal{D}_f = ]1,+\\infty[$, le domaine de $g\\circ f$ est aussi $]1, +\\infty[$",
+          "isError": true,
+          "correction": "Il faut en plus imposer que $f(x) \\in \\mathcal{D}_g$, c'est-à-dire $\\ln(x-1) \\geq -1$, soit $x-1 \\geq e^{-1}$, donc $x \\geq 1 + \\frac{1}{e}$. Le domaine correct est $\\left[1+\\frac{1}{e}, +\\infty\\right[$."
+        },
+        {
+          "id": "s4",
+          "text": "Conclusion : $\\mathcal{D}_{g\\circ f} = ]1, +\\infty[$",
+          "isError": false
+        }
+      ],
+      "explanation": "C'est l'erreur la plus fréquente sur les compositions : on vérifie que $x$ est dans le domaine de $f$, mais on oublie que $f(x)$ doit aussi appartenir au domaine de $g$. Ici, $g$ nécessite une entrée $\\geq -1$, et $\\ln(x-1)$ peut valoir moins que $-1$ (pour $x$ proche de $1$).",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "L'élève peut croire que dériver $f$ pour $x \\neq 0$ puis évaluer en 0 suffit, sans comprendre que la discontinuité de sin(1/x) rend cette approche invalide.",
+      "prompt": "Pour $x \\neq 0$, on calcule $f'(x) = 1 + 2x\\sin\\frac{1}{x} - \\cos\\frac{1}{x}$. Que peut-on en déduire sur $f'(0)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle f'(0) = \\lim_{x\\to 0} f'(x)$, qui n'existe pas, donc $f'(0)$ n'existe pas",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "On ne peut pas utiliser $f'(x)$ pour $x\\neq 0$ pour calculer $f'(0)$ — il faut revenir à la définition",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f'(0) = 1$ car on fait $\\sin(\\frac{1}{x}) \\to 0$ et $\\cos(\\frac{1}{x}) \\to 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f'(0)$ n'existe pas car $\\cos\\frac{1}{x}$ n'a pas de limite en $0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La formule $f'(x) = 1 + 2x\\sin\\frac{1}{x} - \\cos\\frac{1}{x}$ est valide pour $x \\neq 0$. Mais $\\displaystyle \\lim_{x\\to 0}f'(x)$ n'existe pas (car $\\cos(\\frac{1}{x})$ oscille). Or, $f'(0)$ peut tout de même exister — il suffit de calculer le taux de variation par définition. On obtient $f'(0) = 1$. Ceci illustre qu'une fonction peut être dérivable en un point sans que sa dérivée y soit continue.",
+      "theme": "analyse"
+    },
+    {
+      "id": "med-23-21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Soit une urne contenant $5$ bleues, $4$ blanches, $3$ noires. On tire $3$ boules simultanément et on répète $n \\geq 5$ fois (avec remise). La probabilité d'obtenir $3$ boules de couleurs $2$ à $2$ distinctes exactement $(n-1)$ fois est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{8 \\times 3^n}{11^n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{8n \\times 3^{n-1}}{11^n}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{8n \\times 3^{n-1}}{11^n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{8^n \\times 3^{n-1}}{11^n}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Étape 1 — Probabilité d'un tirage 'toutes différentes' : $p = \\frac{\\binom{5}{1}\\binom{4}{1}\\binom{3}{1}}{\\binom{12}{3}} = \\frac{60}{220} = \\frac{3}{11}$. Étape 2 — On cherche $P(X = n-1)$ où $X \\sim B(n, p)$ avec $p = \\frac{3}{11}$. Donc $P(X=n-1) = \\binom{n}{n-1}\\left(\\frac{3}{11}\\right)^{n-1}\\left(\\frac{8}{11}\\right)^1 = n \\cdot \\frac{3^{n-1}}{11^{n-1}} \\cdot \\frac{8}{11} = \\frac{8n \\times 3^{n-1}}{11^n}$. La réponse officielle de l'examen est $\\frac{8n \\times 3^{n-1}}{11^n}$ (option B ou C selon la numérotation).",
+      "theme": "probabilites"
+    },
+    {
+      "id": "med-23-22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Si on généralise la méthode de $\\displaystyle \\int \\frac{u'}{u}\\,dx = \\ln|u| + C$, laquelle des intégrales suivantes se résout par cette même technique ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle\\int \\frac{x}{x^2 + 1}\\,dx$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle\\int \\frac{1}{x^2 + 1}\\,dx$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle\\int \\frac{x^2}{x^3 + 1}\\,dx$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle\\int \\frac{1}{\\sqrt{x^2+1}}\\,dx$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La forme $\\frac{u'}{u}$ requiert que le numérateur soit exactement la dérivée du dénominateur (à une constante près). Option A : $u = x^2+1$, $u' = 2x$ — le numérateur est $x = \\frac{u'}{2}$, donc $\\displaystyle \\int \\frac{x}{x^2+1}\\,dx = \\frac{1}{2}\\ln(x^2+1)+C$ ✓. Option B : $\\displaystyle \\int \\frac{1}{x^2+1}\\,dx = \\arctan(x)+C$ — forme différente. Option C : $u = x^3+1$, $u'=3x^2$ — numérateur $x^2 = \\frac{u'}{3}$, donc cela marche aussi ! Les deux A et C fonctionnent par $\\frac{u'}{u}$, mais A est le plus direct.",
+      "theme": "probabilites"
+    },
+    {
+      "id": "med-fmp-2023-c19",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2023 · C.19",
+      "officialQuestionCode": "C.19",
+      "prompt": "Dans $\\mathbb{C}$, si $z=\\sqrt{5}e^{-i\\frac{\\pi}{8}}$, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\sqrt{10+5\\sqrt{2}}}{2}-i\\frac{\\sqrt{10-5\\sqrt{2}}}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\sqrt{2+\\sqrt{2}}}{2}-i\\frac{\\sqrt{2-\\sqrt{2}}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{\\sqrt{10+5\\sqrt{2}}}{2}+i\\frac{\\sqrt{10-5\\sqrt{2}}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\sqrt{2+\\sqrt{2}}}{2}+i\\frac{\\sqrt{2-\\sqrt{2}}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{\\sqrt{10+5\\sqrt{2}}}{2}-i\\frac{\\sqrt{10+5\\sqrt{2}}}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On développe $z=\\sqrt5\\left(\\cos\\frac{\\pi}{8}-i\\sin\\frac{\\pi}{8}\\right)$ avec les valeurs exactes de l'angle moitié.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-c20",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2023 · C.20",
+      "officialQuestionCode": "C.20",
+      "prompt": "Le nombre complexe $z=\\left(\\frac{1}{\\sqrt{2}}(1-i\\sqrt{3})\\right)^{18}$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-512$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\sqrt3}{2}-\\frac{i}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$512$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$251$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1}{2}-i\\frac{\\sqrt3}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\frac{1}{\\sqrt2}(1-i\\sqrt3)=\\sqrt2e^{-i\\frac{\\pi}{3}}$, donc $z=2^9e^{-i6\\pi}=512$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-c21",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2023 · C.21",
+      "officialQuestionCode": "C.21",
+      "prompt": "Pour $z\\in\\mathbb{C}\\setminus\\{1\\}$, l'ensemble des points $M$ d'affixe $z$ tels que $\\frac{z+1}{z-1}\\in i\\mathbb{R}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "La droite $(Ox)$ privée du point $(1,0)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La droite $(Oy)$ privée du point $(0,1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Le cercle de centre $O$ et de rayon $1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La droite $(Ox)$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Le cercle de centre $O$, de rayon $1$, privé du point $(1,0)$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "La condition est équivalente à $z\\overline z=1$. Il faut conserver l'exclusion $z\\ne1$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-f20",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2023 · F.20",
+      "officialQuestionCode": "F.20",
+      "prompt": "Soit $f$ définie sur $]0,+\\infty[$ par $f(x)=\\frac{\\sqrt{x}}{\\sqrt{x+2\\sqrt{x}}}$. Alors $\\displaystyle \\lim_{x\\to0^+}f(x)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "La limite n'existe pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(x)^2=\\frac{x}{x+2\\sqrt{x}}=\\frac{\\sqrt{x}}{\\sqrt{x}+2}\\to0$. La limite est $0$.",
+      "answerValidation": {
+        "status": "corrected-from-source",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-f21",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2023 · F.21",
+      "officialQuestionCode": "F.21",
+      "prompt": "Soit $g$ définie sur $]0,+\\infty[$ par $g(x)=\\frac{(2x)^x}{x^{2x}}$. Alors $\\displaystyle \\lim_{x\\to+\\infty}g(x)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "La limite n'existe pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$g(x)=\\left(\\frac{2}{x}\\right)^x=\\exp\\!\\left(x\\ln\\frac{2}{x}\\right)$ et l'exposant tend vers $-\\infty$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-f22",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2023 · F.22",
+      "officialQuestionCode": "F.22",
+      "prompt": "Soit $f$ une fonction réelle telle que $f(1)=3$ et $f'(1)=-3$. La courbe de $f$ admet au point $A(1,3)$ une tangente d'équation :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y=3x-2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$y=3x-6$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y=-3x+6$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$y=3x$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$y=-3x+2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$y=f'(1)(x-1)+f(1)=-3(x-1)+3=-3x+6$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-f23",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2023 · F.23",
+      "officialQuestionCode": "F.23",
+      "prompt": "Soient $f(x)=\\ln(x-1)$ et $g(x)=\\sqrt{x+1}$. Le domaine de définition de $g\\circ f$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$[-1,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$]1,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\left[1+\\frac{1}{e},+\\infty\\right[$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$]e,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$]-e,+\\infty[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il faut $x>1$ et $\\ln(x-1)+1\\ge0$, soit $x\\ge1+e^{-1}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-f24",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2023 · F.24",
+      "officialQuestionCode": "F.24",
+      "prompt": "Soit $f(x)=x+x^2\\sin\\!\\left(\\frac{1}{x}\\right)$ si $x\\ne0$ et $f(0)=0$. Alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ est dérivable en $0$ et $f'(0)=1$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f$ n'est pas dérivable en $0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f'(0)=0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Pour tout $x\\ne0$, $f'(x)=1+2x\\sin\\!\\left(\\frac{1}{x}\\right)+\\cos\\!\\left(\\frac{1}{x}\\right)$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\frac{f(x)-f(0)}x=1+x\\sin(\\frac{1}{x})\\to1$, donc $f$ est dérivable en $0$ et $f'(0)=1$. Pour $x\\ne0$, le terme issu de la dérivation de $\\sin(\\frac{1}{x})$ est négatif.",
+      "answerValidation": {
+        "status": "unique-correct-option",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-g3",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l'espace",
+      "sourceReference": "FMP 2023 · G.3",
+      "officialQuestionCode": "G.3",
+      "prompt": "Dans un repère orthonormé direct, $(P):x-y-z+2=0$, $(P'):x+z-2=0$ et $\\Delta$ est donnée par $x=1+t$, $y=2+2t$, $z=1-t$, avec $t\\in\\mathbb R$. Alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\Delta\\subset(P)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\Delta\\perp(P)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\Delta\\cap(P)=\\varnothing$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\Delta\\cap(P')=\\varnothing$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\Delta\\perp(P')$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La direction $(1,2,-1)$ est orthogonale au normal $(1,-1,-1)$ de $(P)$, et le point $(1,2,1)$ appartient à $(P)$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-i16",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2023 · I.16",
+      "officialQuestionCode": "I.16",
+      "prompt": "L'intégrale $\\displaystyle\\int_{\\frac{\\pi}{6}}^{\\frac{\\pi}{4}}\\frac{dx}{\\sin(x)\\tan(x)}$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}-\\frac{\\sqrt2}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2-\\sqrt2$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt2-2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\sqrt2}{2}-\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$1-\\sqrt2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\frac{1}{{\\sin x\\tan x}}=\\frac{\\cos x}{\\sin^2x}$ a pour primitive $-\\frac{1}{{\\sin x}}$. L'évaluation donne $2-\\sqrt2$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-i17",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2023 · I.17",
+      "officialQuestionCode": "I.17",
+      "prompt": "L'intégrale $\\displaystyle\\int_0^{\\frac{\\pi}{2}}\\frac{\\sin(2x)}{1+\\sin^2(x)}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\ln(2)+1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln(2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$-\\ln(2)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $u=1+\\sin^2x$, $du=\\sin(2x)\\,dx$, donc l'intégrale vaut $[\\ln u]_1^2=\\ln2$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-p3",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "sourceReference": "FMP 2023 · P.3",
+      "officialQuestionCode": "P.3",
+      "prompt": "Une urne contient $5$ boules bleues, $4$ blanches et $3$ noires. On tire simultanément $3$ boules, puis on répète l'expérience $n\\ge5$ fois avec remise. La probabilité d'obtenir exactement $n-1$ fois trois couleurs deux à deux distinctes est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{8\\times3^n}{11^n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{8n\\times3^n}{11^n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{8n\\times3^{n-1}}{11^n}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{8^n\\times3^{n-1}}{11^n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{8\\times3^n}{11^{n-1}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$p=\\frac{5\\cdot4\\cdot3}{\\binom{12}{3}}=\\frac{3}{{11}}$, puis $\\binom n{n-1}p^{n-1}(1-p)=\\frac{8n\\,3^{n-1}}{11^n}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-s13",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2023 · S.13",
+      "officialQuestionCode": "S.13",
+      "prompt": "Pour tout entier $n\\ge2$, on pose $U_n=\\left(1-\\frac{1}{{2^2}}\\right)\\left(1-\\frac{1}{{3^2}}\\right)\\cdots\\left(1-\\frac{1}{{n^2}}\\right)$. Alors $\\displaystyle \\lim_{n\\to+\\infty}U_n$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "La limite n'existe pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le produit est télescopique : $U_n=\\frac{n+1}{2n}$, donc $U_n\\to\\frac{1}{2}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2023-s14",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2023 · S.14",
+      "officialQuestionCode": "S.14",
+      "prompt": "Pour $n\\ge1$, $U_n=\\frac{1}{2}+\\frac{1}{{2^2}}+\\cdots+\\frac{1}{{2^n}}$ et $\\ln(V_n)=U_n\\ln2$. Alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\lim U_n=1$ et $\\displaystyle \\lim V_n=\\ln2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\lim U_n=\\frac{1}{2}$ et $\\displaystyle \\lim V_n=\\ln2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\lim U_n=2$ et $\\displaystyle \\lim V_n=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle \\lim U_n=\\frac{1}{2}$ et $\\displaystyle \\lim V_n=2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\displaystyle \\lim U_n=1$ et $\\displaystyle \\lim V_n=2$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "$U_n=1-2^{-n}\\to1$, donc $\\ln(V_n)\\to\\ln2$ et $V_n\\to2$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    }
+  ]
+}

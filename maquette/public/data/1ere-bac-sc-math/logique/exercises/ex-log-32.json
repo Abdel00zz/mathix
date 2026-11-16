@@ -1,0 +1,36 @@
+{
+  "id": "ex-log-32",
+  "theme": "logique",
+  "difficulty": "difficile",
+  "topic": "Logique & Raisonnements — Exercices de perfectionnement",
+  "requiresRedaction": true,
+  "context": "Soient $a$ et $b$ deux réels strictement positifs tels que $a + b = 1$.",
+  "questions": [
+    {
+      "id": "pA_q1",
+      "content": "Partie A.",
+      "subQuestions": [
+        {
+          "id": "sq_pA1a",
+          "content": "Montrer que : $a^2 + b^2 \\geq \\dfrac{1}{2}$ et $ab \\leq \\dfrac{1}{4}$",
+          "hint": "Pour $a^2+b^2$ : développez $(a+b)^2 = a^2+2ab+b^2 = 1$, donc $a^2+b^2 = 1-2ab$. Pour $ab$ : AM-GM donne $ab \\leq \\left(\\dfrac{a+b}{2}\\right)^2$."
+        },
+        {
+          "id": "sq_pA1b",
+          "content": "En déduire : $\\left(a + \\dfrac{1}{a}\\right)^2 + \\left(b + \\dfrac{1}{b}\\right)^2 \\geq \\dfrac{25}{2}$",
+          "hint": "Développez $\\left(a+\\dfrac{1}{a}\\right)^2 + \\left(b+\\dfrac{1}{b}\\right)^2 = a^2+b^2 + 2\\left(\\dfrac{1}{a^2}+\\dfrac{1}{b^2}\\right) + \\dfrac{a^2+b^2}{a^2b^2}$... Utilisez les bornes établies."
+        }
+      ]
+    },
+    {
+      "id": "pA_q2",
+      "content": "Montrer que : $\\left(\\dfrac{a}{a+b} + \\dfrac{a}{b} + 1\\right)^2 + \\left(\\dfrac{b}{a+b} + \\dfrac{a}{b} + 1\\right)^2 \\geq \\dfrac{25}{2}$",
+      "hint": "Simplifiez en utilisant $a+b=1$ : les expressions deviennent $a + \\dfrac{a}{b} + 1$ et $b + \\dfrac{a}{b} + 1$. Utilisez le résultat de 1)."
+    },
+    {
+      "id": "pB",
+      "content": "Partie B. En déduire que pour tout $x \\in \\left[0;\\dfrac{\\pi}{2}\\right]$ : $\\left(\\dfrac{\\cos^4 x + 1}{\\cos^2 x}\\right) + \\left(\\dfrac{\\sin^4 x + 1}{\\sin^2 x}\\right) \\geq \\dfrac{25}{2}$",
+      "hint": "Posez $a = \\cos^2 x$ et $b = \\sin^2 x$. On a $a + b = 1$. Identifiez les expressions à celles de la Partie A."
+    }
+  ]
+}

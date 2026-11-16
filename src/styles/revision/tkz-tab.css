@@ -1,0 +1,244 @@
+/* ============================================================================
+   TKZ-TAB — tableaux de signes & de variations (rendu façon LaTeX tkz-tab)
+   Généré par src/utils/parser/tkzTab.ts
+   ============================================================================ */
+
+.math-display-shell--tkz {
+  justify-content: center;
+}
+
+.tkz-tab-scroll {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+table.tkz-tab {
+  --tkz-ink: #1b2330;
+  --tkz-rule: #1b2330;
+  --tkz-guide: #6b7280;
+  --tkz-paper: #ffffff;
+  --tkz-pad-y: 0.42em;
+
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-inline: auto;
+  border: 1.15px solid var(--tkz-rule);
+  background: var(--tkz-paper);
+  color: var(--tkz-ink);
+  font-size: 1.06em;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+table.tkz-tab th,
+table.tkz-tab td {
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
+  text-align: center;
+  background: transparent;
+}
+
+/* Séparateurs horizontaux entre chaque bloc (la ligne des x incluse) */
+table.tkz-tab .tkz-row + .tkz-row > th,
+table.tkz-tab .tkz-row + .tkz-row > td {
+  border-top: 1px solid var(--tkz-rule);
+}
+
+/* Colonne des libellés : unique trait vertical du tableau */
+table.tkz-tab .tkz-label {
+  border-right: 1px solid var(--tkz-rule);
+  padding: var(--tkz-pad-y) 0.85em;
+  font-weight: 400;
+  min-width: 2.6em;
+}
+
+/* Colonnes « valeur » (bornes) et « intervalle » */
+table.tkz-tab .tkz-b {
+  position: relative;
+  padding: var(--tkz-pad-y) 0.32em;
+  min-width: 1.2em;
+}
+
+table.tkz-tab .tkz-b--first { padding-left: 0.6em; }
+table.tkz-tab .tkz-b--last  { padding-right: 0.6em; }
+
+table.tkz-tab .tkz-i {
+  padding: var(--tkz-pad-y) 0.5em;
+  min-width: 2.6em;
+}
+
+.tkz-tab .tkz-math {
+  margin-inline: 0 !important;
+  padding-inline: 0 !important;
+}
+
+.tkz-tab .katex {
+  font-size: 1.08em;
+}
+
+/* ── Ligne des x ─────────────────────────────────────────────────────────── */
+.tkz-tab .tkz-row--x .tkz-b {
+  padding-block: 0.5em;
+}
+
+/* ── Lignes de signes ────────────────────────────────────────────────────── */
+.tkz-tab .tkz-row--sign .tkz-i--sign .katex {
+  font-size: 1.16em;
+}
+
+/* Trait pointillé vertical (z = zéro, t = trait) traversant toute la ligne */
+.tkz-tab .tkz-mark--zero::before,
+.tkz-tab .tkz-mark--bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px dashed var(--tkz-guide);
+  transform: translateX(-0.5px);
+  pointer-events: none;
+}
+
+.tkz-tab .tkz-zero {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0.05em 0.12em;
+  background: var(--tkz-paper);
+  line-height: 1.1;
+}
+
+/* Double barre (valeur interdite) sur toute la hauteur de la ligne */
+.tkz-tab .tkz-mark--dbar {
+  min-width: 0.9em;
+}
+
+.tkz-tab .tkz-mark--dbar::before,
+.tkz-tab .tkz-mark--dbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid var(--tkz-rule);
+  pointer-events: none;
+}
+
+.tkz-tab .tkz-mark--dbar::before { left: calc(50% - 2px); }
+.tkz-tab .tkz-mark--dbar::after  { left: calc(50% + 1.5px); }
+
+/* ── Blocs de variations ─────────────────────────────────────────────────── */
+.tkz-tab .tkz-row--var { --tkz-h: 4.7em; }
+.tkz-tab .tkz-row--var.tkz-row--lv3 { --tkz-h: 6.6em; }
+
+.tkz-tab .tkz-row--var .tkz-b,
+.tkz-tab .tkz-row--var .tkz-i {
+  padding: 0;
+}
+
+.tkz-tab .tkz-var-b,
+.tkz-tab .tkz-var-i {
+  height: var(--tkz-h);
+  box-sizing: border-box;
+}
+
+.tkz-tab .tkz-var-b {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.tkz-tab .tkz-var-i {
+  position: relative;
+  min-width: 3.8em;
+}
+
+.tkz-tab .tkz-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.38em 0.34em;
+  box-sizing: border-box;
+}
+
+.tkz-tab .tkz-b--first .tkz-stack--center { padding-left: 0.6em; }
+.tkz-tab .tkz-b--last .tkz-stack--center  { padding-right: 0.6em; }
+
+.tkz-tab .tkz-slot {
+  height: 1.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tkz-tab .tkz-stack--right .tkz-slot { justify-content: flex-end; }
+.tkz-tab .tkz-stack--left .tkz-slot  { justify-content: flex-start; }
+
+/* Rappel vertical pointillé sous les bornes intérieures dans la ligne de variations */
+table.tkz-tab .tkz-row--var .tkz-b:not(.tkz-b--first):not(.tkz-b--last):not(:has(.tkz-var-b--forbidden))::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px dashed var(--tkz-guide);
+  transform: translateX(-0.5px);
+  pointer-events: none;
+}
+
+table.tkz-tab .tkz-slot:not(:empty) {
+  position: relative;
+  z-index: 1;
+  background: var(--tkz-paper);
+  padding-inline: 0.15em;
+}
+
+.tkz-tab .tkz-dbar {
+  flex: none;
+  width: 3.5px;
+  border-left: 1px solid var(--tkz-rule);
+  border-right: 1px solid var(--tkz-rule);
+}
+
+.tkz-tab .tkz-arrow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.tkz-tab .tkz-arrow-line {
+  stroke: var(--tkz-ink);
+  stroke-width: 1.05;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.tkz-tab .tkz-arrow-tip {
+  fill: var(--tkz-ink);
+  stroke: none;
+}
+
+/* Les « blancs » à compléter restent visibles dans les cases */
+.tkz-tab .math-blank {
+  min-width: 1.4em;
+}
+
+@media (max-width: 640px) {
+  .tkz-tab { font-size: 0.96em; }
+  .tkz-tab .tkz-i { min-width: 2.1em; padding-inline: 0.35em; }
+  .tkz-tab .tkz-var-i { min-width: 3em; }
+  .tkz-tab .tkz-label { padding-inline: 0.55em; }
+}
+
+@media print {
+  .tkz-tab { --tkz-guide: #000; --tkz-ink: #000; --tkz-rule: #000; }
+  .tkz-tab-scroll { overflow: visible; }
+}

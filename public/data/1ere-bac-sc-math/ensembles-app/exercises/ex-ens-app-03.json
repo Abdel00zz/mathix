@@ -1,0 +1,15 @@
+{
+  "id": "ex-ens-app-03",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Écriture et description d'ensembles",
+  "requiresRedaction": true,
+  "context": "On considère les ensembles suivants définis dans $\\mathbb{N} = \\{4k+3 \\mid k \\in \\mathbb{N},\\, k < 7\\}$ :\n$$F_1 = \\{x \\in \\mathbb{Z} \\mid |3x-5| \\leq 8\\}$$\n$$F_2 = \\{(a;b) \\in \\mathbb{N}^2 \\mid (2a+b)(a+b) = 6\\}$$\n$$F_3 = \\{(x;y) \\in \\mathbb{R}^2 \\mid 9 \\leq x^2 + y^2 \\leq 16\\}$$\n$$F_4 = \\{x \\in \\mathbb{Q}^2 \\mid (x^2-2)(|7x+2|-5) = 0\\}$$\n$$F_5 = \\left\\{n \\in \\mathbb{Z} \\;\\ \\middle| \\;\\ \\dfrac{18}{n+1} \\in \\mathbb{Z}\\right\\}$$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Écrire en extension chacun de ces ensembles.",
+      "hint": "Pour $F_1$ : résolvez $|3x-5| \\leq 8$ puis restreignez à $\\mathbb{Z}$. Pour $F_2$ : listez les factorisations entières de 6. Pour $F_4$ : résolvez séparément $x^2-2=0$ et $|7x+2|-5=0$ dans $\\mathbb{Q}$. Pour $F_5$ : cherchez les diviseurs entiers de 18, puis déduisez les valeurs de $n$."
+    }
+  ]
+}

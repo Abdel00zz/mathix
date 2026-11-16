@@ -1,0 +1,92 @@
+{
+  "id": "ds3-s2-v1",
+  "title": "Devoir Surveillé N°3 — V1",
+  "number": 3,
+  "version": "V1",
+  "semestre": 2,
+  "classId": "2eme-bac-sc-ex",
+  "duration": 120,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "ds3s2v1-ex1",
+      "number": 1,
+      "theme": "probabilités",
+      "points": 7,
+      "topic": "Variables aléatoires et espérance",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Loi de probabilité et espérance",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "On lance un dé équilibré à $6$ faces. On gagne $2$ euros si le résultat est pair, et on perd $1$ euro sinon. Soit $X$ le gain algébrique. Déterminer la loi de $X$.",
+              "hint": "$P(X = 2) = \\frac{3}{6} = \\frac{1}{2}$ et $P(X = -1) = \\frac{1}{2}$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Calculer $E(X)$ et interpréter le résultat.",
+              "hint": "$E(X) = 2 \\times \\frac{1}{2} + (-1) \\times \\frac{1}{2} = \\frac{1}{2}$. En moyenne, on gagne $0{,}50$ € par partie."
+            },
+            {
+              "id": "sq1c",
+              "content": "On répète cette expérience $10$ fois de manière indépendante. Soit $Y$ le nombre de parties gagnantes. Quelle est la loi de $Y$ ? Calculer $P(Y = 5)$.",
+              "hint": "$Y \\sim \\mathcal{B}(10, \\frac{1}{2})$. $P(Y=5) = \\binom{10}{5}(\\frac{1}{2})^{10} = \\frac{252}{1024} = \\frac{63}{256} \\approx 0{,}246$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ds3s2v1-ex2",
+      "number": 2,
+      "theme": "géométrie dans l'espace",
+      "points": 6,
+      "topic": "Produit scalaire et orthogonalité dans l'espace",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Orthogonalité et projeté orthogonal",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Soient $\\overrightarrow{u} = (1, -2, 3)$ et $\\overrightarrow{v} = (4, 5, 2)$. Calculer $\\overrightarrow{u} \\cdot \\overrightarrow{v}$. Les vecteurs sont-ils orthogonaux ?",
+              "hint": "$\\overrightarrow{u} \\cdot \\overrightarrow{v} = 4 - 10 + 6 = 0$. Oui, $\\overrightarrow{u} \\perp \\overrightarrow{v}$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Soit $(D)$ la droite passant par $A(1,0,2)$ et de vecteur directeur $\\overrightarrow{u} = (1,-2,3)$. Déterminer le projeté orthogonal $H$ du point $B(3,1,1)$ sur $(D)$.",
+              "hint": "$\\overrightarrow{AH} = t\\overrightarrow{u}$, $H = (1+t, -2t, 2+3t)$. $\\overrightarrow{BH} \\cdot \\overrightarrow{u} = 0$ : $(t-2, -2t-1, 3t+1) \\cdot (1,-2,3) = t-2+4t+2+9t+3 = 14t+3 = 0 \\Rightarrow t = -\\frac{3}{14}$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ds3s2v1-ex3",
+      "number": 3,
+      "theme": "nombres complexes",
+      "points": 7,
+      "topic": "Transformations du plan complexe",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Similitudes directes",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Soit $f$ la transformation du plan complexe définie par $f(z) = (1 + i)z - 2i$. Déterminer la nature et les éléments caractéristiques de $f$.",
+              "hint": "$f(z) = (1+i)z - 2i$. $|1+i| = \\sqrt{2}$, $\\arg(1+i) = \\frac{\\pi}{4}$. C'est une similitude directe de rapport $\\sqrt{2}$ et d'angle $\\frac{\\pi}{4}$. Centre $\\omega$ : $\\omega = (1+i)\\omega - 2i \\Rightarrow \\omega(1 - 1 - i) = -2i \\Rightarrow \\omega = 2$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Déterminer l'image du point $M$ d'affixe $z = i$ par $f$.",
+              "hint": "$f(i) = (1+i)(i) - 2i = i + i^2 - 2i = -1 - i$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+@import "./core/typography.css";
+@import "./core/base.css";
+@import "./core/animations.css";
+@import "./components/app-page.css";
+@import "./components/modal-theme.css";
+@import "./components/reading-theme.css";
+@import "./components/dashboard-theme.css";
+@import "./components/dashboard-tabs.css";
+@import "./components/dashboard-header.css";
+@import "./components/planner.css";
+@import "./components/login.css";
+@import "./components/math-blank.css";
+@import "./components/prof-console.css";
+@import "./components/exercise-board.css";
+@import "./components/canvas-ink.css";
+@import "./components/learning-experience.css";
+@import "./components/auth-web.css";
+@import "./core/print-document.css";
+@import "./core/print.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

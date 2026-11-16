@@ -1,0 +1,34 @@
+{
+  "id": "produit-scalaire",
+  "title": "Le produit scalaire",
+  "section": "algebre-geometrie",
+  "quizCount": 6,
+  "revisions": [
+    {
+      "id": "rev-scal-tc",
+      "title": "Fiche Complète : Produit Scalaire",
+      "path": "data/tronc-commun-sc/produit-scalaire/revisions/fiche_scalaire_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-scal-tc-01",
+      "path": "data/tronc-commun-sc/produit-scalaire/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-scal-tc-02",
+      "path": "data/tronc-commun-sc/produit-scalaire/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-produit-scalaire-01",
+      "path": "data/tronc-commun-sc/produit-scalaire/exercises/ex_scalaire_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-produit-scalaire-01",
+      "path": "data/tronc-commun-sc/produit-scalaire/quiz/produit-scalaire_quiz.json",
+      "questionsCount": 6
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ex-vect-esp-04",
+  "theme": "vecteurs-espace",
+  "difficulty": "moyen",
+  "topic": "Vecteurs de l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Colinérarité de deux vecteurs",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les vecteurs $\\overrightarrow{u}(1, -2, 3)$ et $\\overrightarrow{v}(2, -4, 6)$.\nLes vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont-ils colinéaires ?",
+          "hint": "Deux vecteurs non nuls sont colinéaires si et seulement si leurs coordonnées sont proportionnelles.\nOn remarque que $\\overrightarrow{v}(2, -4, 6) = 2(1, -2, 3) = 2\\overrightarrow{u}$.\n\nPuisque $\\overrightarrow{v} = 2\\overrightarrow{u}$, les vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont colinéaires."
+        }
+      ]
+    }
+  ]
+}

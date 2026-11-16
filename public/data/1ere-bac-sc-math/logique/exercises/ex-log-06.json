@@ -1,0 +1,35 @@
+{
+  "id": "ex-log-06",
+  "theme": "logique",
+  "difficulty": "facile",
+  "topic": "Logique & Raisonnements — Logique propositionnelle",
+  "requiresRedaction": true,
+  "context": "Compléter en utilisant les connecteurs « ou » et « et », pour que les équivalences suivantes soient vraies :",
+  "questions": [
+    {
+      "id": "qa",
+      "content": "$(\\forall(x;y) \\in \\mathbb{R}^2)\\; x \\cdot y = 0 \\iff (x = 0 \\ldots y = 0)$",
+      "hint": ""
+    },
+    {
+      "id": "qb",
+      "content": "$(\\forall(x;y) \\in \\mathbb{R}^2)\\; x \\cdot y \\neq 0 \\iff (x \\neq 0 \\ldots y \\neq 0)$",
+      "hint": ""
+    },
+    {
+      "id": "qc",
+      "content": "$(\\forall(x;y) \\in \\mathbb{R}^2)\\; x^2 + y^2 = 0 \\iff (x = 0 \\ldots y = 0)$",
+      "hint": ""
+    },
+    {
+      "id": "qd",
+      "content": "$(\\forall(x;y) \\in \\mathbb{R}^2)\\; x^2 \\geq r \\iff (x \\leq -\\sqrt{r} \\ldots x \\geq \\sqrt{r})$",
+      "hint": ""
+    },
+    {
+      "id": "qe",
+      "content": "$(\\forall(x;y) \\in \\mathbb{R}^2)\\; (x;y) \\neq (0;0) \\iff (x \\neq 0 \\ldots y \\neq 0)$",
+      "hint": ""
+    }
+  ]
+}

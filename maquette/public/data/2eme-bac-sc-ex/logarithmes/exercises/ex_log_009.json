@@ -1,0 +1,108 @@
+{
+  "id": "ex-log-009",
+  "theme": "logarithmes",
+  "difficulty": "difficile",
+  "topic": "Analyse - Logarithmes",
+  "context": "Ce problème est constitué de trois parties. \nOn considère la fonction auxiliaire $g$ définie sur $]0, +\\infty[$ par $g(x) = x - \\frac{1}{x} - 2\\ln x$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "p1",
+      "type": "header",
+      "content": "Étude de la fonction g"
+    },
+    {
+      "id": "q1",
+      "content": "Montrer que $g'(x) = \\dfrac{(x-1)^2}{x^2}$ pour tout $x$ de $]0, +\\infty[$ puis en déduire le sens de variations de la fonction $g$.",
+      "hint": "Dériver terme à terme : la dérivée de $\\frac{1}{x}$ est $-\\frac{1}{x^2}$. Mettre au même dénominateur. Un carré étant toujours positif, quel est le signe de la dérivée ?"
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que $g(x) \\le 0$ pour tout $x$ de $]0, 1]$ et que $g(x) \\ge 0$ pour tout $x$ de $[1, +\\infty[$.",
+      "hint": "Calculer $g(1)$. Utiliser la stricte croissance de la fonction pour comparer $g(x)$ à $g(1)$ sur les deux intervalles."
+    },
+    {
+      "id": "p2",
+      "type": "header",
+      "content": "Étude de la fonction f\nSoit $f$ la fonction numérique définie par : $f(x) = x + \\frac{1}{x} - (\\ln x)^2 - 2$."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que $\\displaystyle \\lim_{x \\to +\\infty} \\frac{(\\ln x)^2}{x} = 0$. (On pourra poser $t=\\sqrt{x}$)",
+          "hint": "Si $t=\\sqrt{x}$, alors $x=t^2$ et $\\ln x = 2\\ln t$. Utiliser la limite usuelle $\\lim_{t \\to +\\infty} \\frac{\\ln t}{t} = 0$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} f(x)$.",
+          "hint": "Factoriser par $x$ : $f(x) = x(1 + \\frac{1}{x^2} - \\frac{(\\ln x)^2}{x} - \\frac{2}{x})$. Utiliser le résultat précédent."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Vérifier que $f(1/x) = f(x)$ pour tout $x$ de $]0, +\\infty[$.",
+      "hint": "Remplacer $x$ par $1/x$. Utiliser la propriété $\\ln(1/x) = -\\ln x$ et le fait que $(-A)^2 = A^2$."
+    },
+    {
+      "id": "q5",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to 0^+} f(x)$ puis interpréter géométriquement le résultat.",
+      "hint": "Utiliser le changement de variable $t=1/x$ et la propriété $f(x)=f(1/x)$. Quand $x \\to 0^+$, $t \\to +\\infty$. La limite est donc la même qu'en $+\\infty$."
+    },
+    {
+      "id": "q6",
+      "content": "Montrer que $(C)$ admet une branche parabolique de direction asymptotique la droite d'équation $y=x$.",
+      "hint": "Calculer $\\lim \\frac{f(x)}{x}$ qui doit donner 1, puis calculer $\\lim (f(x)-x)$. Si cette dernière limite est infinie, c'est une branche parabolique."
+    },
+    {
+      "id": "q7",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq7a",
+          "content": "Montrer que $f'(x) = \\dfrac{g(x)}{x}$ pour tout $x$ de $]0, +\\infty[$.",
+          "hint": "Dériver la composée $(\\ln x)^2$ qui donne $2\\ln x \\cdot \\frac{1}{x}$. Factoriser l'expression de la dérivée par $1/x$ pour retrouver $g(x)$."
+        },
+        {
+          "id": "sq7b",
+          "content": "Dresser le tableau de variations de la fonction $f$.",
+          "hint": "Le signe de $f'(x)$ est celui de $g(x)$ car $x>0$. Utiliser les résultats de la Partie I."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "content": "Construire la courbe $(C)$ dans le repère $(O;\\overrightarrow{i},\\overrightarrow{j})$.",
+      "hint": "Placer le minimum en $(1,0)$. Tracer la branche parabolique de direction $y=x$ et l'asymptote verticale en $0$."
+    },
+    {
+      "id": "p3",
+      "type": "header",
+      "content": "Calcul d'aire"
+    },
+    {
+      "id": "q9",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq9a",
+          "content": "Montrer que la fonction $H: x \\mapsto x \\ln x - x$ est une fonction primitive de la fonction $h: x \\mapsto \\ln x$ sur $]0, +\\infty[$.",
+          "hint": "Dériver $H(x)$ pour retrouver $h(x)$. La dérivée de $x \\ln x$ est $1 \\cdot \\ln x + x \\cdot \\frac{1}{x}$."
+        },
+        {
+          "id": "sq9b",
+          "content": "En utilisant une intégration par parties, montrer que $\\displaystyle \\int_{1}^{e} (\\ln x)^2 dx = e - 2$.",
+          "hint": "Poser $u(x) = (\\ln x)^2$ et $v'(x) = 1$. Alors $u'(x) = \\frac{2\\ln x}{x}$ et $v(x) = x$."
+        },
+        {
+          "id": "sq9c",
+          "content": "Déterminer l'aire du domaine plan délimité par la courbe $(C)$, l'axe des abscisses et les deux droites d'équations $x=1$ et $x=e$.",
+          "hint": "Calculer l'intégrale $\\int_1^e f(x) dx$. Utiliser la linéarité de l'intégrale pour séparer les termes $x$, $1/x$, $(\\ln x)^2$ et $-2$. Utiliser le résultat précédent."
+        }
+      ]
+    }
+  ]
+}

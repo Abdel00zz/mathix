@@ -1,0 +1,425 @@
+{
+  "id": "nat-2024-r",
+  "title": "Examen National 2024 — Session Rattrapage",
+  "type": "national",
+  "year": 2024,
+  "session": "rattrapage",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 7,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2024r-ex1",
+      "number": 1,
+      "theme": "geometrie-espace",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Plan, sphère et intersection",
+      "context": "Dans l'espace rapporté à un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les deux points $A(1; 1; 0)$ et $\\Omega(-1; 1; -2)$ et le plan $(P)$ d'équation $x + z - 1 = 0$",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $A$ est un point du plan $(P)$ et donner un vecteur normal de $(P)$",
+              "bareme": 0.5,
+              "hint": "Remplacez les coordonnées de $A$ dans l'équation de $(P)$. Pour le vecteur normal, lisez directement les coefficients de $x$, $y$ et $z$ dans l'équation cartésienne."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que la droite $(\\Omega A)$ est perpendiculaire au plan $(P)$",
+              "bareme": 0.5,
+              "hint": "Calculez les coordonnées du vecteur $\\overrightarrow{\\Omega A}$ et montrez qu'il est colinéaire au vecteur normal de $(P)$ trouvé à la question précédente."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soit $(S)$ l'ensemble des points $M(x; y; z)$ de l'espace vérifiant : $x^2 + y^2 + z^2 + 2x - 2y + 4z - 3 = 0$",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $(S)$ est une sphère de centre $\\Omega$ et déterminer son rayon",
+              "bareme": 0.5,
+              "hint": "Regroupez les termes en $x$, $y$ et $z$ pour faire apparaître des débuts d'identités remarquables, puis factorisez sous la forme $(x-a)^2 + (y-b)^2 + (z-c)^2 = R^2$."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que $(P)$ coupe $(S)$ suivant un cercle de centre $A$ puis déterminer son rayon",
+              "bareme": 0.5,
+              "hint": "Calculez la distance de $\\Omega$ au plan $(P)$ et comparez-la au rayon de la sphère. Remarquez le lien avec la question 1b pour justifier que $A$ est bien le centre de ce cercle. Utilisez le théorème de Pythagore pour le rayon."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Soit $(Q_m)$ un plan d'équation $x + y + mz - 2 = 0$, où $m$ est un nombre réel",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que $A$ est un point du plan $(Q_m)$, pour tout $m$ de $\\mathbb{R}$",
+              "bareme": 0.25,
+              "hint": "Substituez les coordonnées du point $A(1; 1; 0)$ dans l'équation de $(Q_m)$ et constatez que le terme contenant $m$ s'annule."
+            },
+            {
+              "id": "3b",
+              "content": "Déterminer la valeur du réel $m$ pour que $(Q_m)$ soit perpendiculaire au plan $(P)$",
+              "bareme": 0.5,
+              "hint": "Deux plans sont perpendiculaires si et seulement si leurs vecteurs normaux respectifs sont orthogonaux (produit scalaire nul)."
+            },
+            {
+              "id": "3c",
+              "content": "Existe-t-il un plan $(Q_m)$ qui coupe la sphère $(S)$ suivant un cercle de centre $A$ ? Justifier",
+              "bareme": 0.25,
+              "hint": "Pour que le plan coupe la sphère selon un cercle de centre $A$, il faut que la droite passant par le centre $\\Omega$ et $A$ soit perpendiculaire à ce plan. Réfléchissez si c'est possible au vu des vecteurs normaux."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2024r-ex2",
+      "number": 2,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 4,
+      "topic": "Nombres complexes — Équation, géométrie plane et suites complexes",
+      "context": "",
+      "questions": [
+        {
+          "id": "p1",
+          "type": "partie",
+          "content": "On considère dans l'espace des nombres complexes $\\mathbb{C}$ l'équation $(E) : z^2 - 4z + 9 = 0$"
+        },
+        {
+          "id": "q1",
+          "content": "Vérifier que le discriminant de l'équation $(E)$ est $\\Delta = \\left(2i\\sqrt{5}\\right)^2$",
+          "bareme": 0.25,
+          "hint": "Calculez $\\Delta = b^2 - 4ac$. Observez que le résultat négatif s'écrit bien sous la forme d'un carré impliquant $i$."
+        },
+        {
+          "id": "q2",
+          "content": "Résoudre l'équation $(E)$",
+          "bareme": 0.5,
+          "hint": "Appliquez la formule classique de résolution d'une équation du second degré en utilisant la racine de $\\Delta$ identifiée à la question précédente."
+        },
+        {
+          "id": "p2",
+          "type": "partie",
+          "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A$, $B$ et $C$ d'affixes respectives $a = 2 + i\\sqrt{5}$, $b = 2 - i\\sqrt{5}$ et $c = 2 - \\sqrt{5}$"
+        },
+        {
+          "id": "r1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $|a| = 3$",
+              "bareme": 0.25,
+              "hint": "Utilisez la formule du module : $|x+iy| = \\sqrt{x^2+y^2}$."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que le triangle $OAB$ est isocèle",
+              "bareme": 0.25,
+              "hint": "Calculez la distance $OB$ (module de $b$) et remarquez que $b$ est le conjugué de $a$. Comparez avec la distance $OA$."
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Vérifier que $\\dfrac{a - c}{b - c} = i$",
+              "bareme": 0.5,
+              "hint": "Remplacez $a$, $b$ et $c$ par leurs expressions. Multipliez le numérateur et le dénominateur par le conjugué du dénominateur, ou factorisez astucieusement pour trouver $i$."
+            },
+            {
+              "id": "2b",
+              "content": "Déduire la nature du triangle $ABC$",
+              "bareme": 0.5,
+              "hint": "Le résultat $i$ donne deux informations cruciales : son module (qui renseigne sur le rapport des distances) et son argument (qui donne la mesure de l'angle orienté entre les vecteurs)."
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Déterminer l'affixe du point $D$ image de $B$ par la translation de vecteur $\\overrightarrow{CA}$",
+              "bareme": 0.5,
+              "hint": "La translation de vecteur $\\overrightarrow{CA}$ se traduit en nombres complexes par l'égalité : $z_D - z_B = a - c$."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que $ADBC$ est un carré",
+              "bareme": 0.5,
+              "hint": "La question précédente prouve que $ADBC$ est un parallélogramme. Utilisez la nature du triangle $ABC$ démontrée en 2b (isocèle et rectangle) pour conclure."
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "content": "On pose $x_n = \\left(\\dfrac{a}{3}\\right)^n$ et $y_n = \\dfrac{1}{1 - x_n}$, avec $n$ un entier naturel non nul",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Vérifier que $x_n \\bar{x}_n = 1$",
+              "bareme": 0.25,
+              "hint": "Exprimez $\\bar{x}_n$ en fonction de $\\bar{a}$. Effectuez le produit $x_n \\bar{x}_n$ en utilisant les propriétés des puissances et le module $|a| = 3$ calculé en 1a."
+            },
+            {
+              "id": "4b",
+              "content": "Montrer que $y_n + \\bar{y}_n = 1$ puis déduire la partie réelle de $y_n$",
+              "bareme": 0.5,
+              "hint": "Exprimez la somme, réduisez au même dénominateur, puis utilisez la relation $x_n \\bar{x}_n = 1$ trouvée en 4a pour simplifier le numérateur. Rappelez-vous que $Z + \\bar{Z} = 2\\text{Re}(Z)$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2024r-ex3",
+      "number": 3,
+      "theme": "probabilites",
+      "difficulty": "facile",
+      "points": 2,
+      "topic": "Probabilités — Tirage successif sans remise",
+      "context": "Une urne contient huit boules : quatre boules blanches, trois boules noires et une boule verte. Toutes les boules sont indiscernables au toucher. On tire au hasard successivement et sans remise trois boules de l'urne",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Vérifier que le nombre de tirages possibles est égal à $336$",
+          "bareme": 0.25,
+          "hint": "Il s'agit d'un tirage successif sans remise, l'ordre compte. Utilisez les arrangements $A_n^p$ pour calculer le nombre total de possibilités."
+        },
+        {
+          "id": "q2",
+          "content": "Calculer la probabilité de l'évènement $A$ : « Tirer trois boules blanches »",
+          "bareme": 0.5,
+          "hint": "Calculez le nombre d'arrangements de 3 boules parmi les 4 boules blanches disponibles, puis divisez par le nombre total de tirages."
+        },
+        {
+          "id": "q3",
+          "content": "Montrer que la probabilité de l'évènement $B$ : « Tirer trois boules de même couleur » est $p(B) = \\dfrac{5}{56}$",
+          "bareme": 0.75,
+          "hint": "Identifiez les couleurs permettant de tirer 3 boules (il n'y a qu'une seule boule verte, c'est donc impossible pour cette couleur). Additionnez les cas favorables pour les couleurs possibles."
+        },
+        {
+          "id": "q4",
+          "content": "Calculer la probabilité de l'évènement $C$ : « Obtenir au moins deux couleurs différentes »",
+          "bareme": 0.5,
+          "hint": "Formulez cet évènement par rapport à l'évènement $B$. Il s'agit exactement de son évènement contraire."
+        }
+      ]
+    },
+    {
+      "id": "nat2024r-ex4",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 11,
+      "topic": "Analyse — Comparaison de fonctions, suites récurrentes, limites et intégrales",
+      "context": "",
+      "questions": [
+        {
+          "id": "p1",
+          "type": "partie",
+          "content": "La figure du sujet représente les courbes $(C_g)$ et $(C_h)$ des fonctions $g : x \\mapsto \\dfrac{x}{1+x}$ et $h : x \\mapsto \\ln(1+x)$ sur l'intervalle $]-1; +\\infty[$ et la droite d'équation $y = x$, dans un même repère orthonormé."
+        },
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "A partir de cette figure, justifier que : $\\dfrac{x}{1+x} \\leq \\ln(1+x) \\leq x$, pour tout $x$ de $]-1; +\\infty[$",
+              "bareme": 0.5,
+              "hint": "Observez les positions relatives des courbes $(C_g)$, $(C_h)$ et de la droite $y=x$ sur le graphique fourni."
+            },
+            {
+              "id": "1b",
+              "content": "En déduire que $(1+x)\\ln(1+x) - x \\geq 0$, pour tout $x$ de $]-1; +\\infty[$",
+              "bareme": 0.25,
+              "hint": "Utilisez la première partie de la double inégalité trouvée en 1a. Multipliez par $(1+x)$ en tenant compte de son signe sur l'intervalle donné."
+            },
+            {
+              "id": "1c",
+              "content": "Prouver que $e^x - (1+e^x)\\ln(1+e^x) \\leq 0$, pour tout $x$ de $\\mathbb{R}$",
+              "bareme": 0.5,
+              "hint": "Dans l'inégalité démontrée en 1b, posez le changement de variable $X = e^x$. Vérifiez que ce $X$ appartient bien à l'intervalle $]-1; +\\infty[$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soit $(u_n)$ la suite numérique définie par $u_0 = 1$ et la relation $u_{n+1} = g(u_n)$, pour tout $n \\in \\mathbb{N}$",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer par récurrence que $0 < u_n \\leq 1$, pour tout $n \\in \\mathbb{N}$",
+              "bareme": 0.5,
+              "hint": "Pour l'hérédité, vous pouvez étudier les variations de la fonction $g(x) = \\dfrac{x}{1+x}$ et l'appliquer à l'encadrement de $u_n$."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que la suite $(u_n)$ est décroissante (On peut utiliser la question 1-a))",
+              "bareme": 0.5,
+              "hint": "Exprimez le rapport ou la différence entre $u_{n+1}$ et $u_n$. La question 1a montre graphiquement que $g(x) \\leq x$ sur cet intervalle."
+            },
+            {
+              "id": "2c",
+              "content": "En déduire que la suite $(u_n)$ est convergente",
+              "bareme": 0.25,
+              "hint": "Énoncez le théorème liant la monotonie et les bornes d'une suite pour justifier sa convergence."
+            },
+            {
+              "id": "2d",
+              "content": "Déterminer la limite de $(u_n)$",
+              "bareme": 0.75,
+              "hint": "La limite $l$ vérifie l'équation $g(l) = l$. Résolvez algébriquement cette équation, ou servez-vous du graphique de la Partie I."
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "type": "partie",
+          "content": "On considère la fonction numérique $f$ définie sur $\\mathbb{R}$ par $f(x) = e^{-x}\\ln(1+e^x)$. Soit $(C_f)$ sa courbe représentative dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$"
+        },
+        {
+          "id": "r1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Calculer $f(0)$ et vérifier que $f(x) > 0$, pour tout $x \\in \\mathbb{R}$",
+              "bareme": 0.5,
+              "hint": "Pour le signe, étudiez séparément le signe de $e^{-x}$ et celui de $\\ln(1+e^x)$ sachant que $e^x > 0$."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que $\\lim_{x \\to -\\infty} f(x) = 1$, puis donner une interprétation géométrique de ce résultat",
+              "bareme": 0.5,
+              "hint": "Quand $x \\to -\\infty$, on a $e^x \\to 0$. Utilisez la limite usuelle $\\lim_{X \\to 0} \\dfrac{\\ln(1+X)}{X}$ en réécrivant $e^{-x}$ sous forme de dénominateur."
+            },
+            {
+              "id": "1c",
+              "content": "Montrer que $\\lim_{x \\to +\\infty} f(x) = 0$, puis donner une interprétation géométrique de ce résultat",
+              "bareme": 0.5,
+              "hint": "Posez un changement de variable $t = e^x$. En $+\\infty$, vous devez évaluer $\\lim_{t \\to +\\infty} \\dfrac{\\ln(1+t)}{t}$."
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que pour tout $x \\in \\mathbb{R} : f'(x) = \\dfrac{1}{1+e^x} - e^{-x}\\ln(1+e^x)$",
+              "bareme": 0.5,
+              "hint": "Appliquez rigoureusement la dérivée d'un produit $(u \\cdot v)'$. La dérivée de $\\ln(1+e^x)$ utilise la règle des fonctions composées."
+            },
+            {
+              "id": "2b",
+              "content": "Vérifier que pour tout $x \\in \\mathbb{R} : f'(x) = \\dfrac{e^x - (1+e^x)\\ln(1+e^x)}{e^x(1+e^x)}$",
+              "bareme": 0.5,
+              "hint": "Partez de l'expression de $f'(x)$ trouvée en 2a, transformez le terme en $e^{-x}$ en fraction, et réduisez le tout au même dénominateur."
+            },
+            {
+              "id": "2c",
+              "content": "Déduire que $f$ est strictement décroissante sur $\\mathbb{R}$ (On peut utiliser la question 1-c) de la Partie I)",
+              "bareme": 0.5,
+              "hint": "Le dénominateur de l'expression de 2b est strictement positif. Observez que le numérateur correspond exactement à l'expression dont vous avez étudié le signe à la question 1c de la Partie I."
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Déterminer l'équation de la tangente $(T)$ à la courbe $(C_f)$ au point d'abscisse 0",
+              "bareme": 0.5,
+              "hint": "Utilisez la formule standard de la tangente : $y = f'(0)(x-0) + f(0)$. Calculez préalablement $f'(0)$."
+            },
+            {
+              "id": "3b",
+              "content": "Vérifier que la tangente $(T)$ passe par le point $A\\left(1; \\dfrac{1}{2}\\right)$",
+              "bareme": 0.25,
+              "hint": "Remplacez $x$ par $1$ dans l'équation de la tangente et vérifiez que vous obtenez $\\dfrac{1}{2}$ pour $y$."
+            },
+            {
+              "id": "3c",
+              "content": "Construire $(T)$ et la courbe $(C_f)$ dans le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (On prend $\\ln 2 \\approx 0,7$)",
+              "bareme": 0.75,
+              "hint": "Tracez les asymptotes horizontales $y=1$ en $-\\infty$ et $y=0$ en $+\\infty$. Placez le point de tangence en $x=0$, tracez $(T)$ à l'aide du point $A$, puis esquissez l'allure décroissante de la courbe."
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Montrer que $f$ admet une fonction réciproque $f^{-1}$ définie sur un intervalle $J$ que l'on déterminera (Il n'est pas demandé de déterminer $f^{-1}(x)$)",
+              "bareme": 0.5,
+              "hint": "Énoncez les conditions du théorème de la bijection (continuité et stricte monotonie). L'intervalle image se détermine grâce aux limites calculées précédemment."
+            },
+            {
+              "id": "4b",
+              "content": "Vérifier que $f^{-1}$ est dérivable en $\\ln 2$ et calculer $(f^{-1})'(\\ln 2)$",
+              "bareme": 0.5,
+              "hint": "Utilisez la relation $(f^{-1})'(y_0) = \\dfrac{1}{f'(x_0)}$. Rappelez-vous à quelle valeur de $x_0$ correspond $f(x_0) = \\ln 2$ d'après la question 1a."
+            }
+          ]
+        },
+        {
+          "id": "r5",
+          "content": "Soit $\\lambda$ un réel strictement positif",
+          "subQuestions": [
+            {
+              "id": "5a",
+              "content": "Vérifier que $\\dfrac{1}{1+e^x} = \\dfrac{e^{-x}}{1+e^{-x}}$, pour tout $x \\in \\mathbb{R}$",
+              "bareme": 0.25,
+              "hint": "Multipliez le numérateur et le dénominateur de la fraction de gauche par le même facteur $e^{-x}$."
+            },
+            {
+              "id": "5b",
+              "content": "Montrer que $\\displaystyle\\int_0^\\lambda \\dfrac{1}{1+e^x} dx = \\ln(2) - \\ln(1+e^{-\\lambda})$",
+              "bareme": 0.5,
+              "hint": "Utilisez l'égalité de la question 5a. Remarquez que la forme $\\dfrac{e^{-x}}{1+e^{-x}}$ est presque de la forme $\\dfrac{u'}{u}$, au signe près. Intégrez à l'aide de la fonction $\\ln$."
+            },
+            {
+              "id": "5c",
+              "content": "Montrer que $\\displaystyle\\int_0^\\lambda f(x) dx = \\ln(2) - f(\\lambda) + \\displaystyle\\int_0^\\lambda \\dfrac{1}{1+e^x} dx$ (Remarquer que $f(x) = \\dfrac{1}{1+e^x} - f'(x)$)",
+              "bareme": 0.5,
+              "hint": "Utilisez la remarque de l'énoncé pour séparer l'intégrale en deux par linéarité. L'intégrale de $f'(x)$ se détermine directement à l'aide de ses primitives."
+            },
+            {
+              "id": "5d",
+              "content": "Déduire en fonction de $\\lambda$, l'aire $A_\\lambda$ de la partie du plan délimitée par la courbe $(C_f)$, l'axe des abscisses et les droites d'équations $x = 0$ et $x = \\lambda$",
+              "bareme": 0.5,
+              "hint": "L'aire se calcule via $\\int_0^\\lambda f(x) dx$ puisque $f(x)>0$. Substituez le résultat de la question 5b dans l'expression trouvée à la question 5c, et ajoutez l'unité d'aire (u.a.)."
+            },
+            {
+              "id": "5e",
+              "content": "Calculer $\\lim_{\\lambda \\to +\\infty} A_\\lambda$",
+              "bareme": 0.5,
+              "hint": "Développez l'expression de l'aire et évaluez la limite en $+\\infty$, sachant que $e^{-\\lambda}$ tend vers $0$ et que $\\lim f(\\lambda) = 0$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

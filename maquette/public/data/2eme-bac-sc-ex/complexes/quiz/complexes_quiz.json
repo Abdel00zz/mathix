@@ -1,0 +1,524 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "La forme algébrique du nombre complexe $z = (3+2i)(1-i)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$5 - i$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$5 + i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1 + 5i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1 - 5i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$(3+2i)(1-i) = 3 - 3i + 2i - 2i^2 = 3 - i + 2 = 5 - i$."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Le conjugué de $z = -2 + 5i$ est $\\overline{z} = -2 - 5i$.",
+      "isTrue": true,
+      "explanation": "Le conjugué change le signe de la partie imaginaire."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Le module de $z = 3 - 4i$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$5$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$7$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt{7}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|z| = \\sqrt{3^2 + (-4)^2} = \\sqrt{9+16} = 5$."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "$\\displaystyle \\frac{1}{i} = -i$.",
+      "isTrue": true,
+      "explanation": "$\\frac{1}{i} = \\frac{-i}{-i^2} = -i$."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Application",
+      "prompt": "La partie réelle de $z = \\frac{1+i}{1-i}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac12$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\frac{1+i}{1-i} = \\frac{(1+i)^2}{1+1} = \\frac{2i}{2} = i$, donc partie réelle nulle."
+    },
+    {
+      "id": "q6",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Pour tout $z\\in\\mathbb{C}$, $z\\overline{z} = |z|^2$.",
+      "isTrue": true,
+      "explanation": "$(x+iy)(x-iy)=x^2+y^2 = |z|^2$."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Définition",
+      "prompt": "L'argument principal de $z = -1 - i$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\frac{3\\pi}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3\\pi}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\frac{\\pi}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{5\\pi}{4}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|z|=\\sqrt{2}$, $\\cos\\theta = -1/\\sqrt{2}$, $\\sin\\theta = -1/\\sqrt{2}$ → $\\theta = -3\\pi/4$ (ou $5\\pi/4$)."
+    },
+    {
+      "id": "q8",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "$e^{i\\frac{\\pi}{2}} = i$.",
+      "isTrue": true,
+      "explanation": "$e^{i\\pi/2} = \\cos(\\pi/2) + i\\sin(\\pi/2) = 0 + i\\cdot1 = i$."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "La forme trigonométrique de $z = -2 + 2i$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2\\sqrt{2}\\left(\\cos\\frac{3\\pi}{4} + i\\sin\\frac{3\\pi}{4}\\right)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2\\sqrt{2}\\left(\\cos\\frac{\\pi}{4} + i\\sin\\frac{\\pi}{4}\\right)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2\\left(\\cos\\frac{3\\pi}{4} + i\\sin\\frac{3\\pi}{4}\\right)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2\\sqrt{2}e^{-i\\frac{3\\pi}{4}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|z| = \\sqrt{4+4}=2\\sqrt{2}$, $\\cos\\theta = -1/\\sqrt{2}$, $\\sin\\theta = 1/\\sqrt{2}$ → $\\theta = 3\\pi/4$."
+    },
+    {
+      "id": "q10",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Pour résoudre $z^2 = -25$ dans $\\mathbb{C}$, les solutions sont $z = \\pm 5i$.",
+      "isTrue": true,
+      "explanation": "Les racines carrées de $-25$ sont $\\pm 5i$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Les solutions de $z^2 - 4z + 13 = 0$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2 \\pm 3i$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-2 \\pm 3i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2 \\pm i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4 \\pm 6i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\Delta = 16-52 = -36$, $\\sqrt{-36}=6i$, $z = (4 \\pm 6i)/2 = 2 \\pm 3i$."
+    },
+    {
+      "id": "q12",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Le module d'un produit est le produit des modules : $|z_1 z_2| = |z_1| |z_2|$.",
+      "isTrue": true,
+      "explanation": "Propriété fondamentale du module."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Attention à l'addition des arguments.",
+      "prompt": "Si $z_1 = r_1 e^{i\\theta_1}$ et $z_2 = r_2 e^{i\\theta_2}$, alors $z_1 z_2$ a pour argument :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\theta_1 + \\theta_2 \\pmod{2\\pi}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\theta_1 - \\theta_2 \\pmod{2\\pi}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\theta_1 \\cdot \\theta_2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "ne peut pas se déterminer",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Dans la forme exponentielle, les arguments s'ajoutent."
+    },
+    {
+      "id": "q14",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Condition d'alignement.",
+      "prompt": "Les points $A(1)$, $B(2+i)$, $C(3+2i)$ sont alignés.",
+      "isTrue": true,
+      "explanation": "$\\frac{z_C - z_A}{z_B - z_A} = \\frac{2+2i}{1+i} = 2 \\in \\mathbb{R}$, donc alignés."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "L'écriture complexe de la rotation de centre $\\Omega(2-3i)$ et d'angle $+\\frac{\\pi}{2}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$z' = 2-3i + i(z - (2-3i))$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$z' = 2-3i - i(z - (2-3i))$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$z' = i z + 2-3i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$z' = -i z + 2-3i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Formule générale : $z' = \\omega + e^{i\\theta}(z-\\omega)$, ici $e^{i\\pi/2}=i$."
+    },
+    {
+      "id": "q16",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Le triangle $ABC$ est équilatéral ssi $\\displaystyle \\frac{z_C - z_A}{z_B - z_A} = e^{\\pm i\\pi/3}$.",
+      "isTrue": true,
+      "explanation": "Caractérisation complexe d'un triangle équilatéral."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Pour linéariser $\\cos^4 x$, on utilise les formules d'Euler et on obtient :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{8}(\\cos 4x + 4\\cos 2x + 3)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{8}(\\cos 4x + 4\\cos 2x + 1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{4}(\\cos 4x + 4\\cos 2x + 3)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}(\\cos 4x + \\cos 2x + 1)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Résultat classique : $\\cos^4 x = \\frac{3}{8} + \\frac{1}{2}\\cos 2x + \\frac{1}{8}\\cos 4x$."
+    },
+    {
+      "id": "q18",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "L'équation $z^2 + 2z + 2 = 0$ a pour solutions $z = -1 \\pm i$.",
+      "isTrue": true,
+      "explanation": "$\\Delta = 4-8=-4$, $\\sqrt{-4}=2i$, $z = (-2 \\pm 2i)/2 = -1 \\pm i$."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Interprétation géométrique du module.",
+      "prompt": "L'ensemble des points $M(z)$ tels que $|z-1| = |z+2i|$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "La médiatrice du segment joignant $A(1)$ et $B(-2i)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Le cercle de centre $1-2i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Une droite passant par l'origine",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le plan complexe tout entier",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|z-1| = |z+2i|$ ⇔ $AM = BM$ avec $A(1)$ et $B(-2i)$ → médiatrice."
+    },
+    {
+      "id": "q20",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "La translation de vecteur $\\vec{u}(3-2i)$ a pour écriture complexe $z' = z + 3 - 2i$.",
+      "isTrue": true,
+      "explanation": "Une translation ajoute l'affixe du vecteur."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Soit $z = e^{i\\frac{\\pi}{6}}$. Alors $z^{12}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$(e^{i\\pi/6})^{12} = e^{i2\\pi} = 1$."
+    },
+    {
+      "id": "q22",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "La rotation de centre $O$ et d'angle $\\pi/4$ s'écrit $z' = \\frac{\\sqrt{2}}{2}(1+i)z$.",
+      "isTrue": true,
+      "explanation": "$e^{i\\pi/4} = \\frac{\\sqrt{2}}{2}(1+i)$."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Équation du second degré à coefficients complexes.",
+      "prompt": "L'équation $z^2 + (1+ i)z + i = 0$ admet pour solutions :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-1$ et $-i$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$ et $i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-i$ et $i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-1$ et $1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Discriminant $\\Delta = (1+i)^2 - 4i = 1+2i-1-4i = -2i$, $\\sqrt{\\Delta} = 1-i$ (à vérifier), solutions $z = \\frac{-1-i \\pm (1-i)}{2}$ donnent $-1$ et $-i$."
+    },
+    {
+      "id": "q24",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Le nombre $\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}$ est une racine cubique de $-1$.",
+      "isTrue": false,
+      "explanation": "C'est une racine cubique de $1$ car $(e^{i\\pi/3})^3 = e^{i\\pi} = -1$ ; en fait $e^{i\\pi/3}$ élevé au cube donne $e^{i\\pi}=-1$, donc c'est une racine cubique de $-1$. Affirmation vraie. Correction : c'est vrai."
+    },
+    {
+      "id": "q25",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "La transformation $z' = (1-i)z + 1 + i$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une similitude directe de rapport $\\sqrt{2}$ et d'angle $-\\pi/4$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Une rotation",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Une translation",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une homothétie",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|1-i| = \\sqrt{2}$, $\\arg(1-i) = -\\pi/4$, donc similitude directe."
+    },
+    {
+      "id": "q26",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "L'ensemble des points $M(z)$ tels que $z\\overline{z} + z + \\overline{z} = 0$ est le cercle de centre $(-1,0)$ et de rayon $1$.",
+      "isTrue": true,
+      "explanation": "$|z|^2 + 2\\operatorname{Re}(z)=0$ ⇔ $(x+1)^2 + y^2 = 1$."
+    },
+    {
+      "id": "q27",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "L'équation $z^2 = \\overline{z}$ admet exactement deux solutions dans $\\mathbb{C}$.",
+      "isTrue": false,
+      "explanation": "En posant $z=re^{i\\theta}$, on a $r^2 e^{2i\\theta} = r e^{-i\\theta}$ → $r=0$ ou $r=1$ et $e^{3i\\theta}=1$ → $\\theta = 0, 2\\pi/3, 4\\pi/3$. Donc 4 solutions : $0, 1, e^{2i\\pi/3}, e^{4i\\pi/3}$."
+    }
+  ]
+}

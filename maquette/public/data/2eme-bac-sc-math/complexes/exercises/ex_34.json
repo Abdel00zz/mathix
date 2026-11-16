@@ -1,0 +1,71 @@
+{
+  "id": "ex-complexes-34",
+  "topic": "Nombres complexes - Bac National 2023 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2023,
+  "examenSession": "Rattrapage",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans $\\mathbb{R}_+^2$ le système suivant : $(S):\\begin{cases}\\sqrt{x}\\left(1+\\dfrac{1}{x+y}\\right)=\\dfrac{12}{5}\\\\[4pt]\\sqrt{y}\\left(1-\\dfrac{1}{x+y}\\right)=\\dfrac{4}{5}\\end{cases}$"
+    },
+    {
+      "id": "p1q1",
+      "content": "Soit $(x,y)\\in\\mathbb{R}_+^2$ une solution du système $(S)$. On pose $z=\\sqrt{x}+i\\sqrt{y}$.",
+      "subQuestions": [
+        {
+          "id": "p1q1a",
+          "content": "Montrer que $z+\\dfrac{1}{z}=\\dfrac{12}{5}+\\dfrac{4}{5}i$.",
+          "hint": "Calculez $\\dfrac{1}{z}$ en multipliant par le conjugué, remarquez que $|z|^2=x+y$, puis additionnez à $z$ terme réel avec terme réel, imaginaire avec imaginaire en utilisant les deux équations du système."
+        },
+        {
+          "id": "p1q1b",
+          "content": "Montrer que $z^2-\\left(\\dfrac{12}{5}+\\dfrac{4}{5}i\\right)z+1=0$, en déduire les valeurs possibles de $z$ (On remarque que : $\\dfrac{28}{25}+\\dfrac{96}{25}i=\\left(\\dfrac{2}{5}(4+3i)\\right)^2$).",
+          "hint": "Multipliez l'égalité précédente par $z$ pour obtenir une équation du second degré ; utilisez l'indication pour écrire une racine carrée du discriminant sous forme algébrique simple."
+        },
+        {
+          "id": "p1q1c",
+          "content": "En déduire les valeurs du couple $(x,y)$.",
+          "hint": "Pour chaque valeur de $z$ trouvée, identifiez sa partie réelle à $\\sqrt{x}$ et sa partie imaginaire à $\\sqrt{y}$, en n'oubliant pas la contrainte $(x,y)\\in\\mathbb{R}_+^2$."
+        }
+      ]
+    },
+    {
+      "id": "p1q2",
+      "content": "Résoudre dans $\\mathbb{R}_+^2$ le système $(S)$.",
+      "hint": "Reprenez les couples trouvés à la question précédente et vérifiez lesquels sont bien compatibles avec la contrainte de positivité."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe est rapporté à un repère orthonormé direct $(O;\\vec{u},\\vec{v})$. Soit $(U)$ le cercle de centre $O$ et de rayon $1$ et $A(a)$, $B(b)$ et $C(c)$ trois points du cercle $(U)$ deux à deux distincts."
+    },
+    {
+      "id": "p2q1",
+      "content": "Montrer que : $(\\forall z\\in\\mathbb{C}^*)$ ; $|z|=1\\Leftrightarrow\\bar{z}=\\dfrac{1}{z}$.",
+      "hint": "Partez de $|z|^2=z\\bar{z}$ et souvenez-vous que $|z|=1$ équivaut à $z\\bar z=1$."
+    },
+    {
+      "id": "p2q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "La droite passant par $A$ et parallèle à $(BC)$ coupe le cercle $(U)$ au point $P(p)$. Montrer que $p=\\dfrac{bc}{a}$.",
+          "hint": "Traduisez le parallélisme par un quotient réel $\\dfrac{p-a}{b-c}\\in\\mathbb{R}$, remplacez les conjugués grâce à la question 1, et utilisez que $P$ est sur le cercle ($|p|=1$)."
+        },
+        {
+          "id": "p2q2b",
+          "content": "La droite passant par $A$ et perpendiculaire à $(BC)$ coupe le cercle $(U)$ en $Q(q)$. Montrer que $q=-p$.",
+          "hint": "La perpendicularité se traduit par un quotient imaginaire pur ; comparez la démarche à celle de la question précédente en changeant réel en imaginaire pur."
+        },
+        {
+          "id": "p2q2c",
+          "content": "La droite passant par $C$ et parallèle à $(AB)$ coupe le cercle $(U)$ au point $R(r)$. Montrer que les deux droites $(PR)$ et $(OB)$ sont perpendiculaires.",
+          "hint": "Déterminez d'abord $r$ par analogie avec $p$ (en permutant les rôles des points), puis étudiez le quotient $\\dfrac{r-p}{b-0}$ pour voir s'il est imaginaire pur."
+        }
+      ]
+    }
+  ]
+}

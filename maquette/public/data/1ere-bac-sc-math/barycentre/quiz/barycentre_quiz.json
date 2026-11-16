@@ -1,0 +1,395 @@
+{
+  "questions": [
+    {
+      "id": "q1_def_existence",
+      "type": "mcq",
+      "category": "Cours - Définition",
+      "question": "Soit un système pondéré $\\{(A, \\alpha); (B, \\beta)\\}$. Quelle est la condition nécessaire et suffisante pour que le barycentre $G$ existe ?",
+      "options": [
+        {
+          "text": "$\\alpha \\times \\beta \\neq 0$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\alpha + \\beta \\neq 0$",
+          "isCorrect": true
+        },
+        {
+          "text": "$\\alpha = \\beta$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\alpha^2 + \\beta^2 > 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est la règle d'or du barycentre : il ne peut exister que si la somme de ses poids (masses) ne s'annule pas. Physiquement, on ne peut pas trouver le point d'équilibre d'un système dont la masse totale est nulle !"
+    },
+    {
+      "id": "q2_relation_vect",
+      "type": "mcq",
+      "category": "Application Directe",
+      "question": "Soit $G = Bar\\{(A, 1); (B, 3)\\}$. On a la relation $\\overrightarrow{AG} = k \\cdot \\overrightarrow{AB}$. Quelle est la valeur de $k$ ?",
+      "options": [
+        {
+          "text": "3/4",
+          "isCorrect": true
+        },
+        {
+          "text": "1/4",
+          "isCorrect": false
+        },
+        {
+          "text": "1/3",
+          "isCorrect": false
+        },
+        {
+          "text": "4/3",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La formule fondamentale $\\overrightarrow{AG} = \\frac{\\beta}{\\alpha + \\beta}\\overrightarrow{AB}$ est à connaître par cœur. Elle permet de placer G en partant de A. Ici, ça donne $3 / (1+3) = 3/4$."
+    },
+    {
+      "id": "q3_homogeneite",
+      "type": "true-false",
+      "category": "Propriété",
+      "question": "Si $G = Bar\\{(A, \\sqrt{2}); (B, 3\\sqrt{2})\\}$, alors $G$ est aussi le barycentre de $\\{(A, 1); (B, 3)\\}$.",
+      "isTrue": true,
+      "explanation": "Règle de l'homogénéité : on peut multiplier ou diviser tous les coefficients par un même nombre non nul sans changer la position du barycentre. C'est comme convertir des kilos en grammes : le point d'équilibre reste strictement au même endroit."
+    },
+    {
+      "id": "q4_isobarycentre",
+      "type": "mcq",
+      "category": "Vocabulaire",
+      "question": "Comment appelle-t-on le barycentre de $\\{(A, \\alpha); (B, \\alpha)\\}$ avec $\\alpha \\neq 0$ ?",
+      "options": [
+        {
+          "text": "Le centre de gravité",
+          "isCorrect": false
+        },
+        {
+          "text": "L'orthocentre",
+          "isCorrect": false
+        },
+        {
+          "text": "Le milieu du segment $[AB]$",
+          "isCorrect": true
+        },
+        {
+          "text": "L'origine du repère",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un isobarycentre ('iso' signifiant 'égal') est le point d'équilibre parfait entre des masses identiques. Pour deux points, c'est obligatoirement le milieu géométrique du segment."
+    },
+    {
+      "id": "q5_caracteristique",
+      "type": "mcq",
+      "category": "Propriété Caractéristique",
+      "question": "Soit $G = Bar\\{(A, \\alpha); (B, \\beta)\\}$. Pour tout point $M$ du plan, le vecteur $\\alpha\\overrightarrow{MA} + \\beta\\overrightarrow{MB}$ est égal à :",
+      "options": [
+        {
+          "text": "$\\overrightarrow{0}$",
+          "isCorrect": false
+        },
+        {
+          "text": "$(\\alpha + \\beta)\\overrightarrow{MG}$",
+          "isCorrect": true
+        },
+        {
+          "text": "$(\\alpha - \\beta)\\overrightarrow{MG}$",
+          "isCorrect": false
+        },
+        {
+          "text": "$\\overrightarrow{AB}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le théorème de réduction vectorielle est l'outil le plus puissant du chapitre. Il permet de fusionner plusieurs vecteurs partant d'un point $M$ quelconque vers les points de base, en un SEUL vecteur pointant vers $G$ (avec la somme des poids en coefficient)."
+    },
+    {
+      "id": "q6_coordonnees",
+      "type": "mcq",
+      "category": "Application - Coordonnées",
+      "question": "Dans un repère, on a $A(2; 4)$ et $B(-1; 1)$. Quelles sont les coordonnées de $G = Bar\\{(A, 2); (B, 1)\\}$ ?",
+      "options": [
+        {
+          "text": "$G(1; 3)$",
+          "isCorrect": true
+        },
+        {
+          "text": "$G(0.5; 2.5)$",
+          "isCorrect": false
+        },
+        {
+          "text": "$G(1; 2)$",
+          "isCorrect": false
+        },
+        {
+          "text": "$G(3; 5)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La formule des coordonnées est une simple moyenne pondérée. On multiplie l'abscisse de chaque point par son poids, et on divise le total par la somme des poids. $(2 \\times 2 + 1 \\times (-1)) / 3 = 1$."
+    },
+    {
+      "id": "q7_alignement",
+      "type": "true-false",
+      "category": "Géométrie",
+      "question": "Si $G = Bar\\{(A, \\alpha); (B, \\beta)\\}$, alors les points $A$, $B$ et $G$ sont toujours alignés.",
+      "isTrue": true,
+      "explanation": "C'est une propriété géométrique absolue : par définition de la relation vectorielle $\\overrightarrow{AG} = k\\overrightarrow{AB}$, les vecteurs sont colinéaires, et puisqu'ils partagent le point A, les points A, B et G sont inévitablement alignés sur la même droite."
+    },
+    {
+      "id": "q8_ensemble_cercle",
+      "type": "mcq",
+      "category": "Ligne de niveau",
+      "question": "Soit $A$ et $B$ deux points distincts. Quel est l'ensemble des points $M$ tels que $\\|\\overrightarrow{MA} + \\overrightarrow{MB}\\| = AB$ ?",
+      "options": [
+        {
+          "text": "La médiatrice de $[AB]$",
+          "isCorrect": false
+        },
+        {
+          "text": "Le cercle de centre $I$ (milieu de $[AB]$) et de rayon $AB/2$",
+          "isCorrect": true
+        },
+        {
+          "text": "Le cercle de diamètre $[AB]$",
+          "isCorrect": true
+        },
+        {
+          "text": "Une droite parallèle à $(AB)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Astuce classique : on réduit le membre de gauche avec le milieu $I$ (isobarycentre de $A (1)$ et $B (1)$). On obtient $\\|2\\overrightarrow{MI}\\| = AB$. Donc $2MI = AB$, soit $MI = AB/2$. L'ensemble des points à une distance fixe $R$ d'un point fixe $I$ est le cercle de centre $I$ et de rayon $R$."
+    },
+    {
+      "id": "q9_ensemble_mediatrice",
+      "type": "mcq",
+      "category": "Ligne de niveau",
+      "question": "Quel est l'ensemble des points $M$ vérifiant $\\|\\overrightarrow{MA} + \\overrightarrow{MB}\\| = \\|\\overrightarrow{MA} - \\overrightarrow{MB}\\|$ ?",
+      "options": [
+        {
+          "text": "Le cercle de diamètre $[AB]$",
+          "isCorrect": true
+        },
+        {
+          "text": "La médiatrice de $[AB]$",
+          "isCorrect": false
+        },
+        {
+          "text": "L'ensemble vide",
+          "isCorrect": false
+        },
+        {
+          "text": "Le point milieu $I$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Technique de réduction double : à gauche on a $\\|2\\overrightarrow{MI}\\|$, à droite l'expression $\\overrightarrow{MA} - \\overrightarrow{MB}$ donne $\\overrightarrow{BA}$ par la relation de Chasles. On a donc $2MI = \\|\\overrightarrow{BA}\\| = AB$, d'où $MI = AB/2$, qui définit le cercle de diamètre $[AB]$."
+    },
+    {
+      "id": "q10_3points_existence",
+      "type": "mcq",
+      "category": "Barycentre 3 points",
+      "question": "Pour quelle valeur de $x$ le barycentre du système $\\{(A, 2); (B, x); (C, 5)\\}$ n'existe-t-il PAS ?",
+      "options": [
+        {
+          "text": "-7",
+          "isCorrect": true
+        },
+        {
+          "text": "7",
+          "isCorrect": false
+        },
+        {
+          "text": "0",
+          "isCorrect": false
+        },
+        {
+          "text": "10",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La règle de non-nullité de la masse s'applique quel que soit le nombre de points. La somme totale des coefficients doit différer de zéro. Ici $2 + x + 5 = x + 7$. L'explosion mathématique se produit uniquement pour $x = -7$."
+    },
+    {
+      "id": "q11_associativite_methode",
+      "type": "ordering",
+      "category": "Méthode - Associativité",
+      "question": "On veut construire $G = Bar\\{(A, 1); (B, 1); (C, 2)\\}$. Remettez la méthode dans l'ordre.",
+      "items": [
+        {
+          "id": "1",
+          "text": "On identifie le sous-système $\\{(A, 1); (B, 1)\\}$."
+        },
+        {
+          "id": "2",
+          "text": "On construit $I$, isobarycentre de $(A, B)$ (milieu de $[AB]$)."
+        },
+        {
+          "id": "3",
+          "text": "On remplace $(A,1)$ et $(B,1)$ par $(I, 2)$ (somme des poids)."
+        },
+        {
+          "id": "4",
+          "text": "On construit $G$ comme le milieu de $[IC]$ car $G = Bar\\{(I, 2); (C, 2)\\}$."
+        }
+      ],
+      "correctOrder": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "explanation": "L'associativité (ou 'barycentre partiel') est la méthode incontournable pour construire un barycentre de 3 points. On regroupe deux points en leur barycentre partiel (affecté de la somme de leurs poids), puis on travaille avec le 3ème point."
+    },
+    {
+      "id": "q12_centre_gravite",
+      "type": "true-false",
+      "category": "Cours - 3 points",
+      "question": "Le centre de gravité d'un triangle $ABC$ est le barycentre de $\\{(A, 1); (B, 1); (C, 1)\\}$.",
+      "isTrue": true,
+      "explanation": "Dans un triangle $ABC$, l'isobarycentre des 3 sommets est exactement le point d'intersection des 3 médianes. Il est le point d'équilibre parfait si on pose des masses égales sur chaque sommet."
+    },
+    {
+      "id": "q13_4points_quadrilatere",
+      "type": "mcq",
+      "category": "Barycentre 4 points",
+      "question": "Soit $ABCD$ un parallélogramme. L'isobarycentre des 4 sommets est :",
+      "options": [
+        {
+          "text": "Le point $A$",
+          "isCorrect": false
+        },
+        {
+          "text": "Le milieu de $[AB]$",
+          "isCorrect": false
+        },
+        {
+          "text": "Le centre du parallélogramme (intersection des diagonales)",
+          "isCorrect": true
+        },
+        {
+          "text": "N'importe quel point du plan",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Grâce au théorème d'associativité, on peut regrouper $(A,1)$ et $(C,1)$ au centre des diagonales, et $(B,1)$ et $(D,1)$ au même centre. Le barycentre final se trouve donc exactement au centre de symétrie du parallélogramme."
+    },
+    {
+      "id": "q14_reduction_4pts",
+      "type": "mcq",
+      "category": "Calcul vectoriel",
+      "question": "Soit $G$ l'isobarycentre de $A, B, C, D$. Par quel nombre doit-on multiplier $\\overrightarrow{MG}$ pour égaler $\\overrightarrow{MA} + \\overrightarrow{MB} + \\overrightarrow{MC} + \\overrightarrow{MD}$ ?",
+      "options": [
+        {
+          "text": "4",
+          "isCorrect": true
+        },
+        {
+          "text": "1/4",
+          "isCorrect": false
+        },
+        {
+          "text": "0",
+          "isCorrect": false
+        },
+        {
+          "text": "2",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La réduction d'une somme vectorielle est proportionnelle à la somme des poids ! $1+1+1+1 = 4$. C'est extrêmement pratique pour simplifier des expressions complexes dans l'espace ou le plan."
+    },
+    {
+      "id": "q15_parametre_difficile",
+      "type": "mcq",
+      "category": "Réflexion - Paramètre",
+      "question": "Soit $G_m = Bar\\{(A, m); (B, 1-m)\\}$. Quel est le lieu géométrique de $G_m$ quand $m$ parcourt $\\mathbb{R}$ ?",
+      "options": [
+        {
+          "text": "Le segment $[AB]$",
+          "isCorrect": false
+        },
+        {
+          "text": "La droite $(AB)$",
+          "isCorrect": true
+        },
+        {
+          "text": "Le cercle de diamètre $[AB]$",
+          "isCorrect": false
+        },
+        {
+          "text": "Un demi-plan",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque la somme des poids est constante ($m + 1 - m = 1 \\neq 0$), le barycentre existe toujours. L'expression donnant $\\overrightarrow{AG_m} = (1-m)\\overrightarrow{AB}$ avec $m \\in \\mathbb{R}$ génère tous les vecteurs colinéaires possibles : c'est la droite entière."
+    },
+    {
+      "id": "q16_position_segment",
+      "type": "true-false",
+      "category": "Géométrie",
+      "question": "Si $\\alpha$ et $\\beta$ sont de même signe, alors le barycentre $G$ de $\\{(A, \\alpha); (B, \\beta)\\}$ appartient au segment $[AB]$.",
+      "isTrue": true,
+      "explanation": "Propriété physique intuitive : si deux masses sont positives (ou toutes les deux négatives), le point d'équilibre se trouve forcément physiquement ENTRE ces deux masses, donc sur le segment fermé $[AB]$."
+    },
+    {
+      "id": "q17_erreur_classique",
+      "type": "error-spotting",
+      "category": "Chasse à l'erreur",
+      "question": "Un élève veut simplifier $\\|2\\overrightarrow{MA} - \\overrightarrow{MB}\\|$. Trouvez l'erreur.",
+      "context": "Calcul pour tout point M.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Je cherche le barycentre $G$ de $\\{(A, 2); (B, -1)\\}$."
+        },
+        {
+          "id": "s2",
+          "text": "La somme des coefficients est $2 - 1 = 1 \\neq 0$, donc $G$ existe."
+        },
+        {
+          "id": "s3",
+          "text": "J'applique la propriété caractéristique : $2\\overrightarrow{MA} - \\overrightarrow{MB} = (2-1)\\overrightarrow{MG} = \\overrightarrow{MG}$."
+        },
+        {
+          "id": "s4",
+          "text": "Donc la norme est égale à $\\|\\overrightarrow{MG}\\| = 1$.",
+          "isError": true,
+          "correction": "La simplification vectorielle est juste ($\\overrightarrow{MG}$), mais dire que la norme est égale à 1 est faux. La norme vaut $MG$ (une longueur variable), pas 1."
+        }
+      ],
+      "explanation": "Le piège ultime des normes vectorielles ! Une fois la réduction effectuée $\\|\\overrightarrow{MG}\\|$, on passe aux distances géométriques (en enlevant les barres et la flèche). On obtient la distance $MG$. C'est une distance variable selon la position de M, pas du tout la constante 1."
+    },
+    {
+      "id": "q18_coordonnees_3pts",
+      "type": "mcq",
+      "category": "Application - 3 points",
+      "question": "Soit $A(1,0)$, $B(0,1)$, $C(2,2)$. Coordonnées de $G = Bar\\{(A,1); (B,1); (C,-1)\\}$ ?",
+      "options": [
+        {
+          "text": "$G(3, 1)$",
+          "isCorrect": true
+        },
+        {
+          "text": "$G(1, 1)$",
+          "isCorrect": false
+        },
+        {
+          "text": "$G(-1, 1)$",
+          "isCorrect": false
+        },
+        {
+          "text": "$G(3, 3)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Attention au signe négatif ! Somme des poids = $1+1-1=1$. Le calcul donne $x_G = \\frac{1(1) + 1(0) - 1(2)}{1} = -1$. De même $y_G = \\frac{1(0) + 1(1) - 1(2)}{1} = -1$. Le barycentre G atterrit au point de coordonnées $(-1, -1)$."
+    }
+  ]
+}

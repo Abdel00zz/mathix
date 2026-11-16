@@ -1,0 +1,42 @@
+{
+  "id": "ex-ens-app-27",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Applications et Fonctions — Symétrie fonctionnelle et injection/surjection",
+  "requiresRedaction": true,
+  "context": "On considère l'application : $f : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto \\dfrac{x(1-x)^2}{(1+x^2)^2}$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Vérifier que pour tout $x \\in \\mathbb{R}^*$ : $f\\!\\left(\\dfrac{1}{x}\\right) = f(x)$.",
+          "hint": "Calculez $f\\!\\left(\\frac{1}{x}\\right)$ en substituant $\\frac{1}{x}$ à $x$ et simplifiez. Mettez au même dénominateur."
+        },
+        {
+          "id": "sq1b",
+          "content": "L'application $f$ est-elle injective ? Justifier votre réponse.",
+          "hint": "La propriété $f\\!\\left(\\frac{1}{x}\\right) = f(x)$ avec $\\frac{1}{x} \\neq x$ pour $x \\neq \\pm 1$ fournit un contre-exemple direct à l'injectivité."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que pour tout $x \\in \\mathbb{R}$ : $f(x) \\leq \\dfrac{1}{4}$.",
+          "hint": "D'après le tableau de variation, le maximum de $f$ est $\\frac{1}{4}$, atteint en $x = 1$. Vous pouvez aussi montrer directement que $\\frac{1}{4} - f(x) \\geq 0$ en mettant au même dénominateur."
+        },
+        {
+          "id": "sq2b",
+          "content": "L'application $f$ est-elle surjective ? Justifier votre réponse.",
+          "hint": "D'après le tableau de variation, $f(x) \\leq \\frac{1}{4}$ et $f(x) \\geq 0$ pour tout $x$ (car $f(0) = 0$). Donc $f(\\mathbb{R}) \\neq \\mathbb{R}$ : $f$ n'est pas surjective."
+        }
+      ]
+    }
+  ]
+}

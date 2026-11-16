@@ -1,0 +1,543 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Qu'est-ce qu'une loi de composition interne $*$ sur un ensemble $E$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une application de $E \\times E$ dans $E$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Une application de $E$ dans $E$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Une application de $E \\times E$ dans $\\mathbb{R}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une relation d'équivalence sur $E$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une loi interne prend deux éléments de $E$ et renvoie un unique élément qui appartient obligatoirement à $E$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "La soustraction est une loi de composition interne sur l'ensemble des entiers naturels $\\mathbb{N}$.",
+      "isTrue": false,
+      "explanation": "Faux. Par exemple, $2 \\in \\mathbb{N}$ et $5 \\in \\mathbb{N}$, mais $2 - 5 = -3$, qui n'appartient pas à $\\mathbb{N}$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quand dit-on qu'une partie $F$ d'un ensemble $E$ est stable pour une loi interne $*$ définie sur $E$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Si pour tous $x, y \\in F$, on a $x * y \\in F$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Si pour tout $x \\in F$ et $y \\in E$, on a $x * y \\in F$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Si pour tous $x, y \\in E$, on a $x * y \\in F$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Si pour tous $x, y \\in F$, on a $x * y = y * x$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La stabilité signifie que la composition de deux éléments de $F$ reste à l'intérieur de $F$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Parmi les lois suivantes, laquelle n'est **pas** commutative ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La multiplication des matrices carrées dans $M_2(\\mathbb{R})$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "L'addition dans $\\mathbb{Z}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'intersection $\\cap$ dans l'ensemble des parties $\\mathcal{P}(E)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La multiplication dans $\\mathbb{C}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En général, pour deux matrices $A$ et $B$, le produit $A \\times B$ est différent de $B \\times A$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Que signifie l'associativité pour une loi $*$ sur $E$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pour tous $x, y, z \\in E$, $(x * y) * z = x * (y * z)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Pour tous $x, y \\in E$, $x * y = y * x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Il existe $e \\in E$ tel que $x * e = e * x = x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Pour tous $x, y, z \\in E$, $x * (y * z) = (x * y) * (x * z)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'associativité permet de déplacer les parenthèses lors de la composition de trois éléments ou plus.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q6",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Si un ensemble $E$ muni d'une loi $*$ admet un élément neutre $e$, alors cet élément neutre est unique.",
+      "isTrue": true,
+      "explanation": "C'est un théorème fondamental. Si $e$ et $e'$ sont deux neutres, alors $e = e * e' = e'$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Soit $(E, *)$ un ensemble avec un élément neutre $e$. Quand dit-on qu'un élément $x \\in E$ admet un symétrique $x'$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Si $x * x' = x' * x = e$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Si $x * x' = x' * x = x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Si $x * x' = e$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Si $x * e = x'$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le symétrique d'un élément est celui qui, composé avec lui (à gauche et à droite), donne l'élément neutre.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Si la loi $*$ est associative et possède un élément neutre, quelle est la formule du symétrique du produit $(x * y)'$ (en supposant $x$ et $y$ symétrisables) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y' * x'$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x' * y'$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x * y'$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x' * y$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le symétrique d'un composé est le composé des symétriques dans l'ordre inverse.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Qu'est-ce qu'un morphisme $f$ de $(E, *)$ dans $(F, \\top)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une application telle que pour tous $x, y \\in E$, $f(x * y) = f(x) \\top f(y)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Une application bijective de $E$ dans $F$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Une application telle que pour tous $x, y \\in E$, $f(x \\top y) = f(x) * f(y)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une application telle que $f(x * y) = x \\top y$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un morphisme \"transporte\" la structure de $E$ vers $F$ en préservant les opérations.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q10",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Si $f$ est un morphisme de $(E, *)$ dans $(F, \\top)$ et si $e$ est l'élément neutre de $E$, alors $f(e)$ est obligatoirement l'élément neutre de $F$.",
+      "isTrue": false,
+      "explanation": "Attention, $f(e)$ est l'élément neutre de l'image $f(E)$ munie de $\\top$, mais ce n'est pas nécessairement l'élément neutre de tout $F$ si $f$ n'est pas surjective.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Comment appelle-t-on un morphisme bijectif ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un isomorphisme",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un endomorphisme",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un automorphisme",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un homomorphisme",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un isomorphisme indique que les deux structures algébriques sont identiques à un renommage près des éléments.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Comment appelle-t-on un morphisme d'un ensemble $(E, *)$ dans lui-même $(E, *)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un endomorphisme",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un isomorphisme",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un automorphisme",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un épimorphisme",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le préfixe \"endo-\" signifie \"à l'intérieur\". Si cet endomorphisme est bijectif, on l'appelle un automorphisme.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q13",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour montrer qu'une partie $H$ est un sous-groupe d'un groupe $(G, *)$ :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Vérifier que $H$ est inclus dans $G$"
+        },
+        {
+          "id": "b",
+          "content": "Vérifier que $H$ est non vide (en général en montrant que l'élément neutre $e \\in H$)"
+        },
+        {
+          "id": "c",
+          "content": "Prendre deux éléments quelconques $x$ et $y$ dans $H$"
+        },
+        {
+          "id": "d",
+          "content": "Montrer que $x * y^{-1} \\in H$ (où $y^{-1}$ est le symétrique de $y$)"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "C'est la caractérisation classique d'un sous-groupe : non vide et stable par la loi $x * y^{-1}$.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q14",
+      "type": "error",
+      "category": "Méthode",
+      "prompt": "Identifier l'erreur dans cette démonstration pour montrer que $f(x) = e^x$ est un morphisme de $(\\mathbb{R}, +)$ dans $(\\mathbb{R}^*, \\times)$ :",
+      "context": "On veut montrer que $f$ préserve la structure.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Soient $x, y \\in \\mathbb{R}$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "On calcule $f(x + y) = e^{x + y}$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "D'après les propriétés de l'exponentielle, $e^{x + y} = e^x + e^y$.",
+          "isError": true,
+          "correction": "La propriété correcte est $e^{x + y} = e^x \\times e^y$."
+        },
+        {
+          "id": "s4",
+          "text": "Donc $f(x + y) = f(x) \\times f(y)$, ce qui prouve que $f$ est un morphisme.",
+          "isError": false
+        }
+      ],
+      "explanation": "L'exponentielle transforme une somme en produit, c'est précisément ce qui en fait un morphisme de $(\\mathbb{R}, +)$ vers $(\\mathbb{R}^*, \\times)$.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "On définit sur $\\mathbb{R}$ la loi $x * y = x + y - xy$. Quel est l'élément neutre de cette loi ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il n'y en a pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On cherche $e$ tel que $x * e = x$. $x + e - xe = x \\iff e(1 - x) = 0$. Pour que cela soit vrai pour tout $x$, il faut $e = 0$.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "category": "Application",
+      "ambiguity_note": "L'élément $x=1$ n'est pas symétrisable pour cette loi.",
+      "prompt": "Pour la loi $x * y = x + y - xy$ sur $\\mathbb{R}$ (de neutre $0$), quel est le symétrique d'un élément $x \\neq 1$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{x}{x - 1}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{x}{1 - x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On cherche $x'$ tel que $x * x' = 0$. $x + x' - x x' = 0 \\iff x'(1 - x) = -x \\iff x' = \\frac{-x}{1 - x} = \\frac{x}{x - 1}$.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q17",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "L'image d'un groupe par un morphisme de groupes est toujours un groupe.",
+      "isTrue": true,
+      "explanation": "Vrai. Les morphismes préservent toutes les propriétés de groupe (associativité, neutre, symétriques), donc l'image $f(G)$ forme un groupe avec la loi d'arrivée.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "category": "Synthèse",
+      "prompt": "Quelles sont les deux lois d'un anneau $(A, +, \\times)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$+$ est une loi de groupe abélien et $\\times$ est associative et distributive sur $+$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$+$ et $\\times$ sont toutes deux des lois de groupe abélien",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\times$ est une loi de groupe et $+$ est distributive sur $\\times$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+$ est associative et $\\times$ est commutative",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un anneau nécessite un groupe abélien pour la première loi, et l'associativité/distributivité pour la seconde.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q19",
+      "type": "boolean",
+      "category": "Synthèse",
+      "prompt": "L'ensemble des entiers relatifs $(\\mathbb{Z}, +, \\times)$ est un corps.",
+      "isTrue": false,
+      "explanation": "Faux. Dans $\\mathbb{Z}$, seul $1$ et $-1$ admettent un inverse pour la multiplication. Un corps nécessite que tout élément non nul soit inversible.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "category": "Dépassement",
+      "prompt": "Lequel de ces ensembles est un corps ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "(\\mathbb{Q}, +, \\times)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "(\\mathbb{N}, +, \\times)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "(\\mathbb{Z}, +, \\times)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "(M_2(\\mathbb{R}), +, \\times)",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Dans les rationnels, tout nombre non nul a un inverse (1/q). Ce n'est pas le cas pour les entiers ou les matrices (certaines matrices ont un déterminant nul).",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q21",
+      "type": "boolean",
+      "category": "Dépassement",
+      "prompt": "Un corps est nécessairement un anneau commutatif.",
+      "isTrue": false,
+      "explanation": "Pas nécessairement. Certains corps sont non commutatifs (comme les quaternions), bien qu'au lycée on ne travaille que sur des corps commutatifs.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "category": "Dépassement",
+      "prompt": "Quelle est la dimension de l'espace des matrices $M_2(\\mathbb{R})$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "4",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "2",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "1",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "8",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une base est formée des 4 matrices ayant un 1 à une position et 0 ailleurs.",
+      "difficulty": "hard"
+    }
+  ]
+}

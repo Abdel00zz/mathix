@@ -1,0 +1,113 @@
+{
+  "id": "ex-etude-fct-09",
+  "theme": "etude-fonctions",
+  "difficulty": "difficile",
+  "topic": "Analyse - Étude de fonction avec fonction auxiliaire",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "partieA",
+      "content": "On considère la fonction numérique $g$ définie sur $\\mathbb{R}$ par : $$g(x)=\\frac{1}{4}(x^3-3x-18)$$",
+      "type": "header"
+    },
+    {
+      "id": "qA1",
+      "content": "Étudier les variations de la fonction $g$.",
+      "hint": "Calculez la dérivée $g'(x)$ et étudiez son signe. Le polynôme dérivé est du second degré (incomplet), ses racines sont faciles à trouver."
+    },
+    {
+      "id": "qA2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que la courbe $\\mathscr{C}_g$ admet un unique point d'inflexion $A$ qu'on déterminera.",
+          "hint": "Calculez la dérivée seconde $g''(x)$. Le point d'inflexion se situe là où $g''(x)$ s'annule en changeant de signe."
+        },
+        {
+          "id": "b",
+          "content": "Écrire l'équation de la tangente $(T)$ à la courbe $\\mathscr{C}_g$ au point $A$.",
+          "hint": "Utilisez la formule de la tangente $y = g'(x_A)(x-x_A) + g(x_A)$."
+        }
+      ]
+    },
+    {
+      "id": "qA3",
+      "content": "Étudier les branches infinies de la courbe $\\mathscr{C}_g$.",
+      "hint": "Calculez les limites en $+\\infty$ et $-\\infty$. Comme c'est un polynôme de degré 3, étudiez la limite de $\\frac{g(x)}{x}$ pour déterminer la direction asymptotique."
+    },
+    {
+      "id": "qA4",
+      "content": "Construire $(T)$ et la courbe $\\mathscr{C}_g$ dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+      "hint": "Placez le point d'inflexion, la tangente, et les points correspondants aux extremums locaux avant de tracer la courbe."
+    },
+    {
+      "id": "partieB",
+      "content": "On considère la fonction numérique $f$ définie par : $$f(x)=\\frac{1}{3}\\left(\\frac{x^3+9}{x^2-1}\\right)$$",
+      "type": "header"
+    },
+    {
+      "id": "qB1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Déterminer $D$ l'ensemble de définition de $f$.",
+          "hint": "Identifiez les valeurs qui annulent le dénominateur $x^2-1$."
+        },
+        {
+          "id": "b",
+          "content": "Déterminer les limites de $f$ aux bornes de $D$.",
+          "hint": "Étudiez les limites en $+\\infty$, $-\\infty$, ainsi qu'à gauche et à droite de $-1$ et $1$."
+        }
+      ]
+    },
+    {
+      "id": "qB2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que pour tout $x \\in D$ : $$f'(x)=\\frac{4}{3} \\times \\frac{xg(x)}{(x^2-1)^2}$$",
+          "hint": "Dérivez $f(x)$ en utilisant la règle du quotient $\\left(\\frac{u}{v}\\right)'$. Factorisez le numérateur obtenu pour faire apparaître l'expression de $g(x)$."
+        },
+        {
+          "id": "b",
+          "content": "Dresser le tableau de variations de $f$.",
+          "hint": "Étudiez le signe de $f'(x)$. Le signe dépend du terme $x$ et du terme $g(x)$ (dont le signe a été déterminé en Partie A), car $(x^2-1)^2$ est toujours positif."
+        }
+      ]
+    },
+    {
+      "id": "qB3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Étudier les branches infinies de la courbe $\\mathscr{C}_f$.",
+          "hint": "Vous avez déjà les asymptotes verticales. Cherchez maintenant une asymptote oblique en l'infini."
+        },
+        {
+          "id": "b",
+          "content": "Étudier la position relative de la courbe $\\mathscr{C}_f$ et son asymptote oblique $(\\Delta)$.",
+          "hint": "Étudiez le signe de la différence $f(x) - y_{\\Delta}$."
+        }
+      ]
+    },
+    {
+      "id": "qB4",
+      "content": "Construire $\\mathscr{C}_f$ dans un repère orthonormé.",
+      "hint": "Tracez toutes les asymptotes (verticales et oblique) pour guider le tracé."
+    },
+    {
+      "id": "qB5",
+      "content": "Discuter, suivant les valeurs du paramètre réel $m$, le nombre de solutions de l'équation : $$x^3 - 3mx^2 + 3m + 9 = 0$$",
+      "hint": "Transformez l'équation pour isoler $m$ et obtenir une expression de la forme $f(x) = m$. La résolution devient alors graphique (intersection de la courbe avec une droite horizontale)."
+    },
+    {
+      "id": "qB6",
+      "content": "À partir de la courbe $\\mathscr{C}_f$, construire la courbe représentative de la fonction $h:x \\mapsto |f(x)|$.",
+      "hint": "Pour les parties où $f(x)$ est positif, la courbe ne change pas. Pour les parties où $f(x)$ est négatif, effectuez une symétrie axiale par rapport à l'axe des abscisses."
+    }
+  ]
+}

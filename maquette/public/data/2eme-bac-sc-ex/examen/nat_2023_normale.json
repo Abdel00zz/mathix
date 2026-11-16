@@ -1,0 +1,393 @@
+{
+  "id": "nat-2023-n",
+  "title": "Examen National 2023 — Session Normale",
+  "type": "national",
+  "year": 2023,
+  "session": "normale",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 4,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2023n-ex1",
+      "number": 1,
+      "theme": "geometrie-espace",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Produit vectoriel, sphère et plans tangents",
+      "context": "Dans l'espace rapporté à un repère orthonormé direct $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les points $A(0, 1, 4)$, $B(2, 1, 2)$, $C(2, 5, 0)$ et $\\Omega(3, 4, 4)$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = 4(2\\overrightarrow{i} + \\overrightarrow{j} + 2\\overrightarrow{k})$.",
+              "bareme": 0.25,
+              "hint": "Calculez $\\overrightarrow{AB} = (2, 0, -2)$ et $\\overrightarrow{AC} = (2, 4, -4)$, puis appliquez la formule du produit vectoriel composante par composante."
+            },
+            {
+              "id": "1b",
+              "content": "En déduire l'aire du triangle $ABC$ et la distance $d(B, (AC))$.",
+              "bareme": 0.5,
+              "hint": "L'aire vaut $\\frac{1}{2}\\|\\overrightarrow{AB} \\wedge \\overrightarrow{AC}\\|$. Pour $d(B, (AC))$, utilisez la relation $\\text{Aire} = \\frac{1}{2} \\cdot AC \\cdot d(B, (AC))$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soit $D$ le milieu du segment $[AC]$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Vérifier que $\\overrightarrow{D\\Omega} = \\dfrac{1}{4}(\\overrightarrow{AB} \\wedge \\overrightarrow{AC})$.",
+              "bareme": 0.25,
+              "hint": "Calculez les coordonnées de $D = \\left(\\frac{0+2}{2},\\, \\frac{1+5}{2},\\, \\frac{4+0}{2}\\right)$ puis celles de $\\overrightarrow{D\\Omega}$ et comparez."
+            },
+            {
+              "id": "2b",
+              "content": "En déduire que $d(\\Omega, (ABC)) = 3$.",
+              "bareme": 0.5,
+              "hint": "$\\overrightarrow{D\\Omega}$ est colinéaire au vecteur normal $\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$ et $D \\in (ABC)$, donc $d(\\Omega, (ABC)) = \\|\\overrightarrow{D\\Omega}\\|$."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Soit $(S)$ la sphère d'équation $x^2 + y^2 + z^2 - 6x - 8y - 8z + 32 = 0$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Déterminer le centre et le rayon de la sphère $(S)$.",
+              "bareme": 0.5,
+              "hint": "Complétez le carré pour chaque variable : $(x-3)^2 + (y-4)^2 + (z-4)^2 = 9 + 16 + 16 - 32$."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que le plan $(ABC)$ est tangent à la sphère $(S)$ en un point que l'on déterminera.",
+              "bareme": 0.5,
+              "hint": "Vérifiez que $d(\\text{centre}, (ABC)) = R$. Le point de tangence est le projeté orthogonal du centre sur le plan, c'est-à-dire le point $D$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "Soient $(Q_1)$ et $(Q_2)$ les deux plans parallèles à $(ABC)$ tels que chacun d'eux coupe $(S)$ suivant un cercle de rayon $\\sqrt{5}$.",
+          "subQuestions": [
+            {
+              "id": "4",
+              "content": "Déterminer une équation cartésienne pour chacun des deux plans $(Q_1)$ et $(Q_2)$.",
+              "bareme": 0.5,
+              "hint": "Un plan parallèle à $(ABC)$ a pour équation $2x + y + 2z + d = 0$. La condition sur le rayon du cercle donne $R^2 - d(\\Omega, \\text{plan})^2 = 5$, soit $d(\\Omega, \\text{plan}) = 2$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2023n-ex2",
+      "number": 2,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Nombres complexes — Forme trigonométrique, alignement et rotation",
+      "context": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A$, $B$, $C$ et $D$ d'affixes respectives $a = \\sqrt{2} + i\\sqrt{2}$, $b = 1 + \\sqrt{2} + i$, $c = \\bar{b}$ et $d = 2i$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1",
+              "content": "Écrire le nombre complexe $a$ sous forme trigonométrique.",
+              "bareme": 0.25,
+              "hint": "$a = \\sqrt{2}(1 + i)$. Or $|a| = 2$ et $1 + i = \\sqrt{2}\\,e^{i\\pi/4}$, donc $a = 2e^{i\\pi/4}$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Vérifier que $b - d = c$.",
+              "bareme": 0.25,
+              "hint": "Calculez $b - d = (1 + \\sqrt{2} + i) - 2i = 1 + \\sqrt{2} - i$ et comparez avec $c = \\bar{b} = 1 + \\sqrt{2} - i$."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que $(\\sqrt{2} + 1)(b - a) = b - d$ et en déduire que les points $A$, $B$ et $D$ sont alignés.",
+              "bareme": 0.5,
+              "hint": "Calculez $b - a = (1 + \\sqrt{2} + i) - (\\sqrt{2} + i\\sqrt{2}) = 1 + i(1 - \\sqrt{2})$. Pour l'alignement, montrez que $\\frac{b - a}{d - a}$ est un réel."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que $ac = 2b$.",
+              "bareme": 0.25,
+              "hint": "Calculez $ac = (\\sqrt{2} + i\\sqrt{2})(1 + \\sqrt{2} - i)$ en développant, puis comparez avec $2b = 2(1 + \\sqrt{2} + i)$."
+            },
+            {
+              "id": "3b",
+              "content": "En déduire que $2\\arg(b) \\equiv \\dfrac{\\pi}{4} \\;[2\\pi]$.",
+              "bareme": 0.5,
+              "hint": "De $ac = 2b$, passez aux arguments : $\\arg(a) + \\arg(c) = \\arg(b)$. Or $\\arg(c) = -\\arg(b)$ car $c = \\bar{b}$, donc $\\frac{\\pi}{4} = 2\\arg(b)$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "Soit $R$ la rotation de centre $O$ et d'angle $\\dfrac{\\pi}{4}$ qui transforme chaque point $M$ du plan d'affixe $z$ en un point $M'$ d'affixe $z'$.",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Montrer que $z' = \\dfrac{1}{2}az$.",
+              "bareme": 0.25,
+              "hint": "La rotation d'angle $\\frac{\\pi}{4}$ donne $z' = e^{i\\pi/4}\\,z$. Or $e^{i\\pi/4} = \\frac{a}{|a|} = \\frac{a}{2}$."
+            },
+            {
+              "id": "4b",
+              "content": "En déduire que $R(C) = B$ et que $R(A) = D$.",
+              "bareme": 0.5,
+              "hint": "Image de $C$ : $z'_C = \\frac{1}{2}ac = \\frac{1}{2}(2b) = b$. Image de $A$ : $z'_A = \\frac{1}{2}a^2 = \\frac{1}{2}(2i)(2) = 2i = d$."
+            },
+            {
+              "id": "4c",
+              "content": "Montrer que $\\dfrac{b - a}{c - a} = \\left(\\dfrac{\\sqrt{2} - 1}{2}\\right)a$, puis déduire une mesure de l'angle $(\\overrightarrow{AC}, \\overrightarrow{AB})$.",
+              "bareme": 0.5,
+              "hint": "Calculez $b - a$ et $c - a$, puis simplifiez le quotient. L'angle cherché est $\\arg\\!\\left(\\frac{b-a}{c-a}\\right) = \\arg(a) = \\frac{\\pi}{4}$ puisque $\\frac{\\sqrt{2}-1}{2} > 0$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2023n-ex3",
+      "number": 3,
+      "theme": "probabilites",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Probabilités — Urnes, arbre pondéré et variable aléatoire",
+      "context": "Une urne $U_1$ contient six boules portant les nombres : 0 ; 0 ; 1 ; 1 ; 1 ; 2 et une urne $U_2$ contient cinq boules portant les nombres : 1 ; 1 ; 1 ; 2 ; 2.\n\nOn suppose que les boules des deux urnes sont indiscernables au toucher.\n\nOn considère l'expérience aléatoire suivante :\n« On tire une boule de l'urne $U_1$ et on note le nombre $a$ qu'elle porte, puis on la met dans l'urne $U_2$, ensuite on tire une boule de l'urne $U_2$ et on note le nombre $b$ qu'elle porte ».\n\nOn considère les événements suivants :\n$A$ : « la boule tirée de l'urne $U_1$ porte le nombre 1 »\n$B$ : « le produit $ab$ est égal à 2 »",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Calculer $p(A)$ ; la probabilité de l'événement $A$.",
+              "bareme": 0.5,
+              "hint": "$U_1$ contient 6 boules dont 3 portent le nombre 1, donc $p(A) = \\frac{3}{6} = \\frac{1}{2}$."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que $p(B) = \\dfrac{1}{4}$.\n\n(On peut utiliser l'arbre des possibilités)",
+              "bareme": 0.5,
+              "hint": "Faites un arbre selon la valeur de $a$ (0, 1, 2). Pour chaque $a$, $U_2$ contient 6 boules après ajout. Identifiez les cas où $ab = 2$ : si $a = 1$ alors $b = 2$, si $a = 2$ alors $b = 1$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2",
+              "content": "Calculer $p(A/B)$ ; probabilité de l'événement $A$ sachant que l'événement $B$ est réalisé.",
+              "bareme": 0.75,
+              "hint": "Formule de Bayes : $p(A/B) = \\frac{p(A \\cap B)}{p(B)}$. Calculez $p(A \\cap B)$ : si $a = 1$, $U_2$ contient 4 boules « 1 » et 2 boules « 2 », donc $p(b=2 \\mid a=1) = \\frac{2}{6}$."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Soit $X$ la variable aléatoire qui associe à chaque résultat de l'expérience, le produit $ab$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que $p(X = 0) = \\dfrac{1}{3}$.",
+              "bareme": 0.25,
+              "hint": "$X = 0$ si et seulement si $a = 0$ (car $0 \\cdot b = 0$ quel que soit $b$). Or $p(a = 0) = \\frac{2}{6} = \\frac{1}{3}$."
+            },
+            {
+              "id": "3b",
+              "content": "Donner la loi de probabilité de $X$.\n\n(Remarquer que les valeurs prises par $X$ sont : 0 ; 1 ; 2 et 4)",
+              "bareme": 0.5,
+              "hint": "Pour chaque valeur de $X$ (0, 1, 2, 4), sommez les probabilités des branches de l'arbre correspondantes. Vérifiez que la somme des probabilités vaut 1."
+            },
+            {
+              "id": "3c",
+              "content": "On considère les événements :\n$M$ : « le produit $ab$ est pair non nul » et $N$ : « le produit $ab$ est égal à 1 ».\n\nMontrer que les événements $M$ et $N$ sont équiprobables.",
+              "bareme": 0.5,
+              "hint": "$p(M) = p(X = 2) + p(X = 4)$ et $p(N) = p(X = 1)$. Calculez chacune à partir de la loi de $X$ et comparez."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2023n-prob",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 11,
+      "topic": "Analyse — Étude complète d'une fonction, intégration par parties et suite récurrente",
+      "context": "On considère la fonction numérique $f$ définie sur $]0, +\\infty[$ par :\n$$f(x) = 2 - \\dfrac{2}{x} + (1 - \\ln x)^2$$\n\nSoit $(C_f)$ sa courbe représentative dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (unité : 1 cm).",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que pour tout $x \\in ]0, +\\infty[$ :\n$$f(x) = \\dfrac{3x - 2 - 2x\\ln x + x(\\ln x)^2}{x}$$",
+              "bareme": 0.25,
+              "hint": "Développez $(1 - \\ln x)^2 = 1 - 2\\ln x + (\\ln x)^2$ dans $f(x)$, puis réduisez au même dénominateur $x$."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que $\\displaystyle\\lim_{x \\to 0^+} x(\\ln x)^2 = 0$ et que $\\displaystyle\\lim_{x \\to +\\infty} \\dfrac{(\\ln x)^2}{x} = 0$.\n\n(On peut poser : $t = \\sqrt{x}$)",
+              "bareme": 0.5,
+              "hint": "Pour la première limite, posez $t = \\frac{1}{x}$ et utilisez $\\lim_{t \\to +\\infty} \\frac{(\\ln t)^2}{t} = 0$. Pour la seconde, posez $t = \\sqrt{x}$ et écrivez $\\frac{(\\ln x)^2}{x} = \\frac{4(\\ln t)^2}{t^2}$."
+            },
+            {
+              "id": "1c",
+              "content": "Déduire que $\\displaystyle\\lim_{x \\to 0^+} f(x) = -\\infty$, puis donner une interprétation géométrique du résultat.",
+              "bareme": 0.5,
+              "hint": "Dans $f(x) = 2 - \\frac{2}{x} + (1-\\ln x)^2$, le terme $-\\frac{2}{x} \\to -\\infty$ domine quand $x \\to 0^+$. L'interprétation géométrique est que la droite $x = 0$ est asymptote verticale (direction $-\\infty$)."
+            },
+            {
+              "id": "1d",
+              "content": "Calculer $\\displaystyle\\lim_{x \\to +\\infty} f(x)$, puis montrer que la courbe $(C_f)$ admet une branche parabolique de direction l'axe des abscisses au voisinage de $+\\infty$.",
+              "bareme": 0.75,
+              "hint": "Quand $x \\to +\\infty$ : $(1 - \\ln x)^2 \\to +\\infty$ donc $f(x) \\to +\\infty$. Pour la branche parabolique, montrez que $\\lim \\frac{f(x)}{x} = 0$ en utilisant $\\frac{(\\ln x)^2}{x} \\to 0$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2",
+              "content": "Montrer que pour tout $x \\in ]0, +\\infty[$ :\n$$f'(x) = \\dfrac{2(1 - x + x\\ln x)}{x^2}$$",
+              "bareme": 0.5,
+              "hint": "Dérivez terme par terme : $(2)' = 0$, $\\left(-\\frac{2}{x}\\right)' = \\frac{2}{x^2}$ et $\\left((1-\\ln x)^2\\right)' = 2(1-\\ln x)\\cdot\\left(-\\frac{1}{x}\\right)$. Réduisez au même dénominateur $x^2$."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "En exploitant le tableau de variation ci-dessous de la fonction dérivée $f'$ de $f$ sur $]0, +\\infty[$ :\n\n$$\\begin{array}{|c|ccccccc|}\\hline x & 0 & & 1 & & \\beta & & +\\infty \\\\ \\hline f'(x) & +\\infty & \\searrow & 0 & \\nearrow & f'(\\beta) & \\searrow & 0 \\\\ \\hline \\end{array}$$\n\n(On donne $\\beta \\approx 4{,}9$)",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Prouver que $f$ est strictement croissante sur $]0, +\\infty[$ puis dresser le tableau de variations de $f$.",
+              "bareme": 0.75,
+              "hint": "Le tableau montre $f'(x) \\geq 0$ sur $]0, +\\infty[$ avec $f'(x) = 0$ uniquement en $x = 1$. Comme $f'$ ne s'annule qu'en un point isolé et reste $\\geq 0$, $f$ est strictement croissante."
+            },
+            {
+              "id": "3b",
+              "content": "Donner le tableau de signe de la dérivée seconde $f''$ de la fonction $f$ sur $]0, +\\infty[$.",
+              "bareme": 0.5,
+              "hint": "Le signe de $f''$ se lit sur le sens de variation de $f'$ : quand $f'$ décroît, $f'' < 0$ ; quand $f'$ croît, $f'' > 0$. Les changements de signe sont en $x = 1$ et $x = \\beta$."
+            },
+            {
+              "id": "3c",
+              "content": "Déduire la concavité de $(C_f)$ en précisant les abscisses de ses deux points d'inflexion.",
+              "bareme": 0.75,
+              "hint": "$(C_f)$ est concave quand $f'' < 0$ et convexe quand $f'' > 0$. Les points d'inflexion sont aux changements de signe de $f''$, soit en $x = 1$ et $x = \\beta$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "La courbe $(C_g)$ ci-contre est la représentation graphique de la fonction $g : x \\mapsto f(x) - x$, qui s'annule en $\\alpha$ et $1$ ($\\alpha \\approx 0{,}3$).\n\nSoit $(\\Delta)$ la droite d'équation $y = x$.",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "À partir de la courbe $(C_g)$, déterminer le signe de la fonction $g$ sur $]0, +\\infty[$.",
+              "bareme": 0.75,
+              "hint": "Lisez le signe de $g$ sur le graphique : $g(x) < 0$ quand $(C_g)$ est sous l'axe des abscisses, $g(x) > 0$ quand la courbe est au-dessus. Repérez les zéros en $\\alpha$ et $1$."
+            },
+            {
+              "id": "4b",
+              "content": "Déduire que la droite $(\\Delta)$ est en dessous de $(C_f)$ sur l'intervalle $[\\alpha, 1]$ et au-dessus de $(C_f)$ sur les intervalles $]0, \\alpha]$ et $[1, +\\infty[$.",
+              "bareme": 0.75,
+              "hint": "$g(x) = f(x) - x$, donc $g(x) \\geq 0 \\Leftrightarrow f(x) \\geq x$ ($(C_f)$ au-dessus de $(\\Delta)$). Traduisez le signe de $g$ déterminé en 4a) en position relative."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "5",
+              "content": "Construire la courbe $(C_f)$ et la droite $(\\Delta)$ dans le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$.\n\n(On prend : $\\alpha \\approx 0{,}3$, $\\beta \\approx 4{,}9$ et $f(\\beta) \\approx 1{,}9$)",
+              "bareme": 1.5,
+              "hint": "Points clés : asymptote verticale $x = 0$ (direction $-\\infty$), $f(\\alpha) = \\alpha \\approx 0{,}3$, point d'inflexion en $(1, 1)$, second point d'inflexion en $(\\beta, f(\\beta)) \\approx (4{,}9 \\;; 1{,}9)$, puis tracez $y = x$ et respectez les positions relatives."
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "6a",
+              "content": "Vérifier que la fonction $x \\mapsto 2x - x\\ln x$ est une primitive de la fonction $x \\mapsto 1 - \\ln x$ sur $[\\alpha, 1]$.",
+              "bareme": 0.25,
+              "hint": "Dérivez $2x - x\\ln x$ : $(2x)' = 2$ et $(x\\ln x)' = \\ln x + 1$ (produit), donc la dérivée totale est $2 - \\ln x - 1 = 1 - \\ln x$."
+            },
+            {
+              "id": "6b",
+              "content": "En utilisant une intégration par parties, montrer que :\n$$\\int_\\alpha^1 (1 - \\ln x)^2\\,dx = 5(1 - \\alpha) + \\alpha(4 - \\ln\\alpha)\\ln\\alpha$$",
+              "bareme": 0.75,
+              "hint": "Posez $u = 1 - \\ln x$ et $v' = 1 - \\ln x$ (dont une primitive est $2x - x\\ln x$ d'après 6a). Appliquez la formule d'IPP $[uv]_\\alpha^1 - \\int_\\alpha^1 u'v\\,dx$."
+            },
+            {
+              "id": "6c",
+              "content": "Déduire en fonction de $\\alpha$ l'aire de la partie du plan délimitée par la courbe $(C_f)$, l'axe des abscisses et les droites d'équations $x = \\alpha$ et $x = 1$.",
+              "bareme": 1,
+              "hint": "L'aire est $\\int_\\alpha^1 |f(x)|\\,dx$. Comme $f(\\alpha) = \\alpha > 0$ et $f(1) = 1 > 0$, $f$ est positive sur $[\\alpha, 1]$. Séparez l'intégrale en $\\int_\\alpha^1 \\left(2 - \\frac{2}{x}\\right)dx + \\int_\\alpha^1 (1 - \\ln x)^2\\,dx$."
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "content": "Soit la suite numérique $(u_n)$ définie par $u_0 \\in ]\\alpha, 1[$ et la relation $u_{n+1} = f(u_n)$, pour tout $n \\in \\mathbb{N}$.",
+          "subQuestions": [
+            {
+              "id": "7a",
+              "content": "Montrer par récurrence que $\\alpha < u_n < 1$, pour tout $n$ de $\\mathbb{N}$.",
+              "bareme": 0.5,
+              "hint": "$f(\\alpha) = \\alpha$ et $f(1) = 1$ (car $g(\\alpha) = g(1) = 0$). Comme $f$ est strictement croissante, si $\\alpha < u_n < 1$ alors $\\alpha = f(\\alpha) < f(u_n) = u_{n+1} < f(1) = 1$."
+            },
+            {
+              "id": "7b",
+              "content": "Montrer que la suite $(u_n)$ est croissante.\n\n(On peut utiliser la question 4) b))",
+              "bareme": 0.5,
+              "hint": "$u_{n+1} - u_n = f(u_n) - u_n = g(u_n)$. Or d'après 4), $g(x) > 0$ sur $]\\alpha, 1[$, et $u_n \\in ]\\alpha, 1[$, donc $u_{n+1} > u_n$."
+            },
+            {
+              "id": "7c",
+              "content": "En déduire que la suite $(u_n)$ est convergente et calculer sa limite.",
+              "bareme": 0.5,
+              "hint": "$(u_n)$ est croissante et majorée par 1, donc convergente vers $\\ell \\in [\\alpha, 1]$. Par passage à la limite dans $u_{n+1} = f(u_n)$ : $\\ell = f(\\ell)$, soit $g(\\ell) = 0$, d'où $\\ell = 1$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

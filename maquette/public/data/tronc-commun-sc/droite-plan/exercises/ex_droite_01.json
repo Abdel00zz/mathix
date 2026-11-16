@@ -1,0 +1,31 @@
+{
+  "id": "ex-droite-plan-01",
+  "theme": "droite-plan",
+  "difficulty": "difficile",
+  "topic": "La Droite dans le Plan",
+  "context": "On considère les points $A(1, 2)$, $B(3, 5)$ et la droite $(\\Delta)$ d'équation $2x - y + 1 = 0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Équation de droite",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Déterminer une équation cartésienne de la droite $(AB)$.",
+          "hint": "Pour trouver l'équation d'une droite passant par A et B, un point $M(x,y)$ appartient à $(AB)$ si les vecteurs $\\overrightarrow{AM}$ et $\\overrightarrow{AB}$ sont colinéaires. Quelle est la traduction analytique de cette condition ?"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Intersection",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Déterminer les coordonnées du point d'intersection de $(AB)$ et $(\\Delta)$.",
+          "hint": "Le point d'intersection appartient aux deux droites. Ses coordonnées $(x,y)$ doivent donc vérifier simultanément les deux équations. Comment s'appelle un ensemble de deux équations à deux inconnues à résoudre ?"
+        }
+      ]
+    }
+  ]
+}

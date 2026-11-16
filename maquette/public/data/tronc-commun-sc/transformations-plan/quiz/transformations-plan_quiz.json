@@ -1,0 +1,228 @@
+{
+  "questions": [
+    {
+      "id": "q1_fond_homothetie_def",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Quelle égalité vectorielle définit correctement l'image $M'$ du point $M$ par l'homothétie $h$ de centre $\\Omega$ et de rapport $k$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overrightarrow{MM'} = k\\overrightarrow{\\Omega M}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\overrightarrow{\\Omega M} = k\\overrightarrow{\\Omega M'}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\overrightarrow{\\Omega M'} = k\\overrightarrow{\\Omega M}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\overrightarrow{\\Omega M'} = \\overrightarrow{\\Omega M} + k$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'homothétie dilate ou contracte la distance par rapport au centre absolu $\\Omega$. Le vecteur liant le centre à la nouvelle position ($M'$) est exactement $k$ fois le vecteur initial ($\\Omega M$)."
+    },
+    {
+      "id": "q2_fond_translation_def",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Si un point $M'$ est l'image du point $M$ par la translation de vecteur $\\overrightarrow{u}$, alors on a obligatoirement :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overrightarrow{MM'} = \\overrightarrow{u}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\overrightarrow{M'M} = \\overrightarrow{u}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\overrightarrow{OM'} = \\overrightarrow{OM} + \\overrightarrow{u}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le milieu de $[MM']$ est le vecteur $\\overrightarrow{u}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est la définition même de la translation : le déplacement point par point est strictement, en longueur, direction et sens, égal au vecteur de la translation."
+    },
+    {
+      "id": "q3_cons_conservation",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "L'homothétie et la translation conservent toutes les deux les distances à l'identique (isométries).",
+      "isTrue": false,
+      "explanation": "Seule la translation est une isométrie (conservation parfaite des distances $A'B' = AB$). L'homothétie de rapport $k$ multiplie systématiquement toutes les distances par la valeur absolue $|k|$."
+    },
+    {
+      "id": "q4_cons_homothetie_negatif",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Que fait géométriquement une homothétie de centre $\\Omega$ et de rapport $k = -2$  ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle divise la figure par deux sans l'inverser.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Elle double la taille de la figure en la gardant du même côté de $\\Omega$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Elle double la taille de la figure et la projette symétriquement de l'autre côté de $\\Omega$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Impossible, un rapport d'homothétie ne peut pas être strictement négatif.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le rapport $-2$ a deux effets : le coefficient 2 agrandit les longueurs (valeur absolue $|-2|$), mais le signe moins renverse le sens du vecteur depuis le centre. La figure 'passe de l'autre côté' et est la tête en bas (retournée)."
+    },
+    {
+      "id": "q5_cons_aires",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Une figure d'aire $10\\text{ cm}^2$ subit une homothétie de rapport $k = 3$. Quelle sera l'aire de la nouvelle figure ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$10\\text{ cm}^2$ (l'aire est conservée)",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$30\\text{ cm}^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$90\\text{ cm}^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$100\\text{ cm}^2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Règle fondamentale des aires et volumes : si on multiplie les distances par $k$, les aires sont multipliées par $k^2$ (et les volumes par $k^3$). Donc l'aire devient $10 \\times 3^2 = 90$."
+    },
+    {
+      "id": "q6_maitrise_barycentre",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Les élèves doutent des coefficients d'un barycentre après une transformation géométrique.",
+      "prompt": "Si $G$ est le barycentre des points pondérés $(A, 2)$ et $(B, -1)$, et que l'on applique une homothétie $h$ qui transforme $G \\to G'$, $A \\to A'$, $B \\to B'$, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$G'$ est le barycentre de $(A', 2)$ et $(B', -1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$G'$ n'est plus un barycentre car les distances ont changé",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$G'$ est le barycentre de $(A', 2k)$ et $(B', -1k)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$G'$ bascule au milieu exact des nouveaux points",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'homothétie conserve intégralement le barycentre avec les **mêmes coefficients exacts** de pondération. C'est une propriété surpuissante : l'équilibre global de la figure géométrique résiste à l'agrandissement ou à la réduction."
+    },
+    {
+      "id": "q7_maitrise_erreur_distance",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Identifier le calcul erroné de l'élève mesurant le nouveau périmètre d'un cercle après homothétie :",
+      "context": "Un cercle $\\mathcal{C}$ de périmètre $10\\pi$ est transformé par l'homothétie de centre $O$ et de rapport $k = -4$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "L'élève rappelle que l'homothétie modifie les longueurs selon le rapport.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Puisque le périmètre est une somme de distances (longueur 1D), il subit cette même multiplication.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "L'élève calcule $P' = k \\times P_{initial} = -4 \\times 10\\pi = -40\\pi$.",
+          "isError": true,
+          "correction": "Les distances et les périmètres sont des longueurs positives stricto sensu, elles sont donc multipliées par la VALEUR ABSOLUE du rapport d'homothétie : $|k| = 4$. Le périmètre vaut $40\\pi$."
+        },
+        {
+          "id": "s4",
+          "text": "L'élève s'étonne d'un périmètre négatif, ce qui physiquement n'existe pas.",
+          "isError": false
+        }
+      ],
+      "explanation": "Le signe moins du rapport ne fait qu'inverser la position des points par rapport au centre. Il n'a aucun impact sur l'imposante taille finale de l'objet, qui elle, grandit positivement de 4 fois son échelle initiale."
+    },
+    {
+      "id": "q8_depassement_ordre",
+      "type": "order",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Ordonnez les étapes pour prouver que deux droites $(AB)$ et $(CD)$ sont parallèles à l'aide d'une homothétie :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Identifier une homothétie h (son centre et son rapport) liant les points entre eux."
+        },
+        {
+          "id": "b",
+          "content": "Prouver formellement que h(A) = C et que h(B) = D (la droite (CD) est l'image de (AB))."
+        },
+        {
+          "id": "c",
+          "content": "Invoquer la propriété de conservation des homothéties : l'image d'une droite est une droite qui lui est strictement parallèle (ou confondue)."
+        },
+        {
+          "id": "d",
+          "content": "Conclure que (AB) est donc irrémédiablement parallèle à (CD)."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Savoir qu'une transformation génère une ombre géométrique parfaitement parallèle à sa matrice (la droite mère) est une technique de démonstration extrêmement appréciée dans les exercices de Tronc Commun."
+    }
+  ]
+}

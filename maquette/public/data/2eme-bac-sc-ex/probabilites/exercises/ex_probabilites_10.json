@@ -1,0 +1,21 @@
+{
+  "id": "proba-ex05",
+  "theme": "probabilites",
+  "difficulty": "facile",
+  "chapter": "03 - Variables aléatoires et loi binomiale",
+  "topic": "Loi binomiale - Dé à 6 faces répété 5 fois",
+  "requiresRedaction": true,
+  "context": "On lance un dé à 6 faces et on considère l'événement : A « Le dé a donné 3 ou 5 ».",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $p(A)$.",
+      "hint": "L'événement A correspond à 2 faces parmi 6 : $p(A) = \\frac{2}{6} = \\frac{1}{3}$."
+    },
+    {
+      "id": "q2",
+      "content": "On répète cette expérience 5 fois de suite. Quelle est la probabilité pour que l'événement A soit réalisé trois fois exactement ?",
+      "hint": "Il s'agit d'un schéma de Bernoulli répété $n = 5$ fois avec $p = \\frac{1}{3}$. Utilisez la formule : $P(X = k) = C_n^k \\cdot p^k \\cdot (1-p)^{n-k}$ avec $k = 3$."
+    }
+  ]
+}

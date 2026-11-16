@@ -1,0 +1,68 @@
+{
+  "id": "ex-complexes-13",
+  "topic": "Nombres complexes - Bac National 2009 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2009,
+  "examenSession": "Rattrapage",
+  "context": "Soit $u$ un nombre complexe différent de $(1-i)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Développer $(iu-1-i)^2$.",
+          "hint": "Traitez $(iu-1-i)$ comme $i u-(1+i)$ et utilisez l'identité $(A-B)^2=A^2-2AB+B^2$."
+        },
+        {
+          "id": "q1b",
+          "content": "Résoudre dans $\\mathbb{C}$ l'équation d'inconnue $z$ : $(E):z^2-2(u+1-i)z+2u^2-4i=0$.",
+          "hint": "Calculez $\\Delta=4(u+1-i)^2-4(2u^2-4i)$, développez et essayez de retrouver le développement de la question précédente (à un facteur près) pour simplifier."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Le plan complexe $(\\mathcal{P})$ est rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. Soient les points $A((1+i)u-2i)$, $B((1-i)u+2)$, $U(u)$ et $\\Omega(2-2i)$.",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Déterminer l'affixe du point $I$ le milieu du segment $[AB]$, puis déterminer le vecteur de la translation $t$ qui transforme $U$ en $I$.",
+          "hint": "Calculez $i=\\dfrac{a+b}{2}$ à partir des affixes de $A$ et $B$, factorisez-le, puis calculez le vecteur $\\overrightarrow{UI}$ d'affixe $i-u$."
+        },
+        {
+          "id": "q2b",
+          "content": "Soit $R$ la rotation de centre $\\Omega$ et d'angle $-\\dfrac{\\pi}{2}$. Montrer que $R(A)=B$.",
+          "hint": "Vérifiez que $b-\\omega=-i(a-\\omega)$ en remplaçant $a$, $b$, $\\omega$ par leurs expressions en fonction de $u$."
+        },
+        {
+          "id": "q2c",
+          "content": "En déduire que les droites $(\\Omega I)$ et $(AB)$ sont perpendiculaires.",
+          "hint": "$\\Omega$ étant centre d'une rotation de $-\\pi/2$ envoyant $A$ sur $B$, $\\Omega$ est équidistant de $A$ et $B$ et voit $[AB]$ sous un angle droit ; comme $I$ est le milieu de $[AB]$, que dire de $(\\Omega I)$ par rapport à $(AB)$ ?"
+        },
+        {
+          "id": "q2d",
+          "content": "À partir du point $U$, expliquer une méthode de construction des points $A$ et $B$.",
+          "hint": "Utilisez la translation trouvée en 2a) pour construire $I$ à partir de $U$, puis exploitez la perpendicularité (question 2c)) et la relation de rotation (question 2b)) pour placer $A$ et $B$ de part et d'autre de $I$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "On pose $u=(1+i)a-2i$ tel que $a\\in\\mathbb{R}$.",
+      "subQuestions": [
+        {
+          "id": "q3a",
+          "content": "Déterminer les affixes des vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AU}$ en fonction de $a$.",
+          "hint": "Remplacez $u$ par $(1+i)a-2i$ dans les expressions de $a_{\\text{affixe de }A}$, $b$, $u$, puis calculez $b-a_A$ et $u-a_A$."
+        },
+        {
+          "id": "q3b",
+          "content": "En déduire que les points $A$, $B$ et $U$ sont alignés.",
+          "hint": "Montrez que le quotient des deux affixes de vecteurs trouvées à la question précédente est réel."
+        }
+      ]
+    }
+  ]
+}

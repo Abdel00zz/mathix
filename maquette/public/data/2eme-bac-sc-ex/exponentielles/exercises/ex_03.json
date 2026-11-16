@@ -1,0 +1,145 @@
+{
+  "id": "ex-exp-003",
+  "theme": "exponentielles",
+  "difficulty": "facile",
+  "topic": "Analyse - Fonctions exponentielles",
+  "context": "Soit $g$ la fonction numérique définie sur $\\mathbb{R}$ par : $$g(x) = e^x - x^2 + 3x - 1$$\n\nLe tableau de variations de $g$ est donné ci-dessous :\n$$\\begin{array}{|c|ccc|} \\hline x & -\\infty & & +\\infty \\\\ \\hline g'(x) & & + & \\\\ \\hline & & & +\\infty \\\\ g(x) & & \\nearrow & \\\\ & -\\infty & & \\\\ \\hline \\end{array}$$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "pI",
+      "content": "",
+      "type": "header"
+    },
+    {
+      "id": "q1",
+      "content": "Vérifier que $g(0) = 0$.",
+      "hint": "Rappelez-vous que $e^0 = 1$. Remplacez simplement $x$ par $0$ dans l'expression de $g(x)$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer le signe de $g(x)$ sur chacun des intervalles $]-\\infty; 0]$ et $[0; +\\infty[$.",
+      "hint": "Utilisez le sens de variation de $g$ et le fait que $g(0)=0$. Si $x < 0$, comment se compare $g(x)$ à $g(0)$ ? Et si $x > 0$ ?"
+    },
+    {
+      "id": "pII",
+      "content": "",
+      "type": "header"
+    },
+    {
+      "id": "q3",
+      "content": "Soit $f$ la fonction numérique définie sur $\\mathbb{R}$ par : $f(x) = (x^2 - x)e^{-x} + x$ et $(C)$ sa courbe représentative.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Vérifier que $f(x) = \\frac{x^2}{e^x} - \\frac{x}{e^x} + x$ pour tout $x$ de $\\mathbb{R}$ puis montrer que $\\displaystyle \\lim_{x \\to +\\infty} f(x) = +\\infty$.",
+          "hint": "\\method Pour la limite, utilisez la limite de référence $\\lim_{X \\to +\\infty} \\frac{X^n}{e^X} = 0$. Appliquez-la à chaque terme de la fraction."
+        },
+        {
+          "id": "sq3b",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} (f(x) - x)$ puis en déduire que $(C)$ admet une asymptote $(D)$ au voisinage de $+\\infty$ d'équation $y = x$.",
+          "hint": "Calculez la différence $f(x)-x$. Quelle est la limite de cette différence en $+\\infty$ ? Comment interpréter géométriquement ce résultat ?"
+        },
+        {
+          "id": "sq3c",
+          "content": "Vérifier que $f(x) = \\frac{x^2 - x + xe^x}{e^x}$ pour tout $x$ de $\\mathbb{R}$ puis calculer $\\displaystyle \\lim_{x \\to -\\infty} f(x)$.",
+          "hint": "Mettez l'expression de $f(x)$ au même dénominateur $e^x$. Analysez ensuite la limite du numérateur et du dénominateur lorsque $x \\to -\\infty$."
+        },
+        {
+          "id": "sq3d",
+          "content": "Montrer que $\\displaystyle \\lim_{x \\to -\\infty} \\frac{f(x)}{x} = -\\infty$ et interpréter géométriquement le résultat.",
+          "hint": "Calculez le rapport $\\frac{f(x)}{x}$ en utilisant l'expression initiale de $f(x)$. Utilisez la limite de référence pour $xe^{-x}$ en $-\\infty$. Concluez sur la nature de la branche infinie."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Montrer que $f(x) - x$ et $x^2 - x$ ont le même signe pour tout $x$ de $\\mathbb{R}$.",
+          "hint": "Calculez la différence $f(x)-x$. Quel est le signe de $e^{-x}$ ? Le signe de la différence ne dépend donc que du signe d'un polynôme simple."
+        },
+        {
+          "id": "sq4b",
+          "content": "En déduire que $(C)$ est au-dessus de $(D)$ sur chacun des intervalles $]-\\infty; 0]$ et $[1; +\\infty[$, et en dessous de $(D)$ sur l'intervalle $[0; 1]$.",
+          "hint": "Utilisez le résultat précédent. Pour quel intervalle le polynôme $x^2-x$ est-il positif ? négatif ? Traduisez cela en termes de position de la courbe par rapport à l'asymptote."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq5a",
+          "content": "Montrer que $f'(x) = g(x)e^{-x}$ pour tout $x$ de $\\mathbb{R}$.",
+          "hint": "Dérivez le terme $(x^2-x)e^{-x}$ en utilisant la règle du produit. N'oubliez pas d'ajouter la dérivée de $x$. Mettez ensuite $e^{-x}$ en facteur et comparez l'expression obtenue avec $g(x)e^{-x}$."
+        },
+        {
+          "id": "sq5b",
+          "content": "En déduire que la fonction $f$ est décroissante sur $]-\\infty; 0]$ et croissante sur $[0; +\\infty[$.",
+          "hint": "Le signe de $f'(x)$ est le même que celui de $g(x)$. Utilisez les résultats sur le signe de $g(x)$ de la Partie I pour en déduire les variations de $f$."
+        },
+        {
+          "id": "sq5c",
+          "content": "Dresser le tableau de variations de $f$.",
+          "hint": "Rassemblez les informations sur les variations et les limites pour construire le tableau. N'oubliez pas de calculer la valeur du minimum."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq6a",
+          "content": "Montrer que $f''(x) = (x^2 - 5x + 4)e^{-x}$ pour tout $x$ de $\\mathbb{R}$.",
+          "hint": "Dérivez $f'(x) = g(x)e^{-x}$ en utilisant la règle du produit. Vous aurez besoin de $g'(x)$ qui est donné dans le tableau de la Partie I. Factorisez par $e^{-x}$ et simplifiez."
+        },
+        {
+          "id": "sq6b",
+          "content": "En déduire que la courbe $(C_f)$ admet deux points d'inflexion d'abscisses respectives $1$ et $4$.",
+          "hint": "Un point d'inflexion est un point où la dérivée seconde s'annule en changeant de signe. Résolvez $f''(x)=0$ et étudiez le signe de $f''$ de part et d'autre des racines."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "content": "Construire $(D)$ et $(C)$ dans le même repère $(O;\\overrightarrow{i},\\overrightarrow{j})$ (on prend $f(4) \\simeq 4.2$).",
+      "hint": "\\step Tracez l'asymptote oblique et indiquez la direction de la branche parabolique. \\step Placez le point du minimum, les points d'intersection avec l'asymptote et les points d'inflexion. \\step Esquissez la courbe en respectant les variations et la position relative."
+    },
+    {
+      "id": "q8",
+      "content": "Montrer que la fonction $H : x \\mapsto (x^2 + 2x + 2)e^x$ est une primitive de la fonction $h : x \\mapsto (x+2)^2 e^x$ sur $\\mathbb{R}$.",
+      "hint": "Pour vérifier une primitive, il suffit de la dériver. Calculez $H'(x)$ en utilisant la règle du produit $(uv)'$ et comparez avec $h(x)$."
+    },
+    {
+      "id": "pIII",
+      "content": "",
+      "type": "header"
+    },
+    {
+      "id": "q9",
+      "content": "Soit $(u_n)$ la suite numérique définie par : $u_0 = \\frac{1}{2}$ et $u_{n+1} = f(u_n)$ pour tout $n$ de $\\mathbb{N}$.",
+      "subQuestions": [
+        {
+          "id": "sq9a",
+          "content": "Montrer par récurrence que $0 \\leq u_n \\leq 1$ pour tout $n$ de $\\mathbb{N}$.",
+          "hint": "\\method Procédez par récurrence. Pour l'hérédité, si $0 \\le u_n \\le 1$, utilisez le sens de variation de $f$ sur l'intervalle $[0, 1]$ pour encadrer $f(u_n)$."
+        },
+        {
+          "id": "sq9b",
+          "content": "Montrer que la suite $(u_n)$ est décroissante.",
+          "hint": "Pour étudier la monotonie, étudiez le signe de $u_{n+1} - u_n = f(u_n) - u_n$. Utilisez le résultat de la question sur la position relative de $(C_f)$ et de la droite $(D)$ sur l'intervalle $[0, 1]$."
+        },
+        {
+          "id": "sq9c",
+          "content": "En déduire que $(u_n)$ est convergente et déterminer sa limite.",
+          "hint": "Quelle est la conclusion pour une suite décroissante et minorée ? Sa limite $\\ell$ doit être un point fixe de $f$. Quelles sont les solutions de $f(x)=x$ ? Choisissez la bonne limite en tenant compte de la monotonie de la suite."
+        }
+      ]
+    }
+  ]
+}

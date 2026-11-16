@@ -1,0 +1,140 @@
+{
+  "id": "ex-log-001",
+  "theme": "logarithmes",
+  "difficulty": "facile",
+  "topic": "Analyse - Logarithmes",
+  "requiresRedaction": true,
+  "sessionDate": "2026-01-14T20:00:00.000Z",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $D_f$ l'ensemble de définition de la fonction $f(x) = \\begin{cases} \\frac{x}{\\ln x} & \\text{si } x > 0, x \\neq 1 \\\\ 0 & \\text{si } x = 0 \\end{cases}$.",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "",
+          "hint": "On rappelle que $\\ln x$ est défini pour $x > 0$ et que $\\ln x = 0 \\Leftrightarrow x = 1$. Pensez aussi à la définition de $f$ en $0$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que $f$ est continue à droite en $0$.",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "",
+          "hint": "Que valent $\\lim_{x \\to 0^+} x$ et $\\lim_{x \\to 0^+} \\ln x$ ? Comparez avec $f(0)$ pour conclure."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Étudier la dérivabilité de $f$ à droite en $0$ et interpréter géométriquement le résultat.",
+      "subQuestions": [
+        {
+          "id": "sq3",
+          "content": "",
+          "hint": "Pensez à utiliser la définition du nombre dérivé : $f'_d(0) = \\lim_{x \\to 0^+} \\frac{f(x) - f(0)}{x - 0}$. Quelle interprétation géométrique si cette limite existe ?"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to 1} f(x)$ et interpréter les résultats.",
+      "subQuestions": [
+        {
+          "id": "sq4",
+          "content": "",
+          "hint": "Étudiez les limites à gauche et à droite séparément. Quel est le signe de $\\ln x$ pour $x < 1$ ? Et pour $x > 1$ ?"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} f(x)$ et $\\displaystyle \\lim_{x \\to +\\infty} \\frac{f(x)}{x}$ puis interpréter géométriquement les résultats.",
+      "subQuestions": [
+        {
+          "id": "sq5",
+          "content": "",
+          "hint": "Utilisez la limite de référence $\\lim_{X \\to +\\infty} \\frac{\\ln X}{X} = 0$. Comment l'utiliser pour trouver la limite de $\\frac{x}{\\ln x}$ ? Pour $\\frac{f(x)}{x}$, simplifiez d'abord l'expression."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq6a",
+          "content": "Montrer que $(\\forall x \\in \\mathbb{R}^*_+ \\setminus \\{1\\}) : f'(x) = \\dfrac{\\ln x - 1}{(\\ln x)^2}$.",
+          "hint": "Pensez à appliquer la formule $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$. N'oubliez pas que $(\\ln x)' = \\frac{1}{x}$."
+        },
+        {
+          "id": "sq6b",
+          "content": "Étudier le signe de $f'(x)$ et dresser le tableau de variations de $f$.",
+          "hint": "Que remarquez-vous concernant le signe du dénominateur ? Résolvez $\\ln x - 1 > 0$ pour trouver où $f$ est croissante."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq7a",
+          "content": "Montrer que $(\\forall x \\in \\mathbb{R}^*_+ \\setminus \\{1\\}) : f''(x) = \\dfrac{2 - \\ln x}{x(\\ln x)^3}$.",
+          "hint": "Appliquez à nouveau la formule du quotient sur $f'(x)$. Simplifiez ensuite pour retrouver l'expression demandée."
+        },
+        {
+          "id": "sq7b",
+          "content": "Étudier la concavité de $(C_f)$ et montrer qu'elle admet un point d'inflexion dont on déterminera les coordonnées.",
+          "hint": "On rappelle que la concavité dépend du signe de $f''(x)$. Résolvez $f''(x) = 0$ et étudiez le changement de signe pour trouver le point d'inflexion."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq8a",
+          "content": "Résoudre dans $D_f$ l'équation $f(x) = x$.",
+          "hint": "Simplifiez l'équation $\\frac{x}{\\ln x} = x$ en divisant par $x$ (pour $x \\neq 0$). Que vaut $\\ln x$ à la solution ?"
+        },
+        {
+          "id": "sq8b",
+          "content": "En déduire la position relative de $(C_f)$ par rapport à la droite $(\\Delta)$ d'équation $y = x$.",
+          "hint": "Étudiez le signe de $f(x) - x = \\frac{x}{\\ln x} - x$. Mettez $x$ en facteur et analysez selon les intervalles."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "content": "Soit $h$ la restriction de $f$ sur l'intervalle $I = [e, +\\infty[$.",
+      "subQuestions": [
+        {
+          "id": "sq9a",
+          "content": "Montrer que la fonction $h$ admet une fonction réciproque $h^{-1}$ définie sur un intervalle $J$ à déterminer.",
+          "hint": "On rappelle qu'une fonction continue et strictement monotone sur un intervalle admet une bijection réciproque. Vérifiez ces conditions sur $I = [e, +\\infty[$."
+        },
+        {
+          "id": "sq9b",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} \\frac{h^{-1}(x)}{x}$.",
+          "hint": "Pensez à utiliser la symétrie par rapport à la droite $y = x$ entre les courbes de $h$ et $h^{-1}$. Que devient la branche parabolique de $h$ ?"
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "content": "Construire $(\\Delta)$, $(C_f)$ et $(C_{h^{-1}})$ dans le repère $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+      "subQuestions": [
+        {
+          "id": "sq10",
+          "content": "",
+          "hint": "Pour construire les courbes, procédez par étapes :\n\\begin{itemize}\n\\item Tracer l'asymptote verticale $x = 1$\n\\item Tracer la droite $(\\Delta) : y = x$\n\\item Placer le point minimum $A(e, e)$ avec sa tangente horizontale\n\\item Esquisser $(C_f)$ avec ses deux branches séparées par $x = 1$\n\\item Tracer $(C_{h^{-1}})$ comme symétrique de la branche $[e, +\\infty[$ par rapport à $(\\Delta)$\n\\end{itemize}\n"
+        }
+      ]
+    }
+  ]
+}

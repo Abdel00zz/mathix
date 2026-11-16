@@ -1,0 +1,63 @@
+{
+  "id": "ex-complexes-11",
+  "topic": "Nombres complexes - Bac National 2016 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2016,
+  "examenSession": "Normale",
+  "context": "Le plan complexe est rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. On considère dans le plan complexe deux points $M_1$ et $M_2$ tels que les points $O$, $M_1$ et $M_2$ sont distincts deux à deux et non alignés. Soient $z_1$ et $z_2$ les affixes respectives des points $M_1$ et $M_2$ et soit $M$ le point dont l'affixe $z$ vérifie la relation : $z=\\dfrac{2z_1z_2}{z_1+z_2}$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Montrer que : $\\dfrac{z_1-z}{z_2-z}\\times\\dfrac{z_2}{z_1}=-1$.",
+          "hint": "Remplacez $z$ par $\\dfrac{2z_1z_2}{z_1+z_2}$, mettez $z_1-z$ et $z_2-z$ au même dénominateur $(z_1+z_2)$, simplifiez chaque expression avant de faire le produit."
+        },
+        {
+          "id": "q1b",
+          "content": "En déduire que le point $M$ appartient au cercle circonscrit au triangle $OM_1M_2$.",
+          "hint": "Réécrivez l'égalité précédente sous la forme $\\dfrac{z_1-z}{z_2-z}=-\\dfrac{z_1}{z_2}=-\\dfrac{0-z_1}{0-z_2}$ et reconnaissez un birapport de $M,O,M_1,M_2$ constant réel négatif, caractéristique de la cocyclicité (angles inscrits supplémentaires)."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que si $z_2=\\overline{z_1}$ alors $M$ appartient à l'axe des réels.",
+      "hint": "Remplacez $z_2$ par $\\overline{z_1}$ dans l'expression de $z$ et montrez que le résultat obtenu est égal à son propre conjugué."
+    },
+    {
+      "id": "q3",
+      "content": "On suppose que $M_2$ est l'image de $M_1$ par la rotation de centre $O$ et de mesure d'angle $\\alpha$ où $\\alpha$ est un réel de l'intervalle $]0,\\pi[$.",
+      "subQuestions": [
+        {
+          "id": "q3a",
+          "content": "Calculer $z_2$ en fonction de $z_1$ et de $\\alpha$.",
+          "hint": "Une rotation de centre $O$ et d'angle $\\alpha$ transforme $z_1$ en $z_2=e^{i\\alpha}z_1$."
+        },
+        {
+          "id": "q3b",
+          "content": "Montrer que le point $M$ appartient à la médiatrice du segment $[M_1M_2]$.",
+          "hint": "Un point appartient à la médiatrice de $[M_1M_2]$ si et seulement si il est équidistant de $M_1$ et $M_2$ ; calculez $z-z_1$ et $z-z_2$ à partir de l'expression de $z$ et comparez leurs modules (pensez à factoriser par $z_2$ et $z_1$ respectivement, sachant $|z_1|=|z_2|$)."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Soit $\\theta$ un réel donné de l'intervalle $]0,\\pi[$. On suppose que $z_1$ et $z_2$ sont les deux solutions de l'équation : $6t^2-\\left(e^{i\\theta}+1\\right)t+\\left(e^{i\\theta}-1\\right)=0$.",
+      "subQuestions": [
+        {
+          "id": "q4a",
+          "content": "Sans calculer $z_1$ et $z_2$ vérifier que : $z=2\\dfrac{e^{i\\theta}-1}{e^{i\\theta}+1}$.",
+          "hint": "Utilisez les relations coefficients-racines pour $z_1+z_2$ et $z_1z_2$, puis reportez-les dans $z=\\dfrac{2z_1z_2}{z_1+z_2}$ sans jamais calculer $z_1$ ou $z_2$ séparément."
+        },
+        {
+          "id": "q4b",
+          "content": "Donner en fonction de $\\theta$, la forme trigonométrique du nombre complexe $z$.",
+          "hint": "Factorisez $e^{i\\theta}-1$ et $e^{i\\theta}+1$ par l'angle moitié $e^{i\\theta/2}$ pour faire apparaître des sinus et cosinus, puis simplifiez le quotient."
+        }
+      ]
+    }
+  ]
+}

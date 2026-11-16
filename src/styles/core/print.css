@@ -1,0 +1,18 @@
+.print-only { display: none; }
+
+@media print {
+  .print-hide, #root { display: none !important; }
+  .print-only { display: block !important; }
+  body > .print-only { position: static !important; width: auto !important; max-width: none !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body, html { background: white !important; background-color: white !important; }
+  .print-only *:not([style*="border"]) { box-shadow: none !important; }
+  .print-only { background: var(--print-paper, white) !important; background-color: var(--print-paper, white) !important; }
+  .relative.rounded-3xl, .relative.rounded-2xl { background: white !important; background-color: white !important; background-image: none !important; border: none !important; box-shadow: none !important; }
+  .print-footer-clean { box-shadow: none !important; }
+  .print-sheet-footer { position: fixed !important; }
+  .print-exercise[data-page-break='true'] { break-after: page; page-break-after: always; }
+  .print-exercise:last-child { break-after: auto; page-break-after: auto; }
+}
+
+@page { size: A4; margin: 14mm 14mm 18mm; }

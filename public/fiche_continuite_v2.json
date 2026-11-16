@@ -1,0 +1,603 @@
+{
+  "header": {
+    "title": "Continuité et fonction réciproque · V2",
+    "subtitle": "Comprendre les outils, reconnaître leurs usages et compléter les applications",
+    "context": "2BAC Sciences · Fiche de révision"
+  },
+  "sections": [
+    {
+      "id": "cont-v2-introduction",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Comment \\mathqst{utiliser les outils de cette fiche} ?",
+          "content": "Pour chaque notion, complète les passages masqués du résultat, puis repère ce qu'il permet de faire. Complète ensuite ceux de l'exercice avant de les révéler. L'objectif est de reconnaître l'outil adapté et de vérifier ses conditions d'utilisation."
+        },
+        {
+          "type": "text",
+          "content": "Le chapitre relie la continuité à l'image d'un intervalle et aux valeurs intermédiaires. Ces outils permettent d'établir l'existence et l'unicité d'une solution, de l'approcher par dichotomie, puis d'étudier une fonction réciproque."
+        }
+      ]
+    },
+    {
+      "id": "cont-v2-point-intervalle",
+      "category": "course",
+      "title": "Comment étudier la continuité en un point et sur un intervalle ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Étudier la continuité consiste à comparer le comportement d'une fonction près d'un point à sa valeur en ce point. Aux bornes d'un intervalle, on examine seulement le côté où la fonction est définie."
+        },
+        {
+          "uid": "cont-v2-outil-01",
+          "type": "text",
+          "title": "Quand une fonction est-elle \\mathqst{continue en un point} ?",
+          "content": "Soit $f$ une fonction définie en $a$ et au voisinage de $a$. Elle est \\textbf{continue en $a$} lorsque sa limite en ce point coïncide avec sa valeur :$$\\boxed{\\lim_{x\\to a}f(x)=\\blank{f(a)}}$$"
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Vérifier la continuité en un point ;",
+            "Détecter un point de discontinuité ;",
+            "Raccorder une expression à une valeur isolée."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-01",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{On définit $f(x)=\\dfrac{x^2-1}{x-1}$ pour $x\\ne1$ et $f(1)=2$. Étudions la continuité de $f$ en $1$.}\\par\\smallskip Pour $x\\ne1$, la factorisation donne :\\begin{align*}f(x)&=\\frac{\\blank{(x-1)(x+1)}}{x-1}\\\\&=x+1.\\end{align*}Ainsi, $\\displaystyle\\lim_{x\\to1}f(x)=\\blank{2}$. Cette limite est égale à $f(1)$, donc $f$ est $\\blank{\\text{continue}}$ en $1$."
+        },
+        {
+          "uid": "cont-v2-outil-02",
+          "type": "text",
+          "title": "Comment vérifier la \\mathqst{continuité à droite et à gauche} ?",
+          "content": "La continuité à droite compare $f(a)$ à la limite obtenue pour $x>a$. La continuité à gauche utilise les valeurs $x<a$ :$$\\boxed{\\lim_{x\\to \\blank{a^+}}f(x)=f(a)}\\qquad\\boxed{\\lim_{x\\to \\blank{a^-}}f(x)=f(a)}$$Ces deux conditions s'étudient séparément lorsqu'une fonction est définie par morceaux."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Étudier une fonction définie par morceaux ;",
+            "Analyser un point de raccordement ;",
+            "Traiter une extrémité d'intervalle."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-02",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Soit $f(x)=\\begin{cases}x+1&\\text{si }x<0,\\\\x^2+1&\\text{si }x\\ge0.\\end{cases}$ Étudions sa continuité à gauche et à droite en $0$.}\\par\\smallskip La seconde expression donne $f(0)=1$. On calcule :\\begin{align*}\\lim_{x\\to0^-}f(x)&=\\lim_{x\\to0^-}(x+1)=\\blank{1},\\\\\\lim_{x\\to0^+}f(x)&=\\lim_{x\\to0^+}(x^2+1)=\\blank{1}.\\end{align*}Les deux limites sont égales à $\\blank{f(0)}$. La fonction est donc continue à gauche et à droite en $0$."
+        },
+        {
+          "uid": "cont-v2-outil-03",
+          "type": "text",
+          "title": "Que faut-il comparer au \\mathqst{point de raccordement} ?",
+          "content": "Lorsque $a$ est un point intérieur du domaine, $f$ est continue en $a$ si, et seulement si, les deux limites latérales existent et valent $f(a)$ :$$\\boxed{\\lim_{x\\to a^-}f(x)=\\lim_{x\\to a^+}f(x)=\\blank{f(a)}}$$Deux limites latérales différentes suffisent à exclure la continuité. Leur égalité seule ne suffit pas : la valeur $f(a)$ doit aussi coïncider avec elles."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Décider si un raccordement est continu ;",
+            "Distinguer l'existence d'une limite de la continuité ;",
+            "Établir une discontinuité à partir de limites latérales différentes."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-03",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{On pose $f(0)=0$ et $f(x)=\\dfrac{|x|}{x}$ pour $x\\ne0$. Étudions la continuité de $f$ en $0$.}\\par\\smallskip Pour $x<0$, on a $|x|=-x$, donc $f(x)=-1$. Pour $x>0$, on a $|x|=x$, donc $f(x)=1$. Ainsi :$$\\lim_{x\\to0^-}f(x)=\\blank{-1},\\qquad\\lim_{x\\to0^+}f(x)=\\blank{1}.$$Les limites latérales sont $\\blank{\\text{différentes}}$ : $f$ n'est pas continue en $0$. Changer seulement $f(0)$ ne pourrait pas supprimer cette discontinuité."
+        },
+        {
+          "uid": "cont-v2-outil-04",
+          "type": "text",
+          "title": "Que signifie être \\mathqst{continue sur un intervalle} ?",
+          "content": "Sur un intervalle ouvert $I$, une fonction est continue si elle l'est en chaque point de $I$. Sur un segment $[a,b]$, on vérifie la continuité sur $]a,b[$, la continuité à $\\blank{\\text{droite}}$ en $a$ et la continuité à $\\blank{\\text{gauche}}$ en $b$. Aucune valeur située hors du segment n'est nécessaire."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Passer d'une étude locale à la continuité sur tout un intervalle ;",
+            "Vérifier les hypothèses des valeurs intermédiaires ;",
+            "Étudier correctement les bornes d'un segment."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-04",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Justifions que $f(x)=\\sqrt{x}$ est continue sur $[0,4]$, alors qu'elle n'est pas définie à gauche de $0$.}\\par\\smallskip La fonction racine carrée est continue sur $]0,4[$. En $0$, seule la continuité à $\\blank{\\text{droite}}$ est nécessaire, et $\\displaystyle\\lim_{x\\to0^+}\\sqrt{x}=\\blank{0}=f(0)$. En $4$, on vérifie $\\displaystyle\\lim_{x\\to4^-}\\sqrt{x}=\\blank{2}=f(4)$. Les conditions aux deux bornes sont donc remplies : $f$ est continue sur $[0,4]$."
+        },
+        {
+          "uid": "cont-v2-outil-05",
+          "type": "text",
+          "title": "Pourquoi la \\mathqst{partie entière} est-elle discontinue aux entiers ?",
+          "content": "La partie entière $E(x)$ est l'unique entier $n$ vérifiant :$$\\boxed{n\\le x<\\blank{n+1}}$$Sur chaque intervalle $[n,n+1[$, elle vaut constamment $n$. À chaque entier, sa valeur change : la fonction est définie sur $\\mathbb{R}$, mais elle est discontinue en tout entier."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Reconnaître une discontinuité par saut ;",
+            "Comprendre qu'une fonction peut être définie partout sans être continue partout ;",
+            "Utiliser un contre-exemple classique en continuité."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-05",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Étudions la continuité de la fonction partie entière $E$ en $2$.}\\par\\smallskip On a $E(2)=2$. Sur $[1,2[$, $E(x)=1$, alors que sur $[2,3[$, $E(x)=2$. On obtient :$$\\lim_{x\\to2^-}E(x)=\\blank{1},\\qquad\\lim_{x\\to2^+}E(x)=\\blank{2}.$$Les limites latérales sont différentes. Ainsi, $E$ est $\\blank{\\text{discontinue}}$ en $2$, même si elle y est continue à droite."
+        }
+      ]
+    },
+    {
+      "id": "cont-v2-fonctions-continues",
+      "category": "course",
+      "title": "Comment reconnaître et construire des fonctions continues ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les fonctions usuelles et les opérations sur les fonctions continues évitent de reprendre chaque fois le calcul des limites. Il faut toutefois vérifier le domaine et les conditions propres à chaque opération."
+        },
+        {
+          "uid": "cont-v2-outil-06",
+          "type": "text",
+          "title": "Quelles \\mathqst{fonctions usuelles} reconnaît-on comme continues ?",
+          "content": "Les fonctions polynômes, $\\sin$, $\\cos$ et $x\\mapsto|x|$ sont continues sur $\\blank{\\mathbb{R}}$. La fonction $\\tan$ et les fonctions rationnelles sont continues sur tout intervalle inclus dans leur domaine de définition. La fonction $x\\mapsto\\sqrt{x}$ est continue sur $\\blank{[0,+\\infty[}$."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Reconnaître directement la continuité d'une fonction usuelle ;",
+            "Déterminer les intervalles de continuité à partir du domaine ;",
+            "Calculer certaines limites par substitution."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-06",
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Déterminons les intervalles de continuité de $f(x)=\\dfrac{x^2+1}{x-2}$.}\\par\\smallskip Le dénominateur s'annule pour $x=\\blank{2}$. Le domaine est donc $D_f=\\mathbb{R}\\setminus\\{2\\}$. Puisque $f$ est rationnelle, elle est continue sur chacun des intervalles :$$\\boxed{\\blank{]-\\infty,2[}\\quad\\text{et}\\quad\\blank{]2,+\\infty[}}$$"
+        },
+        {
+          "uid": "cont-v2-outil-07",
+          "type": "text",
+          "title": "Quelles \\mathqst{opérations conservent la continuité} ?",
+          "content": "Si $f$ et $g$ sont continues sur $I$, alors $f+g$, $fg$, $f^n$, $\\lambda f$ et $|f|$ y sont continues, pour tout entier $n\\ge1$ et tout réel $\\lambda$. Le quotient $\\dfrac{f}{g}$ est continu sur $I$ à condition que $\\blank{g(x)\\ne0}$ pour tout $x\\in I$."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Décomposer une expression en fonctions simples ;",
+            "Justifier la continuité d'une somme, d'un produit ou d'un quotient ;",
+            "Éviter des calculs de limites inutiles."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-07",
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Montrons que $f(x)=3\\sin x+x^2+1$ est continue sur $\\mathbb{R}$.}\\par\\smallskip La fonction $\\sin$ est continue sur $\\mathbb{R}$ ; sa multiplication par $3$ conserve cette continuité. La fonction $x\\mapsto x^2+1$ est $\\blank{\\text{polynomiale}}$, donc continue sur $\\mathbb{R}$. La fonction $f$ est la $\\blank{\\text{somme}}$ de ces deux fonctions continues. Elle est donc continue sur $\\blank{\\mathbb{R}}$."
+        },
+        {
+          "uid": "cont-v2-outil-08",
+          "type": "text",
+          "title": "Quand la \\mathqst{racine d'une fonction} est-elle continue ?",
+          "content": "Si $f$ est continue sur $I$ et si $\\blank{f(x)\\ge0}$ pour tout $x\\in I$, alors la fonction $x\\mapsto\\sqrt{f(x)}$ est continue sur $I$. La condition de positivité assure que la racine carrée est définie."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Étudier une expression contenant une racine carrée ;",
+            "Associer la continuité à la condition de positivité ;",
+            "Calculer une limite contenant une racine."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-08",
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Étudions la continuité de $h(x)=\\sqrt{x^2+1}$.}\\par\\smallskip La fonction $u(x)=x^2+1$ est $\\blank{\\text{polynomiale}}$, donc continue sur $\\mathbb{R}$. Comme $x^2\\ge0$, on a $u(x)\\ge\\blank{1}>0$. La racine est ainsi définie sur tout $\\mathbb{R}$, et $h$ est continue sur $\\blank{\\mathbb{R}}$."
+        },
+        {
+          "uid": "cont-v2-outil-09",
+          "type": "text",
+          "title": "Comment vérifier la continuité d'une \\mathqst{fonction composée} ?",
+          "content": "Supposons $f$ continue sur $I$ et $g$ continue sur un intervalle $J$. Si $\\blank{f(I)\\subseteq J}$, alors $g\\circ f$ est continue sur $I$. Les valeurs produites par la fonction intérieure doivent appartenir au domaine où la fonction extérieure est continue."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Étudier une fonction obtenue par emboîtement ;",
+            "Justifier la continuité d'une expression telle que $\\cos(\\sqrt{x}+1)$ ;",
+            "Vérifier le domaine de la fonction extérieure."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-09",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Montrons que $h(x)=\\cos(\\sqrt{x}+1)$ est continue sur $[0,+\\infty[$.}\\par\\smallskip On pose $u(x)=\\blank{\\sqrt{x}+1}$ et $g(t)=\\blank{\\cos t}$, de sorte que $h=g\\circ u$. La fonction $u$ est continue sur $[0,+\\infty[$ et $g$ est continue sur $\\mathbb{R}$. Comme $u([0,+\\infty[)\\subseteq\\mathbb{R}$, la composée $h$ est continue sur $\\blank{[0,+\\infty[}$."
+        }
+      ]
+    },
+    {
+      "id": "cont-v2-images-valeurs-intermediaires",
+      "category": "course",
+      "title": "Comment déterminer une image et garantir l'existence et l'unicité d'une solution ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La continuité renseigne sur toutes les valeurs prises entre deux points. Associée aux variations, elle permet d'établir l'existence d'une solution puis, lorsque les conditions le permettent, son unicité."
+        },
+        {
+          "uid": "cont-v2-outil-10",
+          "type": "text",
+          "title": "Quelle est l'\\mathqst{image d'un segment par une fonction continue} ?",
+          "content": "Une fonction continue sur $[a,b]$ atteint un minimum $m$ et un maximum $M$. Elle prend aussi toutes les valeurs intermédiaires :$$\\boxed{f([a,b])=\\blank{[m,M]}}$$Plus généralement, l'image d'un intervalle par une fonction continue est un intervalle. Les extrema ne sont pas nécessairement atteints aux extrémités du segment."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Déterminer toutes les valeurs prises sur un segment ;",
+            "Justifier qu'un minimum et un maximum sont atteints ;",
+            "Lire l'image d'un intervalle dans un tableau de variation."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-10",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons l'image de $[0,3]$ par $f(x)=x^2-2x$.}\\par\\smallskip La fonction $f$ est polynomiale, donc continue sur $[0,3]$. On écrit $f(x)=\\blank{(x-1)^2-1}$. Sur cet intervalle, $(x-1)^2$ prend toutes les valeurs entre $0$ et $4$. Le minimum de $f$ vaut $\\blank{-1}$, atteint en $1$, et son maximum vaut $\\blank{3}$, atteint en $3$. Ainsi :$$\\boxed{f([0,3])=[-1,3]}$$"
+        },
+        {
+          "uid": "cont-v2-outil-11",
+          "type": "text",
+          "title": "Comment les variations donnent-elles l'\\mathqst{image d'un intervalle} ?",
+          "content": "Si $f$ est continue et strictement monotone sur $I$, on utilise les valeurs aux bornes ou les limites aux extrémités. Sur un segment, on obtient :$$\\begin{aligned}f([a,b])&=\\blank{[f(a),f(b)]}&&\\text{si }f\\text{ est croissante},\\\\f([a,b])&=\\blank{[f(b),f(a)]}&&\\text{si }f\\text{ est décroissante}.\\end{aligned}$$Il faut respecter le caractère ouvert ou fermé des bornes de l'image."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Déterminer rapidement $f(I)$ ;",
+            "Exploiter un tableau de variation ;",
+            "Préparer l'étude d'une fonction réciproque."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-11",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons l'image de $[1,4]$ par $f(x)=\\dfrac1x$.}\\par\\smallskip La fonction inverse est continue et strictement $\\blank{\\text{décroissante}}$ sur $[1,4]$. L'image s'écrit donc $[f(4),f(1)]$, avec $f(4)=\\blank{\\frac14}$ et $f(1)=\\blank{1}$. On en déduit :$$\\boxed{f([1,4])=\\left[\\frac14,1\\right]}$$"
+        },
+        {
+          "uid": "cont-v2-outil-12",
+          "type": "text",
+          "title": "Pourquoi une \\mathqst{valeur intermédiaire est-elle atteinte} ?",
+          "content": "Soit $f$ continue sur $[a,b]$. Pour tout réel $k$ compris entre $f(a)$ et $f(b)$, il existe $\\blank{\\text{au moins un}}$ $c\\in[a,b]$ tel que :$$\\boxed{f(c)=\\blank{k}}$$C'est le résultat des valeurs intermédiaires, souvent abrégé TVI. Il garantit l'existence, mais pas l'unicité de $c$.",
+          "media": {
+            "src": "/media/continuite-v2/valeurs-intermediaires.png",
+            "alt": "Courbe continue et droite horizontale y = k illustrant plusieurs antécédents d'une valeur intermédiaire.",
+            "type": "image",
+            "position": "bottom",
+            "width": "52%",
+            "caption": "Une valeur intermédiaire peut être atteinte en plusieurs points."
+          }
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Établir l'existence d'une solution de $f(x)=k$ ;",
+            "Montrer qu'une fonction continue prend les valeurs intermédiaires ;",
+            "Ramener une recherche d'existence à la continuité et aux valeurs aux bornes."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-12",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Montrons que l'équation $x^3+x=1$ admet au moins une solution dans $[0,1]$.}\\par\\smallskip On pose $f(x)=x^3+x-1$. Cette fonction est polynomiale, donc continue sur $[0,1]$. Aux bornes, on obtient $f(0)=\\blank{-1}$ et $f(1)=\\blank{1}$. La valeur $\\blank{0}$ est strictement comprise entre ces images. D'après le TVI, il existe donc $c\\in]0,1[$ tel que $f(c)=0$, soit $\\boxed{c^3+c=1}$."
+        },
+        {
+          "uid": "cont-v2-outil-13",
+          "type": "text",
+          "title": "Comment un \\mathqst{changement de signe} garantit-il une racine ?",
+          "content": "Si $f$ est continue sur $[a,b]$ et si $\\blank{f(a)f(b)<0}$, ses valeurs aux bornes sont de signes opposés. Le TVI garantit alors au moins une solution de $f(x)=0$ dans l'intervalle ouvert $\\blank{]a,b[}$."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Prouver l'existence d'une racine ;",
+            "Localiser une solution dans un intervalle ;",
+            "Préparer un encadrement par dichotomie."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-13",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Montrons que $\\cos x=x$ admet au moins une solution dans $[0,1]$.}\\par\\smallskip On pose $f(x)=\\blank{\\cos x-x}$. La fonction $f$ est continue sur $[0,1]$, comme différence de fonctions continues. On a $f(0)=\\blank{1}>0$ et $f(1)=\\cos1-1<0$. Ainsi, $f(0)f(1)<0$ et le TVI assure au moins une racine dans $\\blank{]0,1[}$. Pour cette valeur $c$, on a $\\boxed{\\cos c=c}$."
+        },
+        {
+          "uid": "cont-v2-outil-14",
+          "type": "text",
+          "title": "Comment passer de l'existence à l'\\mathqst{unicité d'une solution} ?",
+          "content": "Le TVI assure l'existence d'une solution. Si $f$ est aussi $\\blank{\\text{strictement monotone}}$ sur l'intervalle, elle ne peut prendre une même valeur qu'une seule fois. La continuité, un changement de signe et la stricte monotonie garantissent donc une unique racine entre les deux bornes."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Distinguer l'existence de l'unicité ;",
+            "Montrer qu'une équation possède exactement une solution ;",
+            "Justifier ensuite une approximation de cette solution."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-14",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Pour $f(x)=x^3+x-1$, le TVI donne une racine dans $]0,1[$. Justifions qu'elle est unique.}\\par\\smallskip Les fonctions $x\\mapsto x^3$ et $x\\mapsto x$ sont strictement $\\blank{\\text{croissantes}}$ sur $[0,1]$. Leur somme, diminuée de $1$, reste strictement croissante. La fonction $f$ ne peut donc prendre la valeur $0$ qu'\\blank{\\text{une seule fois}}. L'existence étant déjà établie, l'équation possède $\\blank{\\text{exactement une solution}}$ dans $]0,1[$."
+        }
+      ]
+    },
+    {
+      "id": "cont-v2-dichotomie",
+      "category": "course",
+      "title": "Comment approcher une solution par dichotomie ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fois une racine localisée, on peut resserrer l'intervalle qui la contient. La dichotomie répète une même opération : tester le milieu, puis conserver la moitié utile."
+        },
+        {
+          "uid": "cont-v2-outil-15",
+          "type": "text",
+          "title": "Comment \\mathqst{resserrer un encadrement par dichotomie} ?",
+          "content": "Supposons $f$ continue sur $[a,b]$ avec $f(a)f(b)<0$. On calcule le milieu $m=\\blank{\\dfrac{a+b}{2}}$ et le signe de $f(m)$. Si $f(m)=0$, la racine est trouvée ; sinon, on conserve la moitié où le changement de signe subsiste. Après $n$ subdivisions, l'amplitude vaut :$$\\boxed{\\blank{\\frac{b-a}{2^n}}}$$"
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Encadrer progressivement une racine ;",
+            "Obtenir une approximation avec une précision choisie ;",
+            "Transformer un résultat d'existence en procédure numérique."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-15",
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $f(x)=x^3+x-1$. Son unique racine $c$ appartient à $]0,1[$. Effectuons deux subdivisions par dichotomie.}\\par\\smallskip Le premier milieu est $\\dfrac12$. On calcule :\\begin{align*}f\\left(\\frac12\\right)&=\\frac18+\\frac12-1\\\\&=\\blank{-\\frac38}<0.\\end{align*}Comme $f(1)>0$, on conserve $c\\in]\\dfrac12,1[$. Le nouveau milieu vaut $\\blank{\\frac34}$, puis :\\begin{align*}f\\left(\\frac34\\right)&=\\frac{27}{64}+\\frac34-1\\\\&=\\blank{\\frac{11}{64}}>0.\\end{align*}On en déduit $\\boxed{c\\in]\\dfrac12,\\dfrac34[}$. Cet encadrement a pour amplitude $\\blank{\\frac14}$."
+        }
+      ]
+    },
+    {
+      "id": "cont-v2-fonction-reciproque",
+      "category": "course",
+      "title": "Comment définir et étudier une fonction réciproque ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lorsque chaque image correspond à un seul antécédent, on peut inverser la correspondance. Pour interpréter les courbes, le plan est muni d'un repère orthonormé $\\left(O;\\overrightarrow{i},\\overrightarrow{j}\\right)$."
+        },
+        {
+          "uid": "cont-v2-outil-16",
+          "type": "text",
+          "title": "Quand une fonction admet-elle une \\mathqst{fonction réciproque} ?",
+          "content": "Si $f$ est continue et $\\blank{\\text{strictement monotone}}$ sur un intervalle $I$, elle établit une bijection de $I$ sur $J=f(I)$. Elle admet donc une fonction réciproque :$$\\boxed{f^{-1}:\\blank{J}\\longrightarrow\\blank{I}}$$À chaque élément de $J$, cette fonction associe son unique antécédent dans $I$."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Justifier l'existence de $f^{-1}$ ;",
+            "Résoudre $f(x)=y$ de manière unique pour $y\\in f(I)$ ;",
+            "Construire de nouvelles fonctions à partir de fonctions connues."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-16",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Expliquons pourquoi $f(x)=x^2$ possède une réciproque sur $[0,+\\infty[$, mais pas sur $\\mathbb{R}$.}\\par\\smallskip Sur $[0,+\\infty[$, $f$ est continue et strictement $\\blank{\\text{croissante}}$. Son image est $\\blank{[0,+\\infty[}$ : elle y définit donc une bijection. Sur $\\mathbb{R}$, les nombres $-1$ et $1$ ont la même image, car $f(-1)=f(1)=1$. La fonction n'est alors pas $\\blank{\\text{injective}}$ et ne possède pas de réciproque sur tout $\\mathbb{R}$."
+        },
+        {
+          "uid": "cont-v2-outil-17",
+          "type": "text",
+          "title": "Quelles relations permettent de \\mathqst{calculer une réciproque} ?",
+          "content": "Pour $x\\in I$ et $y\\in J=f(I)$, on a :$$\\boxed{f(x)=y\\iff f^{-1}(y)=x}$$Les deux compositions redonnent la variable de départ :$$f^{-1}(f(x))=\\blank{x},\\qquad f(f^{-1}(y))=\\blank{y}.$$Pour déterminer $f^{-1}$, on résout donc $y=f(x)$ par rapport à $x$, en respectant les domaines."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Calculer une fonction réciproque ;",
+            "Vérifier une formule proposée pour $f^{-1}$ ;",
+            "Transformer une équation en une relation équivalente."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-17",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons la réciproque de $f(x)=2x+3$ sur $\\mathbb{R}$.}\\par\\smallskip Cette fonction affine est continue, strictement croissante et d'image $\\mathbb{R}$. À partir de $y=2x+3$, on obtient $2x=\\blank{y-3}$, puis $x=\\blank{\\frac{y-3}{2}}$. Ainsi :$$\\boxed{f^{-1}(x)=\\frac{x-3}{2}}$$On vérifie la composition :\\begin{align*}f^{-1}(f(x))&=\\frac{(2x+3)-3}{2}\\\\&=\\blank{x}.\\end{align*}"
+        },
+        {
+          "uid": "cont-v2-outil-18",
+          "type": "text",
+          "title": "Que deviennent la \\mathqst{continuité et les variations de la réciproque} ?",
+          "content": "Si $f$ est continue et strictement monotone sur $I$, alors $f^{-1}$ est continue sur $J=\\blank{f(I)}$. Elle possède le $\\blank{\\text{même sens de variation}}$ que $f$ : une fonction croissante donne une réciproque croissante, et une fonction décroissante donne une réciproque décroissante."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Déduire les variations de $f^{-1}$ sans nouveau calcul ;",
+            "Obtenir immédiatement sa continuité ;",
+            "Utiliser le tableau de variation de $f$ pour étudier $f^{-1}$."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-18",
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{La fonction $f(x)=x^3$ est continue et strictement croissante sur $\\mathbb{R}$. Déduisons les caractéristiques de sa réciproque.}\\par\\smallskip L'image de $\\mathbb{R}$ par $f$ est $\\blank{\\mathbb{R}}$. La réciproque existe donc de $\\mathbb{R}$ vers $\\mathbb{R}$. Elle est $\\blank{\\text{continue}}$ sur cet ensemble et strictement $\\blank{\\text{croissante}}$, comme $f$."
+        },
+        {
+          "uid": "cont-v2-outil-19",
+          "type": "text",
+          "title": "Quelle symétrie relie les \\mathqst{courbes de fonctions réciproques} ?",
+          "content": "Dans le repère orthonormé fixé, les courbes de $f$ et de $f^{-1}$ sont symétriques par rapport à la droite $\\blank{y=x}$. Un point de coordonnées $(x,y)$ sur la première correspond au point $\\blank{(y,x)}$ sur la seconde : l'image et l'antécédent échangent leurs rôles.",
+          "media": {
+            "src": "/media/continuite-v2/courbes-reciproques.png",
+            "alt": "Courbes d'une fonction et de sa réciproque, symétriques par rapport à y = x, avec échange des coordonnées.",
+            "type": "image",
+            "position": "bottom",
+            "width": "52%",
+            "caption": "Les courbes se correspondent par symétrie par rapport à la droite y = x."
+          }
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Construire graphiquement la courbe de $f^{-1}$ ;",
+            "Comprendre l'échange entre image et antécédent ;",
+            "Contrôler visuellement une expression de fonction réciproque."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-19",
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Le point $(2,4)$ appartient à la courbe d'une fonction $f$ qui admet une réciproque. Déterminons le point correspondant sur la courbe de $f^{-1}$.}\\par\\smallskip L'appartenance du point signifie que $f(2)=\\blank{4}$. La relation réciproque donne $f^{-1}(4)=\\blank{2}$. En échangeant les coordonnées, on obtient donc le point $\\boxed{\\blank{(4,2)}}$ sur la courbe de $f^{-1}$."
+        }
+      ]
+    },
+    {
+      "id": "cont-v2-racines-puissances",
+      "category": "course",
+      "title": "Comment utiliser les racines et les puissances rationnelles ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les racines d'ordre supérieur se construisent en inversant les fonctions puissances sur les nombres positifs. Elles permettent ensuite de comprendre les exposants rationnels et de calculer de nouvelles limites."
+        },
+        {
+          "uid": "cont-v2-outil-20",
+          "type": "text",
+          "title": "Comment définir une \\mathqst{racine d'ordre $n$} ?",
+          "content": "Pour tout entier $n\\ge2$, la fonction $x\\mapsto x^n$ est continue et strictement croissante de $[0,+\\infty[$ sur $[0,+\\infty[$. Sa réciproque est la fonction $x\\mapsto\\sqrt[n]{x}$. Pour $x\\ge0$ et $y\\ge0$ :$$\\boxed{y=x^n\\iff x=\\blank{\\sqrt[n]{y}}}$$"
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Résoudre $x^n=a$ sur $[0,+\\infty[$ pour $a\\ge0$ ;",
+            "Comparer des puissances de nombres positifs ;",
+            "Comprendre la racine comme fonction réciproque."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-20",
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Résolvons $x^4=16$ dans $[0,+\\infty[$.}\\par\\smallskip Sur cet intervalle, $x\\mapsto x^4$ est strictement $\\blank{\\text{croissante}}$. L'équation admet donc une unique solution positive. En appliquant la racine d'ordre $\\blank{4}$, on trouve :$$\\boxed{x=\\sqrt[4]{16}=\\blank{2}}$$"
+        },
+        {
+          "uid": "cont-v2-outil-21",
+          "type": "text",
+          "title": "Comment interpréter une \\mathqst{puissance rationnelle} ?",
+          "content": "Pour $a>0$ et $r=\\dfrac pq\\in\\mathbb{Q}$, avec $p\\in\\mathbb{Z}$ et $q$ entier strictement positif, on pose :$$\\boxed{a^{p/q}=\\blank{\\sqrt[q]{a^p}}}$$On peut aussi écrire $a^{p/q}=(\\sqrt[q]{a})^p$. Le dénominateur de l'exposant indique l'ordre de la racine."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Transformer une puissance rationnelle en radical ;",
+            "Calculer des puissances fractionnaires ;",
+            "Étendre les règles des puissances entières aux exposants rationnels."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-21",
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Calculons $8^{2/3}$ en utilisant une racine.}\\par\\smallskip Le dénominateur $3$ indique une racine cubique ; le numérateur $2$ indique ensuite un carré :\\begin{align*}8^{2/3}&=\\blank{(\\sqrt[3]{8})^2}\\\\&=\\blank{2^2}\\\\&=\\boxed{\\blank{4}}.\\end{align*}"
+        },
+        {
+          "uid": "cont-v2-outil-22",
+          "type": "text",
+          "title": "Quelles règles simplifient les \\mathqst{puissances à exposants rationnels} ?",
+          "content": "Pour $a,b>0$ et $r,s\\in\\mathbb{Q}$, les règles usuelles restent valables :$$\\begin{aligned}a^ra^s&=a^{\\blank{r+s}},&\\frac{a^r}{a^s}&=a^{\\blank{r-s}},\\\\(a^r)^s&=a^{\\blank{rs}},&(ab)^r&=a^rb^r.\\end{aligned}$$On additionne les exposants dans un produit de même base, mais on les multiplie dans une puissance de puissance."
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Simplifier des expressions à exposants fractionnaires ;",
+            "Regrouper ou séparer des puissances ;",
+            "Choisir une écriture adaptée à un calcul ou à une limite."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-22",
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Simplifions $x^{3/2}x^{1/2}$ pour $x>0$.}\\par\\smallskip Les facteurs ont la même base. Il faut donc $\\blank{\\text{additionner}}$ les exposants :\\begin{align*}x^{3/2}x^{1/2}&=x^{\\blank{\\frac32+\\frac12}}\\\\&=x^{\\blank{2}}.\\end{align*}L'expression simplifiée est $\\boxed{x^2}$."
+        },
+        {
+          "uid": "cont-v2-outil-23",
+          "type": "text",
+          "title": "Quand peut-on \\mathqst{passer à la limite sous une racine} ?",
+          "content": "Soit $n\\ge2$ un entier. Si $u$ est continue et positive ou nulle sur $I$, alors $x\\mapsto\\sqrt[n]{u(x)}$ est continue sur $I$. Plus généralement, si $u(x)\\ge0$ au voisinage considéré et si $\\displaystyle\\lim_{x\\to a}u(x)=\\ell\\ge0$, alors :$$\\boxed{\\lim_{x\\to a}\\sqrt[n]{u(x)}=\\blank{\\sqrt[n]{\\ell}}}$$"
+        },
+        {
+          "type": "cela_permet_de",
+          "content": [
+            "Calculer des limites contenant une racine d'ordre $n$ ;",
+            "Étudier la continuité d'une fonction composée ;",
+            "Justifier le passage à la limite sous une racine."
+          ]
+        },
+        {
+          "uid": "cont-v2-application-23",
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to2}\\sqrt[3]{x^2+4}$.}\\par\\smallskip La fonction $u(x)=x^2+4$ est polynomiale et strictement positive. Par continuité, $\\displaystyle\\lim_{x\\to2}u(x)=\\blank{8}$. On peut donc passer à la limite sous la racine :\\begin{align*}\\lim_{x\\to2}\\sqrt[3]{x^2+4}&=\\blank{\\sqrt[3]{8}}\\\\&=\\boxed{\\blank{2}}.\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "cont-v2-choisir-outil",
+      "category": "course",
+      "title": "Quel outil choisir pour résoudre l'exercice ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le verbe de la consigne oriente souvent le choix de l'outil. Il reste toujours à vérifier les hypothèses qui permettent de l'appliquer."
+        },
+        {
+          "type": "text",
+          "title": "Comment \\mathqst{montrer la continuité en un point} ?",
+          "content": "Calcule ou identifie $f(a)$, puis détermine $\\displaystyle\\lim_{x\\to a}f(x)$. Compare les deux valeurs. Pour une fonction par morceaux, commence par les limites à gauche et à droite."
+        },
+        {
+          "type": "text",
+          "title": "Quel outil garantit l'\\mathqst{existence d'une racine} ?",
+          "content": "Vérifie la continuité de $f$ sur $[a,b]$ et le changement de signe $f(a)f(b)<0$. Le TVI donne alors au moins une racine dans $]a,b[$."
+        },
+        {
+          "type": "text",
+          "title": "Que vérifier pour obtenir l'\\mathqst{unicité de cette racine} ?",
+          "content": "Après avoir établi l'existence, montre que $f$ est strictement monotone sur l'intervalle. Elle ne peut alors prendre une même valeur qu'une seule fois. Pour encadrer ensuite la racine, utilise la dichotomie."
+        },
+        {
+          "type": "text",
+          "title": "Comment \\mathqst{déterminer l'image d'un intervalle} ?",
+          "content": "Étudie les variations, puis utilise les valeurs aux bornes ou les limites aux extrémités. Recherche aussi les extrema intérieurs éventuels. Respecte le caractère ouvert ou fermé des bornes de l'image."
+        },
+        {
+          "type": "text",
+          "title": "Quelles conditions justifient l'\\mathqst{existence de la réciproque} ?",
+          "content": "Vérifie que $f$ est continue et strictement monotone sur un intervalle $I$, puis détermine $J=f(I)$. La réciproque existe de $J$ vers $I$. Pour calculer son expression, résous $y=f(x)$ par rapport à $x$."
+        }
+      ]
+    }
+  ]
+}

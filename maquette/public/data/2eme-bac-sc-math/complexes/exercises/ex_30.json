@@ -1,0 +1,72 @@
+{
+  "id": "ex-complexes-30",
+  "topic": "Nombres complexes - Bac National 2022 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2022,
+  "examenSession": "Rattrapage",
+  "context": "Soit $m\\in\\mathbb{C}\\setminus\\{-1;0;1\\}$.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans $\\mathbb{C}$ l'équation $(E_m)$ d'inconnue $z$ : $(E_m):mz^2-(m-1)^2z-(m-1)^2=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q1a",
+          "content": "Montrer que le discriminant de l'équation $(E_m)$ est $\\Delta=\\left(m^2-1\\right)^2$.",
+          "hint": "Calculez $\\Delta=b^2-4ac$ avec $a=m$, $b=-(m-1)^2$, $c=-(m-1)^2$, puis factorisez $4m(m-1)^2$ à l'aide de $(m-1)^2$."
+        },
+        {
+          "id": "p1q1b",
+          "content": "Déterminer $z_1$ et $z_2$ les deux solutions de l'équation $(E_m)$.",
+          "hint": "Une racine carrée de $\\Delta$ est $m^2-1=(m-1)(m+1)$ ; simplifiez ensuite chaque solution en factorisant par $(m-1)$."
+        }
+      ]
+    },
+    {
+      "id": "p1q2",
+      "content": "On prend dans cette question $m=e^{i\\theta}$, avec $0<\\theta<\\pi$. Écrire $z_1$ et $z_2$ sous forme exponentielle.",
+      "hint": "Exprimez $m-1=e^{i\\theta}-1$ sous forme exponentielle grâce à l'angle moitié (factorisation par l'arc moitié), puis reportez dans les expressions de $z_1,z_2$."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe est muni d'un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. On considère les deux points $A$ et $B$ d'affixes respectives $m-1$ et $\\dfrac{1}{m}-1$."
+    },
+    {
+      "id": "p2q1",
+      "content": "Montrer que les points $O$, $A$ et $B$ sont alignés si et seulement si $m\\in\\mathbb{R}$.",
+      "hint": "L'alignement équivaut à $\\dfrac{m-1}{\\frac1m-1}\\in\\mathbb{R}$ ; simplifiez ce quotient (mettez $\\frac1m-1$ au même dénominateur) avant de discuter."
+    },
+    {
+      "id": "p2q2",
+      "content": "On suppose que $m$ n'est pas un nombre réel. Soient $C$ l'image du point $B$ par la rotation de centre $A$ et d'angle $\\dfrac{\\pi}{3}$ et $D$ l'image du point $A$ par la rotation de centre $O$ et d'angle $\\dfrac{\\pi}{3}$ et soient $P(p)$, $Q(q)$ et $R(r)$ les milieux respectifs des segments $[AC]$, $[AD]$ et $[OB]$.",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Montrer que l'affixe de $C$ est $c=m-1+\\left(\\dfrac1m-m\\right)e^{i\\pi/3}$ et que l'affixe de $D$ est $d=(m-1)e^{i\\pi/3}$.",
+          "hint": "Utilisez la formule d'une rotation $z'-\\omega=e^{i\\theta}(z-\\omega)$ avec $\\omega=$ affixe de $A$ pour $C$, et $\\omega=0$ pour $D$."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que $2(p-r)=m-1+\\left(\\dfrac1m-m\\right)\\left(e^{i\\pi/3}-1\\right)$ et $2(q-r)=(m-1)e^{i\\pi/3}-\\left(\\dfrac1m-m\\right)$.",
+          "hint": "Rappelez que $p$, $q$, $r$ sont des milieux, donc $2p=a+c$, $2q=a+d$, $2r=(m-1)+(\\frac1m-1)$ ; remplacez et regroupez les termes."
+        },
+        {
+          "id": "p2q2c",
+          "content": "Montrer que : $q-r=e^{i\\pi/3}(p-r)$.",
+          "hint": "Reprenez les deux expressions de la question précédente et factorisez-les pour faire apparaître un facteur commun $e^{i\\pi/3}$."
+        },
+        {
+          "id": "p2q2d",
+          "content": "Quelle est la nature du triangle $PQR$ ? (justifier votre réponse)",
+          "hint": "La relation $q-r=e^{i\\pi/3}(p-r)$ signifie que $R$ voit $[RP]$ et $[RQ]$ avec un angle de $\\pi/3$ et des longueurs égales : quel type de triangle cela caractérise-t-il ?"
+        }
+      ]
+    }
+  ]
+}

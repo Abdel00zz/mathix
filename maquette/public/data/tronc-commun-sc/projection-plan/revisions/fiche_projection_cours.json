@@ -1,0 +1,46 @@
+{
+  "header": {
+    "title": "La Projection dans le Plan",
+    "subtitle": "Géométrie Vectorielle",
+    "context": "Tronc Commun Scientifique"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie la \\objectif{projection sur une droite parallèlement à une autre} : définition de la projection, théorème de Thalès sous forme vectorielle, et propriétés de conservation du milieu, de l'alignement et du barycentre. La projection transforme des configurations complexes en configurations alignées sur une droite, simplifiant considérablement les démonstrations géométriques. La \\defi{principale difficulté} est de bien identifier les deux droites (celle sur laquelle on projette et la direction de projection) et de vérifier que le théorème de Thalès s'applique dans la bonne configuration. C'est \\savant{Gaspard Monge} qui a, à la fin du XVIII\\textsuperscript{e} siècle, élevé la projection au rang de méthode universelle de représentation et de résolution en géométrie descriptive, un outil encore central en imagerie et en CAO.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Gaspard_monge.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Gaspard Monge (1746–1818)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "proj_def",
+      "category": "course",
+      "title": "Définition",
+      "content": "\\begin{definition}Soit $(D)$ et $(\\Delta)$ deux droites sécantes.\\\\La projection sur $(D)$ parallèlement à $(\\Delta)$ associe à tout point $M$ le point $M'$ intersection de $(D)$ et de la parallèle à $(\\Delta)$ passant par $M$.\\end{definition}"
+    },
+    {
+      "id": "thales_vectoriel",
+      "category": "course",
+      "title": "Théorème de Thalès Vectoriel",
+      "content": "\\begin{theorem}La projection conserve le coefficient de colinéarité.\\\\Si $\\overrightarrow{AB} = k \\overrightarrow{CD}$, alors leurs projetés vérifient $\\overrightarrow{A'B'} = k \\overrightarrow{C'D'}$.\\end{theorem}"
+    },
+    {
+      "id": "conservation",
+      "category": "course",
+      "title": "Propriétés de conservation",
+      "content": "\\begin{property}La projection conserve :\\begin{itemize}\\item Le milieu : le projeté du milieu est le milieu du projeté.\\item L'alignement : les projetés de points alignés sont alignés.\\item Le barycentre : le projeté du barycentre est le barycentre des projetés.\\end{itemize}\\end{property}",
+      "blocks": []
+    }
+  ]
+}

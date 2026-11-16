@@ -1,0 +1,57 @@
+{
+  "id": "proba-ex01",
+  "theme": "probabilites",
+  "difficulty": "facile",
+  "chapter": "01 - Dénombrement et probabilités",
+  "topic": "Tirage simultané - Combinaisons et événements",
+  "requiresRedaction": true,
+  "context": "Un sac contient 9 boules : 4 boules jaunes numérotées 1,1,1,2 ; 3 boules rouges numérotées 1,1,2 ; 2 boules vertes numérotées 1,2. Les boules sont indiscernables au toucher. On tire au hasard et simultanément trois boules du sac.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer le nombre de résultats possibles.",
+      "hint": "Un tirage simultané de 3 boules parmi 9 est une combinaison sans ordre. Utilisez $C_9^3$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer la probabilité de chacun des événements :",
+      "subQuestions": [
+        {
+          "id": "sq2A",
+          "content": "A : « Obtenir 3 boules jaunes ».",
+          "hint": "Choisir 3 jaunes parmi 4 : $Card(A) = C_4^3$. Pensez à diviser par $Card(\\Omega) = C_9^3$."
+        },
+        {
+          "id": "sq2B",
+          "content": "B : « Obtenir 1 boule de chaque couleur ».",
+          "hint": "Il faut 1 jaune parmi 4, 1 rouge parmi 3 et 1 verte parmi 2, de manière indépendante : $Card(B) = C_4^1 \\times C_3^1 \\times C_2^1$."
+        },
+        {
+          "id": "sq2C",
+          "content": "C : « Obtenir 3 boules de même couleur ».",
+          "hint": "Seules les jaunes (4) et les rouges (3) sont en nombre suffisant pour en choisir 3. $Card(C) = C_4^3 + C_3^3$."
+        },
+        {
+          "id": "sq2D",
+          "content": "D : « Obtenir 3 boules qui portent le même numéro ».",
+          "hint": "Le numéro commun peut être 1 (6 boules portent le numéro 1) ou 2 (3 boules portent le numéro 2). Comptez $C_6^3 + C_3^3$."
+        },
+        {
+          "id": "sq2E",
+          "content": "E : « Obtenir une boule exactement verte ».",
+          "hint": "Exactement 1 verte parmi 2, et 2 non-vertes parmi les 7 restantes : $Card(E) = C_2^1 \\times C_7^2$."
+        },
+        {
+          "id": "sq2F",
+          "content": "F : « Obtenir au moins une boule verte ».",
+          "hint": "Passez par le complémentaire $\\bar{F}$ : « aucune boule verte », soit 3 boules choisies parmi les 7 non-vertes. $p(F) = 1 - p(\\bar{F})$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Calculer $p(C \\cap D)$ et $p(C \\cup D)$.",
+      "hint": "$C \\cap D$ : 3 boules de même couleur ET même numéro. Seul le cas (J,J,J) numérotées 1 fonctionne : $Card(C \\cap D) = C_3^3 = 1$. Pour $C \\cup D$, utilisez $p(C \\cup D) = p(C) + p(D) - p(C \\cap D)$."
+    }
+  ]
+}

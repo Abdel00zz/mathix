@@ -1,0 +1,45 @@
+/* ============================================================================
+   VARIANTE « PROBLÈME » — lecture épurée, sans cadres
+   ----------------------------------------------------------------------------
+   Appliquée uniquement quand la vue Révision rend un problème
+   (classe .revision-variant-probleme posée par RevisionView). N'affecte JAMAIS
+   les fiches de leçon. Objectif : style minimaliste type « article », on retire
+   le chrome des cartes (cadres, fonds, ombres) au profit de l'espace et de la
+   typographie ; les badges/titres restent pour la structure.
+   ============================================================================ */
+
+/* Aplatit les cartes révélables : plus de bordure, fond, ni ombre. */
+.revision-variant-probleme .revision-reveal-card,
+.revision-variant-probleme .revision-reveal-card.revision-card-collapsed,
+.revision-variant-probleme .revision-reveal-card.revision-card-expanded {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  padding: 0.35rem 0 0.5rem !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* La « méthode » reprend la pleine largeur (plus de bloc centré rétréci). */
+.revision-variant-probleme .revision-reveal-method {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Séparateur discret entre sous-blocs : un simple filet, sans pastille. */
+.revision-variant-probleme .revision-reveal-divider.is-visible {
+  margin: 0.2rem 0.15rem 0.8rem;
+}
+.revision-variant-probleme .revision-reveal-divider span {
+  display: none;
+}
+
+/* Boîtes « boost » math : on neutralise le fond/contour en mode problème. */
+.revision-variant-probleme .box-block-math-boost,
+.revision-variant-probleme .property-math-boost {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}

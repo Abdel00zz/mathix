@@ -1,0 +1,21 @@
+{
+  "id": "proba-ex07",
+  "theme": "probabilites",
+  "difficulty": "difficile",
+  "chapter": "03 - Variables aléatoires et loi binomiale",
+  "topic": "Variable aléatoire - Maximum de deux dés",
+  "requiresRedaction": true,
+  "context": "On lance simultanément deux dés à 6 faces. Soit X la variable aléatoire égale à la plus grande des deux valeurs.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Établir la loi de probabilité de X.",
+      "hint": "X prend les valeurs $\\{1, 2, 3, 4, 5, 6\\}$ et $Card(\\Omega) = 36$. Pour $P(X = k)$ : comptez les couples $(a; b)$ avec $\\max(a,b) = k$, soit les couples où au moins une valeur est $k$ et l'autre est $\\leq k$. On a $Card(X = k) = k^2 - (k-1)^2 = 2k - 1$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer l'espérance mathématique $E(X)$ et la variance $V(X)$ puis l'écart type $\\sigma(X)$.",
+      "hint": "Utilisez $E(X) = \\sum x_i p_i$ et $V(X) = E(X^2) - (E(X))^2$ avec $E(X^2) = \\sum x_i^2 p_i$. Le tableau de la loi donne 6 valeurs à sommer."
+    }
+  ]
+}

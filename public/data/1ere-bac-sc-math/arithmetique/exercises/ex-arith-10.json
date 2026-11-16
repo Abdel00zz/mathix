@@ -1,0 +1,31 @@
+{
+  "id": "ch03-ex03",
+  "theme": "arithmetique",
+  "difficulty": "moyen",
+  "chapter": "03 - PPCM et PGCD ; propriétés",
+  "topic": "PGCD/PPCM - Systèmes et couples d'entiers",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Résoudre dans $\\mathbb{N}^2$ les systèmes suivants : $\\begin{cases} x \\wedge y = 18 \\\\ x \\vee y = 540 \\end{cases}$ et $\\begin{cases} x + y = 56 \\\\ x \\vee y = 105 \\end{cases}$.",
+      "hint": "Pour le premier système : posez $x = 18a$, $y = 18b$ avec $a \\wedge b = 1$, puis utilisez $x \\vee y = 18ab = 540$ pour trouver $ab$. Pour le second : déduisez $x \\wedge y$ grâce à la relation $x \\wedge y \\cdot x \\vee y = xy$, combinée avec $(x+y)^2 = (x-y)^2 + 4xy$."
+    },
+    {
+      "id": "q2",
+      "content": "Résoudre dans $\\mathbb{N}^* \\times \\mathbb{N}^*$ le système : $\\begin{cases} a \\wedge b = 9 \\\\ a \\vee b = 90 \\end{cases}$.",
+      "hint": "Posez $a = 9a'$ et $b = 9b'$ avec $a' \\wedge b' = 1$. La condition $a \\vee b = 9 a'b' = 90$ donne $a'b' = 10$. Cherchez les couples $(a', b')$ avec $a'b' = 10$ et $a' \\wedge b' = 1$."
+    },
+    {
+      "id": "q3",
+      "content": "Trouver tous les couples d'entiers $(x, y) \\in \\mathbb{N}^2$ tels que : $(x \\vee y) + 11(x \\wedge y) = 203$.",
+      "hint": "Posez $d = x \\wedge y$, $x = da$, $y = db$ avec $a \\wedge b = 1$. L'équation devient $d(ab + 11) = 203$. Cherchez les diviseurs de $203$ et pour chacun, déterminez les couples $(a, b)$ compatibles avec $a \\wedge b = 1$."
+    },
+    {
+      "id": "q4",
+      "content": "Trouver tous les couples $(a, b) \\in \\mathbb{N}^{*2}$ tels que : $a \\vee b + 3(a \\wedge b) = 276$ et $10 < a \\wedge b < 30$.",
+      "hint": "Posez $d = a \\wedge b$, $a = da'$, $b = db'$ avec $a' \\wedge b' = 1$. L'équation devient $d(a'b' + 3) = 276$. La contrainte $10 < d < 30$ limite les valeurs possibles de $d$ parmi les diviseurs de $276$."
+    }
+  ]
+}

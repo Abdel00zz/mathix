@@ -1,0 +1,37 @@
+{
+  "id": "ch02-ex04",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "chapter": "02 - Les nombres premiers ; la décomposition en produit de facteurs premiers",
+  "topic": "Nombres premiers - Factorisation paramétrique et PGCD",
+  "requiresRedaction": true,
+  "context": "Pour tout entier $n \\geq 2$, on pose : $A = n^4 + n^2 + 1$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $A$ n'est pas un nombre premier.",
+      "hint": "Essayez de factoriser $A = n^4 + n^2 + 1$ en remarquant qu'on peut écrire $n^4 + n^2 + 1 = (n^4 + 2n^2 + 1) - n^2$. Reconnaissez-vous une identité remarquable ?"
+    },
+    {
+      "id": "q2",
+      "content": "On pose : $a = n^2 + n + 1$ et $b = n^2 - n + 1$.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que les entiers $a$ et $b$ sont impairs.",
+          "hint": "Étudiez la parité de $a$ et $b$ selon que $n$ est pair ou impair. Remarquez que $n^2 + n = n(n+1)$ est toujours pair, ce qui donne la parité de $a$ et $b$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Soit $d$ un diviseur commun de $a$ et $b$. Montrer que : $d / 2n$ et $d / 2(n^2 + 1)$.",
+          "hint": "Si $d / a$ et $d / b$, alors $d$ divise $a - b$ et $a + b$. Calculez $a - b$ et $a + b$ et identifiez les expressions obtenues."
+        },
+        {
+          "id": "sq2c",
+          "content": "En déduire $a \\wedge b$.",
+          "hint": "D'après la question précédente, $d / 2n$ et $d / 2(n^2+1)$. Puisque $a$ et $b$ sont impairs (question a), $d$ est impair, donc $d / n$ et $d / n^2 + 1$. Si $d / n$, alors $d / n^2$, et comme $d / n^2 + 1$, concluez sur la valeur de $d$."
+        }
+      ]
+    }
+  ]
+}

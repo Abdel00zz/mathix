@@ -1,0 +1,224 @@
+{
+  "header": {
+    "title": "Les Fonctions Primitives",
+    "subtitle": "Définition, propriétés et calcul de primitives usuelles",
+    "context": "2BAC Sciences"
+  },
+  "lexique": [
+    {
+      "term": "Primitive",
+      "arabic": "دالة أصلية",
+      "category": "concept",
+      "symbol": "F'=f",
+      "definition": "Fonction F dont la dérivée est la fonction f.",
+      "variants": [
+        "primitives",
+        "fonction primitive"
+      ]
+    },
+    {
+      "term": "Famille de primitives",
+      "arabic": "مجموعة الدوال الأصلية",
+      "category": "concept",
+      "definition": "Ensemble des primitives qui ne diffèrent que par une constante.",
+      "variants": [
+        "toutes les primitives"
+      ]
+    },
+    {
+      "term": "Constante d'intégration",
+      "arabic": "ثابت التكامل",
+      "category": "concept",
+      "symbol": "+C",
+      "definition": "Constante ajoutée à une primitive pour obtenir toute la famille des primitives.",
+      "variants": [
+        "constante C"
+      ]
+    },
+    {
+      "term": "Dérivée",
+      "arabic": "مشتقة",
+      "category": "concept",
+      "definition": "Fonction qui donne le taux de variation instantané.",
+      "variants": [
+        "dérivées"
+      ]
+    },
+    {
+      "term": "Linéarité",
+      "arabic": "خطية",
+      "category": "concept",
+      "definition": "Propriété qui permet de primitiver séparément une somme et un multiple.",
+      "variants": [
+        "linéarité des primitives"
+      ]
+    },
+    {
+      "term": "Composition",
+      "arabic": "تركيب",
+      "category": "concept",
+      "definition": "Fonction obtenue en remplaçant la variable d'une fonction par une autre expression.",
+      "variants": [
+        "fonction composée",
+        "composée"
+      ]
+    },
+    {
+      "term": "Forme u'\\!f(u)",
+      "arabic": "صيغة u' f(u)",
+      "category": "concept",
+      "definition": "Forme qui permet de reconnaître une primitive par composition.",
+      "variants": [
+        "u'f(u)"
+      ]
+    },
+    {
+      "term": "Fonction usuelle",
+      "arabic": "دالة مألوفة",
+      "category": "concept",
+      "definition": "Fonction dont les dérivées et primitives de référence sont connues.",
+      "variants": [
+        "fonctions usuelles"
+      ]
+    },
+    {
+      "term": "Exponentielle",
+      "arabic": "الدالة الأسية",
+      "category": "concept",
+      "definition": "Fonction dont une primitive est elle-même à un coefficient près.",
+      "variants": [
+        "exponentielle"
+      ]
+    },
+    {
+      "term": "Logarithme népérien",
+      "arabic": "اللوغاريتم النيبيري",
+      "category": "concept",
+      "symbol": "\\ln",
+      "definition": "Fonction dont la dérivée permet de primitiver certaines fractions.",
+      "variants": [
+        "logarithme"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Chercher une primitive, c'est \\objectif{inverser la dérivation} : déterminer $F$ telle que $F' = f$ sur un intervalle donné. Ce calcul est le pont indispensable vers l'intégration et le calcul d'aires sous une courbe. La \\defi{difficulté} récurrente est de reconnaître la forme $u'\\cdot g(u)$ dans une expression composée et d'ajuster le coefficient multiplicatif.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/David_Loggan-port_Isaac_Barrow.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Isaac Barrow (1630–1677)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definition_primitive",
+      "category": "course",
+      "title": "Définition et existence",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Jusqu'à présent, on vous donnait une fonction et on la dérivait. Maintenant, on vous donne la \\textbf{dérivée} $f'$, et vous devez retrouver la \\textbf{fonction de départ} $f$. \\par C'est l'\\textbf{opération inverse} de la dérivation. Cette notion est fondamentale car elle ouvre l'accès au calcul intégral, qui mesure des quantités accumulées (travail, distance, charge électrique, etc.) par inversion de la dérivée."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{une fonction primitive}",
+          "content": "Soit $f$ une fonction définie sur un intervalle $I$.\\par On dit que la fonction $F$ est une \\textbf{primitive} de la fonction $f$ sur l'intervalle $I$ si :\\begin{itemize}\\item $F$ est dérivable sur $I$\\item Pour tout $x \\in I$, on a $F'(x) = f(x)$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifions que $F(x) = x^4 + 5x$ est une primitive de $f(x) = 4x^3 + 5$.}\\par Pour vérifier si $F$ est bien une primitive de $f$, il suffit de calculer sa dérivée. On dérive terme par terme :\\begin{align*}F'(x) &= (x^4)' + (5x)' \\\\&= 4x^3 + 5\\end{align*}Puisque $F'(x) = f(x)$, $F$ est bien une primitive de la fonction $f$."
+        },
+        {
+          "type": "theorem",
+          "title": "Quand \\mathqst{est-on sûr qu'une primitive existe}",
+          "content": "Si $f$ est une fonction \\textbf{continue} sur un intervalle $I$, alors $f$ admet au moins une fonction primitive sur cet intervalle $I$."
+        },
+        {
+          "type": "remark",
+          "content": "La continuité est une condition suffisante pour affirmer qu'une primitive existe, mais elle n'est pas strictement nécessaire (certaines fonctions non continues admettent quand même des primitives)."
+        }
+      ]
+    },
+    {
+      "id": "ensemble_primitives",
+      "category": "course",
+      "title": "L'ensemble des primitives",
+      "blocks": [
+        {
+          "type": "property",
+          "title": "Combien \\mathqst{y a-t-il de primitives pour une fonction}",
+          "content": "Une fonction n'a jamais une seule primitive, elle en a une infinité !\\par\\smallskip Si $F$ admet une fonction primitive $F$ sur $I$, alors toutes les fonctions primitives de $f$ sur $I$ s'écrivent sous la forme :\\par\\smallskip $$\\boxed{F(x) + \\lambda}$$\\par\\smallskip où $\\lambda$ est un nombre réel quelconque (car la dérivée d'une constante est zéro).\\par Ainsi, si $F_1$ et $F_2$ sont deux primitives de $f$, elles diffèrent seulement d'une constante : $F_2(x) = F_1(x) + \\lambda$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{trouver la primitive unique vérifiant $F(x_0) = y_0$}",
+          "content": "Si $f$ admet une fonction primitive sur $I$ et si on choisit un point précis $x_0 \\in I$, alors il existe \\textbf{une unique} fonction primitive $F_0$ qui vérifie une condition initiale donnée :\\par\\smallskip $$\\boxed{F_0(x_0) = y_0}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons l'unique primitive $F_0$ de $f(x) = 2x$ telle que $F_0(1) = 8$.}\\par On sait que les primitives de $f(x) = 2x$ sont de la forme $F(x) = x^2 + \\lambda$, avec $\\lambda \\in \\mathbb{R}$.\\par On utilise la condition $F_0(1) = 8$ pour trouver la valeur exacte de la constante $\\lambda$ :\\begin{align*}1^2 + \\lambda &= 8 \\\\1 + \\lambda &= 8 \\\\\\lambda &= 7\\end{align*}L'unique primitive cherchée est donc la fonction définie par $F_0(x) = x^2 + 7$."
+        }
+      ]
+    },
+    {
+      "id": "culture_mid",
+      "category": "course",
+      "title": "Culture & Contexte",
+      "blocks": []
+    },
+    {
+      "id": "primitives_usuelles",
+      "category": "course",
+      "title": "Tableau des primitives usuelles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Comme pour les dérivées, il n'est pas question de tout deviner. Vous devez connaître par cœur le tableau des primitives des fonctions de référence."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les primitives des fonctions de base}",
+          "content": "Dans ce tableau, $C$ représente une constante réelle arbitraire ($C \\in \\mathbb{R}$).\\par\\smallskip $$\\begin{array}{|c|c|}\\hline \\textbf{Fonction } f(x) & \\textbf{Primitives } F(x) \\\\\\hline x^n \\quad (n \\in \\mathbb{N}) & \\displaystyle\\frac{x^{n+1}}{n+1} + C \\\\\\hline \\displaystyle\\frac{1}{x^n} \\quad (n \\in \\mathbb{N} \\setminus \\{0,1\\}) & \\displaystyle\\frac{-1}{(n-1)x^{n-1}} + C \\\\\\hline \\displaystyle\\frac{1}{x} & \\ln(x) + C \\\\\\hline \\displaystyle\\frac{1}{\\sqrt{x}} & 2\\sqrt{x} + C \\\\\\hline e^x & e^x + C \\\\\\hline \\cos(x) & \\sin(x) + C \\\\\\hline \\sin(x) & -\\cos(x) + C \\\\\\hline \\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons les primitives de la fonction $f(x) = x^3 + e^x - \\sin(x)$.}\\par On sait que la primitive d'une somme est la somme des primitives. On applique le tableau terme par terme.\\begin{itemize}\\item La primitive de $x^3$ est $\\displaystyle\\frac{x^4}{4}$.\\item La primitive de $e^x$ est $e^x$.\\item La primitive de $\\sin(x)$ est $-\\cos(x)$.\\end{itemize}On obtient donc : $F(x) = \\displaystyle\\frac{x^4}{4} + e^x - (-\\cos(x)) + C$. Ce qui donne après simplification :\\begin{align*}F(x) &= \\displaystyle\\frac{x^4}{4} + e^x + \\cos(x) + C\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "operations_composees",
+      "category": "course",
+      "title": "Opérations et fonctions composées",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Souvent, la fonction n'est pas un simple $x$, mais une expression complète $u(x)$. Le secret est de repérer la présence de sa dérivée $u'(x)$ juste à côté."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{intégrer les formes composées $u'\\cdot g(u)$}",
+          "content": "Si $u$ est une fonction dérivable (notée $u'$ sa dérivée), on a les formules suivantes (avec $C \\in \\mathbb{R}$) :\\par\\smallskip $$\\begin{array}{|c|c|}\\hline \\textbf{Forme à reconnaître} & \\textbf{Primitives} \\\\\\hline u' \\times u^n \\quad (n \\in \\mathbb{N}) & \\displaystyle\\frac{u^{n+1}}{n+1} + C \\\\\\hline \\displaystyle\\frac{u'}{u^n} \\quad (n \\in \\mathbb{N} \\setminus \\{0,1\\}) & \\displaystyle\\frac{-1}{(n-1)u^{n-1}} + C \\\\\\hline \\displaystyle\\frac{u'}{u} & \\ln(u) + C \\\\\\hline \\displaystyle\\frac{u'}{\\sqrt{u}} & 2\\sqrt{u} + C \\\\\\hline u' \\times e^u & e^u + C \\\\\\hline u' \\times \\cos(u) & \\sin(u) + C \\\\\\hline u' \\times \\sin(u) & -\\cos(u) + C \\\\\\hline \\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons les primitives de la fonction $g(x) = \\displaystyle\\frac{2x}{x^2+5}$.}\\par On remarque que le numérateur est exactement la dérivée du dénominateur. On pose $u(x) = x^2+5$, dont la dérivée est $u'(x) = 2x$.\\par La fonction $g$ s'écrit donc sous la forme $\\displaystyle\\frac{u'}{u}$.\\par D'après le tableau des composées, la primitive d'une telle forme est $\\ln(u)$. Puisque $x^2+5 > 0$, on obtient :\\begin{align*}G(x) &= \\ln(x^2+5) + C\\end{align*}où $C$ est une constante réelle."
+        }
+      ]
+    }
+  ]
+}

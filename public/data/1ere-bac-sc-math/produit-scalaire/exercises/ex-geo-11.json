@@ -1,0 +1,61 @@
+{
+  "id": "ex-geo-11",
+  "theme": "produit-scalaire",
+  "difficulty": "moyen",
+  "topic": "Géométrie Analytique - Intérieur et extérieur d'un cercle",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer la position relative du point $A$ par rapport au cercle $\\mathcal{C}$ dans chacun des cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq1_1",
+          "content": "$A(-1;1)$ et $\\mathcal{C} : x^2 + y^2 - 2x + 4y = 0$",
+          "hint": "Calculez $d(\\Omega, A)$ et comparez au rayon. Ou substituez directement les coordonnées de $A$ dans le membre gauche de l'équation et comparez au second membre."
+        },
+        {
+          "id": "sq1_2",
+          "content": "$A\\left(\\dfrac{1}{2};-\\dfrac{1}{2}\\right)$ et $\\mathcal{C} : x^2 + y^2 + x = 0$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_3",
+          "content": "$A(0;1)$ et $\\mathcal{C} : (x-1)^2 + (y+2)^2 = 3$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_4",
+          "content": "$A(-1;0)$ et $\\mathcal{C} : (x+1)^2 + (y-2)^2 = 9$",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer l'ensemble $(\\Gamma)$ des points $M(x;y)$ du plan dans chacun des cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq2_5",
+          "content": "$x^2 + y^2 - 8x + 4y \\leq 0$",
+          "hint": "Identifiez le cercle associé à l'équation $x^2 + y^2 - 8x + 4y = 0$. L'ensemble est le disque fermé (intérieur + cercle)."
+        },
+        {
+          "id": "sq2_6",
+          "content": "$x^2 + y^2 + 5x - 4y - 1 \\geq 0$",
+          "hint": ""
+        },
+        {
+          "id": "sq2_7",
+          "content": "$4x^2 + 4y^2 + 16x - 4y - 7 < 0$",
+          "hint": "Divisez par 4 avant d'identifier le cercle."
+        },
+        {
+          "id": "sq2_8",
+          "content": "$x^2 + y^2 - 6x > 0$",
+          "hint": "L'inégalité stricte correspond à l'extérieur strict du cercle."
+        }
+      ]
+    }
+  ]
+}

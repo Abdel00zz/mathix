@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "La longueur d'une médiane",
+    "subtitle": "Théorème de la médiane",
+    "context": "Produit scalaire"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "La longueur d'une médiane",
+          "content": "Un triangle métallique $ABC$ doit être renforcé par une barre reliant le sommet $A$ au milieu $M$ de $[BC]$ (la \\textbf{médiane}). On connaît les longueurs des côtés : $AB = 6$, $AC = 8$ et $BC = 10$ (en mètres).\\par Le \\textbf{théorème de la médiane} affirme que $AB^2 + AC^2 = 2\\,AM^2 + \\dfrac{BC^2}{2}$."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item À l'aide de la relation $\\overrightarrow{AB} + \\overrightarrow{AC} = 2\\,\\overrightarrow{AM}$, retrouver le théorème de la médiane en développant $\\|\\overrightarrow{AB} + \\overrightarrow{AC}\\|^2$ avec le produit scalaire.\\item Calculer la longueur $AM$ de la barre de renfort.\\item Quelle est la nature du triangle $ABC$ ? Que vaut alors la médiane issue de $A$ ? Le résultat est-il cohérent ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "$\\|\\overrightarrow{AB}+\\overrightarrow{AC}\\|^2 = AB^2 + AC^2 + 2\\,\\overrightarrow{AB}\\cdot\\overrightarrow{AC}$, et $\\overrightarrow{AB}\\cdot\\overrightarrow{AC} = \\dfrac{AB^2 + AC^2 - BC^2}{2}$."
+        },
+        {
+          "type": "hint",
+          "content": "Du théorème : $AM^2 = \\dfrac{2\\,AB^2 + 2\\,AC^2 - BC^2}{4}$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $4\\,AM^2 = \\|\\overrightarrow{AB}+\\overrightarrow{AC}\\|^2 = AB^2 + AC^2 + 2\\,\\overrightarrow{AB}\\cdot\\overrightarrow{AC}$. Or $\\overrightarrow{AB}\\cdot\\overrightarrow{AC} = \\dfrac{AB^2+AC^2-BC^2}{2}$, d'où $AM^2 = \\dfrac{2AB^2 + 2AC^2 - BC^2}{4}$, équivalent au théorème de la médiane.\\par\\textbf{2)} $AM^2 = \\dfrac{2\\times 36 + 2\\times 64 - 100}{4} = \\dfrac{72 + 128 - 100}{4} = \\dfrac{100}{4} = 25$, donc $AM = \\boxed{5\\ \\text{m}}$.\\par\\textbf{3)} Comme $AB^2 + AC^2 = 36 + 64 = 100 = BC^2$, le triangle est \\textbf{rectangle en $A$} (réciproque de Pythagore). Dans un triangle rectangle, la médiane issue de l'angle droit vaut la moitié de l'hypoténuse : $AM = \\dfrac{BC}{2} = 5\\ \\text{m}$. $\\checkmark$"
+        }
+      ]
+    }
+  ]
+}

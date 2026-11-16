@@ -1,0 +1,19 @@
+{
+  "id": "ex-log-14",
+  "theme": "logique",
+  "difficulty": "moyen",
+  "topic": "Logique & Raisonnements — Raisonnement par contraposée",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer par contraposée que $\\sqrt{6} \\notin \\mathbb{Q}$ et $\\sqrt{3} - \\sqrt{2} \\notin \\mathbb{Q}$.",
+      "hint": "Pour $\\sqrt{6}$ : supposez $\\sqrt{6} = \\dfrac{p}{q}$ irréductible et obtenez une contradiction sur la parité. Pour $\\sqrt{3}-\\sqrt{2}$ : si $\\sqrt{3}-\\sqrt{2} \\in \\mathbb{Q}$, que vaut $\\dfrac{1}{\\sqrt{3}-\\sqrt{2}}$ et qu'en déduirait-on sur $\\sqrt{3}$ et $\\sqrt{2}$ ?"
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que si $x \\in \\mathbb{Q}^*$ et $y \\notin \\mathbb{Q}$, alors $xy \\notin \\mathbb{Q}$ et $x + y \\notin \\mathbb{Q}$.",
+      "hint": "Raisonnez par contraposée : si $xy \\in \\mathbb{Q}$ et $x \\in \\mathbb{Q}^*$, alors $y = \\dfrac{xy}{x} \\in \\mathbb{Q}$, contradiction."
+    }
+  ]
+}

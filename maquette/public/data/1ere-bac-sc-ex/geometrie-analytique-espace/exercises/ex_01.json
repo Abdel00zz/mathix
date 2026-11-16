@@ -1,0 +1,25 @@
+{
+  "id": "ex-geometrie-analytique-espace-01",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "facile",
+  "topic": "Coordonnées dans l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Vecteur et milieu",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Dans un repère de l'espace, on considère $A(1,-2,3)$ et $B(5,4,-1)$. Déterminer les coordonnées de $\\overrightarrow{AB}$.",
+          "hint": "Soustraire les coordonnées de $A$ à celles de $B$."
+        },
+        {
+          "id": "b",
+          "content": "Déterminer les coordonnées du milieu $I$ de $[AB]$.",
+          "hint": "Faire la moyenne de chaque coordonnée."
+        }
+      ]
+    }
+  ]
+}

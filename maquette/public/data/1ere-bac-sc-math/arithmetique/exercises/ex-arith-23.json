@@ -1,0 +1,42 @@
+{
+  "id": "ch05-ex07",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "chapter": "05 - Congruence modulo n ; l'ensemble Z/nZ et opérations",
+  "topic": "Congruences - Équations diophantiennes dans N²",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Résoudre dans $\\mathbb{N}^2$ l'équation : $a^2 - b^2 = 32$.",
+      "hint": "Factorisez $a^2 - b^2 = (a-b)(a+b) = 32$. Comme $a, b \\in \\mathbb{N}$, on a $a+b > a-b \\geq 0$. Listez les couples de diviseurs positifs de $32$ dont le produit vaut $32$, puis résolvez les systèmes correspondants."
+    },
+    {
+      "id": "q2",
+      "content": "Soit $(x ; y) \\in \\mathbb{N}^2$ tel que : $x > y$. Déterminer $x$ et $y$ sachant que : $x^2 - y^2 = 24$.",
+      "hint": "Même approche : factorisez et exploitez les contraintes $x > y \\geq 0$ pour ne conserver que les décompositions admissibles."
+    },
+    {
+      "id": "q3",
+      "content": "On considère dans $\\mathbb{N}^2$ l'équation $(E)$ suivante : $3x^2 + 2y^2 = 30$.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Vérifier que : $0 \\leq x \\leq 3$.",
+          "hint": "Comme $y^2 \\geq 0$, on a $3x^2 \\leq 30$, soit $x^2 \\leq 10$. Quelles valeurs entières $x$ cela autorise-t-il ?"
+        },
+        {
+          "id": "sq3b",
+          "content": "Résoudre l'équation $(E)$.",
+          "hint": "D'après la question précédente, $x$ ne peut prendre qu'un nombre fini de valeurs. Pour chaque valeur de $x$, vérifiez si $y^2 = \\frac{30 - 3x^2}{2}$ est un carré parfait entier."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Résoudre dans $\\mathbb{N}^2$ les équations suivantes : $3x^3 + xy + 4y^3 = 349$ ; $x^2 - y^2 - x + 3y = 30$ ; $x^2 - 5y^2 = 3$.",
+      "hint": "Pour chaque équation, bornez les variables ou factorisez. Pour $x^2 - 5y^2 = 3$ : étudiez les résidus modulo $5$ pour montrer que $x \\equiv \\pm 2\\ [5]$, ce qui restreint les cas. Pour les autres, essayez de factoriser ou borner $x$ en fonction de $y$."
+    }
+  ]
+}

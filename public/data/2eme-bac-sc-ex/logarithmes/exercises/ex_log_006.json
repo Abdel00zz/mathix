@@ -1,0 +1,177 @@
+{
+  "id": "ex-analyse-bac-logarithme",
+  "theme": "logarithmes",
+  "difficulty": "moyen",
+  "topic": "Analyse",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "pI",
+      "content": "Soit $f$ la fonction numérique définie par :\n$$\\begin{cases} f(x) = x + x(\\ln x)^2 & ; \\enspace x > 0 \\\\ f(0) = 0 \\end{cases}$$\net $(C_f)$ sa courbe représentative dans un repère orthonormé $(O; \\overrightarrow{i}; \\overrightarrow{j})$.",
+      "type": "header"
+    },
+    {
+      "id": "q1",
+      "content": "Déterminer $D_f$ l'ensemble de définition de $f$.",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "",
+          "hint": "La fonction logarithme népérien $\\ln(x)$ est définie uniquement pour $x > 0$. N'oubliez pas de vérifier si la valeur $0$ est incluse explicitement par la définition de $f$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que $f$ est continue à droite en $0$.",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "",
+          "hint": "Rappel de cours : Pour la continuité, vérifiez que $\\displaystyle \\lim_{x \\to 0^+} f(x) = f(0)$. Utilisez la limite de référence $\\displaystyle \\lim_{x \\to 0^+} x(\\ln x)^n = 0$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que $\\displaystyle \\lim_{x \\to 0^+} \\frac{f(x)}{x} = +\\infty$ puis interpréter géométriquement le résultat.",
+      "subQuestions": [
+        {
+          "id": "sq3",
+          "content": "",
+          "hint": "Simplifiez l'expression $\\frac{f(x)}{x}$ en utilisant l'expression de $f(x)$ pour $x>0$. Interprétation : réfléchissez à la notion de dérivabilité en $0$ et à la position de la tangente limite."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} f(x)$ et $\\displaystyle \\lim_{x \\to +\\infty} \\frac{f(x)}{x}$ puis interpréter géométriquement les résultats.",
+      "subQuestions": [
+        {
+          "id": "sq4",
+          "content": "",
+          "hint": "Pour $\\frac{f(x)}{x}$, séparez les termes. Si la limite est infinie, cela indique une branche parabolique de direction $(Oy)$. Observez le terme dominant."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq5a",
+          "content": "Montrer que $(\\forall x \\in ]0; +\\infty[) : f'(x) = (1 + \\ln x)^2$.",
+          "hint": "Utilisez la formule de la dérivée d'un produit $(uv)' = u'v + uv'$ avec $u(x)=x$ et $v(x)=(\\ln x)^2$. Attention à la dérivée composée pour $(\\ln x)^2$."
+        },
+        {
+          "id": "sq5b",
+          "content": "Calculer $f'(e^{-1})$, puis interpréter géométriquement le résultat.",
+          "hint": "Rappel : $\\ln(e^{-1}) = -1$. Si le nombre dérivé est nul, la courbe admet une tangente particulière en ce point."
+        },
+        {
+          "id": "sq5c",
+          "content": "Dresser le tableau de variations de $f$.",
+          "hint": "Étudiez le signe de la dérivée $f'(x) = (1+\\ln x)^2$. Un carré parfait est toujours positif ou nul sur son domaine."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "Montrer que $(C_f)$ admet un point d'inflexion d'abscisse $e^{-1}$.",
+      "subQuestions": [
+        {
+          "id": "sq6",
+          "content": "",
+          "hint": "Méthode : Un point d'inflexion existe là où la dérivée seconde $f''(x)$ s'annule en changeant de signe. Dérivez $f'(x)$ pour obtenir $f''(x)$."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "content": "Montrer que la droite $(T)$ d'équation $y = x$ est tangente à $(C_f)$ au point d'abscisse $1$.",
+      "subQuestions": [
+        {
+          "id": "sq7",
+          "content": "",
+          "hint": "Utilisez l'équation de la tangente : $y = f'(a)(x-a) + f(a)$ avec $a=1$. Vérifiez que vous retrouvez exactement $y=x$."
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq8a",
+          "content": "Montrer que la fonction $f$ admet une fonction réciproque $f^{-1}$ définie sur un intervalle $J$ à déterminer.",
+          "hint": "Théorème de la bijection : La fonction doit être continue et strictement monotone sur l'intervalle donné. $J$ sera l'image de l'intervalle de définition par $f$."
+        },
+        {
+          "id": "sq8b",
+          "content": "Calculer $f^{-1}(1)$ et $(f^{-1})' (1)$",
+          "hint": "Pour $f^{-1}(1)$, trouvez $x$ tel que $f(x)=1$. Pour la dérivée, utilisez la formule : $\\displaystyle (f^{-1})'(y_0) = \\frac{1}{f'(f^{-1}(y_0))}$."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "content": "Construire $(T)$, $(C_f)$ et $(C_{f^{-1}})$ dans le repère $(O; \\overrightarrow{i}; \\overrightarrow{j})$.",
+      "subQuestions": [
+        {
+          "id": "sq9",
+          "content": "",
+          "hint": "**Éléments à placer sur le graphe :**\n\n• **Origine** $O(0, 0)$ (point de $(C_f)$)\n\n• **Tangente** $(T)$ : $y = x$ au point $(1, 1)$\n\n• **Point d'inflexion** en $I(e^{-1}, f(e^{-1}))$ avec tangente horizontale (car $f'(e^{-1}) = 0$)\n\n• **$(C_f)$** : strictement croissante, concave sur $]0, e^{-1}[$, convexe sur $]e^{-1}, +\\infty[$\n\n• **$(C_{f^{-1}})$** : symétrique de $(C_f)$ par rapport à $(T) : y = x$\n\n• **Branche parabolique** de direction $(Oy)$ en $+\\infty$\n"
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "content": "Montrer que la fonction $H : x \\mapsto \\frac{1}{2}x^2 \\left(\\ln(x) - \\frac{1}{2}\\right)$ est primitive de la fonction $h : x \\mapsto x \\ln(x)$ sur l'intervalle $]0; +\\infty[$.",
+      "subQuestions": [
+        {
+          "id": "sq10",
+          "content": "",
+          "hint": "Méthode directe : Dérivez la fonction $H(x)$ et montrez que $H'(x) = h(x)$."
+        }
+      ]
+    },
+    {
+      "id": "pII",
+      "content": "On considère la suite numérique $(u_n)$ définie pour tout $n \\in \\mathbb{N}$ par $u_0 = \\frac{1}{2}$ et $u_{n+1} = f(u_n)$.",
+      "type": "header"
+    },
+    {
+      "id": "qII1",
+      "content": "Montrer que pour tout $n \\in \\mathbb{N}$, $e^{-1} < u_n < 1$.",
+      "subQuestions": [
+        {
+          "id": "sqII1",
+          "content": "",
+          "hint": "Raisonnement par récurrence. Pour l'hérédité, utilisez la stricte croissance de $f$ sur $[e^{-1}, 1]$ établie en partie I."
+        }
+      ]
+    },
+    {
+      "id": "qII2",
+      "content": "Montrer que la suite $(u_n)$ est croissante.",
+      "subQuestions": [
+        {
+          "id": "sqII2",
+          "content": "",
+          "hint": "Comparez $f(x)$ et $x$ sur l'intervalle d'étude, ou utilisez une récurrence. L'observation de la position relative de $(C_f)$ et $y=x$ aide ici (cf. question 7)."
+        }
+      ]
+    },
+    {
+      "id": "qII3",
+      "content": "En déduire que la suite $(u_n)$ est convergente puis déterminer sa limite.",
+      "subQuestions": [
+        {
+          "id": "sqII3",
+          "content": "",
+          "hint": "Théorème de convergence monotone : toute suite croissante et majorée converge. La limite $l$ vérifie $f(l)=l$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.next-audit/
+.next-turbo-audit/
+.next-webpack-audit/
+*.tsbuildinfo
+out/
+public/data/
+public/icons/
+next-env.d.ts

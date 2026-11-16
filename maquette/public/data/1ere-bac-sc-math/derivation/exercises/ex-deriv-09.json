@@ -1,0 +1,56 @@
+{
+  "id": "ex-analyse-etude-fct-irrationnelle",
+  "theme": "derivation",
+  "difficulty": "facile",
+  "topic": "Analyse - Étude de fonction irrationnelle",
+  "requiresRedaction": true,
+  "context": "On considère la fonction numérique $f$ définie par : $f(x) = x+\\frac{2}{\\sqrt{x+1}}$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $D_f$ l'ensemble de définition de la fonction $f$",
+      "hint": "Pour que la fonction soit définie, l'expression sous la racine carrée doit être strictement positive car elle est située au dénominateur. Résolvez l'inéquation $x+1 > 0$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer les limites de la fonction $f$ aux bornes de $D_f$",
+      "hint": "Aux bornes, vous devez étudier la limite en $-1$ (par valeurs supérieures) et en $+\\infty$. Rappelez-vous que $\\lim_{X \\to 0^+} \\frac{1}{\\sqrt{X}} = +\\infty$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que pour tout $x$ de $D_f$, on a : $f'(x)=1-\\frac{1}{(x+1)\\sqrt{x+1}}$",
+      "hint": "Dérivez le terme $\\frac{2}{\\sqrt{x+1}}$ en utilisant la formule $\\left(\\frac{1}{u}\\right)' = -\\frac{u'}{u^2}$ avec $u=\\sqrt{x+1}$, ou en utilisant la forme puissance $2(x+1)^{-\\frac{1}{2}}$. Notez que $(x+1)\\sqrt{x+1} = (x+1)^{\\frac{3}{2}}$."
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que pour tout $x$ de $]-1,0]$, on a : $\\frac{1}{(x+1)\\sqrt{x+1}} \\geq 1$",
+          "hint": "Partez de l'encadrement $-1 < x \\leq 0$. Construisez l'expression étape par étape : encadrez d'abord $x+1$, puis sa puissance, et enfin passez à l'inverse en n'oubliant pas de changer le sens de l'inégalité."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que pour tout $x$ de $[0,+\\infty[$, on a : $\\frac{1}{(x+1)\\sqrt{x+1}} \\leq 1$",
+          "hint": "Adoptez la même démarche que la question précédente en partant cette fois de $x \\geq 0$, ce qui implique $x+1 \\geq 1$."
+        },
+        {
+          "id": "c",
+          "content": "Déduire le signe de $f'(x)$ sur $D_f$",
+          "hint": "Utilisez les résultats des questions 4)a et 4)b pour comparer le terme $\\frac{1}{(x+1)\\sqrt{x+1}}$ à 1. Déduisez-en le signe de la différence $1 - \\frac{1}{(x+1)\\sqrt{x+1}}$ sur chaque intervalle."
+        },
+        {
+          "id": "d",
+          "content": "Dresser le tableau de variations de la fonction $f$.",
+          "hint": "Synthétisez les informations : placez les bornes, le signe de la dérivée trouvé précédemment, et calculez la valeur de l'extremum $f(0)$."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Donner l'équation de la tangente $(T)$ à la courbe représentative de la fonction $f$ au point d'abscisse 0.",
+      "hint": "Appliquez la formule de l'équation réduite de la tangente en un point d'abscisse $a$ : $y = f'(a)(x-a) + f(a)$, en remplaçant $a$ par 0."
+    }
+  ]
+}

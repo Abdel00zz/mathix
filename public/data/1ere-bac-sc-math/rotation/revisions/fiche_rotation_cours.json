@@ -1,0 +1,282 @@
+{
+  "header": {
+    "title": "La Rotation dans le Plan",
+    "subtitle": "Cours Complet & Propriétés",
+    "context": "1BAC Sciences Mathématiques"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "La rotation permet de \\objectif{transformer une figure en conservant les distances et l'orientation} autour d'un centre fixe. Elle donne un modele precis d'un quart de tour, d'un demi-tour ou d'une composition d'isometries dans le plan. La \\defi{difficulte} principale est de manipuler correctement les angles orientes, le centre de rotation et la construction de l'image d'un point ou d'une figure. \\savant{Leonhard Euler} a profondement renouvelle l'etude des transformations geometriques ; aujourd'hui, la rotation est partout, de la robotique au graphisme numerique.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonhard_Euler.jpg",
+            "type": "image",
+            "position": "right",
+            "width": "16.5%",
+            "caption": "Leonhard Euler (1707-1783)"
+          }
+        },
+        {
+          "type": "text",
+          "content": "$$\\boxed{\\text{Idée clé : la rotation préserve les distances, les angles et l'orientation du plan}}$$"
+        }
+      ]
+    },
+    {
+      "id": "definition_base",
+      "category": "course",
+      "title": "Définition et Propriétés de Base",
+      "blocks": [
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{une rotation dans le plan}",
+          "content": "Soit $\\Omega$ un point du plan et $\\theta \\in \\mathbb{R}$. La \\textbf{rotation} $r_{(\\Omega,\\, \\theta)}$ est la transformation qui :\\par\\smallskip\\\\$\\bullet$ laisse le point $\\Omega$ \\blank{invariant} ($r(\\Omega) = \\Omega$)\\\\$\\bullet$ associe à tout point $M \\neq \\Omega$ l'unique point $M'$ tel que :\\\\$$\\boxed{\\begin{cases} \\Omega M' = \\blank{\\Omega M} \\\\ (\\overrightarrow{\\Omega M},\\, \\overrightarrow{\\Omega M'}) \\equiv \\blank{\\theta} \\; [2\\pi] \\end{cases}}$$\\par\\smallskip\\\\La première condition impose que $M'$ est sur le \\textbf{cercle} de centre $\\Omega$ et de rayon $\\Omega M$.\\\\La seconde fixe sa position \\blank{angulaire} sur ce cercle.\\par\\smallskip\\\\On appelle $\\Omega$ le \\textbf{centre} et $\\theta$ l'\\textbf{angle} de la rotation.",
+          "graphId": "rot_definition",
+          "graphCaption": "Modifiez l'angle θ et déplacez M pour visualiser la rotation."
+        },
+        {
+          "type": "remark",
+          "content": "\\textbf{Convention de signe :}\\par\\smallskip\\\\$\\bullet$ $\\theta > 0$ : sens \\blank{trigonométrique} (inverse des aiguilles d'une montre)\\\\$\\bullet$ $\\theta < 0$ : sens \\blank{horaire} (sens des aiguilles d'une montre)\\\\$\\bullet$ $\\theta = 0$ : identité, chaque point est son propre image"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $ABCD$ un carré de centre $O$, orienté dans le sens direct. Déterminer les images par la \\textbf{rotation} $r(O, \\frac{\\pi}{2})$.}\\par\\smallskip\\\\La rotation de centre $O$ et d'angle $\\frac{\\pi}{2}$ fait tourner d'un quart de tour dans le sens trigonométrique.\\par\\smallskip\\\\Puisque $OA = OB = OC = OD$ et que les angles consécutifs valent $\\frac{\\pi}{2}$ :\\\\$$r(A) = \\blank{B} \\quad r(B) = \\blank{C} \\quad r(C) = \\blank{D} \\quad r(D) = \\blank{A}$$\\par\\smallskip\\\\Pour les segments : $r([AB]) = [\\blank{BC}]$, $r([BC]) = [\\blank{CD}]$.\\par\\smallskip\\\\Pour les diagonales : $r([AC]) = [\\blank{BD}]$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $ABC$ un triangle équilatéral direct. Déterminer la \\textbf{rotation} qui envoie $B$ sur $C$.}\\par\\smallskip\\\\On cherche $r(\\Omega, \\theta)$ telle que $r(B) = C$.\\par\\smallskip\\\\Puisque $ABC$ est équilatéral direct, on a $AB = AC$ et $(\\overrightarrow{AB}, \\overrightarrow{AC}) = \\frac{\\pi}{3}$.\\par\\smallskip\\\\Prenons $\\Omega = A$ : alors $\\Omega B = AB = AC = \\Omega C$ et l'angle $(\\overrightarrow{AB}, \\overrightarrow{AC}) = \\frac{\\pi}{3}$.\\par\\smallskip\\\\Donc $r\\left(A,\\, \\frac{\\pi}{3}\\right)$ envoie $B$ sur $\\blank{C}$.\\par\\smallskip\\\\Vérifions les images des côtés : $r([AB]) = [\\blank{AC}]$ et $r([BC])$ est un segment de même longueur."
+        },
+        {
+          "type": "property",
+          "title": "Quelle est \\mathqst{la réciproque d'une rotation}",
+          "content": "Toute rotation est \\blank{bijective}. La réciproque de $r(\\Omega, \\theta)$ est :\\\\$$\\boxed{r^{-1} = r(\\Omega,\\, \\blank{-\\theta})}$$\\par\\smallskip\\\\Autrement dit, pour tous points $M$ et $N$ :\\\\$$r(\\Omega, \\theta)(M) = N \\iff r(\\Omega, -\\theta)(N) = \\blank{M}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On reprend le triangle équilatéral direct $ABC$. Sachant que $r\\left(A, \\frac{\\pi}{3}\\right)(B) = C$, déterminer l'antécédent de $B$ par cette \\textbf{rotation}.}\\par\\smallskip\\\\L'antécédent de $B$ est le point $M$ tel que $r(M) = B$, c'est-à-dire $M = r^{-1}(B)$.\\par\\smallskip\\\\Or $r^{-1} = r\\left(A, -\\frac{\\pi}{3}\\right)$.\\par\\smallskip\\\\On cherche le point à distance $AB$ de $A$, formant un angle de $-\\frac{\\pi}{3}$ avec $\\overrightarrow{AB}$.\\par\\smallskip\\\\Puisque $(\\overrightarrow{AC}, \\overrightarrow{AB}) = -\\frac{\\pi}{3}$ (angle dans le sens horaire), on obtient :\\\\$$r^{-1}(B) = r\\left(A, -\\frac{\\pi}{3}\\right)(B) = \\blank{C}$$\\par\\smallskip\\\\En effet, $r\\left(A, \\frac{\\pi}{3}\\right)(B) = C$ donc $r\\left(A, -\\frac{\\pi}{3}\\right)(C) = B$.\\\\L'antécédent de $B$ par $r\\left(A, \\frac{\\pi}{3}\\right)$ est donc $\\blank{C}$."
+        },
+        {
+          "type": "warning",
+          "title": "Quand \\mathqst{la rotation est-elle l'identité}",
+          "content": "La rotation $r(\\Omega, \\theta)$ est l'\\textbf{identité} (tout point est invariant) si et seulement si :\\\\$$\\theta \\equiv \\blank{0} \\; [2\\pi]$$\\par\\smallskip\\\\Attention : $r(\\Omega, 2\\pi) = r(\\Omega, 0) = \\text{Id}$ pour tout point $\\Omega$."
+        }
+      ]
+    },
+    {
+      "id": "expression_analytique",
+      "category": "course",
+      "title": "Expression Analytique de la Rotation",
+      "blocks": [
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les formules analytiques de la rotation}",
+          "content": "Dans un repère orthonormé direct $(O;\\, \\overrightarrow{i},\\, \\overrightarrow{j})$, si $M(x, y)$ a pour image $M'(x', y')$ par la rotation $r(O, \\theta)$ :\\\\$$\\boxed{\\begin{cases} x' = x\\cos\\theta - y\\sin\\theta \\\\ y' = x\\sin\\theta + y\\cos\\theta \\end{cases}}$$\\par\\smallskip\\\\Sous forme matricielle : $\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix}$\\par\\smallskip\\\\Pour une rotation de centre $\\Omega(a, b) \\neq O$ :\\\\$$\\boxed{\\begin{cases} x' - a = (x-a)\\cos\\theta - (y-b)\\sin\\theta \\\\ y' - b = (x-a)\\sin\\theta + (y-b)\\cos\\theta \\end{cases}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $M(2, 0)$. Calculer son image par $r\\left(O, \\frac{\\pi}{3}\\right)$.}\\par\\smallskip\\\\Appliquons les formules avec $\\theta = \\frac{\\pi}{3}$, $\\cos\\frac{\\pi}{3} = \\frac{1}{2}$, $\\sin\\frac{\\pi}{3} = \\frac{\\sqrt{3}}{2}$ :\\par\\smallskip\\\\$$x' = 2 \\times \\frac{1}{2} - 0 \\times \\frac{\\sqrt{3}}{2} = \\blank{1}$$\\\\$$y' = 2 \\times \\frac{\\sqrt{3}}{2} + 0 \\times \\frac{1}{2} = \\blank{\\sqrt{3}}$$\\par\\smallskip\\\\Donc $M'(\\blank{1},\\, \\blank{\\sqrt{3}})$.\\par\\smallskip\\\\Vérifions : $OM' = \\sqrt{1^2 + (\\sqrt{3})^2} = \\sqrt{1+3} = 2 = OM$ \\quad et \\quad $\\tan^{-1}\\left(\\frac{\\sqrt{3}}{1}\\right) = \\frac{\\pi}{3}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculer l'image de $A(1, 2)$ par la \\textbf{rotation} $r\\left(O, \\frac{\\pi}{2}\\right)$.}\\par\\smallskip\\\\Avec $\\theta = \\frac{\\pi}{2}$ : $\\cos\\frac{\\pi}{2} = 0$ et $\\sin\\frac{\\pi}{2} = 1$.\\par\\smallskip\\\\$$x' = 1 \\times 0 - 2 \\times 1 = \\blank{-2}$$\\\\$$y' = 1 \\times 1 + 2 \\times 0 = \\blank{1}$$\\par\\smallskip\\\\Donc $A'(\\blank{-2},\\, \\blank{1})$.\\par\\smallskip\\\\\\textbf{Règle mnémonique :} pour $\\theta = \\frac{\\pi}{2}$, l'image de $(x, y)$ est $(-y, x)$.\\\\Pour $\\theta = -\\frac{\\pi}{2}$ : $(x, y) \\mapsto (y, -x)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminer l'image de $P(3, 1)$ par la \\textbf{rotation} de centre $\\Omega(1, -1)$ et d'angle $\\frac{\\pi}{2}$.}\\par\\smallskip\\\\D'abord, translatons vers l'origine : $(x - a, y - b) = (3-1, 1-(-1)) = (2, 2)$.\\par\\smallskip\\\\Appliquons la rotation d'angle $\\frac{\\pi}{2}$ : $(2, 2) \\mapsto (-2, 2)$.\\par\\smallskip\\\\Retranslatons : $(x', y') = (-2 + 1, 2 + (-1)) = (-1, 1)$.\\par\\smallskip\\\\Donc $P'(\\blank{-1},\\, \\blank{1})$.\\par\\smallskip\\\\Vérifions : $\\Omega P = \\sqrt{4+4} = 2\\sqrt{2}$ et $\\Omega P' = \\sqrt{4+4} = 2\\sqrt{2}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer \\mathqst{l'image d'un point par une rotation}",
+          "content": "\\textbf{Si le centre est $\\Omega(a,b) \\neq O$ :} poser $X = x-a$ et $Y = y-b$ pour se ramener à l'origine.\\par\\smallskip\\\\Puis appliquer les formules : $X' = X\\cos\\theta - Y\\sin\\theta$ et $Y' = X\\sin\\theta + Y\\cos\\theta$.\\par\\smallskip\\\\Enfin retranslater : $x' = X'+a$ et $y' = Y'+b$.\\par\\smallskip\\\\\\textbf{Contrôle rapide :} vérifier que $\\Omega M' = \\Omega M$."
+        }
+      ]
+    },
+    {
+      "id": "proprietes_conservation",
+      "category": "course",
+      "title": "Propriétés de Conservation",
+      "blocks": [
+        {
+          "type": "property",
+          "title": "Pourquoi \\mathqst{la rotation est-elle une isométrie}",
+          "content": "Si $r(A) = A'$ et $r(B) = B'$, alors :\\\\$$\\boxed{A'B' = \\blank{AB}}$$\\par\\smallskip\\\\La rotation est une \\textbf{isométrie} : elle préserve \\textbf{toutes} les distances. Chaque point se déplace sur un cercle de centre $\\Omega$ sans changement de rayon.",
+          "graphId": "rot_isometrie",
+          "graphCaption": "Déplacez A, B, C et modifiez θ : les distances AB et A'B' restent égales."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les propriétés conservées par la rotation}",
+          "content": "La rotation conserve :\\par\\smallskip\\\\$\\bullet$ Les \\textbf{distances} : $A'B' = AB$\\\\$\\bullet$ Les \\textbf{angles orientés} : $(\\overrightarrow{A'B'},\\, \\overrightarrow{C'D'}) = (\\overrightarrow{AB},\\, \\overrightarrow{CD})$\\\\$\\bullet$ L'\\textbf{alignement} : si $A, B, C$ sont alignés, alors $A', B', C'$ sont \\blank{alignés}\\\\$\\bullet$ La \\textbf{colinéarité} : $\\overrightarrow{AC} = k\\overrightarrow{AB} \\Rightarrow \\overrightarrow{A'C'} = \\blank{k}\\overrightarrow{A'B'}$\\\\$\\bullet$ Le \\textbf{parallélisme} et l'\\textbf{orthogonalité}\\\\$\\bullet$ Le \\textbf{barycentre} : $G = \\textit{Bar}(A_i, \\alpha_i) \\Rightarrow G' = \\textit{Bar}(A'_i, \\alpha_i)$\\\\$\\bullet$ Le \\textbf{milieu} : $I = \\text{mil}[AB] \\Rightarrow I' = \\text{mil}[A'B']$"
+        },
+        {
+          "type": "remark",
+          "content": "La rotation est une isométrie \\textbf{directe} (elle conserve l'orientation du plan). Cela la distingue de la symétrie orthogonale qui est une isométrie \\textit{indirecte} (elle inverse l'orientation)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $ABCD$ et $AEFG$ deux carrés directs de même sommet $A$. Soit $r$ la \\textbf{rotation} $r\\left(A, \\frac{\\pi}{2}\\right)$.\\\\On a $r(B) = D$ et $r(G) = E$. Si $I$ est le milieu de $[BG]$, que peut-on dire de son image ?}\\par\\smallskip\\\\La rotation conserve le milieu. Donc l'image de $I$ (milieu de $[BG]$) est le milieu de l'image de $[BG]$, c'est-à-dire le milieu du segment $[r(B)\\, r(G)] = [DE]$.\\par\\smallskip\\\\$$\\boxed{r(I) = \\text{milieu de } [\\blank{DE}]}$$\\par\\smallskip\\\\De plus, puisque la rotation conserve les distances : $BG = DE$, et $BI = IG$ implique $r(B)r(I) = r(I)r(G)$."
+        }
+      ]
+    },
+    {
+      "id": "images_figures",
+      "category": "course",
+      "title": "Images des Figures Géométriques",
+      "blocks": [
+        {
+          "type": "property",
+          "title": "Quelle est \\mathqst{l'image d'une droite par une rotation}",
+          "content": "L'image d'une droite $(D)$ par $r(\\Omega, \\theta)$ est une \\textbf{droite} $(D')$.\\par\\smallskip\\\\$\\bullet$ Si $\\Omega \\in (D)$ : $(D')$ passe par $\\Omega$ et $(\\overrightarrow{u},\\, \\overrightarrow{u'}) \\equiv \\blank{\\theta} \\; [2\\pi]$\\\\$\\bullet$ Si $\\Omega \\notin (D)$ et $\\theta \\equiv 0\\;[\\pi]$ : $(D') \\parallel (D)$\\\\$\\bullet$ Si $\\Omega \\notin (D)$ et $\\theta \\not\\equiv 0\\;[\\pi]$ : $(D')$ et $(D)$ sont \\blank{sécantes}"
+        },
+        {
+          "type": "property",
+          "title": "Quelle est \\mathqst{l'image d'un cercle par une rotation}",
+          "content": "L'image du cercle $\\mathcal{C}(I, r)$ (centre $I$, rayon $r$) par la rotation $r(\\Omega, \\theta)$ est :\\\\$$\\boxed{\\mathcal{C}'(I',\\, r) \\quad \\text{où} \\quad I' = r(\\Omega, \\theta)(I)}$$\\par\\smallskip\\\\Le rayon est \\blank{conservé}, seul le centre est déplacé."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $\\mathcal{C}$ le cercle de centre $I(1, 0)$ et de rayon $2$. Déterminer son image par $r\\left(O, \\frac{\\pi}{2}\\right)$.}\\par\\smallskip\\\\L'image du centre : $I(1, 0) \\xrightarrow{r(O,\\frac{\\pi}{2})} I'(0, 1)$.\\par\\smallskip\\\\En effet : $x' = 1 \\times 0 - 0 \\times 1 = 0$ et $y' = 1 \\times 1 + 0 \\times 0 = 1$.\\par\\smallskip\\\\Le rayon est conservé : $r' = r = 2$.\\par\\smallskip\\\\$$\\boxed{\\mathcal{C}' = \\mathcal{C}(\\blank{I'(0,1)},\\, \\blank{2})}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles figures sont \\mathqst{globalement invariantes par une rotation}",
+          "content": "$$\\begin{array}{|l|l|}\\hline \\textbf{Figure} & \\textbf{Invariance globale par } r(\\Omega, \\theta) \\\\ \\hline \\text{Cercle de centre } \\Omega & \\text{Invariant pour tout angle } \\theta \\\\ \\hline \\text{Droite passant par } \\Omega & \\text{Invariante si } \\theta \\equiv 0 \\;[\\pi] \\\\ \\hline \\text{Triangle équilatéral de centre } \\Omega & \\text{Invariant si } \\theta \\in \\left\\{\\frac{2\\pi}{3},\\, \\frac{4\\pi}{3}\\right\\} \\\\ \\hline \\text{Carré de centre } \\Omega & \\text{Invariant si } \\theta \\in \\left\\{\\frac{\\pi}{2},\\, \\pi,\\, \\frac{3\\pi}{2}\\right\\} \\\\ \\hline \\end{array}$$"
+        }
+      ]
+    },
+    {
+      "id": "point_invariant",
+      "category": "course",
+      "title": "Point Invariant et Caractérisation du Centre",
+      "blocks": [
+        {
+          "type": "property",
+          "title": "Quel est \\mathqst{l'unique point invariant d'une rotation}",
+          "content": "Si $\\theta \\not\\equiv 0 \\; [2\\pi]$, le centre $\\Omega$ est l'\\textbf{unique} point fixe de $r(\\Omega, \\theta)$.\\par\\smallskip\\\\Pour tout $M \\neq \\Omega$ tel que $r(M) = M'$ :\\par\\smallskip\\\\$\\bullet$ $M'$ est sur le cercle $\\mathcal{C}(\\Omega, \\Omega M)$, donc $\\Omega M' = \\blank{\\Omega M}$\\\\$\\bullet$ Le triangle $\\Omega M M'$ est \\blank{isocèle} de sommet $\\Omega$\\\\$\\bullet$ $\\Omega$ appartient à la \\blank{médiatrice} de $[MM']$",
+          "graphId": "rot_mediatrice_graph",
+          "graphCaption": "Observez : Ω est toujours sur la médiatrice de [MM'] et le triangle ΩMM' est isocèle."
+        },
+        {
+          "type": "method",
+          "title": "Comment déterminer \\mathqst{le centre d'une rotation connaissant un point et son image}",
+          "content": "\\textbf{Données :} deux couples point/image $(M, M')$ et $(N, N')$.\\par\\smallskip\\\\On trace la médiatrice $\\mathcal{M}_1$ de $[MM']$, puis la médiatrice $\\mathcal{M}_2$ de $[NN']$.\\par\\smallskip\\\\Le centre est leur intersection : $\\Omega = \\mathcal{M}_1 \\cap \\mathcal{M}_2$.\\par\\smallskip\\\\L'angle est alors $\\theta = (\\overrightarrow{\\Omega M},\\, \\overrightarrow{\\Omega M'})$.\\par\\smallskip\\\\\\textbf{Avec un seul couple et l'angle connu :} $\\Omega$ est le point de la médiatrice de $[MM']$ tel que $\\angle M\\Omega M' = \\theta$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $A(0, 0)$ et $B(4, 0)$. Déterminer le centre $\\Omega$ de la \\textbf{rotation} d'angle $\\frac{\\pi}{2}$ qui envoie $A$ sur $B$.}\\par\\smallskip\\\\Le triangle $\\Omega AB$ doit être isocèle rectangle en $\\Omega$ avec $(\\overrightarrow{\\Omega A}, \\overrightarrow{\\Omega B}) = \\frac{\\pi}{2}$.\\par\\smallskip\\\\$\\Omega$ est sur la médiatrice de $[AB]$, c'est-à-dire la droite $x = 2$.\\par\\smallskip\\\\Posons $\\Omega(2, t)$. On a $\\Omega A = \\Omega B$ (automatiquement satisfait par symétrie).\\par\\smallskip\\\\La condition d'angle $\\frac{\\pi}{2}$ impose un triangle rectangle isocèle, donc $\\Omega A^2 = \\frac{AB^2}{2} = \\frac{16}{2} = 8$.\\par\\smallskip\\\\$\\Omega A^2 = 4 + t^2 = 8$, donc $t^2 = 4$, soit $t = \\pm 2$.\\par\\smallskip\\\\L'angle $(\\overrightarrow{\\Omega A}, \\overrightarrow{\\Omega B})$ doit être $+\\frac{\\pi}{2}$ (sens trigo). Avec $\\Omega(2, 2)$ : $\\overrightarrow{\\Omega A} = (-2, -2)$ et $\\overrightarrow{\\Omega B} = (2, -2)$. L'angle est bien $\\frac{\\pi}{2}$.\\par\\smallskip\\\\$$\\boxed{\\Omega(\\blank{2},\\, \\blank{2})}$$"
+        }
+      ]
+    },
+    {
+      "id": "decomposition_rotation",
+      "category": "course",
+      "title": "Décomposition en Symétries Axiales",
+      "blocks": [
+        {
+          "type": "theorem",
+          "title": "Comment décomposer \\mathqst{une rotation en deux symétries orthogonales}",
+          "content": "Toute rotation $r(\\Omega, \\theta)$ peut s'écrire comme la composée de deux symétries orthogonales d'axes \\textbf{sécants} en $\\Omega$ :\\\\$$\\boxed{r(\\Omega, \\theta) = \\mathcal{S}_{(\\Delta')} \\circ \\mathcal{S}_{(\\Delta)}}$$\\par\\smallskip\\\\où l'angle entre les axes $(\\Delta)$ et $(\\Delta')$ vérifie :\\\\$$\\boxed{(\\overrightarrow{u}_{\\Delta},\\, \\overrightarrow{u}_{\\Delta'}) \\equiv \\frac{\\blank{\\theta}}{\\blank{2}} \\; [\\pi]}$$\\par\\smallskip\\\\\\textbf{Attention à l'ordre :} on applique d'abord $\\mathcal{S}_{(\\Delta)}$ puis $\\mathcal{S}_{(\\Delta')}$."
+        },
+        {
+          "type": "remark",
+          "content": "Cette décomposition n'est \\textbf{pas unique} : on peut choisir $(\\Delta)$ arbitrairement passant par $\\Omega$, puis $(\\Delta')$ est déterminée par la condition sur l'angle.\\par\\smallskip\\\\\\textbf{Comparaison :} pour une \\textit{translation}, on utilise aussi deux symétries, mais d'axes \\textbf{parallèles} (séparés de $\\frac{\\|\\overrightarrow{v}\\|}{2}$). Pour une rotation, les axes sont \\textbf{sécants} en $\\Omega$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Décomposer} $r\\left(O, \\frac{\\pi}{3}\\right)$ en deux symétries orthogonales.}\\par\\smallskip\\\\Choisissons $(\\Delta) = (Ox)$, l'axe des abscisses.\\par\\smallskip\\\\L'axe $(\\Delta')$ doit passer par $O$ et faire un angle de $\\frac{\\pi/3}{2} = \\frac{\\pi}{6}$ avec $(Ox)$.\\par\\smallskip\\\\Donc $(\\Delta')$ est la droite passant par $O$ de vecteur directeur $\\overrightarrow{u'} = (\\cos\\frac{\\pi}{6},\\, \\sin\\frac{\\pi}{6}) = \\left(\\frac{\\sqrt{3}}{2},\\, \\frac{1}{2}\\right)$.\\par\\smallskip\\\\$$\\boxed{r\\left(O, \\frac{\\pi}{3}\\right) = \\mathcal{S}_{(\\Delta')} \\circ \\mathcal{S}_{(Ox)}}$$\\par\\smallskip\\\\avec $(\\Delta')$ : droite passant par $O$ d'angle $\\blank{\\frac{\\pi}{6}}$ avec $(Ox)$."
+        }
+      ]
+    },
+    {
+      "id": "composition_rotations",
+      "category": "course",
+      "title": "Composition de Rotations",
+      "blocks": [
+        {
+          "type": "theorem",
+          "title": "Que donne \\mathqst{la composée de deux rotations de même centre}",
+          "content": "Soient $r_1 = r(\\Omega, \\alpha)$ et $r_2 = r(\\Omega, \\beta)$ de \\textbf{même centre} $\\Omega$.\\\\$$\\boxed{r_2 \\circ r_1 = r(\\Omega,\\, \\alpha + \\blank{\\beta})}$$\\par\\smallskip\\\\De plus, la composition est \\blank{commutative} : $r_1 \\circ r_2 = r_2 \\circ r_1$.",
+          "graphId": "rot_composition",
+          "graphCaption": "Modifiez α et β pour voir que la composée donne une rotation d'angle α+β."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $r_1 = r\\left(O, \\frac{\\pi}{4}\\right)$ et $r_2 = r\\left(O, \\frac{\\pi}{3}\\right)$. Déterminer $r_2 \\circ r_1$.}\\par\\smallskip\\\\Les deux rotations ont le même centre $O$, donc :\\\\$$r_2 \\circ r_1 = r\\left(O,\\, \\frac{\\pi}{4} + \\frac{\\pi}{3}\\right) = r\\left(O,\\, \\frac{3\\pi + 4\\pi}{12}\\right) = r\\left(O,\\, \\blank{\\frac{7\\pi}{12}}\\right)$$\\par\\smallskip\\\\Et aussi $r_1 \\circ r_2 = r\\left(O, \\frac{7\\pi}{12}\\right)$ (commutativité)."
+        },
+        {
+          "type": "theorem",
+          "title": "Que donne \\mathqst{la composée de deux rotations de centres différents}",
+          "content": "Soient $r_1 = r(\\Omega_1, \\alpha)$ et $r_2 = r(\\Omega_2, \\beta)$ de centres \\textbf{distincts}.\\par\\smallskip\\\\$\\bullet$ Si $\\alpha + \\beta \\not\\equiv 0 \\;[2\\pi]$ : la composée $r_2 \\circ r_1$ est une \\textbf{rotation} d'angle $\\blank{\\alpha + \\beta}$\\\\$\\bullet$ Si $\\alpha + \\beta \\equiv 0 \\;[2\\pi]$ : la composée est une \\blank{translation}\\par\\smallskip\\\\\\textbf{Attention :} la composition n'est \\textbf{pas commutative} quand les centres sont différents."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $ABCD$ un carré. On pose $r_A = r\\left(A, \\frac{\\pi}{2}\\right)$ et $r_B = r\\left(B, -\\frac{\\pi}{2}\\right)$. Quelle est la nature de $f = r_B \\circ r_A$ ?}\\par\\smallskip\\\\Calculons la somme des angles : $\\frac{\\pi}{2} + \\left(-\\frac{\\pi}{2}\\right) = 0 \\equiv 0 \\;[2\\pi]$.\\par\\smallskip\\\\Donc $f = r_B \\circ r_A$ est une \\textbf{translation}.\\par\\smallskip\\\\Pour trouver son vecteur, calculons l'image de $A$ :\\par\\smallskip\\\\$r_A(A) = A$ (point fixe du centre), puis $r_B(A) = $ ?\\par\\smallskip\\\\En notant le carré $ABCD$ direct avec $A$ en bas à gauche : $r_B\\left(A\\right)$ est l'image de $A$ par rotation de centre $B$ et d'angle $-\\frac{\\pi}{2}$.\\par\\smallskip\\\\Si $ABCD$ a pour côté $a$, $\\overrightarrow{BA} = $ vecteur de norme $a$, et après rotation de $-\\frac{\\pi}{2}$ on obtient $\\overrightarrow{BB'} = $ un vecteur perpendiculaire.\\par\\smallskip\\\\Le vecteur de la translation est $\\overrightarrow{Af(A)} = \\overrightarrow{Ar_B(A)}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $ABC$ un triangle équilatéral direct. Déterminer la nature de $r\\left(B, \\frac{2\\pi}{3}\\right) \\circ r\\left(A, \\frac{2\\pi}{3}\\right)$.}\\par\\smallskip\\\\La somme des angles : $\\frac{2\\pi}{3} + \\frac{2\\pi}{3} = \\frac{4\\pi}{3} \\not\\equiv 0 \\;[2\\pi]$.\\par\\smallskip\\\\Donc la composée est une \\textbf{rotation} d'angle $\\frac{4\\pi}{3}$ (ou $-\\frac{2\\pi}{3}$).\\par\\smallskip\\\\Pour trouver le centre $\\Omega$, cherchons son point fixe :\\par\\smallskip\\\\$r_A\\left(\\frac{2\\pi}{3}\\right)(C) = B$ (dans un triangle équilatéral direct, la rotation de $\\frac{2\\pi}{3}$ autour de $A$ envoie $C$ sur $B$).\\par\\smallskip\\\\Puis $r_B\\left(\\frac{2\\pi}{3}\\right)(B) = B$.\\par\\smallskip\\\\Donc la composée envoie $C$ sur $B$ : ce n'est pas le point fixe.\\par\\smallskip\\\\Cherchons plutôt l'image de $A$ : $r_A(A) = A$, puis $r_B(A) = C$ (rotation de $\\frac{2\\pi}{3}$ autour de $B$).\\par\\smallskip\\\\L'image de $B$ : $r_A(B) = C$, puis $r_B(C) = A$.\\par\\smallskip\\\\Le centre est le point fixe. On montre que $\\Omega$ est le centre de gravité $G$ du triangle, et la composée est $r\\left(G, -\\frac{2\\pi}{3}\\right)$."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "category": "course",
+      "title": "Applications et Problèmes de Synthèse",
+      "blocks": [
+        {
+          "type": "method",
+          "title": "À quoi sert \\mathqst{la rotation pour résoudre des problèmes géométriques}",
+          "content": "La rotation est un outil puissant pour démontrer :\\par\\smallskip\\\\$\\bullet$ \\textbf{\\textbf{Égalité de longueurs}} : montrer que $r(A) = C$ et $r(B) = D$, alors $AB = CD$\\\\$\\bullet$ \\textbf{\\textbf{Perpendicularité}} : utiliser une rotation d'angle $\\frac{\\pi}{2}$\\\\$\\bullet$ \\textbf{\\textbf{Alignement}} : montrer que $r(A)$ est sur une droite connue\\\\$\\bullet$ \\textbf{\\textbf{Concours de droites}} : montrer qu'elles passent par un centre de rotation\\\\$\\bullet$ \\textbf{\\textbf{Construction}} : trouver l'intersection d'une figure et de son image"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $ABC$ un triangle équilatéral direct. Sur le côté $[BC]$, on place un point $I$. On construit les triangles équilatéraux directs $ABI'$ (extérieur à $ABC$, sommet $I'$) et $ACI''$ (extérieur à $ABC$, sommet $I''$). Montrer que $I$, $I'$ et $I''$ sont alignés.}\\par\\smallskip\\\\Considérons la rotation $r = r\\left(A, \\frac{\\pi}{3}\\right)$.\\par\\smallskip\\\\Puisque $ABI'$ est un triangle équilatéral direct avec $I'$ sommet opposé à $AB$ :\\\\$r\\left(A, \\frac{\\pi}{3}\\right)(B) = I'$ (car $AB = AI'$ et $(\\overrightarrow{AB}, \\overrightarrow{AI'}) = \\frac{\\pi}{3}$)... Non, reconsidérons.\\par\\smallskip\\\\En fait, $r\\left(A, -\\frac{\\pi}{3}\\right)(B) = C$ (car $ABC$ est direct).\\\\Et $r\\left(A, \\frac{\\pi}{3}\\right)(C) = B$.\\par\\smallskip\\\\La rotation $r\\left(A, \\frac{\\pi}{3}\\right)$ envoie la droite $(BC)$ sur une droite passant par $B$, formant un angle de $\\frac{\\pi}{3}$ avec $(BC)$.\\par\\smallskip\\\\Par un raisonnement analogue utilisant les rotations de centre $A$, on montre que les images des points $I'$ et $I''$ sont liées à $I$ de façon à assurer l'alignement."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $ABCD$ un carré de centre $O$ et $I$ un point de $[BD]$. On construit le cercle $\\Gamma$ de centre $I$ passant par $A$. Il coupe $(AB)$ en $J$ et $(AD)$ en $K$. Montrer que $AJ = AK$.}\\par\\smallskip\\\\Considérons $r = r\\left(A, -\\frac{\\pi}{2}\\right)$.\\par\\smallskip\\\\Cette rotation envoie $(AB)$ sur $(AD)$ (car $(\\overrightarrow{AB}, \\overrightarrow{AD}) = -\\frac{\\pi}{2}$ dans le carré direct).\\par\\smallskip\\\\Le centre $I$ est sur la diagonale $[BD]$. Calculons $r(I)$ : puisque $I \\in [BD]$ et que $r$ envoie $B$ sur $D$, la diagonale $[BD]$ est globalement \\textbf{invariante} par $r$.\\par\\smallskip\\\\Donc $r(I) \\in [BD]$ et $AI = A\\,r(I)$. De plus, le cercle $\\Gamma$ (de centre $I$, passant par $A$) est envoyé sur le cercle $\\Gamma'$ de centre $r(I)$ et passant par $A$ (car $r(A) = A$).\\par\\smallskip\\\\Puisque $J \\in \\Gamma \\cap (AB)$, son image $r(J) \\in \\Gamma' \\cap (AD)$.\\par\\smallskip\\\\Or $\\Gamma' \\cap (AD)$ contient $K$. Comme la rotation conserve les distances :\\\\$$AJ = A\\,r(J) = \\blank{AK}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminer l'image de la droite $(D) : y = 2x + 1$ par la \\textbf{rotation} $r\\left(O, \\frac{\\pi}{2}\\right)$.}\\par\\smallskip\\\\Pour $\\theta = \\frac{\\pi}{2}$, les formules donnent $(x, y) \\mapsto (-y, x)$.\\par\\smallskip\\\\Soit $M(x, y) \\in (D)$, donc $y = 2x + 1$. Son image est $M'(-y, x)$.\\par\\smallskip\\\\Posons $X = -y$ et $Y = x$, donc $x = Y$ et $y = -X$.\\par\\smallskip\\\\La condition $y = 2x + 1$ devient $-X = 2Y + 1$, soit :\\\\$$X = -2Y - 1$$\\par\\smallskip\\\\En revenant aux variables $(x, y)$ :\\\\$$\\boxed{(D') : x = -2y - 1 \\quad \\text{ou} \\quad x + 2y + 1 = 0}$$\\par\\smallskip\\\\Vérifions : le vecteur directeur de $(D)$ est $\\overrightarrow{u}(1, 2)$. Son image est $(-2, 1)$, bien vecteur directeur de $(D')$. Et $(\\overrightarrow{u}, \\overrightarrow{u'}) = \\frac{\\pi}{2}$."
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Synthèse : Tableau Récapitulatif",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "$$\\begin{array}{|l|l|}\\hline \\textbf{Élément} & \\textbf{Formule / Propriété} \\\\ \\hline \\text{Définition} & \\Omega M' = \\Omega M \\;\\text{ et }\\; (\\overrightarrow{\\Omega M}, \\overrightarrow{\\Omega M'}) = \\theta \\\\ \\hline \\text{Point invariant} & \\Omega \\text{ (unique si } \\theta \\not\\equiv 0\\;[2\\pi]\\text{)} \\\\ \\hline \\text{Réciproque} & r^{-1} = r(\\Omega, -\\theta) \\\\ \\hline \\text{Coordonnées (centre } O\\text{)} & (x',y') = (x\\cos\\theta - y\\sin\\theta,\\; x\\sin\\theta + y\\cos\\theta) \\\\ \\hline \\text{Isométrie directe} & \\text{Conserve distances, angles, orientation} \\\\ \\hline \\text{Image d'une droite} & \\text{Droite (même direction si } \\theta \\equiv 0\\;[\\pi]\\text{)} \\\\ \\hline \\text{Image d'un cercle} & \\text{Cercle de même rayon} \\\\ \\hline \\text{Décomposition} & r = \\mathcal{S}_{\\Delta'} \\circ \\mathcal{S}_\\Delta \\text{ , axes sécants en } \\Omega \\text{ , angle } \\frac{\\theta}{2} \\\\ \\hline \\text{Composée (même centre)} & r(\\Omega, \\alpha) \\circ r(\\Omega, \\beta) = r(\\Omega, \\alpha+\\beta) \\\\ \\hline \\text{Composée (centres } \\neq\\text{)} & \\text{Rotation si } \\alpha+\\beta \\not\\equiv 0\\;[2\\pi] \\text{, translation sinon} \\\\ \\hline \\end{array}$$"
+        },
+        {
+          "type": "text",
+          "content": "$$\\begin{array}{|c|c|c|c|}\\hline \\textbf{Angle} & \\textbf{Formule rapide} & \\textbf{Nom} & \\textbf{Figure associée} \\\\ \\hline \\frac{\\pi}{6} & 30° & - & \\text{Dodécagone} \\\\ \\hline \\frac{\\pi}{4} & 45° & - & \\text{Octogone} \\\\ \\hline \\frac{\\pi}{3} & 60° & \\text{Tiers de tour} & \\text{Triangle équilatéral} \\\\ \\hline \\frac{\\pi}{2} & 90° & \\text{Quart de tour} & \\text{Carré} \\\\ \\hline \\frac{2\\pi}{3} & 120° & - & \\text{Triangle équilatéral} \\\\ \\hline \\pi & 180° & \\text{Demi-tour = symétrie centrale} & - \\\\ \\hline \\end{array}$$"
+        }
+      ]
+    }
+  ]
+}

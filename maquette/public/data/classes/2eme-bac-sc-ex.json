@@ -1,0 +1,271 @@
+{
+  "id": "2eme-bac-sc-ex",
+  "title": "2ème Bac Sciences Expérimentales",
+  "chapters": [
+    {
+      "id": "mise-a-niveau",
+      "title": "Mise à niveau",
+      "pinned": true,
+      "quizCount": 26,
+      "manifestPath": "data/2eme-bac-sc-ex/mise-a-niveau/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-mise-a-niveau-2bac-ex",
+          "path": "data/2eme-bac-sc-ex/mise-a-niveau/revisions/fiche_mise_a_niveau_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-mise-a-niveau-diagnostic",
+          "path": "data/2eme-bac-sc-ex/mise-a-niveau/quiz/mise-a-niveau_diagnostic_analyse_trigonometrie_quiz.json",
+          "questionsCount": 26
+        }
+      ]
+    },
+    {
+      "id": "continuite",
+      "title": "Continuité d'une fonction numérique",
+      "section": "analyse",
+      "quizCount": 20,
+      "session_dates": [
+        "2025-12-22T20:00:00.000Z"
+      ],
+      "manifestPath": "data/2eme-bac-sc-ex/continuite/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-cont-2bac",
+          "path": "data/2eme-bac-sc-ex/continuite/revisions/fiche_continuite_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-continuite-01",
+          "path": "data/2eme-bac-sc-ex/continuite/quiz/continuite_quiz.json",
+          "questionsCount": 20
+        }
+      ]
+    },
+    {
+      "id": "derivation-etude-fonctions",
+      "title": "Dérivation et étude de fonctions",
+      "section": "analyse",
+      "quizCount": 42,
+      "manifestPath": "data/2eme-bac-sc-ex/derivation-etude-fonctions/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-derivation-etude-fonctions-2bac",
+          "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/revisions/fiche_derivation_etude_fonctions_cours.json"
+        },
+        {
+          "id": "rev-etude-fonctions-2bac",
+          "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/revisions/fiche_etude_fonctions_cours.json",
+          "title": "Dérivation et étude des fonctions — Partie 2 — Monotonie, extremums, concavité, symétrie, branches infinies et asymptotes"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-derivation-etude-fonctions-01",
+          "path": "data/2eme-bac-sc-ex/derivation-etude-fonctions/quiz/derivation_etude_fonctions_quiz.json",
+          "questionsCount": 42
+        }
+      ]
+    },
+    {
+      "id": "suites",
+      "title": "Les suites numériques",
+      "section": "analyse",
+      "quizCount": 21,
+      "manifestPath": "data/2eme-bac-sc-ex/suites/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-suites-2bac",
+          "path": "data/2eme-bac-sc-ex/suites/revisions/fiche_suites_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-suites-01",
+          "path": "data/2eme-bac-sc-ex/suites/quiz/suites_quiz.json",
+          "questionsCount": 21
+        }
+      ]
+    },
+    {
+      "id": "logarithmes",
+      "title": "Les fonctions logarithmiques",
+      "section": "analyse",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-ex/logarithmes/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-log-2bac-cours",
+          "path": "data/2eme-bac-sc-ex/logarithmes/revisions/fiche_logarithmes_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-logarithmes-01",
+          "path": "data/2eme-bac-sc-ex/logarithmes/quiz/logarithmes_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "exponentielles",
+      "title": "Les fonctions exponentielles",
+      "section": "analyse",
+      "quizCount": 25,
+      "manifestPath": "data/2eme-bac-sc-ex/exponentielles/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-exp-2bac",
+          "path": "data/2eme-bac-sc-ex/exponentielles/revisions/fiche_exponentielles_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-exponentielles-01",
+          "path": "data/2eme-bac-sc-ex/exponentielles/quiz/exponentielles_quiz.json",
+          "questionsCount": 25
+        }
+      ]
+    },
+    {
+      "id": "calcul-integral",
+      "title": "Calcul intégral",
+      "section": "analyse",
+      "quizCount": 22,
+      "manifestPath": "data/2eme-bac-sc-ex/calcul-integral/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-integrale-2bac",
+          "path": "data/2eme-bac-sc-ex/calcul-integral/revisions/fiche_calcul_integral_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-calcul-integral-01",
+          "path": "data/2eme-bac-sc-ex/calcul-integral/quiz/calcul-integral_quiz.json",
+          "questionsCount": 22
+        }
+      ]
+    },
+    {
+      "id": "fonctions-primitives",
+      "title": "Fonctions primitives",
+      "section": "analyse",
+      "quizCount": 14,
+      "manifestPath": "data/2eme-bac-sc-ex/fonctions-primitives/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-prim-2bac",
+          "path": "data/2eme-bac-sc-ex/fonctions-primitives/revisions/fiche_primitives_cours.json"
+        },
+        {
+          "id": "rev-prim-complements-2bac",
+          "path": "data/2eme-bac-sc-ex/fonctions-primitives/revisions/fiche_primitives_complements.json",
+          "title": "Fonctions Primitives — Fiche de Cours & Méthodes"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-fonctions-primitives-01",
+          "path": "data/2eme-bac-sc-ex/fonctions-primitives/quiz/fonctions-primitives_quiz.json",
+          "questionsCount": 14
+        }
+      ]
+    },
+    {
+      "id": "equations-diff",
+      "title": "Les équations différentielles",
+      "section": "analyse",
+      "quizCount": 13,
+      "manifestPath": "data/2eme-bac-sc-ex/equations-diff/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-eqdiff-2bac",
+          "path": "data/2eme-bac-sc-ex/equations-diff/revisions/fiche_equations_diff_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-equations-diff-01",
+          "path": "data/2eme-bac-sc-ex/equations-diff/quiz/equations-diff_quiz.json",
+          "questionsCount": 13
+        }
+      ]
+    },
+    {
+      "id": "complexes",
+      "title": "Les nombres complexes",
+      "section": "algebre-geometrie",
+      "quizCount": 27,
+      "manifestPath": "data/2eme-bac-sc-ex/complexes/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-cpx-1",
+          "path": "data/2eme-bac-sc-ex/complexes/revisions/fiche_complexes_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-complexes-01",
+          "path": "data/2eme-bac-sc-ex/complexes/quiz/complexes_quiz.json",
+          "questionsCount": 27
+        }
+      ]
+    },
+    {
+      "id": "probabilites",
+      "title": "Dénombrement et Probabilités",
+      "section": "algebre-geometrie",
+      "quizCount": 27,
+      "manifestPath": "data/2eme-bac-sc-ex/probabilites/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-proba-2bac",
+          "path": "data/2eme-bac-sc-ex/probabilites/revisions/fiche_probabilites_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-probabilites-01",
+          "path": "data/2eme-bac-sc-ex/probabilites/quiz/probabilites_quiz.json",
+          "questionsCount": 27
+        },
+        {
+          "id": "quiz-denombrement-01",
+          "path": "data/2eme-bac-sc-ex/probabilites/quiz/denombrement_quiz.json",
+          "questionsCount": 18
+        }
+      ]
+    },
+    {
+      "id": "geometrie-analytique-espace",
+      "title": "Géométrie analytique dans l'espace",
+      "section": "algebre-geometrie",
+      "quizCount": 24,
+      "manifestPath": "data/2eme-bac-sc-ex/geometrie-analytique-espace/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-geom-analytique-2bac",
+          "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/revisions/fiche_geometrie_analytique_cours.json"
+        },
+        {
+          "id": "rev-geom-espace-2bac",
+          "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/revisions/fiche_geometrie_espace_cours.json",
+          "title": "Produit vectoriel dans l'espace — De l'orientation à l'équation d'un plan"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-geometrie-analytique-espace-01",
+          "path": "data/2eme-bac-sc-ex/geometrie-analytique-espace/quiz/geometrie-analytique-espace_quiz.json",
+          "questionsCount": 24
+        }
+      ]
+    }
+  ],
+  "classId": "2eme-bac-sc-ex",
+  "className": "2ème Bac Sciences Expérimentales"
+}

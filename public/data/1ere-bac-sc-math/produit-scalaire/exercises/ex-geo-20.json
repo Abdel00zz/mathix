@@ -1,0 +1,67 @@
+{
+  "id": "ex-geo-20",
+  "theme": "produit-scalaire",
+  "difficulty": "difficile",
+  "topic": "Géométrie Analytique - Exercices de perfectionnement : barycentre et lieux géométriques avancés",
+  "requiresRedaction": true,
+  "context": "Soit $ABCD$ un carré dont la longueur du côté est 2. Déterminer les ensembles suivants :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$\\mathcal{E}_1 = \\left\\{ M \\in \\mathcal{P} \\mid \\overrightarrow{AM} \\cdot \\overrightarrow{AB} = 2 \\right\\}$",
+      "hint": "$\\overrightarrow{AM} \\cdot \\overrightarrow{AB} = \\|\\overrightarrow{AB}\\| \\cdot AH$ où $H$ est le projeté de $M$ sur $(AB)$. Ici $\\|\\overrightarrow{AB}\\| = 2$. $\\mathcal{E}_1$ est une droite perpendiculaire à $(AB)$."
+    },
+    {
+      "id": "q2",
+      "content": "$\\mathcal{E}_2 = \\left\\{ M \\in \\mathcal{P} \\mid \\overrightarrow{BM} \\cdot \\overrightarrow{CD} = -4 \\right\\}$",
+      "hint": "$\\overrightarrow{CD}$ est parallèle à $\\overrightarrow{AB}$ dans un carré. Utilisez la même méthode qu'en $\\mathcal{E}_1$."
+    },
+    {
+      "id": "q3",
+      "content": "$\\mathcal{E}_3 = \\left\\{ M \\in \\mathcal{P} \\mid MA^2 - MB^2 = 12 \\right\\}$",
+      "hint": "Exprimez $MA^2 - MB^2$ en passant par le milieu $I$ de $[AB]$ : $MA^2 - MB^2 = 2\\overrightarrow{IM} \\cdot \\overrightarrow{AB}$."
+    },
+    {
+      "id": "q4",
+      "content": "$\\mathcal{E}_4 = \\left\\{ M \\in \\mathcal{P} \\mid MA^2 - MC^2 = -8 \\right\\}$",
+      "hint": "Même méthode avec le milieu de $[AC]$."
+    },
+    {
+      "id": "q5",
+      "content": "On considère les points $A(-1;-2)$ et $B(2;1)$. Soit $\\mathcal{C}$ l'ensemble des points $M$ tels que $MA = 2MB$. Méthode géométrique :",
+      "subQuestions": [
+        {
+          "id": "q5a",
+          "content": "Montrer que $M \\in \\mathcal{C} \\Leftrightarrow \\left(\\overrightarrow{MA} - 2\\overrightarrow{MB}\\right)\\left(\\overrightarrow{MA} + 2\\overrightarrow{MB}\\right) = 0$.",
+          "hint": "Développez $MA^2 - 4MB^2 = 0$ en utilisant $MA^2 = \\overrightarrow{MA} \\cdot \\overrightarrow{MA}$ et factorisez."
+        },
+        {
+          "id": "q5b",
+          "content": "Soit $I$ le barycentre du système $\\{(A;1);(B;-2)\\}$ et $J$ le barycentre du système $\\{(A;1);(B;2)\\}$. Construire les points $I$ et $J$ puis montrer que $M \\in \\mathcal{C} \\Leftrightarrow \\overrightarrow{MI} \\cdot \\overrightarrow{MJ} = 0$.",
+          "hint": "Interprétez $\\overrightarrow{MA} - 2\\overrightarrow{MB} = 3\\overrightarrow{IM}$ (par définition du barycentre $I$) et $\\overrightarrow{MA} + 2\\overrightarrow{MB} = -3\\overrightarrow{JM}$. $\\overrightarrow{MI} \\cdot \\overrightarrow{MJ} = 0$ signifie que $M$ voit $[IJ]$ sous un angle droit : c'est un cercle de diamètre $[IJ]$."
+        },
+        {
+          "id": "q5c",
+          "content": "Déterminer puis construire $\\mathcal{C}$.",
+          "hint": "$\\mathcal{C}$ est le cercle de diamètre $[IJ]$. Calculez le centre (milieu de $[IJ]$) et le rayon."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "Méthode analytique :",
+      "subQuestions": [
+        {
+          "id": "q6a",
+          "content": "Établir l'équivalence : $M(x;y) \\in \\mathcal{C} \\Leftrightarrow x^2 + y^2 - 6x - 4y + 5 = 0$.",
+          "hint": "Écrivez $MA^2 = 4MB^2$ en coordonnées, développez et simplifiez."
+        },
+        {
+          "id": "q6b",
+          "content": "Retrouver le résultat de la question 1) c).",
+          "hint": "Identifiez le centre et le rayon du cercle obtenu et vérifiez la cohérence avec la méthode géométrique."
+        }
+      ]
+    }
+  ]
+}

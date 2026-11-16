@@ -1,0 +1,13 @@
+{
+  "id": "mise-a-niveau",
+  "title": "Mise à niveau",
+  "quizCount": 26,
+  "quizzes": [
+    {
+      "id": "quiz-mise-a-niveau-diagnostic",
+      "path": "data/2eme-bac-sc-ex/mise-a-niveau/quiz/mise-a-niveau_diagnostic_analyse_trigonometrie_quiz.json",
+      "questionsCount": 26
+    }
+  ],
+  "exercises": []
+}

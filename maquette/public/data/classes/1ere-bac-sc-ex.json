@@ -1,0 +1,198 @@
+{
+  "id": "1ere-bac-sc-ex",
+  "title": "1ère Bac Sciences Expérimentales",
+  "chapters": [
+    {
+      "id": "mise-a-niveau",
+      "title": "Mise à niveau",
+      "pinned": true,
+      "quizCount": 0,
+      "manifestPath": "data/1ere-bac-sc-ex/mise-a-niveau/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-mise-a-niveau-1bac-ex",
+          "path": "data/1ere-bac-sc-ex/mise-a-niveau/revisions/fiche_mise_a_niveau_cours.json"
+        }
+      ],
+      "quizzes": []
+    },
+    {
+      "id": "logique",
+      "title": "La logique mathématique",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/logique/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-logique-01",
+          "path": "data/1ere-bac-sc-ex/logique/quiz/logique_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "generalites-fonctions",
+      "title": "Généralités sur les fonctions numériques",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/generalites-fonctions/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-generalites-fonctions-01",
+          "path": "data/1ere-bac-sc-ex/generalites-fonctions/quiz/generalites-fonctions_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "suites",
+      "title": "Les suites numériques",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/suites/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-suites-01",
+          "path": "data/1ere-bac-sc-ex/suites/quiz/suites_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "barycentre",
+      "title": "Le barycentre",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/barycentre/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-barycentre-01",
+          "path": "data/1ere-bac-sc-ex/barycentre/quiz/barycentre_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "produit-scalaire-plan",
+      "title": "Le produit scalaire dans le plan et ses applications",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/produit-scalaire-plan/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-produit-scalaire-plan-01",
+          "path": "data/1ere-bac-sc-ex/produit-scalaire-plan/quiz/produit-scalaire-plan_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "calcul-trigo",
+      "title": "Calcul trigonométrique",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/calcul-trigo/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-calcul-trigo-01",
+          "path": "data/1ere-bac-sc-ex/calcul-trigo/quiz/calcul-trigo_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "rotation-plan",
+      "title": "La rotation dans le plan",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/rotation-plan/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-rotation-plan-01",
+          "path": "data/1ere-bac-sc-ex/rotation-plan/quiz/rotation-plan_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "limites",
+      "title": "Limites d'une fonction numérique",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/limites/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-limites-01",
+          "path": "data/1ere-bac-sc-ex/limites/quiz/limites_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "derivation",
+      "title": "La dérivation et ses applications",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/derivation/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-derivation-01",
+          "path": "data/1ere-bac-sc-ex/derivation/quiz/derivation_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "etude-fonctions",
+      "title": "L'étude des fonctions numériques et représentations graphiques",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/etude-fonctions/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-etude-fonctions-01",
+          "path": "data/1ere-bac-sc-ex/etude-fonctions/quiz/etude-fonctions_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "vecteurs-espace",
+      "title": "Les vecteurs de l'espace",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/vecteurs-espace/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-vecteurs-espace-01",
+          "path": "data/1ere-bac-sc-ex/vecteurs-espace/quiz/vecteurs-espace_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "geometrie-analytique-espace",
+      "title": "Géométrie analytique dans l'espace",
+      "section": "algebre-geometrie",
+      "quizCount": 8,
+      "manifestPath": "data/1ere-bac-sc-ex/geometrie-analytique-espace/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-geometrie-analytique-espace-01",
+          "path": "data/1ere-bac-sc-ex/geometrie-analytique-espace/revisions/fiche_geometrie_analytique_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-geometrie-analytique-espace-01",
+          "path": "data/1ere-bac-sc-ex/geometrie-analytique-espace/quiz/geometrie-analytique-espace_quiz.json",
+          "questionsCount": 8
+        }
+      ]
+    },
+    {
+      "id": "produit-scalaire-espace",
+      "title": "Le produit scalaire dans l'espace et ses applications",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-ex/produit-scalaire-espace/manifest.json",
+      "quizzes": [
+        {
+          "id": "quiz-produit-scalaire-espace-01",
+          "path": "data/1ere-bac-sc-ex/produit-scalaire-espace/quiz/produit-scalaire-espace_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    }
+  ],
+  "classId": "1ere-bac-sc-ex",
+  "className": "1ère Bac Sciences Expérimentales"
+}

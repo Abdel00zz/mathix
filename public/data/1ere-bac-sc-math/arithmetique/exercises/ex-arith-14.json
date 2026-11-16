@@ -1,0 +1,36 @@
+{
+  "id": "ch04-ex01",
+  "theme": "arithmetique",
+  "difficulty": "facile",
+  "chapter": "04 - Algorithme d'Euclide",
+  "topic": "Algorithme d'Euclide - Calculs directs",
+  "requiresRedaction": true,
+  "context": "En utilisant l'algorithme d'Euclide, calculer $a \\wedge b$ dans chacun des cas suivants :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$a = 1730$ et $b = 519$.",
+      "hint": "Commencez par $1730 = q \\cdot 519 + r$ et poursuivez les divisions jusqu'au reste nul."
+    },
+    {
+      "id": "q2",
+      "content": "$a = 1414$ et $b = 666$.",
+      "hint": "Appliquez les divisions euclidiennes successives. Le dernier reste non nul est le PGCD."
+    },
+    {
+      "id": "q3",
+      "content": "$a = 256$ et $b = 5040$.",
+      "hint": "Commencez par $5040 = q \\cdot 256 + r$ (prenez le plus grand comme dividende). Poursuivez jusqu'au reste nul."
+    },
+    {
+      "id": "q4",
+      "content": "$a = 2378$ et $b = 1769$.",
+      "hint": "Appliquez les divisions euclidiennes successives. Le dernier reste non nul est le PGCD."
+    },
+    {
+      "id": "q5",
+      "content": "$a = 44350$ et $b = 20785$.",
+      "hint": "Appliquez les divisions euclidiennes successives. Le dernier reste non nul est le PGCD."
+    }
+  ]
+}

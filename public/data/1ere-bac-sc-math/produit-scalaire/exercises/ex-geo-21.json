@@ -1,0 +1,36 @@
+{
+  "id": "ex-geo-21",
+  "theme": "produit-scalaire",
+  "difficulty": "difficile",
+  "topic": "Géométrie Analytique - Exercices de perfectionnement : triangle isocèle, barycentre et cercle",
+  "requiresRedaction": true,
+  "context": "Soit $ABC$ un triangle isocèle tel que $(a \\in \\mathbb{R}^*_+)$ : $AB = AC = 2a$ et $BC = 3a$. Soit $G$ le barycentre du système pondéré $\\{(A;3);(B;2);(C;2)\\}$. Soit $I$ le milieu du segment $[BC]$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer : $AI$ ; $GA$ ; $GB$ ; $GC$.",
+      "hint": "Pour $AI$ : utilisez le théorème de Pythagore dans le triangle $AIB$ (isocèle, $I$ milieu de $[BC]$, donc $AI \\perp BC$). Pour $GA$, $GB$, $GC$ : utilisez la propriété du barycentre $G$ vérifiant $3\\overrightarrow{GA} + 2\\overrightarrow{GB} + 2\\overrightarrow{GC} = \\overrightarrow{0}$, et la relation $AG = \\dfrac{4}{7}AI$."
+    },
+    {
+      "id": "q2",
+      "content": "Pour tout point $M$ du plan, on pose : $f(M) = 3MA^2 + 2MB^2 + 2MC^2$",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Prouver que pour tout point $M$ du plan : $f(M) = 7MG^2 + 3GA^2 + 2GB^2 + 2GC^2$.",
+          "hint": "Utilisez la propriété de réduction par rapport au barycentre : pour un barycentre $G$ des points pondérés $(A_i; \\lambda_i)$, on a $\\sum \\lambda_i MA_i^2 = (\\sum \\lambda_i)MG^2 + \\sum \\lambda_i GA_i^2$. Remplacez par les expressions calculées en question 1."
+        },
+        {
+          "id": "sq2b",
+          "content": "Déterminer l'ensemble des points $M$ du plan tels que $f(M) = ka^2$ où $k$ un réel positif donné.",
+          "hint": "D'après la question précédente, $f(M) = 7MG^2 + C_{ste}$ où $C_{ste} = 3GA^2 + 2GB^2 + 2GC^2$. L'ensemble est un cercle de centre $G$ si $ka^2 > C_{ste}$, un point si $ka^2 = C_{ste}$, ou vide sinon."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Soit $ABCD$ un rectangle de centre $I$. Déterminer l'ensemble des points $M$ du plan tels que : $MA^2 - MB^2 + MC^2 - BD^2$ (exprimer $D$ comme barycentre de $A$, $B$ et $C$).",
+      "hint": "Exprimez d'abord $D$ comme barycentre de $A$, $B$, $C$ en utilisant les propriétés du rectangle ($\\overrightarrow{AD} = \\overrightarrow{BC}$, donc $D = A + B + C - \\text{centre}$... utilisez les vecteurs). Exprimez ensuite $MA^2 - MB^2 + MC^2 - BD^2$ en coordonnées ou par la propriété du barycentre."
+    }
+  ]
+}

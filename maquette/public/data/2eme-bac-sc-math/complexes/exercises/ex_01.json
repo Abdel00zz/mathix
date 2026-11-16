@@ -1,0 +1,52 @@
+{
+  "id": "ex-complexes-01",
+  "topic": "Nombres complexes - Bac National 2015 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2015,
+  "examenSession": "Rattrapage",
+  "context": "On considère dans l'ensemble $\\mathbb{C}$ l'équation suivante : $(E):z^2-(1+i)z+2+2i=0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Vérifier que $(1-3i)$ est le discriminant de l'équation $(E)$.",
+          "hint": "Calculez $\\Delta=(1+i)^2-4(2+2i)$ en développant soigneusement $(1+i)^2=2i$."
+        },
+        {
+          "id": "q1b",
+          "content": "Déterminer $z_1$ et $z_2$ les deux solutions de l'équation $(E)$ dans l'ensemble $\\mathbb{C}$ (on prendra $z_1$ imaginaire pur).",
+          "hint": "Cherchez une racine carrée de $1-3i$ sous la forme $x+iy$ en résolvant $x^2-y^2=1$ et $2xy=-3$, puis appliquez la formule des racines ; identifiez laquelle des deux solutions est imaginaire pure."
+        },
+        {
+          "id": "q1c",
+          "content": "Montrer que : $\\dfrac{z_1}{z_2}=\\sqrt2e^{i3\\pi/4}$.",
+          "hint": "Calculez le module et l'argument de $z_1$ et de $z_2$ séparément, puis faites le quotient des modules et la différence des arguments."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Le plan complexe rapporté à un repère orthonormé direct. On considère le point $A$ d'affixe $z_1$ et le point $B$ d'affixe $z_2$.",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Déterminer le nombre complexe $e$ affixe du point $E$ milieu du segment $[AB]$.",
+          "hint": "Utilisez $e=\\dfrac{z_1+z_2}{2}$."
+        },
+        {
+          "id": "q2b",
+          "content": "Soit $r$ la rotation de centre $A$ et d'angle $\\left(-\\dfrac{\\pi}{2}\\right)$ et soit $c$ l'affixe du point $C$ image du point $E$ par la rotation $r$. Montrer que : $c=-\\dfrac32+\\dfrac32i$.",
+          "hint": "Appliquez $c-z_1=-i(e-z_1)$, remplacez $z_1$ et $e$ par leurs valeurs numériques déjà trouvées."
+        },
+        {
+          "id": "q2c",
+          "content": "On considère $D$ le point d'affixe $d=1+\\dfrac32i$. Montrer que le nombre $\\left(\\dfrac{z_2-d}{c-d}\\right)\\times\\left(\\dfrac{c-z_1}{z_2-z_1}\\right)$ est réel puis interpréter géométriquement le résultat obtenu.",
+          "hint": "Calculez chaque quotient séparément à partir des valeurs numériques connues de $z_1,z_2,c,d$ ; un produit de deux quotients d'affixes réel traduit en général un alignement ou une cocyclicité, à identifier selon les valeurs obtenues."
+        }
+      ]
+    }
+  ]
+}

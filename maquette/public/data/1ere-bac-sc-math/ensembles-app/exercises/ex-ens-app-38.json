@@ -1,0 +1,55 @@
+{
+  "id": "ex-ens-app-38",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Exercices de perfectionnement : composition et bijectivité, propriétés",
+  "requiresRedaction": true,
+  "context": "Soient $f : E \\to F$ et $g : F \\to G$ deux applications.",
+  "questions": [
+    {
+      "id": "pA_q1",
+      "content": "Partie A. Propriétés de la composée : Montrer que si $g \\circ f$ est injective, alors $f$ est aussi injective.",
+      "hint": "Supposez $f(x_1) = f(x_2)$. Alors $g(f(x_1)) = g(f(x_2))$, soit $(g \\circ f)(x_1) = (g \\circ f)(x_2)$. L'injectivité de $g \\circ f$ implique $x_1 = x_2$."
+    },
+    {
+      "id": "pA_q2",
+      "content": "Montrer que si $g \\circ f$ est surjective, alors $g$ est aussi surjective.",
+      "hint": "Soit $z \\in G$. Puisque $g \\circ f$ est surjective, il existe $x \\in E$ tel que $(g \\circ f)(x) = z$. Posez $y = f(x) \\in F$ : alors $g(y) = z$."
+    },
+    {
+      "id": "pA_q3",
+      "content": "Montrer que si $g \\circ f$ est injective et $f$ surjective, alors l'application $g$ est injective.",
+      "hint": "Supposez $g(y_1) = g(y_2)$ avec $y_1, y_2 \\in F$. Puisque $f$ est surjective, il existe $x_1, x_2 \\in E$ tels que $f(x_1) = y_1$ et $f(x_2) = y_2$. Alors $(g \\circ f)(x_1) = (g \\circ f)(x_2)$, et l'injectivité de $g \\circ f$ donne $x_1 = x_2$, donc $y_1 = y_2$."
+    },
+    {
+      "id": "pA_q4",
+      "content": "Montrer que si $g \\circ f$ est surjective et $g$ injective, alors l'application $f$ est surjective.",
+      "hint": "Soit $y \\in F$. Puisque $g \\circ f$ est surjective, il existe $x \\in E$ tel que $g(f(x)) = g(y)$. L'injectivité de $g$ implique $f(x) = y$."
+    },
+    {
+      "id": "pA_q5",
+      "content": "On suppose que $g \\circ f$ est bijective. $f$ et $g$ sont-elles nécessairement bijectives ?",
+      "hint": "Pour la réponse, construisez un contre-exemple : trouvez $f$ non surjective et $g$ non injective tels que $g \\circ f$ soit bijective. Par exemple : $f : \\{0\\} \\to \\{0,1\\}$, $g : \\{0,1\\} \\to \\{0\\}$ avec $g(0) = g(1) = 0$."
+    },
+    {
+      "id": "pB_q1",
+      "content": "Partie B. Soient $\\varphi : \\mathcal{P}(E) \\to \\mathcal{P}(F)$ et $\\psi : \\mathcal{P}(F) \\to \\mathcal{P}(E)$ définies par : $\\varphi(A) = f(A)$ et $\\psi(B) = f^{-1}(B)$. Montrer que si $f$ est injective, alors $\\varphi$ est injective et $\\psi$ est surjective.",
+      "hint": "Injectivité de $\\varphi$ : si $f(A_1) = f(A_2)$, montrez que $A_1 = A_2$ en utilisant l'injectivité de $f$. Surjectivité de $\\psi$ : pour tout $A \\in \\mathcal{P}(E)$, montrez que $f^{-1}(f(A)) = A$ lorsque $f$ est injective."
+    },
+    {
+      "id": "pB_q2",
+      "content": "Montrer que si $f$ est surjective, alors $\\psi$ est injective et $\\varphi$ est surjective.",
+      "hint": "Injectivité de $\\psi$ : si $f^{-1}(B_1) = f^{-1}(B_2)$, montrez que $B_1 = B_2$ en utilisant la surjectivité de $f$. Surjectivité de $\\varphi$ : pour tout $B \\in \\mathcal{P}(F)$, montrez que $f(f^{-1}(B)) = B$ lorsque $f$ est surjective."
+    },
+    {
+      "id": "pB_q3",
+      "content": "En déduire que si $f$ est bijective, alors $\\varphi$ et $\\psi$ sont toutes les deux bijectives.",
+      "hint": "Combinez les résultats de 1 et 2 : bijectif = injectif + surjectif."
+    },
+    {
+      "id": "pB_q4",
+      "content": "On suppose que $f$ est bijective. Déterminer les applications $\\varphi \\circ \\psi$ et $\\psi \\circ \\varphi$.",
+      "hint": "Calculez $\\varphi(\\psi(B)) = f(f^{-1}(B))$ et $\\psi(\\varphi(A)) = f^{-1}(f(A))$. Utilisez les propriétés de $f$ bijective."
+    }
+  ]
+}

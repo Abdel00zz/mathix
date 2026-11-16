@@ -1,0 +1,42 @@
+{
+  "id": "ex-suites-numeriques-02",
+  "theme": "suites-numeriques",
+  "difficulty": "moyen",
+  "topic": "Suites numeriques",
+  "context": "Exercice de base sur le chapitre \"Suites numeriques\".",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Question 1",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Rappeler une idee importante du chapitre.",
+          "hint": "Relire la definition principale."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Question 2",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Appliquer une propriete directe.",
+          "hint": "Identifier la formule adaptee."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Question 3",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Conclure avec une justification courte.",
+          "hint": "Verifier la coherence du resultat."
+        }
+      ]
+    }
+  ]
+}

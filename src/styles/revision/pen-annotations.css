@@ -1,0 +1,3664 @@
+/* ═══════════════════════════════════════════════════════════════
+   BOX NOTE — Zone manuscrite sous chaque bloc « box » (Stylo)
+   Canvas borné, moteur perfect-freehand partagé (annotationHelpers).
+
+   ARCHITECTURE CSS (v2 — compact & sans doublon)
+   ───────────────────────────────────────────────
+   1. Trigger + Panel
+   2. Toolbar (compact)
+   3. Tool buttons & glyphs
+   4. Canvas surface
+   5. Resize handle
+   6. Split-buttons & menu shell
+   7. Ink menu (pen)
+   8. Highlighter menu
+   9. Eraser menu
+  10. Shape menu
+  11. More menu
+  12. Color bar & color inline
+  13. Tool previews (3D)
+  14. Animations & keyframes
+  15. Dark mode
+  16. Responsive & tablet
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ──────────────────────────────────────────────────────────────
+   1. TRIGGER + PANEL
+   ────────────────────────────────────────────────────────────── */
+.boxnote {
+  margin-top: 0.15rem;
+}
+
+.boxnote-trigger-row {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.boxnote-dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 12px;
+  color: #94a3b8;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s, background-color 0.15s, transform 0.15s;
+  padding: 0;
+  margin: 0;
+}
+.boxnote-dots:hover {
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.08);
+}
+.boxnote-dots.is-filled {
+  color: #0284c7;
+}
+
+.boxnote-trigger-dots {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+.boxnote-trigger-dots span {
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0.45;
+  transition: transform 0.15s, opacity 0.15s;
+}
+.boxnote-dots:hover .boxnote-trigger-dots span {
+  opacity: 1;
+  transform: scale(1.2);
+}
+.boxnote-dots.is-filled .boxnote-trigger-dots span {
+  opacity: 0.9;
+}
+
+.boxnote-panel {
+  margin-top: 0.5rem;
+  border: 1px solid rgba(120, 130, 138, 0.24);
+  background: #fcfbf7;
+  border-radius: 10px;
+  box-shadow: 0 6px 22px rgba(20, 40, 50, 0.09), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  overflow: visible;
+  animation: boxnote-in 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.boxnote-panel > .boxnote-toolbar {
+  border-radius: 10px 10px 0 0;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   2. TOOLBAR (compact)
+   ────────────────────────────────────────────────────────────── */
+.boxnote-toolbar {
+  position: relative;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: minmax(88px, auto) 1fr minmax(88px, auto);
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.9));
+  border-bottom: 1px solid rgba(120, 130, 138, 0.14);
+  backdrop-filter: blur(16px) saturate(1.2);
+  box-shadow: inset 0 -1px 0 rgba(100, 116, 139, 0.08);
+}
+.boxnote-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18rem;
+}
+.boxnote-actions {
+  justify-self: end;
+  margin-left: 0;
+  gap: 0.18rem;
+}
+.boxnote-toolbar-start {
+  justify-self: start;
+  gap: 0.18rem;
+}
+.boxnote-toolbar-center {
+  position: relative;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+/* Pill d'outils (inspiré tldraw) */
+.boxnote-pill {
+  gap: 2px;
+  padding: 3px;
+  background: rgba(226, 232, 240, 0.42);
+  border: 1px solid rgba(100, 116, 139, 0.13);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.75);
+}
+
+.boxnote-sep {
+  width: 1px;
+  height: 16px;
+  align-self: center;
+  margin: 0 0.1rem;
+  background: rgba(148, 163, 184, 0.25);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   3. TOOL BUTTONS & GLYPHS
+   ────────────────────────────────────────────────────────────── */
+.boxnote-tool,
+.boxnote-close {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #4f5e68;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.16s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.boxnote-pill .boxnote-tool {
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.boxnote-tool:hover:not(:disabled),
+.boxnote-close:hover {
+  border-color: rgba(100, 116, 139, 0.13);
+  background: #fff;
+  color: #245f6d;
+  box-shadow: 0 7px 16px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+.boxnote-tool:focus-visible,
+.boxnote-close:focus-visible {
+  outline: 3px solid rgba(37, 105, 121, 0.3);
+  outline-offset: 2px;
+  border-color: #256979;
+  background: #fff;
+  color: #174f5d;
+  box-shadow: 0 0 0 1px #fff, 0 5px 14px rgba(15, 23, 42, 0.1);
+}
+.boxnote-tool:active:not(:disabled) {
+  transform: scale(0.94);
+}
+.boxnote-tool.is-active {
+  border-color: rgba(37, 105, 121, 0.18);
+  background: #fff;
+  color: #174f5d;
+  box-shadow:
+    0 7px 16px rgba(15, 23, 42, 0.09),
+    inset 0 0 0 1px rgba(37, 105, 121, 0.08);
+}
+.boxnote-tool--ink {
+  position: relative;
+  color: var(--tool-color);
+}
+.boxnote-tool--ink:hover:not(:disabled),
+.boxnote-tool--ink.is-active {
+  border-color: color-mix(in srgb, var(--tool-color) 30%, transparent);
+  background: color-mix(in srgb, var(--tool-color) 10%, #fff);
+  color: var(--tool-color);
+  box-shadow:
+    0 8px 18px color-mix(in srgb, var(--tool-color) 14%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--tool-color) 10%, transparent);
+}
+.boxnote-tool--eraser.is-active {
+  border-color: rgba(100, 116, 139, 0.22);
+  background: #fff;
+  color: #334155;
+}
+.boxnote-tool--utility.is-active {
+  border-color: rgba(37, 105, 121, 0.2);
+  background: #fff;
+  color: #1e6170;
+}
+.boxnote-tool--selection:hover:not(:disabled),
+.boxnote-tool--selection.is-active {
+  border-color: rgba(37, 105, 121, 0.22);
+  background: color-mix(in srgb, #256979 9%, #fff);
+  color: #1e6170;
+}
+
+/* Dot indicateur de couleur sous les outils */
+.boxnote-tool-indicator {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px color-mix(in srgb, currentColor 40%, transparent);
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+.boxnote-tool.is-active .boxnote-tool-indicator {
+  transform: translateX(-50%) scale(1.3);
+}
+
+.boxnote-glyph {
+  display: inline-grid;
+  place-items: center;
+  line-height: 0;
+  color: inherit;
+}
+.boxnote-glyph > svg {
+  display: block;
+}
+
+.boxnote-toolbar-glyph {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  transform-origin: 50% 65%;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.boxnote-toolbar-glyph--3d {
+  width: 32px;
+  height: 32px;
+  overflow: visible;
+}
+.boxnote-tool:hover:not(:disabled) .boxnote-toolbar-glyph {
+  transform: translateY(-1px) scale(1.06);
+}
+.boxnote-tool:active:not(:disabled) .boxnote-toolbar-glyph {
+  transform: scale(0.94);
+}
+
+/* Pill hover/active glyph transforms */
+.boxnote-pill .boxnote-toolbar-glyph {
+  transition:
+    transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.2s ease;
+}
+.boxnote-pill .boxnote-tool:hover .boxnote-toolbar-glyph {
+  filter: drop-shadow(0 3px 3px rgba(15, 23, 42, 0.12));
+}
+.boxnote-pill .boxnote-tool--pen:hover .boxnote-toolbar-glyph,
+.boxnote-pill .boxnote-tool--pen.is-active .boxnote-toolbar-glyph {
+  transform: translateY(-1px) rotate(-18deg) scale(1.1);
+}
+.boxnote-pill .boxnote-tool--highlighter:hover .boxnote-toolbar-glyph,
+.boxnote-pill .boxnote-tool--highlighter.is-active .boxnote-toolbar-glyph {
+  transform: translateY(-1px) rotate(12deg) scale(1.08);
+}
+.boxnote-pill .boxnote-tool--shape:hover .boxnote-toolbar-glyph,
+.boxnote-pill .boxnote-tool--shape.is-active .boxnote-toolbar-glyph {
+  transform: translateY(-1px) rotate(-3deg) scale(1.08);
+}
+.boxnote-pill .boxnote-tool--eraser:hover .boxnote-toolbar-glyph,
+.boxnote-pill .boxnote-tool--eraser.is-active .boxnote-toolbar-glyph {
+  transform: translateY(-1px) rotate(-6deg) scale(1.06);
+}
+.boxnote-pill .boxnote-tool--selection:hover .boxnote-toolbar-glyph,
+.boxnote-pill .boxnote-tool--selection.is-active .boxnote-toolbar-glyph {
+  transform: translateY(-1px) rotate(4deg) scale(1.07);
+}
+.boxnote-pill .boxnote-tool.is-active .boxnote-toolbar-glyph {
+  animation: boxnote-tool-settle 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.boxnote-png-icon {
+  display: inline-block;
+  flex: 0 0 auto;
+  background-color: currentColor;
+  -webkit-mask-image: var(--icon-mask);
+  mask-image: var(--icon-mask);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  pointer-events: none;
+}
+.boxnote-tool:focus-visible,
+.boxnote-close:focus-visible {
+  outline: 2px solid #256979;
+  outline-offset: 2px;
+}
+.boxnote-tool:disabled {
+  opacity: 0.32;
+  cursor: not-allowed;
+}
+.boxnote-more-button {
+  width: 34px;
+}
+
+/* Swatches & sizes (toolbar-level) */
+.boxnote-swatch {
+  width: 24px;
+  height: 24px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.14) inset;
+  transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.15s, box-shadow 0.15s;
+}
+.boxnote-swatch:hover {
+  transform: scale(1.18);
+}
+.boxnote-swatch.is-active {
+  border-color: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.14) inset, 0 0 0 2.5px var(--menu-accent, #256979);
+  transform: scale(1.18);
+}
+
+.boxnote-size {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(120, 130, 138, 0.28);
+  background: #fff;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.boxnote-size.is-active {
+  border-color: #256979;
+  background: rgba(37, 105, 121, 0.08);
+}
+.boxnote-size span {
+  display: block;
+  background: #2c2b29;
+  border-radius: 50%;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   4. CANVAS SURFACE
+   ────────────────────────────────────────────────────────────── */
+.boxnote-surface {
+  --paper: #fcfbf7;
+  --ink: rgba(37, 105, 121, 0.18);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--paper);
+  touch-action: pan-y;
+  overscroll-behavior: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  contain: layout paint style;
+}
+.boxnote-surface[data-bg='ruled'] {
+  background-image: repeating-linear-gradient(to bottom, transparent 0 27px, var(--ink) 27px 28px);
+}
+.boxnote-surface[data-pen-active='true'] {
+  touch-action: none;
+}
+.boxnote-surface[data-bg='grid'] {
+  background-image:
+    repeating-linear-gradient(to bottom, transparent 0 23px, var(--ink) 23px 24px),
+    repeating-linear-gradient(to right, transparent 0 23px, var(--ink) 23px 24px);
+}
+.boxnote-surface[data-bg='dots'] {
+  background-image: radial-gradient(var(--ink) 1.4px, transparent 1.6px);
+  background-size: 22px 22px;
+  background-position: 11px 11px;
+}
+.boxnote-surface[data-bg='isometric'] {
+  background-image:
+    repeating-linear-gradient(30deg, var(--ink) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(150deg, var(--ink) 0 1px, transparent 1px 26px);
+}
+.boxnote-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: inherit;
+}
+.boxnote-loading {
+  width: 100%;
+  background: #fcfbf7;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   5. RESIZE HANDLE (compact — 12px, transparent bg)
+   ────────────────────────────────────────────────────────────── */
+.boxnote-resize {
+  display: grid;
+  place-items: center;
+  height: 12px;
+  cursor: ns-resize;
+  background: transparent;
+  border-top: 1px solid rgba(120, 130, 138, 0.15);
+  touch-action: none;
+}
+.boxnote-resize span {
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(120, 130, 138, 0.38);
+}
+.boxnote-resize:hover span {
+  background: #256979;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   6. SPLIT-BUTTONS & MENU SHELL (iPadOS glass)
+   ────────────────────────────────────────────────────────────── */
+.boxnote-split {
+  position: relative;
+  display: inline-flex;
+}
+.boxnote-tool-slot.is-pen { order: 1; }
+.boxnote-tool-slot.is-highlighter { order: 2; }
+.boxnote-tool-slot.is-shape { order: 3; }
+.boxnote-tool-slot.is-eraser { order: 4; }
+.boxnote-tool-slot.is-lasso { order: 5; }
+
+.boxnote-menu {
+  --menu-accent: #256979;
+  --ios-track: rgba(118, 118, 128, 0.12);
+  --ios-divider: rgba(60, 60, 67, 0.12);
+  --ios-tint: var(--menu-accent, #007aff);
+  --ios-label: #000;
+  --ios-label-2: rgba(60, 60, 67, 0.6);
+  --ios-pill: 0 3px 8px rgba(0, 0, 0, 0.12), 0 3px 1px rgba(0, 0, 0, 0.04);
+
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 172px;
+  padding: 10px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.1);
+  transform-origin: top left;
+  animation: boxnote-menu-in 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.boxnote-menu-right {
+  left: auto;
+  right: 0;
+}
+
+/* Menu heading (icon + title + subtitle) */
+.boxnote-menu-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  margin-bottom: 4px;
+  padding: 2px 2px 4px;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.12);
+}
+.boxnote-menu-heading > span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--menu-accent) 12%, #fff);
+  color: var(--menu-accent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--menu-accent) 16%, transparent);
+}
+.boxnote-menu-heading > div {
+  display: grid;
+  gap: 0;
+}
+.boxnote-menu-heading strong {
+  color: #27323a;
+  font-size: 11px;
+  font-weight: 750;
+}
+.boxnote-menu-heading small {
+  color: #8a959c;
+  font-size: 8.5px;
+  font-weight: 600;
+}
+
+.boxnote-menu-title {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #88949e;
+  padding: 3px 4px 1px;
+}
+.boxnote-menu-row {
+  display: flex;
+  gap: 0.25rem;
+  padding: 2px 4px 3px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   7. INK MENU (PEN) — compact 280px
+   ────────────────────────────────────────────────────────────── */
+.boxnote-ink-menu {
+  width: min(280px, calc(100vw - 24px));
+  padding: 8px;
+}
+
+/* Pen grid — circular style inspired by reference */
+.boxnote-pen-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 4px 6px;
+  background: transparent;
+  border-radius: 0;
+}
+.boxnote-pen-card {
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--ios-label);
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.boxnote-pen-card.is-active {
+  background: transparent;
+  box-shadow: none;
+  transform: translateY(-2px);
+}
+.boxnote-pen-card:hover {
+  transform: translateY(-2px);
+}
+.boxnote-pen-card > span {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #f1f3f4;
+  color: #7b8b9a;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.boxnote-pen-card.is-active > span {
+  background: #dce0e3;
+  color: #1e293b;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.boxnote-pen-card small {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.boxnote-pen-stroke {
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: 999px;
+  opacity: 0.78;
+}
+/* La pilule blanche EST l'indicateur d'état : la coche est masquée. */
+.boxnote-pen-card .boxnote-tool-check,
+.boxnote-highlighter-card .boxnote-tool-check {
+  display: none;
+}
+
+/* Tool check badge (shape, eraser) */
+.boxnote-tool-check {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 14px;
+  height: 14px;
+  padding: 2px;
+  border-radius: 999px;
+  background: var(--menu-accent);
+  color: #fff;
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--menu-accent) 28%, transparent);
+}
+
+/* Range row — compact */
+.boxnote-range-row {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 30px;
+  align-items: center;
+  gap: 10px;
+  min-height: 32px;
+  padding: 4px 6px;
+  border-radius: 9px;
+  background: rgba(148, 163, 184, 0.08);
+}
+.boxnote-range-row input[type='range'],
+.boxnote-stabilization-row input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ios-divider);
+  outline: none;
+  accent-color: var(--menu-accent);
+  cursor: pointer;
+}
+/* Valeur en LECTURE SEULE : le fond blanc + le liseré inset lui donnaient
+   l'affordance d'un champ de saisie (au stylet on tape dedans, sans effet).
+   Texte nu, légèrement plus gros pour rester lisible. */
+.boxnote-range-row output {
+  min-width: 24px;
+  padding: 1px 3px;
+  color: #5f6b72;
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.boxnote-range-dot {
+  display: block;
+  justify-self: center;
+  max-width: 22px;
+  max-height: 22px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+.boxnote-range-highlighter {
+  height: 10px !important;
+  border-radius: 3px;
+  opacity: 0.72;
+}
+
+/* Slider thumbs — iPadOS style */
+.boxnote-menu input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.boxnote-menu input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* S-Pen controls */
+.boxnote-spen-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+.boxnote-pressure-curves {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  background: #f1f3f4;
+  border-radius: 12px;
+}
+.boxnote-pressure-curves button {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #7b8b9a;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.boxnote-pressure-curves button.is-active {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  color: #1e293b;
+  font-weight: 600;
+  transform: scale(1.02);
+}
+.boxnote-pressure-curves button > span {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 2px;
+  height: 16px;
+}
+.boxnote-pressure-curves button i {
+  display: block;
+  width: 4px;
+  border-radius: 999px;
+  background: currentColor;
+}
+.boxnote-pressure-curves button i:nth-child(1) { height: 4px; }
+.boxnote-pressure-curves button i:nth-child(2) { height: 8px; }
+.boxnote-pressure-curves button i:nth-child(3) { height: 13px; }
+.boxnote-pressure-curves button.is-soft i:nth-child(1) { height: 7px; }
+.boxnote-pressure-curves button.is-soft i:nth-child(2) { height: 11px; }
+.boxnote-pressure-curves button.is-firm i:nth-child(2) { height: 5px; }
+.boxnote-pressure-curves button.is-firm i:nth-child(3) { height: 9px; }
+.boxnote-pressure-curves small {
+  overflow: hidden;
+  font-size: 9px;
+  font-weight: 500;
+  color: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Stabilization row */
+.boxnote-stabilization-row {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 34px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px;
+  color: #7b8b9a;
+}
+.boxnote-stabilization-row output {
+  width: 34px;
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: #1e293b;
+}
+
+/* Recognition row — Premium switch */
+.boxnote-recognition-row {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 6px;
+  padding: 8px 4px;
+  border: 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.boxnote-recognition-row .boxnote-setting-copy {
+  flex: 1;
+  min-width: 0;
+}
+.boxnote-recognition-row:hover .boxnote-setting-copy strong {
+  color: var(--ios-tint);
+}
+.boxnote-recognition-row .boxnote-setting-copy strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  transition: color 0.2s;
+}
+.boxnote-recognition-row .boxnote-setting-copy small {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #8a959c;
+}
+.boxnote-recognition-row > i {
+  flex: 0 0 44px;
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 24px;
+  border-radius: 24px;
+  background: #e2e8f0;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.boxnote-recognition-row > i::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0,0,0,0.1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.boxnote-recognition-row.is-active > i {
+  background: var(--menu-accent, #256979);
+}
+.boxnote-recognition-row.is-active > i::after {
+  transform: translateX(20px);
+}
+
+/* This row also carries .boxnote-switch-row for compact sizing, whose 3-column
+   icon/text/toggle grid squeezes the text into the 22px icon slot since this
+   row has no leading icon — pin it back to flex so the switch stays flush right. */
+.boxnote-switch-row.boxnote-recognition-row {
+  display: flex;
+  grid-template-columns: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.boxnote-switch-row.boxnote-recognition-row > i {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 22px;
+  border-radius: 22px;
+}
+.boxnote-switch-row.boxnote-recognition-row > i::after {
+  width: 18px;
+  height: 18px;
+}
+.boxnote-switch-row.boxnote-recognition-row.is-active > i::after {
+  transform: translateX(18px);
+}
+
+/* Color palette (shared) */
+.boxnote-compact-colors {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  justify-content: space-between;
+  overflow-x: auto;
+  overflow-y: visible;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+}
+.boxnote-compact-colors::-webkit-scrollbar { display: none; }
+
+/* Emplacement de palette : la pastille + son sélecteur natif, ouvert par appui
+   long. C'est LUI qui est l'élément flex, pas le bouton. */
+.boxnote-swatch-slot {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  line-height: 0;
+  scroll-snap-align: center;
+}
+/* Le sélecteur ne doit ni s'afficher ni capter le pointeur, mais il doit RESTER
+   dans le rendu : un `input` en `display: none` ou `hidden` refuse d'ouvrir sa
+   fenêtre quand on l'active par programme. */
+.boxnote-swatch-picker {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.boxnote-compact-colors .boxnote-swatch {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border: 0;
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+}
+.boxnote-compact-colors .boxnote-swatch::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.boxnote-compact-colors .boxnote-swatch:hover {
+  transform: none;
+}
+.boxnote-compact-colors .boxnote-swatch.is-active {
+  transform: none;
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+}
+.boxnote-compact-colors .boxnote-swatch.is-active::before {
+  border-color: var(--ios-tint);
+}
+
+.boxnote-add-color {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  overflow: visible;
+  border: 0;
+  border-radius: 50%;
+  background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+  color: #256979;
+  cursor: pointer;
+}
+.boxnote-add-color > span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ios-label);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+.boxnote-add-color input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.boxnote-shape-color {
+  position: sticky;
+  z-index: 2;
+  bottom: -3px;
+  margin: 1px 3px 2px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(120, 130, 138, 0.14);
+  background: #fff;
+  box-shadow: 0 -6px 12px rgba(255, 255, 255, 0.88);
+}
+.boxnote-shape-color .boxnote-compact-colors {
+  padding: 4px 4px 6px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   8. HIGHLIGHTER MENU — compact
+   ────────────────────────────────────────────────────────────── */
+.boxnote-highlighter-grid {
+  display: flex;
+  gap: 0;
+  padding: 2px;
+  background: var(--ios-track);
+  border-radius: 9px;
+}
+.boxnote-highlighter-card {
+  position: relative;
+  flex: 1 1 0;
+  display: grid;
+  grid-template-rows: 36px 6px auto;
+  place-items: center;
+  gap: 3px;
+  min-height: 64px;
+  padding: 5px 3px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  box-shadow: none;
+  color: var(--ios-label);
+  cursor: pointer;
+  transition: background-color 0.2s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.2s;
+}
+.boxnote-highlighter-card.is-active {
+  background: #fff;
+  box-shadow: var(--ios-pill);
+  color: var(--ios-tint);
+  transform: none;
+}
+.boxnote-highlighter-card:hover {
+  transform: translateY(-1px);
+}
+.boxnote-highlighter-card > span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(20, 40, 50, 0.08);
+}
+.boxnote-highlighter-card > i,
+.boxnote-highlighter-card > .boxnote-highlighter-stroke {
+  display: block;
+  width: 42px;
+  height: 6px;
+  border-radius: 2px;
+  opacity: 0.55;
+}
+.boxnote-highlighter-card > i.is-round {
+  height: 5px;
+  border-radius: 999px;
+}
+.boxnote-highlighter-card small {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: inherit;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   9. ERASER MENU — compact 280px
+   ────────────────────────────────────────────────────────────── */
+.boxnote-eraser-menu {
+  width: min(280px, calc(100vw - 24px));
+  padding: 8px;
+}
+.boxnote-eraser-sizes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 2px 0 6px;
+}
+.boxnote-eraser-sizes button {
+  display: grid;
+  grid-template-rows: 36px auto;
+  place-items: center;
+  gap: 3px;
+  min-height: 52px;
+  padding: 3px;
+  border: 1px solid rgba(100, 116, 139, 0.12);
+  border-radius: 10px;
+  background: #f8fafb;
+  color: #64748b;
+  cursor: pointer;
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.16s, background-color 0.16s, box-shadow 0.16s;
+}
+.boxnote-eraser-sizes button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(100, 116, 139, 0.28);
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+}
+.boxnote-eraser-sizes button.is-active {
+  border-color: color-mix(in srgb, var(--menu-accent) 38%, transparent);
+  background: color-mix(in srgb, var(--menu-accent) 10%, #fff);
+}
+.boxnote-eraser-sizes .boxnote-eraser-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  max-width: none;
+  max-height: none;
+  border-radius: 11px;
+  background: #fff;
+  color: #64748b;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.06);
+}
+.boxnote-eraser-sizes button.is-active .boxnote-eraser-icon {
+  background: #fff;
+  color: #334155;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--menu-accent) 35%, transparent);
+}
+.boxnote-eraser-sizes > button > span {
+  display: block;
+  max-width: 36px;
+  max-height: 36px;
+  border-radius: 50%;
+  background: #24272b;
+}
+.boxnote-eraser-sizes > button.is-active > span {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #256979;
+}
+.boxnote-eraser-sizes button small {
+  font-size: 8.5px;
+  font-weight: 700;
+}
+.boxnote-eraser-auto > span {
+  display: grid;
+  place-items: center;
+  width: 42px !important;
+  height: 42px !important;
+  color: #fff;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.boxnote-eraser-auto .boxnote-eraser-icon {
+  width: 36px !important;
+  height: 36px !important;
+  color: #64748b;
+}
+.boxnote-eraser-sizes .boxnote-eraser-auto .boxnote-eraser-icon {
+  width: 42px !important;
+  height: 42px !important;
+}
+
+/* Switch row — compact (36px, 11px text) */
+.boxnote-switch-row {
+  display: grid;
+  grid-template-columns: 22px 1fr 34px;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  min-height: 36px;
+  margin-top: 4px;
+  padding: 6px 6px;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(148, 163, 184, 0.07);
+  color: #4f5b62;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+}
+.boxnote-switch-row:hover {
+  background: rgba(148, 163, 184, 0.12);
+}
+.boxnote-switch-row > i {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 18px;
+  border-radius: 999px;
+  background: #c7cdd1;
+  transition: background-color 0.16s;
+}
+.boxnote-switch-row > i::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.16s;
+}
+.boxnote-switch-row.is-active > i {
+  background: var(--menu-accent, #256979);
+}
+.boxnote-switch-row.is-active > i::after {
+  transform: translateX(12px);
+}
+.boxnote-switch-row.is-active {
+  color: color-mix(in srgb, var(--menu-accent) 78%, #0f172a);
+}
+
+.boxnote-setting-copy {
+  display: grid;
+  gap: 1px;
+}
+.boxnote-setting-copy strong {
+  font-size: 11px;
+  font-weight: 650;
+}
+.boxnote-setting-copy small {
+  color: #849097;
+  font-size: 9.5px;
+  font-weight: 500;
+}
+
+/* Clear zone */
+.boxnote-clear-zone {
+  width: 100%;
+  min-height: 38px;
+  padding: 6px 6px 3px;
+  border: 0;
+  border-top: 1px solid rgba(120, 130, 138, 0.14);
+  background: transparent;
+  color: #b42335;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 750;
+  text-align: left;
+}
+.boxnote-clear-zone:disabled {
+  opacity: 0.36;
+  cursor: not-allowed;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   10. SHAPE MENU — compact 300px
+   ────────────────────────────────────────────────────────────── */
+.boxnote-shape-menu {
+  width: min(300px, calc(100vw - 24px));
+  max-height: min(520px, calc(100vh - 88px));
+  padding: 6px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.boxnote-shape-item {
+  position: relative;
+  display: grid;
+  grid-template-rows: 28px auto;
+  place-items: center;
+  gap: 2px;
+  min-height: 44px;
+  padding: 4px 2px 3px;
+  border: 1px solid rgba(100, 116, 139, 0.1);
+  border-radius: 9px;
+  background: #f8fafb;
+  color: #58636a;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 650;
+  line-height: 1.05;
+  text-align: center;
+  transition: border-color 0.14s, background-color 0.14s, color 0.14s, transform 0.12s;
+}
+.boxnote-shape-item:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--menu-accent) 28%, transparent);
+  background: color-mix(in srgb, var(--menu-accent) 7%, #fff);
+  color: var(--menu-accent);
+}
+.boxnote-shape-item.is-active {
+  border-color: color-mix(in srgb, var(--menu-accent) 38%, transparent);
+  background: color-mix(in srgb, var(--menu-accent) 11%, #fff);
+  color: color-mix(in srgb, var(--menu-accent) 78%, #0f172a);
+}
+.boxnote-shape-icon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(20, 40, 50, 0.06);
+}
+.boxnote-shape-check {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: var(--menu-accent);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   11. MORE MENU — compact 248px
+   ────────────────────────────────────────────────────────────── */
+.boxnote-more-menu {
+  width: min(284px, calc(100vw - 24px));
+  max-height: min(480px, calc(100vh - 88px));
+  padding: 6px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(37, 105, 121, 0.35) transparent;
+}
+.boxnote-more-section + .boxnote-more-section {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(120, 130, 138, 0.14);
+}
+.boxnote-more-heading {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 24px;
+  padding: 1px 3px 4px;
+  color: #526067;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+/* Guide grid — compact toggle rows */
+.boxnote-guide-grid {
+  display: grid;
+  gap: 2px;
+}
+.boxnote-guide-grid button {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 4px 5px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #56636a;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+  transition: border-color 0.14s, background-color 0.14s, color 0.14s;
+}
+.boxnote-guide-grid button:hover,
+.boxnote-guide-grid button.is-active {
+  border-color: transparent;
+  background: rgba(37, 105, 121, 0.07);
+  color: #256979;
+}
+.boxnote-guide-grid button > i {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 18px;
+  border-radius: 999px;
+  background: #c7cdd1;
+  transition: background-color 0.16s;
+}
+.boxnote-guide-grid button > i::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.16s;
+}
+.boxnote-guide-grid button.is-active > i {
+  background: #256979;
+}
+.boxnote-guide-grid button.is-active > i::after {
+  transform: translateX(12px);
+}
+
+/* Surface patterns grid */
+.boxnote-surface-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 3px;
+}
+.boxnote-surface-grid button {
+  display: grid;
+  place-items: center;
+  gap: 3px;
+  min-width: 0;
+  min-height: 42px;
+  padding: 4px 2px 3px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: rgba(120, 130, 138, 0.045);
+  color: #657078;
+  cursor: pointer;
+}
+.boxnote-surface-grid button:hover,
+.boxnote-surface-grid button.is-active {
+  border-color: rgba(37, 105, 121, 0.32);
+  background: rgba(37, 105, 121, 0.1);
+  color: #256979;
+}
+.boxnote-surface-grid button span {
+  width: 100%;
+  overflow: hidden;
+  font-size: 7.5px;
+  font-weight: 700;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Angle steps */
+.boxnote-angle-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 6px 0 0;
+}
+.boxnote-angle-steps button {
+  height: 26px;
+  border: 1px solid rgba(120, 130, 138, 0.24);
+  border-radius: 6px;
+  background: transparent;
+  color: #5a656b;
+  cursor: pointer;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+.boxnote-angle-steps button:hover,
+.boxnote-angle-steps button.is-active {
+  border-color: rgba(37, 105, 121, 0.45);
+  background: rgba(37, 105, 121, 0.1);
+  color: #256979;
+}
+
+/* Clear (more menu) */
+.boxnote-more-clear {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 34px;
+  margin-top: 6px;
+  padding: 6px 6px 4px;
+  border: 0;
+  border-top: 1px solid rgba(120, 130, 138, 0.14);
+  background: transparent;
+  color: #b42335;
+  cursor: pointer;
+  font-size: 10.5px;
+  font-weight: 750;
+  text-align: left;
+}
+.boxnote-more-clear:hover:not(:disabled) {
+  background: rgba(180, 35, 53, 0.07);
+}
+.boxnote-more-clear:disabled {
+  opacity: 0.36;
+  cursor: not-allowed;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   12. COLOR INLINE (in toolbar row)
+   ────────────────────────────────────────────────────────────── */
+.boxnote-color-inline {
+  --ios-tint: var(--menu-accent, #007aff);
+  --ios-label: #000;
+  display: flex;
+  align-items: center;
+  /* La palette est le premier bloc à céder de la largeur : les instruments et
+     les actions ne doivent jamais être poussés hors du cadre par des couleurs. */
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+}
+.boxnote-color-inline .boxnote-compact-colors {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* Rembourrage vertical calculé pour l'anneau de sélection (pastille agrandie
+     de 15 % + 2,5 px d'anneau) : sans lui, `overflow` le rognerait. */
+  padding: 7px 4px;
+  justify-content: flex-start;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  /* Dernier rempart contre le débordement : entre 560 px (où la barre passe sur
+     deux lignes) et une tablette large, cinq pastilles tactiles + le bouton
+     d'ajout peuvent ne pas tenir. La rangée DÉFILE alors au lieu de sortir de
+     la zone. */
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+}
+.boxnote-color-inline .boxnote-swatch,
+.boxnote-color-inline .boxnote-add-color {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+  transition: transform 0.16s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.16s ease;
+}
+.boxnote-color-inline .boxnote-swatch-slot {
+  flex: 0 0 20px;
+}
+.boxnote-color-inline .boxnote-add-color > span {
+  width: 16px;
+  height: 16px;
+  font-size: 11px;
+}
+.boxnote-color-inline .boxnote-swatch.is-active {
+  transform: scale(1.15);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 0 2.5px var(--menu-accent, #256979);
+}
+.boxnote-color-inline .boxnote-swatch.is-active::before {
+  border-color: transparent;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   13. ERASER SIZE PREVIEWS
+   ────────────────────────────────────────────────────────────── */
+.boxnote-eraser-sizes button {
+  grid-template-rows: 42px auto;
+  min-height: 64px;
+}
+.boxnote-eraser-sizes .boxnote-eraser-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   14. ANIMATIONS & KEYFRAMES
+   ────────────────────────────────────────────────────────────── */
+@keyframes boxnote-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes boxnote-menu-in {
+  from { opacity: 0; transform: translateY(-4px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes boxnote-tool-settle {
+  0% { scale: 0.86; }
+  62% { scale: 1.12; }
+  100% { scale: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boxnote-panel,
+  .boxnote-menu { animation: none; }
+  .boxnote-pill .boxnote-toolbar-glyph {
+    animation: none !important;
+    transition: none;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   16. RESPONSIVE & TABLET
+   ────────────────────────────────────────────────────────────── */
+
+/* Small screens: toolbar wraps to 2 rows */
+@media (max-width: 560px) {
+  .boxnote-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr auto;
+    row-gap: 0.3rem;
+    padding: 0.3rem 0.4rem;
+  }
+  .boxnote-toolbar-start {
+    order: 1;
+  }
+  .boxnote-actions {
+    order: 2;
+    margin-left: auto;
+  }
+  .boxnote-toolbar-center {
+    order: 3;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    justify-self: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 4px;
+    border-top: 1px solid rgba(120, 130, 138, 0.12);
+  }
+  .boxnote-shape-menu {
+    width: min(280px, calc(100vw - 24px));
+  }
+}
+
+/* Very small screens: pen cards expand */
+@media (max-width: 390px) {
+  .boxnote-pen-card {
+    grid-template-rows: 52px 6px auto;
+    min-height: 86px;
+  }
+}
+
+/* Tablette : les cibles tactiles (44 px) sont définies en fin de fichier, dans
+   le bloc `@media (pointer: coarse), (max-width: 760px)` du dock moderne. Un
+   premier jeu de règles vivait ici (34 px) ; toutes étaient écrasées par ce bloc
+   plus spécifique et plus tardif, elles ne s'appliquaient donc jamais. */
+
+/* ═══════════════════════════════════════════════════════════════
+   17. MODERN TOOL DOCK
+   Des commandes rondes et tactiles, inspirées des applications de prise de
+   notes : une seule surface, une silhouette d'outil lisible et un état actif
+   franc. Ces règles restent en fin de fichier pour unifier desktop et tablette.
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-panel {
+  border-color: rgba(100, 116, 139, 0.18);
+  border-radius: 18px;
+  background: #fdfdfc;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.11), 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.boxnote-panel > .boxnote-toolbar {
+  border-radius: 18px 18px 0 0;
+}
+
+.boxnote-toolbar {
+  gap: 0.75rem;
+  min-height: 58px;
+  padding: 0.45rem 0.75rem;
+  background: rgba(250, 250, 249, 0.94);
+  border-bottom-color: rgba(100, 116, 139, 0.12);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.boxnote-pill {
+  gap: 5px;
+  padding: 5px;
+  border: 0;
+  border-radius: 999px;
+  background: #e9eceb;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.08), 0 1px 0 #fff;
+}
+
+.boxnote-tool,
+.boxnote-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  color: #56616a;
+}
+
+.boxnote-pill .boxnote-tool {
+  background: rgba(255, 255, 255, 0.62);
+  border-color: rgba(100, 116, 139, 0.08);
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.07);
+}
+
+.boxnote-toolbar-glyph {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(100, 116, 139, 0.08);
+}
+
+.boxnote-toolbar-glyph .boxnote-glyph {
+  transform: scale(1.08);
+}
+
+.boxnote-tool:hover:not(:disabled),
+.boxnote-close:hover {
+  background: #fff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.13);
+}
+
+.boxnote-tool.is-active,
+.boxnote-tool--ink.is-active {
+  border-color: transparent;
+  color: var(--tool-color, #fff);
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--tool-color, #256979), 0 7px 16px rgba(15, 23, 42, 0.15);
+}
+
+.boxnote-tool.is-active .boxnote-toolbar-glyph,
+.boxnote-tool--ink.is-active .boxnote-toolbar-glyph {
+  background: color-mix(in srgb, var(--tool-color, #256979) 12%, white);
+  box-shadow: none;
+}
+
+.boxnote-tool--eraser.is-active,
+.boxnote-tool--selection.is-active {
+  --tool-color: #334155;
+}
+
+.boxnote-tool--utility,
+.boxnote-close {
+  background: #f1f3f2;
+  border-color: rgba(100, 116, 139, 0.1);
+}
+
+.boxnote-tool--utility:disabled {
+  opacity: 0.3;
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-sep {
+  height: 24px;
+  background: rgba(100, 116, 139, 0.18);
+}
+
+.boxnote-swatch,
+.boxnote-add-color {
+  width: 24px;
+  height: 24px;
+  border-width: 2px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.13);
+}
+
+.boxnote-swatch.is-active {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px currentColor, 0 3px 8px rgba(15, 23, 42, 0.18);
+}
+
+.boxnote-menu {
+  border-radius: 20px;
+  border-color: rgba(100, 116, 139, 0.16);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.2), 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+.boxnote-pen-card,
+.boxnote-highlighter-card,
+.boxnote-eraser-sizes button,
+.boxnote-shape-item {
+  border-radius: 16px;
+}
+
+.boxnote-pen-card {
+  min-height: 78px;
+  background: #f2f3ef;
+}
+
+.boxnote-pen-card.is-active {
+  background: color-mix(in srgb, var(--menu-accent) 10%, white);
+  box-shadow: inset 0 0 0 2px var(--menu-accent);
+}
+
+@media (max-width: 760px) {
+  .boxnote-toolbar {
+    gap: 0.3rem;
+    min-height: 52px;
+    padding: 0.35rem;
+  }
+
+  .boxnote-tool,
+  .boxnote-close {
+    width: 36px;
+    height: 36px;
+  }
+
+  .boxnote-pill {
+    gap: 2px;
+    padding: 3px;
+  }
+
+  .boxnote-toolbar-glyph {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   18. COMPACT 2D TOOL PICKER
+   Quatre instruments uniquement, contenus dans le panneau même sur mobile.
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-toolbar {
+  min-height: 52px;
+  padding-block: 0.35rem;
+}
+
+.boxnote-pill {
+  gap: 3px;
+  padding: 4px;
+}
+
+.boxnote-tool,
+.boxnote-close {
+  width: 36px;
+  height: 36px;
+}
+
+.boxnote-toolbar-glyph {
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-toolbar-glyph--pen-image {
+  overflow: hidden;
+}
+
+.boxnote-toolbar-glyph--pen-image > img {
+  display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.boxnote-ink-menu {
+  width: min(252px, calc(100vw - 20px));
+  max-width: calc(100vw - 20px);
+  gap: 7px;
+  padding: 7px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.boxnote-pen-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+  padding: 5px 0 3px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.boxnote-pen-card {
+  min-width: 0;
+  min-height: 62px;
+  padding: 4px 3px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #f1f2ef;
+  box-sizing: border-box;
+}
+
+.boxnote-pen-card:hover {
+  border-color: color-mix(in srgb, var(--menu-accent) 25%, transparent);
+  background: color-mix(in srgb, var(--menu-accent) 6%, #f6f7f4);
+}
+
+.boxnote-pen-card.is-active {
+  border-color: var(--menu-accent);
+  background: color-mix(in srgb, var(--menu-accent) 8%, #fff);
+  box-shadow: inset 0 0 0 1px var(--menu-accent);
+  transform: none;
+}
+
+.boxnote-pen-card > .boxnote-pen-image-frame {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 52px;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 9px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-pen-card.is-active > .boxnote-pen-image-frame {
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-pen-image {
+  display: block;
+  width: 46px;
+  height: 46px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.boxnote-highlighter-grid {
+  gap: 4px;
+}
+
+.boxnote-highlighter-card {
+  min-height: 58px;
+}
+
+@media (max-width: 390px) {
+  .boxnote-ink-menu {
+    width: min(238px, calc(100vw - 16px));
+  }
+
+  .boxnote-pen-card {
+    min-height: 58px;
+  }
+
+  .boxnote-pen-card > .boxnote-pen-image-frame {
+    height: 48px;
+  }
+
+  .boxnote-pen-image {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   19. HIGHLIGHTER — barre Canvas et panneau 2D de référence
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-pill .boxnote-tool {
+  border-radius: 11px;
+}
+
+.boxnote-pill .boxnote-tool::after {
+  left: 8px;
+  right: 8px;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 999px;
+}
+
+.boxnote-pill .boxnote-tool--highlighter.is-active {
+  background: color-mix(in srgb, var(--tool-color) 22%, #fff);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--tool-color) 68%, #b48d00),
+    0 3px 10px color-mix(in srgb, var(--tool-color) 18%, transparent);
+}
+
+.boxnote-pill .boxnote-tool--highlighter.is-active .boxnote-png-icon {
+  color: color-mix(in srgb, var(--tool-color) 72%, #4b4d4b);
+}
+
+.boxnote-highlighter-menu {
+  width: min(268px, calc(100vw - 20px));
+  gap: 10px;
+  padding: 10px;
+  border-radius: 18px;
+}
+
+.boxnote-highlighter-range {
+  grid-template-columns: 28px minmax(0, 1fr) 34px;
+  min-height: 42px;
+  padding: 5px 7px;
+  background: #f4f5f3;
+}
+
+.boxnote-highlighter-range input[type='range'] {
+  height: 5px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--menu-accent) 0%,
+      var(--menu-accent) 52%,
+      #dfe2e3 52%,
+      #dfe2e3 100%
+    );
+}
+
+.boxnote-highlighter-range .boxnote-range-highlighter {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.boxnote-favorite-button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #a8adaf;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.16s ease, background-color 0.16s ease;
+}
+
+.boxnote-favorite-button:hover {
+  transform: translateY(-1px);
+}
+
+.boxnote-favorite-button.is-active {
+  background: var(--menu-accent);
+}
+
+.boxnote-highlighter-menu .boxnote-highlighter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 3px 34px 2px;
+  background: transparent;
+}
+
+.boxnote-highlighter-menu .boxnote-highlighter-card {
+  display: grid;
+  grid-template-rows: 72px;
+  min-width: 0;
+  min-height: 72px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-highlighter-menu .boxnote-highlighter-card:hover {
+  transform: translateY(-1px);
+}
+
+.boxnote-highlighter-menu .boxnote-highlighter-card > .boxnote-highlighter-icon {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  max-width: 100%;
+  border-radius: 50%;
+  background: #f0f1ed;
+  color: #737875;
+  box-shadow: inset 0 0 0 1px rgba(75, 81, 79, 0.08);
+}
+
+.boxnote-highlighter-menu .boxnote-highlighter-card.is-active > .boxnote-highlighter-icon {
+  background: color-mix(in srgb, var(--menu-accent) 18%, #f5f4dc);
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, var(--menu-accent) 72%, #9d8500),
+    0 4px 10px color-mix(in srgb, var(--menu-accent) 12%, transparent);
+}
+
+.boxnote-highlighter-menu .boxnote-highlighter-card small,
+.boxnote-highlighter-menu .boxnote-highlighter-card > .boxnote-tool-check {
+  display: none;
+}
+
+.boxnote-highlighter-menu .boxnote-compact-colors {
+  gap: 7px;
+  padding: 8px 5px 9px;
+  overflow: visible;
+}
+
+.boxnote-highlighter-menu .boxnote-swatch,
+.boxnote-highlighter-menu .boxnote-add-color {
+  width: 26px;
+  height: 26px;
+  flex-basis: 26px;
+}
+
+.boxnote-highlighter-options {
+  display: grid;
+  gap: 1px;
+  margin: 0 -10px -10px;
+  padding-top: 2px;
+  border-top: 1px solid rgba(100, 116, 139, 0.12);
+}
+
+.boxnote-highlighter-options .boxnote-switch-row {
+  grid-template-columns: minmax(0, 1fr) 34px;
+  gap: 10px;
+  min-height: 42px;
+  margin: 0;
+  padding: 7px 11px;
+  border-radius: 0;
+  background: transparent;
+  color: #27323a;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.boxnote-highlighter-options .boxnote-switch-row + .boxnote-switch-row {
+  border-top: 1px solid rgba(100, 116, 139, 0.1);
+}
+
+.boxnote-highlighter-options .boxnote-switch-row:hover {
+  background: rgba(148, 163, 184, 0.08);
+}
+
+@media (max-width: 390px) {
+  .boxnote-highlighter-menu {
+    width: min(250px, calc(100vw - 16px));
+    padding: 8px;
+  }
+
+  .boxnote-highlighter-menu .boxnote-highlighter-grid {
+    padding-inline: 31px;
+  }
+
+  .boxnote-highlighter-menu .boxnote-highlighter-card,
+  .boxnote-highlighter-menu .boxnote-highlighter-card > .boxnote-highlighter-icon {
+    width: 66px;
+    height: 66px;
+    min-height: 66px;
+  }
+
+  .boxnote-highlighter-options {
+    margin: 0 -8px -8px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   20. ICÔNES 2D EXACTES DE LA RÉFÉRENCE CANVAS
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-pill {
+  gap: 1px;
+  padding: 3px;
+  border: 1px solid rgba(67, 73, 70, 0.08);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 4px 12px rgba(38, 48, 44, 0.06);
+}
+
+.boxnote-pill .boxnote-tool {
+  width: 37px;
+  height: 37px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-pill .boxnote-tool:hover:not(:disabled) {
+  background: #f1f2ef;
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+.boxnote-pill .boxnote-tool.is-active,
+.boxnote-pill .boxnote-tool--highlighter.is-active {
+  background: #f4f5f1;
+  box-shadow: inset 0 0 0 1px rgba(57, 63, 60, 0.08);
+}
+
+.boxnote-pill .boxnote-tool::after {
+  display: none;
+}
+
+.boxnote-toolbar-reference-icon {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+
+.boxnote-toolbar-reference-icon > img {
+  display: block;
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+  user-select: none;
+  filter: none;
+}
+
+.boxnote-tool--highlighter .boxnote-toolbar-reference-icon > img {
+  width: 29px;
+  height: 29px;
+}
+
+.boxnote-tool--shape .boxnote-toolbar-reference-icon > img,
+.boxnote-tool--selection .boxnote-toolbar-reference-icon > img {
+  width: 28px;
+  height: 28px;
+}
+
+.boxnote-highlighter-menu .boxnote-highlighter-card > .boxnote-highlighter-icon,
+.boxnote-highlighter-menu .boxnote-highlighter-card.is-active > .boxnote-highlighter-icon {
+  width: 74px;
+  height: 74px;
+  overflow: visible;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-highlighter-menu .boxnote-highlighter-icon > img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 50%;
+  user-select: none;
+  transition: transform 0.16s ease, filter 0.16s ease;
+}
+
+.boxnote-highlighter-menu .boxnote-highlighter-card:hover .boxnote-highlighter-icon > img {
+  transform: scale(1.035);
+}
+
+.boxnote-highlighter-menu .boxnote-highlighter-card.is-active .boxnote-highlighter-icon > img {
+  transform: scale(1.045);
+  filter: drop-shadow(0 4px 7px color-mix(in srgb, var(--menu-accent) 18%, transparent));
+}
+
+@media (max-width: 390px) {
+  .boxnote-pill .boxnote-tool {
+    width: 35px;
+    height: 35px;
+  }
+
+  .boxnote-toolbar-reference-icon,
+  .boxnote-toolbar-reference-icon > img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .boxnote-highlighter-menu .boxnote-highlighter-card > .boxnote-highlighter-icon,
+  .boxnote-highlighter-menu .boxnote-highlighter-card.is-active > .boxnote-highlighter-icon,
+  .boxnote-highlighter-menu .boxnote-highlighter-icon > img {
+    width: 66px;
+    height: 66px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   21. BARRE CANVAS MONOCHROME — icônes libres, sans cartes
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-toolbar .boxnote-pill {
+  gap: 8px;
+  padding: 4px 9px;
+  border: 0;
+  border-radius: 13px;
+  background: #dedddb;
+  box-shadow: none;
+}
+
+.boxnote-toolbar .boxnote-tool,
+.boxnote-toolbar .boxnote-close {
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  color: #111;
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool,
+.boxnote-toolbar .boxnote-pill .boxnote-tool.is-active,
+.boxnote-toolbar .boxnote-pill .boxnote-tool--highlighter.is-active {
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool .boxnote-toolbar-glyph,
+.boxnote-toolbar .boxnote-pill .boxnote-tool.is-active .boxnote-toolbar-glyph,
+.boxnote-toolbar .boxnote-pill .boxnote-tool--ink.is-active .boxnote-toolbar-glyph {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-toolbar .boxnote-tool:hover:not(:disabled),
+.boxnote-toolbar .boxnote-close:hover {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.52) 0 52%, transparent 72%);
+  box-shadow: none;
+  transform: none;
+}
+
+.boxnote-toolbar .boxnote-toolbar-reference-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.boxnote-toolbar .boxnote-toolbar-reference-icon > img,
+.boxnote-toolbar .boxnote-tool--highlighter .boxnote-toolbar-reference-icon > img,
+.boxnote-toolbar .boxnote-tool--shape .boxnote-toolbar-reference-icon > img,
+.boxnote-toolbar .boxnote-tool--selection .boxnote-toolbar-reference-icon > img {
+  width: 23px;
+  height: 23px;
+  filter: none;
+  opacity: 1;
+}
+
+.boxnote-toolbar .boxnote-toolbar-reference-icon.is-style-preview > img,
+.boxnote-toolbar .boxnote-tool--highlighter .boxnote-toolbar-reference-icon.is-style-preview > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.boxnote-toolbar .boxnote-toolbar-reference-icon.is-style-preview {
+  width: 28px;
+  height: 28px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  box-sizing: border-box;
+}
+
+.boxnote-toolbar .boxnote-tool--highlighter .boxnote-toolbar-reference-icon.is-highlighter-preview > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+
+.boxnote-toolbar .boxnote-toolbar-highlighter-icon {
+  position: relative;
+  display: block;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f6f6f1;
+  box-shadow: inset 0 0 0 1px #d7dad6;
+  line-height: 0;
+}
+
+.boxnote-toolbar .boxnote-toolbar-highlighter-ink {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--highlighter-ink);
+  pointer-events: none;
+  transform: none;
+  -webkit-mask-image: var(--highlighter-mask);
+  mask-image: var(--highlighter-mask);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.boxnote-toolbar .boxnote-toolbar-reference-icon.is-eraser-toolbar > img {
+  width: 26px;
+  height: 26px;
+}
+
+.boxnote-toolbar .boxnote-toolbar-reference-icon.is-lasso-toolbar > img {
+  width: 26px;
+  height: 26px;
+}
+
+.boxnote-toolbar .boxnote-tool:hover:not(.is-active) .boxnote-toolbar-reference-icon.is-style-preview > img {
+  transform: scale(1.02);
+}
+
+.boxnote-toolbar .boxnote-tool.is-active .boxnote-toolbar-reference-icon.is-style-preview > img {
+  transform: none;
+}
+
+.boxnote-toolbar .boxnote-toolbar-glyph .boxnote-png-icon {
+  width: 21px !important;
+  height: 21px !important;
+  color: #111 !important;
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool::after {
+  display: block;
+  left: 50%;
+  right: auto;
+  bottom: 1px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #111;
+  opacity: 0;
+  box-shadow: 0 0 0 1px #dedddb;
+  transform: translateX(-50%) scale(0.55);
+  transition:
+    opacity 150ms ease,
+    transform 220ms cubic-bezier(0.2, 0.9, 0.25, 1);
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool.is-active::after {
+  opacity: 0.92;
+  transform: translateX(-50%) scale(1);
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool--ink.is-active::after {
+  background: var(--tool-color, #111);
+}
+
+/* Une seule couche d’interaction pour la barre : douce, stable et sans
+   superposition de halos/rotations hérités des anciens styles. */
+.boxnote-toolbar .boxnote-toolbar-reference-icon,
+.boxnote-toolbar .boxnote-toolbar-line-icon {
+  transform-origin: center;
+  transition:
+    transform 210ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 170ms ease,
+    filter 170ms ease;
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool:not(.is-active) > .boxnote-toolbar-reference-icon,
+.boxnote-toolbar .boxnote-pill .boxnote-tool:not(.is-active) > .boxnote-toolbar-line-icon {
+  opacity: 0.5;
+  filter: saturate(0.58) contrast(0.92);
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool:not(.is-active):hover > .boxnote-toolbar-reference-icon,
+.boxnote-toolbar .boxnote-pill .boxnote-tool:not(.is-active):hover > .boxnote-toolbar-line-icon {
+  opacity: 0.78;
+  filter: saturate(0.82) contrast(0.98);
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool.is-active {
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool--ink.is-active {
+  background: transparent;
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool--selection.is-active {
+  background: transparent;
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool.is-active > .boxnote-toolbar-reference-icon,
+.boxnote-toolbar .boxnote-pill .boxnote-tool.is-active > .boxnote-toolbar-line-icon {
+  opacity: 1;
+  transform: translateY(-0.75px) scale(1.1);
+  filter: none;
+  animation: boxnote-toolbar-active-in 380ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool:hover:not(:disabled):not(.is-active) > .boxnote-toolbar-reference-icon,
+.boxnote-toolbar .boxnote-pill .boxnote-tool:hover:not(:disabled):not(.is-active) > .boxnote-toolbar-line-icon {
+  transform: translateY(-0.5px) scale(1.035);
+  filter: none;
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool:active:not(:disabled) > .boxnote-toolbar-reference-icon,
+.boxnote-toolbar .boxnote-pill .boxnote-tool:active:not(:disabled) > .boxnote-toolbar-line-icon {
+  opacity: 1;
+  transform: scale(0.82);
+  transition-duration: 75ms;
+}
+
+.boxnote-toolbar .boxnote-pill .boxnote-tool:active:not(:disabled) {
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.9) 0 48%,
+      rgba(255, 255, 255, 0.28) 49% 63%,
+      transparent 64%
+    );
+  box-shadow: none;
+}
+
+.boxnote-toolbar .boxnote-tool:focus-visible,
+.boxnote-toolbar .boxnote-close:focus-visible {
+  outline: none;
+  background: transparent;
+  box-shadow: 0 0 0 2px rgba(37, 105, 121, 0.3);
+}
+
+@keyframes boxnote-toolbar-active-in {
+  0% { transform: scale(0.78); }
+  48% { transform: translateY(-0.75px) scale(1.18); }
+  72% { transform: translateY(-0.5px) scale(0.98); }
+  100% { transform: translateY(-0.75px) scale(1.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boxnote-toolbar .boxnote-toolbar-reference-icon,
+  .boxnote-toolbar .boxnote-toolbar-line-icon,
+  .boxnote-toolbar .boxnote-pill .boxnote-tool::after {
+    animation: none !important;
+    transition: none;
+  }
+}
+
+.boxnote-toolbar .boxnote-tool:disabled {
+  opacity: 0.32;
+}
+
+@media (max-width: 390px) {
+  .boxnote-toolbar .boxnote-pill {
+    gap: 5px;
+    padding-inline: 7px;
+  }
+
+  .boxnote-toolbar .boxnote-tool,
+  .boxnote-toolbar .boxnote-close {
+    width: 29px;
+    height: 29px;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-reference-icon > img,
+  .boxnote-toolbar .boxnote-tool--highlighter .boxnote-toolbar-reference-icon > img,
+  .boxnote-toolbar .boxnote-tool--shape .boxnote-toolbar-reference-icon > img,
+  .boxnote-toolbar .boxnote-tool--selection .boxnote-toolbar-reference-icon > img {
+    width: 21px;
+    height: 21px;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-reference-icon.is-style-preview > img,
+  .boxnote-toolbar .boxnote-tool--highlighter .boxnote-toolbar-reference-icon.is-style-preview > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-reference-icon.is-style-preview {
+    width: 25px;
+    height: 25px;
+  }
+
+  .boxnote-toolbar .boxnote-tool--highlighter .boxnote-toolbar-reference-icon.is-highlighter-preview > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-highlighter-icon {
+    flex-basis: 25px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-reference-icon.is-eraser-toolbar > img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-reference-icon.is-lasso-toolbar > img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Icônes vectorielles homogènes de la barre : même trait, même taille. */
+.boxnote-toolbar .boxnote-toolbar-line-icon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  overflow: visible;
+  color: #111;
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-toolbar .boxnote-toolbar-line-icon > svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 390px) {
+  .boxnote-toolbar .boxnote-toolbar-line-icon,
+  .boxnote-toolbar .boxnote-toolbar-line-icon > svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   22. AJUSTEMENTS DU MENU STYLO — icônes originales conservées
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-ink-menu .boxnote-pen-grid {
+  gap: 6px;
+  padding: 2px 0 4px;
+}
+
+.boxnote-ink-menu .boxnote-pen-card,
+.boxnote-ink-menu .boxnote-pen-card:hover,
+.boxnote-ink-menu .boxnote-pen-card.is-active {
+  min-height: 54px;
+  padding: 1px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.boxnote-ink-menu .boxnote-pen-card > .boxnote-pen-image-frame,
+.boxnote-ink-menu .boxnote-pen-card.is-active > .boxnote-pen-image-frame {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-ink-menu .boxnote-pen-image {
+  width: 44px;
+  height: 44px;
+  opacity: 0.82;
+  transition: opacity 0.16s ease;
+}
+
+/* Le dessin du feutre reste identique, mais respire davantage dans sa case. */
+.boxnote-ink-menu .boxnote-pen-card.is-marker > .boxnote-pen-image-frame {
+  overflow: visible;
+}
+
+.boxnote-ink-menu .boxnote-pen-card.is-marker .boxnote-pen-image {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  object-position: center;
+  transform: translateY(1px);
+}
+
+.boxnote-ink-menu .boxnote-pen-card:hover .boxnote-pen-image {
+  opacity: 0.94;
+}
+
+.boxnote-ink-menu .boxnote-pen-card.is-active .boxnote-pen-image {
+  opacity: 1;
+}
+
+.boxnote-ink-menu .boxnote-range-row output {
+  font-size: 8.5px;
+}
+
+.boxnote-ink-menu .boxnote-pressure-curves button small {
+  font-size: 8.75px;
+  font-weight: 550;
+}
+
+.boxnote-ink-menu .boxnote-stabilization-row output {
+  font-size: 9.5px;
+}
+
+.boxnote-ink-menu .boxnote-setting-copy strong {
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.boxnote-ink-menu .boxnote-setting-copy small {
+  font-size: 8.5px;
+}
+
+@media (max-width: 390px) {
+  .boxnote-ink-menu .boxnote-pen-card > .boxnote-pen-image-frame,
+  .boxnote-ink-menu .boxnote-pen-card.is-active > .boxnote-pen-image-frame {
+    height: 47px;
+  }
+
+  .boxnote-ink-menu .boxnote-pen-image {
+    width: 41px;
+    height: 41px;
+  }
+
+  .boxnote-ink-menu .boxnote-pen-card.is-marker .boxnote-pen-image {
+    width: 41px;
+    height: 41px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   23. PANNEAU GOMME — présentation circulaire, logique inchangée
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-eraser-menu {
+  width: min(286px, calc(100vw - 20px));
+  padding: 13px 13px 10px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+.boxnote-eraser-title {
+  padding: 2px 3px 8px;
+  color: #181a1c;
+  font-size: 16px;
+  font-weight: 680;
+  letter-spacing: -0.02em;
+}
+
+.boxnote-eraser-menu .boxnote-eraser-sizes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 5px;
+  min-height: 86px;
+  padding: 2px 0 12px;
+}
+
+.boxnote-eraser-menu .boxnote-eraser-sizes > button,
+.boxnote-eraser-menu .boxnote-eraser-sizes > button:hover,
+.boxnote-eraser-menu .boxnote-eraser-sizes > button.is-active {
+  display: grid;
+  grid-template-rows: 1fr;
+  place-items: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 68px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #697075;
+  transform: none;
+}
+
+.boxnote-eraser-menu .boxnote-eraser-size-dot {
+  display: block;
+  width: var(--eraser-preview-size);
+  height: var(--eraser-preview-size);
+  max-width: none;
+  max-height: none;
+  border-radius: 50%;
+  background: #d9dbdc;
+  box-shadow: none;
+  transition: background-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.boxnote-eraser-menu .boxnote-eraser-sizes > button:hover .boxnote-eraser-size-dot {
+  background: #c9ccce;
+  transform: scale(1.035);
+}
+
+.boxnote-eraser-menu .boxnote-eraser-sizes > button.is-active .boxnote-eraser-size-dot {
+  background: #111;
+  box-shadow:
+    0 0 0 5px #fff,
+    0 5px 13px rgba(15, 23, 42, 0.2);
+}
+
+.boxnote-eraser-menu .boxnote-eraser-auto-dot {
+  display: grid;
+  place-items: center;
+  width: 58px !important;
+  height: 58px !important;
+  max-width: none;
+  max-height: none;
+  border-radius: 50%;
+  background: #d9dbdc;
+  color: #606569;
+  font-size: 10px;
+  font-weight: 780;
+  letter-spacing: 0.04em;
+  box-shadow: none;
+}
+
+.boxnote-eraser-menu .boxnote-eraser-auto.is-active .boxnote-eraser-auto-dot {
+  background: #111;
+  color: #fff;
+  box-shadow:
+    0 0 0 5px #fff,
+    0 5px 13px rgba(15, 23, 42, 0.2);
+}
+
+.boxnote-eraser-options {
+  margin: 0 -13px -10px;
+  padding-top: 2px;
+  border-top: 1px solid rgba(100, 116, 139, 0.14);
+}
+
+.boxnote-eraser-menu .boxnote-eraser-option {
+  grid-template-columns: minmax(0, 1fr) 40px;
+  gap: 12px;
+  min-height: 44px;
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 0;
+  background: transparent;
+  color: #25292c;
+  font-size: 11px;
+  font-weight: 560;
+  line-height: 1.3;
+}
+
+.boxnote-eraser-menu .boxnote-eraser-option + .boxnote-eraser-option {
+  border-top: 1px solid rgba(100, 116, 139, 0.1);
+}
+
+.boxnote-eraser-menu .boxnote-eraser-option:hover {
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.boxnote-eraser-menu .boxnote-eraser-option > i {
+  width: 38px;
+  height: 22px;
+  justify-self: end;
+  background: #c7cacc;
+}
+
+.boxnote-eraser-menu .boxnote-eraser-option > i::after {
+  width: 18px;
+  height: 18px;
+}
+
+.boxnote-eraser-menu .boxnote-eraser-option.is-active > i::after {
+  transform: translateX(16px);
+}
+
+.boxnote-eraser-menu .boxnote-clear-zone {
+  min-height: 43px;
+  padding: 10px 14px 9px;
+  border-top: 1px solid rgba(100, 116, 139, 0.1);
+  color: #b3262d;
+  font-size: 11px;
+  font-weight: 620;
+}
+
+@media (max-width: 390px) {
+  .boxnote-eraser-menu {
+    width: min(264px, calc(100vw - 16px));
+    padding-inline: 10px;
+  }
+
+  .boxnote-eraser-options {
+    margin-inline: -10px;
+  }
+
+  .boxnote-eraser-menu .boxnote-eraser-auto-dot {
+    width: 52px !important;
+    height: 52px !important;
+  }
+}
+
+/* Réglages globaux du stylet déplacés dans le menu Paramètres. */
+.boxnote-stylus-settings .boxnote-spen-controls {
+  gap: 8px;
+  margin: 0;
+  padding: 2px 1px 4px;
+  border-top: 0;
+}
+
+.boxnote-stylus-settings .boxnote-pressure-curves {
+  gap: 2px;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+.boxnote-stylus-settings .boxnote-pressure-curves button {
+  height: 34px;
+  border-radius: 8px;
+}
+
+.boxnote-stylus-settings .boxnote-pressure-curves small {
+  font-size: 8.5px;
+}
+
+.boxnote-stylus-settings .boxnote-stabilization-row {
+  min-height: 32px;
+  padding: 2px 4px;
+  border-radius: 8px;
+  background: rgba(148, 163, 184, 0.07);
+}
+
+.boxnote-stylus-settings .boxnote-stabilization-row output {
+  font-size: 9.5px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   24. SÉLECTEUR DE FORMES — grille d'icônes au trait
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-shape-menu {
+  width: min(286px, calc(100vw - 20px));
+  max-height: min(520px, calc(100vh - 88px));
+  padding: 12px;
+  overflow-y: auto;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+.boxnote-shape-title {
+  padding: 1px 4px 8px;
+  color: #17191b;
+  font-size: 17px;
+  font-weight: 690;
+  letter-spacing: -0.025em;
+}
+
+.boxnote-shape-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+  padding: 3px 1px 10px;
+}
+
+.boxnote-shape-picker-item {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #111;
+  cursor: pointer;
+  transition: background-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.boxnote-shape-picker-item > svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.boxnote-shape-picker-item:hover {
+  background: rgba(148, 163, 184, 0.12);
+  transform: translateY(-1px);
+}
+
+.boxnote-shape-picker-item.is-active {
+  background: #fff;
+  color: #111;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.06),
+    0 7px 17px rgba(15, 23, 42, 0.14);
+}
+
+.boxnote-shape-menu .boxnote-shape-footer {
+  position: static;
+  margin: 0 -12px -12px;
+  padding: 8px 12px 10px;
+  border-top: 1px solid rgba(100, 116, 139, 0.12);
+  background: transparent;
+  box-shadow: none;
+}
+
+.boxnote-shape-menu .boxnote-shape-footer .boxnote-range-row {
+  min-height: 34px;
+  padding: 3px 5px;
+  background: rgba(148, 163, 184, 0.07);
+}
+
+@media (max-width: 390px) {
+  .boxnote-shape-menu {
+    width: min(264px, calc(100vw - 16px));
+    padding: 10px;
+  }
+
+  .boxnote-shape-picker-grid {
+    gap: 5px;
+  }
+
+  .boxnote-shape-picker-item > svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .boxnote-shape-menu .boxnote-shape-footer {
+    margin: 0 -10px -10px;
+    padding-inline: 10px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   25. MENU STYLO — outil actif agrandi et teinté
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-pen-menu {
+  width: min(276px, calc(100vw - 20px));
+  padding: 10px;
+  overflow: visible;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+/* Intitulé volontairement discret : la plume active est déjà signalée par
+   l'anneau de la carte ET par son libellé. En 16px/690 ce titre était l'élément
+   le plus lourd du panneau pour une information redondante, pendant que le vrai
+   réglage (la bascule du bas) tenait en 9,5px — hiérarchie inversée. */
+.boxnote-pen-title {
+  padding: 1px 3px 6px;
+  color: #6b7580;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.boxnote-pen-menu .boxnote-range-row {
+  min-height: 36px;
+  padding: 3px 6px;
+}
+
+.boxnote-pen-menu .boxnote-pen-grid {
+  align-items: center;
+  gap: 4px;
+  padding: 8px 5px 7px;
+  overflow: visible;
+}
+
+/* La carte reste ancrée dans la grille. Seul le cadre circulaire est animé :
+   l'agrandissement actif ne provoque donc aucun déplacement des voisins. */
+.boxnote-pen-menu .boxnote-pen-card,
+.boxnote-pen-menu .boxnote-pen-card:hover,
+.boxnote-pen-menu .boxnote-pen-card.is-active {
+  justify-content: center;
+  gap: 4px;
+  min-height: 80px;
+  padding: 0;
+  overflow: visible;
+  transform: none;
+}
+
+.boxnote-pen-menu .boxnote-pen-card > .boxnote-pen-image-frame,
+.boxnote-pen-menu .boxnote-pen-card.is-active > .boxnote-pen-image-frame {
+  width: 56px;
+  height: 56px;
+  margin-inline: auto;
+  overflow: visible;
+  border-radius: 50%;
+  transform: translateZ(0);
+  will-change: transform;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.24s ease,
+    transform 0.28s cubic-bezier(0.2, 1.32, 0.34, 1);
+}
+
+.boxnote-pen-menu .boxnote-pen-image,
+.boxnote-pen-menu .boxnote-pen-card.is-marker .boxnote-pen-image {
+  width: 46px;
+  height: 46px;
+  opacity: 0.78;
+  transform: none;
+  will-change: transform, opacity;
+  transition:
+    opacity 0.18s ease,
+    filter 0.18s ease,
+    transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Le cercle imprimé dans le PNG Bille épouse l’anneau de sélection sans
+   double marge et reste parfaitement centré. */
+.boxnote-pen-menu .boxnote-pen-card.is-ballpoint .boxnote-pen-image {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.boxnote-pen-menu .boxnote-pen-card:hover .boxnote-pen-image {
+  opacity: 0.92;
+}
+
+.boxnote-pen-menu .boxnote-pen-card:active > .boxnote-pen-image-frame {
+  transform: scale(0.96) translateZ(0);
+}
+
+.boxnote-pen-menu .boxnote-pen-card.is-active > .boxnote-pen-image-frame {
+  background:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--menu-accent) 14%, #fff) 0 66%,
+      color-mix(in srgb, var(--menu-accent) 5%, transparent) 67% 100%
+    );
+  /* Anneau porté à 70% d'opacité : à 45% et à la couleur de l'encre, une encre
+     claire (jaune) donnait un anneau quasi invisible sur fond blanc — et c'était
+     le SEUL indicateur d'état, la coche étant masquée. */
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, var(--menu-accent) 70%, transparent),
+    0 0 6px color-mix(in srgb, var(--menu-accent) 14%, rgba(15, 23, 42, 0.08));
+  transform: scale(1.08) translateZ(0);
+}
+
+.boxnote-pen-menu .boxnote-pen-card.is-active .boxnote-pen-image {
+  opacity: 1;
+  filter: saturate(1.08) contrast(1.02);
+  transform: none;
+}
+
+.boxnote-pen-menu .boxnote-pen-card.is-marker .boxnote-pen-image {
+  object-fit: contain;
+  object-position: center;
+  clip-path: none;
+  transform: scale(0.94) translateZ(0);
+}
+
+/* Le feutre garde sa normalisation de cadrage (0,94) à l'état actif : sans ça
+   il grossissait de 0,94 → 0,98 au clic, comme les autres plumes. */
+.boxnote-pen-menu .boxnote-pen-card.is-active.is-marker .boxnote-pen-image {
+  transform: scale(0.94) translateZ(0);
+}
+
+.boxnote-pen-color-section {
+  display: grid;
+  gap: 5px;
+  margin-top: 2px;
+  padding: 8px 4px 9px;
+  border-top: 1px solid rgba(100, 116, 139, 0.12);
+}
+
+.boxnote-pen-color-label {
+  color: #6f7b84;
+  font-size: 9.5px;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.boxnote-pen-menu .boxnote-pen-color-section .boxnote-compact-colors {
+  justify-content: flex-start;
+  gap: 7px;
+  padding: 4px;
+}
+
+.boxnote-pen-menu .boxnote-pen-color-section .boxnote-swatch,
+.boxnote-pen-menu .boxnote-pen-color-section .boxnote-add-color {
+  width: 24px;
+  height: 24px;
+  flex-basis: 24px;
+}
+
+.boxnote-pen-menu .boxnote-pen-color-section .boxnote-swatch.is-active::before {
+  border-color: var(--menu-accent);
+}
+
+/* Libellés réaffichés : bille, plume et feutre sont trois cylindres gris quasi
+   identiques à 46px. Ils n'étaient identifiables que par `title=`, qui ne se
+   déclenche ni au stylet ni au tactile — donc jamais sur la cible (Tab S7). */
+.boxnote-pen-menu .boxnote-pen-card small {
+  display: block;
+  font-size: 10px;
+  font-weight: 550;
+  line-height: 1;
+  color: #7c8791;
+}
+
+.boxnote-pen-menu .boxnote-pen-card.is-active small {
+  color: color-mix(in srgb, var(--menu-accent) 55%, #1e293b);
+  font-weight: 700;
+}
+
+.boxnote-pen-menu .boxnote-recognition-row {
+  min-height: 42px;
+  margin-top: 2px;
+  padding: 7px 5px;
+}
+
+/* 12px : c'est le seul réglage fonctionnel du panneau, il était en 9,5px —
+   sous le plancher de lisibilité sur tablette tenue à bout de bras. Le texte
+   peut passer sur deux lignes, la rangée (42px) l'absorbe. */
+.boxnote-pen-menu .boxnote-recognition-row .boxnote-setting-copy strong {
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: normal;
+}
+
+@media (max-width: 390px) {
+  .boxnote-pen-menu {
+    width: min(264px, calc(100vw - 16px));
+    padding: 9px;
+  }
+
+  .boxnote-pen-menu .boxnote-pen-card,
+  .boxnote-pen-menu .boxnote-pen-card:hover,
+  .boxnote-pen-menu .boxnote-pen-card.is-active {
+    min-height: 76px;
+  }
+
+  .boxnote-pen-menu .boxnote-pen-card > .boxnote-pen-image-frame,
+  .boxnote-pen-menu .boxnote-pen-card.is-active > .boxnote-pen-image-frame {
+    width: 54px;
+    height: 54px;
+  }
+
+  .boxnote-pen-menu .boxnote-pen-card.is-active > .boxnote-pen-image-frame {
+    width: 54px;
+  }
+
+  .boxnote-pen-menu .boxnote-pen-card.is-active .boxnote-pen-image,
+  .boxnote-pen-menu .boxnote-pen-card.is-active.is-marker .boxnote-pen-image {
+    width: 46px;
+    height: 46px;
+  }
+
+  .boxnote-pen-menu .boxnote-pen-card.is-active.is-ballpoint .boxnote-pen-image {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boxnote-pen-menu .boxnote-pen-image,
+  .boxnote-pen-menu .boxnote-pen-image-frame {
+    transition: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   26. MENU OPTIONS — sections repliables (disclosure)
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-disclosure {
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+}
+.boxnote-disclosure:first-child {
+  border-top: 0;
+}
+
+.boxnote-disclosure-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 4px;
+  border: 0;
+  background: transparent;
+  color: #46525c;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+  text-align: left;
+}
+.boxnote-disclosure-head:hover {
+  color: var(--ios-tint, #256979);
+}
+
+.boxnote-disclosure-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: #8a959c;
+}
+.boxnote-disclosure.is-open .boxnote-disclosure-icon,
+.boxnote-disclosure-head:hover .boxnote-disclosure-icon {
+  color: inherit;
+}
+
+.boxnote-disclosure-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Valeur courante, visible SANS déplier : replier ne doit pas masquer l'état. */
+.boxnote-disclosure-summary {
+  flex: 0 0 auto;
+  max-width: 45%;
+  overflow: hidden;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.14);
+  color: #5f6b72;
+  font-size: 10px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: opacity 0.18s ease;
+}
+/* Dépliée, la section montre déjà ses contrôles : le résumé ferait doublon. */
+.boxnote-disclosure.is-open .boxnote-disclosure-summary {
+  opacity: 0;
+}
+
+.boxnote-disclosure-chevron {
+  flex: 0 0 auto;
+  color: #98a3ab;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.boxnote-disclosure.is-open .boxnote-disclosure-chevron {
+  transform: rotate(180deg);
+}
+
+/* Animation par fraction de ligne : la hauteur n'est jamais mesurée en JS, donc
+   un contenu qui change (grille des angles) ne provoque ni saut ni recalcul. */
+.boxnote-disclosure-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.boxnote-disclosure.is-open .boxnote-disclosure-panel {
+  grid-template-rows: 1fr;
+}
+.boxnote-disclosure-inner {
+  overflow: hidden;
+  /* Le focus ne doit pas pouvoir atteindre une section repliée. */
+  visibility: hidden;
+  transition: visibility 0.24s;
+}
+.boxnote-disclosure.is-open .boxnote-disclosure-inner {
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boxnote-disclosure-panel,
+  .boxnote-disclosure-inner,
+  .boxnote-disclosure-chevron {
+    transition: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   27. ACCESSIBILITÉ TACTILE & DÉCOUVERTE DES COMMANDES
+   ═══════════════════════════════════════════════════════════════ */
+.boxnote-dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #7e898f;
+  box-shadow: none;
+}
+
+.boxnote-dots:hover,
+.boxnote-dots:focus-visible,
+.boxnote-dots.is-filled {
+  border-color: transparent;
+  background: transparent;
+  color: #256979;
+}
+
+.boxnote-dots:focus-visible {
+  outline: 2px solid rgba(37, 105, 121, 0.58);
+  outline-offset: -6px;
+  box-shadow: none;
+}
+
+.boxnote-trigger-dots {
+  gap: 3px;
+  margin-left: 0;
+}
+
+.boxnote-trigger-dots span {
+  width: 3px;
+  height: 3px;
+}
+
+.boxnote-more-button {
+  width: 30px;
+  border-radius: 10px;
+  color: #66747c;
+}
+
+.boxnote-more-ellipsis {
+  display: block;
+  flex: 0 0 auto;
+}
+
+@media (pointer: coarse), (max-width: 760px) {
+  /* Sur téléphone et tablette tactile, les couleurs restent accessibles dans
+     le menu de chaque outil. Les dupliquer dans la barre surchargeait le dock
+     avec de grandes pastilles de 44 px et réduisait les outils principaux. */
+  .boxnote-color-inline,
+  .boxnote-color-inline-sep {
+    display: none;
+  }
+
+  .boxnote-dots {
+    min-width: 44px;
+    height: 44px;
+    padding-inline: 0;
+  }
+
+  .boxnote-toolbar .boxnote-tool,
+  .boxnote-toolbar .boxnote-close {
+    width: 44px;
+    height: 44px;
+  }
+
+  .boxnote-toolbar .boxnote-pill {
+    gap: 3px;
+    padding: 4px 6px;
+  }
+
+  .boxnote-toolbar-center {
+    gap: 7px;
+  }
+
+  /* Les boutons avaient déjà une cible tactile de 44 px, mais leur dessin
+     restait dimensionné comme sur desktop (22–28 px). On exploite la place
+     libérée par la palette pour rendre les instruments nettement plus lisibles. */
+  .boxnote-toolbar .boxnote-toolbar-reference-icon,
+  .boxnote-toolbar .boxnote-toolbar-reference-icon.is-style-preview,
+  .boxnote-toolbar .boxnote-toolbar-highlighter-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-highlighter-icon {
+    flex-basis: 34px;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-reference-icon > img,
+  .boxnote-toolbar .boxnote-tool--highlighter .boxnote-toolbar-reference-icon > img,
+  .boxnote-toolbar .boxnote-tool--shape .boxnote-toolbar-reference-icon > img,
+  .boxnote-toolbar .boxnote-tool--selection .boxnote-toolbar-reference-icon > img,
+  .boxnote-toolbar .boxnote-toolbar-reference-icon.is-eraser-toolbar > img,
+  .boxnote-toolbar .boxnote-toolbar-reference-icon.is-lasso-toolbar > img {
+    width: 31px;
+    height: 31px;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-reference-icon.is-style-preview > img,
+  .boxnote-toolbar .boxnote-tool--highlighter .boxnote-toolbar-reference-icon.is-style-preview > img,
+  .boxnote-toolbar .boxnote-tool--highlighter .boxnote-toolbar-reference-icon.is-highlighter-preview > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-line-icon {
+    width: 31px;
+    height: 31px;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-line-icon > svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-glyph {
+    width: 30px;
+    height: 30px;
+  }
+
+  .boxnote-toolbar .boxnote-toolbar-glyph .boxnote-png-icon {
+    width: 25px !important;
+    height: 25px !important;
+  }
+
+  .boxnote-disclosure-head,
+  .boxnote-guide-grid button,
+  .boxnote-surface-grid button,
+  .boxnote-more-import,
+  .boxnote-more-clear {
+    min-height: 44px;
+  }
+}
+
+/* Import d'image (menu options) */
+.boxnote-more-import {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 4px;
+  border: 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+  background: transparent;
+  color: #46525c;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+  text-align: left;
+  transition: color 150ms ease;
+}
+.boxnote-more-import svg {
+  flex: 0 0 auto;
+  color: #8a959c;
+  transition: color 150ms ease;
+}
+.boxnote-more-import:hover:not(:disabled) {
+  color: var(--ios-tint, #256979);
+}
+.boxnote-more-import:hover:not(:disabled) svg {
+  color: inherit;
+}
+.boxnote-more-import:focus-visible {
+  outline: 2px solid rgba(37, 105, 121, 0.48);
+  outline-offset: -3px;
+  border-radius: 7px;
+}
+.boxnote-more-import:disabled {
+  opacity: 0.48;
+  cursor: progress;
+}
+.boxnote-import-error {
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(192, 57, 43, 0.08);
+  color: #b42335;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/*
+ * Compatibilité du moteur canvas « Zone-exercice » importé depuis un projet
+ * en Tailwind v4. Ces quelques utilitaires n'existent pas en Tailwind v3 :
+ * ils sont redéfinis ici avec des valeurs équivalentes.
+ */
+
+/* Police arrondie « Itim » utilisée sur les pastilles d'aide du canvas. */
+.font-itim {
+  font-family: var(--font-ui, system-ui, sans-serif);
+  letter-spacing: 0.01em;
+}
+
+/* Fondu d'entrée des panneaux d'aide. */
+.animate-fadeIn {
+  animation: canvas-fade-in 0.3s ease-out both;
+}
+
+@keyframes canvas-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ombres très légères (Tailwind v4 `shadow-2xs` / `shadow-xs`). */
+.shadow-2xs,
+.shadow-xs {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Masquage à l'impression (équivalent `print:hidden`). */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+/* Rail canva : au plus près du bord utile, sans ignorer les encoches iPad. */
+.canvas-rail-edge {
+  right: max(.45rem, env(safe-area-inset-right));
+}
+
+/* Surface professeur paysage : le contenu utilise tout l'écran et réserve
+   uniquement la largeur tactile indispensable au rail d'outils. */
+@media (min-width: 768px) and (min-height: 560px) and (max-width: 1600px) and (orientation: landscape) {
+  .canvas-rail-edge {
+    right: max(.2rem, env(safe-area-inset-right));
+  }
+
+  .prof-tablet-exercise-content,
+  .quiz-prof-tablet-content {
+    width: 100%;
+    max-width: none;
+    padding-left: max(.65rem, env(safe-area-inset-left));
+    padding-right: max(4.35rem, calc(env(safe-area-inset-right) + 3.85rem));
+  }
+
+  .quiz-prof-tablet-content {
+    padding-top: 1rem;
+  }
+}
+
+/* Commande de réduction du rail — pictogramme sans flèche : les trois outils
+   se compactent visuellement vers la tranche noire de la barre. */
+.canvas-rail-collapse-button {
+  display: grid;
+  width: 42px;
+  height: 38px;
+  min-width: 42px;
+  min-height: 38px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 13px;
+  color: #111827;
+  background: transparent;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 220ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.canvas-rail-collapse-button:hover {
+  color: #000;
+  background: rgba(15, 23, 42, .075);
+  transform: translateX(1px);
+}
+
+.canvas-rail-collapse-button:active {
+  transform: scale(.91);
+  transition-duration: 80ms;
+}
+
+.canvas-rail-collapse-button:focus-visible {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+
+.canvas-rail-collapse-glyph {
+  position: relative;
+  display: block;
+  width: 27px;
+  height: 22px;
+}
+
+.canvas-rail-collapse-marks {
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  display: flex;
+  width: 14px;
+  height: 16px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.canvas-rail-collapse-marks span {
+  display: block;
+  width: 12px;
+  height: 2.5px;
+  border-radius: 999px;
+  background: currentColor;
+  transform-origin: right center;
+  transition:
+    opacity 180ms ease,
+    transform 280ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.canvas-rail-collapse-marks span:nth-child(2) {
+  width: 9px;
+  opacity: .72;
+}
+
+.canvas-rail-collapse-marks span:nth-child(3) {
+  width: 6px;
+  opacity: .48;
+}
+
+.canvas-rail-collapse-spine {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 6px;
+  height: 20px;
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: -3px 0 0 rgba(17, 24, 39, .14);
+  transform-origin: right center;
+  transition: transform 280ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.canvas-rail-collapse-button:hover .canvas-rail-collapse-marks span {
+  opacity: .22;
+  transform: translateX(8px) scaleX(.25);
+}
+
+.canvas-rail-collapse-button:hover .canvas-rail-collapse-spine {
+  transform: scaleX(1.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas-rail-collapse-button,
+  .canvas-rail-collapse-marks span,
+  .canvas-rail-collapse-spine {
+    transition-duration: 0.01ms;
+  }
+}

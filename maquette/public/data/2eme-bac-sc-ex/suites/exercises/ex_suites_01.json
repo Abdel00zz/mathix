@@ -1,0 +1,41 @@
+{
+  "id": "ex-suites-01",
+  "theme": "suites",
+  "difficulty": "moyen",
+  "topic": "Suites Numériques",
+  "context": "On compare deux modèles d'évolution financière. \n$\\textbf{\\textrm{Cas A :}}$ Un loyer initial de 5000 DH augmente de 50 DH par an.\n$\\textbf{\\textrm{Cas B :}}$ Une épargne de 5000 DH placée à intérêts composés de 2% par an.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Modèle Arithmétique (Loyer)",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Soit $u_n$ le loyer l'année $n$. Exprimer $u_{n+1}$ en fonction de $u_n$.",
+          "hint": "Pour montrer qu'une suite est arithmétique, on calcule la différence $u_{n+1} - u_n$ et on vérifie qu'elle est constante. Exprimez $u_{n+1}$ en fonction de $u_n$ à partir de l'énoncé."
+        },
+        {
+          "id": "sq1b",
+          "content": "Donner l'expression de $u_n$ en fonction de $n$.",
+          "hint": "Utilisez la formule du terme général d'une suite arithmétique : $u_n = u_0 + n \\times r$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Modèle Géométrique (Épargne)",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Soit $v_n$ l'épargne l'année $n$. Justifier que $v_{n+1} = 1,02 v_n$.",
+          "hint": "Pour montrer qu'une suite est géométrique, on calcule le rapport $\\frac{v_{n+1}}{v_n}$ et on vérifie qu'il est constant. Pour augmenter un nombre de 2%, par quel facteur le multiplie-t-on ?"
+        },
+        {
+          "id": "sq2b",
+          "content": "Exprimer $v_n$ en fonction de $n$.",
+          "hint": "Utilisez la formule du terme général d'une suite géométrique : $v_n = v_0 \\times q^n$."
+        }
+      ]
+    }
+  ]
+}

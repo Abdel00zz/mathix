@@ -1,0 +1,70 @@
+{
+  "id": "etude-fonctions",
+  "title": "L'étude des fonctions numériques",
+  "section": "analyse",
+  "quizCount": 24,
+  "revisions": [
+    {
+      "id": "rev-etude-fct-1",
+      "title": "Fiche Complète : Étude de Fonctions",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/revisions/fiche_etude_fonctions_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-etude-fct-01",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-etude-fct-02",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-etude-fct-03",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-etude-fct-04",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_04.json"
+    },
+    {
+      "id": "ex-etude-fct-05",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_05.json"
+    },
+    {
+      "id": "ex-etude-fct-06",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_06.json"
+    },
+    {
+      "id": "ex-etude-fct-07",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_07.json"
+    },
+    {
+      "id": "ex-etude-fct-08",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_08.json"
+    },
+    {
+      "id": "ex-etude-fct-09",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_09.json"
+    },
+    {
+      "id": "ex-etude-fct-10",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_10.json"
+    },
+    {
+      "id": "ex-etude-fct-11",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_11.json"
+    },
+    {
+      "id": "ex-analyse-etude-globale-fct-auxiliaire",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/exercises/ex_12.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-etude-fonctions-1",
+      "path": "data/1ere-bac-sc-math/etude-fonctions/quiz/etude-fonctions_quiz.json",
+      "questionsCount": 24
+    }
+  ]
+}

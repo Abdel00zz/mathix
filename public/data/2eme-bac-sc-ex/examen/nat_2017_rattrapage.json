@@ -1,0 +1,342 @@
+{
+  "id": "nat-2017-r",
+  "title": "Examen National 2017 — Session Rattrapage",
+  "type": "national",
+  "year": 2017,
+  "session": "rattrapage",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 7,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2017r-ex1",
+      "number": 1,
+      "theme": "geometrie-espace",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Sphère, plan, distances et intersections",
+      "context": "L'espace est rapporté à un repère orthonormé direct $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$.\\nOn considère la sphère $(S)$ d'équation $x^2 + y^2 + z^2 - 2x - 2y - 2z - 1 = 0$ et le plan $(P)$ d'équation $y - z = 0$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que la sphère $(S)$ a pour centre le point $\\Omega(1, 1, 1)$ et pour rayon est $2$.",
+              "bareme": 0.5,
+              "hint": "Regroupez les termes en $x, y, z$ dans l'équation cartésienne de $(S)$ et complétez les carrés pour obtenir la forme canonique $(x-a)^2 + (y-b)^2 + (z-c)^2 = R^2$."
+            },
+            {
+              "id": "1b",
+              "content": "Calculer $d(\\Omega, (P))$ et en déduire que le plan $(P)$ coupe la sphère $(S)$ suivant un cercle $(C)$.",
+              "bareme": 0.5,
+              "hint": "Appliquez la formule analytique de la distance d'un point à un plan. Comparez le résultat avec le rayon $R$ trouvé à la question précédente."
+            },
+            {
+              "id": "1c",
+              "content": "Déterminer le centre et le rayon du cercle $(C)$.",
+              "bareme": 0.5,
+              "hint": "Observez la valeur exacte de $d(\\Omega, (P))$. Quelle est la nature de l'intersection lorsque la distance du centre au plan est nulle ?"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soit $(\\Delta)$ la droite passant par le point $A(1, -2, 2)$ et orthogonale au plan $(P)$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $\\overrightarrow{u}(0, 1, -1)$ est un vecteur directeur de la droite $(\\Delta)$.",
+              "bareme": 0.25,
+              "hint": "Une droite orthogonale à un plan admet comme vecteur directeur tout vecteur normal à ce plan. Identifiez le vecteur normal de $(P)$ à partir de son équation."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que $||\\overrightarrow{\\Omega A} \\wedge \\overrightarrow{u}|| = \\sqrt{2}||\\overrightarrow{u}||$ et en déduire que la droite $(\\Delta)$ coupe la sphère $(S)$ en deux points.",
+              "bareme": 0.75,
+              "hint": "Calculez les coordonnées du vecteur $\\overrightarrow{\\Omega A}$, effectuez le produit vectoriel, puis calculez sa norme. Utilisez ensuite la formule de la distance d'un point à une droite : $d(\\Omega, (\\Delta)) = \\dfrac{||\\overrightarrow{\\Omega A} \\wedge \\overrightarrow{u}||}{||\\overrightarrow{u}||}$."
+            },
+            {
+              "id": "2c",
+              "content": "Déterminer les coordonnées de chaque points d'intersection de la droite $(\\Delta)$ et la sphère $(S)$.",
+              "bareme": 0.5,
+              "hint": "Écrivez une représentation paramétrique de $(\\Delta)$ à l'aide de $A$ et $\\overrightarrow{u}$. Substituez les expressions de $x, y, z$ dans l'équation cartésienne de $(S)$ pour obtenir une équation du second degré en $t$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2017r-ex2",
+      "number": 2,
+      "theme": "probabilites",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Probabilités — Tirage simultané, variable aléatoire et espérance",
+      "context": "Une urne contient 10 boules indiscernables au toucher : cinq boules blanches, trois boules rouges et deux boules vertes.\\nOn tire au hasard, simultanément, quatre boules de l'urne.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $A$ l'événement : \" Parmi les quatre boules tirées, une seule boule est verte \"\\net $B$ l'événement : \" Parmi les quatre boules tirées, il y a exactement trois boules de même couleur \"\\nMontrer que $p(A) = \\dfrac{8}{15}$ et que $p(B) = \\dfrac{19}{70}$.",
+          "bareme": 1.5,
+          "hint": "Le tirage est simultané, l'univers repose sur des combinaisons $C_n^p$. Pour $A$, choisissez 1 boule verte et 3 boules parmi les non-vertes. Pour $B$, identifiez les couleurs permettant de tirer 3 boules, puis complétez chaque cas avec 1 boule d'une autre couleur."
+        },
+        {
+          "id": "q2",
+          "content": "Soit $X$ la variable aléatoire qui à chaque tirage associe le nombre de boules vertes tirées.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $p(X = 2) = \\dfrac{2}{15}$.",
+              "bareme": 0.5,
+              "hint": "Traduisez l'événement $(X=2)$ : vous tirez exactement 2 boules vertes, et 2 boules qui ne sont pas vertes."
+            },
+            {
+              "id": "2b",
+              "content": "Déterminer la loi de probabilité de la variable aléatoire $X$ et montrer que l'espérance mathématique est égale à $\\dfrac{4}{5}$.",
+              "bareme": 1,
+              "hint": "Listez les valeurs possibles de $X$ (0, 1, 2). Vous connaissez déjà les probabilités pour $X=1$ (événement $A$) et $X=2$. Calculez $P(X=0)$, vérifiez que la somme fait 1, puis appliquez la formule $E(X) = \\sum x_i p(x_i)$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2017r-ex3",
+      "number": 3,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Nombres complexes — Équation, rotation, triangle rectangle et cercle circonscrit",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Résoudre dans l'ensemble des nombres complexes $\\mathbb{C}$ l'équation : $z^2 + 4z + 8 = 0$",
+          "bareme": 0.75,
+          "hint": "Calculez le discriminant $\\Delta$. Puisqu'il est négatif, les deux racines seront complexes conjuguées et s'exprimeront à l'aide de $i\\sqrt{-\\Delta}$."
+        },
+        {
+          "id": "q2",
+          "content": "On considère, dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, les points $A, B$ et $C$ d'affixes respectives $a, b$ et $c$ telles que :\\n$a = -2 + 2i$, $b = 4 - 4i$ et $c = 4 + 8i$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Soit $z$ l'affixe d'un point $M$ du plan et $z'$ l'affixe du point $M'$, image de $M$ par la rotation $R$ de centre $A$ et d'angle $-\\dfrac{\\pi}{2}$. Montrer que $z' = -iz - 4$.",
+              "bareme": 0.5,
+              "hint": "Appliquez la formule complexe de la rotation : $z' - a = e^{-i\\frac{\\pi}{2}}(z - a)$. Remplacez $e^{-i\\frac{\\pi}{2}}$ par sa valeur algébrique ($-i$) et développez."
+            },
+            {
+              "id": "2b",
+              "content": "Vérifier que le point $B$ est l'image du point $C$ par la rotation $R$ et en déduire la nature du triangle $ABC$.",
+              "bareme": 0.75,
+              "hint": "Substituez $z$ par $c$ dans l'expression de la rotation trouvée en 2a et montrez que le résultat est $b$. Déduisez géométriquement les relations d'égalité de longueurs et d'orthogonalité induites par une rotation de $\\pm\\pi/2$."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Soit $\\omega$ l'affixe du point $\\Omega$, milieu du segment $[BC]$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que $|c - \\omega| = 6$.",
+              "bareme": 0.5,
+              "hint": "Calculez l'affixe $\\omega$ du milieu $\\Omega$ en utilisant $\\dfrac{b+c}{2}$. Formez la différence $c - \\omega$ et calculez son module."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que l'ensemble des points $M$ d'affixe $z$ tels que $|z - \\omega| = 6$ est le cercle circonscrit au triangle $ABC$.",
+              "bareme": 0.5,
+              "hint": "Traduisez géométriquement la relation $|z - \\omega| = 6$ en termes de distance. Faites le lien avec la nature du triangle $ABC$ trouvée en 2b pour prouver que les trois points appartiennent à ce cercle."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2017r-ex4",
+      "number": 4,
+      "theme": "suites-numeriques",
+      "difficulty": "facile",
+      "points": 2.5,
+      "topic": "Suites numériques — Récurrence, convergence et suite géométrique",
+      "context": "On considère la suite numérique $(u_n)$ définie par :\\n$u_0 = 17$ et $u_{n+1} = \\dfrac{1}{4}u_n + 12$ pour tout entier naturel $n$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer par récurrence que $u_n > 16$ pour tout entier naturel $n$.",
+              "bareme": 0.5,
+              "hint": "Pour l'hérédité, supposez $u_n > 16$, multipliez les deux membres par $\\dfrac{1}{4}$ puis ajoutez 12 pour faire apparaître $u_{n+1}$ et conclure."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que la suite $(u_n)$ est décroissante et en déduire qu'elle est convergente.",
+              "bareme": 0.5,
+              "hint": "Calculez la différence $u_{n+1} - u_n$ en l'exprimant en fonction de $u_n$. Factorisez de sorte à utiliser l'inégalité $u_n > 16$ démontrée en 1a pour déterminer le signe."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soit $(v_n)$ la suite numérique telle que $v_n = u_n - 16$ pour tout entier naturel $n$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $(v_n)$ est une suite géométrique.",
+              "bareme": 0.5,
+              "hint": "Calculez $v_{n+1} = u_{n+1} - 16$. Remplacez $u_{n+1}$ par sa définition puis factorisez par le coefficient de $u_n$ pour faire apparaître $v_n$."
+            },
+            {
+              "id": "2b",
+              "content": "En déduire que $u_n = 16 + \\left(\\dfrac{1}{4}\\right)^n$ pour tout entier naturel $n$ puis déterminer la limite de la suite $(u_n)$.",
+              "bareme": 0.5,
+              "hint": "Donnez le terme général $v_n = v_0 \\times q^n$, puis déduisez-en $u_n$. Pour la limite, rappelez-vous du comportement de $q^n$ lorsque $-1 < q < 1$."
+            },
+            {
+              "id": "2c",
+              "content": "Déterminer la plus petite valeur de l'entier naturel $n$ pour laquelle $u_n < 16,001$.",
+              "bareme": 0.5,
+              "hint": "Remplacez $u_n$ par son expression. Simplifiez l'inégalité pour isoler $\\left(\\dfrac{1}{4}\\right)^n$, puis appliquez la fonction logarithme népérien ($\\ln$) en faisant attention au changement de sens lors de la division par un nombre négatif."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2017r-ex5",
+      "number": 5,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 8.5,
+      "topic": "Analyse d'une fonction exponentielle, limites asymptotiques et calcul d'aire",
+      "context": "",
+      "questions": [
+        {
+          "id": "p1",
+          "type": "partie",
+          "content": "Soit $g$ la fonction numérique définie sur $\\mathbb{R}$ par : $g(x) = 1 - (x + 1)^2 e^x$.\\nEt $(C_g)$ sa courbe dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (fournie dans le sujet d'examen)."
+        },
+        {
+          "id": "q1",
+          "content": "Vérifier que $g(0) = 0$.",
+          "bareme": 0.25,
+          "hint": "Substituez directement $x$ par $0$ dans l'expression de la fonction $g$."
+        },
+        {
+          "id": "q2",
+          "content": "À partir de la courbe représentative $(C_g)$, montrer que $g(x) \\geq 0$ pour tout $x$ appartenant à l'intervalle $]-\\infty, 0]$ et que $g(x) \\leq 0$ pour tout $x$ appartenant à l'intervalle $[0, +\\infty[$.",
+          "bareme": 1,
+          "hint": "Observez graphiquement la position de la courbe par rapport à l'axe des abscisses. Les zones au-dessus correspondent à une fonction positive, celles au-dessous à une fonction négative."
+        },
+        {
+          "id": "p2",
+          "type": "partie",
+          "content": "On considère la fonction numérique $f$ définie sur $\\mathbb{R}$ par : $f(x) = x + 1 - (x^2 + 1)e^x$.\\nSoit $(C_f)$ la courbe représentative de $f$ dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (unité : $2 cm$)."
+        },
+        {
+          "id": "r1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $f(x) = x + 1 - 4\\left(\\dfrac{x}{2}e^{\\frac{x}{2}}\\right)^2 - e^x$ pour tout $x$ appartenant à $\\mathbb{R}$ puis en déduire que $\\lim_{x \\to -\\infty} f(x) = -\\infty$.",
+              "bareme": 0.75,
+              "hint": "Développez l'expression initiale $(x^2+1)e^x$. Appliquez les règles des puissances $e^x = \\left(e^{\\frac{x}{2}}\\right)^2$ pour forcer l'apparition de l'expression demandée. Pour la limite, servez-vous de la limite usuelle $\\lim_{X \\to -\\infty} Xe^X = 0$."
+            },
+            {
+              "id": "1b",
+              "content": "Calculer $\\lim_{x \\to -\\infty} [f(x) - (x + 1)]$ et en déduire que la droite $(D)$ d'équation $y = x + 1$ est une asymptote à la courbe $(C_f)$ au voisinage de $-\\infty$.",
+              "bareme": 0.5,
+              "hint": "Soustrayez $(x+1)$ de l'expression de $f(x)$. Utilisez la limite de la forme modifiée obtenue en 1a pour montrer que la différence tend vers zéro."
+            },
+            {
+              "id": "1c",
+              "content": "Montrer que la courbe $(C_f)$ est en-dessous de la droite $(D)$.",
+              "bareme": 0.25,
+              "hint": "Étudiez le signe de la différence calculée précédemment. Rappelez-vous que $e^x$ et $(x^2+1)$ sont toujours strictement positifs sur $\\mathbb{R}$."
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $\\lim_{x \\to +\\infty} f(x) = -\\infty$ \\n\\left( on pourra écrire $f(x)$ sous la forme $x \\left[ 1 + \\dfrac{1}{x} - \\left(x + \\dfrac{1}{x}\\right)e^x \\right] \\right)$.",
+              "bareme": 0.5,
+              "hint": "Factorisez globalement par $x$. Analysez la limite du terme entre crochets, qui est conditionné par le produit $x e^x$ tendant vers l'infini."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que la courbe $(C_f)$ admet au voisinage de $+\\infty$ une branche parabolique dont on déterminera la direction.",
+              "bareme": 0.25,
+              "hint": "Évaluez la limite du quotient $\\dfrac{f(x)}{x}$ en $+\\infty$. L'expression entre crochets de la question 2a donne directement ce quotient. Une limite infinie oriente vers une branche de direction bien spécifique."
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que $f'(x) = g(x)$ pour tout $x$ appartenant à $\\mathbb{R}$.",
+              "bareme": 0.75,
+              "hint": "Dérivez $f(x)$ terme à terme. L'expression $(x^2+1)e^x$ se dérive comme un produit. Factorisez ensuite la dérivée par $e^x$ pour retrouver l'expression de $g(x)$."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que la fonction $f$ est croissante sur l'intervalle $]-\\infty, 0]$ et décroissante sur l'intervalle $[0, +\\infty[$ puis dresser le tableau de variations de la fonction $f$ sur $\\mathbb{R}$.",
+              "bareme": 0.75,
+              "hint": "Le signe de la dérivée de $f$ dépend directement de la question 3a. Réutilisez l'étude de signe graphique de $g(x)$ menée en Partie I.\\n\\n$$\\begin{array}{|c|lcccr|}\\hline x & -\\infty & & 0 & & +\\infty \\\\\\\\ \\hline f'(x) & & + & 0 & - & \\\\\\\\ \\hline f & -\\infty & \\nearrow & 0 & \\searrow & -\\infty \\\\\\\\ \\hline \\end{array}$$"
+            },
+            {
+              "id": "3c",
+              "content": "Montrer que la courbe $(C_f)$ admet deux points d'inflexion d'abscisses $-3$ et $-1$.",
+              "bareme": 0.75,
+              "hint": "Calculez la dérivée seconde $f''(x)$ en dérivant $g(x)$. Identifiez les valeurs d'annulation et vérifiez qu'il y a un changement de signe de $f''(x)$."
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "content": "Construire, dans le même repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$, la droite $(D)$ et la courbe $(C_f)$.\\n(on prendra $f(-3) \\approx -2,5$ et $f(-1) \\approx -0,75$).",
+          "bareme": 1,
+          "hint": "Placez le point de coordonnées $(0,0)$ avec sa tangente horizontale. Tracez l'asymptote oblique $y=x+1$ en $-\\infty$ (courbe en dessous). Placez les points d'inflexion fournis et orientez la branche parabolique vers l'axe des ordonnées négatives en $+\\infty$."
+        },
+        {
+          "id": "r5",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "5a",
+              "content": "Vérifier que la fonction $H : x \\mapsto (x - 1)e^x$ est une fonction primitive de la fonction $h : x \\mapsto xe^x$ sur $\\mathbb{R}$ puis montrer que $\\displaystyle\\int_{-1}^0 xe^x dx = \\dfrac{2}{e} - 1$.",
+              "bareme": 0.5,
+              "hint": "Dérivez la fonction $H$ pour retomber sur $h(x)$. Pour l'intégrale, calculez simplement la différence de la primitive évaluée en $0$ et en $-1$."
+            },
+            {
+              "id": "5b",
+              "content": "Montrer, à l'aide d'une intégration par parties, que : $\\displaystyle\\int_{-1}^0 (x^2 + 1)e^x dx = 3\\left(1 - \\dfrac{2}{e}\\right)$.",
+              "bareme": 0.75,
+              "hint": "Choisissez $u(x) = x^2+1$ et $v'(x) = e^x$. La formule de l'intégration par parties vous laissera une intégrale impliquant $xe^x$, que vous calculerez en utilisant la question 5a."
+            },
+            {
+              "id": "5c",
+              "content": "Calculer, en $cm^2$, l'aire du domaine plan limité par la courbe $(C_f)$, la droite $(D)$, l'axe des ordonnées et la droite d'équation $x = -1$.",
+              "bareme": 0.5,
+              "hint": "Exprimez l'aire par l'intégrale de la différence absolue entre la droite et la fonction, sur $[-1, 0]$. Rappelez-vous la position relative trouvée en 1c. Attention : multipliez votre résultat par l'unité d'aire (ici $1 u.a = 2 cm \\times 2 cm = 4 cm^2$)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

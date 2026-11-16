@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">Math en tête</title>
+  <desc id="description">Emblème Math en tête</desc>
+  <defs>
+    <linearGradient id="surface" x1="92" y1="58" x2="430" y2="462" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset=".56" stop-color="#fffafe"/>
+      <stop offset="1" stop-color="#f4efff"/>
+    </linearGradient>
+    <linearGradient id="tete" x1="150" y1="338" x2="362" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e11d5b"/>
+      <stop offset="1" stop-color="#ee7840"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#2f1f72" flood-opacity=".2"/>
+    </filter>
+  </defs>
+  <rect x="34" y="34" width="444" height="444" rx="88" fill="url(#surface)" filter="url(#shadow)"/>
+  <rect x="34.75" y="34.75" width="442.5" height="442.5" rx="87.25" fill="none" stroke="#ffffff" stroke-opacity=".94" stroke-width="1.5"/>
+  <text x="256" y="211" text-anchor="middle" fill="#29216e" font-family="Outfit, Plus Jakarta Sans, Arial, sans-serif" font-size="116" font-weight="700" letter-spacing="-9">Math</text>
+  <path d="M111 269h83M318 269h83" stroke="#df7ca8" stroke-opacity=".75" stroke-width="4"/>
+  <text x="256" y="305" text-anchor="middle" fill="#d84c86" font-family="Cormorant Garamond, Lora, Georgia, serif" font-size="92" font-weight="600" font-style="italic">en</text>
+  <text x="263" y="392" text-anchor="middle" fill="url(#tete)" font-family="Outfit, Plus Jakarta Sans, Arial, sans-serif" font-size="77" font-weight="700" letter-spacing="8">tête</text>
+</svg>

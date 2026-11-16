@@ -1,0 +1,467 @@
+{
+  "header": {
+    "title": "Fonctions exponentielles",
+    "subtitle": "Définir, transformer, dériver, étudier et exploiter les fonctions contenant e^x ou a^x",
+    "context": "2BAC Sciences"
+  },
+  "lexique": [
+    {
+      "term": "Fonction exponentielle",
+      "arabic": "الدالة الأسية",
+      "category": "concept",
+      "symbol": "e^x",
+      "definition": "Fonction égale à sa propre dérivée et associée au nombre e.",
+      "variants": [
+        "fonctions exponentielles",
+        "exponentielle"
+      ]
+    },
+    {
+      "term": "Nombre e",
+      "arabic": "العدد e",
+      "category": "concept",
+      "definition": "Constante positive qui sert de base à l'exponentielle naturelle.",
+      "variants": [
+        "constante e"
+      ]
+    },
+    {
+      "term": "Exposant",
+      "arabic": "أس",
+      "category": "concept",
+      "definition": "Nombre qui indique la puissance à laquelle une base est élevée.",
+      "variants": [
+        "exposants",
+        "puissance"
+      ]
+    },
+    {
+      "term": "Croissance exponentielle",
+      "arabic": "نمو أسي",
+      "category": "concept",
+      "definition": "Augmentation dont le taux est proportionnel à la quantité présente.",
+      "variants": [
+        "croissance"
+      ]
+    },
+    {
+      "term": "Décroissance exponentielle",
+      "arabic": "تناقص أسي",
+      "category": "concept",
+      "definition": "Diminution décrite par une exponentielle de base comprise entre zéro et un.",
+      "variants": [
+        "décroissance"
+      ]
+    },
+    {
+      "term": "Fonction réciproque",
+      "arabic": "الدالة العكسية",
+      "category": "concept",
+      "symbol": "\\ln",
+      "definition": "Fonction qui permet de retrouver l'exposant à partir d'une valeur exponentielle.",
+      "variants": [
+        "réciproque"
+      ]
+    },
+    {
+      "term": "Logarithme népérien",
+      "arabic": "اللوغاريتم النيبيري",
+      "category": "concept",
+      "symbol": "\\ln",
+      "definition": "Fonction réciproque de l'exponentielle naturelle.",
+      "variants": [
+        "logarithme"
+      ]
+    },
+    {
+      "term": "Dérivée",
+      "arabic": "مشتقة",
+      "category": "concept",
+      "definition": "Mesure de la variation instantanée d'une fonction.",
+      "variants": [
+        "dérivée de l'exponentielle"
+      ]
+    },
+    {
+      "term": "Primitive",
+      "arabic": "دالة أصلية",
+      "category": "concept",
+      "definition": "Fonction dont la dérivée est la fonction étudiée.",
+      "variants": [
+        "primitives"
+      ]
+    },
+    {
+      "term": "Équation exponentielle",
+      "arabic": "معادلة أسية",
+      "category": "concept",
+      "definition": "Équation où l'inconnue apparaît dans un exposant.",
+      "variants": [
+        "équations exponentielles"
+      ]
+    },
+    {
+      "term": "Limite",
+      "arabic": "نهاية",
+      "category": "concept",
+      "symbol": "\\lim",
+      "definition": "Valeur approchée par une fonction dans une situation donnée.",
+      "variants": [
+        "limites"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Les fonctions exponentielles permettent d'\\objectif{modéliser une croissance rapide et d'étudier des fonctions d'examen}. La \\defi{difficulté} principale consiste à choisir le bon réflexe : comparer deux exponentielles, poser $X=e^x$, utiliser une croissance comparée, factoriser une dérivée ou lire une asymptote. Dans ce chapitre, tu vas construire $e^x$ comme réciproque de $\\ln$, puis l'utiliser pour résoudre des équations, calculer des limites, étudier des variations, trouver des tangentes et exploiter une fonction réciproque.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonhard_Euler.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "15%",
+            "caption": "Leonhard Euler (1707–1783)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definition_exponentielle_neperienne",
+      "title": "Comment exp inverse-t-elle le logarithme ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le logarithme népérien transforme un nombre strictement positif en un réel. La fonction exponentielle fait le chemin inverse : elle part d'un réel et donne toujours un nombre strictement positif."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la fonction exponentielle népérienne} ?",
+          "content": "La \\textbf{fonction exponentielle népérienne}, notée $\\exp$, est la fonction réciproque de la fonction logarithme népérien. Ainsi, pour tout $x\\in\\mathbb{R}$ et tout $y\\in]0\\,;+\\infty[$ :\\par\\smallskip$$\\boxed{\\exp(x)=y\\Longleftrightarrow x=\\ln(y)}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les conséquences immédiates de exp} ?",
+          "content": "Pour tout réel $x$, on a $\\exp(x)>0$ et $\\ln(\\exp(x))=x$. De plus :\\par\\smallskip$$\\boxed{\\exp(0)=1\\quad ;\\quad \\exp(1)=e}$$\\par Pour tous réels $a$ et $b$ :\\par$$\\exp(a)=\\exp(b)\\Longleftrightarrow a=b,\\qquad \\exp(a)<\\exp(b)\\Longleftrightarrow a<b.$$\\par La fonction $\\exp$ est continue et strictement croissante sur $\\mathbb{R}$."
+        },
+        {
+          "type": "example",
+          "title": "Équation exponentielle directe",
+          "content": "Résolvons $\\exp(x+1)=1$. Comme $1=\\exp(0)$, on écrit $\\exp(x+1)=\\exp(0)$. Puisque $\\exp(a)=\\exp(b) \\Longleftrightarrow a=b$, on obtient $x+1=0$, donc $x=-1$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{résoudre $\\exp(A)=\\exp(B)$} ?",
+          "content": "\\textbf{D'abord}, vérifier que les deux membres sont bien deux exponentielles. \\textbf{Ensuite}, remplacer l'égalité par $A=B$ en utilisant la propriété $\\exp(A)=\\exp(B) \\Longleftrightarrow A=B$. \\textbf{Puis}, résoudre l'équation obtenue. \\textbf{Enfin}, garder les conditions éventuelles du domaine."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Résoudre dans $\\mathbb{R}$ l'équation exponentielle $\\exp(x^2+1)=\\exp(x+5)$.}\\par\\smallskip\\textbf{D'abord}, l'égalité de deux exponentielles impose l'égalité des exposants :\\begin{align*}x^2+1&=x+5\\\\x^2-x-4&=\\blank{0}.\\end{align*}\\textbf{Ensuite}, le discriminant vaut $\\Delta=1+16=\\blank{17}$. \\textbf{Ainsi}, les solutions sont $\\boxed{x=\\dfrac{1-\\sqrt{17}}{2}\\ \text{ou}\\ x=\\dfrac{1+\\sqrt{17}}{2}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résoudre dans $\\mathbb{R}^{*}$ l'équation $\\exp\\!\\left(\\dfrac{1}{x}\\right)=\\exp(2-x)$.}\\par\\smallskip\\textbf{D'abord}, comme $x\\neq0$, l'égalité des exponentielles donne $\\dfrac{1}{x}=2-x$. \\textbf{Ensuite}, on multiplie par $x$ :\\begin{align*}1&=2x-x^2\\\\x^2-2x+1&=\\blank{0}.\\end{align*}\\textbf{Puis}, on reconnaît $(x-1)^2=0$. \\textbf{Enfin}, la solution vérifie le domaine, donc $\\boxed{x=1}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résoudre les inéquations exponentielles suivantes : $\\exp(x-2)\\leq\\exp(2x-3)$ et $\\exp(x^2-x)\\geq\\exp(-5x)$.}\\par\\smallskip\\itemsize{Pour $\\exp(x-2)\\leq\\exp(2x-3)$, la croissance de $\\exp$ donne $x-2\\leq2x-3$, donc $x\\geq\\blank{1}$. Ainsi $S_1=[1\\,;+\\infty[$.}\\itemsize{Pour $\\exp(x^2-x)\\geq\\exp(-5x)$, on compare les exposants : $x^2-x\\geq-5x$, donc $x(x+4)\\geq\\blank{0}$. Ainsi $S_2=] -\\infty\\,;-4]\\cup[0\\,;+\\infty[$.}"
+        }
+      ]
+    },
+    {
+      "id": "calculs_algebriques_exponentielle",
+      "title": "Comment transformer les expressions avec $e^x$ ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les règles de l'exponentielle ressemblent aux règles des puissances. Elles servent à simplifier, factoriser, résoudre des équations et préparer les limites."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les règles algébriques de $e^x$} ?",
+          "content": "Pour tous réels $a$ et $b$, et pour tout $r\\in\\mathbb{Q}$ :\\par\\smallskip$$\\begin{array}{c|c}\\text{Expression}&\\text{Transformation}\\\\ \\hline e^{a+b}&e^ae^b\\\\ e^{a-b}&\\dfrac{e^a}{e^b}\\\\ e^{-b}&\\dfrac{1}{e^b}\\\\ (e^a)^r&e^{ra}\\end{array}$$\\par De plus, $e^a=e^b\\Longleftrightarrow a=b$ et $e^a<e^b\\Longleftrightarrow a<b$."
+        },
+        {
+          "type": "definition",
+          "title": "Pourquoi \\mathqst{écrit-on $e^x$ au lieu de $\\exp(x)$} ?",
+          "content": "Comme $\\exp(1)=e$, on prolonge la notation des puissances et l'on écrit :\\par\\smallskip$$\\boxed{\\exp(x)=e^x}$$\\par La notation $e^x$ désigne donc l'exponentielle népérienne de $x$."
+        },
+        {
+          "type": "example",
+          "title": "Simplification d'un produit exponentiel",
+          "content": "Simplifions $A=\\dfrac{e^2\\times e^{-1}\\times (e^2)^3}{\\sqrt[3]{e^5}}$. On regroupe les exposants : $e^2e^{-1}=e$, $(e^2)^3=e^6$ et $\\sqrt[3]{e^5}=e^{5/3}$. Donc $A=e^{1+6-5/3}=e^{16/3}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{traiter une équation polynomiale en $e^x$} ?",
+          "content": "\\textbf{D'abord}, repérer les puissances de $e^x$, comme $e^{2x}$ ou $e^{3x}$. \\textbf{Ensuite}, poser $X=e^x$ avec $X>0$. \\textbf{Puis}, résoudre l'équation obtenue en $X$. \\textbf{Enfin}, revenir à $x$ avec $x=\\ln X$."
+        },
+        {
+          "type": "example",
+          "title": "Changement d'inconnue $X=e^x$",
+          "content": "Résolvons $e^{2x}-5e^x+4=0$. En posant $X=e^x$, avec $X>0$, on obtient $X^2-5X+4=0$, soit $(X-1)(X-4)=0$. Donc $X=1$ ou $X=4$, d'où $x=0$ ou $x=\\ln4$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Simplifier l'expression exponentielle $A=\\dfrac{e^2\\times e^{-1}\\times (e^2)^3}{\\sqrt[3]{e^5}}$.}\\par\\smallskip\\textbf{D'abord}, on transforme chaque facteur : $e^2e^{-1}=e^{\\blank{1}}$, $(e^2)^3=e^{\\blank{6}}$ et $\\sqrt[3]{e^5}=e^{5/3}$. \\textbf{Ensuite}, on regroupe les exposants :\\begin{align*}A&=e^{1+6-5/3}\\\\&=\\boxed{e^{16/3}}.\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résoudre dans $\\mathbb{R}$ l'équation $e^{2x}-5e^x+4=0$ en posant une \\textbf{nouvelle inconnue}.}\\par\\smallskip\\textbf{D'abord}, on pose $X=e^x$, avec $X>0$. L'équation devient $X^2-5X+4=0$. \\textbf{Ensuite}, on factorise :\\begin{align*}X^2-5X+4&=(X-1)(X-\\blank{4}).\\end{align*}\\textbf{Puis}, $X=1$ ou $X=4$. \\textbf{Enfin}, on revient à $x$ : $e^x=1$ donne $x=0$ et $e^x=4$ donne $x=\\ln4$. Donc $\\boxed{S=\\{0,\\ln4\\}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Résoudre dans $\\mathbb{R}$ les deux inéquations suivantes : $e^{2x}-2e^x+1\\geq0$ et $(x-2)(e^{-3x}-1)<0$.}\\par\\smallskip\\itemsize{Pour $e^{2x}-2e^x+1\\geq0$, on reconnaît $(e^x-1)^2\\geq0$. Un carré est toujours positif ou nul, donc $\\boxed{S_1=\\mathbb{R}}$.}\\itemsize{Pour $(x-2)(e^{-3x}-1)<0$, on étudie les signes. On a $e^{-3x}-1<0\\Longleftrightarrow -3x<0\\Longleftrightarrow x>\\blank{0}$. Le produit est strictement négatif sur $\\boxed{S_2=]-\\infty\\,;0[\\cup]2\\,;+\\infty[}$.}"
+        }
+      ]
+    },
+    {
+      "id": "courbe_exponentielle",
+      "title": "Comment lire la courbe de la fonction exponentielle ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La courbe de $e^x$ est liée à celle de $\\ln x$. Comme ces deux fonctions sont réciproques, leurs courbes sont symétriques par rapport à la droite d'équation $y=x$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles lectures \\mathqst{donne la courbe de $e^x$} ?",
+          "content": "Dans un repère orthonormé, les courbes de $x\\mapsto e^x$ et de $x\\mapsto\\ln x$ sont symétriques par rapport à la droite $y=x$. La fonction $x\\mapsto e^x$ est positive, continue et strictement croissante sur $\\mathbb{R}$.\\par\\smallskip Une lecture essentielle est :\\par$$\\boxed{e^x>x\\quad\\text{pour tout }x\\in\\mathbb{R}}$$"
+        },
+        {
+          "type": "example",
+          "title": "Inégalité graphique utile",
+          "content": "La courbe de $y=e^x$ reste au-dessus de la droite $y=x$. Donc $e^x>x$ pour tout réel $x$, et ainsi $e^x-x>0$ sur $\\mathbb{R}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x)=x+1-\\ln(e^x-x)$. Vérifier le \\textbf{domaine de définition}, puis transformer $f(x)$.\\begin{enumerate}\\item Montrer que $f$ est définie sur $\\mathbb{R}$.\\item Montrer que $f(x)=1-\\ln(1-xe^{-x})$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Comme $e^x>x$ pour tout réel $x$, on a $e^x-x>\\blank{0}$. Donc $\\boxed{D_f=\\mathbb{R}}$.\\item On factorise $e^x$ dans le logarithme : $e^x-x=e^x(1-xe^{-x})$. Ainsi :\\begin{align*}\\ln(e^x-x)&=\\ln(e^x)+\\ln(1-xe^{-x})\\\\&=x+\\ln(1-xe^{-x}).\\end{align*}Donc $f(x)=x+1-x-\\ln(1-xe^{-x})=\\boxed{1-\\ln(1-xe^{-x})}$.\\end{enumerate}"
+        },
+        {
+          "type": "warning",
+          "content": "Le point de vigilance à ne pas oublier : l'expression $\\ln(e^x-x)$ exige $e^x-x>0$. Ici, cette condition est vraie pour tout réel grâce à l'inégalité graphique $e^x>x$."
+        }
+      ]
+    },
+    {
+      "id": "limites_croissances_comparees",
+      "title": "Quelles limites de référence maîtriser avec $e^x$ ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les limites de l'exponentielle servent à reconnaître rapidement le terme dominant. À l'infini, $e^x$ domine les puissances de $x$ ; vers moins l'infini, les produits $x^ne^x$ tendent vers zéro."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelles sont \\mathqst{les limites directes de $e^x$} ?",
+          "content": "Les limites directes de la fonction exponentielle sont :\\par\\smallskip$$\\boxed{\\lim_{x\\to+\\infty}e^x=+\\infty\\qquad\\text{et}\\qquad\\lim_{x\\to-\\infty}e^x=0}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{$e^x$ domine les puissances} ?",
+          "content": "Pour tout entier naturel $n$, on a :\\par\\smallskip$$\\boxed{\\lim_{x\\to+\\infty}\\dfrac{e^x}{x^n}=+\\infty\\qquad\\text{et}\\qquad\\lim_{x\\to-\\infty}x^ne^x=0}$$\\par En particulier : $\\lim_{x\\to+\\infty}\\dfrac{e^x}{x}=+\\infty$ et $\\lim_{x\\to-\\infty}xe^x=0$."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle limite \\mathqst{lie $e^x-1$ à $x$ près de zéro} ?",
+          "content": "La limite fondamentale au voisinage de $0$ est :\\par\\smallskip$$\\boxed{\\lim_{x\\to0}\\dfrac{e^x-1}{x}=1}$$\\par Elle sert souvent pour les tangentes, les dérivées et les changements de variable."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer une limite avec $e^{u(x)}$} ?",
+          "content": "\\textbf{D'abord}, étudier la limite de l'exposant $u(x)$. \\textbf{Ensuite}, choisir la limite de référence adaptée. \\textbf{Puis}, si une forme indéterminée apparaît, utiliser une factorisation, une croissance comparée ou un changement de variable. \\textbf{Enfin}, citer clairement le terme dominant."
+        },
+        {
+          "type": "example",
+          "title": "Croissance comparée à l'infini",
+          "content": "Calculons $\\lim_{x\\to+\\infty}\\dfrac{e^{3x}}{x^3}$. On écrit $\\dfrac{e^{3x}}{x^3}=27\\left(\\dfrac{e^x}{x}\\right)^3$. Comme $\\dfrac{e^x}{x}$ tend vers $+\\infty$, la limite vaut $+\\infty$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculer les \\textbf{limites exponentielles} suivantes : $\\lim_{x\\to+\\infty}\\dfrac{e^{\\sqrt{x}}}{x}$, $\\lim_{x\\to-\\infty}\\dfrac{x^2-x}{e^{-x}}$ et $\\lim_{x\\to+\\infty}x(e^{1/x}-1)$.}\\par\\smallskip\\itemsize{Pour $\\dfrac{e^{\\sqrt{x}}}{x}$, on pose $t=\\sqrt{x}$, donc $x=t^2$ et $t$ tend vers $+\\infty$. Ainsi $\\dfrac{e^{\\sqrt{x}}}{x}=\\dfrac{e^t}{t^2}$, donc la limite vaut $\\boxed{+\\infty}$.}\\itemsize{Pour $\\dfrac{x^2-x}{e^{-x}}$, on écrit $(x^2-x)e^x=x^2e^x-xe^x$. Quand $x$ tend vers $-\\infty$, les deux termes tendent vers $\\blank{0}$, donc la limite vaut $\\boxed{0}$.}\\itemsize{Pour $x(e^{1/x}-1)$, on pose $u=\\dfrac{1}{x}$. Alors $u$ tend vers $0^+$ et $x(e^{1/x}-1)=\\dfrac{e^u-1}{u}$. La limite vaut $\\boxed{1}$.}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\question{Calculer $\\lim_{x\\to0}\\dfrac{e^{3x}-1}{x}$ en utilisant la \\textbf{limite fondamentale}.}\\par\\smallskip\\textbf{D'abord}, on pose $u=3x$, donc $u$ tend vers $0$. \\textbf{Ensuite}, on fait apparaître $u$ au dénominateur :\\begin{align*}\\dfrac{e^{3x}-1}{x}&=3\\dfrac{e^{3x}-1}{3x}\\\\&=3\\dfrac{e^u-1}{u}.\\end{align*}\\textbf{Ainsi}, la limite vaut $3\\times\\blank{1}$, donc $\\boxed{3}$."
+        }
+      ]
+    },
+    {
+      "id": "derivation_primitives_variations",
+      "title": "Comment dériver et étudier une fonction exponentielle ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La dérivée de l'exponentielle est très simple : elle est égale à elle-même. Dans les fonctions composées, le facteur $u'(x)$ apparaît et permet ensuite d'étudier le signe."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{dériver $e^x$ et $e^{u(x)}$} ?",
+          "content": "La fonction $x\\mapsto e^x$ est dérivable sur $\\mathbb{R}$ et :\\par\\smallskip$$\\boxed{(e^x)'=e^x}$$\\par Si $u$ est dérivable sur un intervalle $I$, alors :\\par$$\\boxed{(e^{u(x)})'=u'(x)e^{u(x)}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{étudier les variations avec une exponentielle} ?",
+          "content": "\\textbf{D'abord}, dériver soigneusement la fonction. \\textbf{Ensuite}, factoriser par un facteur toujours positif, comme $e^x$ ou $e^{u(x)}$. \\textbf{Puis}, étudier le signe du facteur restant. \\textbf{Enfin}, dresser le tableau de variations et calculer les valeurs utiles."
+        },
+        {
+          "type": "example",
+          "title": "Variation d'un produit par $e^x$",
+          "content": "Pour $f(x)=(x+3)e^x$, on obtient $f'(x)=e^x+(x+3)e^x=(x+4)e^x$. Comme $e^x>0$, le signe de $f'(x)$ est celui de $x+4$. Donc $f$ décroît sur $]-\\infty\\,;-4]$ puis croît sur $[-4\\,;+\\infty[$."
+        },
+        {
+          "type": "example",
+          "title": "Primitive de la forme $u'e^u$",
+          "content": "Pour $f(x)=(2x+1)e^{x^2+x+1}$, on reconnaît $u(x)=x^2+x+1$ et $u'(x)=2x+1$. Une primitive est donc $F(x)=e^{x^2+x+1}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Étudier les \\textbf{variations} de $f(x)=(x+3)e^x$ sur $\\mathbb{R}$.}\\par\\smallskip\\textbf{D'abord}, on dérive le produit :\\begin{align*}f'(x)&=e^x+(x+3)e^x\\\\&=(x+\\blank{4})e^x.\\end{align*}\\textbf{Ensuite}, comme $e^x>0$, le signe de $f'(x)$ est celui de $x+4$. \\textbf{Ainsi}, $f$ est décroissante sur $]-\\infty\\,;-4]$ puis croissante sur $[-4\\,;+\\infty[$. Le minimum vaut $f(-4)=\\boxed{-e^{-4}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x)=2-xe^{-x+1}$. Calculer $f'(x)$, dresser les \\textbf{variations}, puis déduire une inégalité classique.\\begin{enumerate}\\item Calculer $f'(x)$.\\item Dresser le tableau de variations de $f$.\\item Déduire que $e^{x-1}\\geq x$ pour tout réel $x$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On dérive $xe^{-x+1}$ : $(xe^{-x+1})'=e^{-x+1}-xe^{-x+1}=(1-x)e^{-x+1}$. Donc $f'(x)=\\blank{(x-1)e^{-x+1}}$.\\item Comme $e^{-x+1}>0$, le signe de $f'(x)$ est celui de $x-1$. Donc $f$ décroît sur $]-\\infty\\,;1]$ puis croît sur $[1\\,;+\\infty[$. Son minimum vaut $f(1)=\\blank{1}$.\\item Puisque $f(x)\\geq1$, on a $2-xe^{-x+1}\\geq1$, donc $1\\geq xe^{-x+1}$. En multipliant par $e^{x-1}>0$, on obtient $\\boxed{e^{x-1}\\geq x}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "etude_complete_examen",
+      "title": "Comment organiser une étude de fonction avec $e^x$ ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans les exercices d'examen, une fonction exponentielle se traite avec un plan stable : limites, asymptotes, dérivée, variations, équations et parfois réciproque. Le but est de transformer chaque question en réflexe calculatoire clair."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{mener une étude complète avec $e^x$} ?",
+          "content": "\\textbf{D'abord}, vérifier le domaine. \\textbf{Ensuite}, calculer les limites aux bornes du domaine. \\textbf{Puis}, chercher une asymptote en étudiant $f(x)-(ax+b)$. \\textbf{Après}, calculer $f'(x)$ et factoriser pour obtenir le signe. \\textbf{Enfin}, utiliser les variations pour résoudre une équation, encadrer une solution ou justifier une réciproque."
+        },
+        {
+          "type": "example",
+          "title": "Asymptote au voisinage de $+\\infty$",
+          "content": "Pour $f(x)=x-1+\\dfrac{4}{e^x+2}$, on a $\\dfrac{4}{e^x+2}$ qui tend vers $0$ quand $x$ tend vers $+\\infty$. Donc $f(x)-(x-1)$ tend vers $0$, et la droite $y=x-1$ est asymptote oblique au voisinage de $+\\infty$."
+        },
+        {
+          "type": "example",
+          "title": "Dérivée factorisée et croissance",
+          "content": "Pour $f(x)=x-1+\\dfrac{4}{e^x+2}$, on obtient $f'(x)=1-\\dfrac{4e^x}{(e^x+2)^2}=\\dfrac{e^{2x}+4}{(e^x+2)^2}$. Le numérateur et le dénominateur sont strictement positifs, donc $f$ est strictement croissante sur $\\mathbb{R}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{On considère $f(x)=x-1+\\dfrac{4}{e^x+2}$. Étudier une \\textbf{asymptote} et la \\textbf{monotonie}.\\begin{enumerate}\\item Montrer que $y=x-1$ est asymptote au voisinage de $+\\infty$.\\item Calculer $f'(x)$ et montrer que $f$ est strictement croissante sur $\\mathbb{R}$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On calcule $f(x)-(x-1)=\\dfrac{4}{e^x+2}$. Comme $e^x$ tend vers $+\\infty$, cette différence tend vers $\\blank{0}$. Donc $y=x-1$ est asymptote au voisinage de $+\\infty$.\\item On dérive :\\begin{align*}f'(x)&=1-\\dfrac{4e^x}{(e^x+2)^2}\\\\&=\\dfrac{(e^x+2)^2-4e^x}{(e^x+2)^2}\\\\&=\\dfrac{\\blank{e^{2x}+4}}{(e^x+2)^2}.\\end{align*}Ce quotient est strictement positif, donc $\\boxed{f\\ \text{est strictement croissante sur }\\mathbb{R}}$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Pour $f(x)=x-1+\\dfrac{4}{e^x+2}$, montrer que l'équation $f(x)=0$ admet une \\textbf{unique solution} $\\alpha$, puis vérifier que $-1<\\alpha<0$.\\begin{enumerate}\\item Montrer l'existence et l'unicité de $\\alpha$.\\item Vérifier que $-1<\\alpha<0$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item La fonction $f$ est continue et strictement croissante sur $\\mathbb{R}$. De plus, grâce aux asymptotes, $\\lim_{x\\to-\\infty}f(x)=-\\infty$ et $\\lim_{x\\to+\\infty}f(x)=+\\infty$. Donc l'équation $f(x)=0$ admet une unique solution $\\alpha$.\\item On calcule $f(-1)=-2+\\dfrac{4}{e^{-1}+2}<\\blank{0}$ et $f(0)=-1+\\dfrac{4}{3}=\\dfrac13>0$. Comme $f$ est croissante, on obtient $\\boxed{-1<\\alpha<0}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "tangente_convexite_inflexion",
+      "title": "Comment exploiter tangente, convexité et point d'inflexion ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après les variations, les examens ajoutent souvent une tangente ou une convexité. La dérivée donne la pente de la tangente, et la dérivée seconde donne le sens de la concavité."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{écrire une tangente et lire une inflexion} ?",
+          "content": "Si $f$ est dérivable en $a$, l'équation de la tangente à la courbe de $f$ au point d'abscisse $a$ est :\\par\\smallskip$$\\boxed{y=f'(a)(x-a)+f(a)}$$\\par Si $f''$ change de signe en $a$, alors la courbe admet un \\textbf{point d'inflexion} d'abscisse $a$."
+        },
+        {
+          "type": "example",
+          "title": "Tangente en $x=\\ln2$",
+          "content": "Pour $f(x)=x-1+\\dfrac{4}{e^x+2}$, on a $f(\\ln2)=\\ln2$ et $f'(\\ln2)=\\dfrac12$. Donc la tangente au point d'abscisse $\\ln2$ est $y=\\dfrac12(x-\\ln2)+\\ln2$, soit $y=\\dfrac12x+\\dfrac{\\ln2}{2}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Pour $f(x)=x-1+\\dfrac{4}{e^x+2}$, on admet que $f''(x)=\\dfrac{4e^x(e^x-2)}{(e^x+2)^3}$. Déterminer le \\textbf{point d'inflexion} et l'équation de la \\textbf{tangente} en ce point.\\begin{enumerate}\\item Déterminer l'abscisse du point d'inflexion.\\item Calculer l'équation de la tangente en cette abscisse.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Comme $4e^x>0$ et $(e^x+2)^3>0$, le signe de $f''(x)$ est celui de $e^x-2$. Or $e^x-2=0$ donne $x=\\blank{\\ln2}$. Donc la courbe admet un point d'inflexion d'abscisse $\\ln2$.\\item On calcule $f(\\ln2)=\\ln2$ et $f'(\\ln2)=\\blank{\\dfrac12}$. La tangente est donc :\\begin{align*}y&=\\dfrac12(x-\\ln2)+\\ln2\\\\&=\\boxed{\\dfrac12x+\\dfrac{\\ln2}{2}}.\\end{align*}\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\question{Soit $f(x)=-x+\\dfrac52-\\dfrac12e^{x-2}(e^{x-2}-4)$. Étudier une \\textbf{asymptote}, la \\textbf{position relative} et les \\textbf{variations}.\\begin{enumerate}\\item Montrer que $\\Delta:y=-x+\\dfrac52$ est asymptote au voisinage de $-\\infty$.\\item Résoudre $e^{x-2}-4=0$ et étudier la position relative de la courbe et de $\\Delta$.\\item Montrer que $f'(x)=-(e^{x-2}-1)^2$, puis déduire les variations de $f$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On calcule $f(x)-\\left(-x+\\dfrac52\\right)=-\\dfrac12e^{x-2}(e^{x-2}-4)$. Quand $x$ tend vers $-\\infty$, $e^{x-2}$ tend vers $0$, donc la différence tend vers $\\blank{0}$.\\item L'équation $e^{x-2}-4=0$ donne $x=2+\\ln4$. Comme $e^{x-2}>0$, le signe de $f(x)-\\left(-x+\\dfrac52\\right)$ est l'opposé de celui de $e^{x-2}-4$. La courbe est donc au-dessus de $\\Delta$ sur $]-\\infty\\,;2+\\ln4]$ et en dessous sur $[2+\\ln4\\,;+\\infty[$.\\item En développant, $f(x)=-x+\\dfrac52-\\dfrac12e^{2x-4}+2e^{x-2}$. Donc $f'(x)=-1-e^{2x-4}+2e^{x-2}=\\blank{-(e^{x-2}-1)^2}$. Ainsi $f'(x)\\leq0$ et $\\boxed{f\\ \text{est décroissante sur }\\mathbb{R}}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "fonction_reciproque",
+      "title": "Comment utiliser une fonction réciproque après une étude de variations ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction réciproque apparaît naturellement lorsqu'une fonction est continue et strictement monotone. Dans un exercice, cette question vient souvent après le tableau de variations."
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{une fonction admet-elle une réciproque} ?",
+          "content": "Si $f$ est continue et strictement monotone sur un intervalle $I$, alors $f$ réalise une bijection de $I$ vers $J=f(I)$. Elle admet donc une fonction réciproque $f^{-1}:J\\to I$.\\par\\smallskip Si $f$ est dérivable en $a\\in I$ et si $f'(a)\\neq0$, alors :\\par$$\\boxed{(f^{-1})'(f(a))=\\dfrac{1}{f'(a)}}$$"
+        },
+        {
+          "type": "example",
+          "title": "Dérivée d'une réciproque en une valeur",
+          "content": "Si $f$ est continue, strictement croissante sur $\\mathbb{R}$, si $f(a)=b$ et si $f'(a)=4$, alors $f^{-1}$ est définie sur $\\mathbb{R}$ et $(f^{-1})'(b)=\\dfrac14$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f$ continue et strictement croissante sur $\\mathbb{R}$, avec $\\lim_{x\\to-\\infty}f(x)=-\\infty$, $\\lim_{x\\to+\\infty}f(x)=+\\infty$, $f(a)=b$ et $f'(a)=4$. Déterminer le \\textbf{domaine de $f^{-1}$} et calculer $(f^{-1})'(b)$.\\begin{enumerate}\\item Déterminer l'intervalle de définition de $f^{-1}$.\\item Calculer $(f^{-1})'(b)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Comme $f$ est continue, strictement croissante, et ses limites sont $-\\infty$ et $+\\infty$, son image est $\\mathbb{R}$. Donc $f^{-1}$ est définie sur $\\blank{\\mathbb{R}}$.\\item Comme $b=f(a)$ et $f'(a)=4\\neq0$, on applique la formule :\\begin{align*}(f^{-1})'(b)&=\\dfrac{1}{f'(a)}=\\boxed{\\dfrac14}.\\end{align*}\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "exponentielle_base_a",
+      "title": "Comment définir et étudier les fonctions $a^x$ ?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après $e^x$, on peut donner un sens rigoureux à $a^x$ pour toute base positive $a$. La définition passe par le logarithme népérien."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{l'exponentielle de base $a$} ?",
+          "content": "Soit $a>0$. La \\textbf{fonction exponentielle de base $a$} est définie sur $\\mathbb{R}$ par :\\par\\smallskip$$\\boxed{a^x=e^{x\\ln a}}$$\\par On note aussi $\\exp_a(x)=a^x$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{dériver et étudier $a^x$} ?",
+          "content": "Pour $a>0$, la fonction $x\\mapsto a^x$ est dérivable sur $\\mathbb{R}$ et :\\par\\smallskip$$\\boxed{(a^x)'=(\\ln a)a^x}$$\\par Le signe de $\\ln a$ donne les variations :\\par$$\\begin{array}{c|c|c}\\text{Condition sur }a&\\text{Signe de }\\ln a&\\text{Variation de }a^x\\\\ \\hline a>1&\\ln a>0&\\text{strictement croissante}\\\\ 0<a<1&\\ln a<0&\\text{strictement décroissante}\\end{array}$$"
+        },
+        {
+          "type": "example",
+          "title": "Résolution de $2^x=5$",
+          "content": "On écrit $2^x=e^{x\\ln2}$. L'équation $2^x=5$ devient $e^{x\\ln2}=5$. En appliquant $\\ln$, on obtient $x\\ln2=\\ln5$, donc $x=\\dfrac{\\ln5}{\\ln2}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résoudre dans $\\mathbb{R}$ les équations et inéquations avec \\textbf{base $a$} suivantes : $4^x=8$ et $\\left(\\dfrac13\\right)^x\\leq9$.}\\par\\smallskip\\itemsize{Pour $4^x=8$, on écrit $4=2^2$ et $8=2^3$. Ainsi $2^{2x}=2^3$, donc $2x=\\blank{3}$ et $\\boxed{x=\\dfrac32}$.}\\itemsize{Pour $\\left(\\dfrac13\\right)^x\\leq9$, on écrit $3^{-x}\\leq3^2$. Comme $3>1$, on compare les exposants : $-x\\leq2$, donc $\\boxed{x\\geq-2}$.}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\question{Étudier les \\textbf{variations} de $g(x)=5^x-2x$ sur $\\mathbb{R}$.}\\par\\smallskip\\textbf{D'abord}, on dérive :\\begin{align*}g'(x)&=(\\ln5)5^x-\\blank{2}.\\end{align*}\\textbf{Ensuite}, on résout $g'(x)=0$ :\\begin{align*}5^x&=\\dfrac{2}{\\ln5}\\\\x&=\\blank{\\dfrac{\\ln\\left(\\frac{2}{\\ln5}\\right)}{\\ln5}}.\\end{align*}\\textbf{Puis}, comme $x\\mapsto(\\ln5)5^x-2$ est croissante, $g'$ change de signe une seule fois. \\textbf{Ainsi}, $g$ est décroissante puis croissante, avec un minimum à l'abscisse $\\boxed{\\dfrac{\\ln\\left(\\frac{2}{\\ln5}\\right)}{\\ln5}}$."
+        }
+      ]
+    }
+  ]
+}

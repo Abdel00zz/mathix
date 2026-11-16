@@ -1,0 +1,30 @@
+{
+  "id": "ex-16",
+  "theme": "calcul-integral",
+  "difficulty": "difficile",
+  "topic": "Calcul Intégral - Suites définies par intégrale, IPP, système, limites",
+  "requiresRedaction": true,
+  "context": "On considère les suites $(u_n)$ et $(v_n)$ définies par : $u_n = \\displaystyle\\int_0^{\\frac{\\pi}{2}} e^{-nx} \\sin x\\,dx$ et $v_n = \\displaystyle\\int_0^{\\frac{\\pi}{2}} e^{-nx} \\cos x\\,dx$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $u_0$ et $v_0$.",
+      "hint": "\\method Remplacez $n = 0$ dans les expressions de $u_n$ et $v_n$. \\tip Les intégrales obtenues sont immédiates : $\\int_0^{\\pi/2} \\sin x\\,dx$ et $\\int_0^{\\pi/2} \\cos x\\,dx$."
+    },
+    {
+      "id": "q2",
+      "content": "En utilisant une intégration par parties à $u_n$ et $v_n$, montrer que : $(\\forall n \\in \\mathbb{N})\\,;\\, u_n + nv_n = 1$ et $(\\forall n \\in \\mathbb{N})\\,;\\, -nu_n + v_n = e^{-\\frac{n\\pi}{2}}$",
+      "hint": "\\method Pour $u_n$, posez $U = \\sin x$ et $V' = e^{-nx}$. Pour $v_n$, posez $U = \\cos x$ et $V' = e^{-nx}$. \\tip Après chaque IPP, la nouvelle intégrale fait réapparaître $u_n$ ou $v_n$. Vous obtenez deux relations linéaires : organisez-les sous la forme d'un système $2 \\times 2$."
+    },
+    {
+      "id": "q3",
+      "content": "En déduire $u_n$ et $v_n$ en fonction de $n$.",
+      "hint": "\\method Résolvez le système obtenu en question 2. \\tip Deux équations, deux inconnues $u_n$ et $v_n$. Multipliez la première équation par $n$ et combinez avec la seconde pour éliminer $v_n$, puis procédez symétriquement."
+    },
+    {
+      "id": "q4",
+      "content": "Calculer $\\displaystyle\\lim_{n \\to +\\infty} u_n$ et $\\displaystyle\\lim_{n \\to +\\infty} v_n$.",
+      "hint": "\\method Partez des expressions explicites de $u_n$ et $v_n$ trouvées en question 3. \\tip Identifiez le comportement de chaque terme quand $n \\to +\\infty$ : que vaut $\\frac{1}{n^2+1}$ et $e^{-n\\pi/2}$ à l'infini ?"
+    }
+  ]
+}

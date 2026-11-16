@@ -1,0 +1,33 @@
+{
+  "id": "espaces-vectoriels-reels",
+  "title": "Espaces vectoriels réels",
+  "exercises": [
+    {
+      "id": "ex-espaces-vectoriels-reels-01",
+      "path": "data/2eme-bac-sc-math/espaces-vectoriels-reels/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-espaces-vectoriels-reels-02",
+      "path": "data/2eme-bac-sc-math/espaces-vectoriels-reels/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-espaces-vectoriels-reels-03",
+      "path": "data/2eme-bac-sc-math/espaces-vectoriels-reels/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-espaces-vectoriels-reels-01",
+      "path": "data/2eme-bac-sc-math/espaces-vectoriels-reels/quiz/espaces-vectoriels-reels_quiz.json",
+      "questionsCount": 22
+    }
+  ],
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-espaces-vectoriels-reels-sm",
+      "title": "Fiche Complete : Espaces vectoriels reels",
+      "path": "data/2eme-bac-sc-math/espaces-vectoriels-reels/revisions/fiche_espaces_vectoriels_reels_cours.json"
+    }
+  ]
+}

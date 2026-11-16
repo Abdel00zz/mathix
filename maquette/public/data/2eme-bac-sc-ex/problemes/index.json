@@ -1,0 +1,60 @@
+{
+  "classId": "2eme-bac-sc-ex",
+  "title": "Problèmes — 2ème Bac Sciences Expérimentales",
+  "themes": [
+    {
+      "id": "denombrement",
+      "name": "Dénombrement"
+    },
+    {
+      "id": "probabilites",
+      "name": "Probabilités"
+    },
+    {
+      "id": "suites",
+      "name": "Suites"
+    },
+    {
+      "id": "analyse",
+      "name": "Analyse"
+    },
+    {
+      "id": "geometrie",
+      "name": "Géométrie"
+    }
+  ],
+  "problemes": [
+    {
+      "id": "prob-empreintes",
+      "title": "Avez-vous les mêmes empreintes qu'un autre ?",
+      "subtitle": "Problème 2.1 — Empreintes digitales",
+      "theme": "denombrement",
+      "difficulty": "moyen",
+      "path": "data/2eme-bac-sc-ex/problemes/prob_empreintes.json"
+    },
+    {
+      "id": "prob-pascal-fermat",
+      "title": "Le problème des partis de Pascal et Fermat",
+      "subtitle": "Problème 1.14 — Probabilités et espérance",
+      "theme": "probabilites",
+      "difficulty": "difficile",
+      "path": "data/1ere-bac-sc-math/problemes/prob_pascal_fermat.json"
+    },
+    {
+      "id": "prob-euler",
+      "title": "La droite d'Euler",
+      "subtitle": "Problème 1.32 — Géométrie vectorielle",
+      "theme": "geometrie",
+      "difficulty": "difficile",
+      "path": "data/1ere-bac-sc-math/problemes/prob_euler.json"
+    },
+    {
+      "id": "prob-benford",
+      "title": "La loi de Benford sur les nombres anormaux",
+      "subtitle": "Problème 1.35 — Logarithmes et probabilités",
+      "theme": "probabilites",
+      "difficulty": "difficile",
+      "path": "data/1ere-bac-sc-math/problemes/prob_benford.json"
+    }
+  ]
+}

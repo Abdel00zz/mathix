@@ -1,0 +1,375 @@
+{
+  "questions": [
+    {
+      "id": "q1_fond_parite",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Un entier naturel $a$ est dit impair s'il existe un entier naturel $k$ tel que :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a = 2k + 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$a = 2k$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$a = k + 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a = 2k - 1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La définition standard d'un entier impair dans $\\mathbb{N}$ est $2k+1$ (avec $k \\in \\mathbb{N}$). $2k-1$ donnerait $-1$ pour $k=0$, or $-1 \\notin \\mathbb{N}$."
+    },
+    {
+      "id": "q2_fond_ens",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "L'entier $0$ appartient à l'ensemble $\\mathbb{N}^*$.",
+      "isTrue": false,
+      "explanation": "L'ensemble $\\mathbb{N}^*$ est l'ensemble des entiers naturels non nuls, c'est-à-dire $\\{1, 2, 3, \\dots\\}$. Le $0$ en est donc exclu par définition."
+    },
+    {
+      "id": "q3_fond_div",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Parmi ces propositions, laquelle est universellement vraie pour tout entier naturel $a$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a$ est un multiple de $0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$ est un diviseur de $a$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$a$ admet une infinité de diviseurs",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a$ est premier",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$1$ divise tous les entiers naturels car $a = 1 \\times a$. Attention : c'est $0$ qui est un multiple de tout entier, et non l'inverse !"
+    },
+    {
+      "id": "q4_fond_1",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Le nombre $1$ est un nombre premier car il n'est divisible que par $1$ et par lui-même.",
+      "isTrue": false,
+      "explanation": "C'est l'erreur la plus classique ! Un nombre premier doit avoir **exactement deux** diviseurs distincts : $1$ et lui-même. Or, le nombre $1$ n'a qu'un seul diviseur ($1$). Il n'est donc pas premier."
+    },
+    {
+      "id": "q5_fond_parite_somme",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si $a$ est pair et $b$ est impair, quelle est la parité de $a+b$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Toujours paire",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Toujours impaire",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Paix si $a>b$, impaire sinon",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "On ne peut pas savoir",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La somme (ou la différence) de deux entiers de parités opposées donne toujours un résultat impair. En effet, $2k + (2k'+1) = 2(k+k') + 1$."
+    },
+    {
+      "id": "q6_cons_critere_3",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Le nombre $1\\,245$ est divisible par $3$ mais pas par $9$.",
+      "isTrue": true,
+      "explanation": "La somme des chiffres de $1\\,245$ est $1+2+4+5 = 12$. Or $12$ est un multiple de $3$ (donc $1\\,245$ est divisible par $3$), mais $12$ n'est pas un multiple de $9$ (donc $1\\,245$ n'est pas divisible par $9$)."
+    },
+    {
+      "id": "q7_cons_decomp",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Quelle est la décomposition correcte de $180$ en facteurs premiers ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$180 = 18 \\times 10$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$180 = 2^2 \\times 3^2 \\times 5$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$180 = 2 \\times 90$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$180 = 4 \\times 9 \\times 5$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La seule décomposition qui ne contient **que** des facteurs premiers (et avec de bons exposants) est $2^2 \\times 3^2 \\times 5$. Les propositions contenant 18, 10, 9 ou 4 sont fausses car ce sont des nombres composés."
+    },
+    {
+      "id": "q8_cons_pgcd",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Pour trouver le PGCD de deux nombres à partir de leurs décompositions en facteurs premiers, on multiplie les facteurs premiers :",
+      "options": [
+        {
+          "id": "a",
+          "text": "communs et non communs avec le plus grand exposant",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "communs seulement avec le plus grand exposant",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "communs et non communs avec le plus petit exposant",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "communs seulement avec le plus petit exposant",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Le PGCD prend uniquement les facteurs strictement communs (présents dans les deux décompositions) et au plus **plus petit** exposant."
+    },
+    {
+      "id": "q9_cons_ppcm",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Sachant que $a \\times b = 22\\,680$ et que $\\operatorname{PGCD}(a;b) = 18$, que vaut $\\operatorname{PPCM}(a;b)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1\\,260$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$22\\,680$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$408\\,240$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$18$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il faut appliquer la formule fondamentale $\\operatorname{PGCD} \\times \\operatorname{PPCM} = a \\times b$. Donc $\\operatorname{PPCM} = \\frac{22680}{18} = 1260$."
+    },
+    {
+      "id": "q10_cons_order",
+      "type": "order",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Ordonnez les étapes de l'algorithme d'Euclide pour calculer le PGCD de a et b (a > b) :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Effectuer la division euclidienne $a = bq_1 + r$ avec $0 \\leq r < b$."
+        },
+        {
+          "id": "b",
+          "content": "Vérifier la valeur du reste $r$."
+        },
+        {
+          "id": "c",
+          "content": "Si $r \\neq 0$, diviser $b$ par $r$, jusqu'à obtenir un reste nul."
+        },
+        {
+          "id": "d",
+          "content": "Déclarer que le PGCD est le dernier reste non nul."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "L'algorithme consiste en une cascade de divisions en regardant chaque reste, jusqu'à l'obtention d'un 0. Le terme de l'étape précédente sera le PGCD."
+    },
+    {
+      "id": "q11_maitrise_produit",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "ambiguity_note": "L'élève doit identifier que n(n+1) représente le produit de deux nombres consécutifs.",
+      "prompt": "Pour tout $n \\in \\mathbb{N}$, le nombre $A = n(n+1)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Toujours pair",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Toujours impair",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Pair si $n$ est pair, impair sinon",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Impair si $n$ est pair, pair sinon",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les entiers $n$ et $n+1$ sont forcément consécutifs. S'ils sont consécutifs, l'un des deux au moins est pair. Le produit d'un pair par n'importe quoi donne un pair (car le facteur 2 est présent)."
+    },
+    {
+      "id": "q12_maitrise_error",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Identifier l'étape incorrecte concernant la déduction de la parité de $n^2 + n + 1$ :",
+      "context": "On cherche à prouver que $n^2 + n + 1$ est toujours impair pour tout entier naturel $n$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On factorise l'expression sous la forme $n(n+1) + 1$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Le terme $n(n+1)$ correspond au produit de deux entiers consécutifs, donc c'est un nombre pair.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Puisque $n(n+1)$ est pair, la somme de deux nombres pairs donne toujours un résultat pair.",
+          "isError": true,
+          "correction": "On additionne 1 (qui est impair) et non pas un nombre pair ! Pair + 1 = Impair."
+        },
+        {
+          "id": "s4",
+          "text": "L'expression $n^2+n+1$ est de la forme $2k + 1$ et ne peut donc jamais être paire.",
+          "isError": false
+        }
+      ],
+      "explanation": "C'est l'erreur courante de perte de focus : l'étudiant trouve la parité de n(n+1) (=pair), puis utilise une règle ('pair+pair=pair') qui n'a pas rapport avec le '1' ajouté dans l'expression réelle."
+    },
+    {
+      "id": "q13_maitrise_diviseurs",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Si un nombre entier naturel $n$ est pair, alors il admet exactement un nombre pair de diviseurs.",
+      "isTrue": false,
+      "explanation": "C'est faux. L'astuce concerne plutôt les carrés parfaits. Par exemple, $n=16$ est pair, mais ses diviseurs sont $\\{1, 2, 4, 8, 16\\}$. Il y en a $5$ (donc un nombre impair de diviseurs !)."
+    },
+    {
+      "id": "q14_depassement_premiers",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Combien existe-t-il de nombres premiers et pairs simultanément ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aucun",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Exactement un : le nombre 2",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Une infinité",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Exactement deux : 0 et 2",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Voici un magnifique cas limite. Tout le monde pense que les premiers sont impairs. Or, $2$ n'a que deux diviseurs (1 et 2), il honore la définition stricte. Tout autre nombre pair supérieur (ex: 4, 6) aura obligatoirement 2 comme diviseur et sera donc composé. Par ailleurs, 0 a une infinité de diviseurs."
+    },
+    {
+      "id": "q15_depassement_euclid_fast",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Si après une seule itération dans l'algorithme d'Euclide sur $a$ et $b$ ($a>b$), vous trouvez un reste $r_1=0$, que pouvez-vous affirmer ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a$ et $b$ sont premiers entre eux.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Le $\\operatorname{PGCD}(a;b)$ est $b$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Le $\\operatorname{PGCD}(a;b)$ vaut $0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$b$ est un nombre premier.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si $a = b \\times q + 0$, cela signifie simplement que $b$ divise complètement $a$. Par conséquent, $b$ est le plus grand diviseur commun possible."
+    }
+  ]
+}

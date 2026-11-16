@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "L'aiguille de Buffon",
+    "subtitle": "Probabilité géométrique et estimation de π",
+    "context": "Probabilités"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "L'aiguille de Buffon",
+          "content": "On lance « au hasard » une aiguille sur un parquet à lames parallèles. On compte combien de fois elle tombe \\textbf{à cheval sur une rainure}. Étonnamment, cette proportion permet d'estimer $\\pi$ !\\par On note $\\ell$ la largeur d'une lame et $a$ la longueur de l'aiguille (avec $a < \\ell$). On repère le lancer par deux nombres tirés au hasard : $d$, la distance du \\textbf{milieu} de l'aiguille à la rainure la plus proche, avec $d \\in \\left[0\\,;\\,\\tfrac{\\ell}{2}\\right]$, et $\\theta$, l'angle de l'aiguille avec la rainure, avec $\\theta \\in [0\\,;\\,\\pi]$."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Montrer que l'aiguille coupe une rainure si et seulement si $d \\leq \\dfrac{a}{2}\\sin\\theta$.\\item Les couples $(\\theta, d)$ remplissent un rectangle $[0;\\pi]\\times\\left[0;\\tfrac{\\ell}{2}\\right]$. Calculer son aire. On admet que l'aire de la région favorable $d \\leq \\tfrac{a}{2}\\sin\\theta$ vaut $a$. En déduire la probabilité $p$ que l'aiguille coupe une rainure.\\item Application : pour $a = 5$ et $\\ell = 10$, exprimer $p$ en fonction de $\\pi$. Une simulation de $1000$ lancers a donné une proportion $\\bar{x} = 0{,}30$ d'aiguilles coupant une rainure. En déduire une estimation de $\\pi$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "La demi-longueur de l'aiguille projetée perpendiculairement à la rainure vaut $\\dfrac{a}{2}\\sin\\theta$. L'aiguille atteint la rainure dès que le milieu en est plus proche que cette projection."
+        },
+        {
+          "type": "hint",
+          "content": "$p = \\dfrac{\\text{aire favorable}}{\\text{aire totale}} = \\dfrac{a}{\\pi \\times \\frac{\\ell}{2}} = \\dfrac{2a}{\\pi \\ell}$. Si $a = \\tfrac{\\ell}{2}$, alors $p = \\dfrac{1}{\\pi}$, donc $\\pi \\approx \\dfrac{1}{\\bar{x}}$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} La projection de la demi-aiguille sur la direction perpendiculaire à la rainure mesure $\\dfrac{a}{2}\\sin\\theta$. L'aiguille touche la rainure si et seulement si le milieu en est distant d'au plus cette valeur : $d \\leq \\dfrac{a}{2}\\sin\\theta$.\\par\\textbf{2)} Aire totale du rectangle : $\\pi \\times \\dfrac{\\ell}{2} = \\dfrac{\\pi\\ell}{2}$. Aire favorable admise : $a$. Donc $p = \\dfrac{a}{\\frac{\\pi\\ell}{2}} = \\dfrac{2a}{\\pi\\ell}$.\\par\\textbf{3)} Pour $a=5$, $\\ell=10$ : $p = \\dfrac{2\\times 5}{\\pi\\times 10} = \\dfrac{1}{\\pi}$. La loi des grands nombres donne $\\bar{x} \\approx p = \\dfrac{1}{\\pi}$, d'où $\\pi \\approx \\dfrac{1}{\\bar{x}} = \\dfrac{1}{0{,}30} \\approx \\boxed{3{,}33}$. Avec plus de lancers, l'estimation se rapproche de $\\pi \\approx 3{,}14159$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ch05-ex05",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "chapter": "05 - Congruence modulo n ; l'ensemble Z/nZ et opérations",
+  "topic": "Congruences - Divisibilité par 13 et applications",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$(\\forall n \\in \\mathbb{N})$ : $3^{3n} \\equiv 1\\ [13]$.",
+      "hint": "Calculez $3^3 \\mod 13$. Si $27 \\equiv 1\\ [13]$, la propriété découle immédiatement par récurrence ou par la propriété des puissances de congruences."
+    },
+    {
+      "id": "q2",
+      "content": "Pour tout $n \\in \\mathbb{N}$, le nombre $3^{6n+2} + 3^{3n+1} + 1$ est divisible par $13$.",
+      "hint": "Posez $X = 3^{3n}$. Réécrivez l'expression en fonction de $X$ : $3^{6n+2} = 9X^2$, $3^{3n+1} = 3X$. Utilisez le résultat de la question précédente pour remplacer $X$ par $1$ modulo $13$."
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer tous les entiers naturels $n$ vérifiant : $2n + 1 / 4n^3 + 12n^2 + 3n + 5$.",
+      "hint": "Si $2n+1$ divise $4n^3 + 12n^2 + 3n + 5$, il divise aussi toute combinaison linéaire. Effectuez la division euclidienne de $4n^3 + 12n^2 + 3n + 5$ par $2n+1$ et cherchez les valeurs de $n$ pour lesquelles le reste est divisible par $2n+1$."
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que pour tout $x \\in \\mathbb{Z}$ : $\\dfrac{x^7}{7} + \\dfrac{x^5}{5} + \\dfrac{23x}{35} \\in \\mathbb{Z}$.",
+      "hint": "Mettez sur le même dénominateur $35$ et montrez que $5x^7 + 7x^5 + 23x$ est divisible par $35$, c'est-à-dire par $5$ et par $7$. Étudiez les puissances de $x$ modulo $5$ et modulo $7$ selon le résidu de $x$."
+    }
+  ]
+}

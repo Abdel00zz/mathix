@@ -1,0 +1,398 @@
+{
+  "school": "medecine",
+  "year": "2012–2013 · Épreuve",
+  "title": "Annale Médecine — 2012–2013 · Épreuve",
+  "source": "08_epreuve_2012_2013.tex — transcription LaTeX normalisée",
+  "questions": [
+    {
+      "id": "med-epreuve_2012_2013-q01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012–2013 · Épreuve · Q1",
+      "officialQuestionCode": "Q1",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Déterminer le domaine de\n$f(x)=\\ln\\left(\\frac{x-1}{x+1}\\right).$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$[1,+\\infty[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb{R}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$]-\\infty,-1[\\cup]1,+\\infty[$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$]-\\infty,-1[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$]1,+\\infty[$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le quotient $\\frac{(x-1)}{(x+1)}$ doit être strictement positif. Le tableau de signes donne\n$D_f=]-\\infty,-1[\\cup]1,+\\infty[.$"
+    },
+    {
+      "id": "med-epreuve_2012_2013-q02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012–2013 · Épreuve · Q2",
+      "officialQuestionCode": "Q2",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Soit\n$g(x)=\\ln\\left(\\sqrt[3]{ {e}^x}\\right).$\nDéterminer $g'(x)$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{x-1}{3\\sqrt[3]{ {e}^{2x}}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{x-1}{3\\sqrt[3]{ {e}^x}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{ {e}^x}{3}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{3}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1}{{3 {e}^x}}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$g(x)=\\ln( {e}^{\\frac{x}{3}})=\\frac{x}{3}, \\qquad g'(x)=\\frac{1}{3}.$"
+    },
+    {
+      "id": "med-epreuve_2012_2013-q03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012–2013 · Épreuve · Q3",
+      "officialQuestionCode": "Q3",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Calculer\n$\\displaystyle I=\\int_0^\\pi2 {e}^x\\sin x\\,\\,d x.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "${e}^\\pi$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "${e}^\\pi-1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "${e}^\\pi+1$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$1- {e}^\\pi$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Deux intégrations par parties, ou une primitive standard, donnent\n$\\displaystyle \\int_0^\\pi2 {e}^x\\sin x\\,\\,d x= {e}^\\pi+1.$"
+    },
+    {
+      "id": "med-epreuve_2012_2013-q04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012–2013 · Épreuve · Q4",
+      "officialQuestionCode": "Q4",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Soit $m\\ne0$. Résoudre\n$y''-2my'+2m^2y=0.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y(x)= {e}^{mx}\\bigl(a\\cos(mx)+b\\sin(mx)\\bigr)$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y(x)=a {e}^{mx}+b {e}^{-mx}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y(x)=a {e}^{mx}+b$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y(x)=(ax+b) {e}^{mx}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$y(x)=a\\cos(mx)+b\\sin(mx)$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'équation caractéristique est\n$r^2-2mr+2m^2=0,$\nde racines $m\\pm {i} m$. D'où la solution réelle indiquée en A."
+    },
+    {
+      "id": "med-epreuve_2012_2013-q05",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012–2013 · Épreuve · Q5",
+      "officialQuestionCode": "Q5",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "On considère la sphère de centre $\\Omega(1,1,1)$ et de rayon $1$, ainsi que le plan\n$(P):x-y+z+\\sqrt3-1=0.$\nLeur intersection est :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "un segment ;",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "un demi-cercle ;",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "un point ;",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "l'ensemble vide ;",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "un cercle.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La distance du centre au plan est\n$\\frac{|1-1+1+\\sqrt3-1|}{\\sqrt{1^2+(-1)^2+1^2}}=1.$\nElle est égale au rayon : le plan est tangent à la sphère."
+    },
+    {
+      "id": "med-epreuve_2012_2013-q06",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012–2013 · Épreuve · Q6",
+      "officialQuestionCode": "Q6",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "On choisit au hasard l'une des urnes suivantes, puis une boule :\n$\\begin{array}{c|ccc} &U_1&U_2&U_3\\\\\\hline \\text{blanches}&4&3&1\\\\ \\text{vertes}&3&4&5 \\end{array}$\nSachant que la boule tirée est blanche, calculer la probabilité qu'elle provienne de $U_1$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{24}{49}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{4}{{21}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{7}{{18}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{8}{{20}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{4}{7}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$P(B)=\\frac{1}{3}\\left(\\frac{4}{7}+\\frac{3}{7}+\\frac{1}{6}\\right)=\\frac{49}{126}, \\qquad P(U_1\\cap B)=\\frac{1}{3}\\cdot\\frac{4}{7}=\\frac{4}{{21}}.$\nDonc\n$P(U_1\\mid B)=\\frac{\\frac{4}{21}}{\\frac{49}{126}}=\\frac{24}{49}.$"
+    },
+    {
+      "id": "med-epreuve_2012_2013-q07",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012–2013 · Épreuve · Q7",
+      "officialQuestionCode": "Q7",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "Donner l'écriture exponentielle de\n$z=\\frac{\\sqrt3- {i}}{-1+ {i}\\sqrt3}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "${e}^{5 {i}\\frac{\\pi}{6}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "${e}^{-5 {i}\\frac{\\pi}{6}}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$2 {e}^{5 {i}\\frac{\\pi}{6}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "${e}^{4 {i}\\frac{\\pi}{6}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$2$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le numérateur a pour argument $-\\frac{\\pi}{6}$ et le dénominateur $2\\frac{\\pi}{3}$. Les modules se simplifient, donc\n$z= {e}^{-5 {i}\\frac{\\pi}{6}}.$"
+    },
+    {
+      "id": "med-epreuve_2012_2013-q08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012–2013 · Épreuve · Q8",
+      "officialQuestionCode": "Q8",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "La forme algébrique de $(-1+ {i})^{2012}$ est :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^{2012}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2^{2012}\\cos(3\\frac{\\pi}{4})$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-2^{2012} {i}\\sqrt2\\cos(3\\frac{\\pi}{4})$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-2^{1006}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$-2^{2013}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$-1+ {i}=\\sqrt2 {e}^{3 {i}\\frac{\\pi}{4}}$\net\n$(-1+ {i})^{2012}=2^{1006} {e}^{1509 {i}\\pi}=-2^{1006}.$"
+    },
+    {
+      "id": "med-epreuve_2012_2013-q09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012–2013 · Épreuve · Q9",
+      "officialQuestionCode": "Q9",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Calculer la limite de\n$\\displaystyle S_n=\\ln\\left(\\sum_{k=0}^n\\frac{ {e}^k}{3^{k+1}}\\right).$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln3$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln {e}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$-\\ln(3- {e})$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "La somme est géométrique :\n$\\displaystyle \\sum_{k=0}^n\\frac{ {e}^k}{3^{k+1}} =\\frac{1}{3}\\frac{1-( \\frac{{e}}{3})^{n+1}}{1- \\frac{{e}}{3}} \\longrightarrow\\frac{1}{{3- {e}}}.$\nDonc la limite est $-\\ln(3- {e})$."
+    },
+    {
+      "id": "med-epreuve_2012_2013-q10",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2012–2013 · Épreuve · Q10",
+      "officialQuestionCode": "Q10",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "On définit, pour $x\\ne1$,\n$\\displaystyle R(x)=\\frac{1}{{x-1}}\\int_1^x {e}^{-t^2}\\,\\,d t.$\nCalculer $\\displaystyle\\lim_{x\\to1}R(x)$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{{ {e}^2}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{{e}}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "La limite n'existe pas.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$0$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$R(x)$ est le taux d'accroissement de la primitive $\\displaystyle F(x)=\\int_1^x {e}^{-t^2}\\,\\,d t$ en $1$. Ainsi\n$\\displaystyle \\lim_{x\\to1}R(x)=F'(1)= {e}^{-1}=\\frac{1}{{e}}.$"
+    }
+  ]
+}

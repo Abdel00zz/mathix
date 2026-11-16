@@ -1,0 +1,51 @@
+{
+  "id": "ex_07",
+  "theme": "complexes",
+  "difficulty": "moyen",
+  "topic": "Nombres Complexes",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Résoudre dans l'ensemble $\\mathbb{C}$ des nombres complexes l'équation : $z^2 - 2z + 4 = 0$.",
+      "hint": "C'est une équation du second degré. Calculez le discriminant $\\Delta = b^2 - 4ac$. Si $\\Delta < 0$, les solutions sont de la forme $z = \\frac{-b \\pm i\\sqrt{-\\Delta}}{2a}$."
+    },
+    {
+      "id": "q2",
+      "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A, B, C$ et $D$ d'affixes respectives $a=1-i\\sqrt{3}$, $b=2+2i$, $c=\\sqrt{3}+i$ et $d=-2+2\\sqrt{3}$.",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $a-d = -\\sqrt{3}(c-d)$.",
+          "hint": "Calculez séparément le membre de gauche ($a-d$) et le membre de droite ($-\\sqrt{3}(c-d)$). Comparez les parties réelles et imaginaires pour vérifier l'égalité."
+        },
+        {
+          "id": "b",
+          "content": "En déduire que les points A, C et D sont alignés.",
+          "hint": "L'égalité d'affixes $a-d = -\\sqrt{3}(c-d)$ se traduit par la relation vectorielle $\\overrightarrow{DA} = -\\sqrt{3}\\overrightarrow{DC}$. Que pouvez-vous en déduire sur la colinéarité des vecteurs et donc l'alignement des points ?"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "On considère $z$ l'affixe d'un point $M$ et $z'$ l'affixe de $M'$ image de $M$ par la rotation $R$ de centre $O$ et d'angle $-\\frac{\\pi}{3}$.\\nVérifier que $z' = \\frac{1}{2}az$.",
+      "hint": "L'écriture complexe de la rotation R est $z' = z e^{-i\\frac{\\pi}{3}}$. Calculez la forme algébrique de $e^{-i\\frac{\\pi}{3}}$. D'autre part, calculez la forme algébrique de $\\frac{1}{2}a$. Comparez les deux résultats pour conclure."
+    },
+    {
+      "id": "q4",
+      "content": "Soient H l'image du point B par la rotation R, h son affixe et P le point d'affixe p tel que $p=a-c$.",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $h=ip$.",
+          "hint": "Calculez d'abord l'affixe $h$ de H en utilisant le résultat de la question 3 avec $z=b$. Ensuite, calculez l'affixe $p=a-c$. Enfin, calculez le produit $ip$ et comparez-le à $h$."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que le triangle OHP est rectangle et isocèle en O.",
+          "hint": "L'égalité $h=ip$ peut s'écrire $\\frac{h-0}{p-0} = i$. Interprétez géométriquement le module et l'argument de ce quotient. Que signifie un module de $|i|=1$ pour les longueurs $OP$ et $OH$ ? Que signifie un argument de $\\arg(i)=\\frac{\\pi}{2}$ pour l'angle $(\\overrightarrow{OP}, \\overrightarrow{OH})$ ?"
+        }
+      ]
+    }
+  ]
+}

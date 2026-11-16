@@ -1,0 +1,35 @@
+{
+  "id": "ex-ens-app-14",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Théorie des Ensembles — Parties d'un ensemble et $\\mathcal{P}(E)$",
+  "requiresRedaction": true,
+  "context": "Soient $A$, $B$, $C$ et $D$ quatre ensembles non vides. Établir les égalités suivantes :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$(A \\cup B) \\times C = (A \\times C) \\cup (B \\times C)$",
+      "hint": "$(x,y) \\in (A \\cup B) \\times C \\iff x \\in A \\cup B$ et $y \\in C$. Distribuez la condition sur $x$."
+    },
+    {
+      "id": "q2",
+      "content": "$(A \\setminus B) \\times C = (A \\times C) \\setminus (B \\times C)$",
+      "hint": "$(x,y) \\in (A \\setminus B) \\times C \\iff x \\in A$, $x \\notin B$ et $y \\in C$. Montrez que cela équivaut à $(x,y) \\in A \\times C$ et $(x,y) \\notin B \\times C$."
+    },
+    {
+      "id": "q3",
+      "content": "$(A \\cap B) \\times C = (A \\times C) \\cap (B \\times C)$",
+      "hint": ""
+    },
+    {
+      "id": "q4",
+      "content": "$\\overline{A \\times B} = (\\overline{A} \\times E_2) \\cup (E_1 \\times \\overline{B})$ (où $E_1, E_2$ sont les ensembles de référence)",
+      "hint": "$(x,y) \\notin A \\times B \\iff x \\notin A$ ou $y \\notin B$. Traduisez chaque cas en produit cartésien."
+    },
+    {
+      "id": "q5",
+      "content": "$(A \\cap B) \\times (C \\cap D) = (A \\times C) \\cap (B \\times D)$",
+      "hint": "$(x,y) \\in (A \\cap B) \\times (C \\cap D) \\iff x \\in A \\cap B$ et $y \\in C \\cap D$. Décomposez les intersections."
+    }
+  ]
+}

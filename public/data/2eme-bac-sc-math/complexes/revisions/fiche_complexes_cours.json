@@ -1,0 +1,934 @@
+{
+  "header": {
+    "title": "Les nombres complexes",
+    "subtitle": "Algèbre, formes trigonométrique et exponentielle, équations et géométrie",
+    "context": "2BAC Sciences Mathématiques BIOF"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "\\objectif{Maîtriser les formes algébrique, trigonométrique et exponentielle des nombres complexes, puis les exploiter dans les équations et la géométrie.} Chaque écriture répond à un besoin précis : calculer, lire un angle, élever à une puissance ou résoudre une équation. \\defi{Le principal enjeu consiste à reconnaître la forme la plus efficace avant de commencer les calculs.} \\savant{Rafael Bombelli} a fixé les premières règles cohérentes de calcul avec les quantités imaginaires, préparant leur interprétation géométrique moderne."
+        }
+      ]
+    },
+    {
+      "id": "ensemble_forme_algebrique",
+      "category": "course",
+      "title": "L'ensemble $\\mathbb{C}$ et la forme algébrique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les nombres complexes prolongent les nombres réels afin de rendre possibles de nouvelles résolutions algébriques. Leur première écriture sépare deux informations réelles indépendantes."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{l'ensemble $\\mathbb{C}$}",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/complexes/revisions/figures/plan-complexe.png",
+            "type": "image",
+            "position": "inline-right",
+            "width": "42%",
+            "alt": "Représentation de z égal à a plus ib dans le plan complexe",
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "On admet l'existence d'un ensemble $\\mathbb{C}$ contenant $\\mathbb{R}$ et un élément $i$ tel que $i^2=-1$. Tout nombre complexe s'écrit de manière unique sous la forme :$$\\large\\boxed{z=a+ib,\\qquad a\\in\\mathbb{R},\\ b\\in\\mathbb{R}}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{lire $z=a+ib$}",
+          "content": "Dans l'écriture $z=a+ib$, le réel $a$ est la \\textbf{partie réelle}, notée $\\operatorname{Re}(z)$, et le réel $b$ est la \\textbf{partie imaginaire}, notée $\\operatorname{Im}(z)$. Cette écriture est appelée \\textbf{forme algébrique} de $z$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{identifier deux complexes}",
+          "content": "L'unicité de la forme algébrique donne :\\itemsize{$a+ib=a'+ib'$ si et seulement si $a=a'$ et $b=b'$.}\\itemsize{$a+ib=0$ si et seulement si $a=0$ et $b=0$.}\\itemsize{$z\\in\\mathbb{R}$ si et seulement si $\\operatorname{Im}(z)=0$.}\\itemsize{$z\\in i\\mathbb{R}$ si et seulement si $\\operatorname{Re}(z)=0$.}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{\\textbf{Déterminons} les réels $x$ et $y$ tels que $(2x-y)+i(x+3y)=5-2i$.}\\par\\smallskip Deux complexes sont égaux lorsque leurs parties réelle et imaginaire sont égales. On obtient donc :\\begin{align*}2x-y&=\\blank{5},\\\\x+3y&=-2.\\end{align*} De la première relation, $y=\\blank{2x-5}$. En remplaçant dans la seconde :\\begin{align*}x+3(2x-5)&=-2,\\\\\\blank{7}x&=13,\\\\x&=\\dfrac{13}{7}.\\end{align*} Puis :\\begin{align*}y&=2\\cdot\\dfrac{13}{7}-5\\\\&=\\blank{-\\dfrac{9}{7}}.\\end{align*} Ainsi :$$\\boxed{x=\\dfrac{13}{7}\\qquad\\text{et}\\qquad y=-\\dfrac{9}{7}}$$"
+        },
+        {
+          "type": "exploration",
+          "title": "Quelle écriture \\mathqst{choisir selon le calcul}",
+          "content": "La forme algébrique convient aux sommes, aux différences et à l'identification des parties. La forme trigonométrique sert à lire les modules et les angles. La forme exponentielle simplifie les produits, les quotients, les puissances et les racines."
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Partie imaginaire :} $\\operatorname{Im}(3-5i)=-5$, et non $-5i$. La partie imaginaire d'un complexe est toujours un nombre réel."
+        }
+      ]
+    },
+    {
+      "id": "operations_puissances",
+      "category": "course",
+      "title": "Opérations algébriques et puissances de $i$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La forme algébrique permet d'effectuer les opérations comme avec des expressions réelles. La seule règle nouvelle consiste à remplacer le carré de l'unité imaginaire par moins un."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{additionner et multiplier deux complexes}",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/complexes/revisions/figures/addition-inegalite.png",
+            "type": "image",
+            "position": "inline-right",
+            "width": "46%",
+            "alt": "Parallélogramme des affixes illustrant la somme, la différence et l'inégalité triangulaire",
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Pour $z=a+ib$ et $w=c+id$ :\\itemsize{$z+w=(a+c)+i(b+d)$.}\\itemsize{$zw=(ac-bd)+i(ad+bc)$.} En pratique, on développe le produit puis on utilise $i^2=-1$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles règles \\mathqst{restent valables dans $\\mathbb{C}$}",
+          "content": "L'ensemble $\\mathbb{C}$ est un corps commutatif. On peut donc utiliser :\\itemsize{$zw=0$ si et seulement si $z=0$ ou $w=0$.}\\itemsize{$z^{n+m}=z^nz^m$ et $(z^n)^m=z^{nm}$.}\\itemsize{$z^n-w^n=(z-w)(z^{n-1}+z^{n-2}w+\\cdots+w^{n-1})$.}\\itemsize{Si $z\\neq1$, alors $1+z+\\cdots+z^n=\\dfrac{1-z^{n+1}}{1-z}$.}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{mettre un quotient sous forme algébrique}",
+          "content": "On multiplie le numérateur et le dénominateur par le conjugué du dénominateur. Le dénominateur devient alors le réel positif égal au carré de son module, puis on développe le numérateur."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{\\textbf{Mettons sous forme algébrique} $\\dfrac{3-2i}{1+i}$.}\\par\\smallskip On multiplie par le conjugué $\\blank{1-i}$ :\\begin{align*}\\dfrac{3-2i}{1+i}&=\\dfrac{(3-2i)\\blank{(1-i)}}{(1+i)(1-i)}\\\\&=\\dfrac{3-3i-2i+2i^2}{\\blank{2}}\\\\&=\\dfrac{1-5i}{2}.\\end{align*} Ainsi :$$\\boxed{\\dfrac{3-2i}{1+i}=\\dfrac12-\\blank{\\dfrac52}i}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{se répètent les puissances de $i$}",
+          "content": "Les puissances de $i$ sont périodiques de période $4$ :$$i^{4q}=1,\\qquad i^{4q+1}=i,\\qquad i^{4q+2}=-1,\\qquad i^{4q+3}=-i.$$ Il suffit donc de connaître le reste de l'exposant dans la division par $4$."
+        },
+        {
+          "type": "proof",
+          "content": "On part de $i^2=-1$, ce qui donne $i^3=i^2\\cdot i=-i$, puis $i^4=\\left(i^2\\right)^2=(-1)^2=1$. Soit $n\\in\\mathbb{N}$. La division euclidienne de $n$ par $4$ s'écrit $n=4q+r$ avec $q\\in\\mathbb{N}$ et $r\\in\\{0,1,2,3\\}$. Alors :\\begin{align*}i^n&=i^{4q+r}\\\\&=\\left(i^4\\right)^q\\,i^r\\\\&=1^q\\,i^r=i^r.\\end{align*} La puissance ne dépend donc que du reste $r$, et il suffit de lire les quatre premières puissances :$$\\boxed{i^{4q}=1,\\quad i^{4q+1}=i,\\quad i^{4q+2}=-1,\\quad i^{4q+3}=-i}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{\\textbf{Calculons} $S=1+i+i^2+\\cdots+i^{2018}$.}\\par\\smallskip Comme $i\\neq\\blank{1}$, on utilise la somme géométrique :\\begin{align*}S&=\\dfrac{1-i^{\\blank{2019}}}{1-i}.\\end{align*} Or $2019=4\\cdot504+3$, donc $i^{2019}=i^{\\blank{3}}=-i$. Ainsi :\\begin{align*}S&=\\dfrac{1+i}{1-i}\\\\&=\\dfrac{(1+i)^2}{(1-i)(1+i)}\\\\&=\\dfrac{2i}{2}\\\\&=i.\\end{align*} Donc :$$\\boxed{S=\\blank{i}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Ordre :} l'ensemble $\\mathbb{C}$ n'est pas ordonné. Des écritures comme $z>0$ ou $z\\leq w$ n'ont pas de sens général ; seuls des nombres réels, notamment les modules, peuvent être comparés."
+        }
+      ]
+    },
+    {
+      "id": "conjugue",
+      "category": "course",
+      "title": "Conjugué et équations mêlant $z$ et $\\overline z$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le conjugué conserve la partie réelle et change le signe de la partie imaginaire. Il transforme de nombreux problèmes complexes en égalités réelles."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{le conjugué de $z$}",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/complexes/revisions/figures/symetrie-conjugue.png",
+            "type": "image",
+            "position": "inline-right",
+            "width": "42%",
+            "alt": "Symétrie de z et de son conjugué par rapport à l'axe réel",
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Si $z=a+ib$, son \\textbf{conjugué} est :$$\\large\\boxed{\\overline z=a-ib}$$ Les images de $z$ et de $\\overline z$ sont symétriques par rapport à l'axe réel."
+        },
+        {
+          "type": "property",
+          "title": "Quelles règles \\mathqst{vérifie la conjugaison}",
+          "content": "Pour tous complexes $z$, $w$ et tout entier naturel $n$ :\\itemsize{$\\overline{z+w}=\\overline z+\\overline w$.}\\itemsize{$\\overline{zw}=\\overline z\\,\\overline w$.}\\itemsize{$\\overline{\\left(\\dfrac zw\\right)}=\\dfrac{\\overline z}{\\overline w}$ si $w\\neq0$.}\\itemsize{$\\overline{z^n}=(\\overline z)^n$ et $\\overline{\\overline z}=z$.}\\itemsize{$z+\\overline z=2\\operatorname{Re}(z)$ et $z-\\overline z=2i\\operatorname{Im}(z)$.}"
+        },
+        {
+          "type": "proof",
+          "content": "Posons $z=a+ib$ et $w=c+id$, avec $a$, $b$, $c$, $d$ réels. Pour la somme :\\begin{align*}\\overline{z+w}&=\\overline{(a+c)+i(b+d)}\\\\&=(a+c)-i(b+d)\\\\&=(a-ib)+(c-id)\\\\&=\\overline z+\\overline w.\\end{align*} Pour le produit, on développe $zw=(ac-bd)+i(ad+bc)$, puis on compare :\\begin{align*}\\overline{zw}&=(ac-bd)-i(ad+bc),\\\\\\overline z\\,\\overline w&=(a-ib)(c-id)\\\\&=(ac-bd)-i(ad+bc).\\end{align*} Les deux expressions coïncident, donc :$$\\boxed{\\overline{z+w}=\\overline z+\\overline w\\qquad\\text{et}\\qquad\\overline{zw}=\\overline z\\,\\overline w}$$ En appliquant la seconde règle $n$ fois, on obtient $\\overline{z^n}=\\left(\\overline z\\right)^n$. Enfin, si $w\\neq0$, la conjugaison de l'égalité $\\dfrac zw\\cdot w=z$ donne $\\overline{\\left(\\dfrac zw\\right)}\\,\\overline w=\\overline z$, d'où $\\overline{\\left(\\dfrac zw\\right)}=\\dfrac{\\overline z}{\\overline w}$."
+        },
+        {
+          "type": "theorem",
+          "title": "Quand \\mathqst{un complexe est-il réel ou imaginaire pur}",
+          "content": "Les caractérisations fondamentales sont :$$\\large\\boxed{z\\in\\mathbb{R}\\iff z=\\overline z\\qquad\\text{et}\\qquad z\\in i\\mathbb{R}\\iff z=-\\overline z}$$"
+        },
+        {
+          "type": "proof",
+          "content": "Posons $z=a+ib$ avec $a$ et $b$ réels. Alors :\\begin{align*}z-\\overline z&=(a+ib)-(a-ib)=2ib,\\\\z+\\overline z&=(a+ib)+(a-ib)=2a.\\end{align*} Comme $b$ est réel, l'égalité $2ib=0$ équivaut à $b=0$, c'est-à-dire $z=a\\in\\mathbb{R}$. De même, $2a=0$ équivaut à $a=0$, c'est-à-dire $z=ib\\in i\\mathbb{R}$. En traduisant $z-\\overline z=0$ et $z+\\overline z=0$, on obtient :$$\\boxed{z\\in\\mathbb{R}\\iff z=\\overline z\\qquad\\text{et}\\qquad z\\in i\\mathbb{R}\\iff z=-\\overline z}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{résoudre une équation avec $\\overline z$}",
+          "content": "On peut poser $z=x+iy$, remplacer $\\overline z$ par $x-iy$, puis identifier les parties réelle et imaginaire. Pour une équation linéaire, on peut aussi conjuguer l'égalité afin d'obtenir une seconde relation."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{\\textbf{Résolvons} $2z-3\\overline z+1+2i=0$.}\\par\\smallskip Posons $z=x+iy$. Alors $\\overline z=\\blank{x-iy}$, donc :\\begin{align*}2(x+iy)-3(x-iy)+1+2i&=0,\\\\(\\blank{-x+1})+i(5y+2)&=0.\\end{align*} On identifie :\\begin{align*}-x+1&=0,\\\\\\blank{5}y+2&=0.\\end{align*} Ainsi $x=1$ et $y=-\\dfrac25$. Donc :$$\\boxed{S=\\left\\{1-\\dfrac{2}{\\blank{5}}i\\right\\}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{déterminer un lieu avec un quotient réel}",
+          "content": "On commence par exclure les valeurs qui annulent le dénominateur. Si un quotient $w$ doit être réel, on écrit $w=\\overline w$, puis on simplifie l'égalité obtenue avant de revenir à une condition géométrique."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{\\textbf{Déterminons} l'ensemble des points $M(z)$ tels que $w=\\dfrac{z-2i}{z+i}$ soit réel.}\\par\\smallskip Il faut d'abord $z\\neq\\blank{-i}$. La condition $w\\in\\mathbb{R}$ équivaut à $w=\\blank{\\overline w}$ :\\begin{align*}\\dfrac{z-2i}{z+i}&=\\dfrac{\\overline z+2i}{\\overline z-i},\\\\(z-2i)(\\overline z-i)&=(\\overline z+2i)\\blank{(z+i)}.\\end{align*} Après développement et simplification des termes communs :\\begin{align*}3i(z+\\overline z)&=0,\\\\\\operatorname{Re}(z)&=0.\\end{align*} Le lieu est donc l'axe des imaginaires purs, privé du point interdit :$$\\boxed{\\Gamma=\\blank{i\\mathbb{R}}\\setminus\\{-i\\}}$$"
+        }
+      ]
+    },
+    {
+      "id": "module",
+      "category": "course",
+      "title": "Module et inégalité triangulaire",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le module mesure la distance d'un point à l'origine du plan complexe. Il transforme aussi les produits et les quotients en calculs sur des réels positifs."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{définir le module de $z$}",
+          "content": "Pour $z=a+ib$, le \\textbf{module} de $z$ est le réel positif :$$\\large\\boxed{|z|=\\sqrt{a^2+b^2}=\\sqrt{z\\overline z}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles règles \\mathqst{vérifie le module}",
+          "content": "Pour tous complexes $z$, $w$ et tout entier naturel $n$ :\\itemsize{$|z|^2=z\\overline z$ et $|z|=0$ si et seulement si $z=0$.}\\itemsize{$|\\overline z|=|-z|=|z|$.}\\itemsize{$|zw|=|z||w|$.}\\itemsize{$\\left|\\dfrac zw\\right|=\\dfrac{|z|}{|w|}$ si $w\\neq0$.}\\itemsize{$|z^n|=|z|^n$.}\\itemsize{$|z|=1$ si et seulement si $\\overline z=\\dfrac1z$.}"
+        },
+        {
+          "type": "proof",
+          "content": "Le point de départ est la relation $|u|^2=u\\overline u$, valable pour tout complexe $u$. Appliquée au produit $zw$, et en utilisant $\\overline{zw}=\\overline z\\,\\overline w$ :\\begin{align*}|zw|^2&=(zw)\\overline{(zw)}\\\\&=z\\,w\\,\\overline z\\,\\overline w\\\\&=(z\\overline z)(w\\overline w)\\\\&=|z|^2|w|^2.\\end{align*} Les réels $|zw|$ et $|z||w|$ sont positifs et ont le même carré, donc ils sont égaux :$$\\boxed{|zw|=|z|\\,|w|}$$ En prenant $w=z$ et en raisonnant par récurrence, on en déduit $|z^n|=|z|^n$ pour tout $n\\in\\mathbb{N}$."
+        },
+        {
+          "type": "theorem",
+          "title": "Que dit \\mathqst{l'inégalité triangulaire}",
+          "content": "Pour tous complexes $z$ et $w$ :$$\\large\\boxed{|z+w|\\leq|z|+|w|}$$ Plus généralement, $\\left|\\sum_{k=0}^{n}z_k\\right|\\leq\\sum_{k=0}^{n}|z_k|$."
+        },
+        {
+          "type": "proof",
+          "content": "On compare les carrés, ce qui évite les racines carrées. En développant avec $|u|^2=u\\overline u$ :\\begin{align*}|z+w|^2&=(z+w)(\\overline z+\\overline w)\\\\&=z\\overline z+w\\overline w+z\\overline w+\\overline z w\\\\&=|z|^2+|w|^2+2\\operatorname{Re}(z\\overline w),\\end{align*} car $\\overline z w=\\overline{z\\overline w}$ et $u+\\overline u=2\\operatorname{Re}(u)$. Or tout complexe $u$ vérifie $\\operatorname{Re}(u)\\leq|u|$, et $|z\\overline w|=|z||w|$. Donc :\\begin{align*}|z+w|^2&\\leq|z|^2+2|z||w|+|w|^2\\\\&=\\left(|z|+|w|\\right)^2.\\end{align*} Les deux membres étant positifs, la fonction racine carrée étant croissante :$$\\boxed{|z+w|\\leq|z|+|w|}$$ Le cas d'une somme de $n$ termes s'obtient ensuite par récurrence."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{majorer une différence complexe}",
+          "content": "On décompose l'expression en une somme de morceaux dont les modules sont faciles à contrôler. On applique ensuite l'inégalité triangulaire et, si une exponentielle apparaît, la factorisation par l'angle moitié."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $z\\neq0$. \\textbf{Montrons} que $|z-1|\\leq\\bigl||z|-1\\bigr|+|z|\\,|\\arg z|$.}\\par\\smallskip On écrit :\\begin{align*}z-1&=(\\blank{z-|z|})+(|z|-1).\\end{align*} L'inégalité triangulaire donne :\\begin{align*}|z-1|&\\leq\\blank{|z-|z||}+\\bigl||z|-1\\bigr|.\\end{align*} Posons $z=Re^{i\\theta}$ avec $R=\\blank{|z|}$. Alors :\\begin{align*}|z-|z||&=R|e^{i\\theta}-1|\\\\&=\\blank{2R}\\left|\\sin\\dfrac{\\theta}{2}\\right|\\\\&\\leq R|\\theta|.\\end{align*} Ainsi :$$\\boxed{|z-1|\\leq\\bigl||z|-1\\bigr|+|z|\\,|\\arg z|}$$"
+        },
+        {
+          "type": "method",
+          "title": "Quel réflexe \\mathqst{adopter lorsque $|z|=1$}",
+          "content": "La relation $|z|=1$ permet de remplacer immédiatement $\\overline z$ par $\\dfrac1z$. Cette substitution simplifie les expressions contenant simultanément des conjugués, des produits et des puissances."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Supposons $|z|=1$ et $z\\neq-1$. \\textbf{Montrons} que $\\dfrac{1-z}{1+z}$ est imaginaire pur.}\\par\\smallskip Posons $w=\\dfrac{1-z}{1+z}$. Comme $\\overline z=\\blank{\\dfrac1z}$ :\\begin{align*}\\overline w&=\\dfrac{1-\\overline z}{1+\\overline z}\\\\&=\\dfrac{1-\\frac1z}{\\blank{1+\\frac1z}}\\\\&=\\dfrac{z-1}{z+1}\\\\&=\\blank{-w}.\\end{align*} Un complexe vérifiant $\\overline w=\\blank{-w}$ est imaginaire pur. Ainsi :$$\\boxed{\\dfrac{1-z}{1+z}\\in i\\mathbb{R}}$$"
+        }
+      ]
+    },
+    {
+      "id": "argument_forme_trigonometrique",
+      "category": "course",
+      "title": "Argument et forme trigonométrique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans cette section, le plan complexe est muni d'un repère orthonormé direct. L'argument décrit la direction du vecteur reliant l'origine au point image."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{l'argument d'un complexe}",
+          "content": "Pour $z\\neq0$, un \\textbf{argument} de $z$ est une mesure en radians de l'angle orienté entre l'axe réel positif et le vecteur d'affixe $z$. Il est défini modulo $2\\pi$ :$$\\arg(z)\\equiv\\theta\\ [2\\pi].$$"
+        },
+        {
+          "type": "property",
+          "title": "Quels sont \\mathqst{les arguments remarquables}",
+          "content": "Pour $z\\neq0$ :\\itemsize{$z\\in\\mathbb{R}_+^*$ si et seulement si $\\arg z\\equiv0\\ [2\\pi]$.}\\itemsize{$z\\in\\mathbb{R}_-^*$ si et seulement si $\\arg z\\equiv\\pi\\ [2\\pi]$.}\\itemsize{$z\\in\\mathbb{R}^*$ si et seulement si $\\arg z\\equiv0\\ [\\pi]$.}\\itemsize{$z\\in i\\mathbb{R}^*$ si et seulement si $\\arg z\\equiv\\dfrac{\\pi}{2}\\ [\\pi]$.}"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{écrire la forme trigonométrique}",
+          "content": "Tout complexe non nul s'écrit :$$\\large\\boxed{z=r(\\cos\\theta+i\\sin\\theta)}$$ avec $r=|z|>0$ et $\\arg z\\equiv\\theta\\ [2\\pi]$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{passer de $a+ib$ à la forme trigonométrique}",
+          "content": "On calcule d'abord $r=\\sqrt{a^2+b^2}$. On factorise ensuite par $r$, puis on détermine l'angle $\\theta$ en utilisant simultanément $\\cos\\theta=\\dfrac ar$ et $\\sin\\theta=\\dfrac br$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{\\textbf{Donnons la forme trigonométrique} de $z=-\\sqrt3+i$.}\\par\\smallskip Le module vaut :\\begin{align*}|z|&=\\sqrt{3+1}=\\blank{2}.\\end{align*} On écrit :\\begin{align*}z&=2\\left(-\\dfrac{\\sqrt3}{\\blank{2}}+i\\dfrac12\\right).\\end{align*} Les deux coordonnées trigonométriques correspondent à l'angle $\\dfrac{\\blank{5}\\pi}{6}$. Ainsi :$$\\boxed{z=2\\left(\\cos\\dfrac{5\\pi}{6}+i\\sin\\dfrac{5\\pi}{6}\\right)}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer les arguments d'un produit}",
+          "content": "Pour $z\\neq0$, $w\\neq0$ et $n\\in\\mathbb{Z}$ :\\itemsize{$\\arg(zw)\\equiv\\arg z+\\arg w\\ [2\\pi]$.}\\itemsize{$\\arg\\!\\left(\\dfrac zw\\right)\\equiv\\arg z-\\arg w\\ [2\\pi]$.}\\itemsize{$\\arg(z^n)\\equiv n\\arg z\\ [2\\pi]$.}\\itemsize{$\\arg(\\overline z)\\equiv-\\arg z\\ [2\\pi]$.}\\itemsize{$\\arg(-z)\\equiv\\arg z+\\pi\\ [2\\pi]$.}"
+        },
+        {
+          "type": "proof",
+          "content": "Écrivons les deux nombres sous forme trigonométrique, $z=r(\\cos\\theta+i\\sin\\theta)$ et $w=\\rho(\\cos\\varphi+i\\sin\\varphi)$, avec $r>0$ et $\\rho>0$. En développant le produit, puis en utilisant les formules d'addition :\\begin{align*}zw&=r\\rho\\left(\\cos\\theta\\cos\\varphi-\\sin\\theta\\sin\\varphi\\right)\\\\&\\quad+ir\\rho\\left(\\sin\\theta\\cos\\varphi+\\cos\\theta\\sin\\varphi\\right)\\\\&=r\\rho\\left(\\cos(\\theta+\\varphi)+i\\sin(\\theta+\\varphi)\\right).\\end{align*} Comme $r\\rho>0$, cette écriture est bien une forme trigonométrique de $zw$. On lit donc directement son module et son argument :$$\\boxed{|zw|=|z|\\,|w|\\qquad\\text{et}\\qquad\\arg(zw)\\equiv\\arg z+\\arg w\\ [2\\pi]}$$ En appliquant ce résultat à l'égalité $\\dfrac zw\\cdot w=z$, on obtient $\\arg\\!\\left(\\dfrac zw\\right)\\equiv\\arg z-\\arg w\\ [2\\pi]$ ; en prenant $w=z$ et par récurrence, $\\arg(z^n)\\equiv n\\arg z\\ [2\\pi]$."
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Deux précautions :} le nombre $0$ n'a pas d'argument. De plus, une écriture $r(\\cos\\theta+i\\sin\\theta)$ n'est trigonométrique que si $r>0$ ; un facteur négatif doit être absorbé en ajoutant $\\pi$ à l'angle."
+        }
+      ]
+    },
+    {
+      "id": "forme_exponentielle",
+      "category": "course",
+      "title": "Forme exponentielle et calculs rapides",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La notation exponentielle condense la forme trigonométrique. Elle transforme les règles sur les modules et les arguments en opérations immédiates."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{définir $e^{i\\theta}$}",
+          "content": "Pour tout réel $\\theta$, on pose :$$e^{i\\theta}=\\cos\\theta+i\\sin\\theta.$$ Tout complexe non nul de module $r$ et d'argument $\\theta$ s'écrit alors :$$\\large\\boxed{z=re^{i\\theta}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles règles \\mathqst{simplifie la forme exponentielle}",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/complexes/revisions/figures/calcul-exponentiel-moivre.png",
+            "type": "image",
+            "position": "inline-right",
+            "width": "46%",
+            "alt": "Produit, quotient et puissances de complexes représentés par leurs modules et leurs arguments",
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Pour $z=re^{i\\theta}$ et $w=\\rho e^{i\\varphi}$ :\\itemsize{$zw=r\\rho e^{i(\\theta+\\varphi)}$.}\\itemsize{$\\dfrac zw=\\dfrac r\\rho e^{i(\\theta-\\varphi)}$.}\\itemsize{$z^n=r^ne^{in\\theta}$.}\\itemsize{$\\dfrac1z=\\dfrac1r e^{-i\\theta}$.}\\itemsize{$\\overline z=re^{-i\\theta}$ et $-z=re^{i(\\theta+\\pi)}$.}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer produits, quotients et puissances}",
+          "content": "On met chaque complexe sous forme exponentielle. On multiplie ou divise les modules, puis on additionne ou soustrait les arguments. Pour une puissance, on élève le module et on multiplie l'argument par l'exposant."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soient $z_1=2+2i$ et $z_2=1-i\\sqrt3$. \\textbf{Calculons} $z_1z_2$, $\\dfrac{z_1}{z_2}$ et $z_2^{12}$.}\\par\\smallskip On a :\\begin{align*}z_1&=\\blank{2\\sqrt2}\\,e^{i\\pi/4},\\\\z_2&=2e^{\\blank{-i\\pi/3}}.\\end{align*} Donc :\\begin{align*}z_1z_2&=\\blank{4\\sqrt2}\\,e^{-i\\pi/12},\\\\\\dfrac{z_1}{z_2}&=\\sqrt2\\,e^{i\\blank{7}\\pi/12},\\\\z_2^{12}&=2^{12}e^{-4i\\pi}=\\blank{4096}.\\end{align*} Ainsi :$$\\boxed{z_1z_2=4\\sqrt2\\,e^{-i\\pi/12},\\quad \\dfrac{z_1}{z_2}=\\sqrt2\\,e^{i7\\pi/12},\\quad z_2^{12}=4096}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{obtenir des valeurs trigonométriques exactes}",
+          "content": "On calcule un même complexe de deux façons : une fois sous forme exponentielle pour lire son module et son argument, puis sous forme algébrique pour identifier les parties réelle et imaginaire."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{\\textbf{Déterminons} $\\cos\\dfrac{\\pi}{12}$ et $\\sin\\dfrac{\\pi}{12}$ à l'aide de $w=\\dfrac{\\sqrt3-i}{1-i}$.}\\par\\smallskip Sous forme exponentielle :\\begin{align*}\\sqrt3-i&=2e^{\\blank{-i\\pi/6}},\\\\1-i&=\\sqrt2e^{-i\\pi/4},\\\\w&=\\blank{\\sqrt2}e^{i\\pi/12}.\\end{align*} Sous forme algébrique :\\begin{align*}w&=\\dfrac{(\\sqrt3-i)(1+i)}2\\\\&=\\dfrac{\\sqrt3+1}{\\blank{2}}+i\\dfrac{\\sqrt3-1}{2}.\\end{align*} On identifie les parties :\\begin{align*}\\sqrt2\\cos\\dfrac{\\pi}{12}&=\\blank{\\dfrac{\\sqrt3+1}{2}},\\\\\\sqrt2\\sin\\dfrac{\\pi}{12}&=\\dfrac{\\sqrt3-1}{2}.\\end{align*} Ainsi :$$\\boxed{\\cos\\dfrac{\\pi}{12}=\\blank{\\dfrac{\\sqrt6+\\sqrt2}{4}}\\qquad\\text{et}\\qquad \\sin\\dfrac{\\pi}{12}=\\dfrac{\\sqrt6-\\sqrt2}{4}}$$"
+        }
+      ]
+    },
+    {
+      "id": "moivre",
+      "category": "course",
+      "title": "Formule de Moivre et angles multiples",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La formule de Moivre relie les puissances d'un complexe de module un aux angles multiples. Elle permet de développer des expressions trigonométriques."
+        },
+        {
+          "type": "theorem",
+          "title": "Que donne \\mathqst{la formule de Moivre}",
+          "content": "Pour tout réel $\\theta$ et tout entier relatif $n$ :$$\\large\\boxed{(\\cos\\theta+i\\sin\\theta)^n=\\cos(n\\theta)+i\\sin(n\\theta)}$$"
+        },
+        {
+          "type": "proof",
+          "content": "Notons $P(n)$ la propriété $(\\cos\\theta+i\\sin\\theta)^n=\\cos(n\\theta)+i\\sin(n\\theta)$.\\par\\smallskip \\textbf{Initialisation :} pour $n=0$, les deux membres valent $1$.\\par\\smallskip \\textbf{Hérédité :} supposons $P(n)$ vraie pour un entier $n$. Alors, grâce aux formules d'addition :\\begin{align*}(\\cos\\theta+i\\sin\\theta)^{n+1}&=(\\cos\\theta+i\\sin\\theta)^n(\\cos\\theta+i\\sin\\theta)\\\\&=\\left(\\cos(n\\theta)+i\\sin(n\\theta)\\right)(\\cos\\theta+i\\sin\\theta)\\\\&=\\cos(n\\theta)\\cos\\theta-\\sin(n\\theta)\\sin\\theta\\\\&\\quad+i\\left(\\sin(n\\theta)\\cos\\theta+\\cos(n\\theta)\\sin\\theta\\right)\\\\&=\\cos\\left((n+1)\\theta\\right)+i\\sin\\left((n+1)\\theta\\right).\\end{align*} La formule est donc vraie pour tout $n\\in\\mathbb{N}$.\\par\\smallskip \\textbf{Exposants négatifs :} soit $n=-m$ avec $m\\in\\mathbb{N}^*$. Le complexe $\\cos(m\\theta)+i\\sin(m\\theta)$ est de module $1$, donc son inverse est son conjugué :\\begin{align*}(\\cos\\theta+i\\sin\\theta)^{-m}&=\\dfrac1{\\cos(m\\theta)+i\\sin(m\\theta)}\\\\&=\\cos(m\\theta)-i\\sin(m\\theta)\\\\&=\\cos(-m\\theta)+i\\sin(-m\\theta).\\end{align*} La formule est ainsi établie pour tout $n\\in\\mathbb{Z}$ :$$\\boxed{(\\cos\\theta+i\\sin\\theta)^n=\\cos(n\\theta)+i\\sin(n\\theta)}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{exprimer $\\cos(n\\theta)$ avec $\\cos\\theta$}",
+          "content": "On développe $(\\cos\\theta+i\\sin\\theta)^n$ par le binôme. On identifie les parties réelle et imaginaire, puis on remplace $\\sin^2\\theta$ par $1-\\cos^2\\theta$ lorsque l'on veut une expression uniquement en cosinus."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{\\textbf{Établissons} les formules de $\\cos(3\\theta)$ et $\\sin(3\\theta)$.}\\par\\smallskip Par Moivre :\\begin{align*}\\cos(3\\theta)+i\\sin(3\\theta)&=(\\cos\\theta+i\\sin\\theta)^{\\blank{3}}\\\\&=\\cos^3\\theta+\\blank{3}i\\cos^2\\theta\\sin\\theta\\\\&\\quad-3\\cos\\theta\\sin^2\\theta-i\\sin^3\\theta.\\end{align*} En identifiant :\\begin{align*}\\cos(3\\theta)&=\\cos^3\\theta-3\\cos\\theta\\sin^2\\theta\\\\&=4\\cos^3\\theta\\blank{-3\\cos\\theta},\\\\\\sin(3\\theta)&=3\\cos^2\\theta\\sin\\theta-\\sin^3\\theta\\\\&=3\\sin\\theta\\blank{-4\\sin^3\\theta}.\\end{align*} Ainsi :$$\\boxed{\\cos(3\\theta)=4\\cos^3\\theta-3\\cos\\theta,\\qquad \\sin(3\\theta)=3\\sin\\theta-4\\sin^3\\theta}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles identités \\mathqst{faut-il connaître}",
+          "content": "On retient notamment :\\itemsize{$\\cos(2\\theta)=\\cos^2\\theta-\\sin^2\\theta$.}\\itemsize{$\\sin(2\\theta)=2\\sin\\theta\\cos\\theta$.}\\itemsize{$\\cos(4\\theta)=8\\cos^4\\theta-8\\cos^2\\theta+1$.}\\itemsize{$\\sin(4\\theta)=4\\cos^3\\theta\\sin\\theta-4\\cos\\theta\\sin^3\\theta$.}"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Sens de la méthode :} Moivre développe les angles multiples en puissances. Elle ne sert pas à linéariser une puissance de sinus ou de cosinus."
+        }
+      ]
+    },
+    {
+      "id": "euler_linearisation",
+      "category": "course",
+      "title": "Formules d'Euler et linéarisation",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les formules d'Euler font descendre les exposants des puissances trigonométriques. Elles constituent donc l'outil naturel de linéarisation."
+        },
+        {
+          "type": "theorem",
+          "title": "Que donnent \\mathqst{les formules d'Euler}",
+          "content": "Pour tout réel $\\theta$ :$$\\large\\boxed{\\cos\\theta=\\dfrac{e^{i\\theta}+e^{-i\\theta}}2\\qquad\\text{et}\\qquad \\sin\\theta=\\dfrac{e^{i\\theta}-e^{-i\\theta}}{2i}}$$"
+        },
+        {
+          "type": "proof",
+          "content": "Par définition, $e^{i\\theta}=\\cos\\theta+i\\sin\\theta$. Le cosinus étant pair et le sinus impair :\\begin{align*}e^{-i\\theta}&=\\cos(-\\theta)+i\\sin(-\\theta)\\\\&=\\cos\\theta-i\\sin\\theta.\\end{align*} En ajoutant puis en soustrayant ces deux écritures, les parties imaginaires puis réelles se compensent :\\begin{align*}e^{i\\theta}+e^{-i\\theta}&=2\\cos\\theta,\\\\e^{i\\theta}-e^{-i\\theta}&=2i\\sin\\theta.\\end{align*} Comme $2\\neq0$ et $2i\\neq0$, on peut diviser :$$\\boxed{\\cos\\theta=\\dfrac{e^{i\\theta}+e^{-i\\theta}}2\\qquad\\text{et}\\qquad\\sin\\theta=\\dfrac{e^{i\\theta}-e^{-i\\theta}}{2i}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{linéariser une puissance trigonométrique}",
+          "content": "On remplace le sinus ou le cosinus par son écriture d'Euler. On développe par le binôme, puis on regroupe les exponentielles conjuguées à l'aide de $e^{ik\\theta}+e^{-ik\\theta}=2\\cos(k\\theta)$ ou de leur différence."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{\\textbf{Linéarisons} $\\cos^4\\theta$.}\\par\\smallskip On écrit :\\begin{align*}\\cos^4\\theta&=\\dfrac{1}{\\blank{16}}(e^{i\\theta}+e^{-i\\theta})^4\\\\&=\\dfrac1{16}\\left(e^{4i\\theta}+4e^{2i\\theta}+\\blank{6}+4e^{-2i\\theta}+e^{-4i\\theta}\\right)\\\\&=\\dfrac1{16}\\left(2\\cos4\\theta+\\blank{8}\\cos2\\theta+6\\right).\\end{align*} Donc :$$\\boxed{\\cos^4\\theta=\\dfrac{1}{\\blank{8}}\\cos4\\theta+\\dfrac12\\cos2\\theta+\\dfrac38}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{\\textbf{Linéarisons} $\\sin^5\\theta$.}\\par\\smallskip Comme $(2i)^{\\blank{5}}=32i$ :\\begin{align*}\\sin^5\\theta&=\\dfrac1{\\blank{32i}}(e^{i\\theta}-e^{-i\\theta})^5\\\\&=\\dfrac1{32i}\\left[(e^{5i\\theta}-e^{-5i\\theta})\\blank{-5}(e^{3i\\theta}-e^{-3i\\theta})+10(e^{i\\theta}-e^{-i\\theta})\\right]\\\\&=\\dfrac1{16}\\sin5\\theta-\\dfrac5{16}\\sin3\\theta+\\dfrac58\\sin\\theta.\\end{align*} Ainsi :$$\\boxed{\\sin^5\\theta=\\dfrac1{16}\\sin5\\theta\\blank{-\\dfrac5{16}}\\sin3\\theta+\\dfrac58\\sin\\theta}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Contrôle utile :} après une linéarisation, on teste une valeur simple de l'angle. Pour une puissance de cosinus, $\\theta=0$ est particulièrement efficace ; pour une puissance impaire de sinus, on peut utiliser $\\theta=\\dfrac{\\pi}{2}$."
+        }
+      ]
+    },
+    {
+      "id": "angle_moitie",
+      "category": "course",
+      "title": "Factorisation par l'angle moitié",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une somme de deux exponentielles ne se simplifie pas par les règles du produit. La factorisation par la demi-somme et la demi-différence permet d'en lire le module et l'argument."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{factoriser $e^{i\\alpha}+e^{i\\beta}$}",
+          "content": "Pour tous réels $\\alpha$ et $\\beta$ :$$\\large\\boxed{e^{i\\alpha}+e^{i\\beta}=2\\cos\\left(\\dfrac{\\alpha-\\beta}{2}\\right)e^{i(\\alpha+\\beta)/2}}$$"
+        },
+        {
+          "type": "proof",
+          "content": "Posons $p=\\dfrac{\\alpha+\\beta}{2}$ et $q=\\dfrac{\\alpha-\\beta}{2}$. On vérifie que $p+q=\\alpha$ et $p-q=\\beta$. On met alors $e^{ip}$ en facteur :\\begin{align*}e^{i\\alpha}+e^{i\\beta}&=e^{i(p+q)}+e^{i(p-q)}\\\\&=e^{ip}\\left(e^{iq}+e^{-iq}\\right)\\\\&=2\\cos(q)\\,e^{ip},\\end{align*} la dernière égalité étant la formule d'Euler $e^{iq}+e^{-iq}=2\\cos q$. En revenant à $\\alpha$ et $\\beta$ :$$\\boxed{e^{i\\alpha}+e^{i\\beta}=2\\cos\\left(\\dfrac{\\alpha-\\beta}{2}\\right)e^{i(\\alpha+\\beta)/2}}$$ Le même calcul avec une différence et $e^{iq}-e^{-iq}=2i\\sin q$ donne $e^{i\\alpha}-e^{i\\beta}=2i\\sin\\left(\\dfrac{\\alpha-\\beta}{2}\\right)e^{i(\\alpha+\\beta)/2}$."
+        },
+        {
+          "type": "property",
+          "title": "Quels cas \\mathqst{faut-il mémoriser}",
+          "content": "On obtient :\\itemsize{$1+e^{i\\theta}=2\\cos\\left(\\dfrac{\\theta}{2}\\right)e^{i\\theta/2}$.}\\itemsize{$1-e^{i\\theta}=-2i\\sin\\left(\\dfrac{\\theta}{2}\\right)e^{i\\theta/2}=2\\sin\\left(\\dfrac{\\theta}{2}\\right)e^{i(\\theta/2-\\pi/2)}$.}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{lire le module après factorisation}",
+          "content": "On vérifie le signe du facteur réel placé devant l'exponentielle. S'il est positif, il constitue le module. S'il est négatif, on prend sa valeur absolue et on ajoute $\\pi$ à l'argument."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soient $u=3e^{i\\pi/5}$ et $v=3e^{i\\pi/7}$. \\textbf{Déterminons} le module et un argument de $u+v$.}\\par\\smallskip On factorise :\\begin{align*}u+v&=3\\left(e^{i\\pi/5}+e^{i\\pi/7}\\right)\\\\&=\\blank{6}\\cos\\left(\\dfrac{\\pi/5-\\pi/7}{2}\\right)e^{i(\\pi/5+\\pi/7)/2}\\\\&=6\\cos\\left(\\dfrac{\\pi}{35}\\right)e^{i\\blank{6}\\pi/35}.\\end{align*} Comme $\\dfrac{\\pi}{35}\\in\\left]\\blank{0}\\,;\\dfrac{\\pi}{2}\\right[$, le facteur réel est positif. Ainsi :$$\\boxed{|u+v|=\\blank{6\\cos\\dfrac{\\pi}{35}}\\qquad\\text{et}\\qquad \\arg(u+v)\\equiv\\dfrac{6\\pi}{35}\\ [2\\pi]}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Signe du facteur :} le nombre $2\\cos\\left(\\dfrac{\\alpha-\\beta}{2}\\right)$ n'est pas toujours positif. Le considérer automatiquement comme un module peut produire un argument faux."
+        }
+      ]
+    },
+    {
+      "id": "racines_carrees",
+      "category": "course",
+      "title": "Racines carrées d'un complexe",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans le plan complexe, un nombre non nul possède deux racines carrées opposées. La méthode dépend de la forme sous laquelle le nombre est donné."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{racine carrée d'un complexe}",
+          "content": "Une \\textbf{racine carrée} d'un complexe $\\Delta$ est un complexe $\\delta$ vérifiant :$$\\delta^2=\\Delta.$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Combien existe-t-il \\mathqst{de racines carrées}",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/complexes/revisions/figures/racines-equations.png",
+            "type": "image",
+            "position": "inline-right",
+            "width": "46%",
+            "alt": "Deux racines carrées opposées et leur utilisation dans une équation du second degré complexe",
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Tout complexe non nul admet exactement deux racines carrées, opposées l'une de l'autre."
+        },
+        {
+          "type": "proof",
+          "content": "Soit $\\Delta\\neq0$, écrit sous forme exponentielle $\\Delta=re^{i\\theta}$ avec $r>0$. Posons $\\delta_0=\\sqrt r\\,e^{i\\theta/2}$. Alors :\\begin{align*}\\delta_0^2&=\\left(\\sqrt r\\right)^2e^{i\\theta}\\\\&=re^{i\\theta}=\\Delta,\\end{align*} ce qui prouve qu'il existe au moins une racine carrée.\\par\\smallskip Soit maintenant $\\delta$ un complexe quelconque. En utilisant l'identité $A^2-B^2=(A-B)(A+B)$ :\\begin{align*}\\delta^2=\\Delta&\\iff\\delta^2-\\delta_0^2=0\\\\&\\iff(\\delta-\\delta_0)(\\delta+\\delta_0)=0\\\\&\\iff\\delta=\\delta_0\\ \\text{ou}\\ \\delta=-\\delta_0,\\end{align*} car un produit de complexes est nul si et seulement si l'un de ses facteurs est nul. Enfin $\\delta_0\\neq0$, donc $\\delta_0\\neq-\\delta_0$ : les deux solutions sont bien distinctes. Ainsi :$$\\boxed{\\Delta\\neq0\\ \\text{admet exactement deux racines carrées, }\\delta_0\\ \\text{et}\\ -\\delta_0}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{choisir la méthode selon $\\Delta$}",
+          "content": "Si $\\Delta$ est réel, on utilise les racines réelles ou imaginaires pures. Si $\\Delta=re^{i\\theta}$, les racines sont $\\pm\\sqrt r\\,e^{i\\theta/2}$. Si $\\Delta=\\alpha+i\\beta$, on pose $\\delta=x+iy$ et on combine $x^2-y^2=\\alpha$, $x^2+y^2=|\\Delta|$ et $2xy=\\beta$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{\\textbf{Déterminons} les racines carrées de $\\Delta=-3+4i$.}\\par\\smallskip Posons $\\delta=x+iy$. Comme $|\\Delta|=\\blank{5}$, on obtient :\\begin{align*}x^2-y^2&=-3,\\\\x^2+y^2&=5,\\\\2xy&=\\blank{4}.\\end{align*} En additionnant les deux premières relations : $2x^2=2$, donc $x=\\blank{\\pm1}$. En les soustrayant : $2y^2=8$, donc $y=\\blank{\\pm2}$. Puis $xy=2>0$, donc $x$ et $y$ ont le même signe. Les racines sont :$$\\boxed{\\delta_1=\\blank{1+2i}\\qquad\\text{et}\\qquad \\delta_2=-1-2i}$$"
+        },
+        {
+          "type": "technique",
+          "title": "Comment \\mathqst{repérer un carré complexe évident}",
+          "content": "Avant de résoudre le système, on cherche une identité de la forme $(a+ib)^2=a^2-b^2+2abi$. Si les parties réelle et imaginaire s'ajustent immédiatement, les deux racines sont obtenues sans calcul supplémentaire."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{\\textbf{Déterminons rapidement} les racines carrées de $-8+6i$.}\\par\\smallskip On remarque :\\begin{align*}(1+3i)^{\\blank{2}}&=1+6i+9i^2\\\\&=\\blank{-8+6i}.\\end{align*} Les deux racines carrées sont opposées. Ainsi :$$\\boxed{\\delta=\\pm(\\blank{1+3i})}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Notation :} on n'écrit pas $\\sqrt{\\Delta}$ pour un complexe quelconque, car aucune des deux racines n'est privilégiée. Le symbole radical désigne une racine positive uniquement pour un réel positif."
+        }
+      ]
+    },
+    {
+      "id": "second_degre",
+      "category": "course",
+      "title": "Équations du second degré dans $\\mathbb{C}$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La formule du discriminant reste valable avec des coefficients complexes. La différence essentielle réside dans le calcul des racines carrées du discriminant."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{résoudre $az^2+bz+c=0$}",
+          "content": "Soit $a\\neq0$ et $\\Delta=b^2-4ac$. Si $\\Delta=0$, l'équation admet la racine double $z_0=-\\dfrac{b}{2a}$. Si $\\Delta\\neq0$ et si $\\delta^2=\\Delta$, alors :$$\\large\\boxed{z_1=\\dfrac{-b+\\delta}{2a}\\qquad\\text{et}\\qquad z_2=\\dfrac{-b-\\delta}{2a}}$$"
+        },
+        {
+          "type": "proof",
+          "content": "Comme $a\\neq0$, on factorise par $a$ puis on complète le carré :\\begin{align*}az^2+bz+c&=a\\left(z^2+\\dfrac ba z+\\dfrac ca\\right)\\\\&=a\\left[\\left(z+\\dfrac b{2a}\\right)^2-\\dfrac{b^2}{4a^2}+\\dfrac ca\\right]\\\\&=a\\left[\\left(z+\\dfrac b{2a}\\right)^2-\\dfrac{\\Delta}{4a^2}\\right].\\end{align*} Si $\\Delta=0$, l'équation équivaut à $\\left(z+\\dfrac b{2a}\\right)^2=0$, d'où l'unique racine, dite double, $z_0=-\\dfrac b{2a}$.\\par\\smallskip Si $\\Delta\\neq0$, tout complexe non nul admet des racines carrées : soit $\\delta$ telle que $\\delta^2=\\Delta$. Alors $\\dfrac{\\Delta}{4a^2}=\\left(\\dfrac{\\delta}{2a}\\right)^2$ et l'identité $A^2-B^2=(A-B)(A+B)$ donne :\\begin{align*}az^2+bz+c&=a\\left(z+\\dfrac{b-\\delta}{2a}\\right)\\left(z+\\dfrac{b+\\delta}{2a}\\right).\\end{align*} Un produit de complexes est nul si et seulement si l'un des facteurs est nul, et $a\\neq0$. Ainsi :$$\\boxed{z_1=\\dfrac{-b+\\delta}{2a}\\qquad\\text{et}\\qquad z_2=\\dfrac{-b-\\delta}{2a}}$$ Si de plus $a$, $b$, $c$ sont réels avec $\\Delta<0$, on peut choisir $\\delta=i\\sqrt{-\\Delta}$, et les deux racines obtenues sont conjuguées."
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{les racines sont-elles conjuguées}",
+          "content": "Si les coefficients $a$, $b$ et $c$ sont réels et si $\\Delta<0$, les racines sont conjuguées :$$z_1=\\dfrac{-b+i\\sqrt{-\\Delta}}{2a},\\qquad z_2=\\overline{z_1}.$$ Cette propriété n'est plus automatique dès qu'un coefficient est complexe."
+        },
+        {
+          "type": "property",
+          "title": "Que valent \\mathqst{la somme et le produit des racines}",
+          "content": "Si $z_1$ et $z_2$ sont les racines de $az^2+bz+c=0$, alors :$$\\large\\boxed{z_1+z_2=-\\dfrac ba\\qquad\\text{et}\\qquad z_1z_2=\\dfrac ca}$$ Réciproquement, deux complexes de somme $S$ et de produit $P$ sont racines de $x^2-Sx+P=0$."
+        },
+        {
+          "type": "proof",
+          "content": "Soit $\\delta$ une racine carrée de $\\Delta$, et $z_1=\\dfrac{-b+\\delta}{2a}$, $z_2=\\dfrac{-b-\\delta}{2a}$. En ajoutant, les termes en $\\delta$ se compensent :\\begin{align*}z_1+z_2&=\\dfrac{(-b+\\delta)+(-b-\\delta)}{2a}\\\\&=\\dfrac{-2b}{2a}=-\\dfrac ba.\\end{align*} En multipliant, on reconnaît une différence de deux carrés :\\begin{align*}z_1z_2&=\\dfrac{(-b+\\delta)(-b-\\delta)}{4a^2}\\\\&=\\dfrac{b^2-\\delta^2}{4a^2}\\\\&=\\dfrac{b^2-(b^2-4ac)}{4a^2}\\\\&=\\dfrac{4ac}{4a^2}=\\dfrac ca.\\end{align*} Le calcul reste valable si $\\Delta=0$, avec $\\delta=0$ et $z_1=z_2$. Donc :$$\\boxed{z_1+z_2=-\\dfrac ba\\qquad\\text{et}\\qquad z_1z_2=\\dfrac ca}$$ Réciproquement, si deux complexes vérifient $z_1+z_2=S$ et $z_1z_2=P$, alors $(x-z_1)(x-z_2)=x^2-Sx+P$ : ils sont bien les racines de $x^2-Sx+P=0$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{traiter des coefficients complexes}",
+          "content": "On calcule le discriminant sans supposer qu'il est réel. On cherche ensuite une racine carrée du discriminant par la méthode algébrique, puis on applique les formules et on simplifie chaque quotient à l'aide d'un conjugué."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{\\textbf{Résolvons} $(1+i)z^2-(1+7i)z+14+12i=0$.}\\par\\smallskip Le discriminant vaut :\\begin{align*}\\Delta&=(1+7i)^2-\\blank{4}(1+i)(14+12i)\\\\&=-56-90i.\\end{align*} Son module vaut $\\blank{106}$. Pour $\\delta=x+iy$, le système donne :\\begin{align*}x^2-y^2&=-56,\\\\x^2+y^2&=106,\\\\2xy&=-90.\\end{align*} On obtient $x=\\pm5$, $y=\\blank{\\pm9}$ avec des signes contraires. Prenons $\\delta=5-9i$. Alors :\\begin{align*}z_1&=\\dfrac{1+7i+5-9i}{2(1+i)}=\\blank{1-2i},\\\\z_2&=\\dfrac{1+7i-5+9i}{2(1+i)}=3+5i.\\end{align*} Donc :$$\\boxed{S=\\{1-2i\\,;\\blank{3+5i}\\}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Conjugaison des racines :} deux racines complexes ne sont conjuguées que lorsque les coefficients de l'équation sont réels. Cette conclusion est fausse pour une équation à coefficients complexes."
+        }
+      ]
+    },
+    {
+      "id": "degre_superieur",
+      "category": "course",
+      "title": "Équations polynomiales de degré supérieur",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une équation de degré trois devient accessible dès qu'une première racine est connue. La recherche d'une racine imaginaire pure ramène souvent le problème à deux équations réelles."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{chercher une racine imaginaire pure}",
+          "content": "On pose $z_0=i\\lambda$ avec $\\lambda\\in\\mathbb{R}$. Après substitution dans le polynôme, on sépare les parties réelle et imaginaire. Une valeur de $\\lambda$ convient seulement si elle annule les deux équations obtenues."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{\\textbf{Résolvons} $z^3+(-8+i)z^2+(17-8i)z+17i=0$.}\\par\\smallskip Posons $z_0=i\\lambda$. Après développement, on obtient :\\begin{align*}8\\lambda(\\lambda+1)&=0,\\\\-\\lambda^3-\\lambda^2+17\\lambda+17&=0.\\end{align*} La première relation donne $\\lambda=0$ ou $\\lambda=\\blank{-1}$. Seule $\\lambda=-1$ vérifie la seconde, donc $z_0=\\blank{-i}$. On factorise :\\begin{align*}P(z)=(z+i)\\blank{(z^2-8z+17)}.\\end{align*} Le discriminant du second facteur vaut $\\blank{-4}=(2i)^2$, d'où :\\begin{align*}z&=4+i\\qquad\\text{ou}\\qquad z=4-i.\\end{align*} Ainsi :$$\\boxed{S=\\{-i\\,;\\blank{4+i}\\,;4-i\\}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{factoriser après une première racine}",
+          "content": "Si $z_0$ est une racine de $P$, alors $P(z)$ est divisible par $z-z_0$. On détermine le facteur restant par identification des coefficients ou par division euclidienne, puis on résout l'équation de degré inférieur."
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Test complet :} dans la recherche d'une racine imaginaire pure, satisfaire seulement l'équation réelle ou seulement l'équation imaginaire ne suffit pas. La même valeur doit satisfaire simultanément les deux."
+        }
+      ]
+    },
+    {
+      "id": "racines_unite",
+      "category": "course",
+      "title": "Racines $n$-ièmes de l'unité",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les racines de l'unité sont réparties régulièrement sur le cercle unité. Elles relient l'algèbre des puissances à la géométrie des polygones réguliers."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une \\mathqst{racine $n$-ième de l'unité}",
+          "content": "Une racine $n$-ième de l'unité est un complexe $u$ vérifiant :$$u^n=1.$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Quelles sont \\mathqst{les solutions de $u^n=1$}",
+          "content": "L'équation $u^n=1$ admet exactement $n$ solutions :$$\\large\\boxed{u_k=e^{2ik\\pi/n},\\qquad k\\in\\{0,1,\\ldots,n-1\\}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelle géométrie \\mathqst{forment les racines de l'unité}",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/complexes/revisions/figures/racines-niemes.png",
+            "type": "image",
+            "position": "inline-right",
+            "width": "46%",
+            "alt": "Racines n-ièmes régulièrement réparties sur un cercle et formant un polygone régulier",
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Leurs images sont les sommets d'un polygone régulier à $n$ côtés inscrit dans le cercle unité. Pour $n\\geq2$, leur somme est nulle."
+        },
+        {
+          "type": "proof",
+          "content": "Soit $u$ tel que $u^n=1$. En passant au module, $|u|^n=1$ ; comme $|u|$ est un réel positif, on obtient $|u|=1$, donc $u$ s'écrit $u=e^{i\\theta}$. L'équation devient alors :\\begin{align*}e^{in\\theta}&=1,\\\\ n\\theta&\\equiv0\\ [2\\pi],\\\\ \\theta&=\\dfrac{2k\\pi}{n},\\quad k\\in\\mathbb{Z}.\\end{align*} Les entiers $k\\in\\{0,1,\\ldots,n-1\\}$ donnent des arguments deux à deux distincts dans $[0\\,;2\\pi[$, donc $n$ solutions distinctes ; tout autre entier $k$ redonne l'une d'elles, car les arguments se répètent modulo $2\\pi$.\\par\\smallskip \\textbf{Somme nulle.} Supposons $n\\geq2$ et posons $\\omega=e^{2i\\pi/n}$, de sorte que $u_k=\\omega^k$, avec $\\omega\\neq1$ et $\\omega^n=1$. La somme géométrique donne :\\begin{align*}\\sum_{k=0}^{n-1}u_k&=\\sum_{k=0}^{n-1}\\omega^k\\\\&=\\dfrac{\\omega^n-1}{\\omega-1}\\\\&=0.\\end{align*} Ainsi :$$\\boxed{\\left\\{u\\in\\mathbb{C}:u^n=1\\right\\}=\\left\\{e^{2ik\\pi/n},\\ 0\\leq k\\leq n-1\\right\\}\\quad\\text{et}\\quad\\sum_{k=0}^{n-1}e^{2ik\\pi/n}=0}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{\\textbf{Décrivons} les racines cubiques de l'unité et le nombre $j$.}\\par\\smallskip Les trois racines sont :\\begin{align*}u_0&=1,\\\\u_1&=e^{2i\\pi/\\blank{3}}=j=-\\dfrac12+i\\dfrac{\\sqrt3}{2},\\\\u_2&=e^{4i\\pi/3}=\\blank{j^2}.\\end{align*} Elles vérifient :\\begin{align*}j^3&=1,\\\\1+j+\\blank{j^2}&=0,\\\\\\overline j=\\blank{j^2}=\\dfrac1j.\\end{align*} Ainsi :$$\\boxed{\\{u\\in\\mathbb{C}:u^3=1\\}=\\{1,j,j^2\\}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Indices :} les valeurs $k=0,\\ldots,n-1$ donnent une fois chacune les $n$ racines. Continuer avec d'autres entiers ne produit pas de nouvelles solutions, car les arguments se répètent modulo $2\\pi$."
+        }
+      ]
+    },
+    {
+      "id": "racines_niemes",
+      "category": "course",
+      "title": "Racines $n$-ièmes d'un complexe non nul",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La forme exponentielle permet de partager simultanément le module et l'argument. Les solutions obtenues sont régulièrement espacées sur un même cercle."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{résoudre $z^n=re^{i\\theta}$}",
+          "content": "Si $a=re^{i\\theta}$ avec $r>0$, alors $z^n=a$ admet exactement $n$ solutions :$$\\large\\boxed{z_k=\\sqrt[n]{r}\\,e^{i(\\theta+2k\\pi)/n},\\qquad k=0,\\ldots,n-1}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{rédiger la recherche des racines}",
+          "content": "On écrit le second membre sous forme exponentielle. On pose $z=\\rho e^{i\\alpha}$, puis on identifie les modules et les arguments. On obtient $\\rho=\\sqrt[n]r$ et $\\alpha=\\dfrac{\\theta+2k\\pi}{n}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{\\textbf{Résolvons sous forme générale} $z^n=re^{i\\theta}$ avec $r>0$.}\\par\\smallskip Posons $z=\\rho e^{i\\alpha}$. Alors :\\begin{align*}z^n&=\\rho^ne^{in\\alpha}=re^{i\\theta}.\\end{align*} L'égalité des modules donne $\\rho^n=r$, donc $\\rho=\\blank{\\sqrt[n]r}$. L'égalité des arguments donne :\\begin{align*}\\blank{n}\\alpha&\\equiv\\theta\\ [2\\pi],\\\\\\alpha&=\\dfrac{\\theta+\\blank{2k\\pi}}{n}.\\end{align*} Les valeurs distinctes correspondent à $k=0,\\ldots,n-1$. Ainsi :$$\\boxed{z_k=\\sqrt[n]{\\blank{r}}\\,e^{i(\\theta+2k\\pi)/n}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{traiter une équation mêlant $z$ et $\\overline z$}",
+          "content": "On commence par étudier les modules. Si l'on obtient $|z|=1$, on remplace $\\overline z$ par $\\dfrac1z$. L'équation se transforme alors en une équation de racines de l'unité."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{\\textbf{Résolvons} $z^6=\\overline z$.}\\par\\smallskip Le nombre $z=0$ est solution. Supposons maintenant $z\\neq0$. En prenant les modules :\\begin{align*}|z|^6&=|z|,\\\\|z|^{\\blank{5}}&=1,\\\\|z|&=1.\\end{align*} Ainsi $\\overline z=\\blank{\\dfrac1z}$, et l'équation devient :\\begin{align*}z^6&=\\dfrac1z,\\\\z^{\\blank{7}}&=1.\\end{align*} Les solutions non nulles sont les racines septièmes de l'unité. Donc :$$\\boxed{S=\\{0\\}\\cup\\left\\{e^{2ik\\pi/\\blank{7}}:k=0,\\ldots,6\\right\\}}$$"
+        }
+      ]
+    },
+    {
+      "id": "sommes_racines_septiemes",
+      "category": "course",
+      "title": "Sommes construites avec les racines septièmes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les sommes de racines de l'unité peuvent être déterminées sans calcul trigonométrique direct. Le conjugué, la somme totale et le produit fournissent une équation du second degré."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{regrouper des racines de l'unité}",
+          "content": "On utilise $|z|=1$ pour écrire $\\overline z=\\dfrac1z$, puis la relation $z^n=1$ pour réduire les exposants. On calcule ensuite la somme et le produit des groupes afin de les identifier comme racines d'une équation quadratique."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Soit $z=e^{2i\\pi/7}$. On pose $S=z+z^2+z^4$ et $T=z^3+z^5+z^6$. \\textbf{Déterminons} $S$ et $T$.}\\par\\smallskip Comme $|z|=1$ et $z^7=1$ :\\begin{align*}\\overline S&=z^6+z^5+z^3=\\blank{T}.\\end{align*} De plus :\\begin{align*}S+T&=z+z^2+\\cdots+z^6\\\\&=\\blank{-1}.\\end{align*} En développant le produit et en réduisant les exposants modulo $\\blank{7}$, on obtient $ST=\\blank{2}$. Ainsi $S$ et $T$ sont les racines de :\\begin{align*}x^2+x+2&=0.\\end{align*} Son discriminant vaut $\\blank{-7}$. Comme $\\operatorname{Im}(S)>0$ :$$\\boxed{S=\\dfrac{-1+i\\sqrt7}{2}\\qquad\\text{et}\\qquad T=\\dfrac{-1-i\\sqrt7}{2}}$$"
+        },
+        {
+          "type": "remark",
+          "content": "Le calcul repose sur une idée de symétrie : deux sommes conjuguées peuvent être déterminées par leur somme et leur produit, sans évaluer séparément les sinus et les cosinus."
+        }
+      ]
+    },
+    {
+      "id": "affixes_dictionnaire",
+      "category": "course",
+      "title": "Affixes, distances et angles orientés",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans cette partie, le plan complexe est muni d'un repère orthonormé direct. Les affixes traduisent les points, les vecteurs, les distances et les angles dans un même langage algébrique."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{affixe d'un point ou d'un vecteur}",
+          "content": "Au complexe $z=a+ib$ correspond le point $M(a\\,;b)$, appelé \\textbf{image} de $z$. Réciproquement, $z$ est l'\\textbf{affixe} de $M$. Le même complexe est l'affixe du vecteur de coordonnées $(a\\,;b)$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer les affixes usuelles}",
+          "content": "Dans le plan complexe :\\itemsize{$z_{\\overrightarrow{AB}}=z_B-z_A$.}\\itemsize{Si $I$ est le milieu de $[AB]$, alors $z_I=\\dfrac{z_A+z_B}{2}$.}\\itemsize{Si $G$ est le barycentre des points pondérés $(A_k,\\alpha_k)$, alors $z_G=\\dfrac{\\sum\\alpha_kz_k}{\\sum\\alpha_k}$.}\\itemsize{L'affixe d'une somme de vecteurs est la somme de leurs affixes.}"
+        },
+        {
+          "type": "theorem",
+          "title": "Quel est \\mathqst{le dictionnaire entre complexes et géométrie}",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/complexes/revisions/figures/geometrie-complexe.png",
+            "type": "image",
+            "position": "inline-right",
+            "width": "46%",
+            "alt": "Quotient complexe donnant un rapport de longueurs, un angle, l'alignement et l'orthogonalité",
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Pour des points distincts :$$\\large\\boxed{AB=|z_B-z_A|}$$ et $$\\large\\boxed{\\left(\\overrightarrow{AB},\\overrightarrow{AC}\\right)\\equiv\\arg\\left(\\dfrac{z_C-z_A}{z_B-z_A}\\right)\\ [2\\pi]}$$ Le module d'un quotient donne un rapport de longueurs, tandis que son argument donne un angle."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{lire deux informations dans un quotient}",
+          "content": "On construit le quotient des affixes des deux vecteurs concernés. Son module fournit le rapport de leurs longueurs et son argument fournit l'angle orienté entre les deux vecteurs."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soient $A(3+5i)$, $B(3-5i)$ et $C(7+3i)$. \\textbf{Déterminons} la nature de l'angle en $C$ et le rapport $\\dfrac{CB}{CA}$.}\\par\\smallskip Formons :\\begin{align*}w&=\\dfrac{z_B-z_C}{z_A-z_C}\\\\&=\\dfrac{-4-8i}{-4+2i}\\\\&=\\dfrac{(-4-8i)(-4-2i)}{\\blank{20}}\\\\&=\\blank{2i}.\\end{align*} Son module vaut $\\blank{2}$, donc $\\dfrac{CB}{CA}=2$. Son argument vaut $\\dfrac{\\pi}{\\blank{2}}$ modulo $2\\pi$, donc $\\overrightarrow{CA}$ et $\\overrightarrow{CB}$ sont perpendiculaires. Ainsi :$$\\boxed{ABC\\ \\text{est rectangle en }C\\qquad\\text{et}\\qquad CB=\\blank{2}\\,CA}$$"
+        }
+      ]
+    },
+    {
+      "id": "configurations_geometriques",
+      "category": "course",
+      "title": "Traduction complexe des configurations géométriques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les configurations classiques se reconnaissent par la nature d'un quotient complexe ou par une égalité de modules. Cette traduction évite les calculs de coordonnées séparés."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{traduire les configurations usuelles}",
+          "content": "Pour des points distincts :\\itemsize{$A$, $B$, $C$ sont alignés si $\\dfrac{z_C-z_A}{z_B-z_A}\\in\\mathbb{R}$.}\\itemsize{$(AB)\\perp(AC)$ si $\\dfrac{z_C-z_A}{z_B-z_A}\\in i\\mathbb{R}^*$.}\\itemsize{$ABC$ est rectangle et isocèle en $A$ si ce quotient vaut $\\pm i$.}\\itemsize{$ABC$ est équilatéral si ce quotient vaut $e^{\\pm i\\pi/3}$, ou si les trois côtés ont même longueur.}\\itemsize{$M$ appartient au cercle de centre $\\Omega(\\omega)$ et de rayon $R$ si $|z-\\omega|=R$.}\\itemsize{$M$ appartient à la médiatrice de $[AB]$ si $|z-z_A|=|z-z_B|$.}"
+        },
+        {
+          "type": "proof",
+          "content": "Soient $A$, $B$, $C$ d'affixes $z_A$, $z_B$, $z_C$, avec $B\\neq A$ et $C\\neq A$. Posons :\\begin{align*}Z&=\\dfrac{z_C-z_A}{z_B-z_A}.\\end{align*} Le numérateur et le dénominateur sont non nuls, donc $Z\\neq0$ et $Z$ possède un argument. La règle de l'argument d'un quotient et la lecture géométrique des affixes de vecteurs donnent :\\begin{align*}\\arg Z&\\equiv\\arg(z_C-z_A)-\\arg(z_B-z_A)\\\\&\\equiv\\left(\\overrightarrow{AB},\\overrightarrow{AC}\\right)\\ [2\\pi].\\end{align*} Les points $A$, $B$, $C$ sont alignés si et seulement si cet angle vaut $0$ ou $\\pi$, c'est-à-dire $\\arg Z\\equiv0\\ [\\pi]$, ce qui caractérise exactement les réels non nuls. De même, $(AB)\\perp(AC)$ si et seulement si l'angle vaut $\\dfrac{\\pi}{2}$ ou $-\\dfrac{\\pi}{2}$, c'est-à-dire $\\arg Z\\equiv\\dfrac{\\pi}{2}\\ [\\pi]$, ce qui caractérise les imaginaires purs non nuls. Ainsi :$$\\boxed{A,\\,B,\\,C\\ \\text{alignés}\\iff Z\\in\\mathbb{R}\\qquad\\text{et}\\qquad(AB)\\perp(AC)\\iff Z\\in i\\mathbb{R}^*}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Soient $A(2)$, $B(1+i\\sqrt3)$ et $C(3+i\\sqrt3)$. \\textbf{Montrons} que le triangle $ABC$ est équilatéral.}\\par\\smallskip On calcule les longueurs :\\begin{align*}AB&=|z_B-z_A|=|-1+i\\sqrt3|=\\blank{2},\\\\AC&=|z_C-z_A|=\\blank{|1+i\\sqrt3|}=2,\\\\BC&=|z_C-z_B|=\\blank{|2|}=2.\\end{align*} Les trois côtés ont la même longueur. Donc :$$\\boxed{ABC\\ \\text{est équilatéral}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{reconnaître un cercle ou une médiatrice}",
+          "content": "On cherche à écrire la condition sous la forme d'une distance. Une égalité $|z-\\omega|=R$ décrit un cercle, tandis qu'une égalité $|z-a|=|z-b|$ décrit l'ensemble des points équidistants de deux points, donc une médiatrice."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{\\textbf{Interprétons géométriquement} les conditions $|z-\\omega|=R$ et $|z-a|=|z-b|$.}\\par\\smallskip Le module $\\blank{|z-\\omega|}$ représente la distance entre $M(z)$ et $\\Omega(\\omega)$. La première condition impose donc une distance constante $\\blank{R}$. De même, $|z-a|$ et $|z-b|$ sont les distances de $M$ aux points $A(a)$ et $B(\\blank{b})$. Ainsi :$$\\boxed{|z-\\omega|=R\\ \\text{décrit un cercle, et}\\ |z-a|=|z-b|\\ \\text{décrit la médiatrice de }\\blank{[AB]}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Dénominateur :} un quotient de vecteurs exige que le vecteur placé au dénominateur soit non nul. Les points correspondants doivent donc être distincts."
+        }
+      ]
+    },
+    {
+      "id": "cocyclicite",
+      "category": "course",
+      "title": "Cocyclicité et argument d'un produit",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La cocyclicité se traduit par une égalité d'angles inscrits. Le langage des arguments transforme cette égalité géométrique en une condition de réalité."
+        },
+        {
+          "type": "theorem",
+          "title": "Quel critère \\mathqst{caractérise quatre points cocycliques}",
+          "content": "Quatre points distincts $A(a)$, $B(b)$, $C(c)$ et $D(d)$ sont cocycliques ou alignés si et seulement si :$$\\large\\boxed{\\left(\\dfrac{c-a}{b-a}\\right)\\left(\\dfrac{b-d}{c-d}\\right)\\in\\mathbb{R}^*}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{exploiter des complexes de module $1$}",
+          "content": "On remplace les conjugués par les inverses, puis on transforme l'expression afin de montrer qu'elle est égale à son conjugué. La réalité obtenue se traduit ensuite par une congruence d'arguments."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Soient $a$, $b$, $c$ de module $1$, avec $a\\neq c$ et $b\\neq c$. \\textbf{Montrons} que $\\left(\\dfrac{c-b}{c-a}\\right)^2\\dfrac ab$ est réel, puis déterminons une relation d'arguments.}\\par\\smallskip Posons :$$w=\\left(\\dfrac{c-b}{c-a}\\right)^2\\dfrac ab.$$ Comme $|a|=|b|=|c|=1$, on a $\\overline a=\\blank{\\dfrac1a}$, $\\overline b=\\dfrac1b$ et $\\overline c=\\dfrac1c$. On obtient :\\begin{align*}\\overline{\\left(\\dfrac{c-b}{c-a}\\right)}&=\\dfrac{1/c-1/b}{1/c-1/a}\\\\&=\\dfrac{\\blank{a}}{b}\\,\\dfrac{c-b}{c-a}.\\end{align*} Par conséquent $\\overline w=w$, donc $w\\in\\blank{\\mathbb{R}^*}$. Alors :\\begin{align*}2\\arg\\left(\\dfrac{c-b}{c-a}\\right)+\\arg\\left(\\dfrac ab\\right)&\\equiv\\blank{0}\\ [\\pi].\\end{align*} Ainsi :$$\\boxed{\\arg\\left(\\dfrac{c-b}{c-a}\\right)\\equiv\\dfrac12\\arg\\left(\\dfrac ba\\right)\\ \\left[\\dfrac{\\pi}{2}\\right]}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Signe du réel :} le critère de cocyclicité demande un réel non nul, pas nécessairement positif. Un produit négatif correspond aussi à des points cocycliques, avec des angles inscrits supplémentaires."
+        }
+      ]
+    },
+    {
+      "id": "transformations_base",
+      "category": "course",
+      "title": "Translations, homothéties et rotations",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans le plan complexe muni du repère précédent, une transformation géométrique se décrit par une relation entre l'affixe d'un point et celle de son image. La forme centrée rend les caractéristiques immédiatement visibles."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelles écritures \\mathqst{décrivent les transformations de base}",
+          "media": {
+            "src": "/data/2eme-bac-sc-math/complexes/revisions/figures/transformations-complexes.png",
+            "type": "image",
+            "position": "inline-right",
+            "width": "48%",
+            "alt": "Comparaison des écritures complexes d'une translation, d'une homothétie, d'une rotation et d'une similitude directe",
+            "zoomable": true,
+            "style": {
+              "border": false,
+              "shadow": false,
+              "rounded": false
+            }
+          },
+          "content": "Les écritures complexes sont :\\itemsize{Translation de vecteur d'affixe $a$ : $z'=z+a$.}\\itemsize{Homothétie de centre $\\Omega(\\omega)$ et de rapport $k\\in\\mathbb{R}^*$ : $z'-\\omega=k(z-\\omega)$.}\\itemsize{Rotation de centre $\\Omega(\\omega)$ et d'angle $\\theta$ : $z'-\\omega=e^{i\\theta}(z-\\omega)$.}"
+        },
+        {
+          "type": "method",
+          "title": "Pourquoi \\mathqst{privilégier la forme centrée}",
+          "content": "Dans $z'-\\omega=\\lambda(z-\\omega)$, le point $\\Omega(\\omega)$ est directement le centre. Le coefficient $\\lambda$ donne le rapport et l'angle. On développe seulement si l'énoncé demande explicitement une écriture de la forme $z'=az+b$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{\\textbf{Déterminons l'écriture complexe} de la rotation de centre $\\Omega(1+i)$ et d'angle $\\dfrac{3\\pi}{4}$.}\\par\\smallskip La forme centrée donne :\\begin{align*}z'-(1+i)&=\\blank{e^{3i\\pi/4}}(z-1-i).\\end{align*} Or :\\begin{align*}e^{3i\\pi/4}&=\\dfrac{\\sqrt2}{\\blank{2}}(-1+i).\\end{align*} Donc :\\begin{align*}z'&=\\dfrac{\\sqrt2}{2}(-1+i)(z-1-i)+1+i\\\\&=\\dfrac{\\sqrt2}{2}(-1+i)z+\\blank{\\sqrt2}+1+i.\\end{align*} Ainsi :$$\\boxed{z'=\\dfrac{\\sqrt2}{2}(\\blank{-1+i})z+\\sqrt2+1+i}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Centre :} dans une rotation ou une homothétie, le terme constant de la forme développée n'est pas l'affixe du centre. Le centre se lit dans la forme centrée."
+        }
+      ]
+    },
+    {
+      "id": "transformation_azb",
+      "category": "course",
+      "title": "Classification de la transformation $z'=az+b$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Toute transformation affine complexe de coefficient non nul est une translation ou une similitude directe. Le cas où le coefficient vaut un doit être séparé avant toute recherche de point fixe."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{classifier $z'=az+b$}",
+          "content": "Soit $a\\neq0$.\\itemsize{Si $a=1$, la transformation est la translation de vecteur d'affixe $b$.}\\itemsize{Si $a\\neq1$, elle possède l'unique point fixe $\\omega=\\dfrac{b}{1-a}$ et s'écrit $z'-\\omega=a(z-\\omega)$.}\\itemsize{Si $a\\in\\mathbb{R}\\setminus\\{0,1\\}$, c'est une homothétie de rapport $a$.}\\itemsize{Si $|a|=1$, c'est une rotation d'angle $\\arg a$.}\\itemsize{Sinon, c'est une similitude directe de rapport $|a|$ et d'angle $\\arg a$.}"
+        },
+        {
+          "type": "proof",
+          "content": "Supposons $a\\neq0$ et $a\\neq1$. Un point d'affixe $\\omega$ est fixe si et seulement si $\\omega=a\\omega+b$, c'est-à-dire :\\begin{align*}\\omega(1-a)&=b,\\\\\\omega&=\\dfrac b{1-a},\\end{align*} division licite puisque $1-a\\neq0$. Le point fixe existe donc et il est unique. En soustrayant membre à membre les égalités $z'=az+b$ et $\\omega=a\\omega+b$, le terme $b$ disparaît :\\begin{align*}z'-\\omega&=a(z-\\omega).\\end{align*} Pour $z\\neq\\omega$, en passant aux modules puis aux arguments :\\begin{align*}\\dfrac{|z'-\\omega|}{|z-\\omega|}&=|a|,\\\\\\left(\\overrightarrow{\\Omega M},\\overrightarrow{\\Omega M'}\\right)&\\equiv\\arg a\\ [2\\pi].\\end{align*} La transformation multiplie donc les distances à $\\Omega$ par $|a|$ et tourne d'un angle $\\arg a$ : c'est la similitude directe de centre $\\Omega$, de rapport $|a|$ et d'angle $\\arg a$. Elle devient une homothétie lorsque $a$ est réel et une rotation lorsque $|a|=1$. Enfin, si $a=1$, l'écriture se réduit à $z'=z+b$. D'où :$$\\boxed{a=1\\ \\text{: translation de vecteur d'affixe }b\\ ;\\qquad a\\neq1\\ \\text{: similitude directe de centre }\\omega=\\dfrac b{1-a}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{étudier systématiquement $z'=az+b$}",
+          "content": "On compare d'abord $a$ à $1$. Si $a\\neq1$, on calcule le point fixe $\\omega=\\dfrac{b}{1-a}$, puis on écrit $z'-\\omega=a(z-\\omega)$. On conclut ensuite selon que $a$ est réel, de module $1$, ou d'une autre nature."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{\\textbf{Identifions} la transformation $z'=-2z+3-3i$.}\\par\\smallskip Ici $a=\\blank{-2}\\neq1$. Le point fixe vaut :\\begin{align*}\\omega&=\\dfrac{3-3i}{1-(-2)}\\\\&=\\blank{1-i}.\\end{align*} En soustrayant l'égalité vérifiée par $\\omega$ :\\begin{align*}z'-\\omega&=\\blank{-2}(z-\\omega).\\end{align*} Le coefficient est réel. Ainsi :$$\\boxed{\\text{la transformation est l'homothétie de centre }\\Omega(1-i)\\text{ et de rapport }\\blank{-2}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{La rotation $R_0$ a pour centre $O$ et angle $\\dfrac{\\pi}{6}$ ; la rotation $R_1$ a pour centre $A(i)$ et angle $\\dfrac{\\pi}{3}$. \\textbf{Déterminons} la nature de $R_1\\circ R_0$.}\\par\\smallskip Les écritures sont :\\begin{align*}R_0:\\quad z'&=\\blank{e^{i\\pi/6}}z,\\\\R_1:\\quad z''&=e^{i\\pi/3}(z'-\\blank{i})+i.\\end{align*} En composant :\\begin{align*}z''&=e^{i\\pi/2}z+i(1-e^{i\\pi/3})\\\\&=\\blank{i}z+\\dfrac{\\sqrt3}{2}+\\dfrac12i.\\end{align*} Le coefficient $i$ a pour module $\\blank{1}$ et argument $\\dfrac{\\pi}{2}$. Le centre vaut :\\begin{align*}\\omega&=\\dfrac{\\frac{\\sqrt3}{2}+\\frac12i}{1-i}\\\\&=\\dfrac{\\sqrt3-1}{4}+i\\dfrac{\\sqrt3+1}{4}.\\end{align*} Donc :$$\\boxed{R_1\\circ R_0\\ \\text{est une rotation d'angle }\\blank{\\dfrac{\\pi}{2}}\\text{ et de centre }\\Omega\\!\\left(\\dfrac{\\sqrt3-1}{4}+i\\dfrac{\\sqrt3+1}{4}\\right)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $u\\neq0$ et $z'=uz+i-u$. \\textbf{Classons} la transformation pour quatre valeurs de $u$ :\\begin{enumerate}\\item $u=1$ ;\\item $u=-3$ ;\\item $u=j$ ;\\item $u=4-4i\\sqrt3$. \\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour $u=1$, $z'=z\\blank{-1+i}$. C'est une translation de vecteur d'affixe $-1+i$.\\item Pour $u=-3$, le coefficient est réel. C'est une homothétie de rapport $\\blank{-3}$, de centre $\\omega=\\dfrac{i+3}{4}$.\\item Pour $u=j$, on a $|j|=1$ et $\\arg j=\\blank{\\dfrac{2\\pi}{3}}$. C'est une rotation d'angle $\\dfrac{2\\pi}{3}$, de centre $\\omega=\\dfrac{i-j^2}{1-j}$.\\item Pour $u=4-4i\\sqrt3$, on a $|u|=\\blank{8}$ et $\\arg u\\equiv-\\dfrac{\\pi}{3}\\ [2\\pi]$. C'est une similitude directe de rapport $8$ et d'angle $-\\dfrac{\\pi}{3}$.\\end{enumerate}\\par\\smallskip Les quatre cas sont donc :$$\\boxed{\\text{translation ; homothétie ; rotation ; \\blank{similitude directe}}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Cas $a=1$ :} la formule $\\omega=\\dfrac{b}{1-a}$ n'est alors pas définie. La transformation doit être reconnue directement comme une translation."
+        }
+      ]
+    }
+  ]
+}

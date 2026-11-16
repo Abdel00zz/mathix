@@ -1,0 +1,76 @@
+{
+  "id": "ensa",
+  "name": "ENSA",
+  "fullName": "Ecoles Nationales des Sciences Appliquées",
+  "description": "Concours d'accès aux ENSA — QCM Mathématiques",
+  "color": "#2563eb",
+  "questionsPerExam": 30,
+  "timePerQuestion": 45,
+  "annales": [
+    {
+      "id": "ensa_2025",
+      "year": "2025",
+      "path": "data/concours/ensa/ensa_2025.json",
+      "questionsCount": 20
+    },
+    {
+      "id": "ensa_2024",
+      "year": "2024",
+      "path": "data/concours/ensa/ensa_2024.json",
+      "questionsCount": 20
+    },
+    {
+      "id": "ensa_2023",
+      "year": "2023",
+      "path": "data/concours/ensa/ensa_2023.json",
+      "questionsCount": 15
+    },
+    {
+      "id": "ensa_2022",
+      "year": "2022",
+      "path": "data/concours/ensa/ensa_2022.json",
+      "questionsCount": 15
+    },
+    {
+      "id": "ensa_2021",
+      "year": "2021",
+      "path": "data/concours/ensa/ensa_2021.json",
+      "questionsCount": 15
+    },
+    {
+      "id": "ensa_2020",
+      "year": "2020",
+      "path": "data/concours/ensa/ensa_2020.json",
+      "questionsCount": 5
+    },
+    {
+      "id": "ensa_2019",
+      "year": "2019",
+      "path": "data/concours/ensa/ensa_2019.json",
+      "questionsCount": 20
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "ensa-analyse",
+      "theme": "analyse",
+      "title": "Analyse",
+      "path": "data/concours/ensa/quiz/ensa_analyse_quiz.json",
+      "questionsCount": 20
+    },
+    {
+      "id": "ensa-algebre",
+      "theme": "algebre",
+      "title": "Algèbre & Géométrie",
+      "path": "data/concours/ensa/quiz/ensa_algebre_quiz.json",
+      "questionsCount": 15
+    },
+    {
+      "id": "ensa-probabilites",
+      "theme": "probabilites",
+      "title": "Probabilités",
+      "path": "data/concours/ensa/quiz/ensa_probabilites_quiz.json",
+      "questionsCount": 10
+    }
+  ]
+}

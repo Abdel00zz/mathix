@@ -1,0 +1,563 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quelle est la condition pour qu'une fonction $f$ soit continue sur un segment $[a, b]$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Continue sur $]a, b[$, continue à droite en $a$ et continue à gauche en $b$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Continue sur $]a, b[$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Dérivable sur $]a, b[$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Continue à gauche en $a$ et à droite en $b$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La continuité sur un segment fermé nécessite la continuité sur l'ouvert et aux bornes (à l'intérieur du segment).",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "L'image d'un intervalle par une fonction continue est toujours un intervalle.",
+      "isTrue": true,
+      "explanation": "C'est un théorème fondamental de la continuité : l'image d'un intervalle (connexe) par une fonction continue reste un intervalle.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Si $f$ est continue sur le segment $[a, b]$, quelle est la nature de l'ensemble image $f([a, b])$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un segment $[m, M]$ où $m$ et $M$ sont le minimum et le maximum de $f$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un intervalle ouvert $]m, M[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'intervalle $[f(a), f(b)]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "L'ensemble $\\mathbb{R}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'image d'un segment par une fonction continue est un segment (théorème des bornes atteintes). Attention, ce n'est pas forcément $[f(a), f(b)]$ si la fonction n'est pas croissante.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Que stipule le Théorème des Valeurs Intermédiaires (TVI) pour une fonction $f$ continue sur un intervalle $I$ contenant $a$ et $b$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pour tout réel $k$ compris entre $f(a)$ et $f(b)$, l'équation $f(x) = k$ admet au moins une solution entre $a$ et $b$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "L'équation $f(x) = 0$ admet toujours une solution.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Pour tout réel $k$, l'équation $f(x) = k$ admet une unique solution.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La fonction $f$ est strictement monotone entre $a$ et $b$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le TVI garantit l'existence d'au moins un antécédent pour toute valeur intermédiaire entre $f(a)$ et $f(b)$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q5",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Pour que l'équation $f(x) = k$ admette une **unique** solution sur $I$ d'après le corollaire du TVI, il suffit que $f$ soit continue sur $I$.",
+      "isTrue": false,
+      "explanation": "Faux. Pour garantir l'unicité de la solution, la fonction $f$ doit être continue **et strictement monotone** sur $I$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q6",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour montrer qu'une fonction $f$ réalise une bijection de $I$ vers $J$ :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Vérifier que $f$ est continue sur l'intervalle $I$"
+        },
+        {
+          "id": "b",
+          "content": "Montrer que $f$ est strictement monotone sur $I$ (calcul de dérivée)"
+        },
+        {
+          "id": "c",
+          "content": "Déterminer l'intervalle image $J = f(I)$"
+        },
+        {
+          "id": "d",
+          "content": "Conclure que $f$ est une bijection de $I$ vers $J$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "On vérifie d'abord les hypothèses du théorème de la bijection (continuité et stricte monotonie), puis on détermine l'ensemble d'arrivée $J$ avant de conclure.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Si $f$ est une bijection d'un intervalle $I$ vers $J$, quelle propriété possède sa fonction réciproque $f^{-1}$ concernant ses variations ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle a le même sens de variation que $f$ sur $J$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Elle a le sens de variation opposé à celui de $f$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Elle est toujours strictement croissante",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "On ne peut pas connaître son sens de variation",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La fonction réciproque conserve la stricte monotonie de la fonction initiale.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Dans un repère orthonormé, comment se déduit la courbe représentative de $f^{-1}$ à partir de celle de $f$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Par symétrie par rapport à la droite d'équation $y = x$ (première bissectrice)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Par symétrie par rapport à l'axe des abscisses",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Par symétrie par rapport à l'axe des ordonnées",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Par symétrie centrale par rapport à l'origine $O$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les points $(x, y)$ de la courbe de $f$ deviennent les points $(y, x)$ sur la courbe de $f^{-1}$, ce qui correspond à une symétrie par rapport à la droite $y=x$.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Pour tout entier $n \\in \\mathbb{N}^*$, la fonction racine n-ième $x \\mapsto \\sqrt[n]{x}$ est la bijection réciproque de quelle fonction ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La fonction $x \\mapsto x^n$ définie sur $\\mathbb{R}^+$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La fonction $x \\mapsto x^n$ définie sur $\\mathbb{R}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La fonction $x \\mapsto nx$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La fonction $x \\mapsto \\frac{1}{x^n}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La racine n-ième est la réciproque de la fonction puissance n-ième, restreinte à $\\mathbb{R}^+$ pour garantir la bijectivité (surtout si $n$ est pair).",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q10",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Pour tous $x \\in \\mathbb{R}^+$ et $n, p \\in \\mathbb{N}^*$, on a l'égalité : $\\sqrt[n]{\\sqrt[p]{x}} = \\sqrt[n+p]{x}$.",
+      "isTrue": false,
+      "explanation": "Faux. La propriété correcte est $\\sqrt[n]{\\sqrt[p]{x}} = \\sqrt[n \\times p]{x}$. Les indices se multiplient, ils ne s'additionnent pas.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Quelle est l'écriture équivalente de $\\sqrt[n]{x}$ sous forme de puissance fractionnaire (pour $x \\ge 0$) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^{\\frac{1}{n}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x^{-n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x^{\\frac{n}{1}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{x^n}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par convention et pour conserver les propriétés des puissances, la racine n-ième s'écrit comme la puissance $1/n$.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "Quelle est la formule pour calculer la dérivée de la fonction réciproque $(f^{-1})'(y_0)$ en un point $y_0 = f(x_0)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{f'(x_0)}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-\\frac{f'(x_0)}{(f(x_0))^2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{f'(y_0)}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f'\\left(\\frac{1}{x_0}\\right)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La dérivée de la réciproque en $y_0$ est l'inverse de la dérivée de la fonction initiale au point antécédent $x_0$.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q13",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour calculer le nombre dérivé $(f^{-1})'(y_0)$ :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Résoudre l'équation $f(x) = y_0$ pour trouver l'antécédent $x_0$"
+        },
+        {
+          "id": "b",
+          "content": "Calculer la fonction dérivée $f'(x)$"
+        },
+        {
+          "id": "c",
+          "content": "Vérifier que $f'(x_0) \\neq 0$"
+        },
+        {
+          "id": "d",
+          "content": "Appliquer la formule $(f^{-1})'(y_0) = \\frac{1}{f'(x_0)}$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Il faut d'abord trouver l'antécédent $x_0$, puis s'assurer que la dérivée de $f$ ne s'y annule pas avant d'appliquer la formule de l'inverse.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q14",
+      "type": "error",
+      "category": "Méthode",
+      "prompt": "Identifier l'erreur dans ce calcul de limite avec une racine cubique :",
+      "context": "On cherche à calculer $\\lim_{x \\to 1} \\frac{\\sqrt[3]{x} - 1}{x - 1}$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "C'est une forme indéterminée $0/0$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "On multiplie par l'expression conjuguée classique : $\\frac{(\\sqrt[3]{x} - 1)(\\sqrt[3]{x} + 1)}{(x - 1)(\\sqrt[3]{x} + 1)}$.",
+          "isError": true,
+          "correction": "L'expression conjuguée pour une racine cubique utilise l'identité $a^3 - b^3 = (a-b)(a^2+ab+b^2)$. Il faut multiplier par $(\\sqrt[3]{x}^2 + \\sqrt[3]{x} + 1)$."
+        },
+        {
+          "id": "s3",
+          "text": "Le numérateur devient $(\\sqrt[3]{x})^2 - 1^2$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "La limite ne peut pas être levée ainsi.",
+          "isError": false
+        }
+      ],
+      "explanation": "L'expression conjuguée usuelle $(a-b)(a+b)=a^2-b^2$ ne permet d'éliminer que les racines carrées. Pour les racines n-ièmes, il faut utiliser l'identité généralisée $a^n - b^n$.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "Quelle identité remarquable généralisée utilise-t-on pour lever une indétermination avec des racines n-ièmes du type $\\sqrt[n]{a} - \\sqrt[n]{b}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$A^n - B^n = (A-B)(A^{n-1} + A^{n-2}B + \\dots + B^{n-1})$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$A^n - B^n = (A-B)^n$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$A^n - B^n = (A-B)(A^n + B^n)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$A^n - B^n = n(A-B)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Cette factorisation permet de faire apparaître $(A-B)$ au numérateur, ce qui élimine les racines n-ièmes si on pose $A = \\sqrt[n]{a}$ et $B = \\sqrt[n]{b}$.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Que vaut $\\displaystyle\\lim_{x\\to+\\infty}\\frac{3x^3-x+1}{2x^3+5}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\dfrac32$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On divise le numérateur et le dénominateur par $x^3$. Les termes de degré inférieur tendent vers zéro et il reste le rapport des coefficients dominants $3/2$."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "On définit $f(0)=m$ et, pour $x\\neq0$, $f(x)=\\dfrac{\\sin x}{x}$. Pour quelle valeur de $m$ la fonction est-elle continue en $0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$m=1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$m=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$m=-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Aucune valeur",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La limite de $\\sin x/x$ en $0$ vaut $1$. La continuité impose $f(0)=\\lim_{x\\to0}f(x)$, donc $m=1$."
+    },
+    {
+      "id": "q18",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "Une fonction admet un prolongement continu en $a$ dès que sa limite en $a$ existe et est finie.",
+      "isTrue": true,
+      "explanation": "On définit alors la valeur manquante par $f(a)=\\lim_{x\\to a}f(x)$. Si la limite n'existe pas ou est infinie, aucun prolongement continu n'est possible."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Définition",
+      "prompt": "La fonction $\\operatorname{Arctan}$ est la réciproque de la restriction de $\\tan$ à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\left]-\\dfrac\\pi2,\\dfrac\\pi2\\right[$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$[0,\\pi]$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\mathbb{R}$ tout entier",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\left[0,\\dfrac\\pi2\\right[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Sur cet intervalle, la tangente est continue, strictement croissante et réalise une bijection vers $\\mathbb{R}$."
+    },
+    {
+      "id": "q20",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Identifier l'erreur dans le calcul de $\\operatorname{Arctan}(\\tan(3\\pi/4))$.",
+      "context": "Un élève utilise directement la relation de réciprocité.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "$\\tan(3\\pi/4)=-1$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "On écrit $\\operatorname{Arctan}(\\tan\\theta)=\\theta$ pour tout réel $\\theta$.",
+          "isError": true,
+          "correction": "Cette identité n'est valable que pour $\\theta\\in]-\\pi/2,\\pi/2[$. Il faut ramener $3\\pi/4$ à $-\\pi/4$ modulo $\\pi$."
+        },
+        {
+          "id": "s3",
+          "text": "La valeur correcte est donc $\\operatorname{Arctan}(-1)=-\\pi/4$.",
+          "isError": false
+        }
+      ],
+      "explanation": "La fonction réciproque renvoie toujours une valeur dans son intervalle de définition $]-\\pi/2,\\pi/2[$."
+    },
+    {
+      "id": "q21",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Si $f$ est continue et strictement monotone sur un intervalle $I$, alors sa fonction réciproque est continue sur $f(I)$ et possède le même sens de variation que $f$.",
+      "isTrue": true,
+      "explanation": "La continuité et la stricte monotonie font de $f$ une bijection de $I$ sur l'intervalle $f(I)$. Sa réciproque est continue et conserve le sens de variation."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "ambiguity_note": "Pour une racine d'indice pair, le radicand doit être positif ou nul.",
+      "prompt": "Sur quel ensemble réel l'expression $\\sqrt[4]{x-2}$ est-elle définie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$[2,+\\infty[$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb{R}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$]-\\infty,2]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$]2,+\\infty[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une racine d'indice pair exige $x-2\\ge0$, donc $x\\ge2$. La valeur $x=2$ est admise car la racine quatrième de zéro existe."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "ex-log-26",
+  "theme": "logique",
+  "difficulty": "difficile",
+  "topic": "Logique & Raisonnements — Raisonnement par récurrence",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soit $x$ un réel positif. Montrer que $\\forall n \\in \\mathbb{N} : 1 + nx \\leq (1+x)^n$.",
+      "hint": "C'est l'inégalité de Bernoulli. Au rang $n+1$ : $(1+x)^{n+1} = (1+x)^n(1+x) \\geq (1+nx)(1+x)$. Développez et minorez."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer par récurrence que $\\forall n \\in \\mathbb{N}$ : 11 divise $5^{5n+1} + 4^{5n+2} + 3^{5n}$.",
+      "hint": "Au rang $n+1$, exprimez $5^{5(n+1)+1} + 4^{5(n+1)+2} + 3^{5(n+1)}$ en faisant apparaître $5^{5n+1} + 4^{5n+2} + 3^{5n}$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que $\\forall n \\in \\mathbb{N}^* : \\displaystyle\\sum_{k=1}^{n} \\dfrac{1}{k(k+1)(k+2)} = \\dfrac{n(n+3)}{4(n+1)(n+2)}$",
+      "hint": "Décomposez en éléments simples : $\\dfrac{1}{k(k+1)(k+2)} = \\dfrac{1}{2}\\left(\\dfrac{1}{k(k+1)} - \\dfrac{1}{(k+1)(k+2)}\\right)$ — la somme est télescopique."
+    },
+    {
+      "id": "q4",
+      "content": "Soit $a \\in ]0;1[$. Prouver que $\\forall n \\geq 2 : 1 - na < (1-a)^n < \\dfrac{1}{1+na}$",
+      "hint": "Pour la borne inférieure utilisez la question 1. Pour la borne supérieure, montrez par récurrence que $(1-a)^n(1+na) < 1$ en développant le produit au rang $n+1$."
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que $\\forall n \\in \\mathbb{N}^* : \\left(1 + \\dfrac{1}{1^2}\\right)\\left(1 + \\dfrac{1}{2^2}\\right)\\cdots\\left(1 + \\dfrac{1}{n^2}\\right) \\leq 3 - \\dfrac{1}{n}$",
+      "hint": "Au rang $n+1$, le produit est multiplié par $\\left(1+\\dfrac{1}{(n+1)^2}\\right)$. Il faut montrer que $\\left(3-\\dfrac{1}{n}\\right)\\left(1+\\dfrac{1}{(n+1)^2}\\right) \\leq 3 - \\dfrac{1}{n+1}$."
+    }
+  ]
+}

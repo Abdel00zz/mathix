@@ -1,0 +1,138 @@
+/* Animate-in system */
+@keyframes enter {
+  from { opacity: var(--tw-enter-opacity, 1); transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0) scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1)); }
+}
+
+.animate-in {
+  animation-name: enter;
+  animation-duration: 150ms;
+  --tw-enter-opacity: initial;
+  --tw-enter-scale: initial;
+  --tw-enter-translate-x: initial;
+  --tw-enter-translate-y: initial;
+}
+.fade-in        { --tw-enter-opacity: 0; }
+.zoom-in-95     { --tw-enter-scale: .95; }
+.zoom-in-90     { --tw-enter-scale: .90; }
+.slide-in-from-top-1    { --tw-enter-translate-y: -0.25rem; }
+.slide-in-from-top-2    { --tw-enter-translate-y: -0.5rem; }
+.slide-in-from-top-4    { --tw-enter-translate-y: -1rem; }
+.slide-in-from-bottom-1 { --tw-enter-translate-y: 0.25rem; }
+.slide-in-from-bottom-2 { --tw-enter-translate-y: 0.5rem; }
+.slide-in-from-bottom-4 { --tw-enter-translate-y: 1rem; }
+.slide-in-from-bottom-full { --tw-enter-translate-y: 100%; }
+.slide-in-from-left-2   { --tw-enter-translate-x: -0.5rem; }
+.slide-in-from-right-2  { --tw-enter-translate-x: 0.5rem; }
+
+/* Custom generic animations */
+@keyframes sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-sweep {
+  animation: sweep 2.5s infinite linear;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.animate-blob-float {
+  animation: blobFloat 20s infinite ease-in-out;
+}
+
+.animate-blob-float-reverse {
+  animation: blobFloat 25s infinite ease-in-out reverse;
+}
+
+@keyframes paintDrift {
+  0%,
+  100% {
+    transform: rotate(-0.8deg) scale(1);
+    border-radius: 70% 30% 80% 20% / 50% 60% 40% 50%;
+  }
+
+  50% {
+    transform: rotate(0.5deg) scale(1.02);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.animate-paint-drift {
+  animation: paintDrift 10s ease-in-out infinite;
+}
+
+@keyframes float-question {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(8deg) scale(1.15);
+  }
+}
+
+.animate-float-question {
+  animation: float-question 3s ease-in-out infinite;
+}
+
+@keyframes chicBounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(-25%) scale(1.05);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+.animate-chic-bounce {
+  animation: chicBounce 2s infinite;
+}
+
+/* Antigravity */
+@keyframes scale-up {
+  from {
+    scale: 0.85;
+  }
+}
+
+@keyframes wobble {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  25% { transform: translate(2px, -3px) rotate(1deg); }
+  50% { transform: translate(-2px, 3px) rotate(-1deg); }
+  75% { transform: translate(3px, 1px) rotate(0.5deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.animate-wobble {
+  animation: wobble 8s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@supports ((animation-timeline: view()) and (animation-range: 0% 100%)) {
+  .animate-on-scroll {
+    animation: scale-up linear both;
+    animation-timeline: view();
+    animation-range: entry 20% entry 100%;
+  }
+}
+
+@keyframes chapterReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0px);
+    }
+}

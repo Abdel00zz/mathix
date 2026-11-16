@@ -1,0 +1,25 @@
+{
+  "id": "ex-ens-app-11",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Inclusions et parties d'un ensemble",
+  "requiresRedaction": true,
+  "context": "Soit $\\alpha$ un réel strictement positif. On considère les ensembles :\n$$E = \\{x \\in \\mathbb{R} \\mid |x+1| < \\alpha\\} \\qquad \\text{et} \\qquad F = \\left\\{x \\in \\mathbb{R} \\;\\ \\middle| \\;\\ |x-1| < \\dfrac{\\alpha}{2}\\right\\}$$\nLe tableau de variation des bornes de $E$ et $F$ en fonction de $\\alpha$ :\n$$\\begin{array}{|c|c|c|c|c|}\n\\hline\n\\alpha & 0 & & 1 & +\\infty \\\\\n\\hline\n\\text{Borne inf. de } E & & -1-\\alpha & & -2 \\\\\n\\hline\n\\text{Borne sup. de } E & & -1+\\alpha & & 0 \\\\\n\\hline\n\\text{Borne inf. de } F & & 1-\\dfrac{\\alpha}{2} & & \\dfrac{1}{2} \\\\\n\\hline\n\\text{Borne sup. de } F & & 1+\\dfrac{\\alpha}{2} & & \\dfrac{3}{2} \\\\\n\\hline\nE \\cap F & \\varnothing & & & \\neq \\varnothing \\\\\n\\hline\n\\end{array}$$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Justifier que $E \\neq \\varnothing$.",
+      "hint": "Vérifiez qu'il existe au moins un $x$ vérifiant $|x+1| < \\alpha$ pour $\\alpha > 0$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer les valeurs de $\\alpha$ (si elles existent) pour lesquelles $E = F$.",
+      "hint": "Écrivez $E = ]-1-\\alpha ; -1+\\alpha[$ et $F = ]1-\\frac{\\alpha}{2} ; 1+\\frac{\\alpha}{2}[$. Pour $E = F$, leurs bornes doivent coïncider : résolvez le système."
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer les valeurs de $\\alpha$ (si elles existent) pour lesquelles $E$ et $F$ sont disjoints.",
+      "hint": "Utilisez le tableau : $E \\cap F = \\varnothing$ si et seulement si la borne supérieure de $E$ est inférieure ou égale à la borne inférieure de $F$, ou vice versa."
+    }
+  ]
+}

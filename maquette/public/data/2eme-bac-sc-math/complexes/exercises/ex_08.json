@@ -1,0 +1,30 @@
+{
+  "id": "ex-complexes-08",
+  "topic": "Nombres complexes - Bac National 2017 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2017,
+  "examenSession": "Rattrapage",
+  "context": "Le plan complexe est rapporté au repère orthonormé direct $\\left(O,\\overrightarrow{e_1},\\overrightarrow{e_2}\\right)$. Soit $M$ le point d'affixe le nombre complexe non nul $z$ et $M'$ le point d'affixe $z'=\\dfrac12\\left(z+\\dfrac1z\\right)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer le nombre complexe $z$ tel que les deux points $M$ et $M'$ soient confondus.",
+      "hint": "Résolvez $z=\\dfrac12\\left(z+\\dfrac1z\\right)$, ce qui se ramène à $z^2=1$."
+    },
+    {
+      "id": "q2",
+      "content": "On suppose que le point $M$ est différent des deux points $A$ et $B$ d'affixes respectifs $1$ et $-1$. Montrer que : $\\dfrac{z'+1}{z'-1}=\\left(\\dfrac{z+1}{z-1}\\right)^2$.",
+      "hint": "Remplacez $z'$ par son expression, mettez $z'+1$ et $z'-1$ au même dénominateur $2z$, factorisez chaque numérateur en repérant une identité remarquable liée à $(z\\pm1)^2$."
+    },
+    {
+      "id": "q3",
+      "content": "Soit $(\\Delta)$ la médiatrice du segment $[AB]$. Montrer que : Si le point $M$ appartient à $(\\Delta)$, alors le point $M'$ appartient à $(\\Delta)$.",
+      "hint": "$M\\in(\\Delta)$ signifie $\\left|\\dfrac{z+1}{z-1}\\right|=1$, c'est-à-dire que $\\dfrac{z+1}{z-1}$ est de module $1$ ; utilisez la relation de la question précédente pour en déduire une propriété analogue sur $\\dfrac{z'+1}{z'-1}$."
+    },
+    {
+      "id": "q4",
+      "content": "Soit $(\\Gamma)$ le cercle dont l'un des diamètres est le segment $[AB]$. Montrer que : Si le point $M$ appartient à $(\\Gamma)$, alors le point $M'$ appartient à $(AB)$.",
+      "hint": "$M\\in(\\Gamma)$ signifie que $\\dfrac{z+1}{z-1}$ est imaginaire pur ; reportez cela dans la relation de la question 2 pour en déduire une propriété (réelle ou non) sur $\\dfrac{z'+1}{z'-1}$, caractéristique de l'appartenance à la droite $(AB)$."
+    }
+  ]
+}

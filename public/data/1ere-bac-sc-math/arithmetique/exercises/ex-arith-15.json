@@ -1,0 +1,31 @@
+{
+  "id": "ch04-ex02",
+  "theme": "arithmetique",
+  "difficulty": "facile",
+  "chapter": "04 - Algorithme d'Euclide",
+  "topic": "Algorithme d'Euclide - PGCD et simplification",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "En utilisant l'algorithme d'Euclide, déterminer $\\text{PGCD}(980 ; 246)$.",
+      "hint": "Appliquez les divisions euclidiennes successives : $980 = q \\cdot 246 + r$, puis continuez avec $246$ et $r$, jusqu'à obtenir un reste nul."
+    },
+    {
+      "id": "q2",
+      "content": "En utilisant l'algorithme d'Euclide, déterminer le $\\text{pgcd}(980, 264)$.",
+      "hint": "Même méthode : divisions euclidiennes successives jusqu'au reste nul."
+    },
+    {
+      "id": "q3",
+      "content": "En utilisant l'algorithme d'Euclide, déterminer $138807 \\wedge 52089$ puis simplifier le nombre : $\\dfrac{138807}{52089}$.",
+      "hint": "Appliquez les divisions euclidiennes successives pour obtenir le PGCD. Puis divisez numérateur et dénominateur par ce PGCD pour simplifier la fraction."
+    },
+    {
+      "id": "q4",
+      "content": "Déterminer : $231 \\wedge 3311$.",
+      "hint": "Appliquez les divisions euclidiennes successives jusqu'au reste nul."
+    }
+  ]
+}

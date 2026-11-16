@@ -1,0 +1,25 @@
+{
+  "id": "ex-07",
+  "theme": "calcul-integral",
+  "difficulty": "moyen",
+  "topic": "Calcul Intégral - IPP itérée et calcul d'aire (Session Juin 2015)",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction définie sur $\\mathbb{R}$ par : $f(x) = (x-2)^2 e^x$. Soit $(C_f)$ la courbe de $f$ dans un repère orthonormé (unité $1\\,\\text{cm}$).",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que : $H : x \\mapsto (x-1)e^x$ est une primitive de la fonction $h : x \\mapsto xe^x$ sur $\\mathbb{R}$, puis calculer $\\displaystyle\\int_0^1 xe^x\\,dx$.",
+      "hint": "\\method Calculez $H'(x)$ en appliquant la règle de dérivation d'un produit. \\tip Pour l'intégrale, appliquez directement $[H(x)]_0^1$."
+    },
+    {
+      "id": "q2",
+      "content": "En utilisant une intégration par parties, montrer que : $\\displaystyle\\int_0^1 x^2 e^x\\,dx = e - 2$.",
+      "hint": "\\method Posez $u = x^2$ et $v' = e^x$. \\tip La nouvelle intégrale fait apparaître $\\int xe^x\\,dx$, dont la valeur vient d'être calculée en question 1."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que l'aire du domaine plan, limité par $(C_f)$, l'axe des abscisses et les droites d'équations $x = 0$ et $x = 1$ est $5(e-2)\\,\\text{cm}^2$.",
+      "hint": "\\method Exprimez $\\displaystyle\\int_0^1 (x-2)^2 e^x\\,dx$ en développant $(x-2)^2 = x^2 - 4x + 4$. \\tip Décomposez l'intégrale en trois intégrales, puis utilisez les résultats des questions 1 et 2."
+    }
+  ]
+}

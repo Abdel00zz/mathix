@@ -1,0 +1,454 @@
+{
+  "questions": [
+    {
+      "id": "ensa-al-01",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "prompt": "Soit $z = \\frac{1+i\\sqrt{3}}{1-i\\sqrt{3}}$. Le module et l'argument de $z$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$|z|=1$ et $\\arg(z)=\\frac{2\\pi}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$|z|=1$ et $\\arg(z)=\\frac{\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$|z|=2$ et $\\arg(z)=\\frac{\\pi}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$|z|=\\sqrt{3}$ et $\\arg(z)=\\pi$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$1+i\\sqrt{3} = 2e^{i\\pi/3}$ et $1-i\\sqrt{3} = 2e^{-i\\pi/3}$. Donc $z = e^{i2\\pi/3}$, d'où $|z|=1$ et $\\arg(z)=\\frac{2\\pi}{3}$. Passage en forme exponentielle pour simplifier les quotients."
+    },
+    {
+      "id": "ensa-al-02",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "prompt": "Les racines cubiques de $-8$ dans $\\mathbb{C}$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2e^{i\\pi/3}, \\; -2, \\; 2e^{-i\\pi/3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-2, \\; 2i, \\; -2i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-2$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2e^{i\\pi/3}, \\; 2e^{i2\\pi/3}, \\; 2e^{i\\pi}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$-8 = 8e^{i\\pi}$. Les racines cubiques sont $z_k = 2e^{i(\\pi+2k\\pi)/3}$ pour $k=0,1,2$ : $z_0 = 2e^{i\\pi/3}$, $z_1 = -2$, $z_2 = 2e^{-i\\pi/3}$. Formule des racines n-ièmes."
+    },
+    {
+      "id": "ensa-al-03",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "prompt": "Le reste de la division de $7^{100}$ par $5$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$7 \\equiv 2 \\pmod{5}$ et $2^4 = 16 \\equiv 1 \\pmod{5}$. Comme $100 = 4 \\times 25$, $7^{100} \\equiv 2^{100} = (2^4)^{25} \\equiv 1 \\pmod{5}$. Petit théorème de Fermat : $a^{p-1} \\equiv 1 \\pmod{p}$."
+    },
+    {
+      "id": "ensa-al-04",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "prompt": "Le PGCD de $2024$ et $1518$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$506$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$253$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1012$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Algorithme d'Euclide : $2024 = 1 \\times 1518 + 506$, puis $1518 = 3 \\times 506 + 0$. Donc $\\text{PGCD}(2024, 1518) = 506$."
+    },
+    {
+      "id": "ensa-al-05",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "prompt": "Soit $(\\mathbb{Z}/5\\mathbb{Z}, +, \\times)$. Cette structure est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un corps commutatif",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un anneau non intègre",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un anneau commutatif non unitaire",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un groupe pour la multiplication",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\mathbb{Z}/5\\mathbb{Z}$ est un corps car $5$ est premier. Théorème : $\\mathbb{Z}/n\\mathbb{Z}$ est un corps ssi $n$ est premier. Tout $\\bar{a} \\neq \\bar{0}$ admet un inverse par Bézout."
+    },
+    {
+      "id": "ensa-al-06",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "prompt": "Soit $G = \\{1, -1, i, -i\\}$ muni de la multiplication. L'ordre de $i$ dans $(G, \\times)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$4$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$i^1=i$, $i^2=-1$, $i^3=-i$, $i^4=1$. Le plus petit $n \\geq 1$ tel que $i^n = 1$ est $n=4$. Ce groupe est cyclique engendré par $i$."
+    },
+    {
+      "id": "ensa-al-07",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "prompt": "L'ensemble des points $M(z)$ tels que $|z - 2| = |z + 2i|$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "La médiatrice de $[A, B]$ avec $A(2,0)$ et $B(0,-2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un cercle de centre l'origine",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'axe des réels",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "L'axe des imaginaires",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|z-2| = |z-(-2i)|$ signifie $MA = MB$ : c'est la médiatrice de $[AB]$. En développant avec $z=x+iy$ : $x + y = 0$. Interprétation géométrique du module."
+    },
+    {
+      "id": "ensa-al-08",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "prompt": "L'équation $15x + 21y = 12$ admet des solutions dans $\\mathbb{Z}^2$ :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, car $\\text{PGCD}(15,21) = 3$ divise $12$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Non, car $15$ et $21$ ne sont pas premiers entre eux",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Oui, uniquement si $12$ est premier",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non, car $12 < 15$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Théorème : $ax+by=c$ admet des solutions entières ssi $\\text{PGCD}(a,b) | c$. Ici $\\text{PGCD}(15,21)=3$ et $3|12$. On simplifie par $3$ : $5x+7y=4$."
+    },
+    {
+      "id": "ensa-al-09",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Espaces vectoriels",
+      "prompt": "Dans $\\mathbb{R}^3$, la famille $\\{(1,0,1), (0,1,1), (1,1,0)\\}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Libre et génératrice (base de $\\mathbb{R}^3$)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Libre mais pas génératrice",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Liée",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Génératrice mais pas libre",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le déterminant $\\begin{vmatrix} 1&0&1 \\\\ 0&1&1 \\\\ 1&1&0 \\end{vmatrix} = -2 \\neq 0$. Famille libre, et $3$ vecteurs libres dans $\\mathbb{R}^3$ de dimension $3$ forment une base."
+    },
+    {
+      "id": "ensa-al-10",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "prompt": "La transformation $T: z \\mapsto iz + 1-i$ a pour point fixe l'affixe :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1+i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1-i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Point fixe : $z = iz + 1-i \\Rightarrow z(1-i) = 1-i \\Rightarrow z = 1$. $T$ est la rotation de centre $1$ et d'angle $\\pi/2$ (coefficient de $z$ : $i = e^{i\\pi/2}$)."
+    },
+    {
+      "id": "ensa-al-11",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "prompt": "Soit $\\star$ sur $\\mathbb{R}$ définie par $a \\star b = a + b + ab$. L'élément neutre est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il n'existe pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On cherche $e$ tel que $a + e + ae = a$ pour tout $a$, soit $e(1+a) = 0$ pour tout $a$, d'où $e = 0$. Vérification : $a \\star 0 = a$. On remarque que $a \\star b = (1+a)(1+b) - 1$."
+    },
+    {
+      "id": "ensa-al-12",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "prompt": "Le nombre $1023 = 2^{10} - 1$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Divisible par $3$ et par $11$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Premier",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Divisible par $7$ mais pas par $3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une puissance de $3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$1023 = 3 \\times 341 = 3 \\times 11 \\times 31$. Par congruences : $2^2 \\equiv 1 \\pmod{3}$ donc $2^{10} \\equiv 1 \\pmod{3}$, et $2^5 \\equiv 32 \\equiv -1 \\pmod{11}$ donc $2^{10} \\equiv 1 \\pmod{11}$."
+    },
+    {
+      "id": "ensa-al-13",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Espaces vectoriels",
+      "prompt": "Le sous-espace $F = \\{(x,y,z) \\in \\mathbb{R}^3 : x+2y-z=0\\}$ a pour dimension :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$F = \\ker \\varphi$ avec $\\varphi(x,y,z)=x+2y-z$ forme linéaire non nulle. Théorème du rang : $\\dim F = 3 - 1 = 2$. Base de $F$ : $\\{(2,-1,0), (1,0,1)\\}$."
+    },
+    {
+      "id": "ensa-al-14",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "prompt": "Si $z = 1+i$, la valeur de $z^8$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$16$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-16$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$16i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$256$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$z = \\sqrt{2}e^{i\\pi/4}$, donc $z^8 = (\\sqrt{2})^8 e^{i \\cdot 2\\pi} = 16$. Ou : $(1+i)^2 = 2i$, $(1+i)^4 = -4$, $(1+i)^8 = 16$."
+    },
+    {
+      "id": "ensa-al-15",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "prompt": "Les éléments inversibles de $(\\mathbb{Z}/6\\mathbb{Z}, \\times)$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{\\bar{1}, \\bar{5}\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\{\\bar{1}, \\bar{2}, \\bar{3}, \\bar{4}, \\bar{5}\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{\\bar{1}\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\{\\bar{1}, \\bar{3}, \\bar{5}\\}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\bar{a}$ inversible ssi $\\text{PGCD}(a,6)=1$. Parmi $\\{1,...,5\\}$, seuls $1$ et $5$ sont premiers avec $6$. On vérifie : $\\bar{5}^2 = \\overline{25} = \\bar{1}$. Cardinal : $\\varphi(6) = 2$."
+    }
+  ]
+}

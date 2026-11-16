@@ -1,0 +1,522 @@
+{
+  "header": {
+    "title": "Dérivation et étude des fonctions",
+    "subtitle": "Nombre dérivé, calculs, variations, convexité, asymptotes, symétries et étude complète",
+    "context": "2BAC Sciences - SVT et PC"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "La dérivation permet d'\\objectif{relier la variation locale d'une fonction à l'évolution globale de sa courbe}. La \\defi{difficulté principale} consiste à coordonner le calcul de la dérivée, son signe, les limites, les asymptotes et la convexité. Une étude complète rassemble ces informations pour construire une représentation cohérente de la fonction. \\savant{Isaac Newton} participa à la fondation du calcul différentiel, devenu essentiel pour modéliser les mouvements, les variations et les phénomènes scientifiques.",
+          "media": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/3/39/GodfreyKneller-IsaacNewton-1689.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "15%",
+            "caption": "Isaac Newton (1643-1727)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "variation_locale",
+      "category": "course",
+      "title": "Variation locale et nombre dérivé",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une variation moyenne compare deux points d'une courbe. En rapprochant ces points, on obtient une mesure locale qui conduit au nombre dérivé et à la tangente."
+        },
+        {
+          "type": "definition",
+          "title": "Que mesure \\mathqst{le taux d'accroissement d'une fonction} ?",
+          "content": "Le \\textbf{taux d'accroissement} de $f$ entre $a$ et $x$, avec $x\\neq a$, est $$\\boxed{\\dfrac{f(x)-f(a)}{x-a}}$$ En posant $x=a+h$, il s'écrit aussi $\\dfrac{f(a+h)-f(a)}{h}$ avec $h\\neq0$."
+        },
+        {
+          "type": "definition",
+          "title": "Quand existe \\mathqst{le nombre dérivé $f'(a)$} ?",
+          "content": "La fonction $f$ est \\textbf{dérivable en $a$} lorsque la limite suivante existe et est finie : $$\\boxed{f'(a)=\\displaystyle\\lim_{x\\to a}\\dfrac{f(x)-f(a)}{x-a}=\\displaystyle\\lim_{h\\to0}\\dfrac{f(a+h)-f(a)}{h}}$$ Le réel $f'(a)$ est le \\textbf{nombre dérivé} de $f$ en $a$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons le nombre dérivé en $a$ de la fonction $f(x)=x^2$.}\\par\\smallskip Pour $h\\neq0$, $$\\dfrac{f(a+h)-f(a)}{h}=\\dfrac{(a+h)^2-a^2}{h}=\\blank{2a+h}.$$ Lorsque $h\\to0$, cette expression tend vers $\\blank{2a}$. Ainsi $$\\boxed{f'(a)=\\blank{2a}}$$ En particulier, $f'(1)=\\blank{2}$."
+        },
+        {
+          "type": "property",
+          "title": "Quel lien unit \\mathqst{dérivabilité et continuité en un point} ?",
+          "content": "Toute fonction dérivable en $a$ est continue en $a$. La réciproque est fausse : une fonction peut être continue en un point sans y être dérivable."
+        },
+        {
+          "type": "warning",
+          "content": "Pour montrer que $f$ n'est pas dérivable en $a$, il suffit de vérifier que le taux d'accroissement n'admet pas de limite finie, ou que ses limites à gauche et à droite sont différentes."
+        },
+        {
+          "type": "property",
+          "title": "Comment interpréter \\mathqst{$f'(a)$ comme pente d'une tangente} ?",
+          "content": "Soit $A(a,f(a))$ un point de la courbe $\\mathcal C_f$. Si $f$ est dérivable en $a$, alors $f'(a)$ est le coefficient directeur de la tangente en $A$. Son équation est $$\\boxed{y=f(a)+f'(a)(x-a)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons la tangente à la courbe de $f(x)=2x^2$ au point d'abscisse $1$.}\\par\\smallskip On a $f(1)=\\blank{2}$ et $f'(x)=\\blank{4x}$, donc $f'(1)=\\blank{4}$. Ainsi $$y=2+4(x-1),$$ d'où $$\\boxed{y=\\blank{4x-2}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons l'équation de la tangente à la courbe de $f(x)=x^3-2x+1$ au point d'abscisse $1$.}\\par\\smallskip On calcule $f(1)=\\blank{0}$ et $f'(x)=\\blank{3x^2-2}$, donc $f'(1)=\\blank{1}$. La tangente a pour équation $$y=0+1(x-1).$$ Ainsi $$\\boxed{y=\\blank{x-1}}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Que signifient \\mathqst{les dérivées à droite et à gauche} ?",
+          "content": "La \\textbf{dérivée à droite} de $f$ en $a$ est $$f'_d(a)=\\displaystyle\\lim_{h\\to0^+}\\dfrac{f(a+h)-f(a)}{h},$$ lorsque cette limite existe et est finie. La \\textbf{dérivée à gauche} est $$f'_g(a)=\\displaystyle\\lim_{h\\to0^-}\\dfrac{f(a+h)-f(a)}{h}.$$"
+        },
+        {
+          "type": "property",
+          "title": "Quand les dérivées latérales donnent-elles \\mathqst{la dérivabilité en $a$} ?",
+          "content": "La fonction $f$ est dérivable en $a$ si et seulement si elle est dérivable à droite et à gauche en $a$ et si $$\\boxed{f'_d(a)=f'_g(a)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Étudions la dérivabilité en $0$ de la fonction $f(x)=|x|$.}\\par\\smallskip Pour $h>0$, $\\dfrac{f(h)-f(0)}{h}=\\dfrac{h}{h}=\\blank{1}$, donc $f'_d(0)=1$. Pour $h<0$, $\\dfrac{f(h)-f(0)}{h}=\\dfrac{-h}{h}=\\blank{-1}$, donc $f'_g(0)=-1$. Les deux valeurs sont différentes. Ainsi, $f$ est $\\blank{non\\ dérivable}$ en $0$ et la courbe possède un point anguleux à l'origine."
+        },
+        {
+          "type": "property",
+          "title": "Que représentent \\mathqst{les demi-tangentes en un point} ?",
+          "content": "Si $f'_d(a)$ est fini, la courbe possède à droite de $A(a,f(a))$ une demi-tangente de coefficient directeur $f'_d(a)$. Une propriété analogue vaut à gauche. Si une dérivée latérale vaut $+\\infty$ ou $-\\infty$, la demi-tangente correspondante est verticale et son support est $x=a$."
+        },
+        {
+          "type": "warning",
+          "content": "Un \\textbf{point anguleux} possède deux demi-tangentes non verticales de coefficients directeurs finis et différents. Une pointe ou une tangente verticale correspond à un taux d'accroissement qui devient infini."
+        },
+        {
+          "type": "property",
+          "title": "Comment obtenir \\mathqst{une approximation affine près de $a$} ?",
+          "content": "Si $f$ est dérivable en $a$, alors, pour $h$ proche de $0$, $$\\boxed{f(a+h)\\approx f(a)+hf'(a)}$$ De manière équivalente, pour $x$ proche de $a$, $f(x)\\approx f(a)+f'(a)(x-a)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Estimons $\\sqrt{9,002}$ par une approximation affine au voisinage de $9$.}\\par\\smallskip Pour $f(x)=\\sqrt{x}$, on a $f(9)=3$ et $f'(9)=\\blank{\\dfrac16}$. Avec $h=0,002$, $$f(9+h)\\approx3+0,002\\times\\dfrac16.$$ Ainsi $$\\boxed{\\sqrt{9,002}\\approx\\blank{3,000333}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{À l'aide d'une approximation affine, estimons :\\begin{enumerate}\\item $\\sqrt{16,04}$ ;\\item $\\dfrac1{0,998}$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour $f(x)=\\sqrt{x}$ au voisinage de $16$, $f(16)=4$ et $f'(16)=\\dfrac18$. Avec $h=0,04$, on obtient $\\sqrt{16,04}\\approx4+\\blank{\\dfrac{0,04}{8}}$, donc $\\boxed{\\sqrt{16,04}\\approx\\blank{4,005}}$.\\item Pour $g(x)=\\dfrac1x$ au voisinage de $1$, $g(1)=1$ et $g'(1)=-1$. Avec $h=-0,002$, on obtient $g(1+h)\\approx1-h$, donc $\\boxed{\\dfrac1{0,998}\\approx\\blank{1,002}}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "calcul_derivees",
+      "category": "course",
+      "title": "Calcul des fonctions dérivées",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le nombre dérivé décrit une variation en un point. Lorsqu'il existe en chaque point d'un intervalle, il forme une nouvelle fonction que l'on calcule à l'aide de règles précises."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{la fonction dérivée de $f$} ?",
+          "content": "Soit $f$ une fonction dérivable sur un intervalle $I$. La fonction qui associe à tout $x\\in I$ le nombre dérivé $f'(x)$ s'appelle la \\textbf{fonction dérivée} de $f$ et se note $f'$."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{la dérivée seconde et les dérivées successives} ?",
+          "content": "Si $f'$ est dérivable, sa dérivée se note $f''$ et s'appelle la \\textbf{dérivée seconde} de $f$. Plus généralement, la dérivée d'ordre $n$ se note $f^{(n)}$."
+        },
+        {
+          "type": "property",
+          "title": "Que signifie \\mathqst{être dérivable sur un segment} ?",
+          "content": "Sur un segment $[a,b]$, dire que $f$ est dérivable signifie qu'elle est dérivable sur $]a,b[$, dérivable à droite en $a$ et dérivable à gauche en $b$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les dérivées usuelles à connaître} ?",
+          "content": "Les dérivées usuelles sont regroupées dans le tableau suivant : $$\\begin{array}{c|c|c}f(x)&\\text{Domaine de dérivabilité}&f'(x)\\\\\\hline c&\\mathbb R&0\\\\ x&\\mathbb R&1\\\\ x^n\\ (n\\in\\mathbb N^*)&\\mathbb R&nx^{n-1}\\\\ \\dfrac1x&\\mathbb R^*&-\\dfrac1{x^2}\\\\ \\sqrt{x}&]0,+\\infty[&\\dfrac1{2\\sqrt{x}}\\\\ \\sin x&\\mathbb R&\\cos x\\\\ \\cos x&\\mathbb R&-\\sin x\\\\ \\tan x&\\mathbb R\\setminus\\left\\{\\dfrac\\pi2+k\\pi\\right\\}&\\dfrac1{\\cos^2x}=1+\\tan^2x\\end{array}$$"
+        },
+        {
+          "type": "warning",
+          "content": "La fonction $x\\mapsto\\sqrt{x}$ est continue en $0$, mais elle n'est pas dérivable en $0$ au sens usuel : son taux d'accroissement tend vers $+\\infty$ à droite."
+        },
+        {
+          "type": "property",
+          "title": "Comment dériver \\mathqst{une somme, un produit ou un quotient} ?",
+          "content": "Soient $u$ et $v$ deux fonctions dérivables sur un intervalle $I$, et $\\lambda\\in\\mathbb R$. Alors : $$\\boxed{(u+v)'=u'+v',\\qquad(\\lambda u)'=\\lambda u',\\qquad(uv)'=u'v+uv'}$$ Lorsque $v$ ne s'annule pas sur $I$ : $$\\boxed{\\left(\\dfrac1v\\right)'=-\\dfrac{v'}{v^2},\\qquad\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons la dérivée de $f(x)=\\dfrac{x^2+1}{x-1}$ pour $x\\neq1$.}\\par\\smallskip La formule du quotient donne $$f'(x)=\\dfrac{2x(x-1)-(x^2+1)}{(x-1)^2}.$$ Après réduction, le numérateur devient $\\blank{x^2-2x-1}$. Ainsi $$\\boxed{f'(x)=\\blank{\\dfrac{x^2-2x-1}{(x-1)^2}}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons les dérivées des fonctions :\\begin{enumerate}\\item $f(x)=(3x-1)(x^2+2)$ ;\\item $g(x)=\\dfrac{2x+1}{x^2+1}$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On applique la formule du produit : $f'(x)=3(x^2+2)+(3x-1)2x$. Donc $$\\boxed{f'(x)=\\blank{9x^2-2x+6}}$$\\item On applique la formule du quotient : $$g'(x)=\\dfrac{2(x^2+1)-(2x+1)2x}{(x^2+1)^2}.$$ Ainsi $$\\boxed{g'(x)=\\blank{\\dfrac{-2x^2-2x+2}{(x^2+1)^2}}}$$\\end{enumerate}"
+        },
+        {
+          "type": "property",
+          "title": "Que vaut \\mathqst{la dérivée d'une puissance de fonction} ?",
+          "content": "Si $u$ est dérivable sur $I$ et si $n\\in\\mathbb N^*$, alors $$\\boxed{(u^n)'=nu^{n-1}u'}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Dérivons $g(x)=(-2x^4+5x^2+x-3)^7$.}\\par\\smallskip On pose $u(x)=-2x^4+5x^2+x-3$. Alors $u'(x)=\\blank{-8x^3+10x+1}$. Par la formule de dérivation d'une puissance, $$\\boxed{g'(x)=\\blank{7(-2x^4+5x^2+x-3)^6(-8x^3+10x+1)}}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment dériver \\mathqst{une fonction composée $v\\circ u$} ?",
+          "content": "Si $u$ est dérivable en $x$ et si $v$ est dérivable en $u(x)$, alors la composée $v\\circ u$ est dérivable en $x$ et $$\\boxed{(v\\circ u)'(x)=u'(x)v'(u(x))}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles formules donnent \\mathqst{les dérivées composées usuelles} ?",
+          "content": "Les formes composées usuelles donnent : $$\\begin{array}{c|c}[u(x)]^n&nu(x)^{n-1}u'(x)\\\\ \\sqrt{u(x)}&\\dfrac{u'(x)}{2\\sqrt{u(x)}}\\quad(u(x)>0)\\\\ \\sin(u(x))&u'(x)\\cos(u(x))\\\\ \\cos(u(x))&-u'(x)\\sin(u(x))\\\\ \\tan(u(x))&\\dfrac{u'(x)}{\\cos^2(u(x))}\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Dérivons $f(x)=\\sin\\left(\\dfrac{\\pi x}{1+x^2}\\right)$.}\\par\\smallskip On pose $u(x)=\\dfrac{\\pi x}{1+x^2}$. La formule du quotient donne $$u'(x)=\\blank{\\dfrac{\\pi(1-x^2)}{(1+x^2)^2}}.$$ Donc $$\\boxed{f'(x)=\\blank{\\dfrac{\\pi(1-x^2)}{(1+x^2)^2}\\cos\\left(\\dfrac{\\pi x}{1+x^2}\\right)}}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Quand peut-on dériver \\mathqst{une fonction réciproque} ?",
+          "content": "Soit $f$ continue et strictement monotone sur un intervalle $I$, et soit $J=f(I)$. Si $f$ est dérivable en $a\\in I$ et si $f'(a)\\neq0$, alors $f^{-1}$ est dérivable en $f(a)$ et $$\\boxed{(f^{-1})'(f(a))=\\dfrac1{f'(a)}}$$ Pour $y\\in J$, $$(f^{-1})'(y)=\\dfrac1{f'(f^{-1}(y))}.$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Retrouvons la dérivée de la fonction racine carrée à l'aide de la fonction réciproque.}\\par\\smallskip La fonction $f(x)=x^2$ est continue et strictement croissante sur $[0,+\\infty[$. Sa réciproque est $f^{-1}(x)=\\sqrt{x}$. Pour $x>0$, on pose $a=\\sqrt{x}$. Comme $f'(a)=\\blank{2a}$, $$\\boxed{(f^{-1})'(x)=\\dfrac1{2a}=\\blank{\\dfrac1{2\\sqrt{x}}}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment dériver \\mathqst{une puissance rationnelle} ?",
+          "content": "Pour $r\\in\\mathbb Q$ et $x>0$, $$\\boxed{(x^r)'=rx^{r-1}}$$ Si $u$ est strictement positive et dérivable, alors $$(u^r)'=ru^{r-1}u'.$$"
+        },
+        {
+          "type": "warning",
+          "content": "Avant d'appliquer une formule contenant une racine ou une puissance rationnelle, il faut vérifier le domaine de définition et la condition de positivité."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons les dérivées suivantes :\\begin{enumerate}\\item $f(x)=3x^5-2x^3+7$ ;\\item $g(x)=\\dfrac{x^2+2x}{x-1}$ ;\\item $h(x)=\\sqrt{2x^2+1}$ ;\\item $k(x)=\\cos(3x-1)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item $\\boxed{f'(x)=\\blank{15x^4-6x^2}}$.\\item Pour $x\\neq1$, $\\boxed{g'(x)=\\blank{\\dfrac{x^2-2x-2}{(x-1)^2}}}$.\\item $\\boxed{h'(x)=\\blank{\\dfrac{2x}{\\sqrt{2x^2+1}}}}$.\\item $\\boxed{k'(x)=\\blank{-3\\sin(3x-1)}}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "variations_extrema",
+      "category": "course",
+      "title": "Variations, extrema et résolution d'équations",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La fonction dérivée ne sert pas seulement à calculer une pente. Son signe indique le sens de variation de la fonction et permet d'étudier les extrema ainsi que l'unicité de certaines solutions."
+        },
+        {
+          "type": "theorem",
+          "title": "Quel lien existe entre \\mathqst{le signe de $f'$ et les variations} ?",
+          "content": "Soit $f$ une fonction dérivable sur un intervalle $I$.\\begin{itemize}\\item Si $f'(x)\\geq0$ sur $I$, alors $f$ est croissante sur $I$.\\item Si $f'(x)\\leq0$ sur $I$, alors $f$ est décroissante sur $I$.\\item Si $f'(x)=0$ pour tout $x\\in I$, alors $f$ est constante sur $I$.\\end{itemize} Si $f'$ est strictement positive, sauf éventuellement en un nombre fini de points, alors $f$ est strictement croissante. Une formulation analogue vaut pour la stricte décroissance."
+        },
+        {
+          "type": "method",
+          "title": "Comment conduire \\mathqst{une étude complète des variations} ?",
+          "content": "Pour étudier les variations de $f$, on détermine son domaine, on calcule $f'(x)$, puis on factorise la dérivée lorsque cela est possible. On étudie ensuite son signe, on calcule les valeurs et les limites utiles, puis on construit le tableau de variations."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Étudions les variations de $f(x)=(2x+4)^2$.}\\par\\smallskip On a $f'(x)=\\blank{8(x+2)}$. Ainsi, $f'(x)<0$ pour $x<-2$ et $f'(x)>0$ pour $x>-2$. La fonction est décroissante sur $]-\\infty,-2]$, puis croissante sur $[-2,+\\infty[$. De plus, $f(-2)=\\blank{0}$. $$\\begin{array}{c|ccc}x&-\\infty&-2&+\\infty\\\\\\hline f'(x)&-&0&+\\\\\\hline f(x)&+\\infty&\\searrow0\\nearrow&+\\infty\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions les variations de $g(x)=x^3-3x^2-9x+1$.}\\par\\smallskip On calcule $$g'(x)=3x^2-6x-9=\\blank{3(x+1)(x-3)}.$$ La dérivée est positive sur $]-\\infty,-1[\\cup]3,+\\infty[$ et négative sur $]-1,3[$. On obtient $g(-1)=\\blank{6}$ et $g(3)=\\blank{-26}$. Ainsi, $g$ est croissante sur $]-\\infty,-1]$, décroissante sur $[-1,3]$, puis croissante sur $[3,+\\infty[$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{un extremum local d'une fonction} ?",
+          "content": "La fonction $f$ admet un \\textbf{maximum local} en $a$ lorsque $f(x)\\leq f(a)$ pour tout $x$ suffisamment proche de $a$. Elle admet un \\textbf{minimum local} en $a$ lorsque $f(x)\\geq f(a)$ au voisinage de $a$."
+        },
+        {
+          "type": "property",
+          "title": "Quelle condition nécessaire vérifie \\mathqst{un extremum local dérivable} ?",
+          "content": "Si $f$ est dérivable en un point intérieur $a$ de son domaine et si $f$ admet un extremum local en $a$, alors $$\\boxed{f'(a)=0}$$"
+        },
+        {
+          "type": "warning",
+          "content": "La condition $f'(a)=0$ n'est pas suffisante. Pour $f(x)=x^3$, on a $f'(0)=0$, mais la fonction ne possède aucun extremum en $0$."
+        },
+        {
+          "type": "property",
+          "title": "Comment reconnaître \\mathqst{un extremum par changement de signe} ?",
+          "content": "Si $f'$ change de signe en $a$, alors $f(a)$ est un extremum local. Un passage de $+$ à $-$ donne un maximum local. Un passage de $-$ à $+$ donne un minimum local."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons les extrema locaux de $f(x)=x^3-3x$.}\\par\\smallskip On a $$f'(x)=3x^2-3=\\blank{3(x-1)(x+1)}.$$ La dérivée est positive sur $]-\\infty,-1[\\cup]1,+\\infty[$ et négative sur $]-1,1[$. Elle passe de $+$ à $-$ en $-1$, puis de $-$ à $+$ en $1$. Ainsi, $$\\boxed{f(-1)=\\blank{2}\\text{ est un maximum local}}$$ et $$\\boxed{f(1)=\\blank{-2}\\text{ est un minimum local}}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Quand les variations assurent-elles \\mathqst{l'unicité d'une solution} ?",
+          "content": "Si $f$ est continue et strictement monotone sur un intervalle $I$, alors l'équation $f(x)=\\lambda$ possède au plus une solution dans $I$. Si, de plus, $\\lambda\\in f(I)$, cette solution existe et elle est unique."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Montrons que l'équation $x^3+x-1=0$ admet une unique solution dans $]0,1[$.}\\par\\smallskip Posons $f(x)=x^3+x-1$. On a $f'(x)=\\blank{3x^2+1}>0$ sur $\\mathbb R$, donc $f$ est strictement croissante. De plus, $f(0)=\\blank{-1}<0$ et $f(1)=\\blank{1}>0$. Par continuité, l'équation admet une solution dans $]0,1[$. La stricte croissance garantit que cette solution est $\\blank{unique}$."
+        }
+      ]
+    },
+    {
+      "id": "convexite",
+      "category": "course",
+      "title": "Convexité et points d'inflexion",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les variations décrivent le sens de déplacement de la courbe. La dérivée seconde précise maintenant sa forme et permet de comparer la courbe à ses tangentes."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{la convexité et la concavité} ?",
+          "content": "Une fonction est \\textbf{convexe} sur un intervalle $I$ lorsque sa courbe est située au-dessus de chacune de ses tangentes sur $I$. Elle est \\textbf{concave} lorsque sa courbe est située au-dessous de ses tangentes."
+        },
+        {
+          "type": "theorem",
+          "title": "Quel signe de $f''$ caractérise \\mathqst{la convexité d'une fonction} ?",
+          "content": "Soit $f$ deux fois dérivable sur un intervalle $I$.\\begin{itemize}\\item Si $f''(x)\\geq0$ sur $I$, alors $f$ est convexe sur $I$.\\item Si $f''(x)\\leq0$ sur $I$, alors $f$ est concave sur $I$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment situer \\mathqst{une courbe par rapport à sa tangente} ?",
+          "content": "Pour étudier la position de $\\mathcal C_f$ par rapport à la tangente $T$ au point d'abscisse $a$, on écrit $T(x)=f(a)+f'(a)(x-a)$. On calcule ensuite $f(x)-T(x)$ et on étudie son signe. Une différence positive place la courbe au-dessus de la tangente, une différence négative la place au-dessous."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions la position de la courbe de $f(x)=x^2$ par rapport à sa tangente au point d'abscisse $a$.}\\par\\smallskip On a $f'(a)=2a$. La tangente est $$T(x)=a^2+2a(x-a)=\\blank{2ax-a^2}.$$ Or $$f(x)-T(x)=x^2-2ax+a^2=\\blank{(x-a)^2}\\geq0.$$ La courbe est donc $\\blank{au-dessus}$ de toutes ses tangentes, ce qui confirme sa convexité sur $\\mathbb R$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{un point d'inflexion de la courbe} ?",
+          "content": "Un point $A(a,f(a))$ est un \\textbf{point d'inflexion} lorsque la courbe change de convexité en $a$. La tangente en ce point traverse généralement la courbe."
+        },
+        {
+          "type": "property",
+          "title": "Comment reconnaître \\mathqst{un point d'inflexion avec $f''$} ?",
+          "content": "Si $f''$ change de signe en $a$, alors le point $A(a,f(a))$ est un point d'inflexion. Lorsque $f''(a)$ existe, on a nécessairement $f''(a)=0$."
+        },
+        {
+          "type": "warning",
+          "content": "L'égalité $f''(a)=0$ ne suffit pas. Il faut vérifier que $f''$ change réellement de signe au voisinage de $a$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions la convexité de $f(x)=x^3-3x$ et déterminons son point d'inflexion.}\\par\\smallskip On a $f''(x)=\\blank{6x}$. Cette dérivée seconde est négative sur $]-\\infty,0[$ et positive sur $]0,+\\infty[$. La fonction est donc concave à gauche de $0$ et convexe à droite. Comme $f(0)=0$, l'origine est un $\\blank{point\\ d'inflexion}$. La tangente en $0$ a pour équation $\\boxed{y=\\blank{-3x}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Étudions la convexité et déterminons les points d'inflexion de $f(x)=x^4-4x^2$.}\\par\\smallskip On calcule $$f''(x)=12x^2-8=\\blank{4(3x^2-2)}.$$ Cette dérivée seconde s'annule pour $x=\\blank{-\\sqrt{\\frac23}}$ et $x=\\blank{\\sqrt{\\frac23}}$. Elle est positive à l'extérieur de ces deux valeurs et négative entre elles. La courbe possède donc deux points d'inflexion : $$\\boxed{\\left(-\\sqrt{\\frac23},\\blank{-\\frac{20}{9}}\\right)\\quad\\text{et}\\quad\\left(\\sqrt{\\frac23},\\blank{-\\frac{20}{9}}\\right)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Étudions la convexité de $g(x)=x^4-4x^2+2$ et déterminons ses points d'inflexion.}\\par\\smallskip On a encore $g''(x)=\\blank{4(3x^2-2)}$. La fonction est convexe sur $]-\\infty,-\\sqrt{\\frac23}]\\cup[\\sqrt{\\frac23},+\\infty[$ et concave entre ces deux valeurs. Pour $x^2=\\dfrac23$, on obtient $g(x)=\\blank{-\\dfrac29}$. Les points d'inflexion sont donc $$\\boxed{\\left(-\\sqrt{\\frac23},-\\frac29\\right)\\quad\\text{et}\\quad\\left(\\sqrt{\\frac23},-\\frac29\\right)}$$"
+        }
+      ]
+    },
+    {
+      "id": "asymptotes",
+      "category": "course",
+      "title": "Asymptotes et comportement infini",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les limites aux bornes du domaine décrivent les branches éloignées de la courbe. Elles permettent d'identifier des droites qui guident la représentation graphique."
+        },
+        {
+          "type": "definition",
+          "title": "Quand obtient-on \\mathqst{une asymptote verticale $x=a$} ?",
+          "content": "La droite d'équation $x=a$ est une \\textbf{asymptote verticale} à $\\mathcal C_f$ lorsqu'au moins l'une des limites $\\displaystyle\\lim_{x\\to a^-}f(x)$ ou $\\displaystyle\\lim_{x\\to a^+}f(x)$ vaut $+\\infty$ ou $-\\infty$."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Déterminons l'asymptote verticale de $f(x)=\\dfrac1{x-1}$.}\\par\\smallskip On a $$\\displaystyle\\lim_{x\\to1^-}f(x)=\\blank{-\\infty}\\qquad\\text{et}\\qquad\\displaystyle\\lim_{x\\to1^+}f(x)=\\blank{+\\infty}.$$ Ainsi, $$\\boxed{x=\\blank{1}\\text{ est une asymptote verticale}}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Quand apparaît \\mathqst{une asymptote horizontale $y=b$} ?",
+          "content": "Si $\\displaystyle\\lim_{x\\to+\\infty}f(x)=b$, alors la droite $y=b$ est une \\textbf{asymptote horizontale} à $\\mathcal C_f$ au voisinage de $+\\infty$. Une définition analogue vaut au voisinage de $-\\infty$."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Déterminons les asymptotes horizontales de $f(x)=2+\\dfrac1{x^2+1}$.}\\par\\smallskip Lorsque $x\\to+\\infty$ ou $x\\to-\\infty$, le quotient $\\dfrac1{x^2+1}$ tend vers $\\blank{0}$. Ainsi $$\\boxed{y=\\blank{2}\\text{ est une asymptote horizontale aux deux infinis}}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Comment caractériser \\mathqst{une asymptote oblique $y=mx+p$} ?",
+          "content": "La droite $y=mx+p$, avec $m\\neq0$, est une \\textbf{asymptote oblique} à $\\mathcal C_f$ au voisinage de $+\\infty$ ou de $-\\infty$ lorsque $$\\boxed{\\displaystyle\\lim_{x\\to\\pm\\infty}\\left(f(x)-(mx+p)\\right)=0}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment déterminer \\mathqst{les coefficients d'une asymptote oblique} ?",
+          "content": "Lorsque les limites existent et sont finies, on cherche d'abord $$m=\\displaystyle\\lim_{x\\to\\pm\\infty}\\dfrac{f(x)}x,$$ puis $$p=\\displaystyle\\lim_{x\\to\\pm\\infty}\\left(f(x)-mx\\right).$$ Il faut enfin vérifier que $f(x)-(mx+p)$ tend vers zéro."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons l'asymptote oblique de $f(x)=x+3+\\dfrac{x+7}{x-1}$.}\\par\\smallskip On écrit $$\\dfrac{x+7}{x-1}=1+\\dfrac8{x-1},$$ donc $$f(x)=x+4+\\blank{\\dfrac8{x-1}}.$$ Comme ce dernier terme tend vers $0$ aux deux infinis, $$\\boxed{y=\\blank{x+4}\\text{ est une asymptote oblique}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment étudier \\mathqst{la position relative à une asymptote} ?",
+          "content": "Si $D$ a pour équation $y=mx+p$, on étudie le signe de $f(x)-(mx+p)$. Une différence positive place $\\mathcal C_f$ au-dessus de $D$. Une différence négative la place au-dessous."
+        },
+        {
+          "type": "property",
+          "title": "Que révèlent \\mathqst{les directions des branches paraboliques} ?",
+          "content": "Lorsque $|f(x)|\\to+\\infty$ mais qu'aucune asymptote affine n'existe, on peut préciser une direction de branche.\\begin{itemize}\\item Si $\\dfrac{f(x)}x\\to0$, la direction est celle de l'axe des abscisses.\\item Si $\\dfrac{f(x)}x\\to\\pm\\infty$, la direction est celle de l'axe des ordonnées.\\item Si $\\dfrac{f(x)}x\\to m\\neq0$ et $f(x)-mx\\to\\pm\\infty$, la direction est celle de la droite $y=mx$.\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Une direction de branche n'est pas une asymptote. La distance entre la courbe et la droite de direction ne tend pas nécessairement vers zéro."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons les asymptotes de $h(x)=\\dfrac{2x^2+1}{x-1}$ et la position de la courbe par rapport à l'asymptote oblique.}\\par\\smallskip La division euclidienne donne $$h(x)=\\blank{2x+2+\\dfrac3{x-1}}.$$ La droite $x=\\blank{1}$ est une asymptote verticale et la droite $y=\\blank{2x+2}$ est une asymptote oblique. De plus, $$h(x)-(2x+2)=\\dfrac3{x-1}.$$ La courbe est donc $\\blank{au-dessous}$ de l'asymptote pour $x<1$ et $\\blank{au-dessus}$ pour $x>1$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Une courbe possède l'asymptote $D:y=2x-1$ et vérifie $f(x)-(2x-1)=\\dfrac{x-3}{x^2+1}$. Déterminons sa position par rapport à $D$ sur $[0,+\\infty[$.}\\par\\smallskip Le dénominateur $x^2+1$ est toujours positif. Le signe de la différence est donc celui de $x-3$. La courbe est $\\blank{au-dessous}$ de $D$ sur $[0,3[$, elle rencontre $D$ pour $x=\\blank{3}$, puis elle est $\\blank{au-dessus}$ sur $]3,+\\infty[$."
+        }
+      ]
+    },
+    {
+      "id": "symetries",
+      "category": "course",
+      "title": "Symétries et réduction de l'étude",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans le plan muni d'un repère, certaines courbes possèdent un axe ou un centre de symétrie. Cette propriété permet de réduire l'étude à une partie du domaine, puis de compléter la représentation."
+        },
+        {
+          "type": "property",
+          "title": "Comment reconnaître \\mathqst{un axe de symétrie vertical} ?",
+          "content": "La droite $x=a$ est un axe de symétrie de $\\mathcal C_f$ si le domaine est stable par la transformation $x\\mapsto2a-x$ et si $$\\boxed{f(2a-x)=f(x)}$$ pour tout $x$ du domaine."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Montrons que la courbe de $f(x)=(x-2)^2+1$ possède un axe de symétrie.}\\par\\smallskip On calcule $$f(4-x)=(2-x)^2+1=\\blank{(x-2)^2+1}=f(x).$$ Ainsi $$\\boxed{x=\\blank{2}\\text{ est un axe de symétrie}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quand un point $I(a,b)$ est-il \\mathqst{centre de symétrie} ?",
+          "content": "Le point $I(a,b)$ est un centre de symétrie de $\\mathcal C_f$ si le domaine est stable par $x\\mapsto2a-x$ et si $$\\boxed{f(2a-x)+f(x)=2b}$$ pour tout $x$ du domaine."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Montrons que la courbe de $f(x)=x+1+\\dfrac2{x-1}$ possède un centre de symétrie.}\\par\\smallskip On pose $x=1+t$. Alors $$f(1+t)-2=t+\\dfrac2t.$$ Cette expression est une fonction $\\blank{impaire}$ de $t$. Ainsi $$\\boxed{I(\\blank{1},\\blank{2})\\text{ est un centre de symétrie}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quels cas particuliers donnent \\mathqst{la parité d'une fonction} ?",
+          "content": "Si $f(-x)=f(x)$, alors $f$ est paire et l'axe des ordonnées est un axe de symétrie. Si $f(-x)=-f(x)$, alors $f$ est impaire et l'origine est un centre de symétrie."
+        },
+        {
+          "type": "remark",
+          "content": "Une symétrie permet d'étudier la fonction sur une partie du domaine, puis d'obtenir le reste de la courbe par transformation géométrique."
+        }
+      ]
+    },
+    {
+      "id": "etude_complete",
+      "category": "course",
+      "title": "Organisation d'une étude complète de fonction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les résultats précédents décrivent séparément la pente, les variations, la forme et les branches d'une courbe. Une étude complète les rassemble dans un ordre cohérent afin d'éviter les oublis et les contradictions."
+        },
+        {
+          "type": "method",
+          "title": "Dans quel ordre conduire \\mathqst{une étude complète de fonction} ?",
+          "content": "Une étude complète peut suivre l'ordre suivant :\\begin{itemize}\\item déterminer le domaine de définition ;\\item rechercher une parité, un axe ou un centre de symétrie ;\\item calculer les limites aux bornes du domaine ;\\item identifier les asymptotes et la position relative de la courbe ;\\item calculer $f'$, étudier son signe et dresser le tableau de variations ;\\item calculer $f''$ lorsque la convexité est demandée ;\\item déterminer les extrema, les points d'inflexion, les intersections et les tangentes remarquables ;\\item construire une représentation compatible avec tous les résultats.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Étudions complètement la fonction $f(x)=\\dfrac{x^2+1}{x-1}$.\\begin{enumerate}\\item Déterminons le domaine et une écriture utile.\\item Étudions les limites, les asymptotes et la position relative.\\item Étudions les variations.\\item Étudions la convexité.\\item Déterminons un centre de symétrie.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On a $D_f=\\blank{\\mathbb R\\setminus\\{1\\}}$ et, par division euclidienne, $$f(x)=\\blank{x+1+\\dfrac2{x-1}}.$$\\item Lorsque $x\\to1^-$, $f(x)\\to\\blank{-\\infty}$, et lorsque $x\\to1^+$, $f(x)\\to\\blank{+\\infty}$. Ainsi, $x=1$ est une asymptote verticale. Comme $f(x)-(x+1)=\\dfrac2{x-1}\\to0$, la droite $y=\\blank{x+1}$ est une asymptote oblique. La courbe est au-dessous de cette droite pour $x<1$ et au-dessus pour $x>1$.\\item $$f'(x)=1-\\dfrac2{(x-1)^2}=\\blank{\\dfrac{(x-1)^2-2}{(x-1)^2}}.$$ La dérivée s'annule en $x=1-\\sqrt2$ et $x=1+\\sqrt2$. La fonction est croissante sur $]-\\infty,1-\\sqrt2]$, décroissante sur $[1-\\sqrt2,1[$, décroissante sur $]1,1+\\sqrt2]$, puis croissante sur $[1+\\sqrt2,+\\infty[$. Les valeurs remarquables sont $f(1-\\sqrt2)=\\blank{2-2\\sqrt2}$ et $f(1+\\sqrt2)=\\blank{2+2\\sqrt2}$.\\item On a $$f''(x)=\\blank{\\dfrac4{(x-1)^3}}.$$ La fonction est concave sur $]-\\infty,1[$ et convexe sur $]1,+\\infty[$. Le réel $1$ n'appartient pas au domaine, donc il n'est pas l'abscisse d'un point d'inflexion.\\item Les asymptotes $x=1$ et $y=x+1$ se rencontrent au point $I(1,2)$. Ce point est le centre de symétrie de la courbe.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Rassemblons les variations, la convexité et la symétrie de $g(x)=x^3-3x$.}\\par\\smallskip On a $$g'(x)=\\blank{3(x-1)(x+1)}\\qquad\\text{et}\\qquad g''(x)=\\blank{6x}.$$ La fonction est croissante sur $]-\\infty,-1]$, décroissante sur $[-1,1]$, puis croissante sur $[1,+\\infty[$. Elle admet un maximum local $g(-1)=\\blank{2}$ et un minimum local $g(1)=\\blank{-2}$. Elle est concave sur $]-\\infty,0]$ et convexe sur $[0,+\\infty[$. L'origine est un point d'inflexion. Enfin, $g$ est $\\blank{impaire}$, donc l'origine est aussi un centre de symétrie."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Réalisons une étude complète de $f(x)=\\dfrac{x^2-2x+2}{x-1}$.\\begin{enumerate}\\item Déterminons le domaine et les asymptotes.\\item Étudions les variations.\\item Étudions la convexité.\\item Déterminons le centre de symétrie.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On a $D_f=\\blank{\\mathbb R\\setminus\\{1\\}}$ et $$f(x)=\\blank{x-1+\\dfrac1{x-1}}.$$ La droite $x=1$ est une asymptote verticale et la droite $y=\\blank{x-1}$ est une asymptote oblique.\\item $$f'(x)=1-\\dfrac1{(x-1)^2}=\\blank{\\dfrac{x(x-2)}{(x-1)^2}}.$$ La fonction est croissante sur $]-\\infty,0]$, décroissante sur $[0,1[$, décroissante sur $]1,2]$, puis croissante sur $[2,+\\infty[$. On a $f(0)=\\blank{-2}$ et $f(2)=\\blank{2}$.\\item $$f''(x)=\\blank{\\dfrac2{(x-1)^3}}.$$ La fonction est concave sur $]-\\infty,1[$ et convexe sur $]1,+\\infty[$. Il n'y a pas de point d'inflexion en $1$, car ce réel n'appartient pas au domaine.\\item Les deux asymptotes se rencontrent en $I(1,0)$, centre de symétrie de la courbe.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "applications_synthese",
+      "category": "course",
+      "title": "Applications de synthèse",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les résultats du chapitre peuvent maintenant être mobilisés ensemble. Les applications suivantes demandent de choisir le bon outil, puis de rédiger chaque justification dans un ordre logique."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons l'équation de la tangente à la courbe de $f(x)=\\dfrac1{x+1}$ au point d'abscisse $0$.}\\par\\smallskip On a $f(0)=\\blank{1}$ et $f'(x)=\\blank{-\\dfrac1{(x+1)^2}}$, donc $f'(0)=-1$. Ainsi $$\\boxed{y=1-x}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Étudions la dérivabilité en $0$ de $f(x)=|2x-1|-1$.}\\par\\smallskip Au voisinage de $0$, on a $2x-1<0$. Donc $$f(x)=-(2x-1)-1=\\blank{-2x}.$$ La fonction est ainsi dérivable en $0$ et $$\\boxed{f'(0)=\\blank{-2}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Déterminons $a$ et $b$ pour que $f(x)=\\begin{cases}ax^2+bx,&x\\leq1,\\\\2x+1,&x>1\\end{cases}$ soit dérivable en $1$.}\\par\\smallskip La dérivabilité exige d'abord la continuité : $$a+b=\\blank{3}.$$ La dérivée à gauche vaut $2a+b$, tandis que la dérivée à droite vaut $2$. On impose donc $$2a+b=\\blank{2}.$$ La résolution du système donne $$\\boxed{a=\\blank{-1}\\qquad\\text{et}\\qquad b=\\blank{4}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{À l'aide d'une approximation affine, estimons :\\begin{enumerate}\\item $\\sqrt{25,1}$ ;\\item $(0,999)^4$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Pour $f(x)=\\sqrt{x}$ au voisinage de $25$, $f(25)=5$ et $f'(25)=\\dfrac1{10}$. Avec $h=0,1$, $$\\boxed{\\sqrt{25,1}\\approx\\blank{5,01}}$$\\item Pour $g(x)=x^4$ au voisinage de $1$, $g(1)=1$ et $g'(1)=4$. Avec $h=-0,001$, $$\\boxed{(0,999)^4\\approx\\blank{0,996}}$$\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Montrons que l'équation $x^5+x-2=0$ admet une unique solution réelle.}\\par\\smallskip Posons $f(x)=x^5+x-2$. La fonction est continue sur $\\mathbb R$ et $$f'(x)=\\blank{5x^4+1}>0.$$ Elle est donc strictement croissante. De plus, $f(1)=\\blank{0}$. Ainsi, l'équation possède une seule solution réelle : $$\\boxed{x=\\blank{1}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $f$ deux fois dérivable sur $\\mathbb R$ et telle que $f''(x)>0$ pour tout $x$.\\begin{enumerate}\\item Montrons que $f'$ est strictement croissante.\\item Expliquons pourquoi l'équation $f'(x)=0$ possède au plus une solution.\\item Interprétons ce résultat pour les variations de $f$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Puisque $(f')'=f''$ et que $f''(x)>0$, la fonction $f'$ est $\\blank{strictement\\ croissante}$.\\item Une fonction strictement croissante ne peut prendre la valeur $0$ qu'une seule fois. L'équation $f'(x)=0$ possède donc $\\blank{au\\ plus\\ une\\ solution}$.\\item Si cette solution existe, le signe de $f'$ peut passer de négatif à positif une seule fois. La fonction $f$ décroît alors, puis croît, et possède un unique $\\blank{minimum\\ local}$. Si $f'$ ne s'annule pas, $f$ reste strictement monotone.\\end{enumerate}"
+        }
+      ]
+    }
+  ]
+}

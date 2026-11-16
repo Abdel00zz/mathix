@@ -1,0 +1,357 @@
+{
+  "id": "nat-2021-r",
+  "title": "Examen National 2021 — Session Rattrapage",
+  "type": "national",
+  "year": 2021,
+  "session": "rattrapage",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 7,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2021r-ex1",
+      "number": 1,
+      "theme": "suites-numeriques",
+      "difficulty": "moyen",
+      "points": 4,
+      "topic": "Suites numériques — Récurrence, monotonie, convergence et suite arithmétique",
+      "context": "Soit $(U_n)$ la suite numérique définie par : $U_0 = \\dfrac{1}{3}$ et $U_{n+1} = \\dfrac{1 + U_n}{3 - U_n}$ pour tout $n$ de $\\mathbb{N}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que pour tout $n$ de $\\mathbb{N}$, $0 < U_n < 1$.",
+          "bareme": 0.5,
+          "hint": "Procédez par récurrence. Pour l'hérédité, montrez séparément que $U_{n+1} > 0$ et que la différence $U_{n+1} - 1$ est strictement négative en utilisant l'hypothèse de récurrence."
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que pour tout $n$ de $\\mathbb{N}$, $U_{n+1} - U_n = -\\dfrac{(U_n - 1)^2}{3 - U_n}$.",
+              "bareme": 0.5,
+              "hint": "Remplacez $U_{n+1}$ par son expression, réduisez au même dénominateur, développez le numérateur, puis reconnaissez et factorisez une identité remarquable."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que la suite $(U_n)$ est convergente.",
+              "bareme": 0.5,
+              "hint": "Déduisez de l'égalité précédente (et du fait que $U_n < 1$) le signe de $U_{n+1} - U_n$, ce qui vous donnera la monotonie. Associez cela à l'encadrement trouvé en Q1."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "On pose $V_n = \\dfrac{1}{1 - U_n}$ pour tout $n$ de $\\mathbb{N}$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que $(V_n)$ est une suite arithmétique et déterminer sa raison et son premier terme.",
+              "bareme": 0.75,
+              "hint": "Calculez la différence $V_{n+1} - V_n$. Remplacez $U_{n+1}$ par sa définition, simplifiez avec soin les fractions superposées jusqu'à obtenir une constante."
+            },
+            {
+              "id": "3b",
+              "content": "Déterminer $V_n$ en fonction de $n$ et en déduire $U_n = \\dfrac{n + 1}{n + 3}$, pour tout $n$ de $\\mathbb{N}$.",
+              "bareme": 0.5,
+              "hint": "Écrivez le terme général de la suite arithmétique $V_n = V_0 + n \\cdot r$. Ensuite, manipulez l'égalité $V_n = \\dfrac{1}{1 - U_n}$ pour exprimer $U_n$ en fonction de $V_n$."
+            },
+            {
+              "id": "3c",
+              "content": "Calculer la limite de la suite $(U_n)$.",
+              "bareme": 0.5,
+              "hint": "Utilisez l'expression explicite de $U_n$ trouvée à la question 3b. Factorisez par $n$ au numérateur et au dénominateur pour calculer la limite en $+\\infty$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "A partir de quelle valeur de $n$, a-t-on $U_n \\geq \\dfrac{1011}{1012}$ ?",
+          "bareme": 0.75,
+          "hint": "Remplacez $U_n$ par l'expression $\\dfrac{n+1}{n+3}$ et résolvez l'inéquation d'inconnue $n$. Attention au sens de l'inégalité en effectuant les produits en croix (justifiés car les termes sont positifs)."
+        }
+      ]
+    },
+    {
+      "id": "nat2021r-ex2",
+      "number": 2,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 5,
+      "topic": "Nombres complexes — Équations, homothétie, rotation et propriétés des quadrilatères",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Résoudre dans l'ensemble $\\mathbb{C}$ des nombres complexes, l'équation : $z^2 - 6z + 13 = 0$",
+          "bareme": 0.75,
+          "hint": "Calculez le discriminant $\\Delta$. Puisqu'il est strictement négatif, l'équation admettra deux solutions complexes conjuguées en fonction de $i\\sqrt{-\\Delta}$."
+        },
+        {
+          "id": "q2",
+          "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A, B$ et $C$ d'affixes respectives $a, b$ et $c$ telles que : $a = 3 + 2i$, $b = 3 - 2i$ et $c = -1 - 2i$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Écrire $\\dfrac{c - b}{a - b}$ sous forme trigonométrique.",
+              "bareme": 0.5,
+              "hint": "Déterminez d'abord la forme algébrique du quotient. Calculez ensuite son module et factorisez pour identifier l'angle remarquable associé."
+            },
+            {
+              "id": "2b",
+              "content": "En déduire la nature de triangle $ABC$.",
+              "bareme": 0.5,
+              "hint": "Interprétez le module obtenu en termes de rapport de distances et l'argument en termes de mesure d'angle orienté. La combinaison des deux donne la nature exacte du triangle."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Soit $R$ la rotation de centre $B$ et d'angle $\\dfrac{\\pi}{2}$. Soit $M$ un point du plan d'affixe $z$ et le point $M'$ d'affixe $z'$ l'image de $M$ par $R$, et soit $D$ le point d'affixe $d = -3 - 4i$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Écrire $z'$ en fonction de $z$.",
+              "bareme": 0.5,
+              "hint": "L'expression complexe de la rotation est $z' - b = e^{i\\frac{\\pi}{2}}(z - b)$. Remplacez $e^{i\\frac{\\pi}{2}}$ par sa valeur algébrique et développez."
+            },
+            {
+              "id": "3b",
+              "content": "Vérifier que $C$ est l'image de point $A$ par $R$.",
+              "bareme": 0.25,
+              "hint": "Substituez $z$ par l'affixe $a$ dans l'expression trouvée à la question précédente et vérifiez que le résultat est exactement l'affixe $c$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Montrer que les points $A, C$ et $D$ sont alignés.",
+              "bareme": 0.5,
+              "hint": "Calculez le quotient $\\dfrac{c - a}{d - a}$ et montrez que le résultat est un nombre réel pur, ce qui traduit la colinéarité des vecteurs $\\overrightarrow{AC}$ et $\\overrightarrow{AD}$."
+            },
+            {
+              "id": "4b",
+              "content": "Déterminer le rapport de l'homothétie $h$ de centre $C$ et qui transforme $A$ en $D$.",
+              "bareme": 0.5,
+              "hint": "L'homothétie se traduit par $d - c = k(a - c)$. Calculez le réel $k$ satisfaisant cette égalité."
+            },
+            {
+              "id": "4c",
+              "content": "Déterminer l'affixe $m$ du point $E$ pour que le quadrilatère $BCDE$ soit un parallélogramme.",
+              "bareme": 0.5,
+              "hint": "La condition géométrique pour un parallélogramme se traduit par l'égalité vectorielle $\\overrightarrow{BC} = \\overrightarrow{ED}$. Passez aux affixes pour isoler $m$."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "5a",
+              "content": "Montrer que $\\dfrac{d - a}{m - b}$ est un nombre réel.",
+              "bareme": 0.5,
+              "hint": "Remplacez chaque affixe par sa valeur. Effectuez les calculs au numérateur et au dénominateur, simplifiez la fraction et constatez l'absence de partie imaginaire."
+            },
+            {
+              "id": "5b",
+              "content": "En déduire que quadrilatère $ABED$ est un trapèze isocèle.",
+              "bareme": 0.5,
+              "hint": "Le résultat de la Q5a montre que les droites $(AD)$ et $(BE)$ sont parallèles. Utilisez les questions précédentes (rotation et parallélogramme) pour comparer les longueurs $AB$ et $ED$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2021r-ex3",
+      "number": 3,
+      "theme": "analyse",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Fonction auxiliaire, limites et théorème des valeurs intermédiaires",
+      "context": "On considère la fonction numérique $h$ définie sur $]0, +\\infty[$ par : $h(x) = x + \\ln x$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que la fonction $h$ est strictement croissante sur $]0, +\\infty[$.",
+          "bareme": 0.5,
+          "hint": "Calculez la dérivée $h'(x)$ à l'aide des formules usuelles. Étudiez son signe, qui devrait être trivialement positif sur l'intervalle donné."
+        },
+        {
+          "id": "q2",
+          "content": "Déterminer $h(]0, +\\infty[)$.",
+          "bareme": 0.5,
+          "hint": "La fonction étant continue et strictement croissante, l'image de l'intervalle s'obtient en calculant les limites de $h(x)$ en $0^+$ et en $+\\infty$."
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "En déduire que l'équation $h(x) = 0$ admet une solution unique $\\alpha$ dans $]0, +\\infty[$.",
+              "bareme": 0.5,
+              "hint": "Appliquez le théorème de la bijection en utilisant les conclusions des questions 1 et 2 (stricte monotonie et appartenance de 0 à l'intervalle image)."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que $0 < \\alpha < 1$.",
+              "bareme": 0.5,
+              "hint": "Calculez $h(1)$ et utilisez la limite en $0^+$. Le changement de signe de la fonction entre ces deux valeurs confirmera l'encadrement de $\\alpha$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Vérifier que $h\\left(\\dfrac{1}{\\alpha}\\right) = \\alpha + \\dfrac{1}{\\alpha}$.",
+              "bareme": 0.5,
+              "hint": "Remplacez $x$ par $\\dfrac{1}{\\alpha}$ dans l'expression de $h$. Servez-vous ensuite de la propriété $h(\\alpha) = 0$, qui équivaut à $\\ln(\\alpha) = -\\alpha$, pour transformer le terme logarithmique."
+            },
+            {
+              "id": "4b",
+              "content": "En déduire que $h\\left(\\dfrac{1}{\\alpha}\\right) > 2$.",
+              "bareme": 0.5,
+              "hint": "Étudiez le signe de la différence $\\left(\\alpha + \\dfrac{1}{\\alpha}\\right) - 2$. En réduisant au même dénominateur, vous ferez apparaître un carré parfait au numérateur."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2021r-ex4",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 8,
+      "topic": "Étude d'une fonction avec exponentielle, dérivées successives, intégration par parties et fonction réciproque",
+      "context": "Soit $f$ la fonction numérique définie sur $\\mathbb{R}$ par : $f(x) = 2 - xe^{-x+1}$. Et $(C)$ sa courbe représentative dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (unité : $1cm$).",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Calculer $\\lim_{x \\to +\\infty} f(x)$ et interpréter le résultat géométriquement.",
+          "bareme": 0.5,
+          "hint": "Transformez $xe^{-x+1}$ en sortant la constante $e$ pour obtenir $e \\cdot \\dfrac{x}{e^x}$. Appliquez ensuite la limite usuelle de l'exponentielle en l'infini. Une limite finie indique une asymptote horizontale."
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Calculer $\\lim_{x \\to -\\infty} f(x)$.",
+              "bareme": 0.5,
+              "hint": "En $-\\infty$, évaluez séparément la limite de $x$ et de l'exponentielle $e^{-x+1}$. Attention à la règle des signes lors du produit."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que $\\lim_{x \\to -\\infty} \\dfrac{f(x)}{x} = -\\infty$, et interpréter le résultat géométriquement.",
+              "bareme": 0.75,
+              "hint": "Calculez le quotient en séparant les termes. La limite du second terme l'emportera et tendra vers l'infini. Ce résultat géométrique qualifie une branche parabolique de direction particulière."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que pour tout $x$ de $\\mathbb{R}$ : $f'(x) = (x - 1)e^{-x+1}$.",
+              "bareme": 0.5,
+              "hint": "Appliquez la formule de la dérivée d'un produit $(u \\cdot v)'$ pour le terme $xe^{-x+1}$. N'oubliez pas la dérivée de l'exposant."
+            },
+            {
+              "id": "3b",
+              "content": "Dresser le tableau de variations de la fonction $f$.",
+              "bareme": 0.5,
+              "hint": "L'exponentielle étant toujours positive, le signe de la dérivée ne dépend que de $(x-1)$. Déduisez-en les intervalles de monotonie et incluez les limites calculées précédemment.\\n\\n$$\\begin{array}{|c|lcccr|}\\hline x & -\\infty & & 1 & & +\\infty \\\\\\\\ \\hline f'(x) & & - & 0 & + & \\\\\\\\ \\hline f & +\\infty & \\searrow & 1 & \\nearrow & 2 \\\\\\\\ \\hline \\end{array}$$"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Calculer $f''(x)$ pour tout $x$ de $\\mathbb{R}$.",
+              "bareme": 0.5,
+              "hint": "Dérivez à nouveau $f'(x)$ en utilisant la règle de dérivation d'un produit sur l'expression $(x - 1)e^{-x+1}$."
+            },
+            {
+              "id": "4b",
+              "content": "Montrer que la courbe $(C)$ admet un point d'inflexion d'abscisse 2.",
+              "bareme": 0.5,
+              "hint": "Cherchez la valeur pour laquelle $f''(x) = 0$ et vérifiez que la dérivée seconde change de signe de part et d'autre de cette abscisse."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "Construire la courbe $(C)$ dans le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (on prend : $f(2) \\simeq 1,25$).",
+          "bareme": 1,
+          "hint": "Tracez l'asymptote horizontale $y=2$ en $+\\infty$. Placez le point minimum en $(1, 1)$ avec sa tangente horizontale, positionnez le point d'inflexion, et respectez la direction de la branche parabolique en $-\\infty$."
+        },
+        {
+          "id": "q6",
+          "content": "Déterminer la valeur minimale de la fonction $f$ et en déduire que pour tout $x$ de $\\mathbb{R}, e^{x-1} \\geq x$.",
+          "bareme": 0.5,
+          "hint": "Lisez le minimum global dans le tableau de variations, ce qui donne $f(x) \\geq 1$. Remplacez $f(x)$ par son expression, manipulez l'inégalité et divisez par l'exponentielle pour retrouver l'expression demandée."
+        },
+        {
+          "id": "q7",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "7a",
+              "content": "En utilisant une intégration par parties, calculer : $\\displaystyle\\int_0^2 xe^{-x} dx$.",
+              "bareme": 0.5,
+              "hint": "Posez $u(x) = x$ et $v'(x) = e^{-x}$. La dérivée de $u$ étant $1$, l'intégrale résiduelle sera l'intégrale de $-e^{-x}$, qui se calcule directement."
+            },
+            {
+              "id": "7b",
+              "content": "En déduire que $\\displaystyle\\int_0^2 f(x) dx = 4 - e + 3e^{-1}$.",
+              "bareme": 0.5,
+              "hint": "Séparez l'intégrale de $f(x)$ en deux par linéarité. Pour le second terme, extrayez la constante $e$ de l'exponentielle afin d'utiliser le résultat exact de la question 7a."
+            }
+          ]
+        },
+        {
+          "id": "q8",
+          "content": "Soit $g$ la restriction de $f$ à l'intervalle $]-\\infty, 1]$.",
+          "subQuestions": [
+            {
+              "id": "8a",
+              "content": "Montrer que $g$ admet une fonction réciproque $g^{-1}$ définie sur un intervalle $J$ à déterminer.",
+              "bareme": 0.5,
+              "hint": "Justifiez que $g$ est continue et strictement monotone (décroissante) sur cet intervalle spécifique. L'intervalle $J$ correspond aux bornes des limites ou images trouvées dans le tableau de variations."
+            },
+            {
+              "id": "8b",
+              "content": "Construire la courbe représentative de $g^{-1}$ dans le même repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$.",
+              "bareme": 0.5,
+              "hint": "La courbe de la fonction réciproque est le symétrique de la portion correspondante de la courbe $(C)$ par rapport à la première bissectrice, d'équation $y = x$."
+            },
+            {
+              "id": "8c",
+              "content": "A partir de la courbe représentative de $g^{-1}$, déterminer $\\lim_{x \\to +\\infty} \\dfrac{g^{-1}(x)}{x}$.",
+              "bareme": 0.25,
+              "hint": "Observez graphiquement l'allure de la courbe de $g^{-1}$ en $+\\infty$. C'est le symétrique de la branche parabolique de $f$ en $-\\infty$ (de direction $Oy$), elle aura donc une direction parabolique liée à l'axe des abscisses."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

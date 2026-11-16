@@ -1,0 +1,89 @@
+{
+  "id": "ex-complexes-29",
+  "topic": "Nombres complexes - Bac National 2019 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2019,
+  "examenSession": "Normale",
+  "context": "Soit $m$ un nombre complexe non réel $(m\\in\\mathbb{C}-\\mathbb{R})$.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans $\\mathbb{C}$, l'équation d'inconnue $z$ définie par : $(E):z^2-(1+i)(1+m)z+2im=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q1a",
+          "content": "Montrer que le discriminant de l'équation $(E)$ est non nul.",
+          "hint": "Calculez $\\Delta=[(1+i)(1+m)]^2-8im$ et essayez de l'écrire comme un carré ; montrez ensuite que ce carré ne peut être nul puisque $m$ n'est pas réel."
+        },
+        {
+          "id": "p1q1b",
+          "content": "Déterminer $z_1$ et $z_2$, les deux solutions de l'équation $(E)$.",
+          "hint": "Après avoir écrit $\\Delta$ comme un carré $[(1+i)(1-m)]^2$ par exemple, appliquez la formule usuelle des racines."
+        }
+      ]
+    },
+    {
+      "id": "p1q2",
+      "content": "On suppose dans cette question que $m=e^{i\\theta}$ avec $0<\\theta<\\pi$.",
+      "subQuestions": [
+        {
+          "id": "p1q2a",
+          "content": "Déterminer le module et un argument de $z_1+z_2$.",
+          "hint": "$z_1+z_2=(1+i)(1+m)$ ; mettez $1+i$ sous forme exponentielle et $1+e^{i\\theta}$ sous forme exponentielle grâce à la factorisation par l'arc moitié."
+        },
+        {
+          "id": "p1q2b",
+          "content": "Montrer que si $z_1z_2\\in\\mathbb{R}$ alors $z_1+z_2=2i$.",
+          "hint": "$z_1z_2=2im$ ; traduisez que ce produit est réel en une condition sur $\\theta$, puis reportez cette condition dans l'expression de $z_1+z_2$ trouvée précédemment."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe est rapporté à un repère orthonormé direct $(O;\\vec{u},\\vec{v})$. On considère les points suivants : $A$ le point d'affixe $a=1+i$, $B$ le point d'affixe $b=(1+i)m$, $C$ le point d'affixe $c=1-i$, $D$ l'image du point $B$ par la rotation de centre $O$ et d'angle $\\dfrac{\\pi}{2}$ et $\\Omega$ le milieu du segment $[CD]$."
+    },
+    {
+      "id": "p2q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q1a",
+          "content": "Montrer que l'affixe du point $\\Omega$ est $w=\\dfrac{(1-i)(1-m)}{2}$.",
+          "hint": "$D$ étant l'image de $B$ par la rotation d'angle $\\pi/2$ centrée en $O$, on a $d=ib=i(1+i)m$ ; calculez ensuite $w=\\dfrac{c+d}{2}$."
+        },
+        {
+          "id": "p2q1b",
+          "content": "Calculer $\\dfrac{b-a}{w}$.",
+          "hint": "Remplacez $b-a=(1+i)m-(1+i)=(1+i)(m-1)$ et $w$ par son expression, puis simplifiez en utilisant que $\\dfrac{1+i}{1-i}=i$."
+        },
+        {
+          "id": "p2q1c",
+          "content": "En déduire que $(O\\Omega)\\perp(AB)$ et que $AB=2O\\Omega$.",
+          "hint": "Regardez si le quotient trouvé est imaginaire pur et quel est son module."
+        }
+      ]
+    },
+    {
+      "id": "p2q2",
+      "content": "La droite $(O\\Omega)$ coupe la droite $(AB)$ au point $H$ d'affixe $h$.",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Montrer que $\\dfrac{h-a}{b-a}$ est un réel et que $\\dfrac{h}{b-a}$ est un imaginaire pur.",
+          "hint": "$H\\in(AB)$ donne le premier résultat directement ; $H\\in(O\\Omega)$ signifie $\\dfrac{h}{w}$ réel, combinez avec le fait que $\\dfrac{b-a}{w}$ est imaginaire pur pour obtenir le second résultat."
+        },
+        {
+          "id": "p2q2b",
+          "content": "En déduire $h$ en fonction de $m$.",
+          "hint": "Écrivez $h=(b-a)t$ avec $t$ imaginaire pur d'une part et $h=a+(b-a)s$ avec $s$ réel d'autre part, puis combinez les deux conditions pour déterminer $h$."
+        }
+      ]
+    }
+  ]
+}

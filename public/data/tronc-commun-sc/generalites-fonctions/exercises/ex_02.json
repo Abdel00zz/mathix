@@ -1,0 +1,20 @@
+{
+  "id": "ex-fonc-tc-02",
+  "theme": "generalites-fonctions",
+  "difficulty": "moyen",
+  "topic": "Généralités sur les fonctions",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Parité d'une fonction",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Étudier la parité de la fonction $f(x) = x^3 - 2x$.",
+          "hint": "\\method Vérifiez d'abord que le domaine de définition est centré en 0. Ensuite, calculez $f(-x)$ et comparez-le à $f(x)$ et $-f(x)$."
+        }
+      ]
+    }
+  ]
+}

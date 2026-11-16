@@ -1,0 +1,25 @@
+{
+  "id": "ex-17",
+  "theme": "calcul-integral",
+  "difficulty": "difficile",
+  "topic": "Calcul Intégral - Linéarisation trigonométrique, intégrales de cos⁴x et sin⁴x",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que : $(\\forall x \\in \\mathbb{R})\\,;\\, \\cos^4 x = \\dfrac{3}{8} + \\dfrac{1}{2}\\cos 2x + \\dfrac{1}{8}\\cos(4x)$ \\quad (En utilisant les formules trigonométriques et la linéarisation ou la formule d'Euler et l'identité remarquable : $(a+b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4$).",
+      "hint": "\\method Choisissez la méthode de linéarisation : posez $\\cos x = \\frac{e^{ix}+e^{-ix}}{2}$ et développez $(\\cos x)^4$ à l'aide de l'identité $(a+b)^4$ donnée. \\tip Les termes $e^{4ix}+e^{-4ix}$ et $e^{2ix}+e^{-2ix}$ se réécrivent respectivement $2\\cos(4x)$ et $2\\cos(2x)$. Regroupez soigneusement les coefficients."
+    },
+    {
+      "id": "q2",
+      "content": "En déduire la valeur de l'intégrale : $I = \\displaystyle\\int_0^{\\frac{\\pi}{2}} \\cos^4 x\\,dx$",
+      "hint": "\\method Intégrez terme à terme la linéarisation obtenue en question 1. \\tip $\\displaystyle\\int_0^{\\pi/2} \\cos(2x)\\,dx$ et $\\displaystyle\\int_0^{\\pi/2} \\cos(4x)\\,dx$ sont des intégrales immédiates. Évaluez-les aux bornes."
+    },
+    {
+      "id": "q3",
+      "content": "Calculer l'intégrale : $J = \\displaystyle\\int_0^{\\frac{\\pi}{2}} \\sin^4 x\\,dx$ \\quad (on vérifie que : $\\cos^4 x - \\sin^4 x = \\cos(2x)$)",
+      "hint": "\\method Partez de l'identité $\\cos^4 x - \\sin^4 x = \\cos(2x)$, donc $J = I - \\displaystyle\\int_0^{\\pi/2} \\cos(2x)\\,dx$. \\tip Vous connaissez déjà $I$ (question 2) et $\\displaystyle\\int_0^{\\pi/2}\\cos(2x)\\,dx$ (calculée en route). Substituez directement."
+    }
+  ]
+}

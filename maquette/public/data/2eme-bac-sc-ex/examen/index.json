@@ -1,0 +1,196 @@
+{
+  "classId": "2eme-bac-sc-ex",
+  "title": "Examens Nationaux — Sciences Expérimentales",
+  "themeDistribution": {
+    "analyse": 1,
+    "probabilites": 1,
+    "nombres-complexes": 1,
+    "geometrie-espace": 1
+  },
+  "themes": [
+    {
+      "id": "analyse",
+      "name": "Étude de fonctions"
+    },
+    {
+      "id": "probabilites",
+      "name": "Probabilités"
+    },
+    {
+      "id": "nombres-complexes",
+      "name": "Nombres Complexes"
+    },
+    {
+      "id": "geometrie-espace",
+      "name": "Géométrie dans l'Espace"
+    },
+    {
+      "id": "suites-numeriques",
+      "name": "Suites Numériques"
+    }
+  ],
+  "examens": [
+    {
+      "id": "nat-2025-n",
+      "title": "Session Normale 2025",
+      "type": "national",
+      "year": 2025,
+      "session": "normale",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2025_normale.json"
+    },
+    {
+      "id": "nat-2025-r",
+      "title": "Session Rattrapage 2025",
+      "type": "national",
+      "year": 2025,
+      "session": "rattrapage",
+      "exerciseCount": 5,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2025_rattrapage.json"
+    },
+    {
+      "id": "nat-2024-n",
+      "title": "Session Normale 2024",
+      "type": "national",
+      "year": 2024,
+      "session": "normale",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2024_normale.json"
+    },
+    {
+      "id": "nat-2024-r",
+      "title": "Session Rattrapage 2024",
+      "type": "national",
+      "year": 2024,
+      "session": "rattrapage",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2024_rattrapage.json"
+    },
+    {
+      "id": "nat-2023-n",
+      "title": "Session Normale 2023",
+      "type": "national",
+      "year": 2023,
+      "session": "normale",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2023_normale.json"
+    },
+    {
+      "id": "nat-2023-r",
+      "title": "Session Rattrapage 2023",
+      "type": "national",
+      "year": 2023,
+      "session": "rattrapage",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2023_rattrapage.json"
+    },
+    {
+      "id": "nat-2022-n",
+      "title": "Session Normale 2022",
+      "type": "national",
+      "year": 2022,
+      "session": "normale",
+      "exerciseCount": 5,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2022_normale.json"
+    },
+    {
+      "id": "nat-2022-r",
+      "title": "Session Rattrapage 2022",
+      "type": "national",
+      "year": 2022,
+      "session": "rattrapage",
+      "exerciseCount": 5,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2022_rattrapage.json"
+    },
+    {
+      "id": "nat-2021-n",
+      "title": "Session Normale 2021",
+      "type": "national",
+      "year": 2021,
+      "session": "normale",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2021_normale.json"
+    },
+    {
+      "id": "nat-2021-r",
+      "title": "Session Rattrapage 2021",
+      "type": "national",
+      "year": 2021,
+      "session": "rattrapage",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2021_rattrapage.json"
+    },
+    {
+      "id": "nat-2020-n",
+      "title": "Session Normale 2020",
+      "type": "national",
+      "year": 2020,
+      "session": "normale",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2020_normale.json"
+    },
+    {
+      "id": "nat-2020-r",
+      "title": "Session Rattrapage 2020",
+      "type": "national",
+      "year": 2020,
+      "session": "rattrapage",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2020_rattrapage.json"
+    },
+    {
+      "id": "nat-2019-n",
+      "title": "Session Normale 2019",
+      "type": "national",
+      "year": 2019,
+      "session": "normale",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2019_normale.json"
+    },
+    {
+      "id": "nat-2019-r",
+      "title": "Session Rattrapage 2019",
+      "type": "national",
+      "year": 2019,
+      "session": "rattrapage",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2019_rattrapage.json"
+    },
+    {
+      "id": "nat-2018-n",
+      "title": "Session Normale 2018",
+      "type": "national",
+      "year": 2018,
+      "session": "normale",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2018_normale.json"
+    },
+    {
+      "id": "nat-2018-r",
+      "title": "Session Rattrapage 2018",
+      "type": "national",
+      "year": 2018,
+      "session": "rattrapage",
+      "exerciseCount": 5,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2018_rattrapage.json"
+    },
+    {
+      "id": "nat-2017-n",
+      "title": "Session Normale 2017",
+      "type": "national",
+      "year": 2017,
+      "session": "normale",
+      "exerciseCount": 4,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2017_normale.json"
+    },
+    {
+      "id": "nat-2017-r",
+      "title": "Session Rattrapage 2017",
+      "type": "national",
+      "year": 2017,
+      "session": "rattrapage",
+      "exerciseCount": 5,
+      "path": "data/2eme-bac-sc-ex/examen/nat_2017_rattrapage.json"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ex-log-22",
+  "theme": "logique",
+  "difficulty": "moyen",
+  "topic": "Logique & Raisonnements — Raisonnement par équivalence",
+  "requiresRedaction": true,
+  "context": "Soient $a$, $b$, $c$ des réels positifs. Montrer que :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$a^2 + b^2 + c^2 \\geq ab + bc + ac$",
+      "hint": "Développez $\\dfrac{1}{2}[(a-b)^2 + (b-c)^2 + (c-a)^2] \\geq 0$."
+    },
+    {
+      "id": "q2",
+      "content": "$a^3 + a = b^3 + b \\iff a = b$",
+      "hint": "La fonction $x \\mapsto x^3 + x$ est-elle strictement monotone ? Étudiez sa dérivée."
+    },
+    {
+      "id": "q3",
+      "content": "$\\dfrac{\\sqrt{x}}{x^2 - x + 1} \\leq \\dfrac{4}{3}\\sqrt{x}$ pour $x \\geq 0$",
+      "hint": "Pour $x = 0$ c'est immédiat. Pour $x > 0$, simplifiez par $\\sqrt{x}$ et montrez que $x^2 - x + 1 \\geq \\dfrac{3}{4}$, i.e. que le minimum de $x^2-x+1$ est $\\dfrac{3}{4}$."
+    },
+    {
+      "id": "q4",
+      "content": "$\\sqrt{2x+2} - \\sqrt{x} = 1 \\iff x = 1$",
+      "hint": "Établissez l'équivalence : isolez une racine, élevez au carré en vérifiant les conditions de validité à chaque étape."
+    }
+  ]
+}

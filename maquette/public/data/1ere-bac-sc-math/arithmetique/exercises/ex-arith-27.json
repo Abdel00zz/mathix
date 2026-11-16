@@ -1,0 +1,56 @@
+{
+  "id": "ex-arith-27",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "topic": "Arithmétique dans $\\mathbb{Z}$ — Exercices supplémentaires",
+  "requiresRedaction": true,
+  "context": "Les questions 1 à 7 sont indépendantes.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soit $(a;b;c;d) \\in \\mathbb{Z}^4$ tel que $a = bc + d$. Montrer que $a \\wedge b = b \\wedge c$, puis en déduire que $a \\wedge b = b \\wedge (a - bc)$.",
+      "hint": "Un diviseur commun de $a$ et $b$ divise $d = a - bc$, donc divise $b$ et $c$. Réciproquement, un diviseur commun de $b$ et $c$ divise $a = bc + d$."
+    },
+    {
+      "id": "q2",
+      "content": "Soit $n \\in \\mathbb{N}^*$. Montrer que $(n^2+n) \\wedge (2n+1) = 1$.",
+      "hint": "$n^2+n = n(n+1)$ et $2n+1$ est impair. Montrez que $2n+1$ ne partage aucun facteur premier avec $n(n+1)$. Remarquez que $(2n+1) - 2n = 1$, donc $\\gcd(2n+1, n) = \\gcd(1,n) = 1$. De même $\\gcd(2n+1, n+1) = \\gcd(2n+1-(2(n+1)-1), n+1) = \\gcd(0,n+1) = ...$"
+    },
+    {
+      "id": "q3",
+      "content": "Trouver tous les couples $(x,y) \\in \\mathbb{N}^2$ tels que : $(x \\vee y) + 11(x \\wedge y) = 203$.",
+      "hint": "Posez $d = x \\wedge y$, $x = da$, $y = db$ avec $a \\wedge b = 1$ et $a \\leq b$. Alors $d(ab + 11) = 203 = 7 \\times 29$. Enumerez les facteurs de 203."
+    },
+    {
+      "id": "q4",
+      "content": "Résoudre dans $\\mathbb{N}^2$ les systèmes suivants : $\\begin{cases} x \\wedge y = 18 \\\\ x \\vee y = 540 \\end{cases}$ ; $\\begin{cases} x + y = 56 \\\\ x \\vee y = 105 \\end{cases}$",
+      "hint": "Pour le premier : posez $x = 18a$, $y = 18b$ avec $a \\wedge b = 1$. Alors $ab = \\frac{540}{18} = 30$. Pour le second : $x \\wedge y = \\frac{xy}{x \\vee y}$, et $(x-y)^2 = (x+y)^2 - 4xy$."
+    },
+    {
+      "id": "q5",
+      "content": "Trouver tous les couples $(a,b) \\in \\mathbb{N}^2$ tels que : $a \\vee b + 3(a \\wedge b) = 276$ et $10 < a < b$.",
+      "hint": "Posez $d = a \\wedge b$, $a = dp$, $b = dq$ avec $p \\wedge q = 1$ et $p < q$. Alors $d(pq + 3) = 276$. Factorisez 276 et énumérez les cas."
+    },
+    {
+      "id": "q6",
+      "content": "Résoudre dans $\\mathbb{N}^2$ les équations suivantes : $3x^2 + xy + 4y^3 = 349$ ; $x^2 - y^2 - x + 3y = 30$ ; $x^2 - 5y^2 = 3$.",
+      "hint": "Pour chaque équation, bornez les inconnues ou factorisez. Pour $x^2-5y^2=3$ : étudiez les résidus modulo 5 pour restreindre les cas possibles."
+    },
+    {
+      "id": "q7",
+      "content": "Soit $a$ et $b$ deux entiers naturels non nuls tels que $a \\geq 3$ et $a$ impair. On pose $d = (2^a-1) \\wedge (2^b+1)$.",
+      "subQuestions": [
+        {
+          "id": "sq7a",
+          "content": "Montrer que $2^{ab} \\equiv 1\\ [d]$ puis que $2^{2b} \\equiv -1\\ [d]$.",
+          "hint": "Comme $d \\mid 2^a-1$, on a $2^a \\equiv 1 \\pmod d$. Donc $2^{ab} \\equiv 1 \\pmod d$. Comme $d \\mid 2^b+1$, on a $2^b \\equiv -1 \\pmod d$, donc $2^{2b} \\equiv 1 \\pmod d$."
+        },
+        {
+          "id": "sq7b",
+          "content": "En déduire que $d = 1$.",
+          "hint": "L'ordre de 2 modulo $d$ divise à la fois $ab$ et $2b$. Si $d > 1$, l'ordre divise $\\gcd(ab, 2b) = b \\cdot \\gcd(a,2)$. Comme $a$ est impair, $\\gcd(a,2) = 1$, donc l'ordre divise $b$. Mais $2^{2b} \\equiv 1$ et $2^b \\equiv -1$ implique que l'ordre ne divise pas $b$ — contradiction."
+        }
+      ]
+    }
+  ]
+}

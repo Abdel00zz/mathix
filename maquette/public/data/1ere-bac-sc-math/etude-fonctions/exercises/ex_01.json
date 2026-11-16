@@ -1,0 +1,62 @@
+{
+  "id": "ex-etude-fct-01",
+  "theme": "etude-fonctions",
+  "difficulty": "facile",
+  "topic": "Analyse - Fonction rationnelle et valeur absolue",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction numérique définie par :\n$$f(x)=\\frac{x^2+x-2}{x^2-x-2}$$\net soit $\\mathscr{C}_f$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Déterminer $D$ l'ensemble de définition de $f$.",
+          "hint": "Cherchez les racines du dénominateur $x^2-x-2$ en calculant le discriminant $\\Delta$ ou en remarquant une racine évidente."
+        },
+        {
+          "id": "b",
+          "content": "Déterminer les limites de $f$ aux bornes de $D$ puis interpréter les résultats obtenus.",
+          "hint": "Aux bornes infinies, utilisez les termes de plus haut degré. Aux bornes finies (les valeurs interdites), étudiez le signe du dénominateur pour savoir si la limite est $+\\infty$ ou $-\\infty$."
+        },
+        {
+          "id": "c",
+          "content": "Étudier la position relative de la courbe $\\mathscr{C}_f$ et la droite $(D)$ d'équation : $y=1$.",
+          "hint": "Étudiez le signe de la différence $f(x) - 1$. Mettez au même dénominateur et simplifiez pour obtenir une expression du type $\\frac{2x}{x^2-x-2}$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Étudier les variations de la fonction $f$.",
+      "hint": "Calculez la dérivée $f'(x)$ en utilisant la formule $\\left(\\frac{u}{v}\\right)'$. Étudiez ensuite le signe du numérateur obtenu."
+    },
+    {
+      "id": "q3",
+      "content": "Donner l'équation de la tangente $(T)$ à la courbe $\\mathscr{C}_f$ au point d'abscisse $x_0=-2$.",
+      "hint": "Utilisez la formule $y = f'(-2)(x+2) + f(-2)$."
+    },
+    {
+      "id": "q4",
+      "content": "Construire $(T)$ et $\\mathscr{C}_f$.",
+      "hint": "Tracez les asymptotes verticales et horizontale ($y=1$), placez la tangente et les intersections avec les axes."
+    },
+    {
+      "id": "q5",
+      "content": "Soit $g$ la fonction numérique définie par : $$g(x)=\\frac{x^2+|x|-2}{x^2-|x|-2}$$",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Construire la courbe $\\mathscr{C}_g$ de la fonction $g$ dans le repère $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+          "hint": "Étudiez la parité de $g$. Remarquez que pour $x \\geq 0$, $|x|=x$, donc $g(x)=f(x)$. Utilisez la symétrie par rapport à l'axe des ordonnées."
+        },
+        {
+          "id": "b",
+          "content": "Résoudre graphiquement l'inéquation : $(x \\in \\mathbb{R}), \\ g(x) \\geq 1$",
+          "hint": "Repérez les parties de la courbe $\\mathscr{C}_g$ situées au-dessus ou sur la droite horizontale d'équation $y=1$."
+        }
+      ]
+    }
+  ]
+}

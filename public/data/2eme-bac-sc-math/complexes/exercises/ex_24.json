@@ -1,0 +1,72 @@
+{
+  "id": "ex-complexes-24",
+  "topic": "Nombres complexes - Bac National 2011 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2011,
+  "examenSession": "Normale",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "Soit $m$ un nombre complexe non nul. On considère dans l'ensemble $\\mathbb{C}$ l'équation d'inconnue $z$ : $(E_m):z^2+[(1-i)m-4]z-im^2-2(1-i)m+4=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "Vérifier que le nombre $z_1=-m+2$ est solution de l'équation $(E_m)$.",
+      "hint": "Remplacez directement $z=-m+2$ dans $(E_m)$, développez chaque terme et vérifiez que la somme s'annule."
+    },
+    {
+      "id": "p1q2",
+      "content": "Soit $z_2$ la deuxième solution de l'équation $(E_m)$.",
+      "subQuestions": [
+        {
+          "id": "p1q2a",
+          "content": "Montrer que : $z_1z_2=1\\Leftrightarrow im^2+2(1-i)m-3=0$.",
+          "hint": "Utilisez la relation produit des racines $z_1z_2=-im^2-2(1-i)m+4$ (terme constant de $(E_m)$), posez $z_1z_2=1$ et simplifiez."
+        },
+        {
+          "id": "p1q2b",
+          "content": "Déterminer les deux valeurs de $m$ pour lesquelles on a : $z_1z_2=1$.",
+          "hint": "Résolvez l'équation du second degré en $m$ obtenue à la question précédente en calculant son discriminant."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$, on considère l'application $S$ qui au point $M$, d'affixe $z$, fait correspondre le point $M'$ d'affixe $z'$ tel que : $z'-1=-(z-1)$ et la rotation $R$ de centre le point $\\Omega$ d'affixe $(1+i)$ et d'angle $\\dfrac{\\pi}{2}$, et soit $z''$ l'affixe du point $M''=R(M)$."
+    },
+    {
+      "id": "p2q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q1a",
+          "content": "Montrer que l'application $S$ est la symétrie centrale de centre le point d'affixe $1$.",
+          "hint": "Une application de la forme $z'-\\omega=-(z-\\omega)$ (rapport $-1$) est justement la symétrie centrale de centre $\\omega$ ; identifiez $\\omega=1$."
+        },
+        {
+          "id": "p2q1b",
+          "content": "Montrer que : $z''=iz+2$.",
+          "hint": "Appliquez $z''-(1+i)=i(z-(1+i))$, développez et simplifiez."
+        }
+      ]
+    },
+    {
+      "id": "p2q2",
+      "content": "Soit $A$ le point d'affixe $2$. On suppose que le point $M$ est distinct du point $O$ origine du repère.",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Calculer $\\dfrac{z''-2}{z'-2}$, en déduire la nature du triangle $AM'M''$.",
+          "hint": "Remplacez $z'=2-z$ (d'après $S$) et $z''=iz+2$ dans le quotient, simplifiez et regardez le module et l'argument obtenus."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Déterminer l'ensemble des points $M$ pour lesquels les points $A$, $\\Omega$, $M'$ et $M''$ sont cocycliques.",
+          "hint": "Étudiez un birapport formé des quatre points $A,\\Omega,M',M''$ (par exemple en comparant les angles $(\\overrightarrow{M'A},\\overrightarrow{M'\\Omega})$ et $(\\overrightarrow{M''A},\\overrightarrow{M''\\Omega})$) et traduisez la cocyclicité par la réalité de ce birapport, en utilisant les expressions de $z'$ et $z''$ en fonction de $z$."
+        }
+      ]
+    }
+  ]
+}

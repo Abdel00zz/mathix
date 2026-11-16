@@ -1,0 +1,324 @@
+{
+  "id": "nat-2018-n",
+  "title": "Examen National 2018 — Session Normale",
+  "type": "national",
+  "year": 2018,
+  "session": "normale",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 4,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2018n-ex1",
+      "number": 1,
+      "theme": "geometrie-espace",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Plan, sphère, droite, intersection",
+      "context": "Dans l'espace rapporté à un repère orthonormé direct $(O; \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les points $A(0, -2, -2)$, $B(1, -2, -4)$ et $C(-3, -1, 2)$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = 2\\overrightarrow{i} + 2\\overrightarrow{j} + \\overrightarrow{k}$ et en déduire que $2x + 2y + z + 6 = 0$ est une équation cartésienne du plan $(ABC)$.",
+          "bareme": 1,
+          "hint": "Calculez les coordonnées de $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$, puis appliquez la formule du produit vectoriel. Le vecteur obtenu est normal au plan ; utilisez le point $A$ pour trouver la constante."
+        },
+        {
+          "id": "q2",
+          "content": "On considère la sphère $(S)$ dont une équation est $x^2 + y^2 + z^2 - 2x - 2z - 23 = 0$. Vérifier que la sphère $(S)$ a pour centre $\\Omega(1, 0, 1)$ et pour rayon $R = 5$.",
+          "bareme": 0.5,
+          "hint": "Mettez l'équation sous forme canonique en complétant les carrés : $(x-1)^2 + y^2 + (z-1)^2 = R^2$, puis identifiez le centre et calculez $R$."
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que $\\begin{cases} x = 1 + 2t \\\\ y = 2t \\\\ z = 1 + t \\end{cases}$ $(t \\in \\mathbb{R})$ est une représentation paramétrique de la droite $(\\Delta)$ passant par le point $\\Omega$ et orthogonale au plan $(ABC)$.",
+              "bareme": 0.25,
+              "hint": "Vérifiez que $\\Omega(1,0,1)$ correspond à $t = 0$, et que le vecteur directeur $(2, 2, 1)$ est bien le vecteur normal au plan $(ABC)$ trouvé en 1)."
+            },
+            {
+              "id": "3b",
+              "content": "Déterminer les coordonnées de $H$ point d'intersection de la droite $(\\Delta)$ et du plan $(ABC)$.",
+              "bareme": 0.5,
+              "hint": "Substituez la représentation paramétrique de $(\\Delta)$ dans l'équation $2x + 2y + z + 6 = 0$ pour trouver $t$, puis calculez les coordonnées de $H$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "Vérifier que $d(\\Omega, (ABC)) = 3$, puis montrer que le plan $(ABC)$ coupe la sphère $(S)$ selon un cercle de rayon 4, dont on déterminera le centre.",
+          "bareme": 0.75,
+          "hint": "Utilisez la formule $d = \\frac{|2 \\cdot 1 + 2 \\cdot 0 + 1 - 6|}{\\sqrt{4+4+1}}$. Puis appliquez la relation de Pythagore dans la section : $r^2 = R^2 - d^2$. Le centre du cercle de section est le point $H$."
+        }
+      ]
+    },
+    {
+      "id": "nat2018n-ex2",
+      "number": 2,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Nombres complexes — Équation, forme trigonométrique, rotation, triangle équilatéral",
+      "context": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Résoudre dans l'ensemble $\\mathbb{C}$ des nombres complexes l'équation : $2z^2 + 2z + 5 = 0$.",
+          "bareme": 0.75,
+          "hint": "Calculez le discriminant $\\Delta = 4 - 40 = -36 < 0$. Exprimez $\\sqrt{\\Delta} = 6i$ et donnez les deux racines complexes conjuguées."
+        },
+        {
+          "id": "q2",
+          "content": "On considère la rotation $R$ de centre $O$ et d'angle $\\dfrac{2\\pi}{3}$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Écrire sous forme trigonométrique le nombre complexe $d = -\\dfrac{1}{2} + \\dfrac{\\sqrt{3}}{2}i$.",
+              "bareme": 0.25,
+              "hint": "Calculez $|d| = \\sqrt{\\frac{1}{4} + \\frac{3}{4}} = 1$, puis identifiez $\\cos\\theta = -\\frac{1}{2}$ et $\\sin\\theta = \\frac{\\sqrt{3}}{2}$ pour lire l'argument."
+            },
+            {
+              "id": "2b",
+              "content": "On considère le point $A$ d'affixe $a = -\\dfrac{1}{2} + \\dfrac{3}{2}i$ et le point $B$ image du point $A$ par la rotation $R$. Soit $b$ l'affixe du point $B$, montrer que $b = d \\cdot a$.",
+              "bareme": 0.5,
+              "hint": "L'écriture complexe de la rotation de centre $O$ et d'angle $\\theta$ est $z' = e^{i\\theta} \\cdot z$. Ici $e^{i\\frac{2\\pi}{3}} = d$ d'après 2a), donc $b = d \\cdot a$."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Soit $t$ la translation de vecteur $\\overrightarrow{OA}$ et $C$ l'image de $B$ par la translation $t$, et $c$ l'affixe de $C$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que $c = b + a$ et en déduire que $c = a\\left(\\dfrac{1}{2} + \\dfrac{\\sqrt{3}}{2}i\\right)$ (on pourra utiliser la question 2b)).",
+              "bareme": 0.75,
+              "hint": "La translation de vecteur $\\overrightarrow{OA}$ donne $c = b + a$. Substituez $b = da$ pour obtenir $c = da + a = a(d+1)$. Calculez $d + 1 = \\frac{1}{2} + \\frac{\\sqrt{3}}{2}i$."
+            },
+            {
+              "id": "3b",
+              "content": "Déterminer $\\arg\\left(\\dfrac{c}{a}\\right)$ puis en déduire que le triangle $OAC$ est équilatéral.",
+              "bareme": 0.75,
+              "hint": "$\\frac{c}{a} = \\frac{1}{2} + \\frac{\\sqrt{3}}{2}i$ d'après 3a). Lisez l'argument : $\\arg\\left(\\frac{c}{a}\\right) = \\frac{\\pi}{3}$. Montrez aussi que $|c| = |a|$ (car $|d+1| = 1$) pour conclure que $OA = OC$ et l'angle $\\widehat{AOC} = \\frac{\\pi}{3}$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2018n-ex3",
+      "number": 3,
+      "theme": "probabilites",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Probabilités — Dénombrement, variable aléatoire binomiale",
+      "context": "Une urne contient 9 boules indiscernables au toucher : cinq boules rouges portant les nombres $1 ; 1 ; 2 ; 2 ; 2$ et quatre boules blanches portant les nombres $1 ; 2 ; 2 ; 2$. On tire au hasard et simultanément trois boules de l'urne. Soient les événements : $A$ : « les trois boules tirées sont de même couleur » ; $B$ : « les trois boules tirées portent le même nombre » ; $C$ : « les trois boules tirées sont de même couleur et portent le même nombre ».",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que $p(A) = \\dfrac{1}{6}$, $p(B) = \\dfrac{1}{4}$ et $p(C) = \\dfrac{1}{42}$.",
+          "bareme": 1.5,
+          "hint": "L'univers est $\\Omega = C_9^3 = 84$ combinaisons. Pour $A$ : $C_5^3 + C_4^3$ (3 rouges ou 3 blanches). Pour $B$ : compter les triplets portant le même numéro (numéro 1 : $C_2^3 + ...$, numéro 2 : $C_5^3$). Pour $C$ : intersection de $A$ et $B$."
+        },
+        {
+          "id": "q2",
+          "content": "On répète l'expérience précédente trois fois avec remise dans l'urne des trois boules tirées après chaque tirage, et on considère la variable aléatoire $X$ qui est égale au nombre de fois de réalisation de l'événement $A$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Déterminer les paramètres de la variable aléatoire binomiale $X$.",
+              "bareme": 0.5,
+              "hint": "$X$ suit une loi binomiale $\\mathcal{B}(n, p)$ : l'expérience est répétée $n = 3$ fois de façon indépendante, avec probabilité de succès $p = p(A) = \\frac{1}{6}$."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que $p(X = 1) = \\dfrac{25}{72}$ et calculer $p(X = 2)$.",
+              "bareme": 1,
+              "hint": "Utilisez la formule $p(X = k) = C_3^k \\left(\\frac{1}{6}\\right)^k \\left(\\frac{5}{6}\\right)^{3-k}$. Pour $k=1$ : $C_3^1 \\cdot \\frac{1}{6} \\cdot \\frac{25}{36}$. Pour $k=2$ : $C_3^2 \\cdot \\left(\\frac{1}{6}\\right)^2 \\cdot \\frac{5}{6}$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2018n-pb",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 11,
+      "topic": "Analyse — Étude de fonctions, intégration, suite récurrente",
+      "context": "On considère la fonction numérique $f$ définie sur $\\mathbb{R}$ par $f(x) = (x^2 - x)e^{-x} + x$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O; \\overrightarrow{i}, \\overrightarrow{j})$ (unité : 1 cm).",
+      "questions": [
+        {
+          "id": "p1",
+          "type": "partie",
+          "content": "Soit $g$ la fonction numérique définie sur $\\mathbb{R}$ par $g(x) = e^x - x^2 + 3x - 1$. Le tableau ci-contre est le tableau de variations de la fonction $g$ ($g'(x) > 0$ sur $\\mathbb{R}$, $g(-\\infty) = -\\infty$, $g(+\\infty) = +\\infty$)."
+        },
+        {
+          "id": "q1",
+          "content": "Vérifier que $g(0) = 0$.",
+          "bareme": 0.25,
+          "hint": "Substituez directement $x = 0$ dans $g(x) = e^x - x^2 + 3x - 1$."
+        },
+        {
+          "id": "q2",
+          "content": "Déterminer le signe de $g(x)$ sur chacun des intervalles $]-\\infty, 0]$ et $[0, +\\infty[$.",
+          "bareme": 0.5,
+          "hint": "$g$ est strictement croissante sur $\\mathbb{R}$ et s'annule uniquement en $0$. Donc $g(x) \\leq 0$ pour $x \\leq 0$ et $g(x) \\geq 0$ pour $x \\geq 0$."
+        },
+        {
+          "id": "p2",
+          "type": "partie",
+          "content": "Soit $f$ la fonction numérique définie sur $\\mathbb{R}$ par $f(x) = (x^2 - x)e^{-x} + x$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O; \\overrightarrow{i}, \\overrightarrow{j})$ (unité : 1 cm)."
+        },
+        {
+          "id": "r1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r1a",
+              "content": "Vérifier que $f(x) = \\dfrac{x^2}{e^x} - \\dfrac{x}{e^x} + x$ pour tout $x$ de $\\mathbb{R}$, puis montrer que $\\displaystyle\\lim_{x \\to +\\infty} f(x) = +\\infty$.",
+              "bareme": 0.5,
+              "hint": "Développez $(x^2-x)e^{-x} + x$ directement. Pour la limite, $\\frac{x^2}{e^x} \\to 0$ et $\\frac{x}{e^x} \\to 0$ donc $f(x) \\sim x \\to +\\infty$."
+            },
+            {
+              "id": "r1b",
+              "content": "Calculer $\\displaystyle\\lim_{x \\to +\\infty} (f(x) - x)$ puis en déduire que $(C)$ admet une asymptote $(D)$ au voisinage de $+\\infty$ d'équation $y = x$.",
+              "bareme": 0.75,
+              "hint": "$f(x) - x = (x^2-x)e^{-x}$. Comme $\\lim_{x\\to+\\infty} x^2 e^{-x} = 0$ et $\\lim_{x\\to+\\infty} xe^{-x} = 0$, on conclut $\\lim(f(x)-x) = 0$ : asymptote oblique $y = x$."
+            },
+            {
+              "id": "r1c",
+              "content": "Vérifier que $f(x) = \\dfrac{x^2 - x + xe^x}{e^x}$ pour tout $x$ de $\\mathbb{R}$, puis calculer $\\displaystyle\\lim_{x \\to -\\infty} f(x)$.",
+              "bareme": 0.5,
+              "hint": "Réduisez au même dénominateur $e^x$. Pour $x \\to -\\infty$ : $\\frac{x^2-x}{e^x} \\to +\\infty$ (croissances comparées) et $x \\to -\\infty$, donc étudiez le signe dominant."
+            },
+            {
+              "id": "r1d",
+              "content": "Montrer que $\\displaystyle\\lim_{x \\to -\\infty} \\dfrac{f(x)}{x} = -\\infty$ et interpréter le résultat géométriquement.",
+              "bareme": 0.5,
+              "hint": "$\\frac{f(x)}{x} = \\frac{x^2-x}{xe^x} + 1 = \\frac{x-1}{e^x} + 1$. En $-\\infty$ : $e^x \\to 0^+$ et $x-1 \\to -\\infty$, donc $\\frac{x-1}{e^x} \\to -\\infty$. La courbe admet une branche parabolique de direction $(Ox)$."
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r2a",
+              "content": "Montrer que $f(x) - x$ et $x^2 - x$ ont le même signe pour tout $x$ de $\\mathbb{R}$.",
+              "bareme": 0.25,
+              "hint": "$f(x) - x = (x^2-x)e^{-x}$. Comme $e^{-x} > 0$ pour tout $x$, le signe de $f(x)-x$ est identique à celui de $x^2 - x = x(x-1)$."
+            },
+            {
+              "id": "r2b",
+              "content": "En déduire que $(C)$ est au dessus de $(D)$ sur chacun des intervalles $]-\\infty, 0]$ et $[1, +\\infty[$, et en dessous de $(D)$ sur l'intervalle $[0, 1]$.",
+              "bareme": 0.5,
+              "hint": "Réutilisez r2a) : $x^2 - x = x(x-1) \\geq 0$ sur $]-\\infty,0]$ et $[1,+\\infty[$, et $x(x-1) \\leq 0$ sur $[0,1]$. Donc $f(x) - x \\geq 0$ ou $\\leq 0$ selon l'intervalle."
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r3a",
+              "content": "Montrer que $f'(x) = g(x) e^{-x}$ pour tout $x$ de $\\mathbb{R}$.",
+              "bareme": 0.75,
+              "hint": "Dérivez $f(x) = (x^2-x)e^{-x} + x$ par la règle du produit : $f'(x) = (2x-1)e^{-x} + (x^2-x)(-e^{-x}) + 1$. Factorisez par $e^{-x}$ et vérifiez que le terme entre parenthèses vaut $g(x) = e^x - x^2 + 3x - 1$."
+            },
+            {
+              "id": "r3b",
+              "content": "En déduire que la fonction $f$ est décroissante sur $]-\\infty, 0]$ et croissante sur $[0, +\\infty[$.",
+              "bareme": 0.5,
+              "hint": "$f'(x) = g(x)e^{-x}$. Comme $e^{-x} > 0$, le signe de $f'$ est celui de $g$. Réutilisez le résultat de Partie I : $g(x) \\leq 0$ sur $]-\\infty,0]$ et $g(x) \\geq 0$ sur $[0,+\\infty[$."
+            },
+            {
+              "id": "r3c",
+              "content": "Dresser le tableau de variations de la fonction $f$.",
+              "bareme": 0.25,
+              "hint": "$f$ est décroissante sur $]-\\infty,0]$, minimum en $0$ : $f(0) = 0$, croissante sur $[0,+\\infty[$. Aux bornes : $\\lim_{-\\infty} f = -\\infty$ et $\\lim_{+\\infty} f = +\\infty$."
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r4a",
+              "content": "Vérifier que $f''(x) = (x^2 - 5x + 4)e^{-x}$ pour tout $x$ de $\\mathbb{R}$.",
+              "bareme": 0.25,
+              "hint": "Dérivez $f'(x) = g(x)e^{-x}$ : $f''(x) = g'(x)e^{-x} - g(x)e^{-x} = (g'(x) - g(x))e^{-x}$. Calculez $g'(x) = e^x - 2x + 3$ et simplifiez."
+            },
+            {
+              "id": "r4b",
+              "content": "En déduire que la courbe $(C)$ admet deux points d'inflexion d'abscisses respectives 1 et 4.",
+              "bareme": 0.5,
+              "hint": "$f''(x) = (x^2-5x+4)e^{-x} = (x-1)(x-4)e^{-x}$. Étudiez le signe : $f''$ s'annule en changeant de signe en $x=1$ et $x=4$, ce sont les abscisses des points d'inflexion."
+            }
+          ]
+        },
+        {
+          "id": "r5",
+          "content": "Construire $(D)$ et $(C)$ dans le même repère $(O; \\overrightarrow{i}, \\overrightarrow{j})$ (on prend $f(4) \\approx 4{,}2$).",
+          "bareme": 1,
+          "hint": "Placez les éléments clés : minimum en $(0, 0)$, points d'inflexion en $x = 1$ et $x = 4$ (avec $f(1) = 1$ et $f(4) \\approx 4{,}2$), asymptote $y = x$, comportement en $-\\infty$ (branche parabolique vers le bas)."
+        },
+        {
+          "id": "r6",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r6a",
+              "content": "Montrer que la fonction $H : x \\mapsto (x^2 + 2x + 2)e^{-x}$ est une primitive de la fonction $h : x \\mapsto -x^2 e^{-x}$ sur $\\mathbb{R}$, puis en déduire que $\\displaystyle\\int_0^1 x^2 e^{-x}\\,dx = \\dfrac{2e-5}{e}$.",
+              "bareme": 0.5,
+              "hint": "Dérivez $H(x) = (x^2+2x+2)e^{-x}$ : $H'(x) = (2x+2)e^{-x} - (x^2+2x+2)e^{-x} = -x^2 e^{-x} = h(x)$. Puis $\\int_0^1 x^2 e^{-x}dx = -[H(x)]_0^1 = -(H(1) - H(0))$."
+            },
+            {
+              "id": "r6b",
+              "content": "À l'aide d'une intégration par parties montrer que $\\displaystyle\\int_0^1 xe^{-x}\\,dx = \\dfrac{e-2}{e}$.",
+              "bareme": 0.75,
+              "hint": "Posez $u = x$, $v' = e^{-x}$, donc $u' = 1$ et $v = -e^{-x}$. Après IPP : $\\int_0^1 xe^{-x}dx = [-xe^{-x}]_0^1 + \\int_0^1 e^{-x}dx$."
+            },
+            {
+              "id": "r6c",
+              "content": "Calculer en $cm^2$ l'aire du domaine plan limité par $(C)$ et $(D)$ et les droites d'équations $x = 0$ et $x = 1$.",
+              "bareme": 0.75,
+              "hint": "Sur $[0,1]$, $(C)$ est en dessous de $(D)$ donc l'aire est $\\int_0^1 |f(x)-x|\\,dx = \\int_0^1 (x - f(x))\\,dx = \\int_0^1 (x^2-x)e^{-x} \\cdot (-1)\\,dx$. Décomposez en utilisant les résultats de r6a) et r6b)."
+            }
+          ]
+        },
+        {
+          "id": "p3",
+          "type": "partie",
+          "content": "Soit $(u_n)$ la suite numérique définie par $u_0 = \\dfrac{1}{2}$ et $u_{n+1} = f(u_n)$ pour tout $n$ de $\\mathbb{N}$."
+        },
+        {
+          "id": "s1",
+          "content": "Montrer que $0 \\leq u_n \\leq 1$ pour tout $n$ de $\\mathbb{N}$ (on pourra utiliser le résultat de la question II.3b)).",
+          "bareme": 0.75,
+          "hint": "Initialisation : $u_0 = \\frac{1}{2} \\in [0,1]$. Hérédité : si $u_n \\in [0,1]$, montrez que $f(u_n) \\in [0,1]$. Utilisez le fait que $f$ est croissante sur $[0,+\\infty[$ et $f(0) = 0$, $f(1) = 1$."
+        },
+        {
+          "id": "s2",
+          "content": "Montrer que la suite $(u_n)$ est décroissante.",
+          "bareme": 0.5,
+          "hint": "Réutilisez le résultat II.2a) : sur $[0,1]$, $f(x) - x \\leq 0$, donc $f(u_n) \\leq u_n$, c'est-à-dire $u_{n+1} \\leq u_n$."
+        },
+        {
+          "id": "s3",
+          "content": "En déduire que $(u_n)$ est convergente et déterminer sa limite.",
+          "bareme": 0.75,
+          "hint": "$(u_n)$ est décroissante et minorée par $0$ : elle converge vers $L$. Par continuité de $f$, $L = f(L)$, i.e. $f(L) - L = 0$. D'après II.2a), $f(x) - x = (x^2-x)e^{-x} = 0 \\ Leftrightarrow x = 0$ ou $x = 1$. Comme $(u_n)$ est décroissante avec $u_0 = \\frac{1}{2} < 1$, la limite est $0$."
+        }
+      ]
+    }
+  ]
+}

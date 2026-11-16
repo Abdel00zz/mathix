@@ -1,0 +1,16 @@
+{
+  "id": "ch01-ex02",
+  "theme": "arithmetique",
+  "difficulty": "facile",
+  "chapter": "01 - La division euclidienne et ses propriétés",
+  "topic": "Division euclidienne - Fraction entière",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer tous les entiers relatifs $m$ tels que : $\\dfrac{m+7}{m-2} \\in \\mathbb{N}$.",
+      "hint": "Effectuez la division euclidienne du numérateur par le dénominateur : écrivez $m + 7 = 1 \\cdot (m-2) + r$ et identifiez $r$. Pour que la fraction soit un entier, que doit diviser $m - 2$ ?"
+    }
+  ]
+}

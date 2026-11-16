@@ -1,0 +1,62 @@
+{
+  "id": "ex_10",
+  "theme": "complexes",
+  "difficulty": "difficile",
+  "topic": "Nombres Complexes",
+  "context": "Cet exercice est composé de deux parties indépendantes.",
+  "requiresRedaction": true,
+  "sessionDate": "2026-02-05T10:00:00.000Z",
+  "questions": [
+    {
+      "id": "p1",
+      "content": "On considère le nombre complexe $a = 2 + \\sqrt{2} + i\\sqrt{2}$.",
+      "type": "header"
+    },
+    {
+      "id": "q1",
+      "content": "Montrer que le module de $a$ est $|a| = 2\\sqrt{2+\\sqrt{2}}$.",
+      "hint": "Utiliser la définition $|z| = \\sqrt{x^2 + y^2}$. Développer $(2+\\sqrt{2})^2$ et simplifier l'expression sous la racine."
+    },
+    {
+      "id": "q2",
+      "content": "Vérifier que $a = 2\\left(1 + \\cos \\frac{\\pi}{4} + i\\sin \\frac{\\pi}{4}\\right)$.",
+      "hint": "Remplacer $\\sqrt{2}$ par $2 \\times \\frac{\\sqrt{2}}{2}$ pour faire apparaître les valeurs remarquables du cosinus et sinus de $\\frac{\\pi}{4}$."
+    },
+    {
+      "id": "q3",
+      "content": "Linéarisation et forme trigonométrique",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "En linéarisant $\\cos^2 \\theta$, montrer que $1 + \\cos 2\\theta = 2\\cos^2 \\theta$.",
+          "hint": "Utiliser la formule de duplication $\\cos 2\\theta = 2\\cos^2 \\theta - 1$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que $a = 4\\cos^2\\left(\\frac{\\pi}{8}\\right) + 4i\\cos\\left(\\frac{\\pi}{8}\\right)\\sin\\left(\\frac{\\pi}{8}\\right)$.",
+          "hint": "Poser $2\\theta = \\frac{\\pi}{4}$ donc $\\theta = \\frac{\\pi}{8}$. Utiliser le résultat précédent pour la partie réelle et la formule $\\sin 2\\theta = 2\\sin \\theta \\cos \\theta$ pour la partie imaginaire."
+        },
+        {
+          "id": "sq3c",
+          "content": "Montrer que $4\\cos\\left(\\frac{\\pi}{8}\\right)\\left(\\cos \\frac{\\pi}{8} + i\\sin \\frac{\\pi}{8}\\right)$ est une forme trigonométrique de $a$, puis montrer que $a^4 = \\left(2\\sqrt{2+\\sqrt{2}}\\right)^4 \\times i$.",
+          "hint": "Vérifier que le module $4\\cos(\\pi/8)$ est positif. Pour $a^4$, utiliser la formule de Moivre et le fait que $e^{i4(\\pi/8)} = e^{i\\pi/2} = i$."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "content": "On considère le plan complexe muni d'un repère orthonormé $(O, \\overrightarrow{u}, \\overrightarrow{v})$. Soit $\\Omega$ le point d'affixe $\\omega = \\sqrt{2}$ et $R$ la rotation de centre $\\Omega$ et d'angle $\\frac{\\pi}{2}$.",
+      "type": "header"
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que l'affixe $b$ du point $B$, image du point $A$ d'affixe $a$ par la rotation $R$, est $2i$.",
+      "hint": "Utiliser l'écriture complexe de la rotation : $b - \\omega = e^{i\\frac{\\pi}{2}}(a - \\omega)$. Remplacer $a$ et $\\omega$ par leurs valeurs."
+    },
+    {
+      "id": "q5",
+      "content": "Déterminer l'ensemble des points $M$ d'affixe $z$ tels que $|z - 2i| = 2$.",
+      "hint": "Interpréter géométriquement $|z - z_B| = 2$. Cela correspond à une distance constante par rapport à un point fixe."
+    }
+  ]
+}

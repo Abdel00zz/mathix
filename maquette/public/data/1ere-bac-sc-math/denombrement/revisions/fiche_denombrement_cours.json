@@ -1,0 +1,226 @@
+{
+  "header": {
+    "title": "Dénombrement",
+    "subtitle": "Cardinaux, arrangements, permutations, combinaisons et binôme de Newton",
+    "context": "1BAC SM"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Le dénombrement permet d'\\objectif{compter précisément les éléments d'ensembles finis et de résoudre des problèmes concrets de combinatoire}. La \\defi{difficulté} principale est de choisir la bonne technique selon que l'ordre compte ou non et selon que les répétitions sont autorisées. \\savant{Blaise Pascal} a formalisé au XVIIe siècle le triangle qui porte son nom et qui permet de calculer les coefficients binomiaux ; aujourd'hui ces outils sont indispensables en probabilités, en informatique et en statistiques.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Blaise_Pascal.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Blaise Pascal (1623–1662)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ensembles_finis_et_cardinaux",
+      "category": "course",
+      "title": "Ensembles finis et cardinaux",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On commence par définir clairement les ensembles finis et leur cardinal. On va ensuite établir les règles de calcul sur les cardinaux qui seront utiles dans toutes les techniques de dénombrement."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un \\mathqst{ensemble fini} ?",
+          "content": "Un ensemble \\textbf{E} non vide est un ensemble fini s'il existe un entier naturel \\(n\\) tel qu'il existe une bijection de \\(\\{1,2,\\dots,n\\}\\) dans \\(E\\). Dans ce cas, on dit que le cardinal de \\(E\\) est \\(n\\), et l'on pose : \\(\\operatorname{Card}(E) = n\\). Le cardinal de l'ensemble vide est \\(0\\)."
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{Dénombrer un ensemble fini non vide \\(E\\), c'est déterminer le cardinal de \\(E\\), c'est-à-dire le nombre de ses éléments.}\\itemsize{Trois conditions doivent être remplies pour que le dénombrement soit correct : compter uniquement les éléments de \\(E\\), ne pas en oublier, et ne pas compter certains éléments plusieurs fois.}"
+        },
+        {
+          "type": "theorem",
+          "title": "Quelles sont les \\mathqst{propriétés du cardinal d'une union} ?",
+          "content": "Si \\(A\\) et \\(B\\) sont deux ensembles finis, alors les ensembles \\(A \\cup B\\) et \\(A \\cap B\\) sont finis et de plus : $$\\boxed{\\operatorname{Card}(A \\cup B) = \\operatorname{Card} A + \\operatorname{Card} B - \\operatorname{Card}(A \\cap B)}$$ En particulier, si \\(A\\) et \\(B\\) sont disjoints : $$\\operatorname{Card}(A \\cup B) = \\operatorname{Card} A + \\operatorname{Card} B$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Dans une classe de 38 élèves, 31 étudient l'anglais, 24 l'espagnol et 17 l'allemand ; 12 étudient à la fois l'anglais et l'allemand ; 9 étudient l'espagnol et l'allemand ; 4 étudient les trois langues simultanément. \\textbf{Déterminons} le nombre d'élèves qui étudient \\textbf{uniquement} l'anglais et l'espagnol.}\\par\\smallskip\\begin{align*}\\operatorname{Card}(A \\cap B \\cap C) &= \\blank{4}\\\\\\operatorname{Card}(A \\cap B) &= \\blank{12}\\\\\\operatorname{Card}(A \\cap C) &= \\blank{9}\\\\\\operatorname{Card}(B \\cap C) &= \\blank{17}\\\\ \\operatorname{Card}((A \\cap B) \\setminus C) &= \\blank{12-4} = 8\\end{align*}\\par Le nombre est \\(\\boxed{8}\\)."
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{Si \\(A \\subset E\\) et \\(\\operatorname{Card} A = \\operatorname{Card} E\\), alors \\(A = E\\).}\\itemsize{Si \\(A_1, A_2, \\dots, A_n\\) sont des ensembles finis deux à deux disjoints, alors \\(\\operatorname{Card}(A_1 \\cup A_2 \\cup \\dots \\cup A_n) = \\sum_{i=1}^n \\operatorname{Card}(A_i)\\).}"
+        }
+      ]
+    },
+    {
+      "id": "principe_fondamental_et_produits_cartesiens",
+      "category": "course",
+      "title": "Principe fondamental et produits cartésiens",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On connaît maintenant les cardinaux. On découvre le principe fondamental du dénombrement qui permet de compter les choix successifs, puis son application au cardinal d'un produit cartésien."
+        },
+        {
+          "type": "theorem",
+          "title": "Quel est le \\mathqst{principe fondamental du dénombrement} ?",
+          "content": "Si une situation de dénombrement nécessite \\(p\\) choix \\(C_1, C_2, \\dots, C_p\\) et si le choix \\(C_i\\) peut produire \\(n_i\\) résultats possibles, alors la situation peut se faire de \\(n_1 \\times n_2 \\times \\dots \\times n_p\\) manières différentes."
+        },
+        {
+          "type": "property",
+          "title": "Quel est le \\mathqst{cardinal d'un produit cartésien} ?",
+          "content": "Soit \\(E\\) et \\(F\\) deux ensembles finis et non vides. Alors : $$\\boxed{\\operatorname{Card}(E \\times F) = \\operatorname{Card} E \\times \\operatorname{Card} F}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Quel est le nombre de \\textbf{numéros de téléphones mobiles} qui commencent par 061 ?}\\par\\smallskip Après 061, il reste 9 chiffres libres (0 à 9).\\par\\smallskip\\begin{align*}\\text{Nombre de possibilités} &= 9 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\times 10 \\\\&= \\blank{9 \\times 10^8}\\end{align*}\\par Le résultat est \\(\\boxed{900\\,000\\,000}\\)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On lance un dé cubique trois fois de suite. \\textbf{Déterminons} le nombre de triplets \\((a;b;c)\\) comportant \\textbf{uniquement} des chiffres impairs.}\\par\\smallskip Les chiffres impairs sont 1, 3, 5 (3 possibilités par lancer).\\par\\smallskip\\begin{align*}\\text{Nombre de triplets} &= 3 \\times 3 \\times 3 \\\\&= \\boxed{27}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "arrangements",
+      "category": "course",
+      "title": "Arrangements avec et sans répétition",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On passe aux techniques concrètes de dénombrement : les arrangements. On distingue clairement le cas où les répétitions sont autorisées ou non."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un \\mathqst{arrangement avec répétition} ?",
+          "content": "Soit \\(E\\) un ensemble fini non vide de cardinal \\(n \\geq 1\\) et \\(p \\in \\mathbb{N}^*\\). Tout élément \\((x_1;x_2;\\dots;x_p)\\) du produit cartésien \\(E^p\\) s'appelle un arrangement avec répétition de \\(p\\) éléments de \\(E\\) (ou une p-liste de \\(E\\))."
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer le nombre d'\\mathqst{arrangements avec répétition} ?",
+          "content": "Identifier le nombre \\(n\\) d'éléments possibles à chaque choix.\\par Le nombre d'arrangements avec répétition de \\(p\\) éléments parmi \\(n\\) est \\(n^p\\).\\par\\textbf{Attention :} l'ordre compte et les répétitions sont autorisées."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On lance un dé cubique trois fois de suite. \\textbf{Déterminons} le nombre total de triplets \\((a;b;c)\\) possibles (arrangements avec répétition).}\\par\\smallskip Chaque lancer a 6 possibilités.\\par\\smallskip\\begin{align*}\\text{Nombre de triplets} &= \\blank{6} \\times 6 \\times 6 \\\\&= \\boxed{216}\\end{align*}"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un \\mathqst{arrangement sans répétition} ?",
+          "content": "Soit \\(E\\) un ensemble fini non vide de cardinal \\(n \\geq 1\\) et \\(p \\in \\mathbb{N}^*\\) tel que \\(1 \\leq p \\leq n\\). Tout élément \\((x_1;x_2;\\dots;x_p)\\) du produit cartésien tel que les \\(x_i\\) sont deux à deux distincts s'appelle un arrangement sans répétition de \\(p\\) éléments dans \\(E\\)."
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer le nombre d'\\mathqst{arrangements sans répétition} ?",
+          "content": "Calculer successivement : \\(n\\) choix pour le premier, \\(n-1\\) pour le deuxième, etc.\\par Le nombre est : $$A_n^p = n(n-1)\\dots(n-p+1)$$\\par\\textbf{Astuce :} c'est aussi \\(\\dfrac{n!}{(n-p)!}\\)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On dispose de quatre couleurs : vert, jaune, rouge et bleu pour colorier quatre cases. \\textbf{Combien} de coloriages différents avec des couleurs distinctes ?}\\par\\smallskip\\begin{align*}A_4^4 &= 4 \\times \\blank{3} \\times 2 \\times 1 \\\\&= \\boxed{24}\\end{align*}"
+        },
+        {
+          "type": "warning",
+          "content": "Une erreur classique, que vous ne devez pas commettre : confondre arrangements avec et sans répétition. Avec répétition : on peut répéter les éléments. Sans répétition : les éléments doivent être tous distincts."
+        }
+      ]
+    },
+    {
+      "id": "permutations_et_combinaisons",
+      "category": "course",
+      "title": "Permutations et combinaisons",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On continue avec les cas particuliers : les permutations (arrangements sans répétition de tous les éléments) et les combinaisons (l'ordre ne compte pas)."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une \\mathqst{permutation} d'un ensemble fini ?",
+          "content": "Soit \\(E\\) un ensemble fini non vide de cardinal \\(n \\in \\mathbb{N}^*\\). Une permutation de \\(E\\) est une bijection de \\(E\\) dans \\(E\\), c'est-à-dire un arrangement sans répétition de tous les éléments de \\(E\\)."
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer le nombre de \\mathqst{permutations} d'un ensemble fini ?",
+          "content": "Le nombre de permutations des \\(n\\) éléments de \\(E\\) est noté \\(n!\\) et vaut : $$n! = n \\times (n-1) \\times \\dots \\times 2 \\times 1$$\\par On convient que \\(0! = 1\\)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On dispose de quatre couleurs distinctes pour colorier quatre cases. \\textbf{Combien} de permutations complètes sont possibles ?}\\par\\smallskip\\begin{align*}4! &= 4 \\times 3 \\times \\blank{2} \\times 1 \\\\&= \\boxed{24}\\end{align*}"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une \\mathqst{combinaison} de \\(p\\) éléments parmi \\(n\\) ?",
+          "content": "Soit \\(E\\) un ensemble fini non vide de cardinal \\(n \\geq 1\\) et \\(p \\in \\mathbb{N}^*\\) tel que \\(p \\leq n\\). Une combinaison de \\(p\\) éléments pris parmi \\(n\\) est une partie de \\(E\\) dont le cardinal est \\(p\\). (L'ordre ne compte pas et il n'y a pas de répétition.)"
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer le nombre de \\mathqst{combinaisons} de \\(p\\) éléments parmi \\(n\\) ?",
+          "content": "Le nombre est noté \\(C_n^p\\) et vaut : $$C_n^p = \\dfrac{n!}{p!(n-p)!}$$\\par\\textbf{Astuce :} utiliser le triangle de Pascal ou la relation de récurrence \\(C_n^p + C_n^{p+1} = C_{n+1}^{p+1}\\)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Une urne contient 10 boules noires, 5 blanches et 3 rouges. On tire 5 boules successivement sans remise. \\textbf{Déterminons} le nombre de séries de tirages possibles (combinaisons).}\\par\\smallskip On choisit 5 boules parmi 18 sans ordre :\\par\\smallskip\\begin{align*}C_{18}^5 &= \\dfrac{18!}{5! \\, 13!} \\\\&= \\blank{8568}\\end{align*}\\par Le résultat est \\(\\boxed{8568}\\)."
+        },
+        {
+          "type": "warning",
+          "content": "C’est une erreur classique, ne la commettez pas : confondre combinaison et permutation. Dans une combinaison l'ordre ne compte pas ; dans une permutation l'ordre compte toujours."
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{La symétrie : \\(C_n^p = C_n^{n-p}\\).}\\itemsize{On a aussi \\(A_n^p = \\dfrac{n!}{(n-p)!}\\).}"
+        }
+      ]
+    },
+    {
+      "id": "formule_binome_newton",
+      "category": "course",
+      "title": "Formule du binôme de Newton",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On termine par la formule du binôme de Newton et le triangle de Pascal qui permettent de développer rapidement des puissances et de calculer des coefficients."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle est la \\mathqst{formule du binôme de Newton} ?",
+          "content": "Soit \\(a\\) et \\(b\\) deux réels et \\(n\\) un entier naturel non nul. Alors : $$\\boxed{(a + b)^n = \\sum_{k=0}^n C_n^k a^{n-k} b^k}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment appliquer la \\mathqst{formule du binôme de Newton} ?",
+          "content": "Identifier \\(a\\) et \\(b\\).\\par Remplacer dans la formule et calculer chaque terme \\(C_n^k a^{n-k} b^k\\).\\par Pour \\((a - b)^n\\) remplacer \\(b\\) par \\(-b\\).\\par\\textbf{Astuce :} le coefficient de \\(a^{n-k} b^k\\) est exactement \\(C_n^k\\)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Développons \\((a + b)^6\\) à l'aide de la formule du binôme.}\\par\\smallskip\\begin{align*}(a + b)^6 &= \\sum_{k=0}^6 C_6^k a^{6-k} b^k \\\\&= C_6^0 a^6 + C_6^1 a^5 b + \\blank{C_6^2 a^4 b^2} + \\dots + b^6 \\\\&= \\boxed{a^6 + 6a^5b + 15a^4b^2 + 20a^3b^3 + 15a^2b^4 + 6ab^5 + b^6}\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Quel est le coefficient de \\(a^7 b^3\\) dans le développement de \\((a - b)^{10}\\) ?}\\par\\smallskip Le terme est \\(C_{10}^3 a^7 (-b)^3\\).\\par\\smallskip\\begin{align*}C_{10}^3 &= \\dfrac{10!}{3! \\, 7!} \\\\&= \\blank{120}\\\\ \\text{Coefficient final} &= 120 \\times (-1) = \\boxed{-120}\\end{align*}"
+        },
+        {
+          "type": "remark",
+          "content": "\\itemsize{Pour tous réels \\(a\\) et \\(b\\) : \\((a - b)^n = \\sum_{k=0}^n C_n^k (-1)^k a^{n-k} b^k\\).}\\itemsize{Le triangle de Pascal permet de calculer les \\(C_n^k\\) par récurrence : chaque coefficient est la somme de celui du dessus et de celui à gauche.}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{On considère le tableau du triangle de Pascal jusqu'à \\(n=5\\). \\textbf{Complétons} la ligne \\(n=5\\) et vérifions la formule de Pascal pour \\(C_5^2\\).}\\par\\smallskip$$\\begin{array}{c|cccccc} n \\backslash k & 0 & 1 & 2 & 3 & 4 & 5 \\\\ \\hline 0 & 1 \\\\ 1 & 1 & 1 \\\\ 2 & 1 & 2 & 1 \\\\ 3 & 1 & 3 & 3 & 1 \\\\ 4 & 1 & 4 & 6 & 4 & 1 \\\\ 5 & 1 & 5 & 10 & 10 & 5 & 1 \\end{array}$$\\par Vérification : \\(C_4^1 + C_4^2 = 4+6=10=C_5^2\\). Le résultat est confirmé."
+        }
+      ]
+    }
+  ]
+}

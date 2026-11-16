@@ -1,0 +1,680 @@
+{
+  "header": {
+    "title": "Les limites et la continuité",
+    "subtitle": "Limites usuelles et opérations, continuité, TVI, dichotomie, fonction réciproque et racines n-ièmes",
+    "context": "2ème année Bac Sciences Expérimentales · 2023/2024"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Cette fiche relie le calcul des limites à l'étude de la continuité. Elle permet ensuite d'étudier l'image d'un intervalle, le théorème des valeurs intermédiaires, la dichotomie et les fonctions réciproques. La difficulté principale est de reconnaître les hypothèses utiles avant d'appliquer chaque résultat."
+        }
+      ]
+    },
+    {
+      "id": "limites-usuelles",
+      "category": "course",
+      "title": "Les limites usuelles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On rappelle les limites de référence utilisées dans les calculs. Elles servent de base aux opérations et aux comparaisons de limites."
+        },
+        {
+          "type": "property",
+          "title": "Que valent \\mathqst{les limites usuelles à l'infini} ?",
+          "content": "Pour tout $n\\in\\mathbb{N}^{*}$ :\\begin{itemize}\\item $\\displaystyle\\lim_{x\\to+\\infty}x^n=+\\infty$.\\item Si $n$ est pair, $\\displaystyle\\lim_{x\\to-\\infty}x^n=+\\infty$ ; si $n$ est impair, $\\displaystyle\\lim_{x\\to-\\infty}x^n=-\\infty$.\\item $\\displaystyle\\lim_{x\\to+\\infty}\\sqrt{x}=+\\infty$ et $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{1}{\\sqrt{x}}=0$.\\item $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac1{x^n}=0$ et $\\displaystyle\\lim_{x\\to-\\infty}\\dfrac1{x^n}=0$.\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Que valent \\mathqst{les limites usuelles au voisinage de $0$} ?",
+          "content": "Pour tout $n\\in\\mathbb{N}^{*}$ :\\begin{itemize}\\item $\\displaystyle\\lim_{x\\to0}x^n=0$ et $\\displaystyle\\lim_{x\\to0^+}\\sqrt{x}=0$.\\item $\\displaystyle\\lim_{x\\to0^+}\\dfrac1{\\sqrt{x}}=+\\infty$.\\item $\\displaystyle\\lim_{x\\to0^+}\\dfrac1{x^n}=+\\infty$.\\item Si $n$ est pair, $\\displaystyle\\lim_{x\\to0^-}\\dfrac1{x^n}=+\\infty$ ; si $n$ est impair, $\\displaystyle\\lim_{x\\to0^-}\\dfrac1{x^n}=-\\infty$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "operations-limites",
+      "category": "course",
+      "title": "Opérations sur les limites",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "À partir des limites usuelles, on combine les fonctions par somme, produit, inverse et quotient. Certains cas ne permettent pas de conclure directement."
+        },
+        {
+          "type": "theorem",
+          "title": "Quand \\mathqst{une limite en $a$ existe-t-elle à partir des limites latérales} ?",
+          "content": "Soit $f$ une fonction et $a\\in\\mathbb{R}$. Pour $\\ell\\in\\mathbb{R}\\cup\\{-\\infty,+\\infty\\}$ :$$\\boxed{\\displaystyle\\lim_{x\\to a}f(x)=\\ell\\iff\\displaystyle\\lim_{x\\to a^-}f(x)=\\displaystyle\\lim_{x\\to a^+}f(x)=\\ell}$$Les deux limites latérales doivent donc exister et être égales."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer la limite d'une somme} ?",
+          "content": "Les cas essentiels se résument ainsi :\\par\\smallskip $$\\begin{array}{c|c|c|c|c|c}\\displaystyle\\lim_{x\\to a}f(x) & L & L & +\\infty & -\\infty & +\\infty\\\\\\displaystyle\\lim_{x\\to a}g(x) & L' & +\\infty & +\\infty & -\\infty & -\\infty\\\\ \\hline\\displaystyle\\lim_{x\\to a}(f+g)(x) & L+L' & +\\infty & +\\infty & -\\infty & \\mathrm{F.I.}\\end{array}$$où $L,L'\\in\\mathbb{R}$. La forme $+\\infty-\\infty$ est indéterminée."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer la limite d'un produit} ?",
+          "content": "Pour un produit, on applique la règle des signes :\\par\\smallskip $$\\begin{array}{c|c|c|c|c}\\displaystyle\\lim_{x\\to a}f(x) & L & L\\neq0 & \\pm\\infty & 0\\\\\\displaystyle\\lim_{x\\to a}g(x) & L' & \\pm\\infty & \\pm\\infty & \\pm\\infty\\\\ \\hline\\displaystyle\\lim_{x\\to a}(fg)(x) & LL' & \\pm\\infty & \\pm\\infty & \\mathrm{F.I.}\\end{array}$$Dans les colonnes contenant $\\pm\\infty$, le signe final dépend des signes des facteurs."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer la limite d'un inverse} ?",
+          "content": "$$\\begin{array}{c|c|c|c|c}\\displaystyle\\lim_{x\\to a}f(x) & L\\neq0 & 0^+ & 0^- & \\pm\\infty\\\\ \\hline\\displaystyle\\lim_{x\\to a}\\dfrac1{f(x)} & \\dfrac1L & +\\infty & -\\infty & 0\\end{array}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer la limite d'un quotient} ?",
+          "content": "$$\\begin{array}{c|c|c|c|c|c}\\displaystyle\\lim_{x\\to a}f(x) & L & L & \\pm\\infty & 0 & \\pm\\infty\\\\\\displaystyle\\lim_{x\\to a}g(x) & L'\\neq0 & \\pm\\infty & L'\\neq0 & 0 & \\pm\\infty\\\\ \\hline\\displaystyle\\lim_{x\\to a}\\dfrac{f(x)}{g(x)} & \\dfrac{L}{L'} & 0 & \\pm\\infty & \\mathrm{F.I.} & \\mathrm{F.I.}\\end{array}$$Pour le troisième cas, le signe de l'infini se détermine avec la règle des signes."
+        }
+      ]
+    },
+    {
+      "id": "polynomes-rationnelles",
+      "category": "course",
+      "title": "Fonctions polynômes et rationnelles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour les polynômes et les fonctions rationnelles, la continuité algébrique simplifie les limites en un réel. À l'infini, les termes de plus haut degré déterminent le comportement."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer la limite d'un polynôme ou d'un quotient en un réel} ?",
+          "content": "Si $P$ et $Q$ sont des polynômes et $Q(a)\\neq0$, alors :$$\\boxed{\\displaystyle\\lim_{x\\to a}P(x)=P(a)\\qquad\\text{et}\\qquad\\displaystyle\\lim_{x\\to a}\\frac{P(x)}{Q(x)}=\\frac{P(a)}{Q(a)}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quel terme \\mathqst{détermine la limite à l'infini d'un polynôme} ?",
+          "content": "Si $ax^n$ et $bx^m$ sont les termes de plus haut degré de $P$ et $Q$, alors :$$\\boxed{\\displaystyle\\lim_{x\\to\\pm\\infty}P(x)=\\displaystyle\\lim_{x\\to\\pm\\infty}ax^n}$$et$$\\boxed{\\displaystyle\\lim_{x\\to\\pm\\infty}\\frac{P(x)}{Q(x)}=\\displaystyle\\lim_{x\\to\\pm\\infty}\\frac{ax^n}{bx^m}}$$"
+        },
+        {
+          "type": "application",
+          "uid": "app-polynomes-01",
+          "difficulty": 2,
+          "content": "\\qst{Calculer les limites suivantes :\\begin{enumerate}\\item $\\displaystyle\\lim_{x\\to2}(x^2+3x-1)$.\\item $\\displaystyle\\lim_{x\\to1}\\dfrac{2x+3}{x+2}$.\\item $\\displaystyle\\lim_{x\\to-\\infty}(2x^3-x)$.\\item $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{3x^2-1}{2x^2+x}$.\\item $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{2x+1}{x^2+1}$.\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item La fonction est polynomiale. On remplace $x$ par $2$ : $2^2+3\\cdot2-1=\\blank{9}$.\\item Le dénominateur ne s'annule pas en $1$. Donc : $\\dfrac{2\\cdot1+3}{1+2}=\\blank{\\frac53}$.\\item Le terme dominant est $2x^3$. Donc : $\\blank{-\\infty}$.\\item Les degrés sont égaux. La limite est le quotient des coefficients dominants : $\\blank{\\frac32}$.\\item Le degré du dénominateur est supérieur à celui du numérateur. Donc : $\\blank{0}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "limites-racine-carree",
+      "category": "course",
+      "title": "Limites d'une fonction irrationnelle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On étend le calcul des limites à la racine carrée d'une fonction positive. Lorsque deux termes se compensent, la conjugaison permet de transformer l'expression."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{passer une limite sous une racine carrée} ?",
+          "content": "Soit $f$ une fonction telle que $f(x)\\ge0$ au voisinage du point considéré.\\begin{itemize}\\item Si $\\displaystyle\\lim_{x\\to a}f(x)=\\ell$ avec $\\ell\\ge0$, alors $$\\boxed{\\displaystyle\\lim_{x\\to a}\\sqrt{f(x)}=\\sqrt{\\ell}}$$\\item Si $\\displaystyle\\lim_{x\\to a}f(x)=+\\infty$, alors $$\\boxed{\\displaystyle\\lim_{x\\to a}\\sqrt{f(x)}=+\\infty}$$\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "Le même principe s'utilise pour une limite en $+\\infty$, en $-\\infty$, à droite ou à gauche d'un réel lorsque la racine est définie."
+        },
+        {
+          "type": "application",
+          "uid": "app-racines-limites-01",
+          "difficulty": 2,
+          "content": "\\qst{Calculer les limites suivantes :\\begin{enumerate}\\item $\\displaystyle\\lim_{x\\to4}\\dfrac{\\sqrt{x}-2}{x-4}$.\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sqrt{1+x}-1}{x}$.\\item $\\displaystyle\\lim_{x\\to+\\infty}\\left(\\sqrt{x^2+3}-x\\right)$.\\end{enumerate}}\\par\\smallskip \\textbf{Idée :} multiplier numérateur et dénominateur par la quantité conjuguée, puis simplifier avant de passer à la limite.\\par \\begin{enumerate}\\item Pour $x\\neq4$, $\\dfrac{\\sqrt{x}-2}{x-4}=\\blank{\\dfrac1{\\sqrt{x}+2}}$. D'où : $\\blank{\\frac14}$.\\item Pour $x\\neq0$, $\\dfrac{\\sqrt{1+x}-1}{x}=\\dfrac1{\\sqrt{1+x}+1}$. D'où : $\\blank{\\frac12}$.\\item On multiplie par le conjugué : $\\sqrt{x^2+3}-x=\\blank{\\dfrac{3}{\\sqrt{x^2+3}+x}}$. D'où : $\\blank{0}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "limites-trigonometriques",
+      "category": "course",
+      "title": "Limites des fonctions trigonométriques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certaines limites trigonométriques servent de modèles de référence au voisinage de $0$. Elles sont ensuite adaptées par changement d'expression."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les trois limites trigonométriques de référence} ?",
+          "content": "$$\\boxed{\\displaystyle\\lim_{x\\to0}\\frac{\\sin x}{x}=1,\\qquad\\displaystyle\\lim_{x\\to0}\\frac{\\tan x}{x}=1,\\qquad\\displaystyle\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12}$$"
+        },
+        {
+          "type": "application",
+          "uid": "app-trigo-01",
+          "difficulty": 2,
+          "content": "\\qst{Calculer les limites suivantes :\\begin{enumerate}\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(4x)}{x}$.\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{\\tan(3x)}{2x}$.\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{1-\\cos(2x)}{x^2}$.\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(5x)}{\\tan(2x)}$.\\end{enumerate}}\\par\\smallskip \\textbf{Idée :} faire apparaître $\\dfrac{\\sin u}{u}$, $\\dfrac{\\tan u}{u}$ ou $\\dfrac{1-\\cos u}{u^2}$ avec $u\\to0$, puis utiliser les limites de référence.\\par \\begin{enumerate}\\item $\\dfrac{\\sin(4x)}x=4\\dfrac{\\sin(4x)}{4x}$. Donc : $\\blank{4}$.\\item $\\dfrac{\\tan(3x)}{2x}=\\dfrac32\\dfrac{\\tan(3x)}{3x}$. Donc : $\\blank{\\frac32}$.\\item On écrit $\\dfrac{1-\\cos(2x)}{x^2}=4\\dfrac{1-\\cos(2x)}{(2x)^2}$. Donc : $\\blank{2}$.\\item On écrit $\\dfrac{\\sin(5x)}{\\tan(2x)}=\\dfrac{\\sin(5x)}{5x}\\cdot\\dfrac{2x}{\\tan(2x)}\\cdot\\dfrac52$. D'où : $\\blank{\\frac52}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "limites-ordre",
+      "category": "course",
+      "title": "Les limites et l'ordre",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les inégalités permettent de déterminer une limite sans calculer directement l'expression. On utilise une comparaison ou un encadrement."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{déduire une limite à partir d'inégalités} ?",
+          "content": "Soient $f,u,v$ définies sur un intervalle adapté.\\par\\smallskip \\begin{enumerate}\\item Si $f(x)\\ge u(x)$ et $\\displaystyle\\lim_{x\\to+\\infty}u(x)=+\\infty$, alors $\\displaystyle\\lim_{x\\to+\\infty}f(x)=+\\infty$.\\item Si $f(x)\\le u(x)$ et $\\displaystyle\\lim_{x\\to+\\infty}u(x)=-\\infty$, alors $\\displaystyle\\lim_{x\\to+\\infty}f(x)=-\\infty$.\\item Si $u(x)\\le f(x)\\le v(x)$ et $\\displaystyle\\lim_{x\\to+\\infty}u(x)=\\displaystyle\\lim_{x\\to+\\infty}v(x)=\\ell$, alors $\\displaystyle\\lim_{x\\to+\\infty}f(x)=\\ell$.\\item Si $|f(x)-\\ell|\\le u(x)$ et $\\displaystyle\\lim_{x\\to+\\infty}u(x)=0$, alors $\\displaystyle\\lim_{x\\to+\\infty}f(x)=\\ell$.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Ces résultats restent valables pour une limite en $-\\infty$, en un réel, à droite ou à gauche lorsque les fonctions sont définies sur les intervalles correspondants."
+        },
+        {
+          "type": "application",
+          "uid": "app-ordre-01",
+          "difficulty": 2,
+          "content": "\\qst{\\begin{enumerate}\\item Soit $g(x)=\\dfrac{2+\\sin x}{x}$ pour $x>0$. Montrer que $\\dfrac1x\\le g(x)\\le\\dfrac3x$, puis calculer $\\displaystyle\\lim_{x\\to+\\infty}g(x)$.\\item Soit $h(x)=x+\\sin x$. Montrer que $\\displaystyle\\lim_{x\\to+\\infty}h(x)=+\\infty$.\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item On a $-1\\le\\sin x\\le1$. Donc $1\\le2+\\sin x\\le3$. Comme $x>0$, $\\dfrac1x\\le g(x)\\le\\dfrac3x$. Or $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac1x=\\displaystyle\\lim_{x\\to+\\infty}\\dfrac3x=0$. D'où : $\\boxed{\\displaystyle\\lim_{x\\to+\\infty}g(x)=\\blank{0}}$.\\item Comme $\\sin x\\ge\\blank{-1}$, on a $h(x)\\ge\\blank{x-1}$. Or $\\displaystyle\\lim_{x\\to+\\infty}(x-1)=+\\infty$. D'où : $\\boxed{\\displaystyle\\lim_{x\\to+\\infty}h(x)=\\blank{+\\infty}}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "continuite-point",
+      "category": "course",
+      "title": "La continuité en un point",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On relie maintenant la valeur d'une fonction à son comportement au voisinage d'un point. Une activité graphique permet d'observer les cas où la limite coïncide ou non avec la valeur de la fonction."
+        },
+        {
+          "type": "exploration",
+          "content": "La figure ci-dessus représente la courbe $(C_f)$ d'une fonction $f$.\\par\\smallskip \\begin{enumerate}\\item Calculer les limites suivantes : $\\displaystyle\\lim_{x\\to+\\infty}f(x)$, $\\displaystyle\\lim_{x\\to-\\infty}f(x)$, $\\displaystyle\\lim_{x\\to1^-}f(x)$ et $\\displaystyle\\lim_{x\\to1^+}f(x)$.\\item \\begin{enumerate}\\item Calculer $\\displaystyle\\lim_{x\\to0^+}f(x)$, $\\displaystyle\\lim_{x\\to0^-}f(x)$ et $f(0)$.\\item La fonction $f$ est-elle continue au point d'abscisse $0$ ?\\end{enumerate}\\item \\begin{enumerate}\\item Calculer $f(2)$ et $\\displaystyle\\lim_{x\\to2}f(x)$.\\item La fonction $f$ est-elle continue au point d'abscisse $2$ ?\\end{enumerate}\\end{enumerate}",
+          "media": {
+            "src": "/api/content?action=media&id=5255df0b7866eba73d-01_limites_continuite_fig_01.png",
+            "alt": "01_limites_continuite_fig_01",
+            "position": "right"
+          }
+        },
+        {
+          "type": "definition",
+          "title": "Quand dit-on que \\mathqst{$f$ est continue en $x_0$} ?",
+          "content": "Soit $f$ une fonction définie sur un intervalle $I$ et soit $x_0\\in I$. La fonction $f$ est \\textbf{continue en $x_0$} lorsque la limite de $f(x)$ quand $x$ tend vers $x_0$ existe et vaut la valeur de la fonction en ce point :$$\\boxed{\\displaystyle\\lim_{x\\to x_0}f(x)=f(x_0)}$$"
+        },
+        {
+          "type": "warning",
+          "title": "",
+          "content": "Ne concluez pas trop vite à la continuité en $x_0$ : vérifiez que $f(x_0)$ existe, puis comparez $\\displaystyle\\lim_{x\\to x_0}f(x)$ à $f(x_0)$."
+        },
+        {
+          "type": "application",
+          "uid": "app-cont-point-01",
+          "difficulty": 1,
+          "content": "\\qst{Soit $f$ définie par $f(x)=\\dfrac{x^2-1}{x-1}$ pour $x\\neq1$ et $f(1)=2$. Montrer que $f$ est continue en $1$.}\\par\\smallskip \\textbf{Idée :} lever l'indétermination $\\dfrac00$ en factorisant, puis comparer la limite obtenue à $f(1)$.\\par Pour $x\\neq1$, on a $x^2-1=(x-1)(x+1)$, donc $f(x)=\\blank{x+1}$. Ainsi : $\\displaystyle\\lim_{x\\to1}f(x)=\\blank{2}=f(1)$. D'où : $f$ est \\blank{continue} en $1$."
+        },
+        {
+          "type": "application",
+          "uid": "app-cont-point-02",
+          "difficulty": 1,
+          "content": "\\qst{Soit $g$ définie par $g(x)=x^2+1$ pour $x\\neq2$ et $g(2)=6$. La fonction $g$ est-elle continue en $2$ ?}\\par\\smallskip \\textbf{Idée :} calculer la limite en $2$ par continuité, puis la comparer à la valeur $g(2)$ donnée.\\par On a : $\\displaystyle\\lim_{x\\to2}g(x)=2^2+1=\\blank{5}$. Or : $g(2)=\\blank{6}$. Les deux valeurs sont différentes. Donc $g$ n'est \\blank{pas continue} en $2$."
+        }
+      ]
+    },
+    {
+      "id": "continuite-laterale",
+      "category": "course",
+      "title": "Continuité à droite et à gauche",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lorsque le domaine n'est disponible que d'un côté du point, on utilise une limite latérale. Les deux continuités latérales permettent ensuite de retrouver la continuité en un point intérieur."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{être continue à droite ou à gauche en $x_0$} ?",
+          "content": "On dit que $f$ est \\textbf{continue à droite en $x_0$} si $$\\boxed{\\displaystyle\\lim_{x\\to x_0^+}f(x)=f(x_0)}$$et \\textbf{continue à gauche en $x_0$} si $$\\boxed{\\displaystyle\\lim_{x\\to x_0^-}f(x)=f(x_0)}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{les deux continuités latérales donnent-elles la continuité} ?",
+          "content": "Si $x_0$ est intérieur à l'intervalle de définition, alors $f$ est continue en $x_0$ si et seulement si elle est continue à droite et à gauche en $x_0$. Autrement dit :$$\\boxed{\\displaystyle\\lim_{x\\to x_0^-}f(x)=\\displaystyle\\lim_{x\\to x_0^+}f(x)=f(x_0)}$$"
+        },
+        {
+          "type": "application",
+          "uid": "app-cont-lat-01",
+          "difficulty": 1,
+          "content": "\\qst{Soit $f$ définie par $f(x)=2x+1$ si $x<1$ et $f(x)=x+2$ si $x\\ge1$.\\begin{enumerate}\\item Calculer $\\displaystyle\\lim_{x\\to1^-}f(x)$ et $\\displaystyle\\lim_{x\\to1^+}f(x)$.\\item Calculer $f(1)$.\\item La fonction $f$ est-elle continue en $1$ ?\\end{enumerate}}\\par\\smallskip \\textbf{Idée :} traiter séparément les deux expressions de $f$, puis comparer les deux limites latérales et $f(1)$.\\par \\begin{enumerate}\\item $\\displaystyle\\lim_{x\\to1^-}f(x)=2\\cdot1+1=\\blank{3}$ et $\\displaystyle\\lim_{x\\to1^+}f(x)=1+2=\\blank{3}$.\\item Comme $1\\ge1$, on utilise la deuxième expression : $f(1)=\\blank{3}$.\\item Les deux limites latérales et $f(1)$ sont égales. Donc $f$ est \\blank{continue en $1$}.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "uid": "app-cont-lat-02",
+          "difficulty": 2,
+          "content": "\\qst{Soit $g$ définie par $g(x)=x+1$ si $x<2$ et $g(x)=ax$ si $x\\ge2$.\\begin{enumerate}\\item Calculer $\\displaystyle\\lim_{x\\to2^-}g(x)$.\\item Exprimer $\\displaystyle\\lim_{x\\to2^+}g(x)$ et $g(2)$ en fonction de $a$.\\item Déterminer $a$ pour que $g$ soit continue en $2$.\\end{enumerate}}\\par\\smallskip \\textbf{Idée :} exprimer les deux limites latérales en fonction de $a$, écrire l'égalité de continuité, puis résoudre.\\par \\begin{enumerate}\\item $\\displaystyle\\lim_{x\\to2^-}g(x)=2+1=\\blank{3}$.\\item $\\displaystyle\\lim_{x\\to2^+}g(x)=\\blank{2a}$ et $g(2)=\\blank{2a}$.\\item La continuité impose $2a=3$. Donc : $a=\\blank{\\frac32}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "continuite-intervalle",
+      "category": "course",
+      "title": "La continuité sur un intervalle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La continuité en un point se prolonge à tout un intervalle. Une comparaison de courbes permet de distinguer une courbe sans rupture, une rupture par saut et une séparation par asymptote."
+        },
+        {
+          "type": "exploration",
+          "content": "Les figures ci-dessus représentent les courbes de trois fonctions $f$, $g$ et $h$. Commenter les courbes $(C_f)$, $(C_g)$ et $(C_h)$ du point de vue de la continuité.",
+          "media": {
+            "src": "/api/content?action=media&id=43ec265c267ccc65aa-01_limites_continuite_fig_02.png",
+            "alt": "01_limites_continuite_fig_02",
+            "position": "top",
+            "additionalImages": [
+              {
+                "src": "/api/content?action=media&id=0ea55d5a3819815015-01_limites_continuite_fig_04.png",
+                "alt": "01_limites_continuite_fig_04",
+                "position": "top"
+              },
+              {
+                "src": "/api/content?action=media&id=bf265fe3089cdf1e25-01_limites_continuite_fig_03.png",
+                "alt": "01_limites_continuite_fig_03",
+                "position": "top"
+              }
+            ]
+          }
+        },
+        {
+          "type": "definition",
+          "title": "Quand dit-on que \\mathqst{$f$ est continue sur un intervalle} ?",
+          "content": "La fonction $f$ est continue sur $]a,b[$ si elle est continue en tout point de $]a,b[$. Elle est continue sur $[a,b]$ si elle est continue sur $]a,b[$, continue à droite en $a$ et continue à gauche en $b$."
+        }
+      ]
+    },
+    {
+      "id": "partie-entiere",
+      "category": "course",
+      "title": "La fonction partie entière",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La fonction partie entière constitue un exemple classique de fonction constante par morceaux. Elle permet d'observer précisément des discontinuités aux entiers."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la partie entière $E(x)$} ?",
+          "content": "Pour un réel $x$, la \\textbf{partie entière} $E(x)$ est le plus grand entier inférieur ou égal à $x$. Autrement dit, $E(x)=n$ si et seulement si :$$\\boxed{n\\le x<n+1}$$"
+        },
+        {
+          "type": "example",
+          "title": "",
+          "content": "Pour la fonction partie entière $E$, on cherche l'unique entier $n$ tel que $n\\le x<n+1$.\\par Ainsi :$$E(2{,}36)=2,\\qquad E(2)=2,\\qquad E(\\pi)=3,\\qquad E(-2{,}36)=-3.$$Le dernier résultat rappelle qu'avec un nombre négatif, on choisit l'entier situé immédiatement à gauche."
+        },
+        {
+          "type": "application",
+          "uid": "app-partie-entiere-exemple",
+          "difficulty": 3,
+          "content": "\\qst{Calculons quelques valeurs de la partie entière.}\\par\\smallskip \\textbf{Idée :} $E(x)$ est l'entier $n$ vérifiant $n\\le x<n+1$. Il faut donc encadrer chaque nombre entre deux entiers consécutifs.\\par Pour $2{,}36$, on a $2\\le2{,}36<3$, donc $E(2{,}36)=\\blank{2}$.\\par Pour $2$, on a directement $E(2)=\\blank{2}$.\\par Comme $3<\\pi<4$, on obtient $E(\\pi)=\\blank{3}$.\\par Enfin, $-3\\le-2{,}36<-2$, donc $E(-2{,}36)=\\blank{-3}$.\\par Le dernier cas est important : pour un nombre négatif non entier, la partie entière est l'entier situé immédiatement à sa gauche."
+        },
+        {
+          "type": "remark",
+          "content": "Pour tout entier $n$, on a $E(x)=n$ pour $x\\in[n,n+1[$. La fonction partie entière est donc constante sur chaque intervalle $[n,n+1[$. Elle est discontinue en chaque entier et continue en tout réel non entier."
+        },
+        {
+          "type": "application",
+          "uid": "app-partie-entiere-01",
+          "difficulty": 3,
+          "content": "\\qst{\\begin{enumerate}\\item Calculer $E\\left(\\dfrac12\\right)$, $E(-3)$, $E(\\sqrt2)$ et $E(-1{,}34)$.\\item Déterminer $E(x)$ lorsque $x$ appartient respectivement à $[1,2[$, $[-3,-2[$, $[0,1[$ et $[-2,-1[$.\\item Compléter la courbe de la fonction $E$ sur $[-4,4[$.\\item La fonction $E$ est-elle continue en $\\dfrac12$ ? en $0$ ? en $-2$ ?\\item La fonction $E$ est-elle continue sur $]-1,1[$ ? sur $[0,1[$ ? sur $]2,3]$ ?\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item $E\\left(\\dfrac12\\right)=\\blank{0}$, $E(-3)=\\blank{-3}$, $E(\\sqrt2)=\\blank{1}$ et $E(-1{,}34)=\\blank{-2}$.\\item On a respectivement : $E(x)=1$, $E(x)=-3$, $E(x)=0$ et $E(x)=-2$.\\item Sur chaque intervalle $[n,n+1[$, la courbe est le segment horizontal d'équation $y=n$, fermé à gauche et ouvert à droite.\\item $E$ est continue en $\\frac12$, mais elle n'est pas continue en $0$ ni en $-2$.\\item $E$ n'est pas continue sur $]-1,1[$ ; elle est continue sur $[0,1[$ ; elle n'est pas continue sur $]2,3]$.\\end{enumerate}",
+          "media": {
+            "src": "/api/content?action=media&id=15b88959c3484ec6a6-01_limites_continuite_fig_05.png",
+            "alt": "01_limites_continuite_fig_05",
+            "position": "right"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fonctions-usuelles-continues",
+      "category": "course",
+      "title": "Continuité des fonctions usuelles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les fonctions usuelles fournissent des briques de continuité. Il suffit ensuite de vérifier que l'intervalle considéré est inclus dans leur ensemble de définition."
+        },
+        {
+          "type": "property",
+          "title": "Sur quels intervalles \\mathqst{les fonctions usuelles sont-elles continues} ?",
+          "content": "\\begin{itemize}\\item Toute fonction polynôme est continue sur $\\mathbb{R}$.\\item Toute fonction rationnelle est continue sur chaque intervalle inclus dans son ensemble de définition.\\item Les fonctions $\\sin$ et $\\cos$ sont continues sur $\\mathbb{R}$.\\item La fonction $\\tan$ est continue sur chaque intervalle inclus dans son ensemble de définition.\\item La fonction $x\\mapsto\\sqrt{x}$ est continue sur $[0,+\\infty[$.\\item La fonction $x\\mapsto|x|$ est continue sur $\\mathbb{R}$.\\end{itemize}"
+        },
+        {
+          "type": "example",
+          "title": "",
+          "content": "Considérons $f(x)=\\dfrac{2x^3+1}{x-1}$.\\par Son ensemble de définition est :$$D_f=\\mathbb{R}\\setminus\\{1\\}=]-\\infty,1[\\cup]1,+\\infty[.$$Une fonction rationnelle est continue sur tout intervalle inclus dans son ensemble de définition.\\par Donc $f$ est continue sur $]-\\infty,1[$ et sur $]1,+\\infty[$."
+        },
+        {
+          "type": "application",
+          "uid": "app-cont-usuelles-01",
+          "difficulty": 1,
+          "content": "\\qst{Étudier la continuité de $f(x)=\\dfrac{x+1}{x-2}$.}\\par\\smallskip  On a \\blank{$D_f=\\mathbb{R}\\setminus\\{2\\}$}. Comme $f$ est une fonction \\blank{rationnelle}, elle est continue sur \\blank{$]-\\infty,2[$} et sur \\blank{$]2,+\\infty[$}."
+        },
+        {
+          "type": "remark",
+          "content": "Pour $f(x)=\\dfrac{x+1}{x-2}$, on dit que $f$ est continue sur chacun des intervalles $]-\\infty,2[$ et $]2,+\\infty[$. Le point $2$ n'appartient pas à l'ensemble de définition."
+        }
+      ]
+    },
+    {
+      "id": "operations-fonctions-continues",
+      "category": "course",
+      "title": "Opérations sur les fonctions continues",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La continuité se conserve par plusieurs opérations algébriques. La composition demande en plus que les valeurs de la fonction intérieure restent dans un intervalle où la fonction extérieure est continue."
+        },
+        {
+          "type": "property",
+          "title": "Quelles opérations \\mathqst{conservent la continuité} ?",
+          "content": "Soient $f$ et $g$ continues sur un intervalle $I$.\\begin{itemize}\\item Les fonctions $f+g$, $fg$, $f^n$, $|f|$ et $\\lambda f$ sont continues sur $I$.\\item Si $g(x)\\neq0$ pour tout $x\\in I$, alors $\\dfrac1g$ et $\\dfrac fg$ sont continues sur $I$.\\item Si $f(x)\\ge0$ pour tout $x\\in I$, alors $x\\mapsto\\sqrt{f(x)}$ est continue sur $I$.\\end{itemize}"
+        },
+        {
+          "type": "example",
+          "title": "",
+          "content": "Soit $f(x)=3\\sin x+x^2+1$ sur $\\mathbb{R}$.\\par La fonction $x\\mapsto3\\sin x$ est continue sur $\\mathbb{R}$ et $x\\mapsto x^2+1$ est un polynôme continu sur $\\mathbb{R}$.\\par Comme la somme de deux fonctions continues est continue :$$f\\text{ est continue sur }\\mathbb{R}.$$"
+        },
+        {
+          "type": "application",
+          "uid": "app-op-cont-01",
+          "difficulty": 1,
+          "content": "\\qst{Montrer que $f(x)=x^2+\\sin x$ est continue sur $\\mathbb{R}$.}\\par\\smallskip \\textbf{Idée :} reconnaître une somme de deux fonctions usuelles continues, et citer le résultat du cours qui le justifie.\\par La fonction $x\\mapsto x^2$ est polynomiale, donc continue sur $\\blank{\\mathbb{R}}$. La fonction $x\\mapsto\\sin x$ est continue sur $\\blank{\\mathbb{R}}$. Donc leur somme est \\blank{continue sur $\\mathbb{R}$}."
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{la composée de deux fonctions continues est-elle continue} ?",
+          "content": "Si $f$ est continue sur un intervalle $I$, si $g$ est continue sur un intervalle $J$ et si $f(I)\\subset J$, alors :$$\\boxed{g\\circ f\\ \\text{est continue sur }I}$$"
+        },
+        {
+          "type": "example",
+          "title": "",
+          "content": "Soit $h(x)=\\cos\\left(\\dfrac1{\\sqrt{x}}+1\\right)$ sur $]0,+\\infty[$.\\par Posons $u(x)=\\dfrac1{\\sqrt{x}}+1$ et $g(t)=\\cos t$.La fonction $u$ est continue sur $]0,+\\infty[$ et $g$ est continue sur $\\mathbb{R}$.\\par Donc $h=g\\circ u$ est continue sur $]0,+\\infty[$."
+        },
+        {
+          "type": "remark",
+          "content": "La condition $f(I)\\subset J$ signifie que pour tout $x\\in I$, la valeur $f(x)$ appartient à $J$."
+        },
+        {
+          "type": "application",
+          "uid": "app-composee-01",
+          "difficulty": 2,
+          "content": "\\qst{Étudier la continuité de $h(x)=\\sqrt{4-x^2}$ sur son ensemble de définition.}\\par\\smallskip \\textbf{Idée :} déterminer d'abord l'ensemble de définition, puis appliquer la continuité de la composée polynôme-racine.\\par On a $4-x^2\\ge0$ si et seulement si $x\\in\\blank{[-2,2]}$. La fonction $x\\mapsto4-x^2$ est continue sur $\\mathbb{R}$ et prend des valeurs positives ou nulles sur $[-2,2]$. La fonction racine carrée est continue sur $\\blank{[0,+\\infty[}$. Donc $h$ est \\blank{continue sur $[-2,2]$}."
+        }
+      ]
+    },
+    {
+      "id": "image-intervalle-continuite",
+      "category": "course",
+      "title": "L'image d'un intervalle par une fonction continue",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction continue transforme les intervalles sans créer de rupture dans l'ensemble des valeurs prises. Une lecture graphique permet d'abord d'observer les images et les extrema."
+        },
+        {
+          "type": "exploration",
+          "content": "La figure ci-dessus représente la courbe d'une fonction $f$ définie sur $[-2,5]$.\\par\\smallskip \\begin{enumerate}\\item En utilisant la courbe, compléter le tableau suivant :$$\\begin{array}{c|c|c|c|c}I & \\text{Monotonie de }f & f(I) & \\min_I f & \\max_I f\\\\ \\hline[-2,-1] & {} & {} & {} & {}\\\\{}[-1,2] & {} & {} & {} & {}\\\\{}[2,4] & {} & {} & {} & {}\\\\{}[4,5] & {} & {} & {} & {}\\end{array}$$\\item Déterminer graphiquement la valeur maximale et la valeur minimale de $f$ sur $[-2,5]$. En déduire $f([-2,5])$.\\end{enumerate}",
+          "media": {
+            "src": "/api/content?action=media&id=d199a05dc54c82cc76-01_limites_continuite_fig_06.png",
+            "alt": "01_limites_continuite_fig_06",
+            "position": "top"
+          }
+        },
+        {
+          "type": "theorem",
+          "title": "Que garantit \\mathqst{la continuité sur un segment pour les extrema} ?",
+          "content": "Si $f$ est continue sur un segment $[a,b]$, alors elle atteint un minimum $m$ et un maximum $M$. Il existe donc $\\alpha,\\beta\\in[a,b]$ tels que $m=f(\\alpha)$ et $M=f(\\beta)$. Ainsi :$$\\boxed{f([a,b])=[m,M]}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelle est \\mathqst{l'image d'un intervalle par une fonction continue} ?",
+          "content": "L'image d'un segment par une fonction continue est un segment. Plus généralement, l'image d'un intervalle par une fonction continue est un intervalle."
+        }
+      ]
+    },
+    {
+      "id": "image-intervalle-monotone",
+      "category": "course",
+      "title": "Image d'un intervalle par une fonction strictement monotone",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lorsque la fonction est continue et strictement monotone, les bornes de l'image se lisent dans le même ordre si la fonction est croissante, et dans l'ordre inverse si elle est décroissante. Une borne ouverte est déterminée par la limite correspondante."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{déterminer l'image d'un intervalle sous monotonie stricte} ?",
+          "content": "Si $f$ est continue et strictement monotone sur $I$, l'image est un intervalle de même nature.\\par\\smallskip $$\\begin{array}{c|c|c}I & f\\ \\text{strictement croissante} & f\\ \\text{strictement décroissante}\\\\ \\hline[a,b] & [f(a),f(b)] & [f(b),f(a)]\\\\{}[a,b[ & \\left[f(a),\\displaystyle\\lim_{x\\to b^-}f(x)\\right[ & \\left]\\displaystyle\\lim_{x\\to b^-}f(x),f(a)\\right]\\\\{}[a,+\\infty[ & \\left[f(a),\\displaystyle\\lim_{x\\to+\\infty}f(x)\\right[ & \\left]\\displaystyle\\lim_{x\\to+\\infty}f(x),f(a)\\right]\\\\]a,b[ & \\left]\\displaystyle\\lim_{x\\to a^+}f(x),\\displaystyle\\lim_{x\\to b^-}f(x)\\right[ & \\left]\\displaystyle\\lim_{x\\to b^-}f(x),\\displaystyle\\lim_{x\\to a^+}f(x)\\right[\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "uid": "app-image-monotone-01",
+          "difficulty": 3,
+          "content": "\\qst{À partir du tableau de variations source, déterminons $f([0,1])$, $f([0,2[)$, $f(]-\\infty,0])$ et $f(]2,+\\infty[)$.}\\par\\smallskip \\textbf{Idée :} lire le sens de variation aux bornes de l'intervalle, puis appliquer chaque borne dans le bon ordre.\\par On lit successivement : $f([0,1])=\\blank{[0,2]}$, $f([0,2[)=\\blank{]-\\infty,2]}$, $f(]-\\infty,0])=\\blank{]1,2]}$ et $f(]2,+\\infty[)=\\blank{]-\\infty,1[}$."
+        }
+      ]
+    },
+    {
+      "id": "tvi",
+      "category": "course",
+      "title": "Théorème des valeurs intermédiaires",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La continuité assure que les valeurs intermédiaires ne sont pas sautées. Ce résultat devient un outil essentiel pour montrer l'existence d'une solution d'équation."
+        },
+        {
+          "type": "theorem",
+          "title": "Que garantit \\mathqst{le théorème des valeurs intermédiaires} ?",
+          "content": "Soit $f$ une fonction continue sur un intervalle $I$. Soient $a,b\\in I$ avec $a<b$. Pour tout réel $k$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c\\in[a,b]$ tel que :$$\\boxed{f(c)=k}$$"
+        },
+        {
+          "type": "consequence",
+          "title": "Quand \\mathqst{le changement de signe garantit-il une racine} ?",
+          "content": "Si $f$ est continue sur $[a,b]$ et si $f(a)f(b)<0$, alors l'équation $f(x)=0$ admet au moins une solution $c\\in]a,b[$. Si $f$ est en plus strictement monotone sur $[a,b]$, cette solution est unique."
+        },
+        {
+          "type": "example",
+          "title": "",
+          "content": "Pour étudier l'équation $\\cos x=x$ sur $[0,\\pi]$, posons $f(x)=\\cos x-x$.\\par La fonction $f$ est continue sur $[0,\\pi]$.De plus :$$f(0)=1>0,\\qquad f(\\pi)=-1-\\pi<0.$$Les valeurs ont des signes contraires.\\par D'après le théorème des valeurs intermédiaires, l'équation $\\cos x=x$ admet au moins une solution dans $[0,\\pi]$."
+        },
+        {
+          "type": "warning",
+          "title": "",
+          "content": "Un piège classique dans lequel vous ne devez pas tomber : $f(a)f(b)<0$ garantit l'existence, jamais l'unicité. Ajoutez la stricte monotonie pour conclure."
+        },
+        {
+          "type": "application",
+          "uid": "app-tvi-exemple-01",
+          "difficulty": 3,
+          "content": "\\qst{Montrons que l'équation $\\cos x=x$ admet au moins une solution sur $[0,\\pi]$.}\\par\\smallskip \\textbf{Idée :} poser $F(x)=\\cos x-x$ pour se ramener à une équation $F(x)=0$, puis vérifier le changement de signe.\\par On pose $F(x)=\\cos x-x$. La fonction $F$ est continue sur $[0,\\pi]$. On a $F(0)=\\blank{1}>0$ et $F(\\pi)=\\blank{-1-\\pi}<0$. Donc, d'après le théorème des valeurs intermédiaires, il existe au moins une solution dans \\blank{$]0,\\pi[$}."
+        },
+        {
+          "type": "application",
+          "uid": "app-tvi-01",
+          "difficulty": 2,
+          "content": "\\qst{Soit $f(x)=x^3+x-1$.\\begin{enumerate}\\item Montrer que l'équation $f(x)=0$ admet au moins une solution dans $[0,1]$.\\item Montrer que cette solution est unique.\\end{enumerate}}\\par\\smallskip \\textbf{Idée :} le TVI donne l'existence par le changement de signe ; la stricte monotonie, prouvée par la dérivée, donne l'unicité.\\par \\begin{enumerate}\\item La fonction $f$ est continue sur $[0,1]$. On a $f(0)=\\blank{-1}$ et $f(1)=\\blank{1}$. Comme $f(0)f(1)<0$, l'équation admet au moins une solution dans $]0,1[$.\\item On a $f'(x)=\\blank{3x^2+1}>0$ sur $\\mathbb{R}$. Donc $f$ est strictement croissante. La solution est donc \\blank{unique}.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "uid": "app-tvi-03",
+          "difficulty": 1,
+          "content": "\\qst{Soit $f$ une fonction continue sur $[1,3]$ telle que $f(1)=2$ et $f(3)=6$. Montrer qu'il existe $c\\in[1,3]$ tel que $f(c)=4$.}\\par\\smallskip \\textbf{Idée :} vérifier que le réel cherché est compris entre $f(1)$ et $f(3)$, puis appliquer le TVI.\\par Le réel $4$ est compris entre $f(1)=\\blank{2}$ et $f(3)=\\blank{6}$. Comme $f$ est continue sur $[1,3]$, le théorème des valeurs intermédiaires assure l'existence de $c\\in[1,3]$ tel que $f(c)=\\blank{4}$."
+        }
+      ]
+    },
+    {
+      "id": "dichotomie",
+      "category": "course",
+      "title": "Méthode de dichotomie",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après avoir prouvé l'existence et l'unicité d'une racine, on peut réduire progressivement son encadrement. La dichotomie coupe l'intervalle en deux à chaque itération."
+        },
+        {
+          "type": "exploration",
+          "content": "Soit $f$ la fonction définie sur $[1,2]$ par $f(x)=x^3+x-3$.\\par\\smallskip \\begin{enumerate}\\item Montrer que l'équation $f(x)=0$ admet une unique solution $c$ dans $]1,2[$.\\item Vérifier que $\\dfrac{3}{2}$ est le centre de l'intervalle $[1,2]$, calculer $f\\left(\\dfrac{3}{2}\\right)$ et en déduire que $c\\in\\left]1,\\dfrac{3}{2}\\right[$.\\item Vérifier que $\\dfrac{5}{4}$ est le centre de l'intervalle $\\left[1,\\dfrac{3}{2}\\right]$, calculer $f\\left(\\dfrac{5}{4}\\right)$ et en déduire que $c\\in\\left]1,\\dfrac{5}{4}\\right[$. Préciser l'amplitude de cet intervalle.\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{encadrer une racine par dichotomie} ?",
+          "content": "$f$ continue et strictement monotone sur $[a,b]$, avec $f(a)f(b)<0$. On pose $m=\\dfrac{a+b}{2}$ :\\begin{enumerate}\\item si $f(a)f(m)<0$, remplacer $b$ par $m$ ;\\item si $f(a)f(m)>0$, remplacer $a$ par $m$.\\end{enumerate}L'amplitude de l'encadrement est divisée par $2$ à chaque étape."
+        },
+        {
+          "type": "application",
+          "uid": "app-dichotomie-01",
+          "difficulty": 2,
+          "content": "\\qst{Soit $f(x)=x^3+x-1$, qui admet une unique solution $\\alpha$ dans $]0,1[$.\\begin{enumerate}\\item Calculer $f\\left(\\dfrac12\\right)$ et en déduire un nouvel encadrement de $\\alpha$.\\item Calculer $f\\left(\\dfrac34\\right)$ et donner un encadrement plus précis.\\end{enumerate}}\\par\\smallskip \\textbf{Idée :} évaluer $f$ au centre de l'intervalle : le signe obtenu désigne la moitié qui contient encore $\\alpha$.\\par \\begin{enumerate}\\item $f\\left(\\dfrac12\\right)=\\dfrac18+\\dfrac12-1=\\blank{-\\frac38}$. Comme $f(1)>0$, on obtient $\\alpha\\in\\blank{]\\frac12,1[}$.\\item $f\\left(\\dfrac34\\right)=\\dfrac{27}{64}+\\dfrac34-1=\\blank{\\frac{11}{64}}>0$. D'où : $\\alpha\\in\\blank{]\\frac12,\\frac34[}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "fonction-reciproque",
+      "category": "course",
+      "title": "Fonction réciproque",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction continue et strictement monotone prend chaque valeur de son image une seule fois. On peut alors inverser la correspondance entre l'entrée et la sortie."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la fonction réciproque $f^{-1}$} ?",
+          "content": "Soit $f$ continue et strictement monotone sur un intervalle $I$, et soit $J=f(I)$. Pour tout $y\\in J$, il existe un unique $x\\in I$ tel que $f(x)=y$. La \\textbf{fonction réciproque} $f^{-1}:J\\to I$ est définie par :$$\\boxed{f^{-1}(y)=x\\iff f(x)=y}$$"
+        },
+        {
+          "type": "warning",
+          "title": "",
+          "content": "Ne confondez pas $f^{-1}$ avec l'inverse $\\dfrac1f$ : la réciproque échange l'image et l'antécédent."
+        },
+        {
+          "type": "consequence",
+          "title": "Quelles identités \\mathqst{relient $f$ et $f^{-1}$} ?",
+          "content": "Pour tout $x\\in I$ et tout $y\\in J=f(I)$ :$$\\boxed{f^{-1}(f(x))=x}$$et$$\\boxed{f(f^{-1}(y))=y}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{varie et se comporte la fonction réciproque} ?",
+          "content": "Si $f$ est continue et strictement monotone sur $I$, alors $f^{-1}$ est continue sur $J=f(I)$ et varie dans le même sens que $f$."
+        },
+        {
+          "type": "property",
+          "title": "Quel lien géométrique unit \\mathqst{les courbes de $f$ et de $f^{-1}$} ?",
+          "content": "Dans un repère orthonormé, les courbes de $f$ et de $f^{-1}$ sont symétriques par rapport à la droite d'équation $y=x$."
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{l'équation $f(x)=y$ possède-t-elle une unique solution} ?",
+          "content": "Si $f$ est continue et strictement monotone sur $I$, alors pour tout $y\\in J=f(I)$, l'équation $f(x)=y$ admet une unique solution dans $I$, donnée par $x=f^{-1}(y)$."
+        },
+        {
+          "type": "application",
+          "uid": "app-reciproque-01",
+          "difficulty": 2,
+          "content": "\\qst{Soit $f(x)=x^2$ sur $I=[0,+\\infty[$.\\begin{enumerate}\\item Montrer que $f$ est continue et strictement croissante sur $I$.\\item Déterminer $J=f(I)$.\\item Déterminer $f^{-1}$.\\end{enumerate}}\\par\\smallskip \\textbf{Idée :} établir d'abord continuité et stricte monotonie, puis inverser la relation $y=x^2$ en tenant compte de $x\\ge0$.\\par \\begin{enumerate}\\item La fonction $f$ est polynomiale, donc continue. Sur $[0,+\\infty[$, elle est strictement croissante.\\item On a $f(0)=\\blank{0}$ et $\\displaystyle\\lim_{x\\to+\\infty}f(x)=\\blank{+\\infty}$. Donc $J=\\blank{[0,+\\infty[}$.\\item Si $y=x^2$ avec $x\\ge0$, alors $x=\\sqrt{y}$. Donc $f^{-1}(y)=\\blank{\\sqrt{y}}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "racine-nieme",
+      "category": "course",
+      "title": "Fonction racine d'ordre $n$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La racine d'ordre $n$ se comprend naturellement comme une fonction réciproque. Pour $n$ pair, on travaille sur $[0,+\\infty[$ ; pour $n$ impair, la puissance $x\\mapsto x^n$ est strictement croissante sur tout $\\mathbb{R}$."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{la fonction racine d'ordre $n$} ?",
+          "content": "Soit $n\\ge2$.\\begin{itemize}\\item Si $n$ est pair, la fonction $x\\mapsto x^n$ est continue et strictement croissante sur $[0,+\\infty[$. Sa fonction réciproque sur $[0,+\\infty[$ est notée $x\\mapsto\\sqrt[n]{x}$.\\item Si $n$ est impair, la fonction $x\\mapsto x^n$ est continue et strictement croissante sur $\\mathbb{R}$ ; sa fonction réciproque est définie sur $\\mathbb{R}$.\\end{itemize}Dans les deux cas, lorsque les expressions sont définies :$$\\boxed{y=x^n\\iff x=\\sqrt[n]{y}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles relations \\mathqst{relient puissances et racines d'ordre $n$s} ?",
+          "content": "Pour $x,y\\ge0$ et $n\\ge2$ :\\begin{itemize}\\item $x=y^n\\iff y=\\sqrt[n]{x}$.\\item $\\sqrt[n]{x^n}=x$ et $(\\sqrt[n]{x})^n=x$.\\item $x^n=y^n\\iff x=y$.\\item $x^n\\le y^n\\iff x\\le y$.\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "Pour tout réel $x$ et tout entier $n\\ge1$, $\\sqrt[2n]{x^{2n}}=|x|$."
+        },
+        {
+          "type": "application",
+          "uid": "app-racine-equations-01",
+          "difficulty": 1,
+          "content": "\\qst{Résoudre dans $\\mathbb{R}$ les équations suivantes :\\begin{enumerate}\\item $x^3=8$.\\item $x^4=16$.\\item $x^2=-9$.\\item $x^5=-32$.\\end{enumerate}}\\par\\smallskip \\textbf{Idée :} séparer les cas selon la parité de l'exposant : impair une solution, pair deux solutions opposées.\\par \\begin{enumerate}\\item Comme la puissance est impaire : $x=\\blank{2}$.\\item $x^4=2^4$, donc $|x|=2$. D'où : $x=\\blank{\\pm2}$.\\item Un carré réel est toujours positif ou nul. Il n'y a donc \\blank{aucune solution réelle}.\\item Comme la puissance est impaire : $x=\\blank{-2}$.\\end{enumerate}"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{simplifier des produits, quotients et racines imbriquées} ?",
+          "content": "Pour $x,y\\ge0$ et $n,m\\in\\mathbb{N}^{*}$ :\\begin{itemize}\\item $\\sqrt[nm]{x^m}=\\sqrt[n]{x}$.\\item $(\\sqrt[n]{x})^m=\\sqrt[n]{x^m}$.\\item $\\sqrt[n]{\\sqrt[m]{x}}=\\sqrt[nm]{x}$.\\item $\\sqrt[n]{xy}=\\sqrt[n]{x}\\sqrt[n]{y}$.\\item Si $y>0$, $\\sqrt[n]{\\dfrac{x}{y}}=\\dfrac{\\sqrt[n]{x}}{\\sqrt[n]{y}}$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "uid": "app-racine-simplification-01",
+          "difficulty": 1,
+          "content": "\\qst{Simplifier les expressions suivantes :\\begin{enumerate}\\item $\\sqrt[3]{8}$.\\item $\\sqrt[4]{16}$.\\item $\\sqrt[3]{2}\\,\\sqrt[3]{4}$.\\item $\\sqrt{\\sqrt{16}}$.\\end{enumerate}}\\par\\smallskip \\textbf{Idée :} regrouper les racines de même indice, puis écrire chaque nombre comme une puissance de cet indice.\\par \\begin{enumerate}\\item $\\sqrt[3]{8}=\\blank{2}$.\\item $\\sqrt[4]{16}=\\blank{2}$.\\item $\\sqrt[3]{2}\\sqrt[3]{4}=\\sqrt[3]{8}=\\blank{2}$.\\item $\\sqrt{\\sqrt{16}}=\\sqrt4=\\blank{2}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "puissances-rationnelles",
+      "category": "course",
+      "title": "Puissances rationnelles d'un réel strictement positif",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les racines permettent de définir une puissance d'exposant rationnel. On retrouve ensuite les règles usuelles des puissances."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{une puissance d'exposant rationnel} ?",
+          "content": "Soit $a>0$ et soit $r=\\dfrac pq$ un rationnel, avec $p\\in\\mathbb{Z}$ et $q\\in\\mathbb{N}^{*}$. On définit :$$\\boxed{a^r=a^{p/q}=\\sqrt[q]{a^p}}$$Comme $a>0$, cette définition est compatible avec les différentes écritures du même rationnel $r$."
+        },
+        {
+          "type": "example",
+          "title": "",
+          "content": "Quelques écritures permettent de relier puissances rationnelles et racines :$$5^{\\frac32}=\\sqrt{5^3},\\qquad8^{-\\frac16}=\\sqrt[6]{\\frac18},\\qquad4^{\\frac25}=\\sqrt[5]{4^2}=\\sqrt[5]{16}.$$"
+        },
+        {
+          "type": "application",
+          "uid": "app-puissances-exemple-01",
+          "difficulty": 1,
+          "content": "\\qst{Écrire sous forme de racine puis calculer si possible : $9^{1/2}$, $8^{1/3}$ et $16^{3/4}$.}\\par\\smallskip \\textbf{Idée :} écrire $a^{p/q}=\\sqrt[q]{a^p}$, puis simplifier la racine avec les carrés ou les cubes parfaits.\\par $9^{1/2}=\\blank{\\sqrt9}=\\blank{3}$, $8^{1/3}=\\sqrt[3]{8}=\\blank{2}$ et $16^{3/4}=(\\sqrt[4]{16})^3=2^3=\\blank{8}$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles règles \\mathqst{vérifient les puissances rationnelles} ?",
+          "content": "Pour $a,b>0$ et $r,r'\\in\\mathbb{Q}$ :\\begin{itemize}\\item $a^r a^{r'}=a^{r+r'}$.\\item $(ab)^r=a^r b^r$.\\item $(a^r)^{r'}=a^{rr'}$.\\item $a^{-r}=\\dfrac1{a^r}$.\\item $\\left(\\dfrac ab\\right)^r=\\dfrac{a^r}{b^r}$.\\item $\\dfrac{a^r}{a^{r'}}=a^{r-r'}$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "continuite-limite-racine-nieme",
+      "category": "course",
+      "title": "Continuité et limite d'une racine d'ordre $n$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On termine en reliant la racine d'ordre $n$ aux résultats de continuité et de limite. La condition de positivité est indispensable pour une racine d'indice pair ; elle n'est pas nécessaire pour une racine d'indice impair."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{transmettre continuité et limite à une racine d'ordre $n$} ?",
+          "content": "Soit $n\\in\\mathbb{N}^{*}$ et $f$ une fonction continue sur un intervalle $I$.\\begin{enumerate}\\item Si $n$ est pair et $f(x)\\ge0$ sur $I$, alors $x\\mapsto\\sqrt[n]{f(x)}$ est continue sur $I$.\\item Si $n$ est impair, alors $x\\mapsto\\sqrt[n]{f(x)}$ est continue sur $I$.\\item Si $\\displaystyle\\lim_{x\\to a}f(x)=\\ell$ et si la racine considérée est définie au voisinage de $a$, alors $\\displaystyle\\lim_{x\\to a}\\sqrt[n]{f(x)}=\\sqrt[n]{\\ell}$.\\item Si $\\displaystyle\\lim_{x\\to a}f(x)=+\\infty$, alors $\\displaystyle\\lim_{x\\to a}\\sqrt[n]{f(x)}=+\\infty$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "uid": "app-racine-finale-01",
+          "difficulty": 3,
+          "content": "\\qst{On considère $f(x)=\\sqrt[3]{x^3+2}$.\\begin{enumerate}\\item Étudier la continuité de $f$.\\item Calculer $\\displaystyle\\lim_{x\\to+\\infty}f(x)$, $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{f(x)}{x}$ et $\\displaystyle\\lim_{x\\to+\\infty}(f(x)-x)$.\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item La fonction $x\\mapsto x^3+2$ est continue sur $\\mathbb{R}$ et la racine cubique réelle est continue sur $\\mathbb{R}$. Donc $f$ est \\blank{continue sur $\\mathbb{R}$}.\\item \\begin{enumerate}\\item Comme $x^3+2\\to+\\infty$, on obtient $\\displaystyle\\lim_{x\\to+\\infty}f(x)=\\blank{+\\infty}$.\\item On a $\\dfrac{f(x)}x=\\sqrt[3]{1+\\dfrac2{x^3}}$. D'où : $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{f(x)}x=\\blank{1}$.\\item Comme $f(x)^3-x^3=2$, $f(x)-x=\\dfrac{2}{f(x)^2+xf(x)+x^2}$. D'où : $\\displaystyle\\lim_{x\\to+\\infty}(f(x)-x)=\\blank{0}$.\\end{enumerate}\\end{enumerate}"
+        }
+      ]
+    }
+  ]
+}

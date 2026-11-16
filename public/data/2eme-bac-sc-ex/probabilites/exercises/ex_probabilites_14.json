@@ -1,0 +1,37 @@
+{
+  "id": "proba-ex09",
+  "theme": "probabilites",
+  "difficulty": "moyen",
+  "chapter": "03 - Variables aléatoires et loi binomiale",
+  "topic": "Loi binomiale - Urne et schéma de Bernoulli",
+  "requiresRedaction": true,
+  "context": "Une urne contient 10 boules portant les numéros : 1 ; 2 ; 2 ; 3 ; 3 ; 3 ; 4 ; 4 ; 4 ; 4. Ces boules sont indiscernables au toucher. On tire successivement et sans remise 2 boules de l'urne.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soit l'événement A : « Obtenir deux boules portant deux numéros pairs ». Montrer que : $P(A) = \\dfrac{1}{3}$.",
+      "hint": "$Card(\\Omega) = A_{10}^2$. Les boules paires portent le numéro 2 (×2) ou 4 (×4), soit 6 boules paires en tout. $Card(A) = A_6^2$. Vérifiez : $\\frac{A_6^2}{A_{10}^2} = \\frac{30}{90} = \\frac{1}{3}$."
+    },
+    {
+      "id": "q2",
+      "content": "On répète l'expérience précédente trois fois de suite en remettant chaque fois les deux boules tirées dans l'urne. Soit X la variable aléatoire égale au nombre de réalisation de l'événement A.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que : $P(X = 1) = \\dfrac{4}{9}$.",
+          "hint": "X suit une loi $B(3 ; \\frac{1}{3})$. Appliquez $P(X=1) = C_3^1 \\cdot \\left(\\frac{1}{3}\\right)^1 \\cdot \\left(\\frac{2}{3}\\right)^2$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Déterminer la loi de probabilité de la variable X.",
+          "hint": "Calculez $P(X=k) = C_3^k \\cdot \\left(\\frac{1}{3}\\right)^k \\cdot \\left(\\frac{2}{3}\\right)^{3-k}$ pour $k \\in \\{0, 1, 2, 3\\}$. Dressez le tableau."
+        },
+        {
+          "id": "sq2c",
+          "content": "Calculer $E(X)$ et la variance $V(X)$ puis l'écart type $\\sigma(X)$.",
+          "hint": "Pour $B(n; p)$ : $E(X) = np = 3 \\times \\frac{1}{3}$, $V(X) = np(1-p)$, $\\sigma(X) = \\sqrt{V(X)}$."
+        }
+      ]
+    }
+  ]
+}

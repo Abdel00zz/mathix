@@ -1,0 +1,52 @@
+{
+  "id": "olympiad-1ere-bac-sc-math-2017",
+  "title": "Olympiade Mathématique Marocaine 2017 — Épreuve nationale",
+  "year": 2017,
+  "classId": "1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "badge": "national",
+  "source": "https://www.men.gov.ma/",
+  "duration": 180,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2017-ex1",
+      "number": 1,
+      "theme": "arithmetique",
+      "points": 5,
+      "topic": "Divisibilité et carrés",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Déterminer tous les entiers naturels $n$ tels que $n^2 + 3^n$ soit un carré parfait."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2017-ex2",
+      "number": 2,
+      "theme": "algebre",
+      "points": 5,
+      "topic": "Équations fonctionnelles sur N",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Trouver toutes les fonctions $f : \\mathbb{N}^* \\to \\mathbb{N}^*$ telles que pour tous $n, m \\in \\mathbb{N}^*$ :\n$$f(n + f(m)) = f(n) + m$$"
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2017-ex3",
+      "number": 3,
+      "theme": "geometrie",
+      "points": 5,
+      "topic": "Points cocycliques",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $ABC$ un triangle. Soit $M$ un point sur le segment $[BC]$. Soit $\\omega_1$ le cercle circonscrit au triangle $ABM$ et $\\omega_2$ le cercle circonscrit au triangle $ACM$. Montrer que les centres de $\\omega_1$ et $\\omega_2$ ainsi que les points $A$ et $M$ sont sur un même cercle si et seulement si $M$ est le pied de la hauteur issue de $A$."
+        }
+      ]
+    }
+  ]
+}

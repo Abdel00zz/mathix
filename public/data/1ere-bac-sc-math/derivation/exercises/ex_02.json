@@ -1,0 +1,30 @@
+{
+  "id": "ex-deriv-02",
+  "theme": "derivation",
+  "difficulty": "facile",
+  "topic": "Dérivabilité et Approximation",
+  "context": "Soit $f$ la fonction définie par : $\\begin{cases} f(x) = \\dfrac{x^2-6x+5}{x-5} & ; x \\neq 5 \\\\ f(5) = 4 \\end{cases}$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $f$ est dérivable en $x_0 = 5$.",
+      "hint": "Le taux d'accroissement en 5 est $\\frac{f(x)-4}{x-5}$. Factorisez le numérateur $x^2-6x+5$ (sachant que 1 est racine évidente) pour simplifier par $(x-5)$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer l'équation de $(T)$ la tangente à $(C_f)$ en 5.",
+      "hint": "Appliquez directement l'équation réduite $y = f'(x_0)(x-x_0) + f(x_0)$ avec $x_0=5$."
+    },
+    {
+      "id": "q3",
+      "content": "Donner l'approximation affine de $f$ au voisinage de 5.",
+      "hint": "Au voisinage de $5$, la fonction se comporte comme sa tangente : $f(5+h) \\approx f(5) + h f'(5)$."
+    },
+    {
+      "id": "q4",
+      "content": "Déduire une valeur approchée de $f(5,001)$.",
+      "hint": "Utilisez l'approximation trouvée précédemment en posant $h = 0,001$."
+    }
+  ]
+}

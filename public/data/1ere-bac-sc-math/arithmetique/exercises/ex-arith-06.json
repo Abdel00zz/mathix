@@ -1,0 +1,32 @@
+{
+  "id": "ch02-ex03",
+  "theme": "arithmetique",
+  "difficulty": "moyen",
+  "chapter": "02 - Les nombres premiers ; la décomposition en produit de facteurs premiers",
+  "topic": "Nombres premiers - Factorisation et structure",
+  "requiresRedaction": true,
+  "context": "Les questions 1 et 2 sont indépendantes.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soit $n$ un élément de $\\mathbb{Z}$. On pose : $\\alpha_n = n^4 - n^2 + 16$.",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que les entiers $n^2 - 3n + 4$ et $n^2 + 3n + 4$ sont pairs.",
+          "hint": "Étudiez la parité de chaque expression selon que $n$ est pair ou impair. Remarquez que $n^2$ et $n$ ont la même parité, ce qui détermine celle de $n^2 \\pm 3n + 4$."
+        },
+        {
+          "id": "sq1b",
+          "content": "En déduire que le nombre $\\alpha_n$ n'est pas premier.",
+          "hint": "Montrez que $\\alpha_n = (n^2 - 3n + 4)(n^2 + 3n + 4)$ en développant le produit. Les deux facteurs sont pairs d'après la question a), donc tous les deux $\\geq 2$. Concluez."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soit $m \\in \\mathbb{N}^*$ tel que $2^m + 1$ soit premier. Montrer que $m = 2^k$ avec $k \\in \\mathbb{N}$.",
+      "hint": "Raisonnez par contraposée : si $m$ admet un diviseur impair $d > 1$, écrivez $m = d \\cdot q$. Factorisez $2^m + 1 = (2^q)^d + 1$ en utilisant l'identité $x^d + 1 = (x+1)(x^{d-1} - x^{d-2} + \\ldots + 1)$ valable pour $d$ impair. Montrez que $2^m + 1$ aurait alors un facteur non trivial."
+    }
+  ]
+}

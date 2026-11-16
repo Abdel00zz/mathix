@@ -1,0 +1,101 @@
+{
+  "id": "ds1-s2-v1",
+  "title": "Devoir Surveillé N°1 — V1",
+  "number": 1,
+  "version": "V1",
+  "semestre": 2,
+  "classId": "tronc-commun-sc",
+  "duration": 120,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "tds1s2v1-ex1",
+      "number": 1,
+      "theme": "calcul trigonométrique",
+      "points": 10,
+      "topic": "Calcul trigonométrique",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Formules trigonométriques",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Calculer $\\cos\\left(\\frac{\\pi}{12}\\right)$ en utilisant $\\frac{\\pi}{12} = \\frac{\\pi}{3} - \\frac{\\pi}{4}$.",
+              "hint": "$\\cos\\frac{\\pi}{12} = \\cos\\frac{\\pi}{3}\\cos\\frac{\\pi}{4} + \\sin\\frac{\\pi}{3}\\sin\\frac{\\pi}{4} = \\frac{1}{2} \\cdot \\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{3}}{2} \\cdot \\frac{\\sqrt{2}}{2} = \\frac{\\sqrt{2} + \\sqrt{6}}{4}$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Simplifier $\\cos^2(x) - \\sin^2(x)$.",
+              "hint": "$\\cos^2(x) - \\sin^2(x) = \\cos(2x)$."
+            },
+            {
+              "id": "sq1c",
+              "content": "Résoudre dans $[0, 2\\pi[$ : $\\cos(x) = \\frac{1}{2}$.",
+              "hint": "$x = \\frac{\\pi}{3}$ ou $x = \\frac{5\\pi}{3}$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Équations trigonométriques",
+          "subQuestions": [
+            {
+              "id": "sq2a",
+              "content": "Résoudre dans $\\mathbb{R}$ : $\\sin(x) = \\sin\\left(\\frac{\\pi}{6}\\right)$.",
+              "hint": "$x = \\frac{\\pi}{6} + 2k\\pi$ ou $x = \\pi - \\frac{\\pi}{6} + 2k\\pi = \\frac{5\\pi}{6} + 2k\\pi$, $k \\in \\mathbb{Z}$."
+            },
+            {
+              "id": "sq2b",
+              "content": "Résoudre dans $[0, 2\\pi[$ : $2\\sin^2(x) - \\sin(x) - 1 = 0$.",
+              "hint": "Poser $t = \\sin(x)$. $2t^2 - t - 1 = 0$, $\\Delta = 9$, $t = 1$ ou $t = -\\frac{1}{2}$. Solutions: $x \\in \\{\\frac{\\pi}{2}, \\frac{7\\pi}{6}, \\frac{11\\pi}{6}\\}$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tds1s2v1-ex2",
+      "number": 2,
+      "theme": "produit scalaire",
+      "points": 10,
+      "topic": "Produit scalaire dans le plan",
+      "context": "Soit $ABC$ un triangle tel que $AB = 5$, $AC = 4$ et $\\widehat{BAC} = 60°$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Calcul du produit scalaire",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Calculer $\\overrightarrow{AB} \\cdot \\overrightarrow{AC}$.",
+              "hint": "$\\overrightarrow{AB} \\cdot \\overrightarrow{AC} = AB \\times AC \\times \\cos(\\widehat{BAC}) = 5 \\times 4 \\times \\cos(60°) = 10$."
+            },
+            {
+              "id": "sq1b",
+              "content": "En déduire $BC^2$ puis $BC$.",
+              "hint": "$BC^2 = AB^2 + AC^2 - 2\\overrightarrow{AB} \\cdot \\overrightarrow{AC} = 25 + 16 - 20 = 21$. $BC = \\sqrt{21}$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Applications géométriques",
+          "subQuestions": [
+            {
+              "id": "sq2a",
+              "content": "Soit $H$ le pied de la hauteur issue de $A$. Calculer $AH$.",
+              "hint": "Aire $= \\frac{1}{2} AB \\times AC \\times \\sin(60°) = \\frac{1}{2} \\times 5 \\times 4 \\times \\frac{\\sqrt{3}}{2} = 5\\sqrt{3}$. Ainsi $AH = \\frac{2 \\times \\text{Aire}}{BC} = \\frac{10\\sqrt{3}}{\\sqrt{21}}$."
+            },
+            {
+              "id": "sq2b",
+              "content": "Montrer que $\\overrightarrow{AB} \\cdot \\overrightarrow{BC} = -\\frac{4 + \\sqrt{21}^2}{2} + 10$.",
+              "hint": "$\\overrightarrow{AB} \\cdot \\overrightarrow{BC} = \\overrightarrow{AB} \\cdot (\\overrightarrow{AC} - \\overrightarrow{AB}) = \\overrightarrow{AB} \\cdot \\overrightarrow{AC} - AB^2 = 10 - 25 = -15$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

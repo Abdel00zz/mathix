@@ -1,0 +1,57 @@
+{
+  "id": "ex-esp-02",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "facile",
+  "topic": "Géométrie analytique dans l'espace — Sphère, droite, plan paramétrique",
+  "requiresRedaction": true,
+  "context": "Dans l'espace rapporté à un repère orthonormé direct $\\left(O,\\overrightarrow{i},\\overrightarrow{j},\\overrightarrow{k}\\right)$, on considère les deux points $A(1,-1,1)$ et $B(5,1,-3)$. Soit $(S)$ la sphère de centre $\\Omega(3,0,-1)$ de rayon $R = 3$, et $(\\Delta)$ la droite passant par le point $A$ et de vecteur directeur $\\overrightarrow{u}(2,-2,1)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Calculer la distance $\\Omega A$",
+          "hint": ""
+        },
+        {
+          "id": "sq1b",
+          "content": "Montrer que la droite $(\\Delta)$ et $(\\Omega A)$ sont perpendiculaires",
+          "hint": "Calculez $\\overrightarrow{\\Omega A} \\cdot \\overrightarrow{u}$ et vérifiez qu'il est nul."
+        },
+        {
+          "id": "sq1c",
+          "content": "Déduire la position relative de la droite $(\\Delta)$ et la sphère $(S)$",
+          "hint": "Calculez $d(\\Omega, (\\Delta))$. Comme $(\\Delta)$ passe par $A$ et $\\overrightarrow{\\Omega A} \\perp \\overrightarrow{u}$, la distance est $\\Omega A$. Comparez à $R$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soit le point $M_a(2a-3, 3-2a, a-1)$ avec $a \\in \\mathbb{R}$, montrer que $\\overrightarrow{AM_a} = (a-2)\\overrightarrow{u}$ et déduire que $M_a \\in (\\Delta)$ pour tout $M_a \\in \\mathbb{R}$",
+      "hint": "Calculez les coordonnées de $\\overrightarrow{AM_a}$ et factorisez pour faire apparaître $\\overrightarrow{u}(2;-2;1)$."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Vérifier que $2x - 2y + z - 9a + 13 = 0$ est une équation du plan $(P_a)$ passant par $M_a$ et perpendiculaire à la droite $(\\Delta)$",
+          "hint": "Le plan perpendiculaire à $(\\Delta)$ a $\\overrightarrow{u}(2;-2;1)$ comme vecteur normal. Vérifiez que $M_a$ vérifie l'équation."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que $d(\\Omega, (P_a)) = |3a-6|$",
+          "hint": "Utilisez la formule $d(\\Omega,(P_a)) = \\dfrac{|2x_\\Omega - 2y_\\Omega + z_\\Omega - 9a + 13|}{\\sqrt{4+4+1}}$."
+        },
+        {
+          "id": "sq3c",
+          "content": "Déterminer les deux valeurs de $a$ pour lesquelles le plan $(P_a)$ est tangent à la sphère $(S)$",
+          "hint": "$(P_a)$ est tangente à $(S)$ si et seulement si $d(\\Omega,(P_a)) = R = 3$. Résolvez $|3a-6| = 3$."
+        }
+      ]
+    }
+  ]
+}

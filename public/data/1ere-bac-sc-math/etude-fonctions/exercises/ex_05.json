@@ -1,0 +1,72 @@
+{
+  "id": "ex-etude-fct-05",
+  "theme": "etude-fonctions",
+  "difficulty": "moyen",
+  "topic": "Analyse - Fonction rationnelle et asymptotes",
+  "requiresRedaction": true,
+  "context": "On considère la fonction $f$ définie par $f(x)=x-\\frac{1}{x}+\\frac{1-x^2}{x^2}$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $D_f$ l'ensemble de définition de $f$",
+      "hint": "Identifiez la valeur qui annule les dénominateurs."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer $\\displaystyle \\lim_{x\\to 0^+} f(x)$, $\\displaystyle \\lim_{x\\to 0^-} f(x)$ et interpréter les résultats obtenus graphiquement.",
+      "hint": "Analysez le comportement des termes $\\frac{1}{x}$ et $\\frac{1}{x^2}$ lorsque $x$ tend vers 0. Déduisez-en l'existence d'une asymptote verticale."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Calculer $\\displaystyle \\lim_{x\\to +\\infty} f(x)$ et $\\displaystyle \\lim_{x\\to -\\infty} f(x)$",
+          "hint": "Simplifiez l'expression de $f(x)$ en réduisant les fractions ou en factorisant par le terme dominant."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que la droite $(\\Delta): y=x-1$ est une asymptote oblique à $(\\mathcal{C}_f)$ au voisinage de $\\pm\\infty$",
+          "hint": "Simplifiez d'abord $f(x)$. Remarquez que $\\frac{1-x^2}{x^2} = \\frac{1}{x^2} - 1$. Montrez ensuite que la limite de la différence $f(x) - (x-1)$ est nulle."
+        },
+        {
+          "id": "c",
+          "content": "Etudier les positions relatives de $(\\mathcal{C}_f)$ et $(\\Delta)$",
+          "hint": "Étudiez le signe de $f(x) - (x-1)$. Après simplification, cela revient à étudier le signe de $\\frac{1-x}{x^2}$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que $(\\forall x \\in D_f) : \\quad f'(x)=\\frac{(x-1)(x^2+x+2)}{x^3}$",
+          "hint": "Dérivez $f(x)$ à partir de sa forme simplifiée $f(x) = x - 1 + \\frac{1}{x^2} - \frac{1}{x}$. Mettez tout au même dénominateur."
+        },
+        {
+          "id": "b",
+          "content": "Etudier le signe de $f'(x)$ et dresser le tableau de variations de $f$",
+          "hint": "Le facteur $x^2+x+2$ (trinôme du second degré) a-t-il des racines réelles ? Étudiez son discriminant. Le signe de la dérivée dépendra alors des autres termes."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que le point $I(3;f(3))$ est un point d'inflexion de $(\\mathcal{C}_f)$",
+      "hint": "Calculez la dérivée seconde $f''(x)$ et vérifiez qu'elle s'annule en changeant de signe pour $x=3$."
+    },
+    {
+      "id": "q6",
+      "content": "Déterminer l'équation de la tangente à $(\\mathcal{C}_f)$ au point d'abscisse 1",
+      "hint": "Utilisez la formule $y = f'(1)(x-1) + f(1)$. Attention à bien calculer $f(1)$ et $f'(1)$."
+    },
+    {
+      "id": "q7",
+      "content": "Construire $(\\mathcal{C}_f)$ dans un repère orthonormé $(O;\\overrightarrow{i},\\overrightarrow{j})$",
+      "hint": "Tracez l'asymptote verticale $x=0$, l'asymptote oblique $y=x-1$, placez le point d'inflexion et la tangente avant de tracer la courbe."
+    }
+  ]
+}

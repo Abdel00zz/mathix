@@ -1,0 +1,34 @@
+{
+  "id": "geometrie-analytique-espace",
+  "title": "Géométrie analytique dans l'espace",
+  "section": "algebre-geometrie",
+  "quizCount": 8,
+  "revisions": [
+    {
+      "id": "rev-geometrie-analytique-espace-01",
+      "title": "Fiche complète : géométrie analytique de l'espace",
+      "path": "data/1ere-bac-sc-ex/geometrie-analytique-espace/revisions/fiche_geometrie_analytique_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-geometrie-analytique-espace-01",
+      "path": "data/1ere-bac-sc-ex/geometrie-analytique-espace/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-geometrie-analytique-espace-02",
+      "path": "data/1ere-bac-sc-ex/geometrie-analytique-espace/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-geometrie-analytique-espace-03",
+      "path": "data/1ere-bac-sc-ex/geometrie-analytique-espace/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-geometrie-analytique-espace-01",
+      "path": "data/1ere-bac-sc-ex/geometrie-analytique-espace/quiz/geometrie-analytique-espace_quiz.json",
+      "questionsCount": 8
+    }
+  ]
+}

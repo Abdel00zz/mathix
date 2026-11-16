@@ -1,0 +1,31 @@
+{
+  "id": "ex-calcul-trigo-01",
+  "theme": "calcul-trigo",
+  "difficulty": "difficile",
+  "topic": "Calcul Trigonométrique",
+  "context": "Simplification d'expressions.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Expression A",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Simplifier $A = \\cos(x) + \\cos(x + \\pi) + \\sin(x) + \\sin(\\pi - x)$.",
+          "hint": "Quelles sont les formules pour les angles associés $\\cos(x+\\pi)$ et $\\sin(\\pi-x)$ ? Vous pouvez les retrouver en visualisant les symétries sur le cercle trigonométrique."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Équation",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Résoudre dans $]-\\pi, \\pi]$ l'équation $2\\cos x - 1 = 0$.",
+          "hint": "Isolez d'abord $\\cos x$. Vous obtiendrez une valeur remarquable. Quelles sont les deux familles de solutions générales pour $\\cos x = \\cos \\alpha$ ? Identifiez ensuite les solutions qui appartiennent à l'intervalle $]-\\pi, \\pi]$."
+        }
+      ]
+    }
+  ]
+}

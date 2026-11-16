@@ -1,0 +1,20 @@
+{
+  "id": "ex-prod-scal-esp-03",
+  "theme": "produit-scalaire-espace",
+  "difficulty": "moyen",
+  "topic": "Produit scalaire dans l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Norme d'un vecteur",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère le vecteur $\\overrightarrow{u}(3, -4, 1)$.\nCalculer la norme du vecteur $\\overrightarrow{u}$.",
+          "hint": "Dans un repère orthonormé, la norme d'un vecteur $\\overrightarrow{u}(x, y, z)$ est donnée par la formule :\n$||\\overrightarrow{u}|| = \\sqrt{x^2 + y^2 + z^2}$\n\nEn appliquant cette formule avec $\\overrightarrow{u}(3, -4, 1)$ :\n$||\\overrightarrow{u}|| = \\sqrt{3^2 + (-4)^2 + 1^2}$\n$||\\overrightarrow{u}|| = \\sqrt{9 + 16 + 1}$\n$||\\overrightarrow{u}|| = \\sqrt{26}$"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "ex-complexes-04",
+  "topic": "Nombres complexes - Bac National 2010 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2010,
+  "examenSession": "Rattrapage",
+  "context": "Le plan complexe est muni d'un repère orthonormé direct $(O;\\vec{u},\\vec{v})$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "On considère dans l'ensemble $\\mathbb{C}$ l'équation : $(E)\\ z^2-4iz-2+2i\\sqrt3=0$.",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Vérifier que le nombre $a=1+i(2-\\sqrt3)$ est une solution de l'équation $(E)$.",
+          "hint": "Remplacez directement $z=a$ dans $(E)$, développez $a^2$ soigneusement et vérifiez que le résultat s'annule."
+        },
+        {
+          "id": "q1b",
+          "content": "En déduire $b$ la deuxième solution de l'équation $(E)$.",
+          "hint": "Utilisez la somme des racines $a+b=4i$ (coefficient de $(E)$) pour isoler $b$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Montrer que : $a^2=4(2-\\sqrt3)e^{i\\pi/6}$.",
+          "hint": "Développez $a^2=(1+i(2-\\sqrt3))^2$ sous forme algébrique, puis identifiez le module $4(2-\\sqrt3)$ et l'argument $\\pi/6$ en comparant à $\\cos(\\pi/6)$ et $\\sin(\\pi/6)$."
+        },
+        {
+          "id": "q2b",
+          "content": "Écrire $a$ sous forme trigonométrique.",
+          "hint": "Le module de $a$ est la racine carrée du module de $a^2$ trouvé précédemment, et son argument est la moitié de celui de $a^2$ (en vérifiant le bon quadrant grâce à la forme algébrique de $a$)."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "On considère les points $A$, $B$ et $C$ dont les affixes sont respectivement $a$, $b$ et $c=2i+2e^{i\\pi/7}$. Soit $(\\Gamma)$ le cercle de diamètre $[AB]$.",
+      "subQuestions": [
+        {
+          "id": "q3a",
+          "content": "Déterminer $w$, l'affixe du point $\\Omega$ centre du cercle $(\\Gamma)$.",
+          "hint": "Le centre d'un cercle de diamètre $[AB]$ est le milieu de $[AB]$ : calculez $w=\\dfrac{a+b}{2}$."
+        },
+        {
+          "id": "q3b",
+          "content": "Montrer que les points $O$ et $C$ appartiennent au cercle $(\\Gamma)$.",
+          "hint": "Un point $M$ appartient au cercle de diamètre $[AB]$ si et seulement si $\\dfrac{m-a}{m-b}$ est imaginaire pur ; vérifiez-le pour $m=0$ puis pour $m=c$."
+        },
+        {
+          "id": "q3c",
+          "content": "Montrer que le nombre complexe $\\dfrac{c-a}{c-b}$ est imaginaire pur.",
+          "hint": "C'est exactement la condition d'appartenance de $C$ au cercle $(\\Gamma)$ déjà utilisée à la question précédente : calculez ce quotient explicitement pour conclure."
+        }
+      ]
+    }
+  ]
+}

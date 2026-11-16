@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 250" width="440" height="250">
+  <rect width="440" height="250" rx="12" fill="#fcfbf9"/>
+  <!-- Zones Concave / Convexe -->
+  <rect x="30" y="24" width="190" height="196" rx="6" fill="#fef2f2" opacity="0.55"/>
+  <rect x="220" y="24" width="190" height="196" rx="6" fill="#f0fdf4" opacity="0.55"/>
+  <line x1="220" y1="24" x2="220" y2="220" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <text x="65" y="46" font-family="sans-serif" font-size="12" font-weight="bold" fill="#b8332a">CONCAVE (∩) · f''(x) &lt; 0</text>
+  <text x="245" y="46" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1f6b4a">CONVEXE (∪) · f''(x) &gt; 0</text>
+
+  <!-- Courbe cubique avec point d'inflexion en I(220, 125) -->
+  <path d="M 45 190 C 115 55, 175 125, 220 125 C 265 125, 325 195, 395 60" fill="none" stroke="#1b3a6b" stroke-width="3"/>
+
+  <!-- Tangente traversant la courbe au point d'inflexion -->
+  <line x1="125" y1="75" x2="315" y2="175" stroke="#b45309" stroke-width="2" stroke-dasharray="5 3"/>
+
+  <!-- Point d'inflexion I -->
+  <circle cx="220" cy="125" r="6" fill="#ffffff" stroke="#b45309" stroke-width="2.5"/>
+  <text x="230" y="118" font-family="Georgia, serif" font-weight="bold" font-size="13.5" fill="#b45309">I(a ; f(a)) — Point d'inflexion</text>
+  <text x="155" y="238" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#475569">La tangente traverse la courbe en x = a (f''(a) = 0)</text>
+</svg>

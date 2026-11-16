@@ -1,0 +1,171 @@
+{
+  "header": {
+    "title": "Vecteurs de l'Espace",
+    "subtitle": "Définitions, opérations et colinéarité en 3D",
+    "context": "1BAC SM"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Le calcul vectoriel dans l'espace permet de \\objectif{modeliser proprement des configurations geometriques en trois dimensions} a l'aide de coordonnees, de directions et de combinaisons lineaires. Il sert a traiter alignement, coplanarite, positions relatives et equations de droites ou de plans. La \\defi{difficulte} majeure est de visualiser l'espace tout en gardant une ecriture algebrique rigoureuse et bien organisee. \\savant{Hermann Grassmann} a pose les fondements de ce langage vectoriel au XIXe siecle, devenu essentiel en geometrie, en physique et en modelisation 3D.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Hermann_Grassmann.jpg",
+            "type": "image",
+            "position": "right",
+            "width": "16.5%",
+            "caption": "Hermann Grassmann (1809–1877)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definition_vecteur",
+      "category": "course",
+      "title": "Le vecteur de l'espace",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On commence par revoir la définition fondamentale d'un vecteur, transposée dans l'espace. La logique reste exactement la même que dans le plan."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un vecteur de l'espace ?",
+          "content": "Deux points distincts $A$ et $B$ de l'espace forment un \\textbf{vecteur de l'espace}, noté $\\overrightarrow{AB}$.\\par\\smallskip Si les deux points sont confondus ($A = B$), le vecteur formé est le \\textbf{vecteur nul}, noté $\\overrightarrow{AA} = \\overrightarrow{0}$.\\par\\smallskip L'ensemble de tous les vecteurs de l'espace se note $V_3$."
+        },
+        {
+          "type": "property",
+          "title": "Comment caractériser un vecteur non nul ?",
+          "content": "Un vecteur $\\overrightarrow{u} = \\overrightarrow{AB}$ non nul est caractérisé par trois éléments géométriques :\\begin{itemize}\\item \\textbf{Sa direction} : c'est la droite $(AB)$\\item \\textbf{Son sens} : de $A$ vers $B$\\item \\textbf{Sa norme} : c'est la distance $AB$, notée $\\|\\overrightarrow{AB}\\| = AB$\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Quand deux vecteurs sont-ils égaux ?",
+          "content": "Deux vecteurs sont égaux s'ils ont la même direction, le même sens et la même norme.\\par\\smallskip Géométriquement, l'égalité de deux vecteurs correspond à un parallélogramme :\\par\\smallskip $$\\boxed{\\overrightarrow{AB} = \\overrightarrow{MN} \\Leftrightarrow ABNM \\text{ est un parallélogramme}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Utilisons l'égalité de \\textbf{vecteurs} dans un quadrilatère.}\\par On suppose que $ABNM$ est un parallélogramme. Par définition de cette figure géométrique, les vecteurs $\\overrightarrow{AB}$ et $\\blank{\\overrightarrow{MN}}$ sont strictement égaux.\\par\\smallskip On en déduit directement que les segments $[AB]$ et $[MN]$ ont la même $\\blank{longueur}$ et que les droites $(AB)$ et $(MN)$ ont la même $\\blank{direction}$."
+        }
+      ]
+    },
+    {
+      "id": "operations_addition",
+      "category": "course",
+      "title": "Addition vectorielle dans l'espace",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait maintenant définir et comparer des vecteurs. On va voir comment les additionner pour former de nouveaux vecteurs."
+        },
+        {
+          "type": "definition",
+          "title": "Comment additionner deux vecteurs ?",
+          "content": "Soient deux vecteurs non nuls $\\overrightarrow{u} = \\overrightarrow{OB}$ et $\\overrightarrow{v} = \\overrightarrow{OC}$ issus d'un même point $O$.\\par\\smallskip La somme $\\overrightarrow{u} + \\overrightarrow{v}$ est le vecteur $\\overrightarrow{OD}$ tel que le quadrilatère $OBDC$ soit un \\textbf{parallélogramme}.\\par\\smallskip On écrit alors : $$\\boxed{\\overrightarrow{u} + \\overrightarrow{v} = \\overrightarrow{OB} + \\overrightarrow{OC} = \\overrightarrow{OD}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les règles de l'addition vectorielle ?",
+          "content": "L'addition dans l'ensemble $V_3$ respecte plusieurs règles fondamentales :\\begin{itemize}\\item \\textbf{Commutativité} : $\\overrightarrow{u} + \\overrightarrow{v} = \\overrightarrow{v} + \\overrightarrow{u}$\\item \\textbf{Associativité} : $(\\overrightarrow{u} + \\overrightarrow{v}) + \\overrightarrow{w} = \\overrightarrow{u} + (\\overrightarrow{v} + \\overrightarrow{w})$\\item \\textbf{Vecteur nul} : $\\overrightarrow{u} + \\overrightarrow{0} = \\overrightarrow{0} + \\overrightarrow{u} = \\overrightarrow{u}$\\item \\textbf{Vecteur opposé} : $\\overrightarrow{u} + (-\\overrightarrow{u}) = \\overrightarrow{0}$\\end{itemize}\\par\\smallskip On déduit que l'ensemble $(V_3, +)$ forme un groupe commutatif.\\par Pour soustraire un vecteur, on ajoute simplement son opposé : $\\overrightarrow{u} - \\overrightarrow{v} = \\overrightarrow{u} + (-\\overrightarrow{v})$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Simplifions \\textbf{l'expression vectorielle $\\overrightarrow{W} = (\\overrightarrow{u} + \\overrightarrow{v}) + (\\overrightarrow{w} - \\overrightarrow{u}) - \\overrightarrow{v}$.}\\par On commence par réorganiser les termes en regroupant ceux de même nature :\\begin{align*}\\overrightarrow{W} &= \\overrightarrow{u} - \\blank{\\overrightarrow{u}} + \\overrightarrow{v} - \\blank{\\overrightarrow{v}} + \\overrightarrow{w} \\\\&= \\blank{\\overrightarrow{0}} + \\overrightarrow{0} + \\overrightarrow{w} \\\\&= \\blank{\\overrightarrow{w}}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "multiplication_reel",
+      "category": "course",
+      "title": "Produit d'un vecteur par un réel",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'addition permet de combiner des vecteurs entre eux. La multiplication par un nombre réel permet, quant à elle, d'allonger, raccourcir ou inverser un vecteur."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que la multiplication par un réel ?",
+          "content": "Pour tout vecteur $\\overrightarrow{u}$ et tout réel $k$, le produit $k\\overrightarrow{u}$ donne un nouveau vecteur.\\par\\smallskip Si on pose $\\overrightarrow{u} = \\overrightarrow{AB}$, alors le vecteur $\\overrightarrow{v} = k\\overrightarrow{u}$ correspond à l'unique point $C$ sur la droite $(AB)$ tel que $\\overrightarrow{AC} = k\\overrightarrow{AB}$."
+        },
+        {
+          "type": "property",
+          "title": "Comment développer les produits vectoriels ?",
+          "content": "Pour tous réels $\\alpha, \\beta$ et vecteurs $\\overrightarrow{u}, \\overrightarrow{v}$, le calcul suit des règles de distributivité :\\begin{itemize}\\item $\\alpha(\\overrightarrow{u} + \\overrightarrow{v}) = \\alpha\\overrightarrow{u} + \\alpha\\overrightarrow{v}$\\item $(\\alpha + \\beta)\\overrightarrow{u} = \\alpha\\overrightarrow{u} + \\beta\\overrightarrow{u}$\\item $\\alpha(\\beta\\overrightarrow{u}) = (\\alpha\\beta)\\overrightarrow{u}$\\end{itemize}\\par\\smallskip L'ensemble des vecteurs muni de l'addition et de ce produit forme une structure appelée \\textbf{espace vectoriel réel}."
+        },
+        {
+          "type": "warning",
+          "content": "Ne confondez pas le nombre réel $0$ et le vecteur nul $\\overrightarrow{0}$. La règle du produit s'écrit : $k\\overrightarrow{u} = \\overrightarrow{0} \\Leftrightarrow \\overrightarrow{u} = \\overrightarrow{0}$ ou $k = 0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Développons et simplifions} $\\overrightarrow{X} = 3(\\overrightarrow{u} - 2\\overrightarrow{v}) - 2(\\overrightarrow{u} - 3\\overrightarrow{v})$.}\\par On distribue les nombres réels sur les vecteurs :\\begin{align*}\\overrightarrow{X} &= 3\\overrightarrow{u} - \\blank{6\\overrightarrow{v}} - 2\\overrightarrow{u} + \\blank{6\\overrightarrow{v}} \\\\&= (3\\overrightarrow{u} - 2\\overrightarrow{u}) + (\\blank{-6\\overrightarrow{v} + 6\\overrightarrow{v}}) \\\\&= \\blank{\\overrightarrow{u}} + \\overrightarrow{0} \\\\&= \\blank{\\overrightarrow{u}}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "colinearite_vecteurs",
+      "category": "course",
+      "title": "Vecteurs colinéaires et combinaisons",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les opérations algébriques que l'on vient de voir permettent de définir formellement le parallélisme. C'est le rôle fondamental de la notion de colinéarité."
+        },
+        {
+          "type": "definition",
+          "title": "Quand dit-on que deux vecteurs sont colinéaires ?",
+          "content": "Deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont \\textbf{colinéaires} s'il existe un nombre réel $k$ qui permet d'exprimer l'un en fonction de l'autre.\\par\\smallskip $$\\boxed{\\overrightarrow{v} = k\\overrightarrow{u}}$$\\par\\smallskip Géométriquement, si ce lien existe, les deux vecteurs ont la même direction (ils sont portés par des droites parallèles)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $\\overrightarrow{a} = 4\\overrightarrow{u} - 2\\overrightarrow{v}$ et $\\overrightarrow{b} = -2\\overrightarrow{u} + \\overrightarrow{v}$ sont colinéaires.}\\par On cherche à exprimer $\\overrightarrow{a}$ comme un multiple de $\\overrightarrow{b}$. On factorise l'expression de $\\overrightarrow{a}$ :\\begin{align*}\\overrightarrow{a} &= 4\\overrightarrow{u} - 2\\overrightarrow{v} \\\\&= \\blank{-2}( -2\\overrightarrow{u} + \\blank{\\overrightarrow{v}} ) \\\\&= \\blank{-2\\overrightarrow{b}}\\end{align*}\\par Puisqu'on a trouvé un coefficient réel constant pour passer de $\\overrightarrow{b}$ à $\\overrightarrow{a}$, on en déduit que ces deux vecteurs sont \\blank{colinéaires}."
+        },
+        {
+          "type": "property",
+          "title": "Comment utiliser une combinaison linéaire nulle ?",
+          "content": "Si on possède une égalité de la forme $a\\overrightarrow{u} + b\\overrightarrow{v} = \\overrightarrow{0}$ avec $a \\neq 0$ ou $b \\neq 0$, alors les vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont automatiquement colinéaires.\\par\\smallskip L'expression $a\\overrightarrow{u} + b\\overrightarrow{v}$ s'appelle une \\textbf{combinaison linéaire}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons \\textbf{le lien entre $\\overrightarrow{u}$ et} $\\overrightarrow{v}$ sachant que $5\\overrightarrow{u} + 7\\overrightarrow{v} = \\overrightarrow{0}$.}\\par On observe l'égalité donnée par l'énoncé.\\par Les coefficients associés aux vecteurs sont $a = \\blank{5}$ et $b = \\blank{7}$.\\par Puisqu'ils ne sont pas tous \\blank{nuls}, on peut appliquer la propriété de la combinaison linéaire.\\par On conclut directement que $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont \\blank{colinéaires}."
+        }
+      ]
+    },
+    {
+      "id": "droites_espace",
+      "category": "course",
+      "title": "Représentation vectorielle des droites",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La colinéarité permet d'aller plus loin : elle sert à définir algébriquement ce qu'est une droite dans l'espace, en s'affranchissant totalement des repères."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une droite vectorielle ?",
+          "content": "Pour un vecteur non nul $\\overrightarrow{u}$, l'ensemble de tous les vecteurs qui lui sont colinéaires forme une \\textbf{droite vectorielle}, notée $\\Delta_{\\overrightarrow{u}}$.\\par\\smallskip $$\\boxed{\\Delta_{\\overrightarrow{u}} = \\{ \\overrightarrow{v} \\in V_3 \\mid \\exists k \\in \\mathbb{R}, \\overrightarrow{v} = k\\overrightarrow{u} \\}}$$\\par\\smallskip Deux droites vectorielles $\\Delta_{\\overrightarrow{u}}$ et $\\Delta_{\\overrightarrow{v}}$ sont confondues si et seulement si les vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont colinéaires. Dans le cas contraire, leur seule intersection est le vecteur nul $\\overrightarrow{0}$."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir une droite passant par un point ?",
+          "content": "Soit un point $A$ de l'espace et un vecteur non nul $\\overrightarrow{u}$.\\par L'ensemble des points $M$ qui vérifient $\\overrightarrow{AM} = k\\overrightarrow{u}$ (où $k$ est un réel) forme la \\textbf{droite passant par A de vecteur directeur} $\\overrightarrow{u}$.\\par\\smallskip On la note $D(A; \\overrightarrow{u})$.\\par\\smallskip $$\\boxed{D(A; \\overrightarrow{u}) = \\{ M \\in \\mathcal{E} \\mid \\exists k \\in \\mathbb{R}, \\overrightarrow{AM} = k\\overrightarrow{u} \\}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifions \\textbf{si le point $E$ appartient} à la droite $D(A; \\overrightarrow{u})$, sachant que $\\overrightarrow{AE} = -3\\overrightarrow{u}$.}\\par Par définition, un point $M$ appartient à la droite $D(A; \\overrightarrow{u})$ s'il existe un réel $k$ tel que $\\overrightarrow{AM} = \\blank{k\\overrightarrow{u}}$.\\par Ici, l'énoncé nous donne $\\overrightarrow{AE} = -3\\overrightarrow{u}$. Cette égalité respecte bien la condition avec la valeur $k = \\blank{-3}$.\\par Le point $E$ remplit les critères et se trouve donc \\blank{sur la droite} étudiée."
+        }
+      ]
+    }
+  ]
+}

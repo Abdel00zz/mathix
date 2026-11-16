@@ -1,0 +1,374 @@
+{
+  "id": "nat-2022-r",
+  "title": "Examen National 2022 — Session Rattrapage",
+  "type": "national",
+  "year": 2022,
+  "session": "rattrapage",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 7,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2022r-ex1",
+      "number": 1,
+      "theme": "suites-numeriques",
+      "difficulty": "facile",
+      "points": 2.5,
+      "topic": "Suites numériques — Récurrence, suite géométrique et calcul de somme",
+      "context": "Soit $(U_n)$ la suite numérique définie par $U_0 = 2$ et $U_{n+1} = \\dfrac{\\sqrt{2}}{2} U_n + \\dfrac{2 - \\sqrt{2}}{2}$ pour tout $n$ de $\\mathbb{N}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que pour tout $n$ de $\\mathbb{N}$, $U_n > 1$",
+              "bareme": 0.5,
+              "hint": "Procédez par récurrence. Pour l'hérédité, montrez que la différence $U_{n+1} - 1$ est strictement positive en utilisant l'hypothèse de récurrence $U_n > 1$."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que pour tout $n$ de $\\mathbb{N}$, $U_{n+1} - U_n = \\dfrac{\\sqrt{2} - 2}{2}(U_n - 1)$ et déduire que la suite $(U_n)$ est décroissante et convergente",
+              "bareme": 0.75,
+              "hint": "Remplacez $U_{n+1}$ par son expression, puis mettez $\\dfrac{\\sqrt{2} - 2}{2}$ en facteur. Le signe de cette différence dépendra du résultat de la question 1a. Concluez ensuite avec le théorème de la convergence monotone."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "On pose pour tout $n$ de $\\mathbb{N}$, $V_n = U_n - 1$",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $(V_n)$ est une suite géométrique et déterminer sa raison et son premier terme",
+              "bareme": 0.5,
+              "hint": "Calculez $V_{n+1}$ en remplaçant $U_{n+1}$ par sa définition. Simplifiez l'expression pour faire apparaître la relation $V_{n+1} = q \\times V_n$."
+            },
+            {
+              "id": "2b",
+              "content": "Écrire $U_n$ en fonction de $n$ puis déduire la limite de la suite $(U_n)$",
+              "bareme": 0.5,
+              "hint": "Utilisez d'abord la formule explicite $V_n = V_0 \\times q^n$, puis isolez $U_n$. Pour la limite, observez que la raison $q = \\dfrac{\\sqrt{2}}{2}$ est comprise entre $-1$ et $1$."
+            },
+            {
+              "id": "2c",
+              "content": "Calculer la somme $S = U_0 + U_1 + U_2 + \\dots + U_{2021}$",
+              "bareme": 0.25,
+              "hint": "Remplacez chaque terme $U_k$ par $V_k + 1$. Séparez ensuite la somme en deux parties : la somme des termes d'une suite géométrique et l'addition répétée de la constante $1$ (attention au nombre de termes)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2022r-ex2",
+      "number": 2,
+      "theme": "geometrie-espace",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Sphère, droites et plans paramétrés",
+      "context": "Dans l'espace rapporté à un repère orthonormé directe $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les deux points $A(1, -1, 1)$ et $B(5, 1, -3)$. Soit $(S)$ la sphère de centre $\\Omega(3, 0, -1)$ de rayon $R = 3$, et $(\\Delta)$ la droite passant par le point $A$ et de vecteur directeur $\\overrightarrow{u}(2, -2, 1)$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Calculer la distance $\\Omega A$",
+              "bareme": 0.25,
+              "hint": "Appliquez la formule classique de la distance entre deux points dans l'espace en utilisant les coordonnées fournies."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que la droite $(\\Delta)$ et $(\\Omega A)$ sont perpendiculaires",
+              "bareme": 0.5,
+              "hint": "Calculez les coordonnées du vecteur $\\overrightarrow{\\Omega A}$, puis vérifiez que son produit scalaire avec le vecteur directeur $\\overrightarrow{u}$ de la droite $(\\Delta)$ est nul."
+            },
+            {
+              "id": "1c",
+              "content": "Déduire la position relative de la droite $(\\Delta)$ et la sphère $(S)$",
+              "bareme": 0.25,
+              "hint": "Comparez la distance trouvée en 1a avec le rayon $R$. Utilisez la conclusion de la question 1b pour caractériser géométriquement l'intersection."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soit le point $M_a(2a - 3, 3 - 2a, a - 1)$ avec $a \\in \\mathbb{R}$, montrer que $\\overrightarrow{AM_a} = (a - 2)\\overrightarrow{u}$ et déduire que $M_a \\in (\\Delta)$ pour tout $M_a \\in \\mathbb{R}$",
+          "bareme": 0.5,
+          "hint": "Déterminez les coordonnées du vecteur $\\overrightarrow{AM_a}$ en fonction de $a$, puis factorisez par $(a-2)$. La colinéarité garantit l'appartenance à la droite."
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que $2x - 2y + z - 9a + 13 = 0$ est une équation du plan $(P_a)$ passant par $M_a$ et perpendiculaire à la droite $(\\Delta)$",
+              "bareme": 0.5,
+              "hint": "Le plan étant perpendiculaire à $(\\Delta)$, le vecteur directeur $\\overrightarrow{u}$ lui sert de vecteur normal. Trouvez la constante de l'équation en utilisant le point de passage $M_a$."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que $d(\\Omega, (P_a)) = |3a - 6|$",
+              "bareme": 0.5,
+              "hint": "Appliquez la formule de la distance d'un point à un plan en remplaçant les coordonnées $(x,y,z)$ par celles de $\\Omega$ dans l'équation de $(P_a)$."
+            },
+            {
+              "id": "3c",
+              "content": "Déterminer les deux valeurs de $a$ pour lesquelles le plan $(P_a)$ est tangent à la sphère $(S)$",
+              "bareme": 0.5,
+              "hint": "La condition de tangence se traduit par $d(\\Omega, (P_a)) = R$. Résolvez l'équation en valeur absolue associée avec $R=3$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2022r-ex3",
+      "number": 3,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Nombres complexes — Transformations planes, formes trigonométriques et cocyclicité",
+      "context": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A$, $B$ et $C$ d'affixes respectives $Z_A = 1 + 5i$, $Z_B = 1 - 5i$ et $Z_C = 5 - 3i$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Déterminer le nombre complexe $Z_D$ affixe du point $D$ milieu du segment $[AC]$",
+          "bareme": 0.25,
+          "hint": "Appliquez la définition de l'affixe du milieu : $Z_D = \\dfrac{Z_A + Z_C}{2}$."
+        },
+        {
+          "id": "q2",
+          "content": "Soit $h$ l'homothétie de centre $A$ et de rapport $\\dfrac{1}{2}$.\\nDéterminer le nombre complexe $Z_E$ affixe du point $E$ l'image de $B$ par $h$",
+          "bareme": 0.5,
+          "hint": "Traduisez l'homothétie par la relation complexe $Z_E - Z_A = k(Z_B - Z_A)$, en remplaçant $k$ par le rapport donné."
+        },
+        {
+          "id": "q3",
+          "content": "On considère la rotation $R$ de centre $C$ et d'angle $\\left(-\\dfrac{\\pi}{2}\\right)$, déterminer l'image de $B$ par la rotation $R$",
+          "bareme": 0.5,
+          "hint": "L'expression de la rotation est $Z' - Z_C = e^{-i\\frac{\\pi}{2}}(Z_B - Z_C)$. Rappelez-vous que $e^{-i\\frac{\\pi}{2}} = -i$. Calculez $Z'$ et comparez ce résultat avec les affixes des points déjà définis."
+        },
+        {
+          "id": "q4",
+          "content": "Soit $F$ le point d'affixe $Z_F = -1 + i$",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Vérifier que $\\dfrac{Z_D - Z_A}{Z_F - Z_A} \\times \\dfrac{Z_F - Z_E}{Z_D - Z_E} = -1$",
+              "bareme": 0.25,
+              "hint": "Remplacez chaque affixe par sa valeur algébrique. Simplifiez les deux fractions séparément, par exemple en utilisant la quantité conjuguée, avant d'effectuer le produit final."
+            },
+            {
+              "id": "4b",
+              "content": "En déduire que $(\\overrightarrow{AF}, \\overrightarrow{AD}) + (\\overrightarrow{ED}, \\overrightarrow{EF}) \\equiv \\pi \\; [2\\pi]$",
+              "bareme": 0.5,
+              "hint": "Passez aux arguments sur l'égalité de la question 4a. Rappelez-vous que l'argument d'un produit est la somme des arguments, et que $\\arg(-1) \\equiv \\pi \\; [2\\pi]$."
+            },
+            {
+              "id": "4c",
+              "content": "Déterminer la forme trigonométrique du nombre $\\dfrac{Z_E - Z_F}{Z_A - Z_F}$ et déduire la nature du triangle $AEF$",
+              "bareme": 0.5,
+              "hint": "Calculez d'abord la forme algébrique du quotient, puis déterminez son module et son argument. Interprétez ces deux résultats géométriquement pour obtenir la nature complète du triangle."
+            },
+            {
+              "id": "4d",
+              "content": "Déduire que les points $A$, $D$, $E$ et $F$ appartiennent à un cercle dont on déterminera un diamètre",
+              "bareme": 0.5,
+              "hint": "La relation sur les angles démontrée en 4b traduit la cocyclicité des quatre points. Utilisez le fait que le triangle $AEF$ est rectangle pour identifier le segment qui joue le rôle de diamètre."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2022r-ex4",
+      "number": 4,
+      "theme": "probabilites",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Probabilités — Tirage simultané, indépendance et variable aléatoire",
+      "context": "Une urne contient trois boules blanches, et quatre boules rouges et cinq boules vertes, indiscernables au toucher, on tire au hasard et simultanément trois boules de l'urne.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "On considère les événements suivants :\\n$A$ : \"Obtenir exactement deux boules rouges\"\\n$B$ : \"Obtenir exactement une boule verte\"",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que : $P(A) = \\dfrac{12}{55}$ et $P(B) = \\dfrac{21}{44}$",
+              "bareme": 0.75,
+              "hint": "Le tirage est simultané, utilisez les combinaisons. L'univers a $C_{12}^3$ éventualités. Pour $A$, choisissez 2 boules rouges et 1 boule d'une autre couleur. Pour $B$, choisissez 1 boule verte et 2 boules d'une autre couleur."
+            },
+            {
+              "id": "1b",
+              "content": "Calculer $P(A/B)$, la probabilité de l'événement $A$ sachant que l'événement $B$ est réalisé. Les événements $A$ et $B$ sont-ils indépendants ?",
+              "bareme": 0.75,
+              "hint": "Calculez d'abord la probabilité de l'intersection $A \\cap B$ (tirer exactement 2 rouges ET exactement 1 verte). Appliquez la formule $P(A/B) = \\dfrac{P(A \\cap B)}{P(B)}$. Comparez avec $P(A)$ pour conclure sur l'indépendance."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soit la variable aléatoire $X$ qui associe à chaque tirage le nombre de boules vertes tirées",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Déterminer la loi de probabilité de $X$",
+              "bareme": 1,
+              "hint": "Les valeurs possibles pour $X$ sont $x_i \\in \\{0, 1, 2, 3\\}$. Calculez la probabilité correspondante pour chaque valeur en tirant $x_i$ boules vertes et $3-x_i$ boules non-vertes."
+            },
+            {
+              "id": "2b",
+              "content": "Calculer la probabilité d'obtenir au moins deux boules vertes",
+              "bareme": 0.5,
+              "hint": "Traduisez cette phrase par $P(X \\geq 2)$, ce qui correspond à la somme des probabilités $P(X = 2)$ et $P(X = 3)$ déjà calculées."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2022r-ex5",
+      "number": 5,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 8.5,
+      "topic": "Étude d'une fonction avec logarithme népérien, limites, intégration par parties et calcul d'aire",
+      "context": "Soit la fonction $f$ définie sur $[0, +\\infty[$ par : $f(x) = x^4(\\ln x - 1)^2$ si $x > 0$ et $f(0) = 0$. Et $(C)$ sa courbe représentative dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (unité : $1cm$).",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Calculer $\\lim_{x \\to +\\infty} f(x)$, puis détermine la branche infinie de $(C)$ au voisinage de $+\\infty$",
+          "bareme": 0.75,
+          "hint": "La limite en $+\\infty$ s'obtient directement. Pour étudier la branche infinie, calculez $\\lim_{x \\to +\\infty} \\dfrac{f(x)}{x}$. Une limite infinie met en évidence une branche parabolique dont il faut donner la direction."
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $f$ est continue à droite en $0$",
+              "bareme": 0.5,
+              "hint": "Calculez $\\lim_{x \\to 0^+} f(x)$. Vous pouvez regrouper l'expression sous la forme $(x^2 \\ln x - x^2)^2$ et utiliser la limite fondamentale $\\lim_{x \\to 0^+} x^n \\ln x = 0$."
+            },
+            {
+              "id": "2b",
+              "content": "Étudier la dérivabilité de $f$ à droite en $0$ puis interpréter le résultat géométriquement",
+              "bareme": 0.75,
+              "hint": "Formez le taux d'accroissement $\\dfrac{f(x) - f(0)}{x}$ en $0^+$. Transformez-le de sorte à réutiliser les limites usuelles de la forme $x^p \\ln x$. Concluez géométriquement sur l'existence et la nature de la demi-tangente en l'origine."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que $f'(x) = 2x^3(\\ln x - 1)(2\\ln x - 1)$ pour tout $x$ de l'intervalle $]0, +\\infty[$",
+              "bareme": 0.5,
+              "hint": "Appliquez la règle de dérivation d'un produit $(u \\cdot v)'$. Attention à bien utiliser la dérivée d'une fonction composée pour le terme $(\\ln x - 1)^2$. Factorisez pour trouver l'expression demandée."
+            },
+            {
+              "id": "3b",
+              "content": "Dresser le tableau de variations de $f$",
+              "bareme": 0.5,
+              "hint": "Étudiez le signe de $f'(x)$ en résolvant séparément $\\ln x - 1 = 0$ et $2\\ln x - 1 = 0$. Ces deux racines (passant à l'exponentielle) délimitent les zones de croissance et décroissance de $f$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Sachant que $f''(x) = 2x^2(6\\ln x - 5)\\ln x$ pour tout $x$ de l'intervalle $]0, +\\infty[$, étudier le signe de $f''(x)$ sur $]0, +\\infty[$",
+              "bareme": 0.5,
+              "hint": "Le terme $2x^2$ est strictement positif. Le signe dépend du produit $\\ln x \\times (6\\ln x - 5)$. Posez un tableau de signes pour ce produit après avoir trouvé ses deux racines."
+            },
+            {
+              "id": "4b",
+              "content": "Déduire que la courbe $(C)$ admet deux points d'inflexion dont on déterminera les abscisses",
+              "bareme": 0.5,
+              "hint": "Recherchez les abscisses pour lesquelles la dérivée seconde $f''$ s'annule en changeant de signe, d'après votre étude de la question 4a."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "5a",
+              "content": "Construire la courbe $(C)$ dans le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$, (on prend : $\\sqrt{e} \\simeq 1,6$ et $e^2 \\simeq 7,2$)",
+              "bareme": 1,
+              "hint": "Représentez le point origine avec sa demi-tangente. Placez précisément les extremums locaux (déduits du tableau de variations) avec leurs tangentes horizontales, marquez les points d'inflexion, et tracez la direction de la branche parabolique vers $+\\infty$."
+            },
+            {
+              "id": "5b",
+              "content": "En utilisant la courbe $(C)$, déterminer le nombre de solutions de l'équation $x^2(\\ln x - 1) = -1$",
+              "bareme": 0.5,
+              "hint": "Transformez cette équation en élevant ses deux membres au carré, sachant que pour $x \\in ]0, e]$, la quantité $x^2(\\ln x - 1)$ est bien négative. Vous retomberez sur l'équation $f(x) = 1$, que vous pouvez résoudre graphiquement."
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "content": "On considère la fonction $g$ définie sur $\\mathbb{R}$ par $g(x) = f(|x|)$",
+          "subQuestions": [
+            {
+              "id": "6a",
+              "content": "Montrer que la fonction $g$ est paire",
+              "bareme": 0.5,
+              "hint": "Le domaine $\\mathbb{R}$ est symétrique. Évaluez $g(-x)$ et utilisez la propriété fondamentale de la valeur absolue : $|-x| = |x|$."
+            },
+            {
+              "id": "6b",
+              "content": "Construire $(C_g)$ la courbe représentative de $g$ dans le même repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$",
+              "bareme": 0.5,
+              "hint": "Identifiez que pour $x \\geq 0$, les courbes $(C_g)$ et $(C)$ sont confondues. Pour les $x$ négatifs, complétez le tracé en effectuant une symétrie par rapport à l'axe des ordonnées."
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "7a",
+              "content": "On pose $I = \\displaystyle\\int_1^e x^4(\\ln x - 1)dx$, en utilisant une intégration par parties, montrer que $I = \\dfrac{6 - e^5}{25}$",
+              "bareme": 0.5,
+              "hint": "Effectuez une intégration par parties en posant $u'(x) = x^4$ et $v(x) = \\ln x - 1$. L'intégrale résiduelle sera très facile à calculer."
+            },
+            {
+              "id": "7b",
+              "content": "On considère la fonction $h$ définie sur l'intervalle $]0, +\\infty[$ par $h(x) = x^5(\\ln x - 1)^2$.\\nVérifier que $h'(x) = 5f(x) + 2x^4(\\ln x - 1)$",
+              "bareme": 0.5,
+              "hint": "Dérivez $h(x)$ en tant que produit. Dans l'expression développée résultante, vous ferez naturellement apparaître $f(x)$ d'un côté."
+            },
+            {
+              "id": "7c",
+              "content": "Déduire que $\\displaystyle\\int_1^e f(x)dx = -\\dfrac{1}{5} - \\dfrac{2}{5}I$",
+              "bareme": 0.5,
+              "hint": "À partir de l'égalité prouvée en 7b, exprimez $f(x)$ en fonction de $h'(x)$ et de $x^4(\\ln x - 1)$. Intégrez le tout entre $1$ et $e$. L'intégrale de $h'(x)$ se calcule directement grâce à la primitive $h(x)$, et l'autre morceau correspond à l'intégrale $I$."
+            },
+            {
+              "id": "7d",
+              "content": "Calculer l'aire du domaine délimité par la courbe $(C)$ et l'axe des abscisses et les droites d'équations $x = 1$ et $x = e$",
+              "bareme": 0.5,
+              "hint": "La fonction $f$ étant positive sur l'intervalle considéré, l'aire (en $u.a.$) équivaut à l'intégrale de $f(x)$ de $1$ à $e$. Utilisez la relation trouvée en 7c pour le calcul, et ajoutez l'unité de mesure adéquate en $cm^2$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "La fonction logarithme népérien $\\ln$ est définie sur :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathbb{R}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb{R}^*$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$]0;+\\infty[$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\mathbb{R}^+$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La fonction $\\ln$ est définie pour $x>0$ uniquement, car c'est la primitive de $x\\mapsto 1/x$ sur $]0;+\\infty[$ qui s'annule en $1$."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "$\\ln(1) = 0$ et $\\ln(e) = 1$.",
+      "isTrue": true,
+      "explanation": "C'est par définition : $\\ln(1)=0$ (primitive s'annulant en $1$) et $\\ln(e)=1$ car $e$ est l'unique réel tel que $\\ln(e)=1$."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "La dérivée de la fonction $\\ln x$ sur $]0;+\\infty[$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{\\ln x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$(\\ln x)' = 1/x$ pour tout $x>0$."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "$\\ln(xy) = \\ln x + \\ln y$ pour tous $x,y > 0$.",
+      "isTrue": true,
+      "explanation": "C'est la propriété fondamentale du logarithme : il transforme le produit en somme."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Application",
+      "prompt": "$\\ln(\\frac{1}{e^2})$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\ln(1/e^2) = \\ln(e^{-2}) = -2\\ln e = -2$."
+    },
+    {
+      "id": "q6",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "La fonction $\\ln$ est strictement croissante sur $]0;+\\infty[$.",
+      "isTrue": true,
+      "explanation": "Sa dérivée $1/x$ est strictement positive pour $x>0$."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "L'équation $\\ln(2x-1) = \\ln(x+3)$ a pour solution :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x = -4$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x = 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Aucune solution",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il faut $2x-1>0$ et $x+3>0$, soit $x>0.5$. L'égalité donne $2x-1 = x+3$ → $x=4$, qui vérifie les conditions."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "La limite $\\lim_{x\\to 0^+} \\ln x$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\lim_{x\\to 0^+} \\ln x = -\\infty$ (asymptote verticale en $0$)."
+    },
+    {
+      "id": "q9",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "$\\ln(\\sqrt{x}) = \\frac{1}{2}\\ln x$ pour tout $x>0$.",
+      "isTrue": true,
+      "explanation": "$\\ln(\\sqrt{x}) = \\ln(x^{1/2}) = \\frac12 \\ln x$."
+    },
+    {
+      "id": "q10",
+      "type": "order",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour résoudre $\\ln(x^2-4)\\ge0$.",
+      "items": [
+        {
+          "id": "a",
+          "content": "Imposer le domaine $x^2-4>0$."
+        },
+        {
+          "id": "b",
+          "content": "Utiliser la croissance de $\\ln$ et $\\ln1=0$ pour obtenir $x^2-4\\ge1$."
+        },
+        {
+          "id": "c",
+          "content": "Résoudre $x^2\\ge5$."
+        },
+        {
+          "id": "d",
+          "content": "Vérifier le domaine et conclure $x\\le-\\sqrt5$ ou $x\\ge\\sqrt5$."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Le domaine doit être établi avant toute comparaison. La croissance stricte du logarithme permet ensuite de remplacer l'inéquation logarithmique par une inéquation algébrique."
+    },
+    {
+      "id": "q11",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "$\\lim_{x\\to +\\infty} \\frac{\\ln x}{x} = 0$.",
+      "isTrue": true,
+      "explanation": "C'est une limite fondamentale : la fonction logarithme croît moins vite que n'importe quelle puissance positive de $x$."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "La dérivée de $f(x)=\\ln(x^2+1)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{2x}{x^2+1}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{x^2+1}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2}{x^2+1}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{2x}{x^2+1}\\ln(x^2+1)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$(\\ln(u))' = u'/u$ avec $u=x^2+1$, $u'=2x$."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Synthèse",
+      "prompt": "Soit $f(x)=\\ln\\left(\\frac{x-1}{x+1}\\right)$. L'ensemble de définition de $f$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]1;+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$]-\\infty;-1[\\cup]1;+\\infty[$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\mathbb{R}\\setminus\\{-1;1\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$]-1;1[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il faut $\\frac{x-1}{x+1}>0$. Le signe du quotient est positif pour $x<-1$ ou $x>1$."
+    },
+    {
+      "id": "q14",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Identifier l'erreur dans la simplification de $\\ln(2+3)$.",
+      "context": "Un élève cherche à utiliser les règles algébriques du logarithme.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Les nombres $2$, $3$ et $2+3$ sont strictement positifs.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "On applique la règle $\\ln(a+b)=\\ln a+\\ln b$.",
+          "isError": true,
+          "correction": "Le logarithme transforme un produit en somme : $\\ln(ab)=\\ln a+\\ln b$. Il n'existe pas de règle analogue pour $\\ln(a+b)$."
+        },
+        {
+          "id": "s3",
+          "text": "On conclut à tort que $\\ln5=\\ln2+\\ln3$.",
+          "isError": false
+        }
+      ],
+      "explanation": "La confusion entre somme et produit est centrale : $\\ln2+\\ln3=\\ln6$, tandis que $\\ln(2+3)=\\ln5$."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "La limite $\\lim_{x\\to 0} \\frac{\\ln(1+x)}{x}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est le nombre dérivé de $\\ln(1+x)$ en $0$, soit $1$. On peut aussi utiliser $\\ln(1+x)\\sim x$."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Confondre la limite de $\\ln x$ avec celle de $x\\ln x$.",
+      "prompt": "$\\lim_{x\\to 0^+} x\\ln x$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On sait que $\\lim_{x\\to 0^+} x^\\alpha \\ln x = 0$ pour tout $\\alpha>0$. Ici $\\alpha=1$, donc la limite est $0$."
+    },
+    {
+      "id": "q17",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Propriété",
+      "prompt": "La fonction $\\ln$ est concave sur $]0;+\\infty[$.",
+      "isTrue": true,
+      "explanation": "$(\\ln)''(x) = -1/x^2 < 0$, donc la fonction est concave."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Soit $f(x)=\\ln(\\ln x)$. L'ensemble de définition de $f$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]1;+\\infty[$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$]0;+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$]e;+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\mathbb{R}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il faut $x>0$ et $\\ln x > 0$, soit $x>1$."
+    },
+    {
+      "id": "q19",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Pour tout $x>0$, $\\ln(2^x) = x\\ln 2$.",
+      "isTrue": true,
+      "explanation": "$\\ln(a^x) = x\\ln a$ pour $a>0$."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "La primitive de $f(x)=\\frac{1}{x\\ln x}$ sur $]1;+\\infty[$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln(\\ln x) + C$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\ln x + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{(\\ln x)^2} + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\ln x}{x} + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\int \\frac{1}{x\\ln x} dx = \\int \\frac{(\\ln x)'}{\\ln x} dx = \\ln|\\ln x| + C$."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Pour $a>0$, $a\\neq1$ et $x>0$, quelle est la formule de changement de base ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\log_a x=\\dfrac{\\ln x}{\\ln a}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\log_a x=\\dfrac{\\ln a}{\\ln x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\log_a x=\\ln(ax)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\log_a x=a\\ln x$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La relation $a^{\\log_a x}=x$ et l'écriture $a^t=e^{t\\ln a}$ conduisent à $\\log_a x=\\ln x/\\ln a$."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "ambiguity_note": "Lorsque $0<a<1$, la fonction $\\log_a$ est strictement décroissante.",
+      "prompt": "Pour $0<a<1$ et $x,y>0$, que déduit-on de $x<y$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\log_a x>\\log_a y$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\log_a x<\\log_a y$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\log_a x=\\log_a y$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "On ne peut jamais comparer les logarithmes",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Comme $\\ln a<0$, la division par $\\ln a$ renverse l'ordre. La fonction logarithme de base $a\\in]0,1[$ est donc décroissante."
+    }
+  ]
+}

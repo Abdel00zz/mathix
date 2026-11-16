@@ -1,0 +1,565 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Pour $z=3-5i$, quelle est la partie imaginaire de $z$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-5$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-5i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$5$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Dans $z=a+ib$, la partie imaginaire est le réel $b$. Ici $b=-5$ ; le symbole $i$ ne fait pas partie de $\\operatorname{Im}(z)$."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Application",
+      "prompt": "Que vaut $i^{2026}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les puissances de $i$ sont périodiques de période $4$. Comme $2026=4\\times506+2$, on a $i^{2026}=i^2=-1$."
+    },
+    {
+      "id": "q3",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Pour tout $z\\in\\mathbb{C}$, on a $z\\in\\mathbb{R}$ si et seulement si $z=\\overline z$.",
+      "isTrue": true,
+      "explanation": "Si $z=a+ib$, alors $z=\\overline z$ équivaut à $a+ib=a-ib$, donc à $b=0$. C'est exactement la condition pour que $z$ soit réel."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si $|z|=1$, quelle relation est immédiatement disponible ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overline z=\\dfrac1z$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\overline z=z$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$z+\\overline z=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$z^2=1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La relation $z\\overline z=|z|^2$ donne ici $z\\overline z=1$. Comme $|z|=1$ implique $z\\neq0$, on peut diviser par $z$ et obtenir $\\overline z=1/z$."
+    },
+    {
+      "id": "q5",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Le nombre complexe $0$ admet l'argument $0$.",
+      "isTrue": false,
+      "explanation": "Le nombre $0$ n'a aucun argument, car le vecteur nul ne définit aucune direction. Seuls les complexes non nuls possèdent des arguments."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Méthode",
+      "prompt": "Quelle écriture est la plus adaptée pour calculer rapidement des produits, des quotients, des puissances et des racines ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La forme exponentielle $re^{i\\theta}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La forme algébrique $a+ib$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'écriture $z+\\overline z$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une comparaison du type $z>w$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La forme exponentielle transforme un produit en multiplication des modules et addition des arguments. Elle simplifie de la même manière les quotients, puissances et racines."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "À l'aide de la formule de Moivre, que vaut $\\left(\\dfrac{\\sqrt3}{2}+\\dfrac{i}{2}\\right)^6$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On reconnaît $\\cos(\\pi/6)+i\\sin(\\pi/6)$. Par Moivre, la sixième puissance vaut $\\cos(\\pi)+i\\sin(\\pi)=-1$."
+    },
+    {
+      "id": "q8",
+      "type": "order",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes qui permettent de linéariser $\\cos^4\\theta$.",
+      "items": [
+        {
+          "id": "a",
+          "content": "Remplacer $\\cos\\theta$ par $\\dfrac{e^{i\\theta}+e^{-i\\theta}}2$."
+        },
+        {
+          "id": "b",
+          "content": "Développer $(e^{i\\theta}+e^{-i\\theta})^4$ avec le binôme."
+        },
+        {
+          "id": "c",
+          "content": "Regrouper les exponentielles conjuguées $e^{ik\\theta}$ et $e^{-ik\\theta}$."
+        },
+        {
+          "id": "d",
+          "content": "Utiliser $e^{ik\\theta}+e^{-ik\\theta}=2\\cos(k\\theta)$ puis simplifier."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "La linéarisation descend les puissances trigonométriques : Euler remplace d'abord le cosinus, le binôme développe la puissance, puis le regroupement des termes conjugués fait réapparaître des cosinus d'angles multiples."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "La factorisation de $e^{i\\pi/3}+e^{i\\pi/6}$ par l'angle moitié est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2\\cos\\left(\\dfrac{\\pi}{12}\\right)e^{i\\pi/4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2\\cos\\left(\\dfrac{\\pi}{4}\\right)e^{i\\pi/12}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2\\cos\\left(\\dfrac{\\pi}{6}\\right)e^{i\\pi/2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e^{i\\pi/2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La demi-différence vaut $(\\pi/3-\\pi/6)/2=\\pi/12$ et la demi-somme vaut $(\\pi/3+\\pi/6)/2=\\pi/4$."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Quelles sont les deux racines carrées de $-3+4i$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1+2i$ et $-1-2i$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1-2i$ et $-1+2i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2+i$ et $-2-i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3+4i$ et $-3-4i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$(1+2i)^2=1+4i-4=-3+4i$. Les deux racines carrées d'un complexe non nul sont opposées : $1+2i$ et $-1-2i$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Les solutions de $z^2-4z+13=0$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2+3i$ et $2-3i$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-2+3i$ et $-2-3i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$4+3i$ et $4-3i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2+i$ et $2-i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le discriminant est $\\Delta=16-52=-36=(6i)^2$. Ainsi $z=(4\\pm6i)/2=2\\pm3i$."
+    },
+    {
+      "id": "q12",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Pour vérifier que $z_0=i\\lambda$ est une racine d'un polynôme complexe, la même valeur réelle $\\lambda$ doit annuler simultanément les parties réelle et imaginaire obtenues.",
+      "isTrue": true,
+      "explanation": "L'égalité complexe $P(i\\lambda)=0$ équivaut à deux égalités réelles : $\\operatorname{Re}(P(i\\lambda))=0$ et $\\operatorname{Im}(P(i\\lambda))=0$. Une seule des deux ne suffit pas."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Quel est l'ensemble des solutions de $u^4=1$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{1,i,-1,-i\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\{1,-1\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{1,i\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\{1,-1,2,-2\\}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les quatre racines quatrièmes de l'unité sont $e^{2ik\\pi/4}$ pour $k=0,1,2,3$, soit $1,i,-1,-i$."
+    },
+    {
+      "id": "q14",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Identifier l'étape incorrecte dans la résolution de $z^6=\\overline z$.",
+      "context": "Un élève sépare d'abord le cas $z=0$, puis étudie les solutions non nulles.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "$z=0$ est une solution.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Si $z\\neq0$, l'égalité des modules donne $|z|^6=|z|$, donc $|z|=1$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Comme $|z|=1$, on peut écrire $\\overline z=\\dfrac1z$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "L'équation devient alors $z^6=1$, donc les solutions non nulles sont les racines sixièmes de l'unité.",
+          "isError": true,
+          "correction": "De $z^6=1/z$, il faut multiplier par $z$ : on obtient $z^7=1$. Les solutions non nulles sont les racines septièmes de l'unité."
+        }
+      ],
+      "explanation": "L'erreur consiste à perdre un facteur $z$. L'ensemble des solutions est $\\{0\\}\\cup\\{e^{2ik\\pi/7}:k=0,\\ldots,6\\}$."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Soit $z=e^{2i\\pi/7}$, $S=z+z^2+z^4$ et $T=z^3+z^5+z^6$. Quel mécanisme permet de déterminer $S$ et $T$ sans calcul trigonométrique direct ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$T=\\overline S$, $S+T=-1$ et $ST=2$ ; ainsi $S$ et $T$ sont les racines de $x^2+x+2=0$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$S=T$ et $S+T=0$ ; ainsi $S=T=0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$ST=1$ et $S+T=1$ ; ainsi $S$ et $T$ sont des racines septièmes.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$T=-\\overline S$ et $S-T=-1$ ; ainsi $S$ est réel.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Comme $|z|=1$ et $z^7=1$, les inverses réduisent les exposants modulo $7$ et donnent $T=\\overline S$. La somme totale des racines non triviales vaut $-1$, puis le produit $ST=2$ conduit à l'équation $x^2+x+2=0$."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Pour trois points distincts, on calcule $\\dfrac{z_B-z_C}{z_A-z_C}=2i$. Quelle conclusion est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$CB=2\\,CA$ et $(CA)\\perp(CB)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$CB=CA$ et les points sont alignés",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$CB=\\dfrac12CA$ et l'angle en $C$ est nul",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$CB=2\\,CA$ mais aucune information angulaire n'est disponible",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le module du quotient vaut $2$, donc $CB/CA=2$. Son argument vaut $\\pi/2$ modulo $2\\pi$, donc les vecteurs $\\overrightarrow{CA}$ et $\\overrightarrow{CB}$ sont perpendiculaires."
+    },
+    {
+      "id": "q17",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Pour deux points distincts $A(a)$ et $B(b)$, l'ensemble des points $M(z)$ vérifiant $|z-a|=|z-b|$ est un cercle.",
+      "isTrue": false,
+      "explanation": "Cette égalité signifie $MA=MB$. Le lieu est donc la médiatrice du segment $[AB]$, et non un cercle."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Le critère exige un réel non nul, mais il n'exige pas que ce réel soit positif.",
+      "prompt": "Pour quatre points distincts $A(a)$, $B(b)$, $C(c)$ et $D(d)$, quelle condition caractérise leur cocyclicité ou leur alignement ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\left(\\dfrac{c-a}{b-a}\\right)\\left(\\dfrac{b-d}{c-d}\\right)\\in\\mathbb{R}^*$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\left(\\dfrac{c-a}{b-a}\\right)\\left(\\dfrac{b-d}{c-d}\\right)\\in\\mathbb{R}_+^*$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\left(\\dfrac{c-a}{b-a}\\right)\\left(\\dfrac{b-d}{c-d}\\right)\\in i\\mathbb{R}^*$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\left|\\dfrac{c-a}{b-a}\\right|=1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le produit doit être réel non nul. Son signe n'est pas imposé : un réel négatif correspond lui aussi à l'égalité des angles inscrits modulo $\\pi$."
+    },
+    {
+      "id": "q19",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Dans $e^{i\\alpha}+e^{i\\beta}=2\\cos\\left(\\dfrac{\\alpha-\\beta}{2}\\right)e^{i(\\alpha+\\beta)/2}$, le facteur réel placé devant l'exponentielle est toujours le module de la somme.",
+      "isTrue": false,
+      "explanation": "Le cosinus peut être négatif. Dans ce cas, le module est la valeur absolue du facteur réel et il faut ajouter $\\pi$ à l'argument."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Quelle est la forme centrée de la rotation de centre $\\Omega(1+i)$ et d'angle $3\\pi/4$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$z'-(1+i)=e^{3i\\pi/4}\\bigl(z-(1+i)\\bigr)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$z'=e^{3i\\pi/4}z+(1+i)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$z'-(1+i)=\\dfrac{3\\pi}{4}\\bigl(z-(1+i)\\bigr)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$z'+(1+i)=e^{-3i\\pi/4}\\bigl(z+(1+i)\\bigr)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une rotation de centre $\\Omega(\\omega)$ et d'angle $\\theta$ s'écrit $z'-\\omega=e^{i\\theta}(z-\\omega)$. La forme centrée montre directement le centre et l'angle."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "ambiguity_note": "Le cas $a=1$ doit être traité avant d'utiliser la formule du point fixe $\\omega=b/(1-a)$.",
+      "prompt": "Comment classifier la transformation $z'=z+2-i$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une translation de vecteur d'affixe $2-i$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Une rotation de centre $\\dfrac{2-i}{1-1}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Une homothétie de rapport $1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une similitude directe ayant un point fixe unique",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Ici le coefficient de $z$ vaut $a=1$. On reconnaît directement $z'=z+b$ : c'est une translation. La formule $b/(1-a)$ n'est pas définie dans ce cas."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Quelle description complète correspond à $z'=(1-i)z+1+i$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une similitude directe de centre $1-i$, de rapport $\\sqrt2$ et d'angle $-\\pi/4$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Une rotation de centre $1+i$ et d'angle $\\pi/4$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Une homothétie de centre $1-i$ et de rapport $2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une translation de vecteur d'affixe $1+i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le coefficient $a=1-i$ vérifie $|a|=\\sqrt2$ et $\\arg(a)=-\\pi/4$, donc la transformation est une similitude directe. Son point fixe est $\\omega=(1+i)/(1-(1-i))=(1+i)/i=1-i$."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "proba-ex03",
+  "theme": "probabilites",
+  "difficulty": "facile",
+  "chapter": "02 - Probabilité conditionnelle et indépendance",
+  "topic": "Probabilité conditionnelle - Dé et pièce de monnaie",
+  "requiresRedaction": true,
+  "context": "On lance un dé à 6 faces puis une pièce de monnaie. Considérons les deux événements suivants : A « La pièce a donné face » et B « Le dé a donné 3 ou 5 ».",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $p(A)$ ; $p(B)$ et $P(A \\cap B)$ et $P_A(B)$ et $P_B(A)$.",
+      "hint": "$Card(\\Omega) = 6 \\times 2 = 12$. Pour $A$ : 6 issues donnent face. Pour $B$ : 2 faces du dé $\\times$ 2 faces pièce = 4 issues. Pour $P_A(B) = \\frac{P(A \\cap B)}{P(A)}$."
+    },
+    {
+      "id": "q2",
+      "content": "Les événements A et B sont-ils indépendants ?",
+      "hint": "A et B sont indépendants si et seulement si $P_B(A) = P(A)$. Comparez les valeurs calculées à la question précédente."
+    }
+  ]
+}

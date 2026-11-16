@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Optimiser la taille d'une boîte",
+    "subtitle": "Dérivée et optimisation",
+    "context": "Analyse"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Optimiser la taille d'une boîte",
+          "content": "On part d'une feuille A4 de dimensions $21\\ \\text{cm} \\times 29{,}7\\ \\text{cm}$. On découpe un carré de côté $h$ à chacun des quatre coins, puis on relève les bords pour former une \\textbf{boîte sans couvercle} (un pavé droit ouvert).\\par On note $L$ et $\\ell$ la longueur et la largeur du fond de la boîte, et $h$ sa hauteur. On cherche la hauteur $h$ qui rend le volume \\textbf{maximal}."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Exprimer $L$ et $\\ell$ en fonction de $h$, puis le volume $V(h) = h\\,L\\,\\ell$.\\item Montrer que $V(h) = 4h^3 - 101{,}4\\,h^2 + 623{,}7\\,h$, et préciser les valeurs possibles de $h$.\\item Calculer $V'(h)$, dresser le tableau de variations et déterminer la hauteur $h$ qui maximise le volume.\\item En déduire les dimensions de la boîte optimale et son volume maximal.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "En découpant un carré de côté $h$ à chaque coin, chaque dimension de la feuille perd $2h$ : $L = 29{,}7 - 2h$ et $\\ell = 21 - 2h$."
+        },
+        {
+          "type": "hint",
+          "content": "La hauteur doit vérifier $\\ell = 21 - 2h > 0$, donc $h \\in \\,]0\\,;\\,10{,}5[$. Le maximum est atteint là où $V'(h) = 0$ ; résolvez l'équation du second degré $12h^2 - 202{,}8h + 623{,}7 = 0$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $L = 29{,}7 - 2h$, $\\ell = 21 - 2h$, donc $V(h) = h(29{,}7 - 2h)(21 - 2h)$.\\par\\textbf{2)} En développant : $V(h) = h(623{,}7 - 101{,}4h + 4h^2) = 4h^3 - 101{,}4h^2 + 623{,}7h$, avec $h \\in \\,]0\\,;\\,10{,}5[$ (pour que $\\ell > 0$).\\par\\textbf{3)} $V'(h) = 12h^2 - 202{,}8h + 623{,}7$. Le discriminant est positif et les racines sont $h_1 \\approx 4{,}04$ et $h_2 \\approx 12{,}86$. Seule $h_1$ appartient à $]0\\,;\\,10{,}5[$. Sur cet intervalle $V'$ est positive avant $h_1$ puis négative : $V$ croît puis décroît, le maximum est atteint en $h \\approx \\boxed{4{,}04\\ \\text{cm}}$.\\par\\textbf{4)} Alors $L \\approx 21{,}62\\ \\text{cm}$, $\\ell \\approx 12{,}92\\ \\text{cm}$ et $V \\approx \\boxed{1128{,}5\\ \\text{cm}^3}$. La surface de feuille perdue (les quatre coins) vaut $4h^2 \\approx 65{,}3\\ \\text{cm}^2$."
+        }
+      ]
+    }
+  ]
+}

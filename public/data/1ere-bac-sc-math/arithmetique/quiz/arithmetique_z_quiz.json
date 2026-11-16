@@ -1,0 +1,640 @@
+{
+    "questions": [
+        {
+            "id": "q1",
+            "type": "mcq",
+            "category": "Définition",
+            "prompt": "Que signifie $a / b$ (a divise b) dans $\\mathbb{Z}$ ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Il existe $k \\in \\mathbb{Z}$ tel que $b = ak$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "text": "Il existe $k \\in \\mathbb{Z}$ tel que $a = bk$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "$a$ et $b$ sont premiers entre eux",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "Le reste de la division de $b$ par $a$ est $1$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "La définition formelle $a \\mid b$ est cruciale : elle signifie que $b$ est un multiple exact de $a$. Géométriquement sur l'axe des entiers, faire des bonds de taille $a$ permet de tomber exactement sur $b$ sans reste. Le coefficient $k$ compte le nombre de bonds."
+        },
+        {
+            "id": "q2",
+            "type": "boolean",
+            "category": "Définition",
+            "prompt": "Le nombre $1$ est un nombre premier.",
+            "isTrue": false,
+            "explanation": "Attention au piège classique ! L'unité $1$ n'est PAS un nombre premier. La définition mathématique absolue exige qu'un nombre premier admette EXACTEMENT 4 diviseurs dans $\\mathbb{Z}$ (à savoir $-p, -1, 1, p$). $1$ n'a que deux diviseurs ($-1$ et $1$)."
+        },
+        {
+            "id": "q3",
+            "type": "mcq",
+            "category": "Définition",
+            "prompt": "Soit $p \\in \\mathbb{Z}$. On dit que $p$ est premier si :",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$p$ n'a aucun diviseur",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "$|p| \\neq 1$ et $D_p = \\{-p, -1, 1, p\\}$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "$p$ est impair",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "$p$ a exactement $3$ diviseurs dans $\\mathbb{Z}$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "En arithmétique rigoureuse, la définition s'étend aux relatifs. Un nombre $p$ est premier s'il n'est ni 1 ni -1, et que la seule façon de le factoriser est d'utiliser 1 ou lui-même (aux signes près). Ainsi, $-5$ est considéré premier au même titre que $5$."
+        },
+        {
+            "id": "q4",
+            "type": "boolean",
+            "category": "Propriété",
+            "prompt": "Si $a / b$ et $b / c$, alors $a / c$.",
+            "isTrue": true,
+            "explanation": "La divisibilité fonctionne comme une chaîne infinie. Si $A$ est un bloc de $B$, et que $B$ est un bloc de $C$, alors $A$ mesure parfaitement $C$. Algébriquement, on substitue la variable $b$ dans la deuxième équation."
+        },
+        {
+            "id": "q5",
+            "type": "mcq",
+            "category": "Définition",
+            "prompt": "Quel est le reste de la division euclidienne de $-17$ par $3$ ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$-2$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "$2$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "$1$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "d",
+                    "text": "$-1$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "Dans la division euclidienne mathématique, le RESTE EST TOUJOURS POSITIF OU NUL, même si on divise un nombre négatif. Pour diviser -17 par 3, on va chercher le multiple de 3 situé juste EN DESSOUS de -17, c'est-à-dire -18. $3 \\times (-6) + 1 = -17$."
+        },
+        {
+            "id": "q6",
+            "type": "mcq",
+            "category": "Propriété",
+            "prompt": "Si $a / b$ et $a / c$, alors pour tous $\\alpha, \\beta \\in \\mathbb{Z}$ :",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$a / (\\alpha b + \\beta c)$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "text": "$a / (b \\times c)$ uniquement",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "$a / (b + c)$ mais pas $a / (b - c)$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "$b / a$ et $c / a$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "C'est le Théorème Fondamental des combinaisons linéaires ! Si un nombre divise les deux plateaux d'une balance, il divise tout poids construit en additionnant ou soustrayant ces plateaux."
+        },
+        {
+            "id": "q7",
+            "type": "boolean",
+            "category": "Propriété",
+            "prompt": "Si $a / b$ et $b / a$, alors $a = b$.",
+            "isTrue": false,
+            "explanation": "La divisibilité mutuelle ne prouve pas l'égalité absolue, mais seulement l'égalité des valeurs absolues ($|a| = |b|$). Dans le monde des entiers relatifs $\\mathbb{Z}$, les miroirs négatifs existent : 5 divise -5 et -5 divise 5."
+        },
+        {
+            "id": "q8",
+            "type": "mcq",
+            "category": "Méthode",
+            "prompt": "Pour tester si $n = 97$ est un nombre premier, par quels nombres premiers doit-on tester la divisibilité ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$2, 3, 5, 7$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "text": "$2, 3, 5, 7, 11$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "Tous les nombres jusqu'à $97$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "$2, 3, 5$ uniquement",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "Technique de l'ingénieur : pour tester la primalité d'un nombre $N$, il est totalement inutile de tester tous les diviseurs. Dès qu'on dépasse la racine carrée de $N$, les diviseurs ont déjà été testés. $\\sqrt{97} \\approx 9.8$."
+        },
+        {
+            "id": "q9",
+            "type": "mcq",
+            "category": "Application",
+            "prompt": "Quelle est la décomposition en facteurs premiers de $1344$ ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$2^5 \\times 3 \\times 7$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "$2^6 \\times 3 \\times 7$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "$2^6 \\times 21$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "$2^4 \\times 3^2 \\times 7$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "La décomposition doit être exhaustive (que des nombres premiers). Divisez systématiquement par 2 tant que le nombre est pair. $1344 / 2 = 672 / 2 = 336 / 2 = 168 / 2 = 84 / 2 = 42 / 2 = 21$. Puis passez à 3 : $21 = 3 \\times 7$."
+        },
+        {
+            "id": "q10",
+            "type": "boolean",
+            "category": "Propriété",
+            "prompt": "Le nombre de diviseurs positifs de $n = p_1^{\\alpha_1} \\times p_2^{\\alpha_2} \\times \\cdots \\times p_k^{\\alpha_k}$ est $(\\alpha_1 + 1)(\\alpha_2 + 1) \\cdots (\\alpha_k + 1)$.",
+            "isTrue": true,
+            "explanation": "La formule magique du nombre de diviseurs consiste à prendre tous les exposants de la décomposition, leur ajouter 1, et les multiplier. Pourquoi +1 ? Car on peut choisir la puissance 0 du facteur premier (ne pas le prendre)."
+        },
+        {
+            "id": "q11",
+            "type": "mcq",
+            "category": "Application",
+            "prompt": "Combien de diviseurs possède $924 = 2^2 \\times 3 \\times 7 \\times 11$ dans $\\mathbb{Z}$ ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$24$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "$48$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "$36$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "$16$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "Le nombre 924 a pour exposants 2, 1, 1, 1. Sa quantité de diviseurs POSITIFS est $(2+1)(1+1)(1+1)(1+1) = 24$. Puisque nous sommes dans $\\mathbb{Z}$, chaque diviseur admet un jumeau négatif. On multiplie donc par 2 pour trouver 48."
+        },
+        {
+            "id": "q12",
+            "type": "mcq",
+            "category": "Propriété",
+            "prompt": "Si $a = bq + r$ est la division euclidienne de $a$ par $b$, alors :",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$\\text{pgcd}(a, b) = \\text{pgcd}(b, q)$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "$\\text{pgcd}(a, b) = \\text{pgcd}(b, r)$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "$\\text{pgcd}(a, b) = \\text{pgcd}(a, r)$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "$\\text{pgcd}(a, b) = r$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "Le Lemme d'Euclide est le moteur du calcul de PGCD. Il prouve que décaler un problème de divisibilité d'un cran (en remplaçant par le reste) ne change rien au PGCD."
+        },
+        {
+            "id": "q13",
+            "type": "order",
+            "category": "Méthode",
+            "prompt": "Ordonnez les étapes de l'algorithme d'Euclide pour calculer $\\text{pgcd}(a, b)$.",
+            "items": [
+                {
+                    "id": "a",
+                    "content": "Effectuer la division euclidienne $a = bq + r$"
+                },
+                {
+                    "id": "b",
+                    "content": "Si $r \\neq 0$, remplacer $a$ par $b$ et $b$ par $r$"
+                },
+                {
+                    "id": "c",
+                    "content": "Répéter jusqu'à obtenir un reste nul"
+                },
+                {
+                    "id": "d",
+                    "content": "Le dernier reste non nul est le PGCD"
+                }
+            ],
+            "correctOrder": [
+                "a",
+                "b",
+                "c",
+                "d"
+            ],
+            "explanation": "L'algorithme d'Euclide est une boucle algorithmique primitive : on écrase $a$ par $b$, et $b$ par $r$, jusqu'à l'annihilation totale du reste. Le dernier reste survivant (non nul) est le PGCD."
+        },
+        {
+            "id": "q14",
+            "type": "mcq",
+            "category": "Application",
+            "prompt": "Quel est $\\text{pgcd}(24, 36)$ ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$6$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "$4$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "$12$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "d",
+                    "text": "$8$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "Application visuelle de l'algorithme d'Euclide : 36 divisé par 24 donne 1 (reste 12). 24 divisé par 12 donne 2 (reste 0). Le reste 0 déclenche l'arrêt de l'algorithme. Le dernier reste calculé est 12."
+        },
+        {
+            "id": "q15",
+            "type": "mcq",
+            "category": "Propriété",
+            "prompt": "Pour tous $a, b \\in \\mathbb{Z}^*$, quelle relation lie PGCD et PPCM ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$(a \\wedge b) + (a \\vee b) = |ab|$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "$(a \\wedge b) \\times (a \\vee b) = |ab|$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "$(a \\wedge b) \\times (a \\vee b) = ab$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "$(a \\wedge b) \\times (a \\vee b) = a + b$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "La Balance Arithmétique : Le produit du PGCD par le PPCM est TOUJOURS égal à la valeur absolue du produit des nombres. Les facteurs communs vont au PGCD, les autres vont au PPCM."
+        },
+        {
+            "id": "q16",
+            "type": "boolean",
+            "category": "Propriété",
+            "prompt": "$a \\equiv b[n] \\Leftrightarrow n / (a - b)$",
+            "isTrue": true,
+            "explanation": "La congruence $a \\equiv b \\pmod{n}$ signifie que dans la cour de l'Horloge, $a$ et $b$ occupent la même position. La différence entre les deux est donc un nombre entier de tours complets."
+        },
+        {
+            "id": "q17",
+            "type": "mcq",
+            "category": "Application",
+            "prompt": "Quel est le reste de la division de $7^{2023}$ par $10$ ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$7$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "$9$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "$3$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "d",
+                    "text": "$1$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "Technique de Ninja : trouver un reste de 2023 puissances est impossible à la main. L'astuce $7^2 = 49$. Or $49 \\equiv -1 \\pmod{10}$. La puissance devenant un simple produit de -1, le calcul s'effondre !"
+        },
+        {
+            "id": "q18",
+            "type": "mcq",
+            "category": "Propriété",
+            "prompt": "Si $a \\equiv b[n]$ et $c \\equiv d[n]$, alors :",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$ac \\equiv bd[n]$ et $a + c \\equiv b + d[n]$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "text": "$ac \\equiv bd[n]$ mais pas forcément $a + c \\equiv b + d[n]$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "$\\dfrac{a}{c} \\equiv \\dfrac{b}{d}[n]$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "$a - c \\equiv b + d[n]$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "Les congruences fonctionnent exactement comme des équations normales pour l'Addition et la Multiplication (on peut multiplier ou additionner les plateaux). ATTENTION : la Division est strictement interdite sauf cas spécifiques."
+        },
+        {
+            "id": "q19",
+            "type": "error",
+            "category": "Application",
+            "prompt": "Identifier l'erreur dans le calcul du reste de la division de $-17$ par $3$.",
+            "context": "On cherche le reste de la division euclidienne de $-17$ par $3$.",
+            "steps": [
+                {
+                    "id": "s1",
+                    "text": "On cherche $q$ et $r$ tels que $-17 = 3q + r$",
+                    "isError": false
+                },
+                {
+                    "id": "s2",
+                    "text": "On écrit $-17 = 3 \\times (-5) + (-2)$",
+                    "isError": true,
+                    "correction": "$-17 = 3 \\times (-6) + 1$. Le reste doit vérifier $0 \\leq r < |3| = 3$."
+                },
+                {
+                    "id": "s3",
+                    "text": "On conclut que le reste est $r = -2$",
+                    "isError": false
+                },
+                {
+                    "id": "s4",
+                    "text": "Donc $-17 \\equiv -2[3]$",
+                    "isError": false
+                }
+            ],
+            "explanation": "L'erreur absolue du débutant est de croire que la division euclidienne dans les négatifs marche comme une calculatrice. Le quotient doit pousser vers le bas pour garantir un reste strcitement POSITIF."
+        },
+        {
+            "id": "q20",
+            "type": "mcq",
+            "category": "Propriété",
+            "prompt": "Le PGCD de deux entiers naturels est obtenu par la décomposition en facteurs premiers en prenant :",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Le produit des facteurs communs avec le plus grand exposant",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "Le produit des facteurs communs avec le plus petit exposant",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "Le produit de tous les facteurs avec le plus petit exposant",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "La somme des facteurs premiers communs",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "Règle Mnémotechnique : Pour le PGCD (Plus Grand Diviseur), on choisit le PLUS PETIT exposant commun. Pour le PPCM (Plus Petit Multiple), on prend le PLUS GRAND exposant de tous les facteurs. Le grand prend le petit, le petit prend le grand."
+        },
+        {
+            "id": "q21",
+            "type": "boolean",
+            "category": "Propriété",
+            "prompt": "Si $a \\equiv b[n]$, alors pour tout $p \\in \\mathbb{N}$ : $a^p \\equiv b^p[n]$.",
+            "isTrue": true,
+            "explanation": "La compatibilité avec la puissance est l'arme massive des restes immenses. Si $a$ et $b$ sont synchronisés sur la même horloge modulo $n$, les élever à n'importe quelle puissance conserve leur synchronisation."
+        },
+        {
+            "id": "q22",
+            "type": "mcq",
+            "category": "Définition",
+            "prompt": "Dans $\\mathbb{Z}/6\\mathbb{Z}$, que vaut $\\overline{3} \\times \\overline{4}$ ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$\\overline{12}$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "$\\overline{2}$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "$\\overline{0}$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "d",
+                    "text": "$\\overline{1}$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "Bienvenue dans les anneaux $\\mathbb{Z}/n\\mathbb{Z}$ ! Quand le module n'est pas premier, il existe des fantômes appelés diviseurs de zéro. Deux nombres non nuls peuvent se multiplier et donner zéro (car ils reconstituent le module 6)."
+        },
+        {
+            "id": "q23",
+            "type": "error",
+            "category": "Application",
+            "prompt": "Identifier l'erreur dans le calcul de $\\text{pgcd}(a, b)$ par décomposition.",
+            "context": "Soit $a = 2^3 \\times 3^2 \\times 5$ et $b = 2^2 \\times 3 \\times 7$. Calculer $\\text{pgcd}(a, b)$.",
+            "steps": [
+                {
+                    "id": "s1",
+                    "text": "Facteurs premiers communs : $2$ et $3$",
+                    "isError": false
+                },
+                {
+                    "id": "s2",
+                    "text": "On prend le plus grand exposant de chaque facteur commun",
+                    "isError": true,
+                    "correction": "On prend le plus petit exposant de chaque facteur commun : $\\min(3,2) = 2$ pour $2$ et $\\min(2,1) = 1$ pour $3$."
+                },
+                {
+                    "id": "s3",
+                    "text": "$\\text{pgcd}(a, b) = 2^3 \\times 3^2 = 72$",
+                    "isError": false
+                },
+                {
+                    "id": "s4",
+                    "text": "Le PGCD est $72$",
+                    "isError": false
+                }
+            ],
+            "explanation": "L'erreur de l'élève vient de l'inversion de la règle du PGCD et du PPCM. L'élève a calculé le PPCM des facteurs communs au lieu de leur PGCD."
+        },
+        {
+            "id": "q24",
+            "type": "order",
+            "category": "Méthode",
+            "prompt": "Ordonnez les étapes pour décomposer un entier $a$ en produit de facteurs premiers.",
+            "items": [
+                {
+                    "id": "a",
+                    "content": "Diviser $a$ par son plus petit diviseur premier"
+                },
+                {
+                    "id": "b",
+                    "content": "Diviser le quotient obtenu par son plus petit diviseur premier"
+                },
+                {
+                    "id": "c",
+                    "content": "Répéter jusqu'à obtenir le quotient $1$"
+                },
+                {
+                    "id": "d",
+                    "content": "Écrire $a$ comme produit de tous les facteurs premiers trouvés"
+                }
+            ],
+            "correctOrder": [
+                "a",
+                "b",
+                "c",
+                "d"
+            ],
+            "explanation": "La décomposition en arbre est la technique visuelle parfaite. L'entier est une molécule qu'on casse avec nos scalpels premiers. L'algorithme s'arrête fatalement quand le quotient atteint 1."
+        },
+        {
+            "id": "q25",
+            "type": "mcq",
+            "category": "Application",
+            "prompt": "Sachant que $\\text{pgcd}(a, b) = 2$ et $a \\times b = 12$, quel est $\\text{ppcm}(a, b)$ ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "$24$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "$6$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "$10$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "$14$",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "Le théorème de liaison PGCD-PPCM fait le travail à votre place sans jamais avoir à trouver les nombres A et B ! Formule $PGCD \\times PPCM = |A \\times B|$."
+        },
+        {
+            "id": "q26",
+            "type": "mcq",
+            "category": "Application",
+            "prompt": "Dans $\\mathbb{Z}/6\\mathbb{Z}$, on a $\\overline{2} \\times \\overline{3} = \\overline{0}$ alors que $\\overline{2} \\neq \\overline{0}$ et $\\overline{3} \\neq \\overline{0}$. Cela montre que :",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "La multiplication n'est pas définie dans $\\mathbb{Z}/6\\mathbb{Z}$",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "Le produit de deux éléments non nuls peut être nul dans $\\mathbb{Z}/n\\mathbb{Z}$",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "$\\mathbb{Z}/6\\mathbb{Z}$ n'existe pas",
+                    "isCorrect": false
+                },
+                {
+                    "id": "d",
+                    "text": "Il y a une erreur de calcul",
+                    "isCorrect": false
+                }
+            ],
+            "explanation": "L'étude de $\\mathbb{Z}/6\\mathbb{Z}$ prépare aux mathématiques supérieures. Elle démontre que les règles évidentes comme 'A * B = 0 implique A=0 ou B=0' sont uniquement valables dans des univers spécifiques dits Intègres."
+        }
+    ]
+}

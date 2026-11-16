@@ -1,0 +1,70 @@
+{
+  "id": "suites",
+  "title": "Les suites numériques",
+  "section": "analyse",
+  "quizCount": 21,
+  "revisions": [
+    {
+      "id": "rev-suites-2bac",
+      "title": "Fiche Compléte : Suites",
+      "path": "data/2eme-bac-sc-ex/suites/revisions/fiche_suites_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-suites-01",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_suites_01.json"
+    },
+    {
+      "id": "ex-seq-001",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_seq_001.json"
+    },
+    {
+      "id": "ex-suites-03",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_suites_03.json"
+    },
+    {
+      "id": "ex-func-003",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_func_003.json"
+    },
+    {
+      "id": "ex-suites-02",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_suites_02.json"
+    },
+    {
+      "id": "ex-suites-04",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_suites_04.json"
+    },
+    {
+      "id": "ex-004",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_004.json"
+    },
+    {
+      "id": "ex-seq-002",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_seq_002.json"
+    },
+    {
+      "id": "ex-seq-004",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_seq_004.json"
+    },
+    {
+      "id": "ex-seq-005",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_seq_005.json"
+    },
+    {
+      "id": "ex-suites-007",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_suites_07.json"
+    },
+    {
+      "id": "ex-suites-008",
+      "path": "data/2eme-bac-sc-ex/suites/exercises/ex_suites_08.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-suites-01",
+      "path": "data/2eme-bac-sc-ex/suites/quiz/suites_quiz.json",
+      "questionsCount": 21
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+@layer components {
+  .modal-ui,
+  .modal-sheet {
+    --modal-accent: #b5369b;
+    --modal-accent-deep: #8f1f7d;
+    --modal-accent-soft: #fbf1f9;
+    --modal-accent-border: #ebd3e6;
+    --modal-lilac: #9570fc;
+    --modal-lilac-soft: #f4f0ff;
+    --modal-canvas: #fcfbfe;
+    --modal-surface: #ffffff;
+    --modal-ink: #1c1720;
+    --modal-muted: #6e6472;
+    --modal-line: #ede5ec;
+    --modal-success: #2f7a54;
+    --modal-fs: 1;
+  }
+
+  /* Identité MathPlus : claire, tendre et spécialement lisible dans la grande
+     fenêtre d'aide de la console professeur. */
+  .help-modal-theme {
+    --modal-accent: #2b9b89;
+    --modal-accent-deep: #196f63;
+    --modal-accent-soft: #eaf8f4;
+    --modal-accent-border: #bfe5dc;
+    --modal-lilac: #7184d8;
+    --modal-lilac-soft: #f0f3ff;
+    --modal-canvas: #f8fbfa;
+    --modal-surface: #ffffff;
+    --modal-ink: #183a36;
+    --modal-muted: #617772;
+    --modal-line: #dfebe8;
+    --modal-success: #2e8065;
+  }
+
+  .help-modal-theme.modal-ui {
+    background:
+      radial-gradient(circle at 8% 0%, rgba(107, 205, 183, .12), transparent 20rem),
+      radial-gradient(circle at 96% 10%, rgba(137, 161, 235, .10), transparent 24rem),
+      linear-gradient(180deg, #ffffff 0%, var(--modal-canvas) 15rem);
+  }
+
+  .help-modal-theme .modal-ui__header {
+    border-bottom-color: rgba(191, 229, 220, .62);
+    box-shadow: 0 5px 24px -18px rgba(25, 111, 99, .22);
+  }
+
+  .help-modal-theme .modal-card {
+    border-color: rgba(215, 231, 227, .92);
+    box-shadow: 0 5px 22px -14px rgba(24, 58, 54, .16);
+  }
+
+  .help-modal-theme .modal-card--interactive:hover {
+    border-color: var(--modal-accent-border);
+    box-shadow: 0 12px 30px -18px rgba(25, 111, 99, .28);
+  }
+
+  .help-modal-theme .modal-card--active {
+    border-color: rgba(89, 178, 159, .42);
+    background: linear-gradient(145deg, #ffffff 45%, #effaf7 100%);
+    box-shadow: 0 12px 32px -20px rgba(25, 111, 99, .28), 0 0 0 1px rgba(89, 178, 159, .08);
+  }
+
+  /* Échelle typographique unique des modales : huit paliers en rem, multipliés
+     par --modal-fs (repli à 1). Les tailles éparpillées en `text-[…rem]` ont
+     été remplacées par ces classes pour pouvoir réduire de 15 % sur téléphone. */
+  .modal-t-display { font-size: calc(1.80rem * var(--modal-fs, 1)); }
+  .modal-t-h1      { font-size: calc(1.25rem * var(--modal-fs, 1)); }
+  .modal-t-h2      { font-size: calc(1.10rem * var(--modal-fs, 1)); }
+  .modal-t-lead    { font-size: calc(1.02rem * var(--modal-fs, 1)); }
+  .modal-t-body    { font-size: calc(0.88rem * var(--modal-fs, 1)); }
+  .modal-t-label   { font-size: calc(0.82rem * var(--modal-fs, 1)); }
+  .modal-t-hint    { font-size: calc(0.78rem * var(--modal-fs, 1)); }
+  .modal-t-micro   { font-size: calc(0.70rem * var(--modal-fs, 1)); }
+
+  .modal-ui {
+    color: var(--modal-ink);
+    background:
+      radial-gradient(ellipse 90% 40% at 50% -5%, rgba(181, 54, 155, 0.04), transparent 60%),
+      radial-gradient(circle at 92% 2%, rgba(149, 112, 252, 0.05), transparent 22rem),
+      linear-gradient(180deg, #ffffff 0%, var(--modal-canvas) 12rem);
+  }
+
+  .modal-ui__header {
+    position: relative;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(225, 215, 225, 0.55);
+    box-shadow: 0 4px 20px -15px rgba(104, 23, 88, 0.08);
+  }
+
+  /* Note: Pas de ligne / barre en haut (.modal-ui__header::before supprimé pour un design pur et sans bordure épaisse) */
+
+  .modal-ui__close {
+    color: var(--modal-muted);
+    border: none;
+    background: transparent;
+    border-radius: 9999px;
+    transition: color .18s ease, transform .18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .modal-ui__close:hover {
+    color: var(--modal-ink);
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .modal-ui__close:active {
+    transform: scale(.9);
+  }
+
+  .modal-card {
+    border: 1px solid rgba(230, 222, 230, 0.85);
+    border-radius: 1.15rem;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px -8px rgba(50, 25, 55, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  }
+
+  .modal-card--interactive {
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease, background-color .2s ease;
+  }
+
+  .modal-card--interactive:hover {
+    border-color: var(--modal-accent-border);
+    box-shadow: 0 10px 28px -12px rgba(143, 31, 125, 0.16), 0 2px 6px rgba(0, 0, 0, 0.03);
+    transform: translateY(-1.5px);
+  }
+
+  .modal-card--active {
+    border-color: rgba(181, 54, 155, 0.45);
+    background: linear-gradient(145deg, #ffffff 40%, var(--modal-accent-soft) 100%);
+    box-shadow: 0 12px 30px -14px rgba(143, 31, 125, 0.22), 0 0 0 1px rgba(181, 54, 155, 0.15);
+  }
+
+  .modal-button-primary {
+    min-height: 44px;
+    border-radius: 0.85rem;
+    color: #fff;
+    background: linear-gradient(135deg, var(--modal-accent-deep) 0%, var(--modal-accent) 100%);
+    box-shadow: 0 8px 20px -6px rgba(143, 31, 125, 0.45);
+    transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
+  }
+
+  .modal-button-primary:hover {
+    filter: saturate(1.08) brightness(1.02);
+    box-shadow: 0 12px 24px -6px rgba(143, 31, 125, 0.55);
+    transform: translateY(-1px);
+  }
+
+  .modal-button-primary:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 12px -4px rgba(143, 31, 125, 0.4);
+  }
+
+  .modal-button-secondary {
+    min-height: 44px;
+    border: 1px solid var(--modal-line);
+    border-radius: 0.85rem;
+    color: var(--modal-ink);
+    background: #ffffff;
+    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.04);
+    transition: border-color .16s ease, background .16s ease, color .16s ease, transform .16s ease;
+  }
+
+  .modal-button-secondary:hover {
+    border-color: var(--modal-accent-border);
+    color: var(--modal-accent-deep);
+    background: var(--modal-accent-soft);
+    transform: translateY(-1px);
+  }
+
+  .modal-button-secondary:active {
+    transform: translateY(1px);
+  }
+
+  .modal-icon-tile {
+    color: var(--modal-accent-deep);
+    background: linear-gradient(135deg, var(--modal-accent-soft), var(--modal-lilac-soft));
+    border: 1px solid var(--modal-accent-border);
+  }
+
+  .modal-sheet {
+    background: var(--modal-canvas);
+    border: 1px solid rgba(225, 212, 225, 0.7);
+    box-shadow:
+      0 24px 70px -18px rgba(35, 18, 38, 0.28),
+      0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  }
+
+  @media (max-width: 639px) {
+    .modal-ui,
+    .modal-sheet {
+      --modal-fs: .85;
+    }
+
+    .modal-ui {
+      background: var(--modal-canvas);
+    }
+
+    .modal-sheet {
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      border-top: 1px solid rgba(225, 212, 225, 0.6);
+      box-shadow: 0 -10px 40px -10px rgba(35, 18, 38, 0.2);
+    }
+
+    .modal-card {
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px -3px rgba(50, 25, 55, 0.04);
+    }
+
+    .modal-card--interactive:hover {
+      transform: none;
+    }
+
+    .modal-button-primary:not(.modal-button-compact),
+    .modal-button-secondary:not(.modal-button-compact) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

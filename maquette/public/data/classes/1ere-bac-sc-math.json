@@ -1,0 +1,363 @@
+{
+  "id": "1ere-bac-sc-math",
+  "title": "1ère Bac Sciences Mathématiques",
+  "chapters": [
+    {
+      "id": "mise-a-niveau",
+      "title": "Mise à niveau",
+      "pinned": true,
+      "quizCount": 31,
+      "manifestPath": "data/1ere-bac-sc-math/mise-a-niveau/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-mise-a-niveau-1bac-sm",
+          "path": "data/1ere-bac-sc-math/mise-a-niveau/revisions/fiche_mise_a_niveau_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-mise-a-niveau-01",
+          "path": "data/1ere-bac-sc-math/mise-a-niveau/quiz/mise-a-niveau_quiz.json",
+          "questionsCount": 31
+        }
+      ]
+    },
+    {
+      "id": "logique",
+      "title": "Logique et raisonnements mathématiques",
+      "section": "algebre-geometrie",
+      "quizCount": 12,
+      "manifestPath": "data/1ere-bac-sc-math/logique/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-logique-1",
+          "path": "data/1ere-bac-sc-math/logique/revisions/fiche_logique_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-logique-01",
+          "path": "data/1ere-bac-sc-math/logique/quiz/logique_quiz.json",
+          "questionsCount": 12
+        }
+      ]
+    },
+    {
+      "id": "ensembles-app",
+      "title": "Ensembles et applications",
+      "section": "algebre-geometrie",
+      "quizCount": 6,
+      "manifestPath": "data/1ere-bac-sc-math/ensembles-app/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-ens-app-1",
+          "path": "data/1ere-bac-sc-math/ensembles-app/revisions/fiche_ensembles_app_cours.json"
+        },
+        {
+          "id": "rev-ens-app-2",
+          "path": "data/1ere-bac-sc-math/ensembles-app/revisions/fiche_ensembles_app.json",
+          "title": "Applications et Ensembles — Cours & Définitions"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-ensembles-app-01",
+          "path": "data/1ere-bac-sc-math/ensembles-app/quiz/ensembles-app_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "generalites-fonctions",
+      "title": "Généralités sur les fonctions numériques",
+      "section": "analyse",
+      "quizCount": 5,
+      "manifestPath": "data/1ere-bac-sc-math/generalites-fonctions/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-gen-fonc-1",
+          "path": "data/1ere-bac-sc-math/generalites-fonctions/revisions/fiche_generalites_fonctions_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-generalites-fonctions-01",
+          "path": "data/1ere-bac-sc-math/generalites-fonctions/quiz/generalites-fonctions_quiz.json",
+          "questionsCount": 5
+        }
+      ]
+    },
+    {
+      "id": "barycentre",
+      "title": "Le barycentre dans le plan",
+      "section": "algebre-geometrie",
+      "quizCount": 18,
+      "manifestPath": "data/1ere-bac-sc-math/barycentre/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-bary-1",
+          "path": "data/1ere-bac-sc-math/barycentre/revisions/fiche_barycentre_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-barycentre-01",
+          "path": "data/1ere-bac-sc-math/barycentre/quiz/barycentre_quiz.json",
+          "questionsCount": 18
+        }
+      ]
+    },
+    {
+      "id": "produit-scalaire",
+      "title": "Le produit scalaire dans le plan",
+      "section": "algebre-geometrie",
+      "quizCount": 18,
+      "manifestPath": "data/1ere-bac-sc-math/produit-scalaire/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-prod-scal-1",
+          "path": "data/1ere-bac-sc-math/produit-scalaire/revisions/fiche_produit_scalaire_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-produit-scalaire-01",
+          "path": "data/1ere-bac-sc-math/produit-scalaire/quiz/produit-scalaire_quiz.json",
+          "questionsCount": 18
+        }
+      ]
+    },
+    {
+      "id": "trigonometrie",
+      "title": "Calcul trigonométrique",
+      "section": "analyse",
+      "quizCount": 10,
+      "manifestPath": "data/1ere-bac-sc-math/trigonometrie/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-trigo-1",
+          "path": "data/1ere-bac-sc-math/trigonometrie/revisions/fiche_trigonometrie_cours.json"
+        },
+        {
+          "id": "rev-trigo-1bac-sm-2",
+          "path": "data/1ere-bac-sc-math/trigonometrie/revisions/fiche_trigonometrie.json",
+          "title": "Trigonométrie — Fiche de Cours & Méthodes"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-trigonometrie-01",
+          "path": "data/1ere-bac-sc-math/trigonometrie/quiz/trigonometrie_quiz.json",
+          "questionsCount": 10
+        }
+      ]
+    },
+    {
+      "id": "rotation",
+      "title": "La rotation dans le plan",
+      "section": "algebre-geometrie",
+      "quizCount": 21,
+      "manifestPath": "data/1ere-bac-sc-math/rotation/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-rotation-1",
+          "path": "data/1ere-bac-sc-math/rotation/revisions/fiche_rotation_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-rotation-01",
+          "path": "data/1ere-bac-sc-math/rotation/quiz/rotation_quiz.json",
+          "questionsCount": 21
+        }
+      ]
+    },
+    {
+      "id": "suites",
+      "title": "Les suites numériques",
+      "section": "analyse",
+      "quizCount": 21,
+      "manifestPath": "data/1ere-bac-sc-math/suites/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-suites-1bac",
+          "path": "data/1ere-bac-sc-math/suites/revisions/fiche_suites_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-suites-01",
+          "path": "data/1ere-bac-sc-math/suites/quiz/suites_quiz.json",
+          "questionsCount": 21
+        }
+      ]
+    },
+    {
+      "id": "limites",
+      "title": "Limites d'une fonction numérique",
+      "section": "analyse",
+      "quizCount": 24,
+      "session_dates": [
+        "2026-01-25T20:00:00.000Z",
+        "2026-01-26T20:00:00.000Z",
+        "2026-01-28T20:00:00.000Z"
+      ],
+      "manifestPath": "data/1ere-bac-sc-math/limites/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-limites-1",
+          "path": "data/1ere-bac-sc-math/limites/revisions/fiche_limites_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-limites-01",
+          "path": "data/1ere-bac-sc-math/limites/quiz/limites_quiz.json",
+          "questionsCount": 24
+        }
+      ]
+    },
+    {
+      "id": "derivation",
+      "title": "La dérivation et ses applications",
+      "section": "analyse",
+      "quizCount": 25,
+      "manifestPath": "data/1ere-bac-sc-math/derivation/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-deriv-1",
+          "path": "data/1ere-bac-sc-math/derivation/revisions/fiche_derivation_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-derivation-01",
+          "path": "data/1ere-bac-sc-math/derivation/quiz/derivation_quiz.json",
+          "questionsCount": 25
+        }
+      ]
+    },
+    {
+      "id": "etude-fonctions",
+      "title": "L'étude des fonctions numériques",
+      "section": "analyse",
+      "quizCount": 24,
+      "manifestPath": "data/1ere-bac-sc-math/etude-fonctions/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-etude-fct-1",
+          "path": "data/1ere-bac-sc-math/etude-fonctions/revisions/fiche_etude_fonctions_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-etude-fonctions-1",
+          "path": "data/1ere-bac-sc-math/etude-fonctions/quiz/etude-fonctions_quiz.json",
+          "questionsCount": 24
+        }
+      ]
+    },
+    {
+      "id": "vecteurs-espace",
+      "title": "Les vecteurs de l'espace",
+      "section": "algebre-geometrie",
+      "quizCount": 20,
+      "manifestPath": "data/1ere-bac-sc-math/vecteurs-espace/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-vect-esp-1",
+          "path": "data/1ere-bac-sc-math/vecteurs-espace/revisions/fiche_vecteurs_espace_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-vecteurs-espace-1",
+          "path": "data/1ere-bac-sc-math/vecteurs-espace/quiz/vecteurs-espace_quiz.json",
+          "questionsCount": 20
+        }
+      ]
+    },
+    {
+      "id": "produit-scalaire-espace",
+      "title": "Produit scalaire dans l'espace",
+      "section": "algebre-geometrie",
+      "quizCount": 20,
+      "manifestPath": "data/1ere-bac-sc-math/produit-scalaire-espace/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-prod-scal-esp-1",
+          "path": "data/1ere-bac-sc-math/produit-scalaire-espace/revisions/fiche_produit_scalaire_espace_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-produit-scalaire-espace-1",
+          "path": "data/1ere-bac-sc-math/produit-scalaire-espace/quiz/produit-scalaire-espace_quiz.json",
+          "questionsCount": 20
+        }
+      ]
+    },
+    {
+      "id": "produit-vectoriel",
+      "title": "Produit vectoriel",
+      "section": "algebre-geometrie",
+      "quizCount": 20,
+      "manifestPath": "data/1ere-bac-sc-math/produit-vectoriel/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-prod-vect-1",
+          "path": "data/1ere-bac-sc-math/produit-vectoriel/revisions/fiche_produit_vectoriel_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-produit-vectoriel-1",
+          "path": "data/1ere-bac-sc-math/produit-vectoriel/quiz/produit-vectoriel_quiz.json",
+          "questionsCount": 20
+        }
+      ]
+    },
+    {
+      "id": "arithmetique",
+      "title": "Arithmétique dans $\\mathbb{Z}$",
+      "section": "algebre-geometrie",
+      "quizCount": 26,
+      "manifestPath": "data/1ere-bac-sc-math/arithmetique/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-arith-1",
+          "path": "data/1ere-bac-sc-math/arithmetique/revisions/fiche_arithmetique_z_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-arithmetique-1",
+          "path": "data/1ere-bac-sc-math/arithmetique/quiz/arithmetique_z_quiz.json",
+          "questionsCount": 26
+        }
+      ]
+    },
+    {
+      "id": "denombrement",
+      "title": "Dénombrement",
+      "section": "algebre-geometrie",
+      "quizCount": 20,
+      "manifestPath": "data/1ere-bac-sc-math/denombrement/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-denom-1",
+          "path": "data/1ere-bac-sc-math/denombrement/revisions/fiche_denombrement_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-denombrement-1",
+          "path": "data/1ere-bac-sc-math/denombrement/quiz/denombrement_quiz.json",
+          "questionsCount": 20
+        }
+      ]
+    }
+  ],
+  "classId": "1ere-bac-sc-math",
+  "className": "1ère Bac Sciences Mathématiques"
+}

@@ -1,0 +1,1166 @@
+{
+  "questions": [
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "Logique et rédaction",
+      "difficulty": "medium",
+      "prompt": "Pour tout réel $x$, quelle implication est vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x>2\\Rightarrow x^2>4$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x^2>4\\Rightarrow x>2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x^2>4\\Longleftrightarrow x>2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x^2=4\\Rightarrow x=2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les réciproques échouent pour les valeurs négatives, par exemple $x=-3$ ou $x=-2$."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Logique et rédaction",
+      "difficulty": "medium",
+      "prompt": "Dans l'inégalité $\\dfrac{x-1}{x+2}\\leq0$, pourquoi ne peut-on pas multiplier directement par $x+2$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Parce que $x+2$ n'est jamais nul",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Son signe dépend de $x$ et peut inverser le sens de l'inégalité",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Parce qu'une fraction ne peut jamais être négative",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Parce qu'il faut toujours mettre au carré",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le facteur $x+2$ change de signe en $-2$ et s'annule en ce point exclu du domaine."
+    },
+    {
+      "id": "q7",
+      "type": "boolean",
+      "category": "Logique et rédaction",
+      "difficulty": "medium",
+      "prompt": "Vrai ou faux : une suite $(u_n)$ est majorée s'il existe un même réel $M$ tel que $u_n\\leq M$ pour tout $n\\in\\mathbb N$.",
+      "isTrue": true,
+      "explanation": "La borne supérieure doit être un même réel $M$, valable pour tous les rangs ; elle ne dépend pas de $n$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Étude de fonction",
+      "difficulty": "hard",
+      "ambiguity_note": "Le sens de variation de $f-g$ et la limite en $+\\infty$ doivent être combinés.",
+      "prompt": "$f$ et $g$ sont dérivables sur $\\mathbb R$. Laquelle des implications suivantes est vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'\\leq g'\\Rightarrow f\\leq g$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f'\\geq g'\\Rightarrow f\\leq g$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(f'\\leq g'\\text{ et }f(0)=g(0))\\Rightarrow f\\leq g$ sur $\\mathbb R$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "( $f'\\geq g'$ et $\\displaystyle\\lim_{x\\to+\\infty}[f(x)-g(x)]=0$ ) $\\Rightarrow f\\leq g$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "$f-g$ est croissante et tend vers $0$ en $+\\infty$ ; elle est donc inférieure ou égale à $0$ sur $\\mathbb R$."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "category": "Étude de fonction",
+      "difficulty": "hard",
+      "prompt": "Pour $f(x)=\\dfrac{x}{\\sqrt{1+x^2}-\\sqrt{1+x}}$, quel est le domaine de définition ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$[-1,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$[-1,0[\\cup]0,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$[-1,1[\\cup]1,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$[-1,0[\\cup]0,1[\\cup]1,+\\infty[$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Il faut $x\\geq-1$ et le dénominateur s'annule pour $x^2=x$, donc en $0$ et $1$, qui doivent être exclus."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "category": "Étude de fonction",
+      "difficulty": "medium",
+      "prompt": "Le plus grand intervalle sur lequel $x\\mapsto x-\\sin x$ est strictement croissante est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathbb R$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$[0,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "[-\\pi,\\pi]",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$[-\\pi/2,\\pi/2]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La dérivée vaut $1-\\cos x\\geq0$, et elle n'est nulle qu'en des points isolés : la fonction est strictement croissante sur $\\mathbb R$."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "category": "Étude de fonction",
+      "difficulty": "hard",
+      "prompt": "Pour $n\\geq3$ pair, $f_n(x)=x^{n+1}-(n+1)x$ admet :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deux extrema locaux",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Deux points d'inflexion",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un seul extremum local",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un seul point d'inflexion",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f_n'(x)=(n+1)(x^n-1)$ s'annule en $-1$ et $1$. Son signe est positif puis négatif puis positif : maximum local en $-1$, minimum local en $1$."
+    },
+    {
+      "id": "q27",
+      "type": "mcq",
+      "category": "Étude de fonction",
+      "difficulty": "medium",
+      "prompt": "Si $f'$ est positive avant $a$, s'annule en $a$, puis devient négative après $a$, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(a)$ est un minimum local",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f(a)$ est un maximum local",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f$ est constante près de $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a$ est une asymptote verticale",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le signe de $f'$ passe de $+$ à $-$ : la fonction croît puis décroît."
+    },
+    {
+      "id": "q28",
+      "type": "mcq",
+      "category": "Étude de fonction",
+      "difficulty": "medium",
+      "prompt": "Si $f'$ est négative avant $a$, s'annule en $a$, puis devient positive après $a$, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(a)$ est un maximum local",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f(a)$ est un minimum local",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f$ est toujours négative",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f''(a)$ doit être nul",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le signe de $f'$ passe de $-$ à $+$ : la fonction décroît puis croît."
+    },
+    {
+      "id": "q29",
+      "type": "boolean",
+      "category": "Étude de fonction",
+      "difficulty": "medium",
+      "prompt": "Vrai ou faux : l'égalité $f''(a)=0$ suffit à prouver que $a$ est un point d'inflexion.",
+      "isTrue": false,
+      "explanation": "Il faut établir un changement de convexité, généralement par un changement de signe de $f''$."
+    },
+    {
+      "id": "q30",
+      "type": "mcq",
+      "category": "Étude de fonction",
+      "difficulty": "medium",
+      "prompt": "Pour comparer $C_f$ à la droite $\\Delta:y=ax+b$, on étudie principalement le signe de :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'(x)-a$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f(x)-(ax+b)$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f(x)+ax+b$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f''(x)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le signe de l'écart vertical indique si la courbe est au-dessus ou au-dessous de la droite."
+    },
+    {
+      "id": "q31",
+      "type": "mcq",
+      "category": "Étude de fonction",
+      "difficulty": "hard",
+      "prompt": "Pour montrer que la droite $x=a$ est un axe de symétrie de $C_f$, le critère algébrique essentiel est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(a+x)=f(a-x)$ pour les $x$ admissibles",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f(a+x)=-f(a-x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f(x+a)=f(x)+a$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f'(a)=0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les points d'abscisses $a-x$ et $a+x$ doivent avoir la même ordonnée."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Limites",
+      "difficulty": "hard",
+      "prompt": "Pour $x>3$, $f(x)=5+\\dfrac4{6-2x}$ et $f(x)-5\\leq g(x)\\leq5-f(x)$. Alors $\\displaystyle\\lim_{x\\to+\\infty}g(x)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$5$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Les deux bornes $f(x)-5$ et $5-f(x)$ tendent vers $0$ : on applique l'encadrement."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "Limites",
+      "difficulty": "medium",
+      "prompt": "Pour calculer $\\displaystyle\\lim_{x\\to+\\infty}R(x)$, avec $R(x)=\\dfrac{3x^4-2x+1}{5x^4+x^2}$, quel mécanisme donne le plus vite la limite ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Comparer les coefficients constants",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Prendre le rapport des coefficients des termes de plus haut degré",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Remplacer $x$ par $0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Chercher une quantité conjuguée",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les polynômes ont le même degré : la limite est le rapport des coefficients dominants, soit $3/5$."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "category": "Limites",
+      "difficulty": "medium",
+      "prompt": "Devant $\\sqrt{A(x)}-\\sqrt{B(x)}$ qui conduit à une forme indéterminée, le réflexe typique est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ajouter les deux racines au numérateur seulement",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Multiplier et diviser par la quantité conjuguée",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Dériver immédiatement",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Prendre la valeur absolue de chaque terme",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le conjugué transforme la différence de racines en différence de carrés."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "category": "Limites",
+      "difficulty": "medium",
+      "prompt": "On suppose que $N$ et $D$ sont définies au voisinage de $a$, que $\\displaystyle\\lim_{x\\to a}N(x)=3$ et que $\\displaystyle\\lim_{x\\to a}D(x)=0$. Pour étudier $\\displaystyle\\lim_{x\\to a}\\dfrac{N(x)}{D(x)}$, que faut-il vérifier en priorité ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le signe de $D(x)$ de chaque côté de $a$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La dérivée seconde de $N$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La parité de $N$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La valeur de $N(0)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le signe du dénominateur décide si le quotient tend vers $+\\infty$ ou $-\\infty$."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "category": "Limites",
+      "difficulty": "medium",
+      "prompt": "On sait que $|f(x)-\\ell|\\leq u(x)$ près de $a$ et que $\\displaystyle\\lim_{x\\to a}u(x)=0$. Que conclure ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle\\lim_{x\\to a}f(x)=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle\\lim_{x\\to a}f(x)=\\ell$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f(x)=\\ell$ pour tout $x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$u(x)=f(x)$ près de $a$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'encadrement de l'écart $|f-\\ell|$ par une fonction qui tend vers zéro impose $\\displaystyle\\lim_{x\\to a}f(x)=\\ell$."
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "category": "Limites",
+      "difficulty": "medium",
+      "prompt": "Pour calculer $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(5x)}x$, quelle réécriture fait apparaître la limite fondamentale ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\dfrac{\\sin(5x)}{5x}\\times5$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\dfrac{\\sin x}{x}\\times\\sin(4x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\dfrac{\\sin(5x)}{x^2}\\times x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\dfrac{5x}{\\sin(5x)}$ uniquement",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On pose $t=5x$ et on utilise $\\displaystyle\\lim_{t\\to0}\\dfrac{\\sin t}{t}=1$ : la limite vaut $5$."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "category": "Limites",
+      "difficulty": "medium",
+      "prompt": "Pour prouver que $y=ax+b$ est une asymptote oblique à $C_f$ en $+\\infty$, le test décisif est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}f(x)=b$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}[f(x)-(ax+b)]=0$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f'(x)=a$ pour tout $x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f(0)=b$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une asymptote oblique est caractérisée par un écart à la droite qui tend vers zéro."
+    },
+    {
+      "id": "q26",
+      "type": "mcq",
+      "category": "Limites",
+      "difficulty": "hard",
+      "prompt": "Pour $f(x)=\\dfrac{x}{\\sqrt{1+x^2}-\\sqrt{1+x}}$, quelle affirmation décrit $C_f$ au voisinage de $+\\infty$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle admet une asymptote horizontale $y=1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Elle a une branche parabolique de direction $(Ox)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Elle a une branche parabolique de direction $(Oy)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle admet une asymptote oblique",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le dénominateur est équivalent à $x$ lorsque $x$ tend vers $+\\infty$, donc $\\displaystyle\\lim_{x\\to+\\infty}f(x)=1$."
+    },
+    {
+      "id": "q3",
+      "type": "boolean",
+      "category": "Dérivation",
+      "difficulty": "hard",
+      "prompt": "Vrai ou faux : si $f$ est dérivable sur $\\mathbb R$ et si $f'$ est paire, alors $f$ est paire.",
+      "isTrue": false,
+      "explanation": "Par exemple, $f(x)=x+1$ a pour dérivée la fonction constante $1$, qui est paire, alors que $f$ n'est ni paire ni impaire."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Dérivation",
+      "difficulty": "hard",
+      "prompt": "Si $f$ est dérivable en $0$, alors $\\displaystyle\\lim_{h\\to0}\\dfrac{f(4h)-f(h)}h$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f'(0)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2f'(0)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3f'(0)$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$4f'(0)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On écrit $[f(4h)-f(0)]/h-[f(h)-f(0)]/h$, soit $4f'(0)-f'(0)$."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Dérivation",
+      "difficulty": "hard",
+      "prompt": "$f$ et $g$ sont dérivables sur $\\mathbb R$ et vérifient $f'(x)=g'(2x)$. Quelle fonction est constante sur $\\mathbb R$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(x)-g(2x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2f(x)-g(2x)$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f(x)-2g(x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f(x)-2g(2x)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La dérivée de $2f(x)-g(2x)$ vaut $2f'(x)-2g'(2x)=0$."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "category": "Dérivation",
+      "difficulty": "hard",
+      "prompt": "Soit $f$ dérivable sur $\\mathbb R$. Quelle condition permet d'affirmer que $f'$ ne s'annule pas sur $\\mathbb R$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ est strictement croissante",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f$ n'a pas d'extremum local",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f$ est injective",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La fonction $x\\mapsto f(x)-x$ est croissante",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Si $f(x)-x$ est croissante et dérivable, $f'(x)-1\\geq0$, donc $f'(x)\\geq1$. Les autres conditions admettent par exemple $f(x)=x^3$."
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "category": "Dérivation",
+      "difficulty": "hard",
+      "prompt": "$f$ est dérivable sur $\\mathbb R$ et vérifie $f(3t-1)=t^3-3t$. Les abscisses des points où $C_f$ admet une tangente horizontale sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$ et $4$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-1$ et $1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-4$ et $2$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$-2$ et $4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$3f'(3t-1)=3t^2-3$, donc $t=\\pm1$ et les abscisses sont $3t-1$, soit $-4$ et $2$."
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "category": "Dérivation",
+      "difficulty": "medium",
+      "prompt": "Si $F(x)=[u(x)]^5$, quelle dérivée est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$F'(x)=5[u(x)]^4$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$F'(x)=5u'(x)[u(x)]^4$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$F'(x)=[u'(x)]^5$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$F'(x)=5u'(x)u(x)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La règle de chaîne multiplie la dérivée extérieure par la dérivée intérieure."
+    },
+    {
+      "id": "q23",
+      "type": "boolean",
+      "category": "Dérivation",
+      "difficulty": "medium",
+      "prompt": "Vrai ou faux : si $f'(x)\\geq0$ sur un intervalle $I$, alors $f$ est nécessairement strictement croissante sur $I$.",
+      "isTrue": false,
+      "explanation": "Le signe $f'\\geq0$ garantit que $f$ est croissante. La stricte croissance demande une information supplémentaire."
+    },
+    {
+      "id": "q24",
+      "type": "mcq",
+      "category": "Dérivation",
+      "difficulty": "medium",
+      "prompt": "On sait seulement que $f'(a)=0$. Quelle conclusion est toujours justifiée ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ a un maximum en $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f$ a un minimum en $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La tangente en $A(a,f(a))$ est horizontale",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$f$ change de sens de variation en $a$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f'(a)=0$ donne une pente nulle ; un extremum exige une information supplémentaire."
+    },
+    {
+      "id": "q25",
+      "type": "mcq",
+      "category": "Dérivation",
+      "difficulty": "medium",
+      "prompt": "Si les nombres dérivés à gauche et à droite en $a$ existent, sont finis mais différents, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ est dérivable en $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$C_f$ présente un point anguleux en $A(a,f(a))$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$x=a$ est une asymptote verticale",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f(a)=0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Deux pentes latérales finies mais distinctes produisent un point anguleux."
+    },
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Suites numériques",
+      "difficulty": "medium",
+      "prompt": "Une suite $(u_n)_{n\\in\\mathbb N^*}$ vérifie $u_1\\ne0$ et $\\dfrac{u_n}{n}=\\dfrac{u_{n+1}}{n+1}$ pour tout $n\\geq1$. Alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(u_n)$ est croissante",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(u_n)$ est décroissante",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(u_n)$ est arithmétique",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$(u_n)$ n'est ni arithmétique ni géométrique",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le rapport $u_n/n$ est constant : $u_n=nu_1$, donc $u_{n+1}-u_n=u_1$ est constant."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "category": "Suites numériques",
+      "difficulty": "medium",
+      "prompt": "Une suite arithmétique vérifie $u_2=-5$ et $u_6=-6$. Quelle est la valeur de $u_1$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\dfrac{21}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-\\dfrac{21}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\dfrac{19}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$-\\dfrac94$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$4r=u_6-u_2=-1$, donc $r=-1/4$ et $u_1=u_2-r=-19/4$."
+    },
+    {
+      "id": "q32",
+      "type": "mcq",
+      "category": "Suites numériques",
+      "difficulty": "hard",
+      "prompt": "Une suite géométrique positive de raison $q>1$ vérifie $v_0+v_4=\\dfrac{164}{3}$ et $v_1+v_3=20$. Alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$q=3$ et $v_0=\\dfrac23$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$q=3$ et $v_0=-\\dfrac23$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$q=-3$ et $v_0=-\\dfrac23$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$q=-3$ et $v_0=\\dfrac23$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $q=3$, $v_0(1+3^4)=164/3$ donne $v_0=2/3$, et la seconde relation est vérifiée."
+    },
+    {
+      "id": "q33",
+      "type": "mcq",
+      "category": "Suites numériques",
+      "difficulty": "medium",
+      "prompt": "On sait que $z_0=1$, $z_{n+1}=\\dfrac{z_n+3}{2}$ et $z_n<3$ pour tout $n$. Quelle conclusion est justifiée ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(z_n)$ est décroissante",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(z_n)$ est croissante",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$(z_n)$ est constante",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Aucune conclusion n'est possible",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$z_{n+1}-z_n=(3-z_n)/2>0$ grâce à la borne $z_n<3$."
+    },
+    {
+      "id": "q34",
+      "type": "mcq",
+      "category": "Suites numériques",
+      "difficulty": "medium",
+      "prompt": "Si $(u_n)$ est arithmétique de raison $r$, alors pour les rangs $p$ et $n$ :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$u_n=u_p+(n-p)r$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$u_n=u_pr^{n-p}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$u_n=u_p+(n+p)r$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$u_n=\\dfrac{u_p}{n-p}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Entre les rangs $p$ et $n$, on ajoute $(n-p)$ fois la raison."
+    },
+    {
+      "id": "q35",
+      "type": "boolean",
+      "category": "Suites numériques",
+      "difficulty": "medium",
+      "prompt": "Vrai ou faux : si $(u_n)$ est géométrique de raison $q$, alors $u_n=q^{n-p}u_p$.",
+      "isTrue": true,
+      "explanation": "Entre les rangs $p$ et $n$, on multiplie $(n-p)$ fois par la raison $q$."
+    },
+    {
+      "id": "q36",
+      "type": "mcq",
+      "category": "Trigonométrie",
+      "difficulty": "medium",
+      "prompt": "Les solutions dans $[0,2\\pi[$ de $\\cos x=\\dfrac12$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{\\pi/3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\{5\\pi/3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{\\pi/3,5\\pi/3\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\{\\pi/3,2\\pi/3\\}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\cos x=\\cos(\\pi/3)$ donne $x=2k\\pi\\pm\\pi/3$ ; on filtre ensuite sur l'intervalle demandé."
+    },
+    {
+      "id": "q37",
+      "type": "mcq",
+      "category": "Trigonométrie",
+      "difficulty": "medium",
+      "prompt": "Pour $\\cos x=\\cos\\alpha$, la forme générale des solutions est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x=\\alpha+2k\\pi$ seulement",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$x=-\\alpha+2k\\pi$ seulement",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x=2k\\pi\\pm\\alpha,\\ k\\in\\mathbb Z$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$x=k\\pi+\\alpha,\\ k\\in\\mathbb Z$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le cosinus est pair et $2\\pi$-périodique."
+    },
+    {
+      "id": "q38",
+      "type": "mcq",
+      "category": "Trigonométrie",
+      "difficulty": "medium",
+      "prompt": "Pour transformer $a\\cos x+b\\sin x$ sous la forme $r\\cos(x-\\varphi)$, le choix fondamental est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$r=a+b$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$r=|a-b|$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$r=\\sqrt{a^2+b^2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$r=ab$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'amplitude de $a\\cos x+b\\sin x$ est $\\sqrt{a^2+b^2}$."
+    },
+    {
+      "id": "q39_graphique_variations",
+      "type": "mcq",
+      "category": "Étude de fonction",
+      "difficulty": "medium",
+      "prompt": "À la lecture de la représentation de $C_f$, quelle proposition est correcte ?",
+      "media": {
+        "src": "/data/2eme-bac-sc-math/mise-a-niveau/quiz/figures/qcm_lecture_graphique_limites_variations.svg",
+        "alt": "Courbe de f pour x supérieur à 1, avec asymptote verticale x égal à 1 et minimum au point (3 ; 2).",
+        "position": "bottom",
+        "width": "62%",
+        "lazy": false,
+        "style": {
+          "border": true,
+          "shadow": true,
+          "rounded": true
+        }
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ est décroissante sur $]1,3[$ puis croissante sur $]3,+\\infty[$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f$ est croissante sur $]1,3[$ puis décroissante sur $]3,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle\\lim_{x\\to1^+}f(x)=-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f(3)=-2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La courbe descend jusqu'au minimum $(3;2)$ puis remonte. On lit aussi $\\displaystyle\\lim_{x\\to1^+}f(x)=+\\infty$, ce qui correspond à l'asymptote verticale $x=1$."
+    },
+    {
+      "id": "q40_lecture_tangente",
+      "type": "mcq",
+      "category": "Dérivation",
+      "difficulty": "medium",
+      "prompt": "La figure montre la tangente $T$ à $C_f$ au point $A(2;2)$. Quel est le nombre dérivé $f'(2)$ ?",
+      "media": {
+        "src": "/data/2eme-bac-sc-math/mise-a-niveau/quiz/figures/qcm_nombre_derive_tangente.svg",
+        "alt": "Courbe C f et sa tangente T au point A de coordonnées (2 ; 2), avec un déplacement horizontal de 1 et vertical de 2.",
+        "position": "bottom",
+        "width": "46%",
+        "lazy": false,
+        "style": {
+          "border": true,
+          "shadow": true,
+          "rounded": true
+        }
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le nombre dérivé est la pente de la tangente : $$f'(2)=\\dfrac{\\Delta y}{\\Delta x}=\\dfrac{2}{1}=2.$$"
+    },
+    {
+      "id": "q41_branche_asymptote",
+      "type": "mcq",
+      "category": "Limites",
+      "difficulty": "medium",
+      "prompt": "La droite $\\Delta:y=x$ est une asymptote oblique de $C_f$ en $+\\infty$. Quelle limite faut-il vérifier ?",
+      "media": {
+        "src": "/data/2eme-bac-sc-math/mise-a-niveau/quiz/figures/qcm_branche_infinie_asymptote.svg",
+        "alt": "Branche infinie de C f et droite oblique Delta d'équation y égal x, asymptote en plus l'infini.",
+        "position": "bottom",
+        "width": "59%",
+        "lazy": false,
+        "style": {
+          "border": true,
+          "shadow": true,
+          "rounded": true
+        }
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}[f(x)-x]=0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}f(x)=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{f(x)}x=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle\\lim_{x\\to+\\infty}[f(x)-x]=1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par définition, $y=x$ est une asymptote oblique lorsque l'écart vertical $f(x)-x$ tend vers $0$ quand $x$ tend vers $+\\infty$."
+    }
+  ]
+}

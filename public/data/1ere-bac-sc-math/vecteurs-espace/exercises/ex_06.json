@@ -1,0 +1,20 @@
+{
+  "id": "ex-vect-esp-06",
+  "theme": "vecteurs-espace",
+  "difficulty": "difficile",
+  "topic": "Vecteurs de l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Centre de gravité d'un triangle",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les points $A(1, -2, 3)$, $B(4, 5, -1)$ et $C(-2, 3, 4)$.\nDéterminer les coordonnées du centre de gravité $G$ du triangle $ABC$.",
+          "hint": "Les coordonnées du centre de gravité $G$ du triangle $ABC$ sont données par la formule :\n$G(\\frac{x_A + x_B + x_C}{3}, \\frac{y_A + y_B + y_C}{3}, \\frac{z_A + z_B + z_C}{3})$\n\nEn appliquant cette formule avec $A(1, -2, 3)$, $B(4, 5, -1)$ et $C(-2, 3, 4)$ :\n$G(\\frac{1 + 4 - 2}{3}, \\frac{-2 + 5 + 3}{3}, \\frac{3 - 1 + 4}{3})$\n$G(\\frac{3}{3}, \\frac{6}{3}, \\frac{6}{3})$\n$G(1, 2, 2)$"
+        }
+      ]
+    }
+  ]
+}

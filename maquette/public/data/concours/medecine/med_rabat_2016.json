@@ -1,0 +1,382 @@
+{
+  "school": "medecine",
+  "year": "2016 · Rabat",
+  "title": "Annale Médecine — 2016 · Rabat",
+  "source": "04_rabat_2016.tex — transcription LaTeX normalisée",
+  "questions": [
+    {
+      "id": "med-rabat_2016-q01",
+      "type": "mcq",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l’espace",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q1",
+      "officialQuestionCode": "Q1",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "La suite $(V_n)$ est géométrique de raison :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{4}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Un calcul direct donne\n$V_{n+1}=\\frac{U_{n+1}^2}{3-U_{n+1}^2}=4\\frac{U_n^2}{3-U_n^2}=4V_n.$"
+    },
+    {
+      "id": "med-rabat_2016-q03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q3",
+      "officialQuestionCode": "Q3",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "Calculer $\\displaystyle\\lim_{n\\to+\\infty}U_n$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\sqrt{n}}{3}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\sqrt3$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En divisant numérateur et dénominateur par $4^n$,\n$U_n=\\sqrt{\\frac{3}{{1+\\frac{2}{4^n}}}}\\longrightarrow\\sqrt3.$"
+    },
+    {
+      "id": "med-rabat_2016-q04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q4",
+      "officialQuestionCode": "Q4",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "La limite $\\displaystyle\\lim_{x\\to0^+}f(x)$ vaut :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-\\infty$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le terme dominant est $\\frac{(\\ln x)}{x}$, qui tend vers $-\\infty$ lorsque $x\\to0^+$."
+    },
+    {
+      "id": "med-rabat_2016-q05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q5",
+      "officialQuestionCode": "Q5",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "On admet que $f$ est strictement croissante. L'équation $f(x)=0$ possède une unique solution dans :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]0,\\tfrac12[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$]\\tfrac12,1[$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$]1, {e}[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$]0,+\\infty[$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(\\frac{1}{2})=\\frac{1}{2}-3\\ln2<0$ et $f(1)=1>0$. La continuité et la stricte croissance donnent une unique racine dans $]\\frac{1}{2},1[$."
+    },
+    {
+      "id": "med-rabat_2016-q06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q6",
+      "officialQuestionCode": "Q6",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "La dérivée de $x\\mapsto x^2\\ln x$ est :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2x\\ln x+x$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x\\ln x+x$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x(1+\\ln x^2)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{x^2}{2}\\ln x$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$(x^2\\ln x)'=2x\\ln x+x.$"
+    },
+    {
+      "id": "med-rabat_2016-q07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q7",
+      "officialQuestionCode": "Q7",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Calculer $\\displaystyle\\int_1^ {e} f(x)\\,\\,d x$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "${e}^2+\\frac{1}{2}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "${e}^2+\\frac{1}{4}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1+ {e}^2}{4}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1+ {e}^2}{2}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On remarque\n$f(x)=(x^2\\ln x)'+(\\ln x)'+\\ln x\\,(\\ln x)'.$\nDonc\n$\\displaystyle \\int_1^ {e} f(x)\\,\\,d x =\\left[x^2\\ln x+\\frac{1}{2}(\\ln x)^2\\right]_1^ {e} = {e}^2+\\frac{1}{2}.$"
+    },
+    {
+      "id": "med-rabat_2016-q08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q8",
+      "officialQuestionCode": "Q8",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Exprimer $I_n$ en fonction de $n$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\frac{n {e}^{n+1}+1}{(n+1)^2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\frac{n {e}^{n+1}}{(n+1)^2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\frac{n {e}^{n+1}}{(n+1)^2}+\\frac{1}{{(n+1)^2}}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle \\frac{ {e}^n}{n(n+1)}+\\frac{1}{{(n+1)^2}}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une intégration par parties donne\n$\\displaystyle I_n=\\left[\\frac{x^{n+1}}{n+1}\\ln x\\right]_1^ {e} -\\frac{1}{{n+1}}\\int_1^ {e} x^n\\,\\,d x =\\frac{n {e}^{n+1}+1}{(n+1)^2}.$\nC'est exactement l'écriture de C."
+    },
+    {
+      "id": "med-rabat_2016-q09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q9",
+      "officialQuestionCode": "Q9",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "La limite $\\displaystyle\\lim_{n\\to+\\infty}I_n$ vaut :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "L'expression précédente est équivalente à ${e}^\\frac{{n+1}}{n}$, donc $I_n\\to+\\infty$."
+    },
+    {
+      "id": "med-rabat_2016-q10",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q10",
+      "officialQuestionCode": "Q10",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "On tire simultanément trois boules. Quelle est la probabilité d'obtenir la boule numérotée $1$ ?\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{4}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{3}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{4}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Parmi les $\\binom43=4$ tirages, trois contiennent la boule $1$. Ainsi $P=\\frac{3}{4}$."
+    },
+    {
+      "id": "med-rabat_2016-q11",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q11",
+      "officialQuestionCode": "Q11",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "On effectue trois tirages successifs avec remise. Quelle est la probabilité d'obtenir exactement une boule numérotée $1$ et deux boules numérotées $2$ ?\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{15}{64}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{{16}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{11}{16}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{27}{64}$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "La probabilité cherchée est\n$\\binom31\\left(\\frac{1}{4}\\right)\\left(\\frac{3}{4}\\right)^2=\\frac{27}{64}.$"
+    },
+    {
+      "id": "med-rabat_2016-q12",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Rabat — Médecine dentaire 2016 · Rabat · Q12",
+      "officialQuestionCode": "Q12",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "On tire une boule, on la remet, puis on tire simultanément deux boules. Quelle est la probabilité d'obtenir au total une boule numérotée $1$ et deux boules numérotées $2$ ?\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{4}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{3}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{2}{3}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Deux cas disjoints :\n$\\frac{1}{4}\\cdot\\frac{\\binom32}{\\binom42} +\\frac{3}{4}\\cdot\\frac{\\binom11\\binom31}{\\binom42} =\\frac{1}{8}+\\frac{3}{8}=\\frac{1}{2}.$"
+    }
+  ]
+}

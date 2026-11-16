@@ -1,0 +1,470 @@
+{
+  "header": {
+    "title": "Arithmétique dans ℤ",
+    "subtitle": "Divisibilité, Nombres Premiers et Congruences",
+    "context": "1ère Bac Sciences Mathématiques"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "L'arithmetique dans $\\mathbb{Z}$ permet d'\\objectif{organiser les entiers par divisibilite, nombres premiers et congruences}, outils de base pour raisonner sur des problemes discrets. Elle prepare aussi la cryptographie et les equations diophantiennes, ou un calcul simple cache souvent une idee fine. La \\defi{difficulte} principale est de choisir le bon outil entre division euclidienne, factorisation et congruences, sans perdre la rigueur sur les conditions. \\savant{Carl Friedrich Gauss} a donne a ce domaine sa forme moderne dans les \\textit{Disquisitiones Arithmeticae} ; ses idees sont aujourd'hui au coeur du codage et de la securite numerique.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl_Friedrich_Gauss.jpg",
+            "type": "image",
+            "position": "right",
+            "width": "16.5%",
+            "caption": "Carl Friedrich Gauss (1777–1855)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "divisibilite_z",
+      "category": "course",
+      "title": "Divisibilité dans ℤ",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La divisibilité est la relation fondatrice de l'arithmétique : elle organise les entiers en une hiérarchie de multiples et de diviseurs, et conditionne toute la suite du chapitre."
+        },
+        {
+          "type": "definition",
+          "title": "Quand dit-on que \\mathqst{$a$ divise $b$}",
+          "content": "Soient $a, b \\in \\mathbb{Z}$. On dit que $a$ \\textbf{divise} $b$, noté $a \\mid b$, lorsqu'il existe $k \\in \\mathbb{Z}$ tel que :\\par$$\\boxed{b = a \\times \\blank{k}}$$\\par On dit que $b$ est un \\textbf{multiple} de $a$, et que $a$ est un \\textbf{diviseur} de $b$. L'ensemble des diviseurs de $a$ dans $\\mathbb{Z}$ est noté $D_a$."
+        },
+        {
+          "type": "intuition",
+          "title": "Que signifie \\mathqst{« diviser » concrètement}",
+          "content": "Dire que $a \\mid b$ revient à dire que $b$ se \\textbf{partage exactement} en parts de taille $a$, sans reste. Par exemple, $4 \\mid 12$ car on peut répartir $12$ objets en $3$ groupes de $4$. Si cette répartition laisse un reste, alors $a$ ne divise pas $b$.\\par La notation $a \\mid b$ se lit \\textbf{de gauche à droite} : c'est $a$ qui divise $b$, pas l'inverse. Le petit nombre divise le grand (en valeur absolue)."
+        },
+        {
+          "type": "remark",
+          "content": "Notations équivalentes : $a \\mid b$ signifie « $a$ divise $b$ », ou « $b$ est divisible par $a$ », ou « $b$ est multiple de $a$ ». Ne pas confondre $a \\mid b$ (relation de divisibilité) avec $\\frac{a}{b}$ (fraction)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifions \\textbf{la divisibilité} dans chaque cas :}\\par\\begin{enumerate}\\item $4 \\mid 24$ car $24 = 4 \\times \\blank{6}$.\\item $5 \\mid (-50)$ car $-50 = 5 \\times \\blank{-10}$.\\item $(-3) \\mid 36$ car $36 = (-3) \\times \\blank{-12}$.\\end{enumerate}\\par Conséquence directe : si $a \\mid b$, alors $(-a) \\mid b$ également."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les règles de base de la divisibilité}",
+          "content": "Soient $a, b, c, d \\in \\mathbb{Z}$. On a :\\par\\begin{enumerate}\\item $(a \\mid b \\text{ et } b \\mid c) \\text{, alors } a \\mid \\blank{c}$ \\quad (transitivité).\\item $a \\mid b \\Leftrightarrow a \\mid \\blank{bc}$ pour tout $c \\neq 0$.\\item $(a \\mid b \\text{ et } a \\mid c) \\text{, alors } \\forall (\\alpha, \\beta) \\in \\mathbb{Z}^2, \\ a \\mid (\\blank{\\alpha b + \\beta c})$.\\item $(a \\mid b \\text{ et } c \\mid d) \\text{, alors } ac \\mid \\blank{bd}$.\\item $a \\mid b \\text{ et } b \\mid a \\Leftrightarrow |a| = \\blank{|b|}$.\\end{enumerate}"
+        },
+        {
+          "type": "proof",
+          "title": "Comment démontrer \\mathqst{la transitivité de la divisibilité}",
+          "content": "\\begin{enumerate}\\item \\textbf{Posons} les hypothèses : $a \\mid b$ et $b \\mid c$, donc il existe $k, k' \\in \\mathbb{Z}$ tels que $b = ak$ et $c = bk'$.\\item \\textbf{Substituons} $b$ dans la seconde relation : $c = (ak)k' = a(\\blank{kk'})$.\\item \\textbf{Concluons :} $kk' \\in \\mathbb{Z}$, donc $a \\mid c$.\\end{enumerate}"
+        },
+        {
+          "type": "theorem",
+          "title": "C'est quoi \\mathqst{la combinaison linéaire}",
+          "content": "Si $a \\mid b$ et $a \\mid c$, alors pour tous $\\alpha, \\beta \\in \\mathbb{Z}$ :\\par$$\\boxed{a \\mid (\\alpha b + \\beta c)}$$\\par Ce théorème est l'outil le plus puissant pour démontrer des résultats de divisibilité en arithmétique.\\par\\smallskip\\textit{$\\hookrightarrow$ Application : voir Méthode « Comment montrer \\mathqst{qu'un entier divise une expression} »}"
+        },
+        {
+          "type": "proof",
+          "title": "Comment démontrer \\mathqst{la propriété de la combinaison linéaire}",
+          "content": "\\begin{enumerate}\\item \\textbf{Posons} : $b = ak$ et $c = ak'$ pour certains $k, k' \\in \\mathbb{Z}$.\\item \\textbf{Calculons} $\\alpha b + \\beta c = \\alpha(ak) + \\beta(ak') = a(\\blank{\\alpha k + \\beta k'})$.\\item \\textbf{Concluons :} $\\alpha k + \\beta k' \\in \\mathbb{Z}$, donc $a \\mid (\\alpha b + \\beta c)$.\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Comment montrer \\mathqst{qu'un entier divise une expression}",
+          "content": "\\textbf{Principe :} Construire une combinaison linéaire pour éliminer l'inconnue et faire apparaître une constante divisible par $a$.\\par\\textbf{La méthode pas à pas :}\\begin{enumerate}\\item \\textbf{Identifiez} les deux expressions divisibles par $a$ (ex~: $a \\mid (12n+1)$ et $a \\mid (5n+3)$).\\item \\textbf{Cherchez} les multiplicateurs croisés $\\alpha$ et $\\beta$ qui annulent la variable $n$ (ici $5$ et $12$).\\item \\textbf{Calculez} la combinaison : $5(12n+1) - 12(5n+3) = -31$.\\item \\textbf{Concluez :} $a \\mid -31$, donc $a \\in \\{1, 31\\}$.\\end{enumerate}\\textbf{Variante polynomiale :}\\begin{itemize}\\item Si l'expression est une puissance (ex~: $n^3-1$), \\textbf{factoriser d'abord} plutôt que combiner : $(n-1) \\mid (n^3-1)$ car $n^3-1 = (n-1)(n^2+n+1)$.\\end{itemize}\\par\\smallskip\\textit{$\\hookrightarrow$ Fondement : Théorème « C'est quoi \\mathqst{la combinaison linéaire} »}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $(n-1) \\mid (n^3-1)$ pour tout $n \\in \\mathbb{Z}$.}\\par On factorise : $n^3 - 1 = (n-1)(\\blank{n^2+n+1})$.\\par\\smallskip Puisque $n^2+n+1 \\in \\mathbb{Z}$, on a bien $(n-1) \\mid (n^3-1)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $a, n \\in \\mathbb{Z}$. On suppose que $a \\mid (12n+1)$ et $a \\mid (-2n+3)$. Montrons que $a \\mid 19$.}\\par Par la propriété de combinaison linéaire, $a$ divise toute expression $\\alpha(12n+1) + \\beta(-2n+3)$.\\par\\smallskip L'idée est de choisir $\\alpha$ et $\\beta$ pour éliminer $n$. On pose $\\alpha = 1$ et $\\beta = 6$ :\\begin{align*}1 \\times (12n+1) + 6 \\times (-2n+3) &= 12n + 1 - 12n + 18 \\\\&= \\blank{19}\\end{align*}Donc $a \\mid 19$. Comme $19$ est premier, alors $a \\in \\{-19, -1, 1, 19\\}$."
+        },
+        {
+          "type": "remark",
+          "content": "Cas particuliers essentiels :\\par\\begin{itemize}\\item $a \\mid 0$ pour tout $a \\in \\mathbb{Z}^*$ (car $0 = a \\times 0$).\\item $0 \\mid a \\Leftrightarrow a = \\blank{0}$.\\item $1 \\mid a$ et $(-1) \\mid a$ pour tout $a \\in \\mathbb{Z}$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "division_euclidienne",
+      "category": "course",
+      "title": "Division Euclidienne",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La division euclidienne exprime tout entier comme un multiple plus un reste. C'est le mécanisme de base de l'algorithme d'Euclide et la porte d'entrée vers les congruences."
+        },
+        {
+          "type": "theorem",
+          "title": "Que dit \\mathqst{le théorème de la division euclidienne}",
+          "content": "Soient $a \\in \\mathbb{Z}^*$ (le diviseur) et $b \\in \\mathbb{Z}$ (le dividende). Il existe un \\textbf{unique} couple $(q,r) \\in \\mathbb{Z} \\times \\mathbb{N}$ vérifiant :\\par$$\\boxed{b = a \\times \\blank{q} + \\blank{r} \\quad \\text{avec} \\quad 0 \\leq r < |a|}$$\\par $q$ est le \\textbf{quotient} et $r$ le \\textbf{reste}. La condition $r \\geq 0$ est essentielle."
+        },
+        {
+          "type": "intuition",
+          "title": "Que représente \\mathqst{le reste de la division euclidienne}",
+          "content": "Le reste $r$ mesure « ce qui dépasse » après avoir retiré le plus grand multiple de $a$ possible sans dépasser $b$. On cherche le multiple de $a$ qui se situe juste \\textbf{en dessous} (ou égal) à $b$ sur la droite des entiers.\\par Par exemple, pour diviser $17$ par $5$ : le multiple de $5$ juste en dessous est $15 = 5 \\times 3$, il reste $2$. Le reste est toujours positif et strictement plus petit que le diviseur."
+        },
+        {
+          "type": "warning",
+          "content": "Le reste $r$ doit \\textbf{toujours} vérifier $0 \\leq r < |a|$. Un reste négatif signifie une erreur.\\par\\begin{itemize}\\item \\textbf{Erreur fréquente :} écrire $-17 = 3 \\times (-5) + (-2)$. Le reste $-2 < 0$, donc c'est \\textbf{incorrect}.\\item \\textbf{Correction :} on cherche le multiple de $3$ juste \\textit{en dessous} de $-17$, c'est $-18 = 3 \\times (-6)$.\\item \\textbf{Écriture correcte :} $-17 = 3 \\times (\\blank{-6}) + \\blank{1}$, avec $0 \\leq 1 < 3$.\\end{itemize}\\par \\textit{Astuce :} quand le dividende est négatif, ajuster le quotient pour rendre le reste positif."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Effectuons les divisions euclidiennes suivantes :}\\par\\begin{enumerate}\\item $134$ par $25$ : $134 = 25 \\times \\blank{5} + \\blank{9}$, car $0 \\leq 9 < 25$.\\item $-67$ par $5$ : le multiple de $5$ juste en dessous de $-67$ est $-70 = 5 \\times (-14)$. Donc $-67 = 5 \\times (\\blank{-14}) + \\blank{3}$, car $0 \\leq 3 < 5$.\\item $79$ par $-25$ : on a $|a| = 25$, donc $79 = (-25) \\times (\\blank{-3}) + \\blank{4}$, car $0 \\leq 4 < 25$.\\end{enumerate}"
+        },
+        {
+          "type": "proof",
+          "title": "Pourquoi \\mathqst{le couple $(q, r)$ est-il unique}",
+          "content": "\\begin{enumerate}\\item \\textbf{Supposons} deux représentations : $b = aq + r = aq' + r'$ avec $0 \\leq r, r' < |a|$.\\item \\textbf{Soustrayons} : $a(q-q') = r'-r$, donc $a \\mid (r'-r)$.\\item \\textbf{Bornons} : $|r'-r| < \\blank{|a|}$. Le seul multiple de $a$ de valeur absolue $< |a|$ est $\\blank{0}$.\\item \\textbf{Concluons :} $r' = r$, puis $q' = q$. Le couple $(q, r)$ est unique.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "\\textbf{Formes des entiers.} La division euclidienne par $n$ donne exactement $n$ classes de restes possibles :\\par\\begin{itemize}\\item Par $2$ : $n = 2k$ (pair) ou $n = 2k+1$ (impair).\\item Par $3$ : $n = 3k$ ou $n = 3k+1$ ou $n = 3k+2$.\\item Par $4$ : $n = 4k$, $4k+1$, $4k+2$ ou $4k+3$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment raisonner \\mathqst{par disjonction de cas sur les restes}",
+          "content": "\\textbf{Principe :} Écrire l'entier $n$ sous toutes ses formes possibles modulo le diviseur choisi, puis vérifier la propriété dans chaque cas.\\par\\textbf{La méthode pas à pas :}\\begin{enumerate}\\item \\textbf{Choisissez} le diviseur judicieusement selon l'expression cible.\\item \\textbf{Listez} toutes les formes (ex~: par $2$ : $n = 2k$ ou $2k+1$ ; par $3$ : $n = 3k$, $3k+1$ ou $3k+2$).\\item \\textbf{Substituez} $n$ dans l'expression pour chaque forme et vérifiez la propriété.\\item \\textbf{Concluez :} si la propriété est vraie dans tous les cas, elle est vraie pour tout $n$.\\end{enumerate}\\textbf{Comment choisir le diviseur :}\\begin{itemize}\\item \\textbf{Par 2 :} résultats pair/impair, ou divisibilité par $2$.\\item \\textbf{Par 3 :} expressions avec carrés ou produits de consécutifs.\\end{itemize}\\par\\smallskip\\textit{$\\hookrightarrow$ Fondement : Théorème « Que dit \\mathqst{le théorème de la division euclidienne} »}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $8 \\mid (a^2-1)$ pour tout entier $a$ impair.}\\par Comme $a$ est impair, on écrit $a = 2k+1$ avec $k \\in \\mathbb{N}$.\\par\\smallskip On développe :\\begin{align*}a^2 - 1 &= (2k+1)^2 - 1 \\\\&= 4k^2 + 4k + 1 - 1 \\\\&= 4k^2 + 4k \\\\&= 4k(\\blank{k+1})\\end{align*}Or, parmi deux entiers consécutifs $k$ et $k+1$, l'un est pair. Donc $k(k+1) = 2m$ pour un certain $m \\in \\mathbb{N}$.\\par\\smallskip Par suite, $a^2 - 1 = 4 \\times 2m = \\blank{8}m$, donc $8 \\mid (a^2-1)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons \\textbf{que} pour tout $n \\in \\mathbb{Z}$, $n^2 \\equiv 0$ ou $1 [3]$.}\\par On distingue les trois cas par division euclidienne de $n$ par $3$ :\\par\\begin{itemize}\\item Si $n = 3k$ : $n^2 = 9k^2 = 3(3k^2)$, donc $n^2 \\equiv \\blank{0}[3]$.\\item Si $n = 3k+1$ : $n^2 = 9k^2 + 6k + 1 = 3(3k^2+2k) + 1$, donc $n^2 \\equiv \\blank{1}[3]$.\\item Si $n = 3k+2$ : $n^2 = 9k^2 + 12k + 4 = 3(3k^2+4k+1) + 1$, donc $n^2 \\equiv \\blank{1}[3]$.\\end{itemize}\\par Dans tous les cas, $n^2 \\equiv 0$ ou $1$ modulo $3$."
+        }
+      ]
+    },
+    {
+      "id": "nombres_premiers",
+      "category": "course",
+      "title": "Nombres Premiers",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les nombres premiers sont les briques élémentaires de l'arithmétique : irréductibles par la divisibilité, ils servent de base universelle à la décomposition de tout entier."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{un nombre premier}",
+          "content": "Soit $p \\in \\mathbb{Z}$. On dit que $p$ est \\textbf{premier} si :\\par$$|p| \\neq 1 \\quad \\text{et} \\quad D_p = \\{\\blank{-p}, \\blank{-1}, \\blank{1}, \\blank{p}\\}$$\\par Autrement dit, $\\text{Card}(D_p) = \\blank{4}$.\\par Dans $\\mathbb{N}$, un nombre premier positif a exactement $\\blank{2}$ diviseurs : $1$ et lui-même."
+        },
+        {
+          "type": "intuition",
+          "title": "Pourquoi \\mathqst{les nombres premiers sont-ils comme des atomes}",
+          "content": "De même que la matière est composée d'atomes insécables, tout entier est construit à partir de nombres premiers par multiplication. Un nombre premier ne peut pas être « cassé » en un produit de nombres plus petits — c'est un \\textbf{atome arithmétique}.\\par Le nombre $12$ se décompose en $2 \\times 2 \\times 3$, mais $2$ et $3$ ne se décomposent pas davantage. C'est cette propriété d'irréductibilité qui rend les nombres premiers si fondamentaux."
+        },
+        {
+          "type": "remark",
+          "content": "\\begin{enumerate}\\item $1$ n'est \\textbf{pas} premier car $D_1 = \\{-1, 1\\}$, soit $\\text{Card}(D_1) = 2 \\neq 4$.\\item $2$ est le \\textbf{seul} nombre premier pair.\\item Tout nombre premier $p \\geq 3$ est impair.\\item Les premiers nombres premiers positifs sont : $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifions que $7$ est premier et que $15$ ne l'est pas.}\\par\\smallskip Pour $7$ : $D_7 = \\{\\blank{-7}, -1, 1, \\blank{7}\\}$, donc $\\text{Card}(D_7) = 4$. Ainsi $7$ est premier.\\par\\smallskip Pour $15$ : $15 = 3 \\times 5$, donc $3 \\in D_{15}$ et $5 \\in D_{15}$. Comme $D_{15}$ contient plus de $4$ éléments, $15$ n'est \\blank{pas} premier."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment utiliser \\mathqst{le critère de primalité par $\\sqrt{n}$}",
+          "content": "Soit $n \\in \\mathbb{N}$ avec $n \\geq 2$. Si $n$ n'est pas premier, alors $n$ admet un diviseur premier $p$ tel que :\\par$$\\boxed{p \\leq \\blank{\\sqrt{n}}}$$\\par Autrement dit : $n$ est premier si et seulement si aucun premier $p \\leq \\sqrt{n}$ ne divise $n$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{tester si un entier est premier} ?",
+          "content": "\\textbf{Principe :} Tester si un seul premier $p \\leq \\sqrt{n}$ divise $n$.\\par\\textbf{La méthode pas à pas :}\\begin{enumerate}\\item \\textbf{Calculez} $\\lfloor\\sqrt{n}\\rfloor$ (la racine entière par dessus).\\item \\textbf{Listez} tous les nombres premiers $p$ tels que $p \\leq \\sqrt{n}$.\\item \\textbf{Testez} : utilisez les critères rapides ($2$, $3$, $5$) en premier, puis testez $7$, $11$, etc.\\item \\textbf{Concluez :} si \\textbf{aucun} $p$ ne divise $n$ → premier. Dès qu'un $p$ divise $n$ → composé.\\end{enumerate}\\textbf{Critères immédiats :}\\begin{itemize}\\item \\textbf{Critère $2$ :} nombre pair → composé.\\item \\textbf{Critère $3$ :} somme des chiffres divisible par $3$ → composé.\\item \\textbf{Critère $5$ :} termine par $0$ ou $5$ → composé.\\end{itemize}\\par\\smallskip\\textit{$\\hookrightarrow$ Fondement : Théorème « Comment utiliser \\mathqst{le critère de primalité par $\\sqrt{n}$} »}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $101$ est premier.}\\par $\\sqrt{101} \\approx \\blank{10.05}$. Les nombres premiers $p \\leq 10$ sont : $2, 3, 5, 7$.\\par\\smallskip\\begin{itemize}\\item $101 = 2 \\times 50 + 1$, donc $2 \\nmid 101$.\\item $1+0+1 = 2$, non divisible par $3$, donc $3 \\nmid 101$.\\item $101$ ne finit pas par $0$ ou $5$, donc $5 \\nmid 101$.\\item $101 = 7 \\times 14 + 3$, donc $7 \\nmid 101$.\\end{itemize}\\par Conclusion : $101$ est \\blank{premier}."
+        },
+        {
+          "type": "theorem",
+          "title": "Existe-t-il \\mathqst{une infinité de nombres premiers} ?",
+          "content": "L'ensemble des nombres premiers est \\textbf{infini}. On ne peut jamais les lister tous."
+        },
+        {
+          "type": "proof",
+          "title": "Comment \\mathqst{prouver l'infinité des premiers} par l'absurde ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Supposons par l'absurde} que la liste de tous les premiers soit finie : $p_1, p_2, \\ldots, p_n$.\\item \\textbf{Construisons} $N = p_1 p_2 \\cdots p_n + \\blank{1}$. Comme $N \\geq 2$, il possède un diviseur premier $q$.\\item \\textbf{Analysons} : par hypothèse $q = p_i$ pour un certain $i$. Alors $q \\mid (p_1 \\cdots p_n)$ et $q \\mid N$.\\item \\textbf{Appliquons} la combinaison linéaire : $q \\mid (N - p_1 \\cdots p_n) = \\blank{1}$.\\item \\textbf{Contradiction :} $q \\geq 2$ ne peut pas diviser $1$. L'ensemble des premiers est donc \\textbf{infini}.\\end{enumerate}"
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{la décomposition en facteurs premiers} est-elle unique ?",
+          "content": "Tout entier $n \\in \\mathbb{Z}$ avec $n \\notin \\{-1, 0, 1\\}$ s'écrit de manière \\textbf{unique} :\\par$$\\boxed{n = \\varepsilon \\cdot p_1^{\\alpha_1} \\cdot p_2^{\\alpha_2} \\cdots p_k^{\\alpha_k}}$$\\par où $\\varepsilon = \\blank{\\pm 1}$, les $p_i$ sont des premiers positifs distincts rangés par ordre croissant, et $\\alpha_i \\in \\mathbb{N}^*$.\\par C'est le \\textbf{théorème fondamental de l'arithmétique}."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{décomposer un entier en facteurs premiers} ?",
+          "content": "\\textbf{Principe :} Diviser $n$ successivement par les plus petits premiers jusqu'à obtenir le quotient $1$.\\par\\textbf{La méthode (présentation en colonne) :}\\begin{enumerate}\\item \\textbf{Écrivez} $n$ à gauche d'un trait vertical, commencez avec $p = 2$.\\item \\textbf{Testez} si $p$ divise le quotient actuel (critères de divisibilité). Si oui, inscrivez $p$ à droite et le nouveau quotient en dessous.\\item \\textbf{Répétez} avec le même $p$ jusqu'à ce qu'il ne divise plus, puis passez au premier suivant ($3$, $5$, $7$...).\\item \\textbf{Arrêtez} dès que le quotient atteint $\\blank{1}$.\\item \\textbf{Lisez} la colonne de droite et regroupez les facteurs identiques en puissances.\\end{enumerate}\\par\\smallskip\\textit{$\\hookrightarrow$ Fondement : Théorème « Pourquoi \\mathqst{la décomposition en facteurs premiers} est-elle unique ? »}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Décomposons $1344$ en produit de facteurs premiers.}\\par$$\\begin{array}{r|l}1344 & 2 \\\\ 672 & 2 \\\\ 336 & 2 \\\\ 168 & 2 \\\\ 84 & 2 \\\\ 42 & 2 \\\\ 21 & 3 \\\\ 7 & 7 \\\\ 1 & \\end{array}$$\\par Résultat : $1344 = 2^{\\blank{6}} \\times 3 \\times 7$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{compter les diviseurs} d'un entier par sa décomposition ?",
+          "content": "Soit $n = p_1^{\\alpha_1} \\cdots p_k^{\\alpha_k}$ la décomposition en facteurs premiers de $n$.\\par\\begin{enumerate}\\item Nombre de diviseurs \\textbf{positifs} de $n$ : $(1+\\alpha_1)(1+\\alpha_2) \\cdots (1+\\alpha_k)$.\\item Nombre \\textbf{total} de diviseurs de $n$ dans $\\mathbb{Z}$ : $\\blank{2}(1+\\alpha_1)(1+\\alpha_2) \\cdots (1+\\alpha_k)$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons le nombre de diviseurs de $924 = 2^2 \\times 3 \\times 7 \\times 11$ dans $\\mathbb{Z}$.}\\par\\smallskip $\\text{Card}(D_{924}) = 2 \\times (2+1)(1+1)(1+1)(1+1) = 2 \\times \\blank{3} \\times 2 \\times 2 \\times 2 = \\blank{48}$."
+        }
+      ]
+    },
+    {
+      "id": "pgcd_ppcm",
+      "category": "course",
+      "title": "PGCD et PPCM",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le PGCD et le PPCM mesurent respectivement le plus grand facteur commun et le plus petit multiple partagé entre deux entiers. Ils sont reliés par une identité fondamentale et se calculent par l'algorithme d'Euclide ou par décomposition."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{le PGCD de deux entiers} ?",
+          "content": "Soient $a, b \\in \\mathbb{Z}^*$. Le \\textbf{plus grand commun diviseur} de $a$ et $b$, noté $\\text{pgcd}(a, b)$ ou $a \\wedge b$, est :\\par$$a \\wedge b = \\max\\big(D_a \\cap D_b \\cap \\blank{\\mathbb{N}^*}\\big)$$"
+        },
+        {
+          "type": "intuition",
+          "title": "Que mesure \\mathqst{le PGCD} ?",
+          "content": "Le PGCD de $a$ et $b$ est la plus grande « unité de mesure » qui divise exactement les deux nombres. Par exemple, $\\text{pgcd}(12, 18) = 6$ signifie que $6$ est le plus grand nombre qui entre à la fois dans $12$ (deux fois) et dans $18$ (trois fois).\\par Quand le PGCD vaut $1$, les deux nombres n'ont \\textbf{aucun facteur commun} autre que $1$ : on dit qu'ils sont premiers entre eux."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{$24 \\wedge 36$ par la} méthode des diviseurs.}\\par\\begin{itemize}\\item Diviseurs positifs de $24$ : $\\{1, 2, 3, 4, 6, 8, 12, 24\\}$.\\item Diviseurs positifs de $36$ : $\\{1, 2, 3, 4, 6, 9, 12, 18, 36\\}$.\\item Diviseurs communs : $\\{1, 2, 3, 4, 6, \\blank{12}\\}$.\\end{itemize}\\par Le plus grand est $\\blank{12}$, donc $24 \\wedge 36 = 12$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les propriétés fondamentales du PGCD} ?",
+          "content": "Soient $a, b, c \\in \\mathbb{Z}^*$.\\par\\begin{enumerate}\\item $a \\wedge b = |a| \\wedge \\blank{|b|}$.\\item $a \\mid b \\Leftrightarrow a \\wedge b = \\blank{|a|}$.\\item $a \\wedge b \\mid a$ et $a \\wedge b \\mid \\blank{b}$.\\item $(ca) \\wedge (cb) = |c| \\times (a \\wedge b)$.\\item $(c \\mid a \\text{ et } c \\mid b) \\text{, alors } c \\mid (a \\wedge b)$.\\end{enumerate}"
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{être premiers entre eux} ?",
+          "content": "Soient $a, b \\in \\mathbb{Z}^*$. On dit que $a$ et $b$ sont \\textbf{premiers entre eux} (ou copremiers) lorsque :\\par$$\\boxed{a \\wedge b = \\blank{1}}$$\\par Leurs seuls diviseurs communs sont $1$ et $-1$."
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi \\mathqst{le PGCD est-il invariant} par division euclidienne ?",
+          "content": "Si $a = bq + r$ est la division euclidienne de $a$ par $b$, alors :\\par$$\\boxed{a \\wedge b = b \\wedge \\blank{r}}$$\\par C'est le \\textbf{principe de l'algorithme d'Euclide} : remplacer $(a, b)$ par $(b, r)$ préserve le PGCD.\\par\\smallskip\\textit{$\\hookrightarrow$ Application : voir Méthode « Comment \\mathqst{appliquer l'algorithme d'Euclide} ? »}"
+        },
+        {
+          "type": "proof",
+          "title": "Comment \\mathqst{démontrer l'invariance du PGCD} ?",
+          "content": "Soit $a = bq + r$ avec $0 \\leq r < |b|$. On montre que les ensembles de diviseurs communs de $(a,b)$ et $(b,r)$ sont identiques.\\par\\begin{enumerate}\\item \\textbf{Sens direct} ($\\mathcal{D}_{b,r} \\subseteq \\mathcal{D}_{a,b}$) : Soit $d \\mid b$ et $d \\mid r$. Par combinaison linéaire : $d \\mid (bq + r) = a$. Donc $d \\mid a$ et $d \\mid b$.\\item \\textbf{Sens réciproque} ($\\mathcal{D}_{a,b} \\subseteq \\mathcal{D}_{b,r}$) : Soit $d' \\mid a$ et $d' \\mid b$. Alors $d' \\mid (a - bq) = \\blank{r}$. Donc $d'$ divise $b$ et $r$.\\item \\textbf{Concluons :} les deux ensembles sont égaux, donc $a \\wedge b = b \\wedge r$.\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{appliquer l'algorithme d'Euclide} ?",
+          "content": "\\textbf{Principe :} Enchaîner des divisions euclidiennes pour réduire les nombres ; le dernier reste non nul est le PGCD.\\par\\textbf{La méthode pas à pas :}\\begin{enumerate}\\item \\textbf{Divisez} le plus grand par le plus petit : $a = b q_1 + r_1$.\\item \\textbf{Décalez} : si $r_1 \\neq 0$, divisez $b$ par $r_1$ : $b = r_1 q_2 + r_2$.\\item \\textbf{Continuez} : chaque reste est strictement plus petit que le précédent, garantissant la terminaison.\\item \\textbf{Arrêtez} dès que le reste est $\\blank{0}$.\\item \\textbf{Concluez :} le PGCD est le \\textbf{dernier reste non nul} (celui juste avant le zéro).\\end{enumerate}\\textbf{Vérification obligatoire :}\\begin{itemize}\\item \\textbf{Contrôlez} que le PGCD trouvé divise bien les deux entiers initiaux.\\end{itemize}\\par\\smallskip\\textit{$\\hookrightarrow$ Fondement : Propriété « Pourquoi \\mathqst{le PGCD est-il invariant} par division euclidienne ? »}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{$\\text{pgcd}(2446, 718)$ par l'algorithme} d'Euclide.}\\par\\begin{align*}2446 &= 718 \\times 3 + \\blank{292} \\\\ 718 &= 292 \\times 2 + \\blank{134} \\\\ 292 &= 134 \\times 2 + 24 \\\\ 134 &= 24 \\times 5 + 14 \\\\ 24 &= 14 \\times 1 + 10 \\\\ 14 &= 10 \\times 1 + 4 \\\\ 10 &= 4 \\times 2 + \\blank{2} \\\\ 4 &= 2 \\times 2 + 0\\end{align*}\\par Le dernier reste non nul est $\\blank{2}$, donc $2446 \\wedge 718 = 2$."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{le PPCM de deux entiers} ?",
+          "content": "Soient $a, b \\in \\mathbb{Z}^*$. Le \\textbf{plus petit commun multiple} de $a$ et $b$, noté $\\text{ppcm}(a, b)$ ou $a \\vee b$, est le plus petit élément \\textbf{strictement positif} de l'ensemble des multiples communs à $a$ et $b$."
+        },
+        {
+          "type": "property",
+          "title": "Quelle est \\mathqst{la relation fondamentale entre PGCD et PPCM} ?",
+          "content": "Pour tous $a, b \\in \\mathbb{Z}^*$ :\\par$$\\boxed{(a \\wedge b) \\times (a \\vee b) = \\blank{|ab|}}$$\\par Cette identité permet de calculer le PPCM dès que le PGCD est connu, et inversement."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{$24 \\vee 36$ sachant} que $24 \\wedge 36 = 12$.}\\par D'après la relation fondamentale $(a \\wedge b)(a \\vee b) = |ab|$ :\\begin{align*}12 \\times (24 \\vee 36) &= |24 \\times 36| \\\\&= \\blank{864}\\end{align*}On en déduit :\\begin{align*}24 \\vee 36 &= \\frac{864}{12} \\\\&= \\blank{72}\\end{align*}"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{calculer PGCD et PPCM} par la décomposition en facteurs premiers ?",
+          "content": "Soient $a = \\prod p_i^{\\alpha_i}$ et $b = \\prod p_i^{\\beta_i}$ deux décompositions en facteurs premiers.\\par\\begin{enumerate}\\item $a \\wedge b = \\prod p_i^{\\blank{\\min(\\alpha_i, \\beta_i)}}$ \\quad (facteurs \\textbf{communs}, plus petit exposant).\\item $a \\vee b = \\prod p_i^{\\blank{\\max(\\alpha_i, \\beta_i)}}$ \\quad (\\textbf{tous} les facteurs, plus grand exposant).\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $a = 2^3 \\times 3^2 \\times 5$ et $b = 2^2 \\times 3 \\times 7$. Calculons $a \\wedge b$ et $a \\vee b$.}\\par\\smallskip\\begin{itemize}\\item Facteurs communs : $2$ et $3$.\\item $a \\wedge b = 2^{\\min(3,2)} \\times 3^{\\min(2,1)} = 2^{\\blank{2}} \\times 3^{\\blank{1}} = \\blank{12}$.\\item $a \\vee b = 2^{\\max(3,2)} \\times 3^{\\max(2,1)} \\times 5^{\\max(1,0)} \\times 7^{\\max(0,1)} = 2^3 \\times 3^2 \\times 5 \\times 7 = \\blank{2520}$.\\end{itemize}\\par Vérification : $12 \\times 2520 = 30240 = |360 \\times 84| = |a \\times b|$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{prouver que deux entiers sont premiers entre eux} ?",
+          "content": "\\textbf{Principe :} Montrer que $a \\wedge b = 1$ en choisissant la technique adaptée au contexte.\\par\\textbf{Les 3 chemins d'exécution :}\\begin{itemize}\\item \\textbf{Bézout (algébrique) :} \\textbf{Trouvez} $u, v \\in \\mathbb{Z}$ tels que $au + bv = 1$. L'existence suffit : $a \\wedge b = 1$.\\item \\textbf{Euclide (algorithmique) :} \\textbf{Appliquez} les divisions successives. Si le dernier reste non nul est $1$, c'est conclu.\\item \\textbf{Décomposition (fondamental) :} \\textbf{Vérifiez} que les décompositions en facteurs premiers de $a$ et $b$ n'ont aucun facteur commun.\\end{itemize}\\textbf{Résultat clé à mémoriser :}\\begin{itemize}\\item \\textbf{Consécutifs :} $n$ et $n+1$ sont toujours premiers entre eux : $(-1) \\cdot n + 1 \\cdot (n+1) = 1$.\\end{itemize}\\par\\smallskip\\textit{$\\hookrightarrow$ Méthode liée : « Comment \\mathqst{appliquer l'algorithme d'Euclide} ? »}"
+        }
+      ]
+    },
+    {
+      "id": "congruences_modulo",
+      "category": "course",
+      "title": "Congruences Modulo n",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les congruences transforment un problème de divisibilité en un calcul sur les restes. Compatibles avec l'addition, la multiplication et la puissance, elles simplifient énormément les calculs sur les grandes puissances."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{la congruence modulo $n$} ?",
+          "content": "Soient $n \\in \\mathbb{N}^*$ et $a, b \\in \\mathbb{Z}$. On dit que $a$ est \\textbf{congru} à $b$ modulo $n$, noté $a \\equiv b[n]$, lorsque :\\par$$\\boxed{a \\equiv b[n] \\Leftrightarrow n \\mid (\\blank{a-b})}$$\\par\\textbf{Interprétation :} $a$ et $b$ ont le \\textbf{même reste} dans la division euclidienne par $n$."
+        },
+        {
+          "type": "intuition",
+          "title": "Comment \\mathqst{l'horloge illustre-t-elle} les congruences ?",
+          "content": "Une horloge fonctionne modulo $12$ : après $12$h, on revient à $0$. Dire que $15 \\equiv 3[12]$ signifie que $15$h et $3$h affichent la \\textbf{même position} sur l'horloge. De même, $25 \\equiv 1[12]$ car $25$h et $1$h sont au même endroit.\\par Les congruences fonctionnent sur ce même principe : on ne garde que le reste, et on « oublie » les tours complets. Deux nombres sont congrus modulo $n$ quand ils tombent sur la même graduation d'une horloge à $n$ positions."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifions les congruences suivantes.}\\par\\begin{enumerate}\\item $47 \\equiv 3[11]$ car $47 - 3 = \\blank{44} = 11 \\times 4$, donc $11 \\mid 44$.\\item $8 \\equiv -1[9]$ car $8 - (-1) = \\blank{9} = 9 \\times 1$, donc $9 \\mid 9$.\\item $-17 \\equiv 1[3]$ car $-17 - 1 = \\blank{-18} = 3 \\times (-6)$, donc $3 \\mid (-18)$.\\end{enumerate}"
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi \\mathqst{la congruence est une relation d'équivalence} ?",
+          "content": "La congruence modulo $n$ vérifie :\\par\\begin{enumerate}\\item \\textbf{Réflexivité :} $a \\equiv \\blank{a}[n]$ (car $n \\mid 0$).\\item \\textbf{Symétrie :} $a \\equiv b[n] \\Leftrightarrow b \\equiv \\blank{a}[n]$.\\item \\textbf{Transitivité :} $(a \\equiv b[n]$ et $b \\equiv c[n])$ entraîne $a \\equiv \\blank{c}[n]$.\\end{enumerate}"
+        },
+        {
+          "type": "proof",
+          "title": "Comment \\mathqst{démontrer la transitivité} de la congruence ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Posons} : $a - b = nk$ et $b - c = nk'$ pour certains $k, k' \\in \\mathbb{Z}$.\\item \\textbf{Additionnons} : $a - c = nk + nk' = n(\\blank{k + k'})$.\\item \\textbf{Concluons :} $k + k' \\in \\mathbb{Z}$, donc $n \\mid (a-c)$, c'est-à-dire $a \\equiv c[n]$.\\end{enumerate}"
+        },
+        {
+          "type": "theorem",
+          "title": "En quoi \\mathqst{la congruence est-elle compatible} avec les opérations ?",
+          "content": "Soient $a \\equiv b[n]$ et $c \\equiv d[n]$. Alors :\\par\\begin{enumerate}\\item $a + c \\equiv \\blank{b + d}[n]$ \\quad (addition).\\item $a \\times c \\equiv \\blank{b \\times d}[n]$ \\quad (multiplication).\\item Pour tout $p \\in \\mathbb{N}$ : $a^p \\equiv \\blank{b^p}[n]$ \\quad (puissance).\\end{enumerate}"
+        },
+        {
+          "type": "proof",
+          "title": "Comment \\mathqst{démontrer la compatibilité} avec la multiplication ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Posons} : $a = b + nk$ et $c = d + nk'$ pour certains $k, k' \\in \\mathbb{Z}$.\\item \\textbf{Développons} $ac$ :\\begin{align*}ac &= (b+nk)(d+nk') = bd + bnk' + nkd + n^2kk' = bd + n(\\blank{bk' + kd + nkk'})\\end{align*}\\item \\textbf{Concluons :} $bk' + kd + nkk' \\in \\mathbb{Z}$, donc $n \\mid (ac - bd)$, c'est-à-dire $ac \\equiv bd[n]$.\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{trouver le reste d'une grande puissance} ?",
+          "content": "\\textbf{Principe :} Exploiter la périodicité des restes de $a^k$ modulo $n$ pour réduire un grand exposant.\\par\\textbf{La méthode pas à pas :}\\begin{enumerate}\\item \\textbf{Calculez} $a^1, a^2, a^3, \\ldots$ modulo $n$ jusqu'à trouver la période $p$ telle que $a^p \\equiv 1 [n]$.\\item \\textbf{Réduisez} $N$ : effectuez la division euclidienne $N = p \\cdot q + r$ avec $0 \\leq r < p$.\\item \\textbf{Substituez} : $(a^p)^q \\equiv 1^q \\equiv 1$, donc $a^N = (a^p)^q \\cdot a^r \\equiv a^r [n]$.\\item \\textbf{Concluez} avec la valeur de $a^r$ déjà calculée à l'étape 1.\\end{enumerate}\\textbf{Raccourcis à chercher en priorité :}\\begin{itemize}\\item \\textbf{$a^2 \\equiv 1 [n]$ :} période $2$. Résultat : $1$ si $N$ pair, $a$ si $N$ impair.\\item \\textbf{$a^2 \\equiv -1 [n]$ :} période $4$. Calculer $N \\bmod 4$.\\item \\textbf{$a \\equiv -1 [n]$ :} $a^N \\equiv (-1)^N [n]$, soit $1$ si $N$ pair, $-1$ si $N$ impair.\\end{itemize}\\par\\smallskip\\textit{$\\hookrightarrow$ Fondement : Théorème « En quoi \\mathqst{la congruence est-elle compatible} avec les opérations ? »}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons \\textbf{le reste} de $7^{2023}$ dans la division par $10$.}\\par D'abord, on cherche une puissance de $7$ qui donne un reste simple modulo $10$ :\\par $7^2 = 49 \\equiv \\blank{-1}[10]$.\\par\\smallskip Ensuite, on décompose l'exposant par division euclidienne :\\par $2023 = 2 \\times 1011 + 1$.\\par\\smallskip On en déduit :\\begin{align*}7^{2023} &= (7^2)^{1011} \\times 7 \\\\&\\equiv (-1)^{1011} \\times 7 \\quad [10] \\\\&\\equiv -1 \\times 7 \\quad [10] \\\\&\\equiv -7 \\equiv \\blank{3} \\quad [10]\\end{align*}Le reste est $\\blank{3}$, c'est-à-dire que le chiffre des unités de $7^{2023}$ est $3$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons \\textbf{le reste} de $3^n$ par $7$ selon les valeurs de $n \\in \\mathbb{N}$.}\\par\\smallskip Calculons les premières puissances de $3$ modulo $7$ :\\par\\begin{itemize}\\item $3^1 \\equiv 3[7]$\\item $3^2 \\equiv 9 \\equiv \\blank{2}[7]$\\item $3^3 \\equiv 3 \\times 2 = 6 \\equiv \\blank{-1}[7]$\\item $3^4 \\equiv 3 \\times (-1) = -3 \\equiv \\blank{4}[7]$\\item $3^5 \\equiv 3 \\times 4 = 12 \\equiv \\blank{5}[7]$\\item $3^6 \\equiv 3 \\times 5 = 15 \\equiv \\blank{1}[7]$\\end{itemize}\\par Le cycle recommence : la période est $\\blank{6}$. On utilise la division euclidienne de $n$ par $6$ pour conclure."
+        },
+        {
+          "type": "warning",
+          "content": "On ne peut \\textbf{pas} toujours simplifier (diviser) dans une congruence.\\par\\begin{itemize}\\item \\textbf{Contre-exemple :} $8 \\equiv 2[6]$. En divisant par $2$ : $4 \\not\\equiv 1[6]$ car $4 - 1 = 3$ et $6 \\nmid 3$.\\item \\textbf{Raison :} $2 \\wedge 6 = 2 \\neq 1$, le facteur $2$ n'est pas premier avec le module.\\item \\textbf{Règle :} on peut simplifier $ka \\equiv kb[n]$ par $k$ \\textbf{uniquement si} $k \\wedge n = \\blank{1}$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{retrouver les critères de divisibilité} par les congruences ?",
+          "content": "\\textbf{Principe :} Exploiter les congruences de $10$ modulo $n$ pour simplifier l'écriture décimale.\\par\\textbf{La méthode d'analyse :}\\begin{enumerate}\\item \\textbf{Décomposez} l'entier : $N = a_k \\cdot 10^k + \\ldots + a_1 \\cdot 10 + a_0$.\\item \\textbf{Calculez} $10 \\bmod n$ (et $100 \\bmod n$ si nécessaire).\\item \\textbf{Remplacez} chaque puissance de $10$ par sa congruence pour simplifier.\\end{enumerate}\\textbf{Les 3 cas fondamentaux :}\\begin{itemize}\\item \\textbf{$n=3$ ou $9$} : $10 \\equiv 1$, donc $N \\equiv a_0 + a_1 + \\ldots + a_k \\pmod{n}$ (\\textbf{somme des chiffres}).\\item \\textbf{$n=11$} : $10 \\equiv -1$, donc $N \\equiv a_0 - a_1 + a_2 - \\ldots \\pmod{11}$ (\\textbf{somme alternée}).\\item \\textbf{$n=4$ ou $25$} : $100 \\equiv 0$, donc $N \\equiv \\overline{a_1 a_0} \\pmod{n}$ (\\textbf{deux derniers chiffres}).\\end{itemize}\\par\\smallskip\\textit{$\\hookrightarrow$ Fondement : Théorème « En quoi \\mathqst{la congruence est-elle compatible} avec les opérations ? »}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Le nombre $N = 83\\,247$ est-il divisible par $9$ ? par $11$ ?}\\par\\textbf{Par $9$ :} somme des chiffres $= 8 + 3 + 2 + 4 + 7 = \\blank{24}$. Puis $2 + 4 = 6$, et $9 \\nmid 6$. Donc $N$ n'est \\blank{pas} divisible par $9$.\\par\\textbf{Par $11$ :} somme alternée (depuis les unités) $= 7 - 4 + 2 - 3 + 8 = \\blank{10}$. Or $11 \\nmid 10$, donc $N$ n'est \\blank{pas} divisible par $11$.\\par\\textbf{Astuce :} si la somme alternée donne $0$ ou un multiple de $11$, alors $11 \\mid N$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $n(n+1)(n+2)$ est divisible par $6$ pour tout $n \\in \\mathbb{N}$.}\\par\\textbf{Astuce des entiers consécutifs :} parmi $3$ entiers consécutifs, il y a toujours au moins un multiple de $2$ et au moins un multiple de $3$.\\par Donc $2 \\mid n(n+1)(n+2)$ et $3 \\mid n(n+1)(n+2)$. Comme $2 \\wedge 3 = \\blank{1}$, on en déduit que $6 = 2 \\times 3$ divise $n(n+1)(n+2)$.\\par\\textbf{Généralisation :} le produit de $k$ entiers consécutifs est toujours divisible par $\\blank{k!}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons les deux derniers chiffres de $3^{100}$, c'est-à-dire le reste de $3^{100}$ par $100$.}\\par\\textbf{Astuce :} chercher une puissance de $3$ congrue à $1$ ou $-1$ modulo $100$.\\par $3^2 = 9$, $3^4 = 81$, $3^{10} = 59049$. Calculons $3^{10} \\mod 100$ :\\par $3^{10} = (3^4)^2 \\times 3^2 = 81^2 \\times 9$. Or $81^2 = 6561 \\equiv \\blank{61}[100]$.\\par Donc $3^{10} \\equiv 61 \\times 9 = 549 \\equiv \\blank{49}[100]$.\\par $3^{20} \\equiv 49^2 = 2401 \\equiv \\blank{1}[100]$.\\par\\textbf{Période trouvée :} $20$. Comme $100 = 20 \\times 5$, on a $3^{100} = (3^{20})^5 \\equiv 1^5 = \\blank{1}[100]$.\\par Les deux derniers chiffres de $3^{100}$ sont $\\blank{01}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{montrer qu'un produit consécutif est divisible} par $n!$ ?",
+          "content": "\\textbf{Principe :} Parmi $k$ entiers consécutifs, il y a toujours exactement un multiple de chaque entier de $1$ à $k$.\\par\\textbf{La méthode pas à pas :}\\begin{enumerate}\\item \\textbf{Comptez} le nombre $k$ d'entiers consécutifs dans le produit $P$.\\item \\textbf{Repérez} un multiple de $2$, un de $3$, ..., un de $k$ parmi les $k$ entiers.\\item \\textbf{Vérifiez} que ces diviseurs $2, 3, \\ldots, k$ sont deux à deux premiers entre eux.\\item \\textbf{Concluez} par le théorème de Gauss : $P$ est divisible par $2 \\times 3 \\times \\ldots \\times k = k!$.\\end{enumerate}\\textbf{Raccourci via les coefficients binomiaux :}\\begin{itemize}\\item \\textbf{Formule directe :} si $P = n(n+1)\\cdots(n+k-1)$, alors $\\displaystyle P = k! \\times C_{n+k-1}^{k}$, qui est entier par définition, donc $k! \\mid P$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "znz_structure",
+      "category": "course",
+      "title": "L'ensemble ℤ/nℤ",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'ensemble $\\mathbb{Z}/n\\mathbb{Z}$ réunit les classes de congruence modulo $n$ et définit une arithmétique finie munie de l'addition et de la multiplication. C'est le cadre naturel pour résoudre des équations modulo $n$."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{une classe d'équivalence modulo $n$} ?",
+          "content": "Soit $n \\in \\mathbb{N}^*$ et $a \\in \\mathbb{Z}$. La \\textbf{classe d'équivalence} de $a$ modulo $n$ est :\\par$$\\overline{a} = \\{x \\in \\mathbb{Z} \\mid x \\equiv \\blank{a}[n]\\}$$\\par C'est l'ensemble de tous les entiers ayant le même reste $r$ que $a$ dans la division par $n$.\\par On note aussi : $x \\in \\overline{a} \\Leftrightarrow x \\equiv a[\\blank{n}]$."
+        },
+        {
+          "type": "intuition",
+          "title": "Comment \\mathqst{visualiser les classes} comme des paquets d'entiers ?",
+          "content": "Travailler modulo $n$ revient à ranger tous les entiers dans $n$ \\textbf{paquets} selon leur reste. Modulo $3$, tous les multiples de $3$ tombent dans le paquet $\\overline{0}$, les nombres du type $3k+1$ dans le paquet $\\overline{1}$, et les $3k+2$ dans $\\overline{2}$.\\par Quand on calcule dans $\\mathbb{Z}/n\\mathbb{Z}$, on ne distingue plus les éléments d'un même paquet : $7$ et $1$ sont « la même chose » modulo $3$. C'est ce qui rend les calculs si simples."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "Classes d'équivalence modulo $3$ :\\par\\begin{itemize}\\item $\\overline{0} = \\{\\ldots, -6, -3, 0, 3, 6, 9, \\ldots\\}$ : les multiples de $\\blank{3}$.\\item $\\overline{1} = \\{\\ldots, -5, -2, 1, 4, 7, 10, \\ldots\\}$ : reste $\\blank{1}$ dans la division par $3$.\\item $\\overline{2} = \\{\\ldots, -4, -1, 2, 5, 8, 11, \\ldots\\}$ : reste $\\blank{2}$ dans la division par $3$.\\end{itemize}\\par Ces trois classes \\textbf{partitionnent} $\\mathbb{Z}$ : tout entier appartient à exactement l'une d'elles."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{$\\\\mathbb{Z}$ se partitionne-t-il} en classes modulo $n$ ?",
+          "content": "Soit $n \\in \\mathbb{N}^*$.\\par\\begin{enumerate}\\item Pour tout $a \\in \\mathbb{Z}$, il existe un unique $r \\in \\{0, 1, \\ldots, \\blank{n-1}\\}$ tel que $\\overline{a} = \\overline{r}$.\\item Les classes $\\overline{0}, \\overline{1}, \\ldots, \\overline{n-1}$ sont deux à deux \\blank{disjointes}.\\item $\\mathbb{Z} = \\overline{0} \\cup \\overline{1} \\cup \\cdots \\cup \\overline{n-1}$.\\end{enumerate}"
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{$\\mathbb{Z}/n\\mathbb{Z}$ et comment y calcule-t-on} ?",
+          "content": "L'ensemble $\\mathbb{Z}/n\\mathbb{Z}$ est l'ensemble de toutes les classes d'équivalence modulo $n$ :\\par$$\\boxed{\\mathbb{Z}/n\\mathbb{Z} = \\{\\overline{0}, \\overline{1}, \\overline{2}, \\ldots, \\overline{\\blank{n-1}}\\}}$$\\par C'est un ensemble fini de cardinal $\\blank{n}$.\\par Les opérations sont définies par :\\par\\begin{enumerate}\\item Addition : $\\overline{x} + \\overline{y} = \\overline{\\blank{x+y}}$.\\item Multiplication : $\\overline{x} \\times \\overline{y} = \\overline{\\blank{xy}}$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Effectuons des calculs dans $\\mathbb{Z}/6\\mathbb{Z}$.}\\par\\begin{enumerate}\\item $\\overline{3} + \\overline{4} = \\overline{7} = \\overline{\\blank{1}}$ \\quad (car $7 = 6 \\times 1 + 1$).\\item $\\overline{5} + \\overline{5} = \\overline{10} = \\overline{\\blank{4}}$ \\quad (car $10 = 6 \\times 1 + 4$).\\item $\\overline{3} \\times \\overline{4} = \\overline{12} = \\overline{\\blank{0}}$ \\quad (car $12 = 6 \\times 2$).\\item $\\overline{5} \\times \\overline{4} = \\overline{20} = \\overline{\\blank{2}}$ \\quad (car $20 = 6 \\times 3 + 2$).\\end{enumerate}"
+        },
+        {
+          "type": "warning",
+          "content": "Dans $\\mathbb{Z}/n\\mathbb{Z}$, le produit de deux éléments \\textbf{non nuls} peut donner $\\overline{0}$.\\par\\begin{itemize}\\item \\textbf{Exemple :} dans $\\mathbb{Z}/6\\mathbb{Z}$, $\\overline{2} \\times \\overline{3} = \\overline{\\blank{0}}$, alors que $\\overline{2} \\neq \\overline{0}$ et $\\overline{3} \\neq \\overline{0}$.\\item On appelle $\\overline{2}$ et $\\overline{3}$ des \\textbf{diviseurs de zéro}.\\item \\textbf{Conséquence :} on ne peut pas « simplifier » par un diviseur de zéro. L'annulation $\\overline{a} \\cdot \\overline{b} = \\overline{0}$ n'implique pas $\\overline{a} = \\overline{0}$ ou $\\overline{b} = \\overline{0}$.\\item Ce phénomène disparaît si $n$ est \\blank{premier} : dans ce cas, $\\mathbb{Z}/p\\mathbb{Z}$ n'a aucun diviseur de zéro.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{résoudre une équation dans $\\mathbb{Z}/n\\mathbb{Z}$} ?",
+          "content": "\\textbf{Principe :} Résoudre $\\overline{a}x = \\overline{b}$ dans $\\mathbb{Z}/n\\mathbb{Z}$ selon le PGCD $d = a \\wedge n$.\\par\\textbf{La checklist d'exécution :}\\begin{enumerate}\\item \\textbf{Calculez} $d = a \\wedge n$ par l'algorithme d'Euclide.\\item \\textbf{Filtrez :} est-ce que $d \\mid b$ ? Si \\textbf{non}, arrêtez — l'équation n'a \\textbf{aucune solution}.\\item \\textbf{Agissez} selon le cas :\\begin{itemize}\\item \\textbf{$d = 1$ (optimal) :} trouvez l'inverse $u$ de $\\overline{a}$ via Bézout ($au + nv = 1$), puis la solution unique est $x \\equiv ub \\pmod{n}$.\\item \\textbf{$d > 1$ :} divisez $a$, $b$ et $n$ par $d$. Résolvez l'équation simplifiée dans $\\mathbb{Z}/(n/d)\\mathbb{Z}$, puis remontez en retrouvant les $d$ solutions modulo $n$.\\item \\textbf{$n$ petit :} testez toutes les classes $\\overline{0}, \\overline{1}, \\ldots, \\overline{n-1}$ exhaustivement.\\end{itemize}\\end{enumerate}\\par\\smallskip\\textit{$\\hookrightarrow$ Méthode liée : « Comment \\mathqst{prouver que deux entiers sont premiers entre eux} ? »}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons \\textbf{$\\overline{3}x = \\overline{4}$} dans $\\mathbb{Z}/8\\mathbb{Z}$.}\\par\\smallskip On vérifie d'abord : $3 \\wedge 8 = 1$ et $1 \\mid 4$, donc une solution unique existe. On teste les $8$ classes :\\par\\begin{itemize}\\item $\\overline{3} \\times \\overline{0} = \\overline{0}$\\item $\\overline{3} \\times \\overline{1} = \\overline{3}$\\item $\\overline{3} \\times \\overline{2} = \\overline{6}$\\item $\\overline{3} \\times \\overline{3} = \\overline{9} = \\overline{1}$\\item $\\overline{3} \\times \\overline{4} = \\overline{12} = \\overline{\\blank{4}}$ \\quad solution trouvée\\item $\\overline{3} \\times \\overline{5} = \\overline{15} = \\overline{7}$\\end{itemize}\\par Solution unique : $x = \\overline{\\blank{4}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons \\textbf{$2x + 1 \\equiv 0[6]$} dans $\\mathbb{Z}$.}\\par\\smallskip L'équation s'écrit $2x \\equiv \\blank{-1}[6]$, soit $2x \\equiv \\blank{5}[6]$.\\par\\smallskip On vérifie : $2 \\wedge 6 = 2$ et $2 \\nmid 5$. La condition de solvabilité n'est pas remplie.\\par\\textbf{Conclusion :} l'équation n'a \\blank{pas de solution} dans $\\mathbb{Z}$.\\par\\smallskip Raison : $2x$ est toujours pair, $5$ est impair, et $6$ est pair. Donc $2x - 5$ est impair et ne peut pas être divisible par $6$."
+        },
+        {
+          "type": "remark",
+          "content": "\\textbf{Critère de résolution.} L'équation $\\overline{a}x = \\overline{b}$ dans $\\mathbb{Z}/n\\mathbb{Z}$ admet une solution \\textbf{si et seulement si} $a \\wedge n \\mid b$.\\par\\begin{itemize}\\item Si $a \\wedge n = \\blank{1}$, la solution existe et est \\textbf{unique}.\\item Si $a \\wedge n \\neq 1$ et $(a \\wedge n) \\nmid b$, l'équation n'a \\blank{pas de solution}.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

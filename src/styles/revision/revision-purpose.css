@@ -1,0 +1,61 @@
+.revision-purpose-block {
+  width: 100%;
+  min-width: 0;
+  padding: clamp(0.85rem, 2vw, 1.2rem) clamp(1rem, 2.6vw, 1.5rem);
+  border-radius: 14px;
+  background: #f3f6fa;
+  color: #253343;
+  font-family: var(--font-editorial-text, var(--font-ui));
+  font-size: inherit;
+  line-height: 1.65;
+  direction: ltr;
+  text-align: left;
+  break-inside: avoid;
+}
+
+.revision-purpose-block .revision-purpose-heading {
+  margin: 0 0 0.65em;
+  font: inherit;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.revision-purpose-block .revision-purpose-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revision-purpose-block .revision-purpose-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45em;
+  margin: 0;
+  padding: 0;
+}
+
+.revision-purpose-item + .revision-purpose-item {
+  margin-top: 0.12em;
+}
+
+.revision-purpose-bullet {
+  display: grid;
+  flex: 0 0 0.85em;
+  width: 0.85em;
+  height: 1.65em;
+  place-items: center;
+}
+
+.revision-purpose-bullet::before {
+  content: '';
+  width: 0.36em;
+  height: 0.36em;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+.revision-purpose-text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,46 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   Tableau d'exercice (ExerciseBoard) — présentation « serrée » de l'énoncé.
+
+   Les zones de réponse sont déjà retirées par `ExerciseDisplayContext`
+   (`compact`) ; il reste à récupérer l'air que la fiche prof réserve autour de
+   chaque ligne pour que l'exercice tienne sur un écran projeté.
+
+   Ces règles sont importées AVANT `@tailwind utilities` : `!important` est
+   nécessaire pour reprendre la main sur `py-*`, `mb-*` et `space-y-*`.
+   Thème clair uniquement — aucune variante sombre.
+   ════════════════════════════════════════════════════════════════════════════ */
+
+.board-statement {
+  /* Projection : le stylet écrit sur le canvas, on n'attrape jamais le texte. */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* La feuille porte déjà sa réglure : l'énoncé ne doit pas la masquer. */
+.board-statement :where(.bg-white) {
+  background-color: transparent !important;
+}
+
+.board-statement :where(article) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.board-statement :where(header) {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Interlignes des rangées de questions (`space-y-3 sm:space-y-4`). */
+.board-statement [class*="space-y-"] > * + * {
+  margin-top: 0.35rem !important;
+}
+
+.board-statement :where(section) {
+  margin-bottom: 0.35rem !important;
+}
+
+/* Cellules de grille (`py-0.5 sm:py-1.5`) : numéro, label, énoncé, barème. */
+.board-statement :where(.grid) > * {
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.1rem !important;
+}

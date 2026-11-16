@@ -1,0 +1,56 @@
+{
+  "id": "ex-geo-02",
+  "theme": "produit-scalaire",
+  "difficulty": "facile",
+  "topic": "Géométrie Analytique - Produit scalaire, orthogonalité, triangle",
+  "requiresRedaction": true,
+  "context": "On considère les points : $A(1;\\sqrt{5})$, $B(-1;1)$, $C(3;-1)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer le produit scalaire $\\overrightarrow{AB} \\cdot \\overrightarrow{AC}$ puis en déduire la nature du triangle $ABC$.",
+      "hint": "Calculez les coordonnées de $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$. Que signifie $\\overrightarrow{AB} \\cdot \\overrightarrow{AC} = 0$ pour la nature du triangle ?"
+    },
+    {
+      "id": "q2",
+      "content": "Soit $H$ le projeté orthogonal du point $A$ sur $(BC)$.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Déterminer une équation cartésienne de chacune des droites $(AH)$ et $(BC)$.",
+          "hint": "$(AH) \\perp (BC)$ : le vecteur directeur de $(BC)$ est vecteur normal de $(AH)$, et vice versa."
+        },
+        {
+          "id": "sq2b",
+          "content": "Calculer le couple de coordonnées de $H$.",
+          "hint": "$H$ est l'intersection de $(AH)$ et $(BC)$ : résolvez le système des deux équations."
+        },
+        {
+          "id": "sq2c",
+          "content": "En déduire la distance de $A$ à la droite $(BC)$.",
+          "hint": "La distance de $A$ à $(BC)$ est $AH$. Utilisez le résultat de la question précédente."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "On considère les points $A(-1;2)$, $B(-2;1)$, $C(2;-1)$. Montrer que le triangle $ABC$ est rectangle en $A$.",
+      "hint": "Calculez $\\overrightarrow{AB} \\cdot \\overrightarrow{AC}$ et vérifiez qu'il est nul."
+    },
+    {
+      "id": "q4",
+      "content": "Calculer $\\cos\\left(\\widehat{\\overrightarrow{AB},\\overrightarrow{AC}}\\right)$ et $\\sin\\left(\\widehat{\\overrightarrow{CA},\\overrightarrow{CB}}\\right)$.",
+      "hint": "Utilisez $\\cos(\\overrightarrow{u},\\overrightarrow{v}) = \\dfrac{\\overrightarrow{u}\\cdot\\overrightarrow{v}}{\\|\\overrightarrow{u}\\|\\|\\overrightarrow{v}\\|}$. Pour le sinus, utilisez $\\sin^2 + \\cos^2 = 1$ et le sens de l'angle orienté pour déterminer le signe."
+    },
+    {
+      "id": "q5",
+      "content": "Calculer $\\cos\\dfrac{\\pi}{12}$ et $\\sin\\dfrac{\\pi}{12}$.",
+      "hint": "$\\dfrac{\\pi}{12} = \\dfrac{\\pi}{3} - \\dfrac{\\pi}{4}$. Utilisez les formules de soustraction d'angles."
+    },
+    {
+      "id": "q6",
+      "content": "Montrer que le triangle $IJC$ est isocèle.",
+      "hint": "Calculez les longueurs $IJ$, $IC$ et $JC$ à l'aide des coordonnées et comparez-les."
+    }
+  ]
+}

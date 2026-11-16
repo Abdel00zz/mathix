@@ -1,0 +1,46 @@
+{
+  "id": "rotation",
+  "title": "La rotation dans le plan",
+  "section": "algebre-geometrie",
+  "quizCount": 21,
+  "revisions": [
+    {
+      "id": "rev-rotation-1",
+      "title": "Fiche Complète : La Rotation",
+      "path": "data/1ere-bac-sc-math/rotation/revisions/fiche_rotation_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-geom-rotation-carres-barycentre",
+      "path": "data/1ere-bac-sc-math/rotation/exercises/ex_rotation_01.json"
+    },
+    {
+      "id": "ex-geom-rotations-equilateral",
+      "path": "data/1ere-bac-sc-math/rotation/exercises/ex_rotation_02.json"
+    },
+    {
+      "id": "ex-geom-rotation-triangle",
+      "path": "data/1ere-bac-sc-math/rotation/exercises/ex_rotation_03.json"
+    },
+    {
+      "id": "ex-geom-rotation-carre",
+      "path": "data/1ere-bac-sc-math/rotation/exercises/ex_rotation_04.json"
+    },
+    {
+      "id": "ex-geom-rotation-equilateral-ext",
+      "path": "data/1ere-bac-sc-math/rotation/exercises/ex_rotation_05.json"
+    },
+    {
+      "id": "ex-geom-carre-rotation-004",
+      "path": "data/1ere-bac-sc-math/rotation/exercises/ex_rotation_06.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-rotation-01",
+      "path": "data/1ere-bac-sc-math/rotation/quiz/rotation_quiz.json",
+      "questionsCount": 21
+    }
+  ]
+}

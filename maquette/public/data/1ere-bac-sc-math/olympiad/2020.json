@@ -1,0 +1,39 @@
+{
+  "id": "olympiad-1ere-bac-sc-math-2020",
+  "title": "Olympiade Internationale de Mathématiques (IMO) 2020 — Sujet officiel",
+  "year": 2020,
+  "classId": "1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "badge": "international",
+  "source": "https://www.imo-official.org/problems.aspx",
+  "duration": 240,
+  "totalPoints": 42,
+  "exercises": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2020-ex1",
+      "number": 1,
+      "theme": "geometrie",
+      "points": 7,
+      "topic": "Quadrilatère convexe",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $ABCD$ un quadrilatère convexe. Soit $P$ un point à l'intérieur de $ABCD$ tel que :\n$$\\widehat{PAD} = \\widehat{PBA} = \\widehat{PCD} = \\widehat{PDA} = \\text{un angle } \\alpha$$\nMontrer que $ABCD$ est un trapèze isocèle ou un parallélogramme."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2020-ex2",
+      "number": 2,
+      "theme": "algebre",
+      "points": 7,
+      "topic": "Inégalités",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soient $a, b, c, d$ des nombres réels tels que $a \\geq b \\geq c \\geq d > 0$ et $a+b+c+d=1$. Montrer que :\n$$(a+2b+3c+4d) a^a b^b c^c d^d < 1$$"
+        }
+      ]
+    }
+  ]
+}

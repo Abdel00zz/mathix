@@ -1,0 +1,66 @@
+{
+  "id": "denombrement",
+  "title": "Dénombrement",
+  "section": "algebre-geometrie",
+  "quizCount": 20,
+  "revisions": [
+    {
+      "id": "rev-denom-1",
+      "title": "Fiche Complète : Dénombrement",
+      "path": "data/1ere-bac-sc-math/denombrement/revisions/fiche_denombrement_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-denom-01",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-denom-02",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-denom-03",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-denom-04",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_04.json"
+    },
+    {
+      "id": "ex-denom-05",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_05.json"
+    },
+    {
+      "id": "ex-denom-06",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_06.json"
+    },
+    {
+      "id": "ex-denom-07",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_07.json"
+    },
+    {
+      "id": "ex-denom-08",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_08.json"
+    },
+    {
+      "id": "ex-denom-09",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_09.json"
+    },
+    {
+      "id": "ex-denom-10",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_10.json"
+    },
+    {
+      "id": "ex-denom-11",
+      "path": "data/1ere-bac-sc-math/denombrement/exercises/ex_11.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-denombrement-1",
+      "path": "data/1ere-bac-sc-math/denombrement/quiz/denombrement_quiz.json",
+      "questionsCount": 20
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ex-vecteurs-espace-02",
+  "theme": "vecteurs-espace",
+  "difficulty": "moyen",
+  "topic": "Les vecteurs de l'espace",
+  "context": "Exercice de base sur le chapitre \"Les vecteurs de l'espace\".",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Question 1",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Rappeler une idee importante du chapitre Les vecteurs de l'espace.",
+          "hint": "Relire la definition principale du cours."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Question 2",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Effectuer une application directe simple.",
+          "hint": "Appliquer la methode en une etape."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Question 3",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Donner une conclusion claire et justifiee.",
+          "hint": "Verifier l interpretation du resultat final."
+        }
+      ]
+    }
+  ]
+}

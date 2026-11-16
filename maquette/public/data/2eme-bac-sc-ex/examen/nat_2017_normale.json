@@ -1,0 +1,324 @@
+{
+  "id": "nat-2017-n",
+  "title": "Examen National 2017 — Session Normale",
+  "type": "national",
+  "year": 2017,
+  "session": "normale",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 4,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2017n-ex1",
+      "number": 1,
+      "theme": "geometrie-espace",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Plan, sphère, droite, tangence, produit vectoriel",
+      "context": "Dans l'espace rapporté à un repère orthonormé direct $(O; \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère le plan $(P)$ passant par le point $A(0, 1, 1)$ et dont $\\overrightarrow{u}(1, 0, -1)$ est un vecteur normal, et la sphère $(S)$ de centre le point $\\Omega(0, 1, -1)$ et de rayon $\\sqrt{2}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que $x - z + 1 = 0$ est une équation cartésienne du plan $(P)$.",
+              "bareme": 0.5,
+              "hint": "$(P)$ passe par $A(0,1,1)$ et a pour vecteur normal $\\overrightarrow{u}(1,0,-1)$. L'équation est $1 \\cdot x + 0 \\cdot y - 1 \\cdot z + d = 0$ ; substituez $A$ pour trouver $d$."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer que le plan $(P)$ est tangent à la sphère $(S)$ et vérifier que $B(-1, 1, 0)$ est le point de contact.",
+              "bareme": 0.75,
+              "hint": "Calculez $d(\\Omega, (P)) = \\frac{|0 - (-1) + 1|}{\\sqrt{1^2+(-1)^2}} = \\frac{2}{\\sqrt{2}} = \\sqrt{2} = R$. Pour le point de contact, vérifiez $B \\in (P)$ et $\\Omega B = \\sqrt{2} = R$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Déterminer une représentation paramétrique de la droite $(\\Delta)$ passant par le point $A$ et orthogonale au plan $(P)$.",
+              "bareme": 0.25,
+              "hint": "La droite est orthogonale à $(P)$ donc son vecteur directeur est $\\overrightarrow{u}(1, 0, -1)$. Elle passe par $A(0, 1, 1)$ : écrivez $x = t$, $y = 1$, $z = 1 - t$."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que la droite $(\\Delta)$ est tangente à la sphère $(S)$ au point $C(1, 1, 0)$.",
+              "bareme": 0.75,
+              "hint": "Vérifiez les trois conditions : $C \\in (\\Delta)$ (substituez $t=1$), $\\Omega C = \\sqrt{(1-0)^2+(1-1)^2+(0+1)^2} = \\sqrt{2} = R$ (donc $C \\in (S)$), et $\\overrightarrow{\\Omega C} \\cdot \\overrightarrow{u} = 0$ ($\\Delta$ tangente en $C$)."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Montrer que $\\overrightarrow{OC} \\wedge \\overrightarrow{OB} = 2\\overrightarrow{k}$ et en déduire l'aire du triangle $OCB$.",
+          "bareme": 0.75,
+          "hint": "Calculez $\\overrightarrow{OC}(1,1,0)$ et $\\overrightarrow{OB}(-1,1,0)$, puis effectuez le produit vectoriel. L'aire du triangle est $\\frac{1}{2}\\|\\overrightarrow{OC} \\wedge \\overrightarrow{OB}\\|$."
+        }
+      ]
+    },
+    {
+      "id": "nat2017n-ex2",
+      "number": 2,
+      "theme": "probabilites",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Probabilités — Dénombrement, variable aléatoire, loi de probabilité",
+      "context": "Une urne contient huit boules indiscernables au toucher portant chacune un nombre : $0, 2, 2, 2, 0, 1, 2, 4$. On tire au hasard, simultanément, trois boules de l'urne.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $A$ l'événement : « Parmi les trois boules tirées, aucune ne porte le nombre 0 » et $B$ l'événement : « Le produit des nombres portés par les trois boules tirées est égal à 8 ». Montrer que $p(A) = \\dfrac{5}{14}$ et que $p(B) = \\dfrac{1}{7}$.",
+          "bareme": 1.5,
+          "hint": "$\\text{Card}(\\Omega) = C_8^3 = 56$. Pour $A$ : choisir 3 parmi les 6 boules non nulles : $C_6^3 = 20$. Pour $B$ : le produit vaut 8 si on tire $2 \\times 2 \\times 2 = 8$ (trois « 2 ») ou $1 \\times 2 \\times 4 = 8$ ; comptez les cas favorables."
+        },
+        {
+          "id": "q2",
+          "content": "Soit $X$ la variable aléatoire qui à chaque tirage associe le produit des nombres portés par les trois boules tirées.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $p(X = 16) = \\dfrac{3}{28}$.",
+              "bareme": 0.5,
+              "hint": "$X = 16$ si le produit est $2 \\times 2 \\times 4 = 16$. Choisissez 2 parmi les quatre boules « 2 » et 1 parmi la boule « 4 » : $\\text{Card} = C_4^2 \\times C_1^1 = 6$. Donc $p(X=16) = \\frac{6}{56}$."
+            },
+            {
+              "id": "2b",
+              "content": "Le tableau ci-contre concerne la loi de probabilité de la variable aléatoire $X$ (valeurs $0, 4, 8, 16$). Recopier sur votre copie et compléter le tableau en justifiant chaque réponse.",
+              "bareme": 1,
+              "hint": "$p(X=8) = p(B) = \\frac{1}{7}$ déjà calculé. $p(X=4)$ : produit $2\\times2\\times1 = 4$, calculez $C_4^2 \\times C_1^1$. $p(X=0) = 1 - p(X=4) - p(X=8) - p(X=16)$ (événement complémentaire : au moins une boule porte 0)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2017n-ex3",
+      "number": 3,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Nombres complexes — Forme trigonométrique, valeur exacte de cos, translation, carré",
+      "context": "On considère les nombres complexes $a$ et $b$ tels que $a = \\sqrt{3} + i$ et $b = \\sqrt{3} - 1 + (\\sqrt{3} + 1)i$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $b = (1 + i)a$.",
+              "bareme": 0.25,
+              "hint": "Calculez $(1+i)(\\sqrt{3}+i) = \\sqrt{3} + i + i\\sqrt{3} + i^2 = \\sqrt{3} - 1 + (\\sqrt{3}+1)i$ et comparez avec $b$."
+            },
+            {
+              "id": "1b",
+              "content": "En déduire que $|b| = 2\\sqrt{2}$ et que $\\arg b \\equiv \\dfrac{5\\pi}{12} \\pmod{2\\pi}$.",
+              "bareme": 0.5,
+              "hint": "$|b| = |1+i| \\cdot |a| = \\sqrt{2} \\times 2 = 2\\sqrt{2}$. Pour l'argument : $\\arg(1+i) = \\frac{\\pi}{4}$ et $\\arg(a) = \\frac{\\pi}{6}$, donc $\\arg(b) = \\frac{\\pi}{4} + \\frac{\\pi}{6} = \\frac{5\\pi}{12}$."
+            },
+            {
+              "id": "1c",
+              "content": "Déduire de ce qui précède que $\\cos\\dfrac{5\\pi}{12} = \\dfrac{\\sqrt{6} - \\sqrt{2}}{4}$.",
+              "bareme": 0.5,
+              "hint": "La partie réelle de $b$ vaut $\\sqrt{3} - 1$. D'autre part $b = 2\\sqrt{2}\\left(\\cos\\frac{5\\pi}{12} + i\\sin\\frac{5\\pi}{12}\\right)$, donc $2\\sqrt{2}\\cos\\frac{5\\pi}{12} = \\sqrt{3}-1$. Divisez par $2\\sqrt{2}$ et rationalisez."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Le plan complexe est rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$. On considère les points $A$ et $B$ d'affixes respectives $a$ et $b$, et le point $C$ d'affixe $c$ telle que $c = -1 + i\\sqrt{3}$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Vérifier que $c = ia$ et en déduire que $OA = OC$ et que $\\left(\\overrightarrow{OA}, \\overrightarrow{OC}\\right) \\equiv \\dfrac{\\pi}{2} \\pmod{2\\pi}$.",
+              "bareme": 0.75,
+              "hint": "Calculez $ia = i(\\sqrt{3}+i) = i\\sqrt{3} - 1 = -1 + i\\sqrt{3} = c$. Puis $OC = |c| = |ia| = |i||a| = |a| = OA$. Pour l'angle : $\\arg\\left(\\frac{c}{a}\\right) = \\arg(i) = \\frac{\\pi}{2}$."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que le point $B$ est l'image du point $A$ par la translation de vecteur $\\overrightarrow{OC}$.",
+              "bareme": 0.5,
+              "hint": "L'image de $A(a)$ par la translation de vecteur $\\overrightarrow{OC}$ (affixe $c$) a pour affixe $a + c = a + ia = (1+i)a = b$. Or $b$ est l'affixe de $B$."
+            },
+            {
+              "id": "2c",
+              "content": "En déduire que le quadrilatère $OABC$ est un carré.",
+              "bareme": 0.5,
+              "hint": "$\\overrightarrow{AB} = \\overrightarrow{OC}$ (translation), donc $OABC$ est un parallélogramme. De plus $OA = OC$ et $\\left(\\overrightarrow{OA}, \\overrightarrow{OC}\\right) = \\frac{\\pi}{2}$, donc c'est un carré."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2017n-pb",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 11,
+      "topic": "Analyse — Étude de fonctions sur $]0,+\\infty[$, dérivée, asymptotes, intégration, suite récurrente",
+      "context": "On considère la fonction numérique $f$ définie sur l'intervalle $]0, +\\infty[$ par $f(x) = x + \\left(1 - \\dfrac{2}{x}\\right)\\ln x$. Soit $(C)$ la courbe représentative de la fonction $f$ dans un repère orthonormé $(O; \\overrightarrow{i}, \\overrightarrow{j})$ (unité : 1 cm).",
+      "questions": [
+        {
+          "id": "p1",
+          "type": "partie",
+          "content": "Soit $g$ la fonction numérique définie sur l'intervalle $]0, +\\infty[$ par $g(x) = x^2 + x - 2 + 2\\ln x$. Le tableau de variations de $g$ montre que $g$ est strictement croissante sur $]0, +\\infty[$, avec $g(x) \\to -\\infty$ en $0^+$ et $g(x) \\to +\\infty$ en $+\\infty$."
+        },
+        {
+          "id": "q1",
+          "content": "Vérifier que $g(1) = 0$.",
+          "bareme": 0.25,
+          "hint": "Substituez directement $x = 1$ : $g(1) = 1 + 1 - 2 + 2\\ln 1 = 0$."
+        },
+        {
+          "id": "q2",
+          "content": "À partir du tableau de variations de la fonction $g$, montrer que $g(x) \\leq 0$ pour tout $x$ appartenant à l'intervalle $]0, 1]$ et que $g(x) \\geq 0$ pour tout $x$ appartenant à l'intervalle $[1, +\\infty[$.",
+          "bareme": 1,
+          "hint": "$g$ est strictement croissante et s'annule uniquement en $x = 1$. Donc $g(x) < g(1) = 0$ pour $x < 1$ et $g(x) > g(1) = 0$ pour $x > 1$."
+        },
+        {
+          "id": "p2",
+          "type": "partie",
+          "content": "On considère la fonction numérique $f$ définie sur l'intervalle $]0, +\\infty[$ par $f(x) = x + \\left(1 - \\dfrac{2}{x}\\right)\\ln x$."
+        },
+        {
+          "id": "r1",
+          "content": "Montrer que $\\displaystyle\\lim_{\\substack{x \\to 0 \\\\ x > 0}} f(x) = +\\infty$ et interpréter géométriquement le résultat.",
+          "bareme": 0.5,
+          "hint": "$f(x) = x + \\left(1 - \\frac{2}{x}\\right)\\ln x$. Quand $x \\to 0^+$ : $x \\to 0$ et $\\left(1-\\frac{2}{x}\\right) \\to -\\infty$ tandis que $\\ln x \\to -\\infty$, donc le produit $\\to +\\infty$. Interprétation : la courbe admet une asymptote verticale $x = 0$."
+        },
+        {
+          "id": "r2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r2a",
+              "content": "Montrer que $\\displaystyle\\lim_{x \\to +\\infty} f(x) = +\\infty$.",
+              "bareme": 0.25,
+              "hint": "$f(x) = x\\left[1 + \\left(1-\\frac{2}{x}\\right)\\frac{\\ln x}{x}\\right]$. Comme $\\frac{\\ln x}{x} \\to 0$ et $x \\to +\\infty$, on a $f(x) \\sim x \\to +\\infty$."
+            },
+            {
+              "id": "r2b",
+              "content": "Montrer que la courbe $(C)$ admet au voisinage de $+\\infty$ une branche parabolique de direction asymptotique celle de la droite $(D)$ d'équation $y = x$.",
+              "bareme": 0.75,
+              "hint": "Calculez $\\lim_{x\\to+\\infty} \\frac{f(x)}{x} = 1$ (pente), puis $\\lim_{x\\to+\\infty}(f(x) - x) = \\lim_{x\\to+\\infty} \\left(1-\\frac{2}{x}\\right)\\ln x = +\\infty$. Pente 1 mais écart infini : branche parabolique de direction $y = x$."
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r3a",
+              "content": "Montrer que $f'(x) = \\dfrac{g(x)}{x^2}$ pour tout $x$ appartenant à l'intervalle $]0, +\\infty[$.",
+              "bareme": 1,
+              "hint": "Dérivez $f(x) = x + \\ln x - \\frac{2\\ln x}{x}$ : $f'(x) = 1 + \\frac{1}{x} - \\frac{2}{x^2}\\ln x \\cdot x - \\frac{2\\ln x \\cdot 1}{x^2}$... Réduisez au dénominateur commun $x^2$ et vérifiez que le numérateur est $g(x) = x^2 + x - 2 + 2\\ln x$."
+            },
+            {
+              "id": "r3b",
+              "content": "Montrer que $f$ est décroissante sur l'intervalle $]0, 1]$ et croissante sur l'intervalle $[1, +\\infty[$.",
+              "bareme": 0.75,
+              "hint": "$f'(x) = \\frac{g(x)}{x^2}$ et $x^2 > 0$. Réutilisez le signe de $g$ de la Partie I : $g \\leq 0$ sur $]0,1]$ donc $f' \\leq 0$, et $g \\geq 0$ sur $[1,+\\infty[$ donc $f' \\geq 0$."
+            },
+            {
+              "id": "r3c",
+              "content": "Dresser le tableau de variations de la fonction $f$ sur l'intervalle $]0, +\\infty[$.",
+              "bareme": 0.25,
+              "hint": "$f$ décroissante sur $]0,1]$, minimum en $x=1$ : $f(1) = 1 + 0 = 1$, croissante sur $[1,+\\infty[$. Limites : $+\\infty$ en $0^+$ et $+\\infty$ en $+\\infty$."
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r4a",
+              "content": "Résoudre dans l'intervalle $]0, +\\infty[$ l'équation $\\left(1 - \\dfrac{2}{x}\\right)\\ln x = 0$.",
+              "bareme": 0.5,
+              "hint": "Le produit est nul si $1 - \\frac{2}{x} = 0$ (soit $x = 2$) ou $\\ln x = 0$ (soit $x = 1$). Vérifiez que les deux appartiennent à $]0,+\\infty[$."
+            },
+            {
+              "id": "r4b",
+              "content": "En déduire que la courbe $(C)$ coupe la droite $(D)$ en deux points dont on déterminera les coordonnées.",
+              "bareme": 0.5,
+              "hint": "$f(x) = x \\Leftrightarrow f(x) - x = 0 \\Leftrightarrow \\left(1-\\frac{2}{x}\\right)\\ln x = 0$. Les solutions sont $x = 1$ et $x = 2$ ; les points sont $A(1, 1)$ et $B(2, 2)$."
+            },
+            {
+              "id": "r4c",
+              "content": "Montrer que $f(x) \\leq x$ pour tout $x$ appartenant à l'intervalle $[1, 2]$ et en déduire la position relative de la courbe $(C)$ et la droite $(D)$ sur l'intervalle $[1, 2]$.",
+              "bareme": 0.75,
+              "hint": "Étudiez le signe de $f(x) - x = \\left(1-\\frac{2}{x}\\right)\\ln x$ sur $[1,2]$ : sur $[1,2]$, $\\ln x \\geq 0$ et $1-\\frac{2}{x} \\leq 0$, donc le produit $\\leq 0$. Conclusion : $(C)$ est en dessous de $(D)$ sur $[1,2]$."
+            }
+          ]
+        },
+        {
+          "id": "r5",
+          "content": "Construire, dans le même repère $(O; \\overrightarrow{i}, \\overrightarrow{j})$, la droite $(D)$ et la courbe $(C)$ (on admettra que la courbe $(C)$ possède un seul point d'inflexion dont l'abscisse est comprise entre 2,4 et 2,5).",
+          "bareme": 1,
+          "hint": "Placez : asymptote verticale $x=0$, minimum $(1,1)$, intersections avec $(D)$ en $A(1,1)$ et $B(2,2)$, $(C)$ en dessous de $(D)$ sur $[1,2]$, point d'inflexion vers $x \\approx 2{,}45$, branche parabolique vers $+\\infty$."
+        },
+        {
+          "id": "r6",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r6a",
+              "content": "Montrer que $\\displaystyle\\int_1^2 \\dfrac{\\ln x}{x}\\,dx = \\dfrac{1}{2}(\\ln 2)^2$.",
+              "bareme": 0.5,
+              "hint": "$\\frac{\\ln x}{x} = (\\ln x)' \\cdot \\ln x = \\frac{1}{2}\\left[(\\ln x)^2\\right]'$. Donc $\\int_1^2 \\frac{\\ln x}{x}dx = \\left[\\frac{(\\ln x)^2}{2}\\right]_1^2 = \\frac{(\\ln 2)^2}{2} - 0$."
+            },
+            {
+              "id": "r6b",
+              "content": "Montrer que la fonction $H : x \\mapsto 2\\ln x - x$ est une fonction primitive de la fonction $h : x \\mapsto \\dfrac{2}{x} - 1$ sur l'intervalle $]0, +\\infty[$.",
+              "bareme": 0.25,
+              "hint": "Dérivez $H(x) = 2\\ln x - x$ : $H'(x) = \\frac{2}{x} - 1 = h(x)$. Donc $H$ est bien une primitive de $h$."
+            },
+            {
+              "id": "r6c",
+              "content": "Montrer, à l'aide d'une intégration par parties, que $\\displaystyle\\int_1^2 \\left(\\dfrac{2}{x} - 1\\right)\\ln x\\,dx = (1 - \\ln 2)^2$.",
+              "bareme": 0.5,
+              "hint": "Posez $u = \\ln x$, $v' = \\frac{2}{x}-1 = H'(x)$, donc $u' = \\frac{1}{x}$ et $v = H(x) = 2\\ln x - x$. Après IPP : $[H(x)\\ln x]_1^2 - \\int_1^2 H(x)\\frac{1}{x}dx$. Développez et utilisez le résultat de r6a)."
+            },
+            {
+              "id": "r6d",
+              "content": "Calculer, en $cm^2$, l'aire du domaine plan limité par la courbe $(C)$, la droite $(D)$ et les droites d'équations $x = 1$ et $x = 2$.",
+              "bareme": 0.5,
+              "hint": "Sur $[1,2]$, $(C)$ est en dessous de $(D)$ donc $\\mathcal{A} = \\int_1^2 (x - f(x))\\,dx = \\int_1^2 \\left(\\frac{2}{x}-1\\right)\\ln x\\,dx$. Utilisez le résultat de r6c)."
+            }
+          ]
+        },
+        {
+          "id": "p3",
+          "type": "partie",
+          "content": "On considère la suite numérique $(u_n)$ définie par $u_0 = \\sqrt{3}$ et $u_{n+1} = f(u_n)$ pour tout entier naturel $n$."
+        },
+        {
+          "id": "s1",
+          "content": "Montrer par récurrence que $1 \\leq u_n \\leq 2$ pour tout entier naturel $n$.",
+          "bareme": 0.5,
+          "hint": "Initialisation : $u_0 = \\sqrt{3} \\in [1, 2]$. Hérédité : si $1 \\leq u_n \\leq 2$ et $f$ est croissante sur $[1,2]$, alors $f(1) \\leq f(u_n) \\leq f(2)$, c'est-à-dire $1 \\leq u_{n+1} \\leq 2$."
+        },
+        {
+          "id": "s2",
+          "content": "Montrer que la suite $(u_n)$ est décroissante (on pourra utiliser le résultat de la question II.4.c)).",
+          "bareme": 0.5,
+          "hint": "D'après II.4.c), $f(x) \\leq x$ sur $[1,2]$. Comme $u_n \\in [1,2]$, on a $u_{n+1} = f(u_n) \\leq u_n$, donc la suite est décroissante."
+        },
+        {
+          "id": "s3",
+          "content": "En déduire que la suite $(u_n)$ est convergente et déterminer sa limite.",
+          "bareme": 0.75,
+          "hint": "$(u_n)$ est décroissante et minorée par 1, donc convergente. Sa limite $L$ vérifie $L = f(L)$, c'est-à-dire $f(L) - L = 0$. D'après II.4.b), les solutions dans $]0,+\\infty[$ sont $1$ et $2$. Comme $(u_n)$ est décroissante avec $u_n \\geq 1$, la limite est $L = 1$."
+        }
+      ]
+    }
+  ]
+}

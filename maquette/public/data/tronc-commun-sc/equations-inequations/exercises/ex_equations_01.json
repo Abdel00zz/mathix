@@ -1,0 +1,32 @@
+{
+  "id": "ex-equations-inequations-01",
+  "theme": "equations-inequations",
+  "difficulty": "difficile",
+  "topic": "Équations et Inéquations",
+  "context": "Résolution de problèmes variés.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Équation bicarrée",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Résoudre dans $\\mathbb{R}$ : $x^4 - 5x^2 + 4 = 0$.",
+          "hint": "Cette équation est bicarrée. Quel changement de variable simple permet de la transformer en une équation du second degré que vous savez résoudre ?"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Inéquation rationnelle",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Résoudre $\\frac{2x-1}{x+3} \\ge 1$.",
+          "hint": "\\method Pour résoudre une inéquation rationnelle, il faut étudier le signe d'une expression. Ramenez d'abord tous les termes d'un seul côté pour comparer à zéro. Mettez ensuite au même dénominateur et dressez un tableau de signes."
+        }
+      ]
+    }
+  ]
+}

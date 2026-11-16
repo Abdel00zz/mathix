@@ -1,0 +1,51 @@
+{
+  "id": "ex-geo-01",
+  "theme": "produit-scalaire",
+  "difficulty": "facile",
+  "topic": "Géométrie Analytique - Produit scalaire et vecteurs",
+  "requiresRedaction": true,
+  "context": "Dans tout ce qui suit, le plan est rapporté à un repère orthonormé $\\left(O;\\overrightarrow{i};\\overrightarrow{j}\\right)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $\\overrightarrow{u} \\cdot \\overrightarrow{v}$, $\\|\\overrightarrow{u}\\|$, $\\|\\overrightarrow{v}\\|$ dans chacun des cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq1_1",
+          "content": "$\\overrightarrow{u} = \\overrightarrow{i} + 4\\overrightarrow{j}$ et $\\overrightarrow{v} = 2\\overrightarrow{i} - \\overrightarrow{j}$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_2",
+          "content": "$\\overrightarrow{u}(-1;\\sqrt{3})$ et $\\overrightarrow{v}(3;1)$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_3",
+          "content": "$\\overrightarrow{u}(\\sqrt{2}-1;\\sqrt{3}+2)$ et $\\overrightarrow{v}(\\sqrt{2}+1;\\sqrt{3}-2)$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_4",
+          "content": "$\\overrightarrow{u}\\left(-\\dfrac{3}{4};\\dfrac{1}{2}\\right)$ et $\\overrightarrow{v}\\left(\\dfrac{1}{4};\\dfrac{\\sqrt{5}}{4}\\right)$",
+          "hint": ""
+        },
+        {
+          "id": "sq1_5",
+          "content": "$\\overrightarrow{u}(0;3)$ et $\\overrightarrow{v} = a\\overrightarrow{i} + 3\\overrightarrow{j}$",
+          "hint": "Le résultat s'exprimera en fonction du paramètre $a$."
+        },
+        {
+          "id": "sq1_6",
+          "content": "$\\overrightarrow{u}(1;-5)$ et $\\overrightarrow{v} = -2\\overrightarrow{i}$",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "On considère les vecteurs suivants ($m \\in \\mathbb{R}$) : $\\overrightarrow{u} = -\\overrightarrow{i} + 2\\overrightarrow{j}$ et $\\overrightarrow{v} = 2\\overrightarrow{i} + \\left(m - \\dfrac{1}{2}\\right)\\overrightarrow{j}$. Déterminer la valeur de $m$ pour laquelle les vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont orthogonaux.",
+      "hint": "Deux vecteurs sont orthogonaux si et seulement si $\\overrightarrow{u} \\cdot \\overrightarrow{v} = 0$. Exprimez le produit scalaire en fonction de $m$ puis résolvez."
+    }
+  ]
+}

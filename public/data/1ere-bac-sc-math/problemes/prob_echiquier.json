@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "La légende de l'échiquier",
+    "subtitle": "Somme d'une suite géométrique",
+    "context": "Suites"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "La légende de l'échiquier",
+          "content": "La légende raconte que l'inventeur du jeu d'échecs demanda comme récompense : $1$ grain de blé sur la première case de l'échiquier, $2$ sur la deuxième, $4$ sur la troisième, et ainsi de suite en \\textbf{doublant} à chaque case, jusqu'à la $64^e$.\\par On note $u_n$ le nombre de grains sur la $n$-ième case ($n$ de $1$ à $64$)."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Donner la nature de la suite $(u_n)$, son premier terme et sa raison. Exprimer $u_n$ en fonction de $n$.\\item Calculer le nombre total $S$ de grains sur l'échiquier, en fonction de puissances de $2$.\\item Sachant qu'un grain de blé pèse environ $0{,}05\\ \\text{g}$, montrer que la récompense dépasse de loin la production mondiale annuelle de blé (de l'ordre de $800$ millions de tonnes).\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "$(u_n)$ est géométrique de premier terme $u_1 = 1$ et de raison $q = 2$, donc $u_n = 2^{n-1}$."
+        },
+        {
+          "type": "hint",
+          "content": "Somme d'une suite géométrique : $S = u_1 \\dfrac{q^{64} - 1}{q - 1} = \\dfrac{2^{64} - 1}{2 - 1} = 2^{64} - 1$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $(u_n)$ est géométrique de raison $q = 2$ et de premier terme $u_1 = 1$ : $u_n = 2^{\\,n-1}$.\\par\\textbf{2)} $S = 1 + 2 + 4 + \\cdots + 2^{63} = \\dfrac{2^{64} - 1}{2 - 1} = 2^{64} - 1 = \\boxed{18\\,446\\,744\\,073\\,709\\,551\\,615}$ grains (environ $1{,}8 \\times 10^{19}$).\\par\\textbf{3)} Masse $\\approx 1{,}8\\times 10^{19} \\times 0{,}05\\ \\text{g} = 9\\times 10^{17}\\ \\text{g} = 9\\times 10^{11}\\ \\text{tonnes}$, soit $900$ \\emph{milliards} de tonnes : plus de $1000$ fois la production mondiale annuelle. La croissance géométrique est vertigineuse."
+        }
+      ]
+    }
+  ]
+}

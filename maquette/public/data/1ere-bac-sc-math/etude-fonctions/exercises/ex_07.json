@@ -1,0 +1,46 @@
+{
+  "id": "ex-etude-fct-07",
+  "theme": "etude-fonctions",
+  "difficulty": "moyen",
+  "topic": "Analyse - Fonction irrationnelle",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction numérique définie par :\n$$f(x)=x-\\sqrt{x}+\\frac{1}{\\sqrt{x}}$$\net soit $\\mathscr{C}_f$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $D$ l'ensemble de définition de $f$ puis Déterminer les limites de $f$ aux bornes de $D$.",
+      "hint": "Pour que $\\sqrt{x}$ existe et soit au dénominateur, il faut $x > 0$. Pour la limite en $0^+$, observez que $\\frac{1}{\\sqrt{x}}$ tend vers $+\\infty$."
+    },
+    {
+      "id": "q2",
+      "content": "Étudier les branches infinies de la courbe $\\mathscr{C}_f$.",
+      "hint": "En $0$, interprétez la limite infinie. En $+\\infty$, calculez la limite de $f(x)-x$ pour voir s'il y a une asymptote oblique ou une direction asymptotique."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que pour tout $x \\in D$ : $f'(x)=\\left(\\frac{2x+\\sqrt{x}+1}{2x\\sqrt{x}}\\right)(\\sqrt{x}-1)$",
+          "hint": "Dérivez terme à terme. Rappel : $(\\sqrt{x})' = \\frac{1}{2\\sqrt{x}}$ et $(\\frac{1}{\\sqrt{x}})' = -\\frac{1}{2x\\sqrt{x}}$. Réduisez au même dénominateur $2x\\sqrt{x}$ et factorisez."
+        },
+        {
+          "id": "b",
+          "content": "Dresser le tableau de variations de la fonction $f$.",
+          "hint": "Le facteur $\\frac{2x+\\sqrt{x}+1}{2x\\sqrt{x}}$ est strictement positif sur $D$. Le signe de la dérivée ne dépend que de $\\sqrt{x}-1$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Étudier la position relative de la courbe $\\mathscr{C}_f$ et la droite $(\\Delta): y=x$.",
+      "hint": "Étudiez le signe de $f(x)-x = -\\sqrt{x} + \\frac{1}{\\sqrt{x}}$. Réduisez au même dénominateur pour comparer $\\sqrt{x}$ et $\\frac{1}{\\sqrt{x}}$."
+    },
+    {
+      "id": "q5",
+      "content": "Construire la courbe $\\mathscr{C}_f$.\nOn donne : $f(\\frac{1}{4})=\\frac{7}{4}$ et $f(4)=\\frac{5}{2}$",
+      "hint": "Tracez l'asymptote verticale, la droite $y=x$, placez le minimum local (tangente horizontale) et les points donnés."
+    }
+  ]
+}

@@ -1,0 +1,515 @@
+@layer components {
+  /*
+   * Calendrier du planning — grille jours × demi-heures.
+   *
+   * La position des séances est portée par la grille CSS (`grid-row: début /
+   * span durée`), pas par un calcul de pixels : la hauteur de ligne peut
+   * changer d'un écran à l'autre sans décaler les blocs d'une minute.
+   *
+   * Le bleu structure les actions et les repères temporels, avec repli
+   * explicite : la feuille modale peut être montée hors de `.dashboard-shell`.
+   */
+  .planner {
+    --modal-accent: #0056d2;
+    --modal-accent-deep: #003f9e;
+    --modal-accent-border: rgba(0, 86, 210, .3);
+    --planner-accent: #0056d2;
+    --planner-deep: #003f9e;
+    --planner-done: #1f7a46;
+    --planner-now-color: #c9242b;
+    --planner-soft: rgba(0, 86, 210, .09);
+    --planner-border: rgba(0, 86, 210, .24);
+    --planner-wash: #f4f8ff;
+    --planner-grid-bg: #fff;
+    --planner-grid-line: #dfe5ec;
+    --planner-row-h: 0.65rem;
+    --planner-gutter: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .planner {
+      --planner-row-h: 0.82rem;
+      --planner-gutter: 3.1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .planner { --planner-row-h: 0.68rem; }
+  }
+
+  .planner-overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: .65rem;
+  }
+
+  .planner-overview__title {
+    color: #1f1f1f;
+    font-size: .92rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+  }
+
+  .planner-overview__hint {
+    margin-top: .12rem;
+    color: #5f6b7a;
+    font-size: .7rem;
+    line-height: 1.35;
+  }
+
+  .planner-overview__stats {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    flex-shrink: 0;
+    padding: .35rem .45rem .35rem .65rem;
+    border: 1px solid #b9d2f5;
+    border-radius: .32rem;
+    background: var(--planner-wash);
+    color: #344054;
+    font-size: .68rem;
+    font-weight: 650;
+  }
+
+  .planner-overview__stats strong {
+    padding: .22rem .42rem;
+    border-left: 1px solid #c9daf2;
+    border-radius: 0;
+    background: transparent;
+    color: var(--planner-deep);
+    font-size: .72rem;
+    font-variant-numeric: tabular-nums;
+    box-shadow: none;
+  }
+
+  .planner-frame {
+    overflow: hidden;
+    border: 1px solid #bcc9d8;
+    border-radius: 0;
+    background: var(--planner-grid-bg);
+    box-shadow: 0 8px 20px -20px rgba(31, 47, 70, .55);
+  }
+
+  .modal-sheet.planner-sheet {
+    --modal-accent: #0056d2;
+    --modal-accent-deep: #003f9e;
+    --modal-accent-soft: #eef5ff;
+    --modal-accent-border: #b9d2f5;
+    --modal-canvas: #fff;
+    --modal-surface: #fff;
+    --modal-ink: #1f1f1f;
+    --modal-muted: #5f6b7a;
+    --modal-line: #d8dee8;
+    border-color: #cbd4df;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: 0 24px 60px -28px rgba(23, 35, 52, .58);
+  }
+
+  .planner-page {
+    background: #fff;
+  }
+
+  .planner-page .modal-ui__header {
+    border-bottom: 1px solid #e1e6ed;
+    box-shadow: none;
+  }
+
+  .planner-page .modal-ui__header::before { display: none; }
+
+  .planner-page .modal-ui__close {
+    border: none;
+    background: transparent;
+    color: #3f4b5d;
+  }
+
+  .planner-page .modal-ui__close:hover {
+    background: transparent;
+    color: var(--planner-deep);
+  }
+
+  .planner-section {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .planner-checkin {
+    padding: .75rem .85rem;
+    border: 1px solid #cfe0f6;
+    border-left: 4px solid var(--planner-accent);
+    border-radius: .22rem;
+    background: #f6f9fe;
+  }
+
+  .planner-checkin__primary,
+  .planner-checkin__secondary { border-radius: .25rem; }
+  .planner-checkin__primary {
+    border: 1px solid var(--planner-accent);
+    background: var(--planner-accent);
+    box-shadow: 0 3px 8px rgba(0, 86, 210, .2);
+  }
+  .planner-checkin__primary:hover { background: var(--planner-deep); }
+  .planner-checkin__secondary {
+    border: 1px solid #cdd5df;
+    background: #fff;
+    color: #465365;
+  }
+  .planner-checkin__secondary:hover { border-color: #9ba8b8; background: #f5f7fa; }
+
+  /* Zones fonctionnelles : un seul cadre lisible, sans boîtes imbriquées. */
+  .planner-zone {
+    overflow: hidden;
+    border: 1px solid #ccd5e0;
+    border-radius: .3rem;
+    background: #fff;
+    box-shadow: 0 7px 18px -18px rgba(31, 47, 70, .5);
+  }
+
+  .planner-zone__header {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    min-height: 52px;
+    padding: .22rem .32rem .22rem .72rem;
+    background: #f6f8fa;
+  }
+
+  .planner-zone__toggle {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    min-height: 44px;
+    align-items: center;
+    gap: .55rem;
+    padding: 0 .25rem;
+    border-radius: .3rem;
+    text-align: left;
+  }
+
+  .planner-zone__toggle:hover { background: #edf3fb; }
+  .planner-zone__toggle:focus-visible,
+  .planner-zone__close:focus-visible,
+  .planner-zone__remove:focus-visible {
+    outline: 2px solid rgba(0, 86, 210, .48);
+    outline-offset: 1px;
+  }
+
+  .planner-zone__title {
+    min-width: 0;
+    overflow: hidden;
+    color: #1f1f1f;
+    font-size: .83rem;
+    font-weight: 750;
+    letter-spacing: -.005em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .planner-zone__summary {
+    margin-left: auto;
+    color: #526071;
+    font-size: .7rem;
+    font-weight: 650;
+    white-space: nowrap;
+  }
+
+  .planner-zone__chevron {
+    flex-shrink: 0;
+    color: var(--planner-accent);
+    transition: transform .25s ease;
+  }
+
+  .planner-zone__actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .planner-zone__close,
+  .planner-zone__remove {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: .35rem;
+    transition: background-color .16s ease, color .16s ease;
+  }
+
+  .planner-zone__close { color: #66748a; }
+  .planner-zone__close:hover { background: #e9eff8; color: #263750; }
+  .planner-zone__remove {
+    gap: .35rem;
+    padding: 0 .55rem;
+    color: #b33b35;
+    font-size: .75rem;
+    font-weight: 700;
+  }
+  .planner-zone__remove:hover { background: #fff0ef; color: #8f2f28; }
+
+  .planner-zone__body { padding: .6rem .82rem .82rem; }
+
+  .planner-quick-add { display: none; }
+
+  @media (max-width: 1100px) {
+    .planner-page .app-page__nav-gap { padding-bottom: 1.25rem; }
+
+    .planner-quick-add {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 7.25rem auto;
+      align-items: end;
+      gap: .5rem;
+      margin: 0 0 .7rem;
+      padding: .55rem;
+      border: 1px solid #d6dee8;
+      border-radius: .28rem;
+      background: #f6f8fa;
+    }
+
+    .planner-quick-add label {
+      display: grid;
+      gap: .25rem;
+      min-width: 0;
+      color: #526071;
+      font-size: .66rem;
+      font-weight: 700;
+    }
+
+    .planner-quick-add select,
+    .planner-quick-add input {
+      width: 100%;
+      min-width: 0;
+      min-height: 44px;
+      padding: 0 .7rem;
+      border: 1px solid #c8d1dd;
+      border-radius: .22rem;
+      background: #fff;
+      color: #172033;
+      font-size: .82rem;
+      font-weight: 650;
+      outline: none;
+    }
+
+    .planner-quick-add select:focus,
+    .planner-quick-add input:focus {
+      border-color: var(--planner-accent);
+      box-shadow: 0 0 0 3px var(--planner-soft);
+    }
+
+    .planner-quick-add button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .35rem;
+      min-height: 44px;
+      padding: 0 1rem;
+      border: 0;
+      border-radius: .22rem;
+      background: var(--planner-accent);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 750;
+      transition: background-color .16s ease, transform .16s ease;
+    }
+
+    .planner-quick-add button:active { transform: scale(.98); }
+  }
+
+  @media (max-width: 479px) {
+    .planner { --planner-row-h: 0.65rem; }
+    .planner-quick-add { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .planner-quick-add button { grid-column: 1 / -1; }
+    .planner .planner-legend { display: none; }
+    .planner-zone__header { padding-left: .48rem; }
+    .planner-zone__summary { display: none; }
+    .planner-zone__body { padding: .55rem .65rem .72rem; }
+  }
+
+  @media (max-width: 1100px) and (max-height: 820px) {
+    .planner { --planner-row-h: 0.62rem; }
+    .planner-quick-add { margin-bottom: .4rem; padding-block: .4rem; }
+  }
+
+  /* La page reste défilable pour les réglages sous le calendrier, mais sans
+     rail visuel : la grille temporelle principale tient entièrement à l'écran. */
+  .planner-page .app-page__scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .planner-page .app-page__scroll::-webkit-scrollbar { display: none; }
+
+  .planner-cal {
+    display: grid;
+    grid-template-columns: var(--planner-gutter) repeat(7, minmax(0, 1fr));
+    position: relative;
+    background: var(--planner-grid-bg);
+  }
+
+  /* L'ensemble de la journée reste visible : aucun défilement interne. */
+  .planner-cal__head {
+    z-index: 3;
+    background: #f5f7fa;
+    border-bottom: 1px solid #cfd8e4;
+  }
+
+  .planner-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.05rem;
+    padding: 0.4rem 0 0.42rem;
+    min-height: 2.85rem;
+    justify-content: center;
+    line-height: 1.1;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+    transition: background-color .18s ease;
+  }
+
+  .planner-day:hover { background: #edf3fb; }
+  .planner-day[data-today='true'] {
+    background: #e7f0fd;
+    box-shadow: inset 0 3px 0 var(--planner-accent);
+  }
+  .planner-day[data-on='true'] .planner-day__abbr,
+  .planner-day[data-on='true'] .planner-day__name { color: #334155; font-weight: 750; }
+
+  .planner-day__abbr,
+  .planner-day__name {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #64748b;
+  }
+  .planner-day__name { display: none; }
+  .planner-day__dur { font-size: 0.62rem; font-weight: 750; color: var(--planner-accent); font-variant-numeric: tabular-nums; }
+  .planner-day__split { margin-left: 0.1rem; opacity: .7; }
+  .planner-day__off { font-size: 0.62rem; color: #b8c0c8; }
+
+  @media (min-width: 640px) {
+    .planner-day__abbr { display: none; }
+    .planner-day__name { display: block; font-size: 0.7rem; }
+    .planner-day__dur, .planner-day__off { font-size: 0.68rem; }
+  }
+
+  /* Colonne des heures. */
+  .planner-hour {
+    grid-column: 1;
+    height: var(--planner-row-h);
+    padding-right: 0.3rem;
+    text-align: right;
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #64748b;
+    background: #f5f7fa;
+    border-right: 1px solid #cfd8e4;
+    font-variant-numeric: tabular-nums;
+    transform: translateY(-0.35em);
+  }
+  @media (min-width: 640px) { .planner-hour { font-size: 0.66rem; } }
+
+  /* Cellule cliquable : une demi-heure d'un jour. */
+  .planner-cell {
+    height: var(--planner-row-h);
+    border-left: 1px solid var(--planner-grid-line);
+    border-top: 0;
+    padding: 0;
+    background: var(--planner-grid-bg);
+    cursor: pointer;
+    transition: background-color .12s ease;
+  }
+  .planner-cell:hover { background: #edf3fb; }
+  .planner-cell[data-today='true'] { background: #eef4fc; }
+  .planner-cell[data-today='true']:hover { background: #e2edfb; }
+
+  /* Bloc de séance posé sur la grille. */
+  .planner-block {
+    position: relative;
+    z-index: 2;
+    margin: 1px 2.5px;
+    padding: 0.12rem 0.34rem;
+    border: 1px solid rgba(255, 255, 255, .42);
+    border-radius: 0.14rem;
+    background: var(--planner-accent);
+    color: #fff;
+    text-align: left;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 3px 7px rgba(0, 63, 158, .25);
+    transition: filter .16s ease, outline-color .16s ease, box-shadow .16s ease;
+    outline: 2px solid transparent;
+    outline-offset: 1px;
+  }
+  .planner-block:hover { filter: brightness(1.06) saturate(1.08); }
+  .planner-block[data-selected='true'] {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--planner-deep), 0 4px 9px rgba(0, 63, 158, .28);
+  }
+  .planner-block[data-past='true'] {
+    border-color: rgba(255, 255, 255, .5);
+    background: #7f8da3;
+    box-shadow: 0 2px 5px rgba(71, 85, 105, .2);
+  }
+  .planner-block[data-done='true'] {
+    border-color: rgba(255, 255, 255, .45);
+    background: var(--planner-done);
+    box-shadow: 0 3px 7px rgba(35, 130, 75, .25);
+  }
+
+  .planner-block__time { display: block; font-size: 0.6rem; font-weight: 800; line-height: 1.15; font-variant-numeric: tabular-nums; text-shadow: 0 1px 1px rgba(15, 23, 42, .2); }
+  .planner-block__focus { display: block; font-size: 0.58rem; font-weight: 600; line-height: 1.15; opacity: .96; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  @media (min-width: 640px) {
+    .planner-block__time { font-size: 0.66rem; }
+    .planner-block__focus { font-size: 0.62rem; }
+  }
+
+  /* Filet « maintenant » : repère temporel, sans interaction. */
+  .planner-now {
+    position: relative;
+    z-index: 4;
+    height: 0;
+    pointer-events: none;
+    border-top: 2px solid var(--planner-now-color);
+  }
+  .planner-now::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: -4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--planner-now-color);
+  }
+
+  .planner-legend {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .8rem;
+    min-height: 1.75rem;
+    padding: .42rem .15rem 0;
+    color: #748096;
+    font-size: .65rem;
+    font-weight: 600;
+  }
+
+  .planner-legend span { display: inline-flex; align-items: center; gap: .3rem; }
+  .planner-legend__dot { width: .48rem; height: .48rem; border-radius: .18rem; }
+  .planner-legend__dot--planned { background: var(--planner-accent); }
+  .planner-legend__dot--done { background: var(--planner-done); }
+  .planner-legend__line { width: .8rem; border-top: 2px solid var(--planner-now-color); }
+
+  @media (max-width: 420px) {
+    .planner-overview__hint { display: none; }
+    .planner-overview__stats { gap: .25rem; padding-left: .45rem; }
+  }
+}

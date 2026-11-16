@@ -1,0 +1,2862 @@
+/* ═══ CORE REVEAL — Math sizing inside definition / theorem / property ═══ */
+
+.core-reveal-content-balance {
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif));
+}
+
+.core-reveal-content-balance .math-renderer {
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif));
+  font-size: 100%;
+  line-height: var(--revision-box-leading, 1.74);
+}
+
+.core-reveal-content-balance .math-renderer .katex {
+  font-size: 120%;
+}
+
+.core-reveal-content-balance .math-renderer .katex-display > .katex {
+  font-size: 130%;
+}
+
+/* Box blocks: math formulas are globally amplified (+12%) */
+.box-block-math-boost .katex {
+  font-size: 112%;
+}
+
+.property-math-boost .katex {
+  font-size: 115%;
+}
+
+.text-block-body .math-renderer {
+  margin-top: -0.1rem;
+}
+
+.text-block-body .math-renderer > *:first-child {
+  margin-top: 0;
+}
+
+/* ═══ VARIATION TABLES (KaTeX Arrays) ═══ */
+.math-renderer .katex .array {
+  border-collapse: collapse;
+  margin: 1.5rem auto;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  background: white;
+}
+
+.math-renderer .katex .array > tbody > tr > td {
+  padding: 0.5rem 0.8rem !important;
+  border-color: #cbd5e1 !important; /* slate-300 */
+}
+
+/* Make headers (first column) bolder and slightly tinted */
+.math-renderer .katex .array > tbody > tr > td:first-child {
+  background-color: #f8fafc;
+  font-weight: 600;
+  border-right: 2px solid #94a3b8 !important; /* Thicker right border for first col */
+}
+
+.math-renderer .katex .array > tbody > tr:first-child > td {
+  border-bottom: 2px solid #94a3b8 !important; /* Thicker bottom border for root row */
+}
+
+/* Stylish arrows */
+.math-renderer .katex .mord.accent > span.vlist-t {
+  color: #4b5563;
+}
+
+/* Tombstone de fin de preuve : aligné sur la marge droite, comme en typographie
+   mathématique imprimée. Le float le pose en fin de dernière ligne s'il reste de
+   la place, sinon sur une ligne propre en bas à droite. flow-root contient le
+   float pour qu'il ne déborde pas du bloc. */
+.proof-content {
+  display: flow-root;
+}
+
+.proof-content::after {
+  content: '';
+  display: block;
+  float: right;
+  width: 10px;
+  height: 10px;
+  background-color: #1e293b;
+  /* slate-800 */
+  margin-left: 8px;
+  margin-top: 0.35em;
+}
+
+/* ═══════════════════ REVISION BLOCKS ═══════════════════ */
+
+/* ─── Reveal Card — single merged rule (background + border + scroll margin) ─── */
+.revision-surface {
+  --revision-contour: rgba(84, 106, 123, 0.24);
+  --revision-contour-strong: rgba(84, 106, 123, 0.36);
+  --revision-contour-soft: rgba(255, 255, 255, 0.74);
+  
+  /* Palette Blanc moderne doux avec mix des couleurs sémantiques */
+  --revision-paper: #ffffff;
+  --revision-paper-top: #ffffff;
+  --revision-paper-bottom: #fbfbfb;
+  --revision-paper-warm: rgba(250, 250, 250, 0.4);
+  --revision-paper-border: rgba(0, 0, 0, 0.06);
+  --revision-paper-border-strong: rgba(0, 0, 0, 0.12);
+}
+
+.revision-env {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.revision-env-plain,
+.revision-env-example,
+.revision-env-application {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   CADRE D'ÉTUDE MODERNE & AÉRÉ — Haute Clarté Cognitive
+   Design minimaliste, coins très arrondis, ombres très douces, zéro distraction.
+   ══════════════════════════════════════════════════════════════════════ */
+.revision-reveal-card {
+  background: #ffffff;
+  border: 1px solid var(--mathqst-border, rgba(148, 163, 184, 0.24));
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.025);
+  transition:
+    border-color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 200ms ease;
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif));
+  scroll-margin-top: 120px;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.revision-reveal-card.revision-card-collapsed {
+  padding: var(--rev-fluid-card-pad-y, clamp(12px, calc(10px + 0.5vw), 18px)) var(--rev-fluid-card-pad-x, clamp(14px, calc(11px + 0.85vw), 24px));
+  margin: var(--rev-fluid-card-gap, clamp(0.9rem, calc(0.75rem + 0.7vw), 1.35rem)) auto;
+  border-radius: clamp(14px, 1.4vw, 16px);
+}
+
+.revision-reveal-card.revision-card-expanded {
+  padding: clamp(13px, calc(11px + 0.55vw), 19px) var(--rev-fluid-card-pad-x, clamp(14px, calc(11px + 0.85vw), 24px)) clamp(14px, calc(12px + 0.6vw), 21px);
+  margin: var(--rev-fluid-card-gap, clamp(0.9rem, calc(0.75rem + 0.7vw), 1.35rem)) auto;
+  border-radius: clamp(14px, 1.4vw, 16px);
+  border-color: color-mix(in srgb, var(--mathqst-color, #6b5ce7) 28%, var(--mathqst-border, rgba(148, 163, 184, 0.24)));
+  box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.05);
+}
+
+.revision-reveal-card.revision-card-collapsed:hover {
+  border-color: color-mix(in srgb, var(--mathqst-color, #6b5ce7) 36%, var(--mathqst-border, rgba(148, 163, 184, 0.28)));
+  box-shadow: 0 4px 14px -4px rgba(15, 23, 42, 0.05);
+}
+
+/* Séparatrice supprimée : transition directe sans coupure vers le bout de papier */
+.revision-reveal-divider,
+.revision-reveal-divider.is-visible {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.revision-reveal-divider::before,
+.revision-reveal-divider::after,
+.revision-reveal-divider span {
+  display: none !important;
+}
+
+.revision-reveal-card .math-renderer,
+.revision-reveal-card .math-renderer-inherit {
+  text-wrap: pretty;
+}
+
+.revision-reveal-definition,
+.revision-reveal-property,
+.revision-reveal-theorem {
+  /* Hérite du background color-mix et d'unification de .revision-reveal-card */
+}
+
+.revision-reveal-method {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   MÉTHODE — « HOLO SCAN » futuriste & ultra-léger
+   ══════════════════════════════════════════════════════════════ */
+
+.revision-method-holo,
+.revision-reveal-method .revision-reveal-header h3,
+.revision-block-method .revision-block-header h4 {
+  position: relative;
+  color: #0f172a;
+  font-family: var(--font-display);
+  font-size: calc(var(--rev-fluid-heading, clamp(1.06rem, calc(0.99rem + 0.35vw), 1.34rem)) * var(--reading-doc-scale, 1));
+  font-weight: 620;
+  font-style: normal;
+  letter-spacing: -0.012em;
+  line-height: 1.42;
+  padding-bottom: 0;
+  border-bottom: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.revision-method-holo {
+  display: inline-block;
+}
+
+/* Aucun trait ni ligne en bas sous la question méthode */
+.revision-method-holo::before,
+.revision-method-holo::after {
+  content: none !important;
+  display: none !important;
+}
+
+.revision-method-holo .math-mathqst,
+.revision-method-holo .mathqst-colored,
+.revision-reveal-method .revision-reveal-header h3 .math-mathqst,
+.revision-reveal-method .revision-reveal-header h3 .mathqst-colored {
+  color: inherit !important;
+  font-family: inherit !important;
+  font-style: inherit !important;
+  font-weight: 700 !important;
+}
+
+
+.revision-rappel-header {
+  margin-bottom: 0.95rem;
+}
+
+.revision-rappel-title-shell {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0.1rem 0 0.9rem;
+  padding: 0 0 0 0.6rem;
+  border-left: 2px solid rgba(84, 106, 123, 0.45);
+  background: transparent;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none !important;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
+
+.revision-rappel-title {
+  margin: 0;
+  color: #43596B;
+  font-size: calc(clamp(0.94rem, calc(0.9rem + 0.16vw), 1.06rem) * var(--reading-doc-scale, 1));
+  font-weight: 550;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.revision-reveal-badge {
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.8rem;
+  border: 1px solid color-mix(in srgb, currentColor 12%, rgba(255, 255, 255, 0.8));
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px -4px color-mix(in srgb, currentColor 24%, rgba(15, 23, 42, 0.12));
+  position: relative;
+  overflow: hidden;
+  transition: background-color 180ms ease, box-shadow 200ms ease;
+}
+
+.revision-reveal-badge::before {
+  content: none;
+}
+
+.revision-reveal-badge:hover {
+  box-shadow: 0 4px 12px -4px color-mix(in srgb, currentColor 28%, rgba(15, 23, 42, 0.15));
+}
+
+.revision-reveal-badge-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 500; /* Plus fine et élégant */
+  letter-spacing: 0.22em; /* Majestueux */
+  line-height: 1;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.revision-reveal-badge-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.35rem; /* Espace plus aéré avec le texte */
+  padding: 0; 
+  color: currentColor;
+  background: transparent; 
+  border: none; 
+  border-radius: 0; 
+  font-family: var(--font-display), var(--font-ui); /* Revient au font typo-display (comme le username Dashboard) */
+  font-size: 1.18rem;
+  font-weight: 500;
+  font-style: italic; /* Touche élégante assortie au design texte */
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: none; 
+  transform: translateY(-0.02rem);
+  z-index: 1;
+}
+
+.revision-reveal-title {
+  color: #111827;
+  text-wrap: balance;
+  overflow: visible;
+  position: relative;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.math-block-title {
+  display: block;
+  margin-top: 0.5rem;
+  padding: clamp(0.24rem, 0.5vw, 0.35rem) clamp(0.65rem, 1.2vw, 0.9rem);
+  border-left: 2px solid rgba(217, 119, 6, 0.6);
+  border-radius: 4px;
+  background: linear-gradient(90deg, rgba(217, 119, 6, 0.08), transparent);
+  color: #1e293b;
+  font-family: var(--font-display);
+  font-size: calc(clamp(1.2rem, calc(1.08rem + 0.5vw), 1.55rem) * var(--reading-doc-scale, 1));
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.math-env-header {
+  margin-bottom: 0.85rem;
+  user-select: none;
+  vertical-align: middle;
+  overflow: visible;
+  padding-left: 0.08rem;
+}
+
+.math-env-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0;
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  position: relative;
+  overflow: visible;
+}
+
+.math-env-badge-remark {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgba(91, 84, 118, 0.2);
+  background: linear-gradient(135deg, #fdfdfd, #f1f0f5);
+  color: #5b5476;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  font-size: 0.68rem;
+  font-weight: 650;
+}
+
+.math-env-badge-note {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgba(71, 85, 105, 0.18);
+  background: linear-gradient(135deg, #ffffff, #f1f5f9);
+  color: #475569;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  font-size: 0.68rem;
+  font-weight: 650;
+}
+
+.math-proof-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.math-proof-square {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #94a3b8;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   POINT D'INTERROGATION — Calligraphie Élégante & Rebond Tactile Sans Distraction
+   - Typographie handwriting calligraphique (Caveat / Itim / Cormorant)
+   - Animation d'accueil fluide à l'entrée et au survol/ouverture
+   - Immobile au repos pour préserver la concentration visuelle de l'élève
+   ══════════════════════════════════════════════════════════════ */
+.revision-question-mark,
+.revision-question-mark-linked {
+  display: inline-block !important;
+  font-family: 'Caveat', 'Itim', 'Playpen Sans', 'Cormorant Garamond', cursive, serif !important;
+  font-size: clamp(1.48em, 1.62em, 1.85em) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--mathqst-color, #6851a6) !important;
+  vertical-align: -0.04em !important;
+  margin-inline-start: 0.2em !important;
+  padding: 0 0.05em !important;
+  transform-origin: 50% 88% !important;
+  user-select: none;
+  transition: color 200ms ease;
+}
+
+.revision-question-glyph,
+.revision-question-art,
+.revision-question-char,
+.revision-question-mark-char {
+  display: inline !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-style: normal !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
+
+/* Apparition calme et sobre du point d'interrogation (sans rebond distrayant) */
+.revision-in-view .revision-question-mark,
+.revision-in-view .revision-question-mark-linked {
+  animation: revision-question-entrance-calm 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes revision-question-entrance-calm {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 3px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revision-question-mark,
+  .revision-question-mark-linked,
+  .revision-question-glyph,
+  .revision-question-dot {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@media print {
+  .revision-question-mark,
+  .revision-question-mark-linked,
+  .revision-question-glyph,
+  .revision-question-dot {
+    animation: none !important;
+    transform: none !important;
+    text-shadow: none !important;
+  }
+}
+
+
+.revision-reveal-toggle {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.revision-reveal-toggle-label {
+  color: #6b7280;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  text-shadow: none;
+}
+
+.revision-reveal-toggle:hover .revision-reveal-toggle-label {
+  color: #4b5563;
+}
+
+.revision-reveal-toggle-label.is-open {
+  color: #9ca3af;
+}
+
+.revision-reveal-toggle-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.revision-toggle-dots {
+  color: #b6b8bd;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.revision-reveal-toggle:focus-visible {
+  outline: none;
+}
+
+.revision-reveal-toggle:focus-visible .revision-reveal-toggle-label {
+  color: #374151;
+}
+
+.revision-practice-block {
+  --example-badge-width: 108px;
+  --example-badge-gap: 10px;
+  --example-fuse-lift: clamp(0.08rem, 0.32vw, 0.22rem);
+  --example-question-shift-x: 0rem;
+  --example-question-fine-y: clamp(0.2rem, 0.5vw, 0.36rem);
+}
+
+.revision-course-block {
+  background: transparent !important;
+  border-color: color-mix(in srgb, var(--mathqst-color) 15%, var(--revision-paper-border)) !important;
+  border-right: none !important;
+  border-right-width: 0 !important;
+  box-shadow: none !important;
+  position: relative !important;
+  overflow: visible !important;
+  padding: 0.95rem 1.35rem 0.85rem !important;
+  margin: 1.15rem auto !important;
+}
+
+.revision-course-block:hover {
+  box-shadow: none !important;
+}
+
+.revision-course-block-intro {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Boîte Intuition — Architecture Épurée, Bordure Fine & Relief Calme */
+.revision-course-block-intuition {
+  background: linear-gradient(135deg, #ffffff 0%, #f9f7ff 100%) !important;
+  border: 1px solid rgba(196, 181, 253, 0.55) !important;
+  border-left: 3px solid #7c3aed !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 10px -4px rgba(124, 58, 237, 0.08) !important;
+  width: min(100%, 940px) !important;
+  max-width: 940px !important;
+  margin: clamp(1.2rem, 2.4vw, 1.75rem) auto !important;
+  padding: clamp(1rem, calc(0.85rem + 0.6vw), 1.35rem) clamp(1.1rem, calc(0.9rem + 0.8vw), 1.65rem) !important;
+  overflow: visible !important;
+  transition: border-color 200ms ease, box-shadow 200ms ease !important;
+}
+
+.revision-course-block-intuition:hover {
+  border-color: rgba(139, 92, 246, 0.55) !important;
+  border-left-color: #7c3aed !important;
+  box-shadow: 0 4px 14px -4px rgba(124, 58, 237, 0.12) !important;
+}
+
+/* Boîtes Statiques (Rappel / Note / Synthèse) — Cadres Tactiles Calmes */
+.revision-course-block-rappel {
+  background: var(--mathqst-fill, #f1f3fc) !important;
+  border: 1px solid var(--mathqst-border, #c7d0ef) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 10px -4px rgba(76, 81, 191, 0.06) !important;
+  width: min(100%, 940px) !important;
+  max-width: 940px !important;
+  margin: clamp(1.45rem, 2.8vw, 2.1rem) auto clamp(1.15rem, 2vw, 1.55rem) !important;
+  padding: clamp(1.25rem, calc(1rem + 0.9vw), 1.85rem) clamp(1.1rem, calc(0.88rem + 1vw), 1.85rem) clamp(1.05rem, calc(0.88rem + 0.75vw), 1.55rem) !important;
+  position: relative !important;
+  overflow: visible !important;
+  transition: border-color 200ms ease, box-shadow 200ms ease !important;
+}
+
+.revision-course-block-rappel:hover {
+  border-color: color-mix(in srgb, var(--mathqst-color, #4c51bf) 35%, var(--mathqst-border, #c7d0ef)) !important;
+  box-shadow: 0 4px 14px -4px rgba(76, 81, 191, 0.09) !important;
+}
+
+.revision-course-block-rappel .revision-rappel-header > div:first-child {
+  position: absolute !important;
+  top: clamp(-15px, -1.2vw, -12px) !important;
+  left: clamp(16px, 2vw, 26px) !important;
+  z-index: 5 !important;
+}
+
+.revision-course-block-note,
+.revision-course-block-summary {
+  background: var(--mathqst-fill, #f5f4f8) !important;
+  border: 1px solid var(--mathqst-border, #d5d1e0) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 10px -4px rgba(87, 83, 102, 0.06) !important;
+  width: min(100%, 940px) !important;
+  max-width: 940px !important;
+  margin: clamp(1.45rem, 2.8vw, 2.1rem) auto clamp(1.15rem, 2vw, 1.55rem) !important;
+  padding: clamp(1.25rem, calc(1rem + 0.9vw), 1.85rem) clamp(1.1rem, calc(0.88rem + 1vw), 1.85rem) clamp(1.05rem, calc(0.88rem + 0.75vw), 1.55rem) !important;
+  position: relative !important;
+  overflow: visible !important;
+  transition: border-color 200ms ease, box-shadow 200ms ease !important;
+}
+
+.revision-course-block-note:hover,
+.revision-course-block-summary:hover {
+  border-color: #b8b4c4 !important;
+  box-shadow: 0 4px 14px -4px rgba(87, 83, 102, 0.09) !important;
+}
+
+/* Exercice d'application — Zone teintée aérée & structurée aux quatre coins */
+.revision-course-block-application,
+.revision-block-application,
+.revision-application-block {
+  background: linear-gradient(180deg, rgba(239, 246, 255, 0.78) 0%, rgba(248, 250, 252, 0.94) 100%) !important;
+  border: 1px solid rgba(0, 86, 210, 0.14) !important;
+  box-shadow: 0 2px 12px -4px rgba(0, 86, 210, 0.055), inset 0 1px 0 rgba(255, 255, 255, 0.85) !important;
+  border-radius: 16px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  width: min(100%, 940px) !important;
+  max-width: 940px !important;
+  margin: clamp(1rem, 2vw, 1.45rem) auto !important;
+  overflow: visible;
+  padding: clamp(0.95rem, calc(0.8rem + 0.55vw), 1.35rem) clamp(1.05rem, calc(0.85rem + 0.7vw), 1.55rem) !important;
+  transition: border-color 200ms ease, box-shadow 200ms ease !important;
+}
+
+.revision-course-block.revision-course-block-application {
+  padding: clamp(0.95rem, calc(0.8rem + 0.55vw), 1.35rem) clamp(1.05rem, calc(0.85rem + 0.7vw), 1.55rem) !important;
+}
+
+.revision-course-block-application:hover,
+.revision-block-application:hover,
+.revision-application-block:hover {
+  transform: none !important;
+  border-color: rgba(0, 86, 210, 0.22) !important;
+  box-shadow: 0 4px 16px -4px rgba(0, 86, 210, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.revision-course-block-rappel::before {
+  content: none;
+}
+
+.revision-example-header {
+  display: flex;
+  align-items: center;
+  min-height: 1.85rem;
+  overflow: visible;
+  padding-left: 0.1rem;
+}
+
+.revision-block-header {
+  overflow: visible;
+  padding-left: 0.1rem;
+}
+
+.revision-course-block-example {
+  overflow: visible;
+  padding-left: 0.28rem;
+}
+
+/* Remarque — Décloisonné & Aéré (Non encadré) */
+.revision-course-block-remark,
+.revision-block-remark {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow: visible;
+  padding: 0.4rem 0 !important;
+  transition: none !important;
+}
+
+.revision-course-block-remark:hover,
+.revision-block-remark:hover {
+  transform: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.revision-practice-content,
+.revision-example-content,
+.revision-application-content {
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif));
+  --revision-inline-math-scale: 1.02em;
+  --revision-display-math-scale: 1.06em;
+  color: #1e293b;
+  font-size: var(--revision-box-size, calc(clamp(1.02rem, 1.2vw, 1.09rem) * var(--reading-doc-scale, 1)));
+  line-height: var(--revision-box-leading, 1.74);
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.revision-practice-content .math-renderer,
+.revision-practice-content .math-renderer-inherit,
+.revision-application-content .math-renderer,
+.revision-application-content .math-renderer-inherit {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+}
+
+.revision-practice-content .math-inline-node {
+  font-size: inherit;
+  vertical-align: baseline;
+}
+
+.revision-practice-content .math-inline-node .katex {
+  font-size: var(--revision-inline-math-scale, 1.02em);
+  line-height: 1;
+}
+
+.revision-practice-content .katex {
+  text-rendering: optimizeLegibility;
+}
+
+.revision-practice-content .katex-display > .katex {
+  font-size: var(--revision-display-math-scale, 1.06em);
+  line-height: var(--revision-display-math-leading, 1.34);
+}
+
+.revision-block-example,
+.revision-block-application {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  position: relative;
+  overflow: visible;
+}
+
+.revision-exploration-shell {
+  background: #fcfaf4;
+  border-color: rgba(212, 146, 11, 0.32);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.revision-exploration-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(90deg, rgba(212, 146, 11, 0.72), transparent 14%, transparent 82%, rgba(212, 146, 11, 0.18));
+  opacity: 0.34;
+}
+
+.revision-exploration-shell::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  bottom: 1rem;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #F3C74C, #B8790B);
+  box-shadow: 0 0 20px rgba(212, 146, 11, 0.22);
+}
+
+.revision-exploration-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.revision-exploration-shell:hover {
+  border-color: rgba(212, 146, 11, 0.5);
+  box-shadow: none;
+}
+
+.revision-exploration-content .math-renderer,
+.revision-exploration-content .math-renderer-inherit {
+  text-wrap: pretty;
+  line-height: 1.76;
+}
+
+.revision-block-application.revision-application-has-question .revision-application-content .math-question {
+  margin-top: calc(-1 * var(--example-fuse-lift));
+  margin-bottom: 0.2rem;
+  justify-self: start;
+  align-self: start;
+  margin-left: 0;
+  transform: translateX(-0.08rem);
+}
+
+/* Collapse spacers right after \question in applications */
+.revision-application-content .math-question + .block.w-full {
+  height: 0.15em;
+}
+
+.revision-section-index-dot {
+  display: inline-block;
+  margin-left: 0.05em;
+  font-family: var(--font-paragraph-number, var(--font-majestic, 'History Channel', 'History Channels', 'History', 'Franklin Gothic Heavy', 'Franklin Gothic Bold', 'Franklin Gothic Medium', 'Franklin Gothic', 'Cinzel Decorative', 'Cinzel', 'Trajan Pro', 'Trajan', serif, sans-serif));
+  font-style: normal;
+  font-weight: 700;
+  color: #ca8a04;
+  text-shadow: none;
+  filter: none;
+}
+
+.revision-example-content .math-question {
+  margin-bottom: 0.2rem;
+  margin-top: 0.35rem;
+}
+
+.revision-block-application .revision-application-content .math-question {
+  display: block;
+  padding: 0.2rem 0;
+  color: #1e293b;
+  margin: 0.4rem 0 0.25rem;
+}
+
+.revision-block-application .revision-application-content .math-question::before {
+  content: none;
+}
+
+.revision-block-application .revision-application-content .math-question-body {
+  min-width: 0;
+}
+
+.revision-block-application .revision-application-content .math-question + .math-question {
+  margin-top: 0.35rem;
+  padding-top: 0;
+}
+
+.revision-application-correction-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0.9rem 0 0.7rem;
+  color: #64748b;
+}
+
+.revision-application-correction-divider::before,
+.revision-application-correction-divider::after {
+  content: '';
+  flex: 1 1 0;
+  height: 0;
+  border-top: 1.5px dotted rgba(100, 116, 139, 0.48);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.revision-application-correction-divider span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 0 0.18rem;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font-family: var(--font-ui);
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.revision-correction-toggle-label {
+  position: relative;
+  display: inline-block;
+}
+
+.revision-correction-chevron {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.revision-example-content > :first-child {
+  margin-top: 0;
+}
+
+.revision-example-content .math-renderer > :first-child {
+  margin-top: 0;
+}
+
+.revision-example-block-content .katex-display {
+  background: none;
+  box-shadow: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0.55rem clamp(0.4rem, 1.4vw, 1rem);
+  margin: 1rem auto;
+  display: block;
+  text-align: center;
+  overflow: visible;
+  max-width: 100%;
+}
+
+.revision-practice-content .math-display-node {
+  max-width: 100%;
+  min-width: 0;
+  overflow: visible;
+  padding-block: 0.12rem 0.18rem;
+  display: flex;
+  justify-content: center;
+}
+
+.revision-practice-content .math-display-node > span {
+  max-width: 100%;
+}
+
+.revision-application-content .math-display-node,
+.revision-application-content .katex-display {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.revision-application-content .katex-display {
+  background: none;
+  box-shadow: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0.5rem clamp(0.4rem, 1vw, 0.75rem);
+  margin: 0.75rem auto;
+  display: block;
+  text-align: center;
+  overflow: visible;
+  max-width: 100%;
+}
+
+.revision-practice-content .katex-display > .katex {
+  transition: none;
+  transform-origin: center center;
+}
+
+.revision-practice-content .katex-display.math-display-fitted {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  /* ── Cadre élégant & adaptatif sur mobile (Samsung One UI / Google Pixel) ── */
+  .revision-reveal-card {
+    border-radius: 15px !important;
+    background: #ffffff !important;
+    border: 1px solid var(--mathqst-border, rgba(148, 163, 184, 0.22)) !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* ── Badges sobres style notebook sur mobile ── */
+  .revision-reveal-card .revision-reveal-badge-row,
+  .revision-course-block-warning .revision-warning-header {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    margin: 0 0 10px 0 !important;
+    pointer-events: auto !important;
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+  }
+
+  /* ── En-tête de carte & alignement naturel sur mobile ── */
+  .revision-reveal-header {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: start !important;
+    gap: 0.55rem !important;
+    min-height: 2rem !important;
+  }
+
+  .revision-reveal-header h3,
+  .revision-reveal-method .revision-reveal-header h3,
+  .revision-block-method .revision-block-header h4,
+  .revision-method-holo {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Zone tactile étendue (touch target 44px min pour les doigts sur Android) */
+  .revision-reveal-toggle::before,
+  .revision-correction-toggle::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    bottom: -8px;
+    left: -8px;
+    right: -8px;
+  }
+
+  .revision-reveal-content-shell p,
+  .revision-reveal-content-shell .latex-text,
+  .revision-reveal-content-shell .math-paragraph {
+    margin-bottom: 0.85rem !important;
+    line-height: 1.78 !important;
+  }
+
+  .revision-reveal-content-shell ul,
+  .revision-reveal-content-shell ol {
+    margin: 0.8rem 0 0.8rem 1.15rem !important;
+    padding-left: 0.15rem !important;
+  }
+
+  .revision-reveal-content-shell .katex-display {
+    margin: 0.9rem 0 !important;
+  }
+
+  .revision-practice-content,
+  .revision-application-content,
+  .revision-example-content,
+  .text-block-body {
+    text-align: left !important;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  /* Défilement fluide & sans débordement pour les formules mathématiques KaTeX */
+  .revision-surface .math-display-node,
+  .revision-surface .katex-display {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    overscroll-behavior-inline: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x pan-y !important;
+    scrollbar-width: thin;
+    padding: 0.35rem 0.15rem !important;
+    margin-block: 0.65rem !important;
+  }
+
+  .revision-surface .katex-display > .katex {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .revision-surface .math-inline-node {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .revision-application-content .katex-display {
+    padding: 0.35rem 0.15rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .revision-reveal-card .revision-reveal-badge-row,
+  .revision-course-block-warning .revision-warning-header {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    margin: 0 0 10px 0 !important;
+    pointer-events: auto !important;
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revision-reveal-card,
+  .revision-course-block,
+  .revision-correction-toggle {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   VISUAL-CARD — Textbook-style figure boxes (VisualRenderer)
+   ══════════════════════════════════════════════════════════════ */
+
+.visual-card {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.65rem 0.85rem 0.55rem;
+  border-radius: 0;
+  background: #f5f7f7;
+  border: 1px solid rgba(203,213,225,0.45);
+  box-shadow: none;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.visual-card:hover {
+  border-color: rgba(148,163,184,0.55);
+  box-shadow: none;
+}
+
+.visual-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(226,232,240,0.5);
+  margin-bottom: 0.25rem;
+}
+
+.visual-card__badge {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  padding: 0.1rem 0.45rem;
+  background: rgba(241,245,249,0.8);
+  border: 1px solid rgba(203,213,225,0.4);
+  border-radius: 0.25rem;
+}
+
+.visual-card__count {
+  font-family: var(--font-mono-ui);
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: 0.03em;
+}
+
+.visual-card__legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding-top: 0.25rem;
+  border-top: 1px solid rgba(226,232,240,0.4);
+}
+
+.visual-card__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.visual-card__legend-dot {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  border: 1px solid;
+  flex-shrink: 0;
+}
+
+.visual-card__legend-text {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.visual-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  color: #94a3b8;
+  padding-top: 0.2rem;
+}
+
+.visual-card__footer strong {
+  color: #64748b;
+  font-weight: 700;
+}
+
+.visual-card__footer-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.2rem;
+  background: rgba(241,245,249,0.8);
+  border: 1px solid rgba(203,213,225,0.3);
+  font-size: 0.58rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+.visual-card--tree {
+  max-width: 100%;
+}
+
+.visual-card--grid {
+  background: rgba(255,255,255,0.7);
+}
+
+/* ═══ MOBILE OVERRIDES ═══ */
+
+@media (max-width: 768px) {
+  .revision-hero {
+    margin-bottom: clamp(1.25rem, 3.5vw, 1.75rem);
+  }
+
+  .revision-hero-inner {
+    padding: clamp(0.45rem, 1.5vw, 0.75rem) 0.2rem;
+  }
+
+  .revision-hero-eyebrow {
+    font-size: calc(clamp(0.64rem, calc(0.6rem + 0.14vw), 0.72rem) * var(--reading-doc-scale, 1));
+    letter-spacing: 0.3em;
+    margin-bottom: 0.32rem;
+  }
+
+  .revision-practice-block {
+    --example-badge-width: 102px;
+    --example-badge-gap: 10px;
+    --example-fuse-lift: clamp(0.04rem, 1.1vw, 0.18rem);
+    --example-question-shift-x: 0rem;
+    --example-question-fine-y: clamp(0.16rem, 0.72vw, 0.3rem);
+  }
+
+  .revision-block-application.revision-application-has-question .revision-application-content .math-question {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0.2rem;
+    margin-top: calc(-1 * var(--example-fuse-lift));
+    transform: none;
+  }
+
+  .revision-block-application.revision-application-has-question .revision-application-content .math-question::before {
+    content: none;
+    display: none;
+  }
+}
+
+/* ═══ INTRO PORTRAIT ═══ */
+.intro-portrait {
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 240ms ease;
+}
+
+.intro-portrait:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px -4px rgba(15, 23, 42, 0.12);
+}
+
+/* ═══ INTRO DASHED BORDER — Modern styled ═══ */
+.intro-dashed-border {
+  border: none;
+  background-image:
+    repeating-linear-gradient(0deg,   transparent, transparent 6px, #d4b87a55 6px, #d4b87a55 12px),
+    repeating-linear-gradient(90deg,  transparent, transparent 6px, #d4b87a55 6px, #d4b87a55 12px),
+    repeating-linear-gradient(180deg, transparent, transparent 6px, #d4b87a55 6px, #d4b87a55 12px),
+    repeating-linear-gradient(270deg, transparent, transparent 6px, #d4b87a55 6px, #d4b87a55 12px);
+  background-size: 1.5px 100%, 100% 1.5px, 1.5px 100%, 100% 1.5px;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
+}
+
+/* ═══ HIGHLIGHT TEXT EFFECT ═══ */
+.highlight-text {
+  width: fit-content;
+  padding: 6px 12px;
+  position: relative;
+  font-family: var(--font-display) !important;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.highlight-text::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 3px 5px 3px 5px;
+  background: 
+    conic-gradient(at 0 100%, rgb(var(--mark-color) / 100%) 1% , #fff0 3%) no-repeat 0 0 / auto 120%,
+    conic-gradient(from 180deg at 100% 0, #fff0, rgb(var(--mark-color) / 100%) 1%, #fff0 4%) no-repeat 100% 100% / auto 120%,
+    linear-gradient(var(--mark-bg-angle), rgb(var(--mark-color) / 60%), rgb(var(--mark-color) / 20%) 75%, rgb(var(--mark-color) / 55%)) no-repeat center / auto;
+}
+
+.highlight-yellow::before {
+  rotate: 1deg;
+  scale: 1.1;
+  transform: skew(-5deg);
+  --mark-color: 255 232 62;
+  --mark-bg-angle: 50deg;
+}
+
+.highlight-green::before {
+  scale: 0.92;
+  transform: skew(7deg);
+  --mark-color: 91 233 92;
+  --mark-bg-angle: 30deg;
+}
+
+.highlight-red::before {
+  rotate: 0.5deg;
+  transform: skew(5deg);
+  --mark-color: 255 100 185;
+  --mark-bg-angle: 150deg;
+}
+
+:root {
+  --badge-bg-fallback: #ffffff;
+}
+
+/* Badges — Pastille Sobre Style Notebook */
+.revision-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(5px, 0.6vw, 7px) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif !important;
+  font-size: calc(var(--rev-fluid-badge-font, clamp(0.64rem, calc(0.61rem + 0.1vw), 0.74rem)) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase;
+  padding: var(--rev-fluid-badge-pad-y, clamp(3px, 0.35vw, 5px)) var(--rev-fluid-badge-pad-x, clamp(9px, calc(8px + 0.35vw), 13px)) !important;
+  height: auto !important;
+  min-height: var(--rev-fluid-badge-min-h, clamp(23px, calc(21px + 0.38vw), 28px)) !important;
+  border-radius: 100px !important;
+  background: var(--mathqst-fill-soft, #f0edff) !important;
+  color: var(--mathqst-color, #6b5ce7) !important;
+  border: 1px solid var(--mathqst-border, rgba(107, 92, 231, 0.18)) !important;
+  box-shadow: 0 1px 2px rgba(107, 92, 231, 0.04) !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
+  cursor: default !important;
+  user-select: none !important;
+  pointer-events: auto !important;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.24s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* Aucun balayage lumineux distrayant */
+.revision-badge::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SYSTÈME D'ANIMATION CALME — Courbe Apple / Google Ease-Out (sans rebond)
+   ══════════════════════════════════════════════════════════════════════════ */
+:root {
+  --rev-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --rev-ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Le badge est toujours visible avec son élévation élégante */
+.revision-reveal-card .revision-badge,
+.revision-course-block-warning .revision-badge {
+  opacity: 1 !important;
+}
+
+/* 0. Apparition calme et linéaire (sans rebond ni perspective 3D) */
+@keyframes revision-card-artistic-entrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.revision-reveal-card.revision-in-view,
+.revision-course-block.revision-in-view {
+  animation: revision-card-artistic-entrance 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes revision-content-rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 5px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.revision-badge::after,
+.revision-badge:hover::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Survol sobre : teinte douce sans saut ni décalage */
+.revision-badge:hover {
+  transition: background-color 180ms ease, border-color 180ms ease;
+  background: color-mix(in srgb, var(--mathqst-color, #6b5ce7) 13%, #ffffff) !important;
+  border-color: color-mix(in srgb, var(--mathqst-color, #6b5ce7) 30%, transparent) !important;
+}
+
+/* Badge-bouton (clic = afficher / masquer la boîte) */
+.revision-reveal-card .revision-badge.revision-badge-toggle {
+  cursor: pointer !important;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.revision-reveal-card .revision-badge.revision-badge-toggle:focus-visible {
+  outline: 2px solid var(--mathqst-color, #6b5ce7);
+  outline-offset: 2px;
+}
+
+.revision-reveal-card .revision-badge.revision-badge-toggle:active {
+  transform: scale(0.985) !important;
+  transition-duration: 80ms !important;
+}
+
+.revision-badge-chevron {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  margin-left: 2px;
+  opacity: 0.75;
+  transform-origin: 50% 50%;
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), opacity 180ms ease;
+}
+
+.revision-card-expanded .revision-badge-chevron {
+  transform: rotate(180deg);
+  opacity: 0.95;
+}
+
+.revision-reveal-card .revision-badge.revision-badge-toggle[aria-expanded='true'] {
+  background: color-mix(in srgb, var(--mathqst-color, #6b5ce7) 12%, #ffffff) !important;
+  border-color: color-mix(in srgb, var(--mathqst-color, #6b5ce7) 34%, transparent) !important;
+}
+
+.revision-reveal-card.revision-card-expanded::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Grille de déploiement fluide (courbe Apple/Google ease-out sans overshoot) */
+.revision-reveal-grid,
+.revision-reveal-body-grid {
+  transition:
+    grid-template-rows 340ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 260ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.revision-reveal-card.revision-card-expanded .revision-reveal-content-shell {
+  animation: revision-content-rise 260ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revision-badge,
+  .revision-badge::after,
+  .revision-badge > span,
+  .revision-badge-chevron,
+  .revision-reveal-card,
+  .revision-reveal-card::before,
+  .revision-reveal-body-grid,
+  .revision-reveal-card .revision-reveal-header,
+  .revision-reveal-card .revision-reveal-content-shell,
+  .revision-reveal-card .revision-question-mark {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.revision-badge-number {
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: currentColor !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  margin-left: 0.28rem !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border: none !important;
+  font-variant-numeric: tabular-nums !important;
+  vertical-align: baseline !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BADGES DE BOX RÉVISION — Style Notebook Sobre & Haute Lisibilité
+   Badges compacts en pilule, intégrés naturellement au-dessus du titre,
+   couleurs douces et clarté visuelle apaisante.
+   ══════════════════════════════════════════════════════════════ */
+.revision-reveal-card .revision-reveal-badge-row {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  z-index: 4 !important;
+  margin: 0 0 14px 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  line-height: 1 !important;
+  pointer-events: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+}
+
+.revision-reveal-card .revision-badge {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: clamp(5px, 0.6vw, 7px) !important;
+  height: auto !important;
+  min-height: var(--rev-fluid-badge-min-h, clamp(23px, calc(21px + 0.38vw), 28px)) !important;
+  padding: var(--rev-fluid-badge-pad-y, clamp(3px, 0.35vw, 5px)) var(--rev-fluid-badge-pad-x, clamp(9px, calc(8px + 0.35vw), 13px)) !important;
+  background: var(--mathqst-fill-soft, #f0edff) !important;
+  border: 1px solid var(--mathqst-border, rgba(107, 92, 231, 0.18)) !important;
+  border-radius: 100px !important;
+  color: var(--mathqst-color, #6b5ce7) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif !important;
+  font-size: calc(var(--rev-fluid-badge-font, clamp(0.64rem, calc(0.61rem + 0.1vw), 0.74rem)) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+  box-shadow: 0 1px 2px rgba(107, 92, 231, 0.04) !important;
+  transform: none !important;
+  margin-bottom: 0 !important;
+  cursor: default !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  pointer-events: auto !important;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease !important;
+}
+
+.revision-reveal-card .revision-badge:hover {
+  background: color-mix(in srgb, var(--mathqst-color, #6b5ce7) 13%, #ffffff) !important;
+  border-color: color-mix(in srgb, var(--mathqst-color, #6b5ce7) 30%, transparent) !important;
+  box-shadow: none !important;
+}
+
+.revision-reveal-card .revision-badge::before {
+  content: none !important;
+  display: none !important;
+}
+
+.revision-reveal-card .revision-badge .revision-badge-number {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: 700 !important;
+  color: currentColor !important;
+  background: transparent !important;
+  margin-left: 0.28rem !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.revision-reveal-header {
+  min-height: 1.6rem;
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.revision-reveal-header h3,
+.revision-block-header h4,
+.revision-title-text,
+.revision-text-question {
+  color: #0f172a !important;
+  font-family: var(--font-display, var(--font-editorial-text, var(--font-ui))) !important;
+  font-size: calc(var(--rev-fluid-heading, clamp(1.06rem, calc(0.99rem + 0.35vw), 1.34rem)) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 600 !important;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+/* Ensure inline math/text wrappers and mathqst emphasis inside headings inherit display font cleanly */
+.revision-reveal-header h3 :is(.math-renderer, .math-renderer-flow, .math-renderer-inherit, .latex-text, .math-paragraph, p, .math-mathqst, .mathqst-colored),
+.revision-block-header h4 :is(.math-renderer, .math-renderer-flow, .math-renderer-inherit, .latex-text, .math-paragraph, p, .math-mathqst, .mathqst-colored),
+.revision-title-text :is(.math-renderer, .math-renderer-flow, .math-renderer-inherit, .latex-text, .math-paragraph, p, .math-mathqst, .mathqst-colored),
+.revision-text-question :is(.math-renderer, .math-renderer-flow, .math-renderer-inherit, .latex-text, .math-paragraph, p, .math-mathqst, .mathqst-colored) {
+  font-family: inherit !important;
+}
+
+.revision-reveal-header h3 .math-mathqst,
+.revision-reveal-header h3 .mathqst-colored,
+.revision-block-header h4 .math-mathqst,
+.revision-block-header h4 .mathqst-colored,
+.revision-title-text .math-mathqst,
+.revision-title-text .mathqst-colored,
+.revision-text-question .math-mathqst,
+.revision-text-question .mathqst-colored {
+  color: inherit !important;
+  font-weight: 700 !important;
+  font-size: inherit !important;
+}
+
+.revision-reveal-header h3 .katex,
+.revision-block-header h4 .katex,
+.revision-title-text .katex,
+.revision-text-question .katex {
+  color: #0f172a !important;
+}
+
+/* Strictly prevent rogue lexicon badges from appearing inside titles */
+.revision-reveal-header .mathflow-lexicon-term,
+.revision-block-header .mathflow-lexicon-term,
+.revision-title-text .mathflow-lexicon-term,
+.revision-text-question .mathflow-lexicon-term,
+.revision-badge .mathflow-lexicon-term,
+h3 .mathflow-lexicon-term,
+h4 .mathflow-lexicon-term {
+  background: transparent !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  cursor: default !important;
+}
+
+.revision-application-header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-bottom: 0.75rem !important;
+  direction: ltr !important;
+  width: 100% !important;
+}
+
+.revision-application-header > div:first-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BADGE EXERCICE D'APPLICATION — Pilule claire contrastée (#0056d2)
+   Épurée, lisible sur la zone azur, typographie cohérente
+   ══════════════════════════════════════════════════════════════ */
+.revision-badge-application,
+.revision-application-header .revision-badge,
+.revision-course-block-application .revision-badge,
+.revision-block-application .revision-badge {
+  background: #ffffff !important;
+  background-image: none !important;
+  color: #0056d2 !important;
+  border: 1px solid rgba(0, 86, 210, 0.24) !important;
+  border-radius: 9999px !important;
+  padding: var(--rev-fluid-badge-pad-y, clamp(3px, 0.35vw, 5px)) var(--rev-fluid-badge-pad-x, clamp(9px, calc(8px + 0.35vw), 13px)) !important;
+  height: auto !important;
+  min-height: var(--rev-fluid-badge-min-h, clamp(23px, calc(21px + 0.38vw), 28px)) !important;
+  gap: 5px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif !important;
+  font-size: calc(var(--rev-fluid-badge-font, clamp(0.64rem, calc(0.61rem + 0.1vw), 0.74rem)) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 1px 2px rgba(0, 86, 210, 0.06) !important;
+  margin-left: 0 !important;
+  align-self: flex-start !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+.revision-badge-application span,
+.revision-badge-application .revision-badge-label,
+.revision-application-header .revision-badge span,
+.revision-course-block-application .revision-badge span,
+.revision-block-application .revision-badge span {
+  color: #0056d2 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif !important;
+  font-weight: 650 !important;
+  font-size: inherit !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.revision-badge-application .revision-badge-number,
+.revision-application-header .revision-badge .revision-badge-number,
+.revision-course-block-application .revision-badge .revision-badge-number,
+.revision-block-application .revision-badge .revision-badge-number {
+  background: transparent !important;
+  color: #0041a8 !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  padding: 0 !important;
+  margin-left: 0.28rem !important;
+  box-shadow: none !important;
+  border: none !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   WARNING BLOCK ('ATTENTION') — Cadre serré, sans badge, style titre tiret
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.revision-course-block-warning {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: var(--rev-fluid-card-gap, clamp(0.9rem, calc(0.75rem + 0.7vw), 1.35rem)) auto !important;
+  padding: clamp(11px, calc(9px + 0.45vw), 16px) clamp(14px, calc(11px + 0.7vw), 20px) !important;
+  background: #fff8f9 !important;
+  border: 1px solid rgba(225, 29, 72, 0.2) !important;
+  border-radius: clamp(12px, 1.2vw, 15px) !important;
+  box-shadow: 0 2px 8px -4px rgba(225, 29, 72, 0.06) !important;
+  color: #9f1239 !important;
+  position: relative !important;
+  overflow: visible !important;
+  transition:
+    box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 180ms ease !important;
+}
+
+.revision-course-block-warning:hover {
+  border-color: rgba(225, 29, 72, 0.3) !important;
+  box-shadow: 0 4px 12px -4px rgba(225, 29, 72, 0.09) !important;
+}
+
+/* En-tête sobre sans badge, style titre tiret */
+.revision-course-block-warning .revision-warning-header {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 7px !important;
+  z-index: 4 !important;
+  margin-bottom: 6px !important;
+  line-height: 1.25 !important;
+  pointer-events: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+}
+
+.revision-warning-label {
+  font-family: var(--font-display, var(--font-editorial-text, var(--font-ui))) !important;
+  font-size: calc(clamp(0.72rem, calc(0.68rem + 0.12vw), 0.82rem) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #be123c !important;
+  line-height: 1.2 !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.revision-warning-separator {
+  display: inline-block !important;
+  color: #be123c !important;
+  font-weight: 600 !important;
+}
+
+/* Titre du warning chic épuré */
+.revision-course-block-warning .revision-warning-header h4 {
+  color: #9f1239 !important;
+  font-family: var(--font-display, var(--font-editorial-text, var(--font-ui))) !important;
+  font-size: calc(clamp(0.96rem, calc(0.9rem + 0.2vw), 1.08rem) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: auto !important;
+}
+
+.revision-course-block-warning .katex {
+  color: #1e293b !important;
+}
+
+.revision-course-block-warning p,
+.revision-course-block-warning .math-renderer {
+  color: #1e293b !important;
+  font-family: var(--font-editorial-text, var(--font-ui)) !important;
+  font-size: var(--revision-box-size, clamp(0.98rem, calc(0.945rem + 0.175vw), 1.12rem)) !important;
+  line-height: 1.62 !important;
+}
+
+.revision-course-block-warning p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Typography hierarchy: single coherent reading font + crisp display headings */
+.revision-surface,
+.revision-surface .text-block-body,
+.revision-surface .latex-text,
+.revision-surface .math-renderer-flow,
+.revision-surface .revision-reading-block,
+.revision-surface .revision-course-block .typo-ui:not(.revision-badge-label):not(.revision-reveal-toggle),
+.revision-surface .revision-reading-block .typo-ui:not(.revision-badge-label):not(.revision-reveal-toggle) {
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif));
+}
+
+.revision-surface {
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+.revision-surface .typo-display,
+.revision-surface .revision-title-text,
+.revision-surface .revision-hero-title {
+  font-family: var(--font-display);
+}
+
+.revision-hero-title {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-synthesis: none;
+}
+
+.revision-section-title {
+  font-family: var(--font-editorial-text, var(--font-ui)) !important;
+  font-size: calc(var(--rev-fluid-section-title, clamp(1.35rem, calc(1.22rem + 0.65vw), 1.9rem)) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.revision-section-title .revision-title-text {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
+
+.revision-section-title .katex {
+  font-size: 1em !important;
+}
+
+/* Aucun filet ni ligne séparatrice entre les paragraphes et sections */
+.revision-section,
+.revision-section-heading,
+.revision-section-title,
+.revision-reading-block {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.revision-surface strong,
+.revision-surface b {
+  font-weight: 600;
+}
+
+.revision-reveal-header h3 {
+  font-weight: 500 !important;
+  letter-spacing: 0.01em;
+}
+
+.revision-surface .math-renderer .katex,
+.revision-surface .math-renderer-inherit .katex,
+.revision-surface .box-block-math-boost .katex,
+.revision-surface .property-math-boost .katex,
+.revision-surface .core-reveal-content-balance .math-renderer .katex {
+  font-size: 1.1em !important;
+  font-weight: 400;
+  font-synthesis: none;
+}
+
+.revision-surface .core-reveal-content-balance .math-renderer .katex-display > .katex,
+.revision-surface .math-renderer .katex-display > .katex,
+.revision-surface .math-renderer-inherit .katex-display > .katex {
+  font-size: 1.1em !important;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.revision-surface .math-renderer .katex-display,
+.revision-surface .math-renderer-inherit .katex-display {
+  width: fit-content;
+  max-width: 100%;
+  margin: 1rem auto;
+  padding: 0.2rem 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.revision-surface .math-env-fallback-card,
+.revision-surface .math-env-quote {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Soft card system, adapted from the supplied reference for course blocks. */
+
+.revision-block-application .revision-application-content .math-question {
+  margin-top: 0.7rem;
+  padding-left: 0;
+  border-left: 0;
+}
+
+/* Espacement vertical généreux et aéré entre les différents types de boîtes */
+.revision-section-content > div + div {
+  margin-top: clamp(3rem, 5.5vw, 4.25rem) !important;
+}
+
+.revision-reveal-header {
+  margin-bottom: 0.35rem !important;
+}
+
+.revision-practice-content,
+.revision-application-content,
+.revision-example-content,
+.revision-reveal-card .math-renderer {
+  line-height: var(--revision-box-leading, 1.74);
+}
+
+/* Semantic commands: distinct meaning, one restrained colour system. */
+.revision-surface .math-mathqst,
+.revision-surface .mathqst-colored {
+  color: color-mix(in srgb, var(--mathqst-color, #6851a6) 90%, #2a2833);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.revision-surface .math-text-bold {
+  color: #1e293b;
+  font-weight: 620;
+}
+
+.revision-surface .math-text-italic {
+  color: #475569;
+  font-weight: 500;
+}
+
+.revision-surface .math-highlight {
+  padding-inline: 0.1em;
+  border-radius: 2px;
+}
+
+.revision-surface .math-highlight-amber { background: rgba(245, 158, 11, 0.08); }
+.revision-surface .math-highlight-yellow { background: rgba(250, 204, 21, 0.24); }
+.revision-surface .math-highlight-green { background: rgba(34, 197, 94, 0.14); }
+.revision-surface .math-highlight-orange { background: rgba(249, 115, 22, 0.14); }
+.revision-surface .math-highlight-purple { background: rgba(139, 92, 246, 0.13); }
+.revision-surface .math-highlight-pink { background: rgba(236, 72, 153, 0.13); }
+.revision-surface .math-highlight-cyan { background: rgba(6, 182, 212, 0.14); }
+.revision-surface .math-highlight-gray { background: rgba(100, 116, 139, 0.14); }
+.revision-surface .math-highlight-red { background: rgba(225, 29, 72, 0.085); color: #be123c; }
+.revision-surface .math-highlight-blue { background: rgba(37, 99, 235, 0.075); color: #1d4ed8; }
+
+/* Exercise statements inside application zones remain unboxed and clean */
+.revision-course-block-application .math-question,
+.revision-block-application .revision-application-content .math-question,
+.revision-application-content .math-question {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0.4rem 0 0.6rem !important;
+}
+
+.revision-course-block-application .math-question-body,
+.revision-block-application .revision-application-content .math-question-body,
+.revision-application-content .math-question-body {
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Example guided exercises keep focused soft styling */
+.revision-example-content .math-question {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(248, 246, 255, 0.9)) !important;
+  border-radius: 16px !important;
+  padding: clamp(16px, calc(13px + 0.8vw), 24px) clamp(16px, calc(13px + 1vw), 26px) !important;
+  border: 1px solid rgba(107, 92, 231, 0.14) !important;
+  border-left: 4px solid var(--mathqst-color, #0284c7) !important;
+  box-shadow: 0 4px 20px rgba(107, 92, 231, 0.05), inset 0 1px 0 #ffffff !important;
+  color: #1e293b !important;
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif));
+  font-size: var(--revision-box-size, calc(var(--rev-fluid-body, clamp(0.98rem, calc(0.945rem + 0.175vw), 1.12rem)) * var(--reading-doc-scale, 1)));
+  font-weight: 400;
+  line-height: var(--revision-box-leading, 1.74);
+  margin: clamp(1rem, 2vw, 1.35rem) 0 clamp(1.15rem, 2.2vw, 1.55rem) !important;
+  transform: none;
+}
+
+/* Method blocks — Cadre souple complet aux quatre coins, zéro cadre interne, aligné à gauche */
+.revision-reveal-method,
+.revision-reveal-method.revision-card-collapsed,
+.revision-reveal-method.revision-card-expanded,
+.revision-course-block-method {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: var(--rev-fluid-card-gap, clamp(0.9rem, calc(0.75rem + 0.7vw), 1.35rem)) 0 !important;
+  padding: var(--rev-fluid-card-pad-y, clamp(12px, calc(10px + 0.5vw), 18px)) var(--rev-fluid-card-pad-x, clamp(14px, calc(11px + 0.85vw), 24px)) !important;
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.96) 0%, #ffffff 100%) !important;
+  border: 1px solid color-mix(in srgb, var(--mathqst-color, #b45309) 18%, rgba(203, 213, 225, 0.72)) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.025) !important;
+  transition:
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 220ms ease,
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.revision-reveal-method::before {
+  content: none !important;
+  display: none !important;
+}
+
+.revision-reveal-method.revision-card-expanded {
+  padding: clamp(13px, calc(11px + 0.55vw), 19px) var(--rev-fluid-card-pad-x, clamp(14px, calc(11px + 0.85vw), 24px)) clamp(14px, calc(12px + 0.6vw), 21px) !important;
+  border-color: color-mix(in srgb, var(--mathqst-color, #b45309) 32%, rgba(203, 213, 225, 0.8)) !important;
+  box-shadow: 0 4px 16px -4px rgba(180, 83, 9, 0.07) !important;
+}
+
+.revision-reveal-method .revision-reveal-badge-row {
+  display: none !important;
+}
+
+.revision-reveal-method .revision-reveal-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.9rem !important;
+  width: 100% !important;
+  cursor: pointer !important;
+  user-select: none;
+  padding: 0.05rem 0 !important;
+  margin: 0 !important;
+  text-align: left !important;
+  transition: opacity 180ms ease;
+}
+
+.revision-reveal-method .revision-reveal-header h3 {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left !important;
+  justify-content: flex-start !important;
+  margin: 0 !important;
+  line-height: 1.44;
+}
+
+.revision-reveal-method .revision-reveal-header:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--mathqst-color, #b45309) 42%, transparent);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+.revision-method-cue {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(26px, calc(24px + 0.4vw), 32px);
+  height: clamp(26px, calc(24px + 0.4vw), 32px);
+  border-radius: 9999px;
+  color: var(--mathqst-color, #b45309);
+  background: color-mix(in srgb, var(--mathqst-color, #b45309) 9%, transparent);
+  transition:
+    background-color 200ms ease,
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 200ms ease;
+}
+
+.revision-method-cue-icon {
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.revision-reveal-method.revision-card-expanded .revision-method-cue {
+  background: color-mix(in srgb, var(--mathqst-color, #b45309) 14%, transparent);
+}
+
+.revision-reveal-method.revision-card-expanded .revision-method-cue-icon {
+  transform: rotate(180deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .revision-reveal-method.revision-card-collapsed:hover {
+    border-color: color-mix(in srgb, var(--mathqst-color, #b45309) 34%, rgba(203, 213, 225, 0.8)) !important;
+    background: linear-gradient(180deg, rgba(255, 251, 242, 0.98) 0%, #ffffff 100%) !important;
+    box-shadow: 0 4px 14px -4px rgba(180, 83, 9, 0.06) !important;
+  }
+
+  .revision-reveal-method .revision-reveal-header:hover .revision-method-cue {
+    background: color-mix(in srgb, var(--mathqst-color, #b45309) 15%, transparent);
+  }
+}
+
+/* Aucun autre cadre autour du contenu méthode : déploiement souple et ouvert dans la carte */
+.revision-reveal-method .revision-reveal-content-shell {
+  margin-top: 0.7rem !important;
+  padding: 0.1rem 0 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.revision-reveal-method .revision-reveal-content-shell ol > li::marker,
+.revision-reveal-method .revision-reveal-content-shell .math-list-marker {
+  color: var(--mathqst-color, #b45309);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 640px) {
+  .revision-reveal-method .revision-reveal-content-shell {
+    margin-top: 0.55rem !important;
+    padding: 0.05rem 0 0 !important;
+  }
+}
+
+/* Dynamic collapsed card state for all revealable cards */
+.revision-reveal-card.revision-card-collapsed {
+  cursor: pointer !important;
+  user-select: none;
+  transition: box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1), border-color 180ms ease, background-color 180ms ease !important;
+}
+
+.revision-reveal-card.revision-card-collapsed:hover {
+  border-color: color-mix(in srgb, var(--mathqst-color, #6b5ce7) 36%, var(--mathqst-border, rgba(148, 163, 184, 0.28))) !important;
+  box-shadow: 0 4px 14px -4px rgba(15, 23, 42, 0.05) !important;
+}
+
+.revision-reveal-card.revision-card-collapsed:active {
+  transform: scale(0.996) !important;
+}
+
+.revision-reveal-card.revision-card-expanded .revision-reveal-header {
+  cursor: pointer !important;
+  user-select: none;
+}
+
+.revision-surface .math-question {
+  margin: 1.65rem 0 1.25rem;
+  padding: 0.18rem 0 0.22rem 1rem;
+  border-left: 2.5px solid color-mix(in srgb, var(--mathqst-color, #2563eb) 56%, #cbd5e1);
+  color: #1e293b;
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif));
+  font-size: var(--revision-box-size, calc(clamp(1.02rem, 1.2vw, 1.09rem) * var(--reading-doc-scale, 1)));
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: var(--revision-box-leading, 1.74);
+  transform: none;
+}
+
+.revision-surface .math-question-body {
+  max-width: 68ch;
+}
+
+.revision-block-application .revision-application-content .math-question + .math-question {
+  margin-top: 0.75rem !important;
+  padding-top: 0 !important;
+}
+
+.revision-block-application.revision-application-has-question .revision-application-content .math-question {
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.6rem !important;
+  transform: none;
+}
+
+/* Cadre des résultats mathématiques : strict, tracé à la règle, non arrondi */
+.revision-surface .math-result {
+  display: inline-block;
+  margin: 1.5rem 0;
+  padding: 0.55rem 1.15rem;
+  border: 2px solid var(--mathqst-color, #2563eb);
+  border-radius: 0 !important;
+  background: color-mix(in srgb, var(--mathqst-color, #2563eb) 5%, transparent);
+  box-shadow: none;
+  color: #1e1b2e;
+  font-weight: 700;
+}
+
+.math-boxed,
+.revision-surface .math-boxed,
+.katex .fbox,
+.katex .fcolorbox {
+  border-radius: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .revision-section-content > div + div {
+    margin-top: clamp(2.1rem, 5.5vw, 3.6rem) !important;
+  }
+
+  .revision-course-block-rappel .revision-rappel-header > div:first-child {
+    top: -13px !important;
+    left: 16px !important;
+  }
+
+  .revision-surface .math-question,
+  .revision-block-application .revision-application-content .math-question,
+  .revision-example-content .math-question {
+    margin: clamp(1rem, 3vw, 1.35rem) 0 clamp(0.85rem, 2.5vw, 1.1rem);
+    padding-left: clamp(0.7rem, 2vw, 0.9rem);
+  }
+}
+
+/* Exercise statements stay free of side rules; the card carries the structure. */
+.revision-course-block-application .math-question,
+.revision-block-application .revision-application-content .math-question {
+  padding-left: 0 !important;
+  border-left: 0 !important;
+}
+
+.revision-reveal-grid {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   FEUILLE D'ÉTUDE ÉPURÉE — HAUTE CONCENTRATION COGNITIVE
+   Fond blanc pur et aéré sans quadrillage distrayant, respecte --revision-box-size.
+   ══════════════════════════════════════════════════════════════════════ */
+.revision-reveal-content-shell {
+  position: relative;
+  margin-top: clamp(0.75rem, 1.5vw, 1rem);
+  padding: clamp(0.95rem, calc(0.8rem + 0.7vw), 1.65rem) clamp(1rem, calc(0.85rem + 0.9vw), 1.85rem);
+  border-radius: clamp(12px, 1.2vw, 14px);
+  background-color: #ffffff;
+  border: 1px solid color-mix(in srgb, var(--mathqst-color, #6b5ce7) 12%, rgba(203, 213, 225, 0.7));
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.025);
+  color: var(--text, #1e293b);
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif));
+  font-size: var(--revision-box-size, calc(var(--rev-fluid-body, clamp(0.98rem, calc(0.945rem + 0.175vw), 1.12rem)) * var(--reading-doc-scale, 1)));
+  line-height: var(--revision-box-leading, 1.74);
+  transform: translate3d(0, -4px, 0);
+  opacity: 0;
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Suppression complète de la ligne rouge de marge */
+.revision-reveal-content-shell::before {
+  display: none !important;
+  content: none !important;
+}
+
+.revision-card-expanded .revision-reveal-content-shell,
+.revision-card-flat .revision-reveal-content-shell {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+/* Espacements aérés & respiration des contenus intérieurs (style cahier moderne) */
+.revision-reveal-content-shell p,
+.revision-reveal-content-shell .latex-text,
+.revision-reveal-content-shell .math-paragraph {
+  margin-bottom: 1rem !important;
+  line-height: 1.85 !important;
+}
+
+.revision-reveal-content-shell p:last-child,
+.revision-reveal-content-shell .latex-text:last-child,
+.revision-reveal-content-shell .math-paragraph:last-child {
+  margin-bottom: 0 !important;
+}
+
+.revision-reveal-content-shell .math-renderer > * + *,
+.revision-reveal-content-shell .math-renderer-inherit > * + * {
+  margin-top: 1.05rem !important;
+}
+
+.revision-reveal-content-shell .katex-display {
+  margin: 1.35rem 0 !important;
+  padding: 0.25rem 0;
+}
+
+.revision-reveal-content-shell ul,
+.revision-reveal-content-shell ol {
+  margin: 1.05rem 0 1.05rem 1.45rem !important;
+  padding-left: 0.25rem !important;
+}
+
+.revision-reveal-content-shell li + li {
+  margin-top: 0.7rem !important;
+}
+
+/* Harmonisation selon type de carte (Définition violette, Propriété bleue, etc.) */
+.revision-reveal-property .revision-reveal-content-shell {
+  border-color: rgba(197, 208, 222, 0.7) !important;
+  box-shadow: 
+    0 2px 0 rgba(197, 208, 222, 0.6),
+    0 10px 26px -6px rgba(70, 100, 140, 0.08),
+    inset 0 1.5px 0 #ffffff !important;
+}
+
+/* Macro harmony: semantic commands follow the reading text instead of competing with it. */
+.revision-surface .math-mathqst,
+.revision-surface .mathqst-colored,
+.revision-surface .math-text-bold,
+.revision-surface .math-text-italic,
+.revision-surface .math-savant,
+.revision-surface .math-motivation,
+.revision-surface .math-challenge,
+.revision-surface .math-text-emph {
+  font-size: 1em;
+  letter-spacing: inherit;
+}
+
+.revision-surface .math-mathqst,
+.revision-surface .mathqst-colored,
+.revision-surface .math-text-bold,
+.revision-surface .math-savant,
+.revision-surface .math-challenge {
+  font-weight: 600;
+}
+
+.revision-surface .math-text-italic,
+.revision-surface .math-motivation,
+.revision-surface .math-text-emph {
+  font-weight: 500;
+}
+
+.revision-surface .math-objective,
+.revision-surface .math-command-label,
+.revision-surface .math-command-step,
+.revision-surface .math-size-small,
+.revision-surface .math-size-tiny {
+  font-size: 0.82em;
+  font-weight: 650;
+  letter-spacing: 0.055em;
+}
+
+.revision-surface .math-size-large {
+  font-size: 1.08em;
+  line-height: inherit;
+}
+
+.revision-surface .math-size-huge {
+  margin-block: 1.35rem;
+  font-size: clamp(1.3rem, 1.18rem + 0.45vw, 1.48rem);
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.revision-surface .math-question,
+.revision-course-block-application .math-question,
+.revision-block-application .revision-application-content .math-question {
+  font-family: var(--font-editorial-text, var(--font-ui, 'Inter', system-ui, sans-serif));
+  font-size: var(--revision-box-size, calc(clamp(1.02rem, 1.2vw, 1.09rem) * var(--reading-doc-scale, 1)));
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: var(--revision-box-leading, 1.74);
+}
+
+.revision-reveal-header h3,
+.revision-block-header h4 {
+  font-family: var(--font-display);
+  font-size: calc(var(--rev-fluid-heading, clamp(1.06rem, calc(0.99rem + 0.35vw), 1.34rem)) * var(--reading-doc-scale, 1));
+  font-weight: 620;
+  letter-spacing: -0.012em;
+  line-height: 1.42;
+}
+
+.revision-surface .math-text-red { color: #c2410c; }
+.revision-surface .math-text-blue { color: #1d4ed8; }
+.revision-surface .math-text-green { color: #047857; }
+.revision-surface .math-text-orange { color: #b45309; }
+.revision-surface .math-text-purple { color: #6d28d9; }
+
+/* Révélation différée : les formules et médias ne sont montés qu'à la première ouverture. */
+.revision-reveal-grid {
+  overflow: hidden;
+  isolation: isolate;
+  contain: layout paint;
+  transition:
+    grid-template-rows 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* Canevas commun aux médias de révision : il reste discret sur les photos et
+   rend immédiatement lisibles les PNG/SVG transparents (figures, repères,
+   graphes et schémas). L'isolation empêche le mélange de l'image avec la
+   couleur de la carte qui l'entoure. */
+.revision-media-canvas {
+  background-color: #f5f8fc;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.92), transparent 65%),
+    linear-gradient(45deg, rgba(148, 163, 184, 0.055) 25%, transparent 25%, transparent 75%, rgba(148, 163, 184, 0.055) 75%),
+    linear-gradient(45deg, rgba(148, 163, 184, 0.055) 25%, transparent 25%, transparent 75%, rgba(148, 163, 184, 0.055) 75%);
+  background-position: center, 0 0, 10px 10px;
+  background-size: auto, 20px 20px, 20px 20px;
+}
+
+/* Illustration d'introduction : un vrai visuel éditorial, sans pastille. */
+.revision-intro-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12.5rem, 0.36fr);
+  align-items: start;
+  column-gap: clamp(1.25rem, 2.5vw, 2.2rem);
+}
+
+.revision-intro-copy {
+  max-width: 46rem;
+}
+
+.revision-intro-aside {
+  align-self: start;
+  min-width: 0;
+  margin-top: 0.16rem;
+  padding-left: clamp(0.95rem, 1.8vw, 1.45rem);
+}
+
+.revision-intro-figure {
+  width: 100%;
+  margin: 0 0 0.82rem;
+}
+
+.revision-intro-image {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.055);
+}
+
+.revision-intro-caption {
+  margin-top: 0.55rem;
+  color: #64748b;
+  font-family: var(--font-ui);
+  font-size: 0.56rem;
+  font-weight: 650;
+  letter-spacing: 0.085em;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .revision-intro-layout {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  .revision-intro-aside {
+    width: min(72vw, 15rem);
+    margin-top: 0;
+    margin-inline: auto;
+    padding: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revision-reveal-grid,
+  .revision-reveal-content-shell {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   PASTILLES COMPACTES TACTILES & FLUIDES (Voir la correction / Réduire)
+   Design compact, serré, typographie fine serif & finitions haut de gamme
+   ══════════════════════════════════════════════════════════════════════ */
+
+.revision-reveal-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: clamp(22px, calc(20px + 0.35vw), 26px) !important;
+  height: auto !important;
+  width: max-content;
+  max-width: 100%;
+  padding: clamp(3px, 0.35vw, 5px) clamp(8px, 0.8vw, 11px) !important;
+  border: 1px solid #d5d8de !important;
+  border-radius: 999px !important;
+  background: #f1f3f5 !important;
+  box-shadow: 0 1px 1.5px rgba(15, 23, 42, 0.03) !important;
+  color: #4b5563 !important;
+  font-family: var(--font-editorial-text, var(--font-ui)) !important;
+  font-size: calc(clamp(10px, calc(9.5px + 0.14vw), 11.5px) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1;
+  text-transform: none !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    color 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    box-shadow 0.18s ease !important;
+}
+
+.revision-reveal-toggle span,
+.revision-reveal-toggle.typo-ui {
+  font-family: var(--font-editorial-text, var(--font-ui)) !important;
+  font-weight: 400 !important;
+  font-size: inherit !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1 !important;
+}
+
+/* ── BOUTON « RÉSOLVONS L'EXERCICE » — Mécanisme Fluide, Calme & Anti-distraction ── */
+.revision-correction-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: clamp(26px, calc(24px + 0.4vw), 32px) !important;
+  height: auto !important;
+  width: max-content;
+  max-width: 100%;
+  padding: clamp(4px, 0.45vw, 6px) clamp(11px, 1vw, 15px) !important;
+  border: 1px solid rgba(0, 86, 210, 0.22) !important;
+  border-radius: 9999px !important;
+  background: #f0f5ff !important;
+  box-shadow: none !important;
+  color: #0056d2 !important;
+  font-family: var(--font-button-fira, 'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif) !important;
+  font-size: calc(clamp(10.5px, calc(10px + 0.16vw), 12.5px) * var(--reading-doc-scale, 1)) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.015em !important;
+  line-height: 1;
+  text-transform: none !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease !important;
+}
+
+.revision-correction-toggle span,
+.revision-correction-toggle-label,
+.revision-correction-toggle.typo-ui {
+  font-family: var(--font-button-fira, 'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif) !important;
+  font-weight: 600 !important;
+  font-size: inherit !important;
+  letter-spacing: 0.015em !important;
+  line-height: 1 !important;
+}
+
+.revision-correction-toggle::after {
+  content: none !important;
+}
+
+.revision-reveal-chevron,
+.revision-correction-chevron {
+  width: 11px;
+  height: 11px;
+  opacity: 0.78;
+  stroke-width: 2.2;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), opacity 180ms ease;
+}
+
+.revision-reveal-toggle:hover,
+.revision-reveal-toggle:focus-visible {
+  background: #e5e7eb !important;
+  border-color: #cbcfd6 !important;
+  color: #111827 !important;
+  text-decoration: none !important;
+  outline: none;
+}
+
+.revision-correction-toggle:hover,
+.revision-correction-toggle:focus-visible {
+  background: #e2ecff !important;
+  border-color: rgba(0, 86, 210, 0.38) !important;
+  color: #0042a8 !important;
+  text-decoration: none !important;
+  outline: none;
+}
+
+.revision-correction-toggle:hover .revision-correction-chevron,
+.revision-correction-toggle:focus-visible .revision-correction-chevron {
+  opacity: 1;
+}
+
+.revision-reveal-toggle:active {
+  background: #d8dbe0 !important;
+  transform: scale(0.98) !important;
+  transition-duration: 60ms !important;
+}
+
+.revision-correction-toggle:active {
+  background: #d5e4ff !important;
+  border-color: rgba(0, 86, 210, 0.45) !important;
+  color: #003a94 !important;
+  transform: scale(0.975) !important;
+  transition-duration: 60ms !important;
+}
+
+.revision-correction-toggle:focus-visible {
+  outline: 2px solid rgba(0, 86, 210, 0.35) !important;
+  outline-offset: 2px;
+}
+
+/* État déplié / ouvert ("Réduire") */
+.revision-reveal-toggle[aria-expanded="true"] {
+  background: #e9ecef !important;
+  border-color: #ccd0d8 !important;
+  color: #374151 !important;
+  border-radius: 9999px !important;
+  box-shadow: none !important;
+}
+
+.revision-correction-toggle[aria-expanded="true"] {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+  border-radius: 9999px !important;
+  box-shadow: none !important;
+}
+
+.revision-reveal-toggle[aria-expanded="true"]:hover {
+  background: #dee2e6 !important;
+  border-color: #c4c9d2 !important;
+  color: #111827 !important;
+}
+
+.revision-correction-toggle[aria-expanded="true"]:hover {
+  background: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  color: #1e293b !important;
+}
+
+.revision-reveal-toggle[aria-expanded="true"] .revision-reveal-chevron,
+.revision-correction-toggle[aria-expanded="true"] .revision-correction-chevron {
+  transform: rotate(180deg);
+}
+
+/* Grilles d'alignement pour les blocs et questions titrées */
+.revision-reveal-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.revision-reveal-header .revision-reveal-toggle {
+  position: static;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  z-index: 2;
+}
+
+/* Le bouton « Afficher / Masquer » textuel est masqué sur les encadrés révélables : le badge-bouton interactif suffit */
+.revision-reveal-card .revision-reveal-toggle {
+  display: none !important;
+}
+
+.revision-reveal-card .revision-reveal-header:not(.revision-method-header) {
+  display: block !important;
+  width: 100% !important;
+}
+
+.revision-reveal-card .revision-reveal-header:not(.revision-method-header) h3 {
+  width: 100% !important;
+  line-height: 1.44 !important;
+}
+
+/* Deux réserves identiques gardent la question réellement centrée, sans
+   chevauchement avec le bouton, y compris lorsque l'interface est en RTL. */
+.revision-text-disclosure {
+  --mathqst-color: #2563eb;
+  container-type: inline-size;
+}
+
+.revision-text-question-row {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, 1fr) minmax(0, 8fr) minmax(5.5rem, 1fr);
+  align-items: center;
+  column-gap: 0.65rem;
+  min-height: 2.9rem;
+  direction: ltr;
+}
+
+.revision-text-question-row .revision-reveal-toggle {
+  position: static;
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  transform: none;
+}
+
+.revision-text-question {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  margin: 0;
+  color: #1e293b;
+  font-size: calc(var(--rev-fluid-heading, clamp(1.06rem, calc(0.99rem + 0.35vw), 1.34rem)) * var(--reading-doc-scale, 1));
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.revision-text-question .math-mathqst,
+.revision-text-question .mathqst-colored {
+  color: #2454a6 !important;
+  font-weight: 700 !important;
+}
+
+.revision-text-disclosure .revision-reveal-content-shell {
+  margin-top: 0.9rem;
+  padding: clamp(0.95rem, calc(0.8rem + 0.7vw), 1.5rem);
+  border: 1.5px solid #e2eaf4;
+  border-radius: clamp(13px, 1.3vw, 16px);
+  background: #f8fafd;
+  box-shadow: 0 2px 0 #e2eaf4;
+}
+
+/* Le cadre décoratif de \boxed ne doit pas intercepter les trous cliquables. */
+.revision-reveal-content-shell .katex .fbox {
+  pointer-events: none;
+}
+
+@container (max-width: 480px) {
+  .revision-text-question-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.6rem;
+  }
+
+  .revision-text-question-row .revision-reveal-toggle {
+    grid-column: 2;
+    padding: clamp(3px, 0.5vw, 5px) clamp(9px, 2vw, 12px) !important;
+    gap: 0.3rem;
+  }
+
+  .revision-text-question {
+    grid-column: 1;
+    letter-spacing: -0.015em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revision-reveal-chevron,
+  .revision-correction-chevron,
+  .revision-reveal-toggle,
+  .revision-correction-toggle {
+    transition: none !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   OPTIMISATION GPU & FLUIDITÉ (sans brider les courbes d'animation)
+   ══════════════════════════════════════════════════════════════════════ */
+
+.revision-reveal-card,
+.revision-course-block,
+.revision-course-block-warning,
+.revision-block-application,
+.revision-course-block-application,
+.revision-badge,
+.revision-reveal-badge,
+.revision-reveal-toggle,
+.revision-correction-toggle,
+.revision-reveal-chevron,
+.revision-correction-chevron,
+.revision-reveal-grid,
+.revision-reveal-content-shell {
+  will-change: auto;
+}
+
+/* Survol : uniquement sur les appareils qui ont un vrai pointeur */
+@media (hover: none) {
+  .revision-reveal-card:hover,
+  .revision-course-block:hover,
+  .revision-course-block-warning:hover {
+    transform: none !important;
+  }
+}
+
+/* Sections hors écran : ni layout ni paint tant qu'elles ne sont pas proches */
+.revision-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1200px;
+}
+
+@media print {
+  .revision-section {
+    content-visibility: visible;
+    contain-intrinsic-size: none;
+  }
+}

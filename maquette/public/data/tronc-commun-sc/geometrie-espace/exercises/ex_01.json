@@ -1,0 +1,20 @@
+{
+  "id": "ex-espace-tc-01",
+  "theme": "geometrie-espace",
+  "difficulty": "facile",
+  "topic": "La géométrie dans l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Positions relatives",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Soit $ABCD$ un tétraèdre. $I$ et $J$ sont les milieux respectifs de $[AB]$ et $[AC]$. Montrer que la droite $(IJ)$ est parallèle au plan $(BCD)$.",
+          "hint": "\\method Dans le triangle $ABC$, utilisez le théorème des milieux pour montrer que $(IJ) \\parallel (BC)$. Concluez avec la propriété d'une droite parallèle à une droite d'un plan."
+        }
+      ]
+    }
+  ]
+}

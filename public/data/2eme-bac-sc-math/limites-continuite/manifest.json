@@ -1,0 +1,38 @@
+{
+  "id": "limites-continuite",
+  "title": "Limites et continuité",
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-lim-cont-sm",
+      "title": "Fiche Complète : Continuité",
+      "path": "data/2eme-bac-sc-math/limites-continuite/revisions/fiche_limites_continuite_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-limites-continuite-01",
+      "path": "data/2eme-bac-sc-math/limites-continuite/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-limites-continuite-02",
+      "path": "data/2eme-bac-sc-math/limites-continuite/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-limites-continuite-03",
+      "path": "data/2eme-bac-sc-math/limites-continuite/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-lim-cont-sm-01",
+      "path": "data/2eme-bac-sc-math/limites-continuite/exercises/ex_limites_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-limites-continuite",
+      "title": "Quiz : Limites et Continuité",
+      "path": "data/2eme-bac-sc-math/limites-continuite/quiz/limites-continuite_quiz.json",
+      "questionsCount": 22
+    }
+  ]
+}

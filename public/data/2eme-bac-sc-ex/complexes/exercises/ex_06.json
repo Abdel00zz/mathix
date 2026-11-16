@@ -1,0 +1,79 @@
+{
+  "id": "ex_06",
+  "theme": "complexes",
+  "difficulty": "moyen",
+  "topic": "Nombres Complexes",
+  "context": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points A, B, C, D et $\\Omega$ d'affixes respectives $a=1+2i$, $b=\\overline{a}$, $c=\\frac{3(1+i)}{2}$, $d=\\frac{3(i-1)}{2}$ et $\\omega=\\frac{a+b}{2}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que $a+b=2$ et déduire que l'affixe du point $P$, milieu du segment [AB], est $p=1$.",
+          "hint": "Calculez la somme $a+\\overline{a}$. Rappelez-vous que $z+\\overline{z} = 2\\text{Re}(z)$. Pour l'affixe du milieu $P$ de $[AB]$, utilisez la formule $p = \\frac{a+b}{2}$."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que $a$ et $b$ sont les solutions de l'équation : $z^2-2z+5=0$ dans l'ensemble $\\mathbb{C}$.",
+          "hint": "Utilisez les relations entre les coefficients et les racines d'un polynôme du second degré. Si $a$ et $b$ sont les racines, l'équation est de la forme $(z-a)(z-b)=0$, qui se développe en $z^2 - (a+b)z + ab = 0$. Calculez $a+b$ et $ab$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $|\\omega-d|=|\\omega-b|=|\\omega-c|$.",
+          "hint": "Calculez d'abord l'affixe $\\omega$. Ensuite, calculez les affixes des vecteurs $\\overrightarrow{D\\Omega}$, $\\overrightarrow{B\\Omega}$ et $\\overrightarrow{C\\Omega}$ (c'est-à-dire $\\omega-d$, $\\omega-b$, $\\omega-c$). Enfin, calculez le module de chacun de ces nombres complexes pour vérifier l'égalité des distances."
+        },
+        {
+          "id": "b",
+          "content": "Déduire que $\\Omega$ est le centre du cercle circonscrit au triangle ABC.",
+          "hint": "Un point est le centre du cercle circonscrit à un triangle s'il est équidistant des trois sommets. Analysez le résultat de la question 2.a et la conclusion demandée, qui concerne le triangle ABC."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $\\frac{d-c}{a-b} = \\frac{3i}{4}$.",
+          "hint": "Calculez les affixes des vecteurs $\\overrightarrow{CD}$ ($d-c$) et $\\overrightarrow{BA}$ ($a-b$). Effectuez ensuite le quotient des deux nombres complexes. N'oubliez pas que $\\frac{1}{i} = -i$."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que $d-b=(c-a)e^{i\\pi/2}$ puis déduire que les droites (DB) et (AC) sont perpendiculaires.",
+          "hint": "Calculez séparément les affixes $d-b$ et $c-a$. Multipliez $c-a$ par $i$ (car $e^{i\\pi/2}=i$) et comparez. Pour la déduction, rappelez-vous l'interprétation géométrique de la multiplication par $i$ en termes de rotation et donc d'angle entre les vecteurs $\\overrightarrow{AC}$ et $\\overrightarrow{BD}$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Soit l'homothétie $h$ de centre C et de rapport $\\frac{2}{3}$ qui transforme chaque point M du plan d'affixe $z$ en un point M' d'affixe $z'$. On pose $h(P)=G$.",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $z'=\\frac{2}{3}z+\\frac{1}{2}+\\frac{1}{2}i$.",
+          "hint": "Utilisez l'écriture complexe de l'homothétie : $z' - z_C = k(z - z_C)$. Remplacez $k$ et l'affixe $c$ de $C$, puis isolez $z'$ pour trouver son expression en fonction de $z$."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que l'affixe du point G est $\\frac{13}{6}+\\frac{i}{6}$.",
+          "hint": "Le point $G$ est l'image du point $P$ par l'homothétie $h$. Vous avez déjà déterminà l'affixe $p$ du point $P$ à la question 1.a. Appliquez la formule de transformation $z'$ trouvée à la question 4.a à l'affixe $p$."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que les points $\\Omega, G$ et $D$ sont alignés.",
+      "hint": "Pour montrer que trois points $\\Omega, G, D$ sont alignés, il suffit de prouver que les vecteurs $\\overrightarrow{\\Omega G}$ et $\\overrightarrow{\\Omega D}$ sont colinéaires. Calculez les affixes de ces deux vecteurs ($g-\\omega$ et $d-\\omega$) puis vérifiez s'il existe un réel $k$ tel que $g-\\omega = k(d-\\omega)$, ou bien que $\\frac{g-\\omega}{d-\\omega}$ est un nombre réel."
+    }
+  ]
+}

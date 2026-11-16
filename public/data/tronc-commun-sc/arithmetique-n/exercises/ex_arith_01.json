@@ -1,0 +1,31 @@
+{
+  "id": "ex-arithmetique-n-01",
+  "theme": "arithmetique-n",
+  "difficulty": "difficile",
+  "topic": "Arithmétique dans N",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Factorisation de $A = 3^{n+2} + 3^n$",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer que $A$ est divisible par 10 pour tout $n \\in \\mathbb{N}$.",
+          "hint": "\\method Pour montrer la divisibilité, essayez de factoriser l'expression. Quel est le facteur commun que vous pouvez extraire de $3^{n+2}$ et $3^n$ ?"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Application",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Déterminer les valeurs de $n$ pour lesquelles $\\frac{12}{n+1}$ est un entier naturel.",
+          "hint": "Pour que la fraction soit un entier, quelle condition le dénominateur $(n+1)$ doit-il vérifier par rapport au numérateur $12$ ? Listez tous les diviseurs de 12."
+        }
+      ]
+    }
+  ]
+}

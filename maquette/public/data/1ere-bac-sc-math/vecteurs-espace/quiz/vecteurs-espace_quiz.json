@@ -1,0 +1,490 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Deux points distincts $A$ et $B$ de l'espace forment un vecteur noté $\\overrightarrow{AB}$. Si les deux points sont confondus ($A = B$), comment note-on le vecteur formé ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overrightarrow{0}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\emptyset$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si $A = B$, le vecteur forme est le vecteur nul $\\overrightarrow{0}$. Ne pas confondre avec le nombre reel $0$."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Un vecteur non nul est caractérisé uniquement par sa direction et sa norme.",
+      "isTrue": false,
+      "explanation": "Il faut trois elements : la direction, le sens et la norme."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "À quelle condition géométrique deux vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{MN}$ sont-ils égaux ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$ABNM$ est un parallélogramme",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$ABMN$ est un parallélogramme",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Les segments $[AB]$ et $[MN]$ ont la même longueur",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Les droites $(AB)$ et $(MN)$ sont parallèles",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\overrightarrow{AB} = \\overrightarrow{MN}$ equivaut a dire que $ABNM$ est un parallelogramme."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Soient deux vecteurs non nuls $\\overrightarrow{u} = \\overrightarrow{OB}$ et $\\overrightarrow{v} = \\overrightarrow{OC}$. La somme $\\overrightarrow{u} + \\overrightarrow{v}$ est le vecteur $\\overrightarrow{OD}$ tel que :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$OBDC$ est un parallélogramme",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$OBCD$ est un parallélogramme",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$D$ est le milieu de $[BC]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$O, B, C, D$ sont alignés",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La somme $\\overrightarrow{OB} + \\overrightarrow{OC} = \\overrightarrow{OD}$ ou $OBDC$ forme un parallelogramme."
+    },
+    {
+      "id": "q5",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "L'addition vectorielle dans l'espace n'est pas commutative.",
+      "isTrue": false,
+      "explanation": "L'addition vectorielle est commutative : $\\overrightarrow{u} + \\overrightarrow{v} = \\overrightarrow{v} + \\overrightarrow{u}$."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Que donne la simplification de l'expression $\\overrightarrow{W} = (\\overrightarrow{u} + \\overrightarrow{v}) + (\\overrightarrow{w} - \\overrightarrow{u}) - \\overrightarrow{v}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overrightarrow{w}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\overrightarrow{0}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2\\overrightarrow{u} + \\overrightarrow{w}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\overrightarrow{u} + \\overrightarrow{v} + \\overrightarrow{w}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les termes $\\overrightarrow{u}$ et $\\overrightarrow{v}$ s'annulent : $\\overrightarrow{u} - \\overrightarrow{u} + \\overrightarrow{v} - \\overrightarrow{v} + \\overrightarrow{w} = \\overrightarrow{w}$."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Que donne le développement de l'expression $\\overrightarrow{X} = 3(\\overrightarrow{u} - 2\\overrightarrow{v}) - 2(\\overrightarrow{u} - 3\\overrightarrow{v})$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\overrightarrow{u}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\overrightarrow{u} - 12\\overrightarrow{v}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$5\\overrightarrow{u}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\overrightarrow{u} - 6\\overrightarrow{v}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$3\\overrightarrow{u} - 6\\overrightarrow{v} - 2\\overrightarrow{u} + 6\\overrightarrow{v} = \\overrightarrow{u}$ : les termes en $\\overrightarrow{v}$ s'annulent."
+    },
+    {
+      "id": "q8",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour simplifier une expression vectorielle avec la relation de Chasles :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Repérer des vecteurs dont l'extrémité de l'un est l'origine de l'autre"
+        },
+        {
+          "id": "b",
+          "content": "Regrouper les termes pour appliquer Chasles"
+        },
+        {
+          "id": "c",
+          "content": "Utiliser la propriété du parallélogramme si nécessaire"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "On repere les vecteurs consecutifs, on les regroupe par Chasles, puis on utilise le parallelogramme si besoin."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quand dit-on que deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont colinéaires ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S'il existe un nombre réel $k$ tel que $\\overrightarrow{v} = k\\overrightarrow{u}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "S'ils ont la même norme",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "S'ils sont orthogonaux",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "S'il existe un nombre réel $k$ tel que $\\overrightarrow{v} + k\\overrightarrow{u} = \\overrightarrow{0}$ avec $k=0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont colineaires s'il existe $k \\in \\mathbb{R}$ tel que $\\overrightarrow{v} = k\\overrightarrow{u}$ (meme direction)."
+    },
+    {
+      "id": "q10",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Si on possède une égalité $a\\overrightarrow{u} + b\\overrightarrow{v} = \\overrightarrow{0}$ avec $a \\neq 0$ ou $b \\neq 0$, alors les vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont automatiquement colinéaires.",
+      "isTrue": true,
+      "explanation": "Une combinaison lineaire nulle a coefficients non tous nuls implique la colinearite des vecteurs."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "Comment démontrer que trois points $A, B$ et $C$ sont alignés ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "En montrant que les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ sont colinéaires",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "En montrant que $\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "En montrant que les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{BC}$ sont orthogonaux",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "En montrant que $AB = BC$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Trois points sont alignes si et seulement si $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ sont colineaires."
+    },
+    {
+      "id": "q12",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour démontrer que trois points $A, B, C$ sont alignés :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Calculer ou exprimer les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$"
+        },
+        {
+          "id": "b",
+          "content": "Trouver un réel $k$ tel que $\\overrightarrow{AC} = k \\overrightarrow{AB}$"
+        },
+        {
+          "id": "c",
+          "content": "Conclure à l'alignement"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "On exprime les vecteurs, on cherche le coefficient de colinearite $k$, puis on conclut."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "Comment démontrer que deux droites sont parallèles dans l'espace ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "En montrant que leurs vecteurs directeurs sont colinéaires",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "En montrant qu'elles ne se coupent pas",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "En montrant que leurs vecteurs directeurs sont orthogonaux",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "En montrant qu'elles sont coplanaires",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Deux droites sont paralleles si et seulement si leurs vecteurs directeurs sont colineaires."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "À quelle condition trois vecteurs $\\overrightarrow{u}, \\overrightarrow{v}$ et $\\overrightarrow{w}$ sont-ils coplanaires ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Si l'un s'écrit comme combinaison linéaire des deux autres",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "S'ils sont tous les trois colinéaires deux à deux",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Si leur somme est égale au vecteur nul",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "S'ils forment un triangle",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Trois vecteurs sont coplanaires si l'un est combinaison lineaire des deux autres, par exemple $\\overrightarrow{w} = x\\overrightarrow{u} + y\\overrightarrow{v}$."
+    },
+    {
+      "id": "q15",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Si deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont colinéaires, alors ils sont forcément coplanaires avec n'importe quel troisième vecteur $\\overrightarrow{w}$.",
+      "isTrue": true,
+      "explanation": "Deux vecteurs colineaires definissent au plus une droite vectorielle, contenue dans tout plan : ils sont coplanaires avec tout $\\overrightarrow{w}$."
+    },
+    {
+      "id": "q16",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour démontrer la coplanarité de 4 points $A, B, C, D$ :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Former les vecteurs $\\overrightarrow{AB}$, $\\overrightarrow{AC}$ et $\\overrightarrow{AD}$"
+        },
+        {
+          "id": "b",
+          "content": "Vérifier que $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ ne sont pas colinéaires"
+        },
+        {
+          "id": "c",
+          "content": "Trouver $x, y$ tels que $\\overrightarrow{AD} = x\\overrightarrow{AB} + y\\overrightarrow{AC}$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "On forme les vecteurs, on verifie que deux d'entre eux ne sont pas colineaires, puis on ecrit le troisieme comme combinaison lineaire."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "Comment démontrer qu'une droite de vecteur directeur $\\overrightarrow{u}$ est parallèle à un plan de base $(\\overrightarrow{v}, \\overrightarrow{w})$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "En montrant que $\\overrightarrow{u}$ est coplanaire avec $\\overrightarrow{v}$ et $\\overrightarrow{w}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "En montrant que $\\overrightarrow{u}$ est colinéaire à $\\overrightarrow{v}$ ou à $\\overrightarrow{w}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "En montrant que $\\overrightarrow{u}$ est orthogonal à $\\overrightarrow{v}$ et $\\overrightarrow{w}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "En montrant que la droite ne coupe pas le plan",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une droite est parallele a un plan si son vecteur directeur est coplanaire avec les vecteurs du plan : $\\overrightarrow{u} = x\\overrightarrow{v} + y\\overrightarrow{w}$."
+    },
+    {
+      "id": "q18",
+      "type": "error",
+      "category": "Application",
+      "prompt": "Identifier l'erreur dans ce calcul de simplification vectorielle :",
+      "context": "On donne $\\overrightarrow{a} = 4\\overrightarrow{u} - 2\\overrightarrow{v}$ et $\\overrightarrow{b} = -2\\overrightarrow{u} + \\overrightarrow{v}$. On cherche à exprimer $\\overrightarrow{a}$ en fonction de $\\overrightarrow{b}$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "$\\overrightarrow{a} = 4\\overrightarrow{u} - 2\\overrightarrow{v}$",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "$\\overrightarrow{a} = -2(-2\\overrightarrow{u} - \\overrightarrow{v})$",
+          "isError": true,
+          "correction": "$\\overrightarrow{a} = -2(-2\\overrightarrow{u} + \\overrightarrow{v})$"
+        },
+        {
+          "id": "s3",
+          "text": "$\\overrightarrow{a} = -2\\overrightarrow{b}$",
+          "isError": false
+        }
+      ],
+      "explanation": "En factorisant $-2\\overrightarrow{v}$ par $-2$, on obtient $+\\overrightarrow{v}$, pas $-\\overrightarrow{v}$. Erreur de signe dans la factorisation."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Comment définit-on la droite passant par $A$ de vecteur directeur $\\overrightarrow{u}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'ensemble des points $M$ tels qu'il existe $k \\in \\mathbb{R}$ avec $\\overrightarrow{AM} = k\\overrightarrow{u}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "L'ensemble des points $M$ tels que $\\overrightarrow{AM} + \\overrightarrow{u} = \\overrightarrow{0}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'ensemble des points $M$ tels que $AM = \\|\\overrightarrow{u}\\|$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "L'ensemble des vecteurs colinéaires à $\\overrightarrow{u}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$D(A; \\overrightarrow{u})$ est l'ensemble des points $M$ tels que $\\overrightarrow{AM} = k\\overrightarrow{u}$ pour un reel $k$."
+    },
+    {
+      "id": "q20",
+      "type": "error",
+      "category": "Application",
+      "prompt": "Identifier l'erreur dans cette démonstration d'alignement :",
+      "context": "On veut montrer que $A, B, C$ sont alignés sachant que $2\\overrightarrow{AB} - 3\\overrightarrow{AC} = \\overrightarrow{0}$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On a $2\\overrightarrow{AB} - 3\\overrightarrow{AC} = \\overrightarrow{0}$",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Donc $2\\overrightarrow{AB} = 3\\overrightarrow{AC}$",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Soit $\\overrightarrow{AB} = \\dfrac{2}{3}\\overrightarrow{AC}$",
+          "isError": true,
+          "correction": "$\\overrightarrow{AB} = \\dfrac{3}{2}\\overrightarrow{AC}$"
+        },
+        {
+          "id": "s4",
+          "text": "Les vecteurs sont colinéaires, donc $A, B, C$ sont alignés.",
+          "isError": false
+        }
+      ],
+      "explanation": "En divisant $2\\overrightarrow{AB} = 3\\overrightarrow{AC}$ par $2$, on obtient $\\overrightarrow{AB} = \\dfrac{3}{2}\\overrightarrow{AC}$, pas $\\dfrac{2}{3}$."
+    }
+  ]
+}

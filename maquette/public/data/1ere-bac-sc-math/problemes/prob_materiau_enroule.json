@@ -1,0 +1,55 @@
+{
+  "header": {
+    "title": "La longueur d'un matériau enroulé",
+    "subtitle": "Suites arithmétiques",
+    "context": "Suites numériques"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "La longueur d'un matériau enroulé",
+          "content": "Un rouleau de moquette est enroulé autour d'un mandrin cylindrique de rayon intérieur $r_0 = 5$ cm. Chaque nouvelle couche de moquette augmente le rayon d'une épaisseur constante $e = 0{,}8$ cm.\\par On note $L_n$ la longueur de moquette contenue dans les $n$ premières couches du rouleau.\\par La longueur de la $k$-ième couche (pour $k \\geq 1$) est la circonférence du cercle de rayon $r_k = r_0 + (k-1) \\times e$, soit $\\ell_k = 2\\pi r_k$."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Exprimer $\\ell_k$ en fonction de $k$, $r_0$ et $e$. Quelle est la nature de la suite $(\\ell_k)$ ?\\item Exprimer $L_n = \\displaystyle\\sum_{k=1}^{n} \\ell_k$ en fonction de $n$, $r_0$, $e$ et $\\pi$.\\item Un rouleau comporte $40$ couches. Calculer la longueur totale de moquette (donner le résultat en mètres, arrondi à l'unité).\\item Inversement, si l'on dispose d'un rouleau de $60$ m de moquette, combien de couches comporte-t-il (en supposant les mêmes paramètres) ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "$\\ell_k = 2\\pi(r_0 + (k-1)e)$ est une suite arithmétique de premier terme $\\ell_1 = 2\\pi r_0$ et de raison $2\\pi e$."
+        },
+        {
+          "type": "hint",
+          "content": "La somme des $n$ premiers termes d'une suite arithmétique est $S_n = n \\times \\dfrac{\\ell_1 + \\ell_n}{2}$."
+        },
+        {
+          "type": "hint",
+          "content": "Pour la question 4, posez $L_n = 6000$ (en cm) et résolvez l'équation du second degré en $n$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $\\ell_k = 2\\pi(5 + 0{,}8(k-1))$ cm. C'est une suite arithmétique de raison $r = 2\\pi \\times 0{,}8 \\approx 5{,}03$ cm.\\par\\textbf{2)} $L_n = \\displaystyle\\sum_{k=1}^{n} 2\\pi(5 + 0{,}8(k-1)) = 2\\pi n \\cdot 5 + 2\\pi \\times 0{,}8 \\cdot \\dfrac{n(n-1)}{2} = 2\\pi n\\left(5 + 0{,}4(n-1)\\right)$.\\par\\textbf{3)} $L_{40} = 2\\pi \\times 40 \\times (5 + 0{,}4 \\times 39) = 80\\pi \\times 20{,}6 \\approx 5183$ cm $\\approx \\boxed{52}$ m.\\par\\textbf{4)} $L_n = 6000$ donne $2\\pi n(5 + 0{,}4(n-1)) = 6000$, soit $0{,}8\\pi n^2 + 9{,}2\\pi n - 6000 = 0$.\\par Discriminant $> 0$, racine positive $\\approx 43{,}7$, donc $\\boxed{43}$ couches complètes."
+        }
+      ]
+    }
+  ]
+}
