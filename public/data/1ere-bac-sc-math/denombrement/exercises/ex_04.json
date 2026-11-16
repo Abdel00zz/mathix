@@ -1,0 +1,20 @@
+{
+  "id": "ex-denom-04",
+  "theme": "denombrement",
+  "difficulty": "facile",
+  "topic": "Dénombrement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Permutations",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Combien d'anagrammes peut-on former avec les lettres du mot MATHS ?",
+          "hint": "Le mot MATHS contient 5 lettres distinctes.\nUne anagramme est une permutation de ces 5 lettres.\n\nLe nombre de permutations de 5 éléments distincts est $5!$.\n\n$5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$.\n\nIl y a donc 120 anagrammes possibles du mot MATHS."
+        }
+      ]
+    }
+  ]
+}

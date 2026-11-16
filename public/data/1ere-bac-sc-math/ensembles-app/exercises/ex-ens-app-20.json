@@ -1,0 +1,41 @@
+{
+  "id": "ex-ens-app-20",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Théorie des Ensembles — Propriétés avancées des ensembles",
+  "requiresRedaction": true,
+  "context": "Pour tout entier $n \\geq 2$, on pose $I_n = \\{0;1;2;\\ldots;n\\}$ et on définit :\n$$E = \\{(x;y) \\in \\mathbb{N}^2 \\mid x + y = n\\} \\qquad F = \\{(x;y) \\in \\mathbb{N}^2 \\mid x^2 + y = n+2\\}$$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que $E \\subset I_n \\times I_n$.",
+          "hint": "Si $(x;y) \\in E$, alors $x + y = n$ avec $x, y \\in \\mathbb{N}$. Montrez que $x \\leq n$ et $y \\leq n$."
+        },
+        {
+          "id": "sq1b",
+          "content": "Montrer que $F \\not\\subset I_n \\times I_n$.",
+          "hint": "Cherchez un élément de $F$ dont une coordonnée dépasse $n$. Essayez $x = 0$ dans la définition de $F$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer en extension l'ensemble $E \\cap F$.",
+      "hint": "$(x;y) \\in E \\cap F$ implique $x+y=n$ et $x^2+y=n+2$. Soustrayez les deux équations pour éliminer $y$."
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer en extension les ensembles suivants : $A = \\{(x;y) \\in \\mathbb{Z}^2 \\mid x^2 + xy - 2y^2 + 5 = 0\\}$",
+      "hint": "Utilisez la factorisation $(x-y)(x+2y) = -5$ et cherchez toutes les façons d'écrire $-5$ comme produit de deux entiers."
+    },
+    {
+      "id": "q4",
+      "content": "Déterminer en extension les ensembles suivants : $B = \\{(x;y) \\in \\mathbb{Z}^2 \\mid x^2 - y^2 - x + 3y - 30 = 0\\}$",
+      "hint": "Factorisez $x^2 - y^2 - x + 3y - 30 = (x-y)(x+y) - (x-3y) - 30$. Essayez de regrouper autrement ou substituez $u = x-y$ et $v = x+y$."
+    }
+  ]
+}

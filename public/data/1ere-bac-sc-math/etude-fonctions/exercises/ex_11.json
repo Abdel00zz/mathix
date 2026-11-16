@@ -1,0 +1,60 @@
+{
+  "id": "ex-etude-fct-11",
+  "theme": "etude-fonctions",
+  "difficulty": "difficile",
+  "topic": "Analyse - Étude complète d'une fonction rationnelle",
+  "requiresRedaction": true,
+  "context": "Soit $f$ une fonction définie par :\n$$f(x)=\\frac{x^2-2x+1}{x-3}$$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer les limites aux bornes de $D_f$",
+      "hint": "Identifiez d'abord $D_f = \\mathbb{R} \\setminus \\{3\\}$. Pour les limites en $\\pm\\infty$, utilisez le rapport des termes de plus haut degré $\\displaystyle \\lim_{x \\to \\pm\\infty} \\frac{x^2}{x}$. Pour les limites en $3^+$ et $3^-$, déterminez le signe du dénominateur $x-3$ au voisinage de $3$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer les réels a et b tel que :\n$$f(x)=ax+b+\\frac{c}{x-3} \\quad \\forall x \\in D_f$$",
+      "hint": "Réduisez l'expression $ax+b+\\frac{c}{x-3}$ au même dénominateur, développez le numérateur obtenu, puis procédez par identification des coefficients avec ceux du polynôme $x^2-2x+1$."
+    },
+    {
+      "id": "q3",
+      "content": "Etudier les branches infinies de la courbe $(C_f)$",
+      "hint": "La limite infinie en $3$ donne une asymptote verticale. En $\\pm\\infty$, utilisez l'expression de la question précédente pour montrer que $\\displaystyle \\lim_{x \\to \\pm\\infty}[f(x) - (ax+b)] = 0$, ce qui prouve l'existence d'une asymptote oblique."
+    },
+    {
+      "id": "q4",
+      "content": "Etudier les variations de $f$ et dresser le tableau de variation de $f$",
+      "hint": "Calculez la fonction dérivée $f'(x)$ en appliquant la formule $\\left(\\frac{u}{v}\\right)' = \\frac{u'v-uv'}{v^2}$. Étudiez le signe du trinôme au numérateur pour déduire le sens de variation."
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que le point $\\Omega(3;4)$ est un centre de symétrie de $(C_f)$",
+      "hint": "Appliquez la relation caractérisant un centre de symétrie $\\Omega(a;b)$ : vérifiez que pour tout $x$ du domaine, $f(2a-x) + f(x) = 2b$, soit ici $f(6-x) + f(x) = 8$."
+    },
+    {
+      "id": "q6",
+      "content": "Calculer $f''(x) \\quad \\forall x \\in D_f$ et étudier la concavité de la courbe de $f$",
+      "hint": "Dérivez $f'(x)$. Pour un calcul plus rapide, dérivez l'expression décomposée $f(x)=x+1+\\frac{4}{x-3}$. Étudiez ensuite le signe de $f''(x)$ : $f''(x)>0$ indique une fonction convexe, $f''(x)<0$ une fonction concave."
+    },
+    {
+      "id": "q7",
+      "content": "Etudier la position de courbe $(C_f)$ et son asymptote oblique $(\\Delta)$",
+      "hint": "Étudiez le signe de la différence $f(x) - y_{\\Delta}$, qui équivaut au signe du reste $\\frac{c}{x-3}$. Déduisez-en si la courbe est au-dessus ou en-dessous de l'asymptote sur chaque intervalle."
+    },
+    {
+      "id": "q8",
+      "content": "Déterminer les points d'intersection de la courbe $(C_f)$ avec les axes du repère",
+      "hint": "L'intersection avec l'axe $(Oy)$ est le point $(0; f(0))$. L'intersection avec l'axe $(Ox)$ s'obtient en résolvant $f(x)=0$, ce qui revient à annuler le numérateur $x^2-2x+1$."
+    },
+    {
+      "id": "q9",
+      "content": "Déterminer l'équation de la tangente $(T)$ a la courbe $(C_f)$ en $x_0=2$",
+      "hint": "Appliquez la formule de l'équation de la tangente au point d'abscisse $a$ : $y = f'(a)(x-a) + f(a)$, en posant $a=2$."
+    },
+    {
+      "id": "q10",
+      "content": "Tracer la courbe $(C_f)$",
+      "hint": "Représentez d'abord les droites asymptotes (verticale et oblique), placez le centre de symétrie $\\Omega$, les points d'intersection avec les axes, la tangente en $2$, puis tracez l'allure de la courbe en cohérence avec le tableau de variations."
+    }
+  ]
+}

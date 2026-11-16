@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Extraire une racine carrée à la main",
+    "subtitle": "Méthode de Héron",
+    "context": "Suites"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Extraire une racine carrée à la main",
+          "content": "La diagonale d'un carré de côté $1$ vaut $\\sqrt{2}$, un nombre qui n'est pas entier. Comment en calculer une valeur approchée sans calculatrice ?\\par \\textbf{Méthode de Héron.} Pour approcher $\\sqrt{a}$ (avec $a>0$), on construit la suite $(u_n)$ définie par :\\par $$u_0 > 0, \\qquad u_{n+1} = \\dfrac{1}{2}\\left(u_n + \\dfrac{a}{u_n}\\right) \\quad \\text{pour tout } n \\in \\mathbb{N}.$$"
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Montrer par récurrence que $u_n > 0$ pour tout $n \\in \\mathbb{N}$.\\item Montrer que $u_{n+1}^2 - a = \\dfrac{1}{4}\\left(u_n - \\dfrac{a}{u_n}\\right)^2 \\geq 0$, et en déduire que $u_{n+1} \\geq \\sqrt{a}$ pour tout $n$.\\item Montrer que la suite $(u_n)_{n\\geq 1}$ est décroissante. Que peut-on en conclure sur sa convergence, et quelle est sa limite ?\\item Application : calculer $u_1$, $u_2$ et $u_3$ pour $a = 2$ et $u_0 = 1$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Si $u_n > 0$ alors $\\dfrac{a}{u_n} > 0$, donc $u_{n+1}$ est la demi-somme de deux réels strictement positifs."
+        },
+        {
+          "type": "hint",
+          "content": "Pour la monotonie : $u_{n+1} - u_n = \\dfrac{a - u_n^2}{2u_n}$. Or pour $n\\geq 1$, $u_n \\geq \\sqrt{a}$ donc $u_n^2 \\geq a$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $u_0 > 0$. Si $u_n > 0$, alors $\\dfrac{a}{u_n} > 0$ et $u_{n+1} = \\dfrac{1}{2}\\left(u_n + \\dfrac{a}{u_n}\\right) > 0$. Par récurrence, $u_n > 0$ pour tout $n$.\\par\\textbf{2)} $u_{n+1}^2 - a = \\dfrac{1}{4}\\left(u_n + \\dfrac{a}{u_n}\\right)^2 - a = \\dfrac{1}{4}\\left(u_n - \\dfrac{a}{u_n}\\right)^2 \\geq 0$, donc $u_{n+1}^2 \\geq a$ et, comme $u_{n+1}>0$, $u_{n+1} \\geq \\sqrt{a}$.\\par\\textbf{3)} Pour $n \\geq 1$ : $u_{n+1} - u_n = \\dfrac{a - u_n^2}{2u_n} \\leq 0$ car $u_n^2 \\geq a$. La suite $(u_n)_{n\\geq 1}$ est décroissante et minorée par $\\sqrt{a}$ : elle converge. Sa limite $\\ell$ vérifie $\\ell = \\dfrac{1}{2}\\left(\\ell + \\dfrac{a}{\\ell}\\right)$, soit $\\ell^2 = a$, donc $\\ell = \\sqrt{a}$.\\par\\textbf{4)} Pour $a=2$, $u_0 = 1$ : $u_1 = \\dfrac{1}{2}\\left(1 + 2\\right) = \\dfrac{3}{2}$ ; $u_2 = \\dfrac{17}{12} \\approx 1{,}4167$ ; $u_3 = \\dfrac{577}{408} \\approx 1{,}4142157$. En $3$ étapes seulement, on obtient déjà $6$ décimales exactes de $\\boxed{\\sqrt{2} \\approx 1{,}414214}$."
+        }
+      ]
+    }
+  ]
+}

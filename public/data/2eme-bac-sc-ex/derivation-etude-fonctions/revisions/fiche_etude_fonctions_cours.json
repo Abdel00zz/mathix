@@ -1,0 +1,212 @@
+{
+  "header": {
+    "title": "Dérivation et étude des fonctions — Partie 2",
+    "subtitle": "Monotonie, extremums, concavité, symétrie, branches infinies et asymptotes",
+    "context": "2BAC Sciences"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "L'étude complète d'une fonction est l'\\objectif{aboutissement de l'analyse au lycée} : elle coordonne domaine, parité, limites, dérivée, variations, concavité et branches infinies en un protocole rigoureux menant au tableau de variations et à la courbe représentative. La \\defi{difficulté} est cumulative — une erreur de signe sur $f'(x)$ fausse le sens de variation et donc toute la conclusion graphique.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "René Descartes (1596–1650)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "derivee_premiere_monotonie",
+      "category": "course",
+      "title": "Applications de la dérivée première — Monotonie et extremums",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La dérivée première est l'outil central pour étudier les variations d'une fonction. Son signe détermine si la fonction monte ou descend, et son annulation avec changement de signe signale un extremum."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{le signe de $f'$ détermine les variations de $f$}",
+          "content": "Soit $f$ une fonction dérivable sur un intervalle $I$.\\begin{enumerate}\\item Si $f'(x) > 0$ pour tout $x \\in I$ (sauf éventuellement en un nombre fini de points où $f' = 0$), alors $f$ est \\textbf{strictement croissante} sur $I$\\item Si $f'(x) < 0$ pour tout $x \\in I$ (sauf éventuellement en un nombre fini de points), alors $f$ est \\textbf{strictement décroissante} sur $I$\\item Si $f'(x) = 0$ pour tout $x \\in I$, alors $f$ est \\textbf{constante} sur $I$\\end{enumerate}\\par\\smallskip \\textbf{Précision :} si $f'$ s'annule en un nombre fini de points intérieurs à $I$ sans changer de signe, la monotonie de $f$ n'est pas affectée."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = x^3 - 3x^2 - 9x + 5$. Calculons $f'(x)$, étudions son signe et dressons le tableau de variations de $f$.}\\par\\smallskip \\textbf{Calcul de $f'(x)$ :}\\begin{align*}f'(x) &= \\blank{3x^2 - 6x - 9} = 3(x^2 - 2x - 3) = 3(x-3)(x+1)\\end{align*}\\par\\smallskip \\textbf{Signe de $f'(x)$ :} $f'(x) = 0$ pour $x = \\blank{-1}$ et $x = \\blank{3}$.\\par\\smallskip$$\\begin{array}{|c|ccccc|}\\hline x & -\\infty & & -1 & & 3 & & +\\infty \\\\\\hline f'(x) & & + & 0 & - & 0 & + & \\\\\\hline f & \\nearrow & & \\blank{10} & \\searrow & \\blank{-22} & \\nearrow & \\\\\\hline\\end{array}$$\\par\\smallskip $f(-1) = -1-3+9+5 = \\blank{10}$ est un \\textbf{maximum local}, $f(3) = 27-27-27+5 = -22$ est un \\textbf{minimum local}."
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{$f'(a)=0$ garantit un extremum}",
+          "content": "Soit $f$ dérivable sur un intervalle ouvert $I$ et $a \\in I$.\\par\\smallskip \\textbf{Condition nécessaire (Propriété 1) :}$$\\text{Si } f \\text{ admet un extremum en } a \\Rightarrow f'(a) = 0$$\\par\\smallskip \\textbf{Condition suffisante (Propriété 2) :}$$\\text{Si } f'(a) = 0 \\text{ ET } f' \\text{ change de signe en } a \\Rightarrow f(a) \\text{ est un extremum}$$\\par\\smallskip Plus précisément :\\begin{itemize}\\item $f'$ passe de $+$ à $-$ en $a$ : $f(a)$ est un \\textbf{maximum local}\\item $f'$ passe de $-$ à $+$ en $a$ : $f(a)$ est un \\textbf{minimum local}\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = x^3$. Montrons que $f'(0) = 0$ mais que $f(0)$ n'est pas un extremum.}\\par\\smallskip On calcule $f'(x) = \\blank{3x^2}$, donc $f'(0) = 0$. La condition nécessaire est \\blank{satisfaite}.\\par\\smallskip On étudie le signe de $f'(x) = 3x^2$ :\\begin{itemize}\\item Pour $x < 0$ : $f'(x) = 3x^2 > 0$\\item Pour $x > 0$ : $f'(x) = 3x^2 > 0$\\end{itemize}$f'$ ne \\blank{change pas de signe} en $0$ — elle reste \\textbf{positive} des deux côtés. Donc $f(0) = 0$ \\blank{n'est pas} un extremum : $f$ est strictement croissante sur $\\mathbb{R}$ tout entier."
+        },
+        {
+          "type": "warning",
+          "content": "$f'(a) = 0$ est une \\textbf{condition nécessaire} pour un extremum, mais \\textbf{pas suffisante}. L'exemple $f(x) = x^3$ en $a = 0$ le prouve : $f'(0) = 0$, mais $f$ est strictement croissante au voisinage de 0 — aucun extremum.\\par\\smallskip Pour conclure à un extremum, il faut \\textbf{impérativement} vérifier que $f'$ \\textbf{change de signe} au voisinage de $a$. Ne jamais conclure à un extremum sur la seule base de $f'(a) = 0$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{dresser le tableau de variations à partir de $f'$}",
+          "content": "\\begin{enumerate}\\item \\textbf{Calculer} $f'(x)$ et la factoriser si possible\\item \\textbf{Résoudre} $f'(x) = 0$ pour trouver les zéros de $f'$\\item \\textbf{Étudier} le signe de $f'$ sur chaque intervalle délimité par ces zéros :\\begin{itemize}\\item Tester une valeur dans chaque intervalle\\item Ou utiliser le signe des facteurs (tableau de signes)\\end{itemize}\\item \\textbf{Remplir} le tableau de variations :\\begin{itemize}\\item Flèche $\\nearrow$ si $f' > 0$, flèche $\\searrow$ si $f' < 0$\\item Calculer $f(a)$ pour chaque zéro $a$ de $f'$ et l'inscrire dans le tableau\\end{itemize}\\item \\textbf{Identifier} les extremums locaux en repérant les changements de signe de $f'$\\end{enumerate}\\par\\textbf{Piège :} ne pas oublier de calculer les limites de $f$ aux bornes du domaine pour compléter les flèches."
+        },
+        {
+          "type": "remark",
+          "content": "Un point $a$ où $f'(a) = 0$ peut correspondre à trois situations :\\begin{enumerate}\\item $f'$ passe de $+$ à $-$ : \\textbf{maximum local} (la courbe a un sommet)\\item $f'$ passe de $-$ à $+$ : \\textbf{minimum local} (la courbe a un creux)\\item $f'$ garde le même signe : \\textbf{point d'inflexion à tangente horizontale} — ni maximum ni minimum. C'est le cas de $f(x) = x^3$ en $0$\\end{enumerate}\\par\\smallskip Dans tous les cas, $f'(a) = 0$ signifie que la tangente à la courbe en $x = a$ est \\textbf{horizontale}."
+        }
+      ]
+    },
+    {
+      "id": "derivee_seconde",
+      "category": "course",
+      "title": "Applications de la dérivée seconde — Concavité et inflexion",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La dérivée première renseigne sur les variations. La dérivée seconde $f''$ renseigne sur la \\textit{courbure} de la courbe : est-elle tournée vers le haut comme un bol ($\\cup$) ou vers le bas comme une cloche ($\\cap$) ? Le point où elle change de courbure est un point d'inflexion."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{$f''$ détermine la concavité de la courbe}",
+          "content": "Soit $f$ une fonction deux fois dérivable sur un intervalle $I$.\\begin{enumerate}\\item Si $\\forall x \\in I : f''(x) > 0$, alors $\\mathcal{C}_f$ est située \\textbf{au-dessus} de ses tangentes — on dit que la courbe est \\textbf{convexe} (concavité vers le bas, notée $\\cup$)\\item Si $\\forall x \\in I : f''(x) < 0$, alors $\\mathcal{C}_f$ est située \\textbf{en dessous} de ses tangentes — on dit que la courbe est \\textbf{concave} (concavité vers le haut, notée $\\cap$)\\end{enumerate}\\par\\smallskip \\textbf{Mémo visuel :}\\begin{itemize}\\item $f'' > 0$ : la courbe ressemble à un $\\cup$ — comme un bol qui retient l'eau\\item $f'' < 0$ : la courbe ressemble à un $\\cap$ — comme une cloche retournée\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = x^3 - 3x^2 - 9x + 5$. Étudions la concavité de $\\mathcal{C}_f$ et trouvons son point d'inflexion.}\\par\\smallskip On calcule $f''(x)$ à partir de $f'(x) = 3x^2 - 6x - 9$ :\\begin{align*}f''(x) &= \\blank{6x - 6} = 6(x - 1)\\end{align*}\\par\\smallskip $f''(x) = 0$ pour $x = \\blank{1}$.\\begin{itemize}\\item Pour $x < 1$ : $f''(x) < 0$ — la courbe est \\blank{concave} ($\\cap$)\\item Pour $x > 1$ : $f''(x) > 0$ — la courbe est \\blank{convexe} ($\\cup$)\\end{itemize}$f''$ s'annule en $x = 1$ et change de signe : le point $A\\bigl(1, f(1)\\bigr) = A(1, \\blank{-6})$ est un \\textbf{point d'inflexion}. La tangente en ce point \\textbf{traverse} la courbe."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{un point d'inflexion}",
+          "content": "Soit $f$ deux fois dérivable sur $I$ et $x_0 \\in I$.\\par\\smallskip Le point $A\\bigl(x_0, f(x_0)\\bigr)$ est un \\textbf{point d'inflexion} de $\\mathcal{C}_f$ si et seulement si :\\begin{enumerate}\\item $f''(x_0) = 0$ (condition nécessaire)\\item $f''$ \\textbf{change de signe} au voisinage de $x_0$ (condition suffisante)\\end{enumerate}\\par\\smallskip \\textbf{Propriété fondamentale :} en un point d'inflexion, la tangente à la courbe \\textbf{coupe} (ou traverse) la courbe — elle n'est pas juste tangente d'un côté, elle passe de l'autre côté.\\par\\smallskip \\textbf{Note :} $f''(x_0) = 0$ seul ne suffit pas — il faut impérativement vérifier le changement de signe."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{étudier la concavité et trouver les points d'inflexion}",
+          "content": "\\begin{enumerate}\\item \\textbf{Calculer} $f''(x)$ (dériver $f'$ une nouvelle fois)\\item \\textbf{Résoudre} $f''(x) = 0$ pour trouver les candidats points d'inflexion\\item \\textbf{Étudier} le signe de $f''$ sur chaque intervalle :\\begin{itemize}\\item $f'' > 0$ : convexe ($\\cup$), courbe au-dessus des tangentes\\item $f'' < 0$ : concave ($\\cap$), courbe en dessous des tangentes\\end{itemize}\\item \\textbf{Vérifier} le changement de signe pour chaque zéro de $f''$\\item \\textbf{Calculer} les coordonnées $\\bigl(x_0, f(x_0)\\bigr)$ de chaque point d'inflexion\\item \\textbf{Dresser} le tableau de concavité en dessous du tableau de variations\\end{enumerate}\\par\\textbf{Rappel :} un point d'inflexion peut être un extremum (si $f'(x_0) = 0$ aussi) ou simplement un changement de courbure."
+        },
+        {
+          "type": "remark",
+          "content": "La condition $f''(x_0) = 0$ est nécessaire mais pas suffisante pour un point d'inflexion. Contre-exemple : $f(x) = x^4$ en $x_0 = 0$.\\par $f''(x) = 12x^2$, donc $f''(0) = 0$. Mais $f''(x) = 12x^2 \\geq 0$ pour tout $x$ — $f''$ ne change pas de signe. La courbe reste convexe partout : pas de point d'inflexion en $0$.\\par\\smallskip Résumé des conditions :\\begin{enumerate}\\item $f''(x_0) = 0$ ET $f''$ change de signe : \\textbf{point d'inflexion}\\item $f''(x_0) = 0$ mais $f''$ ne change pas de signe : \\textbf{ni inflexion, ni changement de concavité}\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "symetrie_courbe",
+      "category": "course",
+      "title": "Centre et axe de symétrie de la courbe d'une fonction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait étudier la concavité. On explore maintenant les symétries de la courbe : un centre de symétrie réduit le travail d'étude à la moitié du domaine, et un axe de symétrie le réduit encore davantage."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{vérifier qu'un point est centre de symétrie de $\\mathcal{C}_f$}",
+          "content": "Soit $\\mathcal{C}_f$ la courbe représentative de $f$ définie sur $D_f$.\\par\\smallskip Le point $I(a, b)$ est \\textbf{centre de symétrie} de $\\mathcal{C}_f$ si et seulement si :\\begin{enumerate}\\item Pour tout $x \\in D_f$ : $2a - x \\in D_f$ \\quad (domaine symétrique par rapport à $a$)\\item Pour tout $x \\in D_f$ :\\par$$\\boxed{f(2a - x) + f(x) = 2b}$$\\end{enumerate}\\par\\smallskip \\textbf{Remarque pratique :} si on soupçonne $I(a,b)$ d'être centre de symétrie, calculer $b = f(a)$ d'abord (si $a \\in D_f$), puis vérifier l'équation fonctionnelle."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{vérifier que $x = a$ est axe de symétrie de $\\mathcal{C}_f$}",
+          "content": "La droite $D : x = a$ est \\textbf{axe de symétrie} de $\\mathcal{C}_f$ si et seulement si :\\begin{enumerate}\\item Pour tout $x \\in D_f$ : $2a - x \\in D_f$\\item Pour tout $x \\in D_f$ :\\par$$\\boxed{f(2a - x) = f(x)}$$\\end{enumerate}\\par\\smallskip \\textbf{Lien avec la parité :}\\begin{itemize}\\item $f$ paire $\\Leftrightarrow$ axe de symétrie $x = 0$ (cas particulier $a = 0$)\\item $f$ impaire $\\Leftrightarrow$ centre de symétrie $O(0, 0)$ (cas particulier $a = b = 0$)\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = \\dfrac{x-1}{\\sqrt{x^2-2x+2}}$. Montrons que le point $I(1 ; 0)$ est un centre de symétrie de $\\mathcal{C}_f$.}\\par\\smallskip \\textbf{Vérification du domaine :} on a $x^2 - 2x + 2 = (x-1)^2 + 1 > 0$ pour tout $x \\in \\mathbb{R}$. Donc $D_f = \\mathbb{R}$, symétrique par rapport à $1$. La \\blank{première condition} est satisfaite.\\par\\smallskip \\textbf{Calcul de $f(2 - x)$ :} on substitue $x \\leftarrow 2 - x$ :\\begin{align*}f(2-x) &= \\frac{(2-x)-1}{\\sqrt{(2-x)^2-2(2-x)+2}} = \\frac{\\blank{1-x}}{\\sqrt{x^2-2x+2}}\\end{align*}\\par\\smallskip \\textbf{Vérification de l'équation :}\\begin{align*}f(2-x) + f(x) &= \\frac{1-x}{\\sqrt{x^2-2x+2}} + \\frac{x-1}{\\sqrt{x^2-2x+2}} = \\frac{\\blank{0}}{\\sqrt{x^2-2x+2}} = \\blank{0} = 2 \\times 0\\end{align*}L'équation $f(2-x) + f(x) = 0 = 2b$ est vérifiée avec $b = \\blank{0}$. Donc $I(1; 0)$ est bien un centre de symétrie."
+        },
+        {
+          "type": "remark",
+          "content": "L'existence d'un centre de symétrie $I(a, b)$ sur la courbe a une conséquence pratique majeure : il suffit d'étudier $f$ sur $]-\\infty ; a]$ (ou $[a ; +\\infty[$) et de déduire le comportement sur l'autre moitié par symétrie.\\par\\smallskip De même, si $I(a, b)$ est un point d'inflexion de $\\mathcal{C}_f$ (c'est-à-dire $f''(a) = 0$ et $f''$ change de signe en $a$), alors $I$ est un centre de symétrie de $\\mathcal{C}_f$. Ce résultat permet de deviner le centre de symétrie en résolvant $f''(x) = 0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = -3x^2 + 6x + 1$. Montrons que la droite $x = 1$ est un axe de symétrie de $\\mathcal{C}_f$.}\\par\\smallskip On doit vérifier que $f(2 - x) = f(x)$ pour tout $x \\in \\mathbb{R}$.\\par\\smallskip \\textbf{Calcul de $f(2-x)$ :}\\begin{align*}f(2-x) &= -3(2-x)^2 + 6(2-x) + 1 \\\\&= -3(4 - 4x + x^2) + 12 - 6x + 1 \\\\&= \\blank{-3x^2 + 12x - 12} + 12 - 6x + 1 \\\\&= \\blank{-3x^2 + 6x + 1} = f(x)\\end{align*}Puisque $f(2-x) = f(x)$ pour tout $x \\in \\mathbb{R}$, la droite $x = \\blank{1}$ est bien un \\textbf{axe de symétrie} de $\\mathcal{C}_f$.\\par\\smallskip \\textbf{Lien avec le sommet :} $\\alpha = -\\dfrac{b}{2a} = -\\dfrac{6}{2 \\times (-3)} = \\blank{1}$ — le sommet de la parabole a pour abscisse $1$, qui est bien l'axe de symétrie."
+        }
+      ]
+    },
+    {
+      "id": "branches_infinies",
+      "category": "course",
+      "title": "Branches infinies — Asymptotes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a étudié le comportement local de la courbe. On s'intéresse maintenant au comportement aux bornes du domaine (quand $x \\to \\pm\\infty$ ou $x \\to a^\\pm$) : la courbe s'échappe-t-elle vers l'infini, et si oui, se rapproche-t-elle d'une droite ?"
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{une branche infinie et les types d'asymptotes}",
+          "content": "Si au moins une des coordonnées d'un point $M$ de $\\mathcal{C}_f$ tend vers l'infini, on dit que $\\mathcal{C}_f$ admet une \\textbf{branche infinie}.\\par\\smallskip On distingue trois types d'asymptotes :\\begin{enumerate}\\item \\textbf{Asymptote verticale} $x = a$ : $\\displaystyle\\lim_{x \\to a^+} f(x) = \\pm\\infty$ ou $\\displaystyle\\lim_{x \\to a^-} f(x) = \\pm\\infty$\\item \\textbf{Asymptote horizontale} $y = b$ : $\\displaystyle\\lim_{x \\to +\\infty} f(x) = b$ ou $\\displaystyle\\lim_{x \\to -\\infty} f(x) = b$\\item \\textbf{Asymptote oblique} $y = ax + b$ ($a \\neq 0$) : $\\displaystyle\\lim_{x \\to \\pm\\infty} \\bigl[f(x) - (ax+b)\\bigr] = 0$\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = \\dfrac{2x+1}{x-1}$. Trouvons l'asymptote verticale de $\\mathcal{C}_f$ et précisons la position relative de la courbe.}\\par\\smallskip \\textbf{Domaine :} $x \\neq 1$, donc $D_f = \\mathbb{R} \\setminus \\{1\\}$.\\par\\smallskip \\textbf{Limites en $x = 1$ :}\\begin{align*}\\lim_{x \\to 1^+} f(x) &= \\lim_{x \\to 1^+} \\frac{2x+1}{x-1} = \\frac{3}{\\blank{0^+}} = \\blank{+\\infty}\\\\\\lim_{x \\to 1^-} f(x) &= \\frac{3}{\\blank{0^-}} = \\blank{-\\infty}\\end{align*}Donc la droite $x = \\blank{1}$ est une \\textbf{asymptote verticale} à $\\mathcal{C}_f$. La courbe monte vers $+\\infty$ à droite de $x=1$ et descend vers $-\\infty$ à gauche."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = \\dfrac{2x+1}{x-1}$. Trouvons l'asymptote horizontale de $\\mathcal{C}_f$ au voisinage de $+\\infty$.}\\par\\smallskip On calcule la limite en divisant numérateur et dénominateur par $x$ :\\begin{align*}\\lim_{x \\to +\\infty} f(x) &= \\lim_{x \\to +\\infty} \\frac{2 + \\frac{1}{x}}{1 - \\frac{1}{x}} = \\frac{\\blank{2 + 0}}{\\blank{1 - 0}} = \\blank{2}\\end{align*}Donc la droite $y = \\blank{2}$ est une \\textbf{asymptote horizontale} à $\\mathcal{C}_f$ au voisinage de $+\\infty$.\\par\\smallskip \\textbf{Position relative :} on étudie le signe de $f(x) - 2 = \\dfrac{2x+1}{x-1} - 2 = \\dfrac{3}{x-1}$.\\par Pour $x > 1$ : $f(x) - 2 > 0$, donc $\\mathcal{C}_f$ est \\blank{au-dessus} de l'asymptote $y = 2$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{trouver une asymptote oblique}",
+          "content": "Si $\\mathcal{C}_f$ admet une asymptote oblique $y = ax + b$ au voisinage de $\\pm\\infty$, on détermine $a$ et $b$ par les deux limites successives :\\begin{enumerate}\\item \\textbf{Déterminer $a$} :\\par$$a = \\lim_{x \\to \\pm\\infty} \\frac{f(x)}{x} \\in \\mathbb{R}^*$$\\par Si cette limite est $0$ ou $\\pm\\infty$, il n'y a pas d'asymptote oblique.\\item \\textbf{Déterminer $b$} (une fois $a$ connu) :\\par$$b = \\lim_{x \\to \\pm\\infty} \\bigl[f(x) - ax\\bigr] \\in \\mathbb{R}$$\\par Si $b = \\pm\\infty$, il n'y a pas d'asymptote oblique.\\item \\textbf{Conclure} : la droite $y = ax + b$ est une asymptote oblique si et seulement si les deux limites ci-dessus sont finies (et $a \\neq 0$).\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = x + \\dfrac{2}{\\sqrt{x+1}}$ définie sur $]-1; +\\infty[$. Montrons que $\\mathcal{C}_f$ admet une asymptote oblique au voisinage de $+\\infty$ et déterminons son équation.}\\par\\smallskip \\textbf{Calcul de $a$ :}\\begin{align*}a = \\lim_{x \\to +\\infty} \\frac{f(x)}{x} = \\lim_{x \\to +\\infty} \\frac{x + \\frac{2}{\\sqrt{x+1}}}{x} = \\lim_{x \\to +\\infty} \\left(1 + \\frac{2}{x\\sqrt{x+1}}\\right) = \\blank{1}\\end{align*}\\par\\smallskip \\textbf{Calcul de $b$} (avec $a = 1$) :\\begin{align*}b = \\lim_{x \\to +\\infty} \\bigl[f(x) - x\\bigr] = \\lim_{x \\to +\\infty} \\frac{2}{\\sqrt{x+1}} = \\blank{0}\\end{align*}\\par\\smallskip Donc la droite $y = \\blank{x}$ est une \\textbf{asymptote oblique} à $\\mathcal{C}_f$ au voisinage de $+\\infty$.\\par\\smallskip \\textbf{Position relative :} $f(x) - x = \\dfrac{2}{\\sqrt{x+1}} > 0$ pour tout $x > -1$, donc $\\mathcal{C}_f$ est toujours \\blank{au-dessus} de son asymptote oblique."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = \\dfrac{x^4}{x^3+x^2}$ avec $f(0) = 0$. Calculons $\\displaystyle\\lim_{x \\to +\\infty} \\frac{f(x)}{x}$ et $\\displaystyle\\lim_{x \\to +\\infty}[f(x) - x]$ pour identifier la branche infinie au voisinage de $+\\infty$.}\\par\\smallskip On simplifie d'abord : pour $x \\neq 0$ et $x \\neq -1$, $f(x) = \\dfrac{x^4}{x^2(x+1)} = \\dfrac{x^2}{x+1}$.\\par\\smallskip \\textbf{Calcul de $a$ :}\\begin{align*}a = \\lim_{x \\to +\\infty} \\frac{f(x)}{x} = \\lim_{x \\to +\\infty} \\frac{x^2}{x(x+1)} = \\lim_{x \\to +\\infty} \\frac{x}{x+1} = \\blank{1}\\end{align*}\\par\\smallskip \\textbf{Calcul de $b$} (avec $a = 1$) :\\begin{align*}f(x) - x &= \\frac{x^2}{x+1} - x = \\frac{x^2 - x(x+1)}{x+1} = \\frac{\\blank{-x}}{x+1}\\end{align*}\\begin{align*}b = \\lim_{x \\to +\\infty} \\frac{-x}{x+1} = \\blank{-1}\\end{align*}Donc la droite $y = \\blank{x - 1}$ est une \\textbf{asymptote oblique} à $\\mathcal{C}_f$ au voisinage de $+\\infty$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{identifier le type de branche infinie}",
+          "content": "Quand $\\displaystyle\\lim_{x \\to \\pm\\infty} f(x) = \\pm\\infty$, appliquer l'arbre de décision suivant :\\begin{enumerate}\\item \\textbf{Calculer} $\\displaystyle\\lim_{x \\to \\pm\\infty} \\frac{f(x)}{x}$\\begin{itemize}\\item Résultat $= \\pm\\infty$ : \\textbf{branche parabolique de direction l'axe des ordonnées}\\item Résultat $= 0$ : \\textbf{branche parabolique de direction l'axe des abscisses}\\item Résultat $= a \\in \\mathbb{R}^*$ : passer à l'étape 2\\end{itemize}\\item \\textbf{Calculer} $\\displaystyle\\lim_{x \\to \\pm\\infty} [f(x) - ax]$\\begin{itemize}\\item Résultat $= \\pm\\infty$ : \\textbf{branche parabolique de direction la droite $y = ax$}\\item Résultat $= b \\in \\mathbb{R}$ : \\textbf{asymptote oblique $y = ax + b$}\\end{itemize}\\end{enumerate}\\par\\textbf{Cas de l'asymptote horizontale :} si $\\displaystyle\\lim_{x \\to \\pm\\infty} f(x) = L \\in \\mathbb{R}$, la droite $y = L$ est une asymptote horizontale — ne pas faire les étapes 1 et 2."
+        },
+        {
+          "type": "warning",
+          "content": "Ne pas confondre :\\begin{enumerate}\\item \\textbf{Asymptote horizontale} : $\\lim_{x\\to\\pm\\infty} f(x) = L \\in \\mathbb{R}$ — la courbe se rapproche d'une droite horizontale\\item \\textbf{Asymptote oblique} : $\\lim_{x\\to\\pm\\infty} \\frac{f(x)}{x} = a \\neq 0$ et $\\lim[f(x)-ax] = b \\in \\mathbb{R}$ — la courbe se rapproche d'une droite non horizontale\\item \\textbf{Branche parabolique} : aucune asymptote oblique, la courbe s'écarte de toute droite\\end{enumerate}\\par\\smallskip Si $\\lim_{x\\to\\pm\\infty} f(x) = \\pm\\infty$, alors $f$ ne peut pas avoir d'asymptote horizontale en $\\pm\\infty$ — commencer directement l'arbre de décision par le calcul de $\\lim f(x)/x$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{réaliser l'étude complète d'une fonction}",
+          "content": "Plan canonique d'une étude de fonction :\\begin{enumerate}\\item \\textbf{Domaine $D_f$} : exclure les valeurs problématiques (dénominateur nul, sous-racine négatif, logarithme non positif)\\item \\textbf{Parité / périodicité} : tester $f(-x)$ — réduire le domaine d'étude si possible\\item \\textbf{Limites aux bornes} : calculer les limites en chaque borne de $D_f$ — identifier les asymptotes verticales, horizontales ou obliques\\item \\textbf{Dérivée $f'$} : calculer, factoriser, étudier le signe — dresser le tableau de variations\\item \\textbf{Concavité ($f''$)} : calculer $f''$, étudier son signe — identifier les points d'inflexion\\item \\textbf{Tableau de concavité} : compléter sous le tableau de variations\\item \\textbf{Tangentes remarquables} : équation de la tangente en un point $x_0$ : $y = f'(x_0)(x - x_0) + f(x_0)$\\item \\textbf{Tracé de la courbe} : asymptotes, points calculés, variations et concavité\\end{enumerate}\\par\\textbf{Ordre conseillé :} toujours commencer par le domaine et les limites — elles conditionnent tout le reste."
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Synthèse — Plan d'étude complète d'une fonction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a tous les outils pour réaliser l'étude complète d'une fonction. Ce récapitulatif regroupe le plan canonique à suivre et les résultats essentiels."
+        },
+        {
+          "type": "summary",
+          "title": "Ce qu'il faut retenir — \\mathqst{Dérivation et étude des fonctions}",
+          "content": "\\begin{itemize}\\item $f' > 0$ sur $I$ $\\Rightarrow$ $f$ strictement croissante ; $f' < 0$ $\\Rightarrow$ décroissante\\item Extremum en $a$ $\\Rightarrow$ $f'(a) = 0$ (nécessaire). $f'(a) = 0$ ET $f'$ change de signe $\\Rightarrow$ extremum (suffisant)\\item $f'' > 0$ sur $I$ : courbe convexe ($\\cup$), au-dessus des tangentes\\item $f'' < 0$ sur $I$ : courbe concave ($\\cap$), en dessous des tangentes\\item Point d'inflexion en $x_0$ : $f''(x_0) = 0$ ET $f''$ change de signe (tangente traverse la courbe)\\item Centre de symétrie $I(a,b)$ : $f(2a-x) + f(x) = 2b$ pour tout $x$\\item Axe de symétrie $x = a$ : $f(2a-x) = f(x)$ pour tout $x$\\item Asymptote verticale $x = a$ : $\\lim_{x\\to a^\\pm} f(x) = \\pm\\infty$\\item Asymptote horizontale $y = b$ : $\\lim_{x\\to\\pm\\infty} f(x) = b$\\item Asymptote oblique $y = ax+b$ : $a = \\lim \\frac{f(x)}{x}$, $b = \\lim[f(x)-ax]$\\item Branche parabolique : $a = \\lim \\frac{f(x)}{x} = \\pm\\infty$ ou $0$, ou $b = \\pm\\infty$\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

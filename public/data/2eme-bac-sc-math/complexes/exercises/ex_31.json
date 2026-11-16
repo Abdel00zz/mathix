@@ -1,0 +1,72 @@
+{
+  "id": "ex-complexes-31",
+  "topic": "Nombres complexes - Bac National 2022 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2022,
+  "examenSession": "Normale",
+  "context": "Soit $m$ un nombre complexe non nul donné et $j=-\\dfrac12+\\dfrac{\\sqrt3}{2}i=e^{i2\\pi/3}$.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans l'ensemble $\\mathbb{C}$ l'équation d'inconnue $z$ $(E_m):z^2+mj^2z+m^2j=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "Vérifier que $j^3=1$ et $1+j+j^2=0$.",
+      "hint": "Utilisez $j=e^{i2\\pi/3}$ pour $j^3$, et pour la deuxième identité, reconnaissez la somme d'une suite géométrique de raison $j\\ne1$."
+    },
+    {
+      "id": "p1q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q2a",
+          "content": "Montrer que le discriminant de l'équation $(E_m)$ est $\\Delta=[m(1-j)]^2$.",
+          "hint": "Calculez $\\Delta=(mj^2)^2-4m^2j$ et factorisez par $m^2$ ; utilisez $1+j+j^2=0$ pour simplifier $j^4-4j$."
+        },
+        {
+          "id": "p1q2b",
+          "content": "Déterminer $z_1$ et $z_2$ les deux solutions de l'équation $(E_m)$.",
+          "hint": "Une racine carrée de $\\Delta$ est $m(1-j)$ ; simplifiez chaque solution en utilisant à nouveau $1+j+j^2=0$."
+        }
+      ]
+    },
+    {
+      "id": "p1q3",
+      "content": "Dans cette question, on suppose que $m=1+i$. Montrer que $(z_1+z_2)^{2022}$ est un imaginaire pur.",
+      "hint": "$z_1+z_2=-mj^2$ (somme des racines) ; mettez $m=1+i$ sous forme exponentielle, combinez son argument avec celui de $j^2$, puis regardez l'argument modulo $\\pi/2$ après élévation à la puissance $2022$."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe est muni d'un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. Soit $\\varphi$ la transformation du plan complexe qui à tout point $M(z)$ fait correspondre le point $M'(z')$ tel que $z'=(1+j)z$."
+    },
+    {
+      "id": "p2q1",
+      "content": "Déterminer la nature et les éléments caractéristiques de l'application $\\varphi$.",
+      "hint": "Une application $z\\mapsto az$ est une similitude (rotation si $|a|=1$, homothétie si $a$ réel) : calculez $1+j$ et mettez-le sous forme exponentielle grâce à $1+j+j^2=0$ (donc $1+j=-j^2$)."
+    },
+    {
+      "id": "p2q2",
+      "content": "On considère les points $A$, $B$ et $C$ d'affixes respectives $m$, $mj$ et $mj^2$ et on note $A'(a')$, $B'(b')$ et $C'(c')$ les images respectives des points $A$, $B$, $C$ par l'application $\\varphi$ et soient $P(p)$, $Q(q)$ et $R(r)$ les milieux respectifs des segments $[BA']$, $[CB']$ et $[AC']$.",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Montrer que : $a'=-mj^2$, $b'=-m$ et $c'=-mj$.",
+          "hint": "Appliquez $z'=(1+j)z=-j^2z$ (d'après la question précédente) à chacune des affixes $m$, $mj$, $mj^2$, en utilisant $j^3=1$."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que : $p+qj+rj^2=0$.",
+          "hint": "Exprimez $2p=b+a'$, $2q=c+b'$, $2r=a+c'$ à l'aide des résultats précédents, puis calculez $2(p+qj+rj^2)$ et simplifiez grâce à $1+j+j^2=0$ et $j^3=1$."
+        },
+        {
+          "id": "p2q2c",
+          "content": "En déduire que le triangle $PQR$ est équilatéral.",
+          "hint": "Rappelez le critère : un triangle $PQR$ est équilatéral (direct) si et seulement si $p+jq+j^2r=0$ ou une relation analogue faisant intervenir $j$ ; identifiez laquelle correspond à ce que vous venez d'obtenir (à une permutation près)."
+        }
+      ]
+    }
+  ]
+}

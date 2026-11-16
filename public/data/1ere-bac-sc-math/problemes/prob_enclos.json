@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "L'enclos le plus grand possible",
+    "subtitle": "Dérivée et optimisation d'aire",
+    "context": "Analyse"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "L'enclos le plus grand possible",
+          "content": "Un éleveur dispose de $100\\ \\text{m}$ de grillage pour construire un \\textbf{enclos rectangulaire}, en s'appuyant sur un long mur déjà existant (le mur forme l'un des côtés, et n'a donc pas besoin de grillage).\\par On note $x$ la longueur de chacun des deux côtés perpendiculaires au mur. Le grillage couvre ces deux côtés et le côté opposé au mur."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Exprimer la longueur du côté parallèle au mur en fonction de $x$, puis l'aire $A(x)$ de l'enclos.\\item Préciser l'intervalle des valeurs possibles de $x$, calculer $A'(x)$ et dresser le tableau de variations.\\item En déduire les dimensions de l'enclos d'aire maximale et la valeur de cette aire.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Le grillage couvre $2x$ (les deux côtés perpendiculaires) plus le côté parallèle au mur. Ce dernier mesure donc $100 - 2x$, et $A(x) = x(100 - 2x)$."
+        },
+        {
+          "type": "hint",
+          "content": "$A(x) = 100x - 2x^2$, donc $A'(x) = 100 - 4x$. Le maximum est atteint là où $A'(x) = 0$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} Le côté parallèle au mur mesure $100 - 2x$, donc $A(x) = x(100 - 2x) = 100x - 2x^2$.\\par\\textbf{2)} Il faut $x > 0$ et $100 - 2x > 0$, soit $x \\in \\,]0\\,;\\,50[$. $A'(x) = 100 - 4x$, qui s'annule en $x = 25$ : $A'$ est positive avant, négative après, donc $A$ croît puis décroît.\\par\\textbf{3)} L'aire est maximale pour $x = \\boxed{25\\ \\text{m}}$ ; le côté parallèle au mur mesure $100 - 50 = 50\\ \\text{m}$. L'aire maximale vaut $A(25) = 25 \\times 50 = \\boxed{1250\\ \\text{m}^2}$."
+        }
+      ]
+    }
+  ]
+}

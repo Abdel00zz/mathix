@@ -1,0 +1,78 @@
+{
+  "id": "ex_01",
+  "theme": "complexes",
+  "difficulty": "facile",
+  "topic": "Nombres Complexes",
+  "requiresRedaction": true,
+  "sessionDate": "2026-01-20T19:15:00.000Z",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Résoudre dans l'ensemble $\\mathbb{C}$ des nombres complexes, l'équation : $z^2 - \\sqrt{3}z + 1 = 0$.",
+      "hint": "Calculez le discriminant $\\Delta = b^2 - 4ac$. Les racines complexes sont données par $z = \\frac{-b \\pm i\\sqrt{-\\Delta}}{2a}$ lorsque $\\Delta < 0$."
+    },
+    {
+      "id": "q2",
+      "content": "Soient les nombres complexes $a = e^{i\\frac{\\pi}{6}}$ et $b = \\frac{3}{2} + i\\frac{\\sqrt{3}}{2}$.",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Ecrire $a$ sous forme algébrique.",
+          "hint": "Utilisez la formule d'Euler $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$ et les valeurs trigonométriques remarquables pour l'angle $\\frac{\\pi}{6}$."
+        },
+        {
+          "id": "b",
+          "content": "Vérifier que $\\overline{a}b = \\sqrt{3}$.",
+          "hint": "Calculez d'abord $\\overline{a}$ à partir de la forme algébrique de $a$. Ensuite, effectuez le produit. Une méthode alternative plus rapide consiste à écrire $b$ sous forme exponentielle et à utiliser les propriétés du produit."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A, B$ et $C$ d'affixes respectives $a, b$ et $\\overline{a}$.\\parMontrer que le point B est l'image du point A par une homothétie $h$ de centre $O$ dont on déterminera le rapport.",
+      "hint": "L'écriture complexe d'une homothétie de centre O et de rapport $k$ est $z' = kz$. Cherchez un réel $k$ tel que $b = ka$. Le résultat de la question 2.b peut être très utile ici."
+    },
+    {
+      "id": "q4",
+      "content": "Soient $z$ l'affixe d'un point M du plan et $z'$ l'affixe du point M' image de M par la rotation R de centre A et d'angle $\\frac{\\pi}{2}$.",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Ecrire $z'$ en fonction de $z$ et $a$.",
+          "hint": "L'écriture complexe d'une rotation de centre $A(a)$ et d'angle $\\theta$ est $z' - a = e^{i\\theta}(z - a)$. Isolez $z'$ et rappelez-vous que $e^{i\\frac{\\pi}{2}}=i$."
+        },
+        {
+          "id": "b",
+          "content": "Soit d l'affixe du point D image de C par la rotation R, montrer que $d = a+1$.",
+          "hint": "Appliquez la formule de la question 4.a au point $C$ d'affixe $c=\\overline{a}$. Vous devrez calculer le produit $i(\\overline{a} - a)$ et vous rappeler que $\\overline{a}-a = -2i\\text{Im}(a)$."
+        },
+        {
+          "id": "c",
+          "content": "Soit I le point d'affixe le nombre 1, montrer que ADIO est un losange.",
+          "hint": "Pour montrer que c'est un losange, prouvez que c'est un parallélogramme avec deux côtés consécutifs de même longueur. Calculez les affixes des vecteurs $\\overrightarrow{AD}$ et $\\overrightarrow{OI}$ pour le parallélogramme, puis comparez les modules $|OA| = |a|$ et $|OI| = |1|$."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $d - b = \\frac{\\sqrt{3}-1}{2}(1-i)$; en déduire un argument du nombre $d-b$.",
+          "hint": "C'est un calcul algébrique direct. Pour l'argument, mettez le nombre complexe $(1-i)$ sous forme exponentielle. L'argument d'un produit est la somme des arguments (ici, l'argument du réel positif est 0)."
+        },
+        {
+          "id": "b",
+          "content": "Ecrire le nombre $1-b$ sous forme trigonométrique.",
+          "hint": "Calculez d'abord $1-b$ sous forme algébrique. Ensuite, calculez son module et factorisez par celui-ci pour trouver le cosinus et le sinus de l'argument."
+        },
+        {
+          "id": "c",
+          "content": "Déduire une mesure de l'angle $(\\overrightarrow{BI}, \\overrightarrow{BD})$.",
+          "hint": "L'angle $(\\overrightarrow{BI}, \\overrightarrow{BD})$ est égal à $\\text{arg}\\left(\\frac{z_D - z_B}{z_I - z_B}\\right) = \\text{arg}\\left(\\frac{d-b}{1-b}\\right)$. Utilisez les résultats des questions 5.a et 5.b et la propriété $\\arg(z_1/z_2) = \\arg(z_1) - \\arg(z_2)$."
+        }
+      ]
+    }
+  ]
+}

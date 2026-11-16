@@ -1,0 +1,281 @@
+{
+  "header": {
+    "title": "Calcul Trigonométrique",
+    "subtitle": "Formules, transformations et équations",
+    "context": "1BAC SM"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "La trigonometrie permet de \\objectif{relier les mesures d'angles aux longueurs et aux mouvements periodiques} grace au cercle trigonometrique et aux fonctions sinus, cosinus et tangente. Elle sert autant a resoudre des triangles qu'a modeliser des phenomenes ondulatoires. La \\defi{difficulte} reside dans la memorisation intelligente des formules, le reperage des angles associes et la resolution rigoureuse des equations trigonometriques. \\savant{Hipparque de Nicee} a pose les premieres bases de cette discipline pour l'astronomie, en reliant observation du ciel et calcul geometrique.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Hipparchus.jpg",
+            "type": "image",
+            "position": "right",
+            "width": "16.5%",
+            "caption": "Hipparque de Nicée (c. 190–120 av. J.-C.)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rappels_fondamentaux",
+      "category": "course",
+      "title": "Rappels fondamentaux",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On connaît les fonctions cosinus et sinus depuis le cercle trigonométrique. On rappelle ici les identités de base qui seront utilisées tout au long du chapitre."
+        },
+        {
+          "type": "property",
+          "title": "Quelles identités doit-on connaître par cœur ?",
+          "content": "Pour tout réel $x$ :\\par\\begin{itemize}\\item \\textbf{Relation fondamentale} : $\\cos^2 x + \\sin^2 x = 1$\\item \\textbf{Parité du cosinus} : $\\cos(-x) = \\cos x$ \\quad (fonction paire)\\item \\textbf{Imparité du sinus} : $\\sin(-x) = -\\sin x$ \\quad (fonction impaire)\\item \\textbf{Complémentaire} : $\\cos\\left(\\frac{\\pi}{2} - x\\right) = \\sin x$ \\quad et \\quad $\\sin\\left(\\frac{\\pi}{2} - x\\right) = \\cos x$\\item \\textbf{Supplément} : $\\cos(\\pi - x) = -\\cos x$ \\quad et \\quad $\\sin(\\pi - x) = \\sin x$\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "title": "Valeurs des angles remarquables",
+          "content": "\\begin{array}{|c|c|c|c|c|c|}\\hline x & 0 & \\frac{\\pi}{6} & \\frac{\\pi}{4} & \\frac{\\pi}{3} & \\frac{\\pi}{2} \\\\\\hline \\cos x & 1 & \\frac{\\sqrt{3}}{2} & \\frac{\\sqrt{2}}{2} & \\frac{1}{2} & 0 \\\\\\hline \\sin x & 0 & \\frac{1}{2} & \\frac{\\sqrt{2}}{2} & \\frac{\\sqrt{3}}{2} & 1 \\\\\\hline \\tan x & 0 & \\frac{\\sqrt{3}}{3} & 1 & \\sqrt{3} & \\text{non défini} \\\\\\hline\\end{array}\\par\\textbf{Astuce de mémorisation} : pour le cosinus, les valeurs sont $\\frac{\\sqrt{4}}{2}, \\frac{\\sqrt{3}}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{1}}{2}, \\frac{\\sqrt{0}}{2}$. Le sinus suit l'ordre inverse."
+        }
+      ]
+    },
+    {
+      "id": "formules_addition",
+      "category": "course",
+      "title": "Formules d'addition et de duplication",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On connaît les valeurs de $\\cos$ et $\\sin$ pour les angles remarquables. Les formules d'addition permettent de calculer $\\cos(x+y)$ et $\\sin(x+y)$ à partir de $\\cos x$, $\\sin x$, $\\cos y$ et $\\sin y$."
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer le cosinus et le sinus d'une somme ?",
+          "content": "Pour tous réels $x$ et $y$ :\\begin{itemize}\\item $\\cos(x + y) = \\cos x \\cos y - \\sin x \\sin y$\\item $\\cos(x - y) = \\cos x \\cos y + \\sin x \\sin y$\\item $\\sin(x + y) = \\sin x \\cos y + \\cos x \\sin y$\\item $\\sin(x - y) = \\sin x \\cos y - \\cos x \\sin y$\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Le \\textbf{signe change} entre l'addition et la soustraction, mais de manière opposée pour le cosinus et le sinus.\\par\\begin{itemize}\\item Pour le \\textbf{cosinus} : $\\cos(x+y)$ a un signe \\textbf{moins} entre les deux termes, $\\cos(x-y)$ a un signe \\textbf{plus}\\item Pour le \\textbf{sinus} : c'est l'inverse, le signe suit celui de l'opération\\item \\textbf{Erreur fréquente} : écrire $\\cos(x+y) = \\cos x \\cos y + \\sin x \\sin y$. C'est \\textbf{faux}, c'est la formule de $\\cos(x-y)$\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer la valeur exacte d'un angle non remarquable ?",
+          "content": "Écrire l'angle comme \\textbf{somme} ou \\textbf{différence} d'angles remarquables ($\\frac{\\pi}{6}$, $\\frac{\\pi}{4}$, $\\frac{\\pi}{3}$). Appliquer la \\textbf{formule d'addition} puis remplacer par les valeurs connues.\\par Décompositions classiques :\\begin{itemize}\\item $\\dfrac{\\pi}{12} = \\dfrac{\\pi}{3} - \\dfrac{\\pi}{4}$\\item $\\dfrac{5\\pi}{12} = \\dfrac{\\pi}{4} + \\dfrac{\\pi}{6}$\\item $\\dfrac{7\\pi}{12} = \\dfrac{\\pi}{3} + \\dfrac{\\pi}{4}$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{$\\cos\\left(\\dfrac{\\pi}{12}\\right)$}.}\\par\\smallskip On remarque que $\\displaystyle\\frac{\\pi}{12} = \\frac{\\pi}{3} - \\frac{\\pi}{4}$. On applique la formule d'addition du cosinus :\\begin{align*}\\cos\\left(\\frac{\\pi}{12}\\right) &= \\cos\\left(\\frac{\\pi}{3} - \\frac{\\pi}{4}\\right) \\\\&= \\cos\\left(\\frac{\\pi}{3}\\right)\\cos\\left(\\frac{\\pi}{4}\\right) + \\blank{\\sin\\left(\\frac{\\pi}{3}\\right)\\sin\\left(\\frac{\\pi}{4}\\right)} \\\\&= \\frac{1}{2} \\times \\frac{\\sqrt{2}}{2} + \\blank{\\frac{\\sqrt{3}}{2}} \\times \\frac{\\sqrt{2}}{2} \\\\&= \\frac{\\sqrt{2}}{4} + \\blank{\\frac{\\sqrt{6}}{4}} \\\\&= \\blank{\\frac{\\sqrt{2} + \\sqrt{6}}{4}}\\end{align*}"
+        },
+        {
+          "type": "property",
+          "title": "Comment simplifier un angle double ?",
+          "content": "En posant $y = x$ dans les formules d'addition, on obtient pour tout réel $x$ :\\begin{itemize}\\item $\\sin(2x) = 2\\sin x \\cos x$\\item $\\cos(2x) = \\cos^2 x - \\sin^2 x$\\item $\\cos(2x) = 2\\cos^2 x - 1$\\item $\\cos(2x) = 1 - 2\\sin^2 x$\\end{itemize}\\par\\smallskip On en déduit les formules de \\textbf{linéarisation des carrés} : $$\\boxed{\\cos^2 x = \\frac{1 + \\cos(2x)}{2} \\quad \\text{et} \\quad \\sin^2 x = \\frac{1 - \\cos(2x)}{2}}$$"
+        },
+        {
+          "type": "remark",
+          "content": "Les trois formes de $\\cos(2x)$ servent dans des situations différentes :\\par\\begin{itemize}\\item $\\cos^2 x - \\sin^2 x$ : quand les deux fonctions apparaissent\\item $2\\cos^2 x - 1$ : pour exprimer un cosinus seul (linéarisation de $\\cos^2 x$)\\item $1 - 2\\sin^2 x$ : pour exprimer un sinus seul (linéarisation de $\\sin^2 x$)\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{$\\cos\\left(\\dfrac{\\pi}{8}\\right)$ sachant} que $\\dfrac{\\pi}{4} = 2 \\times \\dfrac{\\pi}{8}$.}\\par\\smallskip On utilise la formule de duplication du cosinus :\\begin{align*}\\cos\\left(\\frac{\\pi}{4}\\right) &= \\blank{2\\cos^2\\left(\\frac{\\pi}{8}\\right) - 1} \\\\\\frac{\\sqrt{2}}{2} &= 2\\cos^2\\left(\\frac{\\pi}{8}\\right) - 1 \\\\2\\cos^2\\left(\\frac{\\pi}{8}\\right) &= \\blank{\\frac{\\sqrt{2}}{2} + 1} = \\frac{\\sqrt{2} + 2}{2} \\\\\\cos^2\\left(\\frac{\\pi}{8}\\right) &= \\blank{\\frac{\\sqrt{2} + 2}{4}}\\end{align*}Puisque $\\dfrac{\\pi}{8}$ est entre $0$ et $\\dfrac{\\pi}{2}$, son cosinus est positif. On en déduit : $\\cos\\left(\\dfrac{\\pi}{8}\\right) = \\blank{\\frac{\\sqrt{\\sqrt{2} + 2}}{2}}$."
+        }
+      ]
+    },
+    {
+      "id": "tangente",
+      "category": "course",
+      "title": "Formules de la tangente",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait additionner les cosinus et les sinus. Comme la tangente est le quotient $\\frac{\\sin x}{\\cos x}$, elle possède ses propres formules d'addition, utiles pour certaines équations."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les formules d'addition pour la tangente ?",
+          "content": "Soient $x$ et $y$ des réels tels que les tangentes existent. On a :\\begin{itemize}\\item $\\displaystyle\\tan(x + y) = \\frac{\\tan x + \\tan y}{1 - \\tan x \\tan y}$\\item $\\displaystyle\\tan(x - y) = \\frac{\\tan x - \\tan y}{1 + \\tan x \\tan y}$\\item $\\displaystyle\\tan(2x) = \\frac{2\\tan x}{1 - \\tan^2 x}$\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Les formules de la tangente ne sont valables que si les \\textbf{dénominateurs sont non nuls}.\\par\\begin{itemize}\\item $\\tan(x+y)$ n'existe que si $\\tan x \\tan y \\neq 1$, c'est-à-dire si $x + y \\neq \\frac{\\pi}{2} + k\\pi$\\item $\\tan(2x)$ n'existe que si $\\tan^2 x \\neq 1$, c'est-à-dire si $x \\neq \\frac{\\pi}{4} + k\\frac{\\pi}{2}$\\item \\textbf{Erreur fréquente} : appliquer ces formules sans vérifier le domaine de validité\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{$\\tan(2x)$ sachant} que $\\tan(x) = \\dfrac{1}{2}$.}\\par\\smallskip On applique la formule de duplication de la tangente :\\begin{align*}\\tan(2x) &= \\frac{\\blank{2\\tan(x)}}{1 - \\tan^2(x)} \\\\&= \\frac{2 \\times \\frac{1}{2}}{1 - \\blank{\\left(\\frac{1}{2}\\right)^2}} \\\\&= \\frac{1}{1 - \\blank{\\frac{1}{4}}} \\\\&= \\frac{1}{\\frac{3}{4}} \\\\&= \\blank{\\frac{4}{3}}\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{$\\tan\\left(\\dfrac{\\pi}{12}\\right)$}.}\\par\\smallskip On utilise $\\dfrac{\\pi}{12} = \\dfrac{\\pi}{3} - \\dfrac{\\pi}{4}$ et la formule de soustraction :\\begin{align*}\\tan\\left(\\frac{\\pi}{12}\\right) &= \\frac{\\tan\\frac{\\pi}{3} - \\tan\\frac{\\pi}{4}}{1 + \\tan\\frac{\\pi}{3} \\tan\\frac{\\pi}{4}} \\\\&= \\frac{\\sqrt{3} - \\blank{1}}{1 + \\blank{\\sqrt{3} \\times 1}} \\\\&= \\frac{\\sqrt{3} - 1}{\\blank{1 + \\sqrt{3}}}\\end{align*}On multiplie par le conjugué : $\\dfrac{(\\sqrt{3}-1)^2}{(1+\\sqrt{3})(\\sqrt{3}-1)} = \\dfrac{4-2\\sqrt{3}}{\\blank{2}} = \\blank{2-\\sqrt{3}}$."
+        }
+      ]
+    },
+    {
+      "id": "demi_angle",
+      "category": "course",
+      "title": "L'astuce du demi-angle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait exprimer les fonctions trigonométriques d'une somme ou d'un double. Parfois, il est plus efficace de tout ramener à une seule variable : la tangente du demi-angle $t = \\tan\\left(\\frac{x}{2}\\right)$."
+        },
+        {
+          "type": "property",
+          "title": "Comment tout exprimer avec la tangente du demi-angle ?",
+          "content": "En posant $\\displaystyle t = \\tan\\left(\\frac{x}{2}\\right)$, on peut exprimer toutes les fonctions trigonométriques :\\begin{itemize}\\item $\\displaystyle\\cos x = \\frac{1 - t^2}{1 + t^2}$\\item $\\displaystyle\\sin x = \\frac{2t}{1 + t^2}$\\item $\\displaystyle\\tan x = \\frac{2t}{1 - t^2}$\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "\\textbf{Quand utiliser le demi-angle ?} Cette technique est utile quand une expression mélange $\\cos x$ et $\\sin x$ de manière complexe et qu'on veut tout ramener à une \\textbf{fraction rationnelle} en $t$. Elle transforme un problème trigonométrique en un problème algébrique classique.\\par\\textbf{Attention} : le changement de variable $t = \\tan(x/2)$ n'est valable que si $x \\neq \\pi + 2k\\pi$."
+        },
+        {
+          "type": "method",
+          "title": "Comment simplifier avec le changement $t = \\tan(x/2)$ ?",
+          "content": "Poser $t = \\tan\\left(\\frac{x}{2}\\right)$ et remplacer $\\cos x$ par $\\frac{1-t^2}{1+t^2}$ et $\\sin x$ par $\\frac{2t}{1+t^2}$.\\par Simplifier la fraction obtenue en factorisant numérateur et dénominateur.\\par\\begin{itemize}\\item \\textbf{Réduire au même dénominateur} : le dénominateur commun est toujours $1+t^2$\\item \\textbf{Simplifier} : les $1+t^2$ s'éliminent souvent entre numérateur et dénominateur\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Exprimons $A = \\dfrac{1 - \\cos x}{\\sin x}$ en \\textbf{fonction} de $t = \\tan\\left(\\dfrac{x}{2}\\right)$.}\\par\\smallskip On remplace le cosinus et le sinus par leurs expressions en fonction de $t$ :\\begin{align*}1 - \\cos x &= 1 - \\blank{\\frac{1-t^2}{1+t^2}} = \\frac{1+t^2-1+t^2}{1+t^2} = \\blank{\\frac{2t^2}{1+t^2}}\\end{align*}On divise ensuite par l'expression du sinus :\\begin{align*}A &= \\frac{\\frac{2t^2}{1+t^2}}{\\blank{\\frac{2t}{1+t^2}}} \\\\&= \\frac{2t^2}{1+t^2} \\times \\blank{\\frac{1+t^2}{2t}} \\\\&= \\blank{t} = \\tan\\left(\\frac{x}{2}\\right)\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "sommes_produits",
+      "category": "course",
+      "title": "Transformer les sommes et les produits",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a vu comment développer $\\cos(x+y)$ et $\\sin(x+y)$. On va maintenant faire le chemin inverse : transformer une somme comme $\\cos p + \\cos q$ en un produit, et inversement. Ces deux opérations sont essentielles pour factoriser et résoudre des équations."
+        },
+        {
+          "type": "property",
+          "title": "Comment transformer des sommes en produits (factorisation) ?",
+          "content": "Pour tous réels $p$ et $q$, en posant $S = \\dfrac{p+q}{2}$ et $D = \\dfrac{p-q}{2}$ :\\begin{itemize}\\item $\\displaystyle\\sin p + \\sin q = 2\\sin S\\cos D$\\item $\\displaystyle\\sin p - \\sin q = 2\\cos S\\sin D$\\item $\\displaystyle\\cos p + \\cos q = 2\\cos S\\cos D$\\item $\\displaystyle\\cos p - \\cos q = -2\\sin S\\sin D$\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "La formule de $\\cos p - \\cos q$ a un signe \\textbf{moins devant le 2}. C'est la seule des quatre qui commence par $-2$.\\par\\begin{itemize}\\item \\textbf{Moyen mnémotechnique} : les trois premières formules commencent par $+2$, seule la différence de cosinus est négative\\item \\textbf{Erreur fréquente} : oublier ce signe et trouver l'opposé du résultat correct\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment factoriser une somme trigonométrique ?",
+          "content": "On transforme une \\textbf{somme} en \\textbf{produit}. Calculer $S = \\dfrac{p+q}{2}$ et $D = \\dfrac{p-q}{2}$, puis appliquer la formule correspondante.\\par Pour résoudre une \\textbf{équation} : le produit obtenu est nul, donc résoudre \\textbf{chaque facteur} égal à zéro séparément.\\par\\begin{itemize}\\item $2\\sin S \\cos D = 0$ donne $\\sin S = 0$ ou $\\cos D = 0$\\item Chaque facteur donne une famille de solutions\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Factorisons l'expression} $E = \\sin(5x) - \\sin(x)$.}\\par\\smallskip On utilise la formule de la différence de deux sinus avec $p = 5x$ et $q = x$ :\\begin{align*}S = \\frac{5x+x}{2} = \\blank{3x} \\quad&\\text{et}\\quad D = \\frac{5x-x}{2} = \\blank{2x}\\end{align*}Donc :\\begin{align*}\\sin(5x) - \\sin(x) &= 2\\cos\\left(\\blank{3x}\\right)\\sin\\left(\\blank{2x}\\right)\\end{align*}"
+        },
+        {
+          "type": "property",
+          "title": "Comment transformer des produits en sommes (linéarisation) ?",
+          "content": "Pour tous réels $x$ et $y$ :\\begin{itemize}\\item $\\displaystyle\\cos x \\cos y = \\frac{1}{2}\\left[\\cos(x + y) + \\cos(x - y)\\right]$\\item $\\displaystyle\\sin x \\sin y = -\\frac{1}{2}\\left[\\cos(x + y) - \\cos(x - y)\\right]$\\item $\\displaystyle\\sin x \\cos y = \\frac{1}{2}\\left[\\sin(x + y) + \\sin(x - y)\\right]$\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment linéariser un produit trigonométrique ?",
+          "content": "On transforme un \\textbf{produit} en \\textbf{somme}. Identifier le type de produit ($\\cos\\cos$, $\\sin\\sin$ ou $\\sin\\cos$) et appliquer la formule correspondante.\\par\\begin{itemize}\\item $\\cos \\times \\cos$ : on obtient une somme de cosinus\\item $\\sin \\times \\sin$ : on obtient une différence de cosinus (avec le signe $-\\frac{1}{2}$)\\item $\\sin \\times \\cos$ : on obtient une somme de sinus\\end{itemize}\\par \\textbf{Application typique} : linéariser $\\cos^2 x = \\cos x \\cdot \\cos x$ donne $\\frac{1}{2}[1 + \\cos(2x)]$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Linéarisons l'expression} $B = \\cos(4x)\\cos(2x)$.}\\par\\smallskip On applique la formule de transformation du produit de deux cosinus :\\begin{align*}\\cos(4x)\\cos(2x) &= \\frac{1}{2}\\left[\\cos(4x + 2x) + \\blank{\\cos(4x - 2x)}\\right] \\\\&= \\frac{1}{2}\\left[\\blank{\\cos(6x)} + \\cos(2x)\\right] \\\\&= \\blank{\\frac{1}{2}\\cos(6x) + \\frac{1}{2}\\cos(2x)}\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Linéarisons} $C = \\sin^2 x \\cos^2 x$.}\\par\\smallskip On reconnaît $(\\sin x \\cos x)^2$. Or $\\sin x \\cos x = \\frac{1}{2}\\sin(2x)$, donc :\\begin{align*}C &= \\left(\\blank{\\frac{1}{2}\\sin(2x)}\\right)^2 \\\\&= \\frac{1}{4}\\sin^2(2x) \\\\&= \\frac{1}{4} \\times \\blank{\\frac{1 - \\cos(4x)}{2}} \\\\&= \\blank{\\frac{1 - \\cos(4x)}{8}}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "equations_base",
+      "category": "course",
+      "title": "Équations trigonométriques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On dispose maintenant de toutes les formules de transformation. L'objectif final est de résoudre des équations trigonométriques. On commence par les trois formes de base."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les solutions générales des équations de base ?",
+          "content": "Pour un angle $x_0$ connu et $k \\in \\mathbb{Z}$ :\\begin{itemize}\\item $\\cos x = \\cos x_0 \\iff x = x_0 + 2k\\pi \\quad \\text{ou} \\quad x = -x_0 + 2k\\pi$\\item $\\sin x = \\sin x_0 \\iff x = x_0 + 2k\\pi \\quad \\text{ou} \\quad x = \\pi - x_0 + 2k\\pi$\\item $\\tan x = \\tan x_0 \\iff x = x_0 + k\\pi$\\end{itemize}"
+        },
+        {
+          "type": "intuition",
+          "content": "Pourquoi y a-t-il \\textbf{deux} familles de solutions pour le cosinus et le sinus, mais \\textbf{une seule} pour la tangente ? Sur le cercle trigonométrique, deux points ont le même cosinus (même abscisse) : $x_0$ et $-x_0$. Deux points ont le même sinus (même ordonnée) : $x_0$ et $\\pi - x_0$. Mais un seul point correspond à une valeur de tangente donnée (une droite par l'origine coupe le cercle en un seul point du demi-cercle)."
+        },
+        {
+          "type": "method",
+          "title": "Comment résoudre $\\cos x = \\cos a$ ou $\\sin x = \\sin a$ ?",
+          "content": "Ramener l'équation à la forme $\\cos X = \\cos \\alpha$ ou $\\sin X = \\sin \\alpha$. Si le second membre est une valeur numérique, la réécrire comme \\textbf{cos ou sin d'un angle remarquable}.\\par Résultats à appliquer directement :\\begin{itemize}\\item $\\cos X = \\cos \\alpha$ donne $X = \\alpha + 2k\\pi$ ou $X = -\\alpha + 2k\\pi$\\item $\\sin X = \\sin \\alpha$ donne $X = \\alpha + 2k\\pi$ ou $X = \\pi - \\alpha + 2k\\pi$\\item $\\tan X = \\tan \\alpha$ donne $X = \\alpha + k\\pi$\\end{itemize}\\par Sélectionner ensuite les solutions dans l'\\textbf{intervalle} demandé."
+        },
+        {
+          "type": "warning",
+          "content": "Deux erreurs fréquentes dans la résolution d'équations trigonométriques :\\par\\begin{itemize}\\item \\textbf{Oublier une famille de solutions} : $\\cos x = \\frac{1}{2}$ donne $x = \\frac{\\pi}{3} + 2k\\pi$ \\textbf{et aussi} $x = -\\frac{\\pi}{3} + 2k\\pi$. Si on oublie la deuxième, on perd la moitié des solutions\\item \\textbf{Ne pas exprimer en fonction d'un angle} : face à $\\sin x = \\frac{\\sqrt{3}}{2}$, il faut écrire $\\sin x = \\sin\\frac{\\pi}{3}$ avant d'appliquer la formule. Ne jamais écrire directement $x = \\frac{\\sqrt{3}}{2}$\\item \\textbf{Confondre la période} : pour $\\cos(2x) = \\cos\\alpha$, on obtient $2x = \\pm\\alpha + 2k\\pi$, puis diviser par $2$ donne $x = \\pm\\frac{\\alpha}{2} + k\\pi$, pas $+2k\\pi$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons \\textbf{l'équation $\\sin(2x) = \\dfrac{\\sqrt{3}}{2}$} dans $\\mathbb{R}$.}\\par\\smallskip On sait que $\\displaystyle\\frac{\\sqrt{3}}{2} = \\blank{\\sin\\left(\\frac{\\pi}{3}\\right)}$. L'équation devient donc $\\sin(2x) = \\sin\\left(\\dfrac{\\pi}{3}\\right)$.\\par\\smallskip Cela donne deux familles de solutions avec $k \\in \\mathbb{Z}$ :\\begin{align*}2x = \\blank{\\frac{\\pi}{3} + 2k\\pi} \\quad &\\text{ou} \\quad 2x = \\blank{\\pi - \\frac{\\pi}{3} + 2k\\pi} \\\\x = \\frac{\\pi}{6} + k\\pi \\quad &\\text{ou} \\quad x = \\blank{\\frac{\\pi}{3} + k\\pi}\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons \\textbf{l'équation $\\cos\\left(x + \\dfrac{\\pi}{4}\\right) = \\cos(2x)$ dans $\\mathbb{R}$.}\\par\\smallskip Les deux termes sont des cosinus, on pose directement les deux cas avec $k \\in \\mathbb{Z}$ :\\begin{align*}x + \\frac{\\pi}{4} = \\blank{2x + 2k\\pi} \\quad &\\text{ou} \\quad x + \\frac{\\pi}{4} = \\blank{-2x + 2k\\pi} \\\\-x = -\\frac{\\pi}{4} + 2k\\pi \\quad &\\text{ou} \\quad 3x = \\blank{-\\frac{\\pi}{4} + 2k\\pi} \\\\x = \\blank{\\frac{\\pi}{4} - 2k\\pi} \\quad &\\text{ou} \\quad x = \\blank{-\\frac{\\pi}{12} + \\frac{2k\\pi}{3}}\\end{align*}"
+        },
+        {
+          "type": "method",
+          "title": "Comment résoudre une équation par factorisation ?",
+          "content": "Si l'équation contient une \\textbf{somme ou différence} de fonctions trigonométriques, la transformer en \\textbf{produit} avec les formules de factorisation, puis résoudre chaque facteur égal à zéro.\\par\\begin{itemize}\\item Identifier la formule : $\\sin A + \\sin B$, $\\cos A - \\cos B$, etc.\\item Factoriser en produit de deux facteurs\\item Résoudre chaque facteur séparément : un produit est nul si et seulement si l'un des facteurs est nul\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons \\textbf{$\\sin(3x) + \\sin(x) = 0$} dans $\\mathbb{R}$.}\\par\\smallskip On factorise avec $p = 3x$ et $q = x$ :\\begin{align*}\\sin(3x) + \\sin(x) &= 2\\sin\\left(\\blank{\\frac{3x+x}{2}}\\right)\\cos\\left(\\blank{\\frac{3x-x}{2}}\\right) \\\\&= 2\\sin(\\blank{2x})\\cos(\\blank{x}) = 0\\end{align*}Donc $\\sin(2x) = 0$ ou $\\cos(x) = 0$ :\\begin{align*}2x = \\blank{k\\pi} \\quad &\\text{ou} \\quad x = \\blank{\\frac{\\pi}{2} + k\\pi} \\\\x = \\frac{k\\pi}{2} \\quad &\\text{(regroupe les deux familles)}\\end{align*}"
+        }
+      ]
+    },
+    {
+      "id": "equation_lineaire",
+      "category": "course",
+      "title": "L'équation $a\\cos x + b\\sin x + c = 0$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait résoudre les équations où un seul type de fonction apparaît. Si l'équation mélange $\\cos x$ et $\\sin x$ au premier degré, une technique spéciale permet de les fusionner en un seul cosinus."
+        },
+        {
+          "type": "property",
+          "title": "Quelle est la forme réduite de $a\\cos x + b\\sin x$ ?",
+          "content": "Soient $a$ et $b$ deux réels non tous nuls. On peut écrire :\\par$$a\\cos x + b\\sin x = \\sqrt{a^2+b^2}\\cos(x - \\varphi)$$\\par où l'angle auxiliaire $\\varphi$ vérifie : $$\\boxed{\\cos \\varphi = \\frac{a}{\\sqrt{a^2+b^2}} \\quad \\text{et} \\quad \\sin \\varphi = \\frac{b}{\\sqrt{a^2+b^2}}}$$\\par L'équation $a\\cos x + b\\sin x + c = 0$ se ramène alors à : $$\\cos(x - \\varphi) = \\frac{-c}{\\sqrt{a^2+b^2}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment résoudre $a\\cos x + b\\sin x + c = 0$ ?",
+          "content": "Calculer l'\\textbf{amplitude} $R = \\sqrt{a^2 + b^2}$ et mettre $R$ en facteur.\\par Trouver l'\\textbf{angle auxiliaire} $\\varphi$ tel que $\\cos\\varphi = \\dfrac{a}{R}$ et $\\sin\\varphi = \\dfrac{b}{R}$.\\par L'équation se réduit alors à $\\cos(x - \\varphi) = \\dfrac{-c}{R}$.\\par\\begin{itemize}\\item Si $\\left|\\dfrac{c}{R}\\right| \\leq 1$ : résoudre classiquement $\\cos(x-\\varphi) = \\cos\\alpha$\\item Si $\\left|\\dfrac{c}{R}\\right| > 1$ : l'équation n'a \\textbf{pas de solution}\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons \\textbf{l'équation $\\cos x + \\sqrt{3}\\sin x = 1$ dans $\\mathbb{R}$.}\\par\\smallskip On calcule le facteur commun $R = \\sqrt{1^2 + (\\sqrt{3})^2} = \\sqrt{4} = \\blank{2}$.\\par On met $2$ en facteur :\\begin{align*}2\\left(\\blank{\\frac{1}{2}}\\cos x + \\frac{\\sqrt{3}}{2}\\sin x\\right) &= 1 \\\\2\\left(\\cos\\left(\\frac{\\pi}{3}\\right)\\cos x + \\blank{\\sin\\left(\\frac{\\pi}{3}\\right)}\\sin x\\right) &= 1 \\\\2\\cos\\left(\\blank{x - \\frac{\\pi}{3}}\\right) &= 1 \\\\\\cos\\left(x - \\frac{\\pi}{3}\\right) &= \\blank{\\frac{1}{2}} = \\cos\\left(\\frac{\\pi}{3}\\right)\\end{align*}Donc $x - \\frac{\\pi}{3} = \\frac{\\pi}{3} + 2k\\pi$ ou $x - \\frac{\\pi}{3} = -\\frac{\\pi}{3} + 2k\\pi$, d'où :\\par$$x = \\blank{\\frac{2\\pi}{3} + 2k\\pi} \\quad \\text{ou} \\quad x = \\blank{2k\\pi}$$"
+        },
+        {
+          "type": "remark",
+          "content": "\\textbf{Deuxième approche.} On peut aussi résoudre $a\\cos x + b\\sin x + c = 0$ avec le \\textbf{changement de variable} $t = \\tan\\left(\\frac{x}{2}\\right)$ : on remplace $\\cos x$ et $\\sin x$ par leurs expressions en $t$, ce qui donne une équation du second degré en $t$. Cette méthode est plus longue mais fonctionne toujours."
+        }
+      ]
+    }
+  ]
+}

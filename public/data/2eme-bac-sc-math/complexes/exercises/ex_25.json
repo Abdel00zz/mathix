@@ -1,0 +1,71 @@
+{
+  "id": "ex-complexes-25",
+  "topic": "Nombres complexes - Bac National 2014 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2014,
+  "examenSession": "Rattrapage",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": ""
+    },
+    {
+      "id": "p1q1",
+      "content": "Résoudre dans l'ensemble $\\mathbb{C}$, l'équation : $z^2+i=0$ ($a$ est la solution de l'équation telle que $\\text{Re}(a)>0$).",
+      "hint": "Écrivez $-i$ sous forme exponentielle $e^{-i\\pi/2}$ et cherchez ses racines carrées sous forme exponentielle."
+    },
+    {
+      "id": "p1q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q2a",
+          "content": "Déterminer le module et l'argument du nombre complexe $1+a$.",
+          "hint": "Écrivez d'abord $a$ sous forme algébrique à partir de sa forme exponentielle, puis calculez le module et l'argument de $1+a$ en utilisant éventuellement la factorisation par l'arc moitié."
+        },
+        {
+          "id": "p1q2b",
+          "content": "En déduire que $\\cos\\left(\\dfrac{\\pi}{8}\\right)=\\dfrac{\\sqrt{2+\\sqrt2}}{2}$.",
+          "hint": "Comparez la partie réelle de $1+a$ écrite sous forme algébrique à celle obtenue à partir de son module et de son argument (qui doit être $\\pi/8$)."
+        },
+        {
+          "id": "p1q2c",
+          "content": "Vérifier que $(1+a)(1-a)=1+i$, en déduire la forme trigonométrique du nombre complexe $1-a$.",
+          "hint": "Développez $(1+a)(1-a)=1-a^2=1-(-i)=1+i$ ; utilisez ensuite le module et l'argument déjà connus de $1+a$ et de $1+i$ pour en déduire ceux de $1-a$ par division."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Dans le plan complexe rapporté au repère orthonormé direct $(O,\\vec{u},\\vec{v})$, on considère les points $A$, $B$, $M$ et $M'$ d'affixes respectifs $a$, $-a$, $z$ et $z'$ tels que $zz'+i=0$."
+    },
+    {
+      "id": "p2q1",
+      "content": "Soit $N$ le point d'affixe $\\bar z$, conjugué de $z$. Montrer que les droites $(ON)$ et $(OM')$ sont perpendiculaires.",
+      "hint": "Exprimez $z'=-\\dfrac{i}{z}$ à partir de $zz'+i=0$, puis calculez le quotient $\\dfrac{z'}{\\bar z}$ et montrez qu'il est imaginaire pur."
+    },
+    {
+      "id": "p2q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Montrer que : $z'-a=i\\dfrac{z-a}{az}$.",
+          "hint": "Remplacez $z'=-\\dfrac{i}{z}$, mettez $z'-a$ au même dénominateur $z$, puis factorisez le numérateur en utilisant que $a^2=-i$."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que si $z\\ne-a$, alors : $z'\\ne-a$ et $\\dfrac{z'-a}{z'+a}=-\\dfrac{z-a}{z+a}$.",
+          "hint": "Calculez de même $z'+a$ en factorisant, puis faites le quotient $\\dfrac{z'-a}{z'+a}$ et simplifiez ; utilisez à nouveau $a^2=-i$ pour repérer un facteur $-1$."
+        }
+      ]
+    },
+    {
+      "id": "p2q3",
+      "content": "On suppose que les points $A$, $B$, $M$ sont non alignés. Montrer que le point $M'$ appartient au cercle circonscrit au triangle $ABM$.",
+      "hint": "La relation $\\dfrac{z'-a}{z'+a}=-\\dfrac{z-a}{z+a}$ relie les angles $(\\overrightarrow{M'A},\\overrightarrow{M'B})$ et $(\\overrightarrow{MA},\\overrightarrow{MB})$ ; rappelez le critère de cocyclicité par les angles inscrits supplémentaires (facteur $-1$)."
+    }
+  ]
+}

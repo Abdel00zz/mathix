@@ -1,0 +1,692 @@
+{
+  "questions": [
+    {
+      "id": "med-13-01",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "theme": "algebre",
+      "prompt": "Quelle condition caractérise une suite arithmétique $(u_n)$ strictement décroissante, de raison $r$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$r < 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$r > 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$r \\ne 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$u_0 > 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• Pour une suite arithmétique, le passage d'un terme au suivant se fait par l'addition de la raison $r$.\n• Si $r < 0$, chaque terme est plus petit que le précédent, imposant une stricte décroissance."
+    },
+    {
+      "id": "med-13-02",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "algebre",
+      "prompt": "Dans une suite géométrique de premier terme $u_1$ et de raison $q$, quelle expression de $u_9$ est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$u_9 = u_1 \\times q^8$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$u_9 = u_1 \\times q^9$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$u_9 = u_1 \\times q^7$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$u_9 = u_1 + 8q$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• La formule générale est $u_n = u_p \\times q^{n-p}$.\n• Ici, on part du premier terme $u_1$, l'exposant doit donc être l'écart des indices, soit $9-1 = 8$. L'expression correcte est $u_9 = u_1 \\times q^8$."
+    },
+    {
+      "id": "med-13-03",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Méthode",
+      "theme": "probabilites",
+      "prompt": "Lors d'un tirage \"simultané\" de boules dans une urne, l'outil combinatoire adéquat pour modéliser le nombre de cas possibles est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Les combinaisons $C_n^p$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Les arrangements $A_n^p$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Les factorielles $n!$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Les puissances $n^p$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le terme \"simultanément\" implique qu'il n'y a ni ordre de tirage, ni remise. C'est la définition même d'une combinaison."
+    },
+    {
+      "id": "med-13-04",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "analyse",
+      "prompt": "Quelle est la formule correcte pour la dérivée de la fonction composée $x \\mapsto \\cos(u(x))$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-u'(x)\\sin(u(x))$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$u'(x)\\sin(u(x))$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\sin(u'(x))$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\sin(u(x))$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Règle de composition : $(f(u))' = u' \\times f'(u)$. Sachant que la dérivée de $\\cos(x)$ est $-\\sin(x)$, on obtient bien $-u'\\sin(u)$. Oublier le $u'$ est une erreur très fréquente (distracteur d)."
+    },
+    {
+      "id": "med-13-05",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Méthode",
+      "theme": "complexes",
+      "prompt": "Pour exprimer le quotient $\\frac{1-i}{1+i}$ sous forme algébrique, par quelle expression conjuguée faut-il multiplier le numérateur et le dénominateur ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1-i$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-1+i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-1-i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$i-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le dénominateur étant $1+i$, son conjugué est obtenu en changeant le signe de la partie imaginaire uniquement, ce qui donne $1-i$."
+    },
+    {
+      "id": "med-13-06",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "theme": "analyse",
+      "prompt": "Quelle méthode permet de déterminer l'équation de la tangente au graphe de $f$ au point d'abscisse $0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculer $f(0)$ et $f'(0)$, puis écrire $y=f'(0)(x-0)+f(0)$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Calculer seulement $f(0)$ et écrire $y=f(0)x$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Utiliser $f(0)$ comme coefficient directeur et $f'(0)$ comme ordonnée.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Résoudre $f(x)=0$ puis tracer la droite verticale correspondante.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Cette séquence garantit de ne pas s'emmêler entre l'évaluation ponctuelle et l'expression algébrique lors de l'application de la formule de la tangente."
+    },
+    {
+      "id": "med-13-07",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "Pour tout entier naturel $n$, on pose $S_n = 1 + \\frac{1}{2} + \\dots + \\frac{1}{2^n}$. La valeur de $\\displaystyle \\lim_{n \\to +\\infty} S_n$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il s'agit de la somme des termes d'une suite géométrique de raison $q = \\frac{1}{2}$. La somme partielle est $S_n = \\frac{1 - (\\frac{1}{2})^{n+1}}{1 - \\frac{1}{2}} = 2(1 - (\\frac{1}{2})^{n+1})$. Puisque $\\frac{1}{2} \\in ]-1, 1[$, $(\\frac{1}{2})^{n+1}$ tend vers 0, et la somme tend vers $2(1 - 0) = 2$."
+    },
+    {
+      "id": "med-13-08",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "probabilites",
+      "prompt": "Combien de nombres, composés de 3 chiffres, peut-on composer à partir de l'ensemble de chiffres {6, 7, 8, 9} ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$4^3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$C_4^3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3^4$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4 \\times 3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'énoncé ne précise pas que les chiffres doivent être distincts. On peut donc utiliser plusieurs fois le même chiffre (ex: 666). Il y a 4 choix pour le premier chiffre, 4 pour le deuxième, 4 pour le troisième. C'est un arrangement avec répétition (ou $p$-uplet) : $4 \\times 4 \\times 4 = 4^3 = 64$."
+    },
+    {
+      "id": "med-13-09",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "probabilites",
+      "prompt": "Un sac contient deux boules blanches et trois boules noires. On tire au hasard et simultanément deux boules. La probabilité d'obtenir deux boules de la même couleur est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{2}{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{3}{5}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{10}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On calcule le nombre de tirages favorables sur le nombre de tirages totaux. Total : $C_5^2 = 10$. Cas favorables (2 blanches OU 2 noires) : $C_2^2 + C_3^2 = 1 + 3 = 4$. La probabilité est $\\frac{4}{10} = \\frac{2}{5}$."
+    },
+    {
+      "id": "med-13-10",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "Soit la fonction définie par $f(x) = \\cos(e^x)$. L'équation cartésienne de la tangente au graphe de $f$ au point d'abscisse $0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = -\\sin(1)x + \\cos(1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = \\cos(1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = -\\cos(1)x + \\sin(1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = -\\sin(1)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On applique la méthode : $f(0) = \\cos(e^0) = \\cos(1)$. La dérivée est $f'(x) = -e^x\\sin(e^x)$, donc $f'(0) = -e^0\\sin(e^0) = -\\sin(1)$. L'équation $y = f'(0)(x-0) + f(0)$ donne directement l'option a."
+    },
+    {
+      "id": "med-13-11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "complexes",
+      "prompt": "La forme simplifiée du nombre complexe $\\left(\\frac{1-i}{1+i}\\right)^{16}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On simplifie d'abord l'intérieur de la parenthèse : $\\frac{1-i}{1+i} = \\frac{(1-i)^2}{1^2+1^2} = \\frac{1 - 2i - 1}{2} = -i$. Ensuite on élève à la puissance 16 : $(-i)^{16} = ((-i)^4)^4 = 1^4 = 1$."
+    },
+    {
+      "id": "med-13-12",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "prompt": "La limite $\\displaystyle \\lim_{x \\to 0^+} \\frac{\\ln(x)}{1 - \\ln(x)}$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Quand $x \\to 0^+$, $\\ln(x)$ tend vers $-\\infty$. Nous avons la forme indéterminée $\\frac{-\\infty}{+\\infty}$. En posant $X = \\ln(x)$, on cherche la limite en $-\\infty$ de $\\frac{X}{1-X}$. Par le théorème des monômes de plus haut degré, cela équivaut à $\\displaystyle \\lim_{X \\to -\\infty} \\frac{X}{-X} = -1$."
+    },
+    {
+      "id": "med-13-13",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "algebre",
+      "ambiguity_note": "La résolution de l'équation du second degré donne deux racines. Il faut impérativement exploiter le mot 'décroissante' de l'énoncé pour exclure la racine positive.",
+      "prompt": "Soit $(u_n)$ une suite arithmétique strictement décroissante. Son premier terme est $u_0 = 2$, et sa raison $r$ vérifie l'équation $4(u_1)^2 + (u_2)^2 = 164$. La valeur de $r$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-6$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$6$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Étape par étape :\n1) $u_1 = 2+r$ et $u_2 = 2+2r$.\n2) $4(2+r)^2 + (2+2r)^2 = 164 \\implies 4(4+4r+r^2) + 4(1+r)^2 = 164$.\n3) $16 + 16r + 4r^2 + 4 + 8r + 4r^2 = 164 \\implies 8r^2 + 24r - 144 = 0$.\n4) En divisant par 8 : $r^2 + 3r - 18 = 0$. Les racines sont $r = 3$ et $r = -6$.\nLa suite étant décroissante, la raison $r$ doit être strictement négative. Seul $-6$ est validé."
+    },
+    {
+      "id": "med-13-14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "algebre",
+      "ambiguity_note": "L'énoncé source contient une contradiction (un piège) : il affirme que la suite géométrique est décroissante, mais les valeurs imposent $q=2$. Il faut privilégier le fait calculatoire brut.",
+      "prompt": "$(u_n)$ est une suite géométrique présentée comme décroissante. Son premier terme est $u_1 = 5$, et sa raison est $q > 0$ telle que $u_9 = 1280$. En se basant sur la seule validité algébrique, la valeur de $q$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On applique la formule $u_9 = u_1 \\times q^8 \\implies 1280 = 5 \\times q^8$. On isole $q^8 = 256$. Sachant que $q > 0$, la seule solution algébrique est $q = \\sqrt[8]{256} = 2$. Le mot 'décroissante' dans l'énoncé source était soit une erreur d'énoncé, soit un test de confiance de l'élève envers l'algèbre."
+    },
+    {
+      "id": "med-13-15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "ambiguity_note": "Les étudiants oublient très fréquemment que l'élévation au carré génère une double contrainte de borne lors de la résolution (le carré 'efface' la partie négative, mais l'inéquation matricielle reste).",
+      "prompt": "L'intervalle constituant le domaine de définition de la fonction $g(x) = \\frac{x}{\\sqrt{4 - (\\ln x)^2}}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]e^{-2}; e^2[$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$]-\\infty; e^2[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$]0; e^2[$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\mathbb{R}^+$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Deux conditions sont requises : \n1) Argument du logarithme : $x > 0$.\n2) Intérieur de la racine carrée strictly positif (car au dénominateur) : $4 - (\\ln x)^2 > 0 \\implies (\\ln x)^2 < 4$.\nC'est ici qu'intervient le piège : $X^2 < 4$ implique $-2 < X < 2$. Donc $-2 < \\ln x < 2$. En passant à l'exponentielle, on obtient $e^{-2} < x < e^2$, ce qui respecte automatiquement $x > 0$."
+    },
+    {
+      "id": "med-13-16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "Pour calculer $\\displaystyle \\lim_{x \\to 0^+} \\frac{\\ln(x)}{1-\\ln(x)}$, quelle affirmation repère correctement l'erreur du raisonnement qui conclut directement à $1$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Une forme $\\frac{-\\infty}{+\\infty}$ ne se simplifie pas directement ; après factorisation par $\\ln(x)$, la limite vaut $-1$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\ln(x)$ tend vers $+\\infty$ lorsque $x$ tend vers $0^+$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1-\\ln(x)$ tend vers $-\\infty$ lorsque $x$ tend vers $0^+$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il est interdit de factoriser une fraction par $\\ln(x)$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La \"simplification aveugle\" des formes indéterminées est l'erreur d'analyse la plus lourdement sanctionnée. La rigueur impose d'isoler le terme prépondérant."
+    },
+    {
+      "id": "med-13-17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "theme": "probabilites",
+      "prompt": "Une urne contient 2 boules blanches et 3 noires. Quel diagnostic est correct pour le calcul de la probabilité de tirer simultanément deux boules de même couleur ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Après $C_2^2+C_3^2=4$ cas favorables sur $C_5^2=10$, il ne faut pas diviser encore par 2 : la probabilité vaut $\\frac{2}{5}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Le nombre total de tirages simultanés est $C_5^2=5$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Les cas « deux blanches » et « deux noires » doivent être multipliés.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une division finale par 2 est nécessaire car il y a deux couleurs.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un schéma de pensée arborescent (ou arbre de probabilités) permet de voir que les branches s'additionnent sans autre opération de pondération ex-post."
+    },
+    {
+      "id": "med-13-18",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "probabilites",
+      "prompt": "Dans un modèle à $4^3$ issues pour former un nombre de trois chiffres avec $\\{6,7,8,9\\}$, quelle affirmation est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le nombre $666$ est une issue possible.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Chaque chiffre doit être utilisé au plus une fois.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Le nombre d'issues est $C_4^3$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "L'ordre des trois chiffres n'a aucune importance.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Généralisation :\nL'usage d'une puissance $n^p$ (arrangement avec répétition) part du principe fondamental que l'objet tiré/choisi est \"remis en jeu\" ou réutilisable. Générer \"666\" est donc un cas inclus naturellement dans l'univers de $4^3 = 64$ issues."
+    },
+    {
+      "id": "med-13-19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "analyse",
+      "prompt": "L'énoncé de la question 09 évoque un calcul entre $x=0$ et $x=2$ impliquant les courbes $f$ et $g$, mais omet accidentellement leurs formules ! Si ces fonctions avaient été données, quelle intégrale stricte fournirait incontestablement l'aire géométrique $\\mathcal{A}$ comprise entre ces deux courbes ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\mathcal{A} = \\int_0^2 |f(x) - g(x)|\\,dx$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\mathcal{A} = \\int_0^2 (f(x) - g(x))\\,dx$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\mathcal{A} = \\int_0^2 (f(x) + g(x))\\,dx$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\mathcal{A} = |f(2) - g(0)|$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'aire géométrique (qui est toujours positive) requiert l'usage absolu des valeurs absolues dans l'intégrande, car on ne sait pas *a priori* quelle courbe se situe au-dessus de l'autre, et elles peuvent se croiser dans l'intervalle $[0; 2]$. Le distracteur (b) donnerait une aire algébrique faussée."
+    },
+    {
+      "id": "med-13-20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "analyse",
+      "prompt": "Quelle correction est nécessaire pour résoudre l'inéquation $4-(\\ln x)^2>0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Il faut écrire $|\\ln x|<2$, soit $-2<\\ln x<2$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "On peut déduire directement $\\ln x<2$ de $(\\ln x)^2<4$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La condition se réduit à $x<e^2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le logarithme est défini pour tout réel $x$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Oublier la valeur absolue induite par la racine carrée d'un carré est l'une des lacunes les plus dommageables, causant l'oubli total de la moitié de l'intervalle de définition réel (et tronquant la borne $e^{-2}$ dans cet exercice)."
+    },
+    {
+      "id": "med-13-21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "algebre",
+      "prompt": "Soit une suite arithmétique strictement décroissante avec $u_0=2$ et $4u_1^2+u_2^2=164$. Quelle démarche détermine correctement sa raison $r$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Poser $u_1=2+r$ et $u_2=2+2r$, obtenir $r^2+3r-18=0$, puis retenir $r=-6$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Poser $u_1=u_2=2+r$, puis retenir $r=3$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Écrire $u_2=2+r$, ce qui donne directement $r=-6$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Résoudre le trinôme puis retenir $r=3$ parce qu'une raison est positive.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il faut résister à la tentation de diviser ou distribuer le carré sans avoir posé explicitement la fonction affine inhérente à la suite arithmétique ($u_n = u_0 + nr$)."
+    },
+    {
+      "id": "med-13-22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "analyse",
+      "prompt": "Quel changement de variable permet d'étudier $\\displaystyle \\lim_{x\\to0^+}\\frac{\\ln(x)}{1-\\ln(x)}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Poser $X=\\ln(x)$ ; alors $X\\to-\\infty$ et la limite devient celle de $\\frac{X}{1-X}$, soit $-1$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Poser $X=\\ln(x)$ ; alors $X\\to+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Poser $X=x$ ; alors le logarithme disparaît de la fraction.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un changement de variable est impossible parce que $\\ln$ n'est pas une fonction algébrique.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Généralisation :\nIl s'agit du principe puissant de composition des limites. En posant le changement de variable $X = \\ln(x)$, puisque $\\ln(x)$ s'effondre vers $-\\infty$ lorsque $x$ approche de $0^+$, le comportement asymptotique de l'expression entière est transféré à l'étude d'une simple fonction rationnelle en l'infini."
+    }
+  ],
+  "school": "medecine",
+  "year": "2013",
+  "title": "Concours Médecine 2013"
+}

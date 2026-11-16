@@ -1,0 +1,52 @@
+{
+  "id": "olympiad-1ere-bac-sc-math-2023",
+  "title": "Olympiade Mathématique Marocaine 2023 — Épreuve nationale",
+  "year": 2023,
+  "classId": "1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "badge": "national",
+  "source": "https://www.men.gov.ma/",
+  "duration": 180,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2023-ex1",
+      "number": 1,
+      "theme": "algebre",
+      "points": 5,
+      "topic": "Équation diophantienne complexe",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Déterminer tous les entiers naturels $x, y$ et $z$ tels que :\n$$3^x + 4^y = 5^z$$"
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2023-ex2",
+      "number": 2,
+      "theme": "geometrie",
+      "points": 5,
+      "topic": "Orthocentre et cercles",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $H$ l'orthocentre d'un triangle acutangle $ABC$. Soit $M$ le milieu du segment $[BC]$. La droite passant par $H$ et perpendiculaire à $AM$ coupe la droite $(BC)$ en $P$. Montrer que $P$ est à l'extérieur du segment $[BC]$."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2023-ex3",
+      "number": 3,
+      "theme": "arithmetique",
+      "points": 5,
+      "topic": "Sommes de carrés",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que pour tout entier naturel $n$, le nombre $n^4 + 4$ n'est premier que si $n=1$."
+        }
+      ]
+    }
+  ]
+}

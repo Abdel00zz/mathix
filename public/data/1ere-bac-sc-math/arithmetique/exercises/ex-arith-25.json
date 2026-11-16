@@ -1,0 +1,19 @@
+{
+  "id": "ex-arith-25",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "topic": "Arithmétique dans $\\mathbb{Z}$ — Exercices supplémentaires",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Résoudre dans $\\mathbb{Z}/5\\mathbb{Z}$ les équations : $(E_1) : \\bar{4}x - \\bar{3} = \\bar{0}$ et $(E_2) : x^2 - x - \\bar{2} = \\bar{0}$.",
+      "hint": "Pour $(E_1)$ : cherchez l'inverse de $\\bar{4}$ modulo 5. Pour $(E_2)$ : testez $x \\in \\{\\bar{0}, \\bar{1}, \\bar{2}, \\bar{3}, \\bar{4}\\}$."
+    },
+    {
+      "id": "q2",
+      "content": "Résoudre dans $(\\mathbb{Z}/5\\mathbb{Z})^2$ le système : $(S) : \\begin{cases} 3x + 2y = \\bar{1} \\\\ 2x + 4y = \\bar{3} \\end{cases}$",
+      "hint": "Appliquez l'élimination de Gauss dans $\\mathbb{Z}/5\\mathbb{Z}$. Calculez le déterminant $\\Delta = 3 \\cdot 4 - 2 \\cdot 2 = 8 \\equiv \\bar{3}$, qui est inversible modulo 5."
+    }
+  ]
+}

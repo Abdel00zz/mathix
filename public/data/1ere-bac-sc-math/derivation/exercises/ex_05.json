@@ -1,0 +1,19 @@
+{
+  "id": "ex-deriv-05",
+  "theme": "derivation",
+  "difficulty": "moyen",
+  "topic": "Problèmes d'Optimisation",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "L'aire d'un rectangle est $49m^2$. Déterminer ses dimensions pour que son périmètre soit minimal.",
+      "hint": "Exprimez une dimension en fonction de l'autre ($y = 49/x$), puis étudiez les variations de la fonction périmètre $P(x) = 2(x + 49/x)$."
+    },
+    {
+      "id": "q2",
+      "content": "Un éditeur doit produire un livre. Chaque page doit contenir $300 cm^2$ de texte. Marges : 1,5cm horizontales, 2cm verticales.\nQuelles doivent être les dimensions de la page pour que la consommation de papier soit minimale ?",
+      "subQuestions": []
+    }
+  ]
+}

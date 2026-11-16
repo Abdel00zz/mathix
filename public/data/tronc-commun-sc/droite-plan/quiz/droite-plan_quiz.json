@@ -1,0 +1,142 @@
+{
+  "questions": [
+    {
+      "id": "q1_fond_repere_def",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Quelles sont les conditions pour que trois points $O$, $I$ et $J$ forment un repère valable du plan ?",
+      "options": [
+        { "id": "a", "text": "Ils doivent former un triangle rectangle.", "isCorrect": false },
+        { "id": "b", "text": "Ils doivent être non alignés.", "isCorrect": true },
+        { "id": "c", "text": "Les distances $OI$ et $OJ$ doivent être égales.", "isCorrect": false },
+        { "id": "d", "text": "L'angle $\\widehat{IOJ}$ doit mesurer 90 degrés.", "isCorrect": false }
+      ],
+      "explanation": "La seule et unique condition fondamentale pour définir un repère $(O, I, J)$ est que les trois points soient non alignés. Les autres conditions (angle droit, distances égales) servent à définir des repères *orthogonaux* ou *orthonormés*, qui sont des cas particuliers."
+    },
+    {
+      "id": "q2_fond_coords_vecteur",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si $A(x_A, y_A)$ et $B(x_B, y_B)$, quelle est la formule pour calculer les coordonnées du vecteur $\\overrightarrow{AB}$ ?",
+      "options": [
+        { "id": "a", "text": "$\\begin{pmatrix}x_A - x_B \\\\ y_A - y_B\\end{pmatrix}$", "isCorrect": false },
+        { "id": "b", "text": "$\\begin{pmatrix}x_A + x_B \\\\ y_A + y_B\\end{pmatrix}$", "isCorrect": false },
+        { "id": "c", "text": "$\\begin{pmatrix}x_B - x_A \\\\ y_B - y_A\\end{pmatrix}$", "isCorrect": true },
+        { "id": "d", "text": "$\\begin{pmatrix}\\frac{x_A+x_B}{2} \\\\ \\frac{y_A+y_B}{2}\\end{pmatrix}$", "isCorrect": false }
+      ],
+      "explanation": "C'est la règle d'or : « arrivée moins départ ». On soustrait les coordonnées du point d'origine $A$ aux coordonnées du point d'arrivée $B$."
+    },
+    {
+      "id": "q3_fond_milieu",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Application",
+      "prompt": "Quel est le milieu du segment $[AB]$ avec $A(1, 4)$ et $B(5, -2)$ ?",
+      "options": [
+        { "id": "a", "text": "$(3, 1)$", "isCorrect": true },
+        { "id": "b", "text": "$(4, -6)$", "isCorrect": false },
+        { "id": "c", "text": "$(6, 2)$", "isCorrect": false },
+        { "id": "d", "text": "$(2, 3)$", "isCorrect": false }
+      ],
+      "explanation": "On calcule la moyenne des abscisses : $(1+5)/2 = 3$, et la moyenne des ordonnées : $(4-2)/2 = 1$. Le milieu est donc $(3, 1)$."
+    },
+    {
+      "id": "q4_cons_determinant_formule",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Définition",
+      "prompt": "Le déterminant de deux vecteurs $\\overrightarrow{u}\\begin{pmatrix}x\\\\y\\end{pmatrix}$ et $\\overrightarrow{v}\\begin{pmatrix}x'\\\\y'\\end{pmatrix}$ se calcule par la formule $\\det(\\overrightarrow{u}, \\overrightarrow{v}) = x x' - y y'$.",
+      "isTrue": false,
+      "explanation": "Le déterminant est la différence des produits en croix : $\\det(\\overrightarrow{u}, \\overrightarrow{v}) = x y' - x' y$."
+    },
+    {
+      "id": "q5_cons_colinearite",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Les vecteurs $\\overrightarrow{u}\\begin{pmatrix}3\\\\-2\\end{pmatrix}$ et $\\overrightarrow{v}\\begin{pmatrix}-9\\\\6\\end{pmatrix}$ sont-ils colinéaires ?",
+      "options": [
+        { "id": "a", "text": "Oui, car leur déterminant vaut 0.", "isCorrect": true },
+        { "id": "b", "text": "Non, car leur déterminant vaut 36.", "isCorrect": false },
+        { "id": "c", "text": "Oui, car leur produit est nul.", "isCorrect": false },
+        { "id": "d", "text": "Non, car ils ont des sens opposés.", "isCorrect": false }
+      ],
+      "explanation": "On calcule le déterminant : $(3 \\times 6) - (-2 \\times -9) = 18 - 18 = 0$. Les vecteurs sont donc colinéaires (on remarque d'ailleurs que $\\overrightarrow{v} = -3\\overrightarrow{u}$)."
+    },
+    {
+      "id": "q6_cons_vecteur_directeur",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Quel est un vecteur directeur valable pour la droite d'équation cartésienne $2x - 5y + 7 = 0$ ?",
+      "options": [
+        { "id": "a", "text": "$\\begin{pmatrix}2 \\\\ -5\\end{pmatrix}$", "isCorrect": false },
+        { "id": "b", "text": "$\\begin{pmatrix}5 \\\\ 2\\end{pmatrix}$", "isCorrect": true },
+        { "id": "c", "text": "$\\begin{pmatrix}-5 \\\\ -2\\end{pmatrix}$", "isCorrect": false },
+        { "id": "d", "text": "$\\begin{pmatrix}-2 \\\\ 5\\end{pmatrix}$", "isCorrect": false }
+      ],
+      "explanation": "L'équation cartésienne est sous la forme $ax + by + c = 0$. Un vecteur directeur canonique a pour coordonnées $\\begin{pmatrix}-b \\\\ a\\end{pmatrix}$. Ici $a=2$, $b=-5$, donc $-b = 5$. Le vecteur est $\\begin{pmatrix}5 \\\\ 2\\end{pmatrix}$."
+    },
+    {
+      "id": "q7_maitrise_erreur_distance",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Identifier le calcul erroné lors de la mesure de la distance $AB$ avec $A(-2, 3)$ et $B(1, -1)$ :",
+      "context": "Un élève applique la formule de la norme pour trouver la distance.",
+      "steps": [
+        { "id": "s1", "text": "L'élève écrit $AB = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}$.", "isError": false },
+        { "id": "s2", "text": "Il insère les valeurs : $AB = \\sqrt{(1 - (-2))^2 + (-1 - 3)^2}$.", "isError": false },
+        { "id": "s3", "text": "Il simplifie les parenthèses : $AB = \\sqrt{(3)^2 + (-4)^2}$.", "isError": false },
+        { "id": "s4", "text": "Il calcule $AB = \\sqrt{9 - 16} = \\sqrt{-7}$, et bloque car la racine est négative.", "isError": true, "correction": "L'erreur classique du carré d'un négatif : $(-4)^2 = +16$, et non $-16$. La distance vaut toujours la racine positive d'une somme de termes positifs : $\\sqrt{9 + 16} = \\sqrt{25} = 5$." }
+      ],
+      "explanation": "La formule de la distance aboutit irrémédiablement à une somme de deux nombres positifs. Obtenir un négatif sous la racine indique systématiquement une erreur de signe lors de la mise au carré."
+    },
+    {
+      "id": "q8_maitrise_cartesiene",
+      "type": "order",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Ordonnez les étapes pour déterminer l'équation cartésienne de la droite (AB) connaissant $A$ et $B$ :",
+      "items": [
+        { "id": "a", "content": "Soit un point générique M(x; y) appartenant à la droite (AB)." },
+        { "id": "b", "content": "Calculer les coordonnées du vecteur AB, qui servira de vecteur directeur." },
+        { "id": "c", "content": "Exprimer les coordonnées du vecteur AM en fonction de x et y." },
+        { "id": "d", "content": "Poser l'équation de colinéarité det(AM, AB) = 0 et la développer algébriquement." }
+      ],
+      "correctOrder": ["b", "a", "c", "d"],
+      "explanation": "C'est la méthode reine. On détermine d'abord l'ancrage direct $(\\overrightarrow{AB})$. Ensuite, l'inclusion d'un point arbitraire $M$ sur la droite se transpose en exigence géométrique absolue : $\\overrightarrow{AM}$ doit être colinéaire à $\\overrightarrow{AB}$, forçant le déterminant à zéro."
+    },
+    {
+      "id": "q9_depassement_inconnue",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "ambiguity_note": "Résoudre une équation det=0 introduit une inconnue m, qu'il faut manipuler avec précaution.",
+      "prompt": "Pour quelle valeur de $m$ les vecteurs $\\overrightarrow{u}\\begin{pmatrix}m\\\\4\\end{pmatrix}$ et $\\overrightarrow{v}\\begin{pmatrix}3\\\\m-1\\end{pmatrix}$ sont-ils colinéaires ?",
+      "options": [
+        { "id": "a", "text": "$m = -3$ ou $m = 4$", "isCorrect": true },
+        { "id": "b", "text": "$m = 3$ uniquement", "isCorrect": false },
+        { "id": "c", "text": "$m = 4$ uniquement", "isCorrect": false },
+        { "id": "d", "text": "Aucune valeur ne fonctionne car $\\overrightarrow{u}$ et $\\overrightarrow{v}$ varient simultanément.", "isCorrect": false }
+      ],
+      "explanation": "La colinéarité impose $\\det(\\overrightarrow{u}, \\overrightarrow{v}) = 0$. Donc $m(m-1) - 12 = 0$, soit $m^2 - m - 12 = 0$. C'est une équation du second degré. Ses solutions sont $-3$ et $4$ (dont le produit fait $-12$ et la somme $1$)."
+    },
+    {
+      "id": "q10_depassement_parralleles",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Soit $(D_1) : 3x - 2y + 5 = 0$ et $(D_2) : -6x + 4y - 1 = 0$. Que peut-on dire de ces deux droites ?",
+      "options": [
+        { "id": "a", "text": "Elles sont sécantes.", "isCorrect": false },
+        { "id": "b", "text": "Elles sont confondues.", "isCorrect": false },
+        { "id": "c", "text": "Elles sont strictement parallèles.", "isCorrect": true },
+        { "id": "d", "text": "Elles sont perpendiculaires.", "isCorrect": false }
+      ],
+      "explanation": "Les vecteurs directeurs sont $\\overrightarrow{u_1}\\begin{pmatrix}2\\\\3\\end{pmatrix}$ et $\\overrightarrow{u_2}\\begin{pmatrix}-4\\\\-6\\end{pmatrix}$. Ils sont colinéaires ($\\overrightarrow{u_2} = -2\\overrightarrow{u_1}$), donc les droites sont parallèles. Si on multiplie l'équation de $(D_1)$ par $-2$, on a $-6x + 4y - 10 = 0$, ce qui est incompatible avec la constante de $(D_2)$ qui est $-1$. Les droites ne sont pas confondues, donc disjointes strictement."
+    }
+  ]
+}

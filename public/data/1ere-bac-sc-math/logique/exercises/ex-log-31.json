@@ -1,0 +1,24 @@
+{
+  "id": "ex-log-31",
+  "theme": "logique",
+  "difficulty": "difficile",
+  "topic": "Logique & Raisonnements — Exercices de perfectionnement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soient $a$ et $b$ deux réels strictement positifs. Établir l'équivalence : $\\dfrac{x}{y} < \\dfrac{ax+by}{bx+ay} < \\dfrac{y}{x} \\iff x < y$",
+      "hint": "Montrez les deux sens. Pour $\\Rightarrow$ : supposez l'encadrement vrai et déduisez $x < y$ en soustrayant $\\dfrac{x}{y}$ au membre central. Pour $\\Leftarrow$ : supposez $x < y$ et vérifiez les deux inégalités séparément."
+    },
+    {
+      "id": "q2",
+      "content": "Soit $x \\in \\mathbb{R}$. Montrer que : $\\forall(x;y) \\in \\mathbb{R}^2 : |x-y| \\leq 2\\sqrt{x^2+y^2+xy}$ et $x^4+y^4 \\geq 2xy(x^2+y^2)$",
+      "hint": "Pour la première : élevez au carré et développez. Pour la seconde : $x^4+y^4 - 2xy(x^2+y^2) = (x^2-y^2)^2 - 2xy(x^2+y^2) + 2x^2y^2$... ou reformulez en $(x^2-xy)^2 + (y^2-xy)^2 \\geq 0$."
+    },
+    {
+      "id": "q3",
+      "content": "$(x \\neq \\sqrt{3}$ et $x \\neq -\\sqrt{3}) \\iff \\dfrac{2}{\\sqrt{x^2+1}} \\neq 1$",
+      "hint": "$\\dfrac{2}{\\sqrt{x^2+1}} = 1 \\iff x^2+1 = 4 \\iff x^2 = 3 \\iff x = \\pm\\sqrt{3}$. La contraposée est immédiate."
+    }
+  ]
+}

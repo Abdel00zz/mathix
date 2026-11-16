@@ -1,0 +1,70 @@
+{
+  "id": "logarithmes",
+  "title": "Les fonctions logarithmiques",
+  "section": "analyse",
+  "revisions": [
+    {
+      "id": "rev-log-2bac-cours",
+      "title": "Fiche Compléte : Logarithmes",
+      "path": "data/2eme-bac-sc-ex/logarithmes/revisions/fiche_logarithmes_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-log-bac-1",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_bac_1.json"
+    },
+    {
+      "id": "ex-log-001",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_001.json"
+    },
+    {
+      "id": "ex-log-002",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_002.json"
+    },
+    {
+      "id": "ex-log-003",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_003.json"
+    },
+    {
+      "id": "ex-log-004",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_004.json"
+    },
+    {
+      "id": "ex-log-005",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_005.json"
+    },
+    {
+      "id": "ex-analyse-bac-logarithme",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_006.json"
+    },
+    {
+      "id": "ex-log-007",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_007.json"
+    },
+    {
+      "id": "ex-log-008",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_008.json"
+    },
+    {
+      "id": "ex-log-009",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_009.json"
+    },
+    {
+      "id": "ex-log-010",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_010.json"
+    },
+    {
+      "id": "ex-log-011",
+      "path": "data/2eme-bac-sc-ex/logarithmes/exercises/ex_log_011.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-logarithmes-01",
+      "path": "data/2eme-bac-sc-ex/logarithmes/quiz/logarithmes_quiz.json",
+      "questionsCount": 22
+    }
+  ],
+  "quizCount": 22
+}

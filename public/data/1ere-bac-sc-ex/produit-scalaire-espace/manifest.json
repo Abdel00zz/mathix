@@ -1,0 +1,26 @@
+{
+  "id": "produit-scalaire-espace",
+  "title": "Le produit scalaire dans l'espace et ses applications",
+  "exercises": [
+    {
+      "id": "ex-produit-scalaire-espace-01",
+      "path": "data/1ere-bac-sc-ex/produit-scalaire-espace/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-produit-scalaire-espace-02",
+      "path": "data/1ere-bac-sc-ex/produit-scalaire-espace/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-produit-scalaire-espace-03",
+      "path": "data/1ere-bac-sc-ex/produit-scalaire-espace/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-produit-scalaire-espace-01",
+      "path": "data/1ere-bac-sc-ex/produit-scalaire-espace/quiz/produit-scalaire-espace_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

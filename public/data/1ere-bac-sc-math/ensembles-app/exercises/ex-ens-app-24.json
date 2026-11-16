@@ -1,0 +1,35 @@
+{
+  "id": "ex-ens-app-24",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Applications et Fonctions — Injection, surjection et bijectivité",
+  "requiresRedaction": true,
+  "context": "On considère l'application : $f : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto \\dfrac{x}{1+|x|}$",
+  "questions": [
+    {
+      "id": "pA_q1",
+      "content": "Partie A. Montrer que l'application $f$ est injective.",
+      "hint": "Supposez $f(x_1) = f(x_2)$ et montrez que $x_1 = x_2$. Traitez séparément les cas selon les signes de $x_1$ et $x_2$ (même signe ou signes opposés)."
+    },
+    {
+      "id": "pA_q2",
+      "content": "Montrer que l'application $f$ est surjective.",
+      "hint": "Soit $y \\in \\mathbb{R}$. Résolvez $\\dfrac{x}{1+|x|} = y$ et montrez que la solution $x$ appartient à $\\mathbb{R}$. Traitez les cas $x \\geq 0$ et $x < 0$ séparément, et vérifiez que $|y| < 1$ est automatiquement satisfait."
+    },
+    {
+      "id": "pA_q3",
+      "content": "En déduire que l'application $f$ est bijective puis donner sa bijection réciproque.",
+      "hint": "$f$ est bijective car injective et surjective. Exprimez $x$ en fonction de $y$ à partir de la résolution de la question précédente."
+    },
+    {
+      "id": "pB_q1",
+      "content": "Partie B. On considère l'application $f : \\mathbb{R} \\setminus \\{-1\\} \\to \\mathbb{R}$, $x \\mapsto \\dfrac{x+1}{x}$. L'application $f$ est-elle injective sur $\\mathbb{R} \\setminus \\{-1\\}$ ? Justifier.",
+      "hint": "Utilisez le tableau de variation fourni : $f$ est-elle strictement monotone sur $\\mathbb{R} \\setminus \\{-1\\}$ ? Sur $]-\\infty;-1[$ $f$ est strictement décroissante de $1$ vers $-\\infty$, et sur $]-1;+\\infty[$ également de $+\\infty$ vers $1$. Ces deux branches partagent des valeurs communes."
+    },
+    {
+      "id": "pB_q2",
+      "content": "L'application $f$ est-elle surjective sur $\\mathbb{R} \\setminus \\{-1\\}$ ? Justifier.",
+      "hint": "Déterminez $f(\\mathbb{R} \\setminus \\{-1\\})$ à partir du tableau de variation. La valeur $y = 1$ est-elle atteinte ?"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "header": {
+    "title": "Statistiques",
+    "subtitle": "Traitement de données",
+    "context": "Tronc Commun Scientifique"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie le \\objectif{traitement statistique de données} : paramètres de position (moyenne, mode, médiane) et paramètres de dispersion (étendue, variance, écart-type) pour résumer et comparer des séries de données. Ces indicateurs permettent de faire parler les chiffres et de prendre des décisions éclairées à partir de données brutes. La \\defi{principale difficulté} est le calcul de la variance — il faut bien pondérer chaque écart au carré par son effectif et ne pas confondre variance et écart-type. C'est \\savant{Adolphe Quetelet} qui, au XIX\\textsuperscript{e} siècle, a introduit le concept de moyenne et d'écart-type pour caractériser des populations entières, fondant ainsi la statistique descriptive moderne qui alimente aujourd'hui l'épidémiologie, l'économie et le Big Data.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Adolphe_Quetelet_by_Joseph-Arnold_Demannez.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Adolphe Quetelet (1796–1874)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "parametres_position",
+      "category": "course",
+      "title": "Paramètres de position",
+      "content": "\\begin{itemize}\\item \\textbf{Moyenne} $\\bar{x}$ : Somme des valeurs pondérées par les effectifs divisée par l'effectif total.\\item \\textbf{Mode} : Valeur du caractère ayant le plus grand effectif.\\item \\textbf{Médiane} $M_e$ : Valeur qui partage la série en deux groupes de même effectif.\\end{itemize}"
+    },
+    {
+      "id": "parametres_dispersion",
+      "category": "course",
+      "title": "Paramètres de dispersion",
+      "content": "\\begin{itemize}\\item \\textbf{Étendue} : Différence entre la plus grande et la plus petite valeur.\\item \\textbf{Variance} $V$ : Moyenne des carrés des écarts à la moyenne ($V = \\frac{1}{N}\\sum n_i(x_i-\\bar{x})^2$).\\item \\textbf{Écart-type} $\\sigma$ : Racine carrée de la variance ($\\sigma = \\sqrt{V}$).\\end{itemize}",
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "calcul-trigo",
+  "title": "Calcul trigonométrique",
+  "exercises": [
+    {
+      "id": "ex-calcul-trigo-01",
+      "path": "data/1ere-bac-sc-ex/calcul-trigo/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-calcul-trigo-02",
+      "path": "data/1ere-bac-sc-ex/calcul-trigo/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-calcul-trigo-03",
+      "path": "data/1ere-bac-sc-ex/calcul-trigo/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-calcul-trigo-01",
+      "path": "data/1ere-bac-sc-ex/calcul-trigo/quiz/calcul-trigo_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

@@ -1,0 +1,1332 @@
+{
+  "school": "medecine",
+  "year": "2022",
+  "title": "Concours Médecine 2022 — annales FMP vérifiées",
+  "questions": [
+    {
+      "id": "med-22-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "concours",
+      "prompt": "$\\displaystyle\\lim_{x \\to +\\infty} \\frac{\\ln x}{x}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Croissance comparée : le logarithme croît beaucoup moins vite que toute puissance positive. $\\frac{\\ln x}{x} \\xrightarrow{+\\infty} 0$."
+    },
+    {
+      "id": "med-22-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "difficulty": "concours",
+      "prompt": "Le nombre de solutions de $e^x = 3x$ sur $\\mathbb{R}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Soit $g(x) = e^x - 3x$. $g'(x)=0 \\Leftrightarrow x = \\ln 3$. $g(\\ln 3)=3-3\\ln 3 < 0$. Avec $\\displaystyle \\lim_{\\pm\\infty}g=+\\infty$, le TVI donne $2$ racines."
+    },
+    {
+      "id": "med-22-03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "$\\displaystyle\\int_0^{\\pi} \\sin^2(x)\\,dx$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\pi$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Linéarisation : $\\sin^2 x = \\frac{(1-\\cos 2x)}{2}$. $I = \\frac{1}{2}[x-\\frac{\\sin 2x}{2}]_0^\\pi = \\frac{\\pi}{2}$."
+    },
+    {
+      "id": "med-22-04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Logarithme",
+      "difficulty": "concours",
+      "prompt": "L'ensemble des solutions de $\\ln(x^2-4) = \\ln 5$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{-3, 3\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\{3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{-3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\emptyset$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Domaine : $|x|>2$. $x^2-4=5 \\Rightarrow x^2=9 \\Rightarrow x=\\pm 3$. Les deux solutions sont dans le domaine."
+    },
+    {
+      "id": "med-22-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "Soit $(u_n)$ définie par $u_0 = 1$ et $u_{n+1} = \\frac{u_n}{1+u_n}$. Alors $u_n$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{n+1}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2^n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{n}{n+1}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{n}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $v_n = \\frac{1}{u_n}$. Alors $v_{n+1} = \\frac{1+u_n}{u_n} = v_n + 1$. Suite arithmétique : $v_n = v_0 + n = 1+n$. Donc $u_n = \\frac{1}{n+1}$."
+    },
+    {
+      "id": "med-22-06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "difficulty": "concours",
+      "prompt": "L'inégalité $e^x \\geq 1+x$ est vraie pour :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tout $x \\in \\mathbb{R}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x \\geq 0$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x \\leq 0$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$|x| \\leq 1$ uniquement",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$g(x)=e^x-1-x$ atteint son minimum global en $x=0$ où $g(0)=0$. Convexité de $e^x$ : la tangente en $0$ est en dessous de la courbe."
+    },
+    {
+      "id": "med-22-07",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "prompt": "On tire $3$ boules simultanément d'une urne contenant $5$ rouges et $4$ bleues. La probabilité d'obtenir exactement $2$ rouges est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{10}{21}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{5}{14}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{10}{84}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{40}{84}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\binom{9}{3} = 84$. Cas favorables : $\\binom{5}{2} \\times \\binom{4}{1} = 40$. Probabilité : $\\frac{40}{84} = \\frac{10}{21}$."
+    },
+    {
+      "id": "med-22-08",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités conditionnelles",
+      "difficulty": "concours",
+      "prompt": "Deux événements $A$ et $B$ sont incompatibles avec $P(A) = 0{,}3$ et $P(B) = 0{,}5$. $P(A \\cup B)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}8$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}15$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}65$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Incompatibles : $A \\cap B = \\emptyset$. $P(A \\cup B) = P(A) + P(B) = 0{,}8$. Incompatibles $\\neq$ indépendants."
+    },
+    {
+      "id": "med-22-09",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Variables aléatoires",
+      "difficulty": "concours",
+      "prompt": "$X$ a pour espérance $E(X)=3$ et variance $V(X)=4$. Alors $E(2X+1)$ et $V(2X+1)$ valent :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$E = 7$ et $V = 16$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$E = 7$ et $V = 9$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$E = 6$ et $V = 16$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$E = 7$ et $V = 8$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$E(aX+b) = aE(X)+b = 7$. $V(aX+b) = a^2 V(X) = 16$. La constante additive n'affecte pas la variance."
+    },
+    {
+      "id": "med-22-10",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités totales",
+      "difficulty": "concours",
+      "prompt": "Un laboratoire utilise $3$ appareils : $A_1$ ($50\\%$, $1\\%$ d'erreur), $A_2$ ($30\\%$, $2\\%$), $A_3$ ($20\\%$, $3\\%$). La probabilité d'erreur est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}017$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}02$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}06$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0{,}01$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$P(E) = 0{,}5 \\times 0{,}01 + 0{,}3 \\times 0{,}02 + 0{,}2 \\times 0{,}03 = 0{,}017$."
+    },
+    {
+      "id": "med-fmp-2022-c13",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2022 · C.13",
+      "officialQuestionCode": "C.13",
+      "prompt": "Dans $\\mathbb C$, l'ensemble des solutions de $\\frac{2z-1}{z+1}=z$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{-1;\\frac{1}{2}\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\{1+i\\sqrt3;1-i\\sqrt3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\left\\{\\frac{1+i\\sqrt3}{2};\\frac{1-i\\sqrt3}{2}\\right\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\{i\\sqrt3;-i\\sqrt3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Une autre réponse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Après multiplication par $z+1$, on obtient $z^2-z+1=0$. Son discriminant vaut $-3$, d'où $z=\\frac{(1\\pm i\\sqrt3)}{2}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 17,
+        "originalReference": "Concours 2022 — Q1",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-c14",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2022 · C.14",
+      "officialQuestionCode": "C.14",
+      "prompt": "Si $z=e^{ix}-e^{-ix}$ avec $x\\in]0,\\pi[$, alors $|z|$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2\\cos x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2\\cos\\frac{x}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2\\sin x$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$2\\sin\\frac{x}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $z=2i\\sin x$. Sur $]0,\\pi[$, $\\sin x>0$, donc $|z|=2\\sin x$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 18,
+        "originalReference": "Concours 2022 — Q3",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-c15",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2022 · C.15",
+      "officialQuestionCode": "C.15",
+      "prompt": "Dans $\\mathbb C$, si $\\arg(iz)\\equiv\\frac{7\\pi}{6}\\ [2\\pi]$ et $|z|=\\sqrt2$, alors la partie imaginaire de $z^3$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$-2\\sqrt2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\arg z\\equiv7\\frac{\\pi}{6}-\\frac{\\pi}{2}=2\\frac{\\pi}{3}$. Ainsi $z^3$ a pour argument $2\\pi$ et est réel ; sa partie imaginaire est nulle.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 19,
+        "originalReference": "Concours 2022 — Q5",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-c16",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2022 · C.16",
+      "officialQuestionCode": "C.16",
+      "prompt": "Dans le plan complexe, $\\Omega$, $M$ et $M'$ ont pour affixes $-\\frac{\\sqrt3}{3}$, $z$ et $z'$, avec $z'=(1+i\\sqrt3)z+i$. Une mesure de l'angle $(\\overrightarrow{\\Omega M};\\overrightarrow{\\Omega M'})$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{2\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$-\\frac{2\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\frac{\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{\\pi}{6}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En notant $\\omega=-\\frac{\\sqrt3}{3}$, on vérifie $z'-\\omega=(1+i\\sqrt3)(z-\\omega)$. L'angle demandé est donc $\\arg(1+i\\sqrt3)=\\frac{\\pi}{3}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 20,
+        "originalReference": "Concours 2022 — Q8",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-c17",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2022 · C.17",
+      "officialQuestionCode": "C.17",
+      "prompt": "Dans $\\mathbb C$, si $|z|-z=3-i\\sqrt3$, alors $|z|$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$2\\sqrt3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$7\\sqrt2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $r=|z|$. Alors $z=r-3+i\\sqrt3$ et $r^2=(r-3)^2+3$, soit $6r=12$. Ainsi $|z|=r=2$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 21,
+        "originalReference": "Concours 2022 — Q10",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-c18",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2022 · C.18",
+      "officialQuestionCode": "C.18",
+      "prompt": "Dans le plan complexe, $A$ et $B$ ont pour affixes $-i$ et $i$. L'ensemble des points $M$ d'affixe $z$ tels que $\\left|\\frac{iz-1}{\\overline z+i}\\right|=1$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "La médiatrice de $[AB]$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La droite $(AB)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La droite $(AB)$ privée de $B$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le cercle de diamètre $[AB]$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Le cercle de diamètre $[AB]$ privé de $B$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Comme $|iz-1|=|z+i|$ et $|\\overline z+i|=|z-i|$, la condition équivaut à $MA=MB$. Le lieu est donc la médiatrice de $[AB]$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 22,
+        "originalReference": "Concours 2022 — Q11",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-f17",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2022 · F.17",
+      "officialQuestionCode": "F.17",
+      "prompt": "$ABCD$ est un carré de côté $1$. Les points $E\\in[AB]$ et $F\\in[BC]$ vérifient $BE=CF=x$. La valeur de $x$ pour laquelle l'aire du triangle $EFD$ est minimale est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Une autre réponse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Dans un repère adapté, le double de l'aire vaut $x^2-x+1=(x-\\frac{1}{2})^2+\\frac{3}{4}$. Il est minimal pour $x=\\frac{1}{2}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 48,
+        "originalReference": "Concours 2022 — Q9",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-f18",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2022 · F.18",
+      "officialQuestionCode": "F.18",
+      "prompt": "Soit $f$ définie sur $\\mathbb R$ par $f(2x-1)=x^2+3x$. Alors $f(1)+f'(1)$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{5}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$4$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{9}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{13}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Une autre réponse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $t=2x-1$, $f(t)=(\\frac{(t+1)}{2})^2+3\\frac{(t+1)}{2}$. On obtient $f(1)=4$ et $f'(1)=\\frac{5}{2}$, donc la somme vaut $\\frac{13}{2}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 49,
+        "originalReference": "Concours 2022 — Q17",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-f19",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2022 · F.19",
+      "officialQuestionCode": "F.19",
+      "prompt": "Soit $\\displaystyle f(x)=\\sum_{k=0}^{n}x^k$. L'équation réduite de la tangente à sa courbe au point d'abscisse $1$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y=\\frac{n(n+1)}2x-\\frac{(n-2)(n+1)}2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y=\\frac{n(n-1)}2x-\\frac{(n-2)(n+1)}2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y=\\frac{n(n+1)}2x+\\frac{(n-2)(n+1)}2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y=\\frac{n(n-1)}2x-\\frac{n^2-1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(1)=n+1$ et $\\displaystyle f'(1)=\\sum_{k=1}^n k=n\\frac{(n+1)}{2}$. La formule $y=f'(1)(x-1)+f(1)$ donne la proposition A.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 50,
+        "originalReference": "Concours 2022 — Q19",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-l3",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Limites et continuité",
+      "sourceReference": "FMP 2022 · L.3",
+      "officialQuestionCode": "L.3",
+      "prompt": "La limite $\\displaystyle\\lim_{n\\to+\\infty}\\left(n-\\sqrt{n^2-n}\\right)$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Une autre réponse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Après rationalisation, l'expression vaut $\\frac{n}{n+\\sqrt{n^2-n}}=\\dfrac1{1+\\sqrt{1-\\frac{1}{n}}}$, qui tend vers $\\frac{1}{2}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 68,
+        "originalReference": "Concours 2022 — Q4",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-l4",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Limites et continuité",
+      "sourceReference": "FMP 2022 · L.4",
+      "officialQuestionCode": "L.4",
+      "prompt": "Soit $x\\in\\mathbb R^*$. Si $\\displaystyle\\lim_{n\\to+\\infty}\\left(1+\\frac{x}{7n}\\right)^{29n}=2022$, alors $x$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{29}{7}\\ln2022$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2022\\ln\\frac{7}{{29}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2022\\ln\\frac{29}{7}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{7}{{29}}\\ln2022$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Une autre réponse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La limite vaut $e^{\\frac{29x}{7}}$. L'égalité à $2022$ donne $\\frac{29x}{7}=\\ln2022$, donc $x=(\\frac{7}{29})\\ln2022$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 69,
+        "originalReference": "Concours 2022 — Q12",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-s11",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2022 · S.11",
+      "officialQuestionCode": "S.11",
+      "prompt": "Si $v_1+v_2+\\cdots+v_n=2n^2+n$ pour tout $n\\ge1$, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$v_8=31$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$v_8=53$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$v_8=54$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$v_8=62$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$v_8=64$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En notant $S_n=2n^2+n$, on a $v_8=S_8-S_7=136-105=31$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 81,
+        "originalReference": "Concours 2022 — Q16",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-s12",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2022 · S.12",
+      "officialQuestionCode": "S.12",
+      "prompt": "La suite $(u_n)$ est définie par $u_0\\in]0,1[$ et $u_{n+1}=f(u_n)$, où $f(x)=\\frac{\\sqrt{x}}{\\sqrt{x}+\\sqrt{1-x}}$ sur $[0,1]$. Alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\lim u_n=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\lim u_n=\\frac{1}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\lim u_n=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\displaystyle \\lim u_n=+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Une autre réponse",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Le point fixe intérieur est $\\frac{1}{2}$. De plus, $f(x)>x$ sur $]0,\\frac{1}{2}[$ et $f(x)<x$ sur $]\\frac{1}{2},1[$ ; l'itération converge vers $\\frac{1}{2}$. Cette valeur n'étant pas proposée, la réponse est « Une autre réponse ».\n",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 82,
+        "originalReference": "Concours 2022 — Q20",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-i11",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2022 · I.11",
+      "officialQuestionCode": "I.11",
+      "prompt": "Si $f$ est solution de $y''+2y'+4y=0$ sur $\\mathbb R$, alors $g=2f$ est solution de :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y''+2y'+4y=0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y''+y'+y=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y''+4y'+4y=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2y''+4y'+y=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Une autre équation",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'équation est linéaire homogène : tout multiple scalaire d'une solution est encore solution de la même équation.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 99,
+        "originalReference": "Concours 2022 — Q2",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-i12",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2022 · I.12",
+      "officialQuestionCode": "I.12",
+      "prompt": "Soit $a\\in\\mathbb R^*$. Si $\\displaystyle\\int_0^1\\frac{e^{ax}}{e^{ax}+1}\\,dx=\\frac{1}{a}$, alors $a$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln(e-1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2e-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln(2e+1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln(2e-1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$2e+1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'intégrale vaut $\\frac{1}{a}\\ln\\!\\left(\\frac{e^a+1}{2}\\right)$. Elle vaut $\\frac{1}{a}$ lorsque $\\frac{(e^a+1)}{2}=e$, soit $a=\\ln(2e-1)$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 100,
+        "originalReference": "Concours 2022 — Q7",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-i13",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2022 · I.13",
+      "officialQuestionCode": "I.13",
+      "prompt": "Soit $f(x)=2e^{3x}-6$. La primitive dont la courbe coupe l'axe des ordonnées en $3$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$F(x)=\\frac{2}{3}e^{3x}-6x-\\frac{2}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$F(x)=\\frac{2}{3}e^{3x}-6x+\\frac{7}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$F(x)=\\frac{2}{3}e^{3x}-6x-\\frac{7}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$F(x)=\\frac{2}{3}e^{3x}-6x+\\frac{2}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Une autre réponse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Toute primitive s'écrit $F(x)=\\frac{2}{3}e^{3x}-6x+C$. La condition $F(0)=3$ donne $C=\\frac{7}{3}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 101,
+        "originalReference": "Concours 2022 — Q14",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-i14",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2022 · I.14",
+      "officialQuestionCode": "I.14",
+      "prompt": "L'intégrale $\\displaystyle\\int_0^3\\frac{x^2+2}{\\sqrt{x^3+6x+4}}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{8}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{10}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{14}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Une autre réponse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $u=x^3+6x+4$, on a $du=3(x^2+2)dx$. L'intégrale vaut $\\frac{2}{3}[\\sqrt{x^3+6x+4}]_0^3=\\frac{2}{3}(7-2)=\\frac{10}{3}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 102,
+        "originalReference": "Concours 2022 — Q15",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-i15",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2022 · I.15",
+      "officialQuestionCode": "I.15",
+      "prompt": "Pour $n\\in\\mathbb N$, on pose $I_n=\\displaystyle\\int_1^e x(\\ln x)^n\\,dx$. Pour tout $n\\ge1$, $2I_{n+1}+(n+1)I_n$ est égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$e$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$e^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{e-1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{e+1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une intégration par parties appliquée à $I_{n+1}$ donne $I_{n+1}=\\frac{e^2}{2}-(n+1)\\frac{I_n}{2}$. Ainsi $2I_{n+1}+(n+1)I_n=e^2$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 103,
+        "originalReference": "Concours 2022 — Q18",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-g2",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "geometrie-espace",
+      "category": "Géométrie dans l’espace",
+      "sourceReference": "FMP 2022 · G.2",
+      "officialQuestionCode": "G.2",
+      "prompt": "Dans un repère orthonormé, $A(1,2,3)$ et $B(2,0,1)$. L'ensemble des points $M(x,y,z)$ équidistants de $A$ et $B$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le plan $x-y+z=6$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Le plan $2x-4y-4z=-9$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Le plan $2x-4y-4z=9$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La droite définie par $x+y+z=6$ et $2x-4y-4z=-9$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Une autre réponse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'égalité $MA^2=MB^2$ se développe en $2x-4y-4z=-9$. Il s'agit du plan médiateur de $[AB]$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 111,
+        "originalReference": "Concours 2022 — Q6",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2022-p2",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "probabilites",
+      "category": "Probabilités et dénombrement",
+      "sourceReference": "FMP 2022 · P.2",
+      "officialQuestionCode": "P.2",
+      "prompt": "Le plan $(P)$ a pour équation $3x-2z+3=0$. Un dé équilibré fournit $a\\in\\{1,\\ldots,6\\}$. La probabilité que $A(a^2,2a,6a-3)$ appartienne à $(P)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{2}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Une autre réponse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La condition d'appartenance devient $3a^2-2(6a-3)+3=0$, soit $(a-1)(a-3)=0$. Il y a deux issues favorables sur six : la probabilité vaut $\\frac{1}{3}$.",
+      "provenance": {
+        "questionDocument": "Concours par theme _FMP .pdf",
+        "questionPage": 119,
+        "originalReference": "Concours 2022 — Q13",
+        "solutionDocument": "Solutions et Techniques Concnours FMP.pdf",
+        "transcription": "textuelle vérifiée"
+      },
+      "answerValidation": {
+        "status": "source-answer-verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    }
+  ]
+}

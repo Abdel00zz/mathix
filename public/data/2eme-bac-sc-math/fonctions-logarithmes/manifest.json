@@ -1,0 +1,33 @@
+{
+  "id": "fonctions-logarithmes",
+  "title": "Fonctions logarithmes",
+  "exercises": [
+    {
+      "id": "ex-fonctions-logarithmes-01",
+      "path": "data/2eme-bac-sc-math/fonctions-logarithmes/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-fonctions-logarithmes-02",
+      "path": "data/2eme-bac-sc-math/fonctions-logarithmes/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-fonctions-logarithmes-03",
+      "path": "data/2eme-bac-sc-math/fonctions-logarithmes/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-fonctions-logarithmes-01",
+      "path": "data/2eme-bac-sc-math/fonctions-logarithmes/quiz/fonctions-logarithmes_quiz.json",
+      "questionsCount": 22
+    }
+  ],
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-fonctions-logarithmes-sm",
+      "title": "Fiche Complete : Fonctions logarithmes",
+      "path": "data/2eme-bac-sc-math/fonctions-logarithmes/revisions/fiche_fonctions_logarithmes_cours.json"
+    }
+  ]
+}

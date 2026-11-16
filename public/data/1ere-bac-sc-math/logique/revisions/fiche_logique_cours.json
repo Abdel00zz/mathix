@@ -1,0 +1,414 @@
+{
+  "header": {
+    "title": "Logique et Raisonnements",
+    "subtitle": "Propositions, connecteurs, quantificateurs et méthodes de preuve",
+    "context": "1BAC Sciences Mathématiques"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "La logique mathematique permet de \\objectif{transformer une intuition en raisonnement valide} grace a un langage precis sur les propositions, les quantificateurs et les implications. Elle sert a lire correctement un enonce, a rediger une preuve et a eviter les erreurs de negation ou de raisonnement. La \\defi{difficulte} vient souvent des quantificateurs et des equivalences logiques, qui demandent beaucoup de precision malgre des symboles tres compacts. \\savant{George Boole} a montre qu'on pouvait traiter la logique comme une algebre ; cette idee est devenue la base des circuits numeriques et de l'informatique.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Aristotle_Altemps_Inv8575.jpg",
+            "type": "image",
+            "position": "right",
+            "width": "16.5%",
+            "caption": "Aristote (384–322 av. J.-C.)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "propositions-fondamentales",
+      "category": "course",
+      "title": "Propositions et valeurs de vérité",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vous manipulez quotidiennement des phrases comme « $7$ est premier » ou « $x + 3 = 5$ », mais toutes ne sont pas de même nature. La différence fondamentale réside dans la \\textbf{valeur de vérité} : peut-on trancher définitivement si l'énoncé est vrai ou faux ?"
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{une proposition}",
+          "content": "On appelle \\textbf{proposition} tout énoncé mathématique auquel on peut attribuer exactement une valeur de vérité : \\textbf{Vrai} ($V$) ou \\textbf{Faux} ($F$).\\par\\smallskip$$\\begin{array}{|l|c|}\\hline \\textbf{Énoncé} & \\textbf{Valeur} \\\\\\hline \\text{« } 7 \\text{ est un nombre premier »} & V \\\\\\hline \\text{« } \\sqrt{2} \\text{ est rationnel »} & F \\\\\\hline \\text{« La somme des angles d'un triangle vaut } 180° \\text{ »} & V \\\\\\hline \\text{« } 0{,}333\\ldots = \\frac{1}{3} \\text{ »} & V \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{une fonction propositionnelle}",
+          "content": "Une \\textbf{fonction propositionnelle}, notée $P(x)$, est un énoncé dépendant d'une variable $x \\in E$. Cet énoncé ne devient une proposition que lorsque l'on remplace $x$ par une valeur précise.\\par\\smallskip L'\\textbf{ensemble de vérité} est l'ensemble des éléments qui rendent la proposition vraie :\\par$$\\mathcal{V}_{P} = \\{x \\in E \\mid P(x) \\text{ est vraie}\\}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $P(x)$ : « $x^2 - 5x + 6 = 0$ » définie sur $\\mathbb{R}$. Déterminons son ensemble de vérité.}\\par Résolvons l'équation :\\begin{align*}x^2 - 5x + 6 &= 0 \\\\(x - 2)(x - 3) &= 0\\end{align*}\\par On en déduit $x = 2$ ou $x = 3$.\\par L'ensemble de vérité est donc $\\mathcal{V}_{P} = \\blank{\\{2\\,;\\, 3\\}}$."
+        },
+        {
+          "type": "remark",
+          "content": "Certains énoncés ne sont \\textbf{jamais} des propositions logiques :\\par\\smallskip$$\\begin{array}{|l|l|}\\hline \\textbf{Énoncé} & \\textbf{Raison} \\\\\\hline \\text{« } x^2 = 4 \\text{ »} & \\text{Dépend de } x \\text{ : fonction propositionnelle} \\\\\\hline \\text{« Fermez la porte ! »} & \\text{Ordre, pas affirmation} \\\\\\hline \\text{« Quelle heure est-il ? »} & \\text{Question, pas affirmation} \\\\\\hline\\end{array}$$"
+        }
+      ]
+    },
+    {
+      "id": "connecteurs-logiques",
+      "category": "course",
+      "title": "Les connecteurs logiques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour construire des raisonnements, il faut assembler des briques élémentaires. Les connecteurs logiques permettent de combiner des propositions simples en propositions composées."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{la négation $\\overline{P}$}",
+          "content": "La \\textbf{négation} d'une proposition $P$, notée $\\overline{P}$, est la proposition qui affirme le contraire de $P$.\\par\\smallskip$$\\begin{array}{|c|c|}\\hline P & \\overline{P} \\\\\\hline V & F \\\\\\hline F & V \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Que signifient \\mathqst{$P \\land Q$ et $P \\lor Q$}",
+          "content": "\\begin{itemize}\\item La \\textbf{conjonction} $P \\land Q$ (« $P$ \\textbf{et} $Q$ ») : vraie si et seulement si \\blank{$P$ et $Q$ sont vraies simultanément}.\\item La \\textbf{disjonction} $P \\lor Q$ (« $P$ \\textbf{ou} $Q$ ») : vraie si \\blank{au moins l'une des deux est vraie}.\\end{itemize}\\par\\smallskip$$\\begin{array}{|c|c|c|c|}\\hline P & Q & P \\land Q & P \\lor Q \\\\\\hline V & V & V & V \\\\\\hline V & F & F & V \\\\\\hline F & V & F & V \\\\\\hline F & F & F & F \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $P$ : « $6$ est pair » et $Q$ : « $6$ est divisible par $3$ ». Déterminons la valeur de $P \\land Q$ et $P \\lor Q$.}\\par $P$ est vraie (car $6 = 2 \\times 3$) et $Q$ est vraie (car $6 = 3 \\times 2$).\\par D'après la table de vérité : $P \\land Q$ est \\blank{Vraie} et $P \\lor Q$ est \\blank{Vraie}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $P$ : « $9$ est pair » et $Q$ : « $9$ est divisible par $3$ ». Quelle est la valeur de $P \\land Q$ et $P \\lor Q$ ?}\\par $P$ est fausse ($9 = 2 \\times 4 + 1$) et $Q$ est vraie ($9 = 3 \\times 3$).\\par D'après la table : $P \\land Q$ est \\blank{Fausse} (il suffit qu'une soit fausse) et $P \\lor Q$ est \\blank{Vraie} (au moins une est vraie)."
+        },
+        {
+          "type": "remark",
+          "content": "En logique, le « ou » est \\textbf{inclusif} : $P \\lor Q$ est vrai même si $P$ et $Q$ sont vraies en même temps. C'est différent du « ou » exclusif du langage courant (« fromage ou dessert » signifie souvent l'un \\textbf{mais pas} les deux)."
+        }
+      ]
+    },
+    {
+      "id": "implication-equivalence",
+      "category": "course",
+      "title": "Implication et équivalence",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'implication est la pierre angulaire de la démonstration mathématique. Elle formalise la relation de cause à effet : « si... alors... »."
+        },
+        {
+          "type": "definition",
+          "title": "Quand \\mathqst{l'implication $P \\Rightarrow Q$ est-elle fausse}",
+          "content": "L'\\textbf{implication} $P \\Rightarrow Q$ se lit « si $P$, alors $Q$ ».\\par Elle est fausse dans \\textbf{un seul cas} : lorsque l'hypothèse $P$ est \\blank{vraie} et la conclusion $Q$ est \\blank{fausse}.\\par\\smallskip$$\\begin{array}{|c|c|c|}\\hline P & Q & P \\Rightarrow Q \\\\\\hline V & V & V \\\\\\hline V & F & F \\\\\\hline F & V & V \\\\\\hline F & F & V \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "remark",
+          "content": "Si l'hypothèse $P$ est fausse, l'implication $P \\Rightarrow Q$ est automatiquement \\blank{Vraie}, quelle que soit $Q$. C'est pourquoi « si $2+2=5$, alors je suis le roi du monde » est une proposition mathématiquement vraie."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{l'équivalence $P \\Leftrightarrow Q$}",
+          "content": "L'\\textbf{équivalence} $P \\Leftrightarrow Q$ signifie que $P$ et $Q$ ont exactement la même valeur de vérité. Cela revient à une \\textbf{double implication} :\\par$$P \\Leftrightarrow Q \\quad \\text{si et seulement si} \\quad (P \\Rightarrow Q) \\;\\land\\; (Q \\Rightarrow P)$$\\par\\smallskip$$\\begin{array}{|c|c|c|}\\hline P & Q & P \\Leftrightarrow Q \\\\\\hline V & V & V \\\\\\hline V & F & F \\\\\\hline F & V & F \\\\\\hline F & F & V \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Pour} $x \\in \\mathbb{R}$, la condition « $x = 3$ » est-elle nécessaire, suffisante, ou les deux, pour « $x^2 = 9$ » ?}\\par D'abord, vérifions $P \\Rightarrow Q$ (« $x = 3$» implique « $x^2 = 9$ ») : si $x = 3$, alors $x^2 = 9$. C'est \\blank{vrai}.\\par Ensuite, vérifions $Q \\Rightarrow P$ (« $x^2 = 9$ » implique « $x = 3$ ») : si $x^2 = 9$, alors $x = 3$ ou $x = -3$. C'est \\blank{faux} (contre-exemple : $x = -3$).\\par On en déduit : $x = 3$ est condition \\textbf{suffisante} mais \\textbf{pas nécessaire} pour $x^2 = 9$."
+        },
+        {
+          "type": "property",
+          "title": "Quand \\mathqst{une condition est-elle nécessaire, suffisante, ou les deux}",
+          "content": "$$\\begin{array}{|c|c|c|}\\hline \\textbf{Type de condition} & \\textbf{Formulation} & \\textbf{Signification} \\\\\\hline P \\text{ suffisante pour } Q & P \\Rightarrow Q & \\text{Il suffit que } P \\text{ soit vraie} \\\\\\hline P \\text{ nécessaire pour } Q & Q \\Rightarrow P & \\text{Il faut que } P \\text{ soit vraie} \\\\\\hline P \\text{ néc. et suff. pour } Q & P \\Leftrightarrow Q & P \\text{ et } Q \\text{ sont équivalentes} \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{La condition} « $n$ est divisible par $6$ » est-elle nécessaire, suffisante, ou les deux, pour « $n$ est divisible par $3$ » ?}\\par D'abord : si $6 \\mid n$, alors $n = 6k = 3 \\times 2k$, donc $3 \\mid n$. Ainsi « $6 \\mid n$ » est \\textbf{suffisante} pour « $3 \\mid n$ ».\\par Ensuite : si $3 \\mid n$, est-ce que $6 \\mid n$ ? Contre-exemple : $n = 9$. On a $3 \\mid 9$ mais $6 \\nmid 9$. Donc « $6 \\mid n$ » n'est \\textbf{pas nécessaire} pour « $3 \\mid n$ ».\\par Conclusion : condition \\textbf{suffisante mais pas nécessaire}."
+        }
+      ]
+    },
+    {
+      "id": "lois-de-morgan",
+      "category": "course",
+      "title": "Lois de De Morgan et négation",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'intuition nous trompe souvent lorsqu'il s'agit de nier une phrase complexe. Les lois de De Morgan offrent une règle infaillible pour nier correctement les propositions composées."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment nier correctement \\mathqst{« ET » et « OU »}",
+          "content": "Pour nier une proposition composée, on \\textbf{inverse les connecteurs} et on nie chaque partie :\\par\\smallskip$$\\boxed{\\overline{P \\land Q} = \\overline{P} \\;\\blank{\\lor}\\; \\overline{Q}}$$\\par$$\\boxed{\\overline{P \\lor Q} = \\overline{P} \\;\\blank{\\land}\\; \\overline{Q}}$$\\par\\smallskip$$\\begin{array}{|c|c|c|}\\hline \\textbf{Proposition} & \\textbf{Négation} & \\textbf{Règle} \\\\\\hline P \\land Q & \\overline{P} \\lor \\overline{Q} & \\text{ET} \\to \\text{OU} \\\\\\hline P \\lor Q & \\overline{P} \\land \\overline{Q} & \\text{OU} \\to \\text{ET} \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Nions la proposition : « $n$ est pair et $n$ est divisible par $3$ ».}\\par Par De Morgan, on inverse « et » en « ou » et on nie chaque partie :\\par La négation est : « $n$ est \\blank{impair} \\textbf{ou} $n$ n'est \\blank{pas divisible par $3$} ».\\par Il suffit qu'une seule des deux conditions tombe pour que la proposition initiale soit fausse."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Nions la proposition : « $x \\leq -1$ ou $x \\geq 3$ ».}\\par Par De Morgan, « ou » devient « et », et on nie chaque inégalité :\\par La négation est : « $x > \\blank{-1}$ \\textbf{et} $x < \\blank{3}$ », c'est-à-dire $x \\in \\,]-1\\,,\\, 3[\\,$."
+        },
+        {
+          "type": "property",
+          "title": "Comment nier \\mathqst{une implication $P \\Rightarrow Q$}",
+          "content": "$$\\boxed{\\overline{P \\Rightarrow Q} = P \\;\\blank{\\land}\\; \\overline{Q}}$$\\par\\smallskip Pour nier « si $P$ alors $Q$ », on dit : « $P$ est vraie \\textbf{et} $Q$ est fausse ».\\par C'est logique : le seul cas où l'implication est fausse, c'est quand l'hypothèse est vraie et la conclusion est fausse."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Nions la proposition} : « Si $n$ est un carré parfait, alors $n$ est positif ».}\\par On applique $\\overline{P \\Rightarrow Q} = P \\land \\overline{Q}$ :\\par La négation est : « $n$ est un carré parfait \\textbf{et} $n$ est \\blank{strictement négatif} ».\\par Cette négation est d'ailleurs fausse (car tout carré est $\\geq 0$), ce qui confirme que la proposition initiale est vraie."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les règles de distributivité des connecteurs}",
+          "content": "$$\\begin{array}{|c|c|}\\hline \\textbf{Distributivité de } \\land \\text{ sur } \\lor & P \\land (Q \\lor R) = (P \\land Q) \\lor (P \\land R) \\\\\\hline \\textbf{Distributivité de } \\lor \\text{ sur } \\land & P \\lor (Q \\land R) = (P \\lor Q) \\land (P \\lor R) \\\\\\hline\\end{array}$$"
+        }
+      ]
+    },
+    {
+      "id": "quantificateurs",
+      "category": "course",
+      "title": "Les quantificateurs",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En mathématiques, on veut souvent préciser si une propriété est vraie pour « tout le monde » ou juste pour « quelqu'un ». Les quantificateurs $\\forall$ et $\\exists$ gèrent cette nuance essentielle."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifient \\mathqst{$\\forall$ et $\\exists$}",
+          "content": "$$\\begin{array}{|c|c|c|}\\hline \\textbf{Symbole} & \\textbf{Lecture} & \\textbf{Signification} \\\\\\hline \\forall & \\text{« pour tout »} & P(x) \\text{ est vraie pour } \\textbf{tous} \\text{ les } x \\in E \\\\\\hline \\exists & \\text{« il existe »} & P(x) \\text{ est vraie pour } \\textbf{au moins un} \\text{ } x \\in E \\\\\\hline \\exists ! & \\text{« il existe un unique »} & P(x) \\text{ est vraie pour } \\textbf{exactement un} \\text{ } x \\in E \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Traduisons les propositions suivantes en} langage symbolique et déterminons leur valeur de vérité.}\\par\\smallskip$$\\begin{array}{|l|c|c|}\\hline \\textbf{Proposition en français} & \\textbf{Écriture symbolique} & \\textbf{Valeur} \\\\\\hline \\text{Tout nombre pair est divisible par 2} & (\\forall n \\in \\mathbb{N})\\;(n \\text{ pair} \\Rightarrow 2 \\mid n) & \\blank{V} \\\\\\hline \\text{Il existe un entier dont le carré vaut 2} & (\\exists n \\in \\mathbb{N})\\; n^2 = 2 & \\blank{F} \\\\\\hline \\text{Il existe un unique réel de cube nul} & (\\exists ! x \\in \\mathbb{R})\\; x^3 = 0 & \\blank{V} \\\\\\hline \\text{Tout réel est positif ou négatif} & (\\forall x \\in \\mathbb{R})\\;(x \\geq 0 \\lor x \\leq 0) & \\blank{V} \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "theorem",
+          "title": "Comment nier \\mathqst{une proposition quantifiée}",
+          "content": "On \\textbf{inverse le quantificateur} et on nie la propriété :\\par\\smallskip$$\\boxed{\\overline{(\\forall x \\in E)\\, P(x)} = (\\blank{\\exists}\\, x \\in E)\\, \\overline{P(x)}}$$\\par$$\\boxed{\\overline{(\\exists x \\in E)\\, P(x)} = (\\blank{\\forall}\\, x \\in E)\\, \\overline{P(x)}}$$\\par\\smallskip$$\\begin{array}{|c|c|}\\hline \\textbf{Quantificateur initial} & \\textbf{Après négation} \\\\\\hline \\forall & \\exists \\\\\\hline \\exists & \\forall \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Nions les propositions quantifiées suivantes}.}\\par D'abord, nions $(\\forall x \\in \\mathbb{R})\\; x^2 + 1 > 0$ :\\par On inverse $\\forall$ en $\\exists$ et on nie l'inégalité :\\par$$\\overline{(\\forall x \\in \\mathbb{R})\\; x^2 + 1 > 0} = (\\exists x \\in \\mathbb{R})\\; x^2 + 1 \\leq \\blank{0}$$\\par Cette négation est fausse car $x^2 + 1 \\geq 1 > 0$ pour tout $x$.\\par\\smallskip À présent, nions $(\\exists n \\in \\mathbb{N})\\; n^2 = n + 1$ :\\par$$\\overline{(\\exists n \\in \\mathbb{N})\\; n^2 = n + 1} = (\\forall n \\in \\mathbb{N})\\; n^2 \\neq \\blank{n + 1}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Nions la proposition à double} quantificateur : $(\\forall x \\in \\mathbb{R})(\\exists y \\in \\mathbb{R})\\; x + y = 0$.}\\par On procède de gauche à droite, en inversant chaque quantificateur :\\par$$\\overline{(\\forall x)(\\exists y)\\; x + y = 0} = (\\blank{\\exists}\\, x \\in \\mathbb{R})(\\blank{\\forall}\\, y \\in \\mathbb{R})\\; x + y \\neq 0$$\\par La proposition initiale est vraie (pour tout $x$, il suffit de prendre $y = -x$), donc sa négation est fausse."
+        },
+        {
+          "type": "warning",
+          "content": "L'ordre des quantificateurs change radicalement le sens :\\par\\smallskip$$\\begin{array}{|l|c|l|}\\hline \\textbf{Proposition} & \\textbf{Valeur} & \\textbf{Explication} \\\\\\hline (\\forall x \\in \\mathbb{R})(\\exists y \\in \\mathbb{R})\\; y > x & V & y \\text{ peut dépendre de } x \\text{ (prendre } y = x+1 \\text{)} \\\\\\hline (\\exists y \\in \\mathbb{R})(\\forall x \\in \\mathbb{R})\\; y > x & F & y \\text{ doit être le même pour tous les } x \\\\\\hline\\end{array}$$"
+        }
+      ]
+    },
+    {
+      "id": "raisonnement-direct",
+      "category": "course",
+      "title": "Raisonnement direct",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le raisonnement direct est la méthode de preuve la plus naturelle. On part de l'hypothèse et on avance pas à pas, par déductions logiques, jusqu'à la conclusion."
+        },
+        {
+          "type": "property",
+          "title": "En quoi consiste \\mathqst{le raisonnement direct}",
+          "content": "Pour démontrer $P \\Rightarrow Q$ par raisonnement direct :\\par\\smallskip\\begin{enumerate}\\item On \\textbf{suppose} que $P$ est vraie (hypothèse).\\item On enchaîne les déductions logiques.\\item On \\textbf{aboutit} à $Q$ (conclusion).\\end{enumerate}\\par\\smallskip$$\\boxed{\\underbrace{P}_{\\text{Hypothèse}} \\;\\longrightarrow\\; P_1 \\;\\longrightarrow\\; P_2 \\;\\longrightarrow\\; \\cdots \\;\\longrightarrow\\; \\underbrace{Q}_{\\text{Conclusion}}}$$\\par\\smallskip\\textbf{Quand l'utiliser ?} Quand le passage de $P$ à $Q$ se fait naturellement par calcul ou par définition."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons par raisonnement direct que la somme de deux entiers pairs est paire.}\\par\\textbf{Hypothèse :} $a$ et $b$ sont des entiers pairs.\\par D'abord, par définition de la parité, il existe $k, l \\in \\mathbb{Z}$ tels que :\\begin{align*}a &= 2k \\\\b &= 2l\\end{align*}\\par Calculons leur somme :\\begin{align*}a + b &= 2k + 2l \\\\&= 2(\\blank{k + l})\\end{align*}\\par Comme $k + l \\in \\mathbb{Z}$, la somme $a + b$ s'écrit $2m$ avec $m$ entier.\\par\\textbf{Conclusion :} $a + b$ est \\blank{pair}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que le produit de deux entiers consécutifs est toujours pair.}\\par\\textbf{Hypothèse :} $n$ est un entier. Montrons que $n(n+1)$ est pair.\\par On distingue deux situations (mais c'est du raisonnement direct dans chaque cas) :\\par Si $n$ est pair, alors $n = 2k$, donc :\\begin{align*}n(n+1) &= 2k(2k+1) \\\\&= 2 \\cdot \\underbrace{k(2k+1)}_{\\in \\mathbb{Z}}\\end{align*}\\par C'est de la forme $2m$, donc le produit est pair.\\par Si $n$ est impair, alors $n+1$ est pair, donc $n+1 = 2l$, et :\\begin{align*}n(n+1) &= n \\cdot 2l \\\\&= 2 \\cdot \\underbrace{nl}_{\\in \\mathbb{Z}}\\end{align*}\\par Dans les deux cas, $n(n+1)$ est \\blank{pair}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons \\textbf{que} pour tous réels $a$ et $b$ : $(a+b)^2 \\leq 2(a^2+b^2)$.}\\par\\textbf{Stratégie :} montrons que la différence est positive.\\begin{align*}2(a^2+b^2) - (a+b)^2 &= 2a^2 + 2b^2 - a^2 - 2ab - b^2 \\\\&= a^2 - 2ab + b^2 \\\\&= (a-b)^2\\end{align*}\\par Or $(a-b)^2 \\geq 0$ pour tous réels $a, b$.\\par Donc $2(a^2+b^2) - (a+b)^2 \\geq 0$, ce qui donne $(a+b)^2 \\leq \\blank{2(a^2+b^2)}$."
+        }
+      ]
+    },
+    {
+      "id": "raisonnement-disjonction",
+      "category": "course",
+      "title": "Raisonnement par disjonction des cas",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Parfois, il est impossible de traiter un problème en un seul bloc. On découpe alors l'univers en plusieurs cas exhaustifs et on démontre le résultat dans chacun d'eux."
+        },
+        {
+          "type": "property",
+          "title": "En quoi consiste \\mathqst{la disjonction des cas}",
+          "content": "Pour démontrer une propriété $P(x)$ pour tout $x \\in E$ :\\par\\smallskip\\begin{enumerate}\\item On \\textbf{partitionne} $E$ en cas exhaustifs : $E = E_1 \\cup E_2 \\cup \\cdots \\cup E_k$.\\item On démontre $P(x)$ \\textbf{dans chaque cas} $E_i$.\\item Comme les cas recouvrent tout $E$, la propriété est vraie partout.\\end{enumerate}\\par\\smallskip$$\\boxed{\\underbrace{E_1 : P \\text{ vrai}}_{\\text{Cas 1}} \\;+\\; \\underbrace{E_2 : P \\text{ vrai}}_{\\text{Cas 2}} \\;+\\; \\cdots \\;\\longrightarrow\\; P \\text{ vrai sur } E}$$\\par\\smallskip\\textbf{Quand l'utiliser ?} Quand un traitement unifié semble impossible (valeur absolue, parité, signe...)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons \\textbf{que} pour tout entier $n \\in \\mathbb{Z}$, le nombre $n^2 + n$ est pair.}\\par On distingue deux cas selon la parité de $n$.\\par\\smallskip\\textbf{Cas 1 : $n$ est pair.} Il existe $k \\in \\mathbb{Z}$ tel que $n = 2k$.\\begin{align*}n^2 + n &= (2k)^2 + 2k \\\\&= 4k^2 + 2k \\\\&= 2(\\blank{2k^2 + k})\\end{align*}\\par C'est de la forme $2m$, donc $n^2 + n$ est pair.\\par\\smallskip\\textbf{Cas 2 : $n$ est impair.} Il existe $k \\in \\mathbb{Z}$ tel que $n = 2k + 1$.\\begin{align*}n^2 + n &= (2k+1)^2 + (2k+1) \\\\&= 4k^2 + 4k + 1 + 2k + 1 \\\\&= 4k^2 + 6k + 2 \\\\&= 2(\\blank{2k^2 + 3k + 1})\\end{align*}\\par C'est de la forme $2m$, donc $n^2 + n$ est pair.\\par\\smallskip Dans les deux cas, $n^2 + n$ est pair. On pouvait aussi le voir : $n^2 + n = n(n+1)$, produit de deux entiers consécutifs."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons \\textbf{que} pour tout $x \\in \\mathbb{R}$ : $|x - 1| + |x + 1| \\geq 2$.}\\par On distingue trois cas selon le signe des expressions dans les valeurs absolues.\\par\\smallskip\\textbf{Cas 1 : $x \\geq 1$.} Alors $x - 1 \\geq 0$ et $x + 1 > 0$ :\\begin{align*}|x-1| + |x+1| &= (x-1) + (x+1) \\\\&= 2x \\\\&\\geq \\blank{2}\\end{align*}\\par\\textbf{Cas 2 : $-1 \\leq x < 1$.} Alors $x - 1 < 0$ et $x + 1 \\geq 0$ :\\begin{align*}|x-1| + |x+1| &= -(x-1) + (x+1) \\\\&= -x + 1 + x + 1 \\\\&= \\blank{2}\\end{align*}\\par\\textbf{Cas 3 : $x < -1$.} Alors $x - 1 < 0$ et $x + 1 < 0$ :\\begin{align*}|x-1| + |x+1| &= -(x-1) - (x+1) \\\\&= -2x \\\\&\\geq \\blank{2}\\end{align*}\\par Dans les trois cas, $|x-1| + |x+1| \\geq 2$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons \\textbf{que} pour tout entier $n$ : $n^3 - n$ est divisible par $6$.}\\par On factorise d'abord : $n^3 - n = n(n^2-1) = (n-1) \\cdot n \\cdot (n+1)$.\\par C'est le produit de trois entiers consécutifs.\\par\\smallskip\\textbf{Divisibilité par $2$ :} Parmi trois entiers consécutifs, l'un au moins est pair. Donc $2 \\mid (n-1)n(n+1)$.\\par\\textbf{Divisibilité par $3$ :} Parmi trois entiers consécutifs, l'un a un reste $0$ modulo $3$, un autre un reste $1$, et le dernier un reste $2$. Donc exactement un est divisible par $3$.\\par\\smallskip Puisque $\\text{pgcd}(2, 3) = 1$, on conclut que $6 \\mid \\blank{n^3 - n}$."
+        }
+      ]
+    },
+    {
+      "id": "raisonnement-contraposee",
+      "category": "course",
+      "title": "Raisonnement par contraposée",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Quand la preuve directe semble bloquée, on peut emprunter un chemin détourné mais logiquement équivalent : prouver la contraposée."
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi \\mathqst{prouver la contraposée suffit-il}",
+          "content": "L'implication $P \\Rightarrow Q$ et sa \\textbf{contraposée} $\\overline{Q} \\Rightarrow \\overline{P}$ sont logiquement équivalentes :\\par\\smallskip$$\\boxed{(P \\Rightarrow Q) \\;\\Leftrightarrow\\; (\\overline{Q} \\Rightarrow \\overline{P})}$$\\par\\smallskip$$\\begin{array}{ccc}\\textbf{Directe} & & \\textbf{Contraposée} \\\\P \\Rightarrow Q & \\Longleftrightarrow & \\overline{Q} \\Rightarrow \\overline{P} \\\\\\text{« si } P \\text{, alors } Q \\text{ »} & & \\text{« si non } Q \\text{, alors non } P \\text{ »}\\end{array}$$\\par\\smallskip\\textbf{Quand l'utiliser ?} Quand nier $Q$ donne une hypothèse plus exploitable que $P$ elle-même."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons par contraposée : pour tout $n \\in \\mathbb{N}$, si $n^2$ est impair, alors $n$ est impair.}\\par La contraposée est : « si $n$ est \\textbf{pair}, alors $n^2$ est \\textbf{pair} ».\\par\\smallskip Supposons $n$ pair. Il existe $k \\in \\mathbb{N}$ tel que $n = 2k$.\\begin{align*}n^2 &= (2k)^2 \\\\&= 4k^2 \\\\&= 2(\\blank{2k^2})\\end{align*}\\par $n^2$ s'écrit $2m$ avec $m = 2k^2$, donc $n^2$ est pair.\\par La contraposée est prouvée, ce qui démontre la proposition initiale."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons par contraposée : pour $a, b \\in \\mathbb{R}$, si $ab \\neq 0$, alors $a \\neq 0$ et $b \\neq 0$.}\\par La contraposée est : « si $a = 0$ \\textbf{ou} $b = 0$, alors $ab = 0$ ».\\par (On a nié « $a \\neq 0$ et $b \\neq 0$ » en « $a = 0$ ou $b = 0$ » par De Morgan.)\\par\\smallskip Supposons $a = 0$ ou $b = 0$. Dans les deux cas, le produit $ab = \\blank{0}$.\\par La contraposée est vraie, donc la proposition initiale est démontrée."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons par contraposée : pour $x, y \\in \\mathbb{R}$, si $x + y \\neq 2$ ou $xy \\neq 1$, alors $x \\neq 1$ ou $y \\neq 1$.}\\par La contraposée est : « si $x = 1$ \\textbf{et} $y = 1$, alors $x+y = 2$ \\textbf{et} $xy = 1$ ».\\par\\smallskip Supposons $x = 1$ et $y = 1$. Alors :\\begin{align*}x + y &= 1 + 1 = \\blank{2} \\\\xy &= 1 \\times 1 = \\blank{1}\\end{align*}\\par Donc $x+y = 2$ et $xy = 1$. La contraposée est prouvée."
+        }
+      ]
+    },
+    {
+      "id": "raisonnement-absurde",
+      "category": "course",
+      "title": "Raisonnement par l'absurde",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le raisonnement par l'absurde est une arme redoutable : on suppose le contraire de ce qu'on veut prouver, et on montre que cela mène à une contradiction."
+        },
+        {
+          "type": "property",
+          "title": "En quoi consiste \\mathqst{le raisonnement par l'absurde}",
+          "content": "Pour démontrer qu'une proposition $P$ est vraie :\\par\\smallskip\\begin{enumerate}\\item On \\textbf{suppose} que $P$ est fausse (on suppose $\\overline{P}$).\\item On raisonne à partir de cette hypothèse.\\item On aboutit à une \\blank{contradiction}.\\item On conclut que $\\overline{P}$ est fausse, donc $P$ est \\blank{vraie}.\\end{enumerate}\\par\\smallskip$$\\boxed{\\text{Supposons } \\overline{P} \\;\\longrightarrow\\; \\cdots \\;\\longrightarrow\\; \\text{Contradiction !} \\;\\longrightarrow\\; P \\text{ est vraie}}$$\\par\\smallskip\\textbf{Quand l'utiliser ?} Quand on veut prouver une impossibilité ou une non-existence, ou quand les autres méthodes semblent bloquées."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons par l'absurde que $\\sqrt{2}$ est irrationnel.}\\par\\textbf{Supposons}, par l'absurde, que $\\sqrt{2} \\in \\mathbb{Q}$.\\par Alors il existe $p, q \\in \\mathbb{N}^*$ avec $\\text{pgcd}(p, q) = 1$ tels que $\\sqrt{2} = \\displaystyle\\frac{p}{q}$.\\par En élevant au carré : $2 = \\displaystyle\\frac{p^2}{q^2}$, donc $p^2 = 2q^2$.\\par Ainsi $p^2$ est pair, ce qui entraîne $p$ pair (contraposée du résultat précédent).\\par Il existe $k \\in \\mathbb{N}^*$ tel que $p = 2k$. En remplaçant :\\begin{align*}(2k)^2 &= 2q^2 \\\\4k^2 &= 2q^2 \\\\q^2 &= 2k^2\\end{align*}\\par Donc $q^2$ est pair, ce qui entraîne $q$ \\blank{pair}.\\par Or $p$ et $q$ sont tous les deux pairs, ce qui contredit $\\text{pgcd}(p, q) = 1$.\\par\\textbf{Contradiction !} L'hypothèse est fausse. Donc $\\sqrt{2}$ est \\blank{irrationnel}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons par l'absurde que $\\mathbb{N}$ n'admet pas de plus grand élément.}\\par\\textbf{Supposons}, par l'absurde, qu'il existe $N \\in \\mathbb{N}$ tel que $\\forall n \\in \\mathbb{N},\\; n \\leq N$.\\par Considérons $N + 1$. On a $N + 1 \\in \\mathbb{N}$ et $N + 1 > N$.\\par Cela contredit l'hypothèse que $N$ est le plus grand élément.\\par\\textbf{Contradiction !} Donc $\\mathbb{N}$ n'admet \\blank{pas de plus grand élément}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons par l'absurde que si $a$ et $b$ sont des entiers tels que $a + b \\geq 3$, alors $a \\geq 2$ ou $b \\geq 2$.}\\par\\textbf{Supposons}, par l'absurde, que $a < 2$ \\textbf{et} $b < 2$.\\par (C'est la négation de « $a \\geq 2$ ou $b \\geq 2$ » par De Morgan.)\\par Puisque $a, b \\in \\mathbb{Z}$, on a $a \\leq 1$ et $b \\leq 1$.\\par Par suite :\\begin{align*}a + b &\\leq 1 + 1 \\\\&= 2 \\\\&< 3\\end{align*}\\par Cela contredit $a + b \\geq 3$.\\par\\textbf{Contradiction !} Donc $a \\geq 2$ ou $b \\geq \\blank{2}$."
+        }
+      ]
+    },
+    {
+      "id": "raisonnement-recurrence",
+      "category": "course",
+      "title": "Raisonnement par récurrence",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le raisonnement par récurrence est la méthode privilégiée pour démontrer une propriété portant sur tous les entiers naturels. Son principe est simple : on renverse une infinité de dominos en en poussant un seul."
+        },
+        {
+          "type": "property",
+          "title": "En quoi consiste \\mathqst{le raisonnement par récurrence}",
+          "content": "Pour démontrer que $P(n)$ est vraie pour tout $n \\geq n_0$ :\\par\\smallskip\\begin{enumerate}\\item \\textbf{Initialisation :} on vérifie que $P(\\blank{n_0})$ est vraie.\\item \\textbf{Hérédité :} on suppose $P(n)$ vraie pour un $n \\geq n_0$ fixé (\\textbf{hypothèse de récurrence}) et on montre $P(\\blank{n+1})$.\\item \\textbf{Conclusion :} par le principe de récurrence, $P(n)$ est vraie pour tout $n \\geq n_0$.\\end{enumerate}\\par\\smallskip$$\\boxed{\\underbrace{P(n_0)}_{\\text{1er domino}} \\;+\\; \\underbrace{P(n) \\Rightarrow P(n+1)}_{\\text{chaque domino pousse le suivant}} \\;\\longrightarrow\\; (\\forall n \\geq n_0)\\; P(n)}$$\\par\\smallskip\\textbf{Quand l'utiliser ?} Pour prouver des formules de somme, des inégalités, ou des propriétés indexées par $\\mathbb{N}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons par récurrence que $\\displaystyle\\sum_{k=1}^{n} k = \\frac{n(n+1)}{2}$ pour tout $n \\in \\mathbb{N}^*$.}\\par Notons $P(n)$ : « $1 + 2 + \\cdots + n = \\displaystyle\\frac{n(n+1)}{2}$ ».\\par\\smallskip\\textbf{Initialisation ($n = 1$) :}\\begin{align*}\\text{Gauche} &= 1 \\\\\\text{Droite} &= \\frac{1 \\times 2}{2} = \\blank{1}\\end{align*}\\par $P(1)$ est vraie.\\par\\smallskip\\textbf{Hérédité.} Supposons $P(n)$ vraie : $1 + 2 + \\cdots + n = \\displaystyle\\frac{n(n+1)}{2}$.\\par Montrons $P(n+1)$ :\\begin{align*}\\sum_{k=1}^{n+1} k &= \\underbrace{\\left(\\sum_{k=1}^{n} k\\right)}_{= \\frac{n(n+1)}{2}} + (n+1) \\\\&= \\frac{n(n+1)}{2} + (n+1) \\\\&= \\frac{n(n+1) + 2(n+1)}{2} \\\\&= \\frac{(n+1)(\\blank{n+2})}{2}\\end{align*}\\par C'est la formule pour $n+1$. Donc $P(n+1)$ est vraie.\\par\\smallskip\\textbf{Conclusion.} Par récurrence, $P(n)$ est vraie pour tout $n \\in \\mathbb{N}^*$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons par récurrence que $2^n \\geq n + 1$ pour tout $n \\in \\mathbb{N}$.}\\par Notons $P(n)$ : « $2^n \\geq n + 1$ ».\\par\\smallskip\\textbf{Initialisation ($n = 0$) :} $2^0 = 1$ et $0 + 1 = 1$, donc $2^0 \\geq 0 + 1$. $P(0)$ est \\blank{vraie}.\\par\\smallskip\\textbf{Hérédité.} Supposons $P(n)$ : $2^n \\geq n + 1$.\\begin{align*}2^{n+1} &= 2 \\times 2^n \\\\&\\geq 2(n+1) \\quad \\text{(par hypothèse de récurrence)} \\\\&= 2n + 2 \\\\&= (n+2) + n \\\\&\\geq \\blank{n + 2} \\quad \\text{(car } n \\geq 0 \\text{)}\\end{align*}\\par Donc $P(n+1)$ est vraie.\\par\\smallskip\\textbf{Conclusion.} Par récurrence, $2^n \\geq n + 1$ pour tout $n \\in \\mathbb{N}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons par récurrence que $\\displaystyle\\sum_{k=0}^{n} 2^k = 2^{n+1} - 1$ pour tout $n \\in \\mathbb{N}$.}\\par Notons $P(n)$ : « $1 + 2 + 4 + \\cdots + 2^n = 2^{n+1} - 1$ ».\\par\\smallskip\\textbf{Initialisation ($n = 0$) :} Gauche $= 2^0 = 1$. Droite $= 2^1 - 1 = 1$. $P(0)$ est \\blank{vraie}.\\par\\smallskip\\textbf{Hérédité.} Supposons $P(n)$ : $\\displaystyle\\sum_{k=0}^{n} 2^k = 2^{n+1} - 1$.\\begin{align*}\\sum_{k=0}^{n+1} 2^k &= \\underbrace{\\left(\\sum_{k=0}^{n} 2^k\\right)}_{= 2^{n+1}-1} + 2^{n+1} \\\\&= (2^{n+1} - 1) + 2^{n+1} \\\\&= 2 \\cdot 2^{n+1} - 1 \\\\&= \\blank{2^{n+2} - 1}\\end{align*}\\par C'est la formule attendue pour $n+1$.\\par\\smallskip\\textbf{Conclusion.} Par récurrence, $P(n)$ est vraie pour tout $n \\in \\mathbb{N}$."
+        },
+        {
+          "type": "warning",
+          "content": "L'\\textbf{initialisation} et l'\\textbf{hérédité} sont \\textbf{toutes les deux indispensables} :\\par\\smallskip$$\\begin{array}{|l|c|c|c|}\\hline \\textbf{Propriété} & \\textbf{Init.} & \\textbf{Héréd.} & \\textbf{Vraie ?} \\\\\\hline \\text{« } n > 1000 \\text{ »} & \\text{Non} & \\text{Oui} & \\text{Non (fausse pour } n=0 \\text{)} \\\\\\hline \\text{« } n = 0 \\text{ »} & \\text{Oui} & \\text{Non} & \\text{Non (fausse pour } n \\geq 1 \\text{)} \\\\\\hline\\end{array}$$"
+        }
+      ]
+    },
+    {
+      "id": "raisonnement-equivalence",
+      "category": "course",
+      "title": "Raisonnement par équivalence",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le raisonnement par équivalence transforme une propriété difficile en une plus simple, tout en préservant l'exactitude logique à chaque étape."
+        },
+        {
+          "type": "property",
+          "title": "En quoi consiste le raisonnement par équivalence ?",
+          "content": "Pour résoudre une équation ou inéquation, on enchaîne des équivalences :\\par\\smallskip$$P \\;\\Leftrightarrow\\; P_1 \\;\\Leftrightarrow\\; P_2 \\;\\Leftrightarrow\\; \\cdots \\;\\Leftrightarrow\\; Q$$\\par\\smallskip Si toutes les étapes sont des \\textbf{équivalences}, alors $P$ et $Q$ ont la même valeur de vérité et les mêmes solutions.\\par\\smallskip\\textbf{Quand l'utiliser ?} Pour résoudre des équations, inéquations, ou ramener un problème à un plus simple."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons dans $\\mathbb{R}$ l'in\\textbf{équation} $\\displaystyle\\frac{2x-1}{x+3} \\geq 0$.}\\par L'expression est définie pour $x \\neq -3$. On étudie le signe par équivalences :\\begin{align*}\\frac{2x-1}{x+3} \\geq 0 &\\Leftrightarrow (2x-1)(x+3) \\geq 0 \\quad \\text{(même signe)}\\end{align*}\\par Étudions le signe de chaque facteur :\\par$$\\begin{array}{|c|ccccccc|}\\hline x & -\\infty & & -3 & & \\frac{1}{2} & & +\\infty \\\\\\hline 2x-1 & & - & - & - & 0 & + & \\\\\\hline x+3 & & - & 0 & + & + & + & \\\\\\hline \\frac{2x-1}{x+3} & & + & || & - & 0 & + & \\\\\\hline\\end{array}$$\\par L'ensemble des solutions est $\\mathcal{S} = \\blank{]-\\infty,\\, -3[\\; \\cup \\;[\\frac{1}{2},\\, +\\infty[}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons \\textbf{$2x + 3 = 7$} par équivalences successives.}\\begin{align*}2x + 3 = 7 &\\Leftrightarrow 2x = 4 \\\\&\\Leftrightarrow x = \\blank{2}\\end{align*}\\par Chaque passage est une équivalence. Donc $\\mathcal{S} = \\{2\\}$."
+        },
+        {
+          "type": "warning",
+          "content": "Toute opération ne conserve pas l'équivalence ! Par exemple, élever au carré peut créer des solutions parasites :\\par$$x = 2 \\;\\Rightarrow\\; x^2 = 4 \\quad \\text{mais} \\quad x^2 = 4 \\;\\not\\Rightarrow\\; x = 2$$\\par Car $x = -2$ est aussi solution de $x^2 = 4$. Il faut alors utiliser des implications ($\\Rightarrow$) et vérifier à la fin."
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Synthèse des méthodes de raisonnement",
+      "blocks": [
+        {
+          "type": "property",
+          "title": "Comment choisir la bonne méthode de preuve ?",
+          "content": "$$\\begin{array}{|l|l|l|}\\hline \\textbf{Méthode} & \\textbf{Principe} & \\textbf{Quand l'utiliser} \\\\\\hline \\text{Directe} & P \\Rightarrow \\cdots \\Rightarrow Q & \\text{Passage naturel de } P \\text{ à } Q \\\\\\hline \\text{Disjonction} & \\text{Cas } 1 + \\text{Cas } 2 + \\cdots & \\text{Valeur absolue, parité, signe} \\\\\\hline \\text{Contraposée} & \\overline{Q} \\Rightarrow \\overline{P} & \\text{Nier } Q \\text{ est plus exploitable que } P \\\\\\hline \\text{Absurde} & \\overline{P} \\Rightarrow \\text{Contradiction} & \\text{Impossibilité, irrationalité} \\\\\\hline \\text{Récurrence} & P(n_0) + P(n) \\Rightarrow P(n+1) & \\text{Propriété indexée par } \\mathbb{N} \\\\\\hline \\text{Équivalence} & P \\Leftrightarrow \\cdots \\Leftrightarrow Q & \\text{Résolution d'équations} \\\\\\hline\\end{array}$$"
+        }
+      ]
+    }
+  ]
+}

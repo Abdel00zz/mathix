@@ -1,0 +1,73 @@
+{
+  "id": "ex-complexes-33",
+  "topic": "Nombres complexes - Bac National 2012 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2012,
+  "examenSession": "Normale",
+  "context": "Le plan complexe est rapporté à un repère orthonormé direct $(O;\\vec{u},\\vec{v})$.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans $\\mathbb{C}$ l'équation $(E):iz^2+(2-i)az-(1+i)a^2=0$ où $a$ est un nombre complexe non nul."
+    },
+    {
+      "id": "p1q1",
+      "content": "Déterminer $z_1$ et $z_2$, les deux racines de l'équation $(E)$.",
+      "hint": "Calculez le discriminant $\\Delta=(2-i)^2a^2+4i(1+i)a^2$, développez et factorisez par $a^2$ avant d'appliquer la formule des racines (avec $\\alpha=i$)."
+    },
+    {
+      "id": "p1q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q2a",
+          "content": "Vérifier que : $z_1z_2=a^2(i-1)$.",
+          "hint": "Utilisez la relation produit des racines $z_1z_2=\\dfrac{c}{\\alpha}=\\dfrac{-(1+i)a^2}{i}$ et simplifiez en multipliant par $\\bar i/\\bar i$ ou en utilisant $1/i=-i$."
+        },
+        {
+          "id": "p1q2b",
+          "content": "Montrer que : $z_1z_2$ est un nombre réel $\\Leftrightarrow\\arg a\\equiv\\dfrac{-3\\pi}{8}\\left[\\dfrac{\\pi}{2}\\right]$.",
+          "hint": "Écrivez $z_1z_2=a^2(i-1)$ sous forme d'argument $2\\arg(a)+\\arg(i-1)$ ; ce nombre est réel quand cet argument total est un multiple de $\\pi$, ce qui donne une condition modulo $\\pi/2$ sur $\\arg(a)$."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Soient $c$ un nombre réel non nul et $z$ un nombre complexe non nul. On considère les points $A$, $B$, $C$, $D$ et $M$ d'affixes respectifs $1$, $1+i$, $c$, $ic$ et $z$."
+    },
+    {
+      "id": "p2q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q1a",
+          "content": "Montrer que : $A$, $D$ et $M$ sont alignés $\\Leftrightarrow(ic+1)z+(ic-1)\\bar z=2ic$ (remarquer que $c=\\bar c$).",
+          "hint": "Traduisez l'alignement par $\\dfrac{z-1}{ic-1}\\in\\mathbb{R}$, c'est-à-dire égal à son conjugué, puis mettez tout au même dénominateur et simplifiez en utilisant $c=\\bar c$."
+        },
+        {
+          "id": "p2q1b",
+          "content": "Montrer que : $(AD)\\perp(OM)\\Leftrightarrow(ic+1)z-(ic-1)\\bar z=0$.",
+          "hint": "Traduisez la perpendicularité par $\\dfrac{z}{ic-1}$ imaginaire pur, c'est-à-dire égal à l'opposé de son conjugué, puis procédez comme à la question précédente."
+        }
+      ]
+    },
+    {
+      "id": "p2q2",
+      "content": "Soit $h$ l'affixe du point $H$, la projection orthogonale du point $O$ sur $(AD)$.",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Montrer que : $h-(1+i)=\\dfrac{i}{c}(h-c)$.",
+          "hint": "$H\\in(AD)$ donne une relation via la question 1a) (avec $z=h$) ; $H$ étant projection orthogonale, $(OH)\\perp(AD)$ donne une seconde relation via la question 1b) ; combinez les deux pour isoler $h$."
+        },
+        {
+          "id": "p2q2b",
+          "content": "En déduire que $(CH)\\perp(BH)$.",
+          "hint": "Réécrivez la relation précédente sous la forme d'un quotient $\\dfrac{h-(1+i)}{h-c}$ et montrez qu'il est imaginaire pur (facteur $i/c$ avec $c$ réel)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ex-denom-05",
+  "theme": "denombrement",
+  "difficulty": "moyen",
+  "topic": "Dénombrement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Tirages successifs avec remise",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Une urne contient 5 boules rouges et 3 boules noires.\nOn tire successivement et avec remise 3 boules de l'urne.\nCombien de tirages différents peut-on obtenir ?",
+          "hint": "Il y a un total de $5 + 3 = 8$ boules dans l'urne.\nOn tire 3 boules successivement et avec remise. L'ordre compte, et il y a répétition possible.\n\nC'est donc un arrangement avec répétition de 3 éléments parmi 8, noté $8^3$.\n\n$8^3 = 8 \\times 8 \\times 8 = 512$.\n\nIl y a 512 tirages différents possibles."
+        }
+      ]
+    }
+  ]
+}

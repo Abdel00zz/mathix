@@ -1,0 +1,52 @@
+{
+  "id": "ex-ens-app-37",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Bijection réciproque et applications avancées",
+  "requiresRedaction": true,
+  "context": "On considère l'application : $f : [1;+\\infty[ \\to [1;+\\infty[$, $x \\mapsto x + 1 - 2\\sqrt{x-1}$",
+  "questions": [
+    {
+      "id": "pA_q1",
+      "content": "Partie A.",
+      "subQuestions": [
+        {
+          "id": "sq_pA1a",
+          "content": "Déterminer $f^{-1}\\!\\left(\\left\\{-\\dfrac{1}{2}\\right\\}\\right)$.",
+          "hint": "Résolvez $x + 1 - 2\\sqrt{x-1} = -\\dfrac{1}{2}$ avec $x \\geq 1$. Posez $t = \\sqrt{x-1} \\geq 0$ pour obtenir une équation du second degré en $t$."
+        },
+        {
+          "id": "sq_pA1b",
+          "content": "L'application $f$ est-elle injective ? Justifier.",
+          "hint": "Étudiez la monotonie de $f$ sur $[1;+\\infty[$ en calculant $f'(x) = 1 - \\dfrac{1}{\\sqrt{x-1}}$ et en étudiant son signe."
+        }
+      ]
+    },
+    {
+      "id": "pA_q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq_pA2a",
+          "content": "Montrer que : $f\\left([1;+\\infty[\\right) \\subset [0;+\\infty[$.",
+          "hint": "Montrez que $f(x) \\geq 0$ pour tout $x \\geq 1$. $f(x) = (\\sqrt{x-1} - 1)^2 \\geq 0$."
+        },
+        {
+          "id": "sq_pA2b",
+          "content": "L'application $f$ est-elle surjective ? Justifier.",
+          "hint": "D'après le tableau de variation, $f$ admet un minimum en $x = 2$ : $f(2) = 0$. Étudiez si $f([1;+\\infty[) = [0;+\\infty[$."
+        }
+      ]
+    },
+    {
+      "id": "pA_q3",
+      "content": "On considère $g : [0;+\\infty[ \\to ]-1;+\\infty[$, $x \\mapsto x^2 - 2x$. Déterminer une application $h$ telle que $f = g \\circ h$.",
+      "hint": "$f = g \\circ h$ signifie $g(h(x)) = f(x) = (\\sqrt{x-1}-1)^2 - 2(\\sqrt{x-1}-1)$... Posez $h(x) = \\sqrt{x-1} - 1$ et vérifiez que $g(h(x)) = f(x)$."
+    },
+    {
+      "id": "pB",
+      "content": "Partie B. On considère l'application $f : \\mathbb{R} \\to \\mathbb{R}$ définie par : $f(x) = \\begin{cases} x^2 - 2x & \\text{si } x > 1 \\\\ \\dfrac{1-2x}{x^2} & \\text{si } 0 < x \\leq 1 \\end{cases}$. Dresser le tableau de variation de $f$ sur $]0;1]$ et $]1;+\\infty[$.",
+      "hint": "Sur $]0;1]$ : calculez $f'(x) = \\dfrac{-2x^2 - (1-2x) \\cdot 2x}{x^4} = \\dfrac{2x-2}{x^3}$ et étudiez son signe. Sur $]1;+\\infty[$ : $f'(x) = 2x - 2 > 0$."
+    }
+  ]
+}

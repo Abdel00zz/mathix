@@ -1,0 +1,20 @@
+{
+  "id": "ex-vect-esp-07",
+  "theme": "vecteurs-espace",
+  "difficulty": "difficile",
+  "topic": "Vecteurs de l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Représentation paramétrique d'une droite",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère le point $A(1, -2, 3)$ et le vecteur directeur $\\overrightarrow{u}(2, 1, -1)$.\nDéterminer une représentation paramétrique de la droite $(D)$ passant par $A$ et de vecteur directeur $\\overrightarrow{u}$.",
+          "hint": "Une représentation paramétrique de la droite $(D)$ passant par $A(x_A, y_A, z_A)$ et de vecteur directeur $\\overrightarrow{u}(a, b, c)$ est donnée par le système :\n$\\begin{cases} x = x_A + at \\\\ y = y_A + bt \\\\ z = z_A + ct \\end{cases} \\quad (t \\in \\mathbb{R})$\n\nEn appliquant cette formule avec $A(1, -2, 3)$ et $\\overrightarrow{u}(2, 1, -1)$ :\n$\\begin{cases} x = 1 + 2t \\\\ y = -2 + t \\\\ z = 3 - t \\end{cases} \\quad (t \\in \\mathbb{R})$"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ex-geo-12",
+  "theme": "produit-scalaire",
+  "difficulty": "moyen",
+  "topic": "Géométrie Analytique - Lieux géométriques et équidistance",
+  "requiresRedaction": true,
+  "context": "On considère la droite $\\mathcal{D}$ d'équation $3x - 4y + 2 = 0$ et le point $A(1;-1)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer le couple de coordonnées du point $H$ projeté orthogonal de $A$ sur $\\mathcal{D}$.",
+      "hint": "La droite $(AH)$ passe par $A$ et est perpendiculaire à $\\mathcal{D}$. Son vecteur directeur est le vecteur normal de $\\mathcal{D}$. Résolvez le système formé par $(AH)$ et $\\mathcal{D}$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer la distance du point $A$ à la droite $\\mathcal{D}$.",
+      "hint": "Utilisez la formule $d(A;\\mathcal{D}) = \\dfrac{|3x_A - 4y_A + 2|}{\\sqrt{3^2+4^2}}$, ou bien $d(A;\\mathcal{D}) = AH$ grâce à la question précédente."
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer le couple de coordonnées du point $A'$ symétrique de $A$ par rapport à $\\mathcal{D}$.",
+      "hint": "$H$ est le milieu de $[AA']$. Exprimez les coordonnées de $A'$ en fonction de $H$ et $A$."
+    },
+    {
+      "id": "q4",
+      "content": "On considère les droites : $\\mathcal{D}_1 : 3x - 4y + 2 = 0$ et $\\mathcal{D}_2 : 4x - 3y - 1 = 0$. Déterminer $(\\Gamma)$ l'ensemble des points $M(x;y)$ du plan équidistant aux droites $\\mathcal{D}_1$ et $\\mathcal{D}_2$.",
+      "hint": "$M$ équidistant de $\\mathcal{D}_1$ et $\\mathcal{D}_2$ signifie $d(M;\\mathcal{D}_1) = d(M;\\mathcal{D}_2)$. Écrivez cette égalité avec les formules de distances et résolvez (deux cas : $+$ et $-$)."
+    },
+    {
+      "id": "q5",
+      "content": "Que représente l'ensemble $(\\Gamma)$ ?",
+      "hint": "$(\\Gamma)$ est constitué des deux bissectrices des droites $\\mathcal{D}_1$ et $\\mathcal{D}_2$."
+    },
+    {
+      "id": "q6",
+      "content": "On considère les points $A(-2;6)$, $B(0;2)$, $C(4;4)$. Calculer de deux façons différentes l'aire du triangle $ABC$.",
+      "hint": "Méthode 1 : $\\mathcal{A} = \\dfrac{1}{2} \\cdot base \\cdot hauteur$ (choisissez une base et calculez la hauteur correspondante). Méthode 2 : utilisez la formule $\\mathcal{A} = \\dfrac{1}{2}|\\overrightarrow{AB} \\times \\overrightarrow{AC}|$ (déterminant)."
+    }
+  ]
+}

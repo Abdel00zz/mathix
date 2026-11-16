@@ -1,0 +1,24 @@
+{
+  "id": "ex-log-20",
+  "theme": "logique",
+  "difficulty": "moyen",
+  "topic": "Logique & Raisonnements — Raisonnement par l'absurde",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soit $(x;y;z) \\in \\mathbb{R}^3$. Montrer que le système $\\begin{cases} 2x - 3z > 3 \\\\ 3y - 2x \\geq 3 \\\\ y - z \\leq 2 \\end{cases}$ n'admet pas de solution.",
+      "hint": "Additionnez les trois inégalités membre à membre et observez la contradiction."
+    },
+    {
+      "id": "q2",
+      "content": "Soit $ABC$ un triangle de côtés $4a$, $3a$, $6a$ avec $a \\in \\mathbb{R}^*_+$. Montrer qu'il n'est pas rectangle.",
+      "hint": "Supposez par l'absurde qu'il est rectangle. Identifiez l'hypoténuse (le plus grand côté) et vérifiez si la relation de Pythagore est satisfaite."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer par l'absurde qu'il n'existe pas d'entiers $x, y, z$ vérifiant $(x-y)^3 + (y-z)^3 + (z-x)^3 = 30$.",
+      "hint": "Posez $a = x-y$, $b = y-z$, $c = z-x$. Remarquez que $a+b+c = 0$, donc $a^3+b^3+c^3 = 3abc$. Il reste à montrer que $3abc = 30$ est impossible pour $a,b,c \\in \\mathbb{Z}$."
+    }
+  ]
+}

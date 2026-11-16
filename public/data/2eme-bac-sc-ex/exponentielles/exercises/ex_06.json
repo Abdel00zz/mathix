@@ -1,0 +1,98 @@
+{
+  "id": "ex-21",
+  "theme": "exponentielles",
+  "difficulty": "moyen",
+  "topic": "Étude de fonction - Parité, asymptote oblique, variations, suite récurrente bornée",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "Soit $f$ la fonction numérique définie sur $\\mathbb{R}$ par : $f(x) = 1 - \\dfrac{1}{2}x - \\dfrac{2}{e^x + 1}$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$."
+    },
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Vérifier que : $(\\forall x \\in \\mathbb{R})\\,;\\, \\dfrac{1}{e^{-x}+1} = 1 - \\dfrac{1}{e^x+1}$.",
+          "hint": "Partez du membre de droite : $1 - \\dfrac{1}{e^x+1} = \\dfrac{e^x}{e^x+1}$, puis multipliez numérateur et dénominateur par $e^{-x}$ pour retrouver $\\dfrac{1}{e^{-x}+1}$."
+        },
+        {
+          "id": "q1b",
+          "content": "En déduire que $f$ est une fonction impaire.",
+          "hint": "Calculez $f(-x)$ et utilisez le résultat de 1a pour simplifier $\\dfrac{2}{e^{-x}+1}$. Si $f(-x) = -f(x)$, la fonction est impaire."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Calculer $\\displaystyle\\lim_{x \\to +\\infty} f(x)$.",
+      "hint": "Analysez chaque terme quand $x \\to +\\infty$ : $\\dfrac{1}{2}x \\to +\\infty$ et $\\dfrac{2}{e^x+1} \\to 0$. La limite est déterminée par le terme dominant."
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q3a",
+          "content": "Montrer que : $(\\forall x \\in \\mathbb{R})\\,;\\, f'(x) = -\\dfrac{1}{2}\\left(\\dfrac{e^x-1}{e^x+1}\\right)^2$.",
+          "hint": "Calculez $f'(x) = -\\dfrac{1}{2} + \\dfrac{2e^x}{(e^x+1)^2}$ puis mettez sur le même dénominateur. Développez $\\left(\\dfrac{e^x-1}{e^x+1}\\right)^2$ pour vérifier l'égalité."
+        },
+        {
+          "id": "q3b",
+          "content": "Dresser le tableau de variations de $f$ sur $\\mathbb{R}^+$.",
+          "hint": "Un carré est toujours positif ; le coefficient $-\\dfrac{1}{2}$ impose le signe de $f'$. Identifiez le cas particulier en $x = 0$."
+        },
+        {
+          "id": "q3c",
+          "content": "En déduire que : $(\\forall x \\in \\mathbb{R}^+)\\,;\\, 1 - \\dfrac{2}{e^x+1} \\leq \\dfrac{1}{2}x$.",
+          "hint": "Le tableau de variations montre $f$ décroissante sur $\\mathbb{R}^+$ avec $f(0) = 0$. L'inégalité $f(x) \\leq 0$ se développe en l'inégalité demandée."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que : $\\displaystyle\\lim_{x \\to +\\infty} \\left[ f(x) - \\left(1 - \\dfrac{1}{2}x\\right) \\right] = 0$.",
+      "hint": "Calculez $f(x) - \\left(1 - \\dfrac{1}{2}x\\right) = -\\dfrac{2}{e^x+1}$ et calculez directement la limite de cette expression quand $x \\to +\\infty$."
+    },
+    {
+      "id": "q5",
+      "content": "Tracer dans le repère $(O;\\overrightarrow{i};\\overrightarrow{j})$, la droite $(D)$ d'équation : $y = -\\dfrac{1}{2}x + 1$ et la courbe $(C)$.",
+      "hint": ""
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Soit $(u_n)$ la suite numérique définie par : $u_0 = 1$ et $(\\forall n \\in \\mathbb{N})\\,;\\, u_{n+1} = 1 - \\dfrac{2}{e^{u_n}+1}$."
+    },
+    {
+      "id": "r1",
+      "content": "Montrer par récurrence que : $(\\forall n \\in \\mathbb{N})\\,;\\, u_n > 0$.",
+      "hint": "Initialisation : $u_0 = 1 > 0$. Hérédité : si $u_n > 0$, cherchez une minoration directe de $u_{n+1} = 1 - \\dfrac{2}{e^{u_n}+1}$ en utilisant que $e^{u_n} + 1 > 1 + 1 = 2$."
+    },
+    {
+      "id": "r2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "r2a",
+          "content": "Vérifier en utilisant la question I-3c que : $(\\forall n \\in \\mathbb{N})\\,;\\, u_{n+1} \\leq \\dfrac{1}{2}u_n$.",
+          "hint": "La question I-3c donne : pour tout $x \\geq 0$, $1 - \\dfrac{2}{e^x+1} \\leq \\dfrac{x}{2}$. Appliquez cette inégalité pour $x = u_n > 0$."
+        },
+        {
+          "id": "r2b",
+          "content": "En déduire que la suite $(u_n)$ est décroissante.",
+          "hint": "Montrez $u_{n+1} \\leq u_n$ : puisque $u_n > 0$, on a $\\dfrac{1}{2}u_n \\leq u_n$, et $u_{n+1} \\leq \\dfrac{1}{2}u_n \\leq u_n$."
+        }
+      ]
+    },
+    {
+      "id": "r3",
+      "content": "Montrer que : $u_n \\leq \\left(\\dfrac{1}{2}\\right)^n$ pour tout $n$ de $\\mathbb{N}$, puis calculer $\\displaystyle\\lim_{n \\to +\\infty} u_n$.",
+      "hint": "Par récurrence : si $u_n \\leq \\left(\\dfrac{1}{2}\\right)^n$, alors $u_{n+1} \\leq \\dfrac{1}{2}u_n \\leq \\left(\\dfrac{1}{2}\\right)^{n+1}$. Concluez par le théorème des gendarmes."
+    }
+  ]
+}

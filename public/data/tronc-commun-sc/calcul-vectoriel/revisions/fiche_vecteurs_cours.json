@@ -1,0 +1,182 @@
+{
+  "header": {
+    "title": "Calcul vectoriel dans le plan",
+    "subtitle": "Vecteurs, opérations, colinéarité, parallélisme et milieu",
+    "context": "Tronc Commun Toutes Séries — Biof"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre introduit le \\objectif{calcul vectoriel dans le plan} : caractérisation d'un vecteur par sa direction, son sens et sa norme, addition de vecteurs, relation de Chasles, colinéarité et conditions de parallélisme ou d'alignement. La \\defi{principale difficulté} est la rigueur dans la manipulation des lettres et des signes — l'ordre des points dans $\\overrightarrow{AB}$ est capital, et un schéma au brouillon est indispensable à chaque exercice. C'est \\savant{Hermann Grassmann} qui a formalisé la théorie des vecteurs dans sa Ausdehnungslehre (1844), un cadre qui fonde aujourd'hui la robotique, la mécanique des fluides et l'infographie 3D.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Hermann_Grassmann.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Hermann Grassmann (1809–1877)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definition_vecteur",
+      "category": "course",
+      "title": "Définition et caractérisation d'un vecteur",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avant d'opérer sur les vecteurs, il faut savoir les caractériser précisément. Un vecteur n'est pas un simple nombre : il possède trois attributs indissociables — direction, sens et longueur."
+        },
+        {
+          "type": "definition",
+          "title": "Quels sont les trois attributs d'un vecteur ?",
+          "content": "Soient $A$ et $B$ deux points distincts. Le \\textbf{vecteur} $\\overrightarrow{AB}$ est caractérisé par :\\begin{enumerate}\\item Sa \\textbf{direction} : celle de la droite $(AB)$\\item Son \\textbf{sens} : de $A$ vers $B$\\item Sa \\textbf{longueur} (ou \\textbf{norme}), notée $AB$ ou $\\|\\overrightarrow{AB}\\|$ : la distance de $A$ à $B$\\end{enumerate}\\par\\smallskip \\textbf{Vecteurs égaux :} deux vecteurs non nuls sont \\textbf{égaux} si et seulement si ils ont même direction, même sens et même longueur.\\par\\smallskip \\textbf{Propriété fondamentale :}$$\\boxed{\\overrightarrow{AB} = \\overrightarrow{DC} \\Leftrightarrow ABCD \\text{ est un parallélogramme}}$$"
+        },
+        {
+          "type": "intuition",
+          "content": "Imaginez un vecteur comme une flèche sur une carte routière : sa direction est l'axe de la route (horizontale, verticale, diagonale...), son sens est le sens de circulation (nord, sud, est, ouest), et sa longueur est la distance à parcourir. Deux flèches identiques pointant dans la même direction et le même sens, avec la même longueur, représentent le même vecteur — peu importe où elles sont dessinées sur la carte."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $ABCD$ un parallélogramme avec $A$, $B$, $C$, $D$ ses sommets dans l'ordre. Répondons aux questions suivantes : quel vecteur est égal à $\\overrightarrow{AB}$ ? Quelle est la norme de $\\overrightarrow{AB}$ si $AB = 5$ cm ? Le vecteur $\\overrightarrow{BA}$ est-il égal à $\\overrightarrow{AB}$ ?}\\par\\smallskip \\begin{itemize}\\item \\textbf{Vecteur égal à $\\overrightarrow{AB}$ :} dans le parallélogramme $ABCD$, les côtés $AB$ et $DC$ sont \\blank{parallèles, de même longueur et de même sens}. Donc $\\overrightarrow{AB} = \\blank{\\overrightarrow{DC}}$.\\item \\textbf{Norme de $\\overrightarrow{AB}$ :} $\\|\\overrightarrow{AB}\\| = \\blank{5}$ cm — la norme est égale à la distance $AB$.\\item \\textbf{Comparaison de $\\overrightarrow{BA}$ et $\\overrightarrow{AB}$ :} $\\overrightarrow{BA}$ a la même direction et la même longueur que $\\overrightarrow{AB}$, mais son sens est \\blank{opposé} (de $B$ vers $A$). Donc $\\overrightarrow{BA} \\blank{\\neq} \\overrightarrow{AB}$ — on a $\\overrightarrow{BA} = -\\overrightarrow{AB}$.\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "L'égalité $\\overrightarrow{AB} = \\overrightarrow{DC}$ (et non $\\overrightarrow{CD}$) mérite attention : l'ordre des lettres indique le sens du vecteur. Dans un parallélogramme $ABCD$ (sommets dans l'ordre), on a :\\begin{itemize}\\item $\\overrightarrow{AB} = \\overrightarrow{DC}$ \\quad — même sens, de gauche à droite\\item $\\overrightarrow{AB} = -\\overrightarrow{CD}$ \\quad — sens opposé\\item $\\overrightarrow{AD} = \\overrightarrow{BC}$ \\quad — l'autre paire de côtés parallèles\\end{itemize}\\par\\smallskip Écrire $\\overrightarrow{AB} = \\overrightarrow{CD}$ (sens inversé) est une erreur fréquente — toujours vérifier l'ordre des lettres."
+        }
+      ]
+    },
+    {
+      "id": "addition_vecteurs",
+      "category": "course",
+      "title": "Addition de vecteurs",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait caractériser un vecteur. On apprend maintenant à additionner deux vecteurs, ce qui revient à enchaîner deux déplacements. La relation de Chasles est l'outil central — elle permet de simplifier n'importe quelle expression vectorielle."
+        },
+        {
+          "type": "property",
+          "title": "Comment additionner deux vecteurs ?",
+          "content": "Il existe deux méthodes équivalentes pour construire $\\overrightarrow{u} + \\overrightarrow{v}$ :\\begin{enumerate}\\item \\textbf{Relation de Chasles} — enchaîner les déplacements :\\par Soient $\\overrightarrow{u} = \\overrightarrow{AB}$ et $\\overrightarrow{v} = \\overrightarrow{BC}$, alors :\\par$$\\boxed{\\overrightarrow{u} + \\overrightarrow{v} = \\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}}$$\\par Le point intermédiaire $B$ disparaît — on va directement de $A$ à $C$.\\item \\textbf{Règle du parallélogramme} — partir du même point :\\par Soient $\\overrightarrow{u} = \\overrightarrow{AB}$ et $\\overrightarrow{v} = \\overrightarrow{AC}$, alors $\\overrightarrow{u} + \\overrightarrow{v}$ est la diagonale du parallélogramme construit sur $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$.\\end{enumerate}\\par\\smallskip \\textbf{Opposé et soustraction :}\\begin{itemize}\\item $\\overrightarrow{AB} + \\overrightarrow{BA} = \\overrightarrow{0}$, donc $\\overrightarrow{BA} = -\\overrightarrow{AB}$\\item $\\overrightarrow{u} - \\overrightarrow{v} = \\overrightarrow{u} + (-\\overrightarrow{v}) = \\overrightarrow{AB} + \\overrightarrow{CA} = \\overrightarrow{CB}$ \\quad si $\\overrightarrow{u} = \\overrightarrow{AB}$ et $\\overrightarrow{v} = \\overrightarrow{AC}$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Simplifiez les expressions vectorielles suivantes en utilisant la relation de Chasles : $E_1 = \\overrightarrow{AB} + \\overrightarrow{BC} + \\overrightarrow{CD}$ et $E_2 = \\overrightarrow{MA} + \\overrightarrow{AB} + \\overrightarrow{BM}$.}\\par\\smallskip \\begin{itemize}\\item \\textbf{Simplification de $E_1$ :} On applique Chasles en enchaînant les lettres intermédiaires :\\begin{align*}E_1 &= \\overrightarrow{AB} + \\overrightarrow{BC} + \\overrightarrow{CD} \\\\&= \\blank{\\overrightarrow{AC}} + \\overrightarrow{CD} \\quad\\text{(Chasles sur AB+BC)}\\\\&= \\blank{\\overrightarrow{AD}}\\end{align*}\\item \\textbf{Simplification de $E_2$ :} On regroupe les termes qui s'annulent :\\begin{align*}E_2 &= \\overrightarrow{MA} + \\overrightarrow{AB} + \\overrightarrow{BM} \\\\&= \\overrightarrow{MA} + \\blank{\\overrightarrow{AM}} \\quad\\text{(Chasles sur AB+BM = AM)}\\\\&= \\blank{\\overrightarrow{0}}\\end{align*}La somme est le \\blank{vecteur nul} car on revient au point de départ.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment simplifier une expression vectorielle par Chasles ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Identifier les lettres qui se répètent} en fin d'un vecteur et en début du suivant\\item \\textbf{Fusionner} chaque paire consécutive : $\\overrightarrow{XY} + \\overrightarrow{YZ} = \\overrightarrow{XZ}$ — la lettre du milieu disparaît\\item \\textbf{Recommencer} jusqu'à ce qu'aucune simplification ne soit possible\\item \\textbf{Cas particulier :} si la première et la dernière lettre sont les mêmes, le résultat est $\\overrightarrow{0}$\\end{enumerate}\\par\\textbf{Astuce :} pour une soustraction $\\overrightarrow{AB} - \\overrightarrow{AC}$, réécrire $-\\overrightarrow{AC} = \\overrightarrow{CA}$ avant d'appliquer Chasles. Ainsi $\\overrightarrow{AB} - \\overrightarrow{AC} = \\overrightarrow{CB}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $A$, $B$, $C$ trois points. Exprimons $\\overrightarrow{u} - \\overrightarrow{v}$ avec $\\overrightarrow{u} = \\overrightarrow{AB}$ et $\\overrightarrow{v} = \\overrightarrow{AC}$, puis calculons $\\overrightarrow{AB} - \\overrightarrow{CB}$ et $\\overrightarrow{OA} - \\overrightarrow{OB}$.}\\par\\smallskip \\begin{itemize}\\item \\textbf{Calcul de $\\overrightarrow{u} - \\overrightarrow{v}$} : on remplace $-\\overrightarrow{v} = -\\overrightarrow{AC} = \\overrightarrow{CA}$, puis on applique Chasles :\\begin{align*}\\overrightarrow{u} - \\overrightarrow{v} &= \\overrightarrow{AB} + \\overrightarrow{CA} = \\blank{\\overrightarrow{CB}}\\end{align*}\\item \\textbf{Calcul de $\\overrightarrow{AB} - \\overrightarrow{CB}$} : on écrit $-\\overrightarrow{CB} = \\blank{\\overrightarrow{BC}}$, puis :\\begin{align*}\\overrightarrow{AB} - \\overrightarrow{CB} &= \\overrightarrow{AB} + \\overrightarrow{BC} = \\blank{\\overrightarrow{AC}}\\end{align*}\\item \\textbf{Calcul de $\\overrightarrow{OA} - \\overrightarrow{OB}$} : on écrit $-\\overrightarrow{OB} = \\overrightarrow{BO}$, puis :\\begin{align*}\\overrightarrow{OA} - \\overrightarrow{OB} &= \\overrightarrow{OA} + \\overrightarrow{BO} = \\overrightarrow{BO} + \\overrightarrow{OA} = \\blank{\\overrightarrow{BA}}\\end{align*}\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "La relation de Chasles se généralise à toute chaîne de vecteurs :\\par$$\\overrightarrow{A_1 A_2} + \\overrightarrow{A_2 A_3} + \\cdots + \\overrightarrow{A_{n-1} A_n} = \\overrightarrow{A_1 A_n}$$\\par\\smallskip Toutes les lettres intermédiaires disparaissent — seule la première et la dernière comptent.\\par\\smallskip \\textbf{Conséquence utile :} pour tout point $O$ quelconque et tous points $A$, $B$ :\\par$$\\overrightarrow{AB} = \\overrightarrow{OB} - \\overrightarrow{OA}$$\\par\\smallskip Cette formule permet d'exprimer \\textbf{n'importe quel vecteur} à partir d'un point d'origine fixe $O$."
+        }
+      ]
+    },
+    {
+      "id": "multiplication_vecteur",
+      "category": "course",
+      "title": "Multiplication d'un vecteur par un réel",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait additionner des vecteurs. On étudie maintenant le produit d'un vecteur par un réel $k$ : comment la direction, le sens et la norme du vecteur sont modifiés par $k$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le produit $k\\overrightarrow{u}$ ?",
+          "content": "Soient $\\overrightarrow{u}$ un vecteur non nul et $k$ un réel non nul. Le vecteur $k\\overrightarrow{u}$ a :\\begin{enumerate}\\item La \\textbf{même direction} que $\\overrightarrow{u}$\\item Le \\textbf{même sens} que $\\overrightarrow{u}$ si $k > 0$, le sens \\textbf{contraire} si $k < 0$\\item La \\textbf{norme} $\\|k\\overrightarrow{u}\\| = |k| \\times \\|\\overrightarrow{u}\\|$\\end{enumerate}\\par\\smallskip \\textbf{Cas particuliers :}\\begin{itemize}\\item Si $k = 0$ ou $\\overrightarrow{u} = \\overrightarrow{0}$ : $k\\overrightarrow{u} = \\overrightarrow{0}$ (vecteur nul)\\item $1 \\cdot \\overrightarrow{u} = \\overrightarrow{u}$ et $(-1) \\cdot \\overrightarrow{u} = -\\overrightarrow{u}$ (vecteur opposé)\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les 8 propriétés du calcul vectoriel ?",
+          "content": "Pour tous vecteurs $\\overrightarrow{u}$, $\\overrightarrow{v}$, $\\overrightarrow{w}$ et tous réels $k$, $k'$ :\\begin{enumerate}\\item $\\overrightarrow{u} + \\overrightarrow{v} = \\overrightarrow{v} + \\overrightarrow{u}$ \\quad (commutativité)\\item $(\\overrightarrow{u} + \\overrightarrow{v}) + \\overrightarrow{w} = \\overrightarrow{u} + (\\overrightarrow{v} + \\overrightarrow{w})$ \\quad (associativité)\\item $\\overrightarrow{0} + \\overrightarrow{u} = \\overrightarrow{u} + \\overrightarrow{0} = \\overrightarrow{u}$ \\quad (élément neutre)\\item $\\overrightarrow{u} + (-\\overrightarrow{u}) = (-\\overrightarrow{u}) + \\overrightarrow{u} = \\overrightarrow{0}$ \\quad (opposé)\\item $k(\\overrightarrow{u} + \\overrightarrow{v}) = k\\overrightarrow{u} + k\\overrightarrow{v}$ \\quad (distributivité sur les vecteurs)\\item $(k + k')\\overrightarrow{u} = k\\overrightarrow{u} + k'\\overrightarrow{u}$ \\quad (distributivité sur les scalaires)\\item $(k \\times k')\\overrightarrow{u} = k(k'\\overrightarrow{u})$ \\quad (associativité mixte)\\item $1 \\cdot \\overrightarrow{u} = \\overrightarrow{u}$ \\quad (élément neutre scalaire)\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $\\overrightarrow{u}$ un vecteur de norme $6$. Déterminons la norme et le sens de $\\overrightarrow{v} = 3\\overrightarrow{u}$, $\\overrightarrow{w} = -\\frac{1}{2}\\overrightarrow{u}$ et $\\overrightarrow{t} = 0 \\cdot \\overrightarrow{u}$.}\\par\\smallskip \\begin{itemize}\\item \\textbf{Vecteur $\\overrightarrow{v} = 3\\overrightarrow{u}$ :} $k = 3 > 0$ donc \\blank{même sens} que $\\overrightarrow{u}$. Norme : $\\|\\overrightarrow{v}\\| = |3| \\times 6 = \\blank{18}$.\\item \\textbf{Vecteur $\\overrightarrow{w} = -\\dfrac{1}{2}\\overrightarrow{u}$ :} $k = -\\frac{1}{2} < 0$ donc sens \\blank{contraire} à $\\overrightarrow{u}$. Norme : $\\|\\overrightarrow{w}\\| = \\left|-\\dfrac{1}{2}\\right| \\times 6 = \\blank{3}$.\\item \\textbf{Vecteur $\\overrightarrow{t} = 0 \\cdot \\overrightarrow{u}$ :} $k = 0$, donc $\\overrightarrow{t} = \\blank{\\overrightarrow{0}}$ — le vecteur nul, quelle que soit la norme de $\\overrightarrow{u}$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment effectuer un calcul vectoriel avec des réels ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Développer} en utilisant les propriétés P5 et P6 : $k(\\overrightarrow{u}+\\overrightarrow{v}) = k\\overrightarrow{u}+k\\overrightarrow{v}$ et $(k+k')\\overrightarrow{u} = k\\overrightarrow{u}+k'\\overrightarrow{u}$\\item \\textbf{Regrouper} les termes portant le même vecteur\\item \\textbf{Factoriser} si possible\\item \\textbf{Vérifier} les signes : multiplier par un négatif inverse le sens\\end{enumerate}\\par\\textbf{Exemple-type :} $3\\overrightarrow{u} - 2(\\overrightarrow{u} + \\overrightarrow{v}) = 3\\overrightarrow{u} - 2\\overrightarrow{u} - 2\\overrightarrow{v} = \\overrightarrow{u} - 2\\overrightarrow{v}$.\\par\\textbf{Piège :} $k(\\overrightarrow{u} - \\overrightarrow{v}) = k\\overrightarrow{u} - k\\overrightarrow{v}$ et non $k\\overrightarrow{u} - \\overrightarrow{v}$ — le réel $k$ distribue sur \\textbf{tous} les termes."
+        },
+        {
+          "type": "remark",
+          "content": "Les 8 propriétés du calcul vectoriel (P1–P8) permettent de manipuler les vecteurs comme des nombres. Trois propriétés sont particulièrement utiles en exercices :\\begin{enumerate}\\item \\textbf{P5 — distributivité} : $k(\\overrightarrow{u}+\\overrightarrow{v}) = k\\overrightarrow{u}+k\\overrightarrow{v}$ — on distribue le réel sur chaque vecteur\\item \\textbf{P6 — factorisation} : $(k+k')\\overrightarrow{u} = k\\overrightarrow{u}+k'\\overrightarrow{u}$ — on factorise un vecteur commun\\item \\textbf{P7 — associativité mixte} : $(k \\times k')\\overrightarrow{u} = k(k'\\overrightarrow{u})$ — on peut regrouper les réels\\end{enumerate}\\par\\smallskip \\textbf{Exemple d'application :} simplifier $5\\overrightarrow{u} - 3(\\overrightarrow{u} - 2\\overrightarrow{v})$.\\par$= 5\\overrightarrow{u} - 3\\overrightarrow{u} + 6\\overrightarrow{v} = 2\\overrightarrow{u} + 6\\overrightarrow{v}$. \\par On distribue, puis on regroupe par P6 les termes portant $\\overrightarrow{u}$."
+        }
+      ]
+    },
+    {
+      "id": "colinearite",
+      "category": "course",
+      "title": "Vecteurs colinéaires — Parallélisme et alignement",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On maîtrise maintenant les opérations vectorielles. La colinéarité est la propriété clé qui relie calcul vectoriel et géométrie : elle permet de tester algébriquement si deux droites sont parallèles ou si trois points sont alignés."
+        },
+        {
+          "type": "definition",
+          "title": "Quand dit-on que deux vecteurs sont colinéaires ?",
+          "content": "Deux vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont \\textbf{colinéaires} s'ils ont la \\textbf{même direction} (parallèles ou confondus).\\par\\smallskip \\textbf{Théorème de caractérisation algébrique :}$$\\boxed{\\overrightarrow{u} \\text{ et } \\overrightarrow{v} \\text{ colinéaires} \\Leftrightarrow \\exists k \\in \\mathbb{R} \\text{ tel que } \\overrightarrow{v} = k\\overrightarrow{u}}$$\\par\\smallskip Autrement dit : $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont colinéaires si et seulement si l'un est un multiple scalaire de l'autre."
+        },
+        {
+          "type": "theorem",
+          "title": "Quel lien y a-t-il entre colinéarité et parallélisme ?",
+          "content": "Soient $A$, $B$, $C$, $D$ quatre points du plan.\\begin{enumerate}\\item \\textbf{Parallélisme :}$$\\boxed{\\overrightarrow{AB} \\text{ et } \\overrightarrow{CD} \\text{ colinéaires} \\Leftrightarrow (AB) \\parallel (CD)}$$\\item \\textbf{Alignement :} les points $A$, $B$, $C$ sont alignés si et seulement si deux des trois vecteurs $\\overrightarrow{AB}$, $\\overrightarrow{AC}$, $\\overrightarrow{BC}$ sont colinéaires.\\item \\textbf{Milieu :} $I$ est le milieu de $[AB]$ si et seulement si l'une des conditions suivantes est réalisée :\\begin{itemize}\\item $\\overrightarrow{AI} = \\overrightarrow{IB}$\\item $\\overrightarrow{AI} = \\dfrac{1}{2}\\overrightarrow{AB}$\\item $\\overrightarrow{IA} + \\overrightarrow{IB} = \\overrightarrow{0}$\\end{itemize}\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $A(1;2)$, $B(3;6)$, $C(5;10)$ trois points du plan. Montrons que $A$, $B$, $C$ sont alignés.}\\par\\smallskip \\begin{itemize}\\item On calcule les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ :\\begin{align*}\\overrightarrow{AB} &= \\begin{pmatrix} 3-1 \\\\ 6-2 \\end{pmatrix} = \\begin{pmatrix} \\blank{2} \\\\ \\blank{4} \\end{pmatrix}\\end{align*}\\begin{align*}\\overrightarrow{AC} &= \\begin{pmatrix} 5-1 \\\\ 10-2 \\end{pmatrix} = \\begin{pmatrix} \\blank{4} \\\\ 8 \\end{pmatrix}\\end{align*}\\item On cherche $k$ tel que $\\overrightarrow{AC} = k \\overrightarrow{AB}$ : $\\begin{pmatrix}4 \\\\ 8\\end{pmatrix} = k\\begin{pmatrix}2 \\\\ 4\\end{pmatrix}$ donne $k = \\blank{2}$.\\item Puisque $\\overrightarrow{AC} = 2\\,\\overrightarrow{AB}$, les vecteurs $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ sont \\blank{colinéaires}, donc $A$, $B$, $C$ sont alignés.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment tester le parallélisme de deux droites par les vecteurs ?",
+          "content": "Pour tester si les droites $(AB)$ et $(CD)$ sont parallèles :\\begin{enumerate}\\item \\textbf{Calculer} les coordonnées de $\\overrightarrow{AB}$ et $\\overrightarrow{CD}$\\item \\textbf{Chercher} un réel $k$ tel que $\\overrightarrow{CD} = k\\,\\overrightarrow{AB}$ :\\begin{itemize}\\item Écrire le système : $\\frac{x_{CD}}{x_{AB}} = \\frac{y_{CD}}{y_{AB}} = k$\\item Si les deux rapports sont \\textbf{égaux} : les vecteurs sont colinéaires $\\Rightarrow$ droites \\textbf{parallèles}\\item Si les rapports sont \\textbf{différents} : droites \\textbf{non parallèles}\\end{itemize}\\item \\textbf{Conclure} sur le parallélisme ou l'alignement selon le contexte\\end{enumerate}\\par\\textbf{Attention :} si les droites sont parallèles et passent par un point commun, elles sont \\textbf{confondues} — ne pas confondre parallèles strictes et droites confondues."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $I$ le milieu de $[AB]$. Montrons par le calcul vectoriel que $\\overrightarrow{IA} + \\overrightarrow{IB} = \\overrightarrow{0}$, puis exprimons $\\overrightarrow{OM}$ où $M$ est le milieu de $[AB]$ en fonction de $\\overrightarrow{OA}$ et $\\overrightarrow{OB}$.}\\par\\smallskip \\begin{itemize}\\item \\textbf{Preuve que $\\overrightarrow{IA} + \\overrightarrow{IB} = \\overrightarrow{0}$ :}\\par Puisque $I$ est le milieu de $[AB]$, on a $\\overrightarrow{AI} = \\overrightarrow{IB}$, donc $\\overrightarrow{IA} = \\blank{-\\overrightarrow{IB}}$, d'où :\\begin{align*}\\overrightarrow{IA} + \\overrightarrow{IB} = -\\overrightarrow{IB} + \\overrightarrow{IB} = \\blank{\\overrightarrow{0}}\\end{align*}\\item \\textbf{Expression de $\\overrightarrow{OM}$ :} On utilise Chasles depuis l'origine $O$ :\\begin{align*}\\overrightarrow{OM} &= \\overrightarrow{OA} + \\overrightarrow{AM} = \\overrightarrow{OA} + \\frac{1}{2}\\overrightarrow{AB}\\\\&= \\overrightarrow{OA} + \\frac{1}{2}(\\overrightarrow{OB} - \\overrightarrow{OA}) \\\\&= \\blank{\\frac{1}{2}\\overrightarrow{OA} + \\frac{1}{2}\\overrightarrow{OB}} = \\frac{\\overrightarrow{OA} + \\overrightarrow{OB}}{\\blank{2}}\\end{align*}\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "La formule du milieu $\\overrightarrow{OM} = \\dfrac{\\overrightarrow{OA} + \\overrightarrow{OB}}{2}$ est un résultat fondamental. En coordonnées, si $A(x_A; y_A)$ et $B(x_B; y_B)$, alors le milieu $M$ a pour coordonnées :\\par$$M\\left(\\frac{x_A+x_B}{2} \\;,\\; \\frac{y_A+y_B}{2}\\right)$$\\par\\smallskip Les trois conditions du milieu sont \\textbf{toutes équivalentes} et s'utilisent selon le contexte :\\begin{enumerate}\\item $\\overrightarrow{AI} = \\overrightarrow{IB}$ — utile pour montrer un parallélogramme\\item $\\overrightarrow{AI} = \\frac{1}{2}\\overrightarrow{AB}$ — utile pour calculer les coordonnées\\item $\\overrightarrow{IA} + \\overrightarrow{IB} = \\overrightarrow{0}$ — utile dans les sommes vectorielles\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Synthèse",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a parcouru toute la théorie vectorielle du plan : caractérisation, addition, multiplication par un réel, colinéarité et milieu. Ce récapitulatif regroupe les résultats essentiels à maîtriser."
+        },
+        {
+          "type": "summary",
+          "title": "Ce qu'il faut retenir sur les vecteurs",
+          "content": "\\begin{itemize}\\item Vecteur $\\overrightarrow{AB}$ : direction de $(AB)$, sens de $A$ vers $B$, norme $= AB$\\item $\\overrightarrow{AB} = \\overrightarrow{DC}$ $\\Leftrightarrow$ $ABCD$ parallélogramme (attention à l'ordre !)\\item Chasles : $\\overrightarrow{AB} + \\overrightarrow{BC} = \\overrightarrow{AC}$ — les lettres intermédiaires s'éliminent\\item Soustraction : $\\overrightarrow{AB} - \\overrightarrow{AC} = \\overrightarrow{CB}$ — réécrire $-\\overrightarrow{AC} = \\overrightarrow{CA}$ puis Chasles\\item $k\\overrightarrow{u}$ : même direction, sens selon signe de $k$, norme $= |k|\\,\\|\\overrightarrow{u}\\|$\\item Colinéaires $\\Leftrightarrow$ $\\overrightarrow{v} = k\\overrightarrow{u}$ pour un certain $k \\in \\mathbb{R}$\\item $\\overrightarrow{AB} \\parallel \\overrightarrow{CD}$ $\\Leftrightarrow$ droites $(AB)$ et $(CD)$ parallèles\\item Alignement de $A$, $B$, $C$ $\\Leftrightarrow$ $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ colinéaires\\item Milieu $I$ de $[AB]$ : $\\overrightarrow{AI} = \\overrightarrow{IB}$ ou $\\overrightarrow{AI} = \\frac{1}{2}\\overrightarrow{AB}$ ou $\\overrightarrow{IA}+\\overrightarrow{IB}=\\overrightarrow{0}$\\item Coordonnées du milieu : $M\\!\\left(\\frac{x_A+x_B}{2}, \\frac{y_A+y_B}{2}\\right)$\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

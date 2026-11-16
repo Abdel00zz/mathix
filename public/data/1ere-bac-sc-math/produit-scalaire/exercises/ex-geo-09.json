@@ -1,0 +1,51 @@
+{
+  "id": "ex-geo-09",
+  "theme": "produit-scalaire",
+  "difficulty": "moyen",
+  "topic": "Géométrie Analytique - Cercle circonscrit et tangente en un point",
+  "requiresRedaction": true,
+  "context": "On considère les points $A(3;0)$, $B(1;2)$, $C(0;1)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que les points $A$, $B$ et $C$ ne sont pas alignés.",
+      "hint": "Calculez $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$ et montrez qu'ils ne sont pas colinéaires (par exemple en vérifiant que leur déterminant est non nul)."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que le triangle $ABC$ est rectangle en $B$.",
+      "hint": "Calculez $\\overrightarrow{BA} \\cdot \\overrightarrow{BC}$ et montrez qu'il est nul."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que $x^2 + y^2 - 3x - y = 0$ est une équation cartésienne du cercle circonscrit au triangle $ABC$.",
+      "hint": "Vérifiez que les trois points $A$, $B$, $C$ vérifient l'équation. Pour un triangle rectangle en $B$, le centre du cercle circonscrit est le milieu de l'hypoténuse $[AC]$."
+    },
+    {
+      "id": "q4",
+      "content": "Vérifier que le point $A$ appartient au cercle $\\mathcal{C}$ puis écrire une équation cartésienne de la tangente $(\\Delta)$ au cercle $\\mathcal{C}$ en $A$ dans les cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq4_4",
+          "content": "$A(2;4)$ et $\\mathcal{C} : x^2 + y^2 - 5y = 0$",
+          "hint": "Vérifiez d'abord que $A \\in \\mathcal{C}$. La tangente en $A$ est perpendiculaire au rayon $\\Omega A$, donc $\\overrightarrow{\\Omega A}$ est vecteur normal de la tangente."
+        },
+        {
+          "id": "sq4_5",
+          "content": "$A(-1;3)$ et $\\mathcal{C} : x^2 + y^2 + 4x - 4y + 6 = 0$",
+          "hint": "Même méthode : déterminez $\\Omega$, puis la tangente en $A$ a pour vecteur normal $\\overrightarrow{\\Omega A}$."
+        },
+        {
+          "id": "sq4_6",
+          "content": "$A(2;1)$ et $\\mathcal{C} : x^2 + y^2 - 2x + 6y - 7 = 0$",
+          "hint": ""
+        },
+        {
+          "id": "sq4_7",
+          "content": "$A(-1;1)$ et $\\mathcal{C} : x^2 + y^2 + 4x - 2y + 4 = 0$",
+          "hint": ""
+        }
+      ]
+    }
+  ]
+}

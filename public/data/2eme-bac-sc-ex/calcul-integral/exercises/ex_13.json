@@ -1,0 +1,35 @@
+{
+  "id": "ex-13",
+  "theme": "calcul-integral",
+  "difficulty": "difficile",
+  "topic": "Calcul Intégral - Intégrale paramétrique, IPP, aire et limite",
+  "requiresRedaction": true,
+  "context": "On considère la fonction définie sur $\\mathbb{R}$ par $f(x) = e^{-x}\\ln(1+e^x)$. Soit $(C_f)$ sa courbe dans un repère orthonormé $(O,\\overrightarrow{i},\\overrightarrow{j})$. Soit $\\lambda$ un réel strictement positif.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Vérifier que : $\\dfrac{1}{e^x+1} = \\dfrac{e^{-x}}{e^{-x}+1}$, pour tout $x \\in \\mathbb{R}$",
+      "hint": "\\method Multipliez numérateur et dénominateur de $\\frac{1}{e^x+1}$ par $e^{-x}$. \\tip C'est une vérification algébrique directe en deux lignes."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que : $\\displaystyle\\int_0^{\\lambda} \\frac{1}{e^x+1}\\,dx = \\ln(2) - \\ln\\bigl(1+e^{\\lambda}\\bigr) + \\lambda + \\ln(1+e^\\lambda) - \\ln 2$",
+      "hint": "\\method Utilisez la vérification de la question 1 pour réécrire l'intégrande. \\tip $\\frac{e^{-x}}{e^{-x}+1}$ est de la forme $\\frac{u'}{u}$ avec $u = e^{-x}+1$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que : $\\displaystyle\\int_0^{\\lambda} f(x)\\,dx = \\ln(2) - f(\\lambda) + \\displaystyle\\int_0^{\\lambda} \\frac{1}{e^x+1}\\,dx$ \\quad (Remarquer que $f(x) = \\dfrac{1}{e^x+1} - f'(x)$)",
+      "hint": "\\method La remarque donne $f(x) = \\frac{1}{e^x+1} - f'(x)$. Intégrez cette relation sur $[0;\\lambda]$. \\tip $\\displaystyle\\int_0^\\lambda f'(x)\\,dx = [f(x)]_0^\\lambda = f(\\lambda) - f(0)$. Calculez $f(0)$."
+    },
+    {
+      "id": "q4",
+      "content": "Déduire en fonction de $\\lambda$, l'aire $\\mathcal{A}_{\\lambda}$ de la partie du plan délimitée par la courbe $(C_f)$, l'axe des abscisses et les droites d'équations $x = 0$ et $x = \\lambda$.",
+      "hint": "\\method Vérifiez que $f(x) \\geq 0$ sur $[0;\\lambda]$. \\tip L'aire vaut $\\displaystyle\\int_0^\\lambda f(x)\\,dx$. Substituez les résultats des questions 2 et 3."
+    },
+    {
+      "id": "q5",
+      "content": "Calculer $\\displaystyle\\lim_{\\lambda \\to +\\infty} \\mathcal{A}_{\\lambda}$.",
+      "hint": "\\method Analysez le comportement de chaque terme de $\\mathcal{A}_\\lambda$ quand $\\lambda \\to +\\infty$. \\tip Étudier $f(\\lambda) = e^{-\\lambda}\\ln(1+e^\\lambda)$ quand $\\lambda \\to +\\infty$ : encadrez $\\ln(1+e^\\lambda)$ et multipliez par $e^{-\\lambda}$."
+    }
+  ]
+}

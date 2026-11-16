@@ -1,0 +1,39 @@
+{
+  "id": "olympiad-1ere-bac-sc-math-2016",
+  "title": "Olympiade Internationale de Mathématiques (IMO) 2016 — Sujet officiel",
+  "year": 2016,
+  "classId": "1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "badge": "international",
+  "source": "https://www.imo-official.org/problems.aspx",
+  "duration": 240,
+  "totalPoints": 42,
+  "exercises": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2016-ex1",
+      "number": 1,
+      "theme": "geometrie",
+      "points": 7,
+      "topic": "Cercle et triangle",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Triangle $ABC$ tel que $AB=AC$. Soit $M$ le milieu de $[BC]$. Soit $P$ un point tel que $PB < PC$ et $PA$ est parallèle à $BC$. Soit $X$ et $Y$ des points sur les segments $[AB]$ et $[AC]$ respectivement tels que $M$ soit sur le segment $[XY]$ et $\\widehat{PXB} = \\widehat{PYC}$. Montrer que le quadrilatère $APXY$ est inscriptible."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2016-ex2",
+      "number": 2,
+      "theme": "algebre",
+      "points": 7,
+      "topic": "Polynômes",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Déterminer tous les entiers $n \\geq 3$ tels qu'il existe un polygone régulier à $n$ sommets et un ensemble $S$ de points à l'intérieur du polygone tels que pour tout sommet $V$, le triangle formé par $V$ et les deux points de $S$ les plus proches de $V$ soit un triangle isocèle."
+        }
+      ]
+    }
+  ]
+}

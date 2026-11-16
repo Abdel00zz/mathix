@@ -1,0 +1,56 @@
+{
+  "id": "ex-etude-fct-03",
+  "theme": "etude-fonctions",
+  "difficulty": "facile",
+  "topic": "Analyse - Étude complète fonction rationnelle",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction numérique définie sur $\\mathbb{R}-\\{-1\\}$ par :\n$$f(x)=\\frac{-x^2+2x+1}{x+1}$$\net soit $\\mathscr{C}_f$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to -1^+} f(x)$ et $\\displaystyle \\lim_{x \\to -1^-} f(x)$ puis interpréter graphiquement les résultats obtenus.",
+      "hint": "Le dénominateur s'annule en -1. Étudiez son signe à droite et à gauche pour déterminer le signe de l'infini."
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Déterminer les réels $a, b$ et $c$ tels que pour tout $x \\in \\mathbb{R}-\\{-1\\} : f(x)=ax+b+\\frac{c}{x+1}$.",
+          "hint": "Effectuez une division euclidienne de polynômes ou mettez la forme $ax+b+\\frac{c}{x+1}$ au même dénominateur pour identifier les coefficients."
+        },
+        {
+          "id": "b",
+          "content": "En déduire que la droite $(\\Delta): y=ax+b$ est une asymptote oblique de la courbe $\\mathscr{C}_f$, puis déterminer la position relative de $\\mathscr{C}_f$ et $(\\Delta)$.",
+          "hint": "Pour la position relative, étudiez le signe de la différence $f(x) - y_{\\Delta}$, qui correspond au terme $\\frac{c}{x+1}$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Étudier les variations de la fonction $f$.",
+      "hint": "Dérivez $f(x)$ et dressez le tableau de signes de la dérivée et le tableau de variations complet."
+    },
+    {
+      "id": "q4",
+      "content": "Soit $I$ le point d'intersection des deux asymptotes de la courbe $\\mathscr{C}_f$.\nMontrer que $I$ est un centre de symétrie de $\\mathscr{C}_f$.",
+      "hint": "Le point $I$ a pour abscisse -1. Calculez son ordonnée avec l'équation de l'asymptote oblique. Vérifiez que $f(2x_I - x) + f(x) = 2y_I$."
+    },
+    {
+      "id": "q5",
+      "content": "Déterminer les points d'intersection de la courbe $\\mathscr{C}_f$ avec les axes du repère.",
+      "hint": "Résolvez $f(x)=0$ pour l'axe des abscisses (utilisez le discriminant) et calculez $f(0)$ pour l'axe des ordonnées."
+    },
+    {
+      "id": "q6",
+      "content": "Donner l'équation de la tangente $(T)$ à la courbe $\\mathscr{C}_f$ au point d'abscisse 0.",
+      "hint": "Appliquez la formule $y = f'(0)(x-0) + f(0)$."
+    },
+    {
+      "id": "q7",
+      "content": "Construire $(T)$ et $\\mathscr{C}_f$.",
+      "hint": "Tracez d'abord les asymptotes (verticale et oblique) et la tangente pour guider le tracé."
+    }
+  ]
+}

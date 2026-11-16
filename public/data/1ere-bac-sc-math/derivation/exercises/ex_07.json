@@ -1,0 +1,36 @@
+{
+  "id": "ex-deriv-07",
+  "theme": "derivation",
+  "difficulty": "difficile",
+  "topic": "Dérivabilité et Paramètres",
+  "context": "Soit $(a,b) \\in \\mathbb{R}^* \\times \\mathbb{R}$. On considère la fonction $f$ définie par : $$\\begin{cases} f(x) = \\dfrac{x^2}{a} E\\left(\\dfrac{3}{x}\\right) & ; x > 0 \\\\ f(0) = 0 \\\\ f(x) = \\dfrac{2\\cos(bx) - 3\\cos(x\\sqrt{2}) + 1}{x} & ; x < 0 \\end{cases}$$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Étude à droite de 0",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que : $\\forall x \\in \\mathbb{R}_+^* \\quad \\left|\\dfrac{x}{a} E\\left(\\dfrac{3}{x}\\right) - \\dfrac{3}{a}\\right| \\le \\left|\\dfrac{x}{a}\\right|$.",
+          "hint": "Partez de l'inégalité fondamentale $t - 1 < E(t) \\le t$. En posant $t = \\frac{3}{x}$, encadrez $E(\\frac{3}{x})$ puis manipulez l'expression pour obtenir la majoration demandée."
+        },
+        {
+          "id": "sq1b",
+          "content": "En déduire que $f$ est dérivable à droite en 0 et que $f'_d(0) = \\frac{3}{a}$.",
+          "hint": "Le taux d'accroissement en $0^+$ vaut $\\frac{x}{a}E(\\frac{3}{x})$. Utilisez l'inégalité précédente pour montrer que ce taux tend vers $\\frac{3}{a}$ lorsque $x$ tend vers 0."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que $f$ est dérivable à gauche en 0 et que $f'_g(0) = 3 - b^2$.",
+      "hint": "Décomposez le numérateur du taux d'accroissement : $2(\\cos(bx)-1) - 3(\\cos(x\\sqrt{2})-1)$. Utilisez la limite usuelle $\\frac{1-\\cos u}{u^2} \\to \\frac{1}{2}$ en adaptant les variables."
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer les valeurs de $a$ et $b$ pour que $f$ soit dérivable en 0 et que la tangente à $(C_f)$ au point d'abscisse 0 soit orthogonale à la droite $(\\Delta) : y - x = 0$.",
+      "hint": "La dérivabilité exige $f'_d(0) = f'_g(0)$. L'orthogonalité avec la droite de pente 1 implique que le produit des pentes vaut $-1$. Résolvez le système formé par ces deux équations pour trouver $a$ et $b$."
+    }
+  ]
+}

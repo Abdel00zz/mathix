@@ -1,0 +1,20 @@
+{
+  "id": "ex-prod-scal-esp-02",
+  "theme": "produit-scalaire-espace",
+  "difficulty": "facile",
+  "topic": "Produit scalaire dans l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Orthogonalité de deux vecteurs",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les vecteurs $\\overrightarrow{u}(1, -2, 3)$ et $\\overrightarrow{v}(4, 5, 2)$.\nLes vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont-ils orthogonaux ?",
+          "hint": "Deux vecteurs non nuls sont orthogonaux si et seulement si leur produit scalaire est nul.\nCalculons le produit scalaire $\\overrightarrow{u} \\cdot \\overrightarrow{v}$ :\n$\\overrightarrow{u} \\cdot \\overrightarrow{v} = (1)(4) + (-2)(5) + (3)(2)$\n$\\overrightarrow{u} \\cdot \\overrightarrow{v} = 4 - 10 + 6$\n$\\overrightarrow{u} \\cdot \\overrightarrow{v} = 0$\n\nPuisque le produit scalaire est nul, les vecteurs $\\overrightarrow{u}$ et $\\overrightarrow{v}$ sont orthogonaux."
+        }
+      ]
+    }
+  ]
+}

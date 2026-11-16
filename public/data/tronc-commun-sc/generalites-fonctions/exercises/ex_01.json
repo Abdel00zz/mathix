@@ -1,0 +1,20 @@
+{
+  "id": "ex-fonc-tc-01",
+  "theme": "generalites-fonctions",
+  "difficulty": "facile",
+  "topic": "Généralités sur les fonctions",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Domaine de définition",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Déterminer le domaine de définition de la fonction $f(x) = \\frac{\\sqrt{x-2}}{x-5}$.",
+          "hint": "\\method Il y a deux conditions : l'expression sous la racine doit être positive ou nulle ($x-2 \\geq 0$) et le dénominateur doit être non nul ($x-5 \\neq 0$)."
+        }
+      ]
+    }
+  ]
+}

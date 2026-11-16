@@ -1,0 +1,33 @@
+{
+  "id": "calcul-probabilites",
+  "title": "Calcul de probabilités",
+  "exercises": [
+    {
+      "id": "ex-calcul-probabilites-01",
+      "path": "data/2eme-bac-sc-math/calcul-probabilites/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-calcul-probabilites-02",
+      "path": "data/2eme-bac-sc-math/calcul-probabilites/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-calcul-probabilites-03",
+      "path": "data/2eme-bac-sc-math/calcul-probabilites/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-calcul-probabilites-01",
+      "path": "data/2eme-bac-sc-math/calcul-probabilites/quiz/calcul-probabilites_quiz.json",
+      "questionsCount": 22
+    }
+  ],
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-calcul-probabilites-sm",
+      "title": "Fiche Complete : Calcul de probabilites",
+      "path": "data/2eme-bac-sc-math/calcul-probabilites/revisions/fiche_calcul_probabilites_cours.json"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "ex-geo-15",
+  "theme": "produit-scalaire",
+  "difficulty": "difficile",
+  "topic": "Géométrie Analytique - Représentation paramétrique du cercle",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer la nature de l'ensemble des points $M(x;y)$ dans chacun des cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq1_1",
+          "content": "$\\begin{cases} x = -1 + 3\\cos\\theta \\\\ y = 2 + 3\\sin\\theta \\end{cases}$ $(\\theta \\in \\mathbb{R})$",
+          "hint": "Isolez $\\cos\\theta$ et $\\sin\\theta$, puis utilisez $\\cos^2\\theta + \\sin^2\\theta = 1$ pour éliminer le paramètre."
+        },
+        {
+          "id": "sq1_2",
+          "content": "$\\begin{cases} x = 1 + \\sqrt{5}\\sin\\alpha \\\\ y = 1 + \\sqrt{5}\\cos\\alpha \\end{cases}$ $(\\alpha \\in \\mathbb{R})$",
+          "hint": "Même démarche. Attention à l'ordre : ici $\\sin$ est sur $x$ et $\\cos$ sur $y$, mais le résultat est identique."
+        },
+        {
+          "id": "sq1_3",
+          "content": "$\\begin{cases} x = 1 + \\dfrac{2(1-t^2)}{1+t^2} \\\\ y = \\dfrac{4t}{1+t^2} \\end{cases}$ $(t \\in \\mathbb{R})$",
+          "hint": "Posez $c = \\dfrac{1-t^2}{1+t^2}$ et $s = \\dfrac{2t}{1+t^2}$, les formules de Weierstrass. Vérifiez que $c^2 + s^2 = 1$, puis exprimez $x$ et $y$ en fonction de $c$ et $s$. Attention au point éventuellement exclu quand $t \\to \\infty$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Donner une représentation paramétrique du cercle $\\mathcal{C}$ dans chacun des cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq2_4",
+          "content": "$A\\left(\\dfrac{1}{2};-1\\right)$ est le centre de $\\mathcal{C}$ et $R = 5$ son rayon.",
+          "hint": "La représentation paramétrique d'un cercle de centre $(a;b)$ et de rayon $R$ est $\\begin{cases} x = a + R\\cos\\theta \\\\ y = b + R\\sin\\theta \\end{cases}$."
+        },
+        {
+          "id": "sq2_5",
+          "content": "$x^2 + y^2 = 2$",
+          "hint": ""
+        },
+        {
+          "id": "sq2_6",
+          "content": "$(x-2)^2 + (y+3)^2 = \\dfrac{5}{4}$",
+          "hint": ""
+        },
+        {
+          "id": "sq2_7",
+          "content": "$x^2 + y^2 + 2x - 6y - b = 0$ et $x^2 + y^2 = 2$",
+          "hint": "Les deux cercles ont le même rayon $R = \\sqrt{2}$. Déterminez d'abord le centre de chacun par complétion du carré."
+        },
+        {
+          "id": "sq2_8",
+          "content": "$x^2 + y^2 - 8x + 6y = 0$",
+          "hint": ""
+        },
+        {
+          "id": "sq2_9",
+          "content": "$x^2 + y^2 + 6x - 4y + 9 = 0$",
+          "hint": ""
+        },
+        {
+          "id": "sq2_10",
+          "content": "$x^2 + y^2 - 4x - 16 = 0$",
+          "hint": ""
+        }
+      ]
+    }
+  ]
+}

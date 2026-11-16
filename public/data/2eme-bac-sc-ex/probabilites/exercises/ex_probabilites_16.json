@@ -1,0 +1,37 @@
+{
+  "id": "proba-ex12",
+  "theme": "probabilites",
+  "difficulty": "difficile",
+  "chapter": "03 - Variables aléatoires et loi binomiale",
+  "topic": "Rattrapage 2022 - Tirage simultané, indépendance, VA X = nb boules vertes",
+  "requiresRedaction": true,
+  "context": "Une urne contient trois boules blanches, quatre boules rouges et cinq boules vertes, indiscernables au toucher. On tire au hasard et simultanément trois boules de l'urne.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "On considère les événements suivants : $A$ : « Obtenir exactement deux boules rouges » et $B$ : « Obtenir exactement une boule verte ». Montrer que $p(A) = \\dfrac{12}{55}$ et $p(B) = \\dfrac{21}{44}$.",
+      "hint": "$Card(\\Omega) = C_{12}^3 = 220$. Pour $A$ : choisir 2 rouges parmi 4 et 1 non-rouge parmi 8. $Card(A) = C_4^2 \\times C_8^1$. Pour $B$ : 1 verte parmi 5 et 2 non-vertes parmi 7. $Card(B) = C_5^1 \\times C_7^2$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer $p(A/B)$ : la probabilité de l'événement $A$ sachant que l'événement $B$ est réalisé. Les événements $A$ et $B$ sont-ils indépendants ?",
+      "hint": "$A \\cap B$ : exactement 2 rouges parmi 4 ET exactement 1 verte parmi 5 (la 3ème est donc blanche). $Card(A \\cap B) = C_4^2 \\times C_5^1 \\times C_3^1$. Puis $p(A/B) = \\frac{p(A \\cap B)}{p(B)}$. Pour l'indépendance, comparez $p(A/B)$ et $p(A)$."
+    },
+    {
+      "id": "q3",
+      "content": "Soit la variable aléatoire $X$ qui associe à chaque tirage le nombre de boules vertes tirées.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Déterminer la loi de probabilité de $X$.",
+          "hint": "$X$ prend les valeurs $\\{0, 1, 2, 3\\}$. Pour $P(X = k)$ : choisir $k$ vertes parmi 5 et $3-k$ non-vertes parmi 7. $P(X = k) = \\frac{C_5^k \\times C_7^{3-k}}{C_{12}^3}$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Calculer la probabilité d'obtenir au moins deux boules vertes.",
+          "hint": "« Au moins 2 vertes » = $X \\geq 2$, soit $P(X=2) + P(X=3)$. Vous pouvez aussi utiliser le complémentaire : $1 - P(X=0) - P(X=1)$. Les deux valeurs viennent du tableau de la loi établie à la question précédente."
+        }
+      ]
+    }
+  ]
+}

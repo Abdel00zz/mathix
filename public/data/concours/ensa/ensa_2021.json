@@ -1,0 +1,472 @@
+{
+  "school": "ensa",
+  "year": "2021",
+  "title": "Concours ENSA 2021",
+  "questions": [
+    {
+      "id": "ensa-21-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Equations différentielles",
+      "difficulty": "concours",
+      "prompt": "Les solutions de $y' + 2y = 0$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = Ce^{-2x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = Ce^{2x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = C\\cos(2x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = -2x + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$y' + ay = 0 \\Rightarrow y = Ce^{-ax}$. Ici $a=2$."
+    },
+    {
+      "id": "ensa-21-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Equations différentielles",
+      "difficulty": "concours",
+      "prompt": "La solution de $y' - 3y = e^{3x}$ avec $y(0)=1$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = (x+1)e^{3x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = xe^{3x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = e^{3x} + x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = (x+1)e^{-3x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Solution homogène : $Ce^{3x}$. Variation de la constante : $C'(x)e^{3x} = e^{3x}$, donc $C(x) = x$. Générale : $y = (x+K)e^{3x}$, $y(0)=K=1$."
+    },
+    {
+      "id": "ensa-21-03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Exponentielle",
+      "difficulty": "concours",
+      "prompt": "L'aire sous la courbe $y=\\frac{1}{x}$ entre $x=1$ et $x=e^2$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$e^2 - 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e^2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\displaystyle \\int_1^{e^2} \\frac{dx}{x} = [\\ln x]_1^{e^2} = 2 - 0 = 2$."
+    },
+    {
+      "id": "ensa-21-04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "concours",
+      "prompt": "$\\displaystyle \\lim_{x \\to +\\infty} \\frac{x^2}{e^x}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Croissance comparée : $\\displaystyle \\lim_{x\\to+\\infty} \\frac{x^n}{e^x} = 0$ pour tout $n$. L'exponentielle l'emporte toujours sur les polynômes en $+\\infty$."
+    },
+    {
+      "id": "ensa-21-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "difficulty": "concours",
+      "prompt": "La tangente à $y = e^x$ en $x = 0$ a pour équation :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = x + 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = ex$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = 2x + 1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(0)=1$, $f'(0)=1$. Tangente : $y = f'(0)(x-0) + f(0) = x + 1$."
+    },
+    {
+      "id": "ensa-21-06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "Soit $(u_n)$ définie par $u_n = \\frac{(-1)^n}{n}$. La suite est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Convergente vers $0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Divergente",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Croissante",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Convergente vers $1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|u_n| = \\frac{1}{n} \\to 0$. Par le théorème des gendarmes : $-\\frac{1}{n} \\leq u_n \\leq \\frac{1}{n} \\to 0$."
+    },
+    {
+      "id": "ensa-21-07",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "difficulty": "concours",
+      "prompt": "Soit $\\star$ sur $\\mathbb{R}$ définie par $a \\star b = a + b + ab$. L'élément neutre est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il n'existe pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On cherche $e$ tel que $a + e + ae = a$ pour tout $a$, soit $e(1+a) = 0$ pour tout $a$, d'où $e = 0$. Vérification : $a \\star 0 = a$. On remarque que $a \\star b = (1+a)(1+b) - 1$."
+    },
+    {
+      "id": "ensa-21-08",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "Le nombre $1023 = 2^{10} - 1$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Divisible par $3$ et par $11$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Premier",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Divisible par $7$ mais pas par $3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Une puissance de $3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$1023 = 3 \\times 341 = 3 \\times 11 \\times 31$. Par congruences : $2^2 \\equiv 1 \\pmod{3}$ donc $2^{10} \\equiv 1 \\pmod{3}$, et $2^5 \\equiv 32 \\equiv -1 \\pmod{11}$ donc $2^{10} \\equiv 1 \\pmod{11}$."
+    },
+    {
+      "id": "ensa-21-09",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Espaces vectoriels",
+      "difficulty": "concours",
+      "prompt": "Le sous-espace $F = \\{(x,y,z) \\in \\mathbb{R}^3 : x+2y-z=0\\}$ a pour dimension :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$F = \\ker \\varphi$ avec $\\varphi(x,y,z)=x+2y-z$ forme linéaire non nulle. Théorème du rang : $\\dim F = 3 - 1 = 2$. Base de $F$ : $\\{(2,-1,0), (1,0,1)\\}$."
+    },
+    {
+      "id": "ensa-21-10",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Si $z = 1+i$, la valeur de $z^8$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$16$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-16$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$16i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$256$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$z = \\sqrt{2}e^{i\\pi/4}$, donc $z^8 = (\\sqrt{2})^8 e^{i \\cdot 2\\pi} = 16$. Ou : $(1+i)^2 = 2i$, $(1+i)^4 = -4$, $(1+i)^8 = 16$."
+    },
+    {
+      "id": "ensa-21-11",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "difficulty": "concours",
+      "prompt": "Les éléments inversibles de $(\\mathbb{Z}/6\\mathbb{Z}, \\times)$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{\\bar{1}, \\bar{5}\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\{\\bar{1}, \\bar{2}, \\bar{3}, \\bar{4}, \\bar{5}\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{\\bar{1}\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\{\\bar{1}, \\bar{3}, \\bar{5}\\}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\bar{a}$ inversible ssi $\\text{PGCD}(a,6)=1$. Parmi $\\{1,...,5\\}$, seuls $1$ et $5$ sont premiers avec $6$. On vérifie : $\\bar{5}^2 = \\overline{25} = \\bar{1}$. Cardinal : $\\varphi(6) = 2$."
+    },
+    {
+      "id": "ensa-21-12",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Dénombrement",
+      "difficulty": "concours",
+      "prompt": "Le nombre d'anagrammes du mot MATHS est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$120$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$60$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$24$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$720$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$5$ lettres distinctes : $5! = 120$ permutations. S'il y avait des lettres répétées, on diviserait par les factorielles des répétitions."
+    },
+    {
+      "id": "ensa-21-13",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "prompt": "On tire une carte d'un jeu de $52$. $P(\\text{As ou Pique})$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{4}{13}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{17}{52}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{13}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Inclusion-exclusion : $P = \\frac{4}{52} + \\frac{13}{52} - \\frac{1}{52} = \\frac{16}{52} = \\frac{4}{13}$. On retire l'As de Pique compté deux fois."
+    },
+    {
+      "id": "ensa-21-14",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Variables aléatoires",
+      "difficulty": "concours",
+      "prompt": "$X$ prend les valeurs $1, 2, 3$ avec $P(X=k) = k/6$. L'espérance $E(X)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{7}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{5}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Vérification : $1/6+2/6+3/6=1$. $E(X) = 1 \\times 1/6 + 2 \\times 2/6 + 3 \\times 3/6 = (1+4+9)/6 = 14/6 = 7/3$."
+    },
+    {
+      "id": "ensa-21-15",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Variables aléatoires",
+      "difficulty": "concours",
+      "prompt": "$X \\sim \\mathcal{B}(0{,}3)$ (Bernoulli). La variance $V(X)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}21$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}09$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0{,}7$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Loi de Bernoulli : $V(X) = p(1-p) = 0{,}3 \\times 0{,}7 = 0{,}21$. Formule fondamentale."
+    }
+  ]
+}

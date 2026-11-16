@@ -1,0 +1,79 @@
+{
+  "id": "ex-complexes-homothetie-alignement",
+  "theme": "complexes",
+  "difficulty": "difficile",
+  "topic": "Nombres Complexes et Géométrie",
+  "requiresRedaction": true,
+  "context": "Dans le plan complexe rapporté à un repère orthonormé direct $(O,\\overrightarrow{u},\\overrightarrow{v})$, on considère les points $A, B, C, D$ et $\\Omega$ d'affixes respectives $a=1+2i$, $b=\\overline{a}$, $c=\\frac{3(3+i)}{2}$, $d=\\frac{3(1+i)}{2}$ et $\\omega=\\frac{5}{2}$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $a+b=2$ et déduire que l'affixe du point $P$, milieu du segment $[AB]$ est $p=1$.",
+          "hint": "Pour vérifier $a+b=2$, additionnez la partie réelle et imaginaire de $a$ et de son conjugué $b$. Rappelez-vous que l'affixe du milieu d'un segment est la moyenne des affixes des extrémités : $p = \\frac{a+b}{2}$."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que $a$ et $b$ sont les solutions de l'équation : $z^2 - 2z + 5 = 0$ dans l'ensemble $\\mathbb{C}$.",
+          "hint": "Calculez le discriminant $\\Delta$ de l'équation quadratique ou vérifiez simplement que la somme des racines ($a+b$) vaut $-(-2)/1$ et que le produit des racines ($a \\times b$) vaut $5/1$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $|\\omega-a| = |\\omega-b| = |\\omega-c|$.",
+          "hint": "Calculez séparément le module de chaque nombre complexe. Rappel : $|x+iy| = \\sqrt{x^2+y^2}$. Notez que $\\omega = 2,5$."
+        },
+        {
+          "id": "b",
+          "content": "Déduire que $\\Omega$ est le centre du cercle circonscrit au triangle $ABC$.",
+          "hint": "Interprétez géométriquement les égalités de modules de la question précédente en termes de distances $\\Omega A$, $\\Omega B$ et $\\Omega C$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $\\frac{d-c}{a-b} = \\frac{3}{4}i$.",
+          "hint": "Remplacez les affixes par leurs valeurs algébriques. Simplifiez le numérateur et le dénominateur séparément. Pour le dénominateur $a-b$, vous devriez obtenir un imaginaire pur. Simplifiez la fraction finale."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que $d-b=(c-a)e^{i\\frac{\\pi}{2}}$ puis déduire que les droites $(DB)$ et $(AC)$ sont perpendiculaires.",
+          "hint": "Sachez que $e^{i\\frac{\\pi}{2}} = i$. Calculez $i(c-a)$ et vérifiez si cela correspond à $d-b$. Pour la déduction géométrique, utilisez l'argument du quotient $\\frac{d-b}{c-a}$ qui correspond à l'angle entre les vecteurs $\\overrightarrow{AC}$ et $\\overrightarrow{BD}$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Soit $h$ l'homothétie de centre $C$ et de rapport $\\frac{2}{3}$ et qui transforme chaque point $M$ du plan d'affixe $z$ en un point $M'$ d'affixe $z'$. On pose $h(P)=G$.",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $z' = \\frac{2}{3}z + \\frac{3}{2} + \\frac{1}{2}i$.",
+          "hint": "Utilisez l'écriture complexe de l'homothétie : $z' - z_C = k(z - z_C)$ avec $z_C = c$ et $k = \\frac{2}{3}$."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que l'affixe du point $G$ est $g = \\frac{13}{6} + \\frac{1}{2}i$.",
+          "hint": "Appliquez la formule trouvée en 4)a) en remplaçant $z$ par l'affixe $p$ du point $P$ (trouvée en 1a)."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que les points $\\Omega, G$ et $D$ sont alignés.",
+      "hint": "Calculez les affixes des vecteurs $\\overrightarrow{\\Omega G}$ ($g - \\omega$) et $\\overrightarrow{\\Omega D}$ ($d - \\omega$). Montrez que l'un est un multiple réel de l'autre (c'est-à-dire que le quotient $\\frac{d-\\omega}{g-\\omega}$ est un nombre réel)."
+    }
+  ]
+}

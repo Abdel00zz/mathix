@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Quel forfait téléphonique choisir ?",
+    "subtitle": "Inéquations du premier degré",
+    "context": "Équations"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Quel forfait téléphonique choisir ?",
+          "content": "Un opérateur propose deux forfaits, facturés selon le nombre $x$ de minutes d'appel par mois :\\par $\\bullet$ \\textbf{Forfait A} : $10$ dirhams d'abonnement $+\\ 0{,}10$ dirham par minute ;\\par $\\bullet$ \\textbf{Forfait B} : $20$ dirhams, illimité (prix fixe).\\par On souhaite déterminer le forfait le plus avantageux selon la consommation."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Exprimer le coût $f(x)$ du forfait A et le coût $g(x)$ du forfait B en fonction de $x$.\\item Résoudre l'inéquation $f(x) > g(x)$. À partir de combien de minutes le forfait B devient-il plus avantageux ?\\item Que choisir si l'on consomme en moyenne $80$ minutes par mois ? Et $150$ minutes ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "$f(x) = 10 + 0{,}10\\,x$ et $g(x) = 20$. Le forfait B est plus avantageux quand A coûte plus cher, c'est-à-dire $f(x) > g(x)$."
+        },
+        {
+          "type": "hint",
+          "content": "$10 + 0{,}10\\,x > 20 \\iff 0{,}10\\,x > 10 \\iff x > 100$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $f(x) = 10 + 0{,}10\\,x$ et $g(x) = 20$.\\par\\textbf{2)} $f(x) > g(x) \\iff 10 + 0{,}10\\,x > 20 \\iff 0{,}10\\,x > 10 \\iff x > 100$. À partir de $\\boxed{100\\ \\text{minutes}}$, le forfait B (fixe) devient plus avantageux.\\par\\textbf{3)} Pour $x = 80 < 100$ : A coûte $10 + 0{,}10\\times 80 = 18$ DH $< 20$ DH, on choisit \\textbf{A}. Pour $x = 150 > 100$ : A coûte $10 + 15 = 25$ DH $> 20$ DH, on choisit \\textbf{B}."
+        }
+      ]
+    }
+  ]
+}

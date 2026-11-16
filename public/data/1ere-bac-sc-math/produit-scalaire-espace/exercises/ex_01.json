@@ -1,0 +1,20 @@
+{
+  "id": "ex-prod-scal-esp-01",
+  "theme": "produit-scalaire-espace",
+  "difficulty": "facile",
+  "topic": "Produit scalaire dans l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calcul de produit scalaire avec coordonnées",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les vecteurs $\\overrightarrow{u}(2, -1, 3)$ et $\\overrightarrow{v}(1, 4, -2)$.\nCalculer le produit scalaire $\\overrightarrow{u} \\cdot \\overrightarrow{v}$.",
+          "hint": "Dans un repère orthonormé, le produit scalaire de deux vecteurs $\\overrightarrow{u}(x, y, z)$ et $\\overrightarrow{v}(x', y', z')$ est donné par la formule :\n$\\overrightarrow{u} \\cdot \\overrightarrow{v} = xx' + yy' + zz'$\n\nEn appliquant cette formule avec $\\overrightarrow{u}(2, -1, 3)$ et $\\overrightarrow{v}(1, 4, -2)$ :\n$\\overrightarrow{u} \\cdot \\overrightarrow{v} = (2)(1) + (-1)(4) + (3)(-2)$\n$\\overrightarrow{u} \\cdot \\overrightarrow{v} = 2 - 4 - 6$\n$\\overrightarrow{u} \\cdot \\overrightarrow{v} = -8$"
+        }
+      ]
+    }
+  ]
+}

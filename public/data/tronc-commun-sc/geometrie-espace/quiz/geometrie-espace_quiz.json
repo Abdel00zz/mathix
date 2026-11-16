@@ -1,0 +1,126 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Definition",
+      "difficulty": "facile",
+      "question": "Ce quiz porte principalement sur le chapitre La géométrie dans l'espace.",
+      "options": [
+        {
+          "text": "Vrai",
+          "isCorrect": true
+        },
+        {
+          "text": "Faux",
+          "isCorrect": false
+        },
+        {
+          "text": "Impossible a dire",
+          "isCorrect": false
+        },
+        {
+          "text": "Aucun lien",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Question d ancrage pour identifier le theme du chapitre."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "category": "Methode",
+      "difficulty": "facile",
+      "question": "Une reponse mathematique doit etre justifiee par une methode.",
+      "isTrue": true,
+      "explanation": "La justification fait partie de la competence attendue."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Application",
+      "difficulty": "moyen",
+      "question": "Quelle strategie est la plus adaptee pour commencer un exercice ?",
+      "options": [
+        {
+          "text": "Identifier les donnees et l objectif",
+          "isCorrect": true
+        },
+        {
+          "text": "Donner une reponse au hasard",
+          "isCorrect": false
+        },
+        {
+          "text": "Ignorer les conditions",
+          "isCorrect": false
+        },
+        {
+          "text": "Sauter les etapes",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Toujours commencer par l analyse de l enonce."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "category": "Rigueur",
+      "difficulty": "moyen",
+      "question": "Verifier le resultat final est une etape utile.",
+      "isTrue": true,
+      "explanation": "La verification limite les erreurs de calcul et de raisonnement."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Methode",
+      "difficulty": "moyen",
+      "question": "Dans un calcul, que faut il privilegier ?",
+      "options": [
+        {
+          "text": "Etapes claires et ordonnees",
+          "isCorrect": true
+        },
+        {
+          "text": "Resultat sans details",
+          "isCorrect": false
+        },
+        {
+          "text": "Formules non verifiees",
+          "isCorrect": false
+        },
+        {
+          "text": "Notation confuse",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une solution lisible facilite la correction et l apprentissage."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "category": "Synthese",
+      "difficulty": "difficile",
+      "question": "Un bon entrainement combine :",
+      "options": [
+        {
+          "text": "Cours, application, verification",
+          "isCorrect": true
+        },
+        {
+          "text": "Memoire seule",
+          "isCorrect": false
+        },
+        {
+          "text": "Calcul sans comprendre",
+          "isCorrect": false
+        },
+        {
+          "text": "Copie sans adaptation",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La progression complete combine comprehension et pratique."
+    }
+  ]
+}

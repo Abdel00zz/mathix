@@ -1,0 +1,52 @@
+{
+  "id": "ex_05",
+  "theme": "complexes",
+  "difficulty": "moyen",
+  "topic": "Nombres Complexes",
+  "context": "Soient les complexes $a = \\sqrt{3} + i$ et $b = \\sqrt{3} - 1 + (\\sqrt{3} + 1)i$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $b = (1+i)a$.",
+          "hint": "Développez le produit $(1+i)(\\sqrt{3}+i)$ et comparez le résultat avec l'expression de $b$ donnée."
+        },
+        {
+          "id": "b",
+          "content": "En déduire que $|b| = 2\\sqrt{2}$ et $\\arg(b) \\equiv \\frac{5\\pi}{12} [2\\pi]$.",
+          "hint": "Utilisez les propriétés du module et de l'argument d'un produit : $|z_1 z_2| = |z_1||z_2|$ et $\\arg(z_1 z_2) = \\arg(z_1) + \\arg(z_2)$. Mettez d'abord $1+i$ et $a$ sous forme trigonométrique ou exponentielle."
+        },
+        {
+          "id": "c",
+          "content": "Déduire de ce qui précède que : $\\cos\\left(\\frac{5\\pi}{12}\\right) = \\frac{\\sqrt{6}-\\sqrt{2}}{4}$.",
+          "hint": "Écrivez $b$ sous sa forme algébrique et identifiez sa partie réelle $\\text{Re}(b)$. Ensuite, utilisez la forme trigonométrique de $b$ pour exprimer $\\text{Re}(b)$ en fonction de $|b|$ et $\\cos(\\arg(b))$. Égalez les deux expressions de $\\text{Re}(b)$ pour trouver la valeur du cosinus."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Le plan est muni d'un repère orthonormé. On considère les points A, B, C d'affixes respectives $a$, $b$ et $c = -1 + i\\sqrt{3}$.",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Vérifier que $c = ia$, en déduire que $OA = OC$ et que $(\\overrightarrow{OA}, \\overrightarrow{OC}) \\equiv \\frac{\\pi}{2} [2\\pi]$.",
+          "hint": "Calculez le produit $ia$ et comparez-le à $c$. Pour la déduction, interprétez géométriquement le module et l'argument du quotient $\\frac{c}{a} = i$."
+        },
+        {
+          "id": "b",
+          "content": "Montrer que le point B est l'image du point A par la translation de vecteur $\\overrightarrow{OC}$.",
+          "hint": "L'écriture complexe d'une translation est $z' = z + z_{\\text{vecteur}}$. Calculez la différence $b-a$ et comparez-la à l'affixe $c$ du vecteur $\\overrightarrow{OC}$."
+        },
+        {
+          "id": "c",
+          "content": "En déduire la nature du quadrilatère $OABC$.",
+          "hint": "La question 2.b vous donne une relation vectorielle importante entre les côtés. Quelle est la caractérisation vectorielle d'un parallélogramme ? Utilisez aussi le résultat de la question 2.a sur les côtés $OA$ et $OC$ pour affiner la nature du quadrilatère."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ch03-ex04",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "chapter": "03 - PPCM et PGCD ; propriétés",
+  "topic": "PGCD/PPCM - Propriétés et PGCD paramétrique",
+  "requiresRedaction": true,
+  "context": "Les questions sont indépendantes.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soit $n \\in \\mathbb{N}^*$. Montrer que : $(n^2 + n) \\wedge (2n + 1) = 1$.",
+      "hint": "Factorisez $n^2 + n = n(n+1)$. Remarquez que $2n+1$ est impair. Si $d$ divise $n(n+1)$ et $2n+1$, calculez $2n(n+1) - n(2n+1)$ et $2n(n+1) - (n+1)(2n+1)$ et concluez."
+    },
+    {
+      "id": "q2",
+      "content": "Soit $(a ; b ; c ; d) \\in \\mathbb{Z}^4$ tel que : $a = bc + d$. Montrer que $a \\wedge b = b \\wedge c$ puis en déduire que : $a \\wedge b = b \\wedge (a - bc)$.",
+      "hint": "Pour montrer $a \\wedge b = b \\wedge c$ : tout diviseur commun de $b$ et $c$ divise $bc + d = a$, donc divise $b$ et $a$. Réciproquement, tout diviseur commun de $a$ et $b$ divise $a - bc = d$, donc divise $b$ et $c$. La deuxième égalité découle directement car $a - bc = d$."
+    },
+    {
+      "id": "q3",
+      "content": "Soit $(a ; b) \\in (\\mathbb{N}^*)^2$ tel que : $a \\wedge b = 1$.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que : $(3a + 4b) \\wedge (4a + 5b) = 1$.",
+          "hint": "Si $d$ divise $3a+4b$ et $4a+5b$, montrez que $d$ divise aussi $4(3a+4b) - 3(4a+5b)$ et $5(3a+4b) - 4(4a+5b)$. Que valent ces combinaisons ? Concluez avec $a \\wedge b = 1$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que : $(4a + 15b) \\wedge (3a + 11b) = 1$.",
+          "hint": "Même démarche : trouvez une combinaison linéaire de $4a+15b$ et $3a+11b$ qui isole $a$ seul, puis $b$ seul, et utilisez $a \\wedge b = 1$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Soit $n \\in \\mathbb{N}^*$. Déterminer le plus grand commun diviseur des nombres $7^{n+2} - 7^n$ et $5^{n+2} - 5^n$.",
+      "hint": "Factorisez chaque expression : $7^{n+2} - 7^n = 7^n(49-1)$ et $5^{n+2} - 5^n = 5^n(25-1)$. Calculez les facteurs numériques, puis cherchez le PGCD en tenant compte que $7^n$ et $5^n$ sont premiers entre eux."
+    }
+  ]
+}

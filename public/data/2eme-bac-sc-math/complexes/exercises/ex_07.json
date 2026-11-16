@@ -1,0 +1,52 @@
+{
+  "id": "ex-complexes-07",
+  "topic": "Nombres complexes - Bac National 2021 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2021,
+  "examenSession": "Rattrapage",
+  "context": "$m$ est un nombre complexe différent de $2$ et de $-i$. Le plan complexe est rapporté à un repère orthonormé direct $(O;\\vec{u},\\vec{v})$. On considère dans l'ensemble $\\mathbb{C}$ l'équation d'inconnue $z$ : $(E):z^2-(m-i)z-im=0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Vérifier que le discriminant de l'équation $(E)$ est $(m+i)^2$.",
+          "hint": "Calculez $\\Delta=(m-i)^2+4im$ et développez $(m-i)^2$ pour retrouver $(m+i)^2$."
+        },
+        {
+          "id": "q1b",
+          "content": "Déterminer $z_1$ et $z_2$ les deux solutions de $(E)$.",
+          "hint": "Une racine carrée de $\\Delta$ est $m+i$ ; les deux solutions s'obtiennent alors très simplement."
+        },
+        {
+          "id": "q1c",
+          "content": "Sachant que $m=e^{i\\pi/8}$ ; écrire le nombre $z_1+z_2$ sous forme exponentielle.",
+          "hint": "La somme des racines vaut $m-i$ ; remplacez $m$ par sa valeur puis mettez $e^{i\\pi/8}-i$ sous forme exponentielle en factorisant par l'arc moitié."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "On considère les points $A$, $B$ et $M$ d'affixes respectifs $2$, $-i$ et $m$ et soit $M'$ le symétrique de $M$ par rapport à l'axe imaginaire.",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Déterminer en fonction de $m$ l'affixe de $M'$.",
+          "hint": "La symétrie par rapport à l'axe imaginaire change $z$ en $-\\bar z$."
+        },
+        {
+          "id": "q2b",
+          "content": "Déterminer en fonction de $m$ l'affixe du point $N$ tel que le quadrilatère $ANM'B$ soit un parallélogramme.",
+          "hint": "Dans un parallélogramme $ANM'B$, les diagonales $[AM']$ et $[NB]$ ont le même milieu : traduisez cette égalité d'affixes."
+        },
+        {
+          "id": "q2c",
+          "content": "Montrer que les deux droites $(AM)$ et $(BM')$ sont perpendiculaires si et seulement si $\\text{Re}((2-i)m)=\\text{Re}\\left(m^2\\right)$.",
+          "hint": "Traduisez la perpendicularité par $\\dfrac{m'-b}{m-a}$ imaginaire pur (somme avec son conjugué nulle), remplacez $m'=-\\bar m$, $a=2$, $b=-i$, puis développez pour ne garder que des parties réelles."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ex-transformations-plan-01",
+  "theme": "transformations-plan",
+  "difficulty": "difficile",
+  "topic": "Transformations du Plan",
+  "context": "Soit $ABC$ un triangle. On considère l'homothétie $h$ de centre $A$ et de rapport $2$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Construction d'image",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Construire $B'$ et $C'$, images respectives de $B$ et $C$ par $h$.",
+          "hint": "Quelle est la définition vectorielle de l'homothétie $h$ de centre A et de rapport 2 appliquée au point B ?"
+        },
+        {
+          "id": "sq2",
+          "content": "Montrer que les droites $(BC)$ et $(B'C')$ sont parallèles.",
+          "hint": "Comment une homothétie transforme-t-elle un vecteur ? Appliquez cette propriété à $\\overrightarrow{BC}$. Quelle est la conséquence géométrique pour les droites $(BC)$ et $(B'C')$ ?"
+        }
+      ]
+    }
+  ]
+}

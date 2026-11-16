@@ -1,0 +1,20 @@
+{
+  "id": "ex-prod-scal-esp-04",
+  "theme": "produit-scalaire-espace",
+  "difficulty": "moyen",
+  "topic": "Produit scalaire dans l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Distance entre deux points",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les points $A(1, 2, -1)$ et $B(4, -2, 3)$.\nCalculer la distance $AB$.",
+          "hint": "Dans un repère orthonormé, la distance entre deux points $A(x_A, y_A, z_A)$ et $B(x_B, y_B, z_B)$ est donnée par la formule :\n$AB = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2 + (z_B - z_A)^2}$\n\nEn appliquant cette formule avec $A(1, 2, -1)$ et $B(4, -2, 3)$ :\n$AB = \\sqrt{(4 - 1)^2 + (-2 - 2)^2 + (3 - (-1))^2}$\n$AB = \\sqrt{3^2 + (-4)^2 + 4^2}$\n$AB = \\sqrt{9 + 16 + 16}$\n$AB = \\sqrt{41}$"
+        }
+      ]
+    }
+  ]
+}

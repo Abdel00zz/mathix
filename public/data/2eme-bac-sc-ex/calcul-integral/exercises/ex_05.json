@@ -1,0 +1,25 @@
+{
+  "id": "ex-05",
+  "theme": "calcul-integral",
+  "difficulty": "facile",
+  "topic": "Calcul Intégral - Primitive, IPP, aire",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction définie sur $]0;+\\infty[$ par : $f(x) = x - (\\ln x)^2$. Soit $(C_f)$ la courbe de $f$ dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que la fonction $H : x \\mapsto x\\ln x - x$ est une primitive de la fonction $\\ln : x \\mapsto \\ln x$ sur l'intervalle $]0;+\\infty[$, puis montrer que : $\\displaystyle\\int_1^e \\ln x\\,dx = 1$",
+      "hint": "\\method Calculez $H'(x)$ et vérifiez que vous obtenez $\\ln x$. \\tip Pour l'intégrale, appliquez la formule $\\displaystyle\\int_1^e \\ln x\\,dx = [H(x)]_1^e$ avec $H$ que vous venez de trouver."
+    },
+    {
+      "id": "q2",
+      "content": "En utilisant une intégration par parties, montrer que : $\\displaystyle\\int_1^e (\\ln x)^2\\,dx = e - 2$",
+      "hint": "\\method Posez $u = (\\ln x)^2$ et $v' = 1$. \\tip La nouvelle intégrale fait apparaître $\\ln x$, dont la primitive a été établie en question 1."
+    },
+    {
+      "id": "q3",
+      "content": "Calculer l'aire du domaine plan limité par $(C_f)$, la droite $(\\Delta): y = x$, et les droites d'équations : $x = 1$ et $x = e$.",
+      "hint": "\\method Étudiez le signe de $f(x) - x = -(\\ln x)^2$ sur $[1;e]$. \\tip L'aire vaut $\\displaystyle\\int_1^e |f(x)-x|\\,dx = \\int_1^e (\\ln x)^2\\,dx$. Utilisez le résultat de la question 2."
+    }
+  ]
+}

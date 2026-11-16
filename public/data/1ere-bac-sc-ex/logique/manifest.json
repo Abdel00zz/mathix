@@ -1,0 +1,26 @@
+{
+  "id": "logique",
+  "title": "La logique mathématique",
+  "exercises": [
+    {
+      "id": "ex-logique-01",
+      "path": "data/1ere-bac-sc-ex/logique/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-logique-02",
+      "path": "data/1ere-bac-sc-ex/logique/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-logique-03",
+      "path": "data/1ere-bac-sc-ex/logique/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-logique-01",
+      "path": "data/1ere-bac-sc-ex/logique/quiz/logique_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

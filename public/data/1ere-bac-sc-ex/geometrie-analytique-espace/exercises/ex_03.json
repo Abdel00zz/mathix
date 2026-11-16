@@ -1,0 +1,25 @@
+{
+  "id": "ex-geometrie-analytique-espace-03",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "difficile",
+  "topic": "Intersection d'une droite et d'un plan",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Étude d'une position relative",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "On considère le plan $(P):x+y-z-2=0$ et la droite $(D)$ : $x=1+t$, $y=2-t$, $z=t$. Montrer que $(D)$ coupe $(P)$ en un point unique.",
+          "hint": "Remplacer $x$, $y$ et $z$ par leurs expressions en fonction de $t$."
+        },
+        {
+          "id": "b",
+          "content": "Déterminer les coordonnées de ce point d'intersection.",
+          "hint": "Reporter la valeur de $t$ trouvée dans la représentation paramétrique."
+        }
+      ]
+    }
+  ]
+}

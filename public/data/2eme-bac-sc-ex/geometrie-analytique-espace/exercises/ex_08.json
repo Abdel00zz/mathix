@@ -1,0 +1,47 @@
+{
+  "id": "ex-esp-08",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "moyen",
+  "topic": "Géométrie analytique dans l'espace — Plan, sphère, cercle d'intersection",
+  "requiresRedaction": true,
+  "context": "Dans l'espace $\\left(\\mathcal{E}\\right)$ rapporté à un repère orthonormé $\\left(O;\\overrightarrow{i};\\overrightarrow{j};\\overrightarrow{k}\\right)$. On considère le plan $(\\mathcal{P})$ et la sphère $(\\mathcal{S})$ définis par : $(\\mathcal{P}) : x+2y+z-1 = 0$ et $(\\mathcal{S}) : x^2+y^2+z^2-4x-6y+2z+5 = 0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que le centre de la sphère $(\\mathcal{S})$ est le point $I(2;3;-1)$ et que son rayon est 3",
+      "hint": "Complétez le carré en $x$, $y$ et $z$."
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que $d\\left(I;(\\mathcal{P})\\right) = \\sqrt{6}$",
+          "hint": "Utilisez $d(I,(\\mathcal{P})) = \\dfrac{|x_I + 2y_I + z_I - 1|}{\\sqrt{1+4+1}}$."
+        },
+        {
+          "id": "sq2b",
+          "content": "En déduire que le plan $(\\mathcal{P})$ coupe la sphère selon un cercle $(\\mathcal{C})$ de rayon $\\sqrt{3}$",
+          "hint": "Le rayon du cercle d'intersection est $r = \\sqrt{R^2 - d^2} = \\sqrt{9-6}$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Déterminer une représentation paramétrique de la droite $(\\mathcal{D})$ passant par $I$ et orthogonale à $(\\mathcal{P})$",
+          "hint": "La droite a pour vecteur directeur le vecteur normal de $(\\mathcal{P})$ : $(1;2;1)$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que le centre du cercle $(\\mathcal{C})$ est $H(1;1;-2)$",
+          "hint": "Le centre de $(\\mathcal{C})$ est le point d'intersection de $(\\mathcal{D})$ et $(\\mathcal{P})$. Substituez la représentation paramétrique dans l'équation de $(\\mathcal{P})$."
+        }
+      ]
+    }
+  ]
+}

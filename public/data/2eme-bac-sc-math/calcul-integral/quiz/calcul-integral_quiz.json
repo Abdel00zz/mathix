@@ -1,0 +1,475 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Soit $f$ une fonction continue sur $[a;b]$ et $F$ une primitive de $f$ sur $[a;b]$. L'intégrale $\\displaystyle\\int_{a}^{b} f(x)\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$F(a)-F(b)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$F(b)-F(a)$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$f(b)-f(a)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$F'(b)-F'(a)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par définition, $\\int_a^b f(x)dx = [F(x)]_a^b = F(b)-F(a)$."
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "$\\displaystyle\\int_{a}^{b} f(x)\\,dx = -\\int_{b}^{a} f(x)\\,dx$.",
+      "isTrue": true,
+      "explanation": "C'est une conséquence de la définition : $\\int_b^a f = F(a)-F(b) = -\\int_a^b f$."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Si $f$ est continue et positive sur $[a;b]$, alors $\\displaystyle\\int_{a}^{b} f(x)\\,dx$ représente :",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'aire du domaine sous la courbe $y=f(x)$ entre $x=a$ et $x=b$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La longueur de la courbe $\\mathcal{C}_f$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La valeur moyenne de $f$ sur $[a;b]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La primitive de $f$ en $b$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'intégrale d'une fonction positive sur $[a;b]$ est l'aire (en unités d'aire) de la surface comprise entre la courbe, l'axe des abscisses et les droites $x=a$, $x=b$."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Pour tous $a,b,c$ réels, $\\displaystyle\\int_{a}^{c} f(x)\\,dx = \\int_{a}^{b} f(x)\\,dx + \\int_{b}^{c} f(x)\\,dx$.",
+      "isTrue": true,
+      "explanation": "C'est la relation de Chasles, valable pour toute fonction intégrable."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Application",
+      "prompt": "$\\displaystyle\\int_{0}^{1} (2x+1)\\,dx$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac12$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\int_0^1 (2x+1)dx = [x^2+x]_0^1 = 1+1 = 2$."
+    },
+    {
+      "id": "q6",
+      "type": "order",
+      "difficulty": "easy",
+      "category": "Méthode",
+      "prompt": "Ordonner le calcul de $\\displaystyle\\int_0^1\\frac{e^x}{e^x+1}\\,dx$ par changement de variable.",
+      "items": [
+        {
+          "id": "a",
+          "content": "Poser $u=e^x+1$."
+        },
+        {
+          "id": "b",
+          "content": "Écrire $du=e^x\\,dx$ et transformer les bornes en $2$ et $e+1$."
+        },
+        {
+          "id": "c",
+          "content": "Obtenir $\\displaystyle\\int_2^{e+1}\\frac{du}{u}$."
+        },
+        {
+          "id": "d",
+          "content": "Conclure $\\displaystyle\\ln\\left(\\frac{e+1}{2}\\right)$."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Le changement de variable fait apparaître la forme $du/u$. Lorsque les bornes sont transformées immédiatement, il n'est pas nécessaire de revenir à la variable $x$."
+    },
+    {
+      "id": "q7",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Si $f(x) \\le g(x)$ pour tout $x\\in[a;b]$, alors $\\displaystyle\\int_a^b f(x)dx \\le \\int_a^b g(x)dx$.",
+      "isTrue": true,
+      "explanation": "C'est la propriété de monotonie de l'intégrale."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "$\\displaystyle\\int_{1}^{e} \\frac{\\ln x}{x}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac12$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\int \\frac{\\ln x}{x}dx = \\frac12 (\\ln x)^2$, donc $\\frac12(1^2-0^2)=\\frac12$."
+    },
+    {
+      "id": "q9",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Pour calculer $\\displaystyle\\int_{0}^{1} x e^{x}\\,dx$, on pose $u=x$, $v'=e^{x}$ dans une intégration par parties.",
+      "isTrue": true,
+      "explanation": "C'est l'exemple classique : $\\int x e^x dx = x e^x - \\int e^x dx = (x-1)e^x$."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "La valeur moyenne de $f(x)=x$ sur $[0;2]$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac12$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\mu = \\frac{1}{2-0}\\int_0^2 x dx = \\frac12 \\times 2 = 1$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "L'aire du domaine limité par $y=\\sin x$, l'axe des abscisses et $x=0$, $x=\\pi$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\pi$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\int_0^\\pi \\sin x dx = [-\\cos x]_0^\\pi = 1-(-1)=2$. $\\sin x\\ge0$ sur $[0,\\pi]$."
+    },
+    {
+      "id": "q12",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "$\\left|\\int_a^b f(x)dx\\right| \\le \\int_a^b |f(x)|dx$ pour toute fonction continue $f$.",
+      "isTrue": true,
+      "explanation": "C'est l'inégalité triangulaire pour les intégrales."
+    },
+    {
+      "id": "q13",
+      "type": "error",
+      "difficulty": "medium",
+      "category": "Synthèse",
+      "prompt": "Identifier l'erreur dans ce calcul d'aire.",
+      "context": "On cherche l'aire entre la courbe $y=x^2-1$ et l'axe des abscisses sur $[-2,2]$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Les points d'intersection avec l'axe sont d'abscisses $-1$ et $1$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "La fonction est négative sur $[-1,1]$ et positive sur $[-2,-1]\\cup[1,2]$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "L'aire vaut directement $\\displaystyle\\int_{-2}^{2}(x^2-1)\\,dx$.",
+          "isError": true,
+          "correction": "Une aire additionne des quantités positives : il faut intégrer $|x^2-1|$ ou découper aux points $-1$ et $1$ en changeant le signe sur l'intervalle central."
+        }
+      ],
+      "explanation": "L'intégrale algébrique compense les zones au-dessus et au-dessous de l'axe. Une aire géométrique exige la valeur absolue de la différence des ordonnées."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Pour calculer $\\displaystyle\\int_{0}^{2} |x-1|\\,dx$, on utilise :",
+      "options": [
+        {
+          "id": "a",
+          "text": "La linéarité",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La relation de Chasles après avoir coupé au point $x=1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Une intégration par parties",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le changement de variable $t=|x-1|$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|x-1| = 1-x$ sur $[0,1]$, $x-1$ sur $[1,2]$ ; on sépare l'intégrale."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "$\\displaystyle\\int_{0}^{1} x e^{x^2+1}\\,dx$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{e^2- e}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{e^2-1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$e^2- e$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e-1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\int x e^{x^2+1}dx = \\frac12 e^{x^2+1}$, donc $\\frac12(e^{1+1}-e^{0+1}) = \\frac12(e^2-e)$."
+    },
+    {
+      "id": "q16",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "prompt": "Si $F(x)=\\displaystyle\\int_0^x (t^2+1)\\,dt$, alors $F'(x)=x^2+1$.",
+      "isTrue": true,
+      "explanation": "La fonction $t\\mapsto t^2+1$ est continue. Le théorème fondamental donne directement la dérivée d'une intégrale à borne variable : $F'(x)=x^2+1$."
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Le volume du solide engendré par la rotation de $y=\\sqrt{x}$ sur $[0;1]$ autour de l'axe des abscisses est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\pi \\int_0^1 x dx = \\frac{\\pi}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\pi \\int_0^1 \\sqrt{x} dx = \\frac{2\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\int_0^1 x dx = \\frac12$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2\\pi \\int_0^1 \\sqrt{x}\\,dx = \\frac{4\\pi}{3}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La formule est $V = \\pi \\int_a^b [f(x)]^2 dx$. Ici $f(x)^2 = x$, donc $V = \\pi [x^2/2]_0^1 = \\pi/2$."
+    },
+    {
+      "id": "q18",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Confondre aire et volume.",
+      "prompt": "L'aire du domaine sous la courbe $y=\\ln x$ sur $[1;e]$ est $\\int_1^e \\ln x dx = 1$ (en unités d'aire).",
+      "isTrue": true,
+      "explanation": "$\\int_1^e \\ln x dx = [x\\ln x - x]_1^e = e - e - (0-1)=1$."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Pour calculer $\\displaystyle\\int_{-1}^{1} \\sqrt{1-x^2}\\,dx$, on peut interpréter géométriquement comme :",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'aire d'un demi-cercle de rayon $1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "L'aire d'un quart de cercle de rayon $1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La longueur d'un demi-cercle",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le volume d'une sphère",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$y=\\sqrt{1-x^2}$ est le demi-cercle supérieur, l'intégrale sur $[-1;1]$ est l'aire du demi-disque = $\\pi/2$."
+    },
+    {
+      "id": "q20",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "$\\displaystyle\\lim_{n\\to+\\infty}\\frac1n\\sum_{k=1}^{n}\\left(\\frac{k}{n}\\right)^2=\\frac13$.",
+      "isTrue": true,
+      "explanation": "Cette limite est la somme de Riemann de la fonction $f(x)=x^2$ sur $[0,1]$. Elle vaut donc $\\int_0^1x^2\\,dx=1/3$."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Soit $I_n = \\displaystyle\\int_{0}^{1} x^n e^{-x}dx$. La suite $(I_n)$ :",
+      "options": [
+        {
+          "id": "a",
+          "text": "est croissante et converge vers $0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "est décroissante et converge vers $0$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "est constante",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "diverge vers $+\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$x^{n+1} \\le x^n$ sur $[0;1]$, donc $I_{n+1}\\le I_n$. De plus $0\\le I_n \\le \\int_0^1 x^n dx = 1/(n+1) \\to 0$."
+    },
+    {
+      "id": "q22",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "$\\displaystyle\\int_0^1 2x e^{x^2}\\,dx=e-1$.",
+      "isTrue": true,
+      "explanation": "Avec le changement de variable $u=x^2$, on a $du=2x\\,dx$ et les bornes restent $0$ et $1$. L'intégrale devient $\\int_0^1e^u\\,du=e-1$."
+    }
+  ]
+}

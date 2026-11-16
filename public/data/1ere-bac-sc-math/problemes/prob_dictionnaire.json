@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Rechercher dans un dictionnaire",
+    "subtitle": "Complexité et dichotomie",
+    "context": "Suites"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Rechercher dans un dictionnaire",
+          "content": "Un dictionnaire contient une longue liste de mots rangés par ordre alphabétique. Lorsqu'on cherche un mot, en combien d'étapes le trouve-t-on ? Cela dépend de la méthode.\\par On note $n$ le nombre de mots de la liste.\\par $\\bullet$ \\textbf{Méthode séquentielle} : on compare le mot cherché aux mots de la liste, un par un, du premier au dernier.\\par $\\bullet$ \\textbf{Méthode par dichotomie} (liste triée) : on compare au mot \\emph{central} ; selon le résultat, on poursuit dans la moitié gauche ou droite, et on recommence. On supposera $n = 2^p - 1$."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Méthode séquentielle : combien d'étapes au maximum (pire des cas) pour trouver un mot ? Quel est le nombre moyen d'étapes ?\\item Méthode par dichotomie : à chaque étape, le nombre de mots restants est divisé par $2$. Après $k$ étapes, combien reste-t-il de mots ?\\item En déduire le nombre d'étapes nécessaires (au pire) pour une liste de $n = 2^p - 1$ mots.\\item Application : comparer le nombre d'étapes des deux méthodes pour un dictionnaire de $n = 2^{18} - 1 = 262\\,143$ mots.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Pour la méthode séquentielle, le mot en $i$-ième position demande $i$ comparaisons. Le pire des cas est $n$ ; la moyenne est $\\dfrac{1+2+\\cdots+n}{n} = \\dfrac{n+1}{2}$."
+        },
+        {
+          "type": "hint",
+          "content": "Pour la dichotomie, après $k$ étapes il reste environ $\\dfrac{n+1}{2^k} - 1$ mots. On s'arrête quand il ne reste qu'un mot, soit $2^k = n+1$, donc $k = p$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} Au pire, le mot est le dernier : il faut $\\boxed{n}$ comparaisons. En moyenne, $\\dfrac{1+2+\\cdots+n}{n} = \\dfrac{n+1}{2}$ étapes.\\par\\textbf{2)} À chaque étape le nombre de mots est divisé par $2$ : après $k$ étapes il reste $\\dfrac{n+1}{2^k}-1$ mots.\\par\\textbf{3)} Avec $n = 2^p - 1$, on a $n+1 = 2^p$. La recherche se termine lorsqu'il ne reste qu'un mot, c'est-à-dire $2^k = 2^p$, soit $k = p$ étapes. La dichotomie demande donc $\\boxed{p}$ étapes au pire.\\par\\textbf{4)} Pour $n = 2^{18}-1 = 262\\,143$ : la méthode séquentielle demande jusqu'à $262\\,143$ comparaisons, alors que la dichotomie n'en demande que $p = \\boxed{18}$. La dichotomie est spectaculairement plus rapide."
+        }
+      ]
+    }
+  ]
+}

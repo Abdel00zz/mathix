@@ -1,0 +1,34 @@
+{
+  "id": "calcul-trigo",
+  "title": "Calcul trigonométrique",
+  "section": "analyse",
+  "quizCount": 6,
+  "revisions": [
+    {
+      "id": "rev-trigo-tc",
+      "title": "Fiche Complète : Trigonométrie",
+      "path": "data/tronc-commun-sc/calcul-trigo/revisions/fiche_trigo_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-trigo-tc-01",
+      "path": "data/tronc-commun-sc/calcul-trigo/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-trigo-tc-02",
+      "path": "data/tronc-commun-sc/calcul-trigo/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-calcul-trigo-01",
+      "path": "data/tronc-commun-sc/calcul-trigo/exercises/ex_trigo_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-calcul-trigo-01",
+      "path": "data/tronc-commun-sc/calcul-trigo/quiz/calcul-trigo_quiz.json",
+      "questionsCount": 6
+    }
+  ]
+}

@@ -1,0 +1,432 @@
+{
+  "school": "medecine",
+  "year": "2009 · Marrakech",
+  "title": "Annale Médecine — 2009 · Marrakech",
+  "source": "18_marrakech_2009.tex — transcription LaTeX normalisée",
+  "questions": [
+    {
+      "id": "med-marrakech_2009-q01",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q1",
+      "officialQuestionCode": "Q1",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "La partie imaginaire de\n$z=\\frac{1+ {i}\\sqrt3}{(1- {i}\\sqrt3)^2}$\nest :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\frac{1}{12}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\sqrt3$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\sqrt3}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$-\\frac{1}{\\sqrt3}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une simplification donne $z=-\\frac{1}{2}$, réel."
+    },
+    {
+      "id": "med-marrakech_2009-q02",
+      "type": "mcq",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q2",
+      "officialQuestionCode": "Q2",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "Résoudre $z+\\frac{1}{z}=-1$ dans $\\mathbb{C}$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{\\frac{\\sqrt3}{2}+ {i}\\}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\{\\frac{(-1+ {i}\\sqrt3)}{2},\\frac{(-1- {i}\\sqrt3)}{2}\\}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\{\\frac{\\sqrt3}{2}- {i}\\}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\{\\frac{(-1+ {i}\\sqrt3)}{3},\\frac{(-1- {i}\\sqrt3)}{3}\\}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\varnothing$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$z^2+z+1=0$, d'où les deux racines proposées."
+    },
+    {
+      "id": "med-marrakech_2009-q04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q4",
+      "officialQuestionCode": "Q4",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Calculer\n$\\displaystyle \\lim_{x\\to+\\infty}\\frac{\\sqrt{2x^2+1}-\\sqrt{x+1}}x.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "n'existe pas.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt2$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{\\sqrt2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$0$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En divisant numérateur et dénominateur par $x$, la limite est $\\sqrt2$."
+    },
+    {
+      "id": "med-marrakech_2009-q05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q5",
+      "officialQuestionCode": "Q5",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "On définit $u_1=1$, $u_{n+1}=2u_n+\\frac{(n+2)}{(n(n+1))}$ et $v_n=u_n+\\frac{1}{n}$. La raison de $(v_n)$ est :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\frac{1}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1}{2}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On vérifie $v_{n+1}=2v_n$ : la raison vaut $2$."
+    },
+    {
+      "id": "med-marrakech_2009-q06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q6",
+      "officialQuestionCode": "Q6",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Pour $x\\ne1$, $h(x)=\\sin\\frac{(\\pi x)}{(x-1)}$ et $h(1)=a$. Quelle valeur de $a$ rend $h$ continue en $1$ ?\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\pi$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\pi$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\pi}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1}{2}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $x=1+X$,\n$\\frac{\\sin(\\pi x)}{x-1}=-\\frac{\\sin(\\pi X)}X\\longrightarrow-\\pi.$\nLe corrigé imprimé conclut par erreur à $\\pi$."
+    },
+    {
+      "id": "med-marrakech_2009-q07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q7",
+      "officialQuestionCode": "Q7",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Une fonction dérivable $g$ sur $]0,+\\infty[$ vérifie $g(x)=xg(\\frac{1}{x})$ et $g(1)=1$. Calculer $g'(1)$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-2$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{2}{3}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$-\\frac{1}{2}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La dérivation de $g(x)=xg(\\frac{1}{x})$ donne $g'(1)=g(1)-g'(1)$, donc $g'(1)=\\frac{1}{2}$."
+    },
+    {
+      "id": "med-marrakech_2009-q08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q8",
+      "officialQuestionCode": "Q8",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition D.",
+      "prompt": "Calculer\n$\\displaystyle I=\\int_0^2\\frac{|1-x|}{|1-x^2|+|1+x^2|}\\,\\,d x.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\frac{1}{6}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln(\\frac{1}{2})$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\ln2}{2}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$2\\ln(\\frac{3}{2})$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En scindant en $1$, on obtient $I=\\frac{1}{2}\\ln2$."
+    },
+    {
+      "id": "med-marrakech_2009-q09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q9",
+      "officialQuestionCode": "Q9",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Pour $f(x)=x+\\frac{x}{\\sqrt{1+2x^2}}$, une asymptote en $+\\infty$ est :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y=x$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$y=\\frac{x}{\\sqrt2+}1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y=\\sqrt2x+1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y=2x+\\frac{\\sqrt2}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$y=x+\\frac{1}{\\sqrt2}$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "$f(x)-x=\\frac{x}{\\sqrt{1+2x^2}}\\frac{\\to1}{\\sqrt2}$."
+    },
+    {
+      "id": "med-marrakech_2009-q10",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q10",
+      "officialQuestionCode": "Q10",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "Calculer l'aire comprise entre $y=\\sqrt{x}$, $y=x^2$, $x=0$ et $x=2$.\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{(2+5\\sqrt2)}{(-2)}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2\\frac{(5-2\\sqrt2)}{3}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$2\\frac{(2-5\\sqrt2)}{3}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les courbes se coupent en $x=1$ ; l'intégration de la différence en valeur absolue sur $[0,2]$ donne $2\\frac{(5-2\\sqrt2)}{3}$."
+    },
+    {
+      "id": "med-marrakech_2009-q11",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q11",
+      "officialQuestionCode": "Q11",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "Le point $\\Omega(1,2)$ est centre de symétrie de la courbe de $h$ si :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$h(x)=2x$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$h(2-x)+h(x)=4$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$h(2-x)=h(x)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$h(1-x)=2-h(x)$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$h(-x)=-h(x)$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le critère d'un centre $(a,b)$ est $h(2a-x)+h(x)=2b$."
+    },
+    {
+      "id": "med-marrakech_2009-q12",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Marrakech 2009 · Marrakech · Q12",
+      "officialQuestionCode": "Q12",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "On jette deux dés distinguables. La probabilité que la somme soit $8$ est :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{5}{36}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{12}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{6}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{36}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1}{9}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les couples favorables sont $(2,6),(3,5),(4,4),(5,3),(6,2)$, soit $5$ sur $36$."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "ex-ens-app-04",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Écriture en extension et en compréhension",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "On considère l'ensemble : $E = \\{(x;y) \\in \\mathbb{R}^2 \\mid x^2 + xy - 2y^2 + 5 = 0\\}$",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Vérifier que pour tout $(x;y) \\in \\mathbb{R}^2$ : $x^2 + xy - 2y^2 = (x-y)(x+2y)$.",
+          "hint": ""
+        },
+        {
+          "id": "sq1b",
+          "content": "Déterminer en extension l'ensemble $E \\cap \\mathbb{Z}^2$.",
+          "hint": "Utilisez la factorisation de la question a) : $(x-y)(x+2y) = -5$. Cherchez toutes les façons d'écrire $-5$ comme produit de deux entiers relatifs."
+        },
+        {
+          "id": "sq1c",
+          "content": "Montrer que : $E = \\left\\{\\left(\\dfrac{2t^2-5}{3t};\\dfrac{-t^2-5}{3t}\\right) \\;\\ \\middle| \\;\\ t \\in \\mathbb{R}^*\\right\\}$",
+          "hint": "Posez $y = tx$ (avec $t \\neq 0$), substituez dans l'équation de $E$ pour exprimer $x$ en fonction de $t$, puis déduisez $y$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Écrire en compréhension les ensembles suivants :",
+      "subQuestions": [
+        {
+          "id": "sq2_A",
+          "content": "$A = \\{0; 1; 4; 9; 16; \\ldots\\}$",
+          "hint": ""
+        },
+        {
+          "id": "sq2_B",
+          "content": "$B = \\left\\{-1; \\dfrac{1}{2}; -\\dfrac{1}{3}; \\dfrac{1}{4}; \\ldots\\right\\}$",
+          "hint": "Observez le signe et la valeur absolue de chaque terme."
+        },
+        {
+          "id": "sq2_C",
+          "content": "$C = \\{\\ldots; -5; -2; 1; 4; 7; \\ldots\\}$",
+          "hint": "Quelle est la raison arithmétique de cette suite ?"
+        },
+        {
+          "id": "sq2_D",
+          "content": "$D = \\left\\{-\\dfrac{1}{4}; \\dfrac{1}{2}; 1; \\dfrac{3}{2}; 4; \\ldots\\right\\}$",
+          "hint": ""
+        }
+      ]
+    }
+  ]
+}

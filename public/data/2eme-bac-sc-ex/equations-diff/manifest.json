@@ -1,0 +1,34 @@
+{
+  "id": "equations-diff",
+  "title": "Les équations différentielles",
+  "section": "analyse",
+  "revisions": [
+    {
+      "id": "rev-eqdiff-2bac",
+      "title": "Fiche Compléte : équations Diff",
+      "path": "data/2eme-bac-sc-ex/equations-diff/revisions/fiche_equations_diff_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-equations-diff-01",
+      "path": "data/2eme-bac-sc-ex/equations-diff/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-equations-diff-02",
+      "path": "data/2eme-bac-sc-ex/equations-diff/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-equations-diff-03",
+      "path": "data/2eme-bac-sc-ex/equations-diff/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-equations-diff-01",
+      "path": "data/2eme-bac-sc-ex/equations-diff/quiz/equations-diff_quiz.json",
+      "questionsCount": 13
+    }
+  ],
+  "quizCount": 13
+}

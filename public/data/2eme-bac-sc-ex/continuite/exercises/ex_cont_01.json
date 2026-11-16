@@ -1,0 +1,170 @@
+{
+  "id": "ex-func-rat-001",
+  "theme": "continuite",
+  "difficulty": "facile",
+  "topic": "Analyse - Fonctions",
+  "context": "Cet exercice propose une étude approfondie d'une fonction rationnelle : domaine de définition, limites et asymptotes, variations, position relative par rapport aux asymptotes, et étude de la fonction réciproque. On considère la fonction $f$ définie par : $$f(x) = \\displaystyle\\frac{2x^3 + 4x^2 + x}{(x+1)^2}$$ et $(C_f)$ sa courbe représentative dans un repère orthogonal.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Domaine de définition",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Déterminer $D_f$.",
+          "hint": "Une fonction rationnelle est définie lorsque son dénominateur ne s'annule pas. Résolvez $(x+1)^2 = 0$.",
+          "correction": "\\method La fonction $f$ est une fonction rationnelle. Elle est définie si et seulement si le dénominateur est non nul.\n(x+1)^2 = 0 \\iff x = -1\n\\conclusion Donc $\\textbf{D_f = \\R \\setminus \\{-1\\}} = \\intervaloo{-\\infty}{-1} \\cup \\intervaloo{-1}{+\\infty}$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Limites aux bornes",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Calculer $\\displaystyle\\lim_{x \\to -\\infty} f(x)$ et $\\displaystyle\\lim_{x \\to +\\infty} f(x)$.",
+          "hint": "Factorisez le numérateur et le dénominateur par leur terme de plus haut degré ($x^3$ et $x^2$), puis simplifiez.",
+          "correction": "\\method Pour les limites en $\\pm\\infty$, on factorise par le terme de plus haut degré au numérateur et au dénominateur.\nf(x) = \\displaystyle\\frac{x^3\\left(2 + \\frac{4}{x} + \\frac{1}{x^2}\\right)}{x^2\\left(1 + \\frac{1}{x}\\right)^2} = \\displaystyle\\frac{x\\left(2 + \\frac{4}{x} + \\frac{1}{x^2}\\right)}{\\left(1 + \\frac{1}{x}\\right)^2}\nQuand $x \\to \\pm\\infty$ : $\\displaystyle\\frac{4}{x} \\to 0$, $\\displaystyle\\frac{1}{x^2} \\to 0$, $\\displaystyle\\frac{1}{x} \\to 0$.\n\\lim_{x \\to -\\infty} f(x) = \\lim_{x \\to -\\infty} \\frac{x \\cdot 2}{1^2} = \\lim_{x \\to -\\infty} 2x = \\textbf{-\\infty}\n\\lim_{x \\to +\\infty} f(x) = \\lim_{x \\to +\\infty} \\frac{x \\cdot 2}{1^2} = \\lim_{x \\to +\\infty} 2x = \\textbf{+\\infty}"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Limite en $-1$ et asymptote verticale",
+      "subQuestions": [
+        {
+          "id": "sq3",
+          "content": "Calculer $\\displaystyle\\lim_{x \\to -1} f(x)$ et interpréter géométriquement le résultat.",
+          "hint": "Évaluez le numérateur et le dénominateur en $x = -1$, en remarquant que $(x+1)^2 > 0$ au voisinage de $-1$.",
+          "correction": "\\method En $x = -1$, le dénominateur s'annule. On étudie le signe et la limite.\nFactorisons le numérateur : $2x^3 + 4x^2 + x = x(2x^2 + 4x + 1)$.\nEn $x = -1$ : numérateur $= (-1)(2 - 4 + 1) = (-1)(-1) = 1 \\neq 0$.\nLe dénominateur $(x+1)^2 \\to 0^+$ (toujours positif) quand $x \\to -1$.\n\\lim_{x \\to -1} f(x) = \\frac{1}{0^+} = \\textbf{+\\infty}\n\\conclusion \\textbf{Interprétation géométrique :} La droite d'équation $\\textbf{x = -1}$ est asymptote verticale à $(C_f)$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Forme simplifiée de $f$",
+      "subQuestions": [
+        {
+          "id": "sq4",
+          "content": "Vérifier que pour tout $x \\in D_f$ : $\\displaystyle f(x) = 2x - \\frac{x}{(x+1)^2}$.",
+          "hint": "Partez de l'expression de droite et réduisez au même dénominateur $(x+1)^2$.",
+          "correction": "\\method On effectue la division ou on met au même dénominateur pour vérifier l'égalité.\n2x - \\frac{x}{(x+1)^2} = \\frac{2x(x+1)^2 - x}{(x+1)^2} = \\frac{2x(x^2 + 2x + 1) - x}{(x+1)^2}\n= \\frac{2x^3 + 4x^2 + 2x - x}{(x+1)^2} = \\frac{2x^3 + 4x^2 + x}{(x+1)^2} = f(x)\n\\conclusion L'égalité est vérifiée. \\textbf{Cette forme sera utile pour étudier les asymptotes obliques.}"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Asymptote oblique",
+      "subQuestions": [
+        {
+          "id": "sq5",
+          "content": "Montrer que la droite $(D)$ d'équation $y = 2x$ est asymptote oblique à $(C_f)$ en $-\\infty$ et $+\\infty$.",
+          "hint": "Calculez $\\lim_{x \\to \\pm\\infty} [f(x) - 2x]$ à l'aide de la forme simplifiée obtenue à la question précédente.",
+          "correction": "\\method Une droite $y = ax + b$ est asymptote oblique à $(C_f)$ en $\\pm\\infty$ si $\\displaystyle\\lim_{x \\to \\pm\\infty} [f(x) - (ax+b)] = 0$.\nf(x) - 2x = 2x - \\frac{x}{(x+1)^2} - 2x = -\\frac{x}{(x+1)^2}\nCalculons la limite en $+\\infty$ :\n\\lim_{x \\to +\\infty} \\left[-\\frac{x}{(x+1)^2}\\right] = \\lim_{x \\to +\\infty} \\left[-\\frac{x}{x^2\\left(1+\\frac{1}{x}\\right)^2}\\right] = \\lim_{x \\to +\\infty} \\left[-\\frac{1}{x\\left(1+\\frac{1}{x}\\right)^2}\\right] = 0\nDe même en $-\\infty$ :\n\\lim_{x \\to -\\infty} [f(x) - 2x] = 0\n\\conclusion Donc la droite $(D)$ d'équation $\\textbf{y = 2x}$ est asymptote oblique à $(C_f)$ en $-\\infty$ et en $+\\infty$."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "Position relative",
+      "subQuestions": [
+        {
+          "id": "sq6",
+          "content": "Calculer $f(x) - 2x$ et étudier la position relative de $(C_f)$ par rapport à $(D)$.",
+          "hint": "Étudiez le signe de $f(x) - 2x = -\\frac{x}{(x+1)^2}$ : le dénominateur étant un carré strictement positif sur $D_f$, tout dépend du signe de $-x$.",
+          "correction": "\\method On étudie le signe de $f(x) - 2x$.\nf(x) - 2x = -\\frac{x}{(x+1)^2}\nÉtudions le signe : $(x+1)^2 > 0$ pour tout $x \\neq -1$, donc le signe dépend de $-x$.\nTableau de signes :\n\\begin{array}{|c|ccccc|} \\hline x & -\\infty & & -1 & & 0 & & +\\infty \\\\ \\hline -x & & + & \\parallel & + & 0 & - & \\\\ \\hline (x+1)^2 & & + & 0 & + & & + & \\\\ \\hline f(x)-2x & & + & \\parallel & + & 0 & - & \\\\ \\hline \\end{array}\n\\conclusion Sur $\\intervaloo{-\\infty}{-1} \\cup \\intervaloo{-1}{0}$ : $f(x) - 2x > 0$ donc $\\textbf{(C_f)}$ est au-dessus de $\\textbf{(D)}$.\n\\conclusion Sur $\\intervaloo{0}{+\\infty}$ : $f(x) - 2x < 0$ donc $\\textbf{(C_f)}$ est en-dessous de $\\textbf{(D)}$.\n\\conclusion Le point $(0, 0)$ est un point d'intersection entre $(C_f)$ et $(D)$."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "content": "Dérivée",
+      "subQuestions": [
+        {
+          "id": "sq7",
+          "content": "Vérifier que pour tout $x \\in D_f$ : $\\displaystyle f'(x) = \\frac{2x^3 + 6x^2 + 7x + 1}{(x+1)^3}$.",
+          "hint": "Dérivez la forme $f(x) = 2x - \\frac{x}{(x+1)^2}$ terme à terme et simplifiez par $(x+1)$ avant de tout mettre au dénominateur $(x+1)^3$.",
+          "correction": "\\method On utilise la forme $f(x) = 2x - \\displaystyle\\frac{x}{(x+1)^2}$ et on dérive terme à terme.\nf'(x) = (2x)' - \\left(\\frac{x}{(x+1)^2}\\right)'\nPour le deuxième terme, on utilise la formule $\\left(\\displaystyle\\frac{u}{v}\\right)' = \\displaystyle\\frac{u'v - uv'}{v^2}$ avec $u = x$ et $v = (x+1)^2$.\n\\left(\\frac{x}{(x+1)^2}\\right)' = \\frac{1 \\cdot (x+1)^2 - x \\cdot 2(x+1)}{(x+1)^4} = \\frac{(x+1)^2 - 2x(x+1)}{(x+1)^4}\n= \\frac{(x+1)[(x+1) - 2x]}{(x+1)^4} = \\frac{(x+1)(1-x)}{(x+1)^4} = \\frac{1-x}{(x+1)^3}\nf'(x) = 2 - \\frac{1-x}{(x+1)^3} = \\frac{2(x+1)^3 - (1-x)}{(x+1)^3}\n= \\frac{2(x^3 + 3x^2 + 3x + 1) - 1 + x}{(x+1)^3} = \\frac{2x^3 + 6x^2 + 6x + 2 - 1 + x}{(x+1)^3}\n\\conclusion $\\displaystyle f'(x) = \\textbf{\\frac{2x^3 + 6x^2 + 7x + 1}{(x+1)^3}}$ \\quad \\text{(résultat confirmé)}"
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "content": "Variations de $f$",
+      "subQuestions": [
+        {
+          "id": "sq8a",
+          "content": "Montrer que l'équation $f'(x) = 0$ admet une unique solution $\\alpha$ sur $D_f$.",
+          "hint": "Posez $g(x) = 2x^3 + 6x^2 + 7x + 1$, étudiez sa monotonie via $g'(x)$ puis appliquez le théorème des valeurs intermédiaires.",
+          "correction": "\\method On étudie le signe de $f'(x)$. Le dénominateur $(x+1)^3$ garde un signe constant sur chaque intervalle de $D_f$.\nPosons $g(x) = 2x^3 + 6x^2 + 7x + 1$. On cherche les zéros de $g$ sur $D_f$.\ng'(x) = 6x^2 + 12x + 7\nCalculons le discriminant : $\\Delta = 144 - 168 = -24 < 0$.\nDonc $g'(x) > 0$ pour tout $x \\in \\R$, ce qui signifie que $g$ est strictement croissante.\nÉtudions les valeurs de $g$ :\ng(-2) = 2(-8) + 6(4) + 7(-2) + 1 = -16 + 24 - 14 + 1 = -5 < 0\ng(0) = 1 > 0\nPar le théorème des valeurs intermédiaires, $g$ s'annule une unique fois sur $\\intervaloo{-2}{0}$.\n\\conclusion Il existe donc un unique $\\textbf{\\alpha \\in \\intervaloo{-2}{0}}$ tel que $f'(\\alpha) = 0$. (On peut vérifier numériquement que $\\alpha \\approx -0{,}2$)"
+        },
+        {
+          "id": "sq8b",
+          "content": "Dresser le tableau de variations de $f$ sur $D_f$.",
+          "hint": "Déterminez le signe de $f'(x) = \\frac{g(x)}{(x+1)^3}$ sur chacun des trois intervalles $]-\\infty, -1[$, $]-1, \\alpha[$ et $]\\alpha, +\\infty[$.",
+          "correction": "\\method On étudie le signe de $f'(x)$ en fonction du signe de $g(x)$ et de $(x+1)^3$.\nSur $\\intervaloo{-\\infty}{-1}$ : $(x+1)^3 < 0$ et $g(x) < 0$ (car $g$ croissante et $g(\\alpha) = 0$ avec $\\alpha > -1$).\nDonc $f'(x) = \\displaystyle\\frac{g(x)}{(x+1)^3} = \\frac{(-)}{(-)} > 0$ : $f$ est croissante.\nSur $\\intervaloo{-1}{\\alpha}$ : $(x+1)^3 > 0$ et $g(x) < 0$, donc $f'(x) < 0$ : $f$ est décroissante.\nSur $\\intervaloo{\\alpha}{+\\infty}$ : $(x+1)^3 > 0$ et $g(x) > 0$, donc $f'(x) > 0$ : $f$ est croissante.\nTableau de variations :\n\\begin{array}{|c|ccccccc|} \\hline x & -\\infty & & -1 & & \\alpha & & +\\infty \\\\ \\hline f'(x) & & + & \\parallel & - & 0 & + & \\\\ \\hline & -\\infty & \\nearrow & & \\searrow & f(\\alpha) & \\nearrow & +\\infty \\\\ f & & & +\\infty & & & & \\\\ \\hline \\end{array}\n\\conclusion $f$ admet un \\textbf{maximum local} en $x = \\alpha$ avec $f(\\alpha) \\approx -0{,}1$."
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "content": "Tangente au point d'abscisse $-2$",
+      "subQuestions": [
+        {
+          "id": "sq9",
+          "content": "Déterminer l'équation de la tangente $(T)$ au graphe de $f$ au point d'abscisse $-2$.",
+          "hint": "Appliquez la formule de la tangente $y = f'(-2)(x + 2) + f(-2)$ après avoir calculé $f(-2)$ et $f'(-2)$.",
+          "correction": "\\method L'équation de la tangente en $x = a$ est : $y = f'(a)(x-a) + f(a)$.\nCalculons $f(-2)$ :\nf(-2) = \\frac{2(-8) + 4(4) + (-2)}{(-2+1)^2} = \\frac{-16 + 16 - 2}{1} = -2\nCalculons $f'(-2)$ :\nf'(-2) = \\frac{2(-8) + 6(4) + 7(-2) + 1}{(-1)^3} = \\frac{-16 + 24 - 14 + 1}{-1} = \\frac{-5}{-1} = 5\ny = 5(x - (-2)) + (-2) = 5x + 10 - 2 = 5x + 8\n\\conclusion L'équation de la tangente $(T)$ est : $\\textbf{y = 5x + 8}$."
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "content": "Intersection avec l'axe des abscisses",
+      "subQuestions": [
+        {
+          "id": "sq10",
+          "content": "Déterminer l'intersection de $(C_f)$ avec l'axe des abscisses.",
+          "hint": "Résolvez $f(x) = 0$ en factorisant le numérateur $2x^3 + 4x^2 + x$ par $x$.",
+          "correction": "\\method On résout $f(x) = 0$.\nf(x) = 0 \\iff \\frac{2x^3 + 4x^2 + x}{(x+1)^2} = 0 \\iff 2x^3 + 4x^2 + x = 0\nx(2x^2 + 4x + 1) = 0\nSoit $x = 0$, soit $2x^2 + 4x + 1 = 0$.\nPour $2x^2 + 4x + 1 = 0$ : $\\Delta = 16 - 8 = 8 > 0$.\nx = \\frac{-4 \\pm \\sqrt{8}}{4} = \\frac{-4 \\pm 2\\sqrt{2}}{4} = \\frac{-2 \\pm \\sqrt{2}}{2}\n\\conclusion $(C_f)$ coupe l'axe des abscisses en trois points : $\\textbf{x_1 = \\displaystyle\\frac{-2 - \\sqrt{2}}{2}}$, $\\textbf{x_2 = 0}$, et $\\textbf{x_3 = \\displaystyle\\frac{-2 + \\sqrt{2}}{2}}$."
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "content": "Fonction réciproque",
+      "subQuestions": [
+        {
+          "id": "sq11a",
+          "content": "Montrer que $h$ admet une fonction réciproque $h^{-1}$ définie sur un domaine $J$ à déterminer.",
+          "hint": "Vérifiez la continuité et la stricte monotonie de $f$ sur $I = \\intervalco{0}{+\\infty}$ (en situant $0$ par rapport à $\\alpha < 0$), puis déterminez $J = h(I)$.",
+          "correction": "On note $h$ la restriction de $f$ sur $I = \\intervalco{0}{+\\infty}$.\n\\method Une fonction admet une réciproque si et seulement si elle est strictement monotone et continue.\nD'après le tableau de variations de $f$ (question 8), sur $\\intervalco{\\alpha}{+\\infty}$ avec $\\alpha < 0$, $f$ est strictement croissante.\nDonc sur $I = \\intervalco{0}{+\\infty} \\subset \\intervalco{\\alpha}{+\\infty}$, $h$ est strictement croissante et continue.\nCalculons l'ensemble image $J = h(I)$ :\nh(0) = f(0) = 0, \\quad \\lim_{x \\to +\\infty} h(x) = +\\infty\n\\conclusion Donc $h$ réalise une bijection de $I = \\intervalco{0}{+\\infty}$ sur $\\textbf{J = \\intervalco{0}{+\\infty}}$, et admet donc une fonction réciproque $h^{-1} : J \\to I$."
+        },
+        {
+          "id": "sq11b",
+          "content": "Dresser le tableau de variations de $h^{-1}$.",
+          "hint": "La fonction réciproque $h^{-1}$ conserve le même sens de variation que $h$, en inversant les ensembles de départ et d'arrivée.",
+          "correction": "\\method La fonction réciproque a les propriétés suivantes :\n\\step Si $h$ est croissante, alors $h^{-1}$ est croissante.\n\\step Les valeurs et limites sont \"inversées\" : $h^{-1}(0) = 0$ et $\\displaystyle\\lim_{y \\to +\\infty} h^{-1}(y) = +\\infty$.\nTableau de variations de $h^{-1}$ :\n\\begin{array}{|c|ccc|} \\hline y & 0 & & +\\infty \\\\ \\hline & 0 & & +\\infty \\\\ h^{-1}(y) & & \\nearrow & \\\\ \\hline \\end{array}\n\\conclusion $h^{-1}$ est strictement croissante sur $\\intervalco{0}{+\\infty}$."
+        },
+        {
+          "id": "sq11c",
+          "content": "Montrer que la droite $(D')$ d'équation $\\displaystyle y = \\frac{1}{2}x$ est asymptote oblique à $(C_{h^{-1}})$ en $+\\infty$.",
+          "hint": "Les courbes $(C_h)$ et $(C_{h^{-1}})$ sont symétriques par rapport à la droite d'équation $y = x$, ce qui transforme l'asymptote $y = 2x$.",
+          "correction": "\\method On utilise le fait que si $(D) : y = 2x$ est asymptote à $(C_h)$ en $+\\infty$, alors la \"réciproque\" de cette asymptote est asymptote à $(C_{h^{-1}})$.\nPuisque $h(x) \\sim 2x$ quand $x \\to +\\infty$, on a $x \\sim \\displaystyle\\frac{h(x)}{2}$.\nEn posant $y = h(x)$, on obtient $h^{-1}(y) \\sim \\displaystyle\\frac{y}{2}$ quand $y \\to +\\infty$.\n\\lim_{y \\to +\\infty} \\left[h^{-1}(y) - \\frac{y}{2}\\right] = 0\n\\conclusion Donc la droite $(D')$ d'équation $\\textbf{y = \\displaystyle\\frac{1}{2}x}$ est asymptote oblique à $(C_{h^{-1}})$ en $+\\infty$."
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "content": "Représentation graphique",
+      "subQuestions": [
+        {
+          "id": "sq12",
+          "content": "Tracer $(T)$, $(D)$, $(C_f)$ et $(C_{h^{-1}})$ dans le même repère. (On donne $f(\\alpha) \\approx -0{,}1$ et $\\alpha \\approx -0{,}2$)."
+        }
+      ]
+    }
+  ]
+}

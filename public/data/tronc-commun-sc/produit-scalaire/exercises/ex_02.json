@@ -1,0 +1,20 @@
+{
+  "id": "ex-scal-tc-02",
+  "theme": "produit-scalaire",
+  "difficulty": "moyen",
+  "topic": "Le produit scalaire",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Théorème d'Al-Kashi",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Soit $ABC$ un triangle tel que $AB = 4$, $AC = 5$ et $\\widehat{BAC} = 60^\\circ$. Calculer la longueur $BC$.",
+          "hint": "\\method Appliquez le théorème d'Al-Kashi : $BC^2 = AB^2 + AC^2 - 2 \\times AB \\times AC \\times \\cos(\\widehat{BAC})$."
+        }
+      ]
+    }
+  ]
+}

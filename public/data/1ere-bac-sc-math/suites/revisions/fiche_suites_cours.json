@@ -1,0 +1,198 @@
+{
+  "header": {
+    "title": "Les Suites Numériques",
+    "subtitle": "Analyse discrète, récurrence et calcul de sommes",
+    "context": "1ère Bac Sciences Mathématiques"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Les suites numeriques permettent d'\\objectif{etudier l'evolution d'une grandeur terme apres terme} lorsqu'elle est definie explicitement ou par recurrence. Elles servent a modeliser une population, un capital, un algorithme iteratif ou un processus d'approximation. La \\defi{difficulte} majeure reste le raisonnement par recurrence et l'etude simultanee de la monotonie, des bornes et de la convergence. \\savant{Leonardo Fibonacci} a rendu celebre ce type de modele avec la suite qui porte son nom ; les suites sont aujourd'hui omnipresentes en sciences et en informatique.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Fibonacci.jpg",
+            "type": "image",
+            "position": "right",
+            "width": "16.5%",
+            "caption": "Leonardo Fibonacci (c. 1170–1250)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generalites_et_generation",
+      "category": "course",
+      "title": "Généralités et modes de génération",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une suite numérique décrit une évolution à temps discret. On la définit soit directement en fonction de $n$, soit par une relation qui relie deux termes successifs."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une suite numérique ?",
+          "content": "Une \\textbf{suite numérique} $(u_n)$ est une application d'un ensemble d'entiers naturels $\\mathbb{I} \\subset \\mathbb{N}$ vers $\\mathbb{R}$.\\par\\smallskip À chaque entier $n$ on associe un unique réel noté $u_n$.\\par\\smallskip $$u : \\begin{cases}\\mathbb{I} \\to \\mathbb{R}\\\\ n \\mapsto u_n\\end{cases}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment définir une suite dans la pratique ?",
+          "content": "Deux écritures sont essentielles :\\par\\smallskip \\begin{itemize}\\item \\textbf{Formule explicite :} le terme dépend directement de $n$, par exemple $u_n = f(n)$.\\item \\textbf{Relation de récurrence :} le terme $u_{n+1}$ dépend d'un terme précédent, par exemple $u_{n+1} = f(u_n)$, avec un terme initial donné.\\end{itemize}\\par\\smallskip $$\\boxed{\\text{Formule explicite : } u_n = f(n) \\quad ; \\quad \\text{Récurrence : } u_{n+1} = f(u_n)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $u_0=1$ et $u_{n+1}=\\sqrt{1+u_n^2}$. Calculons les premiers termes.}\\par\\begin{align*}u_1 &= \\sqrt{1+1^2}=\\blank{\\sqrt{2}}\\\\u_2 &= \\sqrt{1+(\\sqrt{2})^2}=\\blank{\\sqrt{3}}\\\\u_3 &= \\sqrt{1+3}=\\blank{2}\\end{align*}\\par En observant les résultats, on conjecture : $u_n=\\blank{\\sqrt{n+1}}$."
+        }
+      ]
+    },
+    {
+      "id": "raisonnement_recurrence",
+      "category": "course",
+      "title": "Le raisonnement par récurrence",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après avoir défini des suites, on doit souvent prouver une formule vraie pour tout entier. L'outil central est le raisonnement par récurrence."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment fonctionne la récurrence ?",
+          "content": "Pour démontrer une propriété $P(n)$ pour tout $n \\ge n_0$, on suit trois étapes :\\par\\smallskip \\begin{enumerate}\\item \\textbf{Initialisation :} vérifier $P(n_0)$.\\item \\textbf{Hérédité :} supposer $P(n)$ vraie et démontrer $P(n+1)$.\\item \\textbf{Conclusion :} en déduire que $P(n)$ est vraie pour tout $n\\ge n_0$.\\end{enumerate}\\par\\smallskip $$\\boxed{P(n_0)\\ \\text{vraie et}\\ \\forall n\\ge n_0,\\ P(n)\\Rightarrow P(n+1)\\ \\Longrightarrow\\ \\forall n\\ge n_0,\\ P(n)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $(1+a)^n\\ge 1+na$ pour $a>0$ et $n\\in\\mathbb{N}$.}\\par Supposons l'hérédité : $(1+a)^n\\ge 1+na$. Alors\\par\\begin{align*}(1+a)^{n+1}&=(1+a)^n(1+a)\\\\&\\ge \\blank{(1+na)(1+a)}\\\\&=1+(n+1)a+\\blank{na^2}\\end{align*}\\par Comme $na^2\\ge 0$, on obtient bien $(1+a)^{n+1}\\ge 1+(n+1)a$.\\par Les deux points clés sont donc : substitution par l'hypothèse puis positivité de \\blank{na^2}."
+        }
+      ]
+    },
+    {
+      "id": "suites_arithmetiques",
+      "category": "course",
+      "title": "Suites arithmétiques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une suite arithmétique avance avec un écart constant entre deux termes consécutifs."
+        },
+        {
+          "type": "definition",
+          "title": "Quand une suite est-elle arithmétique ?",
+          "content": "La suite $(u_n)$ est \\textbf{arithmétique} de raison $r$ si, pour tout $n$, la différence entre deux termes successifs est constante :\\par$$u_{n+1}-u_n=r$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles formules faut-il retenir ?",
+          "content": "Pour une suite arithmétique de raison $r$ :\\par\\smallskip \\begin{itemize}\\item \\textbf{Terme général :} $u_n=u_p+(n-p)r$, donc en particulier $u_n=u_0+nr$.\\item \\textbf{Somme :} $\\displaystyle\\sum_{k=p}^{n}u_k=\\frac{n-p+1}{2}(u_p+u_n)$.\\end{itemize}\\par\\smallskip $$\\boxed{u_n=u_0+nr \\quad ; \\quad \\sum_{k=p}^{n}u_k=\\frac{n-p+1}{2}(u_p+u_n)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{$S_n=1+3+5+\\cdots+(2n-1)$}.}\\par C'est une suite arithmétique de premier terme $1$, raison $2$ et dernier terme $2n-1$.\\par\\begin{align*}S_n&=\\text{nombre de termes}\\times\\frac{\\text{premier}+\\text{dernier}}{2}\\\\&=\\blank{n}\\times\\frac{1+(2n-1)}{2}\\\\&=n\\times\\frac{2n}{2}=\\blank{n^2}\\end{align*}\\par On retient donc : la somme des $n$ premiers impairs vaut \\blank{n^2}."
+        }
+      ]
+    },
+    {
+      "id": "suites_geometriques",
+      "category": "course",
+      "title": "Suites géométriques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une suite géométrique avance avec un rapport constant entre deux termes consécutifs."
+        },
+        {
+          "type": "definition",
+          "title": "Quand une suite est-elle géométrique ?",
+          "content": "La suite $(u_n)$ est \\textbf{géométrique} de raison $q$ si, pour tout $n$ :\\par$$u_{n+1}=q\\,u_n$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles formules faut-il retenir ?",
+          "content": "Pour une suite géométrique de raison $q$ :\\par\\smallskip \\begin{itemize}\\item \\textbf{Terme général :} $u_n=u_p\\,q^{n-p}$, donc en particulier $u_n=u_0\\,q^n$.\\item \\textbf{Somme} ($q\\neq 1$) : $\\displaystyle\\sum_{k=p}^{n}u_k=u_p\\,\\frac{1-q^{n-p+1}}{1-q}$.\\end{itemize}\\par\\smallskip $$\\boxed{u_n=u_0q^n \\quad ; \\quad \\sum_{k=p}^{n}u_k=u_p\\frac{1-q^{n-p+1}}{1-q}\\ (q\\neq 1)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Un nénuphar double sa surface chaque jour : $u_{n+1}=2u_n$ et $u_0=1$. Calculer $S_{10}=\\sum_{k=0}^{10}u_k$.}\\par On utilise la somme géométrique avec $q=2$ :\\par\\begin{align*}S_{10}&=u_0\\,\\frac{1-2^{11}}{1-2}\\\\&=1\\times\\frac{1-\\blank{2048}}{-1}\\\\&=\\blank{2047}\\ \\text{m}^2\\end{align*}\\par Le nombre total cumulé est donc \\blank{2047}\\ \\text{m}^2."
+        }
+      ]
+    },
+    {
+      "id": "monotonie_et_bornes",
+      "category": "course",
+      "title": "Monotonie et bornes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avant de parler de convergence, on étudie souvent le sens de variation et les bornes d'une suite."
+        },
+        {
+          "type": "property",
+          "title": "Comment décider si une suite est croissante ou décroissante ?",
+          "content": "On étudie le signe de $u_{n+1}-u_n$ :\\par\\smallskip \\begin{itemize}\\item si $\\forall n,\\ u_{n+1}-u_n\\ge 0$, la suite est croissante ;\\item si $\\forall n,\\ u_{n+1}-u_n\\le 0$, la suite est décroissante.\\end{itemize}\\par\\smallskip $$\\boxed{\\text{signe de }(u_{n+1}-u_n)\\ \\Longrightarrow\\ \\text{monotonie de }(u_n)}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Quand dit-on qu'une suite est bornée ?",
+          "content": "Une suite est \\textbf{majorée} s'il existe $M\\in\\mathbb{R}$ tel que $u_n\\le M$ pour tout $n$.\\par Une suite est \\textbf{minorée} s'il existe $m\\in\\mathbb{R}$ tel que $u_n\\ge m$ pour tout $n$.\\par Elle est \\textbf{bornée} si elle est à la fois majorée et minorée, ce qui équivaut à l'existence d'un réel $K>0$ tel que $|u_n|\\le K$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Étudions \\textbf{la monotonie} de $u_n=\\dfrac{2n+1}{n+3}$.}\\par\\begin{align*}u_{n+1}-u_n&=\\frac{2n+3}{n+4}-\\frac{2n+1}{n+3}\\\\&=\\frac{(2n+3)(n+3)-(2n+1)(n+4)}{(n+4)(n+3)}\\\\&=\\frac{\\blank{5}}{(n+4)(n+3)}\\end{align*}\\par Le numérateur est positif et le dénominateur aussi, donc $u_{n+1}-u_n>0$.\\par La suite est \\blank{strictement\\ croissante}. On retient le signe positif de \\blank{u_{n+1}-u_n}."
+        }
+      ]
+    },
+    {
+      "id": "sommes_et_sigma",
+      "category": "course",
+      "title": "Manipulation du symbole Sigma",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le symbole $\\Sigma$ compacte l'écriture des sommes. Ses règles permettent de transformer une somme compliquée en expression simple."
+        },
+        {
+          "type": "definition",
+          "title": "Comment lire une somme avec $\\Sigma$ ?",
+          "content": "La notation\\par$$\\sum_{k=p}^{n}u_k$$\\par signifie la somme des termes $u_p+u_{p+1}+\\cdots+u_n$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles règles de calcul sont indispensables ?",
+          "content": "\\begin{itemize}\\item \\textbf{Linéarité :} $\\sum(\\alpha u_k+v_k)=\\alpha\\sum u_k+\\sum v_k$.\\item \\textbf{Relation de Chasles :} $\\sum_{k=p}^{n}u_k=\\sum_{k=p}^{m}u_k+\\sum_{k=m+1}^{n}u_k$.\\end{itemize}\\par\\smallskip $$\\boxed{\\sum(\\alpha u_k+v_k)=\\alpha\\sum u_k+\\sum v_k}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons \\textbf{$S=\\sum_{k=1}^{n}\\dfrac{1}{k(k+1)}$}.}\\par On décompose : $\\dfrac{1}{k(k+1)}=\\blank{\\dfrac{1}{k}-\\dfrac{1}{k+1}}$.\\par La somme devient télescopique :\\par\\begin{align*}S&=\\left(1-\\frac12\\right)+\\left(\\frac12-\\frac13\\right)+\\cdots+\\left(\\frac1n-\\frac1{n+1}\\right)\\\\&=1-\\blank{\\frac{1}{n+1}}\\\\&=\\blank{\\frac{n}{n+1}}\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Rappelons deux sommes usuelles}.}\\par\\begin{align*}\\sum_{k=1}^{n}k&=\\blank{\\frac{n(n+1)}{2}}\\\\\\sum_{k=1}^{n}k^2&=\\blank{\\frac{n(n+1)(2n+1)}{6}}\\end{align*}\\par Ces deux formules servent très souvent pour les exercices de \\blank{suites} et de sommes."
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Synthèse finale",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a vu les quatre piliers du chapitre : définition des suites, récurrence, suites arithmétiques et géométriques, puis calcul de sommes. La réussite dépend surtout de la bonne identification de la structure de la suite."
+        },
+        {
+          "type": "summary",
+          "content": "Pour avancer vite en exercice : identifier le type de suite, écrire la bonne formule, vérifier les indices, puis contrôler le résultat avec le sens de variation. En récurrence, garder toujours la structure \\textbf{initialisation - hérédité - conclusion}. Avec cette discipline, la majorité des questions de suites devient systématique."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ex-log-27",
+  "theme": "logique",
+  "difficulty": "difficile",
+  "topic": "Logique & Raisonnements — Raisonnement par récurrence",
+  "requiresRedaction": true,
+  "context": "À l'aide de la récurrence, établir les égalités suivantes :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$\\displaystyle\\sum_{k=1}^{n} k(3k+1) = n(n+1)^2$",
+      "hint": "Au rang $n+1$, le terme supplémentaire est $(n+1)(3(n+1)+1) = (n+1)(3n+4)$. Vérifiez que $n(n+1)^2 + (n+1)(3n+4) = (n+1)(n+2)^2$."
+    },
+    {
+      "id": "q2",
+      "content": "$\\displaystyle\\sum_{k=1}^{n} (2k-1)^3 = n^2(2n^2-1)$",
+      "hint": "Le terme supplémentaire au rang $n+1$ est $(2(n+1)-1)^3 = (2n+1)^3$. Développez et vérifiez."
+    },
+    {
+      "id": "q3",
+      "content": "$\\displaystyle\\sum_{k=0}^{n} (-1)^k k = \\dfrac{(-1)^n(2n+1)-1}{4}$",
+      "hint": "Distinguez les cas $n$ pair et $n$ impair dans le pas de récurrence, ou vérifiez directement en ajoutant $(-1)^{n+1}(n+1)$."
+    },
+    {
+      "id": "q4",
+      "content": "$\\displaystyle\\sum_{k=1}^{n} \\dfrac{k^2}{(2k-1)(2k+1)} = \\dfrac{n(n+1)}{2(2n+1)}$",
+      "hint": "Décomposez en éléments simples : $\\dfrac{k^2}{(2k-1)(2k+1)} = \\dfrac{1}{4} + \\dfrac{1}{4(2k-1)(2k+1)}$, puis utilisez une somme télescopique."
+    },
+    {
+      "id": "q5",
+      "content": "$\\displaystyle\\sum_{k=1}^{n} k(k+1)(k+2) = \\dfrac{n(n+1)(n+2)(n+3)}{4}$",
+      "hint": "Au rang $n+1$, le terme supplémentaire est $(n+1)(n+2)(n+3)$. Factorisez le résultat par $\\dfrac{(n+1)(n+2)(n+3)}{4}$."
+    },
+    {
+      "id": "q6",
+      "content": "$\\displaystyle\\sum_{k=1}^{n} (k+1)k^2 = \\dfrac{n(n+1)(n+2)(3n+1)}{12}$",
+      "hint": "Au rang $n+1$, le terme supplémentaire est $(n+2)(n+1)^2$. Factorisez le résultat."
+    }
+  ]
+}

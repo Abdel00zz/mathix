@@ -1,0 +1,75 @@
+{
+  "id": "ex-geo-13",
+  "theme": "produit-scalaire",
+  "difficulty": "moyen",
+  "topic": "Géométrie Analytique - Ensemble de points et produit scalaire",
+  "requiresRedaction": true,
+  "context": "On considère les points $A(2;1)$ et $B(2;1)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer l'ensemble $(\\Gamma_1)$ des points $M(x;y)$ du plan tels que $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = 0$ (cercle ou droite ?)",
+      "hint": "Exprimez $\\overrightarrow{MA}$ et $\\overrightarrow{MB}$ en fonction de $x$ et $y$, calculez le produit scalaire et simplifiez. Si les deux points sont confondus, l'ensemble est une droite ; sinon, c'est un cercle (théorème de Thalès)."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminer l'ensemble $(\\Gamma_2)$ des points $M(x;y)$ du plan tels que $4MA^2 \\cdot BM^2 = 6$",
+      "hint": "Exprimez $MA^2$ et $BM^2$ en coordonnées, puis résolvez l'équation obtenue."
+    },
+    {
+      "id": "q3",
+      "content": "On considère les points $A(-3;1)$ et $B(1;5)$. Pour tout réel $k$, on désigne par $(\\Delta_k)$ l'ensemble des points $M(x;y)$ tels que $MA^2 - MB^2 = k$. Déterminer puis tracer l'ensemble $(\\Delta_k)$ lorsque $k = 1$ et $k = -1$.",
+      "hint": "Exprimez $MA^2 - MB^2$ en coordonnées et simplifiez. Vous obtiendrez une équation de droite."
+    },
+    {
+      "id": "q4",
+      "content": "Donner une équation cartésienne de l'ensemble $(\\Delta_k)$ en fonction de $k$ puis en déduire la nature de $(\\Delta_k)$ pour tout $k \\in \\mathbb{R}$.",
+      "hint": "Pour tout $k$, $(\\Delta_k)$ est une droite perpendiculaire à $\\overrightarrow{AB}$ (médiatrice généralisée)."
+    }
+  ],
+  "partieB": {
+    "context": "Soient $A$ et $B$ deux points tels que $AB = 4$. Déterminer dans chacun des cas suivants l'ensemble $(\\Gamma)$ des points $M$ du plan vérifiant la condition :",
+    "questions": [
+      {
+        "id": "pB_q1",
+        "content": "$\\overrightarrow{AB} \\cdot \\overrightarrow{AM} = 1$",
+        "hint": "Placez $A$ et $B$ dans un repère. $\\overrightarrow{AB} \\cdot \\overrightarrow{AM} = \\|\\overrightarrow{AB}\\| \\cdot AH$ où $H$ est le projeté de $M$ sur $(AB)$. $(\\Gamma)$ est une droite perpendiculaire à $(AB)$."
+      },
+      {
+        "id": "pB_q2",
+        "content": "$\\overrightarrow{AB} \\cdot \\overrightarrow{AM} = -2$",
+        "hint": ""
+      },
+      {
+        "id": "pB_q3",
+        "content": "$MA^2 - MB^2 = 3$",
+        "hint": ""
+      },
+      {
+        "id": "pB_q4",
+        "content": "$MA^2 - MB^2 = -2$",
+        "hint": ""
+      },
+      {
+        "id": "pB_q5",
+        "content": "$\\dfrac{MA}{MB} = 9$",
+        "hint": "Ceci définit un cercle d'Apollonius. Élevez au carré pour obtenir une équation en coordonnées."
+      },
+      {
+        "id": "pB_q6",
+        "content": "$MA^2 + MB^2 = 4$",
+        "hint": "Utilisez le milieu $I$ de $[AB]$ et la relation $MA^2 + MB^2 = 2MI^2 + 2IA^2$."
+      },
+      {
+        "id": "pB_q7",
+        "content": "$\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = -3$",
+        "hint": ""
+      },
+      {
+        "id": "pB_q8",
+        "content": "$2MA^2 - 3MB^2 = 6$",
+        "hint": ""
+      }
+    ]
+  }
+}

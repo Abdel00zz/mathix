@@ -1,0 +1,34 @@
+{
+  "id": "arithmetique",
+  "title": "Arithmétique dans $\\mathbb{Z}$",
+  "quizCount": 22,
+  "revisions": [
+    {
+      "id": "rev-arith-sm",
+      "title": "Fiche Complète : Arithmétique",
+      "path": "data/2eme-bac-sc-math/arithmetique/revisions/fiche_arithmetique_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-arithmetique-01",
+      "path": "data/2eme-bac-sc-math/arithmetique/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-arithmetique-02",
+      "path": "data/2eme-bac-sc-math/arithmetique/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-arithmetique-03",
+      "path": "data/2eme-bac-sc-math/arithmetique/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-arithmetique",
+      "title": "Quiz : Arithmétique dans Z",
+      "path": "data/2eme-bac-sc-math/arithmetique/quiz/arithmetique_quiz.json",
+      "questionsCount": 22
+    }
+  ]
+}

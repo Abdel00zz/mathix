@@ -1,0 +1,26 @@
+{
+  "id": "ch03-ex06",
+  "theme": "arithmetique",
+  "difficulty": "difficile",
+  "chapter": "03 - PPCM et PGCD ; propriétés",
+  "topic": "PGCD/PPCM - Preuves théoriques avancées",
+  "requiresRedaction": true,
+  "context": "Les questions sont indépendantes.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soit $x$ et $y$ deux entiers naturels non nuls. Prouver que le plus petit entier naturel non nul $t$ tel que $y$ divise le produit $xt$ est un diviseur de $y$.",
+      "hint": "Posez $t_0 = \\frac{y}{x \\wedge y}$. Vérifiez que $y / x t_0$. Puis montrez que pour tout $t$ vérifiant $y / xt$, on a $t_0 / t$, ce qui implique $t_0 \\leq t$. Concluez que $t_0$ est bien le plus petit, et qu'il divise $y$."
+    },
+    {
+      "id": "q2",
+      "content": "Soit $n,\\ a,\\ a',\\ b,\\ b',\\ c,\\ c'$ des éléments de $\\mathbb{Z}$ tels que : $n / a - a'$ et $n / b - b'$ et $n / c - c'$. Montrer que : $n / abc - a'b'c'$.",
+      "hint": "Écrivez $abc - a'b'c' = abc - a'bc + a'bc - a'b'c + a'b'c - a'b'c'$ et regroupez les termes deux à deux. Pour chaque groupe, factorisez et utilisez les hypothèses de divisibilité."
+    },
+    {
+      "id": "q3",
+      "content": "Avec les mêmes hypothèses qu'à la question 2, en déduire que : $n / (abc)^{2018} - (a'b'c')^{2018}$.",
+      "hint": "Appliquez le résultat de la question 2 de manière itérée, ou observez que $(abc)^{2018} - (a'b'c')^{2018}$ peut s'écrire comme $A^{2018} - B^{2018}$ avec $n / A - B$, et factorisez."
+    }
+  ]
+}

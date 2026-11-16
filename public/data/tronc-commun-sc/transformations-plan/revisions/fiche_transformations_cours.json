@@ -1,0 +1,46 @@
+{
+  "header": {
+    "title": "Transformations du Plan",
+    "subtitle": "Homothétie et Vecteurs",
+    "context": "Tronc Commun Scientifique"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie les \\objectif{transformations du plan} : homothétie et translation, leurs définitions vectorielles, et leurs propriétés de conservation (alignement, milieu, parallélisme, angles). Ces transformations permettent de relier des figures semblables ou translatées et de démontrer des propriétés géométriques par le calcul. La \\defi{principale difficulté} est de bien manipuler le rapport d'homothétie avec son signe — un rapport négatif renverse les points par rapport au centre — et de ne pas confondre les propriétés conservées avec celles qui ne le sont pas (les longueurs sont multipliées, pas conservées). C'est \\savant{Felix Klein} qui, dans son Programme d'Erlangen (1872), a unifié toute la géométrie en classifiant les transformations selon les propriétés qu'elles conservent, un cadre conceptuel encore fondateur en mathématiques modernes.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Felix_Klein.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Felix Klein (1849–1925)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "homothetie_def",
+      "category": "course",
+      "title": "Homothétie",
+      "content": "\\begin{definition}Soit $\\Omega$ un point et $k$ un réel non nul. L'homothétie $h$ de centre $\\Omega$ et de rapport $k$ transforme $M$ en $M'$ tel que :\\\\$$\\overrightarrow{\\Omega M'} = \\blank{k} \\overrightarrow{\\Omega M}$$\\end{definition}"
+    },
+    {
+      "id": "proprietes_transfo",
+      "category": "course",
+      "title": "Propriétés de conservation",
+      "content": "\\begin{property}Une homothétie conserve :\\begin{itemize}\\item L'alignement des points\\item Le barycentre (et le milieu)\\item Le parallélisme et l'orthogonalité\\end{itemize}Elle multiplie les distances par $\\blank{|k|}$ et les aires par $\\blank{k^2}$.\\end{property}"
+    },
+    {
+      "id": "translation_def",
+      "category": "course",
+      "title": "Translation",
+      "content": "\\begin{definition}La translation de vecteur $\\overrightarrow{u}$ transforme $M$ en $M'$ tel que $\\overrightarrow{MM'} = \\overrightarrow{u}$.\\end{definition}",
+      "blocks": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ex-log-30",
+  "theme": "logique",
+  "difficulty": "difficile",
+  "topic": "Logique & Raisonnements — Raisonnement par récurrence",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $\\forall n \\in \\mathbb{N}^*$ : $\\dfrac{3n}{2n+1} \\leq 1 + \\dfrac{1}{2^2} + \\dfrac{1}{3^2} + \\cdots + \\dfrac{1}{n^2} \\leq 2 - \\dfrac{1}{n}$",
+      "hint": "Montrez les deux inégalités par récurrence séparément. Pour la borne supérieure, utilisez $\\dfrac{1}{k^2} \\leq \\dfrac{1}{k(k-1)} = \\dfrac{1}{k-1} - \\dfrac{1}{k}$ (somme télescopique)."
+    },
+    {
+      "id": "q2",
+      "content": "En déduire que $\\forall n \\in \\mathbb{N}^*$ : $(n+1)^3 \\leq 3n^3$, puis $3^n \\geq n^3$.",
+      "hint": "De la borne supérieure, déduisez $\\dfrac{1}{n^2} \\leq 2 - \\dfrac{1}{n} - (\\text{somme partielle})$. Pour $(n+1)^3 \\leq 3n^3$ : utilisez $(1+\\frac{1}{n})^3 \\leq 3$, déduit de la borne $\\leq 2-\\frac{1}{n}$ au rang $n$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que $\\forall n \\in \\mathbb{N}^*$ : $\\dfrac{1 \\times 3 \\times 5 \\times \\cdots \\times (2n-1)}{2 \\times 4 \\times 6 \\times \\cdots \\times (2n)} \\leq \\dfrac{1}{\\sqrt{3n+1}}$",
+      "hint": "Posez $u_n = \\dfrac{1 \\times 3 \\times \\cdots \\times (2n-1)}{2 \\times 4 \\times \\cdots \\times (2n)}$ et montrez que $u_n^2 \\leq \\dfrac{1}{3n+1}$ par récurrence."
+    }
+  ]
+}

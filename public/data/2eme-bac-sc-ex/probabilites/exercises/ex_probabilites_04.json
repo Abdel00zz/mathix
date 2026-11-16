@@ -1,0 +1,21 @@
+{
+  "id": "proba-ex14",
+  "theme": "probabilites",
+  "difficulty": "moyen",
+  "chapter": "01 - Dénombrement et probabilités",
+  "topic": "Rattrapage 2019 - Tirage avec remise, trois événements",
+  "requiresRedaction": true,
+  "context": "Une urne contient une boule rouge, deux boules blanches et trois boules noires indiscernables au toucher. On tire au hasard successivement et avec remise trois pions de l'urne. Soient les événements suivants : $A$ : « Les trois boules tirées sont de même couleur » ; $B$ : « Il n'y a aucune boule blanche parmi les boules tirées » ; $C$ : « Il y a exactement deux boules blanches parmi les boules tirées ».",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $p(A) = \\dfrac{1}{6}$ et $p(B) = \\dfrac{8}{27}$.",
+      "hint": "Avec remise : $Card(\\Omega) = 6^3 = 216$. Pour $A$ : $(R,R,R)$ ou $(B,B,B)$ ou $(N,N,N)$. $Card(A) = 1^3 + 2^3 + 3^3 = 36$. Pour $B$ : aucune blanche, donc les 3 boules sont rouge ou noire (4 boules). $Card(B) = 4^3 = 64$. Attention : $\\frac{64}{216} = \\frac{8}{27}$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer $p(C)$.",
+      "hint": "Exactement 2 blanches parmi 3 tirages, la 3ème est non-blanche (4 choix). L'ordre compte et le coefficient multinomial est $\\frac{3!}{2!1!} = 3$. $Card(C) = 3 \\times 2^2 \\times 4^1 = 48$. Donc $p(C) = \\frac{48}{216}$. Simplifiez."
+    }
+  ]
+}

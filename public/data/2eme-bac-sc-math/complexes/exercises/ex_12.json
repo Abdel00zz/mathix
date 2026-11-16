@@ -1,0 +1,56 @@
+{
+  "id": "ex-complexes-12",
+  "topic": "Nombres complexes - Bac National 2024 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2024,
+  "examenSession": "Rattrapage",
+  "context": "Soit $m \\in \\mathbb{C}^*$.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans $\\mathbb{C}$ l'équation d'inconnue $z$ : $(E) : z^2-(2+i)mz+m^2(1+i)=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q1a",
+          "content": "Vérifier que le discriminant de l'équation $(E)$ est $\\Delta=(im)^2$.",
+          "hint": "Calculez $\\Delta=b^2-4ac$ avec $a=1$, $b=-(2+i)m$ et $c=m^2(1+i)$, puis développez $(2+i)^2$ et $4(1+i)$."
+        },
+        {
+          "id": "p1q1b",
+          "content": "Résoudre dans $\\mathbb{C}$ l'équation $(E)$.",
+          "hint": "Une racine carrée de $\\Delta$ est $im$ ; appliquez ensuite $z=\\dfrac{-b\\pm\\sqrt{\\Delta}}{2a}$."
+        }
+      ]
+    },
+    {
+      "id": "p1q2",
+      "content": "Soient $z_1$ et $z_2$ les deux solutions de $(E)$. Mettre sous la forme exponentielle $z_1z_2$ dans le cas où $m=re^{i\\theta}$ $\\left(r\\in\\mathbb{R}_+^*,\\theta\\in\\mathbb{R}\\right)$.",
+      "hint": "Le produit des racines s'obtient directement à partir du coefficient constant de $(E)$ (relation entre coefficients et racines), sans refaire tout le calcul."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe est rapporté à un repère orthonormé $\\left(O,\\overrightarrow{e_1},\\overrightarrow{e_2}\\right)$. On pose $z_1=m$ et $z_2=m(1+i)$. Soit $M_1$ le point d'affixe $z_1$, $M_2$ le point d'affixe $z_2$ et $M_3(z_3)$ l'image du point $O$ par la rotation de centre $M_2$ et d'angle $-\\dfrac{\\pi}{2}$ et $M_4(z_4)$ l'image du point $M_1$ par l'homothétie de centre $O$ et de rapport $k$ $(k\\in\\mathbb{R}^*-\\{1\\})$."
+    },
+    {
+      "id": "p2q1",
+      "content": "Calculer $z_3$ en fonction de $m$ et $z_4$ en fonction de $m$ et $k$.",
+      "hint": "Une rotation de centre $\\Omega(\\omega)$ et d'angle $\\theta$ transforme $M(z)$ en $M'(z')$ avec $z'-\\omega=e^{i\\theta}(z-\\omega)$ ; une homothétie de centre $O$ et de rapport $k$ donne simplement $z'=kz$."
+    },
+    {
+      "id": "p2q2",
+      "content": "Donner la forme algébrique de $\\dfrac{z_4-z_2}{z_4-z_1}\\times\\dfrac{z_3-z_1}{z_3-z_2}$.",
+      "hint": "Remplacez $z_1,z_2,z_3,z_4$ par leurs expressions en fonction de $m$ et $k$, factorisez par $m$ au numérateur et au dénominateur de chaque quotient avant de simplifier."
+    },
+    {
+      "id": "p2q3",
+      "content": "En déduire que les points $M_1$, $M_2$, $M_3$ et $M_4$ sont cocycliques si et seulement si $k=-2$.",
+      "hint": "Rappelez le critère de cocyclicité (ou d'alignement) via un birapport réel : quatre points sont cocycliques ou alignés si et seulement si le birapport formé par leurs affixes est réel."
+    }
+  ]
+}

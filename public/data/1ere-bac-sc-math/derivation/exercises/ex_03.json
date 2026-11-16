@@ -1,0 +1,20 @@
+{
+  "id": "ex-deriv-03",
+  "theme": "derivation",
+  "difficulty": "moyen",
+  "topic": "Limites et Nombre Dérivé",
+  "context": "Calculer les limites suivantes en utilisant le nombre dérivé.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q2",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to 1} \\frac{x^{2022} + x^{2021} - 2}{x-1}$.",
+      "hint": "Considérez la fonction $g(x) = x^{2022} + x^{2021}$. Cette limite correspond exactement à $g'(1)$."
+    },
+    {
+      "id": "q3",
+      "content": "Soit $f$ dérivable sur $\\mathbb{R}$. Calculer $\\displaystyle \\lim_{x \\to a} \\frac{xf(x) - af(a)}{x-a}$.",
+      "hint": "L'astuce consiste à ajouter et retrancher $af(x)$ au numérateur : $xf(x) - af(x) + af(x) - af(a)$. Cela permet de séparer la limite en deux termes simples."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "ex-log-12",
+  "theme": "logique",
+  "difficulty": "facile",
+  "topic": "Logique & Raisonnements — Raisonnement déductif",
+  "requiresRedaction": true,
+  "context": "On considère $P(x) = ax^2 + bx + c$ avec $a \\in \\mathbb{R}^*$, $b, c \\in \\mathbb{R}$. On pose : $\\Delta = b^2 - 4ac$ et $S = \\{x \\in \\mathbb{R} \\mid ax^2 + bx + c = 0\\}$ et si $\\Delta > 0$, on note $x_1 < x_2$ les deux racines.",
+  "questions": [
+    {
+      "id": "pA",
+      "content": "Partie A. Déterminer parmi les implications suivantes celles qui sont vraies :",
+      "subQuestions": [
+        {
+          "id": "sq_pA1",
+          "content": "$ac < 0 \\Rightarrow S \\neq \\varnothing$ ; $a+b+c = 0 \\Rightarrow S = \\left\\{1;\\dfrac{c}{a}\\right\\}$",
+          "hint": "Pour la première : si $ac < 0$, calculez le signe de $\\Delta = b^2 - 4ac$. Pour la seconde : si $a+b+c = 0$, alors $P(1) = 0$ ; utilisez les relations de Viète pour trouver la deuxième racine."
+        },
+        {
+          "id": "sq_pA2",
+          "content": "$c = 0 \\Rightarrow S = \\varnothing$ ; $b = a+c \\Rightarrow S = \\left\\{-1;-\\dfrac{c}{a}\\right\\}$",
+          "hint": "Pour la première : si $c = 0$, que vaut $P(0)$ ? Pour la seconde : si $b = a+c$, vérifiez que $P(-1) = 0$."
+        },
+        {
+          "id": "sq_pA3",
+          "content": "$\\left(\\Delta > 0$ et $\\dfrac{a}{c} < 0\\right) \\Rightarrow x_1 < 0 < x_2$ ; $\\Delta < 0 \\Rightarrow (\\forall x \\in \\mathbb{R})\\; P(x) > 0$",
+          "hint": "Pour la première : $x_1 x_2 = \\dfrac{c}{a}$. Si $\\dfrac{a}{c} < 0$ alors $\\dfrac{c}{a} < 0$, donc $x_1$ et $x_2$ sont de signes opposés."
+        },
+        {
+          "id": "sq_pA4",
+          "content": "$(\\exists(\\alpha;\\beta) \\in \\mathbb{R}^2)$; $P(\\alpha) \\cdot P(\\beta) < 0 \\Rightarrow \\Delta > 0$",
+          "hint": "Si $P(\\alpha)$ et $P(\\beta)$ sont de signes opposés, par le théorème des valeurs intermédiaires, $P$ s'annule entre $\\alpha$ et $\\beta$."
+        }
+      ]
+    },
+    {
+      "id": "pB",
+      "content": "Partie B. Application : avec $a = 1$, $b = -5$, $c = 6$, calculer $\\Delta$, déterminer $S$, vérifier les implications 1) et 3).",
+      "hint": ""
+    }
+  ]
+}

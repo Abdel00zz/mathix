@@ -1,0 +1,483 @@
+{
+  "header": {
+    "title": "Révision — Analyse et trigonométrie",
+    "subtitle": "Limites • Dérivation • Étude de fonction • Suites numériques • Trigonométrie",
+    "context": "1ère Bac Sciences",
+    "source": "Kit de survie — Réactivation Analyse & Trigonométrie",
+    "pages_source": 21
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Révision active : reconnaître la situation, choisir le résultat utile, vérifier ses conditions puis conclure."
+        }
+      ]
+    },
+    {
+      "id": "limites",
+      "category": "course",
+      "title": "Limites",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une limite se lit d'abord par la forme obtenue et par le comportement de la courbe près du point étudié."
+        },
+        {
+          "type": "method",
+          "title": "Reconnaître la situation avant de commencer le calcul d’une limite",
+          "content": "\\begin{enumerate}\\item Vérifier que la fonction est définie au voisinage demandé.\\item Effectuer la substitution lorsqu'elle est possible.\\item Si elle ne conclut pas, reconnaître la forme : $\\dfrac00$, $\\dfrac{\\infty}{\\infty}$, $\\infty-\\infty$, $0\\times\\infty$ ou un dénominateur qui tend vers $0$.\\end{enumerate}"
+        },
+        {
+          "type": "property",
+          "title": "Calculer une limite directe en utilisant correctement la substitution algébrique",
+          "content": "Si $P$ est un polynôme, alors$$\\displaystyle\\lim_{x\\to a}P(x)=P(a).$$Si $P$ et $Q$ sont des polynômes et $Q(a)\\ne0$, alors$$\\displaystyle\\lim_{x\\to a}\\dfrac{P(x)}{Q(x)}=\\dfrac{P(a)}{Q(a)}.$$À l'infini, un polynôme se comporte comme son terme de plus haut degré. Pour une fraction rationnelle, on compare les termes dominants."
+        },
+        {
+          "type": "example",
+          "content": "\\textbf{Calculons la limite suivante.} $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{3x^4-2x+1}{5x^4+x^2}$.\\par\\smallskipOn a : le numérateur et le dénominateur sont de degré $4$. Donc : on divise par $x^4$ :$$\\dfrac{3x^4-2x+1}{5x^4+x^2}=\\dfrac{3-\\frac{2}{x^3}+\\frac1{x^4}}{5+\\frac1{x^2}}.$$Or : les termes contenant $1/x^k$ tendent vers $0$. D'où :$$\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{3x^4-2x+1}{5x^4+x^2}=\\dfrac35.$$"
+        },
+        {
+          "type": "method",
+          "title": "Étudier les fractions rationnelles à l’infini par les termes dominants",
+          "content": "Divise le numérateur et le dénominateur par la plus grande puissance de $x$ présente au dénominateur. Cette écriture fait apparaître directement les termes qui tendent vers $0$."
+        },
+        {
+          "type": "method",
+          "title": "Choisir la transformation adaptée à chaque forme indéterminée rencontrée dans l’exercice",
+          "content": "\\begin{itemize}\\item $\\dfrac00$ : factoriser, simplifier, utiliser une identité remarquable ou une quantité conjuguée.\\item $\\dfrac{\\infty}{\\infty}$ : mettre le terme dominant en facteur ou diviser par la puissance dominante.\\item $\\infty-\\infty$ : mettre au même dénominateur ou utiliser le conjugué si des racines sont présentes.\\item $0\\times\\infty$ : transformer le produit en quotient.\\end{itemize}Une forme indéterminée indique une transformation à chercher ; elle n'est jamais la valeur de la limite."
+        },
+        {
+          "type": "example",
+          "content": "\\textbf{Calculons la limite suivante.} $\\displaystyle\\lim_{x\\to2}\\dfrac{x^2-4}{x-2}$.\\par\\smallskipOn a : $x^2-4=(x-2)(x+2)$. Donc, pour $x\\ne2$ :$$\\dfrac{x^2-4}{x-2}=x+2.$$D'où :$$\\displaystyle\\lim_{x\\to2}\\dfrac{x^2-4}{x-2}=4.$$"
+        },
+        {
+          "type": "example",
+          "content": "\\textbf{Calculons la limite suivante.} $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sqrt{1+x}-1}{x}$.\\par\\smallskipOn multiplie le numérateur et le dénominateur par $\\sqrt{1+x}+1$ :$$\\dfrac{\\sqrt{1+x}-1}{x}=\\dfrac1{\\sqrt{1+x}+1}\\qquad(x\\ne0).$$Donc :$$\\displaystyle\\lim_{x\\to0}\\dfrac{\\sqrt{1+x}-1}{x}=\\dfrac12.$$"
+        },
+        {
+          "type": "warning",
+          "content": "Une confusion qu'il faut lever une fois pour toutes : simplifier une expression au voisinage de $a$ ne signifie pas que la fonction initiale est définie en $a$. Une limite porte sur le comportement près du point."
+        },
+        {
+          "type": "property",
+          "title": "Comparer les limites à gauche et à droite d’un point",
+          "content": "Si les limites latérales existent et vérifient$$\\displaystyle\\lim_{x\\to a^-}f(x)=\\displaystyle\\lim_{x\\to a^+}f(x)=\\ell,$$alors$$\\displaystyle\\lim_{x\\to a}f(x)=\\ell.$$Si les limites à gauche et à droite sont différentes, la limite en $a$ n'existe pas."
+        },
+        {
+          "type": "method",
+          "title": "Lire graphiquement les limites et le comportement local d’une courbe",
+          "content": "\\begin{itemize}\\item Pour $\\displaystyle\\lim_{x\\to a^-}f(x)$, suis la courbe lorsque $x$ se rapproche de $a$ par la gauche.\\item Pour $\\displaystyle\\lim_{x\\to a^+}f(x)$, suis-la par la droite.\\item Pour $\\displaystyle\\lim_{x\\to a}f(x)$, les deux lectures doivent conduire à la même valeur.\\item La valeur de $f(a)$ n'intervient pas nécessairement dans la limite.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "uid": "limites-graphique-1",
+          "difficulty": 3,
+          "content": "\\qst{À partir de la courbe fournie, lire les informations suivantes :\\begin{enumerate}\\item $\\displaystyle\\lim_{x\\to1^-}f(x)=\\blank{-\\infty}$ ;\\item $\\displaystyle\\lim_{x\\to1^+}f(x)=\\blank{+\\infty}$ ;\\item la droite $x=\\blank{1}$ est une asymptote verticale ;\\item la valeur $f(0)=0$ permet-elle de connaître $\\displaystyle\\lim_{x\\to1}f(x)$ ? \\blank{Non}.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On a : la branche gauche descend sans borne lorsque $x$ se rapproche de $1$. Donc : $\\displaystyle\\lim_{x\\to1^-}f(x)=-\\infty$.\\item On a : la branche droite monte sans borne lorsque $x$ se rapproche de $1$. Donc : $\\displaystyle\\lim_{x\\to1^+}f(x)=+\\infty$.\\item D'où : la droite $x=1$ est une asymptote verticale.\\item Or : $f(0)$ décrit la valeur de la fonction en $0$, tandis que la limite en $1$ décrit son comportement au voisinage de $1$. Donc : cette valeur ne permet pas de connaître la limite en $1$.\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Étudier le signe local quand le dénominateur tend vers zéro",
+          "content": "Si le numérateur tend vers un réel non nul et le dénominateur vers $0$ :\\begin{enumerate}\\item déterminer le signe du numérateur près du point ;\\item déterminer le signe du dénominateur à gauche ;\\item déterminer le signe du dénominateur à droite ;\\item en déduire séparément les deux limites latérales.\\end{enumerate}Ne remplace jamais cette étude par l'écriture « nombre sur $0$ »."
+        },
+        {
+          "type": "example",
+          "content": "\\textbf{Étudions les limites latérales de }$f(x)=\\dfrac2{x-3}$\\textbf{.}\\par\\smallskipÀ gauche de $3$, on a $x-3<0$. Donc :$$\\displaystyle\\lim_{x\\to3^-}f(x)=-\\infty.$$À droite de $3$, on a $x-3>0$. Donc :$$\\displaystyle\\lim_{x\\to3^+}f(x)=+\\infty.$$D'où : la droite $x=3$ est une asymptote verticale."
+        },
+        {
+          "type": "property",
+          "title": "Encadrer une fonction pour déterminer sa limite sans calcul direct",
+          "content": "Si, au voisinage du point étudié,$$g(x)\\le f(x)\\le h(x),$$et si$$\\displaystyle\\lim_{x\\to a}g(x)=\\displaystyle\\lim_{x\\to a}h(x)=\\ell,$$alors$$\\displaystyle\\lim_{x\\to a}f(x)=\\ell.$$Une forme pratique est : si $|f(x)-\\ell|\\le u(x)$ et $\\displaystyle\\lim_{x\\to a}u(x)=0$, alors $\\displaystyle\\lim_{x\\to a}f(x)=\\ell$."
+        },
+        {
+          "type": "method",
+          "title": "Exploiter un facteur borné multiplié par un terme qui s’annule",
+          "content": "Si $|v(x)|\\le M$ et $\\displaystyle\\lim_{x\\to a}u(x)=0$, alors$$\\displaystyle\\lim_{x\\to a}u(x)v(x)=0.$$Ce mécanisme est particulièrement utile quand $v(x)$ contient $\\sin x$ ou $\\cos x$."
+        },
+        {
+          "type": "property",
+          "title": "Connaître les limites trigonométriques usuelles et savoir les transformer correctement",
+          "content": "$$\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin x}{x}=1,\\qquad\\displaystyle\\lim_{x\\to0}\\dfrac{\\tan x}{x}=1,$$$$\\displaystyle\\lim_{x\\to0}\\dfrac{1-\\cos x}{x^2}=\\dfrac12.$$Par changement d'échelle, pour $a\\ne0$ :$$\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(ax)}{ax}=1,\\qquad\\displaystyle\\lim_{x\\to0}\\dfrac{\\tan(ax)}{ax}=1.$$"
+        },
+        {
+          "type": "method",
+          "title": "Transformer une expression pour faire apparaître une limite remarquable connue",
+          "content": "Devant $\\dfrac{\\sin(5x)}x$, écris$$\\dfrac{\\sin(5x)}x=5\\dfrac{\\sin(5x)}{5x}.$$On retrouve ainsi la forme connue au lieu de mémoriser une nouvelle formule."
+        },
+        {
+          "type": "application",
+          "uid": "limites-app-1",
+          "difficulty": 3,
+          "content": "\\qst{Pour chaque limite, complète d'abord l'outil principal, puis calcule :\\begin{enumerate}\\item $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{2x^3-x}{x^3+4}$ : \\blank{terme dominant} ;\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sqrt{4+x}-2}{x}$ : \\blank{quantité conjuguée} ;\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(3x)}{2x}$ : \\blank{fabriquer \\dfrac{\\sin(3x)}{3x}}.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On a : les termes dominants sont $2x^3$ et $x^3$. Donc : la limite vaut $2$.\\item On a :$$\\dfrac{\\sqrt{4+x}-2}{x}=\\dfrac1{\\sqrt{4+x}+2}\\qquad(x\\ne0).$$Donc : la limite vaut $\\dfrac14$.\\item On a :$$\\dfrac{\\sin(3x)}{2x}=\\dfrac32\\dfrac{\\sin(3x)}{3x}.$$Or : $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(3x)}{3x}=1$. D'où : la limite vaut $\\dfrac32$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "uid": "limites-reflexion-1",
+          "difficulty": 3,
+          "content": "\\qst{Sans calculer complètement, associer chaque limite à la méthode la plus naturelle :\\begin{enumerate}\\item $\\displaystyle\\lim_{x\\to2}\\dfrac{x^2-4}{x-2}$ ;\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sqrt{9+x}-3}{x}$ ;\\item $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{4x^3+x}{2x^3-1}$ ;\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(7x)}{x}$.\\end{enumerate}Choisir parmi : factorisation, conjugué, terme dominant, limite trigonométrique remarquable.}\\par\\smallskip\\begin{enumerate}\\item Factorisation : $x^2-4=(x-2)(x+2)$.\\item Conjugué : la différence contient deux racines proches.\\item Termes dominants : les deux polynômes sont de degré $3$.\\item Limite trigonométrique : on fabrique $\\dfrac{\\sin(7x)}{7x}$.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Factoriser ou transformer une expression en limite prépare souvent exactement le même geste en dérivation ou en trigonométrie."
+        }
+      ]
+    },
+    {
+      "id": "derivation",
+      "category": "course",
+      "title": "Dérivation",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La dérivée relie trois lectures : pente de la tangente, signe de $f'$ et variations de $f$."
+        },
+        {
+          "type": "definition",
+          "title": "Comprendre le nombre dérivé comme pente locale de la courbe",
+          "content": "$f$ est dérivable en $a$ si la limite suivante existe et est finie :$$f'(a)=\\displaystyle\\lim_{x\\to a}\\dfrac{f(x)-f(a)}{x-a}=\\displaystyle\\lim_{h\\to0}\\dfrac{f(a+h)-f(a)}h.$$"
+        },
+        {
+          "type": "property",
+          "title": "Déterminer l’équation d’une tangente à partir du nombre dérivé associé",
+          "content": "Au point $A(a,f(a))$, la tangente à la courbe de $f$ a pour équation$$y=f'(a)(x-a)+f(a).$$"
+        },
+        {
+          "type": "remark",
+          "content": "Si $f'(a)>0$, la tangente monte ; si $f'(a)<0$, elle descend ; si $f'(a)=0$, elle est horizontale. Une tangente horizontale ne suffit pas à prouver un extremum."
+        },
+        {
+          "type": "method",
+          "title": "Relier graphiquement la pente des tangentes au signe de la dérivée",
+          "content": "\\begin{itemize}\\item Une tangente montante donne $f'(a)>0$.\\item Une tangente descendante donne $f'(a)<0$.\\item Une tangente horizontale donne $f'(a)=0$.\\item Si la courbe monte sur un intervalle, $f$ y est croissante ; si elle descend, $f$ y est décroissante.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "uid": "derivation-graphique-1",
+          "difficulty": 3,
+          "content": "\\qst{À partir de la courbe fournie, on observe un maximum local en $x=-1$ et un minimum local en $x=1$. Compléter :\\begin{enumerate}\\item sur $]-\\infty,-1[$, $f'$ est \\blank{positive} ;\\item sur $]-1,1[$, $f'$ est \\blank{négative} ;\\item sur $]1,+\\infty[$, $f'$ est \\blank{positive} ;\\item $f'(-1)=\\blank{0}$ et $f'(1)=\\blank{0}$.\\end{enumerate}}\\par\\smallskipOn a : la courbe monte, puis descend, puis monte. Donc : le signe de $f'$ est successivement positif, négatif, positif. Aux deux extrema, la tangente est horizontale. D'où : $f'(-1)=f'(1)=0$."
+        },
+        {
+          "type": "example",
+          "content": "\\textbf{Déterminons la tangente à la courbe de }$f(x)=x^2-3x+1$ \\textbf{au point d'abscisse }$2$\\textbf{.}\\par\\smallskipOn a : $f'(x)=2x-3$, donc $f'(2)=1$. On a aussi : $f(2)=-1$. Donc :$$y=1(x-2)-1.$$D'où :$$y=x-3.$$"
+        },
+        {
+          "type": "property",
+          "title": "Comparer les dérivées latérales pour vérifier la dérivabilité en un point",
+          "content": "$f$ est dérivable en $a$ si et seulement si les nombres dérivés à gauche et à droite existent, sont finis et sont égaux."
+        },
+        {
+          "type": "example",
+          "content": "\\textbf{Vérifions la dérivabilité de }$f(x)=|x|$ \\textbf{en }$0$\\textbf{.}$$\\displaystyle\\lim_{x\\to0^-}\\dfrac{|x|-0}{x}=-1,$$$$\\displaystyle\\lim_{x\\to0^+}\\dfrac{|x|-0}{x}=1.$$Or : les deux valeurs sont différentes. Donc : $f$ n'est pas dérivable en $0$."
+        },
+        {
+          "type": "method",
+          "title": "Étudier la dérivabilité au raccord d’une fonction définie par morceaux",
+          "content": "Au point de raccord $a$ :\\begin{enumerate}\\item déterminer $f(a)$ ;\\item vérifier la continuité à gauche et à droite ;\\item calculer ensuite les nombres dérivés latéraux ;\\item comparer les deux valeurs.\\end{enumerate}Une discontinuité interdit déjà la dérivabilité."
+        },
+        {
+          "type": "property",
+          "title": "Approcher une valeur numérique grâce à la tangente locale associée",
+          "content": "Si $f$ est dérivable en $a$, alors près de $a$ :$$f(x)\\approx f(a)+f'(a)(x-a).$$En posant $x=a+h$ :$$f(a+h)\\approx f(a)+hf'(a).$$"
+        },
+        {
+          "type": "example",
+          "content": "\\textbf{Estimons }$\\sqrt{4,04}$ \\textbf{par approximation affine.}\\par\\smallskipPour $f(x)=\\sqrt{x}$ au voisinage de $4$, $f(4)=2$ et $f'(4)=\\dfrac14$. Donc :$$\\sqrt{4,04}\\approx2+0,04\\times\\dfrac14=2,01.$$"
+        },
+        {
+          "type": "property",
+          "title": "Maîtriser les formules de dérivation et leurs conditions d’utilisation précises",
+          "content": "$$\\begin{array}{c|c|c}\\text{Fonction} & \\text{Dérivée} & \\text{Condition utile}\\\\ \\\\hline x^n & nx^{n-1} & \\text{selon le domaine}\\\\\\dfrac1x & -\\dfrac1{x^2} & x\\ne0\\\\\\sqrt{x} & \\dfrac1{2\\sqrt{x}} & x>0\\\\\\sin x & \\cos x & x\\in\\mathbb R\\\\\\cos x & -\\sin x & x\\in\\mathbb R\\\\u+v & u'+v' & u,v\\ \\text{dérivables}\\\\uv & u'v+uv' & u,v\\ \\text{dérivables}\\\\\\dfrac uv & \\dfrac{u'v-uv'}{v^2} & v\\ne0\\\\\\sqrt{u} & \\dfrac{u'}{2\\sqrt{u}} & u>0\\end{array}$$"
+        },
+        {
+          "type": "method",
+          "title": "Simplifier une expression avant de calculer puis étudier sa dérivée",
+          "content": "Avant d'appliquer une formule de produit ou de quotient, regarde si l'expression peut être simplifiée ou factorisée. Une dérivée plus courte est aussi plus facile à étudier en signe."
+        },
+        {
+          "type": "property",
+          "title": "Déduire les variations d’une fonction à partir du signe de sa dérivée",
+          "content": "Sur un intervalle $I$ :\\begin{itemize}\\item si $f'(x)\\ge0$ pour tout $x\\in I$, alors $f$ est croissante sur $I$ ;\\item si $f'(x)\\le0$ pour tout $x\\in I$, alors $f$ est décroissante sur $I$ ;\\item si $f'(x)=0$ pour tout $x\\in I$, alors $f$ est constante sur $I$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Identifier les extrema grâce aux changements de signe de la dérivée",
+          "content": "Si $f'(a)=0$, étudie le signe de $f'$ de part et d'autre de $a$ :\\begin{itemize}\\item positif puis négatif : maximum local ;\\item négatif puis positif : minimum local ;\\item pas de changement de signe : pas d'extremum local dû à ce point.\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Une erreur très fréquente, que vous ne devez pas commettre : $f'(a)=0$ ne prouve pas un extremum. Pour $f(x)=x^3$, on a $f'(0)=0$, mais $f$ reste strictement croissante autour de $0$."
+        },
+        {
+          "type": "application",
+          "uid": "derivation-app-1",
+          "difficulty": 3,
+          "content": "\\qst{Pour $f(x)=x^3-3x$ :\\begin{enumerate}\\item compléter $f'(x)=\\blank{3(x-1)(x+1)}$ ;\\item en déduire les intervalles de variation de $f$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On a :$$f'(x)=3x^2-3=3(x-1)(x+1).$$\\item Donc : $f'(x)>0$ sur $]-\\infty,-1[$ et $]1,+\\infty[$, et $f'(x)<0$ sur $]-1,1[$. D'où : $f$ est croissante sur $]-\\infty,-1]$ et $[1,+\\infty[$, et décroissante sur $[-1,1]$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "uid": "derivation-reflexion-1",
+          "difficulty": 3,
+          "content": "\\qst{Pour chacune des affirmations, dire si elle est suffisante pour conclure.\\begin{enumerate}\\item $f'(2)=0$, donc $f$ admet un maximum en $2$.\\item $f'$ est positive avant $2$ et négative après $2$.\\item $f'(x)>0$ sur $]0,4[$.\\item La tangente en $x=1$ est horizontale.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Non. L'annulation seule de $f'$ ne suffit pas.\\item Oui. Le changement $+/-$ donne un maximum local.\\item Oui. $f$ est strictement croissante sur $]0,4[$.\\item Non. Cela donne seulement $f'(1)=0$.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Le signe de $f'$ est le lien direct entre un calcul algébrique et la lecture graphique des variations."
+        }
+      ]
+    },
+    {
+      "id": "etude-fonction",
+      "category": "course",
+      "title": "Étude de fonctions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'étude de fonction rassemble domaine, limites, asymptotes, variations, convexité et lecture graphique."
+        },
+        {
+          "type": "method",
+          "title": "Organiser une étude de fonction dans un ordre logique efficace",
+          "content": "\\begin{enumerate}\\item Déterminer $D_f$.\\item Chercher une éventuelle parité ou symétrie.\\item Calculer les limites aux bornes de $D_f$.\\item Identifier les asymptotes et les branches infinies.\\item Calculer $f'(x)$, factoriser si possible puis étudier son signe.\\item Dresser les variations et calculer les valeurs remarquables.\\item Si demandé, étudier $f''$ pour la convexité.\\item Étudier les intersections et positions relatives utiles.\\item Construire la courbe en respectant les informations obtenues.\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Lire une courbe globalement avant d’exploiter ses informations mathématiques essentielles",
+          "content": "Sur un graphique, cherche dans cet ordre :\\begin{enumerate}\\item les valeurs interdites ou coupures visibles ;\\item le comportement aux bords et à l'infini ;\\item les asymptotes ;\\item les intervalles où la courbe monte ou descend ;\\item les extrema ;\\item les changements de convexité ;\\item la position par rapport à une droite remarquable.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "uid": "etude-graphique-1",
+          "difficulty": 4,
+          "content": "\\qst{À partir de la courbe fournie et de ses asymptotes, compléter :\\begin{enumerate}\\item l'asymptote verticale est $x=\\blank{1}$ ;\\item l'asymptote oblique est $y=\\blank{x}$ ;\\item pour $x<1$, la courbe est \\blank{au-dessous} de $y=x$ ;\\item pour $x>1$, la courbe est \\blank{au-dessus} de $y=x$ ;\\item peut-on placer un point d'inflexion en $x=1$ ? \\blank{Non}.\\end{enumerate}}\\par\\smallskipOn a : la courbe se rapproche de la droite verticale $x=1$ et de la droite oblique $y=x$. Pour $x<1$, la courbe est sous $y=x$ ; pour $x>1$, elle est au-dessus. Or : $x=1$ n'appartient pas au domaine. Donc : aucun point d'inflexion ne peut avoir pour abscisse $1$."
+        },
+        {
+          "type": "warning",
+          "content": "Le réflexe à ne jamais perdre de vue : déterminez le domaine avant de dériver. Une valeur exclue peut couper le tableau de variations, créer une asymptote verticale et empêcher l'existence d'un point d'inflexion."
+        },
+        {
+          "type": "property",
+          "title": "Reconnaître les différents types d’asymptotes à partir des limites calculées",
+          "content": "\\begin{itemize}\\item \\textbf{Verticale $x=a$ :} une limite latérale de $f$ en $a$ est infinie.\\item \\textbf{Horizontale $y=b$ :} $\\displaystyle\\lim_{x\\to+\\infty}f(x)=b$ ou $\\displaystyle\\lim_{x\\to-\\infty}f(x)=b$.\\item \\textbf{Oblique $y=ax+b$ :} $\\displaystyle\\lim_{x\\to\\pm\\infty}[f(x)-(ax+b)]=0$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Déterminer une asymptote oblique à partir du comportement à l’infini",
+          "content": "Si le comportement semble affine à l'infini :\\begin{enumerate}\\item calculer $a=\\displaystyle\\lim_{x\\to\\pm\\infty}\\dfrac{f(x)}x$ ;\\item si $a$ est fini et $a\\ne0$, calculer $b=\\displaystyle\\lim_{x\\to\\pm\\infty}[f(x)-ax]$ ;\\item si $b$ est fini, la droite candidate est $y=ax+b$.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Une fois l'asymptote $y=ax+b$ déterminée, étudie le signe de $f(x)-(ax+b)$. Un signe positif place la courbe au-dessus ; un signe négatif la place au-dessous."
+        },
+        {
+          "type": "property",
+          "title": "Reconnaître une branche parabolique grâce au comportement du quotient associé",
+          "content": "Lorsque $\\displaystyle\\lim_{x\\to\\pm\\infty}f(x)$ est infinie :\\begin{itemize}\\item si $\\displaystyle\\lim_{x\\to\\pm\\infty}\\dfrac{f(x)}x=0$, la branche est dirigée selon l'axe des abscisses ;\\item si $\\displaystyle\\lim_{x\\to\\pm\\infty}\\dfrac{f(x)}x=\\pm\\infty$, la branche est dirigée selon l'axe des ordonnées ;\\item si $\\displaystyle\\lim_{x\\to\\pm\\infty}\\dfrac{f(x)}x=a\\ne0$ et $\\displaystyle\\lim_{x\\to\\pm\\infty}[f(x)-ax]$ est infinie, la branche a pour direction la droite $y=ax$.\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Déterminer la convexité grâce au signe de la dérivée seconde",
+          "content": "Si $f$ est deux fois dérivable sur un intervalle $I$ :\\begin{itemize}\\item si $f''(x)\\ge0$ sur $I$, la courbe est convexe ;\\item si $f''(x)\\le0$ sur $I$, la courbe est concave.\\end{itemize}Si $f''$ change de signe en $a$ et si $a\\in D_f$, alors $A(a,f(a))$ est un point d'inflexion."
+        },
+        {
+          "type": "warning",
+          "content": "Un raisonnement qui ne prouve rien, et que l'on voit très souvent : $f''(a)=0$ ne fournit qu'un candidat. Pour $f(x)=x^4$, $f''(0)=0$ mais $f''(x)=12x^2\\ge0$ : la convexité ne change pas en $0$."
+        },
+        {
+          "type": "property",
+          "title": "Reconnaître les symétries utiles pour réduire efficacement l’étude d’une fonction",
+          "content": "\\begin{itemize}\\item La droite $x=a$ est un axe si le domaine est stable par $x\\mapsto2a-x$ et si $f(2a-x)=f(x)$.\\item Le point $\\Omega(a,b)$ est un centre si le domaine est stable par $x\\mapsto2a-x$ et si $f(2a-x)=2b-f(x)$.\\end{itemize}Cas particuliers : une fonction paire a pour axe $x=0$ ; une fonction impaire a pour centre $O(0,0)$."
+        },
+        {
+          "type": "method",
+          "title": "Déterminer le centre d’une fonction homographique grâce aux asymptotes associées",
+          "content": "Pour une fonction $f(x)=\\dfrac{ax+b}{cx+d}$ avec $c\\ne0$, les asymptotes donnent directement le centre de l'hyperbole : il s'agit de leur point d'intersection."
+        },
+        {
+          "type": "example",
+          "content": "\\textbf{Étudions la fonction }$f(x)=x+\\dfrac2{x-1}$\\textbf{.}\\par\\smallskipOn a : $D_f=\\mathbb R\\setminus\\{1\\}$. La droite $x=1$ est une asymptote verticale.\\par On a aussi :$$f(x)-x=\\dfrac2{x-1}.$$Donc :$$\\displaystyle\\lim_{x\\to\\pm\\infty}[f(x)-x]=0.$$D'où : $y=x$ est une asymptote oblique.\\par Pour la dérivée :$$f'(x)=1-\\dfrac2{(x-1)^2}=\\dfrac{(x-1)^2-2}{(x-1)^2}.$$Les changements de signe se lisent autour de $1-\\sqrt2$ et $1+\\sqrt2$.\\par Enfin :$$f''(x)=\\dfrac4{(x-1)^3}.$$La convexité change en traversant $1$, mais $1\\notin D_f$. Donc : il n'y a pas de point d'inflexion d'abscisse $1$."
+        },
+        {
+          "type": "application",
+          "uid": "etude-fonction-app-1",
+          "difficulty": 4,
+          "content": "\\qst{Pour $g(x)=\\dfrac{x^2+1}{x-2}$ :\\begin{enumerate}\\item compléter $g(x)=x+2+\\blank{\\dfrac5{x-2}}$ ;\\item en déduire l'asymptote oblique ;\\item indiquer l'expression dont il faut étudier le signe pour situer la courbe.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On a, par division euclidienne :$$g(x)=x+2+\\dfrac5{x-2}.$$\\item Donc :$$\\displaystyle\\lim_{x\\to\\pm\\infty}[g(x)-(x+2)]=0.$$D'où : $y=x+2$ est une asymptote oblique.\\item Il faut étudier le signe de$$g(x)-(x+2)=\\dfrac5{x-2}.$$\\end{enumerate}Ainsi, la courbe est sous l'asymptote pour $x<2$ et au-dessus pour $x>2$."
+        },
+        {
+          "type": "application",
+          "uid": "etude-reflexion-1",
+          "difficulty": 4,
+          "content": "\\qst{Une fonction $f$ vérifie :\\begin{itemize}\\item $D_f=\\mathbb R\\setminus\\{2\\}$ ;\\item $\\displaystyle\\lim_{x\\to2^-}f(x)=-\\infty$ et $\\displaystyle\\lim_{x\\to2^+}f(x)=+\\infty$ ;\\item $\\displaystyle\\lim_{x\\to+\\infty}[f(x)-(x+1)]=0$ ;\\item $f'(x)<0$ sur $]2,4[$ et $f'(x)>0$ sur $]4,+\\infty[$.\\end{itemize}Sans calcul supplémentaire, donner quatre informations graphiques sûres.}\\par\\smallskip\\begin{enumerate}\\item La droite $x=2$ est une asymptote verticale.\\item La droite $y=x+1$ est une asymptote oblique en $+\\infty$.\\item $f$ est décroissante sur $]2,4[$.\\item $f$ est croissante sur $]4,+\\infty[$ ; le changement de signe de $f'$ en $4$ indique un minimum local.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Une courbe doit confirmer les résultats obtenus : domaine, limites, variations et asymptotes doivent raconter la même histoire."
+        }
+      ]
+    },
+    {
+      "id": "suites-numeriques",
+      "category": "course",
+      "title": "Suites numériques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour une suite, commence par identifier sa forme avant de choisir différence, quotient, fonction ou récurrence."
+        },
+        {
+          "type": "definition",
+          "title": "Distinguer les deux principales façons de définir une suite numérique",
+          "content": "\\begin{itemize}\\item \\textbf{Explicitement :} $u_n=f(n)$.\\item \\textbf{Par récurrence :} un premier terme est donné, puis une relation permet de calculer $u_{n+1}$ à partir de $u_n$.\\end{itemize}Une suite est majorée si $u_n\\le M$ pour tout rang, minorée si $u_n\\ge m$, et bornée si elle est à la fois majorée et minorée."
+        },
+        {
+          "type": "method",
+          "title": "Choisir la méthode adaptée pour étudier la monotonie d’une suite",
+          "content": "\\begin{itemize}\\item Étudier le signe de $u_{n+1}-u_n$.\\item Si tous les termes sont strictement positifs, comparer $\\dfrac{u_{n+1}}{u_n}$ à $1$.\\item Si $u_n=f(n)$, étudier les variations de $f$ sur l'intervalle adapté.\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Une condition que vous devez vérifier avant de comparer : la comparaison de $\\dfrac{u_{n+1}}{u_n}$ à $1$ n'est sûre que si le signe des termes est connu. Sinon, préférez l'étude du signe de $u_{n+1}-u_n$."
+        },
+        {
+          "type": "method",
+          "title": "Prouver qu’un intervalle reste stable par une relation de récurrence",
+          "content": "Pour montrer que $u_n\\in[a,b]$ pour tout $n$ :\\begin{enumerate}\\item vérifier que le premier terme appartient à $[a,b]$ ;\\item supposer que $u_n\\in[a,b]$ ;\\item utiliser la récurrence pour montrer que $u_{n+1}\\in[a,b]$ ;\\item conclure par récurrence.\\end{enumerate}Cette barrière permet souvent ensuite de déterminer le signe de $u_{n+1}-u_n$."
+        },
+        {
+          "type": "example",
+          "content": "\\textbf{Étudions la suite définie par }$u_0=1$ \\textbf{et}$$u_{n+1}=\\dfrac{u_n+3}{2}.$$On cherche d'abord à montrer que $u_n<3$.\\par Si $u_n<3$, alors$$u_{n+1}-3=\\dfrac{u_n-3}{2}<0.$$Donc : $u_{n+1}<3$. Comme $u_0<3$, on obtient $u_n<3$ pour tout $n$.\\par De plus :$$u_{n+1}-u_n=\\dfrac{3-u_n}{2}>0.$$D'où : la suite est croissante et majorée par $3$."
+        },
+        {
+          "type": "property",
+          "title": "Reconnaître et exploiter efficacement les suites arithmétiques et géométriques usuelles",
+          "content": "$$\\begin{array}{c|c|c} & \\text{Arithmétique} & \\text{Géométrique}\\\\ \\hline\\text{Test} & u_{n+1}-u_n=r & u_{n+1}=qu_n\\\\\\text{Terme général} & u_n=u_p+(n-p)r & u_n=u_pq^{n-p}\\\\\\text{Somme} & u_p+\\cdots+u_n=\\dfrac{n-p+1}{2}(u_p+u_n) & u_p+\\cdots+u_n=u_p\\dfrac{1-q^{n-p+1}}{1-q},\\ q\\ne1\\end{array}$$"
+        },
+        {
+          "type": "method",
+          "title": "Transformer une récurrence affine en suite géométrique par recentrage adapté",
+          "content": "Si$$u_{n+1}=au_n+b,\\qquad a\\ne1,$$alors :\\begin{enumerate}\\item chercher le point fixe $\\ell$ tel que $\\ell=a\\ell+b$ ;\\item obtenir $\\ell=\\dfrac{b}{1-a}$ ;\\item poser $v_n=u_n-\\ell$ ;\\item vérifier que $v_{n+1}=av_n$.\\end{enumerate}La suite $(v_n)$ est alors géométrique."
+        },
+        {
+          "type": "remark",
+          "content": "Ne force pas une classification. Une suite peut n'être ni arithmétique ni géométrique si sa différence et son quotient ne sont pas constants."
+        },
+        {
+          "type": "method",
+          "title": "Utiliser les points fixes pour transformer une récurrence homographique donnée",
+          "content": "Pour une relation$$u_{n+1}=\\dfrac{au_n+b}{cu_n+d},$$les solutions de$$x=\\dfrac{ax+b}{cx+d}$$sont des valeurs structurantes. Un changement de variable construit à partir de ces points fixes peut transformer la suite en suite géométrique, notamment lorsque l'énoncé suggère un quotient du type $\\dfrac{u_n-\\alpha}{u_n-\\beta}$."
+        },
+        {
+          "type": "application",
+          "uid": "suites-app-1",
+          "difficulty": 4,
+          "content": "\\qst{On définit $u_0=7$ et $u_{n+1}=\\dfrac12u_n+2$. Compléter :\\begin{enumerate}\\item le point fixe est $\\ell=\\blank{4}$ ;\\item si $v_n=u_n-\\ell$, alors $v_{n+1}=\\blank{\\dfrac12v_n}$ ;\\item $u_n=\\blank{4+3\\left(\\dfrac12\\right)^n}$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On a : $\\ell=\\dfrac12\\ell+2$. Donc : $\\ell=4$.\\item On pose $v_n=u_n-4$. Alors :$$v_{n+1}=u_{n+1}-4=\\dfrac12(u_n-4)=\\dfrac12v_n.$$\\item Comme $v_0=3$, on a$$v_n=3\\left(\\dfrac12\\right)^n.$$D'où :$$u_n=4+3\\left(\\dfrac12\\right)^n.$$\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "uid": "suites-app-2",
+          "difficulty": 2,
+          "content": "\\qst{Classer les trois suites suivantes :\\begin{enumerate}\\item $5,1,-3,-7,\\ldots$ : \\blank{arithmétique} ;\\item $3,6,12,24,\\ldots$ : \\blank{géométrique} ;\\item $2,4,7,11,\\ldots$ : \\blank{ni arithmétique ni géométrique}.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On a une différence constante égale à $-4$. Donc : la suite est arithmétique de raison $-4$.\\item On a un quotient constant égal à $2$. Donc : la suite est géométrique de raison $2$.\\item Les différences ne sont pas constantes et les quotients non plus. D'où : la suite n'est ni arithmétique ni géométrique.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "uid": "suites-reflexion-1",
+          "difficulty": 3,
+          "content": "\\qst{On ne connaît pas la formule de $(u_n)$, mais on sait que $1<u_n<5$ pour tout $n$ et que$$u_{n+1}-u_n=\\dfrac{5-u_n}{4}.$$\\begin{enumerate}\\item Quel est le signe de $u_{n+1}-u_n$ ?\\item Que peut-on en déduire sur la monotonie ?\\item La suite est-elle majorée ?\\item Peut-on conclure directement qu'elle converge vers $5$ ?\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item On a $u_n<5$, donc $5-u_n>0$. Ainsi $u_{n+1}-u_n>0$.\\item Donc : $(u_n)$ est croissante.\\item Oui, elle est majorée par $5$.\\item On peut conclure qu'elle converge vers une limite finie, mais l'identification de cette limite à $5$ demande encore d'utiliser la relation de récurrence ou une autre information.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Une borne utile n'est pas seulement une information finale : elle sert souvent à déterminer le signe de $u_{n+1}-u_n$."
+        }
+      ]
+    },
+    {
+      "id": "trigonometrie",
+      "category": "course",
+      "title": "Trigonométrie",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En trigonométrie, réduire ou transformer l'expression doit précéder le calcul."
+        },
+        {
+          "type": "property",
+          "title": "Maîtriser les relations trigonométriques fondamentales avant toute transformation plus complexe",
+          "content": "$$\\cos^2x+\\sin^2x=1,$$$$\\tan x=\\dfrac{\\sin x}{\\cos x}\\qquad(\\cos x\\ne0).$$Parité :$$\\cos(-x)=\\cos x,\\qquad\\sin(-x)=-\\sin x,\\qquad\\tan(-x)=-\\tan x.$$Périodicité :$$\\cos(x+2k\\pi)=\\cos x,\\qquad\\sin(x+2k\\pi)=\\sin x,$$$$\\tan(x+k\\pi)=\\tan x.$$"
+        },
+        {
+          "type": "method",
+          "title": "Réduire un angle avant d’utiliser les valeurs remarquables du cercle",
+          "content": "\\begin{enumerate}\\item Retrancher ou ajouter un multiple de $2\\pi$.\\item Ramener l'angle à un angle remarquable.\\item Déterminer le signe à l'aide du quadrant.\\item Utiliser ensuite la valeur remarquable.\\end{enumerate}"
+        },
+        {
+          "type": "property",
+          "title": "Retrouver rapidement les valeurs remarquables usuelles sur le cercle trigonométrique",
+          "content": "$$\\begin{array}{c|ccccc}x & 0 & \\dfrac{\\pi}{6} & \\dfrac{\\pi}{4} & \\dfrac{\\pi}{3} & \\dfrac{\\pi}{2}\\\\ \\hline\\cos x & 1 & \\dfrac{\\sqrt3}{2} & \\dfrac{\\sqrt2}{2} & \\dfrac12 & 0\\\\\\sin x & 0 & \\dfrac12 & \\dfrac{\\sqrt2}{2} & \\dfrac{\\sqrt3}{2} & 1\\end{array}$$"
+        },
+        {
+          "type": "property",
+          "title": "Utiliser correctement les formules de somme et différence d’angles usuelles",
+          "content": "$$\\cos(a+b)=\\cos a\\cos b-\\sin a\\sin b,$$$$\\cos(a-b)=\\cos a\\cos b+\\sin a\\sin b,$$$$\\sin(a+b)=\\sin a\\cos b+\\cos a\\sin b,$$$$\\sin(a-b)=\\sin a\\cos b-\\cos a\\sin b.$$"
+        },
+        {
+          "type": "property",
+          "title": "Choisir la bonne forme de l’angle double selon l’expression étudiée",
+          "content": "$$\\sin(2x)=2\\sin x\\cos x,$$$$\\cos(2x)=2\\cos^2x-1=1-2\\sin^2x.$$Lorsque $\\tan x$ est définie et $\\tan^2x\\ne1$ :$$\\tan(2x)=\\dfrac{2\\tan x}{1-\\tan^2x}.$$"
+        },
+        {
+          "type": "method",
+          "title": "Reconstruire les formules de transformation au lieu de deviner leurs signes",
+          "content": "Les formules « produit vers somme » et « somme vers produit » peuvent être reconstruites en additionnant ou en soustrayant les formules de $\\cos(a+b)$, $\\cos(a-b)$, $\\sin(a+b)$ et $\\sin(a-b)$. Si un signe est oublié, reconstruis la formule au lieu de le deviner."
+        },
+        {
+          "type": "property",
+          "title": "Transformer une somme trigonométrique en produit pour mieux simplifier l’expression",
+          "content": "$$\\cos p+\\cos q=2\\cos\\dfrac{p+q}{2}\\cos\\dfrac{p-q}{2},$$$$\\cos p-\\cos q=-2\\sin\\dfrac{p+q}{2}\\sin\\dfrac{p-q}{2},$$$$\\sin p+\\sin q=2\\sin\\dfrac{p+q}{2}\\cos\\dfrac{p-q}{2},$$$$\\sin p-\\sin q=2\\cos\\dfrac{p+q}{2}\\sin\\dfrac{p-q}{2}.$$"
+        },
+        {
+          "type": "method",
+          "title": "Vérifier une identité trigonométrique par des transformations successives bien choisies",
+          "content": "\\begin{enumerate}\\item Commencer par le membre le plus compliqué.\\item Ramener si possible tout à $\\sin$ et $\\cos$.\\item Factoriser avant de développer sans objectif.\\item Conserver les restrictions de domaine.\\item S'arrêter dès que l'autre membre est obtenu.\\end{enumerate}"
+        },
+        {
+          "type": "warning",
+          "content": "Deux notions à ne surtout pas confondre : une identité n'est pas une équation. Une identité est vraie pour toutes les valeurs où ses deux membres sont définis ; une équation cherche seulement certaines valeurs de $x$."
+        },
+        {
+          "type": "method",
+          "title": "Réduire une combinaison de sinus et cosinus en oscillation unique",
+          "content": "Pose$$R=\\sqrt{a^2+b^2}.$$On peut choisir un angle $\\varphi$ tel que$$\\cos\\varphi=\\dfrac aR,\\qquad\\sin\\varphi=\\dfrac bR.$$Alors$$a\\cos x+b\\sin x=R\\cos(x-\\varphi).$$D'où :$$-R\\le a\\cos x+b\\sin x\\le R.$$Pour résoudre $a\\cos x+b\\sin x=c$, vérifie d'abord $|c|\\le R$."
+        },
+        {
+          "type": "application",
+          "uid": "trigonometrie-app-1",
+          "difficulty": 3,
+          "content": "\\qst{Pour $3\\cos x+4\\sin x$, compléter :\\begin{enumerate}\\item $R=\\blank{5}$ ;\\item le maximum vaut $\\blank{5}$ ;\\item le minimum vaut $\\blank{-5}$.\\end{enumerate}}\\par\\smallskipOn a :$$R=\\sqrt{3^2+4^2}=5.$$Donc :$$-5\\le3\\cos x+4\\sin x\\le5.$$D'où : le maximum vaut $5$ et le minimum vaut $-5$."
+        },
+        {
+          "type": "property",
+          "title": "Résoudre les équations trigonométriques de base sans oublier aucune famille",
+          "content": "Pour $k\\in\\mathbb Z$ :\\begin{itemize}\\item $\\cos x=\\cos\\alpha$ donne $x=\\alpha+2k\\pi$ ou $x=-\\alpha+2k\\pi$ ;\\item $\\sin x=\\sin\\alpha$ donne $x=\\alpha+2k\\pi$ ou $x=\\pi-\\alpha+2k\\pi$ ;\\item $\\tan x=\\tan\\alpha$ donne $x=\\alpha+k\\pi$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Filtrer correctement les solutions trigonométriques selon l’intervalle demandé dans l’énoncé",
+          "content": "\\begin{enumerate}\\item Écrire d'abord les solutions générales dans $\\mathbb R$.\\item Identifier les valeurs entières de $k$ qui placent $x$ dans l'intervalle demandé.\\item Garder uniquement les solutions appartenant à cet intervalle.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "uid": "trigonometrie-reflexion-1",
+          "difficulty": 3,
+          "content": "\\qst{Pour chaque expression, choisir d'abord la transformation la plus naturelle :\\begin{enumerate}\\item $\\sin x+\\sin3x$ ;\\item $2\\sin x\\cos x$ ;\\item $3\\cos x+4\\sin x$ ;\\item $\\cos x=\\cos\\dfrac{\\pi}{5}$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Utiliser une formule somme vers produit.\\item Reconnaître directement $\\sin(2x)$.\\item Utiliser la forme $R\\cos(x-\\varphi)$ avec $R=5$.\\item Écrire les deux familles de solutions de $\\cos x=\\cos\\alpha$.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Quand une expression trigonométrique devient longue, changer sa forme est souvent plus efficace qu'ajouter une formule."
+        }
+      ]
+    }
+  ]
+}

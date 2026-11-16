@@ -1,0 +1,95 @@
+{
+  "id": "probabilites",
+  "title": "Dénombrement et Probabilités",
+  "section": "algebre-geometrie",
+  "revisions": [
+    {
+      "id": "rev-proba-2bac",
+      "title": "Fiche Complète : Dénombrement et Probabilités",
+      "path": "data/2eme-bac-sc-ex/probabilites/revisions/fiche_probabilites_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "proba-ex01",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_01.json"
+    },
+    {
+      "id": "proba-ex02",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_02.json"
+    },
+    {
+      "id": "proba-ex13",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_03.json"
+    },
+    {
+      "id": "proba-ex14",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_04.json"
+    },
+    {
+      "id": "proba-ex15",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_05.json"
+    },
+    {
+      "id": "proba-ex03",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_06.json"
+    },
+    {
+      "id": "proba-ex04",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_07.json"
+    },
+    {
+      "id": "proba-ex10",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_08.json"
+    },
+    {
+      "id": "proba-ex16",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_09.json"
+    },
+    {
+      "id": "proba-ex05",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_10.json"
+    },
+    {
+      "id": "proba-ex06",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_11.json"
+    },
+    {
+      "id": "proba-ex07",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_12.json"
+    },
+    {
+      "id": "proba-ex08",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_13.json"
+    },
+    {
+      "id": "proba-ex09",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_14.json"
+    },
+    {
+      "id": "proba-ex11",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_15.json"
+    },
+    {
+      "id": "proba-ex12",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_16.json"
+    },
+    {
+      "id": "proba-ex17",
+      "path": "data/2eme-bac-sc-ex/probabilites/exercises/ex_probabilites_17.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-probabilites-01",
+      "path": "data/2eme-bac-sc-ex/probabilites/quiz/probabilites_quiz.json",
+      "questionsCount": 27
+    },
+    {
+      "id": "quiz-denombrement-01",
+      "path": "data/2eme-bac-sc-ex/probabilites/quiz/denombrement_quiz.json",
+      "questionsCount": 18
+    }
+  ],
+  "quizCount": 27
+}

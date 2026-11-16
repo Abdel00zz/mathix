@@ -1,0 +1,123 @@
+{
+  "id": "ex-log-007",
+  "theme": "logarithmes",
+  "difficulty": "moyen",
+  "topic": "Analyse - Fonctions logarithmes, dérivabilité et suites",
+  "context": "On considère la fonction $f$ définie sur $]0; +\\infty[$ par : $$f(x) = \\ln^2(x) - \\ln(x) + x$$ On note $(C_f)$ sa courbe représentative dans un repère orthonormé $(O,\\overrightarrow{i},\\overrightarrow{j})$ d'unité $2$ cm.",
+  "requiresRedaction": true,
+  "sessionDate": "2025-12-25T20:00:00.000Z",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to 0^+} f(x)$, et interpréter géométriquement le résultat obtenu.",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "",
+          "hint": "Quand $x \\to 0^+$, examinez le comportement de chaque terme : $\\color{blue}{\\displaystyle\\lim_{x \\to 0^+} \\ln x = -\\infty}$ donc $\\color{blue}{\\ln^2 x \\to +\\infty}$. Quel terme domine ?"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} \\frac{\\ln^2(x)}{x}$.",
+          "hint": "Posez $X = \\ln x$. Quand $x \\to +\\infty$, on a $X \\to +\\infty$. Utilisez les $\\color{blue}{\\text{croissances comparées}}$ : $\\displaystyle\\lim_{x \\to +\\infty} \\frac{\\ln x}{x^n} = 0$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Montrer que la courbe $(C_f)$ présente une branche parabolique au voisinage de $+\\infty$ dont on précisera la direction.",
+          "hint": "Calculez $\\displaystyle \\lim_{x \\to +\\infty} \\frac{f(x)}{x}$. Si cette limite est $\\color{blue}{\\text{infinie}}$, étudiez alors la direction de la branche."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que pour tout $x$ de $]0; +\\infty[$ : $f'(x) = \\dfrac{x - 1 + 2\\ln(x)}{x}$.",
+          "hint": "Dérivez terme à terme. Pour $\\ln^2(x)$, utilisez la $\\color{blue}{\\text{dérivée composée}}$ : $(u^2)' = 2u \\cdot u'$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que la fonction $f$ est strictement croissante sur $]1; +\\infty[$, et qu'elle est strictement décroissante sur $]0; 1[$.",
+          "hint": "Étudiez le $\\color{blue}{\\text{signe du numérateur}}$ de $f'(x)$. Posez $g(x) = x - 1 + 2\\ln x$ et calculez $g'(x)$."
+        },
+        {
+          "id": "sq3c",
+          "content": "Dresser le tableau de variations de $f$.",
+          "hint": "Rassemblez : limites aux bornes, signe de $f'(x)$, et valeur de $\\color{blue}{f(1)}$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "On note $(\\Delta)$ la droite d'équation $y = x$ :",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Résoudre dans $]0; +\\infty[$ l'équation suivante : $\\ln(x)(\\ln(x) - 1) = 0$.",
+          "hint": "Un produit est nul si et seulement si l'un des facteurs est nul. Résolvez $\\color{blue}{\\ln x = 0}$ et $\\color{blue}{\\ln x = 1}$."
+        },
+        {
+          "id": "sq4b",
+          "content": "Montrer que la courbe $(C_f)$ est située au-dessus de $(\\Delta)$ sur l'intervalle $]1; e[$, qu'elle est située au-dessous de $(\\Delta)$ sur chacun des intervalles $]0; 1[$ et $]e; +\\infty[$.",
+          "hint": "Étudiez le signe de $\\color{blue}{f(x) - x = \\ln^2 x - \\ln x}$. Factorisez cette expression."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq5a",
+          "content": "Calculer $f''(x)$ pour tout $x$ de $]0; +\\infty[$.",
+          "hint": "Dérivez $\\displaystyle f'(x) = \\frac{x - 1 + 2\\ln x}{x}$ avec la formule du $\\color{blue}{\\text{quotient}}$ : $\\displaystyle\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$."
+        },
+        {
+          "id": "sq5b",
+          "content": "Montrer que le point d'abscisse $x = e^{3/2}$ est un point d'inflexion de la courbe $(C_f)$.",
+          "hint": "Un point d'inflexion vérifie $\\color{blue}{f''(x) = 0}$ avec $\\color{blue}{\\text{changement de signe}}$ de $f''$. Résolvez $f''(x) = 0$."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "Construire la courbe $(C_f)$ et la droite $(\\Delta)$ dans le repère $(O,\\overrightarrow{i},\\overrightarrow{j})$.",
+      "subQuestions": [
+        {
+          "id": "sq6",
+          "content": "",
+          "hint": "**Éléments à placer sur le graphe :**\n\n• **Asymptote verticale** : $x = 0$ (car $\\lim_{x \\to 0^+} f(x) = +\\infty$)\n\n• **Droite** $(\\Delta)$ : $y = x$ (première bissectrice)\n\n• **Minimum** en $A(1, 1)$ avec tangente horizontale (car $f'(1) = 0$)\n\n• **Intersections** $(C_f) \\cap (\\Delta)$ : aux points $(1, 1)$ et $(e, e)$\n\n• **Position relative** : $(C_f)$ au-dessus de $(\\Delta)$ sur $]1, e[$, en dessous ailleurs\n\n• **Point d'inflexion** en $I(e^{3/2}, f(e^{3/2}))$\n\n• **Branche parabolique** de direction $(Oy)$ en $+\\infty$\n"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "content": "On considère la suite $(u_n)$ définie par : $u_0 = \\sqrt{e}$ et $u_{n+1} = f(u_n)$, $n \\geq 0$",
+      "subQuestions": [
+        {
+          "id": "sq7a",
+          "content": "Montrer que pour tout $n$ de $\\mathbb{N}$ : $1 \\leq u_n \\leq \\sqrt{e}$.",
+          "hint": "$\\color{blue}{\\text{Récurrence}}$ : vérifiez l'initialisation avec $u_0 = \\sqrt{e}$. Pour l'hérédité, utilisez la monotonie de $f$ sur l'intervalle considéré."
+        },
+        {
+          "id": "sq7b",
+          "content": "Montrer que la suite $(u_n)$ est décroissante.",
+          "hint": "Comparez $u_{n+1}$ et $u_n$, c'est-à-dire étudiez le signe de $\\color{blue}{f(u_n) - u_n}$. Utilisez la question 4b."
+        },
+        {
+          "id": "sq7c",
+          "content": "En déduire que $(u_n)$ est convergente, et déterminer sa limite.",
+          "hint": "Suite décroissante et $\\color{blue}{\\text{minorée}}$ $\\Rightarrow$ convergente. Si $\\ell$ est la limite, alors par continuité : $\\color{blue}{\\ell = f(\\ell)}$."
+        }
+      ]
+    }
+  ]
+}

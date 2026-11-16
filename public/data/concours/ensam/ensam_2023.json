@@ -1,0 +1,410 @@
+{
+  "school": "ensam",
+  "year": "2023",
+  "title": "Concours ENSAM 2023",
+  "questions": [
+    {
+      "id": "ensam-23-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "concours",
+      "prompt": "La limite $\\displaystyle\\lim_{x \\to 0} \\frac{e^{\\sin x} - 1}{x}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$e$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{e}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Équivalents : $\\sin x \\sim x$ en $0$, puis $e^u - 1 \\sim u$ en $0$. Donc $\\frac{e^{\\sin x}-1}{x} \\sim \\frac{x}{x} = 1$."
+    },
+    {
+      "id": "ensam-23-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "difficulty": "concours",
+      "prompt": "Soit $f(x) = (\\ln x)^2$. L'équation $f'(x) = 0$ a pour solution :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x = e$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x = e^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x = \\frac{1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f'(x) = \\frac{2\\ln x}{x}$. $f'(x) = 0 \\Leftrightarrow \\ln x = 0 \\Leftrightarrow x = 1$."
+    },
+    {
+      "id": "ensam-23-03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "La limite de $u_n = \\frac{n^2+3n}{n^2-1}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On divise par $n^2$ : $u_n = \\frac{1+3/n}{1-1/n^2} \\to 1$."
+    },
+    {
+      "id": "ensam-23-04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "La valeur de $\\displaystyle\\int_0^{\\ln 2} e^{2x}\\,dx$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{3}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\left[\\frac{e^{2x}}{2}\\right]_0^{\\ln 2} = \\frac{4}{2} - \\frac{1}{2} = \\frac{3}{2}$."
+    },
+    {
+      "id": "ensam-23-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Continuité",
+      "difficulty": "concours",
+      "prompt": "La fonction $f(x) = \\frac{|x|}{x}$ est continue sur :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathbb{R}^*$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb{R}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\mathbb{R}^+$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$]-\\infty, 0]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(x)=1$ si $x>0$, $f(x)=-1$ si $x<0$. En $0$ : discontinuité de saut."
+    },
+    {
+      "id": "ensam-23-06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Exponentielle",
+      "difficulty": "concours",
+      "prompt": "L'ensemble des solutions de $e^{2x} - 3e^x + 2 \\leq 0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$[0, \\ln 2]$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$]-\\infty, \\ln 2]$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{0, \\ln 2\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$[\\ln 2, +\\infty[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $t = e^x > 0$. $(t-1)(t-2) \\leq 0 \\Rightarrow 1 \\leq t \\leq 2$, soit $0 \\leq x \\leq \\ln 2$."
+    },
+    {
+      "id": "ensam-23-07",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Le conjugué de $z = \\frac{2+i}{1-i}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2} + \\frac{3}{2}i$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2} - \\frac{3}{2}i$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{3}{2} + \\frac{1}{2}i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\frac{1}{2} + \\frac{3}{2}i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$z = \\frac{(2+i)(1+i)}{2} = \\frac{1+3i}{2}$. Le conjugué est $\\bar{z} = \\frac{1}{2}-\\frac{3}{2}i$."
+    },
+    {
+      "id": "ensam-23-08",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "L'inverse de $\\bar{3}$ dans $(\\mathbb{Z}/7\\mathbb{Z}, \\times)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\bar{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\bar{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\bar{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\bar{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$3 \\times 5 = 15 \\equiv 1 \\pmod{7}$. Bézout : $3 \\times 5 - 7 \\times 2 = 1$."
+    },
+    {
+      "id": "ensam-23-09",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Les solutions de $z^2 = -4i$ dans $\\mathbb{C}$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{2}(1-i)$ et $-\\sqrt{2}(1-i)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2i$ et $-2i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2(1+i)$ et $-2(1+i)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt{2}(1+i)$ et $-\\sqrt{2}(1+i)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$-4i = 4e^{-i\\pi/2}$, racines carrées : $2e^{-i\\pi/4} = \\sqrt{2}(1-i)$ et son opposé."
+    },
+    {
+      "id": "ensam-23-10",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "difficulty": "concours",
+      "prompt": "Soit $\\star$ sur $\\mathbb{R}^*_+$ : $a \\star b = \\frac{ab}{a+b}$. Cette loi admet-elle un élément neutre ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non, car $\\frac{ae}{a+e}=a$ n'a pas de solution universelle $e$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Oui, $e = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Oui, $e = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non, car la loi n'est pas commutative",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\frac{ae}{a+e} = a$ donne $a^2 = 0$, impossible pour tout $a > 0$."
+    },
+    {
+      "id": "ensam-23-11",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "Le nombre $91$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non premier, $91 = 7 \\times 13$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Premier",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Non premier, $91 = 9 \\times 11$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non premier, $91 = 7 \\times 14$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On teste les premiers $\\leq \\sqrt{91} \\approx 9{,}5$ : $91/7 = 13$."
+    },
+    {
+      "id": "ensam-23-12",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Espaces vectoriels",
+      "difficulty": "concours",
+      "prompt": "La dimension de $\\mathbb{R}_2[X] = \\{P : \\deg P \\leq 2\\}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Base canonique : $\\{1, X, X^2\\}$, soit $3$ vecteurs."
+    },
+    {
+      "id": "ensam-23-13",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Espaces vectoriels",
+      "difficulty": "concours",
+      "prompt": "$f: \\mathbb{R}^2 \\to \\mathbb{R}$ définie par $f(x,y) = x^2 + y$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Non linéaire",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Linéaire",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Linéaire et injective",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Linéaire et surjective",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f(2,0)=4$ mais $2f(1,0)=2$. L'homogénéité est violée par le terme $x^2$."
+    }
+  ]
+}

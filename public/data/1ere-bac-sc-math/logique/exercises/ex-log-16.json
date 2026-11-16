@@ -1,0 +1,19 @@
+{
+  "id": "ex-log-16",
+  "theme": "logique",
+  "difficulty": "moyen",
+  "topic": "Logique & Raisonnements — Raisonnement par contraposée",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soit $(a;b;c) \\in (\\mathbb{R}^*_+)^3$. Montrer que : $a^2 + b^2 + c^2 < 2 \\Rightarrow \\dfrac{1}{a} + \\dfrac{1}{b} + \\dfrac{1}{c} \\neq \\dfrac{1}{abc}$",
+      "hint": "La contraposée est : $\\dfrac{1}{a} + \\dfrac{1}{b} + \\dfrac{1}{c} = \\dfrac{1}{abc} \\Rightarrow a^2+b^2+c^2 \\geq 2$. Multipliez par $abc$ et utilisez AM-GM."
+    },
+    {
+      "id": "q2",
+      "content": "Soit $(a;b;c) \\in (\\mathbb{R}^*_+)^3$ tels que $a + b + c < \\dfrac{1}{a} + \\dfrac{1}{b} + \\dfrac{1}{c}$ et $abc > 1$. Montrer que les trois réels $a$, $b$, $c$ ne sont pas tous distincts de 1.",
+      "hint": "Raisonnez par contraposée : supposez $a \\neq 1$, $b \\neq 1$, $c \\neq 1$ et montrez que les inégalités $a+b+c < \\dfrac{1}{a}+\\dfrac{1}{b}+\\dfrac{1}{c}$ et $abc > 1$ sont incompatibles."
+    }
+  ]
+}

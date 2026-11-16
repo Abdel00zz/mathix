@@ -1,0 +1,41 @@
+{
+  "id": "continuite",
+  "title": "Continuité d'une fonction numérique",
+  "section": "analyse",
+  "session_dates": [
+    "2025-12-22T20:00:00.000Z"
+  ],
+  "quizCount": 20,
+  "revisions": [
+    {
+      "id": "rev-cont-2bac",
+      "title": "Fiche Compléte : Continuité",
+      "path": "data/2eme-bac-sc-ex/continuite/revisions/fiche_continuite_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-func-rat-001",
+      "path": "data/2eme-bac-sc-ex/continuite/exercises/ex_cont_01.json"
+    },
+    {
+      "id": "ex-cont-02",
+      "path": "data/2eme-bac-sc-ex/continuite/exercises/ex_cont_02.json"
+    },
+    {
+      "id": "ex-cont-03",
+      "path": "data/2eme-bac-sc-ex/continuite/exercises/ex_cont_03.json"
+    },
+    {
+      "id": "ex-cont-04",
+      "path": "data/2eme-bac-sc-ex/continuite/exercises/ex_cont_04.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-continuite-01",
+      "path": "data/2eme-bac-sc-ex/continuite/quiz/continuite_quiz.json",
+      "questionsCount": 20
+    }
+  ]
+}

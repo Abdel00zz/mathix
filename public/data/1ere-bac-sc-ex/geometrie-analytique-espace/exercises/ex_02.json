@@ -1,0 +1,25 @@
+{
+  "id": "ex-geometrie-analytique-espace-02",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "moyen",
+  "topic": "Droite et plan",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Représentation paramétrique",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Donner une représentation paramétrique de la droite $(D)$ passant par $A(2,1,-3)$ et de vecteur directeur $\\overrightarrow{u}(1,-2,4)$.",
+          "hint": "Utiliser un paramètre réel $t$."
+        },
+        {
+          "id": "b",
+          "content": "Le point $M(3,-1,1)$ appartient-il à $(D)$ ? Justifier.",
+          "hint": "Chercher une même valeur de $t$ dans les trois équations."
+        }
+      ]
+    }
+  ]
+}

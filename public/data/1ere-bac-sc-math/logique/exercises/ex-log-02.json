@@ -1,0 +1,25 @@
+{
+  "id": "ex-log-02",
+  "theme": "logique",
+  "difficulty": "facile",
+  "topic": "Logique & Raisonnements — Logique propositionnelle",
+  "requiresRedaction": true,
+  "context": "Soit $I$ un intervalle de $\\mathbb{R}$ et $f$ une fonction numérique définie sur $I$ à valeurs dans $\\mathbb{R}$.",
+  "questions": [
+    {
+      "id": "qa",
+      "content": "Écrire à l'aide des quantificateurs les propositions suivantes : $P_1$ : « $f$ est la fonction nulle » ; $P_2$ : « $f$ ne s'annule pas sur $I$ » ; $P_3$ : « $f$ s'annule sur $I$ » ; $P_4$ : « $f$ s'annule exactement une fois sur $I$ » ; $P_5$ : « $f$ est constante sur $I$ » ; $P_6$ : « $f$ est strictement positive sur $I$ »",
+      "hint": ""
+    },
+    {
+      "id": "qb",
+      "content": "Écrire à l'aide des quantificateurs la négation des propositions de la question a) et traduire chaque négation en français.",
+      "hint": "Pour nier une proposition quantifiée, changez $\\forall$ en $\\exists$ et vice versa, et niez la propriété intérieure."
+    },
+    {
+      "id": "qc",
+      "content": "Parmi les propositions suivantes, lesquelles sont vraies et lesquelles sont fausses ? $Q_1 : (\\forall x \\in \\mathbb{R})(\\forall y \\in \\mathbb{R})\\; x + y^2 = 0$ ; $Q_2 : (\\forall x \\in \\mathbb{R})(\\exists y \\in \\mathbb{R})$; $x + y^2 = 0$ ; $Q_3 : (\\exists x \\in \\mathbb{R})$; $(\\forall y \\in \\mathbb{R})\\; x + y^2 = 0$ ; $Q_4 : (\\exists x \\in \\mathbb{R})(\\exists y \\in \\mathbb{R})$; $x + y^2 = 0$ ; $Q_5 : (\\forall y \\in \\mathbb{R})(\\exists x \\in \\mathbb{R})$; $x + y^2 = 0$ ; $Q_6 : (\\exists x \\in \\mathbb{R})$; $(\\forall y \\in \\mathbb{R})\\; y^2 > x$",
+      "hint": "Pour chaque proposition, cherchez un exemple ou un contre-exemple selon la nature des quantificateurs."
+    }
+  ]
+}

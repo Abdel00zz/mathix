@@ -1,0 +1,35 @@
+{
+  "id": "ex-ens-app-22",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Applications et Fonctions — Image directe et image réciproque",
+  "requiresRedaction": true,
+  "context": "On considère l'application $f$ définie de $\\mathbb{R}^+$ dans $\\mathbb{R}$ par : $f(x) = \\dfrac{\\sqrt{x}}{1+x}$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que : $\\left(\\forall x \\in \\mathbb{R}^+\\right)\\; f(x) = \\dfrac{\\sqrt{x}}{1+x}$",
+      "hint": ""
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que : $f\\left(\\mathbb{R}^+\\right) \\subset \\left[0;\\dfrac{1}{2}\\right]$",
+      "hint": "Montrez que $0 \\leq f(x) \\leq \\dfrac{1}{2}$ pour tout $x \\geq 0$. Pour la borne supérieure, étudiez le signe de $\\dfrac{1}{2} - f(x)$ ou utilisez l'inégalité arithmético-géométrique sur $1 + x \\geq 2\\sqrt{x}$."
+    },
+    {
+      "id": "q3",
+      "content": "En déduire que : $f\\left(\\mathbb{R}^+\\right) = \\left[0;\\dfrac{1}{2}\\right]$",
+      "hint": "D'après la question précédente, $f(\\mathbb{R}^+) \\subset \\left[0;\\frac{1}{2}\\right]$. Il reste à montrer que toute valeur $y \\in \\left[0;\\frac{1}{2}\\right]$ est atteinte : résolvez $f(x) = y$ et vérifiez que la solution appartient à $\\mathbb{R}^+$."
+    },
+    {
+      "id": "q4",
+      "content": "On considère aussi l'application $f : [0;+\\infty[ \\to \\mathbb{R}$ définie par $f(x) = x^2 + 2$. Montrer que : $f\\left([0;+\\infty[\\right) = [2;+\\infty[$",
+      "hint": "Montrez l'inclusion dans les deux sens : $f([0;+\\infty[) \\subset [2;+\\infty[$ puis $[2;+\\infty[ \\subset f([0;+\\infty[)$."
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que : $f^{-1}\\left([6;11]\\right) = [2;3]$",
+      "hint": "$f^{-1}([6;11]) = \\{x \\geq 0 \\mid 6 \\leq x^2+2 \\leq 11\\}$. Résolvez le double encadrement."
+    }
+  ]
+}

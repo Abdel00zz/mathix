@@ -1,0 +1,20 @@
+{
+  "id": "ex-ordre-tc-02",
+  "theme": "ordre-ir",
+  "difficulty": "moyen",
+  "topic": "L'ordre dans $\\mathbb{R}$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Valeur absolue et encadrement",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Résoudre dans $\\mathbb{R}$ l'inéquation $|2x - 3| \\leq 5$.",
+          "hint": "\\method Utilisez la propriété : $|X| \\leq a \\iff -a \\leq X \\leq a$ pour $a > 0$."
+        }
+      ]
+    }
+  ]
+}

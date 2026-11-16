@@ -1,0 +1,20 @@
+{
+  "id": "ex-log-21",
+  "theme": "logique",
+  "difficulty": "moyen",
+  "topic": "Logique & Raisonnements — Raisonnement par l'absurde",
+  "requiresRedaction": true,
+  "context": "On considère $f(x) = x + 2$ et $g(x) = \\sqrt{x^2+4x+5}$. Montrer que les courbes $\\mathcal{C}_f$ et $\\mathcal{C}_g$ ne se coupent pas.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que les courbes $\\mathcal{C}_f$ et $\\mathcal{C}_g$ ne se coupent pas.",
+      "hint": "Supposez par l'absurde qu'il existe $x_0$ tel que $f(x_0) = g(x_0)$, soit $x_0 + 2 = \\sqrt{x_0^2+4x_0+5}$. Élevez au carré et simplifiez."
+    },
+    {
+      "id": "q2",
+      "content": "Soient $a$, $b$, $x$, $y$ des réels strictement positifs tels que $a + b = 2$ et $|a| < |b|$. Montrer que : $1 \\in ]\\min(a;b);\\max(a;b)[ \\iff ab \\in ]-3;1[$",
+      "hint": "Comme $a+b=2$, on a $\\min(a;b) < 1 < \\max(a;b)$. Exprimez le produit $ab$ en fonction de $a+b$ et de $(a-b)^2$, puis étudiez les conditions sur $ab$."
+    }
+  ]
+}

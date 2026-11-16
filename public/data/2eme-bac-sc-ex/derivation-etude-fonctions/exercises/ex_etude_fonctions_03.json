@@ -1,0 +1,42 @@
+{
+  "id": "ex-etude-fonctions-03",
+  "theme": "etude-fonctions",
+  "difficulty": "difficile",
+  "topic": "Étude de fonctions",
+  "context": "Exercice de base sur le chapitre \"Étude de fonctions\".",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Question 1",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Rappeler une idee importante du chapitre Étude de fonctions.",
+          "hint": "Relire la definition principale du cours."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Question 2",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Effectuer une application directe simple.",
+          "hint": "Appliquer la methode en une etape."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Question 3",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Donner une conclusion claire et justifiee.",
+          "hint": "Verifier l interpretation du resultat final."
+        }
+      ]
+    }
+  ]
+}

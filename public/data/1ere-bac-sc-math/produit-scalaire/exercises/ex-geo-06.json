@@ -1,0 +1,66 @@
+{
+  "id": "ex-geo-06",
+  "theme": "produit-scalaire",
+  "difficulty": "facile",
+  "topic": "Géométrie Analytique - Projection orthogonale et distance",
+  "requiresRedaction": true,
+  "context": "On considère les points $A(3;-2)$, $B(1;-6)$, $C(2;-3)$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer une équation cartésienne de $(AC)$.",
+      "hint": "Calculez $\\overrightarrow{AC}$, puis utilisez-le comme vecteur directeur. La droite passe par $A$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer la distance $AB$ puis en déduire que le point $B$ est à l'extérieur du cercle $\\mathcal{C}$ de centre $A$ et de rayon $R = y$.",
+      "hint": "Calculez $AB = \\|\\overrightarrow{AB}\\|$. Comparez $AB$ et le rayon $R$."
+    },
+    {
+      "id": "q3",
+      "content": "Soit $H$ le projeté orthogonal du point $A$ sur la droite $(BC)$. Déterminer le couple de coordonnées de $H$.",
+      "hint": "$(AH) \\perp (BC)$ : écrivez l'équation de $(AH)$ puis résolvez le système avec $(BC)$."
+    },
+    {
+      "id": "q4",
+      "content": "En déduire vérifier que $4x - 3y - 50 = 0$ est une équation cartésienne de la droite $\\mathcal{D}$ puis montrer que $\\mathcal{D}$ est tangente au cercle $\\mathcal{C}$.",
+      "hint": "Une droite est tangente à un cercle si et seulement si la distance du centre à la droite est égale au rayon. Utilisez la formule de la distance d'un point à une droite."
+    },
+    {
+      "id": "q5",
+      "content": "Calculer la distance du point $A$ à la droite $\\mathcal{D}$ dans chacun des cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq5_5",
+          "content": "$A(-1;1)$ et $\\mathcal{D} : x - 2y + 3 = 0$",
+          "hint": ""
+        },
+        {
+          "id": "sq5_6",
+          "content": "$A(2;3)$ et $\\mathcal{D} : 4x - 3y + 11 = 0$",
+          "hint": ""
+        },
+        {
+          "id": "sq5_7",
+          "content": "$A = O$ et $\\mathcal{D} : x + 3y - 3\\sqrt{2} = 0$",
+          "hint": ""
+        },
+        {
+          "id": "sq5_8",
+          "content": "$A\\left(\\dfrac{1}{2};3\\right)$ et $\\mathcal{D} : 2x + 3 = 0$",
+          "hint": "La droite est verticale. La distance est simplement $\\left|x_A - x_\\mathcal{D}\\right|$."
+        },
+        {
+          "id": "sq5_9",
+          "content": "$A(4;-3)$ et $\\mathcal{D} : 5y - 2 = 0$",
+          "hint": ""
+        },
+        {
+          "id": "sq5_10",
+          "content": "$A(-2;5)$ et $\\mathcal{D} : y = -\\dfrac{3}{4}x + \\dfrac{1}{2}$",
+          "hint": "Mettez l'équation de $\\mathcal{D}$ sous forme $ax + by + c = 0$ avant d'appliquer la formule."
+        }
+      ]
+    }
+  ]
+}

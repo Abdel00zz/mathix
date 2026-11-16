@@ -1,0 +1,117 @@
+{
+  "id": "ex-20",
+  "theme": "exponentielles",
+  "difficulty": "difficile",
+  "topic": "Étude de fonction - Symétrie, variations, tangente, primitive, suite récurrente",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction numérique définie sur $\\mathbb{R}$ par : $f(x) = \\dfrac{3e^x - 1}{e^x + 1}$ et $(C_f)$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie"
+    },
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Montrer que : $(\\forall x \\in \\mathbb{R})\\,;\\, f(x) + f(-x) = 2$ et en déduire que la courbe $(C_f)$ admet un centre de symétrie que l'on déterminera.",
+          "hint": "Calculez $f(-x)$ en remplaçant $x$ par $-x$, puis additionnez $f(x) + f(-x)$. L'égalité $f(x) + f(-x) = 2$ signifie que $f(x) - 1 = -(f(-x) - 1)$, ce qui traduit la symétrie par rapport au point $(0, 1)$."
+        },
+        {
+          "id": "q1b",
+          "content": "Calculer $\\displaystyle\\lim_{x \\to +\\infty} f(x)$ et $\\displaystyle\\lim_{x \\to -\\infty} f(x)$ et interpréter géométriquement les deux résultats obtenus.",
+          "hint": "Divisez numérateur et dénominateur par $e^x$. Quand $x \\to +\\infty$, $e^{-x} \\to 0$ ; quand $x \\to -\\infty$, $e^x \\to 0$. Interprétez les asymptotes horizontales."
+        },
+        {
+          "id": "q1c",
+          "content": "Dresser le tableau de variations de $f$.",
+          "hint": "Calculez $f'(x)$ en dérivant le quotient $\\dfrac{3e^x - 1}{e^x + 1}$. Étudiez le signe de $f'(x)$ sur $\\mathbb{R}$ et complétez avec les limites de 1b."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Donner une équation de la tangente $(T)$ à la courbe de $f$ au point d'abscisse $0$.",
+          "hint": "La tangente en $x_0 = 0$ a pour équation $y = f(0) + f'(0)(x - 0)$. Calculez $f(0)$ et $f'(0)$."
+        },
+        {
+          "id": "q2b",
+          "content": "On pose pour tout $x$ de $\\mathbb{R}$ : $g(x) = f(x) - (x+1)$. Vérifier que : $(\\forall x \\in \\mathbb{R})\\,;\\, g'(x) = -\\left(\\dfrac{e^x - 1}{e^x + 1}\\right)^2$ ; calculer $g(0)$ et en déduire le signe de $g$.",
+          "hint": "Calculez $g'(x) = f'(x) - 1$ et simplifiez. Comme $g'(x) \\leq 0$ partout (avec $g'(0)=0$), $g$ est décroissante. Utilisez $g(0)$ pour conclure le signe de $g$ sur chaque intervalle."
+        },
+        {
+          "id": "q2c",
+          "content": "En déduire la position relative de $(C_f)$ et la tangente $(T)$.",
+          "hint": "La position relative de $(C_f)$ et $(T)$ est donnée par le signe de $f(x) - (x+1) = g(x)$. Utilisez directement le signe de $g$ établi en 2b."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Tracer la tangente $(T)$ et la courbe $(C_f)$ dans le repère $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+      "hint": ""
+    },
+    {
+      "id": "p2",
+      "type": "partie"
+    },
+    {
+      "id": "r1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "r1a",
+          "content": "Montrer que : $(\\forall x \\in \\mathbb{R})\\,;\\, f(x) = x \\Longleftrightarrow g(x) = -1$.",
+          "hint": "Remplacez $f(x) = x$ par $f(x) - (x+1) = -1$, c'est-à-dire $g(x) = -1$. C'est une réécriture directe de la définition de $g$."
+        },
+        {
+          "id": "r1b",
+          "content": "En déduire que la droite $(D)$ d'équation : $y = x$ coupe la courbe $(C_f)$ en un point d'abscisse $\\alpha$ comprise entre $2$ et $3$.",
+          "hint": "L'équation $g(x) = -1$ admet une solution dans $]2;3[$ si $g(2)+1$ et $g(3)+1$ sont de signes opposés. Calculez $g(2)$ et $g(3)$ et vérifiez l'encadrement par le théorème des valeurs intermédiaires."
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "r2a",
+          "content": "Montrer que : $(\\forall x \\in \\mathbb{R})\\,;\\, f(x) = -1 + \\dfrac{4e^x}{e^x + 1}$.",
+          "hint": "Effectuez la division euclidienne de $3e^x - 1$ par $e^x + 1$ : $3e^x - 1 = 3(e^x + 1) - 4$, ce qui donne la décomposition souhaitée."
+        },
+        {
+          "id": "r2b",
+          "content": "En déduire une fonction primitive de $f$ sur $\\mathbb{R}$.",
+          "hint": "Intégrez terme à terme la décomposition de 2a. Le terme $\\dfrac{4e^x}{e^x + 1}$ est de la forme $\\dfrac{u'}{u}$ avec $u = e^x + 1$."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "type": "partie",
+      "content": "Soit $(u_n)$ la suite numérique définie par : $\\begin{cases} u_0 = 3 \\\\ u_{n+1} = f(u_n)\\,;\\; n \\in \\mathbb{N} \\end{cases}$"
+    },
+    {
+      "id": "s1",
+      "content": "Montrer que : $(\\forall n \\in \\mathbb{N})\\,;\\, 1 \\leq u_n \\leq 3$.",
+      "hint": "Procédez par récurrence. Pour l'hérédité, montrez que $f([1;3]) \\subseteq [1;3]$ en utilisant le tableau de variations de $f$ : calculez $f(1)$ et $f(3)$."
+    },
+    {
+      "id": "s2",
+      "content": "Montrer que la suite $(u_n)$ est décroissante et en déduire qu'elle est convergente.",
+      "hint": "Montrez que $u_{n+1} - u_n = f(u_n) - u_n = g(u_n)$ et étudiez son signe pour $u_n \\geq 1$ en utilisant le signe de $g$ établi en I-2b."
+    },
+    {
+      "id": "s3",
+      "content": "Montrer que : $\\displaystyle\\lim_{n \\to +\\infty} u_n = \\alpha$.",
+      "hint": "Soit $\\ell$ la limite de $(u_n)$. Passez à la limite dans $u_{n+1} = f(u_n)$ pour obtenir $\\ell = f(\\ell)$, soit $g(\\ell) = -1$. Combinez avec $1 \\leq \\ell \\leq 3$ pour conclure $\\ell = \\alpha$."
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "questions": [
+    {
+      "id": "med-pr-01",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "prompt": "Un test de dépistage a une sensibilité de $95\\%$ et une spécificité de $90\\%$. Si la prévalence de la maladie est $1\\%$, la probabilité d'être malade sachant que le test est positif est approximativement :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\approx 8{,}8\\%$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\approx 95\\%$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\approx 50\\%$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\approx 90\\%$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Bayes : $P(M|T^+) = \\frac{P(T^+|M)P(M)}{P(T^+)}$. $P(T^+) = 0{,}95 \\times 0{,}01 + 0{,}10 \\times 0{,}99 = 0{,}0095 + 0{,}099 = 0{,}1085$. Donc $P(M|T^+) = \\frac{0{,}0095}{0{,}1085} \\approx 8{,}8\\%$. Paradoxe classique en médecine : un test « performant » peut donner beaucoup de faux positifs quand la maladie est rare."
+    },
+    {
+      "id": "med-pr-02",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "prompt": "On tire $3$ boules simultanément d'une urne contenant $5$ rouges et $4$ bleues. La probabilité d'obtenir exactement $2$ rouges est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{10}{21}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{5}{14}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{10}{84}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{40}{84}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Nombre total : $\\binom{9}{3} = 84$. Cas favorables : $\\binom{5}{2} \\times \\binom{4}{1} = 10 \\times 4 = 40$. Probabilité : $\\frac{40}{84} = \\frac{10}{21}$. Modèle hypergéométrique : tirage sans remise simultané."
+    },
+    {
+      "id": "med-pr-03",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités conditionnelles",
+      "prompt": "Deux événements $A$ et $B$ sont incompatibles avec $P(A) = 0{,}3$ et $P(B) = 0{,}5$. La probabilité $P(A \\cup B)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}8$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}15$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}65$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Incompatibles : $A \\cap B = \\emptyset$, donc $P(A \\cap B) = 0$. Par additivité : $P(A \\cup B) = P(A) + P(B) = 0{,}3 + 0{,}5 = 0{,}8$. Attention : incompatibles $\\neq$ indépendants. Deux événements incompatibles de probabilités non nulles ne peuvent pas être indépendants."
+    },
+    {
+      "id": "med-pr-04",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Dénombrement",
+      "prompt": "Le nombre de mots de $4$ lettres (avec répétition) formés avec l'alphabet $\\{A,B,C,D,E\\}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$625$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$120$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$20$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$256$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec répétition, chaque position a $5$ choix indépendants. Nombre total : $5^4 = 625$. C'est un arrangement avec répétition (ou $p$-liste). Sans répétition, ce serait $A_5^4 = \\frac{5!}{1!} = 120$."
+    },
+    {
+      "id": "med-pr-05",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités totales",
+      "prompt": "Un laboratoire utilise $3$ appareils : $A_1$ ($50\\%$ des analyses, $1\\%$ d'erreur), $A_2$ ($30\\%$, $2\\%$ d'erreur), $A_3$ ($20\\%$, $3\\%$ d'erreur). La probabilité d'une analyse erronée est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}017$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}02$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}06$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0{,}01$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Probabilités totales : $P(E) = 0{,}5 \\times 0{,}01 + 0{,}3 \\times 0{,}02 + 0{,}2 \\times 0{,}03 = 0{,}005 + 0{,}006 + 0{,}006 = 0{,}017 = 1{,}7\\%$. Partition $\\{A_1, A_2, A_3\\}$ de l'univers."
+    },
+    {
+      "id": "med-pr-06",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Variables aléatoires",
+      "prompt": "Soit $X$ le nombre de faces obtenues en lançant $2$ pièces équilibrées. L'espérance $E(X)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{3}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$X$ suit une loi binomiale $\\mathcal{B}(2, \\frac{1}{2})$. $E(X) = np = 2 \\times \\frac{1}{2} = 1$. On peut aussi calculer directement : $P(X=0)=\\frac{1}{4}$, $P(X=1)=\\frac{1}{2}$, $P(X=2)=\\frac{1}{4}$. $E(X)= 0 + \\frac{1}{2} + \\frac{2}{4} = 1$."
+    },
+    {
+      "id": "med-pr-07",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "prompt": "On choisit un entier au hasard dans $\\{1, 2, ..., 100\\}$. La probabilité qu'il soit divisible par $6$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{16}{100}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{15}{100}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{17}{100}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les multiples de $6$ dans $\\{1,...,100\\}$ sont $6,12,18,...,96$. Nombre : $\\lfloor \\frac{100}{6} \\rfloor = 16$. Probabilité : $\\frac{16}{100}$. On utilise la partie entière pour compter les multiples d'un entier dans un intervalle."
+    },
+    {
+      "id": "med-pr-08",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Variables aléatoires",
+      "prompt": "Soit $X$ une variable aléatoire avec $E(X) = 3$ et $V(X) = 4$. Alors $E(2X+1)$ et $V(2X+1)$ valent :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$E = 7$ et $V = 16$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$E = 7$ et $V = 9$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$E = 6$ et $V = 16$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$E = 7$ et $V = 8$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Propriétés de linéarité : $E(aX+b) = aE(X)+b = 2 \\times 3 + 1 = 7$. Pour la variance : $V(aX+b) = a^2 V(X) = 4 \\times 4 = 16$ (la constante additive $b$ n'affecte pas la dispersion). Formules essentielles du programme."
+    },
+    {
+      "id": "med-pr-09",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Dénombrement",
+      "prompt": "Le coefficient $\\binom{10}{3}$ est aussi égal à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\binom{10}{7}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\binom{10}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3 \\times \\binom{9}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\binom{9}{2} + \\binom{9}{4}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Symétrie des coefficients binomiaux : $\\binom{n}{k} = \\binom{n}{n-k}$. Donc $\\binom{10}{3} = \\binom{10}{7} = 120$. Interprétation : choisir $3$ éléments parmi $10$ revient à choisir les $7$ qu'on ne prend pas."
+    },
+    {
+      "id": "med-pr-10",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités conditionnelles",
+      "prompt": "Soit $P(A) = 0{,}6$, $P(B|A) = 0{,}3$ et $P(B|\\bar{A}) = 0{,}5$. La probabilité $P(B)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}38$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}30$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}50$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0{,}40$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Probabilités totales avec $\\{A, \\bar{A}\\}$ : $P(B) = P(B|A)P(A) + P(B|\\bar{A})P(\\bar{A}) = 0{,}3 \\times 0{,}6 + 0{,}5 \\times 0{,}4 = 0{,}18 + 0{,}20 = 0{,}38$."
+    }
+  ]
+}

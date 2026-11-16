@@ -1,0 +1,181 @@
+{
+  "questions": [
+    {
+      "id": "q1_fond_comparaison",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Pour comparer deux nombres réels $a$ et $b$, il suffit toujours d'étudier le signe de leur différence $a - b$.",
+      "isTrue": true,
+      "explanation": "C'est la règle d'or : $a \\leq b \\Leftrightarrow b - a \\geq 0$. Étudier le signe de la différence est la méthode la plus universelle et fiable pour comparer deux nombres."
+    },
+    {
+      "id": "q2_fond_inversion",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Parmi ces opérations, laquelle INVERSE le sens d'une inégalité ?",
+      "options": [
+        { "id": "a", "text": "Ajouter un nombre négatif", "isCorrect": false },
+        { "id": "b", "text": "Multiplier par un nombre négatif", "isCorrect": true },
+        { "id": "c", "text": "Mettre au carré des nombres positifs", "isCorrect": false },
+        { "id": "d", "text": "Diviser par un nombre positif", "isCorrect": false }
+      ],
+      "explanation": "Multiplier (ou diviser) les deux membres d'une inégalité par un réel strictement négatif change obligatoirement le sens de l'inégalité. L'addition, même d'un nombre négatif, conserve toujours le sens."
+    },
+    {
+      "id": "q3_fond_absolue_def",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Que vaut la valeur absolue $|x|$ si $x$ est un réel strictement négatif ?",
+      "options": [
+        { "id": "a", "text": "$|x| = x$", "isCorrect": false },
+        { "id": "b", "text": "$|x| = 0$", "isCorrect": false },
+        { "id": "c", "text": "$|x| = -x$", "isCorrect": true },
+        { "id": "d", "text": "$|x| = 1$", "isCorrect": false }
+      ],
+      "explanation": "Puisque $x < 0$, pour que $|x|$ soit une valeur positive (comme une distance), il faut prendre son opposé. Donc $|x| = -x$."
+    },
+    {
+      "id": "q4_cons_absolue_ineg",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "L'inéquation $|x| \\leq 5$ est équivalente à :",
+      "options": [
+        { "id": "a", "text": "$x \\in ]-5 ; 5[$", "isCorrect": false },
+        { "id": "b", "text": "$x \\in [-5 ; 5]$", "isCorrect": true },
+        { "id": "c", "text": "$x \\leq 5$", "isCorrect": false },
+        { "id": "d", "text": "$x \\in ]-\\infty ; -5] \\cup [5 ; +\\infty[$", "isCorrect": false }
+      ],
+      "explanation": "La définition géométrique veut que la distance de $x$ à l'origine soit inférieure ou égale à 5. Cela signifie que $x$ se balade entre -5 et 5, bornes incluses, d'où $[-5 ; 5]$."
+    },
+    {
+      "id": "q5_cons_intervalles_inter",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Soient $I = [-2 ; 4]$ et $J = [0 ; 7[$. Quelle est l'intersection $I \\cap J$ ?",
+      "options": [
+        { "id": "a", "text": "$[-2 ; 7[$", "isCorrect": false },
+        { "id": "b", "text": "$[0 ; 4]$", "isCorrect": true },
+        { "id": "c", "text": "$]-2 ; 4[$", "isCorrect": false },
+        { "id": "d", "text": "$[-2 ; 0]$", "isCorrect": false }
+      ],
+      "explanation": "Pour l'intersection (les nombres communs), on prend la plus grande borne inférieure ($\\max(-2, 0) = 0$) et la plus petite borne supérieure ($\\min(4, 7) = 4$). L'intersection est donc $[0 ; 4]$."
+    },
+    {
+      "id": "q6_cons_encad_soustraction",
+      "type": "error",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Un élève cherche à encadrer $A - B$ sachant que $2 < A < 5$ et $1 < B < 3$. Identifier l'étape erronée :",
+      "context": "Méthode d'encadrement par soustraction",
+      "steps": [
+        { "id": "s1", "text": "L'élève écrit $2 < A < 5$.", "isError": false },
+        { "id": "s2", "text": "L'élève écrit $1 < B < 3$.", "isError": false },
+        { "id": "s3", "text": "L'élève soustrait directement membre à membre : $2-1 < A-B < 5-3$, d'où $1 < A-B < 2$.", "isError": true, "correction": "On n'a JAMAIS le droit de soustraire membre à membre. Il faut d'abord encadrer -B ($-3 < -B < -1$), puis additionner membre à membre avec A." },
+        { "id": "s4", "text": "L'élève déduit l'amplitude de son résultat final.", "isError": false }
+      ],
+      "explanation": "La soustraction d'inégalités membre à membre est mathématiquement interdite. En effet, la plus petite valeur de $A-B$ s'obtient avec le minimum de $A$ moins le maximum de $B$."
+    },
+    {
+      "id": "q7_cons_approx_dec",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Sachant que $1{,}4142 < \\sqrt{2} < 1{,}4143$, quelle est l'approximation décimale par DÉFAUT de $\\sqrt{2}$ à $10^{-3}$ près ?",
+      "options": [
+        { "id": "a", "text": "$1{,}415$", "isCorrect": false },
+        { "id": "b", "text": "$1{,}414$", "isCorrect": true },
+        { "id": "c", "text": "$1{,}413$", "isCorrect": false },
+        { "id": "d", "text": "$1{,}41$", "isCorrect": false }
+      ],
+      "explanation": "L'approximation par défaut à $10^{-3}$ (3 chiffres après la virgule) correspond à la borne inférieure de l'encadrement à cette précision. On tronque simplement à 3 chiffres : $1{,}414$."
+    },
+    {
+      "id": "q8_cons_absolue_calc",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "prompt": "Pour $x < 2$, quelle est l'expression simplifiée sans barre de $|x - 2|$ ?",
+      "options": [
+        { "id": "a", "text": "$x - 2$", "isCorrect": false },
+        { "id": "b", "text": "$2 - x$", "isCorrect": true },
+        { "id": "c", "text": "$x + 2$", "isCorrect": false },
+        { "id": "d", "text": "$-2 - x$", "isCorrect": false }
+      ],
+      "explanation": "Si $x < 2$, alors $x - 2 < 0$. Comme la valeur absolue de tout nombre négatif est son opposé, on a $|x - 2| = -(x - 2) = 2 - x$."
+    },
+    {
+      "id": "q9_maitrise_ineq_degre1",
+      "type": "order",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Ordonnez les étapes pour résoudre de manière sécurisée l'inéquation $-4x + 5 > 13$ :",
+      "items": [
+        { "id": "a", "content": "Soustraire 5 des deux membres : $-4x > 8$." },
+        { "id": "b", "content": "Diviser les deux côtés par $-4$." },
+        { "id": "c", "content": "Inverser le sens de l'inégalité car on a divisé par un nombre négatif : $x < -2$." },
+        { "id": "d", "content": "Exprimer la solution sous forme d'intervalle : $x \\in ]-\\infty ; -2[$." }
+      ],
+      "correctOrder": ["a", "b", "c", "d"],
+      "explanation": "L'étape cruciale est de remarquer le changement de signe avant de tirer la conclusion finale sur l'intervalle. L'oubli de l'inversion à l'étape $c$ rendrait le résultat faux."
+    },
+    {
+      "id": "q10_maitrise_erreur_racine_c",
+      "type": "boolean",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "ambiguity_note": "Confusion universelle entre $\\sqrt{x^2}=|x|$ et $\\sqrt{x^2}=x$",
+      "prompt": "Pour tout nombre réel $x$, la formule $\\sqrt{x^2} = x$ est toujours vraie.",
+      "isTrue": false,
+      "explanation": "Si $x = -3$, $\\sqrt{(-3)^2} = \\sqrt{9} = 3$. Or, $3 \\neq -3$. La vraie formule absolue est $\\sqrt{x^2} = |x|$."
+    },
+    {
+      "id": "q11_maitrise_inverse",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Identifier l'erreur dans ce passage à l'inverse :",
+      "context": "On cherche à déduire une inégalité si on sait que $-2 < x < 5$.",
+      "steps": [
+        { "id": "s1", "text": "On part de $-2 < x < 5$.", "isError": false },
+        { "id": "s2", "text": "L'élève applique la fonction inverse aux trois membres.", "isError": false },
+        { "id": "s3", "text": "Puisque le passage à l'inverse renverse l'inégalité, l'élève écrit : $\\frac{1}{-2} > \\frac{1}{x} > \\frac{1}{5}$.", "isError": true, "correction": "On ne peut passer à l'inverse QUE si les bornes sont de même signe (0 non inclus entre les deux). Ici $x$ passe par 0, où $1/x$ n'est pas défini, et change brusquement de signe !" },
+        { "id": "s4", "text": "L'élève en déduit finalement que $\\frac{1}{5} < \\frac{1}{x} < -\\frac{1}{2}$, une absurdité mathématique.", "isError": false }
+      ],
+      "explanation": "L'inversion renverse les inégalités UNIQUEMENT lorsque l'on reste du même côté de 0. Essayer de le faire sur un intervalle qui chevauche 0 conduit instantanément à des hérésies (un nombre positif plus petit qu'un nombre négatif)."
+    },
+    {
+      "id": "q12_depassement_reunion",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "L'inéquation $|x| \\geq -2$ admet pour solution :",
+      "options": [
+        { "id": "a", "text": "Aucune solution ($\\emptyset$)", "isCorrect": false },
+        { "id": "b", "text": "Tous les réels ($\\mathbb{R}$)", "isCorrect": true },
+        { "id": "c", "text": "Seulement $[-2 ; 2]$", "isCorrect": false },
+        { "id": "d", "text": "$]-\\infty ; -2] \\cup [2 ; +\\infty[$", "isCorrect": false }
+      ],
+      "explanation": "La valeur absolue $|x|$ est une distance, elle est par nature toujours positive ou nulle. Donc affirmer que $|x|$ est supérieur ou égal à un nombre négatif (-2) est une vérité immuable pour absolument TOUT nombre réel $x$."
+    },
+    {
+      "id": "q13_depassement_absolue_eq",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "ambiguity_note": "Résoudre une équation avec une VA impliquant qu'elle vaut un nombre négatif est un piège total.",
+      "prompt": "L'équation $|3x - 1| = -4$ possède :",
+      "options": [
+        { "id": "a", "text": "1 solution", "isCorrect": false },
+        { "id": "b", "text": "2 solutions", "isCorrect": false },
+        { "id": "c", "text": "Aucune solution", "isCorrect": true },
+        { "id": "d", "text": "Une infinité de solutions", "isCorrect": false }
+      ],
+      "explanation": "Une valeur absolue ne peut jamais être strictement négative. Chercher une valeur absolue égale à -4 est impossible. L'ensemble des solutions est l'ensemble vide."
+    }
+  ]
+}

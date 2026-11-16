@@ -1,0 +1,30 @@
+{
+  "id": "ex-log-24",
+  "theme": "logique",
+  "difficulty": "moyen",
+  "topic": "Logique & Raisonnements — Raisonnement par équivalence",
+  "requiresRedaction": true,
+  "context": "Les questions 1, 2, 3, 4, 5 et 6 sont indépendantes. On étudie l'équation : $(E) : \\sqrt{2x+19} - 8\\sqrt{2x+3} + \\sqrt{2x+7-4\\sqrt{2x+3}} = 6$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Résoudre dans $\\mathbb{R}$ l'équation $(E)$. (Remarquer que $7 = 3 + 2^2$ et $19 = 3 + 4^2$)",
+      "hint": "Posez $u = \\sqrt{2x+3}$ (avec $u \\geq 0$). Réécrivez chaque terme : $2x+19 = (u^2-3)+19 = u^2+16$, $2x+7-4\\sqrt{2x+3} = u^2+4-4u = (u-2)^2$. L'équation devient $\\sqrt{u^2+16} - 8u + |u-2| = 6$."
+    },
+    {
+      "id": "q2",
+      "content": "Résoudre dans $\\mathbb{R}$ les inéquations suivantes : $(I_1) : v^2 - 5r + 6 > r + 4$ et $(I_2) : |x-1| + 2x - 3 \\geq 0$",
+      "hint": "Pour $(I_1)$ : ramenez à $v^2 - 6r + 2 > 0$ et étudiez le discriminant. Pour $(I_2)$ : traitez les cas $x \\geq 1$ et $x < 1$ séparément."
+    },
+    {
+      "id": "q3",
+      "content": "Résoudre dans $\\mathbb{R}^2$ les systèmes : $(S_1) : \\begin{cases} 2|x+1| - y = 4 \\\\ |x+2| + 2y = 6 \\end{cases}$ et $(S_2) : \\begin{cases} xy - y + 2 - 2x = 0 \\\\ x^2y - (y^2+1)x + y = 0 \\end{cases}$",
+      "hint": "Pour $(S_1)$ : traitez les cas selon les signes de $x+1$ et $x+2$. Pour $(S_2)$ : factorisez chaque équation en regroupant les termes."
+    },
+    {
+      "id": "q4",
+      "content": "En utilisant un raisonnement par disjonction des cas, montrer que : a) $\\forall x \\in \\mathbb{R} : \\sqrt{x^2+1} - x > 0$ et $x^2 - x + 1 \\geq |x-1|$ ; b) $\\forall n \\in \\mathbb{N} : \\dfrac{n(n+1)(n+2)}{3} \\in \\mathbb{N}$",
+      "hint": "Pour a) première partie : distinguez $x \\geq 0$ et $x < 0$. Pour b) : distinguez $n \\equiv 0$, $n \\equiv 1$, $n \\equiv 2 \\pmod{3}$."
+    }
+  ]
+}

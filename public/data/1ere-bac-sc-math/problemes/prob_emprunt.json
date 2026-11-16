@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Combien rembourser lors d'un emprunt ?",
+    "subtitle": "Suites et intérêts composés",
+    "context": "Suites"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Combien rembourser lors d'un emprunt ?",
+          "content": "On emprunte un capital $C_0$ remboursé par mensualités. Chaque mois, la banque applique un \\textbf{taux d'intérêt} $t$ sur le capital qu'il reste à devoir. On note $C_n$ le capital restant dû après la $n$-ième mensualité $M$.\\par Chaque mois, le capital dû est d'abord multiplié par $(1+t)$ (intérêts), puis on retranche la mensualité $M$ :\\par $$C_n = (1+t)\\,C_{n-1} - M.$$"
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Montrer par récurrence que $C_n = (1+t)^n C_0 - M\\,\\dfrac{(1+t)^n - 1}{t}$.\\item Le prêt est soldé après $N$ mensualités, c'est-à-dire $C_N = 0$. En déduire l'expression de la mensualité $M$ en fonction de $C_0$, $t$ et $N$.\\item \\textbf{Application.} On emprunte $C_0 = 10\\,000$ € au taux mensuel $t = 0{,}5\\,\\% = 0{,}005$ sur $N = 24$ mois. Calculer la mensualité $M$ et le coût total du crédit.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Pour la récurrence, la quantité $\\dfrac{(1+t)^n - 1}{t}$ est la somme géométrique $1 + (1+t) + \\cdots + (1+t)^{n-1}$."
+        },
+        {
+          "type": "hint",
+          "content": "De $C_N = 0$ on tire $M\\,\\dfrac{(1+t)^N - 1}{t} = (1+t)^N C_0$, donc $M = \\dfrac{t\\,C_0}{1 - (1+t)^{-N}}$. Le coût total est $N \\times M - C_0$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} Initialisation $n=0$ : la formule donne $C_0$. Hérédité : si $C_n = (1+t)^n C_0 - M\\dfrac{(1+t)^n-1}{t}$, alors $C_{n+1} = (1+t)C_n - M = (1+t)^{n+1}C_0 - M\\dfrac{(1+t)^{n+1}-(1+t)}{t} - M = (1+t)^{n+1}C_0 - M\\dfrac{(1+t)^{n+1}-1}{t}$.\\par\\textbf{2)} $C_N = 0$ donne $M\\dfrac{(1+t)^N-1}{t} = (1+t)^N C_0$, d'où $M = \\dfrac{t\\,C_0}{1-(1+t)^{-N}}$.\\par\\textbf{3)} $M = \\dfrac{0{,}005 \\times 10\\,000}{1 - 1{,}005^{-24}} \\approx \\boxed{443{,}21\\ \\text{€}}$. Coût total $= 24 \\times 443{,}21 - 10\\,000 \\approx \\boxed{636{,}95\\ \\text{€}}$ d'intérêts."
+        }
+      ]
+    }
+  ]
+}

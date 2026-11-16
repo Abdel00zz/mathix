@@ -1,0 +1,197 @@
+{
+  "header": {
+    "title": "Les polynômes",
+    "subtitle": "Définition, opérations, racines, loi du reste et factorisation",
+    "context": "Tronc Commun Toutes Séries : Biof"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie les \\objectif{polynômes} : définition, degré, opérations (somme, différence, produit), racines, loi du reste et factorisation complète par division euclidienne. Les polynômes sont le langage algébrique universel — toute expression en $x$ se ramène à eux. La \\defi{principale difficulté} est la division euclidienne de polynômes et la chasse aux racines entières : il faut tester méthodiquement les diviseurs du terme constant et ne pas oublier de vérifier le reste. C'est \\savant{Al-Khwarizmi} qui, au IX\\textsuperscript{e} siècle, a systématisé la manipulation des expressions polynomiales, un héritage que Galois et Abel ont prolongé pour fonder la théorie moderne des équations algébriques.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Muhammad_ibn_Musa_al-Khwarizmi.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Al-Khwarizmi (~780–850)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definition_polynome",
+      "category": "course",
+      "title": "Définition d'un polynôme",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avant d'opérer sur les polynômes, il faut savoir les reconnaître, nommer leur degré et identifier leurs coefficients. Cette section pose le vocabulaire fondamental utilisé dans tout le chapitre."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un polynôme de degré $n$ ?",
+          "content": "On appelle \\textbf{polynôme de degré $n$} toute expression de la forme :\\par\\smallskip$$\\boxed{P(x) = a_n x^n + a_{n-1} x^{n-1} + \\cdots + a_2 x^2 + a_1 x + a_0}$$\\par\\smallskip avec $a_n \\neq 0$. Les réels $a_n, a_{n-1}, \\ldots, a_1, a_0$ sont les \\textbf{coefficients} du polynôme.\\par\\smallskip Vocabulaire des éléments :\\begin{enumerate}\\item $a_n$ : \\textbf{coefficient dominant} (celui devant $x^n$, toujours $\\neq 0$)\\item $a_0$ : \\textbf{terme constant} (valeur de $P$ en $x = 0$)\\item $d^\\circ(P) = n$ : \\textbf{degré} du polynôme\\item $a_k x^k$ : \\textbf{monôme} de degré $k$ ; si $a_k = 0$, le terme est absent mais son coefficient existe\\end{enumerate}\\par\\smallskip \\textbf{Cas particuliers :}\\begin{itemize}\\item $P(x) = ax^2 + bx + c$ avec $a \\neq 0$ : \\textbf{trinôme du 2\\textsuperscript{e} degré}\\item $P(x) = ax + b$ avec $a \\neq 0$ : \\textbf{polynôme du 1\\textsuperscript{er} degré}\\item $P(x) = 0$ : \\textbf{polynôme nul}. Tous ses coefficients sont nuls, donc il n'a \\textbf{pas de degré réel}\\end{itemize}"
+        },
+        {
+          "type": "intuition",
+          "content": "Imaginez un polynôme comme un escalier : chaque marche est un monôme $a_k x^k$, du bas ($a_0$, la constante) jusqu'au sommet ($a_n x^n$, le terme dominant). Le degré, c'est le nombre de la marche la plus haute, c'est-à-dire celle qui domine toutes les autres. Si une marche est absente (coefficient nul), l'escalier a un trou, mais les marches du dessus et du dessous existent toujours."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Pour $P(x) = -5x^4 + \\sqrt{3}\\,x^2 + 4x - 7$, déterminons le degré, le coefficient dominant, le terme constant et tous les coefficients.}\\par\\smallskip On réécrit $P(x)$ en faisant apparaître \\textbf{tous} les degrés :\\par$$P(x) = -5x^4 + \\blank{0}x^3 + \\sqrt{3}\\,x^2 + 4x + (-7)$$\\par\\smallskip On identifie :\\begin{enumerate}\\item $d^\\circ(P) = \\blank{4}$ \\quad : le plus haut exposant dont le coefficient est non nul\\item Coefficient dominant : $a_4 = \\blank{-5}$\\item Terme constant : $a_0 = \\blank{-7}$\\item Liste complète des coefficients : $a_4 = -5$, $a_3 = 0$, $a_2 = \\sqrt{3}$, $a_1 = \\blank{4}$, $a_0 = -7$\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Le polynôme nul $P(x) = 0$ n'a pas de degré réel. On ne peut pas lui attribuer de degré car tous ses coefficients sont nuls : il n'y a pas de \"marche la plus haute\".\\par\\smallskip Ne pas confondre :\\begin{itemize}\\item $P(x) = 0$ : le \\textbf{polynôme nul}, expression identiquement nulle pour tout $x$\\item $P(a) = 0$ pour un certain $a$ : la valeur de $P$ est nulle en $x = a$, donc $a$ est une \\textbf{racine}, mais $P$ n'est pas le polynôme nul\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "egalite_polynomes",
+      "category": "course",
+      "title": "Égalité de deux polynômes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait identifier un polynôme. On pose maintenant une règle précise pour décider si deux polynômes sont égaux : il ne suffit pas qu'ils coïncident pour quelques valeurs de $x$, il faut que \\textbf{tous} leurs coefficients coïncident."
+        },
+        {
+          "type": "definition",
+          "title": "Quand deux polynômes sont-ils égaux ?",
+          "content": "Deux polynômes $P(x)$ et $Q(x)$ sont \\textbf{égaux} si et seulement si les coefficients des monômes de \\textbf{même degré} sont égaux :\\par\\smallskip$$\\boxed{P = Q \\Leftrightarrow \\forall k,\\; a_k = b_k}$$\\par\\smallskip En pratique, pour identifier les coefficients inconnus :\\begin{enumerate}\\item Développer et réduire $P(x)$ et $Q(x)$\\item Aligner les termes de même degré\\item Écrire l'égalité entre les coefficients de chaque degré\\item Résoudre le système obtenu\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $P(x) = ax^3 + (b-2)x^2 + (4-c)x + d$ et $Q(x) = -3x^3 + x^2 + 7$. Déterminons $a$, $b$, $c$ et $d$ sachant que $P(x) = Q(x)$ pour tout réel $x$.}\\par\\smallskip On identifie les coefficients de chaque degré :\\begin{align*}\\text{degré 3} &: \\quad a = \\blank{-3}\\\\\\text{degré 2} &: \\quad b - 2 = \\blank{1} \\quad \\Rightarrow \\quad b = \\blank{3}\\\\\\text{degré 1} &: \\quad 4 - c = \\blank{0} \\quad \\Rightarrow \\quad c = \\blank{4}\\\\\\text{degré 0} &: \\quad d = 7\\end{align*}\\par\\smallskip On vérifie : $P(x) = -3x^3 + (3-2)x^2 + (4-4)x + 7 = -3x^3 + x^2 + 7 = Q(x)$. Résultat \\textbf{cohérent}."
+        },
+        {
+          "type": "remark",
+          "content": "L'identification des coefficients est une technique fondamentale en algèbre. Elle repose sur le fait que si $P(x) = Q(x)$ pour \\textbf{tout} réel $x$, alors en particulier pour des valeurs bien choisies ($x = 0$, $x = 1$, $x = -1$...) on peut créer autant d'équations que d'inconnues.\\par\\smallskip Mais attention : deux polynômes peuvent coïncider en un nombre fini de points sans être égaux. L'égalité polynomiale exige la coïncidence pour \\textbf{tous} les $x \\in \\mathbb{R}$."
+        }
+      ]
+    },
+    {
+      "id": "operations_polynomes",
+      "category": "course",
+      "title": "Opérations sur les polynômes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait comparer deux polynômes. On apprend maintenant à les additionner, soustraire et multiplier. Ces opérations produisent toujours un nouveau polynôme, et le degré du résultat obéit à des règles précises."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les règles de degré pour les opérations ?",
+          "content": "Soient $P$ et $Q$ deux polynômes non nuls.\\begin{enumerate}\\item \\textbf{Somme et différence} :\\par$$d^\\circ(P \\pm Q) \\leq \\sup\\bigl(d^\\circ(P)\\,,\\, d^\\circ(Q)\\bigr)$$\\par L'inégalité devient une égalité sauf si les termes dominants se simplifient (annulation des coefficients dominants).\\item \\textbf{Produit} :\\par$$\\boxed{d^\\circ(P \\times Q) = d^\\circ(P) + d^\\circ(Q)}$$\\par Le degré du produit est \\textbf{toujours} la somme des degrés : les termes dominants ne peuvent pas s'annuler.\\end{enumerate}\\par\\smallskip \\textbf{Remarque :} le polynôme nul est l'élément neutre pour l'addition. $P + 0 = P$."
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer la somme et la différence de deux polynômes ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Aligner} les termes de même degré (écrire les deux polynômes l'un sous l'autre)\\item \\textbf{Additionner ou soustraire} les coefficients de chaque degré\\begin{itemize}\\item Seuls les monômes de \\textbf{même degré} peuvent se combiner\\item Un terme absent d'un polynôme a coefficient 0\\end{itemize}\\item \\textbf{Simplifier} les termes dont le coefficient résultant est nul\\item \\textbf{Vérifier} le degré du résultat : il doit être $\\leq \\sup(d^\\circ P, d^\\circ Q)$\\end{enumerate}\\par\\textbf{Piège :} ne jamais \"additionner des exposants\" : $3x^2 + 5x^2 = 8x^2$, pas $8x^4$."
+        },
+        {
+          "type": "method",
+          "title": "Comment calculer le produit de deux polynômes ?",
+          "content": "Pour multiplier $P(x)$ par $Q(x)$ :\\begin{enumerate}\\item \\textbf{Distribuer} chaque monôme de $P$ sur tous les monômes de $Q$ : chaque terme de $P$ multiplie chaque terme de $Q$\\item \\textbf{Écrire} tous les produits obtenus : si $P$ a $m$ termes et $Q$ en a $n$, on obtient $m \\times n$ produits\\item \\textbf{Regrouper} les monômes de même degré et additionner leurs coefficients\\item \\textbf{Vérifier} le degré : $d^\\circ(P \\times Q)$ doit égaler $d^\\circ(P) + d^\\circ(Q)$\\end{enumerate}\\par\\textbf{Astuce :} pour un produit $(ax^p + \\cdots)(bx^q + \\cdots)$, commencer par le terme dominant $ab\\,x^{p+q}$ : s'il est correct, les autres calculs ont de bonnes chances de l'être aussi.\\par\\textbf{Piège :} ne pas oublier les termes dont l'exposant est absent dans l'un des polynômes (coefficient 0) : ils disparaissent naturellement du produit."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $P(x) = 4x^3 + 3x^2 - 4x + 1$ et $Q(x) = 3x^5 - 3x^3 - 6x - 3$. Calculons $(P+Q)(x)$, $(P-Q)(x)$ et précisons le degré de chaque résultat.}\\par\\smallskip \\textbf{Calcul de $(P+Q)(x)$ :}\\begin{align*}(P+Q)(x) &= 3x^5 + (4-3)x^3 + 3x^2 + (-4-6)x + (1-3)\\\\&= \\blank{3x^5 + x^3 + 3x^2 - 10x - 2}\\end{align*}$d^\\circ(P+Q) = \\blank{5} = \\sup(3, 5)$ \\quad (les termes dominants ne s'annulent pas).\\par\\smallskip \\textbf{Calcul de $(P-Q)(x)$ :}\\begin{align*}(P-Q)(x) &= -3x^5 + (4+3)x^3 + 3x^2 + (-4+6)x + (1+3)\\\\&= \\blank{-3x^5 + 7x^3 + 3x^2 + 2x + 4}\\end{align*}$d^\\circ(P-Q) = \\blank{5}$. Les termes dominants \\blank{ne s'annulent pas} : $d^\\circ = \\sup(3,5) = 5$."
+        },
+        {
+          "type": "remark",
+          "content": "Pour la somme, le degré peut être \\textbf{strictement inférieur} à $\\sup(d^\\circ P, d^\\circ Q)$ quand les coefficients dominants s'annulent. Exemple :\\par\\smallskip $P(x) = 2x^3 + x$ et $Q(x) = -2x^3 + 5$ donnent $(P+Q)(x) = x + 5$, de degré 1, alors que $\\sup(3,3) = 3$.\\par\\smallskip Pour le \\textbf{produit}, cette annulation est impossible : le coefficient dominant de $P \\times Q$ est $a_n \\times b_m \\neq 0$ (produit de deux non-nuls). Donc $d^\\circ(P \\times Q) = d^\\circ P + d^\\circ Q$ est toujours une \\textbf{égalité}."
+        }
+      ]
+    },
+    {
+      "id": "racines_polynome",
+      "category": "course",
+      "title": "Racine d'un polynôme : loi du reste",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On maîtrise les opérations sur les polynômes. On étudie maintenant les valeurs qui annulent un polynôme : les racines. La loi du reste relie racines et divisibilité par un binôme de la forme $(x - a)$."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une racine d'un polynôme ?",
+          "content": "Soit $P(x)$ un polynôme. Un réel $a$ est une \\textbf{racine} (ou \\textbf{zéro}) de $P$ si et seulement si :\\par\\smallskip$$\\boxed{P(a) = 0}$$\\par\\smallskip En d'autres termes, $a$ est une racine de $P$ si $a$ annule le polynôme. Les deux termes \"racine\" et \"zéro\" désignent exactement la même notion."
+        },
+        {
+          "type": "property",
+          "title": "Qu'énonce la loi du reste ?",
+          "content": "Soit $P(x)$ un polynôme et $a$ un réel.\\par\\smallskip \\textbf{Loi du reste :} le reste de la division euclidienne de $P(x)$ par le binôme $(x - a)$ est égal à la valeur numérique de $P$ en $a$ :\\par\\smallskip$$\\boxed{r = P(a)}$$\\par\\smallskip \\textbf{Conséquence directe : critère de divisibilité}\\par$$P(x) \\text{ est divisible par } (x-a) \\Leftrightarrow P(a) = 0$$\\par En d'autres termes : $a$ est une racine de $P$ si et seulement si $(x - a)$ divise $P(x)$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $P(x) = x^3 + 3x^2 - 4x - 12$. Vérifions que $2$ et $-3$ sont deux racines de $P(x)$.}\\par\\smallskip \\textbf{Test de $x = 2$ :}\\begin{align*}P(2) &= 2^3 + 3 \\times 2^2 - 4 \\times 2 - 12 \\\\&= 8 + 12 - 8 - 12 \\\\&= \\blank{0}\\end{align*}Puisque $P(2) = 0$, le réel $\\blank{2}$ est bien une racine de $P(x)$, donc $P(x)$ est divisible par $\\blank{(x-2)}$.\\par\\smallskip \\textbf{Test de $x = -3$ :}\\begin{align*}P(-3) &= (-3)^3 + 3(-3)^2 - 4(-3) - 12 \\\\&= -27 + 27 + 12 - 12 \\\\&= \\blank{0}\\end{align*}Puisque $P(-3) = 0$, le réel $-3$ est une racine et $P(x)$ est divisible par \\blank{$(x+3)$}."
+        },
+        {
+          "type": "method",
+          "title": "Comment tester si un réel $a$ est racine d'un polynôme ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Calculer} $P(a)$ en substituant $x = a$ dans l'expression de $P(x)$\\item \\textbf{Simplifier} soigneusement : respecter l'ordre des opérations, les signes des puissances\\item \\textbf{Conclure} selon le résultat :\\begin{itemize}\\item $P(a) = 0$ : $a$ est une racine, $(x-a)$ divise $P(x)$\\item $P(a) \\neq 0$ : $a$ n'est pas une racine, le reste de la division par $(x-a)$ vaut $P(a)$\\end{itemize}\\end{enumerate}\\par\\textbf{Astuce pour chercher des racines entières :} les racines entières de $P(x) = a_n x^n + \\cdots + a_0$ sont nécessairement des diviseurs de $a_0$ (terme constant). Tester $\\pm 1, \\pm 2, \\ldots$ en commençant par les plus petits."
+        },
+        {
+          "type": "remark",
+          "content": "La loi du reste est très puissante : elle transforme un problème de division de polynômes (calcul long) en un simple calcul de valeur numérique.\\par\\smallskip Récapitulatif des équivalences :\\begin{enumerate}\\item $P(a) = 0$ \\quad $\\Leftrightarrow$ \\quad $a$ est une \\textbf{racine} de $P$\\item $P(a) = 0$ \\quad $\\Leftrightarrow$ \\quad $(x - a)$ \\textbf{divise} $P(x)$\\item $(x - a) \\mid P(x)$ \\quad $\\Leftrightarrow$ \\quad il existe un polynôme $Q(x)$ tel que $P(x) = (x-a) \\times Q(x)$\\end{enumerate}\\par\\smallskip Ces trois formulations sont entièrement équivalentes et s'utilisent selon le contexte."
+        }
+      ]
+    },
+    {
+      "id": "factorisation_polynome",
+      "category": "course",
+      "title": "Factorisation d'un polynôme : division euclidienne",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait identifier les racines d'un polynôme. On apprend maintenant à factoriser complètement un polynôme en produit de binômes de la forme $(x - a)$, en enchaînant loi du reste et division euclidienne."
+        },
+        {
+          "type": "property",
+          "title": "Comment la factorisation se déduit-elle d'une racine ?",
+          "content": "Soit $P(x)$ un polynôme de degré $n$ et $\\alpha$ une racine de $P$.\\par\\smallskip D'après la loi du reste, $(x - \\alpha)$ divise $P(x)$. Il existe donc un polynôme $Q(x)$ de degré $n - 1$ tel que :\\par\\smallskip$$\\boxed{P(x) = (x - \\alpha) \\times Q(x)}$$\\par\\smallskip On trouve $Q(x)$ par la \\textbf{division euclidienne} de $P(x)$ par $(x - \\alpha)$.\\par\\smallskip \\textbf{Stratégie de factorisation complète :}\\begin{enumerate}\\item Trouver une première racine $\\alpha_1$ (tester les diviseurs du terme constant)\\item Diviser $P(x)$ par $(x - \\alpha_1)$ pour obtenir $Q(x)$\\item Trouver une racine $\\alpha_2$ de $Q(x)$ et recommencer\\item Continuer jusqu'à obtenir un produit de binômes de degré 1\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Comment effectuer la division euclidienne d'un polynôme ?",
+          "content": "Pour diviser $P(x)$ par un diviseur $D(x)$ et obtenir $P(x) = D(x) \\times Q(x) + R(x)$ :\\begin{enumerate}\\item \\textbf{Poser} la division : écrire $P(x)$ à gauche et $D(x)$ à droite d'une barre\\item \\textbf{Diviser} le terme dominant de $P$ par le terme dominant de $D$ : c'est le premier terme de $Q$\\item \\textbf{Multiplier} ce premier terme de $Q$ par $D(x)$ et \\textbf{soustraire} du dividende courant\\item \\textbf{Abaisser} les termes suivants et \\textbf{répéter} jusqu'à ce que le reste soit de degré $<$ degré de $D$\\item \\textbf{Vérifier} : $D(x) \\times Q(x) + R(x)$ doit redonner $P(x)$\\end{enumerate}\\par\\textbf{Si on sait que la division est exacte} (reste nul), vérifier que $P(\\alpha) = 0$ avant de commencer : la loi du reste garantit alors que le reste sera bien 0."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $P(x) = x^3 + 2x^2 - 5x - 6$. Montrons que $-3$ est une racine, effectuons la division euclidienne par $(x+3)$, puis factorisons complètement $P(x)$.}\\par\\smallskip \\textbf{Vérification de la racine :}\\begin{align*}P(-3) &= (-3)^3 + 2(-3)^2 - 5(-3) - 6 \\\\&= -27 + 18 + 15 - 6 \\\\&= \\blank{0}\\end{align*}Donc $\\blank{-3}$ est une racine et $P(x)$ est divisible par $\\blank{(x+3)}$.\\par\\smallskip \\textbf{Schéma classique de la division euclidienne :}\\par\\smallskip$\\begin{array}{r|l}x^3+2x^2-5x-6 & x+3\\\\\\\\hline x^3+3x^2 & x^2-x-2\\\\\\\\hline -x^2-5x & \\\\-x^2-3x & \\\\\\\\hline -2x-6 & \\\\-2x-6 & \\\\\\\\hline 0 & \\end{array}$\\par\\smallskip On lit directement le quotient : $Q(x) = \\blank{x^2 - x - 2}$. On a donc $P(x) = (x+3)(x^2-x-2)$.\\par\\smallskip \\textbf{Factorisation de $Q(x) = x^2 - x - 2$ :}\\par On cherche les racines de $Q$ : $Q(2) = 4 - 2 - 2 = \\blank{0}$, donc $2$ est racine. On factorise alors : $x^2 - x - 2 = (x-2)(\\blank{x+1})$.\\par\\smallskip \\textbf{Factorisation complète :}$\\boxed{P(x) = (x+3)(x+1)(x-2)}$"
+        },
+        {
+          "type": "remark",
+          "content": "La division euclidienne de polynômes fonctionne exactement comme celle des entiers, mais avec des monômes au lieu de chiffres. Trois parallèles à retenir :\\begin{enumerate}\\item \\textbf{Entiers} : $a = b \\times q + r$ avec $0 \\leq r < b$ \\quad ; \\quad \\textbf{Polynômes} : $P = D \\times Q + R$ avec $d^\\circ(R) < d^\\circ(D)$\\item Dans les deux cas, le \\textbf{reste est nul} si et seulement si le diviseur \\textbf{divise exactement} le dividende\\item La \\textbf{loi du reste} est l'analogue de la vérification $r = a - b \\times q$, mais calculée directement par $P(a)$\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Synthèse",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a parcouru toute la théorie des polynômes : définition, opérations, racines, loi du reste et factorisation. Ce récapitulatif regroupe les résultats essentiels à maîtriser."
+        },
+        {
+          "type": "summary",
+          "title": "Ce qu'il faut retenir sur les polynômes",
+          "content": "\\begin{itemize}\\item $P(x) = a_n x^n + \\cdots + a_0$ avec $a_n \\neq 0$ : degré $n$, coefficient dominant $a_n$, terme constant $a_0$\\item Polynôme nul : tous coefficients nuls, \\textbf{pas de degré}\\item Égalité $P = Q$ : coefficients de même degré égaux\\item $d^\\circ(P \\pm Q) \\leq \\sup(d^\\circ P, d^\\circ Q)$ ; \\quad $d^\\circ(P \\times Q) = d^\\circ P + d^\\circ Q$ (égalité)\\item $a$ est racine de $P$ $\\Leftrightarrow$ $P(a) = 0$\\item Loi du reste : reste de $P(x) \\div (x-a)$ vaut $P(a)$\\item $P(a) = 0$ $\\Leftrightarrow$ $(x-a)$ divise $P(x)$ $\\Leftrightarrow$ $P(x) = (x-a) \\times Q(x)$\\item Factorisation : trouver une racine $\\alpha$, diviser par $(x-\\alpha)$, recommencer\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

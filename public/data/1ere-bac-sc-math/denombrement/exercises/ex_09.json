@@ -1,0 +1,20 @@
+{
+  "id": "ex-denom-09",
+  "theme": "denombrement",
+  "difficulty": "difficile",
+  "topic": "Dénombrement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Tirages successifs avec condition d'ordre",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Une urne contient 5 boules rouges et 3 boules noires.\nOn tire successivement et sans remise 3 boules de l'urne.\nCombien de tirages différents contenant exactement 2 boules rouges et 1 boule noire, dans cet ordre (rouge, rouge, noire), peut-on obtenir ?",
+          "hint": "Pour avoir un tirage de la forme (rouge, rouge, noire), il faut :\n1. Tirer une boule rouge au 1er tirage : 5 possibilités.\n2. Tirer une boule rouge au 2ème tirage : 4 possibilités (car il reste 4 boules rouges).\n3. Tirer une boule noire au 3ème tirage : 3 possibilités.\n\nD'après le principe multiplicatif, le nombre total de tirages est le produit des possibilités à chaque étape.\nNombre de tirages = $5 \\times 4 \\times 3 = 60$.\n\nIl y a 60 tirages différents contenant exactement 2 boules rouges et 1 boule noire, dans cet ordre."
+        }
+      ]
+    }
+  ]
+}

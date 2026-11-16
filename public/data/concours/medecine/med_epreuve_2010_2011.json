@@ -1,0 +1,398 @@
+{
+  "school": "medecine",
+  "year": "2010–2011 · Épreuve",
+  "title": "Annale Médecine — 2010–2011 · Épreuve",
+  "source": "12_epreuve_2010_2011.tex — transcription LaTeX normalisée",
+  "questions": [
+    {
+      "id": "med-epreuve_2010_2011-q01",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2010–2011 · Épreuve · Q1",
+      "officialQuestionCode": "Q1",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition B.",
+      "prompt": "Une urne contient les $34$ jetons portant les lettres de « GAGNER LA COUPE DU MONDE EN AFRIQUE DU SUD ». On tire, avec remise et dans l'ordre, $12$ jetons. La probabilité de former « ESPAGNE GAGNE » est :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{5^3\\,3^2\\,3^2}{34^{12}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{5^3\\,3^4\\,2^3}{34^{12}}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{A_5^3A_3^2A_3^2}{A_{34}^{12}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{A_5^3A_3^2A_3^2}{34^{12}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{C_5^3C_3^2C_3^2}{C_{34}^{12}}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les multiplicités utiles sont $E:5$, $S:1$, $P:1$, $A:3$, $G:2$, $N:3$. En tenant compte des répétitions du mot cible,\n$P=\\frac{5^3\\,3^4\\,2^3}{34^{12}}.$"
+    },
+    {
+      "id": "med-epreuve_2010_2011-q02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2010–2011 · Épreuve · Q2",
+      "officialQuestionCode": "Q2",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Calculer\n$\\displaystyle \\lim_{n\\to+\\infty}\\left(1+\\frac{1}{{\\sqrt{n}}}\\right)^{-\\sqrt{n}}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "${e}^{-1}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "${e}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$1$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En prenant le logarithme,\n$-\\sqrt{n}\\ln\\left(1+\\frac{1}{{\\sqrt{n}}}\\right)\\longrightarrow-1,$\nd'où la limite ${e}^{-1}$."
+    },
+    {
+      "id": "med-epreuve_2010_2011-q03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2010–2011 · Épreuve · Q3",
+      "officialQuestionCode": "Q3",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Calculer\n$(1+ {i}\\sqrt3)^{2010}+(-1- {i}\\sqrt3)^{2010}.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^{2009}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2^{2010}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-2^{2010}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2 {i}\\,2^{2010}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$2^{2011}$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "$1+ {i}\\sqrt3=2 {e}^{2 {i}\\frac{\\pi}{3}}$ et $-1- {i}\\sqrt3=2 {e}^{4 {i}\\frac{\\pi}{3}}$. Les deux puissances valent $2^{2010}$ ; leur somme est $2^{2011}$."
+    },
+    {
+      "id": "med-epreuve_2010_2011-q04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2010–2011 · Épreuve · Q4",
+      "officialQuestionCode": "Q4",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition E.",
+      "prompt": "Déterminer la limite, lorsque $x\\to+\\infty$, de\n$f(x)=\\exp\\left(x+x\\ln\\left(1+\\frac{1}{x}\\right)\\right).$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "elle n'existe pas.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-1$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$+\\infty$.",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "$x\\ln(1+\\frac{1}{x})\\to1$, donc l'exposant tend vers $+\\infty$."
+    },
+    {
+      "id": "med-epreuve_2010_2011-q05",
+      "type": "mcq",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l’espace",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2010–2011 · Épreuve · Q5",
+      "officialQuestionCode": "Q5",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition C.",
+      "prompt": "L'ensemble des points $M$ de l'espace tels que $\\overrightarrow{MA}\\cdot\\overrightarrow{MB}=0$ est :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "une droite.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "un cercle.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "une sphère.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "un demi-cercle.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "un plan.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'égalité caractérise la sphère de diamètre $[AB]$."
+    },
+    {
+      "id": "med-epreuve_2010_2011-q06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2010–2011 · Épreuve · Q6",
+      "officialQuestionCode": "Q6",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Pour $x>0$, on pose $g(x)=\\ln(\\sqrt[3]{x})$. Alors :\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$g'(x)=\\frac{1}{{3x}}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$g'(x)=\\frac{\\sqrt[3]x}{3x}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$g'(x)=\\frac{x}{\\sqrt[3]x}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$g'(x)=\\frac{1}{{\\sqrt[3]x}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$g'(x)=\\frac{1}{{x\\sqrt[3]x}}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$g(x)=\\frac{1}{3}\\ln x$, donc $g'(x)=\\frac{1}{(3x)}$."
+    },
+    {
+      "id": "med-epreuve_2010_2011-q07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2010–2011 · Épreuve · Q7",
+      "officialQuestionCode": "Q7",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Calculer\n$\\displaystyle I=\\int_1^ {e}\\frac{(\\ln x)^n}{x}\\,\\,d x.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{{n+1}}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{e}{n+1}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2 {e}}{n+1}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{2 {e}}{n}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1}{n}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $u=\\ln x$, $\\displaystyle I=\\int_0^1u^n\\,d u=\\frac{1}{(n+1)}$."
+    },
+    {
+      "id": "med-epreuve_2010_2011-q08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2010–2011 · Épreuve · Q8",
+      "officialQuestionCode": "Q8",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Résoudre\n$\\left(\\frac{1}{3}\\right)^x\\ge2.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]-\\infty,-\\frac{\\ln2}{\\ln}3]$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$[-\\infty,-\\frac{\\ln3}{\\ln}2[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$]\\frac{\\ln3}{\\ln}2,+\\infty[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$]\\frac{\\ln2}{\\ln}3,+\\infty[$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\varnothing$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$x\\ln(\\frac{1}{3})\\ge\\ln2$ ; comme $\\ln(\\frac{1}{3})<0$, on obtient $x\\le-\\frac{\\ln2}{\\ln}3$."
+    },
+    {
+      "id": "med-epreuve_2010_2011-q09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2010–2011 · Épreuve · Q9",
+      "officialQuestionCode": "Q9",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Calculer\n$\\displaystyle S_n=\\sum_{k=1}^n k\\binom nk.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$n2^{n-1}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(n-1)2^n$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$n2^n$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2^n$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$n3^{n-1}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$k\\binom nk=n\\binom{n-1}{k-1}$, puis la formule du binôme donne $S_n=n2^{n-1}$."
+    },
+    {
+      "id": "med-epreuve_2010_2011-q10",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Analyse",
+      "difficulty": "concours",
+      "sourceReference": "Médecine — Centre non indiqué 2010–2011 · Épreuve · Q10",
+      "officialQuestionCode": "Q10",
+      "answerValidation": "Corrigé fourni dans la source LaTeX : proposition A.",
+      "prompt": "Calculer\n$\\displaystyle S=\\sum_{k=0}^{2011} {i}^k.$\n\nChoisir l’unique proposition correcte.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{2}{{1- {i}}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2 {i}}{1- {i}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{-2 {i}}{1- {i}}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1+ {i}}{1- {i}}$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les puissances de ${i}$ se regroupent par blocs de quatre, dont la somme est nulle. Il y a $2012=4\\times503$ termes."
+    }
+  ]
+}

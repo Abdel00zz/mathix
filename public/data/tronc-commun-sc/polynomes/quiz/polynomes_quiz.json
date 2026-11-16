@@ -1,0 +1,167 @@
+{
+  "questions": [
+    {
+      "id": "q1_fond_degre_nul",
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Le polynôme nul $P(x) = 0$ possède un degré égal à $0$.",
+      "isTrue": false,
+      "explanation": "Le polynôme nul n'a PAS de degré réel. Son degré n'est pas défini (ou parfois noté $-\\infty$ en convention avancée), car aucun monôme $a_k x^k$ n'a de coefficient non nul. Ne le confondez pas avec le polynôme constant $P(x) = 5$, qui lui est de degré 0."
+    },
+    {
+      "id": "q2_fond_vocabulaire",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "prompt": "Dans le polynôme $P(x) = -5x^4 + \\sqrt{3}\\,x^2 + 4x - 7$, quel est le coefficient dominant ?",
+      "options": [
+        { "id": "a", "text": "$-7$", "isCorrect": false },
+        { "id": "b", "text": "$-5x^4$", "isCorrect": false },
+        { "id": "c", "text": "$-5$", "isCorrect": true },
+        { "id": "d", "text": "$4$", "isCorrect": false }
+      ],
+      "explanation": "Le terme dominant est $-5x^4$ (celui qui a le plus haut exposant, $4$). Son coefficient est $-5$. La réponse $b$ désigne le monôme dominant, pas le coefficient."
+    },
+    {
+      "id": "q3_fond_egalite",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "prompt": "Deux polynômes sont rigoureusement égaux si et seulement si :",
+      "options": [
+        { "id": "a", "text": "Ils donnent le même résultat pour trois valeurs de $x$.", "isCorrect": false },
+        { "id": "b", "text": "Ils ont le même degré et le même coefficient dominant.", "isCorrect": false },
+        { "id": "c", "text": "Tous les coefficients de leurs monômes de même degré respectifs sont égaux.", "isCorrect": true },
+        { "id": "d", "text": "Leurs racines sont identiques.", "isCorrect": false }
+      ],
+      "explanation": "L'égalité polynomiale est une égalité de forme parfaite : chaque \"marche de l'escalier\" doit faire exactement la même taille de chaque côté."
+    },
+    {
+      "id": "q4_cons_deg_somme",
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Le degré de la somme de deux polynômes $P$ et $Q$ est toujours rigoureusement égal au plus grand de leurs degrés.",
+      "isTrue": false,
+      "explanation": "La règle dit que le degré de la somme est *inférieur ou égal* : $d^\\circ(P+Q) \\leq \\sup(d^\\circ P, d^\\circ Q)$. Si les coefficients dominants sont opposés (ex: $x^3$ et $-x^3$), ils s'annulent et le degré chute !"
+    },
+    {
+      "id": "q5_cons_deg_produit",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Propriété",
+      "prompt": "Soit $P$ de degré 3 et $Q$ de degré 5. Quel est le degré de $P \\times Q$ ?",
+      "options": [
+        { "id": "a", "text": "15", "isCorrect": false },
+        { "id": "b", "text": "8", "isCorrect": true },
+        { "id": "c", "text": "5", "isCorrect": false },
+        { "id": "d", "text": "On ne peut pas le garantir", "isCorrect": false }
+      ],
+      "explanation": "Lors d'une multiplication, on ajoute les exposants : $x^3 \\times x^5 = x^8$. Le terme dominant ne s'annule jamais. Donc le degré du produit est la SOMME stricte des degrés : $3+5=8$."
+    },
+    {
+      "id": "q6_cons_racine_def",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Définition",
+      "prompt": "Dire que le réel $\\alpha$ est une racine du polynôme $P$ signifie que :",
+      "options": [
+        { "id": "a", "text": "$P(x) = \\alpha$", "isCorrect": false },
+        { "id": "b", "text": "$P(0) = \\alpha$", "isCorrect": false },
+        { "id": "c", "text": "Le reste de la division euclidienne de $P(x)$ par $(x - \\alpha)$ est non nul.", "isCorrect": false },
+        { "id": "d", "text": "$P(\\alpha) = 0$", "isCorrect": true }
+      ],
+      "explanation": "Une racine est une valeur qui, insérée à la place de $x$, annule la fonction polynomiale. $P(\\alpha) = 0$."
+    },
+    {
+      "id": "q7_cons_loi_reste",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "prompt": "Sachant la loi du reste, si vous divisez un polynôme $P(x)$ par le binôme $(x - 5)$ sans calculer la division euclidienne, le reste $r$ vaut :",
+      "options": [
+        { "id": "a", "text": "$P(-5)$", "isCorrect": false },
+        { "id": "b", "text": "$P(5)$", "isCorrect": true },
+        { "id": "c", "text": "$0$", "isCorrect": false },
+        { "id": "d", "text": "On ne peut pas savoir sans la division", "isCorrect": false }
+      ],
+      "explanation": "La loi du reste stipule formellement que le reste de la division par $(x - a)$ est $P(a)$. Ici $a = 5$."
+    },
+    {
+      "id": "q8_maitrise_erreur_racine",
+      "type": "error",
+      "difficulty": "hard",
+      "category": "Application",
+      "prompt": "Identifier le raisonnement fautif concernant le polynôme $P(x) = x^3 - 2x^2 + x - 2$ :",
+      "context": "L'élève souhaite vérifier si $2$ est racine et en déduire une factorisation.",
+      "steps": [
+        { "id": "s1", "text": "L'élève calcule $P(2) = 2^3 - 2(2^2) + 2 - 2 = 8 - 8 + 2 - 2 = 0$. Il conclut que 2 est racine.", "isError": false },
+        { "id": "s2", "text": "Puisque $P(2) = 0$, d'après la loi du reste, le polynôme $P(x)$ est divisible par le binôme $(x + 2)$.", "isError": true, "correction": "La théorie stipule que si $a$ est racine, le polynôme est divisible par $(x - a)$. Ici la racine est 2, donc il est divisible par $(x - 2)$ et non $(x + 2)$." },
+        { "id": "s3", "text": "Sur cette base, on pose la division euclidienne de $P(x)$ par ce binôme.", "isError": false },
+        { "id": "s4", "text": "On obtiendra un polynôme quotient de degré strict 2 car $3 - 1 = 2$.", "isError": false }
+      ],
+      "explanation": "La confusion de signe $(x-a)$ / $(x+a)$ est le cimetière des points en contrôle. La racine coupe l'axe, donc quand $x=2$, la \"brique\" fautive $(x-2)$ s'annule."
+    },
+    {
+      "id": "q9_maitrise_division_ordre",
+      "type": "order",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "prompt": "Reconstituez la méthode algorithmique de la division euclidienne de $P(x)$ par $D(x)$ :",
+      "items": [
+        { "id": "a", "content": "Aligner chaque polynôme de part et d'autre de la barre de division." },
+        { "id": "b", "content": "Diviser le terme de plus haut degré de P par le terme de plus haut degré de D pour trouver le monôme du quotient." },
+        { "id": "c", "content": "Multiplier ce monôme obtenu par le diviseur entier D(x)." },
+        { "id": "d", "content": "Soustraire ce résultat au reste de P(x), puis abaisser les termes suivants." },
+        { "id": "e", "content": "Répéter le cycle jusqu'à avoir un reste dont le degré est strictement inférieur à celui de D(x)." }
+      ],
+      "correctOrder": ["a", "b", "c", "d", "e"],
+      "explanation": "C'est l'algorithme des potences appliqué scrupuleusement aux monômes de la gauche vers la droite."
+    },
+    {
+      "id": "q10_maitrise_astuce_entiers",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "ambiguity_note": "Oubli fréquent du lien entre racines entières et diviseurs du terme constant.",
+      "prompt": "Pour chercher au brouillon une racine évidente de $P(x) = 2x^4 - 7x^3 + 3x - 12$, quelles valeurs testeriez-vous en priorité ?",
+      "options": [
+        { "id": "a", "text": "Les facteurs premiers de 2 (terme dominant)", "isCorrect": false },
+        { "id": "b", "text": "Des multiples de 12", "isCorrect": false },
+        { "id": "c", "text": "Des diviseurs de $-12$ (terme constant) comme $\\pm 1, \\pm 2, \\pm 3, \\pm 4, \\ldots$", "isCorrect": true },
+        { "id": "d", "text": "Seulement 0 et 1", "isCorrect": false }
+      ],
+      "explanation": "C'est le théorème des racines rationnelles simplifié. Toute racine entière d'un polynôme divise obligatoirement le terme constant de ce polynôme."
+    },
+    {
+      "id": "q11_depassement_inconnues",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "prompt": "Par analogie, si $P(x)$ possède deux racines distinctes $\\alpha$ et $\\beta$, par quel polynôme $P(x)$ est-il assurément divisible ?",
+      "options": [
+        { "id": "a", "text": "$(x - \\alpha) + (x - \\beta)$", "isCorrect": false },
+        { "id": "b", "text": "$(x - \\alpha) \\times (x - \\beta)$", "isCorrect": true },
+        { "id": "c", "text": "$(x^2 - \\alpha\\beta)$", "isCorrect": false },
+        { "id": "d", "text": "On manque d'informations", "isCorrect": false }
+      ],
+      "explanation": "D'après la théorie, si $\\alpha$ annule, on factorise par $(x-\\alpha)$. Il reste un polynôme quotient. Si $\\beta$ annule ce reste, on factorise à son tour, engendrant le produit unifié $(x-\\alpha)(x-\\beta)$."
+    },
+    {
+      "id": "q12_depassement_degre_nul",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "ambiguity_note": "Différence entre $P=0$ et $P(x)$ est une constante = $0$ pour 1 valeur de x.",
+      "prompt": "Un polynôme du premier degré $P(x) = ax + b$ avec $a \\neq 0$ possède systématiquement :",
+      "options": [
+        { "id": "a", "text": "Aucune racine réelle", "isCorrect": false },
+        { "id": "b", "text": "Exactement une racine réelle", "isCorrect": true },
+        { "id": "c", "text": "Deux racines", "isCorrect": false },
+        { "id": "d", "text": "Une infinité de racines", "isCorrect": false }
+      ],
+      "explanation": "Résoudre $ax+b=0$ donne classiquement une et une seule solution : $x = -\\dfrac{b}{a}$. Le degré indique généralement le nombre maximum de racines (Théorème de d'Alembert-Gauss)."
+    }
+  ]
+}

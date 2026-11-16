@@ -1,0 +1,314 @@
+{
+  "questions": [
+    {
+      "id": "q1_propriete_fondamentale",
+      "type": "mcq",
+      "category": "Propriétés de base",
+      "question": "Quelle est la valeur de $e^{\\ln 5}$ ?",
+      "options": [
+        { "text": "$5$", "isCorrect": true },
+        { "text": "$e^5$", "isCorrect": false },
+        { "text": "$\\ln 5$", "isCorrect": false },
+        { "text": "$1$", "isCorrect": false }
+      ],
+      "explanation": "Les fonctions $\\exp$ et $\\ln$ sont réciproques : $e^{\\ln x} = x$ pour tout $x > 0$."
+    },
+    {
+      "id": "q2_simplification",
+      "type": "mcq",
+      "category": "Simplification",
+      "question": "Simplifier $\\frac{e^{3x}}{e^{x}}$ :",
+      "options": [
+        { "text": "$e^{2x}$", "isCorrect": true },
+        { "text": "$e^{3}$", "isCorrect": false },
+        { "text": "$e^{4x}$", "isCorrect": false },
+        { "text": "$3$", "isCorrect": false }
+      ],
+      "explanation": "Propriété du quotient : $\\dfrac{e^a}{e^b} = e^{a-b}$, donc $\\dfrac{e^{3x}}{e^x} = e^{2x}$."
+    },
+    {
+      "id": "q3_limite_infini",
+      "type": "mcq",
+      "category": "Limites",
+      "question": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} e^x$ :",
+      "options": [
+        { "text": "$+\\infty$", "isCorrect": true },
+        { "text": "$0$", "isCorrect": false },
+        { "text": "$1$", "isCorrect": false },
+        { "text": "$e$", "isCorrect": false }
+      ],
+      "explanation": "Limite fondamentale : $\\lim_{x \\to +\\infty} e^x = +\\infty$."
+    },
+    {
+      "id": "q4_limite_moins_infini",
+      "type": "mcq",
+      "category": "Limites",
+      "question": "Calculer $\\displaystyle \\lim_{x \\to -\\infty} e^x$ :",
+      "options": [
+        { "text": "$0$", "isCorrect": true },
+        { "text": "$-\\infty$", "isCorrect": false },
+        { "text": "$+\\infty$", "isCorrect": false },
+        { "text": "$1$", "isCorrect": false }
+      ],
+      "explanation": "Limite fondamentale : $\\lim_{x \\to -\\infty} e^x = 0$. La droite $y = 0$ est asymptote horizontale en $-\\infty$."
+    },
+    {
+      "id": "q5_croissance_comparee",
+      "type": "mcq",
+      "category": "Croissances comparées",
+      "question": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} \\frac{e^x}{x^2}$ :",
+      "options": [
+        { "text": "$+\\infty$", "isCorrect": true },
+        { "text": "$0$", "isCorrect": false },
+        { "text": "$1$", "isCorrect": false },
+        { "text": "$e$", "isCorrect": false }
+      ],
+      "explanation": "Croissances comparées : $\\lim_{x \\to +\\infty} \\dfrac{e^x}{x^n} = +\\infty$ pour tout $n \\in \\mathbb{N}^*$. L'exponentielle l'emporte sur tout polynôme."
+    },
+    {
+      "id": "q6_croissance_comparee_2",
+      "type": "mcq",
+      "category": "Croissances comparées",
+      "question": "Calculer $\\displaystyle \\lim_{x \\to -\\infty} x^2 e^x$ :",
+      "options": [
+        { "text": "$0$", "isCorrect": true },
+        { "text": "$+\\infty$", "isCorrect": false },
+        { "text": "$-\\infty$", "isCorrect": false },
+        { "text": "Forme indéterminée", "isCorrect": false }
+      ],
+      "explanation": "Croissances comparées en $-\\infty$ : $\\lim_{x \\to -\\infty} x^n e^x = 0$ pour tout $n$."
+    },
+    {
+      "id": "q7_derivee_simple",
+      "type": "mcq",
+      "category": "Dérivation",
+      "question": "Quelle est la dérivée de $f(x) = e^{2x}$ ?",
+      "options": [
+        { "text": "$f'(x) = 2e^{2x}$", "isCorrect": true },
+        { "text": "$f'(x) = e^{2x}$", "isCorrect": false },
+        { "text": "$f'(x) = 2xe^{2x}$", "isCorrect": false },
+        { "text": "$f'(x) = e^{2}$", "isCorrect": false }
+      ],
+      "explanation": "On applique $(e^u)' = u' \\cdot e^u$ avec $u = 2x$ et $u' = 2$."
+    },
+    {
+      "id": "q8_derivee_composee",
+      "type": "mcq",
+      "category": "Dérivation",
+      "question": "Quelle est la dérivée de $g(x) = e^{x^2}$ ?",
+      "options": [
+        { "text": "$g'(x) = 2x \\cdot e^{x^2}$", "isCorrect": true },
+        { "text": "$g'(x) = e^{x^2}$", "isCorrect": false },
+        { "text": "$g'(x) = x^2 \\cdot e^{x^2}$", "isCorrect": false },
+        { "text": "$g'(x) = 2e^{2x}$", "isCorrect": false }
+      ],
+      "explanation": "On applique $(e^u)' = u' \\cdot e^u$ avec $u = x^2$ et $u' = 2x$."
+    },
+    {
+      "id": "q9_equation_simple",
+      "type": "mcq",
+      "category": "Équations",
+      "question": "Résoudre $e^x = 1$ :",
+      "options": [
+        { "text": "$x = 0$", "isCorrect": true },
+        { "text": "$x = 1$", "isCorrect": false },
+        { "text": "$x = e$", "isCorrect": false },
+        { "text": "Pas de solution", "isCorrect": false }
+      ],
+      "explanation": "$e^x = 1 = e^0$, donc $x = 0$ par la propriété $e^a = e^b \\iff a = b$."
+    },
+    {
+      "id": "q10_equation_ln",
+      "type": "mcq",
+      "category": "Équations",
+      "question": "Résoudre $e^{2x} = 7$ :",
+      "options": [
+        { "text": "$x = \\frac{\\ln 7}{2}$", "isCorrect": true },
+        { "text": "$x = \\ln 7$", "isCorrect": false },
+        { "text": "$x = 2\\ln 7$", "isCorrect": false },
+        { "text": "$x = \\frac{7}{2}$", "isCorrect": false }
+      ],
+      "explanation": "On passe au $\\ln$ : $2x = \\ln 7$, donc $x = \\dfrac{\\ln 7}{2}$."
+    },
+    {
+      "id": "q11_vrai_faux_derivee",
+      "type": "true-false",
+      "category": "Dérivation",
+      "question": "La fonction $f(x) = e^x$ est sa propre dérivée : $(e^x)' = e^x$.",
+      "isTrue": true,
+      "explanation": "C'est la propriété caractéristique de l'exponentielle : $(e^x)' = e^x$."
+    },
+    {
+      "id": "q12_vrai_faux_signe",
+      "type": "true-false",
+      "category": "Propriétés",
+      "question": "Pour tout réel $x$, on a $e^x > 0$.",
+      "isTrue": true,
+      "explanation": "L'exponentielle est $\toujours strictement positive$ : elle ne s'annule jamais et ne prend jamais de valeurs négatives."
+    },
+    {
+      "id": "q13_primitive",
+      "type": "mcq",
+      "category": "Primitives",
+      "question": "Une primitive de $f(x) = 3e^{3x}$ est :",
+      "options": [
+        { "text": "$F(x) = e^{3x}$", "isCorrect": true },
+        { "text": "$F(x) = 3e^{3x}$", "isCorrect": false },
+        { "text": "$F(x) = 9e^{3x}$", "isCorrect": false },
+        { "text": "$F(x) = \\frac{e^{3x}}{3}$", "isCorrect": false }
+      ],
+      "explanation": "On vérifie : $(e^{3x})' = 3e^{3x}$, donc $e^{3x}$ est bien une primitive de $3e^{3x}$."
+    },
+    {
+      "id": "q14_inequation",
+      "type": "mcq",
+      "category": "Inéquations",
+      "question": "Résoudre $e^x \\geq e^3$ :",
+      "options": [
+        { "text": "$x \\geq 3$", "isCorrect": true },
+        { "text": "$x \\leq 3$", "isCorrect": false },
+        { "text": "$x = 3$", "isCorrect": false },
+        { "text": "$x > 0$", "isCorrect": false }
+      ],
+      "explanation": "L'exponentielle est strictement croissante, donc $e^x \\geq e^3 \\iff x \\geq 3$."
+    },
+    {
+      "id": "q15_tangente_origine",
+      "type": "mcq",
+      "category": "Tangente",
+      "question": "Quelle est l'équation de la tangente à la courbe de $e^x$ au point d'abscisse $0$ ?",
+      "options": [
+        { "text": "$y = x + 1$", "isCorrect": true },
+        { "text": "$y = x$", "isCorrect": false },
+        { "text": "$y = e^x$", "isCorrect": false },
+        { "text": "$y = 1$", "isCorrect": false }
+      ],
+      "explanation": "Tangente en $(0, 1)$ : $y = f'(0)(x - 0) + f(0) = 1 \\cdot x + 1 = x + 1$."
+    },
+    {
+      "id": "q16_second_degre",
+      "type": "mcq",
+      "category": "Équations",
+      "question": "Pour résoudre $e^{2x} - 5e^x + 6 = 0$, on pose $X = e^x$. L'équation devient :",
+      "options": [
+        { "text": "$X^2 - 5X + 6 = 0$", "isCorrect": true },
+        { "text": "$X^2 - 5X - 6 = 0$", "isCorrect": false },
+        { "text": "$2X - 5X + 6 = 0$", "isCorrect": false },
+        { "text": "$X - 5 + 6 = 0$", "isCorrect": false }
+      ],
+      "explanation": "Comme $e^{2x} = (e^x)^2 = X^2$, l'équation se ramène à $X^2 - 5X + 6 = 0$."
+    },
+    {
+      "id": "q17_solutions_second_degre",
+      "type": "mcq",
+      "category": "Équations",
+      "question": "Les solutions de $e^{2x} - 5e^x + 6 = 0$ sont :",
+      "options": [
+        { "text": "$x = \\ln 2$ et $x = \\ln 3$", "isCorrect": true },
+        { "text": "$x = 2$ et $x = 3$", "isCorrect": false },
+        { "text": "$x = \\ln 2$ uniquement", "isCorrect": false },
+        { "text": "$x = -\\ln 2$ et $x = -\\ln 3$", "isCorrect": false }
+      ],
+      "explanation": "$X^2 - 5X + 6 = (X-2)(X-3) = 0$ donne $X = 2$ ou $X = 3$, soit $x = \\ln 2$ ou $x = \\ln 3$."
+    },
+    {
+      "id": "q18_asymptote",
+      "type": "mcq",
+      "category": "Étude de fonction",
+      "question": "La courbe de $f(x) = e^x$ admet une asymptote :",
+      "options": [
+        { "text": "Horizontale $y = 0$ en $-\\infty$", "isCorrect": true },
+        { "text": "Verticale $x = 0$", "isCorrect": false },
+        { "text": "Horizontale $y = 1$ en $+\\infty$", "isCorrect": false },
+        { "text": "Oblique $y = x$", "isCorrect": false }
+      ],
+      "explanation": "Comme $\\lim_{x \\to -\\infty} e^x = 0$, la droite $y = 0$ est asymptote horizontale en $-\\infty$."
+    },
+    {
+      "id": "q19_croissance_comparee_limite",
+      "type": "mcq",
+      "category": "Croissances comparées",
+      "question": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} xe^{-x}$ :",
+      "options": [
+        { "text": "$0$", "isCorrect": true },
+        { "text": "$+\\infty$", "isCorrect": false },
+        { "text": "$-\\infty$", "isCorrect": false },
+        { "text": "$1$", "isCorrect": false }
+      ],
+      "explanation": "$xe^{-x} = \\dfrac{x}{e^x}$. Par croissances comparées, $\\lim_{x \\to +\\infty} \\dfrac{x}{e^x} = 0$."
+    },
+    {
+      "id": "q20_erreur",
+      "type": "mcq",
+      "category": "Chasse à l'erreur",
+      "question": "Un élève affirme que $\\lim_{x \\to +\\infty} (e^x - x^2) = 0$ car c'est une forme indéterminée $+\\infty - \\infty$. Quelle est la vraie limite et la bonne justification ?",
+      "options": [
+        { "text": "$+\\infty$, car en factorisant par $e^x$, on obtient $e^x(1 - \\frac{x^2}{e^x})$ et par croissances comparées $\\frac{x^2}{e^x} \\to 0$.", "isCorrect": true },
+        { "text": "$0$, car les deux termes tendent vers $+\\infty$ à la même vitesse.", "isCorrect": false },
+        { "text": "$-\\infty$, car le terme $-x^2$ l'emporte sur l'exponentielle.", "isCorrect": false },
+        { "text": "$1$, car c'est la limite usuelle de $\\frac{e^x}{x}$.", "isCorrect": false }
+      ],
+      "explanation": "$+\\infty - \\infty$ est une forme indéterminée. Par croissances comparées, $e^x$ domine $x^2$, donc en factorisant par le terme dominant $e^x$, on trouve $\\lim_{x \\to +\\infty}(e^x - x^2) = +\\infty$."
+    },
+    {
+      "id": "q21_limite_remarquable",
+      "type": "mcq",
+      "category": "Limites",
+      "question": "Quelle est la valeur de la limite remarquable $\\displaystyle \\lim_{x \\to 0} \\frac{e^x - 1}{x}$ ?",
+      "options": [
+        { "text": "$1$", "isCorrect": true },
+        { "text": "$0$", "isCorrect": false },
+        { "text": "$+\\infty$", "isCorrect": false },
+        { "text": "$e$", "isCorrect": false }
+      ],
+      "explanation": "C'est une limite du cours qui découle directement de la définition du nombre dérivé de la fonction exponentielle en $x=0$."
+    },
+    {
+      "id": "q22_equation_impossible",
+      "type": "mcq",
+      "category": "Équations",
+      "question": "Combien de solutions réelles possède l'équation $e^{3x+1} = -2$ ?",
+      "options": [
+        { "text": "Aucune solution", "isCorrect": true },
+        { "text": "Une seule solution", "isCorrect": false },
+        { "text": "Deux solutions", "isCorrect": false },
+        { "text": "Une infinité de solutions", "isCorrect": false }
+      ],
+      "explanation": "La fonction exponentielle est strictement positive sur $\\mathbb{R}$. Il est donc impossible que $e^{3x+1}$ soit égal à un nombre négatif comme $-2$."
+    },
+    {
+      "id": "q23_derivee_produit",
+      "type": "mcq",
+      "category": "Dérivation",
+      "question": "Quelle est la dérivée de la fonction $f(x) = x e^x$ ?",
+      "options": [
+        { "text": "$f'(x) = (x+1)e^x$", "isCorrect": true },
+        { "text": "$f'(x) = e^x$", "isCorrect": false },
+        { "text": "$f'(x) = x e^x$", "isCorrect": false },
+        { "text": "$f'(x) = (x-1)e^x$", "isCorrect": false }
+      ],
+      "explanation": "On utilise la formule de la dérivée d'un produit $(uv)' = u'v + uv'$ avec $u(x)=x$ et $v(x)=e^x$. Donc $f'(x) = 1 \\cdot e^x + x \\cdot e^x = (x+1)e^x$."
+    },
+    {
+      "id": "q24_base_a",
+      "type": "mcq",
+      "category": "Exponentielle de base a",
+      "question": "Quelle est la dérivée de la fonction $f(x) = 5^x$ ?",
+      "options": [
+        { "text": "$f'(x) = (\\ln 5) \\times 5^x$", "isCorrect": true },
+        { "text": "$f'(x) = x \\times 5^{x-1}$", "isCorrect": false },
+        { "text": "$f'(x) = 5^x$", "isCorrect": false },
+        { "text": "$f'(x) = \\frac{5^x}{\\ln 5}$", "isCorrect": false }
+      ],
+      "explanation": "Pour une base $a > 0$, on a $a^x = e^{x \\ln a}$. Sa dérivée est donc $(\\ln a) e^{x \\ln a} = (\\ln a) \\times a^x$."
+    },
+    {
+      "id": "q25_piege_algebrique",
+      "type": "true-false",
+      "category": "Propriétés algébriques",
+      "question": "Pour tous réels $a$ et $b$, on a l'égalité : $e^{a+b} = e^a + e^b$.",
+      "isTrue": false,
+      "explanation": "C'est un piège classique ! L'exponentielle transforme les additions en multiplications. La vraie formule est $e^{a+b} = e^a \\times e^b$."
+    }
+  ]
+}

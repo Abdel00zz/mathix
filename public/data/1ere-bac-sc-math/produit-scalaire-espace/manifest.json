@@ -1,0 +1,50 @@
+{
+  "id": "produit-scalaire-espace",
+  "title": "Produit scalaire dans l'espace",
+  "section": "algebre-geometrie",
+  "quizCount": 20,
+  "revisions": [
+    {
+      "id": "rev-prod-scal-esp-1",
+      "title": "Fiche Complète : Produit Scalaire Espace",
+      "path": "data/1ere-bac-sc-math/produit-scalaire-espace/revisions/fiche_produit_scalaire_espace_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-prod-scal-esp-01",
+      "path": "data/1ere-bac-sc-math/produit-scalaire-espace/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-prod-scal-esp-02",
+      "path": "data/1ere-bac-sc-math/produit-scalaire-espace/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-prod-scal-esp-03",
+      "path": "data/1ere-bac-sc-math/produit-scalaire-espace/exercises/ex_03.json"
+    },
+    {
+      "id": "ex-prod-scal-esp-04",
+      "path": "data/1ere-bac-sc-math/produit-scalaire-espace/exercises/ex_04.json"
+    },
+    {
+      "id": "ex-prod-scal-esp-05",
+      "path": "data/1ere-bac-sc-math/produit-scalaire-espace/exercises/ex_05.json"
+    },
+    {
+      "id": "ex-prod-scal-esp-06",
+      "path": "data/1ere-bac-sc-math/produit-scalaire-espace/exercises/ex_06.json"
+    },
+    {
+      "id": "ex-prod-scal-esp-07",
+      "path": "data/1ere-bac-sc-math/produit-scalaire-espace/exercises/ex_07.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-produit-scalaire-espace-1",
+      "path": "data/1ere-bac-sc-math/produit-scalaire-espace/quiz/produit-scalaire-espace_quiz.json",
+      "questionsCount": 20
+    }
+  ]
+}

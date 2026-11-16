@@ -1,0 +1,26 @@
+{
+  "id": "etude-fonctions",
+  "title": "L'étude des fonctions numériques et représentations graphiques",
+  "exercises": [
+    {
+      "id": "ex-etude-fonctions-01",
+      "path": "data/1ere-bac-sc-ex/etude-fonctions/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-etude-fonctions-02",
+      "path": "data/1ere-bac-sc-ex/etude-fonctions/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-etude-fonctions-03",
+      "path": "data/1ere-bac-sc-ex/etude-fonctions/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-etude-fonctions-01",
+      "path": "data/1ere-bac-sc-ex/etude-fonctions/quiz/etude-fonctions_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

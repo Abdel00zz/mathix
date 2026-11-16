@@ -1,0 +1,68 @@
+{
+  "id": "ex-complexes-28",
+  "topic": "Nombres complexes - Bac National 2023 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2023,
+  "examenSession": "Normale",
+  "context": "On considère le nombre complexe : $u=1+(2-\\sqrt{3})i$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Écrire sous forme exponentielle les nombres complexes : $1-i$ et $1+\\sqrt{3}i$.",
+          "hint": "Calculez le module et un argument de chacun séparément ; les valeurs $\\sqrt{2}$ et $2$ ainsi que les angles remarquables $-\\pi/4$ et $\\pi/3$ devraient apparaître."
+        },
+        {
+          "id": "q1b",
+          "content": "Montrer que $\\dfrac{(1-i)(1+\\sqrt{3}i)}{2\\sqrt{2}}=e^{i\\pi/12}$.",
+          "hint": "Multipliez les deux formes exponentielles trouvées à la question précédente et simplifiez le module."
+        },
+        {
+          "id": "q1c",
+          "content": "En déduire que $\\tan\\left(\\dfrac{\\pi}{12}\\right)=2-\\sqrt{3}$.",
+          "hint": "Développez $(1-i)(1+\\sqrt{3}i)$ sous forme algébrique puis identifiez-la à $2\\sqrt{2}e^{i\\pi/12}=2\\sqrt2(\\cos(\\pi/12)+i\\sin(\\pi/12))$ pour en tirer le rapport $\\sin/\\cos$."
+        },
+        {
+          "id": "q1d",
+          "content": "Montrer que $u=(\\sqrt{6}-\\sqrt{2})e^{i\\pi/12}$.",
+          "hint": "Calculez le module de $u=1+(2-\\sqrt3)i$ et comparez son argument à celui trouvé en 1b), en utilisant la valeur de $\\tan(\\pi/12)$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "On considère les deux suites numériques $(x_n)_{n\\in\\mathbb{N}}$ et $(y_n)_{n\\in\\mathbb{N}}$ définies par : $x_0=1$, $y_0=0$ et $(\\forall n\\in\\mathbb{N})$ ; $\\begin{cases}x_{n+1}=x_n-(2-\\sqrt{3})y_n\\\\y_{n+1}=(2-\\sqrt{3})x_n+y_n\\end{cases}$",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Montrer par récurrence que pour tout $n\\in\\mathbb{N}$, $x_n+iy_n=u^n$.",
+          "hint": "Au rang $n+1$, calculez $u\\cdot u^n=u(x_n+iy_n)$ et identifiez partie réelle et partie imaginaire aux formules de récurrence données."
+        },
+        {
+          "id": "q2b",
+          "content": "En déduire que pour tout $n\\in\\mathbb{N}$, $x_n=\\dfrac{\\cos\\left(\\frac{n\\pi}{12}\\right)}{\\left(\\cos\\frac{\\pi}{12}\\right)^n}$ et $y_n=\\dfrac{\\sin\\left(\\frac{n\\pi}{12}\\right)}{\\left(\\cos\\frac{\\pi}{12}\\right)^n}$.",
+          "hint": "Écrivez $u^n$ sous forme exponentielle en élevant $u=(\\sqrt6-\\sqrt2)e^{i\\pi/12}$ à la puissance $n$, puis remarquez que $\\sqrt6-\\sqrt2=2\\sqrt2\\cos(\\pi/12)$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Le plan complexe est rapporté à un repère orthonormé direct $\\left(O;\\overrightarrow{e_1},\\overrightarrow{e_2}\\right)$. Pour tout entier naturel $n$, on note $A_n$ le point d'affixe $u^n$.",
+      "subQuestions": [
+        {
+          "id": "q3a",
+          "content": "Déterminer les entiers $n$ pour lesquels les points $O$, $A_0$ et $A_n$ sont alignés.",
+          "hint": "$O$, $A_0$, $A_n$ alignés signifie que $u^n$ et $u^0=1$ ont le même argument modulo $\\pi$ ; utilisez l'argument $\\frac{n\\pi}{12}$ de $u^n$."
+        },
+        {
+          "id": "q3b",
+          "content": "Montrer que pour tout entier $n$, le triangle $OA_nA_{n+1}$ est rectangle en $A_n$.",
+          "hint": "Étudiez le quotient $\\dfrac{u^{n+1}-u^n}{0-u^n}=\\dfrac{u^n(u-1)}{-u^n}$ et vérifiez qu'il est imaginaire pur en calculant $u-1$."
+        }
+      ]
+    }
+  ]
+}

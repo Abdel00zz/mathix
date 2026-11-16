@@ -1,0 +1,47 @@
+{
+  "id": "ex-esp-10",
+  "theme": "geometrie-analytique-espace",
+  "difficulty": "difficile",
+  "topic": "Géométrie analytique dans l'espace — Plan, sphère, droite, triangle",
+  "requiresRedaction": true,
+  "context": "Dans l'espace rapporté à un repère orthonormé direct $\\left(O;\\overrightarrow{i};\\overrightarrow{j};\\overrightarrow{k}\\right)$. On considère le plan $(P)$ passant par le point $A(0;1;1)$ et dont $\\overrightarrow{u}(1;0;-1)$ est un vecteur normal et la sphère $(S)$ de centre le point $\\Omega(0;1;-1)$ et de rayon $\\sqrt{2}$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que : $x - z + 1 = 0$ est équation cartésienne du plan $(P)$",
+          "hint": "Vérifiez que $\\overrightarrow{u}(1;0;-1)$ est le vecteur normal et que $A(0;1;1)$ appartient au plan."
+        },
+        {
+          "id": "sq1b",
+          "content": "Montrer que le plan $(P)$ est tangente à la sphère $(S)$ et vérifier que $B(-1;1;0)$ est le point de contact",
+          "hint": "Calculez $d(\\Omega,(P)) = \\dfrac{|0-(-1)+1|}{\\sqrt{2}} = \\sqrt{2} = R$. Puis vérifiez que $B \\in (P)$ et $B \\in (S)$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Déterminer une représentation paramétrique de la droite $(\\Delta)$ passant par le point $A$ et orthogonale au plan $(P)$",
+          "hint": "La droite est parallèle au vecteur normal $\\overrightarrow{u}(1;0;-1)$ de $(P)$ et passe par $A(0;1;1)$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Montrer que la droite $(\\Delta)$ est tangente à la sphère $(S)$ au point $C(1;1;0)$",
+          "hint": "Substituez la représentation paramétrique dans l'équation de $(S)$ et vérifiez que le discriminant est nul (tangente). Calculez les coordonnées du point de tangence."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que $\\overrightarrow{OC} \\wedge \\overrightarrow{OB} = 2\\overrightarrow{k}$ et en déduire que l'aire du triangle $OCB$",
+      "hint": "Calculez $\\overrightarrow{OC} = (1;1;0)$ et $\\overrightarrow{OB} = (-1;1;0)$, puis le produit vectoriel. L'aire du triangle est $\\dfrac{1}{2}\\|\\overrightarrow{OC} \\wedge \\overrightarrow{OB}\\|$."
+    }
+  ]
+}

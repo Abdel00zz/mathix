@@ -1,0 +1,263 @@
+{
+  "header": {
+    "title": "Arithmétiques dans \\(\\mathbb{N}\\)",
+    "subtitle": "Entiers naturels, parité, divisibilité, nombres premiers, PGCD, PPCM et algorithme d'Euclide",
+    "context": "Tronc Commun Toutes Séries — Biof"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre étudie les \\objectif{nombres entiers naturels} : divisibilité, parité, décomposition en facteurs premiers, PGCD et PPCM. Ces briques fondamentales composent tous les entiers et régissent leurs relations de divisibilité. La \\defi{principale difficulté} réside dans la rigueur des raisonnements par cas et la manipulation rigoureuse des multiples et des diviseurs, qui demandent de la méthode plutôt que de l'intuition. C'est \\savant{Euclide} qui a posé, dès le III\\textsuperscript{e} siècle av. J.-C., les fondements de cette science des entiers — fondements qui alimentent aujourd'hui la cryptographie à clé publique (RSA) et la sécurité des échanges numériques.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Euklid-von-Alexandria_1.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Euclide (~325–265 av. J.-C.)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "entiers_naturels",
+      "category": "course",
+      "title": "L'ensemble des nombres entiers naturels \\(\\mathbb{N}\\)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On commence par poser les bases : qu'est-ce qu'un entier naturel, comment le noter et comment exprimer l'appartenance ou la non-appartenance à \\(\\mathbb{N}\\)."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que l'ensemble \\(\\mathbb{N}\\) ?",
+          "content": "Tous les nombres entiers naturels forment un ensemble noté $\\mathbb{N}$ :\\par\\smallskip$$\\mathbb{N} = \\{0, 1, 2, 3, 4, 5, \\ldots\\}$$\\par\\smallskip Deux sous-ensembles importants :\\begin{enumerate}\\item $\\mathbb{N}^* = \\{1, 2, 3, \\ldots\\}$ — les entiers naturels \\textbf{non nuls} (on exclut 0)\\item $\\{0\\}$ — le singleton contenant seulement le nombre \\textbf{nul}\\end{enumerate}\\par\\smallskip \\textbf{Notations d'appartenance :}\\begin{itemize}\\item $7 \\in \\mathbb{N}$ : 7 est un entier naturel\\item $-8 \\notin \\mathbb{N}$ : $-8$ n'est pas un entier naturel\\item $0 \\in \\mathbb{N}$ mais $0 \\notin \\mathbb{N}^*$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Parmi les nombres suivants, déterminons lesquels appartiennent à $\\mathbb{N}$, à $\\mathbb{N}^*$, et lesquels n'appartiennent à aucun des deux : $\\;0,\\; 15,\\; -3,\\; \\frac{7}{2},\\; 1000$.}\\par\\smallskip On applique les définitions :\\begin{itemize}\\item $0 \\in \\blank{\\mathbb{N}}$ mais $0 \\notin \\mathbb{N}^*$ (0 est l'entier nul)\\item $15 \\in \\blank{\\mathbb{N}^*}$ (entier strictement positif)\\item $-3 \\blank{\\notin \\mathbb{N}}$ (négatif, exclu de $\\mathbb{N}$)\\item $\\frac{7}{2} = 3{,}5 \\notin \\blank{\\mathbb{N}}$ (non entier)\\item $1000 \\in \\blank{\\mathbb{N}^*}\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "Le symbole $\\in$ se lit « appartient à » et $\\notin$ se lit « n'appartient pas à ».\\par\\smallskip Pour tout entier naturel $k \\in \\mathbb{N}$ :\\begin{itemize}\\item $2k$ est un entier naturel \\textbf{pair}\\item $2k + 1$ est un entier naturel \\textbf{impair}\\end{itemize}\\par\\smallskip Ces deux formes permettent d'écrire \\textbf{n'importe quel} entier naturel : il est soit pair, soit impair, jamais les deux à la fois."
+        }
+      ]
+    },
+    {
+      "id": "parite",
+      "category": "course",
+      "title": "Les nombres pairs et impaires",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait appartenir à $\\mathbb{N}$. On étudie maintenant une propriété fondamentale de chaque entier : sa parité. Elle se transmet lors des opérations arithmétiques de façon précise et prévisible."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un entier pair ? Qu'est-ce qu'un entier impair ?",
+          "content": "Soit $a$ un entier naturel.\\begin{enumerate}\\item $a$ est \\textbf{pair} s'il existe un entier naturel $k$ tel que :\\par$$\\boxed{a = 2k}$$\\item $a$ est \\textbf{impair} s'il existe un entier naturel $k$ tel que :\\par$$\\boxed{a = 2k + 1}$$\\end{enumerate}\\par\\smallskip Tout entier naturel est soit pair, soit impair — jamais les deux à la fois."
+        },
+        {
+          "type": "property",
+          "title": "Comment la parité se transmet-elle dans les opérations ?",
+          "content": "Soient $a$ et $b$ deux entiers naturels. Le tableau suivant résume la parité de $a+b$, $a-b$ et $a \\times b$ :\\par\\smallskip$$\\begin{array}{|c|c|c|c|c|}\\hline a & b & a+b & a-b & a \\times b \\\\\\hline \\text{pair} & \\text{pair} & \\text{pair} & \\text{pair} & \\text{pair} \\\\\\hline \\text{impair} & \\text{impair} & \\text{pair} & \\text{pair} & \\text{impair} \\\\\\hline \\text{pair} & \\text{impair} & \\text{impair} & \\text{impair} & \\text{pair} \\\\\\hline \\text{impair} & \\text{pair} & \\text{impair} & \\text{impair} & \\text{pair} \\\\\\hline\\end{array}$$\\par\\smallskip Règles à retenir :\\begin{itemize}\\item Somme ou différence de deux entiers de \\textbf{même parité} : résultat \\textbf{pair}\\item Somme ou différence de deux entiers de \\textbf{parité différente} : résultat \\textbf{impair}\\item Produit pair si \\textbf{au moins un} facteur est pair\\item Produit impair seulement si \\textbf{tous} les facteurs sont impairs\\end{itemize}"
+        },
+        {
+          "type": "intuition",
+          "content": "Imaginez les entiers pairs comme des boîtes que l'on peut séparer en deux tas égaux, et les impairs comme des boîtes avec un élément qui déborde. Quand on additionne deux \"débordements\" (deux impairs), ils se compensent et donnent un pair. C'est pour ça que impair + impair = pair. En revanche, pair + impair = un débordement qui reste = impair."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que le produit de deux entiers consécutifs $n(n+1)$ est toujours pair, quel que soit $n \\in \\mathbb{N}$.}\\par\\smallskip On distingue deux cas selon la parité de $n$ :\\begin{itemize}\\item \\textbf{Cas 1 — $n$ est pair :} il existe $k \\in \\mathbb{N}$ tel que $n = \\blank{2k}$. Alors : $n(n+1) = 2k(2k+1)$. Ce produit contient le facteur $\\blank{2}$, donc $n(n+1)$ est \\blank{pair}.\\item \\textbf{Cas 2 — $n$ est impair :} il existe $k \\in \\mathbb{N}$ tel que $n = 2k+1$. Alors $n+1 = \\blank{2k+2} = 2(k+1)$. Ainsi, $n(n+1) = (2k+1) \\times 2(k+1)$. Ce produit contient le facteur $2$, donc $n(n+1)$ est \\blank{pair}.\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "La parité se conserve de façon très régulière. Trois résultats utiles à mémoriser :\\begin{enumerate}\\item $n$ et $n+1$ sont de parités \\textbf{opposées} (l'un pair, l'autre impair) — donc leur produit est toujours pair\\item $n^2$ a la \\textbf{même parité} que $n$ : pair$^2$ = pair, impair$^2$ = impair\\item La somme de $p$ entiers impairs est paire si $p$ est pair, impaire si $p$ est impair\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "diviseurs_multiples",
+      "category": "course",
+      "title": "Diviseurs et multiples d'un nombre",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait maintenant analyser la parité d'un entier. On étudie ici une relation plus fine entre deux entiers : la divisibilité. C'est le socle de toute l'arithmétique qui suit."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un multiple et qu'est-ce qu'un diviseur ?",
+          "content": "Soient $a$ et $b$ deux éléments de $\\mathbb{N}$.\\begin{enumerate}\\item $a$ est un \\textbf{multiple de $b$} s'il existe un entier naturel $n$ tel que :\\par$$\\boxed{a = b \\times n}$$\\par On dit aussi que $b$ \\textbf{divise} $a$, noté $b \\mid a$.\\item $b$ est un \\textbf{diviseur de $a$} s'il existe un entier naturel $n$ tel que $a = b \\times n$.\\end{enumerate}\\par\\smallskip Les deux définitions sont \\textbf{réciproques} : $b$ divise $a$ $\\Leftrightarrow$ $a$ est multiple de $b$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les propriétés immédiates de la divisibilité ?",
+          "content": "Pour tout $a \\in \\mathbb{N}$ et pour tout $k \\in \\mathbb{N}$ :\\begin{itemize}\\item $0$ est un multiple de \\textbf{tout} entier naturel\\quad (car $0 = a \\times 0$)\\item $1$ est un diviseur de \\textbf{tout} entier naturel\\quad (car $a = 1 \\times a$)\\item $a$ est un diviseur de lui-même\\quad (car $a = a \\times 1$)\\item $3k$ est un multiple de $3$ ; $\\; 2k$ est un multiple de $2$\\end{itemize}\\par\\smallskip \\textbf{Division euclidienne :} pour tout $a \\in \\mathbb{N}$ et $b \\in \\mathbb{N}^*$, il existe un unique couple $(q, r)$ tel que :\\par$$\\boxed{a = b \\times q + r \\quad \\text{avec} \\quad 0 \\leq r < b}$$\\par $q$ est le \\textbf{quotient}, $r$ le \\textbf{reste}. $b$ divise $a$ si et seulement si $r = 0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Trouvons tous les diviseurs du nombre $24$, puis listons ses cinq premiers multiples.}\\par\\smallskip \\textbf{Diviseurs de 24 :} on cherche tous les $d$ tels que $24 = d \\times n$. On teste méthodiquement :\\begin{itemize}\\item $24 = 1 \\times 24 \\Rightarrow 1$ et $24$ sont diviseurs\\item $24 = 2 \\times 12 \\Rightarrow 2$ et $\\blank{12}$ sont diviseurs\\item $24 = 3 \\times 8 \\Rightarrow 3$ et $\\blank{8}$ sont diviseurs\\item $24 = \\blank{4} \\times 6 \\Rightarrow 4$ et $6$ sont diviseurs\\end{itemize}Les diviseurs de 24 sont donc : $\\{1, 2, 3, 4, 6, 8, 12, 24\\}$ — il y en a \\blank{8}.\\par\\smallskip \\textbf{Cinq premiers multiples de 24 :} $0, 24, \\blank{48}, 72, \\blank{96}$."
+        },
+        {
+          "type": "remark",
+          "content": "Pour trouver \\textbf{tous} les diviseurs d'un entier $n$, il suffit de tester jusqu'à $\\sqrt{n}$ :\\begin{enumerate}\\item Pour chaque diviseur $d \\leq \\sqrt{n}$ trouvé, $\\dfrac{n}{d}$ est aussi un diviseur\\item On obtient ainsi les diviseurs par paires, symétriquement autour de $\\sqrt{n}$\\item Pour $n = 24$ : $\\sqrt{24} \\approx 4{,}9$ — il suffit de tester $d \\in \\{1, 2, 3, 4\\}$\\end{enumerate}\\par\\smallskip Cette méthode est bien plus rapide que de tester tous les entiers jusqu'à $n$."
+        }
+      ]
+    },
+    {
+      "id": "criteres_divisibilite",
+      "category": "course",
+      "title": "Critères de divisibilité",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait ce qu'est la divisibilité. On dispose maintenant de critères pratiques pour tester rapidement si un grand nombre est divisible par 2, 3, 4, 5 ou 9 — sans effectuer la division."
+        },
+        {
+          "type": "property",
+          "title": "Quels sont les critères de divisibilité à connaître ?",
+          "content": "Soit $n$ un entier naturel. On peut tester sa divisibilité par les critères suivants :\\begin{enumerate}\\item \\textbf{Divisibilité par 2} : le \\textbf{chiffre des unités} est $0, 2, 4, 6$ ou $8$\\item \\textbf{Divisibilité par 3} : la \\textbf{somme des chiffres} est divisible par 3\\item \\textbf{Divisibilité par 4} : le \\textbf{nombre formé par les deux derniers chiffres} est divisible par 4\\item \\textbf{Divisibilité par 5} : le \\textbf{chiffre des unités} est $0$ ou $5$\\item \\textbf{Divisibilité par 9} : la \\textbf{somme des chiffres} est divisible par 9\\end{enumerate}\\par\\smallskip \\textbf{Remarque :} si un nombre est divisible par 9, il est aussi divisible par 3 (car $9 = 3 \\times 3$)."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Testons la divisibilité de $4\\,725$ par 2, 3, 4, 5 et 9.}\\begin{itemize}\\item \\textbf{Par 2 :} le chiffre des unités est $\\blank{5}$, qui n'est pas dans $\\{0,2,4,6,8\\}$. Donc $4725$ \\blank{n'est pas} divisible par 2.\\item \\textbf{Par 3 et 9 :} la somme des chiffres est $4 + 7 + 2 + 5 = \\blank{18}$. Puisque $18 = 3 \\times 6$ et $18 = 9 \\times 2$, le nombre $4725$ est divisible par \\blank{3 et 9}.\\item \\textbf{Par 4 :} les deux derniers chiffres forment $25$. Or $25 = 4 \\times 6 + 1$, le reste est $1 \\neq 0$. Donc $4725$ \\blank{n'est pas} divisible par 4.\\item \\textbf{Par 5 :} le chiffre des unités est $5 \\in \\{0, 5\\}$. Donc $4725$ \\blank{est} divisible par 5.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment tester rapidement la divisibilité d'un grand nombre ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Lire le chiffre des unités} — test instantané pour 2 et 5 :\\begin{itemize}\\item Unités $\\in \\{0,2,4,6,8\\}$ $\\Rightarrow$ divisible par 2\\item Unités $\\in \\{0,5\\}$ $\\Rightarrow$ divisible par 5\\end{itemize}\\item \\textbf{Additionner tous les chiffres} — test pour 3 et 9 :\\begin{itemize}\\item Somme divisible par 3 $\\Rightarrow$ divisible par 3\\item Somme divisible par 9 $\\Rightarrow$ divisible par 9\\item Si la somme est encore grande, recommencer avec les chiffres de la somme\\end{itemize}\\item \\textbf{Isoler les deux derniers chiffres} — test pour 4 :\\begin{itemize}\\item Le nombre à deux chiffres formé est divisible par 4 $\\Rightarrow$ divisible par 4\\item Astuce : si les deux derniers chiffres sont $\\leq 12$, tester directement\\end{itemize}\\end{enumerate}\\par\\textbf{Astuce :} combiner les critères — si $n$ est divisible par 2 et par 3, il est divisible par 6."
+        }
+      ]
+    },
+    {
+      "id": "nombres_premiers",
+      "category": "course",
+      "title": "Nombres premiers et décomposition en facteurs premiers",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait tester la divisibilité. On identifie maintenant les briques fondamentales de tous les entiers : les nombres premiers. Tout entier peut se décomposer de façon unique en un produit de ces briques."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un nombre premier ?",
+          "content": "Un entier naturel $p$ non nul et différent de 1 est dit \\textbf{premier} si ses seuls diviseurs sont $1$ et lui-même.\\par\\smallskip$$\\boxed{p \\text{ premier} \\Leftrightarrow \\text{diviseurs de } p = \\{1 \\;,\\; p\\}}$$\\par\\smallskip Les nombres premiers inférieurs à 30 :\\begin{itemize}\\item $2, 3, 5, 7, 11, 13, 17, 19, 23, 29$\\item Il y en a \\textbf{10} inférieurs à 30\\item $2$ est le seul nombre premier \\textbf{pair}\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Comment tout entier se décompose-t-il en facteurs premiers ?",
+          "content": "Tout entier naturel non nul et différent de 1 s'écrit de façon \\textbf{unique} comme un produit de facteurs premiers (à l'ordre des facteurs près) :\\par\\smallskip$$\\boxed{n = p_1^{\\alpha_1} \\times p_2^{\\alpha_2} \\times \\cdots \\times p_k^{\\alpha_k}}$$\\par\\smallskip avec $p_1 < p_2 < \\cdots < p_k$ des nombres premiers et $\\alpha_i \\geq 1$.\\par\\smallskip Exemple : $640 = 2^7 \\times 5$ et $1344 = 2^6 \\times 3 \\times 7$."
+        },
+        {
+          "type": "intuition",
+          "content": "Imaginez chaque entier comme une molécule construite à partir d'atomes. Les atomes sont les nombres premiers : 2, 3, 5, 7, 11... Chaque entier est une combinaison unique de ces atomes. Décomposer 12 en $2^2 \\times 3$, c'est trouver sa formule chimique. Comme en chimie, deux molécules différentes n'ont pas la même formule — c'est l'unicité de la décomposition."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Décomposons le nombre $1\\,344$ en facteurs premiers par la méthode du tableau de divisions.}\\par\\smallskip On divise successivement par les premiers dans l'ordre croissant :\\par\\smallskip$$\\begin{array}{r|l}1344 & 2 \\\\ 672 & 2 \\\\ 336 & 2 \\\\ 168 & 2 \\\\ 84 & 2 \\\\ 42 & \\blank{2} \\\\ 21 & \\blank{3} \\\\ 7 & 7 \\\\ 1 & \\end{array}$$\\begin{itemize}\\item On a divisé par 2 exactement \\blank{6} fois, par 3 une fois, par 7 une fois.\\item Donc : $1344 = \\blank{2^6 \\times 3 \\times 7}$\\item Vérification : $2^6 = 64$, donc $64 \\times 3 \\times 7 = 64 \\times 21 = \\blank{1344}$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment décomposer un entier en facteurs premiers ?",
+          "content": "\\begin{enumerate}\\item \\textbf{Tester la divisibilité} par les premiers dans l'ordre croissant : $2, 3, 5, 7, 11, 13, \\ldots$\\item \\textbf{Diviser} le quotient obtenu par le même premier tant que c'est possible\\item \\textbf{Passer au premier suivant} quand la division n'est plus exacte\\item \\textbf{S'arrêter} quand le quotient vaut 1 — la décomposition est terminée\\item \\textbf{Écrire} le résultat sous la forme $n = p_1^{\\alpha_1} \\times p_2^{\\alpha_2} \\times \\cdots$\\end{enumerate}\\par\\textbf{Critère d'arrêt rapide :} si le quotient courant $q$ est tel que $q \\leq p^2$ (où $p$ est le dernier premier testé), alors $q$ est lui-même premier — inutile de continuer à tester."
+        }
+      ]
+    },
+    {
+      "id": "pgcd_ppcm",
+      "category": "course",
+      "title": "PGCD et PPCM",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait décomposer un entier en facteurs premiers. On utilise maintenant cette décomposition pour calculer deux outils fondamentaux : le plus grand diviseur commun (PGCD) et le plus petit multiple commun (PPCM)."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que le PGCD et le PPCM de deux entiers ?",
+          "content": "Soient $a$ et $b$ deux éléments de $\\mathbb{N}$ non nuls.\\begin{enumerate}\\item Le \\textbf{PGCD} de $a$ et $b$, noté $\\text{PGCD}(a;b)$, est le \\textbf{plus grand entier} qui divise à la fois $a$ et $b$.\\item Le \\textbf{PPCM} de $a$ et $b$, noté $\\text{PPCM}(a;b)$, est le \\textbf{plus petit entier non nul} qui est multiple à la fois de $a$ et de $b$.\\item $a$ et $b$ sont dits \\textbf{premiers entre eux} si $\\text{PGCD}(a;b) = 1$ — ils ne partagent aucun facteur commun.\\end{enumerate}"
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer PGCD et PPCM par la décomposition en facteurs premiers ?",
+          "content": "Une fois $a$ et $b$ décomposés en facteurs premiers :\\begin{enumerate}\\item \\textbf{PGCD} : produit des facteurs \\textbf{communs} avec le \\textbf{plus petit exposant}\\begin{itemize}\\item On ne prend que les premiers qui apparaissent dans \\textbf{les deux} décompositions\\item On choisit l'exposant \\textbf{minimum}\\end{itemize}\\item \\textbf{PPCM} : produit de \\textbf{tous} les facteurs premiers avec le \\textbf{plus grand exposant}\\begin{itemize}\\item On prend tous les premiers qui apparaissent dans \\textbf{au moins une} des deux décompositions\\item On choisit l'exposant \\textbf{maximum}\\end{itemize}\\end{enumerate}\\par\\smallskip \\textbf{Relation fondamentale :}$$\\boxed{\\text{PGCD}(a;b) \\times \\text{PPCM}(a;b) = a \\times b}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons $\\text{PGCD}(180 ; 126)$ par décomposition en facteurs premiers.}\\par\\smallskip On décompose chaque nombre :\\begin{align*}180 &= 2^2 \\times 3^2 \\times 5 \\\\126 &= 2 \\times \\blank{3^2} \\times 7\\end{align*}Les facteurs \\textbf{communs} sont $2$ et $3^2$ (présents dans les deux décompositions). On prend le \\textbf{plus petit exposant} pour chacun :\\begin{itemize}\\item Pour $2$ : $\\min(2, 1) = \\blank{1}$\\item Pour $3$ : $\\min(2, 2) = \\blank{2}$\\end{itemize}Donc $\\text{PGCD}(180 ; 126) = 2^1 \\times 3^2 = 2 \\times 9 = \\blank{18}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons $\\text{PPCM}(180 ; 126)$ en utilisant les décompositions de l'exemple précédent et la relation $\\text{PGCD} \\times \\text{PPCM} = a \\times b$.}\\begin{itemize}\\item \\textbf{Méthode 1 — par les exposants maximum :} On a $180 = 2^2 \\times 3^2 \\times 5$ et $126 = 2 \\times 3^2 \\times 7$. On prend \\textbf{tous} les facteurs premiers avec le \\textbf{plus grand exposant} : $\\text{PPCM} = 2^{\\blank{2}} \\times 3^{\\blank{2}} \\times 5 \\times 7 = 4 \\times 9 \\times 5 \\times 7 = \\blank{1260}$.\\item \\textbf{Méthode 2 — par la relation :} $\\text{PPCM} = \\dfrac{a \\times b}{\\text{PGCD}} = \\dfrac{180 \\times 126}{18} = \\dfrac{\\blank{22680}}{18} = \\blank{1260}$.\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "Deux applications directes du PGCD et du PPCM :\\begin{enumerate}\\item \\textbf{Simplification de fractions} : $\\dfrac{a}{b}$ irréductible $\\Leftrightarrow$ $\\text{PGCD}(a;b) = 1$. Pour simplifier $\\dfrac{180}{126}$ : on divise numérateur et dénominateur par $\\text{PGCD}(180;126) = 18$, ce qui donne $\\dfrac{10}{7}$.\\item \\textbf{Addition de fractions} : pour $\\dfrac{1}{a} + \\dfrac{1}{b}$, le dénominateur commun optimal est $\\text{PPCM}(a;b)$ — la fraction obtenue est directement irréductible.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "algorithme_euclide",
+      "category": "course",
+      "title": "Algorithme d'Euclide et PGCD",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait calculer le PGCD par décomposition. Quand les nombres sont grands, la décomposition devient fastidieuse. L'algorithme d'Euclide offre une méthode rapide et systématique, basée uniquement sur des divisions euclidiennes."
+        },
+        {
+          "type": "property",
+          "title": "Comment fonctionne l'algorithme d'Euclide ?",
+          "content": "L'\\textbf{algorithme d'Euclide} est une suite de divisions euclidiennes qui permet de calculer le PGCD de deux grands entiers.\\par\\smallskip \\textbf{Principe :} à chaque étape, on applique $a = b \\times q + r$. On remplace ensuite $(a, b)$ par $(b, r)$ et on recommence.\\par\\smallskip$$\\boxed{\\text{PGCD}(a;b) = \\text{dernier reste non nul de la suite}}$$\\par\\smallskip \\textbf{L'algorithme s'arrête} quand le reste vaut 0 — le PGCD est le reste de l'étape précédente.\\par\\smallskip \\textbf{Justification :} à chaque étape, $\\text{PGCD}(a;b) = \\text{PGCD}(b;r)$ — le PGCD est invariant."
+        },
+        {
+          "type": "method",
+          "title": "Comment appliquer l'algorithme d'Euclide pas à pas ?",
+          "content": "Pour calculer $\\text{PGCD}(a ; b)$ avec $a > b$ :\\begin{enumerate}\\item \\textbf{Effectuer la division euclidienne} : $a = b \\times q_1 + r_1$ avec $0 \\leq r_1 < b$\\item \\textbf{Si $r_1 = 0$} : $\\text{PGCD}(a;b) = b$ — fin de l'algorithme\\item \\textbf{Si $r_1 \\neq 0$} : recommencer avec le couple $(b, r_1)$ :\\begin{itemize}\\item $b = r_1 \\times q_2 + r_2$\\item Si $r_2 = 0$ : $\\text{PGCD} = r_1$\\item Sinon : continuer avec $(r_1, r_2)$, puis $(r_2, r_3)$, etc.\\end{itemize}\\item \\textbf{Le PGCD est toujours le dernier reste non nul}\\end{enumerate}\\par\\textbf{Astuce :} présenter les calculs dans un tableau (colonnes $a$, $b$, $r$, relation $a - bq = r$) pour ne pas se perdre."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculons $\\text{PGCD}(1053 ; 325)$ par l'algorithme d'Euclide.}\\par\\smallskip On organise les calculs dans un tableau :\\par\\smallskip$$\\begin{array}{|c|c|c|c|l|}\\hline \\textbf{Étape} & a & b & r & \\text{Relation } a - b \\times q = r \\\\\\hline 1 & 1053 & 325 & \\blank{78} & 1053 - 325 \\times 3 = 78 \\\\\\hline 2 & 325 & 78 & \\blank{13} & 325 - 78 \\times 4 = 13 \\\\\\hline 3 & 78 & 13 & \\blank{0} & 78 - 13 \\times 6 = 0 \\\\\\hline\\end{array}$$\\begin{itemize}\\item Le reste vaut 0 à l'étape 3.\\item Le dernier reste non nul est \\blank{13}.\\item Donc $\\text{PGCD}(1053 ; 325) = \\blank{13}$.\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "L'algorithme d'Euclide est bien plus rapide que la décomposition en facteurs premiers pour les grands nombres. Quelques observations importantes :\\begin{enumerate}\\item La suite des restes est \\textbf{strictement décroissante} : $b > r_1 > r_2 > \\cdots > 0$ — l'algorithme termine toujours\\item Le nombre d'étapes est au plus $\\log_\\varphi(\\max(a,b))$ où $\\varphi$ est le nombre d'or — très efficace\\item Si $\\text{PGCD}(a;b) = 1$, les nombres sont premiers entre eux et la fraction $\\frac{a}{b}$ est \\textbf{irréductible}\\end{enumerate}"
+        },
+        {
+          "type": "method",
+          "title": "Comment choisir entre décomposition et algorithme d'Euclide ?",
+          "content": "Le choix dépend de la taille des nombres :\\begin{enumerate}\\item \\textbf{Décomposition en facteurs premiers} :\\begin{itemize}\\item Préférer pour les \\textbf{petits nombres} (inférieurs à quelques centaines)\\item Avantage : donne aussi le PPCM en un seul calcul\\item Inconvénient : fastidieux pour les grands nombres\\end{itemize}\\item \\textbf{Algorithme d'Euclide} :\\begin{itemize}\\item Préférer pour les \\textbf{grands nombres} (au-delà de 1000)\\item Avantage : rapide, ne nécessite que des divisions euclidiennes\\item Inconvénient : ne donne pas directement le PPCM (utiliser $\\text{PPCM} = \\frac{a \\times b}{\\text{PGCD}}$)\\end{itemize}\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Synthèse",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a parcouru toute l'arithmétique dans $\\mathbb{N}$ : parité, divisibilité, nombres premiers, PGCD et PPCM. Ce récapitulatif regroupe les résultats essentiels à maîtriser."
+        },
+        {
+          "type": "summary",
+          "title": "Ce qu'il faut retenir en arithmétique dans \\(\\mathbb{N}\\)",
+          "content": "\\begin{itemize}\\item $\\mathbb{N} = \\{0,1,2,\\ldots\\}$ ; $\\mathbb{N}^* = \\{1,2,3,\\ldots\\}$ (sans 0)\\item Pair : $a = 2k$ ; impair : $a = 2k+1$ pour $k \\in \\mathbb{N}$\\item $b \\mid a \\Leftrightarrow$ il existe $n \\in \\mathbb{N}$ tel que $a = b \\times n$\\item Critères : div. par 2 (unités pair) ; par 3 (somme chiffres div 3) ; par 9 (somme div 9) ; par 5 (unités 0 ou 5)\\item $p$ premier $\\Leftrightarrow$ ses seuls diviseurs sont 1 et $p$ (2 est le seul premier pair)\\item Décomposition : diviser successivement par $2, 3, 5, 7, \\ldots$ jusqu'au quotient 1\\item PGCD par factorisation : facteurs communs, exposants \\textbf{minimum}\\item PPCM par factorisation : tous les facteurs, exposants \\textbf{maximum}\\item $\\text{PGCD}(a;b) \\times \\text{PPCM}(a;b) = a \\times b$\\item Euclide : $a = bq + r$, remplacer $(a,b)$ par $(b,r)$, répéter ; PGCD = dernier reste $\\neq 0$\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

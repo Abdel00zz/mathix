@@ -1,0 +1,78 @@
+{
+  "id": "ex-etude-fct-04",
+  "theme": "etude-fonctions",
+  "difficulty": "facile",
+  "topic": "Analyse - Étude d'une fonction polynôme",
+  "requiresRedaction": true,
+  "context": "On considère la fonction numérique $f$ définie sur $\\mathbb{R}$ par : $f(x)=x^3-3x+3$.\n\net soit $\\mathscr{C}_f$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Déterminer les limites : $\\displaystyle \\lim_{x \\to +\\infty} f(x)$ et $\\displaystyle \\lim_{x \\to -\\infty} f(x)$.",
+          "hint": "Pour une fonction polynôme, la limite en l'infini est déterminée par la limite de son terme de plus haut degré (ici $x^3$)."
+        },
+        {
+          "id": "b",
+          "content": "Étudier les branches infinies de la courbe $\\mathscr{C}_f$.",
+          "hint": "Calculez la limite du rapport $\\frac{f(x)}{x}$ en l'infini pour déterminer la direction asymptotique (parabolique)."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Étudier les variations de la fonction $f$.",
+      "hint": "Calculez la dérivée $f'(x)$, trouvez ses racines (équation du second degré) et dressez le tableau de signes."
+    },
+    {
+      "id": "q3",
+      "content": "Étudier la concavité de la courbe $\\mathscr{C}_f$ en déterminant ses points d'inflexion.",
+      "hint": "Calculez la dérivée seconde $f''(x)$. Le point d'inflexion se situe là où $f''(x)$ s'annule en changeant de signe."
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que le point $I(0;3)$ est un centre de symétrie de $\\mathscr{C}_f$.",
+          "hint": "Vérifiez la relation de symétrie centrale : $f(2a-x) + f(x) = 2b$ avec $(a,b)=(0,3)$. Cela revient à vérifier que $f(-x) + f(x) = 6$."
+        },
+        {
+          "id": "b",
+          "content": "Donner l'équation de la tangente $(T)$ à la courbe $\\mathscr{C}_f$ au point $I$.",
+          "hint": "Appliquez la formule $y = f'(0)(x-0) + f(0)$."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "En utilisant le tableau de variations de la fonction $f$, montrer que l'équation $f(x)=0$ admet une solution unique $\\alpha$ telle que $\\alpha < -1$.",
+          "hint": "Utilisez le théorème des valeurs intermédiaires (TVI) sur l'intervalle où la fonction est strictement monotone et change de signe."
+        },
+        {
+          "id": "b",
+          "content": "Vérifier que : $-2,2 < \\alpha < -2,1$ puis déterminer le signe de $f(x)$ pour $x \\in \\mathbb{R}$.",
+          "hint": "Calculez les images $f(-2,2)$ et $f(-2,1)$ pour constater le changement de signe."
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "content": "Construire la courbe $\\mathscr{C}_f$.",
+      "hint": "Placez les extremums locaux, le point d'inflexion, la tangente et la racine approximative $\\alpha$ avant de tracer la courbe."
+    },
+    {
+      "id": "q7",
+      "content": "Discuter, suivant les valeurs du paramètre réel $m$, le nombre de solutions de l'équation : $f(x)=m$.",
+      "hint": "Tracez mentalement une droite horizontale $y=m$. Observez combien de fois elle coupe la courbe en fonction de sa hauteur par rapport aux minimum et maximum locaux."
+    }
+  ]
+}

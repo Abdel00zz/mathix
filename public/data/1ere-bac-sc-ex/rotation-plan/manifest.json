@@ -1,0 +1,26 @@
+{
+  "id": "rotation-plan",
+  "title": "La rotation dans le plan",
+  "exercises": [
+    {
+      "id": "ex-rotation-plan-01",
+      "path": "data/1ere-bac-sc-ex/rotation-plan/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-rotation-plan-02",
+      "path": "data/1ere-bac-sc-ex/rotation-plan/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-rotation-plan-03",
+      "path": "data/1ere-bac-sc-ex/rotation-plan/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-rotation-plan-01",
+      "path": "data/1ere-bac-sc-ex/rotation-plan/quiz/rotation-plan_quiz.json",
+      "questionsCount": 6
+    }
+  ],
+  "quizCount": 6
+}

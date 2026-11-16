@@ -1,0 +1,601 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Propriété",
+      "options": [
+        {
+          "text": "$5$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$e^5$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$\\ln 5$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$1$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "Les fonctions $\\exp$ et $\\ln$ sont réciproques : $e^{\\ln x} = x$ pour tout $x > 0$.",
+      "difficulty": "easy",
+      "prompt": "Quelle est la valeur de $e^{\\ln 5}$ ?"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "category": "Propriété",
+      "options": [
+        {
+          "text": "$e^{2x}$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$e^{3}$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$e^{4x}$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$3$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "Propriété du quotient : $\\dfrac{e^a}{e^b} = e^{a-b}$, donc $\\dfrac{e^{3x}}{e^x} = e^{2x}$.",
+      "difficulty": "easy",
+      "prompt": "Simplifier $\\frac{e^{3x}}{e^{x}}$ :"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Propriété",
+      "options": [
+        {
+          "text": "$+\\infty$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$0$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$1$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$e$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "Limite fondamentale : $\\lim_{x \\to +\\infty} e^x = +\\infty$.",
+      "difficulty": "easy",
+      "prompt": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} e^x$ :"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "category": "Propriété",
+      "options": [
+        {
+          "text": "$+\\infty$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$0$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$1$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$e$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "Croissances comparées : $\\lim_{x \\to +\\infty} \\dfrac{e^x}{x^n} = +\\infty$ pour tout $n \\in \\mathbb{N}^*$. L'exponentielle l'emporte sur tout polynôme.",
+      "difficulty": "easy",
+      "prompt": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} \\frac{e^x}{x^2}$ :"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Propriété",
+      "options": [
+        {
+          "text": "$0$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$+\\infty$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$-\\infty$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "Forme indéterminée",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "Croissances comparées en $-\\infty$ : $\\lim_{x \\to -\\infty} x^n e^x = 0$ pour tout $n$.",
+      "difficulty": "easy",
+      "prompt": "Calculer $\\displaystyle \\lim_{x \\to -\\infty} x^2 e^x$ :"
+    },
+    {
+      "id": "q6",
+      "type": "order",
+      "category": "Méthode",
+      "items": [
+        {
+          "id": "a",
+          "content": "Poser $X=e^x$ et noter que $X>0$."
+        },
+        {
+          "id": "b",
+          "content": "Résoudre $X^2-5X+6=0$."
+        },
+        {
+          "id": "c",
+          "content": "Conserver $X=2$ et $X=3$, deux valeurs positives."
+        },
+        {
+          "id": "d",
+          "content": "Revenir à $x$ : $x=\\ln2$ ou $x=\\ln3$."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Une équation polynomiale en $e^x$ se ramène à une équation en $X=e^x$. La condition $X>0$ doit être vérifiée avant de revenir au logarithme.",
+      "difficulty": "easy",
+      "prompt": "Ordonner les étapes pour résoudre $e^{2x}-5e^x+6=0$."
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Application",
+      "options": [
+        {
+          "text": "$g'(x) = 2x \\cdot e^{x^2}$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$g'(x) = e^{x^2}$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$g'(x) = x^2 \\cdot e^{x^2}$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$g'(x) = 2e^{2x}$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "On applique $(e^u)' = u' \\cdot e^u$ avec $u = x^2$ et $u' = 2x$.",
+      "difficulty": "medium",
+      "prompt": "Quelle est la dérivée de $g(x) = e^{x^2}$ ?"
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Application",
+      "options": [
+        {
+          "text": "$x = 0$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$x = 1$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$x = e$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "Pas de solution",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "$e^x = 1 = e^0$, donc $x = 0$ par la propriété $e^a = e^b \\iff a = b$.",
+      "difficulty": "medium",
+      "prompt": "Résoudre $e^x = 1$ :"
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Application",
+      "options": [
+        {
+          "text": "$x = \\frac{\\ln 7}{2}$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$x = \\ln 7$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$x = 2\\ln 7$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$x = \\frac{7}{2}$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "On passe au $\\ln$ : $2x = \\ln 7$, donc $x = \\dfrac{\\ln 7}{2}$.",
+      "difficulty": "medium",
+      "prompt": "Résoudre $e^{2x} = 7$ :"
+    },
+    {
+      "id": "q10",
+      "type": "boolean",
+      "category": "Application",
+      "isTrue": true,
+      "explanation": "C'est la propriété caractéristique de l'exponentielle : $(e^x)' = e^x$.",
+      "difficulty": "medium",
+      "prompt": "La fonction $f(x) = e^x$ est sa propre dérivée : $(e^x)' = e^x$."
+    },
+    {
+      "id": "q11",
+      "type": "boolean",
+      "category": "Application",
+      "isTrue": true,
+      "explanation": "L'exponentielle est $\toujours strictement positive$ : elle ne s'annule jamais et ne prend jamais de valeurs négatives.",
+      "difficulty": "medium",
+      "prompt": "Pour tout réel $x$, on a $e^x > 0$."
+    },
+    {
+      "id": "q12",
+      "type": "mcq",
+      "category": "Application",
+      "options": [
+        {
+          "text": "$F(x) = e^{3x}$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$F(x) = 3e^{3x}$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$F(x) = 9e^{3x}$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$F(x) = \\frac{e^{3x}}{3}$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "On vérifie : $(e^{3x})' = 3e^{3x}$, donc $e^{3x}$ est bien une primitive de $3e^{3x}$.",
+      "difficulty": "medium",
+      "prompt": "Une primitive de $f(x) = 3e^{3x}$ est :"
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "category": "Application",
+      "options": [
+        {
+          "text": "$x \\geq 3$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$x \\leq 3$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$x = 3$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$x > 0$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "L'exponentielle est strictement croissante, donc $e^x \\geq e^3 \\iff x \\geq 3$.",
+      "difficulty": "medium",
+      "prompt": "Résoudre $e^x \\geq e^3$ :"
+    },
+    {
+      "id": "q14",
+      "type": "error",
+      "category": "Méthode",
+      "context": "Un élève dérive la fonction $f(x)=e^{x^2}$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On reconnaît une fonction composée $e^{u(x)}$ avec $u(x)=x^2$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "La dérivée de la fonction extérieure est encore une exponentielle.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Donc $f'(x)=2x e^x$.",
+          "isError": true,
+          "correction": "Il faut conserver l'intérieur dans l'exponentielle : $f'(x)=2x e^{x^2}$."
+        }
+      ],
+      "explanation": "La dérivation en chaîne donne $(e^{u})'=u'e^u$. L'oubli fréquent consiste à remplacer à tort $e^{u(x)}$ par $e^x$.",
+      "difficulty": "hard",
+      "prompt": "Identifier l'étape incorrecte."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "category": "Synthèse",
+      "options": [
+        {
+          "text": "$X^2 - 5X + 6 = 0$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$X^2 - 5X - 6 = 0$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$2X - 5X + 6 = 0$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$X - 5 + 6 = 0$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "Comme $e^{2x} = (e^x)^2 = X^2$, l'équation se ramène à $X^2 - 5X + 6 = 0$.",
+      "difficulty": "hard",
+      "prompt": "Pour résoudre $e^{2x} - 5e^x + 6 = 0$, on pose $X = e^x$. L'équation devient :"
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "category": "Synthèse",
+      "options": [
+        {
+          "text": "$x = \\ln 2$ et $x = \\ln 3$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$x = 2$ et $x = 3$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$x = \\ln 2$ uniquement",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$x = -\\ln 2$ et $x = -\\ln 3$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "$X^2 - 5X + 6 = (X-2)(X-3) = 0$ donne $X = 2$ ou $X = 3$, soit $x = \\ln 2$ ou $x = \\ln 3$.",
+      "difficulty": "hard",
+      "prompt": "Les solutions de $e^{2x} - 5e^x + 6 = 0$ sont :"
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "category": "Synthèse",
+      "options": [
+        {
+          "text": "$0$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$+\\infty$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$-\\infty$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$1$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "$xe^{-x} = \\dfrac{x}{e^x}$. Par croissances comparées, $\\lim_{x \\to +\\infty} \\dfrac{x}{e^x} = 0$.",
+      "difficulty": "hard",
+      "prompt": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} xe^{-x}$ :"
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "category": "Synthèse",
+      "options": [
+        {
+          "text": "$+\\infty$, car en factorisant par $e^x$, on obtient $e^x(1 - \\frac{x^2}{e^x})$ et par croissances comparées $\\frac{x^2}{e^x} \\to 0$.",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$0$, car les deux termes tendent vers $+\\infty$ à la même vitesse.",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$-\\infty$, car le terme $-x^2$ l'emporte sur l'exponentielle.",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$1$, car c'est la limite usuelle de $\\frac{e^x}{x}$.",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "$+\\infty - \\infty$ est une forme indéterminée. Par croissances comparées, $e^x$ domine $x^2$, donc en factorisant par le terme dominant $e^x$, on trouve $\\lim_{x \\to +\\infty}(e^x - x^2) = +\\infty$.",
+      "difficulty": "hard",
+      "prompt": "Un élève affirme que $\\lim_{x \\to +\\infty} (e^x - x^2) = 0$ car c'est une forme indéterminée $+\\infty - \\infty$. Quelle est la vraie limite et la bonne justification ?"
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "category": "Synthèse",
+      "options": [
+        {
+          "text": "$1$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$0$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$+\\infty$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$e$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "C'est une limite du cours qui découle directement de la définition du nombre dérivé de la fonction exponentielle en $x=0$.",
+      "difficulty": "hard",
+      "prompt": "Quelle est la valeur de la limite remarquable $\\displaystyle \\lim_{x \\to 0} \\frac{e^x - 1}{x}$ ?"
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "category": "Dépassement",
+      "options": [
+        {
+          "text": "Aucune solution",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "Une seule solution",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "Deux solutions",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "Une infinité de solutions",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "La fonction exponentielle est strictement positive sur $\\mathbb{R}$. Il est donc impossible que $e^{3x+1}$ soit égal à un nombre négatif comme $-2$.",
+      "difficulty": "hard",
+      "ambiguity_note": "Une exponentielle réelle est toujours strictement positive.",
+      "prompt": "Combien de solutions réelles possède l'équation $e^{3x+1} = -2$ ?"
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "category": "Dépassement",
+      "options": [
+        {
+          "text": "$f'(x) = (\\ln 5) \\times 5^x$",
+          "isCorrect": true,
+          "id": "a"
+        },
+        {
+          "text": "$f'(x) = x \\times 5^{x-1}$",
+          "isCorrect": false,
+          "id": "b"
+        },
+        {
+          "text": "$f'(x) = 5^x$",
+          "isCorrect": false,
+          "id": "c"
+        },
+        {
+          "text": "$f'(x) = \\frac{5^x}{\\ln 5}$",
+          "isCorrect": false,
+          "id": "d"
+        }
+      ],
+      "explanation": "Pour une base $a > 0$, on a $a^x = e^{x \\ln a}$. Sa dérivée est donc $(\\ln a) e^{x \\ln a} = (\\ln a) \\times a^x$.",
+      "difficulty": "hard",
+      "prompt": "Quelle est la dérivée de la fonction $f(x) = 5^x$ ?"
+    },
+    {
+      "id": "q22",
+      "type": "boolean",
+      "category": "Dépassement",
+      "isTrue": false,
+      "explanation": "C'est un piège classique ! L'exponentielle transforme les additions en multiplications. La vraie formule est $e^{a+b} = e^a \\times e^b$.",
+      "difficulty": "hard",
+      "prompt": "Pour tous réels $a$ et $b$, on a l'égalité : $e^{a+b} = e^a + e^b$."
+    }
+  ]
+}

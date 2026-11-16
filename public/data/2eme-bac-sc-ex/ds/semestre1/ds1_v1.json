@@ -1,0 +1,106 @@
+{
+  "id": "ds1-s1-v1",
+  "title": "Devoir Surveillé N°1 — V1",
+  "number": 1,
+  "version": "V1",
+  "semestre": 1,
+  "classId": "2eme-bac-sc-ex",
+  "duration": 120,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "ds1s1v1-ex1",
+      "number": 1,
+      "theme": "continuité",
+      "points": 10,
+      "topic": "Continuité et théorème des valeurs intermédiaires",
+      "context": "Soit $f$ la fonction définie sur $[0, +\\infty[$ par :\n$$f(x) = x^3 + 2x - 5$$",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Continuité et existence de solutions",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Montrer que $f$ est continue sur $[0, +\\infty[$.",
+              "hint": "$f$ est une fonction polynomiale, donc continue sur $\\mathbb{R}$ et en particulier sur $[0, +\\infty[$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Calculer $f(0)$ et $f(2)$.",
+              "hint": "$f(0) = 0 + 0 - 5 = -5$ et $f(2) = 8 + 4 - 5 = 7$."
+            },
+            {
+              "id": "sq1c",
+              "content": "En déduire que l'équation $f(x) = 0$ admet une solution dans $]0, 2[$.",
+              "hint": "$f(0) = -5 < 0$ et $f(2) = 7 > 0$. $f$ est continue sur $[0, 2]$, donc d'après le TVI, il existe $c \\in ]0, 2[$ tel que $f(c) = 0$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Étude de la dérivée",
+          "subQuestions": [
+            {
+              "id": "sq2a",
+              "content": "Calculer $f'(x)$ pour tout $x \\in [0, +\\infty[$.",
+              "hint": "$f'(x) = 3x^2 + 2$."
+            },
+            {
+              "id": "sq2b",
+              "content": "En déduire que $f$ est strictement croissante sur $[0, +\\infty[$.",
+              "hint": "Pour tout $x \\geq 0$, $f'(x) = 3x^2 + 2 > 0$, donc $f$ est strictement croissante."
+            },
+            {
+              "id": "sq2c",
+              "content": "Montrer que la solution $c$ de l'équation $f(x) = 0$ est unique.",
+              "hint": "Comme $f$ est strictement croissante sur $[0, +\\infty[$, l'équation $f(x) = 0$ admet au plus une solution (par stricte monotonie). Or on a montré qu'il en existe une, donc elle est unique d'après le théorème de la bijection (ou TVI)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ds1s1v1-ex2",
+      "number": 2,
+      "theme": "dérivabilité",
+      "points": 10,
+      "topic": "Dérivabilité et étude locale",
+      "context": "Soit $g$ la fonction définie sur $\\mathbb{R}$ par :\n$$g(x) = \\begin{cases} \\frac{x^2 - 1}{x - 1} & \\text{si } x \\neq 1 \\\\ 2 & \\text{si } x = 1 \\end{cases}$$",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Continuité en $x = 1$",
+          "subQuestions": [
+            {
+              "id": "sq1a",
+              "content": "Simplifier $g(x)$ pour $x \\neq 1$.",
+              "hint": "$\\frac{x^2 - 1}{x - 1} = \\frac{(x-1)(x+1)}{x-1} = x + 1$ pour $x \\neq 1$."
+            },
+            {
+              "id": "sq1b",
+              "content": "Étudier la continuité de $g$ en $x = 1$.",
+              "hint": "$\\lim_{x \\to 1} g(x) = \\lim_{x \\to 1} (x + 1) = 2 = g(1)$, donc $g$ est continue en $1$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Dérivabilité en $x = 1$",
+          "subQuestions": [
+            {
+              "id": "sq2a",
+              "content": "Calculer $\\lim_{x \\to 1} \\frac{g(x) - g(1)}{x - 1}$.",
+              "hint": "$\\frac{g(x) - g(1)}{x - 1} = \\frac{(x+1) - 2}{x - 1} = \\frac{x - 1}{x - 1} = 1$ pour $x \\neq 1$. Donc la limite vaut $1$."
+            },
+            {
+              "id": "sq2b",
+              "content": "En déduire que $g$ est dérivable en $x = 1$ et donner $g'(1)$.",
+              "hint": "La limite $\\frac{g(x) - g(1)}{x - 1} \\to 1$ existe et est finie, donc $g$ est dérivable en $1$ et $g'(1) = 1$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

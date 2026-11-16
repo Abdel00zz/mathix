@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Le travail d'une force",
+    "subtitle": "Produit scalaire",
+    "context": "Produit scalaire"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le travail d'une force",
+          "content": "En physique, le \\textbf{travail} d'une force constante $\\vec{F}$ pour un déplacement $\\vec{d}$ est le produit scalaire $W = \\vec{F} \\cdot \\vec{d} = \\|\\vec{F}\\| \\times \\|\\vec{d}\\| \\times \\cos\\theta$, où $\\theta$ est l'angle entre $\\vec{F}$ et $\\vec{d}$.\\par Une personne tire une valise à roulettes en exerçant une force de $\\|\\vec{F}\\| = 50\\ \\text{N}$ inclinée d'un angle $\\theta = 30^\\circ$ par rapport au sol, sur une distance horizontale $\\|\\vec{d}\\| = 10\\ \\text{m}$."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Calculer le travail $W$ de la force $\\vec{F}$ sur ce déplacement.\\item Quel angle $\\theta$ rendrait le travail \\textbf{maximal} pour la même intensité de force ? Que vaut alors $W$ ?\\item Pour quel angle le travail serait-il \\textbf{nul} ? Interpréter géométriquement (penser à l'orthogonalité).\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Appliquez directement $W = \\|\\vec{F}\\|\\,\\|\\vec{d}\\|\\cos\\theta$ avec $\\cos(30^\\circ) = \\dfrac{\\sqrt3}{2} \\approx 0{,}866$."
+        },
+        {
+          "type": "hint",
+          "content": "$\\cos\\theta$ est maximal ($=1$) pour $\\theta = 0^\\circ$ et nul pour $\\theta = 90^\\circ$. Le produit scalaire de deux vecteurs orthogonaux est nul."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $W = 50 \\times 10 \\times \\cos(30^\\circ) = 500 \\times \\dfrac{\\sqrt3}{2} \\approx \\boxed{433\\ \\text{J}}$.\\par\\textbf{2)} $W$ est maximal lorsque $\\cos\\theta = 1$, c'est-à-dire $\\theta = 0^\\circ$ (force dans le sens du déplacement). Alors $W = 50 \\times 10 \\times 1 = \\boxed{500\\ \\text{J}}$.\\par\\textbf{3)} $W = 0$ lorsque $\\cos\\theta = 0$, soit $\\theta = 90^\\circ$ : la force est \\textbf{orthogonale} au déplacement. Une force perpendiculaire au mouvement (comme le poids lors d'un déplacement horizontal) ne fournit aucun travail."
+        }
+      ]
+    }
+  ]
+}

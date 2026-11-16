@@ -1,0 +1,395 @@
+{
+  "id": "nat-2024-n",
+  "title": "Examen National 2024 — Session Normale",
+  "type": "national",
+  "year": 2024,
+  "session": "normale",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 4,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2024n-ex1",
+      "number": 1,
+      "theme": "suites-numeriques",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Suites numériques — Récurrence, convergence et suite géométrique",
+      "context": "On considère la suite $(u_n)$ définie par : $u_0 = 4$ et $u_{n+1} = \\dfrac{4u_n - 2}{1 + u_n}$, pour tout entier naturel $n$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $u_{n+1} = 4 - \\dfrac{6}{1 + u_n}$, pour tout entier naturel $n$.",
+              "bareme": 0.5,
+              "hint": "Effectuez la division euclidienne de $4u_n - 2$ par $1 + u_n$, ou réécrivez $\\frac{4u_n - 2}{1 + u_n}$ en séparant la fraction."
+            },
+            {
+              "id": "1b",
+              "content": "Montrer par récurrence que $2 \\leq u_n \\leq 4$, pour tout entier naturel $n$.",
+              "bareme": 0.5,
+              "hint": "Initialisez avec $u_0 = 4$. Pour l'hérédité, exploitez la forme $u_{n+1} = 4 - \\frac{6}{1+u_n}$ en encadrant $\\frac{6}{1+u_n}$ grâce à $2 \\leq u_n \\leq 4$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $u_{n+1} - u_n = \\dfrac{(u_n - 1)(2 - u_n)}{1 + u_n}$, pour tout entier naturel $n$.",
+              "bareme": 0.5,
+              "hint": "Calculez $u_{n+1} - u_n = \\frac{4u_n - 2}{1+u_n} - u_n$ et réduisez au même dénominateur, puis factorisez le numérateur."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que la suite $(u_n)$ est décroissante et en déduire que $(u_n)$ est convergente.",
+              "bareme": 0.5,
+              "hint": "Exploitez le résultat de 1b pour déterminer le signe de chaque facteur dans $u_{n+1} - u_n$. Une suite décroissante et minorée est convergente."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Soit $(v_n)$ la suite numérique définie par $v_n = \\dfrac{2 - u_n}{1 - u_n}$, pour tout entier naturel $n$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que $(v_n)$ est une suite géométrique de raison $\\dfrac{2}{3}$.",
+              "bareme": 0.5,
+              "hint": "Calculez $v_{n+1}$ en remplaçant $u_{n+1}$ par $\\frac{4u_n-2}{1+u_n}$ dans $v_{n+1} = \\frac{2-u_{n+1}}{1-u_{n+1}}$, puis simplifiez pour obtenir $\\frac{2}{3} v_n$."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que $u_n = 1 + \\dfrac{1}{1 - \\left(\\dfrac{2}{3}\\right)^{n+1}}$, pour tout entier naturel $n$.",
+              "bareme": 0.25,
+              "hint": "Exprimez $u_n$ en fonction de $v_n$ à partir de $v_n = \\frac{2-u_n}{1-u_n}$, puis remplacez $v_n$ par son terme général $v_0 \\cdot \\left(\\frac{2}{3}\\right)^n$."
+            },
+            {
+              "id": "3c",
+              "content": "Calculer la limite de la suite $(u_n)$.",
+              "bareme": 0.25,
+              "hint": "$\\left(\\frac{2}{3}\\right)^{n+1} \\to 0$ quand $n \\to +\\infty$. Remplacez dans l'expression de $u_n$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2024n-ex2",
+      "number": 2,
+      "theme": "geometrie-espace",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Géométrie dans l’espace — Plan, sphère et droite",
+      "context": "Dans l’espace rapporté à un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les deux points $A(-1, 0, -1)$ et $B(1, 2, -1)$, le plan $(P)$ passant par $A$ et de vecteur normal $\\overrightarrow{n}(2, -2, 1)$ et la sphère $(S)$ de centre $\\Omega(2, -1, 0)$ et de rayon $5$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que $2x - 2y + z + 3 = 0$ est une équation cartésienne du plan $(P)$.",
+          "bareme": 0.5,
+          "hint": "Utilisez l'équation $\\overrightarrow{n} \\cdot \\overrightarrow{AM} = 0$ avec $A(-1,0,-1)$ et $\\overrightarrow{n}(2,-2,1)$, où $M(x,y,z)$ est un point générique du plan."
+        },
+        {
+          "id": "q2",
+          "content": "Déterminer une équation cartésienne de la sphère $(S)$.",
+          "bareme": 0.5,
+          "hint": "L'équation d'une sphère de centre $\\Omega(a,b,c)$ et de rayon $r$ est $(x-a)^2 + (y-b)^2 + (z-c)^2 = r^2$. Développez."
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que la distance du point $\\Omega$ au plan $(P)$ est $d(\\Omega, (P)) = 3$.",
+              "bareme": 0.5,
+              "hint": "Appliquez la formule $d(\\Omega, (P)) = \\frac{|ax_0 + by_0 + cz_0 + d|}{\\sqrt{a^2+b^2+c^2}}$ avec les coordonnées de $\\Omega$ et l'équation de $(P)$."
+            },
+            {
+              "id": "3b",
+              "content": "En déduire que le plan $(P)$ coupe la sphère $(S)$ suivant un cercle $(T)$ de rayon à déterminer.",
+              "bareme": 0.5,
+              "hint": "Le plan coupe la sphère si $d(\\Omega, (P)) < r$. Le rayon du cercle d'intersection vérifie $R^2 = r^2 - d^2$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Déterminer une représentation paramétrique de la droite $(\\Delta)$ passant par $\\Omega$ et perpendiculaire au plan $(P)$.",
+              "bareme": 0.25,
+              "hint": "La droite passant par $\\Omega$ et perpendiculaire à $(P)$ a pour vecteur directeur le vecteur normal $\\overrightarrow{n}(2,-2,1)$."
+            },
+            {
+              "id": "4b",
+              "content": "Montrer que le point $H(0, 1, -1)$ est le centre du cercle $(\\Gamma)$.",
+              "bareme": 0.5,
+              "hint": "Le centre du cercle est l'intersection de $(\\Delta)$ avec $(P)$. Vérifiez que $H$ appartient à $(\\Delta)$ et à $(P)$."
+            },
+            {
+              "id": "4c",
+              "content": "Montrer que la droite $(\\Delta)$ est une médiatrice du segment $[AB]$.",
+              "bareme": 0.25,
+              "hint": "Vérifiez que $H$ est le milieu de $[AB]$ et que $\\overrightarrow{AB}$ est colinéaire à $\\overrightarrow{n}$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2024n-ex3",
+      "number": 3,
+      "theme": "nombres-complexes",
+      "difficulty": "difficile",
+      "points": 4,
+      "topic": "Nombres complexes — Module, argument, rotation et alignement",
+      "context": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A$ et $B$ d’affixes respectives $a = \\sqrt{3}(1 - i)$ et $b = 2 + \\sqrt{3} + i$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Vérifier que $|a| = \\sqrt{6}$ et que $\\arg(a) = \\dfrac{-\\pi}{4}\\;[2\\pi]$.",
+          "bareme": 0.5,
+          "hint": "Utilisez $|a| = |\\sqrt{3}| \\cdot |1 - i|$. Pour l'argument, identifiez le quadrant de $1 - i$ dans le plan complexe."
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $\\dfrac{b}{a} = \\dfrac{3 + \\sqrt{3}}{6} + \\left(\\dfrac{1 + \\sqrt{3}}{2}\\right)i$ ; puis vérifier que $\\dfrac{b}{a} = \\dfrac{3 + \\sqrt{3}}{3}\\,e^{i\\frac{\\pi}{3}}$.",
+              "bareme": 0.75,
+              "hint": "Multipliez numérateur et dénominateur par le conjugué de $a$. Pour la forme exponentielle, identifiez le module et l'argument du résultat."
+            },
+            {
+              "id": "2b",
+              "content": "En déduire une forme trigonométrique du complexe $b$ puis vérifier que $b^{24}$ est un nombre réel.",
+              "bareme": 0.75,
+              "hint": "Puisque $b = \\frac{b}{a} \\cdot a$, utilisez les formes exponentielles. Pour $b^{24}$, vérifiez que $24\\arg(b) \\equiv 0\\;[\\pi]$."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Soit $R$ la rotation de centre $O$ et d’angle $\\dfrac{\\pi}{6}$, qui transforme chaque point $M$ du plan d’affixe $z$ en un point $M'$ d’affixe $z'$.\n\nOn pose $R(B) = B'$, $R(A) = A'$ et $R(A') = A''$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que $z' = \\dfrac{1}{2}(\\sqrt{3} + i)z$ et que $\\arg(a') \\equiv \\dfrac{-\\pi}{12}\\;[2\\pi]$ où $a'$ est l’affixe du point $A'$.",
+              "bareme": 0.5,
+              "hint": "La rotation de centre $O$ et d'angle $\\frac{\\pi}{6}$ s'écrit $z' = e^{i\\pi/6} z$. Calculez $e^{i\\pi/6}$ en forme algébrique."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que l’affixe du point $A''$ est $a'' = \\sqrt{6}\\,e^{i\\frac{\\pi}{12}}$ et en déduire que les points $O$, $A''$ et $B$ sont alignés.",
+              "bareme": 0.5,
+              "hint": "$A'' = R(A')$ donc $a'' = e^{i\\pi/6} a'$. Pour l'alignement, comparez $\\arg(a'')$ avec $\\arg(b)$."
+            },
+            {
+              "id": "3c",
+              "content": "Montrer que $b'$, l’affixe du point $B'$, vérifie $b' = \\left(\\dfrac{3 + \\sqrt{3}}{3}\\right)\\bar{a}$.",
+              "bareme": 0.5,
+              "hint": "Calculez $b' = e^{i\\pi/6} b$ en utilisant la forme exponentielle de $b$ trouvée à la question 2."
+            },
+            {
+              "id": "3d",
+              "content": "En déduire que le triangle $OAB'$ est rectangle en $O$.",
+              "bareme": 0.5,
+              "hint": "Le triangle est rectangle en $O$ si $\\frac{b'}{a}$ est imaginaire pur. Exploitez $b' = k\\bar{a}$ avec $k$ réel."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2024n-ex4",
+      "number": 4,
+      "theme": "probabilites",
+      "difficulty": "facile",
+      "points": 2,
+      "topic": "Probabilités — Dénombrement et indépendance",
+      "context": "Une urne contient sept boules : quatre boules portant le numéro **1**, deux boules portant le numéro **2** et une boule portant le numéro **3**. Toutes les boules sont indiscernables au toucher.\n\nOn tire simultanément au hasard deux boules de cette urne.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que $p(A) = \\dfrac{1}{3}$, où $A$ est l’évènement « les deux boules tirées portent le même numéro ».",
+          "bareme": 0.5,
+          "hint": "Dénombrez les cas favorables avec $\\binom{n}{2}$ pour chaque numéro, et l'univers a $\\binom{7}{2}$ issues."
+        },
+        {
+          "id": "q2",
+          "content": "Montrer que $p(B) = \\dfrac{5}{21}$, où $B$ est l’évènement « La somme des numéros des boules tirées est 4 ».",
+          "bareme": 0.5,
+          "hint": "Listez les combinaisons dont la somme vaut 4 : $(1,3)$ et $(2,2)$. Comptez le nombre de façons pour chaque cas."
+        },
+        {
+          "id": "q3",
+          "content": "Calculer $p(A \\cap B)$.",
+          "bareme": 0.5,
+          "hint": "$A \\cap B$ : les deux boules portent le même numéro ET leur somme est 4. Quel numéro vérifie ces deux conditions ?"
+        },
+        {
+          "id": "q4",
+          "content": "Les évènements $A$ et $B$ sont-ils indépendants ? Justifier.",
+          "bareme": 0.5,
+          "hint": "Comparez $p(A \\cap B)$ avec le produit $p(A) \\times p(B)$. Concluez selon qu'ils sont égaux ou non."
+        }
+      ]
+    },
+    {
+      "id": "nat2024n-prob",
+      "number": 5,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 8,
+      "topic": "Problème d’analyse — Fonctions exponentielles, aire, fonction réciproque",
+      "questions": [
+        {
+          "id": "p1",
+          "type": "partie",
+          "content": "On considère les deux fonctions $u$ et $v$ définies sur $\\mathbb{R}$ par : $u(x) = e^x$ et $v(x) = x$."
+        },
+        {
+          "id": "q1",
+          "content": "Tracer dans un même repère orthonormé les courbes $(C_u)$ et $(C_v)$ des fonctions $u$ et $v$.",
+          "bareme": 0.5,
+          "hint": "$u(x) = e^x$ passe par $(0,1)$ et croît rapidement ; $v(x) = x$ est la première bissectrice. Placez quelques points clés."
+        },
+        {
+          "id": "q2",
+          "content": "Justifier graphiquement que $e^x - x > 0$ pour tout $x$ de $\\mathbb{R}$.",
+          "bareme": 0.25,
+          "hint": "Observez la position relative des deux courbes : $(C_u)$ est-elle toujours au-dessus de $(C_v)$ ?"
+        },
+        {
+          "id": "q3",
+          "content": "Calculer l’aire de la partie du plan délimitée par la courbe $(C_u)$, la courbe $(C_v)$ et les droites d’équations $x = 0$ et $x = 1$.",
+          "bareme": 0.5,
+          "hint": "L'aire entre deux courbes est $\\int_0^1 |u(x) - v(x)|\\,dx$. Utilisez le résultat précédent pour retirer la valeur absolue."
+        },
+        {
+          "id": "p2",
+          "type": "partie",
+          "content": "On considère la fonction numérique $f$ définie par $f(x) = x + 1 - \\ln(e^x - x)$."
+        },
+        {
+          "id": "r1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r1a",
+              "content": "Vérifier que $f$ est définie sur $\\mathbb{R}$.",
+              "bareme": 0.25,
+              "hint": "$f$ est définie là où $e^x - x > 0$. Qu'avez-vous montré dans la Partie I ?"
+            },
+            {
+              "id": "r1b",
+              "content": "Montrer que pour tout $x \\in \\mathbb{R}$, $f(x) = 1 - \\ln\\left(1 - xe^{-x}\\right)$.",
+              "bareme": 0.5,
+              "hint": "Factorisez $e^x$ dans $e^x - x = e^x(1 - xe^{-x})$, puis appliquez $\\ln(ab) = \\ln a + \\ln b$."
+            },
+            {
+              "id": "r1c",
+              "content": "En déduire que $\\displaystyle\\lim_{x \\to +\\infty} f(x) = 1$, puis interpréter géométriquement ce résultat.",
+              "bareme": 0.5,
+              "hint": "Étudiez $\\lim_{x \\to +\\infty} xe^{-x}$ et utilisez la continuité du logarithme. Géométriquement, pensez asymptote horizontale."
+            }
+          ]
+        },
+        {
+          "id": "r2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r2a",
+              "content": "Calculer $\\displaystyle\\lim_{x \\to -\\infty} f(x)$.",
+              "bareme": 0.25,
+              "hint": "Quand $x \\to -\\infty$, $e^x \\to 0$ donc $e^x - x \\approx -x$. Utilisez cela dans $\\ln(e^x - x)$."
+            },
+            {
+              "id": "r2b",
+              "content": "Vérifier que pour tout $x < 0$, $f(x) = x + 1 - \\ln(-x) - \\ln\\left(1 - \\dfrac{1}{xe^{-x}}\\right)$.",
+              "bareme": 0.5,
+              "hint": "Pour $x < 0$, factorisez $(-x)$ dans $e^x - x$ et appliquez $\\ln(ab) = \\ln a + \\ln b$."
+            },
+            {
+              "id": "r2c",
+              "content": "Calculer $\\displaystyle\\lim_{x \\to -\\infty} \\dfrac{f(x)}{x}$ puis en déduire que $(C_f)$ admet une branche parabolique de direction la droite d’équation $y = x$ au voisinage de $-\\infty$.",
+              "bareme": 0.75,
+              "hint": "Divisez l'expression de la question précédente par $x$ et étudiez chaque terme séparément quand $x \\to -\\infty$."
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r3a",
+              "content": "Montrer que pour tout $x \\in \\mathbb{R}$ : $f'(x) = \\dfrac{1 - x}{e^x - x}$.",
+              "bareme": 0.5,
+              "hint": "Dérivez $f(x) = x + 1 - \\ln(e^x - x)$ en utilisant $(\\ln u)' = \\frac{u'}{u}$ avec $u(x) = e^x - x$."
+            },
+            {
+              "id": "r3b",
+              "content": "Étudier le signe de la fonction dérivée de $f$, puis en déduire le tableau de variations de $f$ sur $\\mathbb{R}$.",
+              "bareme": 0.5,
+              "hint": "Le dénominateur $e^x - x > 0$ (Partie I). Le signe de $f'(x)$ dépend donc uniquement du numérateur $1 - x$."
+            },
+            {
+              "id": "r3c",
+              "content": "Montrer que l’équation $f(x) = 0$ admet une solution unique dans l’intervalle $]-1, 0[$.",
+              "bareme": 0.5,
+              "hint": "Appliquez le TVI : calculez $f(-1)$ et $f(0)$, puis utilisez la stricte monotonie de $f$ sur cet intervalle."
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r4a",
+              "content": "Justifier graphiquement que l’équation $f(x) = x$ admet deux solutions $\\alpha$ et $\\beta$.",
+              "bareme": 0.5,
+              "hint": "Superposez $(C_f)$ et la droite $y = x$ sur le même graphique. Les intersections correspondent aux solutions."
+            },
+            {
+              "id": "r4b",
+              "content": "Montrer que : $e^{\\alpha} - e^{\\beta} = \\alpha - \\beta$.",
+              "bareme": 0.5,
+              "hint": "$f(\\alpha) = \\alpha$ et $f(\\beta) = \\beta$. Remplacez dans l'expression de $f$ et soustrayez les deux égalités."
+            }
+          ]
+        },
+        {
+          "id": "r5",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "r5a",
+              "content": "Soit $g$ la restriction de la fonction $f$ sur $I = ]-\\infty, 1]$.\nMontrer que $g$ admet une fonction réciproque $g^{-1}$ définie sur un intervalle $J$ que l’on déterminera.\n(Il n’est pas demandé de déterminer $g^{-1}(x)$)",
+              "bareme": 0.5,
+              "hint": "Montrez que $g$ est continue et strictement monotone sur $I$ (tableau de variations). Déterminez $J = g(I)$ avec les limites aux bornes."
+            },
+            {
+              "id": "r5b",
+              "content": "Vérifier que $g^{-1}$ est dérivable en $1$ et calculer $\\left(g^{-1}\\right)'(1)$.",
+              "bareme": 0.75,
+              "hint": "Utilisez $(g^{-1})'(y_0) = \\frac{1}{g'(x_0)}$ où $g(x_0) = y_0$. Quel $x_0$ vérifie $g(x_0) = 1$ ?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

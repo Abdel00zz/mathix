@@ -1,0 +1,42 @@
+{
+  "id": "barycentre",
+  "title": "Le barycentre dans le plan",
+  "section": "algebre-geometrie",
+  "quizCount": 18,
+  "revisions": [
+    {
+      "id": "rev-bary-1",
+      "title": "Fiche Complète : Barycentre",
+      "path": "data/1ere-bac-sc-math/barycentre/revisions/fiche_barycentre_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-bary-001",
+      "path": "data/1ere-bac-sc-math/barycentre/exercises/ex_bary_01.json"
+    },
+    {
+      "id": "ex-bary-002",
+      "path": "data/1ere-bac-sc-math/barycentre/exercises/ex_bary_02.json"
+    },
+    {
+      "id": "ex-bary-003",
+      "path": "data/1ere-bac-sc-math/barycentre/exercises/ex_bary_03.json"
+    },
+    {
+      "id": "ex-bary-004",
+      "path": "data/1ere-bac-sc-math/barycentre/exercises/ex_bary_04.json"
+    },
+    {
+      "id": "ex-bary-005",
+      "path": "data/1ere-bac-sc-math/barycentre/exercises/ex_bary_05.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-barycentre-01",
+      "path": "data/1ere-bac-sc-math/barycentre/quiz/barycentre_quiz.json",
+      "questionsCount": 18
+    }
+  ]
+}

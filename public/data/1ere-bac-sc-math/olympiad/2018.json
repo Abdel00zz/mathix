@@ -1,0 +1,39 @@
+{
+  "id": "olympiad-1ere-bac-sc-math-2018",
+  "title": "Olympiade Internationale de Mathématiques (IMO) 2018 — Sujet officiel",
+  "year": 2018,
+  "classId": "1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "badge": "international",
+  "source": "https://www.imo-official.org/problems.aspx",
+  "duration": 240,
+  "totalPoints": 42,
+  "exercises": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2018-ex1",
+      "number": 1,
+      "theme": "geometrie",
+      "points": 7,
+      "topic": "Cercle circonscrit et bissectrices",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $\\Gamma$ le cercle circonscrit à un triangle acutangle $ABC$. Les points $D$ et $E$ sont sur les segments $AB$ et $AC$ respectivement, tels que $AD = AE$. Les médiatrices de $BD$ et $CE$ coupent les arcs $AB$ et $AC$ de $\\Gamma$ ne contenant pas l'autre sommet en $F$ et $G$ respectivement. Montrer que les droites $DE$ et $FG$ sont parallèles (ou confondues)."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2018-ex2",
+      "number": 2,
+      "theme": "algebre",
+      "points": 7,
+      "topic": "Suites numériques",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $(a_n)$ une suite de nombres réels telle que $a_1=1$ et $a_{n+1} = a_n + \\frac{1}{a_n^2}$ pour tout $n \\geq 1$. Montrer que $a_n > \\sqrt[3]{3n}$ pour tout $n > 1$."
+        }
+      ]
+    }
+  ]
+}

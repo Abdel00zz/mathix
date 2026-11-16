@@ -1,0 +1,608 @@
+{
+  "school": "medecine",
+  "year": "2024",
+  "title": "Concours Médecine 2024 — annales FMP vérifiées",
+  "questions": [
+    {
+      "id": "med-fmp-2024-c22",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2024 · C.22",
+      "officialQuestionCode": "C.22",
+      "prompt": "Soit $z=\\frac{(1-i)^{10}}{(1+i\\sqrt3)^4}$. Quelle est la bonne réponse ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$|z|=4$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$|z|=\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\arg z\\equiv\\frac{\\pi}{6}\\ [2\\pi]$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\arg z\\equiv\\frac{3\\pi}{2}\\ [2\\pi]$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\arg z\\equiv\\frac{\\pi}{2}\\ [2\\pi]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$1-i=\\sqrt2e^{-i\\frac{\\pi}{4}}$ et $1+i\\sqrt3=2e^{i\\frac{\\pi}{3}}$. Ainsi $z=2e^{-i23\\frac{\\pi}{6}}=2e^{i\\frac{\\pi}{6}}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-c23",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2024 · C.23",
+      "officialQuestionCode": "C.23",
+      "prompt": "Soient $z_1,z_2,z_3$ trois nombres complexes distincts ayant le même cube : $z_1^3=z_2^3=z_3^3$. Quelles valeurs sont possibles ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$z_1=1$, $z_2=i$, $z_3=-i$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$z_1=1$, $z_2=\\omega$, $z_3=\\omega^2$ avec $\\omega=e^{2i\\frac{\\pi}{3}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$z_1=1$, $z_2=\\frac{1}{2}+i\\frac{\\sqrt3}{2}$, $z_3=-\\frac{1}{2}-i\\frac{\\sqrt3}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$z_1=2$, $z_2=-1$, $z_3=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$z_1=1$, $z_2=-\\omega$, $z_3=-\\omega^2$ avec $\\omega=e^{2i\\frac{\\pi}{3}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les solutions de $w^3=k$ sont $z_0$, $z_0\\omega$ et $z_0\\omega^2$, où $\\omega^3=1$ et $\\omega\\ne1$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-f25",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2024 · F.25",
+      "officialQuestionCode": "F.25",
+      "prompt": "On considère $f(x)=x-\\frac{(\\ln x)^2}{x}$. Alors $f'(x)$ est égale à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1+\\frac{2\\ln x-(\\ln x)^2}{x^2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1-\\frac{2\\ln x-(\\ln x)^2}{x^2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$-1+\\frac{2\\ln x-(\\ln x)^2}{x^2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-1-\\frac{2\\ln x-(\\ln x)^2}{x^2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$1+\\frac{2\\ln x+(\\ln x)^2}{x^2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par quotient, $\\left(\\frac{(\\ln x)^2}{x}\\right)'=\\frac{2\\ln x-(\\ln x)^2}{x^2}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-f26",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2024 · F.26",
+      "officialQuestionCode": "F.26",
+      "prompt": "La fonction $f(x)=2\\ln\\left(\\frac{e^x+2}{\\sqrt{1+e^x}}\\right)$ admet une asymptote horizontale ou oblique. Quelle est son équation ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y=2x$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$y=x$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$y=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y=-2\\ln2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$y=-2x$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En factorisant $e^x$, on obtient $f(x)=x+2\\ln\\left(\\frac{1+2e^{-x}}{\\sqrt{1+e^{-x}}}\\right)$. Le second terme tend vers $0$ quand $x\\to+\\infty$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-f27",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2024 · F.27",
+      "officialQuestionCode": "F.27",
+      "prompt": "On considère $g(x)=\\frac{x^2+1}{x+1}$. Déterminer le point $x_0$ où la tangente à $\\mathcal{C}_g$ est parallèle à la droite $y=x$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x_0=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$x_0=-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x_0=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x_0=2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$x_0=\\varnothing$ (ensemble vide)",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "$g'(x)=\\frac{x^2+2x-1}{(x+1)^2}$. L'égalité $g'(x)=1$ conduirait à $-1=1$, impossible.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-f28",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2024 · F.28",
+      "officialQuestionCode": "F.28",
+      "prompt": "Soit $(E)$ l'équation $x^x=(\\sqrt{x})^{x+1}$. Quelle est la bonne réponse ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x=1$ est une solution",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x=2$ est une solution",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x=0$ est une solution",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x=e$ est une solution",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "L'équation $(E)$ n'admet pas de solution",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour $x>0$, l'équation équivaut à $\\frac{x-1}{2}\\ln x=0$. La solution proposée est donc $x=1$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-f29",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2024 · F.29",
+      "officialQuestionCode": "F.29",
+      "prompt": "Soit $f(x)=\\left(1+\\frac{1}{x}\\right)^x$. Quelle est la bonne réponse ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$D_f=]0,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$D_f=\\mathbb{R}^*$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$D_f=]-\\infty,-1[\\cup]0,+\\infty[$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$D_f=]-1,1[$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$D_f=[-1,1]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour une puissance réelle, il faut $1+\\frac{1}{x}>0$, soit $\\frac{x+1}{x}>0$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-f30",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2024 · F.30",
+      "officialQuestionCode": "F.30",
+      "prompt": "Soit $f(x)=x\\sin(\\pi x)-\\ln(x)-1$ définie sur $]0,1]$. Quelle est la bonne réponse ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f$ est majorée sur $]0,1]$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\lim_{x\\to0^+}f(x)=-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f$ est croissante sur $]0,1]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il existe $c\\in]0,1]$ tel que $f(c)=0$ et $\\displaystyle \\lim_{x\\to1^-}f(x)=-1$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Lorsque $x\\to0^+$, on a $x\\sin(\\pi x)\\to0$ et $-\\ln x\\to+\\infty$, donc $f(x)\\to+\\infty$. Comme $f$ est continue sur $]0,1]$ et $f(1)=-1$, le théorème des valeurs intermédiaires fournit un $c\\in]0,1]$ tel que $f(c)=0$. La continuité en $1$ donne aussi $\\displaystyle \\lim_{x\\to1^-}f(x)=-1$.",
+      "answerValidation": {
+        "status": "verified-and-disambiguated",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-g4",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l'espace",
+      "sourceReference": "FMP 2024 · G.4",
+      "officialQuestionCode": "G.4",
+      "prompt": "Dans l'espace, $A(0,3,1)$, $B(-1,3,0)$ et $C(0,5,0)$. La sphère $(S)$ a pour équation $x^2+y^2+z^2-4x-5=0$. Quelles sont les coordonnées du point de tangence $H$ du plan $(ABC)$ et de $(S)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(2,2,\\sqrt5)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$(2,3,1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(2,2,1)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(0,1,2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "$(0,-1,2)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le centre est $\\Omega(2,0,0)$. Le plan $(ABC)$ est $2x-y-2z+5=0$ ; la projection orthogonale de $\\Omega$ sur ce plan est $H(0,1,2)$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-i18",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2024 · I.18",
+      "officialQuestionCode": "I.18",
+      "prompt": "Calculer $\\displaystyle\\int\\frac{\\cos x}{2+\\sin x}\\,dx$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}\\ln|2+\\sin x|+C$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\ln|2+\\sin x|+C$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$-\\ln|2+\\sin x|+C$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln|2+\\cos x|+C$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$\\frac{1}{2}\\ln|2+\\cos x|+C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $u=2+\\sin x$, on a $du=\\cos x\\,dx$, donc une primitive est $\\ln|u|+C$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-p4",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "sourceReference": "FMP 2024 · P.4",
+      "officialQuestionCode": "P.4",
+      "prompt": "Deux mille personnes ont envoyé un SMS. La société sélectionne $30$ SMS parmi les $2000$. On note $\\Omega$ l'ensemble des sous-ensembles de $30$ SMS distincts. Combien d'éléments contient-il ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$A_{2000}^{30}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$C_{2000}^{30}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$1970$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{2000!}{30!}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$2000$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le tirage est simultané et sans ordre : il y a $\\binom{2000}{30}=C_{2000}^{30}$ sous-ensembles possibles.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-p5",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "sourceReference": "FMP 2024 · P.5",
+      "officialQuestionCode": "P.5",
+      "prompt": "Vous faites partie des $2000$ personnes ayant envoyé un SMS. Quelle est la probabilité d'être sélectionné(e) parmi les $30$ SMS ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}12$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$0{,}03$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}015$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$0{,}02$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "$0{,}3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par symétrie, la probabilité est $\\frac{30}{2000}=0{,}015$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-s15",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2024 · S.15",
+      "officialQuestionCode": "S.15",
+      "prompt": "Soit $U_n=\\ln(1+ne^{-n})$, pour $n\\in\\mathbb{N}$. Quelle est la bonne réponse ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\lim_{n\\to+\\infty}U_n=+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\lim_{n\\to+\\infty}U_n=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La suite $(U_n)$ est divergente",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La suite $(U_n)$ converge vers $0$ ; elle est donc bornée",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Comme $ne^{-n}\\to0$, on obtient $1+ne^{-n}\\to1$, puis $U_n=\\ln(1+ne^{-n})\\to\\ln1=0$. Toute suite convergente est bornée.",
+      "answerValidation": {
+        "status": "verified-and-disambiguated",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2024-s16",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2024 · S.16",
+      "officialQuestionCode": "S.16",
+      "prompt": "La suite $(w_n)$ est définie par $w_0=1$ et $w_{n+1}=\\frac{w_n+3}{2w_n+4}$. On pose $y_n=\\frac{4}{{2+w_n}}$. Alors $y_{n+1}$ vérifie :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y_{n+1}=\\frac{23}{6+y_n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$y_{n+1}=\\frac{32}{6+y_n}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y_{n+1}=\\frac{6}{{32+y_n}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y_{n+1}=\\frac{32}{20+y_n}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "On a $w_n=\\frac{4}{{y_n}}-2$. Ainsi $w_{n+1}=\\frac{w_n+3}{2w_n+4}=\\frac{4+y_n}{8}$, puis $y_{n+1}=\\frac{4}{{2+w_{n+1}}}=\\frac{32}{20+y_n}$. Le corrigé PDF annonce $\\frac{32}{6+y_n}$, mais cette expression est incompatible avec l'énoncé ; les choix C et D y sont aussi dupliqués.",
+      "answerValidation": {
+        "status": "corrected-mathematically",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    }
+  ]
+}

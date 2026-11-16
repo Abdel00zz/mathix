@@ -1,0 +1,61 @@
+{
+  "id": "ex-etude-fct-02",
+  "theme": "etude-fonctions",
+  "difficulty": "facile",
+  "topic": "Analyse - Fonction définie par morceaux",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction numérique définie par :\n$$ \\begin{cases} f(x)=\\sin\\left(\\frac{\\pi}{3}x + \\frac{\\pi}{6}\\right) & ; \\ x < 1 \\\\ f(x)=1-x+\\frac{1}{x} & ; \\ x \\geq 1 \\end{cases} $$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $D$ ensemble de définition de $f$.",
+      "hint": "Vérifiez si les expressions sont définies sur leurs intervalles respectifs. Attention à la division par $x$ dans la deuxième expression."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer la limite : $\\displaystyle \\lim_{x \\to +\\infty} f(x)$.",
+      "hint": "Utilisez l'expression valable pour $x \\geq 1$. Le terme $\\frac{1}{x}$ tend vers 0."
+    },
+    {
+      "id": "q3",
+      "content": "Étudier la dérivabilité de la fonction $f$ au point $x_0=1$ puis interpréter les résultats obtenus.",
+      "hint": "Calculez la limite à gauche et à droite du taux d'accroissement $\\frac{f(x)-f(1)}{x-1}$. Rappelez-vous que $f(1) = 1$."
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Calculer $f'(x)$ pour tout $x \\in \\mathbb{R}^*$.",
+          "hint": "Dérivez séparément les deux expressions. Pour le sinus, utilisez $(\\sin(ax+b))' = a\\cos(ax+b)$."
+        },
+        {
+          "id": "b",
+          "content": "Dresser le tableau de variations de la fonction $f$ sur l'intervalle $[-5; +\\infty[$.",
+          "hint": "Étudiez le signe de la dérivée sur chaque intervalle. Pour la partie trigonométrique, résolvez l'inéquation trigonométrique associée."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que la courbe $\\mathscr{C}_f$ admet une asymptote oblique au voisinage de $+\\infty$.",
+      "hint": "Identifiez une droite $y=ax+b$ telle que $\\lim_{x \\to +\\infty} (f(x)-(ax+b)) = 0$. Regardez la forme de $f(x)$ pour $x \\geq 1$."
+    },
+    {
+      "id": "q6",
+      "content": "Montrer que la courbe $\\mathscr{C}_f$ admet deux points d'inflexion dont les abscisses appartiennent à $[-5; 1]$.",
+      "hint": "Calculez la dérivée seconde $f''(x)$ pour la partie $x < 1$ et cherchez ses racines où elle change de signe."
+    },
+    {
+      "id": "q7",
+      "content": "Construire la restriction de la fonction $f$ sur l'intervalle $[-5; +\\infty[$.",
+      "hint": "Assurez-vous de bien raccorder les deux morceaux au point d'abscisse 1 et de respecter les tangentes trouvées."
+    },
+    {
+      "id": "q8",
+      "content": "Discuter, suivant les valeurs du paramètre réel $m$, le nombre de solutions de l'équation : $x \\geq -5 ; \\ f(x)=m$",
+      "hint": "Effectuez une lecture graphique en déplaçant une droite horizontale $y=m$ et en comptant les intersections avec la courbe tracée."
+    }
+  ]
+}

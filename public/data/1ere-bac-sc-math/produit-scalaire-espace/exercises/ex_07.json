@@ -1,0 +1,20 @@
+{
+  "id": "ex-prod-scal-esp-07",
+  "theme": "produit-scalaire-espace",
+  "difficulty": "difficile",
+  "topic": "Produit scalaire dans l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Équation cartésienne d'une sphère",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère le point $A(1, -2, 3)$ et le rayon $R = 2$.\nDéterminer une équation cartésienne de la sphère $(S)$ de centre $A$ et de rayon $R$.",
+          "hint": "Dans un repère orthonormé, une équation cartésienne d'une sphère de centre $A(x_A, y_A, z_A)$ et de rayon $R$ est donnée par la formule :\n$(x - x_A)^2 + (y - y_A)^2 + (z - z_A)^2 = R^2$\n\nEn appliquant cette formule avec $A(1, -2, 3)$ et $R = 2$ :\n$(x - 1)^2 + (y - (-2))^2 + (z - 3)^2 = 2^2$\n$(x - 1)^2 + (y + 2)^2 + (z - 3)^2 = 4$\n\nUne équation cartésienne de la sphère $(S)$ est $(x - 1)^2 + (y + 2)^2 + (z - 3)^2 = 4$."
+        }
+      ]
+    }
+  ]
+}

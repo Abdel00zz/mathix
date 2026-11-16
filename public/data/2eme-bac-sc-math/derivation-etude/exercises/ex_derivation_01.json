@@ -1,0 +1,21 @@
+{
+  "id": "ex-deriv-sm-01",
+  "theme": "derivation-etude",
+  "difficulty": "difficile",
+  "topic": "Dérivation",
+  "context": "Soit $f(x) = x(x-1)(x-2)(x-3)$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Théorème de Rolle",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer que l'équation $f'(x) = 0$ admet au moins 3 racines réelles.",
+          "hint": "\\method $f$ s'annule en $0, 1, 2, 3$. \nAppliquons le théorème de Rolle sur $[0,1]$, $[1,2]$ et $[2,3]$.\nComme $f(0)=f(1)=0$, $\\exists c_1 \\in ]0,1[$ tq $f'(c_1)=0$.\nDe même pour $c_2 \\in ]1,2[$ et $c_3 \\in ]2,3[$.\n\\conclusion $f'$ admet au moins 3 racines distinctes."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "ex-complexes-17",
+  "topic": "Nombres complexes - Bac National 2011 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2011,
+  "examenSession": "Rattrapage",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans l'ensemble $\\mathbb{C}$ l'équation : $(E)z^3-(1+2i)z^2+3(1+i)z-10(1+i)=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "Vérifier que $-2i$ est une solution de l'équation $(E)$.",
+      "hint": "Remplacez $z=-2i$ dans $(E)$, calculez chaque puissance de $-2i$, puis vérifiez que la somme s'annule."
+    },
+    {
+      "id": "p1q2",
+      "content": "Déterminer les deux nombres complexes $\\alpha$ et $\\beta$ tels que : $(\\forall z\\in\\mathbb{C})\\,z^3-(1+2i)z^2+3(1+i)z-10(1+i)=(z+2i)\\left(z^2+\\alpha z+\\beta\\right)$.",
+      "hint": "Développez $(z+2i)(z^2+\\alpha z+\\beta)$ et identifiez les coefficients avec le polynôme de gauche (coefficient de $z^2$, de $z$, terme constant)."
+    },
+    {
+      "id": "p1q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q3a",
+          "content": "Déterminer les deux racines carrées du nombre $5-12i$.",
+          "hint": "Cherchez une racine carrée sous la forme $x+iy$ en résolvant $x^2-y^2=5$, $2xy=-12$ et $x^2+y^2=|5-12i|=13$."
+        },
+        {
+          "id": "p1q3b",
+          "content": "Résoudre dans $\\mathbb{C}$ l'équation $(E)$.",
+          "hint": "Résolvez le facteur du second degré $z^2+\\alpha z+\\beta=0$ obtenu à la question 2), en utilisant la racine carrée du discriminant calculée à la question 3a), puis n'oubliez pas la racine $-2i$."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe étant rapporté à un repère orthonormé direct. On considère les points $A$, $B$ et $C$ d'affixes respectifs $a=-1+3i$, $b=-2i$ et $c=2+i$."
+    },
+    {
+      "id": "p2q1",
+      "content": "Montrer que le triangle $ABC$ est rectangle et isocèle en $C$.",
+      "hint": "Calculez le quotient $\\dfrac{a-c}{b-c}$ et vérifiez qu'il est de module $1$ et d'argument $\\pm\\pi/2$."
+    },
+    {
+      "id": "p2q2",
+      "content": "On considère la rotation $R_1$ de centre $B$ et dont une mesure de l'angle est $\\dfrac{\\pi}{3}$ et la rotation $R_2$ de centre $A$ et dont une mesure de l'angle est $\\left(-\\dfrac{2\\pi}{3}\\right)$. Soit $M$ un point du plan complexe d'affixe $z$ et $M_1$ son image par la rotation $R_1$ et $M_2$ son image par la rotation $R_2$.",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Vérifier que l'expression complexe de la rotation $R_1$ est : $z'=\\left(\\dfrac{1+i\\sqrt3}{2}\\right)z-\\sqrt3-i$.",
+          "hint": "Écrivez $z'-b=e^{i\\pi/3}(z-b)$ avec $b=-2i$, développez et regroupez les termes constants."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Déterminer $z_2$ l'affixe de $M_2$ en fonction de $z$.",
+          "hint": "Procédez de même avec $z_2-a=e^{-i2\\pi/3}(z-a)$ où $a=-1+3i$, en développant et en isolant $z_2$."
+        },
+        {
+          "id": "p2q2c",
+          "content": "En déduire que $I$, le milieu du segment $[M_1M_2]$, est un point fixe.",
+          "hint": "Calculez $\\dfrac{z_1+z_2}{2}$ à partir des deux expressions trouvées et vérifiez que le coefficient de $z$ s'annule, laissant une constante indépendante de $z$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Le déplacement des drones",
+    "subtitle": "Vecteurs et translations",
+    "context": "Vecteurs"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le déplacement des drones",
+          "content": "Un drone est programmé pour effectuer une livraison en suivant une série de déplacements dans un plan horizontal. On repère sa position dans un repère orthonormé $(O;\\vec{i},\\vec{j})$ où l'unité est le mètre.\\par Le drone part du point $A(1, 2)$ et effectue successivement :\\begin{itemize}\\item un déplacement $\\vec{u} = (3, -1)$,\\item un déplacement $\\vec{v} = (-1, 4)$,\\item un déplacement $\\vec{w} = (2, 1)$.\\end{itemize}\\par On appelle $B$, $C$ et $D$ les positions successives du drone après chaque déplacement."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Calculer les coordonnées des points $B$, $C$ et $D$.\\item Calculer la distance totale parcourue $AB + BC + CD$ (arrondie au mètre).\\item Le vecteur $\\overrightarrow{AD}$ est-il égal à $\\vec{u} + \\vec{v} + \\vec{w}$ ? Calculer $\\overrightarrow{AD}$.\\item Un deuxième drone part de $A'(0, 0)$ et effectue les mêmes déplacements. En quelle position $D'$ se retrouve-t-il ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Pour trouver $B$ : $B = A + \\vec{u}$, soit $B = (1+3,\\; 2+(-1)) = (4,\\; 1)$."
+        },
+        {
+          "type": "hint",
+          "content": "La distance $AB = \\|\\vec{u}\\| = \\sqrt{3^2 + (-1)^2}$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $B = (1+3,\\; 2-1) = (4,\\; 1)$, $C = (4-1,\\; 1+4) = (3,\\; 5)$, $D = (3+2,\\; 5+1) = (5,\\; 6)$.\\par\\textbf{2)} $AB = \\sqrt{10} \\approx 3{,}16$ m, $BC = \\sqrt{17} \\approx 4{,}12$ m, $CD = \\sqrt{5} \\approx 2{,}24$ m. Total $\\approx \\boxed{10}$ m.\\par\\textbf{3)} $\\vec{u}+\\vec{v}+\\vec{w} = (3-1+2,\\; -1+4+1) = (4,\\; 4)$. Et $\\overrightarrow{AD} = (5-1,\\; 6-2) = (4,\\; 4)$. $\\checkmark$\\par\\textbf{4)} $D' = A' + \\overrightarrow{AD} = (0,\\; 0) + (4,\\; 4) = \\boxed{(4,\\; 4)}$."
+        }
+      ]
+    }
+  ]
+}

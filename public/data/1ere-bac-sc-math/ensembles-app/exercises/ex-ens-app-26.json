@@ -1,0 +1,35 @@
+{
+  "id": "ex-ens-app-26",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Applications et Fonctions — Bijection et réciproque",
+  "requiresRedaction": true,
+  "context": "On considère l'application : $f : \\mathbb{R} \\setminus \\{-2\\} \\to \\mathbb{R}$, $x \\mapsto \\dfrac{x^2-2}{x^2+1}$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "L'application $f$ est-elle injective ? Justifier.",
+      "hint": "$f$ est paire : $f(-x) = f(x)$. Donc $f(-1) = f(1)$ avec $-1 \\neq 1$ : $f$ n'est pas injective."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que : $\\left(\\forall x \\in \\mathbb{R}\\right)\\; -2 \\leq f(x) < 1$",
+      "hint": "Pour la borne inférieure : montrez que $f(x) + 2 = \\dfrac{3x^2}{x^2+1} \\geq 0$. Pour la borne supérieure : montrez que $1 - f(x) = \\dfrac{3}{x^2+1} > 0$."
+    },
+    {
+      "id": "q3",
+      "content": "Soit $y \\in \\mathbb{R}$. Prouver que : $y \\in [-2;1[ \\Leftrightarrow \\dfrac{2+y}{1-y} \\geq 0$",
+      "hint": "Étudiez le signe de $\\dfrac{2+y}{1-y}$ selon les valeurs de $y$ (tableau de signes). Le quotient est positif ou nul si et seulement si $y \\in [-2;1[$."
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que l'application $h : \\mathbb{R} \\to [-2;1[$, $x \\mapsto f(x)$ est bijective.",
+      "hint": "D'après la question 2, $h$ est bien définie de $\\mathbb{R}$ dans $[-2;1[$. Pour la bijectivité, montrez qu'elle est surjective (tout $y \\in [-2;1[$ est atteint) et utilisez la question 3 pour résoudre $f(x) = y$. La non-injectivité de $f$ sur $\\mathbb{R}$ n'empêche pas $h$ d'être bijective — vérifiez bien le domaine de départ."
+    },
+    {
+      "id": "q5",
+      "content": "Soit $g$ la restriction de $f$ à $\\mathbb{R}^+$. Montrer que $g$ est bijective de $\\mathbb{R}^+$ dans $[-2;1[$ puis déterminer sa bijection réciproque.",
+      "hint": "Sur $\\mathbb{R}^+$, $g$ est strictement croissante (dressez le tableau de variation). Calculez $g(0)$ et $\\lim_{x\\to+\\infty} g(x)$ pour déterminer l'image. Pour $g^{-1}$ : résolvez $y = \\dfrac{x^2-2}{x^2+1}$ en $x \\geq 0$ et exprimez $x$ en fonction de $y$."
+    }
+  ]
+}

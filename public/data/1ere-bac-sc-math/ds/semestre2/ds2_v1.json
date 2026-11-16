@@ -1,0 +1,66 @@
+{
+  "id": "ds2-s2-v1",
+  "title": "Devoir Surveillé N°2 — V1",
+  "number": 2,
+  "version": "V1",
+  "semestre": 2,
+  "classId": "1ere-bac-sc-math",
+  "duration": 120,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "ds2s2v1-ex1",
+      "number": 1,
+      "theme": "dénombrement",
+      "points": 10,
+      "topic": "Dénombrement — Arrangements et combinaisons",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Arrangements et permutations",
+          "subQuestions": [
+            { "id": "sq1a", "content": "Calculer $A_8^3$ et $\\binom{8}{3}$.", "hint": "$A_8^3 = 8 \\times 7 \\times 6 = 336$. $\\binom{8}{3} = \\frac{336}{6} = 56$." },
+            { "id": "sq1b", "content": "De combien de façons peut-on former un code à 4 chiffres distincts avec les chiffres de 0 à 9 ?", "hint": "$A_{10}^4 = 10 \\times 9 \\times 8 \\times 7 = 5040$." },
+            { "id": "sq1c", "content": "Parmi ces codes, combien commencent par un chiffre impair ?", "hint": "5 choix pour le premier (1,3,5,7,9), puis $A_9^3 = 504$ pour les 3 restants. Total = $5 \\times 504 = 2520$." }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Combinaisons",
+          "subQuestions": [
+            { "id": "sq2a", "content": "Un comité de 5 personnes doit être formé parmi 12 candidats. Quel est le nombre de comités possibles ?", "hint": "$\\binom{12}{5} = \\frac{12!}{5! \\cdot 7!} = 792$." },
+            { "id": "sq2b", "content": "Combien de comités contiennent exactement 2 femmes parmi les 5 femmes et 7 hommes ?", "hint": "$\\binom{5}{2} \\times \\binom{7}{3} = 10 \\times 35 = 350$." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ds2s2v1-ex2",
+      "number": 2,
+      "theme": "arithmétique",
+      "points": 10,
+      "topic": "Arithmétique dans $\\mathbb{Z}$ — Divisibilité et PGCD",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Divisibilité et congruences",
+          "subQuestions": [
+            { "id": "sq1a", "content": "Montrer que pour tout $n \\in \\mathbb{N}$, $n(n+1)$ est pair.", "hint": "Parmi $n$ et $n+1$, l'un est pair. Donc le produit est pair." },
+            { "id": "sq1b", "content": "Montrer que pour tout $n \\in \\mathbb{N}$, $n^3 - n$ est divisible par 6.", "hint": "$n^3 - n = n(n-1)(n+1)$ : produit de 3 entiers consécutifs, divisible par $2$ et par $3$, donc par $6$." }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "PGCD et algorithme d'Euclide",
+          "subQuestions": [
+            { "id": "sq2a", "content": "Déterminer $\\text{PGCD}(252, 180)$ par l'algorithme d'Euclide.", "hint": "$252 = 1 \\times 180 + 72$, $180 = 2 \\times 72 + 36$, $72 = 2 \\times 36 + 0$. Donc $\\text{PGCD} = 36$." },
+            { "id": "sq2b", "content": "Trouver $u, v \\in \\mathbb{Z}$ tels que $252u + 180v = 36$.", "hint": "Remonter l'algorithme : $36 = 180 - 2 \\times 72 = 180 - 2(252 - 180) = 3 \\times 180 - 2 \\times 252$. Donc $u = -2$, $v = 3$." },
+            { "id": "sq2c", "content": "Résoudre l'équation $252x + 180y = 36$ dans $\\mathbb{Z}^2$.", "hint": "Solutions : $x = -2 + 5k$, $y = 3 - 7k$, $k \\in \\mathbb{Z}$." }
+          ]
+        }
+      ]
+    }
+  ]
+}

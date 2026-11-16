@@ -1,0 +1,32 @@
+{
+  "id": "ex-struct-sm-01",
+  "theme": "structures-algebriques",
+  "difficulty": "moyen",
+  "topic": "Structures Algébriques",
+  "context": "On munit $\\mathbb{R}$ de la loi de composition interne $*$ définie par : $x * y = x + y - xy$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Stabilité et Commutativité",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer que la loi $*$ est commutative et associative.",
+          "hint": "\\method Commutativité : $y * x = y + x - yx = x + y - xy = x * y$ (car $+$ et $\\times$ commutatifs).\nAssociativité : Calculer $(x * y) * z$ et $x * (y * z)$ et comparer."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Groupe",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Montrer que $(\\mathbb{R} \\setminus \\{1\\}, *)$ est un groupe commutatif.",
+          "hint": "\\method \\textbf{Neutre :} Chercher $e$ tel que $x * e = x$. $x + e - xe = x \\Rightarrow e(1-x) = 0$. Comme vrai pour tout $x$, $e=0$.\n\\textbf{Symétrique :} Chercher $x'$ tel que $x * x' = 0$. $x + x' - xx' = 0 \\Rightarrow x'(1-x) = -x \\Rightarrow x' = \\frac{x}{x-1}$.\nLe symétrique existe si $x \\neq 1$, ce qui est garanti dans l'ensemble."
+        }
+      ]
+    }
+  ]
+}

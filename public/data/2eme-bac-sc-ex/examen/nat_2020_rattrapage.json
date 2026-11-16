@@ -1,0 +1,360 @@
+{
+  "id": "nat-2020-r",
+  "title": "Examen National 2020 — Session Rattrapage",
+  "type": "national",
+  "year": 2020,
+  "session": "rattrapage",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 7,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2020r-ex1",
+      "number": 1,
+      "theme": "suites-numeriques",
+      "difficulty": "facile",
+      "points": 2,
+      "topic": "Suites numériques — Récurrence, suite arithmétique et limite",
+      "context": "Soit $(u_n)$ la suite numérique définie par : $u_0 = 1$ et $u_{n+1} = \\dfrac{3u_n - 8}{2u_n - 5}$ pour tout $n$ de $\\mathbb{N}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que pour tout $n$ de $\\mathbb{N}$, $u_n < 2$.",
+          "bareme": 0.5,
+          "hint": "Procédez par récurrence. Pour l'hérédité, montrez que $u_{n+1} - 2 < 0$ en remplaçant $u_{n+1}$ par son expression et en réduisant au même dénominateur, tout en utilisant l'hypothèse de récurrence $u_n < 2$."
+        },
+        {
+          "id": "q2",
+          "content": "On pose pour tout $n$ de $\\mathbb{N}$, $v_n = \\dfrac{u_n - 3}{u_n - 2}$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $(v_n)$ est une suite arithmétique de raison $2$.",
+              "bareme": 0.5,
+              "hint": "Calculez la différence $v_{n+1} - v_n$. Remplacez d'abord $u_{n+1}$ par son expression, puis simplifiez soigneusement les fractions pour isoler la constante $2$."
+            },
+            {
+              "id": "2b",
+              "content": "Exprimer $v_n$ en fonction de $n$ et en déduire $u_n$ en fonction de $n$, pour tout $n$ de $\\mathbb{N}$.",
+              "bareme": 0.75,
+              "hint": "Utilisez la formule du terme général d'une suite arithmétique : $v_n = v_0 + nr$. Par la suite, isolez algébriquement $u_n$ dans la relation $v_n = \\dfrac{u_n - 3}{u_n - 2}$."
+            },
+            {
+              "id": "2c",
+              "content": "Calculer la limite de la suite $(u_n)$.",
+              "bareme": 0.25,
+              "hint": "Dans l'expression explicite de $u_n$, factorisez par $n$ au numérateur et au dénominateur pour lever l'indétermination lorsque $n$ tend vers $+\\infty$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2020r-ex2",
+      "number": 2,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 5,
+      "topic": "Nombres complexes — Équation du second degré, forme trigonométrique, rotation et translation",
+      "context": "",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Résoudre dans l'ensemble $\\mathbb{C}$ des nombres complexes l'équation : $z^2 - \\sqrt{2}z + 1 = 0$.",
+          "bareme": 0.75,
+          "hint": "Calculez le discriminant $\\Delta$. Puisqu'il est strictement négatif, l'équation admettra deux solutions complexes conjuguées faisant intervenir $i\\sqrt{-\\Delta}$."
+        },
+        {
+          "id": "q2",
+          "content": "On pose $a = \\dfrac{\\sqrt{2}}{2} + \\dfrac{\\sqrt{2}}{2}i$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Ecrire $a$ sous forme trigonométrique et en déduire que $a^{2020}$ est un nombre réel.",
+              "bareme": 0.75,
+              "hint": "Identifiez le module de $a$ et utilisez les valeurs de sinus et cosinus pour trouver l'argument. Appliquez ensuite la formule de Moivre pour évaluer l'argument de $a^{2020}$ et montrer qu'il correspond à un angle plat (multiple de $\\pi$)."
+            },
+            {
+              "id": "2b",
+              "content": "Soit le nombre complexe $b = \\cos\\left(\\dfrac{\\pi}{8}\\right) + i\\sin\\left(\\dfrac{\\pi}{8}\\right)$. Prouver que $b^2 = a$.",
+              "bareme": 0.5,
+              "hint": "Appliquez la formule de Moivre à $b^2$ pour multiplier l'argument par $2$. Vous reconnaîtrez alors la forme trigonométrique de $a$ trouvée précédemment."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "Dans le plan complexe rapporté à un repère orthonormé direct $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère les points $A, B$ et $C$ d'affixes respectives $a, b$ et $c$ tel que $c = 1$. La rotation $R$ de centre $O$ et d'angle $\\dfrac{\\pi}{8}$ transforme le point $M$ d'affixe $z$ au point $M'$ d'affixe $z'$.",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Vérifier que $z' = bz$.",
+              "bareme": 0.25,
+              "hint": "L'écriture complexe générale d'une rotation de centre $O$ est $z' = e^{i\\theta} z$. Traduisez la valeur de $\\theta$ sous forme trigonométrique pour identifier $b$."
+            },
+            {
+              "id": "3b",
+              "content": "Déterminer l'image de $C$ par la rotation $R$ et montrer que $A$ est l'image de $B$ par $R$.",
+              "bareme": 0.5,
+              "hint": "Appliquez la formule de la rotation : remplacez $z$ par $c$ pour le premier point, puis $z$ par $b$ pour le second, en utilisant la relation $b^2 = a$ démontrée plus tôt."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Montrer que $|a - b| = |b - c|$ puis déduire la nature du triangle $ABC$.",
+              "bareme": 0.75,
+              "hint": "Remplacez $a$ par $b^2$ dans la première expression et factorisez par $b$. Utilisez les propriétés des modules sachant que $|b| = 1$. L'égalité des modules correspond à une égalité de distances."
+            },
+            {
+              "id": "4b",
+              "content": "Déterminer une mesure de l'angle $(\\overrightarrow{BA}, \\overrightarrow{BC})$.",
+              "bareme": 0.5,
+              "hint": "L'angle orienté $(\\overrightarrow{BA}, \\overrightarrow{BC})$ correspond à l'argument du complexe $\\dfrac{c-b}{a-b}$. Utilisez la factorisation de la question précédente pour simplifier ce quotient avant d'en calculer l'argument."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "Soit $T$ la translation du vecteur $\\overrightarrow{u}$ et $D$ l'image de $A$ par la translation $T$.",
+          "subQuestions": [
+            {
+              "id": "5a",
+              "content": "Vérifier que l'affixe de $D$ est $b^2 + 1$.",
+              "bareme": 0.25,
+              "hint": "La traduction complexe de la translation est $z_{image} = z_{origine} + z_{vecteur}$. Notez que l'affixe du vecteur directeur $\\overrightarrow{u}$ est $1$, et réutilisez $a = b^2$."
+            },
+            {
+              "id": "5b",
+              "content": "Montrer que $\\dfrac{b^2 + 1}{b} = b + \\bar{b}$ et en déduire que les points $O, B$ et $D$ sont alignés.",
+              "bareme": 0.75,
+              "hint": "Séparez la fraction. Puisque le module de $b$ est $1$, son inverse $\\dfrac{1}{b}$ est égal à son conjugué $\\bar{b}$. Ce résultat est un réel pur, ce qui indique que l'argument de $\\dfrac{d-0}{b-0}$ est un multiple de $\\pi$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2020r-ex3",
+      "number": 3,
+      "theme": "analyse",
+      "difficulty": "moyen",
+      "points": 4,
+      "topic": "Étude de fonctions auxiliaires, dérivées et calcul intégral",
+      "context": "On considère la fonction numérique $U$ définie sur $\\mathbb{R}$ par : $U(x) = e^x - 2x + 2 - 3e^{-x}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que pour tout $x$ de $\\mathbb{R}$, $U'(x) = \\dfrac{(e^x - 1)^2 + 2}{e^x}$.",
+              "bareme": 0.5,
+              "hint": "Calculez la dérivée terme à terme en gardant à l'esprit que la dérivée de $e^{-x}$ est $-e^{-x}$. Mettez ensuite tout sous le dénominateur commun $e^x$ et reconnaissez le développement de $(e^x - 1)^2$."
+            },
+            {
+              "id": "1b",
+              "content": "Poser le tableau de variations de la fonction $U$ (sans calcul de limite).",
+              "bareme": 0.25,
+              "hint": "Analysez le signe du numérateur de $U'(x)$, qui est constitué d'un carré parfait ajouté à $2$. Concluez sur la monotonie stricte de la fonction sur $\\mathbb{R}$."
+            },
+            {
+              "id": "1c",
+              "content": "En déduire le signe de la fonction $U$ sur $\\mathbb{R}$ (remarquer que $U(0) = 0$).",
+              "bareme": 0.5,
+              "hint": "Utilisez le sens de variation de la fonction $U$ trouvé précédemment. Puisque la fonction est strictement croissante, comparez $U(x)$ à $U(0)$ pour $x < 0$ et pour $x > 0$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soit la fonction numérique $V$ définie sur $\\mathbb{R}$ par : $V(x) = e^{2x} - 2xe^x + 2e^x - 3$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Vérifier que pour tout $x$ de $\\mathbb{R}$, $V(x) = e^x U(x)$.",
+              "bareme": 0.5,
+              "hint": "Multipliez l'expression de $U(x)$ par $e^x$ en appliquant les propriétés des puissances ($e^x \\times e^{-x} = 1$). Vérifiez que le résultat correspond exactement à la définition de $V(x)$."
+            },
+            {
+              "id": "2b",
+              "content": "En déduire le signe de la fonction $V$ sur $\\mathbb{R}$.",
+              "bareme": 0.5,
+              "hint": "L'exponentielle $e^x$ étant strictement positive sur $\\mathbb{R}$, le signe du produit $e^x U(x)$ dépend exclusivement du signe de $U(x)$ déterminé à la question 1c."
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que la fonction $W$ définie par $W(x) = \\dfrac{1}{2}e^{2x} + (4 - 2x)e^x - 3x$ est une primitive de la fonction $V$ sur $\\mathbb{R}$.",
+              "bareme": 0.5,
+              "hint": "Pour prouver qu'une fonction est une primitive, il suffit de calculer sa dérivée $W'(x)$. Appliquez la formule de dérivation d'un produit $(uv)' = u'v + uv'$ pour le terme $(4-2x)e^x$."
+            },
+            {
+              "id": "3b",
+              "content": "Calculer l'intégrale $\\displaystyle\\int_0^2 V(x) dx$.",
+              "bareme": 0.5,
+              "hint": "Utilisez directement la primitive $W(x)$ validée à la question précédente et évaluez la différence $W(2) - W(0)$."
+            },
+            {
+              "id": "3c",
+              "content": "Montrer que $\\dfrac{9}{2}$ est le minimum absolu de la fonction $W$ sur $\\mathbb{R}$.",
+              "bareme": 0.75,
+              "hint": "Pour trouver le minimum de $W$, étudiez sa dérivée qui n'est autre que $V(x)$. D'après la question 2b, $V(x)$ s'annule en $x=0$ en changeant de signe. Calculez l'image $W(0)$ pour obtenir le minimum."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2020r-ex4",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 9,
+      "topic": "Étude de fonction logarithmique et exponentielle combinées, limites et suites",
+      "context": "",
+      "questions": [
+        {
+          "id": "p1",
+          "type": "partie",
+          "content": "Soit $g$ la fonction numérique définie sur $]0; +\\infty[$ par : $g(x) = e^{1-x} + \\dfrac{1}{x} - 2$"
+        },
+        {
+          "id": "q1",
+          "content": "Montrer que $g'(x) < 0$ pour tout $x \\in ]0; +\\infty[$.",
+          "bareme": 0.5,
+          "hint": "Dérivez $g(x)$ en utilisant les dérivées usuelles de l'exponentielle composée et de la fonction inverse. Observez que sur l'intervalle donné, la somme de ces termes est clairement négative."
+        },
+        {
+          "id": "q2",
+          "content": "Déduire le tableau de signes de la fonction $g(x)$ sur l'intervalle $]0; +\\infty[$ (remarquer que $g(1) = 0$).",
+          "bareme": 0.5,
+          "hint": "Puisque la dérivée est strictement négative, la fonction $g$ est strictement décroissante. Positionnez la racine $1$ pour en déduire les intervalles où la fonction est positive et négative."
+        },
+        {
+          "id": "p2",
+          "type": "partie",
+          "content": "On considère la fonction numérique $f$ définie sur l'intervalle $]0; +\\infty[$ par : $f(x) = (1 - x)e^{1-x} - x^2 + 5x - 3 - 2\\ln x$, et $(C)$ sa courbe représentative dans un repère orthonormé $(O, \\overrightarrow{i}, \\overrightarrow{j})$ (unité : $2 cm$)"
+        },
+        {
+          "id": "r1",
+          "content": "Montrer que $\\lim_{x \\to 0^+} f(x) = +\\infty$ puis interpréter le résultat géométriquement.",
+          "bareme": 0.5,
+          "hint": "Identifiez la limite de chaque terme de $f(x)$ quand $x$ tend vers $0^+$. Le terme dominant $-2\\ln x$ impose son comportement infini. Une limite infinie en un point fini révèle une asymptote."
+        },
+        {
+          "id": "r2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer que $\\lim_{x \\to +\\infty} f(x) = -\\infty$",
+              "bareme": 0.5,
+              "hint": "Au voisinage de $+\\infty$, factorisez la partie polynomiale par son terme de plus haut degré ou séparez les termes. Le produit $(1-x)e^{1-x}$ tend vers $0$, laissant le trinôme déterminer la limite."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que $\\lim_{x \\to +\\infty} \\dfrac{f(x)}{x} = -\\infty$ puis interpréter le résultat géométriquement.",
+              "bareme": 0.75,
+              "hint": "Divisez chaque terme de $f(x)$ par $x$. Analysez la limite du quotient dominant $\\dfrac{-x^2}{x}$. Une limite infinie pour $\\dfrac{f(x)}{x}$ caractérise une branche parabolique."
+            }
+          ]
+        },
+        {
+          "id": "r3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que pour tout $x$ de $]0; +\\infty[$, $f'(x) = (x - 2)g(x)$",
+              "bareme": 1,
+              "hint": "Calculez $f'(x)$ en appliquant la formule de la dérivée d'un produit pour $(1-x)e^{1-x}$. Rassemblez ensuite les termes de manière à pouvoir factoriser $(x-2)$ et faire apparaître la structure exacte de $g(x)$."
+            },
+            {
+              "id": "3b",
+              "content": "Montrer que $f$ est décroissante sur $]0; 1]$ et sur $[2; +\\infty[$, et croissante sur $[1; 2]$.",
+              "bareme": 0.75,
+              "hint": "Dressez un tableau de signes combinant celui de $x-2$ et celui de $g(x)$ (étudié en Partie I). Le produit de ces signes vous donnera directement les variations de $f$."
+            },
+            {
+              "id": "3c",
+              "content": "Dresser le tableau de variations de la fonction $f$ sur $]0; +\\infty[$ (on admet $f(2) \\approx 1,25$)",
+              "bareme": 0.25,
+              "hint": "Sintétisez les résultats précédents : limites aux bornes, annulation de la dérivée en $1$ et $2$, et le sens de variation trouvé. Calculez $f(1)$ pour compléter."
+            }
+          ]
+        },
+        {
+          "id": "r4",
+          "content": "Sachant que $f(3) \\approx 0,5$ et $f(4) \\approx -1,9$, montrer que l'équation $f(x) = 0$ admet une solution unique dans l'intervalle $]3; 4[$.",
+          "bareme": 0.5,
+          "hint": "Appliquez le théorème des valeurs intermédiaires. Vérifiez les trois conditions : continuité de $f$ sur l'intervalle, stricte monotonie (décroissance) sur cet intervalle, et changement de signe entre les images des bornes."
+        },
+        {
+          "id": "r5",
+          "content": "Construire $(C)$ dans le repère $(O, \\overrightarrow{i}, \\overrightarrow{j})$.",
+          "bareme": 1,
+          "hint": "Tracez les éléments clés : l'asymptote verticale en $x=0$, les tangentes horizontales en $x=1$ et $x=2$, le point d'intersection avec l'axe des abscisses entre 3 et 4, et l'allure de la branche parabolique. Attention à respecter l'unité graphique de $2 cm$."
+        },
+        {
+          "id": "p3",
+          "type": "partie",
+          "content": "On pose $h(x) = f(x) - x$ pour tout $x$ de $[1; 2]$.\\n\\n$$\\begin{array}{|c|lccr|}\\hline x & 1 & & 2 \\\\\\\\ \\hline & 0 & & \\\\\\\\ h(x) & & \\searrow & \\\\\\\\ & & & h(2) \\\\\\\\ \\hline \\end{array}$$"
+        },
+        {
+          "id": "s1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "A partir du tableau de variations de la fonction $h$ ci-contre, montrer que $f(x) \\leq x$, pour tout $x$ de $[1; 2]$.",
+              "bareme": 0.5,
+              "hint": "La lecture du tableau indique que la valeur maximale de la fonction $h$ sur cet intervalle est $0$ (atteinte en $x=1$). Déduisez-en le signe de $h(x)$, puis l'inégalité demandée."
+            },
+            {
+              "id": "1b",
+              "content": "Montre que $1$ est l'unique solution de l'équation $f(x) = x$ sur l'intervalle $[1; 2]$.",
+              "bareme": 0.25,
+              "hint": "Résoudre $f(x) = x$ revient à résoudre $h(x) = 0$. Le tableau de variations montre clairement que la fonction, étant strictement décroissante depuis la valeur $0$, ne peut s'annuler qu'au point de départ."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "content": "Soit $(u_n)$ la suite numérique définie par : $u_0 = 2$ et $u_{n+1} = f(u_n)$ pour tout $n$ de $\\mathbb{N}$.",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Montrer par récurrence que $1 \\leq u_n \\leq 2$ pour tout $n$ de $\\mathbb{N}$.",
+              "bareme": 0.75,
+              "hint": "Dans l'étape d'hérédité, appliquez la fonction $f$ aux membres de l'encadrement en vous appuyant sur le fait que $f$ est strictement croissante sur $[1; 2]$."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que la suite $(u_n)$ est décroissante.",
+              "bareme": 0.5,
+              "hint": "Pour étudier le signe de $u_{n+1} - u_n$, remarquez que cela s'écrit $f(u_n) - u_n$. Utilisez l'inégalité $f(x) \\leq x$ prouvée à la question III-1a."
+            },
+            {
+              "id": "2c",
+              "content": "En déduire que la suite $(u_n)$ est convergente et calculer $\\lim_{n \\to \\infty} u_n$.",
+              "bareme": 0.75,
+              "hint": "Une suite décroissante et minorée (par 1) est convergente. Sa limite vérifie obligatoirement l'équation $f(l) = l$, dont vous avez déjà identifié l'unique solution dans cet intervalle à la question III-1b."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

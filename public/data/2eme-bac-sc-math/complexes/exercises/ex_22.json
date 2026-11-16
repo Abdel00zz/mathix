@@ -1,0 +1,78 @@
+{
+  "id": "ex-complexes-22",
+  "topic": "Nombres complexes - Bac National 2018 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2018,
+  "examenSession": "Normale",
+  "context": "Soit $m$ un nombre complexe.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans l'ensemble des complexes $\\mathbb{C}$ l'équation $(E_m)$ d'inconnue $z$ : $z^2+(im+2)z+im+2-m=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q1a",
+          "content": "Vérifier que $\\Delta=(im-2i)^2$ est le discriminant de l'équation $(E_m)$.",
+          "hint": "Calculez $(im+2)^2-4(im+2-m)$ et regroupez les termes pour retrouver un carré parfait en $(im-2i)$."
+        },
+        {
+          "id": "p1q1b",
+          "content": "Donner, suivant les valeurs de $m$, l'ensemble des solutions de l'équation $(E_m)$.",
+          "hint": "Distinguez le cas où $\\Delta=0$ (racine double) du cas $\\Delta\\ne0$ (racine carrée $im-2i=i(m-2)$), et appliquez la formule des racines dans chaque cas."
+        }
+      ]
+    },
+    {
+      "id": "p1q2",
+      "content": "Pour $m=i\\sqrt2$, écrire les deux racines de l'équation $(E_m)$ sous la forme exponentielle.",
+      "hint": "Remplacez $m$ dans les solutions générales trouvées à la question précédente, puis mettez chaque résultat sous forme exponentielle."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe est rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. On considère les points $A$, $\\Omega$, $M$ et $M'$ d'affixes respectives $a$, $w$, $m$ et $m'=-im-1+i$. Soit $R$ la rotation d'angle $-\\dfrac{\\pi}{2}$ qui transforme $M$ en $M'$."
+    },
+    {
+      "id": "p2q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q1a",
+          "content": "Vérifier que $\\Omega$ est le centre de $R$.",
+          "hint": "Le centre $\\omega$ d'une rotation d'angle $-\\pi/2$ transformant $z$ en $z'$ vérifie $z'-\\omega=-i(z-\\omega)$ pour tout $z$ ; isolez $\\omega$ à partir de $m'=-im-1+i$ et identifiez sa valeur constante."
+        },
+        {
+          "id": "p2q1b",
+          "content": "Déterminer l'affixe $b$ de $B$, où $B$ est le point tel que : $A=R(B)$.",
+          "hint": "$A=R(B)$ signifie $a-w=-i(b-w)$ ; isolez $b$ en fonction de $a$ et $w$."
+        }
+      ]
+    },
+    {
+      "id": "p2q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Vérifier que : $m'-a=\\dfrac{w-a}{w-b}(m-b)$.",
+          "hint": "Utilisez $m'-w=-i(m-w)$ et les expressions de $a-w$ et $b-w$ obtenues précédemment pour reconstituer cette égalité par substitution."
+        },
+        {
+          "id": "p2q2b",
+          "content": "En déduire que les points $A$, $M$ et $M'$ sont alignés si et seulement si les points $A$, $B$, $\\Omega$ et $M$ sont cocycliques.",
+          "hint": "Le quotient $\\dfrac{m'-a}{m-b}=\\dfrac{w-a}{w-b}$ est indépendant de $M$ : l'alignement de $A,M,M'$ (quotient $\\frac{m'-a}{m-a}$ réel) doit se traduire via cette égalité en une condition de birapport réel, caractéristique de la cocyclicité."
+        },
+        {
+          "id": "p2q2c",
+          "content": "Montrer que l'ensemble des points $M$ tel que les points $A$, $M$ et $M'$ soient alignés est un cercle dont on déterminera le centre et le rayon.",
+          "hint": "D'après la question précédente, cela revient à ce que $M$ soit sur le cercle circonscrit à $A,B,\\Omega$ (privé éventuellement de certains points) : déterminez ce cercle à partir des affixes connues de $A$, $B$, $\\Omega$."
+        }
+      ]
+    }
+  ]
+}

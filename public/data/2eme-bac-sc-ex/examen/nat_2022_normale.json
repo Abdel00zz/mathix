@@ -1,0 +1,368 @@
+{
+  "id": "nat-2022-n",
+  "title": "Examen National 2022 — Session Normale",
+  "type": "national",
+  "year": 2022,
+  "session": "normale",
+  "classId": "2eme-bac-sc-ex",
+  "duration": 180,
+  "coefficient": 4,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "nat2022n-ex1",
+      "number": 1,
+      "theme": "geometrie-espace",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Géométrie dans l'espace — Plan, sphère, droite",
+      "context": "Dans l'espace rapporté à un repère orthonormé direct $(O;\\overrightarrow{i},\\overrightarrow{j},\\overrightarrow{k})$, on considère les points $A(0,1,1)$, $B(1,2,0)$ et $C(-1,1,2)$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Montrer que $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = \\overrightarrow{i} + \\overrightarrow{k}$",
+              "bareme": 0.5,
+              "hint": "Calculez les coordonnées de $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$, puis appliquez la formule du produit vectoriel composante par composante."
+            },
+            {
+              "id": "1b",
+              "content": "En déduire que $x + z - 1 = 0$ est une équation cartésienne du plan $(ABC)$",
+              "bareme": 0.25,
+              "hint": "Le vecteur $\\overrightarrow{AB} \\wedge \\overrightarrow{AC}$ est normal au plan $(ABC)$. Utilisez un point du plan (par exemple $A$) pour déterminer la constante $d$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "Soit $(S)$ la sphère de centre $\\Omega(1,1,2)$ et de rayon $R = \\sqrt{2}$. Déterminer une équation de la sphère $(S)$.",
+          "bareme": 0.5,
+          "hint": "L'équation d'une sphère de centre $\\Omega(x_0, y_0, z_0)$ et de rayon $R$ est $(x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2 = R^2$."
+        },
+        {
+          "id": "q3",
+          "content": "Montrer que le plan $(ABC)$ est tangent à la sphère $(S)$ au point $A$.",
+          "bareme": 0.5,
+          "hint": "Calculez la distance $d(\\Omega, (ABC))$ à l'aide de la formule $d = \\frac{|ax_\\Omega + by_\\Omega + cz_\\Omega + d|}{\\sqrt{a^2+b^2+c^2}}$, puis vérifiez qu'elle est égale à $R$ et que $A \\in (ABC) \\cap (S)$."
+        },
+        {
+          "id": "q4",
+          "content": "On considère la droite $(\\Delta)$ passant par le point $C$ et perpendiculaire au plan $(ABC)$.",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Déterminer une représentation paramétrique de la droite $(\\Delta)$.",
+              "bareme": 0.25,
+              "hint": "La droite est perpendiculaire au plan $(ABC)$, donc son vecteur directeur est le vecteur normal $\\overrightarrow{AB} \\wedge \\overrightarrow{AC} = (1, 0, 1)$. Utilisez le point $C(-1, 1, 2)$."
+            },
+            {
+              "id": "4b",
+              "content": "Montrer que la droite $(\\Delta)$ est tangente à la sphère $(S)$ en un point $D$ dont on déterminera les coordonnées.",
+              "bareme": 0.5,
+              "hint": "Substituez la représentation paramétrique de $(\\Delta)$ dans l'équation de $(S)$ pour obtenir une équation en $t$. Un discriminant nul indique la tangence ; résolvez pour trouver $D$."
+            },
+            {
+              "id": "4c",
+              "content": "Calculer le produit scalaire $\\overrightarrow{AC} \\cdot (\\overrightarrow{i} + \\overrightarrow{k})$, puis en déduire la distance $d(A, (\\Delta))$.",
+              "bareme": 0.5,
+              "hint": "Calculez $\\overrightarrow{AC} \\cdot (\\overrightarrow{i} + \\overrightarrow{k})$ directement. Si ce produit est nul, alors $\\overrightarrow{AC} \\perp (\\Delta)$, ce qui signifie que $C$ est le projeté orthogonal de $A$ sur $(\\Delta)$, donc $d(A, (\\Delta)) = AC$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2022n-ex2",
+      "number": 2,
+      "theme": "nombres-complexes",
+      "difficulty": "moyen",
+      "points": 3,
+      "topic": "Nombres complexes — Translation, rotation, forme trigonométrique, cercles",
+      "context": "Dans le plan complexe rapporté à un repère orthonormé $(O, \\overrightarrow{u}, \\overrightarrow{v})$, on considère le point $A$ d'affixe $a = -1 - i\\sqrt{3}$, le point $B$ d'affixe $b = -1 + i\\sqrt{3}$ et la translation $t$ de vecteur $\\overrightarrow{OA}$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Prouver que l'affixe du point $D$ image du point $B$ par la translation $t$ est $d = -2$.",
+          "bareme": 0.5,
+          "hint": "L'écriture complexe de la translation de vecteur $\\overrightarrow{OA}$ d'affixe $a$ est $z' = z + a$. Calculez $d = b + a$."
+        },
+        {
+          "id": "q2",
+          "content": "On considère la rotation $R$ de centre $D$ et d'angle $\\dfrac{2\\pi}{3}$. Montrer que l'affixe du point $C$ image du point $B$ par la rotation $R$ est $c = -4$.",
+          "bareme": 0.5,
+          "hint": "L'écriture complexe de la rotation de centre $\\omega$ et d'angle $\\theta$ est $z' - \\omega = e^{i\\theta}(z - \\omega)$. Posez $\\omega = d = -2$, $z = b$ et $e^{i\\frac{2\\pi}{3}} = -\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}$."
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Écrire le nombre $\\dfrac{b-c}{a-c}$ sous forme trigonométrique.",
+              "bareme": 0.5,
+              "hint": "Substituez les valeurs de $a$, $b$, $c$ pour calculer $\\frac{b-c}{a-c} = \\frac{3 + i\\sqrt{3}}{3 - i\\sqrt{3}}$. Multipliez par le conjugué du dénominateur, puis identifiez le module et l'argument."
+            },
+            {
+              "id": "3b",
+              "content": "En déduire que $\\left(\\dfrac{b-c}{a-c}\\right)^2 = \\dfrac{c-d}{b-d}$.",
+              "bareme": 0.5,
+              "hint": "Réutilisez le résultat de 3a). On a $R(B) = C$ donc $c - d = e^{i\\frac{2\\pi}{3}}(b - d)$, ce qui donne $\\frac{c-d}{b-d} = e^{i\\frac{2\\pi}{3}}$. Comparez avec $\\left(\\frac{b-c}{a-c}\\right)^2$."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "Soient $(\\Gamma)$ le cercle de centre $D$ et de rayon 2, $(\\Gamma')$ le cercle de centre $O$ et de rayon 4 et $M$ un point d'affixe $z$ appartenant aux deux cercles $(\\Gamma)$ et $(\\Gamma')$.",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Vérifier que $|z + 2| = 2$.",
+              "bareme": 0.25,
+              "hint": "M appartient à $(\\Gamma)$ de centre $D(-2)$ et de rayon 2, donc $|z - d| = 2$, soit $|z - (-2)| = 2$."
+            },
+            {
+              "id": "4b",
+              "content": "Prouver que $z + \\bar{z} = -8$ (remarquer que $|z| = 4$).",
+              "bareme": 0.5,
+              "hint": "De $|z+2| = 2$, élevez au carré : $(z+2)\\overline{(z+2)} = 4$, soit $z\\bar{z} + 2(z + \\bar{z}) + 4 = 4$. Utilisez alors $|z| = 4$ donc $z\\bar{z} = 16$ pour conclure."
+            },
+            {
+              "id": "4c",
+              "content": "En déduire que les cercles $(\\Gamma)$ et $(\\Gamma')$ se coupent en un point unique qu'on déterminera.",
+              "bareme": 0.25,
+              "hint": "De $z + \\bar{z} = -8$, on tire $2\\text{Re}(z) = -8$ donc $\\text{Re}(z) = -4$. Avec $|z| = 4$, calculez la partie imaginaire et concluez sur l'unicité du point."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2022n-ex3",
+      "number": 3,
+      "theme": "probabilites",
+      "difficulty": "facile",
+      "points": 3,
+      "topic": "Probabilités — Dénombrement, probabilité d'événements",
+      "context": "Une urne contient dix boules : trois boules blanches, trois boules vertes et quatre boules rouges indiscernables au toucher. On tire au hasard simultanément trois boules de l'urne.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Montrer que $p(A) = \\dfrac{1}{6}$ ; où $A$ est l'évènement « N'obtenir aucune boule rouge ».",
+          "bareme": 0.75,
+          "hint": "L'univers $\\Omega$ est l'ensemble des combinaisons de 3 boules parmi 10 : $\\text{Card}(\\Omega) = C_{10}^3$. Pour $A$, choisir 3 boules parmi les 6 non rouges : $\\text{Card}(A) = C_6^3$."
+        },
+        {
+          "id": "q2",
+          "content": "Calculer $p(B)$ ; où $B$ est l'évènement « Obtenir trois boules blanches ou trois boules vertes ».",
+          "bareme": 0.75,
+          "hint": "$B$ est la réunion de deux événements incompatibles : 3 blanches ($C_3^3$ façons) ou 3 vertes ($C_3^3$ façons). Donc $\\text{Card}(B) = C_3^3 + C_3^3$."
+        },
+        {
+          "id": "q3",
+          "content": "Montrer que $p(C) = \\dfrac{1}{2}$ ; où $C$ est l'évènement « Obtenir exactement une boule rouge ».",
+          "bareme": 0.75,
+          "hint": "Choisir 1 rouge parmi 4 et 2 non rouges parmi 6 : $\\text{Card}(C) = C_4^1 \\times C_6^2$."
+        },
+        {
+          "id": "q4",
+          "content": "Calculer $p(D)$ ; où $D$ est l'évènement « Obtenir au moins deux boules rouges ».",
+          "bareme": 0.75,
+          "hint": "Utilisez l'événement contraire : $\\bar{D}$ = « aucune rouge » $\\cup$ « exactement une rouge » = $A \\cup C$ (incompatibles). Donc $p(D) = 1 - p(A) - p(C)$."
+        }
+      ]
+    },
+    {
+      "id": "nat2022n-ex4",
+      "number": 4,
+      "theme": "analyse",
+      "difficulty": "moyen",
+      "points": 2.5,
+      "topic": "Analyse — Primitive, intégration par parties, équation différentielle",
+      "context": "On considère la fonction $h$ définie sur $\\mathbb{R}$ par $h(x) = (x+1)e^x$.",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "1a",
+              "content": "Vérifier que $x \\mapsto xe^x$ est une primitive de la fonction $h$ sur $\\mathbb{R}$ ; puis calculer $I = \\displaystyle\\int_{-1}^{0} h(x)\\,dx$.",
+              "bareme": 0.75,
+              "hint": "Dérivez $H(x) = xe^x$ : on a $H'(x) = e^x + xe^x = (x+1)e^x = h(x)$. Puis $I = [xe^x]_{-1}^0 = H(0) - H(-1)$."
+            },
+            {
+              "id": "1b",
+              "content": "À l'aide d'une intégration par parties calculer $J = \\displaystyle\\int_{-1}^{0} (x+1)^2 e^x\\,dx$.",
+              "bareme": 0.75,
+              "hint": "Posez $u(x) = (x+1)^2$ et $v'(x) = e^x$, alors $u'(x) = 2(x+1)$ et $v(x) = e^x$. Après IPP, l'intégrale restante fait apparaître $2I$."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "2a",
+              "content": "Résoudre l'équation différentielle $(E) : y'' - 2y' + y = 0$.",
+              "bareme": 0.5,
+              "hint": "L'équation caractéristique est $r^2 - 2r + 1 = 0$. Calculez le discriminant $\\Delta$ pour déterminer le type de racines, puis écrivez la solution générale."
+            },
+            {
+              "id": "2b",
+              "content": "Montrer que la fonction $h$ est la solution de $(E)$ qui vérifie les conditions $h(0) = 1$ et $h'(0) = 2$.",
+              "bareme": 0.5,
+              "hint": "La solution générale est $y = (\\alpha x + \\beta)e^x$. Utilisez $h(0) = 1$ pour trouver $\\beta$, et $h'(0) = 2$ pour trouver $\\alpha$. Vérifiez que $h$ satisfait $(E)$."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nat2022n-pb",
+      "number": 5,
+      "theme": "analyse",
+      "difficulty": "difficile",
+      "points": 8.5,
+      "topic": "Analyse — Étude complète d'une fonction, concavité, réciproque, suite récurrente",
+      "context": "On considère la fonction numérique $f$ définie sur $\\mathbb{R}$ par $f(x) = x\\left(e^{\\frac{x}{2}} - 1\\right)^2$. Soit $(C)$ sa courbe représentative dans un repère orthonormé $(O; \\overrightarrow{i}, \\overrightarrow{j})$ (unité : 1 cm).",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Calculer $\\displaystyle\\lim_{x \\to +\\infty} f(x)$ et $\\displaystyle\\lim_{x \\to -\\infty} f(x)$.",
+          "bareme": 0.5,
+          "hint": "Pour $x \\to +\\infty$ : $x \\to +\\infty$ et $e^{\\frac{x}{2}} - 1 \\to +\\infty$. Pour $x \\to -\\infty$ : $e^{\\frac{x}{2}} \\to 0$ donc $(e^{\\frac{x}{2}} - 1)^2 \\to 1$, et $x \\to -\\infty$."
+        },
+        {
+          "id": "q2",
+          "content": "Calculer $\\displaystyle\\lim_{x \\to +\\infty} \\dfrac{f(x)}{x}$ et interpréter géométriquement le résultat.",
+          "bareme": 0.5,
+          "hint": "$\\frac{f(x)}{x} = \\left(e^{\\frac{x}{2}} - 1\\right)^2 \\to +\\infty$. Une limite infinie signifie que $(C)$ admet une branche parabolique de direction $(Oy)$ au voisinage de $+\\infty$."
+        },
+        {
+          "id": "q3",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "3a",
+              "content": "Montrer que la droite $(\\Delta)$ d'équation $y = x$ est asymptote à la courbe $(C)$ au voisinage de $-\\infty$.",
+              "bareme": 0.5,
+              "hint": "Calculez $\\lim_{x \\to -\\infty} [f(x) - x] = \\lim_{x \\to -\\infty} x\\left(e^{\\frac{x}{2}} - 1\\right)^2 - x = \\lim_{x \\to -\\infty} xe^{\\frac{x}{2}}\\left(e^{\\frac{x}{2}} - 2\\right)$. Utilisez $\\lim_{x \\to -\\infty} xe^{\\frac{x}{2}} = 0$."
+            },
+            {
+              "id": "3b",
+              "content": "Étudier le signe de $(f(x) - x)$ pour tout $x$ de $\\mathbb{R}$ et en déduire la position relative de la courbe $(C)$ et la droite $(\\Delta)$.",
+              "bareme": 0.75,
+              "hint": "$f(x) - x = xe^{\\frac{x}{2}}\\left(e^{\\frac{x}{2}} - 2\\right)$. Étudiez le signe de chaque facteur : $e^{\\frac{x}{2}} - 2 = 0 \\Leftrightarrow x = 2\\ln 2$. Dressez un tableau de signes."
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "4a",
+              "content": "Montrer que $f'(x) = \\left(e^{\\frac{x}{2}} - 1\\right)^2 + xe^{\\frac{x}{2}}\\left(e^{\\frac{x}{2}} - 1\\right)$ pour tout $x$ de $\\mathbb{R}$.",
+              "bareme": 0.5,
+              "hint": "Dérivez $f(x) = x\\left(e^{\\frac{x}{2}}-1\\right)^2$ par la règle du produit : $f'(x) = 1 \\cdot \\left(e^{\\frac{x}{2}}-1\\right)^2 + x \\cdot 2\\left(e^{\\frac{x}{2}}-1\\right) \\cdot \\frac{1}{2}e^{\\frac{x}{2}}$."
+            },
+            {
+              "id": "4b",
+              "content": "Vérifier que $x\\left(e^{\\frac{x}{2}} - 1\\right) \\geq 0$ pour tout $x$ de $\\mathbb{R}$, puis en déduire le signe de la fonction dérivée $f'$ sur $\\mathbb{R}$.",
+              "bareme": 0.5,
+              "hint": "Distinguez deux cas : $x \\geq 0$ implique $e^{\\frac{x}{2}} \\geq 1$ donc $e^{\\frac{x}{2}} - 1 \\geq 0$ ; $x \\leq 0$ implique $e^{\\frac{x}{2}} \\leq 1$ donc $e^{\\frac{x}{2}} - 1 \\leq 0$. Dans les deux cas le produit $x(e^{\\frac{x}{2}}-1) \\geq 0$."
+            },
+            {
+              "id": "4c",
+              "content": "Dresser le tableau des variations de la fonction $f$ sur $\\mathbb{R}$.",
+              "bareme": 0.25,
+              "hint": "De 4b), $f'(x) \\geq 0$ pour tout $x \\in \\mathbb{R}$, avec $f'(0) = 0$. La fonction $f$ est donc strictement croissante sur $\\mathbb{R}$, avec $\\lim_{x\\to-\\infty} f(x) = -\\infty$ et $\\lim_{x\\to+\\infty} f(x) = +\\infty$."
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "5a",
+              "content": "Montrer que $f''(x) = \\dfrac{1}{2}e^{\\frac{x}{2}}g(x)$ ; où $g(x) = (2x+4)e^{\\frac{x}{2}} - x - 4$ pour tout $x$ de $\\mathbb{R}$.",
+              "bareme": 0.5,
+              "hint": "Dérivez $f'(x) = \\left(e^{\\frac{x}{2}}-1\\right)^2 + xe^{\\frac{x}{2}}\\left(e^{\\frac{x}{2}}-1\\right)$ terme par terme, puis factorisez par $\\frac{1}{2}e^{\\frac{x}{2}}$."
+            },
+            {
+              "id": "5b",
+              "content": "À partir de la courbe ci-contre de la fonction $g$, déterminer le signe de $g(x)$ sur $\\mathbb{R}$ (Remarque : $g(\\alpha) = 0$).",
+              "bareme": 0.5,
+              "hint": "Lisez directement le signe de $g$ sur la courbe donnée : $g(x) \\geq 0$ sur $]-\\infty; \\alpha]$, $g(x) \\leq 0$ sur $[\\alpha; 0]$, et $g(x) \\geq 0$ sur $[0; +\\infty[$."
+            },
+            {
+              "id": "5c",
+              "content": "Étudier la concavité de la courbe $(C)$ et déterminer les abscisses des deux points d'inflexions.",
+              "bareme": 0.5,
+              "hint": "Le signe de $f''(x)$ est celui de $g(x)$ (car $\\frac{1}{2}e^{\\frac{x}{2}} > 0$). Réutilisez le signe de $g$ de 5b) : $f''$ s'annule en $\\alpha$ et $0$ en changeant de signe, ce sont les abscisses des points d'inflexion."
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "content": "Construire la courbe $(C)$ dans le repère $(O; \\overrightarrow{i}, \\overrightarrow{j})$ (On prend : $\\ln(4) \\approx 1{,}4$, $\\alpha \\approx -4{,}5$ et $f(\\alpha) \\approx -3{,}5$).",
+          "bareme": 1,
+          "hint": "Utilisez les éléments clés : asymptote $y = x$ en $-\\infty$, points d'inflexion en $\\alpha$ et $0$, point d'intersection avec $(\\Delta)$ en $O(0,0)$ et $A(2\\ln 2, 2\\ln 2)$, et la branche parabolique en $+\\infty$."
+        },
+        {
+          "id": "q7",
+          "content": "",
+          "subQuestions": [
+            {
+              "id": "7a",
+              "content": "Montrer que la fonction $f$ admet une fonction réciproque $f^{-1}$ définie sur $\\mathbb{R}$.",
+              "bareme": 0.5,
+              "hint": "$f$ est continue sur $\\mathbb{R}$ (dérivable), strictement croissante sur $\\mathbb{R}$, et $f(\\mathbb{R}) = \\mathbb{R}$ (car $\\lim_{-\\infty} f = -\\infty$ et $\\lim_{+\\infty} f = +\\infty$). Ces trois conditions garantissent l'existence de $f^{-1}$ définie sur $\\mathbb{R}$."
+            },
+            {
+              "id": "7b",
+              "content": "Calculer $\\left(f^{-1}\\right)'(\\ln 4)$.",
+              "bareme": 0.25,
+              "hint": "Utilisez la formule $(f^{-1})'(y) = \\frac{1}{f'(f^{-1}(y))}$. Vérifiez que $f(\\ln 4) = \\ln 4$ en calculant $f(\\ln 4)$, puis évaluez $f'(\\ln 4)$."
+            }
+          ]
+        },
+        {
+          "id": "q8",
+          "content": "Soit $(u_n)$ la suite numérique définie par $u_0 = 1$ et $u_{n+1} = f(u_n)$ pour tout $n$ de $\\mathbb{N}$.",
+          "subQuestions": [
+            {
+              "id": "8a",
+              "content": "Montrer par récurrence que $0 < u_n < \\ln 4$ pour tout $n$ de $\\mathbb{N}$.",
+              "bareme": 0.5,
+              "hint": "Initialisation : $u_0 = 1$ et $0 < 1 < \\ln 4 \\approx 1{,}4$. Hérédité : si $0 < u_n < \\ln 4$, comme $f$ est croissante sur $]0; \\ln 4[$, on a $f(0) < f(u_n) < f(\\ln 4)$, c'est-à-dire $0 < u_{n+1} < \\ln 4$."
+            },
+            {
+              "id": "8b",
+              "content": "Montrer que la suite $(u_n)$ est décroissante.",
+              "bareme": 0.5,
+              "hint": "Réutilisez le résultat de 3b) : pour tout $x \\in ]0; \\ln 4[$, $f(x) - x \\leq 0$, donc $f(u_n) \\leq u_n$, c'est-à-dire $u_{n+1} \\leq u_n$."
+            },
+            {
+              "id": "8c",
+              "content": "En déduire que la suite $(u_n)$ est convergente.",
+              "bareme": 0.25,
+              "hint": "$(u_n)$ est décroissante (8b) et minorée par $0$ (8a) : le théorème de la convergence monotone s'applique."
+            },
+            {
+              "id": "8d",
+              "content": "Calculer la limite de la suite $(u_n)$.",
+              "bareme": 0.5,
+              "hint": "Soit $L = \\lim u_n$. Par continuité de $f$, $L = f(L)$, i.e. $f(L) - L = 0$. D'après 3b), les solutions sont $L = 0$ ou $L = 2\\ln 2$. Comme $(u_n)$ est décroissante et $u_0 = 1 < 2\\ln 2$, concluez sur la valeur de $L$."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

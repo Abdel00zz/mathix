@@ -1,0 +1,566 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Quand dit-on qu'un entier $b$ (non nul) divise un entier $a$ dans $\\mathbb{Z}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S'il existe un entier $k \\in \\mathbb{Z}$ tel que $a = kb$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "S'il existe un entier $k \\in \\mathbb{Z}$ tel que $b = ka$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Si $a/b$ est un nombre rationnel",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Si $a$ et $b$ sont premiers entre eux",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "La divisibilité signifie que $a$ est un multiple entier de $b$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q2",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Si $a \\mid b$ et $b \\mid a$, alors on peut affirmer que $a = b$.",
+      "isTrue": false,
+      "explanation": "Faux. Dans $\\mathbb{Z}$, on peut seulement affirmer que $|a| = |b|$ (c'est-à-dire $a = b$ ou $a = -b$).",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Que garantit le théorème de la division euclidienne de $a$ par $b$ (avec $b \\neq 0$) ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "L'existence et l'unicité d'un couple $(q, r)$ tel que $a = bq + r$ avec $0 \\le r < |b|$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "L'existence d'un couple $(q, r)$ tel que $a = bq + r$ avec $r \\le |b|$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'existence et l'unicité d'un couple $(q, r)$ tel que $a = bq + r$ avec $0 < r < |b|$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "L'existence d'un couple $(q, r)$ tel que $a = bq + r$ avec $r$ quelconque",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le reste $r$ doit être strictement inférieur à la valeur absolue du diviseur et positif ou nul.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q4",
+      "type": "error",
+      "category": "Application",
+      "prompt": "Identifier l'erreur dans cette division euclidienne de $-17$ par $5$ :",
+      "context": "On cherche $q$ et $r$ tels que $-17 = 5q + r$.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On sait que $17 = 5 \\times 3 + 2$.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "En multipliant par $-1$, on obtient $-17 = 5 \\times (-3) - 2$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Le quotient est donc $q = -3$ et le reste est $r = -2$.",
+          "isError": true,
+          "correction": "Le reste d'une division euclidienne doit toujours être positif ou nul ($0 \\le r < 5$). Il faut écrire $-17 = 5 \\times (-4) + 3$ pour avoir un reste $r = 3$."
+        },
+        {
+          "id": "s4",
+          "text": "La division est terminée.",
+          "isError": false
+        }
+      ],
+      "explanation": "Pour les nombres négatifs, on doit souvent ajuster le quotient vers l'entier inférieur pour obtenir un reste positif.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Qu'est-ce qu'un nombre premier ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un entier relatif non nul, différent de 1 et -1, qui n'admet comme diviseurs que 1, -1, lui-même et son opposé",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un entier impair",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un entier qui n'est divisible par aucun autre entier",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un entier positif qui admet exactement un diviseur",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Un nombre premier n'a pas de diviseur \"effectif\" (autre que les diviseurs triviaux $\\pm 1$ et $\\pm p$). 1 n'est pas premier.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q6",
+      "type": "boolean",
+      "category": "Méthode",
+      "prompt": "Pour vérifier si un nombre $n$ est premier, il suffit de tester sa divisibilité par tous les nombres premiers inférieurs ou égaux à $\\sqrt{n}$.",
+      "isTrue": true,
+      "explanation": "Vrai. Si $n$ est composé ($n = a \\times b$), l'un des facteurs $a$ ou $b$ est obligatoirement inférieur ou égal à $\\sqrt{n}$.",
+      "difficulty": "easy"
+    },
+    {
+      "id": "q7",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Quelle relation fondamentale relie le PGCD et le PPCM de deux entiers non nuls $a$ et $b$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(a \\wedge b) \\times (a \\vee b) = |a \\times b|$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(a \\wedge b) + (a \\vee b) = |a + b|$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(a \\wedge b) \\times (a \\vee b) = a \\times b$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(a \\wedge b) \\times |a \\times b| = (a \\vee b)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le produit du PGCD et du PPCM est égal à la valeur absolue du produit des deux nombres.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Que dit le théorème de Bézout pour deux entiers $a$ et $b$ non nuls, avec $d = a \\wedge b$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Il existe des entiers $u$ et $v$ tels que $au + bv = d$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Il existe des entiers $u$ et $v$ tels que $au + bv = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Pour tous entiers $u$ et $v$, $au + bv = d$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Il existe des entiers $u$ et $v$ tels que $au - bv = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le théorème de Bézout affirme que le PGCD peut s'écrire comme une combinaison linéaire entière de $a$ et $b$.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q9",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Deux entiers $a$ et $b$ sont premiers entre eux si et seulement s'il existe des entiers $u$ et $v$ tels que $au + bv = 1$.",
+      "isTrue": true,
+      "explanation": "C'est l'identité de Bézout, qui est une condition nécessaire et suffisante pour que le PGCD soit égal à 1.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Que dit le théorème de Gauss ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Si $c \\mid ab$ et $c \\wedge a = 1$, alors $c \\mid b$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Si $c \\mid a$ et $c \\mid b$, alors $c \\mid (a+b)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Si $c \\mid ab$, alors $c \\mid a$ ou $c \\mid b$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Si $a \\wedge b = 1$, alors $a \\mid b$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Si un nombre divise un produit mais n'a aucun facteur commun avec l'un des termes, il doit diviser l'autre terme.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Méthode",
+      "prompt": "À quelle condition l'équation diophantienne $ax + by = c$ admet-elle des solutions entières $(x, y)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Si et seulement si $(a \\wedge b)$ divise $c$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Si et seulement si $a$ et $b$ sont premiers entre eux",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Si et seulement si $c$ divise $(a \\wedge b)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Elle admet toujours des solutions",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque $ax+by$ est toujours un multiple du PGCD de $a$ et $b$, $c$ doit obligatoirement être un multiple de ce PGCD pour qu'il y ait une solution.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q12",
+      "type": "order",
+      "category": "Méthode",
+      "prompt": "Ordonner les étapes pour résoudre l'équation diophantienne $ax + by = c$ :",
+      "items": [
+        {
+          "id": "a",
+          "content": "Calculer $d = a \\wedge b$ et vérifier que $d \\mid c$"
+        },
+        {
+          "id": "b",
+          "content": "Simplifier l'équation en divisant tout par $d$ pour obtenir $a'x + b'y = c'$"
+        },
+        {
+          "id": "c",
+          "content": "Trouver une solution particulière $(x_0, y_0)$ à l'aide de l'algorithme d'Euclide étendu"
+        },
+        {
+          "id": "d",
+          "content": "Écrire la solution générale $x = x_0 + kb'$ et $y = y_0 - ka'$"
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "On vérifie d'abord la solubilité, on simplifie pour avoir des coefficients premiers entre eux, on trouve une solution particulière, puis on applique la formule générale.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Que signifie $a \\equiv b \\pmod{n}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$n$ divise $(a - b)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$a$ et $b$ ont le même quotient dans la division par $n$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$n$ divise $(a + b)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a$ divise $b - n$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Dire que $a$ et $b$ sont congrus modulo $n$ signifie que leur différence est un multiple de $n$, ou de façon équivalente, qu'ils ont le même reste dans la division euclidienne par $n$.",
+      "difficulty": "medium"
+    },
+    {
+      "id": "q14",
+      "type": "boolean",
+      "category": "Propriété",
+      "ambiguity_note": "La simplification par $c$ exige une condition de primalité relative avec le module.",
+      "prompt": "Si $ac \\equiv bc \\pmod{n}$, on peut toujours simplifier par $c$ pour obtenir $a \\equiv b \\pmod{n}$.",
+      "isTrue": false,
+      "explanation": "Faux. On ne peut simplifier par $c$ que si $c$ et $n$ sont premiers entre eux ($c \\wedge n = 1$). Sinon, il faut diviser le module $n$ par le PGCD de $c$ et $n$.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Que dit le petit théorème de Fermat pour un nombre premier $p$ et un entier $a$ non divisible par $p$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a^{p-1} \\equiv 1 \\pmod{p}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$a^p \\equiv 1 \\pmod{p}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$a^{p-1} \\equiv a \\pmod{p}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a^{p} \\equiv p \\pmod{a}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est un résultat fondamental d'arithmétique modulaire. Une formulation équivalente (valable pour tout $a$) est $a^p \\equiv a \\pmod{p}$.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q16",
+      "type": "mcq",
+      "category": "Propriété",
+      "prompt": "Si la décomposition en facteurs premiers d'un entier $m$ est $p_1^{\\alpha_1} p_2^{\\alpha_2} \\dots p_n^{\\alpha_n}$, quel est le nombre de ses diviseurs positifs ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(\\alpha_1 + 1)(\\alpha_2 + 1) \\dots (\\alpha_n + 1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\alpha_1 + \\alpha_2 + \\dots + \\alpha_n$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\alpha_1 \\times \\alpha_2 \\dots \\times \\alpha_n$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$p_1 p_2 \\dots p_n$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour chaque facteur premier $p_i$, on peut choisir une puissance allant de $0$ à $\\alpha_i$, ce qui donne $(\\alpha_i + 1)$ possibilités. On multiplie ces choix.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q17",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Quel est le critère de divisibilité par 9 pour un entier écrit en base 10 ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La somme de ses chiffres est un multiple de 9",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Son dernier chiffre est 9",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La somme alternée de ses chiffres est un multiple de 9",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le nombre formé par ses deux derniers chiffres est un multiple de 9",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque $10 \\equiv 1 \\pmod{9}$, on a $10^k \\equiv 1 \\pmod{9}$, donc un nombre est congru à la somme de ses chiffres modulo 9.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Quel est le critère de divisibilité par 11 pour un entier écrit en base 10 ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "La somme alternée de ses chiffres est un multiple de 11",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La somme de ses chiffres est un multiple de 11",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Son dernier chiffre est 1",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le nombre formé par ses deux derniers chiffres est un multiple de 11",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque $10 \\equiv -1 \\pmod{11}$, on a $10^k \\equiv (-1)^k \\pmod{11}$, ce qui donne la somme alternée (en partant des unités avec un signe +).",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q19",
+      "type": "error",
+      "category": "Méthode",
+      "prompt": "Identifier l'erreur dans l'utilisation du théorème de Fermat pour calculer $5^{14} \\pmod{7}$ :",
+      "context": "On veut trouver le reste de la division de $5^{14}$ par 7.",
+      "steps": [
+        {
+          "id": "s1",
+          "text": "7 est un nombre premier et ne divise pas 5.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "D'après le petit théorème de Fermat, $5^{7-1} \\equiv 1 \\pmod{7}$, soit $5^6 \\equiv 1 \\pmod{7}$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "On décompose l'exposant : $14 = 6 \\times 2 + 2$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "Donc $5^{14} = (5^6)^2 \\times 5^2 \\equiv 1^2 \\times 25 \\equiv 25 \\pmod{7}$. Le reste est 25.",
+          "isError": true,
+          "correction": "Le reste d'une division euclidienne par 7 doit être strictement inférieur à 7. Il faut réduire 25 modulo 7 : $25 = 7 \\times 3 + 4$, donc $25 \\equiv 4 \\pmod{7}$. Le reste est 4."
+        }
+      ],
+      "explanation": "Un reste modulo $n$ doit toujours être donné dans l'ensemble $\\{0, 1, \\dots, n-1\\}$.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q20",
+      "type": "mcq",
+      "category": "Définition",
+      "prompt": "Que représente l'écriture $\\overline{a_m a_{m-1} \\dots a_1 a_0}_{(b)}$ dans la base $b$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a_m b^m + a_{m-1} b^{m-1} + \\dots + a_1 b + a_0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$a_m b^0 + a_{m-1} b^1 + \\dots + a_1 b^{m-1} + a_0 b^m$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(a_m + a_{m-1} + \\dots + a_0) \\times b$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a_m \\times a_{m-1} \\dots \\times a_0 \\times b^m$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "C'est la décomposition polynomiale d'un nombre en puissances de la base $b$, où les $a_i$ sont les chiffres (compris entre 0 et $b-1$).",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q21",
+      "type": "boolean",
+      "category": "Propriété",
+      "prompt": "Dans l'anneau $\\mathbb{Z}/p\\mathbb{Z}$ où $p$ est un nombre premier, tout élément non nul admet un inverse pour la multiplication.",
+      "isTrue": true,
+      "explanation": "C'est une conséquence du théorème de Bézout : si $p$ est premier, tout entier $a$ non multiple de $p$ est premier avec $p$, donc il existe $u, v$ tels que $au + pv = 1$, ce qui donne $au \\equiv 1 \\pmod{p}$.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "q22",
+      "type": "mcq",
+      "category": "Application",
+      "prompt": "Comment trouve-t-on la décomposition en base $b$ d'un entier $N$ donné en base 10 ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "En effectuant des divisions euclidiennes successives de $N$ par $b$ et en lisant les restes de bas en haut",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "En multipliant $N$ par $b$ successivement",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "En divisant $N$ par les puissances successives de $b$ et en gardant les quotients",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "En effectuant des divisions euclidiennes successives de $N$ par $b$ et en lisant les quotients",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'algorithme classique consiste à diviser par la base $b$. Les restes successifs donnent les chiffres de la nouvelle base, du chiffre des unités (poids faible) jusqu'au chiffre de poids fort.",
+      "difficulty": "hard"
+    }
+  ]
+}

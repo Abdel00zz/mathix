@@ -1,0 +1,417 @@
+{
+  "header": {
+    "title": "Fonctions exponentielles",
+    "subtitle": "Réciprocité, calculs, dérivation, limites et exponentielle de base a",
+    "context": "2BAC Sciences Mathématiques - BIOF"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Les fonctions exponentielles permettent de \\objectif{modéliser une croissance rapide, résoudre des équations et étudier des fonctions composées}. La \\defi{difficulté} principale consiste à relier correctement réciprocité, dérivation, limites et comparaison selon la base. \\savant{Leonhard Euler} fixa la notation $e^x$ et contribua à faire de l'exponentielle un outil central en analyse et dans les modèles de croissance.",
+          "media": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Leonhard_Euler.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "15%",
+            "caption": "Leonhard Euler (1707–1783)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definition-exponentielle",
+      "category": "course",
+      "title": "Définir la fonction exponentielle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La fonction logarithme népérien est strictement croissante et bijective sur son domaine. Sa fonction réciproque permet de définir l'exponentielle népérienne."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la fonction exponentielle népérienne} ?",
+          "content": "La fonction réciproque de $\\ln$ est appelée \\textbf{fonction exponentielle népérienne}. Elle se note $\\exp$ et vérifie :\\par\\smallskip$$\\exp:\\mathbb{R}\\longrightarrow\\mathbb{R}_+^*.$$Pour tout $x\\in\\mathbb{R}$ et tout $y>0$ :\\par\\smallskip$$\\boxed{y=\\exp(x)\\iff x=\\ln y}$$On pose $e=\\exp(1)$ et on écrit $e^x=\\exp(x)$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les relations de réciprocité essentielles} ?",
+          "content": "\\begin{itemize}\\item Pour tout $x\\in\\mathbb{R}$, $e^x>0$ et $\\ln(e^x)=x$.\\item Pour tout $x>0$, $e^{\\ln x}=x$.\\item $e^0=1$ et $e^1=e$.\\item La fonction $x\\mapsto e^x$ est continue et strictement croissante sur $\\mathbb{R}$.\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Attention aux domaines.} L'identité $\\ln(e^x)=x$ est valable pour tout réel $x$, tandis que $e^{\\ln x}=x$ exige toujours $x>0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Simplifions $A=\\ln(e^{2x-3})$, $B=e^{\\ln(x+2)}$ et $C=\\ln\\left(e^{-x^2}\\right)$.}\\par\\smallskip L'expression $B$ exige $x+2>0$, donc $x>\\blank{-2}$. Par réciprocité :\\par\\smallskip$$A=\\blank{2x-3},\\qquad B=\\blank{x+2},\\qquad C=\\blank{-x^2}.$$$$\\boxed{A=2x-3,\\quad B=x+2,\\quad C=-x^2}$$"
+        }
+      ]
+    },
+    {
+      "id": "comparaison-exponentielles",
+      "category": "course",
+      "title": "Comparer et résoudre avec l'exponentielle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La stricte croissance de l'exponentielle permet de comparer directement les exposants. Elle simplifie ainsi les équations et les inéquations élémentaires."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{comparer deux exponentielles} ?",
+          "content": "Pour tous réels $x$ et $y$ :\\par\\smallskip\\begin{itemize}\\item $e^x=e^y\\iff x=y$.\\item $e^x<e^y\\iff x<y$.\\item $e^x=1\\iff x=0$.\\item $e^x<1\\iff x<0$ et $e^x>1\\iff x>0$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{résoudre une équation exponentielle élémentaire} ?",
+          "content": "\\begin{enumerate}\\item Écrire les deux membres sous la forme $e^u$ et $e^v$.\\item Utiliser la stricte croissance de l'exponentielle.\\item Résoudre l'équation ou l'inéquation obtenue sur les exposants.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Résolvons dans $\\mathbb{R}$ :\\begin{enumerate}\\item $e^{2x-1}=e^{x+3}$.\\item $e^{x^2-4}=1$.\\item $e^{3x-2}<e^{x+4}$.\\end{enumerate}}\\par\\smallskip \\begin{enumerate}\\item $2x-1=x+3$, donc $x=\\blank{4}$.\\item $x^2-4=0$, donc $x\\in\\blank{\\{-2,2\\}}$.\\item $3x-2<x+4$, donc $x<\\blank{3}$.\\end{enumerate}$$\\boxed{x=4,\\quad x\\in\\{-2,2\\},\\quad x<3}$$"
+        }
+      ]
+    },
+    {
+      "id": "regles-algebriques",
+      "category": "course",
+      "title": "Calculer avec les exponentielles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les règles algébriques de l'exponentielle découlent de sa relation avec le logarithme. Elles permettent de simplifier produits, quotients et puissances."
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{$e^{x+y}=e^xe^y$} ?",
+          "content": "Pour tous réels $x$ et $y$ :\\par\\smallskip$$\\boxed{e^{x+y}=e^xe^y}$$Plus généralement, $e^{x_1+\\cdots+x_n}=e^{x_1}\\cdots e^{x_n}$."
+        },
+        {
+          "type": "proof",
+          "content": "Comme $e^x>0$ et $e^y>0$, on peut écrire :\\par\\smallskip$$\\ln(e^xe^y)=\\ln(e^x)+\\ln(e^y)=x+y.$$Or $e^{x+y}$ est l'unique réel strictement positif dont le logarithme vaut $x+y$. Ainsi :\\par\\smallskip$$\\boxed{e^{x+y}=e^xe^y}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les conséquences algébriques immédiates} ?",
+          "content": "Pour tous réels $x$, $y$ et $r$ :\\par\\smallskip\\begin{itemize}\\item $e^{-x}=\\dfrac{1}{e^x}$.\\item $e^{x-y}=\\dfrac{e^x}{e^y}$.\\item $(e^x)^r=e^{rx}$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{simplifier une expression exponentielle} ?",
+          "content": "\\begin{enumerate}\\item Transformer les produits en sommes d'exposants.\\item Transformer les quotients en différences d'exposants.\\item Transformer les puissances en produits d'exposants.\\item Regrouper les termes semblables à la fin.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Simplifions $A=e^{2x-1}e^{3-x}$, $B=\\dfrac{e^{3x+2}}{e^{x-1}}$ et $C=(e^{1-2x})^3e^{6x}$.}\\par\\smallskip $$A=e^{\\blank{x+2}},\\qquad B=e^{\\blank{2x+3}},\\qquad C=e^{\\blank{3}}.$$$$\\boxed{A=e^{x+2},\\quad B=e^{2x+3},\\quad C=e^3}$$"
+        }
+      ]
+    },
+    {
+      "id": "equations-en-exponentielle",
+      "category": "course",
+      "title": "Résoudre des équations en exponentielle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Certaines équations deviennent algébriques après un changement d'inconnue. La condition de positivité de la nouvelle inconnue doit être conservée."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{utiliser le changement $X=e^x$} ?",
+          "content": "\\begin{enumerate}\\item Poser $X=e^x$ et noter $X>0$.\\item Résoudre l'équation ou l'inéquation algébrique en $X$.\\item Éliminer les solutions qui ne vérifient pas $X>0$.\\item Revenir à $x$ avec $e^x=X\\iff x=\\ln X$.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Résolvons $e^{2x}-5e^x+4=0$.}\\par\\smallskip On pose $X=e^x>0$. L'équation devient $(X-1)(X-4)=0$. Ainsi $X=\\blank{1}$ ou $X=\\blank{4}$, donc $x=\\blank{0}$ ou $x=\\blank{\\ln4}$.\\par\\smallskip $$\\boxed{S=\\{0,\\ln4\\}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Résolvons $e^{2x}-3e^x+2\\leq0$.}\\par\\smallskip Avec $X=e^x>0$, on obtient $(X-1)(X-2)\\leq0$, donc $1\\leq X\\leq2$. Ainsi $\\blank{0\\leq x\\leq\\ln2}$.\\par\\smallskip $$\\boxed{S=[0,\\ln2]}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Résolvons $e^x+e^{-x}=\\dfrac52$.}\\par\\smallskip On pose $X=e^x>0$. L'équation devient $2X^2-5X+2=0$, soit $(2X-1)(X-2)=0$. Donc $X=\\blank{\\frac12}$ ou $X=\\blank{2}$. Finalement $x=\\blank{-\\ln2}$ ou $x=\\blank{\\ln2}$.\\par\\smallskip $$\\boxed{S=\\{-\\ln2,\\ln2\\}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Résolvons $e^{2x}-e^{x+1}=0$ et $e^{x+1}=3e^x$.}\\par\\smallskip La première équation donne $e^x(e^x-e)=0$. Comme $e^x>0$, on a $x=\\blank{1}$. La deuxième donne $e=3$ après division par $e^x>0$, ce qui est faux. Elle n'admet \\blank{aucune solution}.\\par\\smallskip $$\\boxed{S_1=\\{1\\}\\quad\\text{et}\\quad S_2=\\varnothing}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Une exponentielle ne s'annule jamais.} Le facteur $e^x$ peut être éliminé sans créer ni perdre de solution."
+        }
+      ]
+    },
+    {
+      "id": "derivee-exponentielle",
+      "category": "course",
+      "title": "Dériver une exponentielle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La fonction exponentielle est égale à sa dérivée. Pour une exponentielle composée, la dérivée de l'exposant apparaît comme facteur."
+        },
+        {
+          "type": "property",
+          "title": "Comment dériver \\mathqst{$e^x$ et $e^{u(x)}$} ?",
+          "content": "Pour tout $x\\in\\mathbb{R}$ :\\par\\smallskip$$\\boxed{(e^x)'=e^x}$$Si $u$ est dérivable sur un intervalle $I$ :\\par\\smallskip$$\\boxed{(e^{u(x)})'=u'(x)e^{u(x)}}$$"
+        },
+        {
+          "type": "proof",
+          "content": "On part de l'identité $\\ln(e^x)=x$. En dérivant, on obtient :\\par\\smallskip$$\\frac{(e^x)'}{e^x}=1.$$Comme $e^x>0$, on multiplie par $e^x$, d'où :\\par\\smallskip$$\\boxed{(e^x)'=e^x}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{dériver une expression exponentielle composée} ?",
+          "content": "\\begin{enumerate}\\item Repérer l'exposant $u(x)$.\\item Calculer $u'(x)$.\\item Appliquer $(e^u)'=u'e^u$.\\item Utiliser ensuite les règles du produit ou du quotient si nécessaire.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons les dérivées de $f(x)=e^{3x-2}$, $g(x)=e^{-x^2}$ et $h(x)=(x^2+1)e^{-x}$.}\\par\\smallskip $$f'(x)=\\blank{3e^{3x-2}},\\qquad g'(x)=\\blank{-2xe^{-x^2}},$$$$h'(x)=\\blank{(-x^2+2x-1)e^{-x}}.$$$$\\boxed{f'(x)=3e^{3x-2},\\quad g'(x)=-2xe^{-x^2},\\quad h'(x)=(-x^2+2x-1)e^{-x}}$$"
+        }
+      ]
+    },
+    {
+      "id": "primitives",
+      "category": "course",
+      "title": "Reconnaître une primitive exponentielle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La formule de dérivation d'une exponentielle composée donne une famille de primitives immédiates. Une simplification préalable peut rendre le calcul plus direct."
+        },
+        {
+          "type": "property",
+          "title": "Quelle primitive correspond à \\mathqst{$u'(x)e^{u(x)}$} ?",
+          "content": "Si $u$ est dérivable sur un intervalle $I$, les primitives de $x\\mapsto u'(x)e^{u(x)}$ sont :\\par\\smallskip$$\\boxed{x\\mapsto e^{u(x)}+C,\\qquad C\\in\\mathbb{R}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons une primitive de $f(x)=(2x-3)e^{x^2-3x}$ et de $g(x)=\\dfrac{2x}{x^2+1}e^{\\ln(x^2+1)}$.}\\par\\smallskip Pour $u(x)=x^2-3x$, on a $u'(x)=\\blank{2x-3}$. Une primitive est donc $F(x)=\\blank{e^{x^2-3x}}$.\\par\\smallskip Comme $x^2+1>0$, $e^{\\ln(x^2+1)}=\\blank{x^2+1}$. Ainsi $g(x)=\\blank{2x}$ et une primitive est $G(x)=\\blank{x^2}$.\\par\\smallskip $$\\boxed{F(x)=e^{x^2-3x}\\quad\\text{et}\\quad G(x)=x^2}$$"
+        }
+      ]
+    },
+    {
+      "id": "variations",
+      "category": "course",
+      "title": "Étudier les variations",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans une dérivée factorisée, le facteur exponentiel est toujours strictement positif. Le signe dépend uniquement du facteur algébrique restant."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{étudier une fonction comportant une exponentielle} ?",
+          "content": "\\begin{enumerate}\\item Calculer la dérivée et la factoriser.\\item Utiliser $e^{u(x)}>0$ pour réduire l'étude du signe.\\item Déterminer les variations.\\item Calculer les valeurs et les limites utiles.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions les variations de $f(x)=xe^{-x}$.}\\par\\smallskip $$f'(x)=e^{-x}-xe^{-x}=(1-x)e^{-x}.$$Comme $e^{-x}>0$, le signe de $f'(x)$ est celui de $\\blank{1-x}$. La fonction est croissante sur $]-\\infty,1]$ puis décroissante sur $[1,+\\infty[$. De plus, $f(1)=\\blank{\\frac1e}$.\\par\\smallskip $$\\boxed{f\\text{ admet un maximum }\\frac1e\\text{ en }x=1}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Montrons que $f(x)=\\dfrac{e^x}{1+e^x}$ est strictement croissante sur $\\mathbb{R}$ et que $0<f(x)<1$.}\\par\\smallskip $$f'(x)=\\frac{e^x(1+e^x)-e^{2x}}{(1+e^x)^2}=\\blank{\\frac{e^x}{(1+e^x)^2}}>0.$$Donc $f$ est strictement croissante. Comme $e^x>0$ et $1+e^x>e^x$, on a $\\blank{0<f(x)<1}$.\\par\\smallskip $$\\boxed{f\\text{ est strictement croissante et }0<f(x)<1}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Étudions les variations de $g(x)=(x-2)e^x$.}\\par\\smallskip $$g'(x)=e^x+(x-2)e^x=(x-1)e^x.$$Le signe de $g'(x)$ est celui de $\\blank{x-1}$. La fonction est décroissante sur $]-\\infty,1]$, puis croissante sur $[1,+\\infty[$. Enfin, $g(1)=\\blank{-e}$.\\par\\smallskip $$\\boxed{g\\text{ admet un minimum }-e\\text{ en }x=1}$$"
+        }
+      ]
+    },
+    {
+      "id": "limites-fondamentales",
+      "category": "course",
+      "title": "Maîtriser les limites fondamentales",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'exponentielle possède des comportements simples aux extrémités et au voisinage de zéro. Ces limites servent de modèles pour traiter des expressions plus complexes."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les limites aux extrémités} ?",
+          "content": "\\begin{itemize}\\item $\\displaystyle\\lim_{x \\to +\\infty}e^x=+\\infty$.\\item $\\displaystyle\\lim_{x \\to -\\infty}e^x=0$.\\item $\\displaystyle\\lim_{x \\to +\\infty}\\frac{e^x}{x}=+\\infty$.\\item $\\displaystyle\\lim_{x \\to -\\infty}xe^x=0$.\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les limites locales de référence} ?",
+          "content": "Pour tout réel $\\alpha$ :\\par\\smallskip\\begin{itemize}\\item $\\displaystyle\\lim_{x \\to 0}\\frac{e^x-1}{x}=1$.\\item $\\displaystyle\\lim_{x \\to 0}\\frac{e^{\\alpha x}-1}{x}=\\alpha$.\\item $\\displaystyle\\lim_{x \\to \\alpha}\\frac{e^x-e^\\alpha}{x-\\alpha}=e^\\alpha$.\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Ne pas appliquer la formule mécaniquement.} La limite fondamentale s'écrit :\\par\\smallskip$$\\displaystyle\\lim_{u \\to 0}\\frac{e^u-1}{u}=1.$$Avant de l'utiliser, il faut vérifier que l'expression choisie admet bien pour limite $0$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{calculer une limite locale exponentielle} ?",
+          "content": "\\begin{enumerate}\\item Identifier une expression $u(x)$ dont la limite au point considéré est égale à $0$.\\item Faire apparaître $\\dfrac{e^{u(x)}-1}{u(x)}$.\\item Utiliser la limite fondamentale $\\displaystyle\\lim_{u \\to 0}\\dfrac{e^u-1}{u}=1$.\\item Multiplier par la limite du facteur restant.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Calculons $A=\\displaystyle\\lim_{x \\to 0}\\frac{e^{3x}-1}{x}$, $B=\\displaystyle\\lim_{x \\to 0}\\frac{e^{2x}-e^{-x}}{x}$ et $C=\\displaystyle\\lim_{x \\to 2}\\frac{e^x-e^2}{x-2}$.}\\par\\smallskip $A=3\\displaystyle\\lim_{x \\to 0}\\frac{e^{3x}-1}{3x}=\\blank{3}$. Comme $e^{2x}-e^{-x}=e^{-x}(e^{3x}-1)$, on obtient $B=\\blank{3}$. Enfin, $C$ est le nombre dérivé en $2$, donc $C=\\blank{e^2}$.\\par\\smallskip $$\\boxed{A=3,\\quad B=3,\\quad C=e^2}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Calculons $A=\\displaystyle\\lim_{x \\to 0}\\frac{e^{x^2}-1}{x^2}$ et $B=\\displaystyle\\lim_{x \\to 0}\\frac{e^{\\sin x}-1}{x}$.}\\par\\smallskip Avec $u=x^2$, on obtient $A=\\blank{1}$. De plus :\\par\\smallskip$$\\frac{e^{\\sin x}-1}{x}=\\frac{e^{\\sin x}-1}{\\sin x}\\times\\frac{\\sin x}{x}.$$Les deux facteurs tendent vers $1$, donc $B=\\blank{1}$.\\par\\smallskip $$\\boxed{A=1\\quad\\text{et}\\quad B=1}$$"
+        }
+      ]
+    },
+    {
+      "id": "croissances-comparees",
+      "category": "course",
+      "title": "Comparer l'exponentielle aux puissances",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "À l'infini, l'exponentielle croissante domine toute puissance de la variable. Cette idée permet de traiter rapidement plusieurs formes indéterminées."
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{l'exponentielle domine-t-elle les puissances} ?",
+          "content": "Pour tout entier naturel $n$ :\\par\\smallskip\\begin{itemize}\\item $\\displaystyle\\lim_{x \\to +\\infty}\\frac{e^x}{x^n}=+\\infty$.\\item $\\displaystyle\\lim_{x \\to -\\infty}x^ne^x=0$.\\item $\\displaystyle\\lim_{x \\to +\\infty}x^ne^{-x}=0$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $A=\\displaystyle\\lim_{x \\to +\\infty}x^4e^{-2x}$, $B=\\displaystyle\\lim_{x \\to -\\infty}x^3e^x$ et $C=\\displaystyle\\lim_{x \\to +\\infty}\\frac{e^{3x}}{x^5}$.}\\par\\smallskip Avec $t=2x$, on obtient $A=\\blank{0}$. Directement, $B=\\blank{0}$. Avec $t=3x$, on a $\\frac{e^{3x}}{x^5}=3^5\\frac{e^t}{t^5}$, donc $C=\\blank{+\\infty}$.\\par\\smallskip $$\\boxed{A=0,\\quad B=0,\\quad C=+\\infty}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Calculons $L=\\displaystyle\\lim_{x \\to +\\infty}\\frac{e^x-x^3}{e^x+x^3}$.}\\par\\smallskip On divise par $e^x$ :\\par\\smallskip$$\\frac{e^x-x^3}{e^x+x^3}=\\frac{1-x^3e^{-x}}{1+x^3e^{-x}}.$$Or :\\par\\smallskip$$\\displaystyle\\lim_{x \\to +\\infty}x^3e^{-x}=\\blank{0}.$$Donc $L=\\blank{1}$.\\par\\smallskip $$\\boxed{L=1}$$"
+        }
+      ]
+    },
+    {
+      "id": "exponentielle-base-a",
+      "category": "course",
+      "title": "Définir une exponentielle de base quelconque",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'exponentielle népérienne permet de définir une puissance réelle pour toute base positive. Les règles algébriques usuelles se déduisent de cette définition."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{$a^x$ pour un exposant réel} ?",
+          "content": "Soit $a>0$. Pour tout réel $x$, on définit :\\par\\smallskip$$\\boxed{a^x=e^{x\\ln a}}$$Si $a\\neq1$, alors pour $x\\in\\mathbb{R}$ et $y>0$ :\\par\\smallskip$$y=a^x\\iff x=\\log_a y=\\frac{\\ln y}{\\ln a}.$$"
+        },
+        {
+          "type": "property",
+          "title": "Quelles règles \\mathqst{vérifient les puissances réelles} ?",
+          "content": "Pour $a,b>0$ et $x,y\\in\\mathbb{R}$ :\\par\\smallskip\\begin{itemize}\\item $a^{x+y}=a^xa^y$.\\item $a^{-x}=\\dfrac1{a^x}$.\\item $a^{x-y}=\\dfrac{a^x}{a^y}$.\\item $(a^x)^y=a^{xy}$.\\item $(ab)^x=a^xb^x$.\\item $\\left(\\dfrac ab\\right)^x=\\dfrac{a^x}{b^x}$.\\end{itemize}"
+        },
+        {
+          "type": "proof",
+          "content": "Par définition, $a^t=e^{t\\ln a}$ pour tout réel $t$. Ainsi :\\par\\smallskip$$a^{x+y}=e^{(x+y)\\ln a}=e^{x\\ln a+y\\ln a}.$$En utilisant la propriété fondamentale de l'exponentielle :\\par\\smallskip$$e^{x\\ln a+y\\ln a}=e^{x\\ln a}e^{y\\ln a}=a^xa^y.$$Donc :\\par\\smallskip$$\\boxed{a^{x+y}=a^xa^y}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Pour $a>0$, simplifions $A=a^{2x-1}a^{3-x}$, $B=\\dfrac{a^{4x}}{a^{x+2}}$ et $C=(a^{x-1})^2a^{2-2x}$.}\\par\\smallskip $$A=a^{\\blank{x+2}},\\qquad B=a^{\\blank{3x-2}},\\qquad C=a^{\\blank{0}}=\\blank{1}.$$$$\\boxed{A=a^{x+2},\\quad B=a^{3x-2},\\quad C=1}$$"
+        }
+      ]
+    },
+    {
+      "id": "derivee-variations-base-a",
+      "category": "course",
+      "title": "Dériver et comparer une exponentielle de base a",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le signe de la dérivée dépend de la position de la base par rapport à un. Cette position détermine donc le sens de variation de la fonction."
+        },
+        {
+          "type": "property",
+          "title": "Comment dériver \\mathqst{$a^x$ et $a^{u(x)}$} ?",
+          "content": "Pour tout $a>0$ et tout réel $x$ :\\par\\smallskip$$\\boxed{(a^x)'=(\\ln a)a^x}$$Si $u$ est dérivable :\\par\\smallskip$$\\boxed{(a^{u(x)})'=u'(x)(\\ln a)a^{u(x)}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment varie \\mathqst{la fonction $x\\mapsto a^x$} ?",
+          "content": "\\begin{itemize}\\item Si $a>1$, la fonction est strictement croissante.\\item Si $0<a<1$, la fonction est strictement décroissante.\\item Si $a=1$, la fonction est constante égale à $1$.\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{comparer deux puissances de même base} ?",
+          "content": "\\begin{itemize}\\item Si $a>1$, alors $x<y\\iff a^x<a^y$.\\item Si $0<a<1$, alors $x<y\\iff a^x>a^y$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Résolvons $2^{3x-1}\\leq2^{x+5}$ et $\\left(\\dfrac13\\right)^{2x-1}>\\left(\\dfrac13\\right)^3$.}\\par\\smallskip Comme $2>1$, on conserve le sens : $3x-1\\leq x+5$, donc $x\\leq\\blank{3}$.\\par\\smallskip Comme $0<\\dfrac13<1$, le sens s'inverse : $2x-1<3$, donc $x<\\blank{2}$.\\par\\smallskip $$\\boxed{x\\leq3\\quad\\text{et}\\quad x<2}$$"
+        }
+      ]
+    },
+    {
+      "id": "limites-base-a",
+      "category": "course",
+      "title": "Étudier les limites d'une exponentielle de base a",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les limites d'une exponentielle de base positive se déduisent de sa définition avec l'exponentielle népérienne. Il faut lire simultanément la base et le comportement de l'exposant."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les limites selon la base} ?",
+          "content": "\\begin{itemize}\\item Si $a>1$, alors $\\displaystyle\\lim_{x \\to +\\infty}a^x=+\\infty$ et $\\displaystyle\\lim_{x \\to -\\infty}a^x=0$.\\item Si $0<a<1$, alors $\\displaystyle\\lim_{x \\to +\\infty}a^x=0$ et $\\displaystyle\\lim_{x \\to -\\infty}a^x=+\\infty$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $A=\\displaystyle\\lim_{x \\to +\\infty}5^{2x-1}$, $B=\\displaystyle\\lim_{x \\to +\\infty}\\left(\\dfrac14\\right)^{x-3}$ et $C=\\displaystyle\\lim_{x \\to -\\infty}3^x$.}\\par\\smallskip On obtient $A=\\blank{+\\infty}$, $B=\\blank{0}$ et $C=\\blank{0}$.\\par\\smallskip $$\\boxed{A=+\\infty,\\quad B=0,\\quad C=0}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Résolvons $2^x+4^x=6$.}\\par\\smallskip Comme $4^x=(2^x)^2$, on pose $X=2^x>0$. On obtient $X^2+X-6=0$, soit $(X-2)(X+3)=0$. La seule racine positive est $X=\\blank{2}$. Ainsi $2^x=2$, donc $x=\\blank{1}$.\\par\\smallskip $$\\boxed{S=\\{1\\}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Déterminons $a>0$ pour que la courbe de $f(x)=a^x$ possède en $x=0$ une tangente de pente $2$.}\\par\\smallskip On a $f'(x)=(\\ln a)a^x$, donc $f'(0)=\\ln a$. La pente imposée donne $\\ln a=\\blank{2}$, puis $a=\\blank{e^2}$.\\par\\smallskip $$\\boxed{a=e^2}$$"
+        }
+      ]
+    },
+    {
+      "id": "erreurs-frequentes",
+      "category": "course",
+      "title": "Éviter les erreurs qui coûtent des points",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les calculs exponentiels reposent sur quelques conditions indispensables. Les erreurs suivantes doivent être éliminées avant l'examen."
+        },
+        {
+          "type": "warning",
+          "content": "\\begin{enumerate}\\item Ne pas écrire $e^{\\ln x}=x$ sans imposer $x>0$.\\item Ne pas confondre $\\ln(e^x)=x$ et $e^{\\ln x}=x$.\\item Ne jamais transformer $e^{x+y}$ en $e^x+e^y$.\\item Ne pas oublier le facteur $u'(x)$ dans la dérivée de $e^{u(x)}$.\\item Ne pas chercher le signe de $e^{u(x)}$, toujours strictement positif.\\item Conserver $X>0$ après avoir posé $X=e^x$.\\item Ne pas utiliser la limite fondamentale si l'exposant ne tend pas vers $0$.\\item À $+\\infty$, ne pas oublier que l'exponentielle domine toute puissance.\\item Pour comparer $a^x$ et $a^y$, distinguer $a>1$ et $0<a<1$.\\item Ne pas définir $a^x$ pour une base négative et un exposant réel quelconque.\\item Ne pas écrire $(a^x)'=xa^{x-1}$.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "La maîtrise vient d'un entraînement régulier : « C'est en forgeant que l'on devient forgeron. »"
+        }
+      ]
+    }
+  ]
+}

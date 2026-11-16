@@ -1,0 +1,41 @@
+{
+  "id": "ex-ens-app-32",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Application indicatrice et composée",
+  "requiresRedaction": true,
+  "context": "Soit $E$ un ensemble non vide et $A$ une partie de $E$. On considère les applications : $\\varphi : E \\to E$, $X \\mapsto X \\cap A$ et $h : E \\to E$, $X \\mapsto \\overline{X} \\cup A$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer : $\\varphi \\circ \\varphi$ ; $\\varphi \\circ h$ ; $h \\circ h$.",
+      "hint": "Pour chaque composée, calculez l'expression en appliquant les lois de De Morgan et les propriétés ensemblistes. $\\varphi \\circ \\varphi(X) = (X \\cap A) \\cap A = X \\cap A = \\varphi(X)$ : $\\varphi$ est idempotente."
+    },
+    {
+      "id": "q2",
+      "content": "Soit $E$ un ensemble non vide et $A$ une partie de $E$. On considère l'application $f_A : E \\to \\mathbb{R}$ définie par : $f_A(x) = \\begin{cases} 1 & \\text{si } x \\in A \\\\ 0 & \\text{si } x \\notin A \\end{cases}$. Montrer pour tous $A$ et $B$ de $\\mathcal{P}(E)$ :",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "$f_{A \\cap B} = f_A \\cdot f_B$",
+          "hint": "Vérifiez l'égalité en testant les 4 cas : $x \\in A \\cap B$, $x \\in A \\setminus B$, $x \\in B \\setminus A$, $x \\notin A \\cup B$."
+        },
+        {
+          "id": "sq2b",
+          "content": "$f_{A \\cup B} = f_A + f_B - f_A \\cdot f_B$",
+          "hint": "Même approche par cas, ou utilisez la formule $f_{A \\cup B} = f_A + f_B - f_{A \\cap B}$ et le résultat de a)."
+        },
+        {
+          "id": "sq2c",
+          "content": "$f_{\\overline{A}} = 1 - f_A$",
+          "hint": "$x \\in \\overline{A} \\Leftrightarrow x \\notin A$. Vérifiez les deux cas."
+        },
+        {
+          "id": "sq2d",
+          "content": "$f_{A \\triangle B} = f_A + f_B - 2f_A \\cdot f_B$",
+          "hint": "Utilisez $A \\triangle B = (A \\cup B) \\setminus (A \\cap B)$ et les résultats précédents. Ou vérifiez directement par cas."
+        }
+      ]
+    }
+  ]
+}

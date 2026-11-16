@@ -1,0 +1,20 @@
+{
+  "id": "ex-denom-06",
+  "theme": "denombrement",
+  "difficulty": "moyen",
+  "topic": "Dénombrement",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Tirages simultanés",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Une urne contient 5 boules rouges et 3 boules noires.\nOn tire simultanément 3 boules de l'urne.\nCombien de tirages différents peut-on obtenir ?",
+          "hint": "Il y a un total de $5 + 3 = 8$ boules dans l'urne.\nOn tire simultanément 3 boules. L'ordre ne compte pas, et il n'y a pas de répétition possible.\n\nC'est donc une combinaison de 3 éléments parmi 8, notée $C_8^3$.\n\n$C_8^3 = \\frac{8!}{3!(8-3)!} = \\frac{8!}{3!5!} = \\frac{8 \\times 7 \\times 6}{3 \\times 2 \\times 1} = 56$.\n\nIl y a 56 tirages différents possibles."
+        }
+      ]
+    }
+  ]
+}

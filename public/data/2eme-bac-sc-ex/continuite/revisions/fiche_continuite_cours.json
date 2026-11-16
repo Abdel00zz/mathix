@@ -1,0 +1,754 @@
+{
+  "header": {
+    "title": "Limites et continuité",
+    "subtitle": "Comportement local, calcul de limites, continuité, valeurs intermédiaires et fonction réciproque",
+    "context": "2BAC Sciences - SVT et PC"
+  },
+  "lexique": [
+    {
+      "term": "Limite",
+      "arabic": "نهاية",
+      "category": "concept",
+      "symbol": "\\lim",
+      "definition": "Valeur vers laquelle se rapprochent les images d'une fonction lorsque la variable approche un point ou l'infini.",
+      "variants": ["limites", "limite finie", "limite infinie"]
+    },
+    {
+      "term": "Limite à gauche",
+      "arabic": "النهاية اليسرى",
+      "category": "concept",
+      "symbol": "\\lim_{x\\to a^-}f(x)",
+      "definition": "Limite obtenue lorsque x approche a avec des valeurs inférieures à a.",
+      "variants": ["limites à gauche", "limite gauche"]
+    },
+    {
+      "term": "Limite à droite",
+      "arabic": "النهاية اليمنى",
+      "category": "concept",
+      "symbol": "\\lim_{x\\to a^+}f(x)",
+      "definition": "Limite obtenue lorsque x approche a avec des valeurs supérieures à a.",
+      "variants": ["limites à droite", "limite droite"]
+    },
+    {
+      "term": "Au voisinage de",
+      "arabic": "بجوار",
+      "category": "concept",
+      "definition": "Ensemble de valeurs suffisamment proches d'un point, sans devoir être égales à ce point.",
+      "variants": ["au voisinage"]
+    },
+    {
+      "term": "Forme indéterminée",
+      "arabic": "شكل غير محدد",
+      "category": "concept",
+      "definition": "Expression de limites qui ne permet pas de conclure directement et qui doit être transformée.",
+      "variants": ["formes indéterminées", "forme indéterminée"]
+    },
+    {
+      "term": "Continuité",
+      "arabic": "الاتصال",
+      "category": "concept",
+      "symbol": "\\lim_{x\\to a}f(x)=f(a)",
+      "definition": "Propriété selon laquelle la limite de la fonction en un point est égale à sa valeur en ce point.",
+      "variants": ["continuité en un point", "continuité latérale"]
+    },
+    {
+      "term": "Fonction continue",
+      "arabic": "دالة متصلة",
+      "category": "concept",
+      "definition": "Fonction dont le comportement près d'un point rejoint sa valeur en ce point.",
+      "variants": ["fonctions continues", "fonction est continue", "fonction n'est pas continue"]
+    },
+    {
+      "term": "Prolongement par continuité",
+      "arabic": "التمديد بالاتصال",
+      "category": "concept",
+      "definition": "Définition d'une valeur manquante ou corrigée par la limite finie afin de rendre la fonction continue.",
+      "variants": ["prolongement continu", "prolonger une fonction par continuité"]
+    },
+    {
+      "term": "Image d'un intervalle",
+      "arabic": "صورة مجال",
+      "category": "concept",
+      "definition": "Ensemble des valeurs prises par une fonction lorsque la variable parcourt un intervalle donné.",
+      "variants": ["image de l'intervalle", "image d'un domaine"]
+    },
+    {
+      "term": "Théorème des valeurs intermédiaires",
+      "arabic": "مبرهنة القيم الوسيطية",
+      "category": "concept",
+      "definition": "Une fonction continue prend toute valeur comprise entre deux de ses images sur un intervalle.",
+      "variants": ["valeurs intermédiaires", "théorème des valeurs intermédiaires"]
+    },
+    {
+      "term": "Encadrement",
+      "arabic": "حصر",
+      "category": "concept",
+      "definition": "Méthode qui situe une quantité ou une solution entre deux bornes pour contrôler sa valeur.",
+      "variants": ["encadrer", "encadrons", "encadrement numérique"]
+    },
+    {
+      "term": "Fonction réciproque",
+      "arabic": "الدالة العكسية",
+      "category": "concept",
+      "symbol": "f^{-1}",
+      "definition": "Fonction qui retrouve l'antécédent unique à partir de l'image pour une fonction bijective.",
+      "variants": ["fonctions réciproques"]
+    },
+    {
+      "term": "Bijection",
+      "arabic": "تقابل",
+      "category": "concept",
+      "definition": "Correspondance où chaque valeur de l'ensemble d'arrivée possède un unique antécédent.",
+      "variants": ["bijective", "fonction bijective"]
+    },
+    {
+      "term": "Strictement monotone",
+      "arabic": "رتيبة قطعًا",
+      "category": "concept",
+      "definition": "Fonction qui est toujours strictement croissante ou toujours strictement décroissante sur un intervalle.",
+      "variants": ["strictement croissante", "strictement décroissante"]
+    },
+    {
+      "term": "Composée de deux fonctions",
+      "arabic": "مركب دالتين",
+      "category": "concept",
+      "symbol": "g\\circ f",
+      "definition": "Fonction obtenue en appliquant d'abord f puis g à la valeur obtenue.",
+      "variants": ["fonction composée", "composée"]
+    },
+    {
+      "term": "Solution unique",
+      "arabic": "حل وحيد",
+      "category": "concept",
+      "definition": "Solution qui est la seule à vérifier l'équation dans l'intervalle étudié.",
+      "variants": ["unique solution", "solutions uniques", "unicité"]
+    }
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Les limites permettent d'\\objectif{décrire le comportement d'une fonction près d'un point ou à l'infini}. La \\defi{difficulté principale} consiste à distinguer la valeur de la fonction, ses limites latérales et les transformations nécessaires au calcul. La continuité relie ensuite ces notions à l'image d'un intervalle, à l'existence d'une solution et aux fonctions réciproques. \\savant{Augustin-Louis Cauchy} a contribué à donner aux limites et à la continuité une formulation rigoureuse, devenue essentielle dans toute l'analyse moderne.",
+          "media": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Augustin_Louis_Cauchy.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "15%",
+            "caption": "Augustin-Louis Cauchy (1789-1857)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "comportement_limites",
+      "category": "course",
+      "title": "Décrire le comportement d’une fonction",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une limite décrit les valeurs prises par une fonction lorsqu'on se rapproche d'un point. On commence par distinguer le comportement local, les approches latérales et le comportement à l'infini."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{une limite finie en un point} ?",
+          "content": "Soit $f$ une fonction définie au voisinage de $a$, sauf éventuellement en $a$. On écrit $$\\boxed{\\displaystyle\\lim_{x\\to a}f(x)=\\ell}$$ lorsque les valeurs de $f(x)$ se rapprochent du réel $\\ell$ dès que $x$ est suffisamment proche de $a$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to1}\\dfrac{x^2-1}{x-1}$.}\\par\\smallskip Pour $x\\neq1$, on factorise $x^2-1=(x-1)(x+1)$. Ainsi, $\\dfrac{x^2-1}{x-1}=\\blank{x+1}$. On en déduit $$\\boxed{\\displaystyle\\lim_{x\\to1}\\dfrac{x^2-1}{x-1}=\\blank{2}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Ne pas confondre $\\displaystyle\\lim_{x\\to a}f(x)$ et $f(a)$. La limite décrit le comportement au voisinage de $a$, tandis que $f(a)$ désigne la valeur effectivement prise au point $a$."
+        },
+        {
+          "type": "definition",
+          "title": "Pourquoi distingue-t-on \\mathqst{la gauche et la droite} ?",
+          "content": "La \\textbf{limite à gauche} de $f$ en $a$ est notée $\\displaystyle\\lim_{x\\to a^-}f(x)$ et correspond aux valeurs $x<a$. La \\textbf{limite à droite} est notée $\\displaystyle\\lim_{x\\to a^+}f(x)$ et correspond aux valeurs $x>a$."
+        },
+        {
+          "type": "property",
+          "title": "Quand existe \\mathqst{la limite en un point} ?",
+          "content": "La limite de $f$ en $a$ existe et vaut $\\ell$ si et seulement si les deux limites latérales existent et sont égales : $$\\boxed{\\displaystyle\\lim_{x\\to a^-}f(x)=\\lim_{x\\to a^+}f(x)=\\ell}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Soit $f(x)=\\begin{cases}2x+1,&x<1,\\\\x^2+2,&x\\geq1.\\end{cases}$ Déterminons la limite de $f$ en $1$.}\\par\\smallskip À gauche, $\\displaystyle\\lim_{x\\to1^-}f(x)=\\blank{3}$. À droite, $\\displaystyle\\lim_{x\\to1^+}f(x)=\\blank{3}$. Les deux limites sont égales, donc $$\\boxed{\\displaystyle\\lim_{x\\to1}f(x)=\\blank{3}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "L'écriture $f(x)\\to0^+$ signifie que $f(x)$ tend vers $0$ en restant positive. Pour indiquer que $x$ approche $a$ par la droite, on écrit $x\\to a^+$."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie précisément \\mathqst{une limite infinie en un point} ?",
+          "content": "On écrit $\\displaystyle\\lim_{x\\to a}f(x)=+\\infty$ lorsque les valeurs de $f(x)$ deviennent aussi grandes que l'on veut quand $x$ se rapproche de $a$. Une définition analogue s'applique à une limite égale à $-\\infty$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons les limites latérales de $f(x)=\\dfrac1{x-2}$ en $2$.}\\par\\smallskip Lorsque $x\\to2^-$, on a $x-2\\to\\blank{0^-}$, donc $\\dfrac1{x-2}\\to\\blank{-\\infty}$. Lorsque $x\\to2^+$, on a $x-2\\to\\blank{0^+}$, donc $\\dfrac1{x-2}\\to\\blank{+\\infty}$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les limites usuelles de référence} ?",
+          "content": "Les limites usuelles suivantes sont fréquemment utilisées :\\begin{itemize}\\item $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac1x=0^+$ et $\\displaystyle\\lim_{x\\to-\\infty}\\dfrac1x=0^-$ ;\\item $\\displaystyle\\lim_{x\\to+\\infty}x^n=+\\infty$ pour $n\\in\\mathbb N^*$ ;\\item si $n$ est impair, $\\displaystyle\\lim_{x\\to-\\infty}x^n=-\\infty$.\\end{itemize}"
+        },
+        {
+          "type": "definition",
+          "title": "Comment interpréter \\mathqst{une limite à l'infini} ?",
+          "content": "On écrit $\\displaystyle\\lim_{x\\to+\\infty}f(x)=\\ell$ lorsque $f(x)$ se rapproche de $\\ell$ pour des valeurs positives de $x$ de plus en plus grandes. On définit de la même manière une limite lorsque $x\\to-\\infty$."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{2x+1}{x}$.}\\par\\smallskip On écrit $\\dfrac{2x+1}{x}=\\blank{2+\\dfrac1x}$. Comme $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac1x=0$, on obtient $$\\boxed{\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{2x+1}{x}=\\blank{2}}$$"
+        }
+      ]
+    },
+    {
+      "id": "calcul_limites",
+      "category": "course",
+      "title": "Calculer une limite",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après avoir identifié le type de limite, on choisit une transformation adaptée. Le calcul direct reste prioritaire, puis on traite les formes qui ne permettent pas de conclure immédiatement."
+        },
+        {
+          "type": "property",
+          "title": "Que deviennent \\mathqst{les opérations sur des limites finies} ?",
+          "content": "Si $f$ et $g$ admettent des limites finies $\\ell$ et $\\ell'$ en $a$, alors :\\begin{itemize}\\item $\\displaystyle\\lim_{x\\to a}(f+g)(x)=\\ell+\\ell'$ ;\\item $\\displaystyle\\lim_{x\\to a}(fg)(x)=\\ell\\ell'$ ;\\item si $\\ell'\\neq0$, $\\displaystyle\\lim_{x\\to a}\\dfrac{f(x)}{g(x)}=\\dfrac\\ell{\\ell'}$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Quand peut-on \\mathqst{calculer une limite directement} ?",
+          "content": "On commence par remplacer mentalement $x$ par la valeur vers laquelle il tend. Si l'expression obtenue est un réel bien défini, le calcul est direct. Si une forme indéterminée apparaît, on transforme l'expression avant de conclure."
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to2}\\dfrac{3x^2+x+1}{x+4}$.}\\par\\smallskip Le numérateur tend vers $\\blank{15}$ et le dénominateur vers $\\blank{6}$. Comme le dénominateur ne tend pas vers zéro, $$\\boxed{\\displaystyle\\lim_{x\\to2}\\dfrac{3x^2+x+1}{x+4}=\\blank{\\dfrac52}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 1,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to-1}\\dfrac{x^2+3x+5}{2x-3}$.}\\par\\smallskip Par substitution directe, le numérateur tend vers $\\blank{3}$ et le dénominateur vers $\\blank{-5}$. Ainsi $$\\boxed{\\displaystyle\\lim_{x\\to-1}\\dfrac{x^2+3x+5}{2x-3}=\\blank{-\\dfrac35}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Quel signe prend \\mathqst{une limite infinie de quotient} ?",
+          "content": "Pour un quotient dont le dénominateur tend vers zéro, on détermine d'abord le signe du numérateur. On factorise ensuite le dénominateur, puis on étudie son signe du côté considéré. La combinaison des signes donne $+\\infty$ ou $-\\infty$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons $\\displaystyle\\lim_{x\\to1^+}\\dfrac{3x+1}{x^2+x-2}$.}\\par\\smallskip Le numérateur tend vers $4>0$. Or $x^2+x-2=(x-1)(x+2)$. Lorsque $x\\to1^+$, le produit tend vers $\\blank{0^+}$. Donc $$\\boxed{\\displaystyle\\lim_{x\\to1^+}\\dfrac{3x+1}{x^2+x-2}=\\blank{+\\infty}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons $\\displaystyle\\lim_{x\\to-2^-}\\dfrac{x-1}{x^2+3x+2}$.}\\par\\smallskip On factorise $x^2+3x+2=(x+1)(x+2)$. Lorsque $x\\to-2^-$, le numérateur tend vers $-3<0$, $x+1<0$ et $x+2\\to0^-$. Le dénominateur tend donc vers $\\blank{0^+}$. Ainsi $$\\boxed{\\displaystyle\\lim_{x\\to-2^-}\\dfrac{x-1}{x^2+3x+2}=\\blank{-\\infty}}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{une forme indéterminée} ?",
+          "content": "Une \\textbf{forme indéterminée} apparaît lorsque les limites séparées des différentes parties ne suffisent pas pour conclure. Les formes principales du cours sont $\\dfrac{0}{0}$, $\\dfrac{\\infty}{\\infty}$, $\\infty-\\infty$ et $0\\times\\infty$."
+        },
+        {
+          "type": "warning",
+          "content": "Une forme indéterminée n'est pas un résultat. Elle indique seulement qu'une transformation de l'expression est nécessaire."
+        },
+        {
+          "type": "method",
+          "title": "Comment lever \\mathqst{la forme $\\dfrac{0}{0}$ par factorisation} ?",
+          "content": "Lorsque le numérateur et le dénominateur s'annulent en $a$, on recherche le facteur commun $x-a$. On le simplifie pour $x\\neq a$, puis on calcule la limite de l'expression simplifiée."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to2}\\dfrac{x^2-3x+2}{x^2-4}$.}\\par\\smallskip On factorise $x^2-3x+2=(x-1)(x-2)$ et $x^2-4=(x-2)(x+2)$. Pour $x\\neq2$, le quotient devient $\\blank{\\dfrac{x-1}{x+2}}$. Donc $$\\boxed{\\displaystyle\\lim_{x\\to2}\\dfrac{x^2-3x+2}{x^2-4}=\\blank{\\dfrac14}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to1}\\dfrac{x^3-1}{x^2-1}$.}\\par\\smallskip On a $x^3-1=(x-1)(x^2+x+1)$ et $x^2-1=(x-1)(x+1)$. Après simplification, on obtient $\\blank{\\dfrac{x^2+x+1}{x+1}}$. Ainsi $$\\boxed{\\displaystyle\\lim_{x\\to1}\\dfrac{x^3-1}{x^2-1}=\\blank{\\dfrac32}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Pourquoi utiliser \\mathqst{une expression conjuguée en calcul de limite} ?",
+          "content": "En présence d'une différence contenant une racine carrée, on multiplie le numérateur et le dénominateur par l'expression conjuguée. L'identité remarquable obtenue fait disparaître la différence de racines."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to2}\\dfrac{\\sqrt{x+2}-2}{x-2}$.}\\par\\smallskip Après multiplication par le conjugué, on obtient $\\dfrac{1}{\\sqrt{x+2}+2}$. Donc $$\\boxed{\\displaystyle\\lim_{x\\to2}\\dfrac{\\sqrt{x+2}-2}{x-2}=\\blank{\\dfrac14}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sqrt{1+3x}-1}{x}$.}\\par\\smallskip En utilisant le conjugué, $\\dfrac{\\sqrt{1+3x}-1}{x}=\\blank{\\dfrac3{\\sqrt{1+3x}+1}}$. D'où $$\\boxed{\\displaystyle\\lim_{x\\to0}\\dfrac{\\sqrt{1+3x}-1}{x}=\\blank{\\dfrac32}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Quel rôle jouent \\mathqst{les degrés d'un quotient de polynômes} ?",
+          "content": "Pour deux polynômes non nuls $P$ et $Q$ :\\begin{itemize}\\item si $\\deg P<\\deg Q$, alors $\\dfrac{P(x)}{Q(x)}$ tend vers $0$ à l'infini ;\\item si $\\deg P=\\deg Q$, la limite est le quotient des coefficients dominants ;\\item si $\\deg P>\\deg Q$, le quotient se comporte comme le quotient des termes dominants.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Sous quelle forme écrire \\mathqst{un quotient de type $\\dfrac{\\infty}{\\infty}$} ?",
+          "content": "Pour traiter la forme $\\dfrac{\\infty}{\\infty}$, on divise le numérateur et le dénominateur par la plus grande puissance de $x$ utile. Les termes contenant $\\dfrac1x$, $\\dfrac1{x^2}$ ou une puissance supérieure tendent alors vers zéro."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{3x^2-x+1}{2x^2+5x-4}$.}\\par\\smallskip Après division par $x^2$, on obtient $\\dfrac{3-\\frac1x+\\frac1{x^2}}{2+\\frac5x-\\frac4{x^2}}$. Tous les termes inverses tendent vers $\\blank{0}$. Ainsi $$\\boxed{\\displaystyle\\lim_{x\\to+\\infty}\\dfrac{3x^2-x+1}{2x^2+5x-4}=\\blank{\\dfrac32}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to-\\infty}\\dfrac{2x^3+5x}{x^2-1}$.}\\par\\smallskip Les termes dominants donnent $\\dfrac{2x^3}{x^2}=\\blank{2x}$. Comme $x\\to-\\infty$, on en déduit $$\\boxed{\\displaystyle\\lim_{x\\to-\\infty}\\dfrac{2x^3+5x}{x^2-1}=\\blank{-\\infty}}$$"
+        },
+        {
+          "type": "method",
+          "title": "Quelle transformation convient à \\mathqst{la forme $\\infty-\\infty$ en calcul de limite} ?",
+          "content": "Pour une forme $\\infty-\\infty$, on peut factoriser le terme dominant, réduire au même dénominateur ou utiliser une expression conjuguée. Le choix dépend de la structure visible de l'expression."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to+\\infty}\\left(\\sqrt{x^2+3x}-x\\right)$.}\\par\\smallskip Avec le conjugué, $\\sqrt{x^2+3x}-x=\\dfrac{3x}{\\sqrt{x^2+3x}+x}$. Comme $x>0$, on factorise $x$ au dénominateur et on obtient $\\blank{\\dfrac3{\\sqrt{1+\\frac3x}+1}}$. Ainsi $$\\boxed{\\displaystyle\\lim_{x\\to+\\infty}\\left(\\sqrt{x^2+3x}-x\\right)=\\blank{\\dfrac32}}$$"
+        },
+        {
+          "type": "property",
+          "title": "Que vaut exactement \\mathqst{la limite trigonométrique fondamentale du sinus} ?",
+          "content": "La limite trigonométrique fondamentale admise dans le cours est : $$\\boxed{\\displaystyle\\lim_{u\\to0}\\dfrac{\\sin u}{u}=1}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(7x)}{5x}$.}\\par\\smallskip On écrit $\\dfrac{\\sin(7x)}{5x}=\\dfrac75\\dfrac{\\sin(7x)}{7x}$. Comme $7x\\to0$, le second facteur tend vers $\\blank{1}$. Donc $$\\boxed{\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(7x)}{5x}=\\blank{\\dfrac75}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(3x)}{\\sin(5x)}$.}\\par\\smallskip On écrit $\\dfrac{\\sin(3x)}{\\sin(5x)}=\\dfrac35\\dfrac{\\sin(3x)}{3x}\\dfrac{5x}{\\sin(5x)}$. Les deux derniers facteurs tendent vers $\\blank{1}$. Ainsi $$\\boxed{\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin(3x)}{\\sin(5x)}=\\blank{\\dfrac35}}$$"
+        }
+      ]
+    },
+    {
+      "id": "continuite_point",
+      "category": "course",
+      "title": "Étudier la continuité en un point",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La limite décrit le comportement près d'un point. La continuité exige en plus que ce comportement corresponde exactement à la valeur prise par la fonction."
+        },
+        {
+          "type": "definition",
+          "title": "Quand une fonction est-elle \\mathqst{continue en $a$} ?",
+          "content": "Soit $f$ une fonction définie en $a$. La fonction $f$ est \\textbf{continue en $a$} lorsque $$\\boxed{\\displaystyle\\lim_{x\\to a}f(x)=f(a)}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment vérifier \\mathqst{la continuité en un point} ?",
+          "content": "On calcule d'abord $f(a)$, puis $\\displaystyle\\lim_{x\\to a}f(x)$. On compare les deux résultats et on conclut par une phrase précisant si la fonction est continue ou non en $a$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Étudions la continuité en $1$ de $f(x)=\\begin{cases}\\dfrac{3x^2-x-2}{|4x-3|-1},&x\\neq1,\\\\\\dfrac54,&x=1.\\end{cases}$}\\par\\smallskip Au voisinage de $1$, $4x-3>0$, donc $|4x-3|-1=4(x-1)$. De plus, $3x^2-x-2=(x-1)(3x+2)$. Pour $x\\neq1$ proche de $1$, $f(x)=\\blank{\\dfrac{3x+2}{4}}$. Ainsi $\\displaystyle\\lim_{x\\to1}f(x)=\\blank{\\dfrac54}=f(1)$. La fonction est donc $\\blank{continue}$ en $1$."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie précisément \\mathqst{la continuité latérale en un point} ?",
+          "content": "La fonction $f$ est \\textbf{continue à droite} en $a$ lorsque $\\displaystyle\\lim_{x\\to a^+}f(x)=f(a)$. Elle est \\textbf{continue à gauche} en $a$ lorsque $\\displaystyle\\lim_{x\\to a^-}f(x)=f(a)$."
+        },
+        {
+          "type": "property",
+          "title": "Quel lien unit \\mathqst{continuité et limites latérales} ?",
+          "content": "Une fonction est continue en $a$ si et seulement si elle est continue à gauche et à droite en $a$ : $$\\boxed{\\displaystyle\\lim_{x\\to a^-}f(x)=\\lim_{x\\to a^+}f(x)=f(a)}$$"
+        },
+        {
+          "type": "exploration",
+          "content": "Trois situations doivent être distinguées. Si les limites latérales sont différentes, la limite en $a$ n'existe pas. Si la limite existe mais diffère de $f(a)$, la fonction n'est pas continue. Si la limite est égale à $f(a)$, la fonction est continue en $a$."
+        },
+        {
+          "type": "property",
+          "title": "Quand peut-on \\mathqst{prolonger une fonction par continuité} ?",
+          "content": "Si $f$ possède une limite finie $\\ell$ en $a$, mais si $f(a)$ n'existe pas ou diffère de $\\ell$, on définit $\\widetilde f(a)=\\ell$ et $\\widetilde f(x)=f(x)$ pour $x\\neq a$. La fonction $\\widetilde f$ est alors continue en $a$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Prolongeons par continuité en $3$ la fonction $f(x)=\\dfrac{x^2-9}{x-3}$ définie pour $x\\neq3$.}\\par\\smallskip Pour $x\\neq3$, $f(x)=\\blank{x+3}$. Donc $\\displaystyle\\lim_{x\\to3}f(x)=\\blank{6}$. En posant $f(3)=\\blank{6}$, on obtient un prolongement continu en $3$."
+        },
+        {
+          "type": "property",
+          "title": "Comment utiliser \\mathqst{un encadrement pour obtenir une limite} ?",
+          "content": "Si, au voisinage de $a$, $|f(x)|\\leq g(x)$ et si $\\displaystyle\\lim_{x\\to a}g(x)=0$, alors $$\\boxed{\\displaystyle\\lim_{x\\to a}f(x)=0}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Montrons que $f(x)=\\begin{cases}x\\sin\\left(\\dfrac3x\\right),&x\\neq0,\\\\0,&x=0\\end{cases}$ est continue en $0$.}\\par\\smallskip On a $\\left|x\\sin\\left(\\dfrac3x\\right)\\right|\\leq\\blank{|x|}$. Or $\\displaystyle\\lim_{x\\to0}|x|=\\blank{0}$. Donc $\\displaystyle\\lim_{x\\to0}x\\sin\\left(\\dfrac3x\\right)=\\blank{0}=f(0)$. Ainsi $f$ est continue en $0$."
+        }
+      ]
+    },
+    {
+      "id": "fonctions_morceaux",
+      "category": "course",
+      "title": "Étudier une fonction définie par morceaux",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction définie par morceaux peut changer d'expression en un point de raccordement. La continuité dépend alors de la compatibilité entre les deux expressions et la valeur attribuée au point."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle condition assure \\mathqst{la continuité au raccordement} ?",
+          "content": "Une fonction définie par morceaux est continue au point de raccordement $a$ si et seulement si $$\\boxed{\\displaystyle\\lim_{x\\to a^-}f(x)=\\lim_{x\\to a^+}f(x)=f(a)}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment étudier \\mathqst{un point de raccordement} ?",
+          "content": "On calcule la limite à gauche avec l'expression valable pour $x<a$, puis la limite à droite avec l'expression valable pour $x>a$. On calcule enfin $f(a)$ et on compare les trois résultats."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Étudions la continuité en $1$ de $f(x)=\\begin{cases}x^2+2x,&x<1,\\\\-x^2+4x,&x\\geq1.\\end{cases}$}\\par\\smallskip À gauche, $\\displaystyle\\lim_{x\\to1^-}f(x)=\\blank{3}$. À droite, $\\displaystyle\\lim_{x\\to1^+}f(x)=\\blank{3}$. De plus, $f(1)=\\blank{3}$. Les trois valeurs sont égales, donc $f$ est continue en $1$."
+        },
+        {
+          "type": "method",
+          "title": "Quelle équation détermine \\mathqst{un paramètre de continuité au raccordement} ?",
+          "content": "Lorsqu'un paramètre intervient, on impose l'égalité de la limite à gauche, de la limite à droite et de la valeur au point. L'équation obtenue détermine le paramètre lorsque les conditions sont compatibles."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons $\\alpha$ pour que $f(x)=\\begin{cases}\\dfrac{x^2-1}{x-1},&x<1,\\\\\\alpha x+1,&x\\geq1\\end{cases}$ soit continue en $1$.}\\par\\smallskip À gauche, $\\dfrac{x^2-1}{x-1}=x+1$, donc la limite vaut $\\blank{2}$. À droite, la limite et la valeur en $1$ valent $\\blank{\\alpha+1}$. La continuité impose $\\alpha+1=2$, d'où $$\\boxed{\\alpha=\\blank{1}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons $m$ pour que $g(x)=\\begin{cases}\\dfrac{x^2-4}{x-2},&x<2,\\\\mx-1,&x\\geq2\\end{cases}$ soit continue en $2$.}\\par\\smallskip À gauche, $\\dfrac{x^2-4}{x-2}=x+2$, donc la limite vaut $\\blank{4}$. À droite, la limite et $g(2)$ valent $\\blank{2m-1}$. On impose $2m-1=4$, d'où $$\\boxed{m=\\blank{\\dfrac52}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "La présence d'un paramètre ne garantit pas qu'une valeur convenable existe. Si les deux limites latérales sont différentes, aucune valeur donnée au point ne peut rendre la fonction continue."
+        }
+      ]
+    },
+    {
+      "id": "continuite_intervalle",
+      "category": "course",
+      "title": "Reconnaître la continuité sur un intervalle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Après l'étude en un point, on étend la continuité à tout un intervalle. Les fonctions usuelles et les opérations permettent alors de justifier rapidement la continuité d'expressions plus complexes."
+        },
+        {
+          "type": "definition",
+          "title": "Que signifie \\mathqst{être continue sur un intervalle ouvert} ?",
+          "content": "Une fonction $f$ est \\textbf{continue sur un intervalle ouvert} $]a,b[$ lorsqu'elle est continue en tout point de cet intervalle."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{la continuité sur un segment} ?",
+          "content": "Une fonction $f$ est \\textbf{continue sur un segment} $[a,b]$ lorsqu'elle est continue sur $]a,b[$, continue à droite en $a$ et continue à gauche en $b$."
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi peut-on réunir \\mathqst{deux intervalles de continuité ayant un point commun} ?",
+          "content": "Si $f$ est continue sur $[a,b]$ et sur $[b,c]$, alors elle est continue sur $[a,c]$. Plus généralement, si deux intervalles ont un point commun, la continuité sur chacun permet de conclure sur leur réunion."
+        },
+        {
+          "type": "property",
+          "title": "Quelles opérations algébriques conservent \\mathqst{la continuité sur un intervalle} ?",
+          "content": "Si $f$ et $g$ sont continues sur un intervalle $I$, alors $f+g$, $fg$ et $|f|$ sont continues sur $I$. Si $g(x)\\neq0$ sur $I$, alors $\\dfrac1g$ et $\\dfrac fg$ sont continues sur $I$."
+        },
+        {
+          "type": "property",
+          "title": "Quand la racine carrée conserve-t-elle \\mathqst{la continuité} ?",
+          "content": "Si $f$ est continue sur $I$ et si $f(x)\\geq0$ pour tout $x\\in I$, alors la fonction $x\\mapsto\\sqrt{f(x)}$ est continue sur $I$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles fonctions usuelles sont \\mathqst{continues sur leur domaine} ?",
+          "content": "On retient :\\begin{itemize}\\item tout polynôme est continu sur $\\mathbb R$ ;\\item toute fonction rationnelle est continue sur son domaine ;\\item $\\sin$ et $\\cos$ sont continues sur $\\mathbb R$ ;\\item $\\tan$ est continue sur chaque intervalle $\\left]-\\dfrac\\pi2+k\\pi,\\dfrac\\pi2+k\\pi\\right[$ ;\\item la racine carrée est continue sur $[0,+\\infty[$.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Justifions la continuité de $f(x)=\\sqrt{x^2+x+3}$ sur $\\mathbb R$.}\\par\\smallskip Le polynôme $x^2+x+3$ est continu sur $\\mathbb R$. Son discriminant vaut $\\blank{-11}<0$, donc $x^2+x+3>0$ pour tout réel $x$. La racine carrée étant continue sur $[0,+\\infty[$, $f$ est continue sur $\\blank{\\mathbb R}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons les intervalles de continuité de $g(x)=\\dfrac{4x^3+x+1}{x^2+2x-3}$.}\\par\\smallskip On factorise $x^2+2x-3=(x+3)(x-1)$. Le dénominateur s'annule en $\\blank{-3}$ et $\\blank{1}$. La fonction rationnelle est donc continue sur $\\blank{]-\\infty,-3[}$, $\\blank{]-3,1[}$ et $\\blank{]1,+\\infty[}$."
+        },
+        {
+          "type": "property",
+          "title": "Comment la continuité se transmet-elle \\mathqst{à une composée} ?",
+          "content": "Si $f$ est continue en $a$ et si $g$ est continue en $f(a)$, alors la composée $g\\circ f$ est continue en $a$. Sur un intervalle $I$, il faut aussi que $f(I)$ soit contenu dans le domaine de continuité de $g$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Justifions la continuité de $h(x)=\\sqrt{1-x^2}$ sur $[-1,1]$.}\\par\\smallskip Le polynôme $1-x^2$ est continu sur $\\mathbb R$ et vérifie $1-x^2\\geq\\blank{0}$ sur $[-1,1]$. La racine carrée est continue sur $[0,+\\infty[$. Ainsi $h$ est continue sur $\\blank{[-1,1]}$."
+        }
+      ]
+    },
+    {
+      "id": "image_intervalle",
+      "category": "course",
+      "title": "Déterminer l’image d’un intervalle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La continuité permet de contrôler les valeurs prises par une fonction sur un intervalle. Les variations indiquent ensuite dans quel ordre les bornes de l'image doivent être écrites."
+        },
+        {
+          "type": "definition",
+          "title": "Que représente exactement \\mathqst{l'ensemble image $f(I)$ d'un intervalle} ?",
+          "content": "Soit $f$ une fonction définie sur un ensemble contenant l'intervalle $I$. L'\\textbf{image de $I$ par $f$} est l'ensemble $$\\boxed{f(I)=\\{f(x)\\mid x\\in I\\}}$$ Elle rassemble toutes les valeurs prises par $f(x)$ lorsque $x$ parcourt $I$."
+        },
+        {
+          "type": "property",
+          "title": "Comment démontrer rigoureusement \\mathqst{l'égalité $f(I)=J$ entre deux ensembles} ?",
+          "content": "Pour montrer que $f(I)=J$, on établit les deux inclusions. On vérifie que toute valeur $f(x)$ avec $x\\in I$ appartient à $J$, puis que tout $y\\in J$ possède au moins un antécédent $x\\in I$ tel que $f(x)=y$."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle est \\mathqst{l'image d'un segment par une fonction continue} ?",
+          "content": "Si $f$ est continue sur un segment $[a,b]$, elle atteint un minimum $m$ et un maximum $M$ sur ce segment. On a alors $$\\boxed{f([a,b])=[m,M]}$$ avec $m=\\min\\limits_{x\\in[a,b]}f(x)$ et $M=\\max\\limits_{x\\in[a,b]}f(x)$."
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi la monotonie détermine-t-elle \\mathqst{l'image d'un segment continu} ?",
+          "content": "Si $f$ est continue et croissante sur $[a,b]$, alors $f([a,b])=[f(a),f(b)]$. Si $f$ est continue et décroissante, alors $f([a,b])=[f(b),f(a)]$."
+        },
+        {
+          "type": "method",
+          "title": "Comment déterminer \\mathqst{l'image d'un intervalle quelconque} ?",
+          "content": "On étudie les variations de $f$ sur l'intervalle. On calcule les valeurs aux bornes appartenant à l'intervalle et les limites aux bornes ouvertes. On vérifie ensuite si les valeurs extrêmes sont atteintes, puis on écrit l'image dans l'ordre croissant."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons l'image de $[-3,1]$ par $f(x)=x^2+2x=(x+1)^2-1$.}\\par\\smallskip La fonction décroît sur $[-3,-1]$, puis croît sur $[-1,1]$. On a $f(-1)=\\blank{-1}$ et $f(-3)=f(1)=\\blank{3}$. Ainsi $$\\boxed{f([-3,1])=\\blank{[-1,3]}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Pour $f(x)=x^2-4x+1=(x-2)^2-3$, déterminons les images de $[0,2]$, $[2,5]$ et $[0,5]$.}\\par\\smallskip\\begin{enumerate}\\item Sur $[0,2]$, $f$ est décroissante, donc $f([0,2])=[f(2),f(0)]=\\blank{[-3,1]}$.\\item Sur $[2,5]$, $f$ est croissante, donc $f([2,5])=[f(2),f(5)]=\\blank{[-3,6]}$.\\item Sur $[0,5]$, le minimum vaut $f(2)=-3$ et le maximum vaut $f(5)=6$. Ainsi $f([0,5])=\\blank{[-3,6]}$.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Si $f$ est continue et strictement croissante sur $[a,b[$ et si $\\displaystyle\\lim_{x\\to b^-}f(x)=L$, alors $f([a,b[)=[f(a),L[$. La borne $L$ n'est pas atteinte sur $[a,b[$, car la stricte croissance imposerait ensuite des valeurs supérieures à $L$."
+        }
+      ]
+    },
+    {
+      "id": "valeurs_intermediaires",
+      "category": "course",
+      "title": "Utiliser les valeurs intermédiaires",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction continue ne saute pas une valeur située entre deux niveaux déjà atteints. Cette idée permet de prouver l'existence d'une solution, puis la monotonie permet d'établir son unicité."
+        },
+        {
+          "type": "theorem",
+          "title": "Que garantit \\mathqst{le théorème des valeurs intermédiaires} ?",
+          "content": "Soit $f$ une fonction continue sur $[a,b]$. Pour tout réel $\\lambda$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c\\in[a,b]$ tel que $$\\boxed{f(c)=\\lambda}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Le théorème garantit l'existence d'au moins une solution. Il ne garantit pas son unicité, car une même valeur peut être prise plusieurs fois."
+        },
+        {
+          "type": "corollary",
+          "title": "Quand un changement de signe assure-t-il \\mathqst{l'existence d'une racine} ?",
+          "content": "Si $f$ est continue sur $[a,b]$ et si $f(a)f(b)<0$, alors l'équation $f(x)=0$ admet au moins une solution dans $]a,b[$."
+        },
+        {
+          "type": "method",
+          "title": "Comment prouver rigoureusement \\mathqst{l'existence d'une solution sur un intervalle} ?",
+          "content": "On définit la fonction étudiée et on justifie sa continuité sur le segment. On calcule ensuite ses valeurs aux extrémités, puis on vérifie qu'elles sont de signes opposés. Le théorème permet alors de conclure à l'existence d'une solution."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle condition supplémentaire assure \\mathqst{l'unicité de la solution} ?",
+          "content": "Si $f$ est continue et strictement monotone sur $[a,b]$, alors, pour tout $\\lambda$ compris entre $f(a)$ et $f(b)$, l'équation $f(x)=\\lambda$ admet une unique solution dans $[a,b]$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Montrons que l'équation $x^3+x-1=0$ admet une unique solution dans $]0,1[$.}\\par\\smallskip Posons $f(x)=x^3+x-1$. La fonction est continue sur $[0,1]$. On a $f(0)=\\blank{-1}<0$ et $f(1)=\\blank{1}>0$, donc il existe une solution $\\alpha\\in]0,1[$. De plus, $f'(x)=\\blank{3x^2+1}>0$, donc $f$ est strictement croissante. La solution $\\alpha$ est donc $\\blank{unique}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment améliorer progressivement \\mathqst{l'encadrement numérique d'une solution} ?",
+          "content": "Après avoir prouvé l'existence et l'unicité de $\\alpha$, on calcule la fonction aux extrémités de sous-intervalles. Chaque changement de signe fournit un intervalle plus petit contenant $\\alpha$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Pour $f(x)=x^3+x-1$, encadrons la solution unique $\\alpha$.}\\par\\smallskip On calcule $f(0{,}6)=\\blank{-0{,}184}<0$ et $f(0{,}7)=\\blank{0{,}043}>0$, donc $\\blank{0{,}6<\\alpha<0{,}7}$. Puis $f(0{,}68)<0$ et $f(0{,}69)>0$, d'où $$\\boxed{\\blank{0{,}68<\\alpha<0{,}69}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Montrons que l'équation $x^3-2x-2=0$ admet une unique solution dans $]1,2[$.}\\par\\smallskip Posons $f(x)=x^3-2x-2$. Elle est continue sur $[1,2]$. On a $f(1)=\\blank{-3}<0$ et $f(2)=\\blank{2}>0$, donc une solution existe. Sur $[1,2]$, $f'(x)=3x^2-2\\geq\\blank{1}>0$. La fonction est strictement croissante, donc la solution est $\\blank{unique}$."
+        }
+      ]
+    },
+    {
+      "id": "composition_limites",
+      "category": "course",
+      "title": "Composer des fonctions et passer à la limite",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La composition consiste à utiliser la valeur d'une fonction comme entrée d'une autre. Avant tout calcul, il faut vérifier que cette nouvelle expression est définie."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{la composée de deux fonctions} ?",
+          "content": "Soient $f$ et $g$ deux fonctions. La \\textbf{composée de $f$ suivie de $g$}, notée $g\\circ f$, est définie par $$\\boxed{(g\\circ f)(x)=g(f(x))}$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment déterminer \\mathqst{le domaine d'une composée} ?",
+          "content": "Le domaine de la composée est $$\\boxed{D_{g\\circ f}=\\{x\\in D_f\\mid f(x)\\in D_g\\}}$$ Il faut donc que $x$ appartienne au domaine de $f$ et que $f(x)$ appartienne au domaine de $g$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soient $f(x)=2x^2+x$ et $g(x)=\\dfrac1x$. Déterminons $g\\circ f$ et $f\\circ g$.}\\par\\smallskip On a $(g\\circ f)(x)=\\dfrac1{2x^2+x}=\\dfrac1{x(2x+1)}$. Son domaine est $\\mathbb R\\setminus\\blank{\\left\\{-\\dfrac12,0\\right\\}}$. En revanche, $(f\\circ g)(x)=\\blank{\\dfrac2{x^2}+\\dfrac1x}$, défini pour $x\\neq0$. Ainsi, dans le cas général, $g\\circ f\\neq\\blank{f\\circ g}$."
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi la continuité permet-elle \\mathqst{de passer à la limite dans une composée} ?",
+          "content": "Si $\\displaystyle\\lim_{x\\to a}u(x)=\\ell$ et si $v$ est continue en $\\ell$, alors $$\\boxed{\\displaystyle\\lim_{x\\to a}(v\\circ u)(x)=v(\\ell)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to0}\\cos\\left(\\pi\\dfrac{\\sin(4x)}{3x}\\right)$.}\\par\\smallskip On écrit $\\dfrac{\\sin(4x)}{3x}=\\dfrac43\\dfrac{\\sin(4x)}{4x}$, donc cette expression tend vers $\\blank{\\dfrac43}$. La fonction cosinus est continue, alors la limite vaut $\\cos\\left(\\dfrac{4\\pi}{3}\\right)=\\blank{-\\dfrac12}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $\\displaystyle\\lim_{x\\to1}\\sqrt{\\dfrac{x^2+x+2}{x+3}}$.}\\par\\smallskip Le quotient tend vers $\\dfrac{1+1+2}{1+3}=\\blank{1}$. La fonction racine carrée est continue en $1$. Ainsi $$\\boxed{\\displaystyle\\lim_{x\\to1}\\sqrt{\\dfrac{x^2+x+2}{x+3}}=\\blank{1}}$$"
+        }
+      ]
+    },
+    {
+      "id": "fonction_reciproque",
+      "category": "course",
+      "title": "Construire une fonction réciproque",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une fonction réciproque permet de retrouver l'antécédent à partir de son image. Son existence exige qu'une même valeur ne corresponde jamais à deux antécédents dans l'intervalle étudié."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce que \\mathqst{la fonction réciproque d'une bijection} ?",
+          "content": "Soit $f:I\\to J$ une fonction bijective. La \\textbf{fonction réciproque} de $f$, notée $f^{-1}:J\\to I$, associe à chaque $y\\in J$ l'unique réel $x\\in I$ tel que $f(x)=y$."
+        },
+        {
+          "type": "property",
+          "title": "Quel lien relie \\mathqst{$f$ et $f^{-1}$} ?",
+          "content": "Pour $x\\in I$ et $y\\in J$, on a $$\\boxed{f^{-1}(y)=x\\Longleftrightarrow f(x)=y}$$ De plus, $f^{-1}\\circ f=\\operatorname{Id}_I$ et $f\\circ f^{-1}=\\operatorname{Id}_J$."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle hypothèse garantit \\mathqst{l'existence de la fonction réciproque} ?",
+          "content": "Soit $f$ une fonction continue et strictement monotone sur un intervalle $I$. Alors $f$ réalise une bijection de $I$ vers l'intervalle $J=f(I)$. Elle admet donc une fonction réciproque $f^{-1}:J\\to I$."
+        },
+        {
+          "type": "method",
+          "title": "Comment déterminer explicitement \\mathqst{l'expression de la fonction $f^{-1}$} ?",
+          "content": "On pose $y=f(x)$ avec $x\\in I$, puis on résout l'équation par rapport à $x$. On conserve uniquement la solution compatible avec l'intervalle $I$, puis on remplace la lettre $y$ par $x$ dans l'expression finale."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $f(x)=2x^2+x+1$ sur $I=[0,1]$. Déterminons son image et sa fonction réciproque.}\\par\\smallskip On a $f'(x)=4x+1>0$ sur $[0,1]$, donc $f$ est strictement croissante. Comme $f(0)=1$ et $f(1)=4$, $J=\\blank{[1,4]}$. En résolvant $y=2x^2+x+1$, on obtient $x=\\dfrac{-1\\pm\\sqrt{8y-7}}4$. La condition $x\\in[0,1]$ impose la racine $\\blank{positive}$. Ainsi $$\\boxed{f^{-1}(x)=\\blank{\\dfrac{-1+\\sqrt{8x-7}}4}},\\quad x\\in[1,4]$$"
+        },
+        {
+          "type": "property",
+          "title": "Quel sens de variation conserve \\mathqst{la fonction réciproque} ?",
+          "content": "La fonction réciproque possède le même sens de variation que la fonction initiale. Si $f$ est strictement croissante sur $I$, alors $f^{-1}$ est strictement croissante sur $J$. Le même résultat vaut pour la décroissance."
+        },
+        {
+          "type": "property",
+          "title": "Pourquoi les courbes sont-elles \\mathqst{symétriques par rapport à $y=x$} ?",
+          "content": "Les courbes représentatives de $f$ et de $f^{-1}$ sont symétriques par rapport à la droite d'équation $y=x$."
+        },
+        {
+          "type": "warning",
+          "content": "La restriction à un intervalle est essentielle. La fonction $x\\mapsto x^2$ n'est pas bijective sur $\\mathbb R$, mais elle est bijective de $[0,+\\infty[$ vers $[0,+\\infty[$."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{On considère $f(x)=x+\\dfrac1x$ sur $I=[1,+\\infty[$.\\begin{columns}\\begin{enumerate}\\item Montrer que $f$ est continue et strictement croissante sur $I$.\\item Déterminer $J=f(I)$.\\item Déterminer $f^{-1}(y)$ pour $y\\in J$.\\end{enumerate}\\end{columns}}\\par\\smallskip\\begin{enumerate}\\item La fonction est continue sur $I$. De plus, $f'(x)=1-\\dfrac1{x^2}\\geq0$ et elle est strictement positive pour $x>1$. Ainsi $f$ est strictement croissante.\\item On a $f(1)=\\blank{2}$ et $\\displaystyle\\lim_{x\\to+\\infty}f(x)=+\\infty$, donc $J=\\blank{[2,+\\infty[}$.\\item L'équation $y=x+\\dfrac1x$ donne $x^2-yx+1=0$. Comme $x\\geq1$, on retient $x=\\blank{\\dfrac{y+\\sqrt{y^2-4}}2}$.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "applications_synthese",
+      "category": "course",
+      "title": "Applications de synthèse",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Les résultats précédents peuvent maintenant être combinés dans une même question. Les exercices suivants reprennent les situations centrales du cours et demandent une rédaction proche de celle du baccalauréat."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Étudions la continuité en $1$ de $f(x)=\\begin{cases}\\dfrac{x^2-1}{x-1},&x\\neq1,\\\\3,&x=1.\\end{cases}$ Proposons ensuite une valeur donnant un prolongement continu.}\\par\\smallskip Pour $x\\neq1$, $\\dfrac{x^2-1}{x-1}=x+1$. Donc $\\displaystyle\\lim_{x\\to1}f(x)=\\blank{2}$, tandis que $f(1)=\\blank{3}$. La fonction n'est pas continue en $1$. En posant $f(1)=\\blank{2}$, on obtient un prolongement continu."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Déterminons $m$ pour que $g(x)=\\begin{cases}mx+2,&x<1,\\\\x^2+3,&x\\geq1\\end{cases}$ soit continue en $1$.}\\par\\smallskip À gauche, la limite vaut $\\blank{m+2}$. À droite, la limite et $g(1)$ valent $\\blank{4}$. La continuité impose $m+2=4$, donc $$\\boxed{m=\\blank{2}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons l'image de $[-2,3]$ par $f(x)=x^2-2x-3$.}\\par\\smallskip On écrit $f(x)=(x-1)^2-4$. Le minimum sur $[-2,3]$ vaut $\\blank{-4}$, atteint en $x=1$. On a $f(-2)=\\blank{5}$ et $f(3)=0$. Ainsi $$\\boxed{f([-2,3])=\\blank{[-4,5]}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Montrons que l'équation $x^3+x-3=0$ admet une unique solution dans $]1,2[$.}\\par\\smallskip Posons $f(x)=x^3+x-3$. On a $f(1)=\\blank{-1}<0$ et $f(2)=\\blank{7}>0$, donc une solution existe. De plus, $f'(x)=\\blank{3x^2+1}>0$ sur $\\mathbb R$. La fonction est strictement croissante, donc la solution est $\\blank{unique}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Soit $f(x)=\\dfrac{x^2+ax+b}{x-1}$ pour $x\\neq1$. Déterminons $a$ et $b$ pour que $\\displaystyle\\lim_{x\\to1}f(x)=4$.}\\par\\smallskip Pour obtenir une limite finie, le numérateur doit s'annuler en $1$, donc $1+a+b=\\blank{0}$. On a alors $x^2+ax+b=(x-1)(x+1+a)$. La limite vaut $2+a$, donc $2+a=\\blank{4}$. Ainsi $$\\boxed{a=\\blank{2}\\quad\\text{et}\\quad b=\\blank{-3}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $f$ continue sur $[0,2]$ avec $f(0)=3$ et $f(2)=-1$.\\begin{columns}\\begin{enumerate}\\item Que peut-on affirmer sur l'équation $f(x)=0$ ?\\item Peut-on affirmer que la solution est unique ?\\item Quelle hypothèse supplémentaire assure l'unicité ?\\end{enumerate}\\end{columns}}\\par\\smallskip\\begin{enumerate}\\item Comme $f(0)f(2)=\\blank{-3}<0$, le théorème des valeurs intermédiaires assure l'existence d'au moins une solution dans $]0,2[$.\\item La continuité seule ne permet pas d'affirmer l'unicité.\\item Si $f$ est en plus $\\blank{strictement monotone}$ sur $[0,2]$, alors la solution est unique.\\end{enumerate}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "ex-22",
+  "theme": "exponentielles",
+  "difficulty": "difficile",
+  "topic": "Étude de fonction - Branches infinies, variations, suite récurrente divergente",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction numérique définie sur $\\mathbb{R}$ par : $f(x) = \\ln(1+2e^x)$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que : $\\displaystyle\\lim_{x \\to +\\infty} f(x) = +\\infty$ et $\\displaystyle\\lim_{x \\to -\\infty} f(x) = 0$.",
+          "hint": "Pour $x \\to +\\infty$ : $1+2e^x \\to +\\infty$. Pour $x \\to -\\infty$ : $2e^x \\to 0$ donc $1+2e^x \\to 1$. $\\ln(1) = 0$."
+        },
+        {
+          "id": "sq1b",
+          "content": "Vérifier que : $f(x) = x + \\ln(2) + \\ln\\left(1 + \\dfrac{1}{2e^x}\\right)$ pour tout $x$ de $\\mathbb{R}$.",
+          "hint": "Écrivez $1 + 2e^x = 2e^x\\left(\\dfrac{1}{2e^x} + 1\\right)$ puis utilisez les propriétés du logarithme. $\\ln(2e^x) = \\ln 2 + x$."
+        },
+        {
+          "id": "sq1c",
+          "content": "Étudier les branches infinies de la courbe $(C)$.",
+          "hint": "Utilisez la forme de 1b pour étudier le comportement de $f(x) - x$ quand $x \\to +\\infty$, et le comportement de $f(x)$ quand $x \\to -\\infty$. $\\ln\\left(1 + \\dfrac{1}{2e^x}\\right) \\to 0$ quand $x \\to +\\infty$. Concluez sur l'existence d'une asymptote oblique ou d'une branche parabolique."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Donner le tableau de variations de la fonction $f$.",
+          "hint": "Calculez $f'(x) = \\dfrac{2e^x}{1+2e^x}$ et étudiez son signe. $2e^x > 0$ et $1+2e^x > 0$ pour tout $x$."
+        },
+        {
+          "id": "sq2b",
+          "content": "Déterminer l'équation de la tangente $(T)$ à la courbe $(C)$ au point d'abscisse $0$.",
+          "hint": "Calculez $f(0)$ et $f'(0)$. L'équation de la tangente est $y = f'(0)\\cdot x + f(0)$."
+        },
+        {
+          "id": "sq2c",
+          "content": "Tracer dans le repère $(O;\\overrightarrow{i};\\overrightarrow{j})$, la tangente $(T)$ et la courbe $(C)$.",
+          "hint": ""
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Soit $(u_n)_{n \\geq 0}$ la suite numérique définie par : $\\begin{cases} u_0 = 0 \\\\ (\\forall n \\in \\mathbb{N})\\,;\\, u_{n+1} = f(u_n) \\end{cases}$",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que $u_{n+1} - u_n > \\ln(2)$ pour tout $n$ de $\\mathbb{N}$.",
+          "hint": "Écrivez $u_{n+1} - u_n = f(u_n) - u_n$. En utilisant la forme de la question 1b, $f(x) - x = \\ln(2) + \\ln\\left(1 + \\dfrac{1}{2e^x}\\right)$. Quel est le signe de $\\ln\\left(1+\\dfrac{1}{2e^x}\\right)$ ?"
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que la suite $(u_n)$ est strictement croissante.",
+          "hint": "Utilisez directement le résultat de la question 3a. $u_{n+1} - u_n > \\ln(2) > 0$."
+        },
+        {
+          "id": "sq3c",
+          "content": "Montrer que : $\\displaystyle\\lim_{n \\to +\\infty} u_n = +\\infty$.",
+          "hint": "À partir de $u_{n+1} - u_n > \\ln(2)$, montrez par récurrence que $u_n > n\\ln(2)$. $u_n > n\\ln(2) \\to +\\infty$ quand $n \\to +\\infty$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Soit $(v_n)$ la suite numérique définie par : $(\\forall n \\in \\mathbb{N})\\,;\\, v_n = 1 + e^{u_n}$.",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Montrer que $(v_n)_{n \\geq 0}$ est une suite géométrique de raison $2$.",
+          "hint": "Calculez $\\dfrac{v_{n+1}}{v_n} = \\dfrac{1 + e^{u_{n+1}}}{1 + e^{u_n}}$. $e^{u_{n+1}} = e^{f(u_n)} = e^{\\ln(1+2e^{u_n})} = 1 + 2e^{u_n}$. Substituez et simplifiez."
+        },
+        {
+          "id": "sq4b",
+          "content": "Déterminer $u_n$ en fonction de $n$ pour tout $n$ de $\\mathbb{N}$.",
+          "hint": "Exprimez $v_n$ en fonction de $n$ grâce à la suite géométrique, puis déduisez $e^{u_n} = v_n - 1$ et prenez le logarithme. $v_n = v_0 \\cdot 2^n = 2 \\cdot 2^n = 2^{n+1}$."
+        },
+        {
+          "id": "sq4c",
+          "content": "Calculer $\\displaystyle\\lim_{n \\to +\\infty} \\dfrac{u_n}{n}$.",
+          "hint": "Exprimez $\\dfrac{u_n}{n}$ à partir de l'expression de $u_n$ trouvée en 4b. $u_n = \\ln(2^{n+1} - 1)$. Pour les grands $n$, $2^{n+1} - 1 \\sim 2^{n+1}$, donc $u_n \\sim (n+1)\\ln 2$."
+        }
+      ]
+    }
+  ]
+}

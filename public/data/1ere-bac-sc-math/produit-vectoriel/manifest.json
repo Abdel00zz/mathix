@@ -1,0 +1,34 @@
+{
+  "id": "produit-vectoriel",
+  "title": "Produit vectoriel",
+  "section": "algebre-geometrie",
+  "quizCount": 20,
+  "revisions": [
+    {
+      "id": "rev-prod-vect-1",
+      "title": "Fiche Complète : Produit Vectoriel",
+      "path": "data/1ere-bac-sc-math/produit-vectoriel/revisions/fiche_produit_vectoriel_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-produit-vectoriel-01",
+      "path": "data/1ere-bac-sc-math/produit-vectoriel/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-produit-vectoriel-02",
+      "path": "data/1ere-bac-sc-math/produit-vectoriel/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-produit-vectoriel-03",
+      "path": "data/1ere-bac-sc-math/produit-vectoriel/exercises/ex_03.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-produit-vectoriel-1",
+      "path": "data/1ere-bac-sc-math/produit-vectoriel/quiz/produit-vectoriel_quiz.json",
+      "questionsCount": 20
+    }
+  ]
+}

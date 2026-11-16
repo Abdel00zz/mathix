@@ -1,0 +1,83 @@
+{
+  "id": "ex-complexes-18",
+  "topic": "Nombres complexes - Bac National 2019 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2019,
+  "examenSession": "Rattrapage",
+  "context": "Soit $\\alpha$ un nombre complexe non nul.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans l'ensemble des nombres complexes $\\mathbb{C}$ l'équation d'inconnue $z$ : $(E_\\alpha):z^2-i\\alpha\\sqrt3z-\\alpha^2=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p1q1a",
+          "content": "Vérifier que le discriminant de $(E_\\alpha)$ est $\\Delta=\\alpha^2$.",
+          "hint": "Calculez $\\Delta=(i\\alpha\\sqrt3)^2+4\\alpha^2$ en faisant attention au signe de $i^2$ et de $(\\sqrt3)^2$."
+        },
+        {
+          "id": "p1q1b",
+          "content": "Résoudre dans $\\mathbb{C}$ l'équation $(E_\\alpha)$.",
+          "hint": "Une racine carrée de $\\Delta$ est $\\alpha$ ; appliquez directement la formule des racines."
+        }
+      ]
+    },
+    {
+      "id": "p1q2",
+      "content": "Sachant que $\\alpha=|\\alpha|e^{i\\lambda}$ $(\\lambda\\in\\mathbb{R})$, mettre les deux racines de l'équation $(E_\\alpha)$ sous la forme exponentielle.",
+      "hint": "Factorisez chaque racine par $\\alpha=|\\alpha|e^{i\\lambda}$ et identifiez le coefficient restant ($\\frac{1+i\\sqrt3}2$ ou $\\frac{-1+i\\sqrt3}2$) à sa forme exponentielle standard."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "On suppose que le plan complexe est rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. On considère les points $\\Omega$, $M_1$ et $M_2$ d'affixes respectivement $\\alpha$, $z_1=\\dfrac{1+i\\sqrt3}{2}\\alpha$ et $z_2=\\dfrac{-1+i\\sqrt3}{2}\\alpha$ et soit $R$ la rotation de centre $O$ et d'angle $\\dfrac{\\pi}{3}$."
+    },
+    {
+      "id": "p2q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q1a",
+          "content": "Montrer que $R(\\Omega)=M_1$ et que $R(M_1)=M_2$.",
+          "hint": "Vérifiez que $z_1=e^{i\\pi/3}\\alpha$ et $z_2=e^{i\\pi/3}z_1$ en identifiant $\\frac{1+i\\sqrt3}2$ et $\\frac{-1+i\\sqrt3}2$ à des exponentielles."
+        },
+        {
+          "id": "p2q1b",
+          "content": "En déduire que les deux triangles $O\\Omega M_1$ et $OM_1M_2$ sont équilatéraux.",
+          "hint": "Une rotation d'angle $\\pi/3$ centrée en $O$ envoyant un point sur un autre donne un triangle équilatéral avec le centre : appliquez ce principe deux fois."
+        }
+      ]
+    },
+    {
+      "id": "p2q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Vérifier que : $z_1-z_2=\\alpha$.",
+          "hint": "Il suffit de soustraire directement les deux expressions données de $z_1$ et $z_2$."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que les deux droites $(\\Omega M_2)$ et $(OM_1)$ sont orthogonales.",
+          "hint": "Calculez le quotient $\\dfrac{z_2-\\alpha}{z_1-0}$ et montrez qu'il est imaginaire pur."
+        },
+        {
+          "id": "p2q2c",
+          "content": "En déduire que $O\\Omega M_1M_2$ est un losange.",
+          "hint": "Un losange est un parallélogramme à diagonales perpendiculaires : vérifiez le parallélogramme via les milieux des diagonales $[\\Omega M_2]$ et $[OM_1]$, puis utilisez l'orthogonalité déjà montrée."
+        }
+      ]
+    },
+    {
+      "id": "p2q3",
+      "content": "Montrer que pour tout réel $\\theta$, le nombre $Z=\\dfrac{z_2-\\alpha}{z_1-\\alpha}\\div\\dfrac{z_2-|\\alpha|e^{i\\theta}}{z_1-|\\alpha|e^{i\\theta}}$ est un réel.",
+      "hint": "Remplacez $z_1,z_2$ par leurs expressions en fonction de $\\alpha$ et simplifiez chaque quotient séparément avant de faire le rapport final."
+    }
+  ]
+}

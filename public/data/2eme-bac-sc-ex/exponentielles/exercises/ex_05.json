@@ -1,0 +1,88 @@
+{
+  "id": "ex-exp-005",
+  "theme": "exponentielles",
+  "difficulty": "moyen",
+  "topic": "Analyse - Fonctions exponentielles",
+  "context": "On considère la fonction numérique $f$ définie sur $\\mathbb{R}$ par : $$f(x) = -x + \\frac{5}{2} - \\frac{1}{2}e^{x-2}(e^{x-2} - 4)$$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i},\\overrightarrow{j})$ (unité : 2 cm).",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to -\\infty} f(x) = +\\infty$ et $\\displaystyle \\lim_{x \\to +\\infty} f(x) = -\\infty$.",
+      "hint": "Développez l'expression de $f(x)$. Quel est le terme dominant lorsque $x \\to +\\infty$ ? Et lorsque $x \\to -\\infty$ ? Rappelez-vous que $\\lim_{u \\to -\\infty} e^u = 0$."
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Démontrer que la droite $(\\Delta)$ d'équation $y = -x + \\frac{5}{2}$ est une asymptote à la courbe $(C)$ au voisinage de $-\\infty$.",
+          "hint": "Calculez la limite de la différence $f(x) - (-x + \\frac{5}{2})$ lorsque $x \\to -\\infty$. Quelle est la définition d'une asymptote oblique ?"
+        },
+        {
+          "id": "sq2b",
+          "content": "Résoudre l'équation $e^{x-2} - 4 = 0$ puis montrer que la courbe $(C)$ est au-dessus de $(\\Delta)$ sur l'intervalle $]-\\infty; 2 + \\ln 4]$ et en dessous de $(\\Delta)$ sur l'intervalle $[2 + \\ln 4; +\\infty[$.",
+          "hint": "\\method Pour la position relative, étudiez le signe de la différence $f(x) - (-x + \\frac{5}{2})$. Le signe dépend de quel facteur ?"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que $\\displaystyle \\lim_{x \\to +\\infty} \\frac{f(x)}{x} = -\\infty$ et interpréter géométriquement le résultat.",
+      "hint": "\\method Calculez $\\lim_{x \\to +\\infty} \\frac{f(x)}{x}$. Factorisez par $e^{2x}$ pour évaluer la limite, en utilisant les croissances comparées. Si la limite est infinie, quelle est la nature de la branche infinie ?"
+    },
+    {
+      "id": "q4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Montrer que pour tout $x$ de $\\mathbb{R}$ : $f'(x) = -(e^{x-2} - 1)^2$.",
+          "hint": "\\method Développez d'abord $f(x)$ pour simplifier la dérivation. Calculez $f'(x)$ terme à terme. Ensuite, développez $-(e^{x-2} - 1)^2$ et comparez les deux expressions."
+        },
+        {
+          "id": "sq4b",
+          "content": "Dresser le tableau de variations de $f$.",
+          "hint": "Quel est le signe d'un carré ? Que pouvez-vous en déduire sur le signe de $f'(x)$ ? Pour quel(s) point(s) la dérivée s'annule-t-elle ?"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Calculer $f''(x)$ pour tout $x$ de $\\mathbb{R}$ puis montrer que $A(2, 2)$ est un point d'inflexion de $(C)$.",
+      "hint": "\\method Calculez la dérivée seconde $f''(x)$. Pour qu'un point soit un point d'inflexion, que doit vérifier la dérivée seconde ? Étudiez le signe de $f''(x)$."
+    },
+    {
+      "id": "q6",
+      "content": "Montrer que l'équation $f(x) = 0$ admet une solution unique $\\alpha$ telle que $2 + \\ln 3 < \\alpha < 2 + \\ln 4$.",
+      "hint": "\\method Appliquez le théorème des valeurs intermédiaires (TVI). Quelles sont les trois conditions à vérifier pour prouver l'existence d'une solution unique ?"
+    },
+    {
+      "id": "q7",
+      "content": "Construire $(\\Delta)$ et $(C)$ dans le repère $(O;\\overrightarrow{i},\\overrightarrow{j})$ (On prend : $f(2) \\simeq 1.25$) ci-dessous (on prend $\\ln 2 \\simeq 0.7$ et $\\ln 3 \\simeq 1.1$).",
+      "hint": "\\step Tracez l'asymptote oblique, le point d'inflexion (qui est aussi un point à tangente horizontale), puis esquissez la courbe en respectant les variations et la position relative."
+    },
+    {
+      "id": "q8",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq8a",
+          "content": "Montrer que la fonction $f$ admet une fonction réciproque $f^{-1}$ définie sur $\\mathbb{R}$.",
+          "hint": "Quelles sont les conditions (continuité et monotonie) pour qu'une fonction admette une bijection réciproque ? Vérifiez-les pour $f$ sur $\\mathbb{R}$."
+        },
+        {
+          "id": "sq8b",
+          "content": "Construire dans le même repère $(O;\\overrightarrow{i},\\overrightarrow{j})$ la courbe représentative de $f^{-1}$ (Remarquer que la droite $(\\Delta)$ est perpendiculaire à la première bissectrice du repère).",
+          "hint": "Quelle est la relation géométrique entre la courbe de $f$ et celle de $f^{-1}$ ? Comment se transforme une asymptote par cette symétrie ?"
+        },
+        {
+          "id": "sq8c",
+          "content": "Calculer $(f^{-1})(2 - \\ln 3)$ (Remarquer que $f^{-1}(2 - \\ln 3) = 2 + \\ln 3$).",
+          "hint": "Rappelez-vous que $f^{-1}(y) = x \\iff f(x) = y$. Pour trouver $f^{-1}(2 - \\ln 3)$, il suffit de vérifier que l'image d'un certain point par $f$ est $2 - \\ln 3$."
+        }
+      ]
+    }
+  ]
+}

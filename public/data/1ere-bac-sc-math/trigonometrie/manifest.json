@@ -1,0 +1,75 @@
+{
+  "id": "trigonometrie",
+  "title": "Calcul trigonométrique",
+  "section": "analyse",
+  "revisions": [
+    {
+      "id": "rev-trigo-1",
+      "title": "Fiche Complète : Trigonométrie",
+      "path": "data/1ere-bac-sc-math/trigonometrie/revisions/fiche_trigonometrie_cours.json"
+    },
+    {
+      "id": "rev-trigo-1bac-sm-2",
+      "path": "data/1ere-bac-sc-math/trigonometrie/revisions/fiche_trigonometrie.json",
+      "title": "Trigonométrie — Fiche de Cours & Méthodes"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-trigo-001",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_01.json"
+    },
+    {
+      "id": "ex-trigo-002",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_02.json"
+    },
+    {
+      "id": "ex-trigo-003",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_03.json"
+    },
+    {
+      "id": "ex-trigo-004",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_04.json"
+    },
+    {
+      "id": "ex-trigo-005",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_05.json"
+    },
+    {
+      "id": "ex-trigo-006",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_06.json"
+    },
+    {
+      "id": "ex-trigo-007",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_07.json"
+    },
+    {
+      "id": "ex-trigo-008",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_08.json"
+    },
+    {
+      "id": "ex-trigo-009",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_09.json"
+    },
+    {
+      "id": "ex-trigo-010",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_10.json"
+    },
+    {
+      "id": "ex-trigo-011",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_11.json"
+    },
+    {
+      "id": "ex-trigo-012",
+      "path": "data/1ere-bac-sc-math/trigonometrie/exercises/ex_trigo_12.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-trigonometrie-01",
+      "path": "data/1ere-bac-sc-math/trigonometrie/quiz/trigonometrie_quiz.json",
+      "questionsCount": 10
+    }
+  ],
+  "quizCount": 10
+}

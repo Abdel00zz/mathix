@@ -1,0 +1,91 @@
+{
+  "id": "ex-log-bac-1",
+  "theme": "logarithmes",
+  "difficulty": "difficile",
+  "topic": "Analyse - Fonctions Logarithmes & Suites",
+  "context": "Problème d'analyse complet sur l'étude d'une fonction logarithmique et d'une suite récurrente associée.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "p1",
+      "type": "header",
+      "content": "Soit $g$ la fonction définie sur $]0; +\\infty[$ par : $$g(x) = x - 1 - \\ln x$$"
+    },
+    {
+      "id": "q1-1",
+      "content": "Calculer $g'(x)$ et donner le tableau des variations de $g$ sur $]0; +\\infty[$.",
+      "hint": "Calculez la dérivée $g'(x)$. Pour étudier son signe, mettez l'expression au même dénominateur et analysez le signe du numérateur."
+    },
+    {
+      "id": "q1-2",
+      "content": "A partir du tableau de variation, déduire que $(\\forall x \\in ]0; +\\infty[) \\; g(x) \\ge 0$.",
+      "hint": "Le tableau de variation de $g$ montre une valeur minimale. Calculez cette valeur. Si le minimum d'une fonction est nul, que pouvez-vous conclure sur son signe global ?"
+    },
+    {
+      "id": "p2",
+      "type": "header",
+      "content": "Soit $f$ la fonction définie sur $[0; +\\infty[$ par : $$\\begin{cases} f(x) = \\displaystyle\\frac{x}{x - \\ln x} & \\text{si } x > 0 \\\\ f(0) = 0 \\end{cases}$$"
+    },
+    {
+      "id": "q2-1",
+      "content": "Montrer que la fonction $f$ est continue à droite au point $x_0 = 0$.",
+      "hint": "Il faut calculer $\\displaystyle\\lim_{x \\to 0^+} f(x)$ et la comparer à $f(0)$. La limite usuelle de $\\ln x$ en $0^+$ est la clé pour le dénominateur."
+    },
+    {
+      "id": "q2-2",
+      "content": "Étudier la dérivabilité de la fonction $f$ à droite au point $x_0 = 0$ puis donner l'interprétation géométrique de ce résultat.",
+      "hint": "Calculez la limite du taux d'accroissement : $\\displaystyle\\lim_{x \\to 0^+} \\frac{f(x)}{x}$. Le résultat donne la pente de la demi-tangente à droite en $0$."
+    },
+    {
+      "id": "q2-3",
+      "content": "Calculer $\\lim_{x \\to +\\infty} f(x)$ puis donner l'interprétation géométrique de ce résultat.",
+      "hint": "Factorisez par $x$ au dénominateur : $f(x) = \\dfrac{x}{x(1 - \\frac{\\ln x}{x})}$. Utilisez la limite de référence pour $\\frac{\\ln x}{x}$ en $+\\infty$. Une limite finie en $+\\infty$ correspond à une asymptote horizontale."
+    },
+    {
+      "id": "q2-4",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "a",
+          "content": "Montrer que : $(\\forall x \\in ]0; +\\infty[) \\; f'(x) = \\displaystyle\\frac{1 - \\ln x}{(x - \\ln x)^2}$.",
+          "hint": "Appliquez la formule de dérivation d'un quotient $\\displaystyle \\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$ avec $u(x)=x$ et $v(x)=x-\\ln x$."
+        },
+        {
+          "id": "b",
+          "content": "Dresser le tableau des variations de $f$ sur $[0; +\\infty[$.",
+          "hint": "Le signe de $f'(x)$ est celui de son numérateur, $1 - \\ln x$. Résolvez l'inéquation $1 - \\ln x > 0$ pour déterminer les intervalles de monotonie."
+        }
+      ]
+    },
+    {
+      "id": "q2-5",
+      "content": "Montrer que : $(\\forall x \\in ]0; +\\infty[) \\; f(x) - x = -\\displaystyle\\frac{xg(x)}{x - \\ln x}$. En déduire que $(\\forall x \\in ]0; +\\infty[) \\; f(x) \\le x$.",
+      "hint": "Pour la première partie, réduisez $f(x)-x$ au même dénominateur. Pour la déduction, étudiez le signe de chaque terme de l'expression trouvée, en utilisant le signe de $g(x)$ démontré en Partie I."
+    },
+    {
+      "id": "q2-6",
+      "content": "Construire $(C)$ la courbe représentative de $f$ (on prend $f(e) \\approx 1.60$; unité 2cm).",
+      "hint": "Synthétisez tous les résultats : comportement en $0$, asymptote en $+\\infty$, tableau de variations, et position relative par rapport à la droite $y=x$. N'oubliez pas l'unité de 2cm."
+    },
+    {
+      "id": "p3",
+      "type": "header",
+      "content": "Soit $(u_n)$ une suite définie par : $u_0 = \\frac{1}{2}$ et $u_{n+1} = f(u_n)$ pour tout $n \\in \\mathbb{N}$."
+    },
+    {
+      "id": "q3-1",
+      "content": "Montrer par récurrence que $0 \\le u_n \\le 1$ pour tout $n \\in \\mathbb{N}$.",
+      "hint": "**Initialisation :** Vérifiez pour $u_0$. **Hérédité :** Supposez $0 \\le u_n \\le 1$. L'image d'un intervalle par une fonction continue et monotone est un intervalle. Utilisez les variations de $f$ sur $[0, 1]$ pour trouver $f([0, 1])$."
+    },
+    {
+      "id": "q3-2",
+      "content": "Montrer que $(u_n)$ est décroissante puis est convergente (Utiliser question 5 partie II).",
+      "hint": "Pour la monotonie, étudiez le signe de $u_{n+1} - u_n$. Rappelez-vous l'étude du signe de $f(x) - x$ de la Partie II. Une suite décroissante et minorée converge toujours."
+    },
+    {
+      "id": "q3-3",
+      "content": "Calculer la limite de la suite $(u_n)$.",
+      "hint": "La limite $\\ell$ d'une suite convergente $u_{n+1}=f(u_n)$ vérifie l'équation du point fixe $f(\\ell) = \\ell$. Résolvez cette équation et choisissez la solution cohérente avec le comportement de la suite."
+    }
+  ]
+}

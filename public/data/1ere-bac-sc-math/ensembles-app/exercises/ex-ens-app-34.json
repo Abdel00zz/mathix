@@ -1,0 +1,30 @@
+{
+  "id": "ex-ens-app-34",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Applications sur $\\mathcal{P}(E)$ et bijectivité",
+  "requiresRedaction": true,
+  "context": "Soient $A$ et $B$ deux parties non vides d'un ensemble $E$. On considère les applications suivantes : $f : \\mathcal{P}(E) \\to \\mathcal{P}(A) \\times \\mathcal{P}(\\overline{A})$, $X \\mapsto (A \\setminus X\\,;\\; \\overline{A} \\setminus X)$ et $g : \\mathcal{P}(A) \\times \\mathcal{P}(\\overline{A}) \\to \\mathcal{P}(E)$, $(X;Y) \\mapsto X \\cup Y$ et $h : \\mathcal{P}(E) \\to \\mathcal{P}(E)$, $X \\mapsto \\overline{X}$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $h$ est bijective et que $h^{-1} = h$.",
+      "hint": "Montrez que $h \\circ h = \\text{Id}$ : $\\overline{\\overline{X}} = X$. Une involution est toujours bijective et égale à sa propre réciproque."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que $g \\circ f = h$.",
+      "hint": "Calculez $(g \\circ f)(X) = g(A \\setminus X\\,;\\, \\overline{A} \\setminus X) = (A \\setminus X) \\cup (\\overline{A} \\setminus X)$. Utilisez la propriété $(A \\setminus X) \\cup (\\overline{A} \\setminus X) = (A \\cup \\overline{A}) \\setminus X = E \\setminus X = \\overline{X}$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que $g$ est injective et surjective. En déduire que $g$ est bijective.",
+      "hint": "Injectivité : si $(X_1 \\cup Y_1) = (X_2 \\cup Y_2)$ avec $X_i \\subset A$ et $Y_i \\subset \\overline{A}$, montrez que $X_1 = X_2$ et $Y_1 = Y_2$ (intersectez avec $A$ et $\\overline{A}$). Surjectivité : pour tout $Z \\in \\mathcal{P}(E)$, posez $X = Z \\cap A$ et $Y = Z \\cap \\overline{A}$."
+    },
+    {
+      "id": "q4",
+      "content": "En déduire que $f$ est bijective et déterminer sa bijection réciproque $f^{-1}$.",
+      "hint": "$g \\circ f = h$ avec $g$ et $h$ bijectives. $f = g^{-1} \\circ h$ est donc bijective (composée de bijections). $f^{-1} = h^{-1} \\circ g = h \\circ g$ (car $h^{-1} = h$)."
+    }
+  ]
+}

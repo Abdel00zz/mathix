@@ -1,0 +1,66 @@
+{
+  "id": "ex-complexes-21",
+  "topic": "Nombres complexes - Bac National 2013 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2013,
+  "examenSession": "Normale",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "Soit $a$ un nombre complexe non nul. Soit dans l'ensemble $\\mathbb{C}$ l'équation d'inconnue $z$ : $(E):2z^2-(3+i\\sqrt3)az+(1+i\\sqrt3)a^2=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "Vérifier que le discriminant de l'équation $(E)$ est : $(-1+i\\sqrt3)^2a^2$.",
+      "hint": "Calculez $\\Delta=(3+i\\sqrt3)^2a^2-8(1+i\\sqrt3)a^2$, développez et factorisez par $a^2$."
+    },
+    {
+      "id": "p1q2",
+      "content": "Résoudre dans $\\mathbb{C}$ l'équation $(E)$.",
+      "hint": "Une racine carrée de $\\Delta$ est $(-1+i\\sqrt3)a$ ; appliquez la formule des racines avec $\\alpha=2$."
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe étant muni d'un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. On considère les points $A$, $B$ et $M$ d'affixes respectifs $a$, $b=ae^{i\\pi/3}$ et $z$. Soit $r$ la rotation de centre $M$ et d'angle $\\dfrac{\\pi}{3}$. On pose $A_1=r^{-1}(A)$ et $B_1=r(B)$ ($r^{-1}$ désigne la rotation réciproque de $r$) et soient $a_1$ et $b_1$ les affixes respectifs de $A_1$ et $B_1$."
+    },
+    {
+      "id": "p2q1",
+      "content": "Vérifier que le triangle $OAB$ est équilatéral.",
+      "hint": "Calculez $\\dfrac{b}{a}=e^{i\\pi/3}$, ce qui montre à la fois l'égalité des longueurs $OA=OB$ et l'angle en $O$ égal à $\\pi/3$."
+    },
+    {
+      "id": "p2q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Montrer que : $a_1=\\left(\\dfrac12-i\\dfrac{\\sqrt3}{2}\\right)a+\\left(\\dfrac12+i\\dfrac{\\sqrt3}{2}\\right)z$ et $b_1=\\left(-\\dfrac12+i\\dfrac{\\sqrt3}{2}\\right)a+\\left(\\dfrac12-i\\dfrac{\\sqrt3}{2}\\right)z$.",
+          "hint": "$A_1=r^{-1}(A)$ signifie $a-z=e^{i\\pi/3}(a_1-z)$, isolez $a_1$ ; de même $b_1-z=e^{i\\pi/3}(b-z)$ donne directement $b_1$, en remplaçant $b=ae^{i\\pi/3}$."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que le quadrilatère $OA_1MB_1$ est un parallélogramme.",
+          "hint": "Un quadrilatère $OA_1MB_1$ est un parallélogramme si les diagonales $[OM]$ et $[A_1B_1]$ ont le même milieu ; comparez $\\dfrac{0+z}{2}$ à $\\dfrac{a_1+b_1}{2}$ à l'aide des expressions précédentes."
+        }
+      ]
+    },
+    {
+      "id": "p2q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q3a",
+          "content": "On suppose que $M\\ne A$ et $M\\ne B$. Montrer que : $\\dfrac{z-b_1}{z-a_1}=-\\dfrac{z-b}{z-a}\\times\\dfrac{a}{b}$.",
+          "hint": "Exprimez $z-a_1$ et $z-b_1$ à partir des relations de rotation ($z-a_1=e^{-i\\pi/3}(z-a)$ et $z-b_1=e^{i\\pi/3}(z-b)$), faites le quotient et simplifiez les exponentielles, en utilisant $b/a=e^{i\\pi/3}$."
+        },
+        {
+          "id": "p2q3b",
+          "content": "Montrer que $M$, $A_1$ et $B_1$ sont alignés si est seulement si $M$, $O$, $A$ et $B$ sont cocycliques.",
+          "hint": "L'alignement de $M,A_1,B_1$ équivaut à $\\dfrac{z-b_1}{z-a_1}\\in\\mathbb{R}$ ; d'après la question précédente, cela équivaut à $\\dfrac{z-b}{z-a}\\times\\dfrac ab$ réel, c'est-à-dire à un birapport réel des quatre points $M,O,A,B$, critère de cocyclicité (ou d'alignement)."
+        }
+      ]
+    }
+  ]
+}

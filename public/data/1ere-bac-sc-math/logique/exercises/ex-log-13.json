@@ -1,0 +1,30 @@
+{
+  "id": "ex-log-13",
+  "theme": "logique",
+  "difficulty": "moyen",
+  "topic": "Logique & Raisonnements — Raisonnement par contraposée",
+  "requiresRedaction": true,
+  "context": "À l'aide d'un raisonnement par contraposée, établir les implications suivantes :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Pour tous $x, y \\in \\mathbb{R}$ : $(xy \\neq 1$ et $x \\neq y) \\Rightarrow \\dfrac{x}{x^2+x+1} \\neq \\dfrac{y}{y^2+y+1}$",
+      "hint": "La contraposée est : $\\dfrac{x}{x^2+x+1} = \\dfrac{y}{y^2+y+1} \\Rightarrow (xy = 1$ ou $x = y)$. Partez de l'égalité et factorisez."
+    },
+    {
+      "id": "q2",
+      "content": "Pour tous $x, y \\in \\mathbb{R}$ : $x + y > 2 \\Rightarrow (x > z$ ou $y > z)$",
+      "hint": "La contraposée est : $(x \\leq z$ et $y \\leq z) \\Rightarrow x + y \\leq 2$. Choisissez $z$ convenablement."
+    },
+    {
+      "id": "q3",
+      "content": "$(\\forall x \\in [2;+\\infty[)(\\forall y \\in [3;+\\infty[)$ : $(x \\neq 11$ ou $y \\neq 28) \\Rightarrow x + y - 6\\sqrt{x-2} - 10\\sqrt{y-3} + 29 \\neq 0$",
+      "hint": "La contraposée est : si la somme est nulle, alors $x = 11$ et $y = 28$. Complétez les carrés : $x - 6\\sqrt{x-2}$ et $y - 10\\sqrt{y-3}$."
+    },
+    {
+      "id": "q4",
+      "content": "$(x \\neq y$ et $x + y \\neq -1) \\Rightarrow x^2 + xy + y \\neq x^2$",
+      "hint": "La contraposée est : $x^2 + xy + y = x^2 \\Rightarrow (x = y$ ou $x + y = -1)$. Factorisez le membre gauche."
+    }
+  ]
+}

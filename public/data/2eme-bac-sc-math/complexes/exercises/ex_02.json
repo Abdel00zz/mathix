@@ -1,0 +1,47 @@
+{
+  "id": "ex-complexes-02",
+  "topic": "Nombres complexes - Bac National 2016 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2016,
+  "examenSession": "Rattrapage",
+  "context": "On considère dans l'ensemble des nombres complexes $\\mathbb{C}$ l'équation $(E)$ d'inconnue $z$ : $(E):z^2-(1+\\sqrt3)(1+i)z+4i=0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Vérifier que $\\Delta=\\left((\\sqrt3-1)(1-i)\\right)^2$ est le discriminant de l'équation $(E)$.",
+          "hint": "Développez $(1+\\sqrt3)^2(1+i)^2-16i$ puis essayez de retrouver ce carré, en pensant que $(1+i)^2=2i$."
+        },
+        {
+          "id": "q1b",
+          "content": "Écrire sous forme trigonométrique chacune des solutions de l'équation $(E)$.",
+          "hint": "Une racine carrée de $\\Delta$ est $(\\sqrt3-1)(1-i)$ ; calculez chaque solution sous forme algébrique, puis mettez-la sous forme trigonométrique (module et argument)."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Le plan complexe est rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. On considère les points $A$ et $B$ d'affixes respectifs $a=1+i\\sqrt3$ et $b=\\sqrt3+i$.",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Montrer que l'ensemble $(D)$ des points $M(z)$ tels que $z=\\dfrac12a\\bar z$ est une droite passant par $B$.",
+          "hint": "Écrivez $z=x+iy$, remplacez et séparez partie réelle et imaginaire pour obtenir une équation cartésienne linéaire ; vérifiez ensuite que les coordonnées de $B$ la satisfont."
+        },
+        {
+          "id": "q2b",
+          "content": "Soient $M$ et $M'$ deux points d'affixes respectifs $z$ et $z'$ tels que $z'=a\\bar z-b$ et $z\\ne b$. Montrer que : $\\dfrac{b^2}{(z'-b)(z-b)}=\\dfrac{2}{|z-b|^2}$.",
+          "hint": "Exprimez $z'-b=a\\bar z-2b$, remplacez $a$ et $b$ par leurs valeurs et cherchez à faire apparaître $\\overline{z-b}$ au numérateur pour relier à $|z-b|^2=(z-b)\\overline{(z-b)}$."
+        },
+        {
+          "id": "q2c",
+          "content": "En déduire que la droite $(D)$ est la bissectrice de l'angle $\\left(\\overrightarrow{BM'},\\overrightarrow{OB}\\right)$.",
+          "hint": "Prenez l'argument de la relation précédente pour relier l'angle $(\\overrightarrow{BM'},\\overrightarrow{BM})$ à l'argument de $b^2$, sachant que $(D)$ correspond aux points $M$ tels que $\\overrightarrow{BM}$ soit colinéaire à un vecteur directeur fixe lié à $a$."
+        }
+      ]
+    }
+  ]
+}

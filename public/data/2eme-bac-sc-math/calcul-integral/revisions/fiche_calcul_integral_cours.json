@@ -1,0 +1,382 @@
+{
+  "header": {
+    "title": "Calcul intégral",
+    "subtitle": "Primitives, techniques de calcul, encadrements, aires, volumes et sommes de Riemann",
+    "context": "2BAC Sciences Mathématiques BIOF"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Le calcul intégral permet d'\\objectif{calculer exactement une accumulation, une aire, un volume ou la limite d'une somme}. La \\defi{difficulté} principale consiste à reconnaître la structure de l'intégrande avant de choisir une primitive, un découpage ou une transformation. \\savant{Gottfried Wilhelm Leibniz} fixa la notation intégrale moderne et relia durablement dérivation et calcul des aires.",
+          "media": {
+            "src": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Gottfried_Wilhelm_von_Leibniz.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "15%",
+            "caption": "Gottfried Wilhelm Leibniz (1646-1716)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definition-proprietes-integrale",
+      "category": "course",
+      "title": "Définition et propriétés de $\\displaystyle\\int_a^b f(x)\\,dx$",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le calcul intégral prolonge l'étude des primitives. On commence par définir précisément le nombre associé à deux bornes, puis on établit les règles qui permettent de le transformer."
+        },
+        {
+          "type": "definition",
+          "title": "Comment définir \\mathqst{l'intégrale à partir d'une primitive}",
+          "content": "Soit $f$ une fonction continue sur un intervalle $I$, et soient $a,b\\in I$. Si $F$ est une primitive de $f$ sur $I$, on définit :$$\\large\\boxed{\\displaystyle\\int_a^b f(x)\\,dx=F(b)-F(a)}$$La lettre $x$ est une \\textbf{variable d'intégration muette}. On peut donc écrire la même intégrale avec une autre lettre."
+        },
+        {
+          "type": "proof",
+          "title": "Indépendance par rapport à la primitive choisie",
+          "content": "Soient $F$ et $G$ deux primitives de $f$ sur $I$. La fonction $F-G$ a une dérivée nulle, elle est donc constante sur $I$. Il existe alors une constante $C$ telle que $F(x)=G(x)+C$. Par conséquent :$$F(b)-F(a)=G(b)+C-G(a)-C=G(b)-G(a)$$La valeur de l'intégrale ne dépend donc pas de la primitive choisie."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons trois intégrales par reconnaissance directe d'une primitive.\\begin{enumerate}\\item $A=\\displaystyle\\int_2^5(3x^2+4x-5)\\,dx$.\\item $B=\\displaystyle\\int_{-1}^{1}e^{-2x}\\,dx$.\\item $C=\\displaystyle\\int_0^1\\dfrac{e^x}{e^x+3}\\,dx$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Une primitive est $x^3+\\blank{2}x^2-5x$. Donc :$$A=\\left[x^3+2x^2-5x\\right]_2^5=\\boxed{\\blank{144}}$$\\item Une primitive est $-\\dfrac{1}{\\blank{2}}e^{-2x}$. Ainsi :$$B=\\left[-\\dfrac12e^{-2x}\\right]_{-1}^{1}=\\boxed{\\dfrac{e^2}{2}-\\dfrac{1}{2e^2}}$$\\item On reconnaît une forme $u'/u$ avec $u(x)=\\blank{e^x+3}$. Donc :$$C=\\left[\\ln(e^x+3)\\right]_0^1=\\boxed{\\ln\\!\\left(\\dfrac{e+3}{4}\\right)}$$\\end{enumerate}"
+        },
+        {
+          "type": "property",
+          "title": "Comment utiliser \\mathqst{les bornes, Chasles et la linéarité}",
+          "content": "Pour $f$ et $g$ continues sur $I$, et $a,b,c\\in I$ :\\begin{itemize}\\item $\\displaystyle\\int_a^a f(x)\\,dx=0$.\\item $\\displaystyle\\int_b^a f(x)\\,dx=-\\int_a^b f(x)\\,dx$.\\item $\\displaystyle\\int_a^c f(x)\\,dx+\\int_c^b f(x)\\,dx=\\int_a^b f(x)\\,dx$.\\item Pour $\\lambda,\\mu\\in\\mathbb{R}$ :$$\\int_a^b\\bigl(\\lambda f(x)+\\mu g(x)\\bigr)\\,dx=\\lambda\\int_a^b f(x)\\,dx+\\mu\\int_a^b g(x)\\,dx$$\\end{itemize}"
+        },
+        {
+          "type": "proof",
+          "title": "Justification de l'inversion des bornes et de Chasles",
+          "content": "Soit $F$ une primitive de $f$. Pour l'inversion des bornes, on écrit :$$\\int_b^a f(x)\\,dx=F(a)-F(b)=-\\bigl(F(b)-F(a)\\bigr)=-\\int_a^b f(x)\\,dx$$Pour la relation de Chasles :$$\\int_a^c f(x)\\,dx+\\int_c^b f(x)\\,dx=F(c)-F(a)+F(b)-F(c)=F(b)-F(a)$$Ainsi :$$\\int_a^c f(x)\\,dx+\\int_c^b f(x)\\,dx=\\int_a^b f(x)\\,dx$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $I=\\displaystyle\\int_{-2}^{0}|x^2+x|\\,dx$.}\\par\\smallskip Le polynôme $x^2+x=x(x+1)$ s'annule en $\\blank{-1}$ et $0$. Il est positif sur $[-2,-1]$ et $\\blank{\\text{négatif}}$ sur $[-1,0]$. On découpe donc au point $-1$ :\\begin{align*}I&=\\int_{-2}^{-1}(x^2+x)\\,dx+\\int_{-1}^{0}\\blank{(-x^2-x)}\\,dx\\\\&=\\blank{\\dfrac56}+\\dfrac16\\\\&=\\boxed{1}.\n\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Posons $A=\\displaystyle\\int_0^{2\\pi}\\cos^2x\\,dx$ et $B=\\displaystyle\\int_0^{2\\pi}\\sin^2x\\,dx$. Déterminons $A$ et $B$ sans calculer deux primitives distinctes.}\\par\\smallskip Par linéarité et puisque $\\cos^2x+\\sin^2x=1$ :$$A+B=\\int_0^{2\\pi}\\blank{1}\\,dx=2\\pi$$De plus, $\\cos^2x-\\sin^2x=\\blank{\\cos(2x)}$, donc :$$A-B=\\int_0^{2\\pi}\\cos(2x)\\,dx=\\blank{0}$$On résout le système obtenu :$$\\boxed{A=B=\\blank{\\pi}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Voici les points de vigilance à ne pas oublier : \\begin{itemize}\\item Inverser les bornes change le signe.\\item Une valeur absolue impose une étude de signe avant le calcul.\\item La relation de Chasles doit découper l'intervalle aux points où l'expression change de forme.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "fonctions-definies-par-integrale",
+      "category": "course",
+      "title": "Fonctions définies par une intégrale",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une intégrale peut dépendre d'une borne variable et définir ainsi une nouvelle fonction. La dérivation transforme alors l'étude de cette fonction en une étude de signe."
+        },
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{une intégrale fournit-elle une primitive}",
+          "content": "Soit $f$ continue sur un intervalle $I$, et soit $a\\in I$. La fonction définie par :$$F(x)=\\int_a^x f(t)\\,dt$$est l'unique primitive de $f$ sur $I$ qui s'annule en $a$. En particulier :$$\\large\\boxed{F'(x)=f(x)}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{étudier une fonction définie par une intégrale}",
+          "content": "Vérifier la \\textbf{continuité} de l'intégrande sur l'intervalle étudié. Dériver à l'aide du théorème fondamental. Étudier ensuite le signe de la dérivée obtenue. Utiliser enfin la valeur imposée par la borne fixe, souvent $F(a)=0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{On définit $U(x)=\\displaystyle\\int_0^x e^{t^2}(t^2-4)\\,dt$. Étudions les variations de $U$.}\\par\\smallskip L'intégrande est continue sur $\\mathbb{R}$. Le théorème fondamental donne :$$U'(x)=\\blank{e^{x^2}(x^2-4)}$$Comme $e^{x^2}>0$, le signe de $U'$ est celui de $\\blank{(x-2)(x+2)}$. Ainsi, $U$ est croissante sur $]-\\infty,\\blank{-2}]$ et $[2,+\\infty[$, puis $\\blank{\\text{décroissante}}$ sur $[-2,2]$."
+        },
+        {
+          "type": "property",
+          "title": "Comment dériver \\mathqst{une intégrale dont la borne dépend de $x$}",
+          "content": "Soit $f$ continue sur $I$, soit $v$ dérivable sur $J$ avec $v(J)\\subset I$, et soit $a\\in I$. Si :$$\\Psi(x)=\\int_a^{v(x)}f(t)\\,dt$$alors :$$\\large\\boxed{\\Psi'(x)=v'(x)f(v(x))}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $F(x)=\\displaystyle\\int_0^{x^2+2x}\\sqrt{1+t}\\,dt$. Déterminons son domaine et sa dérivée.}\\par\\smallskip On a $x^2+2x=(x+1)^2-\\blank{1}\\geq-1$. La borne supérieure appartient donc toujours au domaine de $t\\mapsto\\sqrt{1+t}$, et $F$ est définie sur $\\mathbb{R}$.\\par\\smallskip Par dérivation d'une borne variable :\\begin{align*}F'(x)&=\\blank{2(x+1)}\\sqrt{1+x^2+2x}\\\\&=2(x+1)\\blank{\\sqrt{(x+1)^2}}\\\\&=\\boxed{2(x+1)\\blank{|x+1|}}.\n\\end{align*}"
+        },
+        {
+          "type": "warning",
+          "content": "Une erreur classique, que vous ne devez pas commettre : $\\sqrt{u^2}=|u|$, et non $u$ dans tous les cas.\\par\\smallskip Le document source contient aussi des passages utilisant une fonction trigonométrique réciproque hors programme. Ils ne sont pas retenus dans les applications de cette fiche."
+        }
+      ]
+    },
+    {
+      "id": "reconnaissance-primitives",
+      "category": "course",
+      "title": "Reconnaissance directe des primitives",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avant toute transformation, il faut observer la structure de l'intégrande. Une dérivée intérieure visible permet souvent un calcul immédiat et évite des développements inutiles."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{reconnaître une primitive sans transformer inutilement}",
+          "content": "Chercher une forme $u'(x)u(x)^\\alpha$ ou $u'(x)/u(x)$. Vérifier le domaine lorsqu'un logarithme apparaît. Pour une fraction rationnelle, effectuer une décomposition adaptée avant d'intégrer. Pour une puissance trigonométrique, utiliser une identité qui simplifie réellement l'expression."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons $I=\\displaystyle\\int_1^e\\dfrac{(\\ln x)^3}{x}\\,dx$.}\\par\\smallskip On reconnaît $u(x)=\\ln x$ et $u'(x)=\\blank{1/x}$. Une primitive de l'intégrande est donc $\\blank{(\\ln x)^4/4}$. Ainsi :$$I=\\left[\\dfrac{(\\ln x)^4}{4}\\right]_1^e=\\boxed{\\blank{\\dfrac14}}$$"
+        },
+        {
+          "type": "technique",
+          "title": "Comment \\mathqst{linéariser une puissance trigonométrique paire}",
+          "content": "Utiliser les identités d'angle double pour transformer une puissance paire en somme de fonctions trigonométriques simples. Pour $\\cos^4x$, on obtient :$$\\cos^4x=\\dfrac38+\\dfrac12\\cos(2x)+\\dfrac18\\cos(4x)$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $K=\\displaystyle\\int_0^{\\pi/4}\\cos^4x\\,dx$.}\\par\\smallskip On utilise l'identité de linéarisation :\\begin{align*}K&=\\int_0^{\\pi/4}\\left(\\dfrac38+\\blank{\\dfrac12}\\cos2x+\\dfrac18\\cos4x\\right)dx\\\\&=\\left[\\dfrac{3x}{8}+\\dfrac{\\sin2x}{4}+\\blank{\\dfrac{\\sin4x}{32}}\\right]_0^{\\pi/4}\\\\&=\\boxed{\\blank{\\dfrac14}+\\dfrac{3\\pi}{32}}.\n\\end{align*}"
+        },
+        {
+          "type": "warning",
+          "content": "Attention, c’est ici que vous risquez de vous tromper : \\begin{itemize}\\item Une variable intérieure doit être accompagnée de sa dérivée.\\item Une erreur de signe dans une décomposition rationnelle contamine tout le calcul.\\item Une identité trigonométrique peut être contrôlée en testant une valeur simple.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "integration-parties-changement-variable",
+      "category": "course",
+      "title": "Intégration par parties et changement de variable",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lorsque la reconnaissance directe échoue, une transformation devient nécessaire. Deux techniques dominent : réduire un produit par dérivation ou remplacer la variable pour simplifier toute l'expression."
+        },
+        {
+          "type": "property",
+          "title": "Quelle est \\mathqst{la formule d'intégration par parties}",
+          "content": "Soient $u$ et $v$ dérivables sur $[a,b]$, avec $u'$ et $v'$ continues. Alors :$$\\large\\boxed{\\int_a^b u(x)v'(x)\\,dx=\\left[u(x)v(x)\\right]_a^b-\\int_a^b u'(x)v(x)\\,dx}$$"
+        },
+        {
+          "type": "proof",
+          "title": "Preuve de l'intégration par parties",
+          "content": "La formule de dérivation d'un produit donne :$$(uv)'=u'v+uv'$$En intégrant cette égalité entre $a$ et $b$, on obtient :$$\\int_a^b(uv)'(x)\\,dx=\\int_a^b u'(x)v(x)\\,dx+\\int_a^b u(x)v'(x)\\,dx$$Or :$$\\int_a^b(uv)'(x)\\,dx=[u(x)v(x)]_a^b$$En isolant la dernière intégrale, on retrouve :$$\\boxed{\\int_a^b u(x)v'(x)\\,dx=[u(x)v(x)]_a^b-\\int_a^b u'(x)v(x)\\,dx}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{choisir $u$ et $v'$}",
+          "content": "Choisir comme $u$ la fonction qui se simplifie en dérivant. Choisir $v'$ de manière à obtenir immédiatement une primitive $v$. Vérifier que l'intégrale restante est plus simple que l'intégrale initiale. Recommencer seulement si la complexité diminue réellement."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $I=\\displaystyle\\int_0^{\\pi/2}x\\cos x\\,dx$ par intégration par parties.}\\par\\smallskip On choisit $u(x)=x$ et $v'(x)=\\cos x$. Alors $u'(x)=\\blank{1}$ et $v(x)=\\sin x$. Ainsi :\\begin{align*}I&=\\left[x\\sin x\\right]_0^{\\pi/2}-\\int_0^{\\pi/2}\\blank{\\sin x}\\,dx\\\\&=\\blank{\\dfrac\\pi2-1}\\\\&=\\boxed{\\dfrac\\pi2-1}.\n\\end{align*}"
+        },
+        {
+          "type": "property",
+          "title": "Quelle est \\mathqst{la formule du changement de variable}",
+          "content": "Soit $g$ dérivable sur $[a,b]$, avec $g'$ continue, et soit $f$ continue sur un intervalle contenant $g([a,b])$. Alors :$$\\large\\boxed{\\int_a^b f(g(x))g'(x)\\,dx=\\int_{g(a)}^{g(b)}f(t)\\,dt}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{changer de variable sans perdre les bornes}",
+          "content": "Poser $t=g(x)$ et calculer $dt=g'(x)dx$. Transformer immédiatement les deux bornes. Réécrire ensuite toute l'intégrale en fonction de $t$. Une fois les bornes transformées, ne plus revenir à la variable $x$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Calculons $J=\\displaystyle\\int_0^{\\pi}\\sin^5x\\,dx$.}\\par\\smallskip On isole un facteur $\\sin x$ :$$\\sin^5x=(\\blank{1-\\cos^2x})^2\\sin x$$Posons $t=\\cos x$, donc $dt=\\blank{-\\sin x}\\,dx$. Les bornes deviennent $\\blank{1}$ et $-1$. Ainsi :\\begin{align*}J&=\\int_{-1}^{1}(1-t^2)^2\\,dt\\\\&=\\boxed{\\blank{\\dfrac{16}{15}}.\n\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Calculons $I=\\displaystyle\\int_1^{\\sqrt3}\\dfrac{1}{x^2\\sqrt{4-x^2}}\\,dx$ par le changement $t=1/x$.}\\par\\smallskip On a $dt=\\blank{-dx/x^2}$. Comme $t>0$ :$$\\sqrt{4-x^2}=\\dfrac{\\sqrt{\\blank{4t^2-1}}}{t}$$Les bornes deviennent $\\blank{1}$ et $1/\\sqrt3$. Ainsi :\\begin{align*}I&=\\int_{1/\\sqrt3}^{1}\\dfrac{\\blank{t}}{\\sqrt{4t^2-1}}\\,dt\\\\&=\\left[\\dfrac14\\sqrt{4t^2-1}\\right]_{1/\\sqrt3}^{1}\\\\&=\\boxed{\\dfrac{\\sqrt3}{6}}.\n\\end{align*}"
+        },
+        {
+          "type": "warning",
+          "content": "Ces erreurs sont à éviter absolument, elles coûtent des points : une intégration par parties n'est pertinente que si l'intégrale restante est plus simple. Lors d'un changement de variable, les bornes doivent être transformées immédiatement et les variables $x$ et $t$ ne doivent plus être mélangées."
+        }
+      ]
+    },
+    {
+      "id": "ordre-encadrement-moyenne",
+      "category": "course",
+      "title": "Ordre, encadrement et valeur moyenne",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une primitive explicite n'est pas toujours disponible. L'ordre entre les fonctions permet pourtant de comparer, d'encadrer et d'étudier des suites définies par des intégrales."
+        },
+        {
+          "type": "property",
+          "title": "Comment comparer \\mathqst{deux intégrales sur $[a,b]$}",
+          "content": "Soient $f$ et $g$ continues sur $[a,b]$, avec $a<b$.\\begin{itemize}\\item Si $f(x)\\geq0$ sur $[a,b]$, alors $\\displaystyle\\int_a^b f(x)\\,dx\\geq0$.\\item Si $f(x)\\geq g(x)$ sur $[a,b]$, alors $\\displaystyle\\int_a^b f(x)\\,dx\\geq\\int_a^b g(x)\\,dx$.\\item On a :$$\\left|\\int_a^b f(x)\\,dx\\right|\\leq\\int_a^b|f(x)|\\,dx$$\\end{itemize}"
+        },
+        {
+          "type": "property",
+          "title": "Comment encadrer \\mathqst{une intégrale par les bornes de $f$}",
+          "content": "Si $m\\leq f(x)\\leq M$ pour tout $x\\in[a,b]$, alors :$$\\large\\boxed{m(b-a)\\leq\\int_a^b f(x)\\,dx\\leq M(b-a)}$$En particulier, si $|f(x)|\\leq M$, alors $\\displaystyle\\left|\\int_a^b f(x)\\,dx\\right|\\leq M(b-a)$."
+        },
+        {
+          "type": "proof",
+          "title": "Preuve de l'encadrement intégral",
+          "content": "Supposons que $m\\leq f(x)\\leq M$ pour tout $x\\in[a,b]$. Comme $f(x)-m\\geq0$, la positivité de l'intégrale donne :$$\\int_a^b f(x)\\,dx-m(b-a)\\geq0$$De même, $M-f(x)\\geq0$, donc :$$M(b-a)-\\int_a^b f(x)\\,dx\\geq0$$On en déduit :$$\\boxed{m(b-a)\\leq\\int_a^b f(x)\\,dx\\leq M(b-a)}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Encadrons $\\displaystyle\\int_0^1 e^{x^2}\\,dx$ sans chercher de primitive.}\\par\\smallskip Sur $[0,1]$, on a $0\\leq x^2\\leq\\blank{x}$. Comme la fonction exponentielle est croissante :$$1\\leq e^{x^2}\\leq\\blank{e^x}$$En intégrant entre $0$ et $1$ :$$\\boxed{1\\leq\\int_0^1 e^{x^2}\\,dx\\leq\\blank{e-1}}$$"
+        },
+        {
+          "type": "definition",
+          "title": "Qu'appelle-t-on \\mathqst{la valeur moyenne de $f$}",
+          "content": "Soit $f$ continue sur $[a,b]$, avec $a<b$. Sa \\textbf{valeur moyenne} sur cet intervalle est :$$\\large\\boxed{m=\\dfrac1{b-a}\\int_a^b f(x)\\,dx}$$Le rectangle de largeur $b-a$ et de hauteur $m$ possède la même aire algébrique que celle représentée par l'intégrale."
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons la valeur moyenne de $f(x)=3x^2-4x+5$ sur $[0,10]$.}\\par\\smallskip D'après la définition :\\begin{align*}m&=\\dfrac{1}{\\blank{10}}\\int_0^{10}(3x^2-4x+5)\\,dx\\\\&=\\dfrac1{10}\\left[\\blank{x^3-2x^2+5x}\\right]_0^{10}\\\\&=\\boxed{\\blank{85}}.\n\\end{align*}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Pour $n\\geq0$, on pose $u_n=\\displaystyle\\int_0^1\\dfrac{t^n}{1+t^2}\\,dt$. Étudions la convergence de $(u_n)$.}\\par\\smallskip Pour $t\\in[0,1]$, l'intégrande est positif, donc $u_n\\geq\\blank{0}$. De plus $t^{n+1}\\leq t^n$, donc :$$0\\leq u_{\\blank{n+1}}\\leq u_n$$La suite est décroissante et minorée. Enfin :$$0\\leq u_n\\leq\\int_0^1t^n\\,dt=\\dfrac{1}{\\blank{n+1}}$$Par encadrement :$$\\boxed{\\displaystyle\\lim_{n\\to+\\infty}u_n=\\blank{0}}$$"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Comparaison.} Une inégalité entre deux intégrales doit provenir d'une inégalité valable sur tout l'intervalle.\\par\\smallskip\\textbf{Valeur moyenne.} Elle n'est pas, en général, la moyenne des valeurs prises aux deux extrémités."
+        }
+      ]
+    },
+    {
+      "id": "aires",
+      "category": "course",
+      "title": "Aires sous une courbe et entre deux courbes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "L'intégrale possède une interprétation géométrique, mais son signe doit être maîtrisé. Une aire géométrique est toujours positive, contrairement à une aire algébrique."
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer \\mathqst{l'aire sous une courbe}",
+          "content": "Soit $f$ continue sur $[a,b]$, avec $a<b$.\\begin{itemize}\\item Si $f\\geq0$, alors $\\displaystyle\\mathcal A=\\int_a^b f(x)\\,dx$.\\item Si $f\\leq0$, alors $\\displaystyle\\mathcal A=-\\int_a^b f(x)\\,dx$.\\item Dans le cas général :$$\\large\\boxed{\\mathcal A=\\int_a^b|f(x)|\\,dx}$$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons l'aire sous la droite $y=2x-1$ sur $[2,5]$ et vérifions-la géométriquement.}\\par\\smallskip La fonction est positive sur $[2,5]$. Ainsi :$$\\mathcal A=\\int_2^5\\blank{(2x-1)}\\,dx=\\left[\\blank{x^2-x}\\right]_2^5=\\boxed{18}$$Le domaine est aussi un trapèze de côtés parallèles $3$ et $\\blank{9}$, et de largeur $3$ :$$\\dfrac{\\blank{3+9}}{2}\\times3=18$$"
+        },
+        {
+          "type": "property",
+          "title": "Comment calculer \\mathqst{l'aire entre deux courbes}",
+          "content": "Soient $f$ et $g$ continues sur $[a,b]$. Si $f(x)\\geq g(x)$ sur tout l'intervalle, alors l'aire comprise entre leurs courbes est :$$\\large\\boxed{\\mathcal A=\\int_a^b\\bigl(f(x)-g(x)\\bigr)\\,dx}$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{organiser un calcul d'aire entre deux courbes}",
+          "content": "Résoudre $f(x)=g(x)$ pour repérer les intersections. Étudier le signe de $f-g$ sur chaque intervalle obtenu. Placer la fonction supérieure en premier dans l'intégrande. Découper le calcul si l'ordre des courbes change."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soient $f(x)=-x^2+2$ et $g(x)=x^2-2x-2$. Calculons l'aire comprise entre leurs courbes sur $[-1,2]$.}\\par\\smallskip On compare :$$f(x)-g(x)=-2x^2+2x+4=-2\\blank{(x+1)(x-2)}$$Cette expression est positive sur $\\blank{[-1,2]}$. Donc :\\begin{align*}\\mathcal A&=\\int_{\\blank{-1}}^{2}\\bigl(f(x)-g(x)\\bigr)\\,dx\\\\&=\\boxed{\\blank{9}}.\n\\end{align*}"
+        },
+        {
+          "type": "warning",
+          "content": "Deux choses à ne surtout pas confondre : \\begin{itemize}\\item $\\displaystyle\\int_a^b f(x)\\,dx$ représente une aire algébrique.\\item L'aire géométrique totale utilise $|f|$.\\item Entre deux courbes, il faut déterminer laquelle est au-dessus avant d'écrire l'intégrande.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "volumes",
+      "category": "course",
+      "title": "Volumes par sections et solides de révolution",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Un solide peut être reconstruit en additionnant les aires de ses sections. Cette idée conduit à une formule générale et au cas particulier des disques de révolution."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment calculer \\mathqst{un volume par sections parallèles}",
+          "content": "Un solide est compris entre les plans de cotes $a$ et $b$. Si sa section à la cote $t$ possède une aire continue $S(t)$, alors :$$\\large\\boxed{V=\\int_a^b S(t)\\,dt}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Retrouvons le volume d'une boule de rayon $R$ par la méthode des sections.}\\par\\smallskip À la cote $t\\in[-R,R]$, la section est un disque de rayon $\\blank{\\sqrt{R^2-t^2}}$. Son aire vaut :$$S(t)=\\pi\\blank{(R^2-t^2)}$$Ainsi :\\begin{align*}V&=\\int_{\\blank{-R}}^{R}\\pi(R^2-t^2)\\,dt\\\\&=\\boxed{\\dfrac43\\pi \\blank{R^3}}.\n\\end{align*}"
+        },
+        {
+          "type": "property",
+          "title": "Quelle formule donne \\mathqst{le volume d'un solide de révolution}",
+          "content": "Soit $f$ continue sur $[a,b]$. Le domaine compris entre la courbe $y=f(x)$, l'axe des abscisses et les droites verticales d'abscisses $a$ et $b$ engendre, par rotation autour de l'axe des abscisses, un volume :$$\\large\\boxed{V=\\pi\\int_a^b\\bigl(f(x)\\bigr)^2\\,dx}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 2,
+          "content": "\\qst{Calculons le volume engendré par la rotation du domaine sous $y=\\cos x$ sur $[0,\\pi/2]$.}\\par\\smallskip La formule des disques donne :\\begin{align*}V&=\\pi\\int_0^{\\pi/2}\\blank{\\cos^2x}\\,dx\\\\&=\\pi\\left[\\dfrac{x}{2}+\\blank{\\dfrac{\\sin2x}{4}}\\right]_0^{\\pi/2}\\\\&=\\boxed{\\blank{\\dfrac{\\pi^2}{4}}.\n\\end{align*}"
+        },
+        {
+          "type": "warning",
+          "content": "\\textbf{Précision importante :} ce n'est pas la courbe seule qui engendre le solide, mais le domaine compris entre la courbe et l'axe. Dans la formule des disques, le rayon est $|f(x)|$, mais son carré vaut $f(x)^2$."
+        }
+      ]
+    },
+    {
+      "id": "sommes-riemann",
+      "category": "course",
+      "title": "Sommes de Riemann et limites de suites",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une intégrale peut être approchée par une somme d'aires de rectangles. Inversement, certaines limites de sommes se reconnaissent comme des intégrales sur un intervalle."
+        },
+        {
+          "type": "exploration",
+          "title": "Comment les rectangles encadrent-ils l'intégrale",
+          "content": "Supposons $f$ croissante sur $[a,b]$ et partageons l'intervalle en $n$ sous-intervalles de longueur $h=(b-a)/n$. Sur chaque sous-intervalle, le rectangle construit à gauche est sous la courbe et celui construit à droite est au-dessus. En additionnant, on obtient deux sommes qui encadrent l'intégrale."
+        },
+        {
+          "type": "theorem",
+          "title": "Quelle limite définit \\mathqst{une somme de Riemann}",
+          "content": "Si $f$ est continue sur $[a,b]$, alors :$$\\large\\boxed{\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{b-a}{n}\\sum_{k=1}^{n}f\\!\\left(a+k\\dfrac{b-a}{n}\\right)=\\int_a^b f(x)\\,dx}$$La même limite est obtenue avec une somme allant de $k=0$ à $n-1$."
+        },
+        {
+          "type": "proof",
+          "title": "Preuve par rectangles dans le cas croissant",
+          "content": "Posons $x_k=a+k\\dfrac{b-a}{n}$ et $h=\\dfrac{b-a}{n}$. Comme $f$ est croissante, pour tout $x\\in[x_k,x_{k+1}]$ :$$f(x_k)\\leq f(x)\\leq f(x_{k+1})$$Après multiplication par $h$ et intégration sur $[x_k,x_{k+1}]$ :$$hf(x_k)\\leq\\int_{x_k}^{x_{k+1}}f(x)\\,dx\\leq hf(x_{k+1})$$En additionnant ces inégalités :$$s_n\\leq\\int_a^b f(x)\\,dx\\leq S_n$$Or :$$\\lim_{n \\to +\\infty}(S_n-s_n)=\\lim_{n \\to +\\infty}\\dfrac{b-a}{n}\\bigl(f(b)-f(a)\\bigr)=0$$Les deux sommes ont donc la même limite, égale à l'intégrale. La généralisation à toute fonction continue est admise dans le cours."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{reconnaître une somme de Riemann}",
+          "content": "Faire apparaître un facteur $1/n$. Réécrire le terme général sous la forme $f\\bigl(a+k(b-a)/n\\bigr)$. Identifier l'intervalle $[a,b]$ et vérifier la continuité de $f$. Remplacer ensuite la somme par l'intégrale correspondante."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $u_n=\\displaystyle\\sum_{k=1}^{n}\\dfrac1{n+k}$. Déterminons sa limite.}\\par\\smallskip On normalise :$$u_n=\\blank{\\dfrac1n}\\sum_{k=1}^{n}\\dfrac1{1+k/n}$$On reconnaît une somme de Riemann associée à $f(x)=\\blank{1/x}$ sur $[1,2]$. Ainsi :$$\\lim_{n\\to+\\infty}u_n=\\int_{\\blank{1}}^2\\dfrac{dx}{x}=\\boxed{\\ln2}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Soit $v_n=\\displaystyle\\sum_{k=1}^{n}\\dfrac1{\\sqrt{n^2+kn}}$. Déterminons sa limite.}\\par\\smallskip On extrait $n^{\\blank{2}}$ du radical :$$v_n=\\dfrac1n\\sum_{k=1}^{n}\\dfrac1{\\blank{\\sqrt{1+k/n}}}$$La somme correspond à $f(x)=\\blank{1/\\sqrt{x}}$ sur $[1,2]$. Donc :$$\\lim_{n\\to+\\infty}v_n=\\int_1^2\\dfrac{dx}{\\sqrt{x}}=\\boxed{\\blank{2(\\sqrt2-1)}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\qst{Déterminons $\\displaystyle\\lim_{n\\to+\\infty}\\dfrac1n\\sum_{k=1}^{n}\\cos\\!\\left(\\dfrac{k\\pi}{n}\\right)$.}\\par\\smallskip On reconnaît la fonction $f(x)=\\blank{\\cos(\\pi x)}$ sur $[0,1]$. Ainsi :\\begin{align*}\\lim_{n\\to+\\infty}\\dfrac1n\\sum_{k=1}^{n}\\cos\\!\\left(\\blank{\\dfrac{k\\pi}{n}}\\right)&=\\int_{\\blank{0}}^1\\cos(\\pi x)\\,dx\\\\&=\\boxed{\\blank{0}}.\n\\end{align*}"
+        },
+        {
+          "type": "warning",
+          "content": "Ces erreurs très fréquentes vous coûteront des points : \\begin{itemize}\\item Faire apparaître correctement le facteur $1/n$ avant d'identifier une somme de Riemann.\\item Extraire la bonne puissance de $n$ lorsqu'un radical apparaît.\\item Conserver dans l'intégrande le coefficient présent dans l'argument de la fonction.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

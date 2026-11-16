@@ -1,0 +1,472 @@
+{
+  "school": "ensa",
+  "year": "2022",
+  "title": "Concours ENSA 2022",
+  "questions": [
+    {
+      "id": "ensa-22-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "La somme $\\displaystyle S = \\sum_{k=0}^{n} \\binom{n}{k}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^n$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$n!$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$n^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2n$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Binôme de Newton avec $a=b=1$ : $\\displaystyle (1+1)^n = \\sum_{k=0}^n \\binom{n}{k} = 2^n$."
+    },
+    {
+      "id": "ensa-22-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Logarithme",
+      "difficulty": "concours",
+      "prompt": "L'ensemble des solutions de $\\ln(x^2 - 3) = \\ln(2x)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{3\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\{-1, 3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{-1\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\emptyset$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Domaine : $x^2-3>0$ et $x>0$, donc $x>\\sqrt{3}$. Equation : $x^2-2x-3=0$, racines $3$ et $-1$. Seul $x=3$ est dans le domaine. Piège classique : oublier de vérifier le domaine."
+    },
+    {
+      "id": "ensa-22-03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Exponentielle",
+      "difficulty": "concours",
+      "prompt": "Le nombre de solutions de $e^{2x} - 5e^x + 6 = 0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $t = e^x > 0$. Equation : $t^2 - 5t + 6 = (t-2)(t-3) = 0$. Deux solutions $t=2$ et $t=3$, toutes deux $>0$. D'où $x = \\ln 2$ et $x = \\ln 3$."
+    },
+    {
+      "id": "ensa-22-04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "$\\displaystyle \\int_0^1 x e^{-x} \\, dx$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1 - \\frac{2}{e}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1 - \\frac{1}{e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{e}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e - 2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "IPP avec $u=x$ et $v'=e^{-x}$ : $\\displaystyle [-xe^{-x}]_0^1 + \\int_0^1 e^{-x}dx = -\\frac{1}{e} + [-e^{-x}]_0^1 = -\\frac{1}{e} - \\frac{1}{e} + 1 = 1-\\frac{2}{e}$."
+    },
+    {
+      "id": "ensa-22-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "$\\displaystyle \\int_0^{\\pi/2} \\cos^2(x) \\, dx$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Linéarisation : $\\cos^2 x = \\frac{1+\\cos(2x)}{2}$. Intégrale : $\\frac{1}{2}[x+\\frac{\\sin(2x)}{2}]_0^{\\pi/2} = \\frac{\\pi}{4}$."
+    },
+    {
+      "id": "ensa-22-06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "Soit $f$ continue sur $[0,1]$ avec $\\displaystyle \\int_0^1 f(t)\\,dt = 3$. Alors $\\displaystyle \\int_0^1 f(1-t)\\,dt$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "On ne peut pas conclure",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Changement de variable $u = 1-t$ : $\\displaystyle \\int_0^1 f(1-t)dt = \\int_0^1 f(u)du = 3$. Propriété de symétrie de l'intégrale sur $[0,1]$."
+    },
+    {
+      "id": "ensa-22-07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "La primitive de $\\frac{2x+3}{x^2+3x+5}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln(x^2+3x+5) + C$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\ln(x^2+3x+5)}{2} + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\arctan(x^2+3x+5) + C$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(x^2+3x+5)^{-1} + C$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le numérateur $2x+3$ est la dérivée du dénominateur. Forme $\\displaystyle \\int \\frac{u'}{u} = \\ln|u| + C$. Le trinôme est toujours positif ($\\Delta = 9-20 < 0$)."
+    },
+    {
+      "id": "ensa-22-08",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "difficulty": "concours",
+      "prompt": "Soit $G = \\{1, -1, i, -i\\}$ muni de la multiplication. L'ordre de $i$ dans $(G, \\times)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$4$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$i^1=i$, $i^2=-1$, $i^3=-i$, $i^4=1$. Le plus petit $n \\geq 1$ tel que $i^n = 1$ est $n=4$. Ce groupe est cyclique engendré par $i$."
+    },
+    {
+      "id": "ensa-22-09",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "L'ensemble des points $M(z)$ tels que $|z - 2| = |z + 2i|$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "La médiatrice de $[A, B]$ avec $A(2,0)$ et $B(0,-2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un cercle de centre l'origine",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "L'axe des réels",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "L'axe des imaginaires",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|z-2| = |z-(-2i)|$ signifie $MA = MB$ : c'est la médiatrice de $[AB]$. En développant avec $z=x+iy$ : $x + y = 0$. Interprétation géométrique du module."
+    },
+    {
+      "id": "ensa-22-10",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "L'équation $15x + 21y = 12$ admet des solutions dans $\\mathbb{Z}^2$ :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, car $\\text{PGCD}(15,21) = 3$ divise $12$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Non, car $15$ et $21$ ne sont pas premiers entre eux",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Oui, uniquement si $12$ est premier",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non, car $12 < 15$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Théorème : $ax+by=c$ admet des solutions entières ssi $\\text{PGCD}(a,b) | c$. Ici $\\text{PGCD}(15,21)=3$ et $3|12$. On simplifie par $3$ : $5x+7y=4$."
+    },
+    {
+      "id": "ensa-22-11",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Espaces vectoriels",
+      "difficulty": "concours",
+      "prompt": "Dans $\\mathbb{R}^3$, la famille $\\{(1,0,1), (0,1,1), (1,1,0)\\}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Libre et génératrice (base de $\\mathbb{R}^3$)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Libre mais pas génératrice",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Liée",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Génératrice mais pas libre",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le déterminant $\\begin{vmatrix} 1&0&1 \\\\ 0&1&1 \\\\ 1&1&0 \\end{vmatrix} = -2 \\neq 0$. Famille libre, et $3$ vecteurs libres dans $\\mathbb{R}^3$ de dimension $3$ forment une base."
+    },
+    {
+      "id": "ensa-22-12",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "La transformation $T: z \\mapsto iz + 1-i$ a pour point fixe l'affixe :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1+i$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1-i$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Point fixe : $z = iz + 1-i \\Rightarrow z(1-i) = 1-i \\Rightarrow z = 1$. $T$ est la rotation de centre $1$ et d'angle $\\pi/2$ (coefficient de $z$ : $i = e^{i\\pi/2}$)."
+    },
+    {
+      "id": "ensa-22-13",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "prompt": "$A$ et $B$ indépendants avec $P(A)=0{,}4$ et $P(B)=0{,}3$. $P(A \\cup B)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}58$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}70$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}12$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0{,}52$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Indépendance : $P(A \\cap B) = 0{,}4 \\times 0{,}3 = 0{,}12$. Poincaré : $P(A \\cup B) = 0{,}4 + 0{,}3 - 0{,}12 = 0{,}58$."
+    },
+    {
+      "id": "ensa-22-14",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités totales",
+      "difficulty": "concours",
+      "prompt": "$M_1$ produit $60\\%$ des pièces ($2\\%$ défauts), $M_2$ produit $40\\%$ ($5\\%$ défauts). La probabilité qu'une pièce soit défectueuse est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0{,}032$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0{,}035$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0{,}07$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0{,}02$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Probabilités totales : $P(D) = 0{,}6 \\times 0{,}02 + 0{,}4 \\times 0{,}05 = 0{,}012 + 0{,}020 = 0{,}032$. Système complet $\\{M_1, M_2\\}$."
+    },
+    {
+      "id": "ensa-22-15",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Bayes",
+      "difficulty": "concours",
+      "prompt": "Même contexte. Sachant qu'une pièce est défectueuse, la probabilité qu'elle vienne de $M_2$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{5}{8}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2}{5}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Bayes : $P(M_2|D) = \\frac{0{,}05 \\times 0{,}4}{0{,}032} = \\frac{0{,}020}{0{,}032} = \\frac{5}{8}$. Bayes inverse le conditionnement."
+    }
+  ]
+}

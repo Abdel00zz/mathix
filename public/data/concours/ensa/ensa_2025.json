@@ -1,0 +1,627 @@
+{
+  "school": "ensa",
+  "year": "2025",
+  "title": "Concours ENSA 2025",
+  "questions": [
+    {
+      "id": "ensa-25-01",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Le nombre complexe : $Z = (-1 + i\\sqrt{3})^{2010} + (-1 - i\\sqrt{3})^{2010}$. La valeur de $Z$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^{2009}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2 \\cos(\\frac{2\\pi}{3}) \\exp(\\frac{i4\\pi}{3})$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2 \\cos(\\frac{4\\pi}{3}) \\exp(12)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2^{2011}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "On pose $z_1 = -1+i\\sqrt{3}$. On a $z_1 = 2e^{i\\frac{2\\pi}{3}}$. Alors $z_1^{2010} = (2e^{i\\frac{2\\pi}{3}})^{2010} = 2^{2010} e^{i1340\\pi} = 2^{2010}$, puisque $1340\\pi$ est un multiple pair de $\\pi$. Le deuxième terme est son conjugué : $\\overline{z_1}^{2010} = 2^{2010}$. Ainsi, $Z = 2^{2010} + 2^{2010} = 2^{2011}$."
+    },
+    {
+      "id": "ensa-25-02",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Dans $\\mathbb{C}$, on considère l'équation : $z^6 = (1-i)\\overline{z}$. On note $z$ une solution non nulle quelconque de l'équation. Alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$|z| = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$|z| = \\sqrt{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$|z| = 2^{1/5}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$|z| = 2^{1/10}$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "En passant au module dans l'équation : $|z^6| = |(1-i)\\overline{z}| \\implies |z|^6 = |1-i| |\\overline{z}| = \\sqrt{2} |z|$. Puisque $z \\neq 0$, on divise par $|z|$ et on obtient $|z|^5 = 2^{1/2} \\implies |z| = 2^{1/10}$."
+    },
+    {
+      "id": "ensa-25-03",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Dans $\\mathbb{C}$, on considère l'équation : $z^2 + z + 1 = \\frac{1}{z+1}$. On note $z_1$ et $z_2$ les solutions non réelles de l'équation. On a :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$|z_1| = |z_2|$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$|z_1| > |z_2|$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$|z_1| < |z_2|$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$|z_1| = 2 |z_2|$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour $z \\neq -1$, l'équation equivaut à $(z+1)(z^2+z+1)=1 \\implies z^3+2z^2+2z=0 \\implies z(z^2+2z+2)=0$. Comme les solutions $z_1, z_2$ sont non réelles, elles sont racines de $z^2+2z+2=0$. Ces solutions complexes sont conjuguées l'une de l'autre, donc elles ont le même module, soit $|z_1| = |z_2| = \\sqrt{2}$."
+    },
+    {
+      "id": "ensa-25-04",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "On note $S$ l'ensemble des points du plan complexe $M$ dont l'affixe $z$ vérifie $|z - 3| = \\frac{\\sqrt{2}}{2}|z - 5|$. Alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$S = \\emptyset$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$S = \\mathbb{C}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$S$ est le cercle de centre $(1,0)$ et de rayon $2\\sqrt{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$S$ est le cercle de centre $(0,1)$ et de rayon $\\frac{1}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En posant $z = x+iy$ et en passant au carré : $|z-3|^2 = \\frac{1}{2}|z-5|^2 \\implies (x-3)^2 + y^2 = \\frac{1}{2}((x-5)^2+y^2)$. En développant et simplifiant, on obtient: $2(x^2-6x+9+y^2) = x^2-10x+25+y^2 \\implies x^2-2x+7+y^2=0 \\implies (x-1)^2 + y^2 = 8 = (2\\sqrt{2})^2$. Il s'agit du cercle de centre $(1,0)$ et de rayon $2\\sqrt{2}$."
+    },
+    {
+      "id": "ensa-25-05",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Dans le plan complexe, on considère les points $A, B, C$ et $D$ d'affixes respectives $1, -1, i$ et $-i$. On note $\\mathbb{U}$ l'ensemble des nombres complexes de module 1. Si $M \\in \\mathbb{U}$, on note $\\phi(M)$ le produit des distances de $M$ aux points $A, B, C, D$ : $\\phi(M) = MA \\times MB \\times MC \\times MD$. On pose $m = \\sup_{M \\in \\mathbb{U}} \\phi(M)$. Alors la valeur de $m$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$m = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$m = 2$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$m = 3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$m = +\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les points $A, B, C, D$ ayant pour affixes $1, -1, i, -i$, l'expression de $\\phi(M)$ avec $M$ d'affixe $z$ est : $\\phi(M) = |z-1||z+1||z-i||z+i| = |(z^2-1)(z^2+1)| = |z^4 - 1|$. Comme $M \\in \\mathbb{U}$, on a $z = e^{i\\theta}$ avec $\\theta \\in \\mathbb{R}$. Ainsi, $|z^4 - 1| = |e^{i4\\theta}-1| = 2|\\sin(2\\theta)|$. La borne supérieure de cette expression pour $\\theta \\in \\mathbb{R}$ est $2$, atteinte lorsque $|\\sin(2\\theta)| = 1$."
+    },
+    {
+      "id": "ensa-25-06",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "Soit $a$ l'entier naturel défini par : $(2025)^{2025} \\equiv a \\pmod 7$. La valeur de $a$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$a = 3$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$a = 2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$a = 5$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a = 1$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "On a $2025 = 7 \\times 289 + 2 \\implies 2025 \\equiv 2 \\pmod 7$. Ainsi $(2025)^{2025} \\equiv 2^{2025} \\pmod 7$. De plus, $2^3 = 8 \\equiv 1 \\pmod 7$. Comme $2025 = 3 \\times 675$, on a $2^{2025} = (2^3)^{675} \\equiv 1^{675} \\equiv 1 \\pmod 7$. Donc $a = 1$."
+    },
+    {
+      "id": "ensa-25-07",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "Le PGCD de $3^{123} - 5$ et $125$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "1",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "5",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "25",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "125",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque $125 = 5^3$, les seuls diviseurs de $125$ sont les puissances de $5$ ($1, 5, 25, 125$). Regardons si $3^{123}-5$ est divisible par $5$. Modulo $5$ : $3^{123}-5 \\equiv 3^{123} \\pmod 5$. D'après le théorème de Fermat : $3^4 \\equiv 1 \\pmod 5$. Comme $123 = 4 \\times 30 + 3$, on a $3^{123} \\equiv (3^4)^{30} \\times 3^3 \\equiv 27 \\equiv 2 \\pmod 5$. Puisque $3^{123}-5$ n'est pas divisible par $5$, le PGCD est égal à $1$."
+    },
+    {
+      "id": "ensa-25-08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "On considère la suite $(u_n)$ définie par : $u_n = \\frac{\\ln(1 + \\sqrt{n})}{\\ln(1 + n^3)}$. On note $\\displaystyle L = \\lim_{n \\to +\\infty} u_n$. Alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$L = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$L = \\sqrt{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$L = \\frac{1}{6}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$L = \\frac{1}{3}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Quand $n \\to +\\infty$, $\\ln(1+\\sqrt{n}) = \\ln(\\sqrt{n}(1 + \\frac{1}{\\sqrt{n}})) = \\frac{1}{2}\\ln(n) + o(1)$. De même, $\\ln(1+n^3) = 3\\ln(n) + o(1)$. Ainsi, $u_n \\sim \\frac{\\frac{1}{2}\\ln(n)}{3\\ln(n)} = \\frac{1}{6}$."
+    },
+    {
+      "id": "ensa-25-09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "Soit $(u_n)$ la suite numérique définie par $u_0 = 1$ et $u_{n+1} = \\frac{u_n}{1 + 2u_n}$ pour tout $n \\ge 0$. En considérant la suite $v_n = \\frac{1}{u_n}$, la valeur de $\\displaystyle \\lim_{n \\to +\\infty} n u_n$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "0",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "1",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{4}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $v_{n+1} = \\frac{1}{u_{n+1}} = \\frac{1+2u_n}{u_n} = v_n + 2$. La suite $(v_n)$ est donc arithmétique de raison $2$ et de premier terme $v_0 = 1$. Ainsi $v_n = 2n + 1$, ce qui donne $u_n = \\frac{1}{2n+1}$. Finalement, $\\displaystyle \\lim_{n \\to +\\infty} n u_n = \\lim_{n \\to +\\infty} \\frac{n}{2n+1} = \\frac{1}{2}$."
+    },
+    {
+      "id": "ensa-25-10",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "Pour $n \\in \\mathbb{N}^*$, on définit : $u_n = \\sqrt{n + \\sqrt{n - 1 + \\dots + \\sqrt{1}}}$. La limite $L$ de la suite $(u_n)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$L = 1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$L = \\frac{\\pi}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$L = +\\infty$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$L = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque pour tout $n \\in \\mathbb{N}^*$, on a l'inégalité évidente $u_n \\ge \\sqrt{n}$, et que $\\displaystyle \\lim_{n \\to +\\infty} \\sqrt{n} = +\\infty$, alors par comparaison, la limite de la suite $u_n$ est $+\\infty$."
+    },
+    {
+      "id": "ensa-25-11",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "On pose pour $n \\in \\mathbb{N}^*$ : $\\displaystyle S_n = \\sum_{k=1}^{2n+1} \\frac{1}{\\sqrt{n^2 + k}}$. La limite de $S_n$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "0",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "1",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "2",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On encadre chaque terme de la somme pour $1 \\le k \\le 2n+1$ : $\\frac{1}{\\sqrt{n^2 + 2n + 1}} \\le \\frac{1}{\\sqrt{n^2+k}} \\le \\frac{1}{\\sqrt{n^2+1}}$. En sommant, on obtient : $\\frac{2n+1}{n+1} \\le S_n \\le \\frac{2n+1}{\\sqrt{n^2+1}}$. Par encadrement, les deux bornes tendent vers $2$, donc $\\displaystyle \\lim_{n \\to +\\infty} S_n = 2$."
+    },
+    {
+      "id": "ensa-25-12",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "En admettant que pour tout $n \\in \\mathbb{N}$, le nombre réel $(3 + \\sqrt{5})^n + (3 - \\sqrt{5})^n$ est un entier pair, la limite $\\displaystyle L = \\lim_{n \\to +\\infty} \\cos((3 + \\sqrt{5})^n \\pi)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$L = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$L = -1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$L = 1$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$L = \\frac{\\pi}{4}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Soit $x_n = (3+\\sqrt{5})^n + (3-\\sqrt{5})^n$ l'un des entiers pairs donnés. Alors $\\cos(x_n \\pi) = 1$. On exprime $(3+\\sqrt{5})^n = x_n - (3-\\sqrt{5})^n$. Ainsi, $\\cos((3+\\sqrt{5})^n \\pi) = \\cos(x_n\\pi - (3-\\sqrt{5})^n\\pi) = \\cos(x_n\\pi)\\cos((3-\\sqrt{5})^n\\pi) + \\sin(x_n\\pi)\\sin((3-\\sqrt{5})^n\\pi)$. Comme $x_n$ est pair, $\\cos(x_n\\pi) = 1$ et $\\sin(x_n\\pi) = 0$. Il reste donc $\\cos((3-\\sqrt{5})^n\\pi)$. Puisque $0 < 3-\\sqrt{5} < 1$, leur puissance $n$-ième tend vers $0$, ainsi l'expression tend vers $\\cos(0) = 1$."
+    },
+    {
+      "id": "ensa-25-13",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "concours",
+      "prompt": "Soit $a > 0$ alors la limite suivante vaut : $\\displaystyle \\lim_{x \\to a^+} \\frac{\\sqrt{x} - \\sqrt{a} - \\sqrt{x-a}}{\\sqrt{x^2 - a^2}}$",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\frac{1}{\\sqrt{2a}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-\\frac{1}{\\sqrt{a}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{\\sqrt{a}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\frac{2}{\\sqrt{a}}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On peut réécrire l'expression en utilisant $\\sqrt{x^2-a^2} = \\sqrt{x-a}\\sqrt{x+a}$ : $\\frac{\\sqrt{x}-\\sqrt{a}}{\\sqrt{x-a}\\sqrt{x+a}} - \\frac{\\sqrt{x-a}}{\\sqrt{x-a}\\sqrt{x+a}} = \\frac{x-a}{\\sqrt{x-a}\\sqrt{x+a}(\\sqrt{x}+\\sqrt{a})} - \\frac{1}{\\sqrt{x+a}} = \\frac{\\sqrt{x-a}}{\\sqrt{x+a}(\\sqrt{x}+\\sqrt{a})} - \\frac{1}{\\sqrt{x+a}}$. Quand $x \\to a^+$, le premier terme tend vers $0$ et le second tend vers $-\\frac{1}{\\sqrt{2a}}$."
+    },
+    {
+      "id": "ensa-25-14",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "On note $I_n$ la suite définie par : $I_n = \\displaystyle \\int_{0}^{1} \\frac{x}{1+x^{2n}} dx$. La limite $\\displaystyle L = \\lim_{n \\to +\\infty} I_n$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$L = \\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$L = \\frac{3}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$L = 0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$L = \\frac{\\sqrt{2}}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour tout $x \\in [0, 1[$, on a $x^{2n} \\xrightarrow[n \\to +\\infty]{} 0$, et par conséquent la fonction sous l'intégrale converge simplement vers la fonction $h(x) = x$ sur $[0, 1[$. D'après le théorème de la convergence dominée (la fonction étant majorée par $x \\le 1$), on a : $\\displaystyle \\lim_{n \\to +\\infty} I_n = \\int_{0}^{1} x dx = \\frac{1}{2}$."
+    },
+    {
+      "id": "ensa-25-15",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "difficulty": "concours",
+      "prompt": "La valeur de l'intégrale $I = \\displaystyle \\int_{0}^{\\sqrt{3}} x^2 \\ln(x^2 + 1) dx$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$I = \\sqrt{3} \\ln(2) - \\frac{\\pi}{9}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$I = \\sqrt{3} \\ln(2) + \\frac{\\pi}{9}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$I = 2(\\sqrt{3} \\ln(2) - \\frac{\\pi}{9})$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$I = \\sqrt{3} \\ln(2)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On procède par intégration par parties en posant $u'(x) = x^2 \\implies u(x) = \\frac{x^3}{3}$ et $v(x) = \\ln(x^2+1) \\implies v'(x) = \\frac{2x}{x^2+1}$. Ainsi, $\\displaystyle I = [\\frac{x^3}{3}\\ln(x^2+1)]_0^{\\sqrt{3}} - \\frac{2}{3}\\int_0^{\\sqrt{3}}\\frac{x^4}{x^2+1}dx = \\sqrt{3}\\ln(4) - \\frac{2}{3}\\int_0^{\\sqrt{3}}(x^2 - 1 + \\frac{1}{x^2+1})dx = 2\\sqrt{3}\\ln(2) - \\frac{2}{3}[\\frac{x^3}{3}-x+\\arctan(x)]_0^{\\sqrt{3}} = 2\\sqrt{3}\\ln(2) - \\frac{2\\pi}{9} = 2(\\sqrt{3}\\ln(2) - \\frac{\\pi}{9})$."
+    },
+    {
+      "id": "ensa-25-16",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "difficulty": "concours",
+      "prompt": "Soit $f$ la fonction définie sur $]0, +\\infty[$ par $f(x) = \\frac{2 \\ln(x)}{x(1 + (\\ln(x))^2)}$. La primitive de $f$ sur $]0, +\\infty[$ qui s'annule en 1 est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln(1 + (\\ln x)^2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(\\ln x)^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2\\ln(1 + (\\ln x)^2)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{x \\ln x}{\\ln x + 1}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On pose $u(x) = 1 + (\\ln x)^2$. Sa dérivée est $u'(x) = 2 \\ln(x) \\cdot \\frac{1}{x} = \\frac{2\\ln(x)}{x}$. La fonction $f(x)$ s'écrit alors sous la forme $\\frac{u'(x)}{u(x)}$. Ses primitives sont de la forme $\\ln|u(x)| + C = \\ln(1 + (\\ln x)^2) + C$. Comme la primitive cherchée s'annule en $1$, on a $\\ln(1 + 0) + C = 0 \\implies C = 0$. La solution est donc $\\ln(1 + (\\ln x)^2)$."
+    },
+    {
+      "id": "ensa-25-17",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Géométrie",
+      "difficulty": "concours",
+      "prompt": "Dans l'espace $\\mathbb{R}^3$ rapporté à un repère orthonormé direct $(O, \\vec{i}, \\vec{j}, \\vec{k})$, on considère le plan $(P)$ d'équation $2x - 5y - 6z + 4 = 0$ et $(S)$ la sphère de centre $\\Omega(2; -2; 3)$ et de rayon 3, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(P)$ coupe $(S)$ suivant un cercle de rayon 3 et de centre $\\Omega$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$(P)$ coupe $(S)$ suivant un cercle de rayon 3 et de centre le point de coordonnées $(2;2;3)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(P)$ est tangent à $(S)$ au point de coordonnées $(2;2;3)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$(P)$ est tangent à $(S)$ au point de coordonnées $(2;0;-3)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Calculons la distance du centre $\\Omega$ au plan $(P)$ : $d(\\Omega, (P)) = \\frac{|2(2) - 5(-2) - 6(3) + 4|}{\\sqrt{2^2+(-5)^2+(-6)^2}} = \\frac{|4+10-18+4|}{\\sqrt{4+25+36}} = \\frac{0}{\\sqrt{65}} = 0$. Puisque la distance est nulle, le centre $\\Omega$ appartient au plan $(P)$. De fait, le plan coupe la sphère selon un grand cercle ayant pour centre $\\Omega$ et pour rayon le rayon de la sphère, soit $3$."
+    },
+    {
+      "id": "ensa-25-18",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "prompt": "On jette deux fois de suite une pièce de monnaie non truquée et on note les arrivées de pile et de face. Soit $p$ la probabilité d’avoir deux fois face sachant que le premier jet a donné face.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$p = \\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$p = \\frac{1}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$p = \\frac{1}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$p = \\frac{3}{4}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les deux lancers de pièce sont indépendants. L'événement « avoir deux fois face sachant que le premier lancer a donné face » est tout simplement équivalent à la probabilité d'obtenir face au second lancer, soit $p = \\frac{1}{2}$."
+    },
+    {
+      "id": "ensa-25-19",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "prompt": "Une usine fabrique des composants électroniques. Si le composant est défectueux, la machine le détecte dans 90% des cas, et elle échoue dans 10%. S'il n'est pas défectueux, la machine l'indique correctement dans 99% des cas, et elle échoue dans 1%. Sachant que 0,1% des composants sont défectueux, la probabilité $p$ qu'un composant tiré au hasard soit détecté défectueux par la machine est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$p = 1,041\\%$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$p = 1,089\\%$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$p = 1,025\\%$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$p = 1\\%$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Par la formule des probabilités totales : $P(T) = P(T|D)P(D) + P(T|\\overline{D})P(\\overline{D}) = (0,90 \\times 0,001) + (0,01 \\times 0,999) = 0,0009 + 0,00999 = 0,01089 = 1,089\\%$."
+    },
+    {
+      "id": "ensa-25-20",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "prompt": "On jette $n$ fois de suite un dé non truqué numéroté de 1 à 6, $n \\ge 2$. Soit $p_n$ la probabilité d'avoir un nombre inférieur ou égal à 3 dans le second jet sachant que le premier jet a donné la face numéro 2. Soit $\\displaystyle p = \\lim_{n \\to +\\infty} p_n$. La valeur de $p$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$p = \\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$p = \\frac{1}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$p = \\frac{1}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$p = 0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les jets successifs d'un dé sont des événements indépendants. Ainsi, la probabilité d'avoir un nombre inférieur ou égal à $3$ (c'est-à-dire $1$, $2$ ou $3$) au second jet sachant que l'on a obtenu $2$ au premier jet ne dépend pas du premier lancer. Elle vaut toujours $\\frac{3}{6} = \\frac{1}{2}$. La suite $p_n$ est donc constante et sa limite quand $n \\to +\\infty$ est $\\frac{1}{2}$."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ex-droite-tc-01",
+  "theme": "droite-plan",
+  "difficulty": "facile",
+  "topic": "La droite dans le plan",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Équation cartésienne",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Déterminer une équation cartésienne de la droite $(D)$ passant par $A(1, 2)$ et de vecteur directeur $\\overrightarrow{u}(3, -1)$.",
+          "hint": "\\method Un point $M(x, y)$ appartient à $(D)$ si et seulement si les vecteurs $\\overrightarrow{AM}$ et $\\overrightarrow{u}$ sont colinéaires, c'est-à-dire $\\det(\\overrightarrow{AM}, \\overrightarrow{u}) = 0$."
+        }
+      ]
+    }
+  ]
+}

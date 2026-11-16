@@ -1,0 +1,54 @@
+{
+  "id": "suites",
+  "title": "Les suites numériques",
+  "section": "analyse",
+  "quizCount": 21,
+  "revisions": [
+    {
+      "id": "rev-suites-1bac",
+      "title": "Fiche Complète : Suites Numériques",
+      "path": "data/1ere-bac-sc-math/suites/revisions/fiche_suites_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-analyse-suite-recurrente-lineaire-ordre2",
+      "path": "data/1ere-bac-sc-math/suites/exercises/ex_suites_01.json"
+    },
+    {
+      "id": "ex-analyse-suite-homographique",
+      "path": "data/1ere-bac-sc-math/suites/exercises/ex_suites_02.json"
+    },
+    {
+      "id": "ex-analyse-suite-homographique-arithmetique-min",
+      "path": "data/1ere-bac-sc-math/suites/exercises/ex_suites_03.json"
+    },
+    {
+      "id": "ex-analyse-suite-homographique-02",
+      "path": "data/1ere-bac-sc-math/suites/exercises/ex_suites_04.json"
+    },
+    {
+      "id": "ex-suites-05",
+      "path": "data/1ere-bac-sc-math/suites/exercises/ex_suites_05.json"
+    },
+    {
+      "id": "ex-analyse-suites-imbriquees-min",
+      "path": "data/1ere-bac-sc-math/suites/exercises/ex_suites_06.json"
+    },
+    {
+      "id": "ex-suites-007",
+      "path": "data/1ere-bac-sc-math/suites/exercises/ex_suites_07.json"
+    },
+    {
+      "id": "ex-suites-008",
+      "path": "data/1ere-bac-sc-math/suites/exercises/ex_suites_08.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-suites-01",
+      "path": "data/1ere-bac-sc-math/suites/quiz/suites_quiz.json",
+      "questionsCount": 21
+    }
+  ]
+}

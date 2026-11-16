@@ -1,0 +1,704 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "category": "Ensembles de nombres",
+      "difficulty": "easy",
+      "prompt": "Quel est le plus petit ensemble parmi $\\mathbb N$, $\\mathbb Z$, $\\mathbb D$, $\\mathbb Q$ qui contient $\\dfrac13$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\mathbb N$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\mathbb Z$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\mathbb Q$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\mathbb D$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\dfrac13$ est rationnel, mais son écriture décimale n'est pas finie. Il appartient donc à $\\mathbb Q$ et non à $\\mathbb D$."
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "category": "Racines carrées",
+      "difficulty": "easy",
+      "prompt": "Pour tout réel $x$, quelle identité est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt{x^2}=x$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\sqrt{x^2}=-x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\sqrt{x^2}=x^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt{x^2}=|x|$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "La racine carrée est toujours non négative : $\\sqrt{x^2}=|x|$."
+    },
+    {
+      "id": "q3",
+      "type": "boolean",
+      "category": "Ensembles de nombres",
+      "difficulty": "easy",
+      "prompt": "Vrai ou faux : le nombre $\\dfrac13$ appartient à $\\mathbb D$.",
+      "isTrue": false,
+      "explanation": "$\\dfrac13$ possède une écriture décimale infinie périodique. Il est rationnel, mais non décimal au sens de $\\mathbb D$."
+    },
+    {
+      "id": "q4",
+      "type": "boolean",
+      "category": "Racines carrées",
+      "difficulty": "easy",
+      "prompt": "Vrai ou faux : pour tout réel $x$, on a $\\sqrt{x^2}=x$.",
+      "isTrue": false,
+      "explanation": "Pour $x=-2$, $\\sqrt{x^2}=\\sqrt4=2\\ne-2$. La formule correcte est $\\sqrt{x^2}=|x|$."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "category": "Arithmétique",
+      "difficulty": "easy",
+      "prompt": "On sait que $a,b\\in\\mathbb N^*$ et $\\operatorname{PGCD}(a,b)=6$. Quelle affirmation est nécessairement vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$6\\mid a$ et $6\\mid b$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$a=6$ ou $b=6$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\operatorname{PPCM}(a,b)=6$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$12\\mid a$ et $12\\mid b$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\operatorname{PGCD}(a,b)=6$ signifie que $6$ est un diviseur commun de $a$ et de $b$. Cela n'impose ni $a=6$, ni $b=6$."
+    },
+    {
+      "id": "q6",
+      "type": "boolean",
+      "category": "Arithmétique",
+      "difficulty": "easy",
+      "prompt": "Vrai ou faux : si $a,b\\in\\mathbb N^*$ sont premiers entre eux, alors $\\operatorname{PPCM}(a,b)=ab$.",
+      "isTrue": true,
+      "explanation": "Si $\\operatorname{PGCD}(a,b)=1$, l'égalité $\\operatorname{PGCD}(a,b)\\times\\operatorname{PPCM}(a,b)=ab$ donne directement $\\operatorname{PPCM}(a,b)=ab$."
+    },
+    {
+      "id": "q7",
+      "type": "boolean",
+      "category": "Arithmétique",
+      "difficulty": "easy",
+      "prompt": "Vrai ou faux : si $a\\mid b$, alors $b\\mid a$.",
+      "isTrue": false,
+      "explanation": "Par exemple, $3\\mid12$, mais $12\\nmid3$. La divisibilité n'est pas une relation symétrique."
+    },
+    {
+      "id": "q8",
+      "type": "mcq",
+      "category": "Arithmétique",
+      "difficulty": "medium",
+      "prompt": "Deux entiers positifs $a$ et $b$ vérifient $\\operatorname{PGCD}(a,b)=12$ et $\\operatorname{PPCM}(a,b)=420$. Que vaut nécessairement $ab$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$840$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$4320$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$5040$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$10080$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour deux entiers positifs, $ab=\\operatorname{PGCD}(a,b)\\times\\operatorname{PPCM}(a,b)$. Ainsi $ab=12\\times420=5040$."
+    },
+    {
+      "id": "q9",
+      "type": "mcq",
+      "category": "Arithmétique",
+      "difficulty": "medium",
+      "prompt": "Laquelle des informations suivantes suffit, à elle seule, à conclure que $221$ n'est pas premier ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$221$ n'est pas divisible par $2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$221$ n'est pas divisible par $3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$221=13\\times17$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$221<15$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "L'égalité $221=13\\times17$ fournit directement un diviseur non trivial. Donc $221$ est composé."
+    },
+    {
+      "id": "q10",
+      "type": "mcq",
+      "category": "Algèbre",
+      "difficulty": "medium",
+      "prompt": "On sait que $x\\ne0$ et $x+\\dfrac1x=3$. Que vaut $x^2+\\dfrac1{x^2}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$5$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$6$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$7$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$9$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En élevant l'égalité au carré, $(x+\\frac1x)^2=x^2+2+\\dfrac1{x^2}=9$. Donc $x^2+\\dfrac1{x^2}=7$."
+    },
+    {
+      "id": "q11",
+      "type": "mcq",
+      "category": "Équations",
+      "difficulty": "hard",
+      "ambiguity_note": "Élever au carré sans conserver la condition de signe peut ajouter une solution parasite.",
+      "prompt": "Quelle écriture est équivalente à $\\sqrt{x+2}=x$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^2=x+2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$x\\geq0$ et $x^2=x+2$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$x+2\\geq0$ et $x^2=x+2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x\\leq0$ et $x^2=x+2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour élever $\\sqrt{x+2}=x$ au carré sans perdre l'équivalence, il faut conserver $x\\geq0$. On obtient alors $x^2=x+2$."
+    },
+    {
+      "id": "q12",
+      "type": "boolean",
+      "category": "Équations",
+      "difficulty": "hard",
+      "prompt": "Vrai ou faux : l'équation $\\sqrt{x+2}=x$ est équivalente à $x^2=x+2$.",
+      "isTrue": false,
+      "explanation": "L'équation obtenue après élévation au carré peut introduire une solution parasite. Il faut aussi imposer $x\\geq0$."
+    },
+    {
+      "id": "q13",
+      "type": "mcq",
+      "category": "Inégalités",
+      "difficulty": "medium",
+      "prompt": "Pour résoudre $\\dfrac{x-2}{x-1}\\leq0$, quelle démarche est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Multiplier immédiatement par $x-1$ sans changer le sens",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Multiplier immédiatement par $x-1$ en inversant le sens",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Exclure $x=1$, puis étudier le signe du numérateur et du dénominateur",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Élever les deux membres au carré",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le signe de $x-1$ dépend de $x$. Il faut exclure $x=1$, puis utiliser un tableau de signes."
+    },
+    {
+      "id": "q14",
+      "type": "mcq",
+      "category": "Inégalités",
+      "difficulty": "medium",
+      "prompt": "Si $0<a<b$, quelle relation est nécessairement vraie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\dfrac1a>\\dfrac1b$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\dfrac1a<\\dfrac1b$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\dfrac1a=\\dfrac1b$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\dfrac1a>\\dfrac1b$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Sur $]0,+\\infty[$, la fonction $x\\mapsto\\dfrac1x$ est décroissante. Ainsi $0<a<b$ donne $\\dfrac1a>\\dfrac1b$."
+    },
+    {
+      "id": "q15",
+      "type": "mcq",
+      "category": "Valeur absolue",
+      "difficulty": "medium",
+      "prompt": "Résoudre dans $\\mathbb R$ : $|2x-3|\\leq5$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$[-4,1]$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$]-1,4[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$[-1,3]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$[-1,4]$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "$|2x-3|\\leq5\\Longleftrightarrow-5\\leq2x-3\\leq5\\Longleftrightarrow-1\\leq x\\leq4$."
+    },
+    {
+      "id": "q16",
+      "type": "boolean",
+      "category": "Inégalités",
+      "difficulty": "medium",
+      "prompt": "Vrai ou faux : pour tous réels $a<b$, on a $a^2<b^2$.",
+      "isTrue": false,
+      "explanation": "Par exemple, $-3<-2$ mais $(-3)^2=9>4=(-2)^2$. Le carré n'est pas croissant sur tout $\\mathbb R$."
+    },
+    {
+      "id": "q17",
+      "type": "boolean",
+      "category": "Valeur absolue",
+      "difficulty": "medium",
+      "prompt": "Vrai ou faux : pour $r\\geq0$, l'inégalité $|x-a|\\leq r$ est équivalente à $a-r\\leq x\\leq a+r$.",
+      "isTrue": true,
+      "explanation": "$|x-a|$ représente la distance entre $x$ et $a$. Être à une distance au plus $r$ signifie exactement $x\\in[a-r,a+r]$."
+    },
+    {
+      "id": "q18",
+      "type": "mcq",
+      "category": "Fonctions",
+      "difficulty": "medium",
+      "prompt": "Quel est le domaine de $f(x)=\\sqrt{\\dfrac{x-1}{x+2}}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]-2,1]$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$]-\\infty,-2[\\cup[1,+\\infty[$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$]-\\infty,-2]\\cup[1,+\\infty[$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$[-2,1]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Il faut $\\dfrac{x-1}{x+2}\\geq0$ et $x\\ne-2$. Le tableau de signes donne $]-\\infty,-2[\\cup[1,+\\infty[$."
+    },
+    {
+      "id": "q19",
+      "type": "mcq",
+      "category": "Fonctions",
+      "difficulty": "medium",
+      "prompt": "Avant de chercher si une fonction est paire ou impaire, quelle vérification est indispensable ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le domaine doit être symétrique par rapport à $0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La fonction doit être positive",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La fonction doit être dérivable",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La fonction doit s'annuler en $0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Les expressions $f(x)$ et $f(-x)$ doivent pouvoir être comparées sur le même domaine. La symétrie de $D_f$ par rapport à $0$ est donc une condition préalable."
+    },
+    {
+      "id": "q20",
+      "type": "boolean",
+      "category": "Fonctions",
+      "difficulty": "medium",
+      "prompt": "Vrai ou faux : si le domaine d'une fonction est symétrique par rapport à $0$, alors la fonction est nécessairement paire ou impaire.",
+      "isTrue": false,
+      "explanation": "Un domaine symétrique permet de tester la parité, mais ne la garantit pas. Il faut encore vérifier $f(-x)=f(x)$ ou $f(-x)=-f(x)$."
+    },
+    {
+      "id": "q21",
+      "type": "mcq",
+      "category": "Fonctions",
+      "difficulty": "medium",
+      "prompt": "Soit $f(x)=\\dfrac1{x+1}$ sur $]-1,+\\infty[$. Si $-1<x_1<x_2$, alors :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(x_1)<f(x_2)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$f(x_1)=f(x_2)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f(x_1)>f(x_2)$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "On ne peut pas comparer sans dériver",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $0<x_1+1<x_2+1$. En prenant les inverses de nombres positifs, l'ordre s'inverse : $f(x_1)>f(x_2)$."
+    },
+    {
+      "id": "q22",
+      "type": "boolean",
+      "category": "Fonctions",
+      "difficulty": "hard",
+      "prompt": "Vrai ou faux : si une fonction est croissante et si $f(a)=f(b)$, alors $a=b$.",
+      "isTrue": false,
+      "explanation": "Une fonction seulement croissante peut être constante sur un intervalle. L'implication exige par exemple que la fonction soit strictement croissante ou injective."
+    },
+    {
+      "id": "q23",
+      "type": "mcq",
+      "category": "Transformations de courbes",
+      "difficulty": "hard",
+      "prompt": "Si la courbe de $f$ est connue, comment obtenir celle de $x\\mapsto f(|x|)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "On relève les parties situées sous l'axe des abscisses",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "On effectue une symétrie centrale par rapport à l'origine",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "On conserve la partie gauche puis on la reflète à droite",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "On conserve la partie droite puis on la reflète à gauche par rapport à l'axe des ordonnées",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "Dans $f(|x|)$, les valeurs négatives de $x$ sont ramenées vers $|x|>0$. On conserve donc la partie pour $x\\geq0$ et on la reflète à gauche par rapport à l'axe des ordonnées."
+    },
+    {
+      "id": "q24",
+      "type": "mcq",
+      "category": "Polynômes",
+      "difficulty": "medium",
+      "prompt": "Pour un polynôme $P$, l'égalité $P(a)=0$ est équivalente à :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x+a$ divise $P(x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$x-a$ divise $P(x)$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$P(x)$ est divisible par $a$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$a$ est le coefficient dominant de $P$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le théorème du facteur donne $P(a)=0\\Longleftrightarrow(x-a)$ divise $P(x)$."
+    },
+    {
+      "id": "q25",
+      "type": "mcq",
+      "category": "Trinômes",
+      "difficulty": "hard",
+      "prompt": "Soit $T(x)=ax^2+bx+c$ avec $a<0$ et $\\Delta=0$. Quelle description du signe de $T$ est correcte ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$T(x)>0$ pour tout $x$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$T(x)<0$ pour tout $x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$T(x)\\leq0$ pour tout $x$, avec une seule valeur où $T(x)=0$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$T$ change de signe à sa racine double",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Avec $\\Delta=0$, le trinôme a une racine double. Comme $a<0$, il est du signe de $a$ sauf à la racine : il est négatif ou nul sur $\\mathbb R$."
+    },
+    {
+      "id": "q26",
+      "type": "boolean",
+      "category": "Trinômes",
+      "difficulty": "medium",
+      "prompt": "Vrai ou faux : si $ax^2+bx+c$ vérifie $a>0$ et $\\Delta<0$, alors $ax^2+bx+c>0$ pour tout réel $x$.",
+      "isTrue": true,
+      "explanation": "Si $\\Delta<0$, le trinôme ne s'annule jamais et garde le signe de $a$. Avec $a>0$, il est donc strictement positif sur $\\mathbb R$."
+    },
+    {
+      "id": "q27",
+      "type": "mcq",
+      "category": "Trinômes",
+      "difficulty": "medium",
+      "prompt": "Un trinôme unitaire a deux racines dont la somme vaut $5$ et le produit vaut $6$. Quel est ce trinôme ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^2-5x+6$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x^2+5x+6$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x^2-6x+5$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x^2+6x-5$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour des racines $x_1,x_2$, le trinôme unitaire est $x^2-(x_1+x_2)x+x_1x_2$. On obtient donc $x^2-5x+6$."
+    },
+    {
+      "id": "q28",
+      "type": "mcq",
+      "category": "Trinômes",
+      "difficulty": "hard",
+      "prompt": "Résoudre dans $\\mathbb R$ : $x^4+2x^2-3=0$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{-\\sqrt3,\\sqrt3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\{-1,1\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\{-\\sqrt3,-1,1,\\sqrt3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\varnothing$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Posons $X=x^2\\geq0$. Alors $X^2+2X-3=(X-1)(X+3)=0$. Seule la solution $X=1$ est possible, donc $x=\\pm1$."
+    },
+    {
+      "id": "q29",
+      "type": "mcq",
+      "category": "Trigonométrie",
+      "difficulty": "medium",
+      "prompt": "Quelle est la solution générale de $\\cos x=\\cos\\alpha$ dans $\\mathbb R$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x=\\alpha+2k\\pi$, $k\\in\\mathbb Z$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$x=\\alpha+k\\pi$, $k\\in\\mathbb Z$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x=\\pm\\alpha+k\\pi$, $k\\in\\mathbb Z$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x=2k\\pi\\pm\\alpha$, $k\\in\\mathbb Z$",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "La parité et la périodicité du cosinus donnent $\\cos x=\\cos\\alpha\\Longleftrightarrow x=2k\\pi\\pm\\alpha$, avec $k\\in\\mathbb Z$."
+    },
+    {
+      "id": "q30",
+      "type": "boolean",
+      "category": "Trigonométrie",
+      "difficulty": "medium",
+      "prompt": "Vrai ou faux : pour tout réel $\\alpha$, $\\tan x=\\tan\\alpha$ équivaut à $x=\\alpha+k\\pi$, avec $k\\in\\mathbb Z$.",
+      "isTrue": true,
+      "explanation": "La tangente est de période $\\pi$ : $\\tan x=\\tan\\alpha\\Longleftrightarrow x=\\alpha+k\\pi$, avec $k\\in\\mathbb Z$."
+    },
+    {
+      "id": "q31",
+      "type": "mcq",
+      "category": "Trigonométrie",
+      "difficulty": "hard",
+      "prompt": "Que peut-on affirmer sur l'équation $3\\cos x+4\\sin x=6$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elle admet exactement une solution dans $\\mathbb R$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Elle admet deux familles de solutions",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Elle n'admet aucune solution réelle",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "Elle est vraie pour tout réel $x$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour tout réel $x$, $|3\\cos x+4\\sin x|\\leq\\sqrt{3^2+4^2}=5$. La valeur $6$ est donc impossible."
+    }
+  ]
+}

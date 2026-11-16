@@ -1,0 +1,39 @@
+{
+  "id": "olympiad-1ere-bac-sc-math-2014",
+  "title": "Olympiade Internationale de Mathématiques (IMO) 2014 — Sujet officiel",
+  "year": 2014,
+  "classId": "1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "badge": "international",
+  "source": "https://www.imo-official.org/problems.aspx",
+  "duration": 240,
+  "totalPoints": 42,
+  "exercises": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2014-ex1",
+      "number": 1,
+      "theme": "algebre",
+      "points": 7,
+      "topic": "Suites et moyennes",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $a_0 < a_1 < a_2 < \\dots$ une suite infinie d'entiers strictement positifs. Démontrer qu'il existe un unique entier $n \\geq 1$ tel que :\n$$a_n < \\frac{a_0+a_1+\\dots+a_n}{n} \\leq a_{n+1}$$"
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2014-ex2",
+      "number": 2,
+      "theme": "combinatoire",
+      "points": 7,
+      "topic": "Grille et jetons",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $n \\geq 2$ un entier. Sur un échiquier $n \\times n$, on place des jetons dans certaines cases. On dit qu'une configuration est 'pacifique' si chaque ligne et chaque colonne contient exactement un jeton. Trouver le nombre maximum de jetons que l'on peut placer de sorte qu'aucune configuration pacifique ne soit entièrement contenue dans l'ensemble des cases occupées."
+        }
+      ]
+    }
+  ]
+}

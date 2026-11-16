@@ -1,0 +1,26 @@
+{
+  "id": "ex-calcul-vectoriel-01",
+  "theme": "calcul-vectoriel",
+  "difficulty": "difficile",
+  "topic": "Calcul Vectoriel",
+  "context": "Soit $ABC$ un triangle. On considère les points $E$ et $F$ tels que : $\\overrightarrow{AE} = \\frac{3}{2}\\overrightarrow{AB}$ et $\\overrightarrow{AF} = \\frac{3}{2}\\overrightarrow{AC}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Construction",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer que $\\overrightarrow{EF} = \\frac{3}{2}\\overrightarrow{BC}$.",
+          "hint": "Pour exprimer $\\overrightarrow{EF}$, utilisez la relation de Chasles en introduisant le point A : $\\overrightarrow{EF} = \\overrightarrow{EA} + \\overrightarrow{AF}$. Utilisez ensuite les définitions de l'énoncé et factorisez."
+        },
+        {
+          "id": "sq2",
+          "content": "Que peut-on déduire pour les droites $(EF)$ et $(BC)$ ?",
+          "hint": "Quelle est la caractérisation vectorielle de deux droites parallèles ? Comment le résultat de la question précédente vous permet-il de conclure ?"
+        }
+      ]
+    }
+  ]
+}

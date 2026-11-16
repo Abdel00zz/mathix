@@ -1,0 +1,78 @@
+/* Apprendre — Print Stylesheet (A4, High-Contrast Ink on Paper) */
+
+@page { size: A4; margin: 14mm 14mm 16mm; }
+
+.print-doc-header { display: none; }
+
+@media print {
+  :root, :root[data-theme="dark"] {
+    --bg: #fff;
+    --surface: #fff;
+    --ink: #000;
+    --muted: #444;
+    --line: #bbb;
+    --accent: #000;
+    --on-accent: #fff;
+    --rule: #ccc;
+    --margin: #999;
+    --g: #000;
+    --bl: #000;
+    --v: #000;
+    --am: #000;
+    --r: #000;
+    --err: #000;
+    --ok: #000;
+    color-scheme: light;
+  }
+
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  html, body, main {
+    background: #fff !important;
+    color: #000 !important;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sheet, .paint, .top, .rp, .act,
+  #toc, #mf-lexicon-popover, #mf-media-lightbox, dialog,
+  [data-action-print], .exo-toolbar, .exo-pills, .sheet-tabs,
+  .exo-hint-btn, .exo-hint-panel[hidden], .sol > summary {
+    display: none !important;
+  }
+
+  .print-doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12mm;
+    margin: 0 0 8mm;
+    padding-bottom: 3mm;
+    border-bottom: 1pt solid #000;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .print-doc-header h1,
+  .print-doc-header h2,
+  .print-doc-header strong { margin: 0; font: 600 13pt var(--serif); }
+  .print-doc-header p,
+  .print-doc-header span,
+  .print-doc-header small { margin: 0; font: 500 9pt var(--sans); color: #444; }
+
+  .tscroll { overflow: visible; }
+  table.tkz-tab {
+    --tkz-bg: #fff;
+    --tkz-ink: #000;
+    --tkz-rule: #000;
+    --tkz-guide: #555;
+  }
+
+  #exo .exo-article, #exo .exo-article > .ctx, #exo .exo-sheet-item {
+    box-shadow: none !important;
+  }
+  .blk, .exam-exo, .exo-sheet-item, .exo-q-group, .tkz-tab, .media-figure, .katex-display {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

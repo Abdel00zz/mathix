@@ -1,0 +1,34 @@
+{
+  "id": "calcul-vectoriel",
+  "title": "Calcul vectoriel dans le plan",
+  "section": "algebre-geometrie",
+  "quizCount": 11,
+  "revisions": [
+    {
+      "id": "rev-vect-tc",
+      "title": "Fiche Complète : Vecteurs",
+      "path": "data/tronc-commun-sc/calcul-vectoriel/revisions/fiche_vecteurs_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-vect-tc-01",
+      "path": "data/tronc-commun-sc/calcul-vectoriel/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-vect-tc-02",
+      "path": "data/tronc-commun-sc/calcul-vectoriel/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-calcul-vectoriel-01",
+      "path": "data/tronc-commun-sc/calcul-vectoriel/exercises/ex_vecteurs_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-calcul-vectoriel-01",
+      "path": "data/tronc-commun-sc/calcul-vectoriel/quiz/calcul_vectoriel_quiz.json",
+      "questionsCount": 11
+    }
+  ]
+}

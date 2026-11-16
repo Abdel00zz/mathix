@@ -1,0 +1,57 @@
+{
+  "id": "ex-complexes-15",
+  "topic": "Nombres complexes - Bac National 2008 (Rattrapage)",
+  "requiresRedaction": true,
+  "examenYear": 2008,
+  "examenSession": "Rattrapage",
+  "context": "Le plan complexe est rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. On considère l'application $r$ qui associe un point $M(z)$ à un point $M_1(z_1)$ tel que : $z_1=\\dfrac{1+\\sqrt3i}{2}z+\\dfrac{\\sqrt3+i}{2}$. Et l'application $h$ qui associe le point $M(z)$ à un point $M_2(z_2)$ tel que : $z_2=-2z+3i$. On pose : $F=h\\circ r$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer la nature de chacune des deux applications $r$ et $h$ et leurs éléments caractéristiques.",
+      "hint": "Pour $r$ (forme $az+b$ avec $|a|=1$) : identifiez $a=\\frac{1+\\sqrt3i}2$ sous forme exponentielle pour trouver l'angle, puis résolvez $\\omega=a\\omega+b$ pour le centre. Pour $h$ (forme $az+b$ avec $a$ réel $\\ne1,-1$) : reconnaissez une homothétie et déterminez son centre et son rapport."
+    },
+    {
+      "id": "q2",
+      "content": "On considère les deux points $\\Omega(i)$ et $A(a)$ avec $a$ un nombre complexe donné différent de $i$. On pose : $B=F(A)$, $C=F(B)$ et $D=F(C)$.",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Montrer que si le point $M'(z')$ est l'image du point $M(z)$ par l'application $F$ alors : $z'-i=2e^{i4\\pi/3}(z-i)$.",
+          "hint": "Calculez d'abord l'expression complexe de $F=h\\circ r$ en composant $z_2=-2z_1+3i=-2\\left(\\frac{1+\\sqrt3i}2z+\\frac{\\sqrt3+i}2\\right)+3i$, simplifiez, puis mettez le résultat sous la forme $z'-i=\\lambda(z-i)$."
+        },
+        {
+          "id": "q2b",
+          "content": "Vérifier que $\\Omega$ est l'unique point qui vérifie : $F(\\Omega)=\\Omega$.",
+          "hint": "D'après la relation précédente, $F(\\Omega)=\\Omega$ équivaut à $0=2e^{i4\\pi/3}\\cdot0$, toujours vraie ; pour l'unicité, montrez que $F(z)=z$ avec $z\\ne i$ mènerait à $2e^{i4\\pi/3}=1$, ce qui est faux car $2e^{i4\\pi/3}$ n'est pas égal à $1$ (module différent)."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q3a",
+          "content": "Déterminer en fonction du nombre complexe $a$ les complexes $b$, $c$ et $d$ les affixes respectives de $B$, $C$ et $D$.",
+          "hint": "Appliquez successivement la relation $z'-i=2e^{i4\\pi/3}(z-i)$ en partant de $a$, pour obtenir $b-i$, puis $c-i$ à partir de $b$, puis $d-i$ à partir de $c$."
+        },
+        {
+          "id": "q3b",
+          "content": "Montrer que les points $\\Omega$, $A$ et $D$ sont alignés.",
+          "hint": "Calculez $\\dfrac{d-i}{a-i}$ à partir des expressions trouvées (en composant trois fois le facteur $2e^{i4\\pi/3}$) et vérifiez qu'il est réel."
+        },
+        {
+          "id": "q3c",
+          "content": "Montrer que $\\Omega$ est le barycentre du système pondéré $\\{(B,4);(C,2);(D,1)\\}$.",
+          "hint": "Il s'agit de montrer $4(b-i)+2(c-i)+1(d-i)=0$ (le barycentre de coefficients sommant peut être ramené à cette forme centrée en $\\Omega$) ; remplacez $b-i,c-i,d-i$ par leurs expressions en puissances de $2e^{i4\\pi/3}$ multipliant $a-i$ et simplifiez la combinaison linéaire."
+        },
+        {
+          "id": "q3d",
+          "content": "Déterminer l'ensemble des points $A(a)$ pour que le point $D$ appartienne à l'axe réel.",
+          "hint": "$D$ est sur l'axe réel signifie $d\\in\\mathbb{R}$, c'est-à-dire $d=\\bar d$ ; remplacez $d$ par son expression en fonction de $a$ (via $i+8e^{i4\\pi}\\,(a-i)$, à recalculer précisément) et traduisez cette condition sur $a$."
+        }
+      ]
+    }
+  ]
+}

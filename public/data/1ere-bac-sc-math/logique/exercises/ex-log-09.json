@@ -1,0 +1,35 @@
+{
+  "id": "ex-log-09",
+  "theme": "logique",
+  "difficulty": "facile",
+  "topic": "Logique & Raisonnements — Raisonnement déductif",
+  "requiresRedaction": true,
+  "context": "Soient $x$ et $y$ deux nombres réels. Montrer que :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$|x| < 1 \\Rightarrow 2x^2 - x - 1 < 2$",
+      "hint": "Partez de $-1 < x < 1$ et majorez $2x^2 - x - 1$ en utilisant les encadrements de $x$ et $x^2$."
+    },
+    {
+      "id": "q2",
+      "content": "$3 \\leq x \\leq 6 \\Rightarrow -\\dfrac{7}{2} \\leq \\dfrac{2-3x}{x-1} \\leq \\dfrac{5}{2}$",
+      "hint": "Encadrez le numérateur et le dénominateur séparément, en tenant compte du signe du dénominateur."
+    },
+    {
+      "id": "q3",
+      "content": "$\\dfrac{1}{1+|x|} = \\dfrac{y}{1+|y|} \\Rightarrow x = y$",
+      "hint": "Montrez que la fonction $t \\mapsto \\dfrac{t}{1+|t|}$ est injective en étudiant ses variations sur $\\mathbb{R}^+$ et $\\mathbb{R}^-$."
+    },
+    {
+      "id": "q4",
+      "content": "$\\begin{cases} 1 \\leq s \\leq 3 \\\\ 1 \\leq t \\leq 3 \\end{cases} \\Rightarrow -10 \\leq 4s + 2t - 3 \\leq 2$ (corriger l'inégalité selon le contexte)",
+      "hint": "Encadrez $4s$ et $2t$ séparément à partir des encadrements de $s$ et $t$, puis additionnez."
+    },
+    {
+      "id": "q5",
+      "content": "$|x| < \\dfrac{1}{2}$ et $|y-2| < \\dfrac{1}{2} \\Rightarrow \\dfrac{3}{2} < \\dfrac{2y}{y-x} < 3$",
+      "hint": "Encadrez $y$ et $y-x$ à partir des hypothèses, puis étudiez le rapport $\\dfrac{2y}{y-x}$."
+    }
+  ]
+}

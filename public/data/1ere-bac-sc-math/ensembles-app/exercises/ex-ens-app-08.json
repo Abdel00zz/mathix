@@ -1,0 +1,57 @@
+{
+  "id": "ex-ens-app-08",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Égalités ensemblistes et différence symétrique",
+  "requiresRedaction": true,
+  "context": "Les questions 1, 2 et 3 sont indépendantes.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soient $A$, $B$ et $C$ trois parties d'un ensemble $E$. Montrer que :",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "$A \\subset B \\subset C \\iff A \\cup B = B \\cap C$",
+          "hint": "Pour $\\Rightarrow$ : si $A \\subset B \\subset C$, calculez $A \\cup B$ et $B \\cap C$. Pour $\\Leftarrow$ : montrez d'abord $B \\subset C$ en prenant $x \\in B$."
+        },
+        {
+          "id": "sq1b",
+          "content": "$(A \\cup B) \\cap (A \\cup \\overline{B}) \\cup (A \\cup B \\cup \\overline{C}) \\cup (A \\cup B \\cup \\overline{C}) = (A \\cup B) \\cup (B \\cup C) \\cup (C \\cup A)$",
+          "hint": ""
+        },
+        {
+          "id": "sq1c",
+          "content": "$A \\cup \\overline{B} = A \\cup \\overline{C} \\iff A \\cap B = A \\cap C$",
+          "hint": "Prenez le complémentaire des deux membres, puis utilisez les lois de De Morgan."
+        },
+        {
+          "id": "sq1d",
+          "content": "$A \\cup B \\subset A \\cup C$ et $A \\cap B \\subset A \\cap C \\Rightarrow B \\subset C$",
+          "hint": "Soit $x \\in B$. Distinguez les cas $x \\in A$ et $x \\notin A$, et utilisez les deux inclusions."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soient $A$, $B$, $C$ et $D$ quatre parties d'un ensemble $E$. Montrer que : $\\begin{cases} (\\overline{B} \\setminus C) \\cup A = E \\\\ (\\overline{C} \\setminus D) \\cup A = E \\end{cases} \\Rightarrow (B \\setminus D) \\subset A$",
+      "hint": "Reformulez chaque condition : la première donne $\\overline{A} \\subset \\overline{B} \\setminus C$, soit $\\overline{A} \\cap B = \\varnothing$ ou... Travaillez par l'absurde : supposez qu'il existe $x \\in B \\setminus D$ avec $x \\notin A$."
+    },
+    {
+      "id": "q3",
+      "content": "Soient $A$ et $B$ deux parties d'un ensemble $E$. On rappelle que la différence symétrique $A \\Delta B$ est le sous-ensemble de $E$ noté $A \\Delta B$ et défini par : $A \\Delta B = (A \\setminus B) \\cup (B \\setminus A)$.",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que : $A \\Delta B = (A \\cup B) \\setminus (A \\cap B)$ et $\\overline{A \\Delta B} = A \\Delta B$",
+          "hint": "Pour la première égalité, montrez la double inclusion. Pour la seconde, utilisez que $\\overline{A \\Delta B} = \\overline{(A\\setminus B) \\cup (B\\setminus A)}$ et appliquez De Morgan."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que pour tout $C \\in \\mathcal{P}(E)$ : $(A \\Delta B = A \\Delta C) \\iff B = C$",
+          "hint": "Utilisez l'associativité de $\\Delta$ et le fait que $A \\Delta A = \\varnothing$ : faites $\\Delta A$ des deux membres."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ex-ens-app-10",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Inclusions et parties d'un ensemble",
+  "requiresRedaction": true,
+  "context": "Simplifier les écritures suivantes :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$A \\cap (A \\cup B)$",
+      "hint": "Loi d'absorption."
+    },
+    {
+      "id": "q2",
+      "content": "$[A \\cup (A \\cap B)] \\cup B$",
+      "hint": "Simplifiez d'abord $A \\cup (A \\cap B)$ par absorption."
+    },
+    {
+      "id": "q3",
+      "content": "$(A \\cap \\overline{B}) \\cup (A \\cap B)$",
+      "hint": "Factorisez par $A$."
+    },
+    {
+      "id": "q4",
+      "content": "$(A \\cup B) \\setminus (A \\cap B)$",
+      "hint": "C'est la définition de la différence symétrique."
+    },
+    {
+      "id": "q5",
+      "content": "$(A \\cap \\overline{B}) \\cup (\\overline{A} \\cap B)$",
+      "hint": "Reconnaissez la différence symétrique $A \\Delta B$."
+    },
+    {
+      "id": "q6",
+      "content": "$A \\cup [B \\cap (A \\cup C)]$",
+      "hint": "Distribuez l'union : $A \\cup [B \\cap (A \\cup C)] = (A \\cup B) \\cap (A \\cup A \\cup C)$."
+    },
+    {
+      "id": "q7",
+      "content": "$A \\cap [B \\cup (A \\cap C)]$",
+      "hint": "Distribuez l'intersection et appliquez l'absorption."
+    }
+  ]
+}

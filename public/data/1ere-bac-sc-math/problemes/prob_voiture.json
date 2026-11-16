@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Que vaut votre voiture ?",
+    "subtitle": "Décote et suites géométriques",
+    "context": "Suites"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Que vaut votre voiture ?",
+          "content": "Le prix d'une voiture diminue avec son ancienneté : c'est la \\textbf{décote}. Pour une citadine, la cote de l'Argus applique chaque année une décote sur la valeur de \\emph{début d'année} :\\par $\\bullet$ $1^{re}$ année : $-20\\,\\%$ ;\\par $\\bullet$ $2^{e}$ année : $-15\\,\\%$ ;\\par $\\bullet$ $3^{e}$ et $4^{e}$ années : $-10\\,\\%$ ;\\par $\\bullet$ chaque année suivante : $-7\\,\\%$.\\par On note $C(x)$ la valeur de la voiture après $x$ années, avec un prix neuf $C(0)$."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Exprimer $C(1)$, $C(2)$, $C(3)$, $C(4)$ et $C(5)$ en fonction de la valeur de l'année précédente (une décote de $p\\,\\%$ revient à multiplier par $1 - \\tfrac{p}{100}$).\\item Pour un prix neuf $C(0) = 10\\,000$ €, calculer la valeur de la voiture après $5$ ans.\\item Montrer que pour $x \\geq 4$, $C(x) = C(4) \\times 0{,}93^{\\,x-4}$. Quelle est la nature de cette suite à partir de la $4^{e}$ année ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Une baisse de $20\\,\\%$ multiplie par $0{,}80$ ; de $15\\,\\%$ par $0{,}85$ ; de $10\\,\\%$ par $0{,}90$ ; de $7\\,\\%$ par $0{,}93$."
+        },
+        {
+          "type": "hint",
+          "content": "Pour $C(5)$, enchaînez les multiplications : $C(5) = C(0)\\times 0{,}80 \\times 0{,}85 \\times 0{,}90 \\times 0{,}90 \\times 0{,}93$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $C(1) = 0{,}80\\,C(0)$ ; $C(2) = 0{,}85\\,C(1)$ ; $C(3) = 0{,}90\\,C(2)$ ; $C(4) = 0{,}90\\,C(3)$ ; $C(5) = 0{,}93\\,C(4)$.\\par\\textbf{2)} $C(5) = 10\\,000 \\times 0{,}80 \\times 0{,}85 \\times 0{,}90 \\times 0{,}90 \\times 0{,}93 = 10\\,000 \\times 0{,}512244 \\approx \\boxed{5122{,}44\\ \\text{€}}$. La voiture a perdu près de la moitié de sa valeur en $5$ ans.\\par\\textbf{3)} À partir de la $4^{e}$ année, chaque année multiplie par $0{,}93$, donc $C(x) = C(4)\\times 0{,}93^{\\,x-4}$ : $(C(x))_{x\\geq 4}$ est une \\textbf{suite géométrique} de raison $0{,}93$."
+        }
+      ]
+    }
+  ]
+}

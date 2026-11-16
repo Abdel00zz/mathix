@@ -1,0 +1,137 @@
+{
+  "header": {
+    "title": "Les Équations Différentielles",
+    "subtitle": "Définition, premier ordre et second ordre",
+    "context": "2BAC Sciences"
+  },
+  "lexique": [
+    {"term":"Équation différentielle","arabic":"معادلة تفاضلية","category":"concept","definition":"Équation reliant une fonction inconnue à une ou plusieurs de ses dérivées.","variants":["équations différentielles"]},
+    {"term":"Solution générale","arabic":"الحل العام","category":"concept","definition":"Famille de toutes les fonctions qui vérifient l'équation différentielle.","variants":["solutions générales"]},
+    {"term":"Solution particulière","arabic":"حل خاص","category":"concept","definition":"Solution déterminée grâce à une condition supplémentaire.","variants":["solutions particulières"]},
+    {"term":"Condition initiale","arabic":"شرط ابتدائي","category":"concept","definition":"Valeur imposée à une solution et parfois à sa dérivée en un point donné.","variants":["conditions initiales"]},
+    {"term":"Premier ordre","arabic":"من الرتبة الأولى","category":"concept","definition":"Se dit d'une équation où la dérivée d'ordre le plus élevé est la première dérivée.","variants":["équation du premier ordre"]},
+    {"term":"Second ordre","arabic":"من الرتبة الثانية","category":"concept","definition":"Se dit d'une équation contenant une dérivée seconde.","variants":["équation du second ordre"]},
+    {"term":"Équation homogène","arabic":"معادلة متجانسة","category":"concept","definition":"Équation différentielle dont le second membre est nul.","variants":["homogène"]},
+    {"term":"Équation linéaire","arabic":"معادلة خطية","category":"concept","definition":"Équation où la fonction inconnue et ses dérivées apparaissent au premier degré.","variants":["linéaire"]},
+    {"term":"Solution exponentielle","arabic":"حل أسي","category":"concept","definition":"Solution exprimée à l'aide d'une exponentielle, fréquente en équations différentielles.","variants":["exponentielle"]},
+    {"term":"Équation caractéristique","arabic":"المعادلة المميزة","category":"concept","definition":"Équation algébrique associée à une équation différentielle linéaire du second ordre.","variants":["racine caractéristique"]}
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Les équations différentielles permettent de \\objectif{relier une fonction inconnue à ses propres dérivées} et ainsi de modéliser toute évolution dynamique : décroissance, oscillation, croissance logistique. On résout les formes $y' = ay + b$ et $y'' + \\omega^2 y = 0$ pour obtenir explicitement la fonction cherchée. La \\defi{difficulté} réside dans le choix de la solution particulière et la détermination des constantes à partir des conditions initiales.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Simon,_marquis_de_Laplace_(1745-1827)_-_Gu%C3%A9rin.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Pierre-Simon de Laplace (1749–1827)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "definition_premier_ordre",
+      "category": "course",
+      "title": "Définition et équations du premier ordre",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Imaginez que vous vouliez prédire la \\textbf{température} d'un café qui refroidit, ou la \\textbf{croissance} d'une population de bactéries. C'est exactement à cela que servent les équations différentielles du \\textbf{premier ordre} : elles \\textit{lient une quantité directement} à sa \\textbf{vitesse de variation} (dérivée première). \\par Exemple : $\\dfrac{dT}{dt} = -k(T - T_\\text{ext})$ modélise le refroidissement par Newton."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{une équation différentielle}",
+          "content": "Une \\textbf{équation différentielle} est une équation ayant pour inconnue une ou plusieurs fonctions ; elle se présente sous la forme d'une relation entre ces fonctions inconnues et leurs dérivées successives.\\par\\smallskip L'ordre d'une équation différentielle correspond au degré maximal de dérivation auquel l'une des fonctions inconnues a été soumise."
+        },
+        {
+          "type": "remark",
+          "content": "Pour alléger l'écriture, on note très souvent l'inconnue $y$ au lieu de $y(x)$. Sa dérivée première est notée $y'$, et sa dérivée seconde $y''$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{résoudre l'équation $y' = ay + b$}",
+          "content": "Soit l'équation différentielle $(E): y' = ay + b$.\\par\\smallskip Dans le cas général où $a \\neq 0$, l'ensemble des solutions de l'équation $(E)$ sont les fonctions de la forme :\\par\\smallskip $$\\boxed{f(x) = \\alpha e^{ax} - \\frac{b}{a}}$$\\par\\smallskip avec $\\alpha \\in \\mathbb{R}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'équation différentielle $(E) : y' = 5y$.}\\par On identifie la forme $y' = ay + b$ avec $a = 5$ et $b = 0$. La fraction $\\displaystyle\\frac{b}{a}$ s'annule.\\par Ainsi, les solutions générales sont simplement les fonctions $y(x) = \\alpha e^{5x}$, avec $\\alpha \\in \\mathbb{R}$."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{trouver l'unique solution avec une condition initiale}",
+          "content": "Une équation différentielle possède toujours une infinité de solutions (à cause de la constante $\\alpha$).\\par\\smallskip Cependant, il existe une et une seule fonction $f$ qui est solution et qui vérifie une \\textbf{condition initiale} donnée, souvent de la forme $f(x_0) = y_0$. Cette condition permet de calculer la valeur exacte de $\\alpha$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Trouvons la solution de $y' = 3y - 6$ vérifiant $f(0) = 5$.}\\par On identifie les coefficients : $a = 3$ et $b = -6$. On applique la formule de la solution générale :\\begin{align*}f(x) &= \\alpha e^{3x} - \\displaystyle\\frac{-6}{3} \\\\&= \\alpha e^{3x} + 2\\end{align*}On utilise ensuite la condition initiale pour trouver $\\alpha$. Puisque $f(0) = 5$, on remplace $x$ par $0$ :\\begin{align*}\\alpha e^{0} + 2 &= 5 \\\\\\alpha + 2 &= 5 \\\\\\alpha &= 3\\end{align*}L'unique solution cherchée est donc $f(x) = 3e^{3x} + 2$."
+        }
+      ]
+    },
+    {
+      "id": "culture_mid",
+      "category": "course",
+      "title": "Culture & Contexte",
+      "blocks": []
+    },
+    {
+      "id": "equations_second_ordre",
+      "category": "course",
+      "title": "Équations du second ordre",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le premier ordre relié vitesse et position. Le \\textbf{second ordre} va plus loin : il relie la \\textbf{dérivée seconde} (l'accélération) à la fonction elle-même. \\par La stratégie de résolution repose entièrement sur l'\\textbf{équation caractéristique} $r^2 + ar + b = 0$ et son \\textbf{discriminant} : trois cas distincts selon $\\Delta > 0$, $\\Delta = 0$ ou $\\Delta < 0$, chacun donnant une forme de solution différente. Ces équations gouvernent le mouvement des pendules, des ressorts et des circuits \\textbf{RLC} en électronique."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{l'équation caractéristique}",
+          "content": "L'équation de la forme $y'' + ay' + by = 0$ s'appelle une équation différentielle linéaire d'ordre 2 à coefficients constants.\\par\\smallskip Pour la résoudre, on lui associe une équation de second degré très simple : $r^2 + ar + b = 0$. C'est ce qu'on appelle l'\\textbf{équation caractéristique} de l'équation différentielle.\\par On note $\\Delta = a^2 - 4b$ son discriminant."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment \\mathqst{trouver les solutions selon le signe de $\\Delta$}",
+          "content": "La solution générale de l'équation $y'' + ay' + by = 0$ dépend directement du signe de $\\Delta$.\\begin{enumerate}\\item \\textbf{Si $\\Delta > 0$} : l'équation caractéristique a deux solutions réelles $r_1$ et $r_2$. Les solutions sont : $$\\boxed{y(x) = \\alpha e^{r_1 x} + \\beta e^{r_2 x}}$$\\item \\textbf{Si $\\Delta = 0$} : l'équation caractéristique a une solution réelle double $r_1$. Les solutions sont : $$\\boxed{y(x) = (\\alpha x + \\beta)e^{r_1 x}}$$\\item \\textbf{Si $\\Delta < 0$} : l'équation a deux solutions complexes conjuguées $r_1 = p + qi$ et $r_2 = p - qi$. Les solutions sont : $$\\boxed{y(x) = (\\alpha \\cos(qx) + \\beta \\sin(qx))e^{px}}$$\\end{enumerate}Dans tous les cas, $\\alpha$ et $\\beta$ sont des nombres réels."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'équation $(E_1) : y'' - 3y' + 2y = 0$.}\\par L'équation caractéristique associée est $r^2 - 3r + 2 = 0$. Son discriminant est $\\Delta = 9 - 8 = 1$.\\par Puisque $\\Delta > 0$, il y a deux racines réelles distinctes : $r_1 = 1$ et $r_2 = 2$.\\par On applique la formule du premier cas. Les solutions sont donc de la forme : $y(x) = \\alpha e^x + \\beta e^{2x}$, avec $\\alpha, \\beta \\in \\mathbb{R}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Résolvons l'équation $(E_2) : y'' - 2y' + 5y = 0$.}\\par L'équation caractéristique est $r^2 - 2r + 5 = 0$. On calcule le discriminant : $\\Delta = 4 - 20 = -16$.\\par Puisque $\\Delta < 0$, il y a deux racines complexes conjuguées. On calcule l'une d'elles :\\begin{align*}r_1 &= \\displaystyle\\frac{2 + i\\sqrt{16}}{2} = 1 + 2i\\end{align*}On identifie la partie réelle $p = 1$ et la partie imaginaire $q = 2$. Les solutions générales de l'équation sont donc :\\begin{align*}y(x) &= (\\alpha \\cos(2x) + \\beta \\sin(2x))e^{x}\\end{align*}où $\\alpha, \\beta \\in \\mathbb{R}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons la solution de $4y'' - 4y' + y = 0$ vérifiant $g(0) = 1$ et $g'(0) = 0$.}\\par L'équation caractéristique $4r^2 - 4r + 1 = 0$ a pour discriminant $\\Delta = 16 - 16 = 0$. Il y a une racine double $r_1 = \\displaystyle\\frac{1}{2}$.\\par La solution générale est $g(x) = (\\alpha x + \\beta)e^{\\frac{1}{2}x}$. On calcule sa dérivée pour utiliser la seconde condition :\\begin{align*}g'(x) &= \\alpha e^{\\frac{1}{2}x} + (\\alpha x + \\beta)\\displaystyle\\frac{1}{2}e^{\\frac{1}{2}x} \\\\&= (\\displaystyle\\frac{1}{2}\\alpha x + \\alpha + \\displaystyle\\frac{1}{2}\\beta)e^{\\frac{1}{2}x}\\end{align*}On utilise les deux conditions initiales en remplaçant $x$ par $0$ :\\begin{align*}g(0) &= \\beta = 1 \\\\g'(0) &= \\alpha + \\displaystyle\\frac{1}{2}\\beta = 0\\end{align*}Puisque $\\beta = 1$, on en déduit que $\\alpha = -\\displaystyle\\frac{1}{2}$. L'unique solution est donc $g(x) = (-\\displaystyle\\frac{1}{2}x + 1)e^{\\frac{1}{2}x}$."
+        }
+      ]
+    },
+    {
+      "id": "cas_particulier_physique",
+      "category": "course",
+      "title": "Un cas très fréquent en physique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Parmi toutes les équations du second ordre, la forme $y'' + \\omega^2 y = 0$ est tellement fréquente qu'elle mérite d'être reconnue immédiatement. Elle modélise l'\\textbf{oscillateur harmonique} : pendule, ressort idéal, circuit \\textbf{LC}. \\par Sa solution est toujours une combinaison de $\\cos(\\omega x)$ et $\\sin(\\omega x)$, sans étape intermédiaire : on applique la formule \\textbf{directement}."
+        },
+        {
+          "type": "property",
+          "title": "Comment \\mathqst{résoudre directement $y'' + \\omega^2 y = 0$}",
+          "content": "C'est un rappel fondamental des équations différentielles. Pour tout réel $\\omega$, les solutions de l'équation différentielle $(E) : y'' + \\omega^2 y = 0$ sont les fonctions de la forme :\\par\\smallskip $$\\boxed{y(x) = \\alpha \\cos(\\omega x) + \\beta \\sin(\\omega x)}$$\\par\\smallskip où $\\alpha$ et $\\beta$ sont des réels."
+        }
+      ]
+    }
+  ]
+}

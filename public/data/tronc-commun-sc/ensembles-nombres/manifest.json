@@ -1,0 +1,34 @@
+{
+  "id": "ensembles-nombres",
+  "title": "Les ensembles de nombres",
+  "section": "algebre-geometrie",
+  "quizCount": 14,
+  "revisions": [
+    {
+      "id": "rev-ensembles-tc",
+      "title": "Fiche Complète : Ensembles",
+      "path": "data/tronc-commun-sc/ensembles-nombres/revisions/fiche_ensembles_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-ensembles-tc-01",
+      "path": "data/tronc-commun-sc/ensembles-nombres/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-ensembles-tc-02",
+      "path": "data/tronc-commun-sc/ensembles-nombres/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-ensembles-nombres-01",
+      "path": "data/tronc-commun-sc/ensembles-nombres/exercises/ex_ensembles_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-ensembles-nombres-01",
+      "path": "data/tronc-commun-sc/ensembles-nombres/quiz/ensembles-nombres_quiz.json",
+      "questionsCount": 14
+    }
+  ]
+}

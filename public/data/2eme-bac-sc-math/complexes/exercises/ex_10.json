@@ -1,0 +1,78 @@
+{
+  "id": "ex-complexes-10",
+  "topic": "Nombres complexes - Bac National 2014 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2014,
+  "examenSession": "Normale",
+  "context": "Le plan complexe étant rapporté à un repère orthonormé direct $(O,\\vec{u},\\vec{v})$. Soit $\\theta$ un nombre réel tel que : $\\theta\\in\\left[0,\\dfrac{\\pi}{2}\\right]-\\left\\{\\dfrac{\\pi}{4}\\right\\}$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "On considère dans $\\mathbb{C}$ l'équation suivante : $(E):z^2-\\sqrt2e^{i\\theta}z+e^{2i\\theta}=0$.",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Vérifier que le discriminant de l'équation $(E)$ est : $\\Delta=\\left(\\sqrt2ie^{i\\theta}\\right)^2$.",
+          "hint": "Calculez $\\Delta=2e^{2i\\theta}-4e^{2i\\theta}=-2e^{2i\\theta}$ et comparez-le au carré proposé."
+        },
+        {
+          "id": "q1b",
+          "content": "Écrire sous forme trigonométrique les deux racines $z_1$ et $z_2$ de l'équation $(E)$ dans $\\mathbb{C}$.",
+          "hint": "Une racine carrée de $\\Delta$ est $\\sqrt2ie^{i\\theta}=\\sqrt2e^{i(\\theta+\\pi/2)}$ ; appliquez la formule des racines puis factorisez par $e^{i\\theta}$ pour simplifier les angles obtenus ($\\theta\\pm\\pi/4$)."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "On considère les points $I$, $J$, $T_1$, $T_2$ et $A$ d'affixes respectives $1$, $-1$, $e^{i(\\theta+\\pi/4)}$, $e^{i(\\theta-\\pi/4)}$ et $\\sqrt2e^{i\\theta}$.",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Montrer que les deux droites $(OA)$ et $(T_1T_2)$ sont perpendiculaires.",
+          "hint": "Calculez le quotient $\\dfrac{T_2-T_1}{A-0}$ en factorisant $T_1$ et $T_2$ par l'arc moitié $e^{i\\theta}$, et montrez qu'il est imaginaire pur."
+        },
+        {
+          "id": "q2b",
+          "content": "Soit $K$ le milieu du segment $[T_1T_2]$. Montrer que les points $O$, $K$ et $A$ sont alignés.",
+          "hint": "Calculez $k=\\dfrac{T_1+T_2}{2}$ en factorisant par $e^{i\\theta}$, puis vérifiez que $k/a$ est réel."
+        },
+        {
+          "id": "q2c",
+          "content": "En déduire que la droite $(OA)$ est la médiatrice du segment $[T_1T_2]$.",
+          "hint": "Combinez la perpendicularité $(OA)\\perp(T_1T_2)$ et le passage de $(OA)$ par le milieu $K$ de $[T_1T_2]$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Soit $r$ la rotation de centre $T_1$ et d'angle $\\dfrac{\\pi}{2}$.",
+      "subQuestions": [
+        {
+          "id": "q3a",
+          "content": "Donner l'expression complexe de la rotation $r$.",
+          "hint": "Une rotation de centre $\\omega$ et d'angle $\\pi/2$ s'écrit $z'-\\omega=i(z-\\omega)$ ; remplacez $\\omega$ par l'affixe de $T_1$."
+        },
+        {
+          "id": "q3b",
+          "content": "Vérifier que l'affixe du point $B$ image du point $I$ par la rotation $r$ est : $b=\\sqrt2e^{i\\theta}+i$.",
+          "hint": "Appliquez l'expression de $r$ trouvée à la question précédente au point $I$ d'affixe $1$, en utilisant $T_1=e^{i(\\theta+\\pi/4)}$."
+        },
+        {
+          "id": "q3c",
+          "content": "Montrer que les deux droites $(AB)$ et $(IJ)$ sont perpendiculaires.",
+          "hint": "Calculez $\\dfrac{B-A}{J-I}$ (avec $J-I=-2$) et montrez que ce quotient est imaginaire pur, en utilisant $b-a=i$ d'après l'expression de $b$."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Déterminer l'affixe du point $C$ image du point $A$ par la translation de vecteur $(-\\vec{v})$.",
+      "hint": "Une translation de vecteur $-\\vec v$ (donc d'affixe $-i$) donne $c=a-i$."
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que $A$ est le milieu du segment $[BC]$.",
+      "hint": "Calculez $\\dfrac{b+c}{2}$ à partir des expressions de $b$ et $c$ obtenues précédemment et comparez-le à $a$."
+    }
+  ]
+}

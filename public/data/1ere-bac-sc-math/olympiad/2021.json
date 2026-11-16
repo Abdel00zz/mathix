@@ -1,0 +1,52 @@
+{
+  "id": "olympiad-1ere-bac-sc-math-2021",
+  "title": "Olympiade Mathématique Marocaine 2021 — Épreuve nationale",
+  "year": 2021,
+  "classId": "1ere-bac-sc-math",
+  "gradeLevel": "1ere-bac-sc-math",
+  "badge": "national",
+  "source": "https://www.men.gov.ma/",
+  "duration": 180,
+  "totalPoints": 20,
+  "exercises": [
+    {
+      "id": "olympiad-1ere-bac-sc-math-2021-ex1",
+      "number": 1,
+      "theme": "algebre",
+      "points": 5,
+      "topic": "Partie fractionnaire",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $x$ un nombre réel tel que $x + \\frac{1}{x}$ est un entier. Montrer que $x^n + \\frac{1}{x^n}$ est un entier pour tout $n \\in \\mathbb{N}^*$."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2021-ex2",
+      "number": 2,
+      "theme": "geometrie",
+      "points": 5,
+      "topic": "Bissectrices et cercles",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $ABC$ un triangle. La bissectrice intérieure de l'angle $\\hat{A}$ coupe le côté $[BC]$ en $D$ et le cercle circonscrit au triangle $ABC$ en $E$. Montrer que $AB \\cdot AC = AD \\cdot AE$."
+        }
+      ]
+    },
+    {
+      "id": "olympiad-1ere-bac-sc-math-2021-ex3",
+      "number": 3,
+      "theme": "arithmetique",
+      "points": 5,
+      "topic": "Nombres de Mersenne",
+      "questions": [
+        {
+          "id": "q1",
+          "content": "Soit $n$ un entier naturel tel que $2^n - 1$ soit un nombre premier. Montrer que $n$ est nécessairement un nombre premier."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "school": "ensa",
+  "year": "2023",
+  "title": "Concours ENSA 2023",
+  "questions": [
+    {
+      "id": "ensa-23-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "concours",
+      "prompt": "La limite $\\displaystyle \\lim_{x \\to 0} \\frac{\\sqrt{1+x} - \\sqrt{1-x}}{x}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "N'existe pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Multiplication par le conjugué : $\\frac{(1+x)-(1-x)}{x(\\sqrt{1+x}+\\sqrt{1-x})} = \\frac{2}{\\sqrt{1+x}+\\sqrt{1-x}} \\xrightarrow[x\\to 0]{} \\frac{2}{2} = 1$."
+    },
+    {
+      "id": "ensa-23-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "concours",
+      "prompt": "$\\displaystyle \\lim_{x \\to 0} \\frac{\\sin(3x)}{\\tan(5x)}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{3}{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{5}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Equivalents en $0$ : $\\sin(3x) \\sim 3x$ et $\\tan(5x) \\sim 5x$. Quotient : $\\frac{3x}{5x} = \\frac{3}{5}$."
+    },
+    {
+      "id": "ensa-23-03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "difficulty": "concours",
+      "prompt": "$\\displaystyle \\lim_{x \\to +\\infty} \\left(1 + \\frac{3}{x}\\right)^x$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$e^3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$3e$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\left(1+\\frac{3}{x}\\right)^x = e^{x\\ln(1+3/x)}$. Or $\\ln(1+u) \\sim u$ quand $u\\to 0$, donc l'exposant tend vers $3$. Limite fondamentale : $(1+a/n)^n \\to e^a$."
+    },
+    {
+      "id": "ensa-23-04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Continuité",
+      "difficulty": "concours",
+      "prompt": "Soit $f(x)=\\frac{e^x - 1 - x}{x^2}$ si $x \\neq 0$. Pour que $f$ soit prolongeable par continuité en $0$, on pose $f(0) =$ :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "DL : $e^x = 1 + x + \\frac{x^2}{2} + o(x^2)$. Donc $\\frac{e^x-1-x}{x^2} \\to \\frac{1}{2}$. La règle de L'Hôpital (appliquée deux fois) donne le même résultat."
+    },
+    {
+      "id": "ensa-23-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "difficulty": "concours",
+      "prompt": "Soit $f(x) = x^x$ pour $x > 0$. Alors $f'(x)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^x(\\ln x + 1)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x \\cdot x^{x-1}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x^x \\ln x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x^{x+1}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On écrit $f(x) = e^{x\\ln x}$. Dérivée de la composée : $f'(x) = (\\ln x + 1) \\cdot e^{x\\ln x} = x^x(\\ln x + 1)$. Le piège est d'appliquer $(x^n)' = nx^{n-1}$ qui ne s'applique que si $n$ est constant."
+    },
+    {
+      "id": "ensa-23-06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "difficulty": "concours",
+      "prompt": "La dérivée de $f(x) = \\ln(\\cos x)$ sur $]-\\frac{\\pi}{2}, \\frac{\\pi}{2}[$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\tan x$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{\\cos x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\frac{\\sin x}{\\cos^2 x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\cos x \\cdot \\ln(\\cos x)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Dérivée d'une composée $\\ln(u)$ : $f'(x) = \\frac{u'}{u} = \\frac{-\\sin x}{\\cos x} = -\\tan x$."
+    },
+    {
+      "id": "ensa-23-07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "difficulty": "concours",
+      "prompt": "Soit $(u_n)$ définie par $u_0 = 2$ et $u_{n+1} = \\sqrt{2u_n + 3}$. La suite converge vers :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\sqrt{7}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Point fixe : $\\ell = \\sqrt{2\\ell+3} \\Rightarrow \\ell^2 - 2\\ell - 3 = 0 \\Rightarrow \\ell = 3$ (seule racine $> 0$). Par récurrence : $u_n < 3$ et $u_{n+1} > u_n$. Suite croissante majorée, donc convergente."
+    },
+    {
+      "id": "ensa-23-08",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Soit $z = \\frac{1+i\\sqrt{3}}{1-i\\sqrt{3}}$. Le module et l'argument de $z$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$|z|=1$ et $\\arg(z)=\\frac{2\\pi}{3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$|z|=1$ et $\\arg(z)=\\frac{\\pi}{3}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$|z|=2$ et $\\arg(z)=\\frac{\\pi}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$|z|=\\sqrt{3}$ et $\\arg(z)=\\pi$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$1+i\\sqrt{3} = 2e^{i\\pi/3}$ et $1-i\\sqrt{3} = 2e^{-i\\pi/3}$. Donc $z = e^{i2\\pi/3}$, d'où $|z|=1$ et $\\arg(z)=\\frac{2\\pi}{3}$. Passage en forme exponentielle pour simplifier les quotients."
+    },
+    {
+      "id": "ensa-23-09",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Complexes",
+      "difficulty": "concours",
+      "prompt": "Les racines cubiques de $-8$ dans $\\mathbb{C}$ sont :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2e^{i\\pi/3}, \\; -2, \\; 2e^{-i\\pi/3}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-2, \\; 2i, \\; -2i$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-2$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2e^{i\\pi/3}, \\; 2e^{i2\\pi/3}, \\; 2e^{i\\pi}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$-8 = 8e^{i\\pi}$. Les racines cubiques sont $z_k = 2e^{i(\\pi+2k\\pi)/3}$ pour $k=0,1,2$ : $z_0 = 2e^{i\\pi/3}$, $z_1 = -2$, $z_2 = 2e^{-i\\pi/3}$. Formule des racines n-ièmes."
+    },
+    {
+      "id": "ensa-23-10",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "Le reste de la division de $7^{100}$ par $5$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$4$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$7 \\equiv 2 \\pmod{5}$ et $2^4 = 16 \\equiv 1 \\pmod{5}$. Comme $100 = 4 \\times 25$, $7^{100} \\equiv 2^{100} = (2^4)^{25} \\equiv 1 \\pmod{5}$. Petit théorème de Fermat : $a^{p-1} \\equiv 1 \\pmod{p}$."
+    },
+    {
+      "id": "ensa-23-11",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Arithmétique",
+      "difficulty": "concours",
+      "prompt": "Le PGCD de $2024$ et $1518$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$506$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$253$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1012$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Algorithme d'Euclide : $2024 = 1 \\times 1518 + 506$, puis $1518 = 3 \\times 506 + 0$. Donc $\\text{PGCD}(2024, 1518) = 506$."
+    },
+    {
+      "id": "ensa-23-12",
+      "type": "mcq",
+      "theme": "algebre",
+      "category": "Structures",
+      "difficulty": "concours",
+      "prompt": "Soit $(\\mathbb{Z}/5\\mathbb{Z}, +, \\times)$. Cette structure est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Un corps commutatif",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Un anneau non intègre",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Un anneau commutatif non unitaire",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Un groupe pour la multiplication",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\mathbb{Z}/5\\mathbb{Z}$ est un corps car $5$ est premier. Théorème : $\\mathbb{Z}/n\\mathbb{Z}$ est un corps ssi $n$ est premier. Tout $\\bar{a} \\neq \\bar{0}$ admet un inverse par Bézout."
+    },
+    {
+      "id": "ensa-23-13",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Dénombrement",
+      "difficulty": "concours",
+      "prompt": "Le nombre de façons de choisir un comité de $3$ personnes parmi $10$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$120$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$720$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1000$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$30$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Combinaison sans ordre : $\\binom{10}{3} = \\frac{10!}{3! \\cdot 7!} = \\frac{10 \\times 9 \\times 8}{6} = 120$. On divise par $3!$ car l'ordre n'importe pas."
+    },
+    {
+      "id": "ensa-23-14",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "difficulty": "concours",
+      "prompt": "On lance deux dés équilibrés. La probabilité d'obtenir une somme égale à $7$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{6}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{7}{36}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{12}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{5}{36}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Univers : $36$ couples. Cas favorables : $(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)$, soit $6$. $P = 6/36 = 1/6$. La somme $7$ est la plus probable."
+    },
+    {
+      "id": "ensa-23-15",
+      "type": "mcq",
+      "theme": "probabilites",
+      "category": "Probabilités conditionnelles",
+      "difficulty": "concours",
+      "prompt": "Une urne contient $5$ blanches et $3$ noires. On tire $2$ boules sans remise. $P(B_2 | N_1)$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{5}{7}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{5}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{4}{7}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{3}{7}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Après tirage d'une noire, il reste $7$ boules dont $5$ blanches. $P(B_2|N_1) = 5/7$. Le tirage sans remise modifie la composition : probabilité conditionnelle."
+    }
+  ]
+}

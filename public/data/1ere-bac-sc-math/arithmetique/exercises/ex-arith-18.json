@@ -1,0 +1,31 @@
+{
+  "id": "ch05-ex02",
+  "theme": "arithmetique",
+  "difficulty": "facile",
+  "chapter": "05 - Congruence modulo n ; l'ensemble Z/nZ et opérations",
+  "topic": "Congruences - Divisibilité et entiers consécutifs",
+  "requiresRedaction": true,
+  "context": "",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Soit $n \\in \\mathbb{Z}$. Montrer que : $2 / n(n^2 - 1)$ et $3 / n(n^2 - 1)$.",
+      "hint": "Factorisez $n(n^2 - 1) = (n-1) \\cdot n \\cdot (n+1)$. C'est le produit de trois entiers consécutifs. Parmi trois entiers consécutifs, que peut-on toujours dire sur leur divisibilité par $2$ et par $3$ ?"
+    },
+    {
+      "id": "q2",
+      "content": "Soit $(a ; b) \\in \\mathbb{Z}^2$. Montrer que : $3 / ab(a^2 - b^2)$.",
+      "hint": "Factorisez $ab(a^2-b^2) = ab(a-b)(a+b)$. Raisonnez modulo $3$ en distinguant les cas selon les résidus de $a$ et $b$ modulo $3$, ou utilisez le résultat de la question précédente avec $n = a$ ou $n = b$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que pour tout $a \\in \\mathbb{N}$ : $24 / (a+1)(a+2)(a+3)(a+4)$.",
+      "hint": "Le produit $(a+1)(a+2)(a+3)(a+4)$ est le produit de quatre entiers consécutifs. Montrez séparément qu'il est divisible par $8$ (parmi quatre consécutifs, combien sont pairs ?) et par $3$."
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que : $\\forall n \\in \\mathbb{N},\\ n(n^2 - 1) \\equiv 0\\ [6]$.",
+      "hint": "Factorisez $n(n^2-1) = (n-1) \\cdot n \\cdot (n+1)$. Utilisez le résultat de la question 1 : vous avez déjà montré que $2$ et $3$ divisent ce produit."
+    }
+  ]
+}

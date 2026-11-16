@@ -1,0 +1,29 @@
+{
+  "id": "ex-ens-app-19",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Théorie des Ensembles — Propriétés avancées des ensembles",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "On considère les deux ensembles : $A = \\left\\{\\dfrac{\\pi}{4} + \\dfrac{2k\\pi}{5} \\;\\ \\middle| \\;\\ k \\in \\mathbb{Z}\\right\\}$ et $B = \\left\\{\\dfrac{\\pi}{2} + \\dfrac{2k\\pi}{5} \\;\\ \\middle| \\;\\ k \\in \\mathbb{Z}\\right\\}$. Montrer que : $A \\cap B = \\varnothing$.",
+      "hint": "Supposez qu'il existe $k, l \\in \\mathbb{Z}$ tels que $\\dfrac{\\pi}{4} + \\dfrac{2k\\pi}{5} = \\dfrac{\\pi}{2} + \\dfrac{2l\\pi}{5}$. Simplifiez par $\\pi$ et montrez qu'on aboutit à une contradiction dans $\\mathbb{Z}$."
+    },
+    {
+      "id": "q2",
+      "content": "On considère les deux ensembles : $E = \\left\\{\\dfrac{\\pi}{2} + 2k\\pi \\;\\ \\middle| \\;\\ k \\in \\mathbb{Z}\\right\\}$ et $F = \\left\\{\\dfrac{\\pi}{10} + \\dfrac{k\\pi}{5} \\;\\ \\middle| \\;\\ k \\in \\mathbb{Z}\\right\\}$. Montrer que : $E \\cap F = E$.",
+      "hint": "Montrez que $E \\subset F$ : tout élément de $E$ est de la forme $\\dfrac{\\pi}{2} + 2k\\pi$. Cherchez la valeur de $l$ telle que $\\dfrac{\\pi}{10} + \\dfrac{l\\pi}{5} = \\dfrac{\\pi}{2} + 2k\\pi$."
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer deux ensembles $X$ et $Y$ sachant que : $X \\cap Y = \\{2;3;4\\}$, $X \\cup Y = \\{1;2;3;4;5\\}$, $1 \\notin Y \\setminus X$ et $5 \\notin X \\setminus Y$",
+      "hint": "De $X \\cup Y$ et $X \\cap Y$, vous savez que $\\{1;5\\}$ appartient à $X$ ou $Y$ mais pas aux deux. La condition $1 \\notin Y \\setminus X$ signifie que si $1 \\in Y$ alors $1 \\in X$. Raisonnez de même pour 5."
+    },
+    {
+      "id": "q4",
+      "content": "Soient $I$ et $J$ deux parties de $\\mathbb{R}$ définies par : $I = \\{x \\in \\mathbb{R} \\mid 2|x-1| < 3\\}$ et $J = \\{x \\in \\mathbb{R} \\mid 2x^2 + x - 3 \\geq 0\\}$. Déterminer en extension les ensembles : $I$ ; $J$ ; $I \\cap J$ ; $I \\cup J$ ; $\\overline{I}$ ; $\\overline{J}$ ; $I \\setminus J$ ; $J \\setminus I$.",
+      "hint": "Pour $I$ : résolvez $2|x-1| < 3$. Pour $J$ : factorisez $2x^2+x-3$ et étudiez le signe."
+    }
+  ]
+}

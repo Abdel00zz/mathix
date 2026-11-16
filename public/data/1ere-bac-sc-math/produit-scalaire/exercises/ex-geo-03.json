@@ -1,0 +1,41 @@
+{
+  "id": "ex-geo-03",
+  "theme": "produit-scalaire",
+  "difficulty": "facile",
+  "topic": "Géométrie Analytique - Angle orienté et formules cos, sin",
+  "requiresRedaction": true,
+  "context": "Soit $\\overrightarrow{u}$ un vecteur tel que $\\|\\overrightarrow{u}\\| = 3$ et $\\left(\\overrightarrow{i};\\overrightarrow{u}\\right) = \\dfrac{\\pi}{6}\\,[2\\pi]$. Calculer $\\overrightarrow{u} \\cdot \\overrightarrow{i}$ et $\\overrightarrow{u} \\cdot \\overrightarrow{j}$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $\\overrightarrow{u} \\cdot \\overrightarrow{i}$ et $\\overrightarrow{u} \\cdot \\overrightarrow{j}$.",
+      "hint": "Utilisez $\\overrightarrow{u} \\cdot \\overrightarrow{i} = \\|\\overrightarrow{u}\\|\\|\\overrightarrow{i}\\|\\cos(\\overrightarrow{i};\\overrightarrow{u})$ et une relation similaire pour $\\overrightarrow{j}$. $\\left(\\overrightarrow{i};\\overrightarrow{j}\\right) = \\dfrac{\\pi}{2}$, donc $\\left(\\overrightarrow{i};\\overrightarrow{u}\\right)$ et $\\left(\\overrightarrow{j};\\overrightarrow{u}\\right)$ sont liés."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer $\\cos\\theta$ et $\\sin\\theta$ puis $\\theta$ dans les cas suivants :",
+      "subQuestions": [
+        {
+          "id": "sq2_1",
+          "content": "$\\overrightarrow{u} = 3\\overrightarrow{i} + 4\\overrightarrow{j}$ et $\\overrightarrow{v}(-1;1)$",
+          "hint": ""
+        },
+        {
+          "id": "sq2_2",
+          "content": "$\\overrightarrow{u}(0;1)$ et $\\overrightarrow{v}(2;2\\sqrt{3})$",
+          "hint": ""
+        },
+        {
+          "id": "sq2_3",
+          "content": "$\\overrightarrow{u} = 2\\overrightarrow{i} - \\overrightarrow{j}$ et $\\overrightarrow{v} = \\overrightarrow{i} + 2\\overrightarrow{j}$",
+          "hint": ""
+        },
+        {
+          "id": "sq2_4",
+          "content": "$\\overrightarrow{u}\\left(\\dfrac{\\sqrt{2}}{2};\\dfrac{1}{2}\\right)$ et $\\overrightarrow{v}\\left(\\dfrac{1}{2};-\\dfrac{\\sqrt{3}}{2}\\right)$",
+          "hint": ""
+        }
+      ]
+    }
+  ]
+}

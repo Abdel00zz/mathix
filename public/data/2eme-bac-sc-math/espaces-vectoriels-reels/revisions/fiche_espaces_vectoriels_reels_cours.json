@@ -1,0 +1,208 @@
+{
+  "header": {
+    "title": "Espaces Vectoriels",
+    "subtitle": "Sous-espaces, combinaisons linéaires et bases",
+    "context": "2BAC Sciences Maths"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Ce chapitre permet de \\objectif{généraliser les calculs géométriques} à des objets abstraits très variés comme les suites, les polynômes ou les matrices. La \\defi{difficulté} principale réside dans la traduction algébrique rigoureuse de ces concepts, ce qui exige de manipuler parfaitement les systèmes d'équations pour analyser les vecteurs. \\savant{Hermann Grassmann} a posé les bases de cette théorie unificatrice au XIXe siècle, offrant aujourd'hui le moteur mathématique indispensable à l'infographie 3D, au traitement d'images et à l'intelligence artificielle.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Hermann_Grassmann.jpg",
+            "type": "image",
+            "position": "float-right",
+            "width": "14%",
+            "caption": "Hermann Grassmann (1809–1877)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "notion_espace_vectoriel",
+      "category": "course",
+      "title": "Notion d'espace vectoriel et règles de base",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait déjà additionner deux vecteurs géométriques et les multiplier par un nombre réel. Un espace vectoriel est simplement un ensemble mathématique abstrait où ces deux opérations sont possibles et respectent certaines règles."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'un espace vectoriel ?",
+          "content": "Un \\textbf{espace vectoriel sur $\\mathbb{R}$} (ou $\\mathbb{R}$-espace vectoriel) est un ensemble $E$ muni d'une addition interne $(+)$ et d'une multiplication par un réel (loi externe). L'ensemble $(E,+)$ doit être un groupe commutatif et la loi externe doit se distribuer sur l'addition.\\par\\smallskip Les éléments de $E$ sont appelés des vecteurs (notés souvent $\\overrightarrow{x}$ ou $x$) et les éléments de $\\mathbb{R}$ sont appelés des scalaires."
+        },
+        {
+          "type": "remark",
+          "content": "Le vecteur nul de l'espace vectoriel $E$ se note $0_E$ ou $\\overrightarrow{0}$. Il est vital de ne pas le confondre avec le scalaire $0$ (le nombre réel). Par exemple, l'ensemble des polynômes $\\mathbb{R}_n[X]$ et l'ensemble des matrices $M_3(\\mathbb{R})$ sont des espaces vectoriels classiques."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont les règles de calcul fondamentales ?",
+          "content": "Dans un espace vectoriel $E$, pour tout vecteur $\\overrightarrow{x}$ et tout réel $\\alpha$ :\\begin{itemize}\\item $0 \\cdot \\overrightarrow{x} = \\overrightarrow{0}$ \\quad et \\quad $\\alpha \\cdot \\overrightarrow{0} = \\overrightarrow{0}$\\item $(-1) \\cdot \\overrightarrow{x} = -\\overrightarrow{x}$\\end{itemize}\\par L'annulation d'un produit obéit à la règle stricte suivante :\\par\\smallskip $$\\boxed{\\alpha \\cdot \\overrightarrow{x} = \\overrightarrow{0} \\iff \\alpha = 0 \\quad \\text{ou} \\quad \\overrightarrow{x} = \\overrightarrow{0}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Trouvons le réel $m$ pour que $(m-2)\\overrightarrow{u} + 3\\overrightarrow{u} = \\overrightarrow{0}$, sachant que $\\overrightarrow{u} \\neq \\overrightarrow{0}$.}\\par On commence par factoriser par le vecteur $\\overrightarrow{u}$ :\\begin{align*}(m-2+3)\\overrightarrow{u} &= \\overrightarrow{0} \\\\\\blank{(m+1)}\\overrightarrow{u} &= \\overrightarrow{0}\\end{align*}Puisque l'énoncé précise que le vecteur $\\overrightarrow{u}$ est différent de $\\blank{\\overrightarrow{0}}$, on applique la propriété d'annulation. C'est donc obligatoirement le scalaire qui est nul. \\par Ainsi, $m+1 = \\blank{0}$, ce qui donne la solution unique $m = \\blank{-1}."
+        }
+      ]
+    },
+    {
+      "id": "sous_espaces_vectoriels",
+      "category": "course",
+      "title": "Les sous-espaces vectoriels (SEV)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vérifier l'intégralité des axiomes d'un espace vectoriel est extrêmement long. En pratique, on travaille plutôt à l'intérieur d'un espace vectoriel déjà connu (comme $\\mathbb{R}^2$ ou $\\mathbb{R}^3$) et on cherche des sous-ensembles particuliers."
+        },
+        {
+          "type": "theorem",
+          "title": "Comment caractériser un sous-espace vectoriel ?",
+          "content": "Soit $E$ un espace vectoriel sur $\\mathbb{R}$ et $F$ un sous-ensemble de $E$.\\par $F$ est un \\textbf{sous-espace vectoriel} (SEV) de $E$ si et seulement si :\\begin{itemize}\\item $F$ n'est pas vide (en pratique, on vérifie que le vecteur nul $\\overrightarrow{0}$ appartient à $F$).\\item $F$ est stable par combinaison linéaire :\\end{itemize}$$\\boxed{\\forall (u,v) \\in F^2, \\; \\forall (\\alpha,\\beta) \\in \\mathbb{R}^2, \\quad \\alpha u + \\beta v \\in F}$$"
+        },
+        {
+          "type": "warning",
+          "content": "Pour montrer que $F$ n'est pas vide, le test absolu est d'insérer \\textbf{le vecteur nul} $(0,0,...)$ dans l'équation. Si le vecteur nul ne vérifie pas l'équation, vous pouvez vous arrêter immédiatement : ce n'est pas un sous-espace vectoriel."
+        },
+        {
+          "type": "method",
+          "title": "Comment prouver qu'un ensemble $F$ est un SEV ?",
+          "content": "Pour montrer qu'un ensemble défini par une équation est un SEV :\\begin{enumerate}\\item Remplacer les coordonnées par des zéros pour vérifier que le vecteur nul appartient à l'ensemble.\\item Soient deux vecteurs $u$ et $v$ qui appartiennent à $F$ (donc qui respectent l'équation).\\item Soient $\\alpha$ et $\\beta$ deux nombres réels.\\item Calculer les coordonnées du nouveau vecteur $w = \\alpha u + \\beta v$.\\item Remplacer ces nouvelles coordonnées dans l'équation de $F$ et factoriser pour montrer que le résultat vaut zéro.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $F = \\{(x,y) \\in \\mathbb{R}^2 \\mid 2x - y = 0\\}$ est un SEV de $\\mathbb{R}^2$.}\\par On vérifie le vecteur nul $(0,0)$ : $2(0) - 0 = 0$, donc le vecteur nul appartient bien à $F$.\\par Soient $u = (x_1, y_1) \\in F$, ce qui implique $\\blank{2x_1 - y_1 = 0}$, et $v = (x_2, y_2) \\in F$, ce qui donne $2x_2 - y_2 = 0$.\\par Pour $\\alpha, \\beta \\in \\mathbb{R}$, le vecteur $w = \\alpha u + \\beta v$ a pour coordonnées $(\\alpha x_1 + \\blank{\\beta x_2}, \\alpha y_1 + \\beta y_2)$.\\par On teste ces coordonnées dans la condition d'appartenance à $F$ :\\begin{align*}2(\\alpha x_1 + \\beta x_2) - (\\alpha y_1 + \\beta y_2) &= \\alpha(2x_1 - y_1) + \\beta(\\blank{2x_2 - y_2}) \\\\&= \\alpha(0) + \\beta(0) \\\\&= \\blank{0}\\end{align*}L'égalité est vérifiée, le vecteur $w$ appartient à $F$. $F$ est donc un sous-espace vectoriel."
+        }
+      ]
+    },
+    {
+      "id": "familles_generatrices",
+      "category": "course",
+      "title": "Combinaisons linéaires et espaces engendrés",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Puisqu'un sous-espace vectoriel est stable par addition et multiplication, on peut reconstruire une infinité de vecteurs à partir d'un petit nombre de vecteurs fondamentaux."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une combinaison linéaire ?",
+          "content": "Soit une famille de vecteurs $(\\overrightarrow{e}_1, \\overrightarrow{e}_2, ..., \\overrightarrow{e}_n)$.\\par Une \\textbf{combinaison linéaire} est une expression de la forme $\\alpha_1 \\overrightarrow{e}_1 + \\alpha_2 \\overrightarrow{e}_2 + ... + \\alpha_n \\overrightarrow{e}_n$ où les $\\alpha_i$ sont des nombres réels.\\par L'ensemble de toutes les combinaisons linéaires possibles forme un espace vectoriel. C'est le plus petit sous-espace contenant ces vecteurs, on l'appelle le \\textbf{sous-espace engendré} et on le note $\\text{Vect}(\\overrightarrow{e}_1, \\overrightarrow{e}_2, ..., \\overrightarrow{e}_n)$."
+        },
+        {
+          "type": "method",
+          "title": "Comment extraire une famille génératrice à partir d'une équation ?",
+          "content": "Face à un sous-espace $F$ défini par une équation cartésienne :\\begin{itemize}\\item Isoler une variable pour l'exprimer en fonction des autres (ex: $z = 2x - y$).\\item Dans l'écriture générale du vecteur $(x,y,z)$, remplacer cette variable par son expression.\\item Décomposer le vecteur obtenu en une somme, en séparant chaque variable restante.\\item Factoriser par les variables réelles. Les vecteurs constants obtenus forment la famille génératrice.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons une famille génératrice du SEV $F = \\{(x,y,z) \\in \\mathbb{R}^3 \\mid x - 2y + z = 0\\}$.}\\par On isole la variable $z$ : l'équation donne $z = \\blank{-x + 2y}$.\\par Un vecteur $\\overrightarrow{u} \\in F$ s'écrit alors $(x, y, -x + 2y)$. On sépare les variables $x$ et $y$ :\\begin{align*}\\overrightarrow{u} &= (x, 0, -x) + (0, y, 2y) \\\\&= x\\blank{(1, 0, -1)} + y\\blank{(0, 1, 2)}\\end{align*}Tout vecteur de $F$ est donc une combinaison des deux vecteurs $\\overrightarrow{e}_1 = (1, 0, -1)$ et $\\overrightarrow{e}_2 = (0, 1, 2)$.\\par On en déduit que $F = \\text{Vect}(\\blank{\\overrightarrow{e}_1, \\overrightarrow{e}_2})$."
+        },
+        {
+          "type": "method",
+          "title": "Comment vérifier si un vecteur appartient à un espace engendré ?",
+          "content": "Pour vérifier si un vecteur $\\overrightarrow{w}$ appartient à $\\text{Vect}(\\overrightarrow{u}, \\overrightarrow{v})$ :\\par On cherche s'il existe des réels $\\alpha$ et $\\beta$ tels que $\\overrightarrow{w} = \\alpha\\overrightarrow{u} + \\beta\\overrightarrow{v}$. On traduit cette égalité vectorielle ligne par ligne pour obtenir un \\textbf{système d'équations}.\\par On résout le système : s'il admet au moins une solution, le vecteur appartient à l'espace. Sinon, il n'y appartient pas."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifions si le vecteur $\\overrightarrow{w}=(3,1)$ appartient à $\\text{Vect}(\\overrightarrow{u}, \\overrightarrow{v})$ où $\\overrightarrow{u}=(1,1)$ et $\\overrightarrow{v}=(1,-1)$.}\\par On pose l'équation $(3,1) = \\alpha(1,1) + \\beta(1,-1)$. On obtient le système suivant :\\begin{align*}\\blank{\\alpha + \\beta = 3} \\quad (L_1) \\\\\\blank{\\alpha - \\beta = 1} \\quad (L_2)\\end{align*}On additionne les deux lignes $(L_1 + L_2)$ pour éliminer $\\beta$ : on obtient $2\\alpha = 4$, d'où $\\alpha = \\blank{2}$.\\par On soustrait les deux lignes $(L_1 - L_2)$ pour éliminer $\\alpha$ : on obtient $2\\beta = 2$, d'où $\\beta = \\blank{1}$.\\par Le système possède une solution. Le vecteur $\\overrightarrow{w}$ appartient donc bien à l'espace engendré."
+        }
+      ]
+    },
+    {
+      "id": "familles_libres",
+      "category": "course",
+      "title": "Familles libres et familles liées",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une famille génératrice contient parfois trop de vecteurs pour construire l'espace : certains sont redondants car ils peuvent déjà être fabriqués par les autres. L'objectif est de distinguer l'essentiel du superflu."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une famille libre ou liée ?",
+          "content": "Une famille de vecteurs $(\\overrightarrow{e}_1, ..., \\overrightarrow{e}_n)$ est dite \\textbf{libre} si aucun vecteur n'est redondant. La seule solution de l'équation $\\alpha_1 \\overrightarrow{e}_1 + ... + \\alpha_n \\overrightarrow{e}_n = \\overrightarrow{0}$ est de prendre tous les coefficients nuls : $$\\alpha_1 = \\alpha_2 = ... = \\alpha_n = 0$$\\par Dans ce cas, on dit que les vecteurs sont \\textbf{linéairement indépendants}.\\par\\smallskip À l'inverse, si la famille n'est pas libre, on dit qu'elle est \\textbf{liée}. Cela implique qu'au moins l'un des vecteurs est une combinaison linéaire des autres."
+        },
+        {
+          "type": "property",
+          "title": "Quels sont les cas triviaux de familles liées ?",
+          "content": "Une famille est toujours directement \\textbf{liée} sans le moindre calcul dans ces trois cas :\\begin{itemize}\\item Elle contient le vecteur nul $\\overrightarrow{0}$.\\item Elle comporte deux fois le même vecteur.\\item Deux de ses vecteurs sont proportionnels (c'est-à-dire colinéaires).\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminons la nature de la famille $B=(\\overrightarrow{u}, \\overrightarrow{v}, \\overrightarrow{w})$ avec $\\overrightarrow{u}=(1,2)$, $\\overrightarrow{v}=(3,6)$ et $\\overrightarrow{w}=(-1,4)$.}\\par Avant de poser un système, on observe les vecteurs. On constate très vite que les coordonnées de $\\overrightarrow{v}$ sont le triple de celles de $\\overrightarrow{u}$.\\par On peut écrire $\\overrightarrow{v} = \\blank{3\\overrightarrow{u}}$.\\par Si on rassemble tout d'un côté, on obtient la combinaison linéaire $3\\overrightarrow{u} \\blank{-1}\\overrightarrow{v} + 0\\overrightarrow{w} = \\overrightarrow{0}$.\\par On a obtenu le vecteur nul avec des coefficients qui ne sont pas tous zéro. La famille est donc \\blank{liée} car elle contient deux vecteurs \\blank{proportionnels}."
+        },
+        {
+          "type": "warning",
+          "content": "Deux vecteurs liés sont visuellement colinéaires (sur la même droite). Cependant, trois vecteurs liés ne sont pas forcément sur la même droite : cela signifie qu'ils sont \\textbf{coplanaires} (dans le même plan)."
+        },
+        {
+          "type": "method",
+          "title": "Comment démontrer qu'une famille est libre ?",
+          "content": "On procède toujours en résolvant un système d'équations :\\begin{enumerate}\\item On pose l'équation fondamentale : $\\alpha\\overrightarrow{u} + \\beta\\overrightarrow{v} = \\overrightarrow{0}$.\\item On traduit cette égalité en système.\\item On résout ce système.\\item Si on trouve inévitablement que $\\alpha = 0$ et $\\beta = 0$, on conclut que la famille est libre.\\item Si on trouve d'autres solutions, la famille est liée.\\end{enumerate}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Prouvons que la famille $(\\overrightarrow{u}, \\overrightarrow{v})$ avec $\\overrightarrow{u}=(1,2)$ et $\\overrightarrow{v}=(2,1)$ est une famille libre.}\\par On pose $\\alpha(1,2) + \\beta(2,1) = (0,0)$. Cela donne naissance au système :\\begin{align*}\\blank{\\alpha + 2\\beta = 0} \\quad &(L_1) \\\\\\blank{2\\alpha + \\beta = 0} \\quad &(L_2)\\end{align*}On applique l'opération $2L_1 - L_2$ pour éliminer $\\alpha$ : on a $(2\\alpha + 4\\beta) - (2\\alpha + \\beta) = 0$, donc $3\\beta = 0$, ce qui implique que $\\beta = \\blank{0}$.\\par En remplaçant $\\beta$ par sa valeur dans $L_1$, on obtient directement $\\alpha = \\blank{0}$.\\par Puisque l'unique solution est le couple $(0,0)$, la famille est parfaitement libre."
+        }
+      ]
+    },
+    {
+      "id": "base_et_dimension",
+      "category": "course",
+      "title": "Bases, coordonnées et dimension",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Nous avons maintenant l'outil final de l'algèbre linéaire : la base. C'est la famille de vecteurs parfaite. Elle possède exactement le bon nombre de vecteurs pour générer l'espace entier sans aucune redondance."
+        },
+        {
+          "type": "definition",
+          "title": "Qu'est-ce qu'une base et des coordonnées ?",
+          "content": "Une famille $B$ de vecteurs est appelée une \\textbf{base} de l'espace vectoriel $E$ si elle est à la fois libre ET génératrice de $E$.\\par Conséquence majeure : tout vecteur $\\overrightarrow{x}$ de l'espace s'exprime d'une \\textbf{manière totalement unique} comme combinaison linéaire des vecteurs de $B$. \\par Les coefficients de cette combinaison unique s'appellent les \\textbf{coordonnées} du vecteur dans la base $B$."
+        },
+        {
+          "type": "method",
+          "title": "Comment trouver les coordonnées dans une base quelconque ?",
+          "content": "La recherche des coordonnées demande de résoudre un système. On exprime le vecteur cible en fonction des vecteurs de la base, on extrait le système d'équations, puis on le résout. La solution unique représente les nouvelles coordonnées demandées."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Quelles sont les coordonnées du vecteur $\\overrightarrow{w}=(4,5)$ dans la base $B=(\\overrightarrow{u},\\overrightarrow{v})$ où $\\overrightarrow{u}=(1,1)$ et $\\overrightarrow{v}=(1,2)$ ?}\\par On cherche les scalaires tels que $(4,5) = \\alpha(1,1) + \\beta(1,2)$. Le système s'écrit :\\begin{align*}\\blank{\\alpha + \\beta = 4} \\quad &(L_1) \\\\\\blank{\\alpha + 2\\beta = 5} \\quad &(L_2)\\end{align*}En effectuant la soustraction $L_2 - L_1$, on trouve immédiatement $\\beta = \\blank{1}$.\\par On remplace dans $L_1$ : on a $\\alpha + 1 = 4$, ce qui nous donne $\\alpha = \\blank{3}$.\\par Les coordonnées de $\\overrightarrow{w}$ dans la base $B$ sont le couple $(3, 1)$."
+        },
+        {
+          "type": "remark",
+          "content": "La \\textbf{dimension} d'un espace vectoriel correspond au nombre exact de vecteurs présents dans sa base. Toutes les bases d'un espace ont toujours le même nombre d'éléments. Il faut retenir que l'espace $\\mathbb{R}^2$ est de dimension 2, l'espace $\\mathbb{R}^3$ de dimension 3, et l'espace des polynômes $\\mathbb{R}_n[X]$ de dimension $n+1$."
+        },
+        {
+          "type": "method",
+          "title": "Comment utiliser la dimension pour prouver qu'on a une base ?",
+          "content": "Montrer qu'une famille est génératrice est fastidieux. Heureusement, si la famille contient exactement autant de vecteurs que la dimension de l'espace, il suffit de calculer le \\textbf{déterminant} de ces vecteurs.\\begin{itemize}\\item Poser la matrice des vecteurs en colonnes.\\item Si $\\det \\neq 0$, la famille est libre. Puisqu'elle a la bonne taille, c'est automatiquement une base.\\item Si $\\det = 0$, la famille est liée, ce n'est pas une base.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrons que $B=(\\overrightarrow{u}, \\overrightarrow{v})$ avec $\\overrightarrow{u}=(2,3)$ et $\\overrightarrow{v}=(-1,4)$ est une base de l'espace $\\mathbb{R}^2$.}\\par L'espace $\\mathbb{R}^2$ est de dimension 2, et la famille $B$ contient bien $\\blank{2}$ vecteurs. Calculons leur déterminant :\\begin{align*}\\det(\\overrightarrow{u}, \\overrightarrow{v}) &= \\begin{vmatrix} 2 & -1 \\\\ 3 & 4 \\end{vmatrix} \\\\&= (2 \\times 4) - (-1 \\times \\blank{3}) \\\\&= 8 + 3 = \\blank{11}\\end{align*}Le déterminant est non nul ($\\det \\neq 0$), donc la famille est libre. Étant composée de 2 vecteurs en dimension 2, c'est obligatoirement une \\blank{base}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifions que les vecteurs $\\overrightarrow{u}=(1,0,0)$, $\\overrightarrow{v}=(0,2,0)$ et $\\overrightarrow{w}=(0,0,3)$ forment une base de $\\mathbb{R}^3$.}\\par Nous avons bien 3 vecteurs dans un espace de dimension 3. On calcule le déterminant $3 \\times 3$ :\\begin{align*}\\det(\\overrightarrow{u}, \\overrightarrow{v}, \\overrightarrow{w}) &= \\begin{vmatrix} 1 & 0 & 0 \\\\ 0 & 2 & 0 \\\\ 0 & 0 & 3 \\end{vmatrix}\\end{align*}En développant par rapport à la première colonne, le calcul est direct :\\begin{align*}\\det &= 1 \\times (\\blank{6 - 0}) - 0 + \\blank{0} \\\\&= \\blank{6}\\end{align*}Ce résultat non nul garantit que la famille est libre. C'est donc validé comme étant une base parfaite de l'espace \\blank{\\mathbb{R}^3}."
+        }
+      ]
+    }
+  ]
+}

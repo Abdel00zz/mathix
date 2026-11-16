@@ -1,0 +1,623 @@
+{
+  "school": "medecine",
+  "year": "2025",
+  "title": "Concours Médecine 2025 — annales FMP vérifiées",
+  "questions": [
+    {
+      "id": "med-fmp-2025-c24",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2025 · C.24",
+      "officialQuestionCode": "C.24",
+      "prompt": "Soient $a$ et $b$ deux nombres complexes tels que $a\\ne b$ et $|a|=1$. Quelle est la valeur de $\\left|\\frac{a-b}{1-\\overline{a}b}\\right|$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque $|a|=1$, on a $\\overline a=\\frac{1}{a}$. Alors $1-\\overline a b=\\frac{a-b}{a}$ et, comme $a\\ne b$, $\\left|\\frac{a-b}{1-\\overline a b}\\right|=|a|=1$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-c25",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2025 · C.25",
+      "officialQuestionCode": "C.25",
+      "prompt": "Soit $C=1+\\cos\\frac{\\pi}{5}+\\cos\\frac{2\\pi}5+\\cdots+\\cos\\frac{9\\pi}5$ et $S=\\sin\\frac{\\pi}{5}+\\sin\\frac{2\\pi}5+\\cdots+\\sin\\frac{9\\pi}5$. Quelle est la valeur de $z=C+iS$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\displaystyle z=\\sum_{k=0}^{9}e^{ik\\frac{\\pi}{5}}$ est une somme géométrique de raison $e^{i\\frac{\\pi}{5}}$ et de somme nulle, car $e^{i10\\frac{\\pi}{5}}=1$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-c26",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "complexes",
+      "category": "Nombres complexes",
+      "sourceReference": "FMP 2025 · C.26",
+      "officialQuestionCode": "C.26",
+      "prompt": "On considère le nombre complexe $z=(1+i)^{20}$. Quelle est la partie imaginaire de $z$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2^{10}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$-2^{10}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$1+i=\\sqrt2e^{i\\frac{\\pi}{4}}$, donc $(1+i)^{20}=2^{10}e^{i5\\pi}=-1024$. Sa partie imaginaire est nulle.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-f31",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2025 · F.31",
+      "officialQuestionCode": "F.31",
+      "prompt": "On définit $f(x)=\\frac{\\sqrt{1+x}-1}{x}$ si $x\\ne0$, et $f(0)=a$. Pour quelle valeur de $a$ la fonction est-elle continue en $0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Après rationalisation, $\\frac{\\sqrt{1+x}-1}{x}=\\frac{1}{\\sqrt{1+x}+1}\\to\\frac{1}{2}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-f32",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2025 · F.32",
+      "officialQuestionCode": "F.32",
+      "prompt": "Soit la fonction $f(x)=\\sin x+\\cos x$. Quelle est la valeur maximale de $f$ sur $\\mathbb{R}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\sqrt2+1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\sqrt2$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\sin x+\\cos x=\\sqrt2\\cos\\left(x-\\frac{\\pi}{4}\\right)$, donc son maximum est $\\sqrt2$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-f33",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2025 · F.33",
+      "officialQuestionCode": "F.33",
+      "prompt": "Résoudre dans $\\mathbb{R}$ l'équation $\\frac{e^{2x-1}}{\\sqrt{e^{2x}+4}}=e^{-x}$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x=1$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$x=0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x=\\frac{3}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$x=-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": true
+        }
+      ],
+      "explanation": "En élevant au carré (les deux membres sont positifs), puis en posant $t=e^{2x}>0$, on obtient $t^3=e^2(t+4)$. Son unique solution positive donne $x\\simeq0{,}678$, absente des quatre premières propositions. Le corrigé PDF remplace à tort $\\sqrt{e^{2x}+4}$ par $e^x+2$ et conclut $x=\\frac{3}{2}$ ; cette simplification est invalide.",
+      "answerValidation": {
+        "status": "corrected-mathematically",
+        "acceptedOptionIds": [
+          "e"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-f34",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Fonctions",
+      "sourceReference": "FMP 2025 · F.34",
+      "officialQuestionCode": "F.34",
+      "prompt": "La fonction $f(x)=\\frac{\\ln(x+1)}{x+e^x}$ admet au point $O(0,0)$ une tangente d'équation :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y=x$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y=x+1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y=-2x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y=x-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On a $f(0)=0$ et $f'(0)=1$, donc la tangente en $O$ est $y=x$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-g5",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l'espace",
+      "sourceReference": "FMP 2025 · G.5",
+      "officialQuestionCode": "G.5",
+      "prompt": "Soient $A(1,1,-2)$, $B(0,5,5)$, $C(6,-3,-5)$ et $D(1,2,0)$. Existe-t-il des réels $x$ et $y$ tels que $\\overrightarrow{AD}=x\\overrightarrow{AB}+y\\overrightarrow{AC}$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Oui, pour $x=\\frac{1}{4}$ et $y=\\frac{1}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "Oui, pour $x=\\frac{5}{{16}}$ et $y=\\frac{1}{{16}}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "Oui, pour $x=\\frac{1}{2}$ et $y=\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Non, $\\overrightarrow{AD}$ n'est pas combinaison linéaire de $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\overrightarrow{AD}=(0,1,2)$, $\\overrightarrow{AB}=(-1,4,7)$ et $\\overrightarrow{AC}=(5,-4,-3)$. La résolution donne $x=\\frac{5}{{16}}$ et $y=\\frac{1}{{16}}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-g6",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "geometrie-espace",
+      "category": "Géométrie de l'espace",
+      "sourceReference": "FMP 2025 · G.6",
+      "officialQuestionCode": "G.6",
+      "prompt": "Soient $\\vec u=(1,2,-1)$, $\\vec v=(3,6,-3)$ et $\\vec w=(0,1,1)$. Quelle est la valeur du produit $(\\vec u\\wedge\\vec v)\\cdot\\vec w$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\vec v=3\\vec u$, donc $\\vec u\\wedge\\vec v=\\vec0$ et le produit mixte est nul.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-i19",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2025 · I.19",
+      "officialQuestionCode": "I.19",
+      "prompt": "Soit $I=\\displaystyle\\int_0^\\pi|\\cos x|\\,dx$. Quelle est la valeur de $I$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "$\\pi$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\cos x$ est positif sur $[0,\\frac{\\pi}{2}]$ et négatif sur $[\\frac{\\pi}{2},\\pi]$. Les deux intégrales valent $1$, donc $I=2$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-i20",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Intégrales",
+      "sourceReference": "FMP 2025 · I.20",
+      "officialQuestionCode": "I.20",
+      "prompt": "Quelle est la valeur de $J=\\displaystyle\\int_0^1\\frac{1-x^2}{(1+x^2)^2}\\,dx$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\left(\\frac{x}{1+x^2}\\right)'=\\frac{1-x^2}{(1+x^2)^2}$. Ainsi $J=\\left[\\frac{x}{1+x^2}\\right]_0^1=\\frac{1}{2}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-p6",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "sourceReference": "FMP 2025 · P.6",
+      "officialQuestionCode": "P.6",
+      "prompt": "Une urne contient $5$ boules rouges numérotées de $1$ à $5$ et $4$ boules noires numérotées de $1$ à $4$. On tire simultanément deux boules. $A$ est l'événement « même couleur » et $B$ l'événement « deux numéros pairs ». Calculer $P_{\\overline A}(B)$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{{18}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{17}{18}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2}{9}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{5}$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$P(\\overline A)=\\frac{5\\times4}{\\binom92}=\\frac{5}{9}$. Il y a $2\\times2=4$ paires de couleurs différentes portant deux numéros pairs, donc $P(\\overline A\\cap B)=\\frac{1}{9}$. Le quotient vaut $\\frac{1}{5}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-p7",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "probabilites",
+      "category": "Probabilités",
+      "sourceReference": "FMP 2025 · P.7",
+      "officialQuestionCode": "P.7",
+      "prompt": "On lance deux dés équilibrés à $6$ faces. Quelle est la probabilité d'obtenir au moins un $6$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{6}$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{11}{36}$",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{5}{{36}}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{25}{36}$",
+          "isCorrect": false
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "On passe au complémentaire : $P(\\text{au moins un }6)=1-P(\\text{aucun }6)=1-\\left(\\frac{5}{6}\\right)^2=\\frac{11}{36}$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "med-fmp-2025-s17",
+      "type": "mcq",
+      "difficulty": "concours",
+      "theme": "analyse",
+      "category": "Suites numériques",
+      "sourceReference": "FMP 2025 · S.17",
+      "officialQuestionCode": "S.17",
+      "prompt": "Soit la suite $(U_n)$ définie par $U_1=1$ et, pour tout $n\\ge1$, $U_{n+1}=\\sqrt{2+U_n}$. Quelle est sa limite ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "$1+\\sqrt2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La suite est divergente",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "e",
+          "text": "Aucune des réponses n'est juste",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Une limite éventuelle $\\ell$ vérifie $\\ell=\\sqrt{2+\\ell}$, donc $\\ell\\in\\{-1,2\\}$. La suite, positive et croissante, est majorée par $2$ ; sa limite est $2$.",
+      "answerValidation": {
+        "status": "verified",
+        "acceptedOptionIds": [
+          "d"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "produit-scalaire",
+  "title": "Le produit scalaire dans le plan",
+  "section": "algebre-geometrie",
+  "revisions": [
+    {
+      "id": "rev-prod-scal-1",
+      "title": "Fiche Complète : Produit Scalaire",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/revisions/fiche_produit_scalaire_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-geo-01",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-01.json"
+    },
+    {
+      "id": "ex-geo-02",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-02.json"
+    },
+    {
+      "id": "ex-geo-03",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-03.json"
+    },
+    {
+      "id": "ex-geo-04",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-04.json"
+    },
+    {
+      "id": "ex-geo-05",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-05.json"
+    },
+    {
+      "id": "ex-geo-06",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-06.json"
+    },
+    {
+      "id": "ex-geo-07",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-07.json"
+    },
+    {
+      "id": "ex-geo-08",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-08.json"
+    },
+    {
+      "id": "ex-geo-09",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-09.json"
+    },
+    {
+      "id": "ex-geo-10",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-10.json"
+    },
+    {
+      "id": "ex-geo-11",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-11.json"
+    },
+    {
+      "id": "ex-geo-12",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-12.json"
+    },
+    {
+      "id": "ex-geo-13",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-13.json"
+    },
+    {
+      "id": "ex-geo-14",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-14.json"
+    },
+    {
+      "id": "ex-geo-15",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-15.json"
+    },
+    {
+      "id": "ex-geo-16",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-16.json"
+    },
+    {
+      "id": "ex-geo-17",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-17.json"
+    },
+    {
+      "id": "ex-geo-18",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-18.json"
+    },
+    {
+      "id": "ex-geo-19",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-19.json"
+    },
+    {
+      "id": "ex-geo-20",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-20.json"
+    },
+    {
+      "id": "ex-geo-21",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/exercises/ex-geo-21.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-produit-scalaire-01",
+      "path": "data/1ere-bac-sc-math/produit-scalaire/quiz/produit-scalaire_quiz.json",
+      "questionsCount": 18
+    }
+  ],
+  "quizCount": 18
+}

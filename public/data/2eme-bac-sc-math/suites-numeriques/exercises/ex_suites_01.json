@@ -1,0 +1,21 @@
+{
+  "id": "ex-suites-sm-01",
+  "theme": "suites-numeriques",
+  "difficulty": "difficile",
+  "topic": "Suites Numériques",
+  "context": "On considère les suites $(u_n)$ et $(v_n)$ définies par : $u_n = \\sum_{k=1}^{n} \\frac{1}{k!}$ et $v_n = u_n + \\frac{1}{n \\times n!}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Adjacence",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer que $(u_n)$ et $(v_n)$ sont adjacentes.",
+          "hint": "\\method Calculons $u_{n+1}-u_n = \\frac{1}{(n+1)!} > 0$, donc $(u_n)$ est croissante.\nCalculons $v_{n+1}-v_n = u_{n+1}-u_n + \\frac{1}{(n+1)(n+1)!} - \\frac{1}{n \\cdot n!} = \\dots = \\frac{-1}{n(n+1)(n+1)!} < 0$.\nEnfin $\\lim (v_n - u_n) = \\lim \\frac{1}{n \\cdot n!} = 0$.\n\\conclusion Les suites sont adjacentes et convergent vers une limite commune (le nombre $e$)."
+        }
+      ]
+    }
+  ]
+}

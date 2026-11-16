@@ -1,0 +1,67 @@
+{
+  "id": "ex-complexes-19",
+  "topic": "Nombres complexes - Bac National 2020 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2020,
+  "examenSession": "Normale",
+  "context": "Soit $m$ un nombre complexe non nul.",
+  "questions": [
+    {
+      "id": "p1",
+      "type": "partie",
+      "content": "On considère dans $\\mathbb{C}$ l'équation d'inconnue $z$, $(E):z^3-2mz^2+2m^2z-m^3=0$."
+    },
+    {
+      "id": "p1q1",
+      "content": "Résoudre dans $\\mathbb{C}$ l'équation $(E)$ (On remarque que $m$ est une solution de l'équation $(E)$).",
+      "hint": "Factorisez $(E)$ par $(z-m)$, puis résolvez le facteur du second degré restant."
+    },
+    {
+      "id": "p1q2",
+      "content": "On note $z_1$ et $z_2$ les deux autres solutions de l'équation $(E)$ autre que $m$.",
+      "subQuestions": [
+        {
+          "id": "p1q2a",
+          "content": "Vérifier que : $\\dfrac{1}{z_1}+\\dfrac{1}{z_2}=\\dfrac{1}{m}$.",
+          "hint": "Mettez $\\dfrac1{z_1}+\\dfrac1{z_2}$ au même dénominateur pour faire apparaître $z_1+z_2$ et $z_1z_2$, valeurs que vous connaissez déjà grâce à la factorisation du second degré."
+        },
+        {
+          "id": "p1q2b",
+          "content": "Dans le cas où $m=1+e^{i\\pi/3}$, écrire sous la forme algébrique $z_1$ et $z_2$.",
+          "hint": "Calculez d'abord $m=1+e^{i\\pi/3}$ sous forme algébrique, puis remplacez dans les expressions de $z_1,z_2$ trouvées à la question 1."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "partie",
+      "content": "Le plan complexe est rapporté à un repère orthonormé direct $(O;\\vec{u},\\vec{v})$. On considère les points $A$ et $B$ d'affixes respectives $a=me^{i\\pi/3}$ et $b=me^{-i\\pi/3}$. On note $P$ le centre de la rotation d'angle $\\left(\\dfrac{\\pi}{2}\\right)$ qui transforme $O$ en $A$, $Q$ le centre de la rotation d'angle $\\left(\\dfrac{\\pi}{2}\\right)$ qui transforme $A$ en $B$ et $R$ le centre de la rotation d'angle $\\left(\\dfrac{\\pi}{2}\\right)$ qui transforme $B$ en $O$."
+    },
+    {
+      "id": "p2q1",
+      "content": "Montrer que les points $O$, $A$ et $B$ ne sont pas alignés.",
+      "hint": "Calculez $\\dfrac{a}{b}=\\dfrac{me^{i\\pi/3}}{me^{-i\\pi/3}}=e^{i2\\pi/3}$ et vérifiez que ce quotient n'est pas réel."
+    },
+    {
+      "id": "p2q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "p2q2a",
+          "content": "Montrer que l'affixe de $P$ est $p=m\\dfrac{\\sqrt2}{2}e^{i7\\pi/12}$ et que l'affixe de $R$ est $r=m\\dfrac{\\sqrt2}{2}e^{-i7\\pi/12}$.",
+          "hint": "$P$ centre de la rotation d'angle $\\pi/2$ envoyant $O$ sur $A$ vérifie $a-p=i(0-p)$ ; isolez $p$, remplacez $a$ par sa valeur, puis mettez $1-i$ sous forme exponentielle pour simplifier l'argument."
+        },
+        {
+          "id": "p2q2b",
+          "content": "Montrer que l'affixe de $Q$ est $q=m\\sqrt2\\sin\\left(\\dfrac{7\\pi}{12}\\right)$.",
+          "hint": "$Q$ vérifie $b-q=i(a-q)$ ; isolez $q$ en fonction de $a$ et $b$, remplacez par leurs formes exponentielles et simplifiez la différence d'exponentielles en un sinus."
+        }
+      ]
+    },
+    {
+      "id": "p2q3",
+      "content": "Montrer que $OQ=PR$ et que les deux droites $(OQ)$ et $(PR)$ sont perpendiculaires.",
+      "hint": "Calculez le quotient $\\dfrac{r-p}{q-0}$ et montrez qu'il est de module $1$ et d'argument $\\pm\\pi/2$."
+    }
+  ]
+}

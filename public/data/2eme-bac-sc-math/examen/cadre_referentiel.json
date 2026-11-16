@@ -1,0 +1,17 @@
+{
+  "header": {
+    "title": "Cadre Référentiel 2026",
+    "subtitle": "2ème BAC Sciences Mathématiques",
+    "context": "Mathématiques"
+  },
+  "sections": [
+    { "id": "arithmetique", "category": "method", "title": "Maîtriser les concepts d'arithmétique dans $\\mathbb{Z}$ (Bézout, Gauss, congruences)" },
+    { "id": "structures", "category": "method", "title": "Étudier les structures algébriques (groupes, anneaux, corps)" },
+    { "id": "complexes", "category": "method", "title": "Utiliser les nombres complexes en algèbre et en géométrie" },
+    { "id": "suites", "category": "method", "title": "Étudier les suites numériques et les suites récurrentes" },
+    { "id": "fonctions", "category": "method", "title": "Étudier des fonctions réelles (continuité, dérivabilité, variations)" },
+    { "id": "integration", "category": "method", "title": "Maîtriser le calcul intégral et ses applications" },
+    { "id": "equa_diff", "category": "method", "title": "Résoudre des équations différentielles" },
+    { "id": "proba", "category": "method", "title": "Calculer des probabilités et étudier des variables aléatoires" }
+  ]
+}

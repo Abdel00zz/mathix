@@ -1,0 +1,381 @@
+{
+  "header": {
+    "title": "Ensembles et Applications",
+    "subtitle": "Logique, structure des ensembles et fonctions entre ensembles",
+    "context": "1BAC Sciences Math"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "Introduction",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "La theorie des ensembles et des applications permet de \\objectif{decrire precisement des collections d'objets et les relations entre elles}, langage de base de tout le programme. On y retrouve appartenance, inclusion, operations ensemblistes, injectivite, surjectivite et bijectivite. La \\defi{difficulte} majeure est de garder une redaction rigoureuse dans un cadre tres abstrait, ou un symbole mal interprete change tout le raisonnement. \\savant{Georg Cantor} a fonde cette theorie a la fin du XIXe siecle, ouvrant une nouvelle maniere de penser l'infini et les structures mathematiques.",
+          "media": {
+            "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Georg_Cantor2.jpg",
+            "type": "image",
+            "position": "right",
+            "width": "16.5%",
+            "caption": "Georg Cantor (1845–1918)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vocabulaire_ensembles",
+      "category": "course",
+      "title": "Vocabulaire des Ensembles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On part de la notion la plus simple : l'ensemble, une collection d'objets. On apprend à le décrire, à comparer deux ensembles et à travailler avec les sous-ensembles."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{un ensemble et comment le décrire}",
+          "content": "Un \\textbf{ensemble} $E$ est une collection d'objets mathématiques appelés \\textbf{éléments}.\\par\\smallskip\\\\$\\bullet$ $x \\in E$ signifie que $x$ \\blank{appartient} à $E$ \\quad (ex : $3 \\in \\mathbb{N}$)\\\\$\\bullet$ $x \\notin E$ signifie que $x$ n'appartient pas à $E$ \\quad (ex : $-1 \\notin \\mathbb{N}$)\\\\$\\bullet$ $\\emptyset$ désigne l'ensemble \\blank{vide}, qui ne contient aucun élément\\par\\smallskip\\\\Un ensemble peut être défini de deux façons :\\par\\smallskip\\\\\\textbf{\\textbf{En extension}} : on liste tous les éléments. Ex : $D_6 = \\{1;2;3;6\\}$\\par\\smallskip\\\\\\textbf{\\textbf{En compréhension}} : on donne une propriété. Ex : $D_6 = \\{n \\in \\mathbb{N}^* \\mid n \\text{ divise } 6\\}$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Écrire l'ensemble des diviseurs de} $12$ en extension et en compréhension.}\\par\\smallskip\\\\\\textbf{En extension} : on liste les entiers naturels non nuls qui divisent $12$ :\\\\$$D_{12} = \\{1\\,;\\,2\\,;\\,3\\,;\\,4\\,;\\,6\\,;\\,12\\}$$\\par\\smallskip\\\\\\textbf{En compréhension} :\\\\$$D_{12} = \\{n \\in \\mathbb{N}^* \\mid n \\text{ divise } 12\\} = \\{n \\in \\mathbb{N}^* \\mid 12 \\equiv 0 \\;[n]\\}$$\\par\\smallskip\\\\On a $|D_{12}| = \\blank{6}$ éléments."
+        },
+        {
+          "type": "definition",
+          "title": "Quand \\mathqst{dit-on que $E = F$ ou que $E \\subset F$}",
+          "content": "Soient $E$ et $F$ deux ensembles.\\par\\smallskip\\\\$\\bullet$ \\textbf{\\textbf{Égalité}} : $E = F \\Longleftrightarrow \\forall x : (x \\in E \\Leftrightarrow x \\in F)$\\par\\smallskip\\\\$\\bullet$ \\textbf{\\textbf{Inclusion}} : $E \\subset F \\Longleftrightarrow \\forall x : (x \\in E \\Rightarrow x \\in \\blank{F})$\\par\\smallskip\\\\$\\bullet$ \\textbf{\\textbf{Double inclusion}} : $(E \\subset F \\text{ et } F \\subset E) \\Longleftrightarrow E = F$\\par\\smallskip\\\\La double inclusion est la méthode standard pour prouver l'égalité de deux ensembles."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrer $\\{x \\in \\mathbb{Z} \\mid x^2 \\leq 4\\} = \\{-2;-1;0;1;2\\}$.}\\par\\smallskip\\\\Posons $A = \\{x \\in \\mathbb{Z} \\mid x^2 \\leq 4\\}$ et $B = \\{-2;-1;0;1;2\\}$.\\par\\smallskip\\\\\\textbf{$B \\subset A$ :} Pour chaque élément de $B$, vérifions $x^2 \\leq 4$ :\\\\$(-2)^2 = 4 \\leq 4$, $(-1)^2 = 1 \\leq 4$, $0^2 = 0 \\leq 4$, $1^2 = 1 \\leq 4$, $2^2 = 4 \\leq 4$.\\par\\smallskip\\\\\\textbf{$A \\subset B$ :} Si $x \\in \\mathbb{Z}$ et $x^2 \\leq 4$, alors $|x| \\leq 2$, donc $x \\in \\{-2,-1,0,1,2\\}$.\\par\\smallskip\\\\Par double inclusion : $A = B$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{prouver que deux ensembles sont égaux}",
+          "content": "La technique standard est la \\textbf{double inclusion}. Pour montrer $A = B$, on prouve deux choses séparément.\\par\\begin{itemize}\\item \\textbf{$A \\subset B$} : prendre un élément quelconque $x \\in A$ et montrer que $x \\in B$\\item \\textbf{$B \\subset A$} : prendre un élément quelconque $x \\in B$ et montrer que $x \\in A$\\end{itemize}\\par \\textbf{Alternative} : si les deux ensembles sont définis par des propriétés, montrer l'\\textbf{équivalence} des propriétés ($P(x) \\iff Q(x)$) donne directement l'égalité."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{l'ensemble des parties $\\mathcal{P}(E)$}",
+          "content": "L'\\textbf{ensemble des parties de $E$}, noté $\\mathcal{P}(E)$, est l'ensemble de tous les sous-ensembles de $E$ :\\\\$$\\mathcal{P}(E) = \\{X \\mid X \\subset E\\}$$\\par\\smallskip\\\\$\\bullet$ $\\emptyset \\in \\mathcal{P}(E)$ : l'ensemble vide est partie de tout ensemble\\\\$\\bullet$ $E \\in \\mathcal{P}(E)$ : tout ensemble est partie de lui-même\\\\$\\bullet$ Si $|E| = n$, alors $|\\mathcal{P}(E)| = 2^{\\blank{n}}$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Déterminer $\\mathcal{P}(E)$ pour $E = \\{a, b, c\\}$.}\\par\\smallskip\\\\On a $|E| = 3$, donc $|\\mathcal{P}(E)| = 2^3 = \\blank{8}$ parties.\\par\\smallskip\\\\$$\\mathcal{P}(E) = \\bigl\\{\\underbrace{\\emptyset}_{0 \\text{ élém.}}\\;; \\underbrace{\\{a\\}; \\{b\\}; \\{c\\}}_{1 \\text{ élém.}}\\;; \\underbrace{\\{a,b\\}; \\{a,c\\}; \\{b,c\\}}_{2 \\text{ élém.}}\\;; \\underbrace{\\{a,b,c\\}}_{3 \\text{ élém.}}\\bigr\\}$$\\par\\smallskip\\\\On retrouve bien $1 + 3 + 3 + 1 = 8$ parties (coefficients binomiaux $\\binom{3}{k}$)."
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{le complémentaire $\\bar{A}$}",
+          "content": "Soit $A \\subseteq E$. Le \\textbf{complémentaire de $A$ dans $E$}, noté $\\bar{A}$ ou $C_E^A$, est :\\\\$$\\boxed{\\bar{A} = \\{x \\in E \\mid x \\notin \\blank{A}\\}}$$\\par\\smallskip\\\\Propriétés immédiates : $\\bar{E} = \\blank{\\emptyset}$, \\quad $\\overline{\\emptyset} = \\blank{E}$, \\quad $\\overline{\\overline{A}} = \\blank{A}$ (involution)\\par\\smallskip\\\\Et aussi : $A \\cap \\bar{A} = \\emptyset$ \\quad et \\quad $A \\cup \\bar{A} = E$."
+        }
+      ]
+    },
+    {
+      "id": "operations_ensembles",
+      "category": "course",
+      "title": "Opérations sur les Ensembles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On sait comparer des ensembles. On va maintenant les combiner avec quatre opérations : intersection, réunion, différence et complémentaire. Ces opérations obéissent à des lois précises, comme De Morgan."
+        },
+        {
+          "type": "definition",
+          "title": "Que contiennent \\mathqst{$A \\cap B$, $A \\cup B$ et $A \\setminus B$}",
+          "content": "Soient $A$ et $B$ deux parties d'un ensemble $E$.\\par\\smallskip\\\\$$\\begin{array}{|c|c|l|}\\hline \\textbf{Opération} & \\textbf{Notation} & \\textbf{Définition} \\\\ \\hline \\text{\\textbf{Intersection}} & A \\cap B & \\{x \\in E \\mid x \\in A \\textbf{ et } x \\in B\\} \\\\ \\hline \\text{\\textbf{Réunion}} & A \\cup B & \\{x \\in E \\mid x \\in A \\textbf{ ou } x \\in B\\} \\\\ \\hline \\text{\\textbf{Différence}} & A \\setminus B & \\{x \\in E \\mid x \\in A \\textbf{ et } x \\notin B\\} \\\\ \\hline \\text{\\textbf{Diff. symétrique}} & A \\triangle B & (A \\setminus B) \\cup (B \\setminus A) \\\\ \\hline \\end{array}$$\\par\\smallskip\\\\\\textbf{Lien :} $A \\setminus B = A \\cap \\blank{\\bar{B}}$",
+          "media": {
+            "src": "/images/revision/intersection-ensembles.svg",
+            "type": "image",
+            "position": "bottom",
+            "anchor": "content",
+            "width": "560px",
+            "alt": "La zone hachurée est l’intersection de A et B dans E.",
+            "caption": "Appartenir à $A \\cap B$, c’est appartenir à $A$ et à $B$."
+          }
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $E = \\{1,2,3,4,5,6\\}$, $A = \\{1,2,3,4\\}$ et $B = \\{3,4,5,6\\}$. Calculer les opérations ensemblistes.}\\par\\smallskip\\\\$A \\cap B = \\{\\blank{3;4}\\}$ (éléments communs)\\par\\smallskip\\\\$A \\cup B = \\{1;2;3;4;5;6\\} = E$ (tous les éléments)\\par\\smallskip\\\\$A \\setminus B = \\{\\blank{1;2}\\}$ (dans $A$ mais pas dans $B$)\\par\\smallskip\\\\$B \\setminus A = \\{\\blank{5;6}\\}$ (dans $B$ mais pas dans $A$)\\par\\smallskip\\\\$A \\triangle B = (A\\setminus B) \\cup (B\\setminus A) = \\{1;2;5;6\\}$\\par\\smallskip\\\\\\textbf{Vérification :} $A \\setminus B = A \\cap \\bar{B} = \\{1,2,3,4\\} \\cap \\{1,2\\} = \\{1,2\\}$."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les propriétés fondamentales de $\\cap$ et $\\cup$}",
+          "content": "$\\begin{array}{|l|l|l|}\\hline \\textbf{Propriété} & \\cap & \\cup \\\\ \\hline \\text{\\textbf{Commutativité}} & A \\cap B = B \\cap A & A \\cup B = B \\cup A \\\\ \\hline \\text{\\textbf{Associativité}} & (A\\cap B)\\cap C = A\\cap(B\\cap C) & (A\\cup B)\\cup C = A\\cup(B\\cup C) \\\\ \\hline \\text{\\textbf{Idempotence}} & A \\cap A = A & A \\cup A = A \\\\ \\hline \\text{\\textbf{Absorbant}} & A \\cap \\emptyset = \\emptyset & A \\cup E = E \\\\ \\hline \\text{\\textbf{Neutre}} & A \\cap E = A & A \\cup \\emptyset = A \\\\ \\hline \\textbf{Si } A \\subset B & A \\cap B = A & A \\cup B = B \\\\ \\hline \\end{array}$\\par\\smallskip\\\\\\textbf{Distributivité} :\\\\$A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$\\\\$A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)$"
+        },
+        {
+          "type": "property",
+          "title": "Que disent \\mathqst{les lois de De Morgan}",
+          "content": "$$\\boxed{\\overline{A \\cap B} = \\bar{A} \\cup \\bar{B} \\qquad \\text{et} \\qquad \\overline{A \\cup B} = \\bar{A} \\cap \\bar{B}}$$\\par\\smallskip\\\\\\textbf{Mnémotechnique :} le complémentaire \\textit{échange} $\\cap$ et $\\cup$.\\par\\smallskip\\\\\\textbf{Conséquences utiles :}\\\\$\\bullet$ $A \\setminus B = A \\cap \\bar{B}$ (lien différence–complémentaire)\\\\$\\bullet$ $A \\subset B \\Leftrightarrow \\bar{B} \\subset \\bar{A}$ (contraposée de l'inclusion)\\\\$\\bullet$ $A \\subset B \\Leftrightarrow A \\cap \\bar{B} = \\emptyset$ (caractérisation par la différence)"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifier Morgan $\\overline{A \\cap B} = \\bar{A} \\cup \\bar{B}$ avec $E = \\{1,2,3,4,5\\}$, $A = \\{1,2,3\\}$, $B = \\{2,3,4\\}$.}\\par\\smallskip\\\\\\textbf{Côté gauche :}\\\\$$A \\cap B = \\{2,3\\} \\quad \\text{donc} \\quad \\overline{A \\cap B} = E \\setminus \\{2,3\\} = \\{1,4,5\\}$$\\par\\smallskip\\\\\\textbf{Côté droit :}\\\\$$\\bar{A} = \\{4,5\\} \\quad \\bar{B} = \\{1,5\\}$$\\\\$$\\bar{A} \\cup \\bar{B} = \\{1,4,5\\}$$\\par\\smallskip\\\\Les deux côtés donnent $\\{1,4,5\\}$ : la loi est vérifiée."
+        },
+        {
+          "type": "warning",
+          "content": "La différence d'ensembles \\textbf{n'est pas commutative} : $A \\setminus B \\neq B \\setminus A$ en général.\\par\\smallskip\\\\Avec $A = \\{1,2,3\\}$ et $B = \\{2,3,4\\}$ : $A \\setminus B = \\{1\\}$ mais $B \\setminus A = \\{4\\}$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{prouver une inclusion $A \\subset B$}",
+          "content": "Prendre un élément \\textbf{quelconque} $x \\in A$ et montrer, par une chaîne d'implications, que $x \\in B$.\\par\\begin{itemize}\\item \\textbf{Méthode directe} : $x \\in A$ implique une propriété $P(x)$, qui implique $x \\in B$\\item \\textbf{Par le complémentaire} : montrer que $\\bar{B} \\subset \\bar{A}$ (contraposée de l'inclusion)\\item \\textbf{Par la différence} : montrer que $A \\cap \\bar{B} = \\emptyset$ (aucun élément de $A$ n'est hors de $B$)\\end{itemize}\\par \\textbf{Erreur fréquente} : vérifier sur quelques exemples ne prouve pas l'inclusion. Il faut un raisonnement valable pour \\textbf{tout} $x$."
+        }
+      ]
+    },
+    {
+      "id": "partitions",
+      "category": "course",
+      "title": "Notations Généralisées et Partitions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On a travaillé avec deux ensembles à la fois. On généralise maintenant les opérations à une famille quelconque d'ensembles, et on introduit la notion de partition : un découpage sans chevauchement."
+        },
+        {
+          "type": "definition",
+          "title": "Comment \\mathqst{noter une réunion ou intersection de $n$ ensembles}",
+          "content": "Soient $A_1, A_2, \\ldots, A_n$ des parties de $E$.\\par\\smallskip\\\\\\textbf{\\textbf{Réunion généralisée}} : $\\displaystyle\\bigcup_{i=1}^{n} A_i = A_1 \\cup A_2 \\cup \\cdots \\cup A_n$\\par\\smallskip\\\\\\textbf{\\textbf{Intersection généralisée}} : $\\displaystyle\\bigcap_{i=1}^{n} A_i = A_1 \\cap A_2 \\cap \\cdots \\cap A_n$\\par\\smallskip\\\\Autrement dit : $x \\in \\bigcup A_i \\Leftrightarrow \\exists\\, i : x \\in A_i$ \\quad et \\quad $x \\in \\bigcap A_i \\Leftrightarrow \\forall\\, i : x \\in A_i$"
+        },
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{une partition de $E$}",
+          "content": "Une famille $(A_i)_{1 \\leq i \\leq n}$ de parties \\textbf{non vides} de $E$ est une \\textbf{partition} de $E$ si :\\par\\smallskip\\\\$$\\boxed{\\begin{cases} \\displaystyle\\bigcup_{i=1}^{n} A_i = \\blank{E} & \\text{(recouvrement)} \\\\[8pt] i \\neq j \\Rightarrow A_i \\cap A_j = \\blank{\\emptyset} & \\text{(disjonction deux à deux)} \\end{cases}}$$\\par\\smallskip\\\\Autrement dit : les $A_i$ découpent $E$ en morceaux \\textbf{sans chevauchement ni oubli}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Vérifier $\\{\\{1,2\\}; \\{3,4\\}; \\{5\\}\\}$ est une partition de $E = \\{1,2,3,4,5\\}$.}\\par\\smallskip\\\\Posons $A_1 = \\{1,2\\}$, $A_2 = \\{3,4\\}$, $A_3 = \\{5\\}$.\\par\\smallskip\\\\\\textbf{Recouvrement :} $A_1 \\cup A_2 \\cup A_3 = \\{1,2,3,4,5\\} = E$.\\par\\smallskip\\\\\\textbf{Disjonction :}\\\\$A_1 \\cap A_2 = \\emptyset$, \\quad $A_1 \\cap A_3 = \\emptyset$, \\quad $A_2 \\cap A_3 = \\emptyset$.\\par\\smallskip\\\\Les deux conditions sont remplies : c'est bien une partition de $E$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Donner une partition naturelle de} $\\mathbb{Z}$.}\\par\\smallskip\\\\On peut partitionner $\\mathbb{Z}$ selon la parité :\\\\$$\\mathbb{Z} = \\underbrace{\\{2k \\mid k \\in \\mathbb{Z}\\}}_{\\text{pairs}} \\;\\cup\\; \\underbrace{\\{2k+1 \\mid k \\in \\mathbb{Z}\\}}_{\\text{impairs}}$$\\par\\smallskip\\\\Plus généralement, pour $n \\geq 2$, les classes de congruence modulo $n$ forment une partition de $\\mathbb{Z}$ en $n$ parties :\\\\$$\\mathbb{Z} = \\bar{0} \\cup \\bar{1} \\cup \\cdots \\cup \\overline{n-1}$$\\par\\smallskip\\\\Par exemple pour $n = 3$ : $\\mathbb{Z} = \\{3k\\} \\cup \\{3k+1\\} \\cup \\{3k+2\\}$."
+        }
+      ]
+    },
+    {
+      "id": "produit_cartesien",
+      "category": "course",
+      "title": "Produit Cartésien",
+      "blocks": [
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{le produit cartésien $E \\times F$}",
+          "content": "Le \\textbf{produit cartésien} de $E$ par $F$ est l'ensemble de tous les couples ordonnés $(x, y)$ avec $x \\in E$ et $y \\in F$ :\\\\$$\\boxed{E \\times F = \\{(x, y) \\mid x \\in \\blank{E} \\text{ et } y \\in \\blank{F}\\}}$$\\par\\smallskip\\\\$\\bullet$ \\textbf{Ordre} : $(a, b) \\neq (b, a)$ en général\\\\$\\bullet$ \\textbf{Égalité} : $(a,b) = (c,d) \\Leftrightarrow a=c$ et $b=d$\\\\$\\bullet$ \\textbf{Cardinal} : $|E \\times F| = |E| \\times |F|$\\\\$\\bullet$ \\textbf{Non commutatif} : $E \\times F \\neq F \\times E$ en général"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $E = \\{1, 2\\}$ et $F = \\{a, b, c\\}$. Déterminer $E \\times F$.}\\par\\smallskip\\\\On forme tous les couples possibles :\\\\$$E \\times F = \\{(1,a);(1,b);(1,c);(2,a);(2,b);(2,c)\\}$$\\par\\smallskip\\\\On a $|E \\times F| = 2 \\times 3 = \\blank{6}$ couples.\\par\\smallskip\\\\Attention : $F \\times E = \\{(a,1);(a,2);(b,1);(b,2);(c,1);(c,2)\\}$ est un ensemble \\textbf{différent} de $E \\times F$."
+        },
+        {
+          "type": "remark",
+          "content": "Le plan muni d'un repère s'identifie à $\\mathbb{R} \\times \\mathbb{R} = \\mathbb{R}^2$. Chaque point du plan est un couple $(x, y)$ de coordonnées. De même, $\\mathbb{R}^3 = \\mathbb{R} \\times \\mathbb{R} \\times \\mathbb{R}$ modélise l'espace."
+        }
+      ]
+    },
+    {
+      "id": "applications_definition",
+      "category": "course",
+      "title": "Applications — Définition et Vocabulaire",
+      "blocks": [
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{une application $f : E \\to F$}",
+          "content": "Soient $E$ et $F$ deux ensembles non vides. Une \\textbf{application} de $E$ dans $F$ est une relation qui associe à \\textbf{tout} élément $x \\in E$ un \\textbf{unique} élément $y \\in F$.\\par\\smallskip\\\\$$\\boxed{f : E \\to F \\qquad x \\mapsto y = f(x)}$$\\par\\smallskip\\\\$\\bullet$ $E$ : ensemble de \\blank{départ} \\quad ; \\quad $F$ : ensemble d'\\blank{arrivée}\\\\$\\bullet$ $y = f(x)$ : \\textbf{image} de $x$ par $f$\\\\$\\bullet$ $x$ : \\textbf{antécédent} de $y$ par $f$\\par\\smallskip\\\\\\textbf{Attention :} chaque élément de $E$ a \\textbf{exactement une} image, mais un élément de $F$ peut avoir $0$, $1$ ou plusieurs antécédents."
+        },
+        {
+          "type": "definition",
+          "title": "Quand \\mathqst{deux applications $f$ et $g$ sont-elles égales}",
+          "content": "$$\\boxed{f = g \\Longleftrightarrow \\begin{cases} \\text{Même ensemble de départ } E \\\\ \\text{Même ensemble d'arrivée } F \\\\ \\forall x \\in E : f(x) = \\blank{g(x)} \\end{cases}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = x^2 - 1$ et $g(x) = (x-1)(x+1)$, toutes deux de $\\mathbb{R}$ dans $\\mathbb{R}$. Sont-elles égales ?}\\par\\smallskip\\\\Même départ ($\\mathbb{R}$), même arrivée ($\\mathbb{R}$).\\par\\smallskip\\\\Pour tout $x \\in \\mathbb{R}$ : $g(x) = (x-1)(x+1) = x^2 - 1 = f(x)$.\\par\\smallskip\\\\Les trois conditions sont vérifiées : $f = g$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f : \\mathbb{R} \\to \\mathbb{R}$, $f(x) = x^2 - 1$. Déterminer les antécédents de $0$, de $3$ et de $-2$.}\\par\\smallskip\\\\On résout $f(x) = y$, soit $x^2 - 1 = y$, c'est-à-dire $x^2 = y + 1$.\\par\\smallskip\\\\$\\bullet$ $y = 0$ : $x^2 = 1$, donc $x = \\pm 1$ \\quad ($\\blank{2}$ antécédents)\\\\$\\bullet$ $y = 3$ : $x^2 = 4$, donc $x = \\pm 2$ \\quad ($2$ antécédents)\\\\$\\bullet$ $y = -2$ : $x^2 = -1$, aucune solution dans $\\mathbb{R}$ \\quad ($\\blank{0}$ antécédent)\\par\\smallskip\\\\\\textbf{Conclusion :} $f$ n'est ni injective ($0$ a deux antécédents) ni surjective ($-2$ n'en a aucun)."
+        }
+      ]
+    },
+    {
+      "id": "injection_surjection_bijection",
+      "category": "course",
+      "title": "Injection, Surjection, Bijection",
+      "blocks": [
+        {
+          "type": "definition",
+          "title": "Quand \\mathqst{une application est-elle injective, surjective ou bijective}",
+          "content": "Soit $f : E \\to F$ une application.\\par\\smallskip\\\\$$\\begin{array}{|l|l|l|}\\hline \\textbf{Type} & \\textbf{Définition} & \\textbf{En termes d'antécédents} \\\\ \\hline \\text{\\textbf{Injective}} & f(x_1)=f(x_2) \\Rightarrow x_1=x_2 & \\text{Chaque } y \\in F \\text{ a \\textbf{au plus} } 1 \\text{ antécédent} \\\\ \\hline \\text{\\textbf{Surjective}} & \\forall y \\in F,\\, \\exists x \\in E : f(x)=y & \\text{Chaque } y \\in F \\text{ a \\textbf{au moins} } 1 \\text{ antécédent} \\\\ \\hline \\text{\\textbf{Bijective}} & \\forall y \\in F,\\, \\exists!\\, x \\in E : f(x)=y & \\text{Chaque } y \\in F \\text{ a \\textbf{exactement} } 1 \\text{ antécédent} \\\\ \\hline \\end{array}$$\\par\\smallskip\\\\$$\\boxed{\\text{Bijective} = \\text{Injective} + \\text{Surjective}}$$"
+        },
+        {
+          "type": "property",
+          "title": "C'est quoi \\mathqst{la bijection réciproque}",
+          "content": "Si $f : E \\to F$ est \\textbf{bijective}, il existe une unique application $f^{-1} : F \\to E$ appelée \\textbf{bijection réciproque}, définie par :\\\\$$\\boxed{f^{-1}(y) = x \\Longleftrightarrow f(x) = \\blank{y}}$$\\par\\smallskip\\\\$\\bullet$ $f^{-1} \\circ f = \\blank{\\text{Id}_E}$ : pour tout $x \\in E$, $f^{-1}(f(x)) = x$\\\\$\\bullet$ $f \\circ f^{-1} = \\blank{\\text{Id}_F}$ : pour tout $y \\in F$, $f(f^{-1}(y)) = y$\\\\$\\bullet$ $(f^{-1})^{-1} = f$ : la réciproque de la réciproque est $f$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{prouver qu'une application est bijective}",
+          "content": "\\textbf{Méthode en 3 temps :}\\par\\smallskip\\\\\\textbf{\\textbf{Injectivité}} : Supposer $f(x_1)=f(x_2)$ et montrer que $x_1=x_2$.\\par\\smallskip\\\\\\textbf{\\textbf{Surjectivité}} : Pour tout $y \\in F$, résoudre $f(x)=y$ et vérifier que $x \\in E$.\\par\\smallskip\\\\\\textbf{\\textbf{Réciproque}} : Exprimer $x$ en fonction de $y$ pour obtenir $f^{-1}(y) = \\ldots$\\par\\smallskip\\\\\\textbf{Méthode alternative :} montrer directement que $\\forall y \\in F$, l'équation $f(x) = y$ a une \\textbf{unique} solution dans $E$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrer $f : \\mathbb{R} \\to \\mathbb{R}$, $f(x) = 2x + 1$ est bijective et déterminer $f^{-1}$.}\\par\\smallskip\\\\\\textbf{Injectivité :} Soient $x_1, x_2 \\in \\mathbb{R}$ tels que $f(x_1) = f(x_2)$ :\\\\$$2x_1 + 1 = 2x_2 + 1 \\implies 2x_1 = 2x_2 \\implies x_1 = x_2$$\\par\\smallskip\\\\\\textbf{Surjectivité :} Soit $y \\in \\mathbb{R}$. On résout $2x + 1 = y$ :\\\\$$x = \\frac{y - 1}{2} \\in \\mathbb{R}$$\\par\\smallskip\\\\Ce $x$ existe et est unique pour tout $y$. Donc $f$ est \\textbf{bijective}.\\par\\smallskip\\\\\\textbf{Réciproque :}\\\\$$\\boxed{f^{-1}(x) = \\frac{x - 1}{\\blank{2}}}$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrer $f : \\mathbb{R} \\to \\mathbb{R}^+$, $f(x) = x^2$ est surjective mais pas injective.}\\par\\smallskip\\\\\\textbf{Non injective :} $f(1) = 1 = f(-1)$ mais $1 \\neq -1$.\\par\\smallskip\\\\\\textbf{Surjective :} Soit $y \\in \\mathbb{R}^+$. On cherche $x \\in \\mathbb{R}$ tel que $x^2 = y$ :\\\\$$x = \\sqrt{y} \\in \\mathbb{R} \\quad \\text{(car } y \\geq 0\\text{)}$$\\par\\smallskip\\\\Tout $y \\in \\mathbb{R}^+$ a un antécédent : $f$ est surjective.\\par\\smallskip\\\\\\textbf{Important :} si on change l'arrivée en $\\mathbb{R}$ (au lieu de $\\mathbb{R}^+$), alors $g : \\mathbb{R} \\to \\mathbb{R}$, $g(x) = x^2$ n'est \\textbf{plus surjective} car $-1$ n'a pas d'antécédent. L'ensemble d'arrivée fait partie de la définition."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{montrer qu'une application n'est pas injective ou pas surjective}",
+          "content": "Pour réfuter l'injectivité ou la surjectivité, un seul \\textbf{contre-exemple} suffit.\\par\\begin{itemize}\\item \\textbf{Non injective} : trouver $x_1 \\neq x_2$ tels que $f(x_1) = f(x_2)$. En pratique, tester des valeurs simples ($0$, $1$, $-1$)\\item \\textbf{Non surjective} : trouver un $y \\in F$ tel que $f(x) = y$ n'a pas de solution dans $E$. Étudier le signe ou les bornes de $f$\\end{itemize}\\par \\textbf{Attention} : l'ensemble de départ et d'arrivée comptent. $x^2 : \\mathbb{R} \\to \\mathbb{R}$ n'est ni injective ni surjective, mais $x^2 : \\mathbb{R}^+ \\to \\mathbb{R}^+$ est bijective."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $E = \\{1,2,3\\}$, $F = \\{a,b,c\\}$ et $f$ définie par $f(1) = b$, $f(2) = a$, $f(3) = c$. Montrer que $f$ est bijective et déterminer $f^{-1}$.}\\par\\smallskip\\\\\\textbf{Injectivité :} Les images $b$, $a$, $c$ sont toutes distinctes.\\par\\smallskip\\\\\\textbf{Surjectivité :} Chaque élément de $F$ a un antécédent : $a = f(2)$, $b = f(1)$, $c = f(3)$.\\par\\smallskip\\\\$f$ est donc bijective. La réciproque $f^{-1} : F \\to E$ est :\\\\$$f^{-1}(a) = \\blank{2}, \\quad f^{-1}(b) = \\blank{1}, \\quad f^{-1}(c) = \\blank{3}$$"
+        }
+      ]
+    },
+    {
+      "id": "image_directe_reciproque",
+      "category": "course",
+      "title": "Image Directe et Image Réciproque",
+      "blocks": [
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{$f(A)$ et $f^{-1}(B)$ pour des ensembles}",
+          "content": "Soit $f : E \\to F$, $A \\subseteq E$ et $B \\subseteq F$.\\par\\smallskip\\\\\\textbf{\\textbf{Image directe}} : $f(A) = \\{f(x) \\mid x \\in \\blank{A}\\}$ — l'ensemble des images des éléments de $A$\\par\\smallskip\\\\\\textbf{\\textbf{Image réciproque}} : $f^{-1}(B) = \\{x \\in E \\mid f(x) \\in \\blank{B}\\}$ — l'ensemble des antécédents des éléments de $B$\\par\\smallskip\\\\Propriétés clés :\\\\$\\bullet$ $f$ surjective $\\Longleftrightarrow f(E) = \\blank{F}$\\\\$\\bullet$ $A \\subset f^{-1}(f(A))$ (égalité si $f$ injective)\\\\$\\bullet$ $f(f^{-1}(B)) \\subset B$ (égalité si $f$ surjective)\\par\\smallskip\\\\\\textbf{Attention :} la notation $f^{-1}(B)$ existe même si $f$ n'est pas bijective ! C'est l'image réciproque d'un \\textit{ensemble}, pas la réciproque de $f$."
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{déterminer l'image directe $f(I)$ d'un intervalle}",
+          "content": "On cherche l'ensemble des valeurs prises par $f$ sur l'intervalle $I$.\\par\\begin{itemize}\\item \\textbf{Si $f$ est monotone sur $I$} : $f(I)$ est l'intervalle entre $f(\\text{borne gauche})$ et $f(\\text{borne droite})$\\item \\textbf{Si $f$ change de sens sur $I$} : dresser le tableau de variations sur $I$, puis lire les valeurs extrêmes\\item \\textbf{Bornes ouvertes/fermées} : si $a \\in I$ (fermé), alors $f(a) \\in f(I)$ (fermé). Si $a \\notin I$ (ouvert), étudier la limite\\end{itemize}\\par Pour l'\\textbf{image réciproque} $f^{-1}(J)$ : résoudre l'inéquation $f(x) \\in J$, c'est-à-dire encadrer $f(x)$ et en déduire l'encadrement de $x$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f : \\mathbb{R} \\to \\mathbb{R}$, $f(x) = x^2$. Calculer $f([-2, 3])$ et $f^{-1}([0, 4])$.}\\par\\smallskip\\\\\\textbf{Image directe de $[-2, 3]$ :}\\par\\smallskip\\\\Pour $x \\in [-2, 3]$, $f(x) = x^2$ atteint son minimum $0$ (en $x = 0$) et son maximum $9$ (en $x = 3$, car $3^2 = 9 > (-2)^2 = 4$).\\\\$$f([-2, 3]) = [\\blank{0}, \\blank{9}]$$\\par\\smallskip\\\\\\textbf{Image réciproque de $[0, 4]$ :}\\par\\smallskip\\\\On cherche $\\{x \\in \\mathbb{R} \\mid x^2 \\in [0, 4]\\}$, soit $0 \\leq x^2 \\leq 4$, c'est-à-dire $|x| \\leq 2$ :\\\\$$f^{-1}([0, 4]) = [\\blank{-2}, \\blank{2}]$$"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f : \\mathbb{R} \\to \\mathbb{R}$, $f(x) = 2x - 1$. Calculer $f(\\{0, 1, 2\\})$, $f(\\mathbb{R})$ et $f^{-1}(\\{-1, 1, 3\\})$.}\\par\\smallskip\\\\\\textbf{Image directe de $\\{0, 1, 2\\}$ :}\\\\$$f(0) = -1, \\quad f(1) = 1, \\quad f(2) = 3$$\\\\$$f(\\{0,1,2\\}) = \\{-1, 1, 3\\}$$\\par\\smallskip\\\\\\textbf{Image de $\\mathbb{R}$ :} $f(x) = 2x-1$ est une droite qui prend toutes les valeurs réelles :\\\\$$f(\\mathbb{R}) = \\mathbb{R} \\implies f \\text{ est \\blank{surjective}}$$\\par\\smallskip\\\\\\textbf{Image réciproque de $\\{-1, 1, 3\\}$ :}\\\\On résout $2x - 1 = y$ pour chaque $y$ :\\\\$$2x-1 = -1 \\Rightarrow x = 0 \\quad ; \\quad 2x-1 = 1 \\Rightarrow x = 1 \\quad ; \\quad 2x-1 = 3 \\Rightarrow x = 2$$\\\\$$f^{-1}(\\{-1,1,3\\}) = \\{0, 1, 2\\}$$"
+        }
+      ]
+    },
+    {
+      "id": "restriction_prolongement",
+      "category": "course",
+      "title": "Restriction et Prolongement",
+      "blocks": [
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{la restriction et le prolongement d'une application}",
+          "content": "Soit $f : E \\to F$.\\par\\smallskip\\\\\\textbf{\\textbf{Restriction} de $f$ à $A$} (avec $A \\subset E$) : c'est l'application $g : A \\to F$ définie par $g(x) = f(x)$ pour tout $x \\in A$. On \\textit{réduit} le domaine.\\par\\smallskip\\\\\\textbf{\\textbf{Prolongement} de $f$ à $\\Gamma$} (avec $E \\subset \\Gamma$) : c'est une application $h : \\Gamma \\to F$ telle que $h(x) = f(x)$ pour tout $x \\in E$. On \\textit{élargit} le domaine."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Montrer $f : \\mathbb{R} \\to \\mathbb{R}$, $f(x) = x^2$ n'est pas injective, mais que sa restriction à $[0, +\\infty[$ l'est.}\\par\\smallskip\\\\\\textbf{Sur $\\mathbb{R}$ :} $f(-1) = 1 = f(1)$ avec $-1 \\neq 1$ : $f$ n'est \\textbf{pas injective}.\\par\\smallskip\\\\\\textbf{Restriction à $[0, +\\infty[$ :} Soient $x_1, x_2 \\geq 0$ avec $x_1^2 = x_2^2$ :\\\\$$x_1^2 - x_2^2 = 0 \\implies (x_1-x_2)(x_1+x_2) = 0$$\\par\\smallskip\\\\Puisque $x_1, x_2 \\geq 0$ : $x_1 + x_2 \\geq 0$. Si $x_1 + x_2 > 0$, alors $x_1 - x_2 = 0$, soit $x_1 = x_2$.\\\\Si $x_1 + x_2 = 0$, alors $x_1 = x_2 = 0$.\\par\\smallskip\\\\Dans les deux cas : $x_1 = x_2$. La restriction est \\textbf{injective}.\\par\\smallskip\\\\De plus, $f : [0,+\\infty[ \\to [0,+\\infty[$ est aussi surjective (tout $y \\geq 0$ a pour antécédent $\\sqrt{y}$), donc c'est une \\textbf{bijection} de réciproque $f^{-1}(x) = \\blank{\\sqrt{x}}$."
+        }
+      ]
+    },
+    {
+      "id": "partie_entiere",
+      "category": "course",
+      "title": "Partie Entière d'un Réel",
+      "blocks": [
+        {
+          "type": "theorem",
+          "title": "Pourquoi \\mathqst{tout réel est-il encadré par deux entiers consécutifs}",
+          "content": "Pour tout réel $x$, il existe un \\textbf{unique} entier relatif $n$ tel que :\\\\$$\\boxed{n \\leq x < n + 1}$$\\par\\smallskip\\\\Cet entier $n$ s'appelle la \\textbf{partie entière} de $x$, notée $E(x)$ ou $\\lfloor x \\rfloor$ (\\textit{fonction plancher})."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les propriétés de la partie entière}",
+          "content": "\\textbf{Encadrement fondamental :} $E(x) \\leq x < E(x) + \\blank{1}$\\par\\smallskip\\\\\\textbf{Partie entière d'un entier :} si $n \\in \\mathbb{Z}$, alors $E(n) = \\blank{n}$\\par\\smallskip\\\\\\textbf{Partie fractionnaire :} $\\{x\\} = x - E(x) \\in [0, 1[$\\par\\smallskip\\\\\\textbf{Translation entière :} $E(x + n) = E(x) + n$ pour $n \\in \\mathbb{Z}$\\par\\smallskip\\\\\\textbf{Type d'application :} $E : \\mathbb{R} \\to \\mathbb{Z}$ est \\blank{surjective} mais pas injective."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Calculer $E(\\sqrt{2})$, $E(\\pi)$, $E(-\\pi)$ et $E(-4)$.}\\par\\smallskip\\\\$\\bullet$ $1 \\leq \\sqrt{2} < 2$ donc $E(\\sqrt{2}) = \\blank{1}$\\\\$\\bullet$ $3 \\leq \\pi < 4$ donc $E(\\pi) = \\blank{3}$\\\\$\\bullet$ $-4 \\leq -\\pi < -3$ donc $E(-\\pi) = \\blank{-4}$\\\\$\\bullet$ $-4$ est entier donc $E(-4) = \\blank{-4}$\\par\\smallskip\\\\\\textbf{Attention :} $E(-\\pi) = -4 \\neq -3$. Pour un nombre négatif, la partie entière n'est pas le chiffre avant la virgule !"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{résoudre une équation $E(f(x)) = n$}",
+          "content": "Utiliser la \\textbf{définition de la partie entière} pour transformer l'équation en encadrement.\\par $E(f(x)) = n$ équivaut à $n \\leq f(x) < n+1$. Résoudre ensuite ce système d'inéquations.\\par\\begin{itemize}\\item \\textbf{Si $f$ est affine} ($f(x) = ax+b$) : l'encadrement donne directement un intervalle\\item \\textbf{Si $f$ est non linéaire} : résoudre chaque inégalité séparément puis intersecter\\item \\textbf{Pour $E(x) = E(y)$} : cela signifie que $x$ et $y$ sont dans le même intervalle $[n, n+1[$\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{\\textbf{Résoudre dans} $\\mathbb{R}$ : $E(2x - 1) = 3$.}\\par\\smallskip\\\\Par définition de la partie entière :\\\\$$E(2x-1) = 3 \\Longleftrightarrow 3 \\leq 2x - 1 < 4$$\\par\\smallskip\\\\Résolvons l'encadrement :\\\\$$3 \\leq 2x - 1 < 4 \\implies 4 \\leq 2x < 5 \\implies 2 \\leq x < \\frac{5}{2}$$\\par\\smallskip\\\\$$\\boxed{S = \\left[2\\,,\\, \\frac{5}{2}\\right[}$$"
+        }
+      ]
+    },
+    {
+      "id": "composition",
+      "category": "course",
+      "title": "Composition de Deux Applications",
+      "blocks": [
+        {
+          "type": "definition",
+          "title": "C'est quoi \\mathqst{la composée $g \\circ f$}",
+          "content": "Soient $f : E \\to F$ et $g : F \\to G$. La \\textbf{composée} $g \\circ f$ est l'application :\\\\$$\\boxed{g \\circ f : E \\to G \\qquad (g \\circ f)(x) = g(\\blank{f(x)})}$$\\par\\smallskip\\\\$$E \\xrightarrow{\\;\\; f \\;\\;} F \\xrightarrow{\\;\\; g \\;\\;} G$$\\\\$$x \\xrightarrow{\\;\\; f \\;\\;} f(x) \\xrightarrow{\\;\\; g \\;\\;} g(f(x))$$\\par\\smallskip\\\\\\textbf{Ordre :} on applique \\textbf{d'abord} $f$, \\textbf{puis} $g$ sur le résultat."
+        },
+        {
+          "type": "property",
+          "title": "Quelles sont \\mathqst{les propriétés de la composition}",
+          "content": "$$\\begin{array}{|l|l|}\\hline \\textbf{Propriété} & \\textbf{Formule} \\\\ \\hline \\text{\\textbf{Associativité}} & (f \\circ g) \\circ h = f \\circ (g \\circ h) \\\\ \\hline \\text{\\textbf{Non commutativité}} & f \\circ g \\neq g \\circ f \\text{ en général} \\\\ \\hline \\text{\\textbf{Élément neutre}} & f \\circ \\text{Id}_E = \\text{Id}_F \\circ f = f \\\\ \\hline \\text{\\textbf{Injection}} & f, g \\text{ injectives} \\Rightarrow g \\circ f \\text{ injective} \\\\ \\hline \\text{\\textbf{Surjection}} & f, g \\text{ surjectives} \\Rightarrow g \\circ f \\text{ surjective} \\\\ \\hline \\text{\\textbf{Bijection}} & f, g \\text{ bijectives} \\Rightarrow g \\circ f \\text{ bijective} \\\\ \\hline \\text{\\textbf{Réciproque}} & (g \\circ f)^{-1} = f^{-1} \\circ g^{-1} \\\\ \\hline \\end{array}$$\\par\\smallskip\\\\\\textbf{Réciproque d'une bijection :}\\\\$$f \\text{ bijective} \\implies f^{-1} \\circ f = \\text{Id}_E \\quad \\text{et} \\quad f \\circ f^{-1} = \\text{Id}_F$$"
+        },
+        {
+          "type": "method",
+          "title": "Comment \\mathqst{montrer qu'une application est bijective par la composée}",
+          "content": "Si on trouve une application $g$ telle que $g \\circ f = \\text{Id}_E$ et $f \\circ g = \\text{Id}_F$, alors $f$ est \\textbf{bijective} et $g = f^{-1}$.\\par\\begin{itemize}\\item \\textbf{$g \\circ f = \\text{Id}_E$ seul} prouve que $f$ est \\textbf{injective} (et $g$ surjective)\\item \\textbf{$f \\circ g = \\text{Id}_F$ seul} prouve que $f$ est \\textbf{surjective} (et $g$ injective)\\item \\textbf{Les deux ensemble} prouvent la bijection et donnent la réciproque\\end{itemize}\\par \\textbf{En pratique} : résoudre $y = f(x)$ en fonction de $x$, poser $g(y)$ égal à l'expression trouvée, puis vérifier les deux compositions."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $f(x) = 2x + 1$ et $g(x) = x^2$, de $\\mathbb{R}$ dans $\\mathbb{R}$. Calculer $g \\circ f$ et $f \\circ g$.}\\par\\smallskip\\\\\\textbf{$g \\circ f$ :} on applique $f$ puis $g$ :\\\\$$(g \\circ f)(x) = g(f(x)) = g(2x+1) = (2x+1)^2 = 4x^2 + 4x + 1$$\\par\\smallskip\\\\\\textbf{$f \\circ g$ :} on applique $g$ puis $f$ :\\\\$$(f \\circ g)(x) = f(g(x)) = f(x^2) = 2x^2 + 1$$\\par\\smallskip\\\\\\textbf{Comparaison :} pour $x = 1$ : $(g \\circ f)(1) = 9$ et $(f \\circ g)(1) = 3$.\\par\\smallskip\\\\Puisque $9 \\neq 3$ : $g \\circ f \\neq f \\circ g$. La composition n'est \\textbf{pas commutative}."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soit $f(x) = 3x - 2$ de $\\mathbb{R}$ dans $\\mathbb{R}$. Vérifier que $f^{-1} \\circ f = \\text{Id}_{\\mathbb{R}}$.}\\par\\smallskip\\\\D'abord, trouvons $f^{-1}$ : on résout $3x - 2 = y$, d'où $x = \\frac{y+2}{3}$.\\\\Donc $f^{-1}(x) = \\frac{x+2}{3}$.\\par\\smallskip\\\\\\textbf{Vérification $f^{-1} \\circ f$ :}\\\\$$(f^{-1} \\circ f)(x) = f^{-1}(3x-2) = \\frac{(3x-2)+2}{3} = \\frac{3x}{3} = x$$\\par\\smallskip\\\\\\textbf{Vérification $f \\circ f^{-1}$ :}\\\\$$(f \\circ f^{-1})(x) = f\\!\\left(\\frac{x+2}{3}\\right) = 3 \\cdot \\frac{x+2}{3} - 2 = x + 2 - 2 = x$$\\par\\smallskip\\\\On a bien $f^{-1} \\circ f = f \\circ f^{-1} = \\text{Id}_{\\mathbb{R}}$."
+        },
+        {
+          "type": "application",
+          "difficulty": 3,
+          "content": "\\question{Soient $f(x) = x+1$, $g(x) = 2x$ et $h(x) = x^2$. Vérifier que $(h \\circ g) \\circ f = h \\circ (g \\circ f)$.}\\par\\smallskip\\\\\\textbf{Membre gauche :}\\\\$(h \\circ g)(x) = h(2x) = (2x)^2 = 4x^2$\\\\$((h \\circ g) \\circ f)(x) = (h \\circ g)(x+1) = 4(x+1)^2$\\par\\smallskip\\\\\\textbf{Membre droit :}\\\\$(g \\circ f)(x) = g(x+1) = 2(x+1)$\\\\$(h \\circ (g \\circ f))(x) = h(2(x+1)) = (2(x+1))^2 = 4(x+1)^2$\\par\\smallskip\\\\Les deux expressions sont identiques : l'\\textbf{associativité} est vérifiée."
+        }
+      ]
+    },
+    {
+      "id": "synthese",
+      "category": "course",
+      "title": "Synthèse et Tableau Récapitulatif",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "$$\\begin{array}{|l|c|c|c|}\\hline & \\textbf{Injective} & \\textbf{Surjective} & \\textbf{Bijective} \\\\ \\hline \\text{Nb d'antécédents par } y & \\leq 1 & \\geq 1 & = 1 \\\\ \\hline \\text{Réciproque} & \\text{Non} & \\text{Non} & \\text{Oui : } f^{-1} \\\\ \\hline x^2 : \\mathbb{R} \\to \\mathbb{R} & \\text{Non} & \\text{Non} & \\text{Non} \\\\ \\hline x^2 : \\mathbb{R}^+ \\to \\mathbb{R}^+ & \\text{Oui} & \\text{Oui} & \\text{Oui} \\\\ \\hline 2x+1 : \\mathbb{R} \\to \\mathbb{R} & \\text{Oui} & \\text{Oui} & \\text{Oui} \\\\ \\hline E(x) : \\mathbb{R} \\to \\mathbb{Z} & \\text{Non} & \\text{Oui} & \\text{Non} \\\\ \\hline \\end{array}$$"
+        },
+        {
+          "type": "text",
+          "content": "$$\\begin{array}{|l|l|}\\hline \\textbf{Opérations ensemblistes} & \\textbf{Formule} \\\\ \\hline \\text{Intersection} & A \\cap B = \\{x \\mid x \\in A \\text{ et } x \\in B\\} \\\\ \\hline \\text{Réunion} & A \\cup B = \\{x \\mid x \\in A \\text{ ou } x \\in B\\} \\\\ \\hline \\text{Complémentaire} & \\bar{A} = \\{x \\in E \\mid x \\notin A\\} \\\\ \\hline \\text{De Morgan} & \\overline{A \\cap B} = \\bar{A} \\cup \\bar{B} \\;,\\; \\overline{A \\cup B} = \\bar{A} \\cap \\bar{B} \\\\ \\hline \\text{Double inclusion} & E = F \\Leftrightarrow (E \\subset F \\text{ et } F \\subset E) \\\\ \\hline \\text{Cardinal de } \\mathcal{P}(E) & |\\mathcal{P}(E)| = 2^n \\text{ si } |E| = n \\\\ \\hline \\end{array}$$"
+        }
+      ]
+    }
+  ]
+}

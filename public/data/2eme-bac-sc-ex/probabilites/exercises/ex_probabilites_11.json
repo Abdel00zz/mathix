@@ -1,0 +1,26 @@
+{
+  "id": "proba-ex06",
+  "theme": "probabilites",
+  "difficulty": "moyen",
+  "chapter": "03 - Variables aléatoires et loi binomiale",
+  "topic": "Variable aléatoire - Loi binomiale et espérance",
+  "requiresRedaction": true,
+  "context": "On lance 3 fois de suite une pièce de monnaie. Soit X la variable aléatoire égale au nombre de fois dont le côté F apparaît.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminons les valeurs prises par la variable aléatoire X.",
+      "hint": "$X$ compte le nombre de fois où F apparaît sur 3 lancers. Les valeurs possibles sont $X(\\Omega) = \\{0; 1; 2; 3\\}$."
+    },
+    {
+      "id": "q2",
+      "content": "Déterminons la loi de probabilité de variable aléatoire X.",
+      "hint": "X suit une loi binomiale $B(3 ; \\frac{1}{2})$. Calculez $P(X = k) = C_3^k \\cdot \\left(\\frac{1}{2}\\right)^3$ pour $k \\in \\{0, 1, 2, 3\\}$."
+    },
+    {
+      "id": "q3",
+      "content": "Calculer l'espérance mathématique $E(X)$ et la variance $V(X)$ puis l'écart type $\\sigma(X)$.",
+      "hint": "Pour une loi $B(n; p)$ : $E(X) = np$, $V(X) = np(1-p)$, $\\sigma(X) = \\sqrt{V(X)}$. Vérifiez aussi avec la formule directe $V(X) = E(X^2) - (E(X))^2$."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ex-ens-app-30",
+  "theme": "ensembles-app",
+  "difficulty": "difficile",
+  "topic": "Applications et Fonctions — Application définie par morceaux",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "On considère l'application : $f : \\mathbb{R} \\to \\mathbb{R}^*_-$, $x \\mapsto \\dfrac{3x+|x|}{2}$. Montrer que $f$ est bijective puis déterminer $f^{-1}$.",
+      "hint": "Écrivez $f$ par morceaux : $f(x) = 2x$ si $x \\geq 0$ et $f(x) = x$ si $x < 0$. Vérifiez que $f(\\mathbb{R}) = \\mathbb{R}^*_-$... Attention à l'ensemble d'arrivée : vérifiez que l'image est bien $\\mathbb{R}^*_-$ et non $\\mathbb{R}_-$."
+    },
+    {
+      "id": "q2",
+      "content": "On considère l'application $h : \\mathbb{R} \\to \\mathbb{R}$ telle que $\\left(\\forall x \\in \\mathbb{R}\\right)\\; 3h(x) + h(-x) = -4x^2 - 2x$. Montrer que l'application $h$ est injective.",
+      "hint": "Écrivez le système en remplaçant $x$ par $-x$ pour obtenir une seconde équation, puis résolvez pour trouver $h(x)$ explicitement. Une fois $h$ explicite, étudiez son injectivité."
+    },
+    {
+      "id": "q3",
+      "content": "On considère l'application $f : \\mathbb{R}^*_+ \\to \\mathbb{R}$ définie par : $f(x) = \\begin{cases} x^2 - 2x & \\text{si } x > 1 \\\\ \\dfrac{1-2x}{x^2} & \\text{si } 0 < x \\leq 1 \\end{cases}$. Déterminer $f^{-1}\\left(\\{0\\}\\right)$ puis en déduire que $f$ n'est pas injective.",
+      "hint": "Résolvez $f(x) = 0$ séparément sur $]0;1]$ et sur $]1;+\\infty[$. Si l'équation $f(x) = 0$ a plus d'une solution, $f$ n'est pas injective."
+    },
+    {
+      "id": "q4",
+      "content": "Soit $g$ la restriction de $f$ à $]0;1]$ et $h$ la restriction de $f$ à $]1;+\\infty[$. Montrer que $g$ est bijective de $\\mathbb{R}^*_+$ dans $]-2;1[$ puis déterminer sa bijection réciproque.",
+      "hint": "Sur $]0;1]$, $f(x) = \\dfrac{1-2x}{x^2}$ est strictement monotone : dressez le tableau de variation. Calculez les limites aux bornes pour déterminer l'image. Pour $g^{-1}$ : résolvez $y = \\dfrac{1-2x}{x^2}$ en $x > 0$."
+    }
+  ]
+}

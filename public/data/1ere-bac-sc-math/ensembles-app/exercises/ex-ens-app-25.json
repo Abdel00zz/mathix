@@ -1,0 +1,50 @@
+{
+  "id": "ex-ens-app-25",
+  "theme": "ensembles-app",
+  "difficulty": "moyen",
+  "topic": "Applications et Fonctions — Étude complète : injection, surjection, bijection",
+  "requiresRedaction": true,
+  "context": "Étudier l'injectivité, la surjectivité et la bijectivité de l'application $f$ dans chacun des cas suivants, en dressant si nécessaire un tableau de variation :",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "$f : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto \\dfrac{2x-1}{5}$",
+      "hint": "C'est une fonction affine strictement croissante. Injective (strictement monotone) et surjective (image = $\\mathbb{R}$), donc bijective."
+    },
+    {
+      "id": "q2",
+      "content": "$f : \\mathbb{R} \\to \\mathbb{R}^*$, $x \\mapsto \\dfrac{2}{x^2+1}$",
+      "hint": "Étudiez les variations. $f$ est paire donc $f(-x) = f(x)$ : non injective. Pour la surjectivité, $f(x) \\leq 2$ pour tout $x$, donc les valeurs $> 2$ dans $\\mathbb{R}^*$ ne sont pas atteintes."
+    },
+    {
+      "id": "q3",
+      "content": "$f : \\mathbb{N} \\times \\mathbb{N} \\to \\mathbb{N}$, $(n;p) \\mapsto np$",
+      "hint": "Pour l'injectivité : $(2;3)$ et $(3;2)$ ont la même image $6$. Pour la surjectivité : $1$ est-il atteint ?"
+    },
+    {
+      "id": "q4",
+      "content": "$f : \\mathbb{N} \\times \\mathbb{N} \\to \\mathbb{N}$, $(n;p) \\mapsto n + (-1)^n$",
+      "hint": "Pour l'injectivité : testez $(0;0)$ et $(0;1)$. Pour la surjectivité : montrez que tout entier est atteint en distinguant les cas $n$ pair et $n$ impair."
+    },
+    {
+      "id": "q5",
+      "content": "$f : \\mathbb{R} \\times \\mathbb{R} \\to \\mathbb{R}$, $(x;y) \\mapsto x + y$",
+      "hint": "Pour l'injectivité : $(1;0)$ et $(0;1)$ ont même image. Pour la surjectivité : tout réel $z$ est atteint, par exemple par $(z;0)$."
+    },
+    {
+      "id": "q6",
+      "content": "$f : \\mathbb{N} \\to \\mathbb{N}$, $x \\mapsto 2x$",
+      "hint": "Injective (si $2x = 2y$ alors $x = y$). Surjective ? $1$ a-t-il un antécédent dans $\\mathbb{N}$ ?"
+    },
+    {
+      "id": "q7",
+      "content": "$f : \\mathbb{R} \\to \\mathbb{R}$, $x \\mapsto 2x^2 - 3x + 2$",
+      "hint": "Dressez le tableau de variation. $f$ admet un minimum et n'est pas monotone sur $\\mathbb{R}$ : non injective. Son image est $\\left[\\frac{7}{8};+\\infty\\right[$ : non surjective."
+    },
+    {
+      "id": "q8",
+      "content": "$f : \\mathbb{Z} \\to \\mathbb{Z}$, $x \\mapsto 2x$",
+      "hint": "Injective (même raisonnement que sur $\\mathbb{N}$). Surjective sur $\\mathbb{Z}$ ? $1$ est-il atteint ?"
+    }
+  ]
+}

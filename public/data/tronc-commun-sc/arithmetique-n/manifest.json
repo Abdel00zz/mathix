@@ -1,0 +1,34 @@
+{
+  "id": "arithmetique-n",
+  "title": "Arithmétique dans $\\mathbb{N}$",
+  "section": "algebre-geometrie",
+  "quizCount": 15,
+  "revisions": [
+    {
+      "id": "rev-arith-tc",
+      "title": "Fiche Complète : Arithmétique",
+      "path": "data/tronc-commun-sc/arithmetique-n/revisions/fiche_arithmetique_n_cours.json"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex-arith-tc-01",
+      "path": "data/tronc-commun-sc/arithmetique-n/exercises/ex_01.json"
+    },
+    {
+      "id": "ex-arith-tc-02",
+      "path": "data/tronc-commun-sc/arithmetique-n/exercises/ex_02.json"
+    },
+    {
+      "id": "ex-arithmetique-n-01",
+      "path": "data/tronc-commun-sc/arithmetique-n/exercises/ex_arith_01.json"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-arithmetique-n-01",
+      "path": "data/tronc-commun-sc/arithmetique-n/quiz/arithmetique_n_quiz.json",
+      "questionsCount": 15
+    }
+  ]
+}

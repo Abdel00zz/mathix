@@ -1,0 +1,52 @@
+{
+  "id": "ex-seq-005",
+  "theme": "suites",
+  "difficulty": "moyen",
+  "topic": "Suites Numériques",
+  "context": "Cet exercice comporte deux parties indépendantes traitant de suites récurrentes d'examen.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "partA",
+      "content": "Partie A : Suite homographique",
+      "subQuestions": [
+        {
+          "id": "sqA1",
+          "content": "Soit la suite $(u_n)_{n \\in \\mathbb{N}}$ définie par $u_0 = \\displaystyle\\frac{1}{3}$ et $u_{n+1} = \\displaystyle\\frac{1+u_n}{3-u_n}$. Montrer que $0 < u_n < 1$ pour tout $n \\in \\mathbb{N}$.",
+          "hint": "\\method Par récurrence. $u_0 = \\displaystyle\\frac{1}{3} \\in ]0,1[$. Si $0 < u_n < 1$, alors $1 < 1+u_n < 2$ et $2 < 3-u_n < 3$. Le quotient est positif et $$\\frac{1+u_n}{3-u_n} < 1 \\iff 1+u_n < 3-u_n \\iff 2u_n < 2 \\iff u_n < 1$$."
+        },
+        {
+          "id": "sqA2",
+          "content": "Étude de la variation et de la convergence de $(u_n)$.",
+          "hint": "$$u_{n+1} - u_n = \\frac{1+u_n - u_n(3-u_n)}{3-u_n} = \\frac{u_n^2 - 2u_n + 1}{3-u_n} = \\frac{(u_n-1)^2}{3-u_n}$$\n\\conclusion Le carré au numérateur est positif, et le dénominateur $3-u_n > 0$. Donc la suite est croissante. Majorée par 1, elle converge."
+        },
+        {
+          "id": "sqA3",
+          "content": "On pose une suite auxiliaire $v_n = \\displaystyle\\frac{1}{1-u_n}$. Montrer que $(v_n)$ est arithmétique et déterminer sa formule explicite, puis en déduire $\\displaystyle\\lim_{n \\to +\\infty} u_n$.",
+          "hint": "On montre que $v_{n+1} - v_n = \\displaystyle\\frac{1}{2}$ (raison $r=\\displaystyle\\frac{1}{2}$). Premier terme $v_0 = \\displaystyle\\frac{1}{1-\\frac{1}{3}} = \\displaystyle\\frac{3}{2}$.\n$$v_n = \\frac{3}{2} + \\frac{n}{2} = \\frac{n+3}{2}$$\nOn inverse pour trouver $u_n$ :\n$$u_n = 1 - \\frac{1}{v_n} = 1 - \\frac{2}{n+3} = \\frac{n+1}{n+3}$$\n\\conclusion La limite de $u_n$ est $\\displaystyle\\lim_{n \\to +\\infty} u_n = \\displaystyle\\lim_{n \\to +\\infty} \\frac{n}{n} = 1$."
+        }
+      ]
+    },
+    {
+      "id": "partB",
+      "content": "Partie B : Suite arithmético-géométrique",
+      "subQuestions": [
+        {
+          "id": "sqB1",
+          "content": "Soit la suite $(u_n)_{n \\in \\mathbb{N}}$ définie par $u_0 = 2$ et $u_{n+1} = \\displaystyle\\frac{\\sqrt{2}}{2}u_n + 1 - \\displaystyle\\frac{\\sqrt{2}}{2}$. Montrer que $u_n > 1$ pour tout $n \\in \\mathbb{N}$.",
+          "hint": "$$u_{n+1} - 1 = \\frac{\\sqrt{2}}{2}u_n + 1 - \\frac{\\sqrt{2}}{2} - 1 = \\frac{\\sqrt{2}}{2}(u_n - 1)$$\n\\conclusion Comme $u_0-1 = 1 > 0$, par récurrence $u_n-1 > 0 \\implies u_n > 1$."
+        },
+        {
+          "id": "sqB2",
+          "content": "On définit la suite $v_n = u_n - 1$. Prouver que $(v_n)$ est géométrique.",
+          "hint": "$$v_{n+1} = u_{n+1}-1 = \\frac{\\sqrt{2}}{2}(u_n-1) = \\frac{\\sqrt{2}}{2}v_n$$\n\\conclusion La suite est géométrique de raison $q = \\displaystyle\\frac{\\sqrt{2}}{2}$ et premier terme $v_0 = 1$. Donc $v_n = \\left(\\displaystyle\\frac{\\sqrt{2}}{2}\\right)^n$."
+        },
+        {
+          "id": "sqB3",
+          "content": "Calculer la somme $S = \\displaystyle\\sum_{k=0}^{2021} u_k$.",
+          "hint": "On a $u_n = v_n + 1$.\n$$S = \\sum_{k=0}^{2021} u_k = \\sum_{k=0}^{2021} v_k + \\sum_{k=0}^{2021} 1$$\nIl y a 2022 termes. $\\sum_{k=0}^{2021} 1 = 2022$. La somme géométrique est $v_0 \\displaystyle\\frac{1-q^{2022}}{1-q}$.\n\\conclusion On obtient : $$S = \\frac{1-\\left(\\frac{\\sqrt{2}}{2}\\right)^{2022}}{1-\\frac{\\sqrt{2}}{2}} + 2022$$"
+        }
+      ]
+    }
+  ]
+}

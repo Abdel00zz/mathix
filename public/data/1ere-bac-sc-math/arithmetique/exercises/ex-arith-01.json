@@ -1,0 +1,16 @@
+{
+  "id": "ch01-ex01",
+  "theme": "arithmetique",
+  "difficulty": "facile",
+  "chapter": "01 - La division euclidienne et ses propriétés",
+  "topic": "Division euclidienne - Quotient de quotient",
+  "requiresRedaction": true,
+  "context": "Soit $n$, $a$ et $b$ des entiers naturels non nuls tels que : $q$ est le quotient de la division euclidienne de $n$ par $a$ ; $q'$ est le quotient de la division euclidienne de $q$ par $b$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $q'$ est le quotient de la division euclidienne de $n$ par $ab$.",
+      "hint": "Écrivez les deux divisions euclidiennes : $n = aq + r$ avec $0 \\leq r < a$, et $q = bq' + r'$ avec $0 \\leq r' < b$. Substituez la seconde dans la première pour exprimer $n$ en fonction de $ab$, $q'$ et un reste. Vérifiez que ce reste est bien dans $[0, ab[$."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ex-log-004",
+  "theme": "logarithmes",
+  "difficulty": "facile",
+  "topic": "Analyse - Logarithmes",
+  "context": "On considère la fonction numérique $g$ définie sur $]0; +\\infty[$ par : $$g(x) = 2\\sqrt{x} - 2 - \\ln x$$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Étude de la fonction g",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que pour tout $x$ de $]0; +\\infty[$, $g'(x) = \\frac{\\sqrt{x}-1}{x}$.",
+          "hint": "\\textbf{Rappel :} $(\\sqrt{x})' = \\frac{1}{2\\sqrt{x}}$ et $(\\ln x)' = \\frac{1}{x}$.\\\\Mettez au même dénominateur pour obtenir l'expression demandée."
+        },
+        {
+          "id": "sq1b",
+          "content": "Montrer que $g$ est croissante sur $[1; +\\infty[$.",
+          "hint": "\\textbf{Signe :} Étudiez le signe de $\\sqrt{x} - 1$. Quand est-ce que $\\sqrt{x} \\ge 1$ ? Concluez sur le signe de la dérivée."
+        },
+        {
+          "id": "sq1c",
+          "content": "Montrer que pour tout $x$ de $[1; +\\infty[$, $0 \\le \\ln x \\le 2\\sqrt{x}$. (On remarquera que $2\\sqrt{x} - 2 \\le 2\\sqrt{x}$)",
+          "hint": "Utilisez le fait que $g(x) \\ge g(1)$ pour obtenir $\\ln x \\le 2\\sqrt{x} - 2$. Ensuite, majorez $2\\sqrt{x}-2$ par $2\\sqrt{x}$."
+        },
+        {
+          "id": "sq1d",
+          "content": "Montrer que pour tout $x$ de $[1; +\\infty[$, $0 \\le \\frac{(\\ln x)^3}{x^2} \\le \\frac{8}{\\sqrt{x}}$ et en déduire $\\lim_{x \\to +\\infty} \\frac{(\\ln x)^3}{x^2}$.",
+          "hint": "\\textbf{Astuce :} Élevez l'inégalité précédente au cube : $(\\ln x)^3 \\le (2\\sqrt{x})^3 = 8x\\sqrt{x}$. Divisez ensuite par $x^2$. utilisez le théorème des gendarmes pour la limite."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Primitive",
+      "subQuestions": [
+        {
+          "id": "sq2",
+          "content": "Montrer que la fonction $G : x \\mapsto x\\left(-1 + \\frac{4}{3}\\sqrt{x} - \\ln x\\right)$ est une primitive de $g$ sur $]0; +\\infty[$.",
+          "hint": "\\\\\\textbf{Méthode :} Dérivez $G(x)$ et montrez que vous retrouvez exactement $g(x)$. Attention à la dérivée du produit $x \\times (\\dots)$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "proba-ex13",
+  "theme": "probabilites",
+  "difficulty": "moyen",
+  "chapter": "01 - Dénombrement et probabilités",
+  "topic": "Normale 2022 - Tirage simultané, complémentaire, union",
+  "requiresRedaction": true,
+  "context": "Une urne contient dix boules : trois boules blanches, trois boules vertes et quatre boules rouges indiscernables au toucher. On tire au hasard simultanément trois boules de l'urne.",
+  "visual": {
+    "type": "urn",
+    "balls": [
+      {
+        "color": "blanc",
+        "count": 3,
+        "label": "B"
+      },
+      {
+        "color": "vert",
+        "count": 3,
+        "label": "V"
+      },
+      {
+        "color": "rouge",
+        "count": 4,
+        "label": "R"
+      }
+    ],
+    "draw": 3,
+    "drawType": "simultaneous",
+    "showTotal": true
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que $p(A) = \\dfrac{1}{6}$ où $A$ est l'événement « N'obtenir aucune boule rouge ».",
+      "hint": "$Card(\\Omega) = C_{10}^3 = 120$. $A$ : choisir 3 boules parmi les 6 non-rouges (3B + 3V). $Card(A) = C_6^3 = 20$. Vérifiez : $\\frac{20}{120} = \\frac{1}{6}$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer $p(B)$ où $B$ est l'événement « Obtenir trois boules blanches ou trois boules vertes ».",
+      "hint": "$B$ est la réunion de deux événements disjoints. $Card(B) = C_3^3 + C_3^3 = 1 + 1 = 2$. Divisez par $Card(\\Omega)$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que $p(C) = \\dfrac{1}{2}$ où $C$ est l'événement « Obtenir exactement une boule rouge ».",
+      "hint": "Exactement 1 rouge parmi 4, et 2 non-rouges parmi 6. $Card(C) = C_4^1 \\times C_6^2 = 4 \\times 15 = 60$. Vérifiez : $\\frac{60}{120} = \\frac{1}{2}$."
+    },
+    {
+      "id": "q4",
+      "content": "Calculer $p(D)$ où $D$ est l'événement « Obtenir au moins deux boules rouges ».",
+      "hint": "$D$ = (exactement 2 rouges) $\\cup$ (exactement 3 rouges), événements disjoints. $Card(D) = C_4^2 \\times C_6^1 + C_4^3$. Vous pouvez aussi passer par le complémentaire : $p(D) = 1 - p(A) - p(C)$, en utilisant les résultats des questions 1 et 3."
+    }
+  ]
+}

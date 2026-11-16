@@ -1,0 +1,300 @@
+{
+  "id": "tronc-commun-sc",
+  "title": "Tronc Commun Scientifique",
+  "chapters": [
+    {
+      "id": "mise-a-niveau",
+      "title": "Mise à niveau",
+      "pinned": true,
+      "quizCount": 0,
+      "manifestPath": "data/tronc-commun-sc/mise-a-niveau/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-mise-a-niveau-tc",
+          "path": "data/tronc-commun-sc/mise-a-niveau/revisions/fiche_mise_a_niveau_cours.json"
+        }
+      ],
+      "quizzes": []
+    },
+    {
+      "id": "arithmetique-n",
+      "title": "Arithmétique dans $\\mathbb{N}$",
+      "section": "algebre-geometrie",
+      "quizCount": 15,
+      "manifestPath": "data/tronc-commun-sc/arithmetique-n/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-arith-tc",
+          "path": "data/tronc-commun-sc/arithmetique-n/revisions/fiche_arithmetique_n_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-arithmetique-n-01",
+          "path": "data/tronc-commun-sc/arithmetique-n/quiz/arithmetique_n_quiz.json",
+          "questionsCount": 15
+        }
+      ]
+    },
+    {
+      "id": "ensembles-nombres",
+      "title": "Les ensembles de nombres",
+      "section": "algebre-geometrie",
+      "quizCount": 14,
+      "manifestPath": "data/tronc-commun-sc/ensembles-nombres/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-ensembles-tc",
+          "path": "data/tronc-commun-sc/ensembles-nombres/revisions/fiche_ensembles_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-ensembles-nombres-01",
+          "path": "data/tronc-commun-sc/ensembles-nombres/quiz/ensembles-nombres_quiz.json",
+          "questionsCount": 14
+        }
+      ]
+    },
+    {
+      "id": "ordre-ir",
+      "title": "L'ordre dans $\\mathbb{R}$",
+      "section": "algebre-geometrie",
+      "quizCount": 13,
+      "manifestPath": "data/tronc-commun-sc/ordre-ir/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-ordre-tc",
+          "path": "data/tronc-commun-sc/ordre-ir/revisions/fiche_ordre_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-ordre-ir-01",
+          "path": "data/tronc-commun-sc/ordre-ir/quiz/ordre-ir_quiz.json",
+          "questionsCount": 13
+        }
+      ]
+    },
+    {
+      "id": "polynomes",
+      "title": "Les polynômes",
+      "section": "algebre-geometrie",
+      "quizCount": 12,
+      "manifestPath": "data/tronc-commun-sc/polynomes/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-poly-tc",
+          "path": "data/tronc-commun-sc/polynomes/revisions/fiche_polynomes_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-polynomes-01",
+          "path": "data/tronc-commun-sc/polynomes/quiz/polynomes_quiz.json",
+          "questionsCount": 12
+        }
+      ]
+    },
+    {
+      "id": "equations-inequations",
+      "title": "Équations, inéquations et systèmes",
+      "section": "algebre-geometrie",
+      "quizCount": 11,
+      "manifestPath": "data/tronc-commun-sc/equations-inequations/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-eq-tc",
+          "path": "data/tronc-commun-sc/equations-inequations/revisions/fiche_equations_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-equations-inequations-01",
+          "path": "data/tronc-commun-sc/equations-inequations/quiz/equations-inequations_quiz.json",
+          "questionsCount": 11
+        }
+      ]
+    },
+    {
+      "id": "calcul-vectoriel",
+      "title": "Calcul vectoriel dans le plan",
+      "section": "algebre-geometrie",
+      "quizCount": 11,
+      "manifestPath": "data/tronc-commun-sc/calcul-vectoriel/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-vect-tc",
+          "path": "data/tronc-commun-sc/calcul-vectoriel/revisions/fiche_vecteurs_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-calcul-vectoriel-01",
+          "path": "data/tronc-commun-sc/calcul-vectoriel/quiz/calcul_vectoriel_quiz.json",
+          "questionsCount": 11
+        }
+      ]
+    },
+    {
+      "id": "projection-plan",
+      "title": "La projection dans le plan",
+      "section": "algebre-geometrie",
+      "quizCount": 8,
+      "manifestPath": "data/tronc-commun-sc/projection-plan/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-proj-tc",
+          "path": "data/tronc-commun-sc/projection-plan/revisions/fiche_projection_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-projection-plan-01",
+          "path": "data/tronc-commun-sc/projection-plan/quiz/projection-plan_quiz.json",
+          "questionsCount": 8
+        }
+      ]
+    },
+    {
+      "id": "droite-plan",
+      "title": "La droite dans le plan",
+      "section": "algebre-geometrie",
+      "quizCount": 10,
+      "manifestPath": "data/tronc-commun-sc/droite-plan/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-droite-tc",
+          "path": "data/tronc-commun-sc/droite-plan/revisions/fiche_droite_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-droite-plan-01",
+          "path": "data/tronc-commun-sc/droite-plan/quiz/droite-plan_quiz.json",
+          "questionsCount": 10
+        }
+      ]
+    },
+    {
+      "id": "transformations-plan",
+      "title": "Transformation dans le plan",
+      "section": "algebre-geometrie",
+      "quizCount": 8,
+      "manifestPath": "data/tronc-commun-sc/transformations-plan/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-transfo-tc",
+          "path": "data/tronc-commun-sc/transformations-plan/revisions/fiche_transformations_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-transformations-plan-01",
+          "path": "data/tronc-commun-sc/transformations-plan/quiz/transformations-plan_quiz.json",
+          "questionsCount": 8
+        }
+      ]
+    },
+    {
+      "id": "produit-scalaire",
+      "title": "Le produit scalaire",
+      "section": "algebre-geometrie",
+      "quizCount": 6,
+      "manifestPath": "data/tronc-commun-sc/produit-scalaire/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-scal-tc",
+          "path": "data/tronc-commun-sc/produit-scalaire/revisions/fiche_scalaire_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-produit-scalaire-01",
+          "path": "data/tronc-commun-sc/produit-scalaire/quiz/produit-scalaire_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "generalites-fonctions",
+      "title": "Généralités sur les fonctions",
+      "section": "analyse",
+      "quizCount": 6,
+      "manifestPath": "data/tronc-commun-sc/generalites-fonctions/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-fonc-tc",
+          "path": "data/tronc-commun-sc/generalites-fonctions/revisions/fiche_fonctions_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-generalites-fonctions-01",
+          "path": "data/tronc-commun-sc/generalites-fonctions/quiz/generalites-fonctions_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "calcul-trigo",
+      "title": "Calcul trigonométrique",
+      "section": "analyse",
+      "quizCount": 6,
+      "manifestPath": "data/tronc-commun-sc/calcul-trigo/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-trigo-tc",
+          "path": "data/tronc-commun-sc/calcul-trigo/revisions/fiche_trigo_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-calcul-trigo-01",
+          "path": "data/tronc-commun-sc/calcul-trigo/quiz/calcul-trigo_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "geometrie-espace",
+      "title": "La géométrie dans l'espace",
+      "section": "algebre-geometrie",
+      "quizCount": 6,
+      "manifestPath": "data/tronc-commun-sc/geometrie-espace/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-espace-tc",
+          "path": "data/tronc-commun-sc/geometrie-espace/revisions/fiche_espace_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-geometrie-espace-01",
+          "path": "data/tronc-commun-sc/geometrie-espace/quiz/geometrie-espace_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    },
+    {
+      "id": "statistiques",
+      "title": "Statistiques",
+      "section": "analyse",
+      "quizCount": 6,
+      "manifestPath": "data/tronc-commun-sc/statistiques/manifest.json",
+      "revisions": [
+        {
+          "id": "rev-stats-tc",
+          "path": "data/tronc-commun-sc/statistiques/revisions/fiche_statistiques_cours.json"
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-statistiques-01",
+          "path": "data/tronc-commun-sc/statistiques/quiz/statistiques_quiz.json",
+          "questionsCount": 6
+        }
+      ]
+    }
+  ]
+}

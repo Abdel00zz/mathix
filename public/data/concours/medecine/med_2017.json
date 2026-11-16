@@ -1,0 +1,821 @@
+{
+  "questions": [
+    {
+      "id": "med-17-01",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "algebre",
+      "prompt": "Soient $a$ et $b$ deux réels strictement positifs. Quelle est la propriété algébrique correcte liant le logarithme népérien et les puissances ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln(a^b) = b \\ln(a)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\ln(a^b) = (\\ln(a))^b$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln(a^b) = a \\ln(b)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln(a^b) = \\ln(a) + \\ln(b)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• L'exposant à l'intérieur du logarithme \"descend\" devant en tant que coefficient multiplicateur.\n• Le distracteur (d) correspond à la règle du produit : $\\ln(a \\times b) = \\ln(a) + \\ln(b)$."
+    },
+    {
+      "id": "med-17-02",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Définition",
+      "theme": "probabilites",
+      "prompt": "Pour des événements indépendants $A$, $B$ et $C$, quelle expression donne $P(A\\cap B\\cap C)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$P(A)\\times P(B)\\times P(C)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$P(A)+P(B)+P(C)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$P(A)-P(B)-P(C)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$1-P(A)P(B)P(C)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• Pour des événements indépendants $A$, $B$ et $C$, la probabilité de l'intersection est le PRODUIT des probabilités : $P(A \\cap B \\cap C) = P(A) \\times P(B) \\times P(C)$.\n• Additionner les probabilités est une erreur majeure qui conduit souvent à un résultat aberrant (supérieur à 1)."
+    },
+    {
+      "id": "med-17-03",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "analyse",
+      "prompt": "Une courbe $(C)$ représentative d'une fonction $f$ admet un point $\\Omega(a; b)$ comme centre de symétrie si et seulement si pour tout réel $x$ tel que $(a-x)$ et $(a+x)$ sont dans le domaine, on a :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$f(a-x) + f(a+x) = 2b$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f(a-x) - f(a+x) = 2b$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f(a-x) + f(a+x) = b$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f(2a-x) - f(x) = 2b$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• Cette formule traduit le fait que le point $\\Omega(a; b)$ est le milieu du segment joignant les points $M(a-x, f(a-x))$ et $M'(a+x, f(a+x))$.\n• Une écriture alternative très courante est : $f(2a-x) + f(x) = 2b$."
+    },
+    {
+      "id": "med-17-04",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Propriété",
+      "theme": "analyse",
+      "prompt": "Quelle formule donne toujours l'aire géométrique entre les courbes de $f$ et $g$ sur $[a,b]$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\displaystyle \\int_a^b |f(x)-g(x)|\\,dx$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\displaystyle \\int_a^b (f(x)-g(x))\\,dx$ sans condition sur l'ordre des courbes",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\displaystyle \\int_a^b (f(x)+g(x))\\,dx$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$|f(b)-g(a)|$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• Une aire géométrique est toujours positive.\n• La formule correcte intègre la valeur absolue : $\\displaystyle \\int_a^b |f(x) - g(x)| \\, dx$.\n• Si les courbes se croisent sur l'intervalle, il faut obligatoirement découper l'intégrale (Relation de Chasles) selon l'ordre de $f(x)$ et $g(x)$."
+    },
+    {
+      "id": "med-17-05",
+      "type": "mcq",
+      "difficulty": "easy",
+      "category": "Méthode",
+      "theme": "algebre",
+      "prompt": "Pour prouver qu'une suite $(v_n)$ est géométrique, quelle est la méthode algébrique standard à appliquer ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Exprimer $v_{n+1}$ et prouver qu'il s'écrit sous la forme $q \\times v_n$ où $q$ est une constante.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Calculer la différence $v_{n+1} - v_n$ et vérifier qu'elle est constante.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Calculer les trois premiers termes et montrer que $\\frac{v_1}{v_0} = \\frac{v_2}{v_1}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Prouver que la suite s'écrit sous la forme $v_n = v_0 + n \\times q$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Rappels utiles :\n• L'option (b) sert à prouver qu'une suite est arithmétique.\n• L'option (c) est une vérification empirique insuffisante pour valider une propriété pour \"tout entier $n$\". La preuve nécessite une généralisation littérale."
+    },
+    {
+      "id": "med-17-06",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "algebre",
+      "prompt": "La valeur du nombre $\\ln(3) + 4\\ln(2) - \\ln(60)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln\\left(\\frac{4}{5}\\right)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln\\left(\\frac{4}{3}\\right)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln(15)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Analyse du calcul :\n1. On utilise $\\ln(a^b) = b\\ln(a)$ : $4\\ln(2) = \\ln(2^4) = \\ln(16)$.\n2. On regroupe les additions : $\\ln(3) + \\ln(16) = \\ln(3 \\times 16) = \\ln(48)$.\n3. On traite la soustraction : $\\ln(48) - \\ln(60) = \\ln\\left(\\frac{48}{60}\\right)$.\n4. On simplifie la fraction par 12 : $\\frac{48}{60} = \\frac{4}{5}$."
+    },
+    {
+      "id": "med-17-07",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "probabilites",
+      "prompt": "Trois élèves Mohamed, Ahmed et Amine ont passé un examen. Les probabilités de réussite sont : Mohamed (3/4), Ahmed (2/3), Amine (1/3). La probabilité pour que les trois réussissent est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{6}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{2}{9}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{9}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Puisque la réussite des différents élèves constitue des événements indépendants, la probabilité simultanée est le produit des probabilités individuelles : $P = \\frac{3}{4} \\times \\frac{2}{3} \\times \\frac{1}{3} = \\frac{6}{36} = \\frac{1}{6}$."
+    },
+    {
+      "id": "med-17-08",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "La courbe représentative de la fonction $f(x) = \\frac{2x^2 - 3x + \\ln(x)}{x}$ admet au voisinage de $+\\infty$ une asymptote d'équation :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = 2x - 3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = -2x + 3$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = 2x$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = 2x + 3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Séparation des termes :\n$f(x) = \\frac{2x^2}{x} - \\frac{3x}{x} + \\frac{\\ln(x)}{x} = 2x - 3 + \\frac{\\ln(x)}{x}$.\nPar croissances comparées, on sait que $\\displaystyle \\lim_{x \\to +\\infty} \\frac{\\ln(x)}{x} = 0$.\nAinsi, la différence $f(x) - (2x - 3)$ tend vers $0$, confirmant que la droite $y = 2x - 3$ est une asymptote oblique."
+    },
+    {
+      "id": "med-17-09",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "analyse",
+      "prompt": "Soit $h$ une fonction définie sur $\\mathbb{R}$ dont la courbe $(C)$ admet le point $\\Omega(1; 2)$ pour centre de symétrie. Donc, pour tout $x \\in \\mathbb{R}$, on a :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$h(2 - x) + h(x) = 4$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$h(x) = 2x$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$h(2 - x) = -h(x)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$h(1 - x) = -h(x) + 2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "En appliquant la propriété fondamentale $h(2a - x) + h(x) = 2b$ avec $a = 1$ et $b = 2$, on obtient directement $h(2 \\times 1 - x) + h(x) = 2 \\times 2$, soit $h(2 - x) + h(x) = 4$."
+    },
+    {
+      "id": "med-17-10",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "theme": "analyse",
+      "prompt": "Quelle démarche calcule correctement l'aire entre $(C_f)$ et $(C_g)$ sur $[a,b]$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trouver les intersections, étudier le signe de $f-g$, découper si besoin, intégrer la différence positive puis additionner.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Intégrer $f-g$ sur tout $[a,b]$ sans vérifier si les courbes se croisent.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Additionner les ordonnées de $f$ et de $g$ aux bornes.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Résoudre seulement $f(a)=g(b)$ puis intégrer $f+g$.",
+          "isCorrect": false
+        }
+      ],
+      "items": [
+        {
+          "id": "a",
+          "content": "Chercher les points d'intersection en résolvant l'équation $f(x) = g(x)$ sur $[a; b]$."
+        },
+        {
+          "id": "b",
+          "content": "Étudier le signe de la différence $f(x) - g(x)$ pour déterminer quelle courbe est au-dessus de l'autre."
+        },
+        {
+          "id": "c",
+          "content": "Découper l'intégrale (Relation de Chasles) aux points d'intersection éventuels."
+        },
+        {
+          "id": "d",
+          "content": "Intégrer les expressions polynomiales obtenues sur chaque sous-intervalle."
+        },
+        {
+          "id": "e",
+          "content": "Additionner les résultats intermédiaires en prenant soin des signes pour obtenir une aire totale."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "explanation": "Sauter l'étape du point d'intersection et de l'étude de signe mène systématiquement à un résultat faux (souvent une aire qui s'annule) si les courbes se croisent."
+    },
+    {
+      "id": "med-17-11",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Méthode",
+      "theme": "analyse",
+      "ambiguity_note": "La condition initiale absente dans l'énoncé d'origine est explicitée afin de déterminer une primitive particulière.",
+      "prompt": "Quelle démarche détermine la primitive $F$ de $\\frac{\\ln(x)}{x^3}$ vérifiant $F(1)=0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prendre $u=\\ln x$, $v'=x^{-3}$, appliquer l'IPP, intégrer le terme résiduel puis utiliser $F(1)=0$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Prendre $v=x^{-3}$ et conclure que sa primitive est encore $x^{-3}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Appliquer l'IPP sans dériver $u=\\ln x$.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Choisir une constante $C=0$ sans utiliser la condition $F(1)=0$.",
+          "isCorrect": false
+        }
+      ],
+      "items": [
+        {
+          "id": "a",
+          "content": "Poser le système : $u(x) = \\ln(x)$ et $v'(x) = x^{-3}$."
+        },
+        {
+          "id": "b",
+          "content": "Dériver et intégrer : calculer $u'(x) = \\frac{1}{x}$ et $v(x) = \\frac{x^{-2}}{-2}$."
+        },
+        {
+          "id": "c",
+          "content": "Appliquer la formule : $\\displaystyle u(x)v(x) - \\int u'(x)v(x) \\, dx$."
+        },
+        {
+          "id": "d",
+          "content": "Calculer la nouvelle intégrale résiduelle qui ne contient plus de logarithme."
+        },
+        {
+          "id": "e",
+          "content": "Déterminer la constante $C$ grâce à la condition initiale donnée."
+        }
+      ],
+      "correctOrder": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "explanation": "Dans une intégration par parties impliquant un polynôme (ou monôme) et un logarithme, la règle ALPES veut que l'on dérive toujours le logarithme ($u$) pour le faire disparaître de l'intégrale résiduelle."
+    },
+    {
+      "id": "med-17-12",
+      "type": "mcq",
+      "difficulty": "medium",
+      "category": "Application",
+      "theme": "algebre",
+      "prompt": "Avant de déterminer un domaine de définition complexe, il est essentiel d'étudier le trinôme. Quelles sont les racines du polynôme $x^2 + 3x - 5 = 0$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{-3 - \\sqrt{29}}{2}$ et $\\frac{-3 + \\sqrt{29}}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3 - \\sqrt{29}}{2}$ et $\\frac{3 + \\sqrt{29}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{-3 - \\sqrt{11}}{2}$ et $\\frac{-3 + \\sqrt{11}}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Ce polynôme n'admet pas de racines réelles.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Calcul du discriminant :\n$\\Delta = b^2 - 4ac = 3^2 - 4(1)(-5) = 9 + 20 = 29 > 0$.\nLes racines sont $\\frac{-b \\pm \\sqrt{\\Delta}}{2a} = \\frac{-3 \\pm \\sqrt{29}}{2}$."
+    },
+    {
+      "id": "med-17-13",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "ambiguity_note": "Confondre la condition interne du ln (x>0) avec la condition de la racine pivotant autour du point ln(X) >= 0 (soit X >= 1).",
+      "prompt": "L'ensemble de définition de la fonction définie par $f(x) = \\sqrt{\\ln(x^2 + 3x - 4)}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$]-\\infty; \\frac{-3-\\sqrt{29}}{2}] \\cup [\\frac{-3+\\sqrt{29}}{2}; +\\infty[$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$]-\\infty; \\frac{-3+\\sqrt{29}}{2}]$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$[\\frac{-3-\\sqrt{29}}{2}; \\frac{-3+\\sqrt{29}}{2}]$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$]-\\infty; \\frac{-3-\\sqrt{29}}{2}[ \\cup ]\\frac{-3+\\sqrt{29}}{2}; +\\infty[$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Pour que $f(x)$ existe, l'argument sous la racine doit être positif ou nul : $\\ln(x^2+3x-4) \\geq 0$.\nCela implique que $x^2+3x-4 \\geq 1$ (puisque $\\ln(1)=0$).\nOn obtient l'inéquation $x^2+3x-5 \\geq 0$.\nLes racines calculées précédemment définissent les bornes. La parabole étant tournée vers le haut (coef $a=1>0$), elle est positive à l'extérieur des racines. Les crochets sont fermés car l'inégalité est large."
+    },
+    {
+      "id": "med-17-14",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "ambiguity_note": "Multiples occasions d'erreurs de signes lors de l'intégration par parties et de l'évaluation de la constante finale.",
+      "prompt": "La fonction primitive de la fonction $f(x) = \\frac{\\ln(x)}{x^3}$ qui prend la valeur 0 au point 1 est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-\\frac{\\ln(x)}{2x^2} - \\frac{1}{4x^2} + \\frac{1}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\ln(x)}{2x^2} - \\frac{1}{4x^2} + \\frac{1}{4}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{\\ln(x)}{4x^2} - \\frac{1}{2x^2} - \\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$-\\frac{\\ln(x)}{2x^2} - \\frac{1}{4x^2} - \\frac{1}{4}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Analyse IPP :\n• $u = \\ln(x) \\implies u' = \\frac{1}{x}$.\n• $v' = x^{-3} \\implies v = \\frac{x^{-2}}{-2} = -\\frac{1}{2x^2}$.\n• $\\displaystyle \\int f(x) = -\\frac{\\ln(x)}{2x^2} - \\int (-\\frac{1}{2x^3}) \\, dx = -\\frac{\\ln(x)}{2x^2} + \\frac{1}{2} \\int x^{-3} \\, dx = -\\frac{\\ln(x)}{2x^2} - \\frac{1}{4x^2} + C$.\n• $F(1) = 0 \\implies 0 - \\frac{1}{4(1)^2} + C = 0 \\implies C = \\frac{1}{4}$."
+    },
+    {
+      "id": "med-17-15",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "analyse",
+      "ambiguity_note": "Les courbes se croisent en plein milieu de l'intervalle demandé. Ne pas découper l'intégrale annule une partie de l'aire.",
+      "prompt": "L'aire du domaine du plan délimité par $(C_f)$ pour $f(x)=x^3$ et $(C_g)$ pour $g(x)=x^2$, et les droites d'équations $x=0$ et $x=2$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{3}{2} \\text{ cm}^2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{1}{2} \\text{ cm}^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{5}{2} \\text{ cm}^2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{2}{3} \\text{ cm}^2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Intersection : $x^3 = x^2 \\implies x=0$ ou $x=1$.\n• Sur $[0; 1]$, $x^2 \\geq x^3$. Aire $\\displaystyle A_1 = \\int_0^1 (x^2 - x^3) \\, dx =[\\frac{x^3}{3} - \\frac{x^4}{4}]_0^1 = \\frac{1}{12}$.\n• Sur $[1; 2]$, $x^3 \\geq x^2$. Aire $\\displaystyle A_2 = \\int_1^2 (x^3 - x^2) \\, dx =[\\frac{x^4}{4} - \\frac{x^3}{3}]_1^2 = (4 - \\frac{8}{3}) - (\\frac{1}{4} - \\frac{1}{3}) = \\frac{17}{12}$.\n• Aire totale = $A_1 + A_2 = \\frac{18}{12} = \\frac{3}{2} \\text{ cm}^2$."
+    },
+    {
+      "id": "med-17-16",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Synthèse",
+      "theme": "probabilites",
+      "ambiguity_note": "La composition finale (2 impairs, 1 pair) peut s'obtenir de deux manières totalement distinctes selon l'urne qui fournit la boule paire.",
+      "prompt": "Deux urnes $S_1$ et $S_2$ contiennent 5 boules numérotées de 1 à 5. On tire simultanément deux boules de $S_1$ puis une de $S_2$. La probabilité d'obtenir deux numéros impairs et un numéro pair est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{12}{25}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{3}{25}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{3}{10}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{18}{25}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Chaque urne a 3 boules impaires (1,3,5) et 2 paires (2,4).\n• Cas A (2 impairs de $S_1$ ET 1 pair de $S_2$) : $P(A) = \\frac{\\binom{3}{2}}{\\binom{5}{2}} \\times \\frac{\\binom{2}{1}}{\\binom{5}{1}} = \\frac{3}{10} \\times \\frac{2}{5} = \\frac{6}{50}$.\n• Cas B (1 impair+1 pair de $S_1$ ET 1 impair de $S_2$) : $P(B) = \\frac{\\binom{3}{1}\\binom{2}{1}}{\\binom{5}{2}} \\times \\frac{\\binom{3}{1}}{\\binom{5}{1}} = \\frac{6}{10} \\times \\frac{3}{5} = \\frac{18}{50}$.\n• Probabilité totale = $\\frac{6}{50} + \\frac{18}{50} = \\frac{24}{50} = \\frac{12}{25}$."
+    },
+    {
+      "id": "med-17-17",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Application",
+      "theme": "probabilites",
+      "prompt": "Deux urnes contiennent chacune les numéros 1 à 5. On tire 2 boules de $S_1$ puis 1 de $S_2$. Quelle analyse donne la probabilité d'obtenir exactement 2 impairs et 1 pair ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Additionner les deux scénarios : $(2\\text{ impairs de }S_1,1\\text{ pair de }S_2)$ et $(1\\text{ impair}+1\\text{ pair de }S_1,1\\text{ impair de }S_2)$, soit $\\frac{12}{25}$.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Ne compter que le premier scénario, ce qui donne $\\frac{3}{25}$.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Multiplier les probabilités des deux scénarios entre eux.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Additionner $\\frac{3}{10}$ et $\\frac{2}{5}$, car ce sont les deux probabilités recherchées.",
+          "isCorrect": false
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Je dois tirer 3 boules au total, et je veux exactement deux boules impaires et une boule paire.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "Je modélise le tirage de $S_1$ : je choisis 2 boules impaires parmi 3, divisé par le total des combinaisons : $\\frac{\\binom{3}{2}}{\\binom{5}{2}} = \\frac{3}{10}$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Ensuite, je tire dans $S_2$ : il me faut absolument ma boule paire. Donc je choisis 1 paire parmi 2 : $\\frac{2}{5}$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "Je multiplie ces probabilités indépendantes et je conclus que la probabilité finale est $\\frac{6}{50} = \\frac{3}{25}$.",
+          "isError": true,
+          "correction": "L'élève a oublié le deuxième scénario viable ! Il est tout à fait possible d'obtenir 1 paire et 1 impaire dans la première urne, puis de compléter avec 1 impaire dans la seconde urne. Ne modéliser qu'un seul scénario est l'erreur probabiliste la plus fréquente."
+        }
+      ],
+      "explanation": "Dans un arbre de probabilité mental, il faut toujours lister l'exhaustivité des branches qui satisfont la condition finale (ici, la somme des boules = 2 impaires + 1 paire)."
+    },
+    {
+      "id": "med-17-18",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Méthode",
+      "theme": "analyse",
+      "prompt": "Quelle condition est nécessaire et suffisante pour que $f(x)=\\sqrt{\\ln(x^2+3x-4)}$ soit définie ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x^2+3x-4\\geq1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x^2+3x-4>0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x^2+3x-4\\geq0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln(x^2+3x-4)>0$",
+          "isCorrect": false
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "text": "On étudie une fonction composée contenant une racine carrée et un logarithme.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "La racine carrée exige que son contenu soit positif ou nul : on pose donc $\\ln(x^2+3x-4) \\geq 0$.",
+          "isError": false
+        },
+        {
+          "id": "s3",
+          "text": "Le logarithme exige que son propre argument soit strictement positif. On pose donc le système : $x^2+3x-4 > 0$ ET $\\ln(x^2+3x-4) \\geq 0$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "Puisque le logarithme est toujours croissant et que sa limite en $0^+$ est $-\\infty$, on résout simplement $x^2+3x-4 > 0$ et on trace le tableau de signes.",
+          "isError": true,
+          "correction": "L'erreur réside dans le remplacement fautif de la condition. Si $x^2+3x-4$ se situe entre 0 et 1, le logarithme sera négatif, ce qui rendra la racine carrée impossible à calculer ! Il fallait résoudre $x^2+3x-4 \\geq 1$ (car $e^0 = 1$), ce qui couvre d'ailleurs automatiquement la condition $>0$."
+        }
+      ],
+      "explanation": "La composition de restrictions est le grand classique des questions de domaine. La condition la plus restrictive externe \"écrase\" ou modifie souvent la condition interne."
+    },
+    {
+      "id": "med-17-19",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "algebre",
+      "prompt": "Soit $(u_n)_{n \\geq 1}$ une suite définie par $u_{n+1} = \\sqrt[3]{\\frac{1+u_n^3}{8}}$. La raison de la suite géométrique $(v_n)$ définie par $v_n = \\frac{7}{8}u_n^3 - \\frac{1}{8}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{1}{8}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-\\frac{1}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$-\\frac{1}{8}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Cette suite $(v_n)$ n'est pas géométrique.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le calcul se déploie ainsi :\n1. On exprime $v_{n+1}$ : $v_{n+1} = \\frac{7}{8}(u_{n+1})^3 - \\frac{1}{8}$.\n2. On remplace par l'expression de la récurrence au cube : $v_{n+1} = \\frac{7}{8} \\left( \\frac{1+u_n^3}{8} \\right) - \\frac{1}{8}$.\n3. On développe : $\\frac{7 + 7u_n^3}{64} - \\frac{8}{64} = \\frac{7u_n^3 - 1}{64}$.\n4. On factorise pour faire réapparaître $v_n$ : $\\frac{1}{8} \\left( \\frac{7}{8}u_n^3 - \\frac{1}{8} \\right) = \\frac{1}{8} v_n$.\nLa raison est bel et bien $\\frac{1}{8}$."
+    },
+    {
+      "id": "med-17-20",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "analyse",
+      "prompt": "La valeur de l'intégrale complexe $\\displaystyle \\int_0^1 \\frac{1}{x^2 - x - 1} \\, dx$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{2}{\\sqrt{5}} \\ln\\left( \\frac{3 - \\sqrt{5}}{2} \\right)$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-\\frac{2}{\\sqrt{5}} \\ln\\left( \\frac{3 - \\sqrt{5}}{2} \\right)$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\ln\\left( \\frac{\\sqrt{5} - 1}{\\sqrt{5} + 1} \\right)$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{4}{\\sqrt{5}} \\ln\\left( \\frac{3 - \\sqrt{5}}{2} \\right)$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Calcul expert :\n1. Les racines du dénominateur sont $r_1 = \\frac{1-\\sqrt{5}}{2}$ et $r_2 = \\frac{1+\\sqrt{5}}{2}$.\n2. Par décomposition en éléments simples, la fraction vaut $\\frac{1}{\\sqrt{5}} \\left( \\frac{1}{x-r_2} - \\frac{1}{x-r_1} \\right)$.\n3. En intégrant, on obtient $\\frac{1}{\\sqrt{5}} \\left[ \\ln|x-r_2| - \\ln|x-r_1| \\right]_0^1$.\n4. En remplaçant par les bornes 1 et 0, la manipulation des valeurs absolues et la multiplication par la quantité conjuguée à l'intérieur du logarithme mènent au résultat (a)."
+    },
+    {
+      "id": "med-17-21",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "analyse",
+      "prompt": "Quelle primitive est correcte pour $\\frac{1}{x-r}$ sur un intervalle qui ne contient pas $r$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\ln|x-r|+C$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\ln(x-r)+C$ dans tous les cas",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{1}{x-r}+C$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$|x-r|+C$",
+          "isCorrect": false
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Je factorise le trinôme et j'effectue la décomposition en éléments simples.",
+          "isError": false
+        },
+        {
+          "id": "s2",
+          "text": "J'intègre $\\frac{1}{x-r_2}$ en obtenant $\\ln(x-r_2)$ et de même pour l'autre terme.",
+          "isError": true,
+          "correction": "L'oubli fatal ! La primitive de $\\frac{1}{u}$ est $\\ln|u|$, avec valeur absolue obligatoire. Ici sur l'intervalle $[0;1]$, $x-r_2$ est négatif. Le logarithme de ce nombre sans valeur absolue n'existe pas."
+        },
+        {
+          "id": "s3",
+          "text": "J'évalue l'expression en $x=1$ puis en $x=0$.",
+          "isError": false
+        },
+        {
+          "id": "s4",
+          "text": "J'utilise les propriétés $\\ln(a) - \\ln(b) = \\ln(\\frac{a}{b})$ pour regrouper mes termes.",
+          "isError": false
+        }
+      ],
+      "explanation": "Cette erreur invalide la totalité des calculs analytiques de fractions rationnelles lorsque l'intervalle d'intégration chevauche la zone où le polynôme est négatif."
+    },
+    {
+      "id": "med-17-22",
+      "type": "mcq",
+      "difficulty": "hard",
+      "category": "Dépassement",
+      "theme": "algebre",
+      "prompt": "En généralisant le principe vu pour la suite $u_{n+1} = \\sqrt[p]{\\alpha + \\beta u_n^p}$. Pour se ramener à une suite géométrique $v_n$ via la transformation $v_n = a u_n^p + b$, quelle composante détermine systématiquement la raison de $(v_n)$ ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Le coefficient $\\beta$ qui multiplie $u_n^p$ à l'intérieur de la racine.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "La constante $\\alpha$ qui permet la translation.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La puissance $p$ de la racine.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Le choix arbitraire des constantes $a$ et $b$ dans la définition de $v_n$.",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Analyse mathématique :\nDans la relation $v_{n+1} = a (u_{n+1})^p + b = a (\\alpha + \\beta u_n^p) + b = a\\beta u_n^p + a\\alpha + b$.\nPour que cette suite soit géométrique, il faut pouvoir factoriser par $\\beta$ pour retrouver $v_n$, ce qui force $v_{n+1} = \\beta (a u_n^p + \\dots)$. La raison est donc structurellement portée par le paramètre $\\beta$ (ici 1/8 dans l'exercice source)."
+    }
+  ],
+  "school": "medecine",
+  "year": "2017",
+  "title": "Concours Médecine 2017"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "ex-ens-app-07",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Différence symétrique",
+  "requiresRedaction": true,
+  "context": "Soit $E$ un ensemble non vide. Soient $A$ et $B$ des parties de $E$. On pose : $A \\Delta B = (A \\cup B) \\setminus (A \\cap B)$",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que : $A \\Delta B = (A \\setminus B) \\cup (B \\setminus A)$",
+      "hint": "Montrez la double inclusion en prenant un élément arbitraire de chaque côté."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que : $A \\Delta B = \\overline{A}\\, \\Delta\\, \\overline{B}$",
+      "hint": "Utilisez la définition $A \\Delta B = (A \\setminus B) \\cup (B \\setminus A)$ et exprimez $\\overline{A} \\Delta \\overline{B}$ de la même façon."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que : $A \\Delta B = A \\cap \\overline{B}$ lorsque $A \\cap B = \\varnothing$",
+      "hint": "Si $A \\cap B = \\varnothing$, que devient $B \\setminus A$ ?"
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que : $A \\Delta \\overline{A} = E$ et $A \\Delta A = \\varnothing$ et $A \\Delta \\varnothing = A$",
+      "hint": ""
+    },
+    {
+      "id": "q5",
+      "content": "Montrer que : $A \\Delta B = A \\cap \\overline{B} \\iff A = B = \\varnothing$",
+      "hint": "Pour le sens $\\Leftarrow$ c'est immédiat. Pour $\\Rightarrow$, utilisez la définition de $\\Delta$ et supposez qu'un élément appartient à $A \\cup B$."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "ex-cont-02",
+  "theme": "continuite",
+  "difficulty": "moyen",
+  "topic": "Analyse",
+  "context": "Soit la fonction $g(x) = x^3 + 3x - 1$ définie sur $\\mathbb{R}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Résolution d'équation",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer que l'équation $g(x)=0$ admet une unique solution $\\alpha$ sur l'intervalle $[0, 1]$.",
+          "hint": "Vérifiez les trois hypothèses du TVI (forme stricte) : continuité de $g$ sur $[0, 1]$, stricte monotonie via le signe de $g'(x)$, et changement de signe entre $g(0)$ et $g(1)$.",
+          "correction": "$g$ est une fonction polynôme, elle est donc continue sur $\\mathbb{R}$.\nÉtudions sa monotonie. Calculons la dérivée $g'(x)$.\ng'(x) = 3x^2 + 3 = 3(x^2 + 1)\nPour tout $x$, $x^2 \\ge 0$ donc $g'(x) > 0$. La fonction $g$ est strictement croissante.\nCalculons les images aux bornes :\ng(0) = -1 \\quad \\text{et} \\quad g(1) = 3\n\\conclusion D'après le TVI, comme $g$ est continue, strictement monotone et que $0 \\in [g(0), g(1)]$, l'équation admet une unique solution $\\alpha$."
+        }
+      ]
+    }
+  ]
+}

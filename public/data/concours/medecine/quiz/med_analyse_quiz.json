@@ -1,0 +1,394 @@
+{
+  "questions": [
+    {
+      "id": "med-an-01",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Limites",
+      "prompt": "La limite $\\displaystyle\\lim_{x \\to 0^+} x \\ln x$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$-\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "N'existe pas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Forme $0 \\times (-\\infty)$. On pose $t = -\\ln x \\to +\\infty$ : $x\\ln x = -te^{-t} \\to 0$ par croissance comparée. Résultat fondamental du programme."
+    },
+    {
+      "id": "med-an-02",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "prompt": "Le nombre de solutions de $e^x = 3x$ sur $\\mathbb{R}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$3$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Soit $g(x) = e^x - 3x$. $g'(x) = e^x - 3 = 0 \\Leftrightarrow x = \\ln 3$. $g(\\ln 3) = 3-3\\ln 3 < 0$ car $\\ln 3 > 1$. Or $\\displaystyle \\lim_{-\\infty}g = +\\infty$, $g(0)=1>0$ et $\\displaystyle \\lim_{+\\infty}g=+\\infty$. Le TVI donne $2$ changements de signe : une racine sur $]-\\infty, \\ln 3[$ et une sur $]\\ln 3, +\\infty[$."
+    },
+    {
+      "id": "med-an-03",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "prompt": "Soit $f(x) = x^3 - 3x + 1$. Le nombre de racines réelles de $f$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$2$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$0$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$f'(x)=3(x-1)(x+1)$. $f(-1)=3>0$ (max local), $f(1)=-1<0$ (min local). Avec $\\displaystyle \\lim_{\\pm\\infty}=\\pm\\infty$, le TVI donne $3$ changements de signe, donc $3$ racines distinctes."
+    },
+    {
+      "id": "med-an-04",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "$\\displaystyle\\int_0^1 \\frac{dx}{1+x^2}$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{\\pi}{2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\ln 2$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$[\\arctan x]_0^1 = \\arctan 1 - 0 = \\frac{\\pi}{4}$. Primitive fondamentale du programme."
+    },
+    {
+      "id": "med-an-05",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "prompt": "Soit $u_n = \\frac{(-1)^n}{n}$ pour $n \\geq 1$. La suite $(u_n)$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Convergente vers $0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "Divergente",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Convergente vers $1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Croissante",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$|u_n| = \\frac{1}{n} \\to 0$. Par le théorème des gendarmes : $-\\frac{1}{n} \\leq u_n \\leq \\frac{1}{n}$ et les bornes tendent vers $0$."
+    },
+    {
+      "id": "med-an-06",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Logarithme",
+      "prompt": "L'ensemble des solutions de $\\ln(x^2-4) = \\ln 5$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\{-3, 3\\}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\{3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$\\{-3\\}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\emptyset$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Domaine : $x^2-4 > 0$, soit $|x|>2$. $\\ln(x^2-4) = \\ln 5 \\Rightarrow x^2-4=5 \\Rightarrow x^2=9 \\Rightarrow x=\\pm 3$. Les deux solutions sont dans le domaine."
+    },
+    {
+      "id": "med-an-07",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Exponentielle",
+      "prompt": "La dérivée de $f(x) = e^{x^2+1}$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2xe^{x^2+1}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$e^{2x+1}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$(x^2+1)e^{x^2}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$e^{x^2+1} + 2x$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Chaîne : $(e^{g(x)})' = g'(x)e^{g(x)}$. Ici $g(x)=x^2+1$, $g'(x)=2x$. Donc $f'(x) = 2xe^{x^2+1}$."
+    },
+    {
+      "id": "med-an-08",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "$\\displaystyle\\int_0^{\\pi} \\sin^2(x)\\,dx$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{\\pi}{2}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$\\pi$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$0$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{\\pi}{4}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Linéarisation : $\\sin^2 x = \\frac{(1-\\cos 2x)}{2}$. $I = \\frac{1}{2}[x-\\frac{\\sin 2x}{2}]_0^\\pi = \\frac{\\pi}{2}$."
+    },
+    {
+      "id": "med-an-09",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Continuité",
+      "prompt": "Si $f$ continue sur $[a,b]$ avec $f(a)\\cdot f(b) < 0$, le TVI affirme :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\exists\\, c \\in ]a,b[$ tel que $f(c) = 0$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$f$ est dérivable sur $]a,b[$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$f$ admet exactement une racine",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$f$ est monotone sur $[a,b]$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Le TVI garantit l'existence d'au moins un zéro, pas l'unicité. Pour l'unicité il faut la stricte monotonie (corollaire de Bolzano)."
+    },
+    {
+      "id": "med-an-10",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Suites",
+      "prompt": "$S_n = 1 + \\frac{1}{2} + \\frac{1}{4} + \\cdots + \\frac{1}{2^n}$ a pour limite :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$2$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$1$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{3}{2}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Série géométrique de raison $q=\\frac{1}{2}$ : $S = \\frac{1}{1-\\frac{1}{2}} = 2$. Formule : $\\displaystyle \\sum_{k=0}^\\infty q^k = \\frac{1}{1-q}$ pour $|q|<1$."
+    },
+    {
+      "id": "med-an-11",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Equations différentielles",
+      "prompt": "La solution de $y' + y = e^{-x}$ avec $y(0) = 0$ est :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$y = xe^{-x}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$y = e^{-x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$y = (x+1)e^{-x}$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$y = -xe^{-x}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Homogène : $y_h = Ce^{-x}$. Variation : $C'(x)e^{-x}=e^{-x}$, $C(x)=x$. Générale : $(x+K)e^{-x}$. $y(0)=0 \\Rightarrow K=0$."
+    },
+    {
+      "id": "med-an-12",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Dérivation",
+      "prompt": "L'inégalité $e^x \\geq 1+x$ est vraie pour :",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tout $x \\in \\mathbb{R}$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$x \\geq 0$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$x \\leq 0$ uniquement",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$|x| \\leq 1$ uniquement",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$g(x)=e^x-1-x$ vérifie $g'(x)=e^x-1=0 \\Leftrightarrow x=0$. Minimum global : $g(0)=0$. Donc $g(x) \\geq 0$ pour tout $x$ (convexité de $e^x$)."
+    },
+    {
+      "id": "med-an-13",
+      "type": "mcq",
+      "theme": "analyse",
+      "category": "Intégration",
+      "prompt": "L'aire sous $y = e^{-x}$ entre $x=0$ et $x=+\\infty$ vaut :",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1$",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "$e$",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "$+\\infty$",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{1}{e}$",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "$\\displaystyle \\int_0^{+\\infty} e^{-x}dx = [-e^{-x}]_0^{+\\infty} = 0+1 = 1$. Intégrale impropre convergente."
+    }
+  ]
+}

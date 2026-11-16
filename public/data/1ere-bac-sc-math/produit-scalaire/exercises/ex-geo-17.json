@@ -1,0 +1,35 @@
+{
+  "id": "ex-geo-17",
+  "theme": "produit-scalaire",
+  "difficulty": "difficile",
+  "topic": "Géométrie Analytique - Exercices de perfectionnement : triangle et produit scalaire avancé",
+  "requiresRedaction": true,
+  "context": "On considère les points : $A(2;5)$ et $B(2;1)$ et $C(-1;1)$. Pour tout point $M$ du plan, on pose : $S = \\overrightarrow{MA}(\\overrightarrow{MB} + 2\\overrightarrow{MC})$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer le couple de coordonnées du point $G$ tel que $\\overrightarrow{GB} + 2\\overrightarrow{GC} = \\overrightarrow{0}$.",
+      "hint": "$G$ est le barycentre de $\\{(B;1);(C;2)\\}$. Ses coordonnées vérifient $\\overrightarrow{GB} + 2\\overrightarrow{GC} = \\overrightarrow{0}$, soit $x_G = \\dfrac{x_B + 2x_C}{3}$ et $y_G = \\dfrac{y_B + 2y_C}{3}$."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que $S = 3\\overrightarrow{MA} \\cdot \\overrightarrow{MG}$.",
+      "hint": "Écrivez $\\overrightarrow{MB} + 2\\overrightarrow{MC} = 3\\overrightarrow{MG} + (\\overrightarrow{GB} + 2\\overrightarrow{GC})$ par la relation de Chasles, et utilisez le résultat de la question précédente."
+    },
+    {
+      "id": "q3",
+      "content": "Déterminer les coordonnées du point $I$ milieu du segment $[AG]$.",
+      "hint": ""
+    },
+    {
+      "id": "q4",
+      "content": "Calculer $S$ en fonction de $IM$.",
+      "hint": "Utilisez l'identité de polarisation : $\\overrightarrow{MA} \\cdot \\overrightarrow{MG} = MI^2 - IA^2$ où $I$ est le milieu de $[AG]$. Exprimez ensuite $S = 3(MI^2 - IA^2)$."
+    },
+    {
+      "id": "q5",
+      "content": "On suppose que le point $M$ appartient à la droite $d$ d'équation $2x - y = 0$. Déterminer le couple de coordonnées du point $M$ pour lequel la valeur $S$ est minimale.",
+      "hint": "D'après la question précédente, $S$ est minimal quand $MI^2$ est minimal, c'est-à-dire quand $M$ est le projeté orthogonal de $I$ sur $d$."
+    }
+  ]
+}

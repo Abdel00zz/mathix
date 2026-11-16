@@ -1,0 +1,20 @@
+{
+  "id": "ex-arith-tc-01",
+  "theme": "arithmetique-n",
+  "difficulty": "facile",
+  "topic": "Arithmétique dans $\\mathbb{N}$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Parité et divisibilité",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Montrer que pour tout entier naturel $n$, le nombre $A = n(n+1)(n+2)$ est un multiple de 3.",
+          "hint": "\\method Raisonnez par disjonction de cas sur le reste de la division euclidienne de $n$ par 3. Les cas possibles sont $n=3k$, $n=3k+1$ et $n=3k+2$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ex-seq-001",
+  "theme": "suites",
+  "difficulty": "facile",
+  "topic": "Suites Numériques",
+  "context": "Soit $(U_n)_{n \\in \\mathbb{N}}$ la suite numérique définie par $U_0 = 1$ et $U_{n+1} = \\displaystyle\\frac{6U_n}{15U_n + 1}$ pour tout $n$ de $\\mathbb{N}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Étude préliminaire",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que $U_{n+1} - \\displaystyle\\frac{1}{3} = \\displaystyle\\frac{U_n - \\displaystyle\\frac{1}{3}}{15U_n + 1}$ pour tout $n \\in \\mathbb{N}$.",
+          "hint": "\\method Mettons l'expression au même dénominateur.\n$$U_{n+1} - \\frac{1}{3} = \\frac{6U_n}{15U_n+1} - \\frac{1}{3} = \\frac{18U_n - (15U_n+1)}{3(15U_n+1)}$$\n$$= \\frac{3U_n - 1}{3(15U_n+1)} = \\frac{3(U_n - \\frac{1}{3})}{3(15U_n+1)}$$\n\\conclusion En simplifiant par 3, on obtient bien $U_{n+1} - \\displaystyle\\frac{1}{3} = \\displaystyle\\frac{U_n - \\displaystyle\\frac{1}{3}}{15U_n + 1}$."
+        },
+        {
+          "id": "sq1b",
+          "content": "Montrer que $U_n > \\displaystyle\\frac{1}{3}$ pour tout $n \\in \\mathbb{N}$.",
+          "hint": "\\method Raisonnons par récurrence. \\\\ \\textbf{Initialisation :} Pour $n=0$, $U_0 = 1 > \\displaystyle\\frac{1}{3}$. La propriété est vraie.\n\\textbf{Hérédité :} Supposons $U_n > \\displaystyle\\frac{1}{3}$. Alors $U_n - \\displaystyle\\frac{1}{3} > 0$ et $15U_n + 1 > 0$ (car $U_n$ est positif).\nD'après la question précédente, $U_{n+1} - \\displaystyle\\frac{1}{3}$ est le quotient de deux des nombres positifs, donc est positif.\n\\conclusion On a donc $U_{n+1} > \\displaystyle\\frac{1}{3}$. La propriété est héréditaire et vraie pour tout $n$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Passage à une suite géométrique",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Montrer que $(\\mathcal{V}_n)$ est géométrique de raison $\\displaystyle\\frac{1}{6}$ puis écrire $\\mathcal{V}_n$ en fonction de $n$.",
+          "hint": "Exprimons $\\mathcal{V}_{n+1}$ en fonction de $U_{n+1}$ puis de $U_n$.\n$$\\mathcal{V}_{n+1} = 1 - \\frac{1}{3U_{n+1}} = 1 - \\frac{15U_n+1}{3(6U_n)} = 1 - \\frac{15U_n+1}{18U_n}$$\n$$\\mathcal{V}_{n+1} = \\frac{18U_n - (15U_n+1)}{18U_n} = \\frac{3U_n - 1}{18U_n}$$\nOr, on a $$\\frac{1}{6}\\mathcal{V}_n = \\frac{1}{6}\\left( \\frac{3U_n-1}{3U_n} \\right) = \\frac{3U_n-1}{18U_n}$$.\nDonc $\\mathcal{V}_{n+1} = \\displaystyle\\frac{1}{6}\\mathcal{V}_n$. La suite est géométrique de raison $q=\\displaystyle\\frac{1}{6}$.\nPremier terme : $\\mathcal{V}_0 = 1 - \\displaystyle\\frac{1}{3(1)} = \\displaystyle\\frac{2}{3}$. Formule explicite : $\\mathcal{V}_n = \\displaystyle\\frac{2}{3} \\times \\left(\\displaystyle\\frac{1}{6}\\right)^n$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Limite de la suite $(U_n)$",
+      "subQuestions": [
+        {
+          "id": "sq3",
+          "content": "Montrer que $U_n = \\displaystyle\\frac{1}{3 - 2\\left(\\displaystyle\\frac{1}{6}\\right)^n}$ et en déduire la limite.",
+          "hint": "On inverse la relation $\\mathcal{V}_n = 1 - \\displaystyle\\frac{1}{3U_n}$.\n$$\\frac{1}{3U_n} = 1 - \\mathcal{V}_n \\iff 3U_n = \\frac{1}{1 - \\mathcal{V}_n} \\iff U_n = \\frac{1}{3(1 - \\mathcal{V}_n)}$$\nEn remplaçant $\\mathcal{V}_n$ par son expression :\n$$U_n = \\frac{1}{3\\left(1 - \\frac{2}{3}\\left(\\frac{1}{6}\\right)^n\\right)} = \\frac{1}{3 - 2\\left(\\frac{1}{6}\\right)^n}$$\n\\conclusion Comme $\\displaystyle\\lim_{n \\to +\\infty} \\left(\\frac{1}{6}\\right)^n = 0$, on a $\\displaystyle\\lim_{n \\to +\\infty} U_n = \\displaystyle\\frac{1}{3 - 0} = \\displaystyle\\frac{1}{3}$."
+        }
+      ]
+    }
+  ]
+}

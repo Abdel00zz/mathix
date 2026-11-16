@@ -1,0 +1,20 @@
+{
+  "id": "ex-08",
+  "theme": "calcul-integral",
+  "difficulty": "moyen",
+  "topic": "Calcul Intégral - Changement de variable et calcul d'aire",
+  "requiresRedaction": true,
+  "context": "Soit $f$ la fonction définie sur $]0;e[\\,\\cup\\,]e;+\\infty[$ par : $f(x) = \\dfrac{1}{x(1-\\ln x)}$. Soit $(C_f)$ la courbe de $f$ dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$ (unité $2\\,\\text{cm}$).",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que : $\\displaystyle\\int_1^{\\sqrt{e}} \\frac{1}{x(1-\\ln x)}\\,dx = \\ln 2$ \\quad (Remarquer que : $(\\forall x \\in D_f)\\,;\\, \\dfrac{1}{x(1-\\ln x)} = \\dfrac{\\frac{1}{x}}{1-\\ln x}$)",
+      "hint": "\\method La remarque indique que l'intégrande est de la forme $\\frac{u'}{u}$ avec $u = 1 - \\ln x$. \\tip Identifiez $u = 1 - \\ln x$, calculez $u'$, puis intégrez. Attention au signe de $u$ sur $[1;\\sqrt{e}]$."
+    },
+    {
+      "id": "q2",
+      "content": "Calculer en $\\text{cm}^2$, l'aire du domaine plan limité par $(C_f)$, la droite $(\\Delta): y = x$ et les droites d'équations : $x = 1$ et $x = \\sqrt{e}$.",
+      "hint": "\\method Étudiez le signe de $f(x) - x$ sur $[1;\\sqrt{e}]$. \\tip L'aire en unités réelles nécessite le facteur d'échelle lié à l'unité $2\\,\\text{cm}$. Utilisez le résultat de la question 1 pour $\\displaystyle\\int_1^{\\sqrt{e}} f(x)\\,dx$."
+    }
+  ]
+}

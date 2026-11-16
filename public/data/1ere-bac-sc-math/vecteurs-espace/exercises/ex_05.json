@@ -1,0 +1,20 @@
+{
+  "id": "ex-vect-esp-05",
+  "theme": "vecteurs-espace",
+  "difficulty": "moyen",
+  "topic": "Vecteurs de l'espace",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Milieu d'un segment",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Dans l'espace muni d'un repère $(O, \\overrightarrow{i}, \\overrightarrow{j}, \\overrightarrow{k})$, on considère les points $A(1, -2, 3)$ et $B(4, 5, -1)$.\nDéterminer les coordonnées du milieu $I$ du segment $[AB]$.",
+          "hint": "Les coordonnées du milieu $I$ du segment $[AB]$ sont données par la formule :\n$I(\\frac{x_A + x_B}{2}, \\frac{y_A + y_B}{2}, \\frac{z_A + z_B}{2})$\n\nEn appliquant cette formule avec $A(1, -2, 3)$ et $B(4, 5, -1)$ :\n$I(\\frac{1 + 4}{2}, \\frac{-2 + 5}{2}, \\frac{3 + (-1)}{2})$\n$I(\\frac{5}{2}, \\frac{3}{2}, \\frac{2}{2})$\n$I(\\frac{5}{2}, \\frac{3}{2}, 1)$"
+        }
+      ]
+    }
+  ]
+}

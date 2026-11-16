@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Maximiser le bénéfice d'une entreprise",
+    "subtitle": "Fonction du second degré",
+    "context": "Fonctions"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Maximiser le bénéfice d'une entreprise",
+          "content": "Une petite entreprise fabrique et vend $x$ objets par jour (avec $0 \\leq x \\leq 40$). Chaque objet est vendu $50$ dirhams, donc la \\textbf{recette} est $R(x) = 50x$. Le \\textbf{coût} de production (en dirhams) est modélisé par $C(x) = x^2 + 10x + 200$.\\par Le \\textbf{bénéfice} est $B(x) = R(x) - C(x)$. On cherche le nombre d'objets qui rend le bénéfice maximal."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Montrer que $B(x) = -x^2 + 40x - 200$.\\item Déterminer la forme canonique de $B$, puis le nombre d'objets $x$ qui maximise le bénéfice et la valeur de ce bénéfice maximal.\\item Pour quelles quantités $x$ l'entreprise est-elle \\textbf{rentable} (bénéfice positif) ? On donne $\\sqrt{200} \\approx 14{,}14$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "$B(x) = 50x - (x^2 + 10x + 200)$. La parabole est tournée vers le bas ($a = -1 < 0$) : son sommet donne le maximum."
+        },
+        {
+          "type": "hint",
+          "content": "Le sommet d'une parabole $ax^2 + bx + c$ a pour abscisse $x = -\\dfrac{b}{2a}$. Forme canonique : $B(x) = -(x-20)^2 + 200$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} $B(x) = 50x - x^2 - 10x - 200 = -x^2 + 40x - 200$.\\par\\textbf{2)} Forme canonique : $B(x) = -(x^2 - 40x) - 200 = -\\big((x-20)^2 - 400\\big) - 200 = -(x-20)^2 + 200$. Le maximum est atteint en $x = \\boxed{20}$ objets, avec un bénéfice maximal $B(20) = \\boxed{200\\ \\text{DH}}$.\\par\\textbf{3)} $B(x) > 0 \\iff (x-20)^2 < 200 \\iff |x-20| < \\sqrt{200} \\approx 14{,}14$, soit $20 - 14{,}14 < x < 20 + 14{,}14$, c'est-à-dire environ $6 \\leq x \\leq 34$ objets. En dehors, l'entreprise travaille à perte."
+        }
+      ]
+    }
+  ]
+}

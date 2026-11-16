@@ -1,0 +1,146 @@
+{
+  "id": "ex-exp-002",
+  "theme": "exponentielles",
+  "difficulty": "facile",
+  "topic": "Analyse - Fonctions exponentielles",
+  "context": "Soit $f$ la fonction numérique définie sur $\\mathbb{R}^*$ par : $$f(x) = 2 + 8\\left(\\frac{x-2}{x}\\right)^2 e^{x-4}$$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i},\\overrightarrow{j})$ (unité : 1 cm).",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "pI",
+      "content": " ",
+      "type": "header"
+    },
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que $\\displaystyle \\lim_{x \\to -\\infty} f(x) = 2$ puis interpréter géométriquement le résultat.",
+          "hint": "Analysez la limite de chaque facteur. Quelle est la limite de $\\frac{x-2}{x}$ en $-\\infty$ ? Et celle de $e^{x-4}$ ? Comment interpréter une limite finie en l'infini ?"
+        },
+        {
+          "id": "sq1b",
+          "content": "Montrer que $\\displaystyle \\lim_{x \\to 0^-} f(x) = +\\infty$ puis interpréter géométriquement le résultat.",
+          "hint": "Quelle est la limite de $\\frac{x-2}{x}$ quand $x \\to 0^-$ ? Que devient le carré de cette limite ? N'oubliez pas le facteur $e^{x-4}$. Comment s'interprète une limite infinie en un point fini ?"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} f(x)$.",
+          "hint": "Quelle est la limite de $\\left(1 - \\frac{2}{x}\\right)^2$ en $+\\infty$ ? Et celle de $e^{x-4}$ ? Le produit de ces limites est-il une forme indéterminée ?"
+        },
+        {
+          "id": "sq2b",
+          "content": "Montrer que la courbe $(C)$ admet une branche parabolique de direction l'axe des ordonnées au voisinage de $+\\infty$.",
+          "hint": "Calculez $\\lim_{x \\to +\\infty} \\frac{f(x)}{x}$. Vous obtiendrez une expression avec $e^x$. Quelle est la limite de référence pour $e^x$ en $+\\infty$ ? Si $\\lim \\frac{f(x)}{x} = \\infty$, quelle est la nature de la branche infinie ?"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Montrer que $f'(x) = \\dfrac{8(x-2)(x^2-2x+4)e^{x-4}}{x^3}$ pour tout $x \\in \\mathbb{R}^*$.",
+          "hint": "\\method Appliquez la règle de dérivation d'un produit $(uv)'$ à la partie $8\\left(\\frac{x-2}{x}\\right)^2 e^{x-4}$. Pensez à utiliser la règle de dérivation des fonctions composées pour le terme au carré."
+        },
+        {
+          "id": "sq3b",
+          "content": "Vérifier que pour tout $x$ de $\\mathbb{R}$, $x^2 - 2x + 4 > 0$.",
+          "hint": "Pour étudier le signe d'un polynôme du second degré, quelle est la première chose à calculer ? Si ce discriminant est négatif, quel est le signe du polynôme ?"
+        },
+        {
+          "id": "sq3c",
+          "content": "Montrer que $f$ est strictement décroissante sur $]0; 2[$ et strictement croissante sur chacun des intervalles $]-\\infty; 0[$ et $[2; +\\infty[$.",
+          "hint": "Le signe de $f'(x)$ a été simplifié à celui de $\\frac{x-2}{x^3}$. Dressez un tableau de signes pour ce quotient en étudiant le signe de $x-2$ et de $x^3$."
+        },
+        {
+          "id": "sq3d",
+          "content": "Dresser le tableau de variations de la fonction $f$ sur $\\mathbb{R}^*$.",
+          "hint": "Rassemblez toutes les informations des questions précédentes (limites, signe de la dérivée) pour construire le tableau de variations. N'oubliez pas de calculer la valeur de l'extremum."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Construire la courbe $(C)$ dans le repère $(O;\\overrightarrow{i},\\overrightarrow{j})$.",
+      "hint": "\\step Tracez les asymptotes verticale et horizontale. \\step Placez le point du minimum local et sa tangente. \\step Indiquez la direction de la branche parabolique. \\step Esquissez la courbe en respectant les variations."
+    },
+    {
+      "id": "q5",
+      "content": "Vérifier que la fonction $H : x \\mapsto \\frac{1}{x}e^{x-4}$ est une primitive de la fonction $h : x \\mapsto \\frac{x-1}{x^2}e^{x-4}$ sur $[2; 4]$.",
+      "hint": "Pour vérifier qu'une fonction est une primitive, il suffit de la dériver. Appliquez la formule de dérivation d'un quotient $\\left(\\frac{u}{v}\\right)'$ à $H(x)$."
+    },
+    {
+      "id": "pII",
+      "content": "",
+      "type": "header"
+    },
+    {
+      "id": "q6",
+      "content": "On considère la fonction numérique $g$ définie sur $[2; 4]$ par : $g(x) = 8(x-2)e^{x-4} - x^2$",
+      "subQuestions": [
+        {
+          "id": "sq6a",
+          "content": "Calculer $g(4)$.",
+          "hint": "Remplacez simplement $x$ par 4 dans l'expression de $g(x)$. Rappelez-vous que $e^0 = 1$."
+        },
+        {
+          "id": "sq6b",
+          "content": "Vérifier que pour tout $x$ de l'intervalle $[2; 4]$ : $g(x) = -(x-4)^2 e^{x-4} + x^2(e^{x-4} - 1)$.",
+          "hint": "\\method Partez de l'expression de droite, développez-la et réarrangez les termes pour essayer de retrouver l'expression initiale de $g(x)$."
+        },
+        {
+          "id": "sq6c",
+          "content": "Vérifier que pour tout $x$ de l'intervalle $[2; 4]$, $e^{x-4} \\leq 1$ puis en déduire que pour tout $x$ de l'intervalle $[2; 4]$, $g(x) \\leq 0$.",
+          "hint": "Quel est le signe de $x-4$ sur l'intervalle $[2, 4]$ ? Utilisez la croissance de la fonction exponentielle pour en déduire un encadrement de $e^{x-4}$. Utilisez ensuite l'expression de $g(x)$ de la question 6b pour conclure sur son signe."
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq7a",
+          "content": "Vérifier que pour tout $x$ de l'intervalle $[2; 4]$ : $f(x) - x = \\left(\\frac{x-2}{x}\\right)g(x)$.",
+          "hint": "Calculez $f(x)-x$ et factorisez. L'expression de $g(x)$ devrait apparaître naturellement."
+        },
+        {
+          "id": "sq7b",
+          "content": "En déduire pour tout $x$ de l'intervalle $[2; 4]$ : $f(x) \\leq x$.",
+          "hint": "Utilisez les résultats des questions 6c et 7a. Quel est le signe de chaque facteur de l'expression de $f(x)-x$ sur l'intervalle $[2, 4]$ ?"
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "content": "Soit $(u_n)$ la suite numérique définie par : $u_0 = 3$ et $u_{n+1} = f(u_n)$ pour tout $n$ de $\\mathbb{N}$.",
+      "subQuestions": [
+        {
+          "id": "sq8a",
+          "content": "Montrer par récurrence que $2 \\leq u_n \\leq 4$ pour tout $n$ de $\\mathbb{N}$.",
+          "hint": "\\method Procédez par récurrence. Pour l'hérédité, si $2 \\le u_n \\le 4$, quel est le sens de variation de $f$ sur cet intervalle ? Appliquez $f$ à l'inégalité pour encadrer $f(u_n) = u_{n+1}$."
+        },
+        {
+          "id": "sq8b",
+          "content": "Déterminer la monotonie de la suite $(u_n)$ et en déduire qu'elle est convergente.",
+          "hint": "Pour étudier la monotonie, étudiez le signe de $u_{n+1} - u_n = f(u_n) - u_n$. Utilisez le résultat de la question 7b. Une suite décroissante et minorée est-elle convergente ?"
+        },
+        {
+          "id": "sq8c",
+          "content": "Calculer la limite de la suite $(u_n)$.",
+          "hint": "La limite $\\ell$ d'une suite convergente définie par $u_{n+1} = f(u_n)$ est un point fixe de $f$, c'est-à-dire une solution de l'équation $f(x)=x$. Utilisez la question 7a pour résoudre cette équation."
+        }
+      ]
+    }
+  ]
+}

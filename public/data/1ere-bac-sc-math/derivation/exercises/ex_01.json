@@ -1,0 +1,52 @@
+{
+  "id": "ex-deriv-01",
+  "theme": "derivation",
+  "difficulty": "facile",
+  "topic": "Étude de fonction irrationnelle",
+  "context": "Soit $f$ la fonction définie par : $f(x) = x - 2\\sqrt{x}$.",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Déterminer $D_f$ et calculer $\\displaystyle\\lim_{x \\to +\\infty} f(x)$.",
+      "hint": "Pour lever l'indétermination en $+\\infty$, factorisez par $x$ (ou $\\sqrt{x}$) pour obtenir une expression du type $x(1 - \\frac{2}{\\sqrt{x}})$."
+    },
+    {
+      "id": "q2",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Étudier la dérivabilité de $f$ à droite en 0.",
+          "hint": "Calculez la limite du taux d'accroissement $\\frac{f(x)-f(0)}{x}$ quand $x \\to 0^+$. Simplifiez l'expression par $\\sqrt{x}$ avant de conclure."
+        },
+        {
+          "id": "sq2b",
+          "content": "Donner une interprétation géométrique.",
+          "hint": "Une limite infinie du taux d'accroissement indique une tangente verticale. Précisez sa direction en observant le signe de la limite."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Déterminer $f'(x)$ puis étudier les variations de $f$.",
+          "hint": "Dérivez terme à terme, puis réduisez au même dénominateur pour étudier le signe de $\\sqrt{x}-1$."
+        },
+        {
+          "id": "sq3b",
+          "content": "Dresser le tableau de variations de $f$.",
+          "hint": "N'oubliez pas de calculer et d'indiquer les images de 0 et 1 dans le tableau."
+        },
+        {
+          "id": "sq3c",
+          "content": "Déterminer les extremums de $f$.",
+          "hint": "Le minimum est atteint lorsque la dérivée s'annule en changeant de signe."
+        }
+      ]
+    }
+  ]
+}

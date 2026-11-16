@@ -1,0 +1,57 @@
+{
+  "id": "ex-complexes-03",
+  "topic": "Nombres complexes - Bac National 2015 (Normale)",
+  "requiresRedaction": true,
+  "examenYear": 2015,
+  "examenSession": "Normale",
+  "context": "On considère dans l'ensemble $\\mathbb{C}$ l'équation suivante : $(E):z^2-(5+i\\sqrt3)z+4+4i\\sqrt3=0$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "",
+      "subQuestions": [
+        {
+          "id": "q1a",
+          "content": "Vérifier que $(3-i\\sqrt3)^2$ est le discriminant de l'équation $(E)$.",
+          "hint": "Calculez $\\Delta=(5+i\\sqrt3)^2-4(4+4i\\sqrt3)$ et regroupez les termes réels d'un côté, imaginaires de l'autre, pour reconnaître le carré proposé."
+        },
+        {
+          "id": "q1b",
+          "content": "Déterminer $a$ et $b$ les deux solutions de l'équation $(E)$ (sachant que : $b\\in\\mathbb{R}$).",
+          "hint": "Une racine carrée de $\\Delta$ est $3-i\\sqrt3$ ; calculez les deux solutions puis repérez celle dont la partie imaginaire s'annule."
+        },
+        {
+          "id": "q1c",
+          "content": "Vérifier que : $b=(1-i\\sqrt3)a$.",
+          "hint": "Calculez le quotient $b/a$ à partir des valeurs numériques trouvées et comparez-le à $1-i\\sqrt3$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Le plan complexe est muni d'un repère orthonormé direct. Soit $A$ le point d'affixe $a$ et $B$ le point d'affixe $b$.",
+      "subQuestions": [
+        {
+          "id": "q2a",
+          "content": "Déterminer $b_1$ l'affixe du point $B_1$ image du point $O$ par la rotation de centre $A$ et d'angle $\\dfrac{\\pi}{2}$.",
+          "hint": "Appliquez $b_1-a=i(0-a)$, c'est-à-dire $b_1=a-ia=a(1-i)$."
+        },
+        {
+          "id": "q2b",
+          "content": "Montrer que $B$ est l'image de $B_1$ par l'homothétie de centre $A$ et de rapport $\\sqrt3$.",
+          "hint": "Vérifiez que $b-a=\\sqrt3(b_1-a)$ en utilisant $b=(1-i\\sqrt3)a$ et $b_1=(1-i)a$ trouvés précédemment."
+        },
+        {
+          "id": "q2c",
+          "content": "Vérifier que : $\\arg\\left(\\dfrac{b}{b-a}\\right)\\equiv\\dfrac{\\pi}{6}[2\\pi]$.",
+          "hint": "Écrivez $b$ et $b-a$ sous forme exponentielle à partir des expressions déjà obtenues en fonction de $a$, puis faites la différence des arguments."
+        },
+        {
+          "id": "q2d",
+          "content": "Soit $C$ un point, d'affixe $c$, appartenant au cercle circonscrit au triangle $OAB$ et différent de $O$ et de $A$. Déterminer un argument du nombre complexe $\\dfrac{c}{c-a}$.",
+          "hint": "L'angle inscrit $\\left(\\overrightarrow{CA},\\overrightarrow{CO}\\right)$ est égal (ou supplémentaire) à l'angle $\\left(\\overrightarrow{BA},\\overrightarrow{BO}\\right)$ déjà calculé à la question précédente, d'après le théorème de l'angle inscrit."
+        }
+      ]
+    }
+  ]
+}

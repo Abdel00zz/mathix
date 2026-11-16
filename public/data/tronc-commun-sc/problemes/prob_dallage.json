@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title": "Carreler une pièce sans découpe",
+    "subtitle": "PGCD et PPCM",
+    "context": "Arithmétique"
+  },
+  "sections": [
+    {
+      "id": "enonce",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Carreler une pièce sans découpe",
+          "content": "Un carreleur doit recouvrir le sol d'une pièce rectangulaire de $240\\ \\text{cm}$ sur $180\\ \\text{cm}$ avec des \\textbf{carreaux carrés identiques}, les plus grands possibles, sans aucune découpe.\\par Dans un deuxième temps, on s'intéresse à deux engrenages comportant respectivement $12$ et $18$ dents, initialement alignés ; on cherche après combien de dents ils reviennent dans la même position."
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "category": "course",
+      "title": "Questions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Quel doit être le côté du plus grand carreau carré possible ? Combien de carreaux faudra-t-il ?\\item Les deux engrenages ($12$ et $18$ dents) repartent du même contact. Après combien de dents engagées reviennent-ils simultanément à leur position de départ ?\\item Combien de tours chaque engrenage aura-t-il alors effectués ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "content": "Le côté du carreau doit diviser à la fois $240$ et $180$ : c'est le \\textbf{PGCD} de $240$ et $180$. Utilisez l'algorithme d'Euclide."
+        },
+        {
+          "type": "hint",
+          "content": "Les engrenages reviennent ensemble après un nombre de dents multiple de $12$ \\emph{et} de $18$ : c'est le \\textbf{PPCM}. On rappelle $\\text{PGCD} \\times \\text{PPCM} = 12 \\times 18$."
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "solution",
+          "content": "\\textbf{1)} Algorithme d'Euclide : $240 = 1\\times 180 + 60$, $180 = 3\\times 60 + 0$, donc $\\text{PGCD}(240,180) = 60$. Le plus grand carreau a un côté de $\\boxed{60\\ \\text{cm}}$. Nombre de carreaux : $\\dfrac{240}{60} \\times \\dfrac{180}{60} = 4 \\times 3 = \\boxed{12}$ carreaux.\\par\\textbf{2)} $\\text{PGCD}(12,18) = 6$, donc $\\text{PPCM}(12,18) = \\dfrac{12\\times 18}{6} = 36$. Ils reviennent ensemble après $\\boxed{36}$ dents.\\par\\textbf{3)} Le premier engrenage a fait $\\dfrac{36}{12} = 3$ tours, le second $\\dfrac{36}{18} = 2$ tours."
+        }
+      ]
+    }
+  ]
+}

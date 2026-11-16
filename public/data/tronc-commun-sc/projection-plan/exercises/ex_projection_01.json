@@ -1,0 +1,20 @@
+{
+  "id": "ex-projection-plan-01",
+  "theme": "projection-plan",
+  "difficulty": "difficile",
+  "topic": "Projection dans le plan",
+  "context": "Soit $ABC$ un triangle. $M$ est un point de $[AB]$ tel que $AM = \\frac{1}{3}AB$. La parallèle à $(BC)$ passant par $M$ coupe $(AC)$ en $N$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Application directe",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Exprimer $\\overrightarrow{AN}$ en fonction de $\\overrightarrow{AC}$.",
+          "hint": "Utilisez le théorème de Thalès sous sa forme vectorielle. La projection conserve le coefficient de colinéarité. Identifiez l'axe de projection et la direction."
+        }
+      ]
+    }
+  ]
+}

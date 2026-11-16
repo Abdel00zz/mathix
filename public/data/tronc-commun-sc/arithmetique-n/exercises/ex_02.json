@@ -1,0 +1,20 @@
+{
+  "id": "ex-arith-tc-02",
+  "theme": "arithmetique-n",
+  "difficulty": "moyen",
+  "topic": "Arithmétique dans $\\mathbb{N}$",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Nombres premiers",
+      "subQuestions": [
+        {
+          "id": "sq1",
+          "content": "Décomposer le nombre 1560 en produit de facteurs premiers, puis déterminer le nombre de ses diviseurs.",
+          "hint": "\\method Divisez successivement par les nombres premiers (2, 3, 5, 7...). Pour le nombre de diviseurs, utilisez la formule $(a+1)(b+1)...$ où $a, b$ sont les exposants."
+        }
+      ]
+    }
+  ]
+}

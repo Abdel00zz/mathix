@@ -1,0 +1,340 @@
+{
+  "header": {
+    "title": "Mise à niveau",
+    "subtitle": "Mécanismes d'analyse et raisonnement",
+    "context": "2ème Bac Sciences Mathématiques"
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "intro",
+          "content": "Cette mise à niveau ne reprend pas le cours une deuxième fois. Elle rassemble des \\textbf{rappels essentiels}, des méthodes courtes et des exemples guidés pour retrouver les mécanismes utiles : reconnaître une structure, choisir l'outil, éviter un piège, rédiger quelques lignes propres et relier les notions. La \\defi{difficulté} n'est pas de réciter davantage, mais de retrouver le bon réflexe avant de calculer."
+        }
+      ]
+    },
+    {
+      "id": "etude-fonction",
+      "category": "course",
+      "title": "Étude de fonction : assembler sans checklist aveugle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans cette partie, on assemble une étude de fonction dans un ordre utile : le \\textbf{domaine}, une éventuelle \\textbf{symétrie}, les \\textbf{limites}, les \\textbf{asymptotes}, la \\textbf{dérivée} et la \\textbf{position relative}. Le résultat attendu est un tableau de variations cohérent avec les limites obtenues."
+        },
+        {
+          "type": "method",
+          "title": "Quel ordre suivre pour étudier une fonction ?",
+          "content": "\\begin{enumerate}\\item Déterminer $D_f$ : tout le reste dépend du domaine.\\item Chercher une symétrie utile.\\item Calculer les limites aux bornes du domaine.\\item Relever les asymptotes et branches infinies.\\item Factoriser $f'$, étudier son signe et construire les variations.\\item Donner les valeurs remarquables et les extrema.\\item Si demandé, étudier $f''$, la convexité et les points d'inflexion.\\item Comparer avec une droite ou une courbe par le signe d'une différence.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Une étude n'est pas une liste de calculs indépendants : le \\textbf{domaine} fixe les intervalles, les \\textbf{limites} annoncent les bords du tableau et le signe de $f'$ remplit les variations. Chaque conclusion doit donc pouvoir être retrouvée dans le tableau final."
+        },
+        {
+          "type": "method",
+          "title": "Quels raccourcis donnent la symétrie et la différence ?",
+          "content": "Si $D_f$ est symétrique par rapport à $0$, alors $f(-x)=f(x)$ signifie que $f$ est paire et $f(-x)=-f(x)$ qu'elle est impaire. Pour comparer $C_f$ et $C_g$, étudie le signe de $f-g$. En particulier, si $y=ax+b$ est une asymptote, le signe de $f(x)-(ax+b)$ donne la position de $C_f$."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Pour $m>-2$, on considère $f_m(x)=\\dfrac{x^2+mx+1}{x-1}$. L'objectif est d'étudier toute la famille sans recommencer les calculs pour chaque valeur de $m$.\\begin{enumerate}\\item Déterminer $D_{f_m}$ et écrire $f_m(x)$ sous la forme $x+\\alpha+\\dfrac{\\beta}{x-1}$.\\item En déduire les asymptotes et la position de $C_{f_m}$ par rapport à l'asymptote oblique.\\item Montrer que le signe de $f_m'$ dépend de $(x-1)^2-(m+2)$.\\item Dresser les variations en fonction de $m$ et calculer les deux valeurs extrémales.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Forme adaptée.} On a :\n$$x^2+mx+1=(x-1)(x+m+1)+(m+2).$$\nDonc :\n$$f_m(x)=x+m+1+\\dfrac{m+2}{x-1},\\qquad D_{f_m}=\\mathbb R\\setminus\\{1\\}.$$\\par\n\\textbf{2. Asymptotes et position.} Comme $m+2>0$, $x=1$ est une asymptote verticale et $y=x+m+1$ une asymptote oblique. De plus :\n$$f_m(x)-(x+m+1)=\\dfrac{m+2}{x-1}.$$\nDonc $C_{f_m}$ est sous l'asymptote pour $x<1$ et au-dessus pour $x>1$.\\par\n\\textbf{3. Signe de la dérivée.} On a :\n$$f_m'(x)=1-\\dfrac{m+2}{(x-1)^2}\n=\\dfrac{(x-1)^2-(m+2)}{(x-1)^2}.$$\nPosons $s=\\sqrt{m+2}$. Les zéros sont $1-s$ et $1+s$. Le dénominateur étant positif sur le domaine, $f_m'$ est positif à l'extérieur de ces deux valeurs et négatif entre elles, en séparant naturellement au point interdit $1$.\\par\n\\textbf{4. Valeurs extrémales.} En utilisant la forme adaptée :\n$$f_m(1-s)=s^2-2s,\\qquad f_m(1+s)=s^2+2s.$$\nAinsi les valeurs remarquables sont\n$$m+2-2\\sqrt{m+2}\\quad\\text{et}\\quad m+2+2\\sqrt{m+2}.$$\\par\n\\textbf{Contrôle.} Les variations obtenues doivent être compatibles avec les limites infinies de part et d'autre de $x=1$."
+        },
+        {
+          "type": "warning",
+          "content": "Trois contrôles à faire avant de conclure votre étude : le tableau de variations doit être compatible avec les limites. De plus, le signe de $f'$ ne permet de conclure que sur un intervalle où $f$ est dérivable. Un zéro de $f'$ seul n'est ni un extremum automatique, ni une preuve de convexité."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{On considère $h(x)=\\dfrac{x^2+1}{x^2-1}$.\\begin{enumerate}\\item Déterminer le domaine et exploiter la parité.\\item Calculer les limites aux bornes du domaine et déterminer toutes les asymptotes.\\item Étudier $h'$ puis dresser les variations.\\item Déterminer la position de $C_h$ par rapport à son asymptote horizontale.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Domaine et symétrie.} On a :\n$$D_h=\\mathbb R\\setminus\\{-1,1\\},\\qquad h(-x)=h(x).$$\nDonc $h$ est paire.\\par\n\\textbf{2. Limites.} On obtient :\n$$\\lim_{x\\to\\pm\\infty}h(x)=1.$$\nAinsi $y=1$ est une asymptote horizontale. De plus, $x=-1$ et $x=1$ sont des asymptotes verticales. Les signes de $x^2-1$ donnent :\n$$\\lim_{x\\to-1^-}h(x)=+\\infty,\\quad\n\\lim_{x\\to-1^+}h(x)=-\\infty,$$\n$$\\lim_{x\\to1^-}h(x)=-\\infty,\\quad\n\\lim_{x\\to1^+}h(x)=+\\infty.$$\\par\n\\textbf{3. Variations.} On a :\n$$h'(x)=\\dfrac{-4x}{(x^2-1)^2}.$$\nDonc $h'>0$ pour $x<0$ et $h'<0$ pour $x>0$, en tenant compte des points interdits. De plus $h(0)=-1$.\\par\n\\textbf{4. Position.} On a :\n$$h(x)-1=\\dfrac{2}{x^2-1}.$$\nDonc $C_h$ est au-dessus de $y=1$ lorsque $|x|>1$, et au-dessous lorsque $|x|<1$.\\par\n\\textbf{Contrôle.} Le tableau doit respecter la parité : les deux branches de gauche sont l'image miroir des branches de droite."
+        },
+        {
+          "type": "method",
+          "title": "Comment transformer une situation en problème d'optimisation ?",
+          "content": "Commence par choisir une seule variable et son \\textbf{intervalle de validité}. Exprime ensuite la grandeur à optimiser en fonction de cette variable, puis étudie son signe de variation. Enfin, compare les valeurs critiques avec les bords autorisés. Une valeur qui optimise une formule mais sort du domaine physique n'est jamais une réponse."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Dans le repère, un rectangle a pour sommets supérieurs $M(-x,12-x^2)$ et $N(x,12-x^2)$ sur la parabole $y=12-x^2$, et ses sommets inférieurs sur l'axe des abscisses, avec $x>0$.\\begin{enumerate}\\item Déterminer l'intervalle admissible pour $x$.\\item Exprimer l'aire $A(x)$.\\item Déterminer les dimensions du rectangle d'aire maximale.\\item Justifier qu'il s'agit d'un maximum global et non seulement local.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Domaine.} La hauteur doit être positive :\n$$12-x^2>0.$$\nComme $x>0$, on travaille sur $]0,2\\sqrt3[$.\\par\n\\textbf{2. Aire.} La largeur vaut $2x$ et la hauteur $12-x^2$. Donc :\n$$A(x)=2x(12-x^2)=24x-2x^3.$$\\par\n\\textbf{3. Variations.} On a :\n$$A'(x)=24-6x^2=6(2-x)(2+x).$$\nSur $]0,2\\sqrt3[$, $A'$ est positif avant $2$ et négatif après $2$. Donc $A$ atteint son maximum pour $x=2$.\\par\n\\textbf{4. Dimensions.} La largeur vaut $4$ et la hauteur vaut $12-4=8$. Ainsi :\n$$A_{\\max}=4\\times8=\\blank{32}.$$\nComme $A$ croît puis décroît sur tout l'intervalle admissible, ce maximum est global."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{On cherche une fonction de la forme $F(x)=\\dfrac{x^2+ax+b}{x-1}$. On sait que $C_F$ admet l'asymptote oblique $y=x+3$ et une tangente horizontale au point d'abscisse $3$.\\begin{enumerate}\\item Déterminer $a$ et $b$.\\item Mettre ensuite $F$ sous une forme adaptée aux asymptotes.\\item Étudier $F'$ et dresser les variations.\\item Déterminer la position de $C_F$ par rapport à $y=x+3$.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Détermination des paramètres.} On a :\n$$F(x)=x+a+1+\\dfrac{a+b+1}{x-1}.$$\nL'asymptote $y=x+3$ impose $a+1=3$, donc $a=2$. Par ailleurs :\n$$F'(x)=\\dfrac{x^2-2x-a-b}{(x-1)^2}.$$\nLa condition $F'(3)=0$ donne $3-a-b=0$. Avec $a=2$, on obtient $b=\\blank{1}$.\\par\n\\textbf{2. Forme adaptée.} Donc :\n$$F(x)=\\dfrac{(x+1)^2}{x-1}=x+3+\\dfrac4{x-1}.$$\\par\n\\textbf{3. Variations.} On a :\n$$F'(x)=1-\\dfrac4{(x-1)^2}\n=\\dfrac{(x-3)(x+1)}{(x-1)^2}.$$\nLe signe vient donc de $(x-3)(x+1)$, avec $x=1$ interdit. Les points critiques sont $-1$ et $3$.\\par\n\\textbf{4. Position.} Puisque\n$$F(x)-(x+3)=\\dfrac4{x-1},$$\nla courbe est sous l'asymptote pour $x<1$ et au-dessus pour $x>1$.\\par\n\\textbf{Contrôle.} Une fois $a$ et $b$ trouvés, toutes les informations données dans l'énoncé doivent réapparaître dans l'étude finale."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Le point $M$ appartient à la branche $y=\\dfrac1x$ avec $x>0$. On cherche la position de $M$ la plus proche de l'origine $O$.\\begin{enumerate}\\item Exprimer $OM^2$ en fonction de $x$.\\item Déterminer son minimum par dérivation.\\item Retrouver le même résultat sans dériver, à partir d'un carré positif.\\item En déduire la distance minimale $OM$.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Fonction à minimiser.} Si $M(x,1/x)$, alors :\n$$OM^2=x^2+\\dfrac1{x^2},\\qquad x>0.$$\\par\n\\textbf{2. Par dérivation.} Posons $\\varphi(x)=x^2+x^{-2}$. On a :\n$$\\varphi'(x)=2x-\\dfrac2{x^3}\n=\\dfrac{2(x^4-1)}{x^3}.$$\nSur $]0,+\\infty[$, le signe change de négatif à positif en $x=1$. Donc $\\varphi$ atteint son minimum en $1$, avec $\\varphi(1)=2$.\\par\n\\textbf{3. Sans dériver.} On a :\n$$\\left(x-\\dfrac1x\\right)^2\\geq0.$$\nDonc :\n$$x^2+\\dfrac1{x^2}\\geq2,$$\navec égalité si et seulement si $x=1$.\\par\n\\textbf{4. Conclusion.} La distance minimale vaut :\n$$OM_{\\min}=\\blank{\\sqrt2}.$$\nLe point correspondant est $M(1,1)$."
+        }
+      ]
+    },
+    {
+      "id": "logique-inegalites",
+      "category": "course",
+      "title": "Logique, inégalités et rédaction mathématique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans cette partie, on reprend les mécanismes qui rendent une rédaction fiable : identifier l'\\textbf{hypothèse} et la \\textbf{conclusion}, nier une phrase quantifiée, distinguer \\textbf{implication} et \\textbf{équivalence}, puis choisir une justification adaptée. Pour les inégalités, les conditions de \\textbf{signe} restent toujours visibles. Une lacune précise se corrige par un retour précis : il vaut mieux retrouver la règle utile, l'appliquer immédiatement puis vérifier la conclusion, que relire tout un chapitre. Le travail suit cinq gestes simples : \\textbf{lire}, \\textbf{choisir}, \\textbf{calculer}, \\textbf{justifier} et \\textbf{interpréter}."
+        },
+        {
+          "type": "method",
+          "title": "Comment décoder une consigne avant de démontrer ?",
+          "content": "Avant tout calcul, prends quelques secondes pour identifier ce qui est donné, ce qui est demandé, le domaine ou le signe à contrôler et la forme mathématique reconnue.\\begin{itemize}\\item \\textbf{Montrer que :} partir des hypothèses et atteindre la conclusion.\\item \\textbf{Vérifier que :} un calcul direct suffit souvent.\\item \\textbf{Déduire que :} utiliser explicitement le résultat obtenu juste avant.\\item \\textbf{Résoudre :} produire toutes les solutions, avec des équivalences contrôlées.\\item \\textbf{Étudier le signe :} factoriser ou construire un tableau de signes avant de conclure.\\item \\textbf{Comparer :} étudier une différence, un quotient positif ou une fonction monotone.\\end{itemize}\\par\\smallskip Une rédaction courte suffit : \\textbf{On a} le calcul utile ; \\textbf{or} la condition qui autorise l'étape ; \\textbf{donc} la conséquence ; \\textbf{d'où} la conclusion demandée."
+        },
+        {
+          "type": "remark",
+          "content": "Une bonne rédaction n'est pas longue : elle rend visible \\textbf{pourquoi} l'étape est autorisée. Trois lignes ciblées sont plus rigoureuses que dix lignes sans condition de signe."
+        },
+        {
+          "type": "method",
+          "title": "Comment nier correctement une phrase quantifiée ?",
+          "content": "Les négations à retrouver sont :\\par\\smallskip$$\\neg(\\forall x\\in E,\\ P(x))\\Longleftrightarrow\\exists x\\in E\\ \\text{tel que}\\ \\neg P(x),$$ $$\\neg(\\exists x\\in E,\\ P(x))\\Longleftrightarrow\\forall x\\in E,\\ \\neg P(x).$$\\par Un seul contre-exemple détruit une affirmation universelle. Dire que $f$ est positive sur $I$ signifie $\\forall x\\in I,\\ f(x)\\geq0$ ; sa négation affirme qu'il existe $x\\in I$ tel que $f(x)<0$."
+        },
+        {
+          "type": "warning",
+          "content": "Un piège classique dans lequel vous ne devez pas tomber : $P\\Rightarrow Q$ ne donne pas automatiquement $Q\\Rightarrow P$. Une élévation au carré ou une multiplication par une expression pouvant s'annuler peut créer des solutions parasites. De même, $f'(a)=0$ ne prouve pas à lui seul un extremum."
+        },
+        {
+          "type": "remark",
+          "content": "Une chaîne d'\\textbf{équivalences} exige que chaque passage soit réversible sur le domaine considéré. Si une étape peut seulement aller dans un sens, écris une implication : c'est souvent le détail qui distingue une résolution correcte d'une liste de calculs."
+        },
+        {
+          "type": "method",
+          "title": "Quelles sécurités vérifier avant de transformer une inégalité ?",
+          "content": "\\begin{enumerate}\\item Pour multiplier ou diviser, connaître le signe du facteur. S'il est négatif, l'ordre s'inverse.\\item Pour élever au carré, contrôler les signes des deux membres afin de garder une équivalence.\\item Pour prendre l'inverse sur $]0,+\\infty[$, se souvenir que $x\\mapsto\\dfrac1x$ est décroissante.\\item Pour appliquer une fonction, connaître son sens de variation sur l'intervalle concerné.\\end{enumerate}\\par\\smallskip Quand une inégalité symétrique mélange $x$ et $\\dfrac1x$, cherche un carré du type $(a-b)^2\\geq0$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Résoudre dans $\\mathbb R$ :\n$$\\dfrac{x-1}{x+2}\\leq\\dfrac{x+1}{x-2}.$$\nLa résolution doit être menée sans multiplier directement par les dénominateurs.}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Domaine.} On a :\n$$x\\neq-2,\\qquad x\\neq2.$$\\par\n\\textbf{2. Réduction.} On écrit :\n$$\\dfrac{x-1}{x+2}-\\dfrac{x+1}{x-2}\n=\\dfrac{(x-1)(x-2)-(x+1)(x+2)}{(x+2)(x-2)}.$$\nDonc :\n$$\\dfrac{2(2-3x)}{(x+2)(x-2)}\\leq0.$$\\par\n\\textbf{3. Points critiques.} Les changements de signe peuvent seulement se produire en\n$$-2,\\qquad \\dfrac23,\\qquad2.$$\nLe tableau de signes donne :\n$$x\\in]-2,\\dfrac23]\\cup]2,+\\infty[.$$\\par\n\\textbf{Contrôle.} Les valeurs $-2$ et $2$ restent exclues, même si une transformation algébrique semble les faire disparaître."
+        },
+        {
+          "type": "method",
+          "title": "Comment choisir un type de raisonnement ?",
+          "content": "\\begin{itemize}\\item Une phrase « pour tout » semble fausse : chercher un contre-exemple.\\item Une valeur absolue ou un signe variable apparaît : raisonner par cas.\\item Une conclusion négative est plus simple : utiliser la contraposée.\\item Une propriété indexée par $n$ est demandée : penser à la récurrence.\\item Une quantité difficile est comprise entre deux simples : chercher un encadrement.\\item On veut prouver une impossibilité : envisager l'absurde.\\end{itemize}"
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Pour $x,y>0$, on considère l'affirmation\n$$\\left(x+y\\right)\\left(\\dfrac1x+\\dfrac1y\\right)\\geq4.$$\n\\begin{enumerate}\\item La démontrer en partant d'un carré positif.\\item Déterminer le cas d'égalité.\\item L'affirmation reste-t-elle vraie pour tous réels non nuls $x,y$ ?\\item Donner une condition simple sur les signes de $x$ et $y$ qui permet de conserver l'inégalité.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Démonstration.} On a :\n$$(x-y)^2\\geq0,$$\ndonc\n$$x^2+y^2\\geq2xy.$$\nOr $xy>0$, donc on peut diviser par $xy$ sans changer le sens :\n$$\\dfrac{x}{y}+\\dfrac{y}{x}\\geq2.$$\nAinsi :\n$$\\left(x+y\\right)\\left(\\dfrac1x+\\dfrac1y\\right)\n=2+\\dfrac{x}{y}+\\dfrac{y}{x}\\geq4.$$\\par\n\\textbf{2. Égalité.} Elle a lieu si et seulement si $x=y$.\\par\n\\textbf{3. Contre-exemple.} Pour $x=1$ et $y=-1$, le membre de gauche vaut $0$. L'affirmation universelle sur $\\mathbb R^*$ est donc fausse.\\par\n\\textbf{4. Condition correcte.} Si $x$ et $y$ sont non nuls et de même signe, alors $xy>0$ et la démonstration reste valable.\\par\n\\textbf{Conclusion logique.} Un seul contre-exemple suffit à réfuter l'affirmation « pour tous réels non nuls »."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Pour $n\\geq1$, montrer que\n$$\\dfrac1{\\sqrt1}+\\dfrac1{\\sqrt2}+\\cdots+\\dfrac1{\\sqrt n}\n>2\\left(\\sqrt{n+1}-1\\right).$$\nOn demande d'abord une comparaison terme à terme, puis une seconde preuve par récurrence.}\\par\\smallskip\n\\par\n\\textbf{1. Comparaison locale.} Comme\n$$\\sqrt{k+1}+\\sqrt k>2\\sqrt k,$$\non a :\n$$2(\\sqrt{k+1}-\\sqrt k)\n=\\dfrac2{\\sqrt{k+1}+\\sqrt k}\n<\\dfrac1{\\sqrt k}.$$\\par\n\\textbf{2. Somme.} En additionnant pour $k=1,\\ldots,n$ :\n$$2\\sum_{k=1}^{n}(\\sqrt{k+1}-\\sqrt k)\n<\\sum_{k=1}^{n}\\dfrac1{\\sqrt k}.$$\nLa somme de gauche se simplifie :\n$$2(\\sqrt{n+1}-1)\n<\\sum_{k=1}^{n}\\dfrac1{\\sqrt k}.$$\\par\n\\textbf{3. Récurrence.} L'initialisation pour $n=1$ est immédiate. Supposons le résultat vrai au rang $n$. Alors :\n$$\\sum_{k=1}^{n+1}\\dfrac1{\\sqrt k}\n>2(\\sqrt{n+1}-1)+\\dfrac1{\\sqrt{n+1}}.$$\nOr, d'après la comparaison locale avec $k=n+1$ :\n$$\\dfrac1{\\sqrt{n+1}}>2(\\sqrt{n+2}-\\sqrt{n+1}).$$\nDonc :\n$$\\sum_{k=1}^{n+1}\\dfrac1{\\sqrt k}\n>2(\\sqrt{n+2}-1).$$\nD'où le résultat pour tout $n\\geq1$."
+        }
+      ]
+    },
+    {
+      "id": "limites",
+      "category": "course",
+      "title": "Limites : reconnaître la forme avant de calculer",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cette partie apprend à reconnaître la \\textbf{forme} d'une limite avant de calculer. On choisira alors entre \\textbf{substitution}, \\textbf{factorisation}, \\textbf{terme dominant}, quantité conjuguée, limite remarquable, encadrement ou étude latérale du signe."
+        },
+        {
+          "type": "method",
+          "title": "Quelle méthode choisir après une substitution mentale ?",
+          "content": "\\begin{enumerate}\\item La substitution donne un réel : calcul direct.\\item Elle donne $\\dfrac00$ : factoriser, simplifier, conjuguer ou utiliser une limite remarquable.\\item Elle donne $\\dfrac\\infty\\infty$ : mettre en facteur le terme de plus haut degré.\\item Le dénominateur tend vers $0$ et le numérateur vers un réel non nul : étudier les signes à gauche et à droite.\\item Une expression bornée est multipliée par une quantité qui tend vers $0$ : penser à l'encadrement.\\end{enumerate}"
+        },
+        {
+          "type": "remark",
+          "content": "Les formes $\\dfrac00$, $\\dfrac\\infty\\infty$, $\\infty-\\infty$ et $0\\times\\infty$ sont indéterminées. Cela signifie seulement que la forme ne permet pas de conclure : il faut transformer l'expression."
+        },
+        {
+          "type": "remark",
+          "content": "Pour une limite en un point $a$, les deux limites latérales doivent être \\textbf{finies ou infinies de même nature} pour obtenir une limite unique. Une asymptote verticale se lit donc toujours avec les signes à gauche et à droite."
+        },
+        {
+          "type": "method",
+          "title": "Comment lire le terme dominant à l'infini ?",
+          "content": "À $+\\infty$ ou $-\\infty$, un polynôme a le comportement de son terme de plus haut degré. Pour $R(x)=\\dfrac{a_px^p+\\cdots}{b_qx^q+\\cdots}$, divise numérateur et dénominateur par la plus grande puissance utile de $x$.\\par\\smallskip\\begin{itemize}\\item Si $p<q$, la limite vaut $0$.\\item Si $p=q$, la limite vaut $\\dfrac{a_p}{b_q}$.\\item Si $p>q$, le signe et la puissance restante déterminent l'infini.\\end{itemize}"
+        },
+        {
+          "type": "warning",
+          "content": "Beaucoup d'élèves perdent des points ici : si $D(x)\\to0$ et $N(x)\\to L\\ne0$, ne calculez pas une seule limite de $\\dfrac{N(x)}{D(x)}$. Étudiez le signe de $N$ près du point, puis celui de $D$ à gauche et à droite."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Calculer les trois limites suivantes en annonçant, avant chaque calcul, la transformation décisive :\n\\begin{enumerate}\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sqrt{1+\\sin x}-\\sqrt{1-\\sin x}}{x}$ ;\\item $\\displaystyle\\lim_{x\\to0}\\dfrac{1-\\cos(2x)}{x^2}$ ;\\item $\\displaystyle\\lim_{x\\to+\\infty}\\left(\\sqrt{x^2+3x}-x\\right)$.\\end{enumerate}}\\par\\smallskip\n\\textbf{1. Deux racines : conjuguer la différence.} On a :\n$$\\dfrac{\\sqrt{1+\\sin x}-\\sqrt{1-\\sin x}}{x}\n=\\dfrac{2\\sin x}{x\\left(\\sqrt{1+\\sin x}+\\sqrt{1-\\sin x}\\right)}.$$\nDonc :\n$$\\lim_{x\\to0}\\dfrac{\\sqrt{1+\\sin x}-\\sqrt{1-\\sin x}}{x}\n=\\dfrac{2}{2}\\times\\lim_{x\\to0}\\dfrac{\\sin x}{x}\n=\\blank{1}.$$\\par\n\\textbf{2. Angle composé : faire apparaître la limite remarquable.} On écrit :\n$$\\dfrac{1-\\cos(2x)}{x^2}\n=4\\,\\dfrac{1-\\cos(2x)}{(2x)^2}.$$\nDonc la limite vaut $\\blank{2}$.\\par\n\\textbf{3. Forme $\\infty-\\infty$ : conjuguer.} On a :\n$$\\sqrt{x^2+3x}-x\n=\\dfrac{3x}{\\sqrt{x^2+3x}+x}\n=\\dfrac3{\\sqrt{1+3/x}+1}.$$\nDonc la limite vaut $\\blank{\\dfrac32}$.\\par\n\\textbf{Contrôle.} Trois formes différentes conduisent à trois réflexes différents : conjugaison, limite remarquable, puis conjugaison avec factorisation par $x$."
+        },
+        {
+          "type": "remark",
+          "content": "La simplification est valable pour $x\\ne0$. C'est compatible avec une limite : on étudie ce qui se passe près de $0$, pas nécessairement en $0$."
+        },
+        {
+          "type": "method",
+          "title": "Comment reconnaître une limite remarquable ou une asymptote ?",
+          "content": "Les limites remarquables à retrouver sont $\\displaystyle\\lim_{x\\to0}\\dfrac{\\sin x}{x}=1$, $\\displaystyle\\lim_{x\\to0}\\dfrac{\\tan x}{x}=1$ et $\\displaystyle\\lim_{x\\to0}\\dfrac{1-\\cos x}{x^2}=\\dfrac12$.\\par\\smallskip Pour une asymptote : $\\lim_{x\\to a}f(x)=\\pm\\infty$ donne $x=a$ ; $\\lim_{x\\to\\pm\\infty}f(x)=b$ donne $y=b$ ; $\\lim_{x\\to\\pm\\infty}[f(x)-(ax+b)]=0$ donne $y=ax+b$."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{On considère\n$$g(x)=\\dfrac{x^2-1}{|x-1|},\\qquad x\\neq1.$$\n\\begin{enumerate}\\item Simplifier $g$ séparément sur $]-\\infty,1[$ et $]1,+\\infty[$.\\item Calculer les deux limites latérales en $1$.\\item La limite de $g$ en $1$ existe-t-elle ?\\item Peut-on choisir une valeur $g(1)$ qui rende la fonction continue en $1$ ? Justifier.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. À gauche.} Si $x<1$, alors $|x-1|=1-x=-(x-1)$. Donc :\n$$g(x)=-(x+1).$$\nAinsi :\n$$\\lim_{x\\to1^-}g(x)=\\blank{-2}.$$\\par\n\\textbf{2. À droite.} Si $x>1$, alors $|x-1|=x-1$. Donc :\n$$g(x)=x+1.$$\nAinsi :\n$$\\lim_{x\\to1^+}g(x)=\\blank{2}.$$\\par\n\\textbf{3. Conclusion.} Les limites latérales sont différentes. Donc $\\displaystyle\\lim_{x\\to1}g(x)$ n'existe pas.\\par\n\\textbf{4. Continuité.} Aucune valeur attribuée à $g(1)$ ne peut rendre $g$ continue en $1$, car le problème vient des deux limites latérales et non de la valeur au point."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{On considère\n$$F(x)=\\sqrt{x^2+2x+5}-x.$$\n\\begin{enumerate}\\item Calculer $\\displaystyle\\lim_{x\\to+\\infty}F(x)$ et en déduire une asymptote.\\item Étudier $\\displaystyle\\lim_{x\\to-\\infty}F(x)$.\\item Calculer $\\displaystyle\\lim_{x\\to-\\infty}\\left(F(x)+2x+1\\right)$.\\item En déduire une asymptote à $-\\infty$.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. À $+\\infty$.} En conjuguant :\n$$F(x)=\\dfrac{2x+5}{\\sqrt{x^2+2x+5}+x}\n=\\dfrac{2+5/x}{\\sqrt{1+2/x+5/x^2}+1}.$$\nDonc :\n$$\\lim_{x\\to+\\infty}F(x)=\\blank{1}.$$\nAinsi $y=1$ est une asymptote horizontale à $+\\infty$.\\par\n\\textbf{2. À $-\\infty$.} On écrit :\n$$F(x)=(-x)\\sqrt{1+\\dfrac2x+\\dfrac5{x^2}}-x.$$\nLes deux termes principaux valent alors $-x$ et $-x$, donc $F(x)\\to+\\infty$.\\par\n\\textbf{3. Recherche de l'asymptote oblique.} On a :\n$$F(x)+2x+1=\\sqrt{x^2+2x+5}+x+1.$$\nOr :\n$$\\sqrt{x^2+2x+5}+x\n=\\dfrac{2x+5}{\\sqrt{x^2+2x+5}-x}.$$\nÀ $-\\infty$, le quotient tend vers $-1$. Donc :\n$$\\lim_{x\\to-\\infty}\\left(F(x)+2x+1\\right)=0.$$\\par\n\\textbf{4. Conclusion.} L'asymptote à $-\\infty$ est :\n$$y=\\blank{-2x-1}.$$\nLe même radical produit donc deux comportements asymptotiques différents selon le côté de l'infini."
+        }
+      ]
+    },
+    {
+      "id": "derivation",
+      "category": "course",
+      "title": "Dérivation : traduire une variation locale",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ici, on relie le \\textbf{nombre dérivé}, l'\\textbf{équation de la tangente} et les formules de dérivation à l'étude des \\textbf{variations}. L'essentiel est de passer proprement du signe de $f'$ au comportement de la fonction."
+        },
+        {
+          "type": "method",
+          "title": "Comment relier nombre dérivé et tangente ?",
+          "content": "Si elle existe et est finie, $$f'(a)=\\lim_{x\\to a}\\dfrac{f(x)-f(a)}{x-a}=\\lim_{h\\to0}\\dfrac{f(a+h)-f(a)}h.$$ La tangente en $A(a,f(a))$ a pour équation $$y=f'(a)(x-a)+f(a).$$\\par Dérivable en $a$ implique continue en $a$, mais la réciproque est fausse : $x\\mapsto|x|$ est continue en $0$ sans y être dérivable."
+        },
+        {
+          "type": "method",
+          "title": "Comment lire une expression avant de la dériver ?",
+          "content": "Lis l'expression de l'extérieur vers l'intérieur. Une somme se dérive terme à terme ; un produit donne $u'v+uv'$ ; un quotient donne $\\dfrac{u'v-uv'}{v^2}$ avec $v\\ne0$ ; une composée donne dérivée extérieure multipliée par dérivée intérieure.\\par\\smallskip Avant de développer un numérateur, cherche une factorisation : pour le signe, une forme factorisée est souvent la plus utile."
+        },
+        {
+          "type": "method",
+          "title": "Comment lire le signe de la dérivée ?",
+          "content": "Sur un intervalle où $f$ est dérivable, $f'(x)\\geq0$ implique que $f$ est croissante et $f'(x)\\leq0$ implique qu'elle est décroissante. Si $f'$ change de signe en $a$, alors $f(a)$ est un extremum local."
+        },
+        {
+          "type": "remark",
+          "content": "Avant de dériver, note le \\textbf{domaine}. Après avoir dérivé, cherche une forme qui rend le \\textbf{signe} lisible : développer est utile pour calculer, factoriser est souvent décisif pour conclure."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{On définit\n$$f(x)=\n\\begin{cases}\nax^2+bx+1,& x\\leq1,\\\\\n3x-1,& x>1.\n\\end{cases}$$\nDéterminer $a$ et $b$ pour que $f$ soit dérivable en $1$.}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Continuité en $1$.} On doit avoir :\n$$a+b+1=2,$$\ndonc :\n$$a+b=1.$$\\par\n\\textbf{2. Dérivées latérales.} À gauche :\n$$f'_-(1)=2a+b.$$\nÀ droite :\n$$f'_+(1)=3.$$\nLa dérivabilité impose :\n$$2a+b=3.$$\\par\n\\textbf{3. Résolution.} En soustrayant $a+b=1$ de $2a+b=3$, on obtient :\n$$a=\\blank{2},\\qquad b=\\blank{-1}.$$\\par\n\\textbf{Contrôle.} Pour ces valeurs, les deux expressions donnent bien $f(1)=2$ et les deux pentes valent $3$."
+        },
+        {
+          "type": "warning",
+          "content": "Un raccourci que vous ne devez pas prendre : $f''(a)=0$ seul ne prouve rien. Pour obtenir un point d'inflexion, vérifiez le changement de signe de $f''$, ou plus généralement le changement de convexité."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{On considère la parabole $C_f$ d'équation $y=x^2+1$ et le point $P(1,0)$.\\begin{enumerate}\\item Écrire l'équation de la tangente à $C_f$ au point d'abscisse $a$.\\item Déterminer toutes les tangentes à $C_f$ passant par $P$.\\item Donner les abscisses des points de contact et les pentes correspondantes.\\item Vérifier que le produit des deux pentes vaut $-4$.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Tangente en $a$.} On a :\n$$f'(a)=2a,\\qquad f(a)=a^2+1.$$\nDonc :\n$$T_a:\\ y=2a(x-a)+a^2+1\n=2ax+1-a^2.$$\\par\n\\textbf{2. Passage par $P$.} Le point $P(1,0)$ appartient à $T_a$ si :\n$$0=2a+1-a^2.$$\nDonc :\n$$a^2-2a-1=0.$$\nD'où :\n$$a_1=1-\\sqrt2,\\qquad a_2=1+\\sqrt2.$$\\par\n\\textbf{3. Pentes.} Les deux pentes sont :\n$$m_1=2-2\\sqrt2,\\qquad m_2=2+2\\sqrt2.$$\\par\n\\textbf{4. Contrôle.} On a :\n$$m_1m_2=(2-2\\sqrt2)(2+2\\sqrt2)=\\blank{-4}.$$\nIl existe donc exactement deux tangentes issues de $P$."
+        }
+      ]
+    },
+    {
+      "id": "suites-numeriques",
+      "category": "course",
+      "title": "Suites numériques : transférer les réflexes des fonctions",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cette partie reprend les liens entre \\textbf{suites} et \\textbf{fonctions} : distinguer une suite \\textbf{explicite} d'une suite \\textbf{récurrente}, étudier sa monotonie et ses bornes, reconnaître les cas arithmétique ou géométrique, puis rédiger une récurrence proprement."
+        },
+        {
+          "type": "method",
+          "title": "Comment lire une suite explicite ou récurrente ?",
+          "content": "Si $u_n=f(n)$, on peut souvent transférer l'étude de la fonction $f$ aux entiers. Si $u_{n+1}=\\varphi(u_n)$, il faut connaître un premier terme et raisonner sur le passage de $u_n$ à $u_{n+1}$. Une suite est une fonction définie sur des entiers : si $f$ est croissante sur $[0,+\\infty[$ et $u_n=f(n)$, alors $(u_n)$ est croissante."
+        },
+        {
+          "type": "method",
+          "title": "Comment choisir une méthode de monotonie ?",
+          "content": "\\begin{itemize}\\item Étudier $u_{n+1}-u_n$ : méthode universelle.\\item Si $u_n>0$, comparer $\\dfrac{u_{n+1}}{u_n}$ à $1$ peut être plus rapide.\\item Si $u_n=f(n)$, étudier la monotonie de $f$ peut éviter des calculs lourds.\\end{itemize}"
+        },
+        {
+          "type": "remark",
+          "content": "Une suite monotone n'est pas automatiquement convergente vers un réel : il faut aussi une \\textbf{borne} du bon côté. Croissante et majorée, ou décroissante et minorée, elle admet alors une limite finie."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{On définit $u_0=1$ et\n$$u_{n+1}=\\dfrac{2u_n+3}{u_n+2}.$$\n\\begin{enumerate}\\item Montrer par récurrence que $1\\leq u_n<\\sqrt3$ pour tout $n$.\\item Calculer $u_{n+1}-u_n$ et en déduire la monotonie de $(u_n)$.\\item Justifier que $(u_n)$ converge.\\item Déterminer sa limite.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Intervalle stable.} On a $1\\leq u_0<\\sqrt3$. Supposons $1\\leq u_n<\\sqrt3$. Comme $u_n+2>0$ :\n$$u_{n+1}-1=\\dfrac{u_n+1}{u_n+2}>0.$$\nDonc $u_{n+1}>1$. De plus :\n$$\\sqrt3-u_{n+1}\n=\\dfrac{\\sqrt3(u_n+2)-(2u_n+3)}{u_n+2}\n=\\dfrac{(2-\\sqrt3)(\\sqrt3-u_n)}{u_n+2}>0.$$\nAinsi $u_{n+1}<\\sqrt3$.\\par\n\\textbf{2. Monotonie.} On a :\n$$u_{n+1}-u_n\n=\\dfrac{3-u_n^2}{u_n+2}.$$\nOr $u_n<\\sqrt3$, donc $3-u_n^2>0$. Ainsi $(u_n)$ est strictement croissante.\\par\n\\textbf{3. Convergence.} La suite est croissante et majorée par $\\sqrt3$. Elle converge donc vers un réel $\\ell$.\\par\n\\textbf{4. Limite.} En passant à la limite dans la relation :\n$$\\ell=\\dfrac{2\\ell+3}{\\ell+2}.$$\nDonc $\\ell^2=3$. Comme $\\ell\\geq1$, on obtient :\n$$\\ell=\\blank{\\sqrt3}.$$\\par\n\\textbf{Contrôle.} La seconde solution $-\\sqrt3$ de l'équation algébrique est éliminée par les bornes de la suite."
+        },
+        {
+          "type": "method",
+          "title": "Comment utiliser un intervalle stable ?",
+          "content": "Pour $u_{n+1}=\\varphi(u_n)$, cherche un intervalle $I$ tel que $u_0\\in I$ et $\\varphi(I)\\subset I$. Une récurrence donne alors $u_n\\in I$ pour tout $n$. Cette borne est souvent le préalable à l'étude de la monotonie."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Pour $n\\geq1$, on pose\n$$u_n=\\dfrac{n^2}{2^n}.$$\n\\begin{enumerate}\\item Étudier le quotient $\\dfrac{u_{n+1}}{u_n}$.\\item Déterminer à partir de quel rang la suite devient strictement décroissante.\\item Déterminer le maximum de la suite et le rang où il est atteint.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Quotient.} On a :\n$$\\dfrac{u_{n+1}}{u_n}\n=\\dfrac{(n+1)^2}{2n^2}.$$\nAinsi $u_{n+1}>u_n$ équivaut à :\n$$(n+1)^2>2n^2,$$\nsoit :\n$$n^2-2n-1<0.$$\\par\n\\textbf{2. Lecture sur les entiers.} Les racines sont $1-\\sqrt2$ et $1+\\sqrt2$. Pour $n\\geq1$, l'inégalité est vraie seulement pour $n=1$ et $n=2$. Donc :\n$$u_1<u_2<u_3,$$\npuis la suite est strictement décroissante à partir de $n=3$.\\par\n\\textbf{3. Maximum.} Il est atteint pour $n=3$ :\n$$u_3=\\dfrac9{8}.$$\nDonc :\n$$\\max_{n\\geq1}u_n=\\blank{\\dfrac98}.$$\\par\n\\textbf{Contrôle.} Il faut distinguer « décroissante à partir du rang $3$ » et « $u_3<u_2$ » : le premier quotient inférieur à $1$ est celui qui compare $u_4$ à $u_3$."
+        },
+        {
+          "type": "method",
+          "title": "Quelles formules retrouver pour les suites usuelles ?",
+          "content": "Pour une suite arithmétique de raison $r$ : $u_{n+1}=u_n+r$ et $u_n=u_p+(n-p)r$. Pour une suite géométrique de raison $q$ : $u_{n+1}=qu_n$ et $u_n=q^{n-p}u_p$.\\par La somme arithmétique est le nombre de termes multiplié par la moyenne du premier et du dernier. Pour $q\\ne1$, $$u_p+\\cdots+u_n=u_p\\dfrac{1-q^{n-p+1}}{1-q}. $$"
+        },
+        {
+          "type": "warning",
+          "content": "C’est un piège classique, prenez-y garde : le nombre de termes de $u_p+u_{p+1}+\\cdots+u_n$ vaut $n-p+1$, pas $n-p$."
+        },
+        {
+          "type": "application",
+          "difficulty": 4,
+          "content": "\\qst{Une suite géométrique positive $(w_n)$ vérifie\n$$w_0+w_1+w_2=14,\\qquad w_0w_2=16.$$\n\\begin{enumerate}\\item Déterminer $w_1$ sans chercher d'abord la raison.\\item Déterminer les valeurs possibles de $w_0$ et $w_2$.\\item En déduire les deux raisons possibles.\\item Si l'on sait en plus que la suite est croissante, déterminer ses trois premiers termes puis calculer $w_0+\\cdots+w_5$.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Terme central.} Comme la suite est positive :\n$$w_1^2=16,$$\ndonc :\n$$w_1=\\blank{4}.$$\\par\n\\textbf{2. Termes extrêmes.} On a :\n$$w_0+w_2=10,\\qquad w_0w_2=16.$$\nAinsi $w_0$ et $w_2$ sont les racines de\n$$X^2-10X+16=0.$$\nDonc $\\{w_0,w_2\\}=\\{2,8\\}$.\\par\n\\textbf{3. Raisons.} Les deux possibilités sont :\n$$(2,4,8)\\quad\\text{avec }q=2,$$\nou\n$$(8,4,2)\\quad\\text{avec }q=\\dfrac12.$$\\par\n\\textbf{4. Cas croissant.} On retient $w_0=2$ et $q=2$. Donc :\n$$w_0+\\cdots+w_5\n=2\\,\\dfrac{1-2^6}{1-2}\n=\\blank{126}.$$\nLa condition de monotonie sert ici à choisir entre deux solutions algébriques."
+        }
+      ]
+    },
+    {
+      "id": "trigonometrie",
+      "category": "course",
+      "title": "Trigonométrie : choisir une transformation",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans cette partie, on choisit la \\textbf{transformation trigonométrique} adaptée : addition, angle double, somme-produit, produit-somme ou forme $a\\cos x+b\\sin x$. On termine en résolvant les équations sans oublier leur \\textbf{périodicité}."
+        },
+        {
+          "type": "method",
+          "title": "Quelle forme veut-on obtenir avant de choisir une formule ?",
+          "content": "\\begin{itemize}\\item $\\sin(x\\pm y)$ ou $\\cos(x\\pm y)$ : formules d'addition.\\item $\\sin x\\cos x$, $\\sin^2x$ ou $\\cos^2x$ : angle double.\\item Un produit trigonométrique : le transformer en somme pour linéariser.\\item Une somme de sinus ou cosinus : la transformer en produit pour factoriser ou résoudre.\\item $a\\cos x+b\\sin x$ : chercher l'amplitude $r=\\sqrt{a^2+b^2}$.\\end{itemize}"
+        },
+        {
+          "type": "method",
+          "title": "Quelles formules trigonométriques doivent rester disponibles ?",
+          "content": "$$\\cos(x-y)=\\cos x\\cos y+\\sin x\\sin y,\\qquad \\cos(x+y)=\\cos x\\cos y-\\sin x\\sin y.$$ $$\\sin(x+y)=\\sin x\\cos y+\\cos x\\sin y,\\qquad \\sin(x-y)=\\sin x\\cos y-\\cos x\\sin y.$$ $$\\sin2x=2\\sin x\\cos x,\\qquad \\cos2x=2\\cos^2x-1=1-2\\sin^2x.$$"
+        },
+        {
+          "type": "warning",
+          "content": "Un oubli très fréquent, qui vous fera perdre la moitié des solutions : $\\cos x=\\cos a$ ne donne pas seulement $x=a+2k\\pi$. Il faut aussi la famille $x=-a+2k\\pi$. Pour $k\\in\\mathbb Z$ : $\\sin x=\\sin a$ donne $x=a+2k\\pi$ ou $x=\\pi-a+2k\\pi$, et $\\tan x=\\tan a$ donne $x=a+k\\pi$."
+        },
+        {
+          "type": "remark",
+          "content": "Les identités de dérivation et les limites remarquables utilisent des angles en \\textbf{radians}. Avant une équation, fixe aussi l'ensemble de résolution : sur un intervalle, on filtre les familles de solutions ; sur $\\mathbb R$, on les écrit toutes."
+        },
+        {
+          "type": "method",
+          "title": "Comment transformer $a\\cos x+b\\sin x$ en une forme unique ?",
+          "content": "Avec $r=\\sqrt{a^2+b^2}$, choisir $\\varphi$ tel que $$\\cos\\varphi=\\dfrac ar,\\qquad \\sin\\varphi=\\dfrac br. $$ Alors $$a\\cos x+b\\sin x=r\\cos(x-\\varphi).$$ On lit immédiatement $|a\\cos x+b\\sin x|\\leq r$."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{Résoudre dans $[0,2\\pi[$ :\n$$\\cos3x+\\cos x=0.$$\nLa résolution doit commencer par une transformation somme-produit, sans développer $\\cos3x$.}\\par\\smallskip\n\\par\\smallskip\nOn a :\n$$\\cos3x+\\cos x\n=2\\cos\\left(\\dfrac{3x+x}{2}\\right)\n\\cos\\left(\\dfrac{3x-x}{2}\\right)\n=2\\cos2x\\cos x.$$\nDonc :\n$$\\cos2x=0\\quad\\text{ou}\\quad\\cos x=0.$$\\par\n\\textbf{1. Première famille.} On a :\n$$2x=\\dfrac\\pi2+k\\pi,$$\ndonc :\n$$x=\\dfrac\\pi4+\\dfrac{k\\pi}{2}.$$\nDans $[0,2\\pi[$, cela donne :\n$$\\dfrac\\pi4,\\ \\dfrac{3\\pi}4,\\ \\dfrac{5\\pi}4,\\ \\dfrac{7\\pi}4.$$\\par\n\\textbf{2. Deuxième famille.} On a :\n$$x=\\dfrac\\pi2+k\\pi,$$\nd'où :\n$$\\dfrac\\pi2,\\ \\dfrac{3\\pi}2.$$\\par\n\\textbf{Conclusion.} L'ensemble des solutions est :\n$$\\left\\{\\dfrac\\pi4,\\dfrac\\pi2,\\dfrac{3\\pi}4,\n\\dfrac{5\\pi}4,\\dfrac{3\\pi}2,\\dfrac{7\\pi}4\\right\\}.$$\nLe point important est que la transformation évite une équation trigonométrique de degré inutilement élevé."
+        },
+        {
+          "type": "application",
+          "difficulty": 5,
+          "content": "\\qst{On pose\n$$F(x)=2\\cos x+2\\sqrt3\\sin x.$$\n\\begin{enumerate}\\item Écrire $F(x)$ sous la forme $R\\cos(x-\\varphi)$ avec $R>0$.\\item En déduire le maximum, le minimum et les valeurs de $x$ où ils sont atteints.\\item Résoudre dans $[0,2\\pi[$ l'inégalité $F(x)\\geq2$.\\end{enumerate}}\\par\\smallskip\n\\par\\smallskip\n\\textbf{1. Réduction.} On a :\n$$R=\\sqrt{2^2+(2\\sqrt3)^2}=4.$$\nOn cherche $\\varphi$ tel que :\n$$\\cos\\varphi=\\dfrac12,\\qquad\n\\sin\\varphi=\\dfrac{\\sqrt3}{2}.$$\nDonc $\\varphi=\\dfrac\\pi3$ et :\n$$F(x)=\\blank{4\\cos\\left(x-\\dfrac\\pi3\\right)}.$$\\par\n\\textbf{2. Extrema.} Comme $-1\\leq\\cos(\\cdot)\\leq1$ :\n$$-4\\leq F(x)\\leq4.$$\nLe maximum $4$ est atteint lorsque $x-\\dfrac\\pi3=2k\\pi$ ; le minimum $-4$ lorsque $x-\\dfrac\\pi3=\\pi+2k\\pi$.\\par\n\\textbf{3. Inégalité.} On doit résoudre :\n$$\\cos\\left(x-\\dfrac\\pi3\\right)\\geq\\dfrac12.$$\nDans $[0,2\\pi[$, on obtient :\n$$x\\in\\blank{\\left[0,\\dfrac{2\\pi}{3}\\right]}.$$\nLa réduction à une seule cosinusoïde permet donc de lire à la fois les extrema et l'ensemble des solutions."
+        },
+        {
+          "type": "text",
+          "content": "\\textbf{Pour finir :} prends une feuille vide. Pour chaque partie, écris de mémoire seulement les titres des méthodes et des résultats cruciaux, puis refais les neuf exemples sans regarder la rédaction. Le but est que le choix de méthode revienne avant la formule."
+        }
+      ]
+    }
+  ]
+}

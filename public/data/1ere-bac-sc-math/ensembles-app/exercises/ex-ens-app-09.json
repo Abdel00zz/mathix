@@ -1,0 +1,30 @@
+{
+  "id": "ex-ens-app-09",
+  "theme": "ensembles-app",
+  "difficulty": "facile",
+  "topic": "Théorie des Ensembles — Inclusions et parties d'un ensemble",
+  "requiresRedaction": true,
+  "context": "Soient $A$, $B$ et $C$ trois parties d'un ensemble $E$.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Montrer que : $\\begin{cases} C \\cup A \\subset C \\cup B \\\\ C \\cap A \\subset C \\cap B \\end{cases} \\Rightarrow A \\subset B$",
+      "hint": "Soit $x \\in A$. Distinguez les cas $x \\in C$ et $x \\notin C$, et utilisez les deux inclusions."
+    },
+    {
+      "id": "q2",
+      "content": "Montrer que : $A \\subset C \\Rightarrow A \\cup (B \\cap C) = (A \\cup B) \\cap C$",
+      "hint": "Montrez la double inclusion. Pour $\\subset$ : si $x \\in A \\cup (B \\cap C)$, distinguez $x \\in A$ et $x \\in B \\cap C$, et utilisez $A \\subset C$."
+    },
+    {
+      "id": "q3",
+      "content": "Montrer que : $A \\cap B = A \\cap C \\iff A \\cap \\overline{B} = A \\cap \\overline{C}$",
+      "hint": "Intersectez les deux membres avec $A$ et utilisez que $A = (A \\cap B) \\cup (A \\cap \\overline{B})$."
+    },
+    {
+      "id": "q4",
+      "content": "Montrer que : $A \\cup B = A \\cap C \\iff B \\subset A \\subset C$",
+      "hint": "Pour $\\Rightarrow$ : montrez d'abord $B \\subset A$ (car $A \\cup B \\supset B$ et $A \\cap C \\subset A$), puis $A \\subset C$."
+    }
+  ]
+}

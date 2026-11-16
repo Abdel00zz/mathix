@@ -1,0 +1,99 @@
+{
+  "id": "ex-log-010",
+  "theme": "logarithmes",
+  "difficulty": "difficile",
+  "topic": "Analyse - Logarithmes",
+  "context": "Soit $f$ la fonction numérique définie sur $]0;+\\infty[$ par : $$f(x)=x+\\frac{1}{2}-\\ln x+\\frac{1}{2}(\\ln x)^2$$ et $(C)$ sa courbe représentative dans un repère orthonormé $(O;\\overrightarrow{i};\\overrightarrow{j})$ (unité : 1 cm).",
+  "requiresRedaction": true,
+  "questions": [
+    {
+      "id": "q1",
+      "content": "Calculer $\\displaystyle \\lim_{x \\to 0^+} f(x)$ puis interpréter le résultat géométriquement.",
+      "hint": "Factorisez la partie logarithmique : $\\ln x(\\frac{1}{2}\\ln x - 1)$ ou remarquez que $(\\ln x)^2$ domine $\\ln x$ et tend vers $+\\infty$."
+    },
+    {
+      "id": "q2",
+      "content": "Étude en $+\\infty$ et branche infinie",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Vérifier que pour tout $x \\in ]0;+\\infty[$ : $f(x) = x + \\frac{1}{2} + \\left(\\frac{1}{2}\\ln x - 1\\right)\\ln x$.",
+          "hint": "Simple factorisation partielle des termes en $\\ln x$."
+        },
+        {
+          "id": "sq2b",
+          "content": "En déduire que $\\displaystyle \\lim_{x \\to +\\infty} f(x) = +\\infty$.",
+          "hint": "Utilisez l'expression précédente. $x \\to +\\infty$, $\\ln x \\to +\\infty$."
+        },
+        {
+          "id": "sq2c",
+          "content": "Montrer que pour tout $x \\in ]0;+\\infty[$ : $\\frac{(\\ln x)^2}{x} = 4 \\left( \\frac{\\ln\\sqrt{x}}{\\sqrt{x}} \\right)^2$ puis en déduire que $\\displaystyle \\lim_{x \\to +\\infty} \\frac{(\\ln x)^2}{x} = 0$.",
+          "hint": "Utilisez $\\ln x = 2\\ln\\sqrt{x}$. Posez $t = \\sqrt{x}$ pour la limite."
+        },
+        {
+          "id": "sq2d",
+          "content": "Montrer que $(C)$ admet au voisinage de $+\\infty$ une branche parabolique de direction asymptotique la droite $(\\Delta)$ d'équation $y=x$.",
+          "hint": "Calculez $\\lim_{x \\to +\\infty} \\frac{f(x)}{x}$ puis $\\lim_{x \\to +\\infty} (f(x) - x)$. Rappel : si $\\frac{f(x)}{x} \\to 1$ et $f(x)-x \\to \\infty$, c'est une branche parabolique de direction $y=x$."
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "content": "Variations",
+      "subQuestions": [
+        {
+          "id": "sq3a",
+          "content": "Vérifier que pour tout $x \\in ]0;1]$ : $(x-1)+\\ln x \\le 0$ et que pour tout $x \\in [1;+\\infty[$ : $(x-1)+\\ln x \\ge 0$.",
+          "hint": "Étudiez le signe de la fonction auxiliaire $u(x) = x - 1 + \\ln x$ ou utilisez les propriétés connues de $\\ln x$ et $x-1$ sur ces intervalles."
+        },
+        {
+          "id": "sq3b",
+          "content": "Montrer que pour tout $x \\in ]0;+\\infty[$ : $f'(x) = \\frac{x-1+\\ln x}{x}$.",
+          "hint": "Dérivez $f(x)$. $(\\frac{1}{2}(\\ln x)^2)' = \\frac{1}{2} \\cdot 2 \\ln x \\cdot \\frac{1}{x} = \\frac{\\ln x}{x}$."
+        },
+        {
+          "id": "sq3c",
+          "content": "Dresser le tableau de variations de la fonction $f$.",
+          "hint": "Le signe de $f'(x)$ est celui du numérateur étudié en 3a."
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "content": "Concavité",
+      "subQuestions": [
+        {
+          "id": "sq4a",
+          "content": "Montrer que $f''(x) = \\frac{2-\\ln x}{x^2}$ pour tout $x \\in ]0;+\\infty[$.",
+          "hint": "Dérivez $f'(x) = 1 - \\frac{1}{x} + \\frac{\\ln x}{x}$."
+        },
+        {
+          "id": "sq4b",
+          "content": "En déduire que $(C)$ admet un point d'inflexion dont on déterminera les coordonnées.",
+          "hint": "Étudiez le signe de $f''(x)$. Il change en $x = e^2$."
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "content": "Position relative et construction",
+      "subQuestions": [
+        {
+          "id": "sq5a",
+          "content": "Montrer que pour tout $x \\in ]0;+\\infty[$ : $f(x) - x = \\frac{1}{2}(\\ln x - 1)^2$.",
+          "hint": "Calculez la différence et reconnaissez une identité remarquable ou factorisez."
+        },
+        {
+          "id": "sq5b",
+          "content": "En déduire la position relative de $(C)$ et $(\\Delta)$.",
+          "hint": "Le carré est toujours positif ou nul."
+        },
+        {
+          "id": "sq5c",
+          "content": "Construire $(\\Delta)$ et $(C)$ dans le même repère $(O;\\overrightarrow{i};\\overrightarrow{j})$.",
+          "hint": "N'oubliez pas l'asymptote verticale, la branche parabolique, la tangente horizontale en 1, le point d'inflexion et le point de contact avec $y=x$ en $e$."
+        }
+      ]
+    }
+  ]
+}

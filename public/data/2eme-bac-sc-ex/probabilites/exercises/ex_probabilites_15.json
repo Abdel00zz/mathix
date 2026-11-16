@@ -1,0 +1,48 @@
+{
+  "id": "proba-ex11",
+  "theme": "probabilites",
+  "difficulty": "difficile",
+  "chapter": "03 - Variables aléatoires et loi binomiale",
+  "topic": "Variable aléatoire - Produit des numéros, événements composés",
+  "requiresRedaction": true,
+  "context": "Un sac contient : 5 boules rouges numérotées 0;1;1;1;2 et 4 boules vertes numérotées 0;1;1;2. On tire simultanément 3 boules de ce sac.",
+  "questions": [
+    {
+      "id": "q1",
+      "content": "On considère les événements suivants : A : « Obtenir 3 boules portant des numéros pairs » ; B : « Obtenir 3 boules dont la somme des numéros est égale à 3 » ; C : « Obtenir 3 boules vertes ».",
+      "subQuestions": [
+        {
+          "id": "sq1a",
+          "content": "Montrer que : $P(A) = \\dfrac{1}{21}$ et $P(B) = \\dfrac{5}{14}$.",
+          "hint": "$Card(\\Omega) = C_9^3 = 84$. Pour A : les numéros pairs sont 0 et 2 ; comptez les boules paires (R:0,2 → 2 boules ; V:0,2 → 2 boules = 4 boules paires). $Card(A) = C_4^3 = 4$. Pour B : somme = 3 avec des numéros $\\{0,1,2\\}$. Les combinaisons sont $(1;1;1)$ et $(2;1;0)$. Comptez $C_6^3 + C_6^1 \\times C_3^1 \\times C_2^1 \\div$ ... attention à l'ordre non compté (tirage simultané)."
+        },
+        {
+          "id": "sq1b",
+          "content": "Montrer que : $P(B \\cap C) = \\dfrac{1}{42}$ et en déduire que $P_B(C) = \\dfrac{1}{15}$.",
+          "hint": "$B \\cap C$ : 3 boules vertes dont la somme est 3. Les 4 vertes sont numérotées 0,1,1,2. Cherchez les triplets de vertes qui somment à 3 : $(0+1+2) = 3$ et $(1+1+1)$ impossible (une seule verte porte le 0). $Card(B \\cap C) = C_1^1 \\times C_2^1 \\times C_1^1 = 2$, donc $P(B \\cap C) = \\frac{2}{84} = \\frac{1}{42}$. Puis $P_B(C) = \\frac{P(B \\cap C)}{P(B)}$."
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "content": "Soit X la variable aléatoire qui, à chaque tirage, associe le produit des numéros obtenus.",
+      "subQuestions": [
+        {
+          "id": "sq2a",
+          "content": "Justifier que $X(\\Omega) = \\{0; 1; 2; 4\\}$.",
+          "hint": "Le produit de 3 numéros choisis parmi $\\{0,1,2\\}$ vaut 0 si au moins un numéro est 0, 1 si les trois numéros sont 1, 2 si exactement un numéro est 2 et les deux autres sont 1, et 4 si deux numéros sont 2 et le troisième est 1. Aucun autre produit n'est possible car le 2 apparaît au plus 2 fois."
+        },
+        {
+          "id": "sq2b",
+          "content": "Montrer que : $P(X = 0) = \\dfrac{7}{12}$.",
+          "hint": "Par complémentaire : $P(X = 0) = 1 - P(X \\neq 0)$. Les cas $X \\neq 0$ nécessitent que les 3 boules aient des numéros non nuls (donc parmi les 7 boules numérotées 1 ou 2). $Card(X \\neq 0) = C_7^3 = 35$. Vérifiez : $1 - \\frac{35}{84} = \\frac{49}{84} = \\frac{7}{12}$."
+        },
+        {
+          "id": "sq2c",
+          "content": "Calculer $P(X = 1)$, puis déterminer la loi de probabilité X.",
+          "hint": "$X = 1$ : les 3 boules portent toutes le numéro 1. Il y a 3 rouges et 2 vertes avec le numéro 1, soit 5 boules. $Card(X=1) = C_5^3 = 10$. Pour $X = 4$ : 2 boules numérotées 2 (il y en a 2R + 2V = 4 en tout) et 1 boule numérotée 1 (5 boules). Déduisez $P(X=2)$ par $P(X=2) = 1 - P(X=0) - P(X=1) - P(X=4)$."
+        }
+      ]
+    }
+  ]
+}

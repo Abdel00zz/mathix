@@ -1,0 +1,108 @@
+{
+    "classId":  "1ere-bac-sc-math",
+    "title":  "Devoirs Surveillés — 1ère Bac Sciences Mathématiques",
+    "semestres":  [
+                      {
+                          "id":  "semestre1",
+                          "title":  "Semestre 1",
+                          "devoirs":  [
+                                          {
+                                              "id":  "ds1-s1-v1",
+                                              "title":  "Devoir Surveillé N°1",
+                                              "version":  "V1",
+                                              "number":  1,
+                                              "semestre":  1,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "logique",
+                                                             "ensembles et applications"
+                                                         ],
+                                              "path":  "data/1ere-bac-sc-math/ds/semestre1/ds1_v1.json",
+                                              "exerciseCount":  2
+                                          },
+                                          {
+                                              "id":  "ds2-s1-v1",
+                                              "title":  "Devoir Surveillé N°2",
+                                              "version":  "V1",
+                                              "number":  2,
+                                              "semestre":  1,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "généralités sur les fonctions",
+                                                             "limites"
+                                                         ],
+                                              "path":  "data/1ere-bac-sc-math/ds/semestre1/ds2_v1.json",
+                                              "exerciseCount":  2
+                                          },
+                                          {
+                                              "id":  "ds3-s1-v1",
+                                              "title":  "Devoir Surveillé N°3",
+                                              "version":  "V1",
+                                              "number":  3,
+                                              "semestre":  1,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "dérivation",
+                                                             "barycentre"
+                                                         ],
+                                              "path":  "data/1ere-bac-sc-math/ds/semestre1/ds3_v1.json",
+                                              "exerciseCount":  2
+                                          }
+                                      ]
+                      },
+                      {
+                          "id":  "semestre2",
+                          "title":  "Semestre 2",
+                          "devoirs":  [
+                                          {
+                                              "id":  "ds1-s2-v1",
+                                              "title":  "Devoir Surveillé N°1",
+                                              "version":  "V1",
+                                              "number":  1,
+                                              "semestre":  2,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "suites numériques",
+                                                             "trigonométrie"
+                                                         ],
+                                              "path":  "data/1ere-bac-sc-math/ds/semestre2/ds1_v1.json",
+                                              "exerciseCount":  2
+                                          },
+                                          {
+                                              "id":  "ds2-s2-v1",
+                                              "title":  "Devoir Surveillé N°2",
+                                              "version":  "V1",
+                                              "number":  2,
+                                              "semestre":  2,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "dénombrement",
+                                                             "arithmétique"
+                                                         ],
+                                              "path":  "data/1ere-bac-sc-math/ds/semestre2/ds2_v1.json",
+                                              "exerciseCount":  2
+                                          },
+                                          {
+                                              "id":  "ds3-s2-v1",
+                                              "title":  "Devoir Surveillé N°3",
+                                              "version":  "V1",
+                                              "number":  3,
+                                              "semestre":  2,
+                                              "duration":  120,
+                                              "totalPoints":  20,
+                                              "themes":  [
+                                                             "produit vectoriel",
+                                                             "rotation"
+                                                         ],
+                                              "path":  "data/1ere-bac-sc-math/ds/semestre2/ds3_v1.json",
+                                              "exerciseCount":  2
+                                          }
+                                      ]
+                      }
+                  ]
+}
