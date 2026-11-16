@@ -228,7 +228,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
         ctx.restore();
       }
     }
-    
+
     if ((tool === 'pointer' || (tool === 'lasso' && selectionMode === 'rectangle')) && selectionBoxRef.current) {
       const box = selectionBoxRef.current;
       ctx.save();
@@ -240,7 +240,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
       ctx.strokeRect(box.x, box.y, box.w, box.h);
       ctx.restore();
     }
-    
+
     if (tool === 'lasso' && lassoPathRef.current.length > 0) {
       ctx.save();
       ctx.beginPath();
@@ -248,7 +248,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
       ctx.lineWidth = 1;
       ctx.setLineDash([5, 5]);
       ctx.fillStyle = 'rgba(59, 130, 246, 0.1)';
-      
+
       ctx.moveTo(lassoPathRef.current[0].x, lassoPathRef.current[0].y);
       for (let i = 1; i < lassoPathRef.current.length; i++) {
         ctx.lineTo(lassoPathRef.current[i].x, lassoPathRef.current[i].y);
@@ -258,10 +258,10 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
       ctx.fill();
       ctx.restore();
     }
-    
+
     if (selectedStrokeIndexes.size > 0 && lassoPathRef.current.length === 0) {
       let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-      
+
       selectedStrokeIndexes.forEach(idx => {
         const stroke = strokesRef.current[idx];
         if (!stroke) return;
@@ -272,14 +272,14 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
           if (p.y > maxY) maxY = p.y;
         });
       });
-      
+
       if (minX !== Infinity) {
         ctx.strokeStyle = '#3b82f6';
         ctx.lineWidth = 1.5;
         ctx.setLineDash([5, 5]);
         ctx.strokeRect(minX - 6, minY - 6, maxX - minX + 12, maxY - minY + 12);
         ctx.setLineDash([]);
-        
+
         if (tool === 'pointer' && selectedStrokeIndexes.size === 1) {
            const stroke = strokesRef.current[Array.from(selectedStrokeIndexes)[0]];
            if (stroke.isImage) {
@@ -291,7 +291,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
                const sMaxX = Math.max(p1.x, p2.x);
                const sMinY = Math.min(p1.y, p2.y);
                const sMaxY = Math.max(p1.y, p2.y);
-               
+
                const handles = [
                  {x: sMinX, y: sMinY},
                  {x: sMaxX, y: sMinY},
@@ -688,7 +688,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
     }
 
     capturePointer(e);
-    
+
     if (activeTool === 'pointer') {
        if (selectedStrokeIndexes.size === 1) {
          const idx = Array.from(selectedStrokeIndexes)[0];
@@ -703,7 +703,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
             return;
          }
        }
-       
+
        for (let i = strokesRef.current.length - 1; i >= 0; i--) {
          const stroke = strokesRef.current[i];
          let clicked = false;
@@ -712,7 +712,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
          } else {
             clicked = strokeIntersectsPoint(stroke, coords.x, coords.y, 10);
          }
-         
+
          if (clicked) {
            let newSelection = selectedStrokeIndexes;
            if (!selectedStrokeIndexes.has(i)) {
@@ -728,7 +728,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
            return;
          }
        }
-       
+
        setSelectedStrokeIndexes(new Set());
        isDrawing.current = true;
        dragModeRef.current = 'select';
@@ -739,7 +739,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
     }
 
     isDrawing.current = true;
-    
+
     if (activeTool === 'eraser' && (settings.eraserType === 'stroke' || settings.eraserHighlighterOnly)) {
       eraseGestureRef.current = [];
       let erasedAny = false;
@@ -771,7 +771,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
             if (p.y > maxY) maxY = p.y;
           });
         });
-        
+
         if (coords.x >= minX - 6 && coords.x <= maxX + 6 && coords.y >= minY - 6 && coords.y <= maxY + 6) {
           isDraggingSelectionRef.current = true;
           dragStartRef.current = coords;
@@ -779,7 +779,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
           return;
         }
       }
-      
+
       setSelectedStrokeIndexes(new Set());
       if (settings.selectionMode === 'rectangle') {
         dragModeRef.current = 'select';
@@ -863,17 +863,17 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
                 const stroke = strokesRef.current[idx];
                 const dx = coords.x - dragStartRef.current.x;
                 const dy = coords.y - dragStartRef.current.y;
-                
+
                 if (dragModeRef.current === 'move') {
                    moveSelectionBy(dx, dy);
                 } else if (dragModeRef.current === 'resize') {
                    // Proportional resize
                    const p1 = stroke.points[0]; // top-left (usually)
                    const p2 = stroke.points[1]; // bottom-right (usually)
-                   
+
                    const handle = activeResizeHandleRef.current;
                    const aspect = (p2.y - p1.y) / (p2.x - p1.x); // Should be maintained
-                   
+
                    if (handle === 'br') {
                       const newW = (coords.x - p1.x);
                       stroke.points[1] = { x: p1.x + newW, y: p1.y + newW * aspect, pressure: 0.5 };
@@ -1007,7 +1007,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
            const maxX = Math.max(box.x, box.x + box.w);
            const minY = Math.min(box.y, box.y + box.h);
            const maxY = Math.max(box.y, box.y + box.h);
-           
+
            if (maxX - minX > 5 && maxY - minY > 5) {
                const newSelection = new Set<number>();
                strokesRef.current.forEach((stroke, idx) => {
@@ -1073,7 +1073,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
         const newSelection = new Set<number>();
         const lassoPoly = simplifyPoints(lassoPathRef.current, 1.25);
         const lassoBounds = getPointsBounds(lassoPoly);
-        
+
         strokesRef.current.forEach((stroke, idx) => {
           const strokeBounds = getStrokeBounds(stroke);
           if (!lassoBounds || !strokeBounds || !boundsIntersect(lassoBounds, strokeBounds)) return;
@@ -1091,7 +1091,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
           } else {
             isSelected = stroke.points.every(p => pointInPolygon(p, lassoPoly));
           }
-          
+
           if (isSelected) {
             newSelection.add(idx);
           }
@@ -1296,37 +1296,37 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
           const leftPos = Math.max(8, (minX + maxX) / 2 - 120);
 
           return (
-            <div 
+            <div
               className="absolute z-30 bg-white/95 backdrop-blur-md border border-slate-300 rounded-full shadow-lg px-3 py-1 flex items-center gap-2 transition-all animate-in fade-in duration-100"
               style={{ left: `${leftPos}px`, top: `${topPos}px` }}
             >
-              <button 
-                onClick={duplicateSelection} 
+              <button
+                onClick={duplicateSelection}
                 className="p-1.5 text-slate-700 hover:text-blue-600 hover:bg-slate-100 rounded-full transition"
                 title="Dupliquer la sélection"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               </button>
-              <button 
-                onClick={bringSelectionToFront} 
+              <button
+                onClick={bringSelectionToFront}
                 className="p-1.5 text-slate-700 hover:text-blue-600 hover:bg-slate-100 rounded-full transition"
                 title="Mettre au premier plan"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
               </button>
               <div className="w-px h-4 bg-slate-200" />
-              <button 
+              <button
                 type="button"
-                onClick={() => changeSelectionWidth(-1)} 
-                className="p-1 text-slate-600 hover:text-slate-900 rounded-full hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500" 
+                onClick={() => changeSelectionWidth(-1)}
+                className="p-1 text-slate-600 hover:text-slate-900 rounded-full hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
                 title="Réduire l'épaisseur"
               >
                 <FaIcon icon={faMinus} size={13} />
               </button>
-              <button 
+              <button
                 type="button"
-                onClick={() => changeSelectionWidth(1)} 
-                className="p-1 text-slate-600 hover:text-slate-900 rounded-full hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500" 
+                onClick={() => changeSelectionWidth(1)}
+                className="p-1 text-slate-600 hover:text-slate-900 rounded-full hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
                 title="Augmenter l'épaisseur"
               >
                 <FaIcon icon={faPlus} size={13} />
@@ -1334,20 +1334,20 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
               <div className="w-px h-4 bg-slate-200" />
               <div className="flex items-center gap-1">
                 {['#0f172a', '#ef4444', '#22c55e', '#3b82f6', '#a855f7'].map(c => (
-                  <button 
-                    key={c} 
+                  <button
+                    key={c}
                     type="button"
-                    onClick={() => changeSelectionColor(c)} 
-                    className="w-4 h-4 rounded-full border border-black/10 hover:scale-125 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500" 
-                    style={{ backgroundColor: c }} 
+                    onClick={() => changeSelectionColor(c)}
+                    className="w-4 h-4 rounded-full border border-black/10 hover:scale-125 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                    style={{ backgroundColor: c }}
                   />
                 ))}
               </div>
               <div className="w-px h-4 bg-slate-200" />
-              <button 
+              <button
                 type="button"
-                onClick={deleteSelection} 
-                className="p-1.5 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500" 
+                onClick={deleteSelection}
+                className="p-1.5 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
                 title="Supprimer"
               >
                 <FaIcon icon={faTrashCan} size={15} />

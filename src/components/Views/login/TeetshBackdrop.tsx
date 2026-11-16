@@ -43,4 +43,3 @@ export const TeetshBrandBadge: React.FC<TeetshBrandBadgeProps> = ({ icon, alt, t
     <img src={icon} alt={alt} className="ts-brand-logo sr-only" />
   </div>
 );
-

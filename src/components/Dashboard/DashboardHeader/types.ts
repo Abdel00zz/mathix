@@ -14,4 +14,3 @@ export interface DashboardHeaderProps {
     /** Nom complet du professeur (nom + prénom) si disponible. */
     profName?: string;
 }
-

@@ -35,4 +35,3 @@ export const FaIcon: React.FC<FaIconProps> = ({
         />
     );
 };
-
