@@ -1,0 +1,100 @@
+{
+  "header": {
+    "title": "Comment lacer ses chaussures ?",
+    "subtitle": "Problème 1.3 — Dénombrement et géométrie du laçage",
+    "context": "Dénombrement et géométrie"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Comment lacer ses chaussures ?",
+          "content": "Une chaussure comporte deux rangées verticales de $n$ œillets (souvent $n = 5$). On suppose que deux œillets voisins d'une même rangée sont distants de $d$, et que les deux rangées sont séparées par une largeur $e$.\\par Il existe de multiples façons de passer un lacet : laçage \\textbf{zigzag} (croisé classique), laçage \\textbf{européen}, laçage \\textbf{gavage} (un grand brin remonte directement du bas vers le haut), ou encore laçage plat, papillon, en Z ou en treillis.\\par Combien existe-t-il de laçages respectant les règles usuelles de maintien, et quel laçage utilise la \\textbf{plus petite longueur de lacet} ?"
+        },
+        {
+          "type": "notation",
+          "title": "Hypothèses d'un laçage admissible",
+          "content": "On impose les règles suivantes pour un laçage sur $2$ rangées de $n$ œillets ($n \\ge 2$) :\\begin{itemize}\\item Le lacet passe \\textbf{une et une seule fois} par chaque œillet.\\item Il alterne systématiquement entre la rangée de gauche et la rangée de droite.\\item Il commence à l'œillet en haut à gauche, effectue une \\textbf{descente} (des segments horizontaux à même hauteur sont autorisés) jusqu'au bas de la chaussure, puis une \\textbf{remontée} jusqu'à l'œillet en haut à droite.\\end{itemize}Ces règles sont satisfaites par les laçages \\textbf{zigzag}, \\textbf{européen} et \\textbf{gavage} (mais pas par les laçages plat, papillon, en Z ou treillis)."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Modélisation et dénombrement des laçages",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\textbf{Questions préliminaires.}\\begin{enumerate}\\item Expliquer pourquoi les deux œillets du bas sont nécessairement reliés directement par un segment horizontal du lacet.\\item Combien de segments composent un laçage complet sur une chaussure à $2 \\times n$ œillets ? (Vérifier pour $n = 5$.)\\end{enumerate}\\par\\textbf{Modélisation sur une grille.}\\par On déroule le parcours du lacet sur une grille de $2n$ colonnes (correspondant à l'ordre de visite des $2n$ œillets : colonne $1$ = haut gauche, colonne $2n$ = haut droite) et $n$ lignes (hauteurs des œillets, de $1$ en bas à $n$ en haut).\\begin{enumerate}\\setcounter{enumi}{2}\\item Décrire les coordonnées $(colonne, hauteur)$ des points visités pour $n=5$ dans les laçages \\textbf{zigzag}, \\textbf{européen} et \\textbf{gavage}.\\item Quelles propriétés géométriques vérifie la ligne brisée associée à tout laçage admissible ? Justifier qu'une fois la \\textbf{descente} choisie, la \\textbf{remontée} est entièrement déterminée.\\item On classe les laçages selon le nombre $k$ de hauteurs intermédiaires (parmi les $n-2$ hauteurs comprises strictement entre le haut et le bas) rencontrées lors de la descente :\\begin{enumerate}\\item Combien de laçages y a-t-il pour $k = 0$ ?\\item Combien pour $k = 1$ ?\\item Combien pour $k = 2$ ?\\item Plus généralement, pour $k \\in \\{0, 1, \\dots, n-2\\}$, montrer qu'il y a $2^k \\dbinom{n-2}{k}$ laçages possibles.\\end{enumerate}\\item En déduire, à l'aide de la formule du binôme de Newton, le nombre total de laçages admissibles en fonction de $n$. Calculer cette valeur pour $n = 5$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Choix à chaque hauteur intermédiaire",
+          "content": "À chaque hauteur intermédiaire visitée pendant la descente, le lacet peut soit \\textbf{traverser horizontalement} (utiliser les $2$ œillets de cette hauteur dès la descente), soit \\textbf{ne visiter qu'un œillet} (l'autre sera alors obligatoirement visité à la remontée) : cela fait exactement $2$ choix par hauteur intermédiaire retenue."
+        },
+        {
+          "type": "hint",
+          "title": "Formule du binôme de Newton",
+          "content": "Rappel : pour tous réels $a, b$ et tout entier $m \\ge 0$, $(a+b)^m = \\displaystyle\\sum_{k=0}^{m} \\binom{m}{k} a^k b^{m-k}$. Choisissez bien $a$, $b$ et $m$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Dénombrement",
+          "content": "\\textbf{1)} Le lacet ne peut effectuer qu'une descente suivie d'une remontée. S'il quittait la ligne du bas après n'avoir visité qu'un seul œillet du bas, il serait déjà en phase de remontée et ne pourrait plus redescendre visiter le second œillet du bas. Les deux œillets du bas sont donc nécessairement reliés directement.\\par\\textbf{2)} Le lacet relie $2n$ œillets consécutifs sans repasser par le même : il est formé de \\blank{$2n-1$} segments (soit $9$ segments pour $n = 5$).\\par\\textbf{3)} Pour $n=5$ (hauteurs numérotées de $1$ en bas à $5$ en haut) :\\begin{itemize}\\item \\textbf{Zigzag :} hauteurs $(5, 4, 3, 2, 1, 1, 2, 3, 4, 5)$ — aucune horizontale intermédiaire.\\item \\textbf{Européen :} hauteurs $(5, 4, 4, 2, 2, 1, 1, 3, 3, 5)$ — descente par paliers pairs, remontée par paliers impairs.\\item \\textbf{Gavage :} hauteurs $(5, 4, 4, 3, 3, 2, 2, 1, 1, 5)$ — toutes les hauteurs intermédiaires sont parcourues horizontalement à la descente, puis un seul grand segment remonte de $1$ à $5$.\\end{itemize}\\par\\textbf{4)} La courbe comporte exactement $2$ points par ligne, $1$ point par colonne, commence en $(1, n)$, finit en $(2n, n)$, descend puis remonte, avec un segment horizontal obligatoire sur la ligne $1$ et au plus un segment horizontal sur chaque ligne intermédiaire. Une fois les hauteurs de la descente fixées, les hauteurs restantes (qui n'ont reçu que $0$ ou $1$ point) doivent être complétées dans l'ordre croissant strictement déterminé lors de la remontée.\\par\\textbf{5. a)} Pour $k = 0$ (aucune hauteur intermédiaire en descente), la descente relie directement le haut au bas : il y a $1$ seul laçage (le gavage symétrique).\\par\\textbf{5. b)} Pour $k = 1$, on choisit $1$ hauteur parmi les $n-2$ hauteurs intermédiaires, et pour cette hauteur on choisit $1$ ou $2$ points (avec ou sans segment horizontal) : $2(n-2)$ laçages.\\par\\textbf{5. c)} Pour $k = 2$, on choisit $2$ hauteurs parmi $n-2$ (soit $\\dbinom{n-2}{2}$ choix), puis $2$ possibilités pour chacune : $2^2 \\dbinom{n-2}{2}$ laçages.\\par\\textbf{5. d)} Pour $k \\in \\{0,\\dots,n-2\\}$ hauteurs intermédiaires, on choisit l'ensemble de ces $k$ hauteurs de $\\dbinom{n-2}{k}$ façons, puis pour chacune on décide indépendamment de faire ou non un segment horizontal ($2^k$ choix), soit :\\par $$N_k = 2^k \\binom{n-2}{k}.$$\\par\\textbf{6)} Le nombre total de laçages admissibles vaut, par le binôme de Newton :\\par $$N = \\sum_{k=0}^{n-2} \\binom{n-2}{k} 2^k \\cdot 1^{n-2-k} = (2 + 1)^{n-2} = \\boxed{3^{n-2}}.$$\\par Formule générale : \\blank{$3^{n-2}$}. Pour $n = 5$ œillets par côté, cela donne $3^3 =$ \\blank{$27$} laçages admissibles."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Longueur de lacet et comparaison",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On calcule la longueur totale de lacet (hors nœud final) en fonction de $n$, de l'écart horizontal $e$ et de l'écart vertical $d$.\\begin{enumerate}\\item \\textbf{Laçage zigzag :} calculer la longueur du lacet pour $n = 5$, puis dans le cas général ($n \\ge 2$).\\item \\textbf{Laçage européen} (pour $n \\ge 3$ \\textbf{impair}) : calculer la longueur du lacet pour $n = 5$, puis dans le cas général. Comparer les longueurs du laçage zigzag et du laçage européen : lequel est le plus court ?\\item \\textbf{Laçage gavage :} calculer la longueur du lacet pour $n = 5$, puis dans le cas général.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Théorème de Pythagore sur les segments obliques",
+          "content": "Un segment horizontal mesure $e$. Un segment qui monte ou descend d'un cran (hauteur $d$) mesure $\\sqrt{e^2 + d^2}$. Un segment qui saute $2$ crans (hauteur $2d$) mesure $\\sqrt{e^2 + 4d^2}$."
+        },
+        {
+          "type": "hint",
+          "title": "Comparer zigzag et européen sans tout développer",
+          "content": "Regardez un motif élémentaire de hauteur $2d$ : en zigzag, le lacet fait deux diagonales de longueur $2\\sqrt{e^2+d^2}$ ; en européen, il fait un segment horizontal $e$ et une diagonale de hauteur $2d$, soit $e + \\sqrt{e^2+4d^2}$. Comparez leurs carrés (ou appliquez l'inégalité triangulaire) !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Longueurs de lacet",
+          "content": "\\textbf{1) Laçage zigzag :} Il comprend $1$ segment horizontal en bas (longueur $e$) et $2(n-1)$ segments obliques de hauteur $d$ (longueur $\\sqrt{e^2+d^2}$).\\par Pour $n=5$ : $L_{\\text{zig}}(5) = 8\\sqrt{e^2+d^2} + e$. En général :\\par $$L_{\\text{zig}}(n) = (2n-2)\\sqrt{e^2+d^2} + e.$$\\par\\textbf{2) Laçage européen ($n$ impair) :} Pour $n=5$, il y a $4$ segments horizontaux (aux hauteurs $4, 2, 1, 3$), $2$ segments obliques de hauteur $d$ (de $5$ à $4$, et de $2$ à $1$) et $3$ segments obliques de hauteur $2d$ (de $4$ à $2$, de $1$ à $3$, et de $3$ à $5$), soit :\\par $$L_{\\text{eur}}(5) = 4e + 2\\sqrt{e^2+d^2} + 3\\sqrt{e^2+4d^2}.$$\\par Dans le cas général ($n$ impair) : il y a $n-1$ segments horizontaux (à toutes les hauteurs sauf $n$, soit $n-1$ horizontaux — attention : la hauteur $1$ compte $1$ horizontal, chacune des $n-2$ hauteurs intermédiaires compte $1$ horizontal, donc $(n-1)e$ ; vérifions pour $n=5$ : $4e$, $2$ segments de hauteur $d$ et $n-2 = 3$ segments de hauteur $2d$, total $(n-1) + 2 + (n-2) = 2n-1$ segments !). Ainsi :\\par $$L_{\\text{eur}}(n) = (n-1)e + 2\\sqrt{e^2+d^2} + (n-2)\\sqrt{e^2+4d^2}.$$\\par \\textit{Comparaison :} On a $L_{\\text{eur}}(n) - L_{\\text{zig}}(n) = (n-2)\\left(e + \\sqrt{e^2+4d^2} - 2\\sqrt{e^2+d^2}\\right)$. Or :\\par $$\\left(e + \\sqrt{e^2+4d^2}\\right)^2 - \\left(2\\sqrt{e^2+d^2}\\right)^2 = 2e^2 + 4d^2 + 2e\\sqrt{e^2+4d^2} - (4e^2 + 4d^2) = 2e\\left(\\sqrt{e^2+4d^2} - e\\right) > 0.$$\\par Comme les quantités sont positives, $e + \\sqrt{e^2+4d^2} > 2\\sqrt{e^2+d^2}$, donc \\blank{$L_{\\text{zig}}(n) < L_{\\text{eur}}(n)$} : le laçage \\textbf{zigzag est toujours plus court} que le laçage européen !\\par\\textbf{3) Laçage gavage :} Pour $n=5$, il y a $4$ segments horizontaux (longueur $4e$), $4$ descentes de hauteur $d$ (longueur $4\\sqrt{e^2+d^2}$) et $1$ grande remontée de hauteur $4d$ (longueur $\\sqrt{e^2 + 16d^2}$).\\par En général :\\par $$L_{\\text{gav}}(n) = (n-1)e + (n-1)\\sqrt{e^2+d^2} + \\sqrt{e^2 + (n-1)^2 d^2}.$$"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "En 2002, le mathématicien australien \\textbf{Burkard Polster} (Université Monash) publie dans la revue \\textit{Nature} l'étude mathématique complète des laçages de chaussures. Il démontre notamment que parmi tous les laçages raisonnables, le laçage en nœud papillon (qui utilise des segments verticaux) est en fait le plus court, tandis que le laçage européen est le plus solide mécaniquement."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Si l'on supprime l'obligation de n'avoir qu'une descente et une remontée (tout en conservant l'alternance gauche/droite et le passage unique par chaque œillet), le nombre de laçages explose : Polster a montré qu'il vaut $\\dfrac{(n!)^2}{2}\\displaystyle\\sum_{k=0}^{\\lfloor n/2\\rfloor}\\dfrac{1}{n-k}\\binom{n-k}{k}^2$. Pour $n = 5$ œillets, cela représente déjà $51\\,840$ façons de lacer ses chaussures !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Traduire un problème combinatoire en \\textbf{modèle de grille} et dénombrer par partitionnement.\\item Utiliser les coefficients binomiaux et la \\textbf{formule du binôme de Newton}.\\item Comparer des expressions irrationnelles issues du \\textbf{théorème de Pythagore}.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

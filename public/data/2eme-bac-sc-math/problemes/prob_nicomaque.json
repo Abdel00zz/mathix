@@ -1,0 +1,85 @@
+{
+  "header": {
+    "title": "Le volume de plusieurs cubes vaut une surface",
+    "subtitle": "Problème 1.31 — Théorème de Nicomaque et récurrence géométrique",
+    "context": "Suites et raisonnement par récurrence"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le volume de plusieurs cubes vaut une surface",
+          "content": "Observons une coïncidence arithmétique saisissante :\\par $$1^3 = 1 = 1^2, \\qquad 1^3 + 2^3 = 9 = (1 + 2)^2, \\qquad 1^3 + 2^3 + 3^3 = 36 = (1 + 2 + 3)^2, \\qquad 1^3 + 2^3 + 3^3 + 4^3 = 100 = (1 + 2 + 3 + 4)^2 !$$\\par La somme des volumes des $n$ premiers cubes d'arêtes $1, 2, \\dots, n$ est-elle \\textbf{toujours} égale à l'aire d'un carré de côté $S_n = 1 + 2 + \\cdots + n$ ? C'est le célèbre \\textbf{théorème de Nicomaque de Gérase} ($\\mathrm{II}^{\\mathrm{e}}$ siècle) :\\par $$\\sum_{k=1}^{n} k^3 = \\left(\\sum_{k=1}^{n} k\\right)^2 = \\frac{n^2 (n + 1)^2}{4}.$$\\par Au lieu d'une preuve purement algébrique, nous en donnons ici une \\textbf{démonstration entièrement géométrique}, inspirée du mathématicien indien \\textbf{Nilakantha Somayaji} ($\\mathrm{XVI}^{\\mathrm{e}}$ siècle) !"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Preuve géométrique de la somme des entiers S_n",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On représente $S_n = 1 + 2 + \\cdots + n$ par un « escalier » composé de $n$ colonnes de petits carrés unités ($1$ carré dans la $1^{\\text{re}}$ colonne, $2$ dans la $2^{\\text{e}}$, …, $n$ dans la $n$-ième).\\begin{enumerate}\\item En accolant deux exemplaires identiques de cet escalier (le second retourné à $180^\\circ$), quelle figure géométrique obtient-on ? Quelles sont ses dimensions ?\\item En déduire directement la formule célèbre : $$S_n = \\sum_{k=1}^{n} k = \\frac{n(n+1)}{2}.$$\\item Calculer $S_{10}$ et $S_{100}$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Rectangle n × (n + 1)",
+          "content": "En plaçant la colonne de hauteur $n$ du second escalier au-dessus de la colonne de hauteur $1$ du premier escalier, chaque colonne a désormais une hauteur totale constante égale à $n + 1$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Somme des n premiers entiers",
+          "content": "\\textbf{1)} En accolant deux escaliers de $n$ colonnes (le second retourné), on forme un \\textbf{rectangle} de largeur $n$ et de hauteur $n + 1$, dont l'aire totale vaut $n(n + 1)$.\\par\\textbf{2)} Comme ce rectangle est exactement la réunion de deux escaliers d'aire $S_n$, on obtient $2 S_n = n(n + 1)$, d'où :\\par $$S_n = \\boxed{\\frac{n(n+1)}{2}}.$$\\par\\textbf{3)} $S_{10} = \\dfrac{10\\times 11}{2} =$ \\blank{$55$} et $S_{100} = \\dfrac{100\\times 101}{2} =$ \\blank{$5\\,050$}."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Récurrence géométrique du théorème de Nicomaque",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On veut démontrer par récurrence sur $n \\ge 1$ la propriété $\\mathcal{P}(n) : \\displaystyle\\sum_{k=1}^{n} k^3 = S_n^2$, où $S_n^2$ est interprété comme l'\\textbf{aire d'un grand carré $\\mathcal{C}_n$ de côté $S_n$}.\\begin{enumerate}\\item \\textbf{Initialisation :} vérifier $\\mathcal{P}(1)$ (et $\\mathcal{P}(2)$ pour visualiser).\\item \\textbf{Hérédité géométrique :} on suppose $\\mathcal{P}(n)$ vraie pour un entier $n \\ge 1$ fixé. On agrandit le carré $\\mathcal{C}_n$ (de côté $S_n$) en un carré $\\mathcal{C}_{n+1}$ de côté $S_{n+1} = S_n + (n + 1)$ en lui ajoutant une bordure en forme de \\textbf{L} (appelée \\textit{gnomon}) de largeur $n + 1$ à droite et en haut.\\begin{enumerate}\\item Découper cette bordure en L en \\textbf{trois pièces élémentaires} : deux rectangles identiques et un carré. Donner les dimensions et l'aire de chaque pièce.\\item Calculer la somme des aires de ces trois pièces (en remplaçant $S_n$ par $\\dfrac{n(n+1)}{2}$) et montrer qu'elle vaut exactement $(n + 1)^3$ !\\item En déduire que l'aire de $\\mathcal{C}_{n+1}$ vaut $\\displaystyle\\sum_{k=1}^{n+1} k^3$, puis conclure la démonstration du théorème de Nicomaque.\\end{enumerate}\\item \\textbf{Application :} calculer sans calculatrice la somme $1^3 + 2^3 + \\cdots + 10^3$, puis $11^3 + 12^3 + \\cdots + 20^3$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Décomposition du gnomon en L",
+          "content": "La bordure en L est constituée : d'un rectangle à droite de dimensions $(n+1) \\times S_n$, d'un rectangle en haut de dimensions $S_n \\times (n+1)$, et d'un carré dans le coin supérieur droit de côté $n + 1$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Théorème de Nicomaque",
+          "content": "\\textbf{1) Initialisation :} Pour $n = 1$, $\\sum_{k=1}^1 k^3 = 1^3 = 1$ et $S_1^2 = 1^2 = 1$, donc $\\mathcal{P}(1)$ est vraie. (Pour $n = 2$ : $1^3 + 2^3 = 9 = 3^2 = S_2^2$.)\\par\\textbf{2. a) Découpage du gnomon :} En prolongeant les côtés du carré $\\mathcal{C}_n$ de côté $S_n$ d'une longueur $n + 1$, la bordure en L d'aire $S_{n+1}^2 - S_n^2$ se découpe en :\\begin{itemize}\\item deux rectangles identiques de dimensions $(n+1)$ et $S_n$, chacun d'aire $(n+1)S_n$ ;\\item un carré dans l'angle de côté $(n+1)$, d'aire $(n+1)^2$.\\end{itemize}\\par\\textbf{2. b) Aire totale de la bordure en L :} En utilisant $S_n = \\dfrac{n(n+1)}{2}$ :\\par $$\\begin{aligned}S_{n+1}^2 - S_n^2 &= 2(n+1)S_n + (n+1)^2 = 2(n+1)\\cdot\\frac{n(n+1)}{2} + (n+1)^2 \\\\ &= n(n+1)^2 + (n+1)^2 = (n+1)^2(n + 1) = \\boxed{(n+1)^3} !\\end{aligned}$$\\par\\textbf{2. c) Conclusion :} Par hypothèse de récurrence, $S_n^2 = \\displaystyle\\sum_{k=1}^{n} k^3$, donc :\\par $$S_{n+1}^2 = S_n^2 + (n+1)^3 = \\sum_{k=1}^{n} k^3 + (n+1)^3 = \\sum_{k=1}^{n+1} k^3.$$\\par Ainsi $\\mathcal{P}(n+1)$ est vraie. Par récurrence, pour tout $n \\ge 1$ :\\par $$\\sum_{k=1}^{n} k^3 = \\left(\\frac{n(n+1)}{2}\\right)^2 = \\frac{n^2(n+1)^2}{4}.$$\\par\\textbf{3) Applications :}\\begin{itemize}\\item $\\displaystyle\\sum_{k=1}^{10} k^3 = S_{10}^2 = 55^2 =$ \\blank{$3\\,025$}.\\item $\\displaystyle\\sum_{k=11}^{20} k^3 = S_{20}^2 - S_{10}^2 = 210^2 - 55^2 = 44\\,100 - 3\\,025 =$ \\blank{$41\\,075$}.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Les \\textit{nombres triangulaires} $S_n$ étaient déjà étudiés par l'école de Pythagore ($\\mathrm{VI}^{\\mathrm{e}}$ s. av. J.-C.), et une célèbre anecdote raconte que \\textbf{Carl Friedrich Gauss} retrouva $S_{100} = 5\\,050$ à l'âge de 7 ans en regroupant les termes par paires ($1+100, 2+99, \\dots$). \\textbf{Nicomaque de Gérase} ($\\mathrm{II}^{\\mathrm{e}}$ s.) observe la somme des cubes en lien avec les entiers impairs, et \\textbf{Nilakantha Somayaji} (école du Kerala, 1500) publie cette élégante preuve géométrique."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "On connaît aussi la somme des carrés $\\displaystyle\\sum_{k=1}^{n} k^2 = \\dfrac{n(n+1)(2n+1)}{6}$, et plus généralement la \\textbf{formule de Faulhaber} (1631) exprime toute somme $\\displaystyle\\sum_{k=1}^{n} k^p$ comme un polynôme de degré $p+1$ en $n$ faisant intervenir les \\textit{nombres de Bernoulli}."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Conduire un \\textbf{raisonnement par récurrence} rigoureux (initialisation, hérédité, conclusion).\\item Interpréter des identités algébriques comme des \\textbf{décompositions d'aires} géométriques.\\item Maîtriser les sommes classiques $\\sum k$ et $\\sum k^3$.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

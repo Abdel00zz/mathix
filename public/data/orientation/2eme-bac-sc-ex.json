@@ -1,0 +1,266 @@
+{
+  "classId": "2eme-bac-sc-ex",
+  "title": "Deuxième année du cycle du baccalauréat — Sciences Expérimentales",
+  "source": "Ministère de l’Éducation Nationale · Sections Internationales BIOF (Option Française)",
+  "year": "Juin 2015",
+  "pdfUrl": "/assets/aistudio/recommandations_p_dagogiques_bac_biof_ccab4a64.pdf",
+  "chapters": [
+    {
+      "id": 1,
+      "section": "Analyse",
+      "title": "Suites numériques",
+      "pages": "p. 2–4",
+      "contents": [
+        "Limite d’une suite numérique ; suites de référence $(n)$, $(n^2)$, $(n^3)$, $(\\sqrt{n})$, $(n^p)$ et $(1/n)$, $(1/n^2)$, $(1/\\sqrt{n})$, $(1/n^p)$ ($p \\in \\mathbb{N}$).",
+        "Suite convergente et suite divergente.",
+        "Critères de convergence : convergence d’une suite croissante et majorée ; convergence d’une suite décroissante et minorée.",
+        "Opérations sur les limites de suites ; limites et ordre."
+      ],
+      "capacities": [
+        "Utiliser les suites géométriques et arithmétiques pour étudier des suites de la forme $u_{n+1} = au_n + b$, $u_{n+1} = \\frac{au_n+b}{cu_n+d}$ et d’autres suites récurrentes simples.",
+        "Utiliser les suites de référence et les critères de convergence pour déterminer les limites de suites numériques.",
+        "Utiliser les suites pour résoudre des problèmes variés de différents domaines.",
+        "Déterminer la limite d’une suite convergente $(u_n)$ de la forme $u_{n+1} = f(u_n)$ où $f$ est continue sur un intervalle $I$ vérifiant $f(I) \\subset I$."
+      ],
+      "recommendations": [
+        "Admettre dans une première étape les limites des suites de référence en $+\\infty$ à partir des fonctions de référence, ainsi que les opérations sur les limites finies et infinies.",
+        "Admettre les critères de convergence par comparaison (majoration, minoration, gendarmes) à partir de situations concrètes ; l’usage de l’outil informatique est recommandé.",
+        "Admettre les propriétés liées à $u_{n+1} = f(u_n)$ ($f(l) = l$) et à $v_n = f(u_n)$ ($\\lim v_n = f(l)$).",
+        "Traiter les limites de $(a^n)$ ($a \\in \\mathbb{R}^*$) et $(n^\\alpha)$ ($\\alpha \\in \\mathbb{Q}^*$) comme limites usuelles ; l’étude des fonctions précédera celle des suites."
+      ],
+      "horsProgramme": [
+        "Toute étude théorique de la notion de limite d’une suite est hors programme."
+      ]
+    },
+    {
+      "id": 2,
+      "section": "Analyse",
+      "title": "Continuité, dérivation et étude de fonctions",
+      "pages": "p. 4–6",
+      "contents": [
+        "Continuité en un point, à droite, à gauche et sur un intervalle (polynômes, fonctions rationnelles, trigonométriques et $x \\mapsto \\sqrt{x}$).",
+        "Image d’un intervalle et d’un segment par une fonction continue ; théorème des valeurs intermédiaires (TVI) et cas strictement monotone.",
+        "Fonction réciproque d’une fonction continue et strictement monotone sur un intervalle.",
+        "Continuité et dérivabilité ; dérivabilité de la composée ; dérivée de la fonction réciproque.",
+        "Puissances rationnelles $x^r$ ($r \\in \\mathbb{Q}^*$) et dérivée de $x \\mapsto \\sqrt[n]{x}$ ($n \\ge 1$) ; exemples d’études de fonctions."
+      ],
+      "capacities": [
+        "Déterminer l’image d’un segment ou d’un intervalle par une fonction continue ou continue et strictement monotone.",
+        "Appliquer le TVI pour résoudre/étudier des équations, inéquations ou signes ; utiliser la dichotomie pour encadrer les solutions de $f(x) = \\lambda$.",
+        "Appliquer le TVI et le théorème de la fonction réciproque, déterminer la monotonie, la courbe et le nombre dérivé en un point de $f^{-1}$.",
+        "Calculer les dérivées usuelles, déterminer la monotonie depuis le signe de $f'$ ou le tableau de variations, et résoudre graphiquement $f(x) = g(x)$ et $f(x) \\le g(x)$.",
+        "Résoudre des problèmes d’extrema et étudier/représenter des fonctions rationnelles et trigonométriques."
+      ],
+      "recommendations": [
+        "Adopter la définition : $f$ est continue en $x_0$ si $\\lim_{x \\to x_0} f(x) = f(x_0)$ ; admettre la continuité des fonctions usuelles et des opérations ($f+g$, $f\\times g$, $\\lambda f$, $g \\circ f$).",
+        "Admettre que l’image d’un segment (resp. intervalle) est un segment (resp. intervalle) et en déduire le TVI.",
+        "Entretenir les acquis sur la dérivation, l’approximation affine, la symétrie, la concavité, les branches infinies et l’écriture différentielle $dy = f'(x)\\,dx$.",
+        "Se limiter à quelques fonctions irrationnelles dont le signe de la dérivée ne pose pas de difficulté."
+      ],
+      "horsProgramme": [
+        "Les fonctions réciproques des fonctions trigonométriques usuelles ($\\arcsin, \\arccos, \\arctan$) sont hors programme.",
+        "L’étude des fonctions de la forme $x \\mapsto \\sqrt[n]{u(x)}$ ($n \\ge 3$, $u > 0$) est hors programme ; on se limite à leur dérivée."
+      ]
+    },
+    {
+      "id": 3,
+      "section": "Analyse",
+      "title": "Fonctions primitives",
+      "pages": "p. 6",
+      "contents": [
+        "Fonctions primitives d’une fonction continue sur un intervalle.",
+        "Primitives de la somme de deux fonctions et du produit d’une fonction par un nombre réel."
+      ],
+      "capacities": [
+        "Déterminer les fonctions primitives des fonctions usuelles.",
+        "Utiliser les formules de dérivation pour déterminer les primitives d’une fonction sur un intervalle."
+      ],
+      "recommendations": [
+        "Déterminer les primitives des fonctions usuelles par lecture croisée du tableau des dérivées."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 4,
+      "section": "Analyse",
+      "title": "Fonctions logarithmes et exponentielles",
+      "pages": "p. 6–8",
+      "contents": [
+        "Fonction logarithme népérien $\\ln$ : définition, propriétés algébriques, étude de $x \\mapsto \\ln(x)$, dérivée logarithmique, primitives de $x \\mapsto \\frac{u'(x)}{u(x)}$.",
+        "Fonction logarithme de base $a$ et fonction logarithme décimal.",
+        "Fonction exponentielle népérienne $\\exp$ : définition, propriétés algébriques, nombre $e$ et écriture $e^x$, primitives de $x \\mapsto u'(x)e^{u(x)}$.",
+        "Fonction exponentielle de base $a$ : définition, propriétés et dérivée de $x \\mapsto a^x$."
+      ],
+      "capacities": [
+        "Maîtriser le calcul algébrique, les équations, inéquations et systèmes comportant des logarithmes (y compris $10^x = a$, $10^x \\le a$, $10^x \\ge a$).",
+        "Maîtriser et appliquer les limites fondamentales logarithmiques et exponentielles.",
+        "Étudier et représenter des fonctions comportant $\\ln$, $\\exp$ ou les deux.",
+        "Déterminer des valeurs approchées de $e^a$ (ou de $a$ connaissant $e^a$) à l’aide de l’outil informatique."
+      ],
+      "recommendations": [
+        "Présenter $\\ln$ comme la primitive de $x \\mapsto 1/x$ sur $]0;+\\infty[$ s’annulant en $1$, juste après l’étude des primitives.",
+        "Définir $\\exp$ comme la fonction réciproque de $\\ln$ et poser $a^b = e^{b\\ln a}$ pour $a > 0$.",
+        "Admettre $\\lim_{x\\to+\\infty}\\ln x = +\\infty$ et considérer comme fondamentales les limites $\\lim_{x\\to+\\infty}\\frac{\\ln x}{x^n}$, $\\lim_{x\\to+\\infty}\\frac{e^x}{x^n}$, $\\lim_{x\\to-\\infty}x^n e^x$ et $\\lim_{x\\to 0^+}x^n\\ln x$ ($n \\in \\mathbb{N}^*$)."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 5,
+      "section": "Analyse",
+      "title": "Équations différentielles",
+      "pages": "p. 8",
+      "contents": [
+        "L’équation différentielle $y' = ay + b$.",
+        "L’équation différentielle $y'' + ay' + by = 0$."
+      ],
+      "capacities": [
+        "Résoudre l’équation différentielle $y' = ay + b$.",
+        "Résoudre l’équation différentielle $y'' + ay' + by = 0$.",
+        "Résoudre les équations différentielles se ramenant aux deux équations précédentes."
+      ],
+      "recommendations": [
+        "Mettre en relation la résolution de $y' = ay + b$ et $y'' + ay' + by = 0$ avec les disciplines de la spécialité (physique, biologie).",
+        "Admettre la solution générale de l’équation différentielle $y'' + ay' + by = 0$."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 6,
+      "section": "Analyse",
+      "title": "Calcul intégral",
+      "pages": "p. 8",
+      "contents": [
+        "Intégrale d’une fonction continue sur un segment.",
+        "Propriétés de l’intégrale : relation de Chasles, linéarité, intégrale et ordre, valeur moyenne.",
+        "Techniques de calcul : utilisation des fonctions primitives et intégration par parties.",
+        "Calcul d’aires planes et calcul de volumes de révolution."
+      ],
+      "capacities": [
+        "Calculer l’intégrale de fonctions à l’aide des primitives et de l’intégration par parties.",
+        "Maîtriser le calcul de l’aire d’un domaine plan limité par deux courbes et deux droites parallèles à l’axe des ordonnées.",
+        "Calculer le volume d’un solide engendré par la rotation de la courbe d’une fonction autour de l’axe des abscisses."
+      ],
+      "recommendations": [
+        "Présenter l’intégrale sur un segment à partir de la notion de primitive d’une fonction continue.",
+        "Admettre toutes les propriétés et les interpréter géométriquement à l’aide de l’aire."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 7,
+      "section": "Algèbre et géométrie",
+      "title": "Produit scalaire dans l’espace $V_3$",
+      "pages": "p. 9",
+      "contents": [
+        "Définition et propriétés : symétrie, bilinéarité, orthogonalité de deux vecteurs.",
+        "Repère orthonormé et base orthonormée.",
+        "Expression analytique du produit scalaire, de la norme d’un vecteur et de la distance de deux points."
+      ],
+      "capacities": [
+        "Exprimer et démontrer l’orthogonalité de deux vecteurs en utilisant le produit scalaire.",
+        "Exprimer vectoriellement et analytiquement l’orthogonalité et ses propriétés."
+      ],
+      "recommendations": [
+        "Présenter le produit scalaire dans l’espace à l’instar du plan et étendre/admettre toutes ses propriétés.",
+        "Viser deux objectifs : exprimer analytiquement les propriétés métriques et l’orthogonalité, et établir des formules de distances."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 8,
+      "section": "Algèbre et géométrie",
+      "title": "Applications du produit scalaire dans l’espace",
+      "pages": "p. 9–10",
+      "contents": [
+        "Détermination analytique de l’ensemble $\\{M \\in \\mathcal{P} \\mid \\vec{u} \\cdot \\overrightarrow{AM} = k\\}$.",
+        "Vecteur normal à un plan ; équation cartésienne d’un plan défini par un point et un vecteur normal ; distance d’un point à un plan.",
+        "Étude analytique d’une sphère et de l’ensemble des points $M(x;y;z)$ tels que $x^2 + y^2 + z^2 + ax + by + cz + d = 0$.",
+        "Intersection d’une sphère et d’un plan, plan tangent en un point donné, intersection d’une sphère et d’une droite ; problèmes géométriques."
+      ],
+      "capacities": [
+        "Déterminer un plan par un point et un vecteur normal, et la droite passant par un point et orthogonale à un plan.",
+        "Déterminer l’équation cartésienne et une représentation paramétrique d’une sphère définie par son centre et son rayon.",
+        "Reconnaître l’ensemble des points $M$ de l’espace vérifiant $\\overrightarrow{MA} \\cdot \\overrightarrow{MB} = 0$."
+      ],
+      "recommendations": [
+        "Limiter l’étude analytique des positions relatives (sphère/plan et sphère/droite) à des exemples numériques sans traiter le cas général.",
+        "Utiliser le produit scalaire pour étudier le parallélisme et l’orthogonalité dans l’espace."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 9,
+      "section": "Algèbre et géométrie",
+      "title": "Produit vectoriel",
+      "pages": "p. 10",
+      "contents": [
+        "Orientation de l’espace ; trièdre ; repère et base orientés.",
+        "Définition géométrique du produit vectoriel et interprétation géométrique de sa norme.",
+        "Propriétés : antisymétrie, bilinéarité ; coordonnées dans une base orthonormée directe.",
+        "Distance d’un point à une droite."
+      ],
+      "capacities": [
+        "Calculer l’aire d’un triangle à l’aide du produit vectoriel.",
+        "Déterminer une équation d’un plan défini par trois points non alignés.",
+        "Appliquer le produit vectoriel pour résoudre des problèmes géométriques."
+      ],
+      "recommendations": [
+        "Définir le produit vectoriel après orientation de l’espace (règle du bonhomme d’Ampère) et en donner l’interprétation géométrique.",
+        "Admettre toutes les propriétés du produit vectoriel."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 10,
+      "section": "Algèbre et géométrie",
+      "title": "Les nombres complexes",
+      "pages": "p. 10–11",
+      "contents": [
+        "Ensemble $\\mathbb{C}$, écriture algébrique, égalité, représentation géométrique, affixe d’un point et d’un vecteur, opérations.",
+        "Conjugué, module, argument d’un complexe non nul et forme trigonométrique.",
+        "Angle de deux vecteurs et argument du rapport de leurs affixes ; alignement de trois points.",
+        "Équation $az^2 + bz + c = 0$ où $a, b, c$ sont réels ($a \\ne 0$).",
+        "Notation exponentielle $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$, formules d’Euler et formule de Moivre."
+      ],
+      "capacities": [
+        "Maîtriser le calcul dans $\\mathbb{C}$ et passer de la forme algébrique à la forme trigonométrique et inversement.",
+        "Reconnaître les formules trigonométriques de base et linéariser des monômes trigonométriques via la notation exponentielle.",
+        "Utiliser les nombres complexes en géométrie (alignement, orthogonalité, distance, cocyclicité) et exprimer une translation, homothétie ou rotation.",
+        "Résoudre dans $\\mathbb{C}$ l’équation $az^2 + bz + c = 0$ ($a,b,c \\in \\mathbb{R},\\; a \\ne 0$) et celles qui s’y ramènent."
+      ],
+      "recommendations": [
+        "Introduire la représentation géométrique dès le début du chapitre pour interpréter opposé, conjugué, module, argument, somme et produit par un réel.",
+        "Relier $|z'-z|$ à la distance $AB$ et $\\arg(z'-z)$ à l’angle orienté $(\\vec{i}; \\overrightarrow{AB})$.",
+        "Insister sur la traduction en complexes de la distance, la mesure d’angle, l’alignement et la cocyclicité."
+      ],
+      "horsProgramme": [
+        "L’équation du second degré à coefficients complexes non réels est hors programme (sauf si elle se ramène à des coefficients réels)."
+      ]
+    },
+    {
+      "id": 11,
+      "section": "Algèbre et géométrie",
+      "title": "Calcul de probabilités",
+      "pages": "p. 11–12",
+      "contents": [
+        "Principe fondamental du dénombrement, arbre de choix ; arrangements avec ou sans répétition, combinaisons, nombres $A_n^p$, $C_n^p$ et $n!$.",
+        "Expériences aléatoires, stabilité de la fréquence, probabilité d’un événement et hypothèse d’équiprobabilité.",
+        "Probabilité conditionnelle ; indépendance de deux événements ; indépendance de deux épreuves.",
+        "Variable aléatoire, loi de probabilité, espérance mathématique, écart-type et loi binomiale."
+      ],
+      "capacities": [
+        "Calculer la probabilité de la réunion, de l’intersection et de l’événement contraire.",
+        "Choisir le modèle de dénombrement adapté à la situation étudiée.",
+        "Reconnaître l’indépendance de deux événements.",
+        "Déterminer la loi de probabilité d’une variable aléatoire et appliquer la loi binomiale dans des situations liées à la spécialité."
+      ],
+      "recommendations": [
+        "Habituer les élèves à concevoir des simulations et observer la stabilité des fréquences (calculatrice touche rand ou ordinateur).",
+        "Introduire les probabilités progressivement à partir de situations concrètes et d’exemples variés en lien avec les disciplines de la spécialité."
+      ],
+      "horsProgramme": [
+        "Éviter toute présentation théorique de la notion de probabilité."
+      ]
+    }
+  ]
+}

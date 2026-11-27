@@ -146,7 +146,7 @@
         {
           "type": "definition",
           "title": "Comment calculer la norme d'un vecteur ?",
-          "content": "Dans un repère orthonormé, la norme du vecteur $\\overrightarrow{u}\\begin{pmatrix}x\\\\y\\end{pmatrix}$ est :\\par\\smallskip$$\\|\\overrightarrow{u}\\| = \\sqrt{x^\\blank{2} + y^2}$$"
+          "content": "Dans un repère orthonormé, la norme du vecteur $\\overrightarrow{u}\\begin{pmatrix}x\\\\y\\end{pmatrix}$ est :\\par\\smallskip$$\\|\\overrightarrow{u}\\| = \\sqrt{x^{\\blank{2}} + y^2}$$"
         },
         {
           "type": "definition",

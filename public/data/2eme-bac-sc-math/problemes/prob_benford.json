@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "La loi de Benford sur les nombres anormaux",
+    "subtitle": "Problème 1.35 — Logarithmes, probabilités et test du χ²",
+    "context": "Probabilités et statistique"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "La loi de Benford sur les nombres anormaux",
+          "content": "En 1881, l'astronome \\textbf{Simon Newcomb} remarque que les premières pages des tables de logarithmes de sa bibliothèque (celles qui commencent par le chiffre $1$) sont nettement plus usées que les dernières (chiffre $9$). En 1938, le physicien \\textbf{Frank Benford} confirme ce phénomène sur plus de $20\\,000$ données issues de la nature et de la vie courante (longueurs de fleuves, populations de villes, factures, constantes physiques, suites mathématiques) : le \\textbf{premier chiffre significatif} (le premier chiffre non nul dans l'écriture décimale, par exemple $1$ pour $1\\,234$, $3$ pour $3{,}14$ et $6$ pour $0{,}0065$) n'est pas du tout équiréparti !\\par Une variable aléatoire $X$ à valeurs dans $\\{1, 2, \\dots, 9\\}$ suit la \\textbf{loi de Benford} si pour tout $i \\in \\{1, 2, \\dots, 9\\}$ :\\par $$\\mathbb{P}(X = i) = \\log_{10}\\!\\left(1 + \\frac{1}{i}\\right) = \\log_{10}\\!\\left(\\frac{i+1}{i}\\right).$$\\par Aujourd'hui, cette loi est utilisée par les auditeurs pour détecter des \\textbf{fraudes fiscales ou comptables} !"
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (logarithme décimal, intervalle de confiance et test du χ²)",
+          "content": "\\begin{itemize}\\item \\textbf{Logarithme décimal $\\log_{10}$ :} $\\log_{10}(1) = 0$, $\\log_{10}(10) = 1$, $\\log_{10}$ est strictement croissante sur $]0\\,;\\,+\\infty[$, et $\\log_{10}(ab) = \\log_{10}(a) + \\log_{10}(b)$, $\\log_{10}(a/b) = \\log_{10}(a) - \\log_{10}(b)$.\\item \\textbf{Intervalle de confiance à $95\\,\\%$ de la moyenne :} pour $n$ observations de moyenne empirique $\\bar{x}$ et d'écart-type $\\sigma = \\sqrt{\\overline{x^2} - \\bar{x}^2}$, $\\text{IC}_{95} = \\left[\\bar{x} - 1{,}96\\dfrac{\\sigma}{\\sqrt{n}}\\,;\\, \\bar{x} + 1{,}96\\dfrac{\\sigma}{\\sqrt{n}}\\right]$.\\item \\textbf{Test d'adéquation du $\\chi^2$ (admis) :} on calcule la distance statistique $T = n\\displaystyle\\sum_{i=1}^{9} \\frac{\\bigl(f_i - \\mathbb{P}(X=i)\\bigr)^2}{\\mathbb{P}(X=i)}$, où $f_i$ sont les fréquences observées. Au seuil de $95\\,\\%$ (pour $8$ degrés de liberté), si $T < 15{,}51$ les données sont compatibles avec la loi de Benford ; si $T \\ge 15{,}51$, on rejette la loi de Benford.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Propriétés théoriques de la loi de Benford",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Montrer que la formule $\\mathbb{P}(X = i) = \\log_{10}\\!\\left(1 + \\dfrac{1}{i}\\right)$ définit bien une loi de probabilité sur $\\{1, \\dots, 9\\}$ (vérifier que chaque valeur est dans $]0\\,;\\,1[$ et que la somme vaut exactement $1$ par télescopage).\\item Calculer les valeurs approchées (en pourcentage à $0{,}1\\,\\%$ près) des $9$ probabilités $\\mathbb{P}(X = 1), \\dots, \\mathbb{P}(X = 9)$.\\item Démontrer que l'\\textbf{espérance} $\\mathbb{E}(X) = \\displaystyle\\sum_{i=1}^{9} i\\,\\mathbb{P}(X = i)$ vaut exactement :\\par $$\\mathbb{E}(X) = 9 - \\log_{10}(9!) \\approx 3{,}44.$$\\par Comparer cette espérance à celle d'une répartition uniforme sur $\\{1, \\dots, 9\\}$ (qui vaut $5$).\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Somme télescopique et regroupement pour E(X)",
+          "content": "Écrire $\\log_{10}\\!\\left(\\dfrac{i+1}{i}\\right) = \\log_{10}(i+1) - \\log_{10}(i)$. Pour $\\mathbb{E}(X)$, développez $\\sum_{i=1}^{9} i\\log_{10}(i+1) - \\sum_{i=1}^{9} i\\log_{10}(i)$ : devant $\\log_{10}(k)$ pour $2 \\le k \\le 9$, le coefficient vaut $(k-1) - k = -1$, et devant $\\log_{10}(10)$ il vaut $9$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Propriétés de la loi de Benford",
+          "content": "\\textbf{1)} Pour tout $i \\in \\{1, \\dots, 9\\}$, $\\dfrac{10}{9} \\le 1 + \\dfrac{1}{i} \\le 2$, donc $1 < 1 + \\dfrac{1}{i} < 10$, ce qui entraîne $0 < \\log_{10}\\!\\left(1 + \\dfrac{1}{i}\\right) < 1$. De plus, par somme télescopique :\\par $$\\sum_{i=1}^{9} \\mathbb{P}(X=i) = \\sum_{i=1}^{9}\\bigl(\\log_{10}(i+1) - \\log_{10}(i)\\bigr) = \\log_{10}(10) - \\log_{10}(1) = 1 - 0 = \\boxed{1}.$$\\par\\textbf{2)} Probabilités de Benford :\\par $$\\begin{array}{|c|c|c|c|c|c|c|c|c|c|}\\hline i & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\\\\\hline \\mathbb{P}(X=i) & 30{,}1\\,\\% & 17{,}6\\,\\% & 12{,}5\\,\\% & 9{,}7\\,\\% & 7{,}9\\,\\% & 6{,}7\\,\\% & 5{,}8\\,\\% & 5{,}1\\,\\% & 4{,}6\\,\\% \\\\\\hline\\end{array}$$\\par Le chiffre $1$ apparaît \\blank{$30{,}1\\,\\%$} du temps — près de $7$ fois plus souvent que le $9$ ($4{,}6\\,\\%$) !\\par\\textbf{3)} Calcul exact de l'espérance :\\par $$\\begin{aligned}\\mathbb{E}(X) &= \\sum_{i=1}^{9} i\\bigl(\\log_{10}(i+1) - \\log_{10}(i)\\bigr) \\\\ &= \\bigl(\\log_{10}2 + 2\\log_{10}3 + \\cdots + 9\\log_{10}10\\bigr) - \\bigl(\\log_{10}1 + 2\\log_{10}2 + \\cdots + 9\\log_{10}9\\bigr) \\\\ &= 9\\log_{10}(10) - \\bigl(\\log_{10}1 + \\log_{10}2 + \\cdots + \\log_{10}9\\bigr) = \\boxed{9 - \\log_{10}(9!)}.\\end{aligned}$$\\par Comme $9! = 362\\,880$, $\\log_{10}(9!) \\approx 5{,}5598$, donc $\\mathbb{E}(X) \\approx$ \\blank{$3{,}44$} (nettement inférieur à $5$, la moyenne uniforme)."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Tests statistiques sur deux séries de données réelles",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\textbf{Série A — 60 nombres choisis « au hasard » par 60 personnes :}\\par On a demandé à $60$ personnes : « Donnez un nombre positif aussi grand ou aussi petit que vous voulez. » Le comptage des premiers chiffres significatifs des $60$ réponses donne :\\par $$\\begin{array}{|c|c|c|c|c|c|c|c|c|c|}\\hline \\text{Chiffre } x_i & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\\\\\hline \\text{Effectif } n_i & 15 & 14 & 5 & 2 & 5 & 4 & 4 & 5 & 6 \\\\\\hline\\end{array}$$\\begin{enumerate}\\item Calculer les fréquences observées $f_i = n_i / 60$, puis la moyenne empirique $\\bar{x}$, l'écart-type $\\sigma$ et l'intervalle de confiance à $95\\,\\%$ de la moyenne. L'espérance théorique $3{,}44$ appartient-elle à cet intervalle ?\\item Calculer la statistique $T_A$ du test du $\\chi^2$ (avec $n = 60$) et comparer au seuil $15{,}51$. Commenter ce résultat surprenant (limites de la taille de l'échantillon et biais humains : choix de $3{,}14$, $666$, dates de naissance, $10$, $100$…).\\end{enumerate}\\par\\textbf{Série B — Les 50 premiers termes de la suite $\\bigl(|\\cos(n)|\\bigr)_{1 \\le n \\le 50}$ ($n$ en radians) :}\\par L'extraction des premiers chiffres significatifs des $50$ premières valeurs de $|\\cos(n)|$ ($0{,}54;\\, 0{,}41;\\, 0{,}98;\\, 0{,}65;\\, 0{,}28;\\,\\dots$) donne le tableau d'effectifs suivant :\\par $$\\begin{array}{|c|c|c|c|c|c|c|c|c|c|}\\hline \\text{Chiffre } x_i & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\\\\\hline \\text{Effectif } n_i & 7 & 4 & 1 & 6 & 5 & 5 & 4 & 4 & 14 \\\\\\hline\\end{array}$$\\begin{enumerate}\\setcounter{enumi}{2}\\item Calculer les fréquences $f_i = n_i / 50$, la moyenne $\\bar{x}$, l'écart-type $\\sigma$ et l'intervalle de confiance à $95\\,\\%$. Que remarque-t-on pour le chiffre $9$ ?\\item Calculer la statistique $T_B$ du test du $\\chi^2$ (avec $n = 50$) et conclure. Pourquoi une suite bornée dans $[0\\,;\\,1]$ comme $|\\cos(n)|$ ne suit-elle pas la loi de Benford ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Variance par Koenig-Huygens et calcul de T",
+          "content": "Rappel : $\\sigma^2 = \\left(\\sum_{i=1}^{9} x_i^2 f_i\\right) - \\bar{x}^2$. Pour la Série B, remarquez que $f_9 = 14/50 = 0{,}28$ contre $p_9 \\approx 0{,}046$ : ce seul terme contribue déjà pour $50\\times\\dfrac{(0{,}28 - 0{,}046)^2}{0{,}046} \\approx 60$ à la statistique $T_B$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Études statistiques et χ²",
+          "content": "\\textbf{1) Série A ($n = 60$) :} Fréquences : $(0{,}25;\\, 0{,}233;\\, 0{,}083;\\, 0{,}033;\\, 0{,}083;\\, 0{,}067;\\, 0{,}067;\\, 0{,}083;\\, 0{,}10)$.\\par $$\\bar{x} = \\frac{1\\times 15 + 2\\times 14 + \\cdots + 9\\times 6}{60} = \\frac{237}{60} = \\boxed{3{,}95}, \\qquad \\overline{x^2} = \\frac{1\\,419}{60} = 23{,}65,$$\\par $$\\sigma = \\sqrt{23{,}65 - 3{,}95^2} = \\sqrt{8{,}0475} \\approx \\boxed{2{,}84}.$$\\par Intervalle de confiance à $95\\,\\%$ :\\par $$\\left[3{,}95 - 1{,}96\\frac{2{,}84}{\\sqrt{60}}\\,;\\, 3{,}95 + 1{,}96\\frac{2{,}84}{\\sqrt{60}}\\right] \\approx \\boxed{[3{,}23\\,;\\,4{,}67]}.$$\\par L'espérance théorique $3{,}44$ appartient bien à cet intervalle.\\par\\textbf{2)} La statistique du $\\chi^2$ vaut :\\par $$T_A = 60\\sum_{i=1}^{9}\\frac{(f_i - p_i)^2}{p_i} \\approx \\boxed{10{,}13} < 15{,}51.$$\\par Valeur de $T_A$ : \\blank{$10{,}13$}. Au seuil de $95\\,\\%$, on ne rejette donc pas l'hypothèse de Benford sur cet échantillon — un résultat surprenant car les humains inventent mal le hasard ! Cela s'explique par la petite taille ($n=60$) et la forte proportion de nombres ronds ($10, 100$) ou de dates ($19\\dots, 20\\dots$) commençant par $1$ ou $2$.\\par\\textbf{3) Série B ($|\\cos(n)|$, $n = 50$) :} Fréquences : $(0{,}14;\\, 0{,}08;\\, 0{,}02;\\, 0{,}12;\\, 0{,}10;\\, 0{,}10;\\, 0{,}08;\\, 0{,}08;\\, 0{,}28)$. Le chiffre $9$ est massivement surreprésenté ($28\\,\\%$ contre $4{,}6\\,\\%$ attendus) car $\\cos(x)$ reste longtemps proche de ses extrema $\\pm 1$ (pente nulle) !\\par $$\\bar{x} = \\boxed{5{,}66}, \\qquad \\overline{x^2} = 40{,}38, \\qquad \\sigma = \\sqrt{40{,}38 - 5{,}66^2} \\approx \\boxed{2{,}89},$$\\par $$\\text{IC}_{95} = \\left[5{,}66 - 1{,}96\\frac{2{,}89}{\\sqrt{50}}\\,;\\, 5{,}66 + 1{,}96\\frac{2{,}89}{\\sqrt{50}}\\right] \\approx \\boxed{[4{,}86\\,;\\,6{,}46]}.$$\\par L'espérance théorique $3{,}44$ est largement en dehors de l'intervalle !\\par\\textbf{4)} Le test du $\\chi^2$ confirme sans appel :\\par $$T_B = 50\\sum_{i=1}^{9}\\frac{(f_i - p_i)^2}{p_i} \\approx \\boxed{73{,}89} \\gg 15{,}51.$$\\par Valeur de $T_B$ : \\blank{$73{,}89$}. On rejette la loi de Benford : pour suivre la loi de Benford, des données doivent s'étaler sur \\textbf{plusieurs ordres de grandeur} (comme $2^n$, $n!$, Fibonacci, populations, chiffres d'affaires) et être \\textbf{invariantes par changement d'unité}, ce qui n'est pas le cas d'une suite bornée dans $[0\\,;\\,1]$."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Découverte par \\textbf{Simon Newcomb} en 1881 puis popularisée par \\textbf{Frank Benford} en 1938, la loi de Benford ne reçoit une explication mathématique pleinement satisfaisante qu'en 1995 grâce au mathématicien américain \\textbf{Theodore Hill} (invariance d'échelle et mélange de distributions). Depuis les années 1980, elle est utilisée par les administrations fiscales et les auditeurs financiers pour repérer des bilans falsifiés."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "La loi de Benford est la seule loi sur les premiers chiffres qui soit \\textbf{invariante par changement d'unité} (multiplier toutes les longueurs ou tous les prix par une constante — de kilomètres en miles, de dirhams en euros — ne change pas la répartition des premiers chiffres !). Elle se généralise à toute base $b$ : $\\mathbb{P}(X = i) = \\log_b\\!\\left(1 + \\dfrac{1}{i}\\right)$."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Utiliser les propriétés algébriques du logarithme et les \\textbf{sommes télescopiques}.\\item Calculer moyenne, variance, écart-type et \\textbf{espérance} d'une série statistique ou loi discrète.\\item Interpréter un intervalle de confiance et un test statistique d'adéquation ($\\chi^2$).\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

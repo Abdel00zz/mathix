@@ -1,0 +1,111 @@
+{
+  "classId": "1ere-bac-sc-ex",
+  "title": "Première année du cycle du baccalauréat — Sciences Expérimentales",
+  "source": "Ministère de l’Éducation Nationale · Sections Internationales BIOF (Option Français)",
+  "year": "Novembre 2014",
+  "pdfUrl": "/assets/aistudio/1er_bac__1__de7fcbf1.pdf",
+  "chapters": [
+    {
+      "id": 1,
+      "section": "Géométrie plane",
+      "title": "Barycentre, rotation et analytique du produit scalaire",
+      "pages": "p. 14–15",
+      "contents": [
+        "Barycentre de $n$ points ($2 \\le n \\le 4$), centre de gravité, propriété caractéristique, invariance, associativité, coordonnées.",
+        "Rotation : définition, réciproque, conservation de la distance, des angles orientés et du barycentre ; images d’une droite, d’un segment et d’un cercle.",
+        "Analytique du produit scalaire : norme, distance, $\\cos\\theta$ et $\\sin\\theta$ ; droite (vecteur normal, équation cartésienne, distance point-droite) ; cercle (équation cartésienne, paramétrique, positions relatives, tangente)."
+      ],
+      "capacities": [
+        "Utiliser le barycentre pour simplifier des expressions vectorielles, montrer l’alignement ou l’intersection de droites et résoudre des problèmes de géométrie/physique.",
+        "Construire l’image de figures usuelles par une rotation et reconnaître des isométries.",
+        "Exprimer parallélisme/orthogonalité, reconnaître $\\overrightarrow{MA}\\cdot\\overrightarrow{MB}=0$, déterminer centre/rayon d’un cercle et passer entre équation cartésienne et paramétrique."
+      ],
+      "recommendations": [
+        "Mettre en évidence le rôle du barycentre et de la méthode analytique du cercle (cercle défini par trois points non alignés, régionnement non linéaire)."
+      ],
+      "horsProgramme": [
+        "L’introduction des coordonnées, de l’expression analytique d’une rotation et de la composée de deux rotations sont hors programme."
+      ]
+    },
+    {
+      "id": 2,
+      "section": "Géométrie dans l’espace",
+      "title": "Vecteurs et étude analytique de l’espace",
+      "pages": "p. 15–16",
+      "contents": [
+        "Calcul vectoriel dans l’espace, vecteurs colinéaires, définition vectorielle d’une droite et d’un plan, vecteurs coplanaires.",
+        "Coordonnées d’un point et d’un vecteur dans un repère/base, déterminant de trois vecteurs.",
+        "Représentation paramétrique d’une droite et d’un plan, équation cartésienne d’un plan, deux équations cartésiennes d’une droite, positions relatives."
+      ],
+      "capacities": [
+        "Reconnaître et exprimer colinéarité et coplanarité pour résoudre des problèmes géométriques.",
+        "Choisir la représentation cartésienne ou paramétrique convenable pour étudier les positions relatives de droites et de plans."
+      ],
+      "recommendations": [
+        "Se limiter à l’interprétation géométrique de l’alignement et de la coplanarité ; définir repère et base par quatre points non coplanaires et privilégier l’étude analytique."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 3,
+      "section": "Algèbre et Analyse",
+      "title": "Logique, suites numériques et calcul trigonométrique",
+      "pages": "p. 17–18",
+      "contents": [
+        "Notions de logique : propositions, connecteurs, fonctions propositionnelles, quantificateurs, raisonnements (absurde, contraposée, disjonction des cas, équivalence, récurrence).",
+        "Suites numériques : suites récurrentes, majorées/minorées/bornées, monotonie, suites arithmétiques et géométriques.",
+        "Calcul trigonométrique : formules de transformation et transformation de $a\\cos x + b\\sin x$."
+      ],
+      "capacities": [
+        "Utiliser le type de raisonnement adapté et rédiger des démonstrations logiquement correctes.",
+        "Étudier une suite numérique par récurrence, reconnaître une suite arithmétique/géométrique et calculer la somme de $n$ termes consécutifs.",
+        "Résoudre des équations et inéquations trigonométriques et lire leurs solutions sur le cercle trigonométrique."
+      ],
+      "recommendations": [
+        "Réinvestir la logique dans tous les chapitres ; utiliser l’outil informatique pour les suites récurrentes sans abus ; opter pour la simplicité en trigonométrie."
+      ],
+      "horsProgramme": [
+        "Éviter toute construction théorique de la logique et toute utilisation excessive de tableaux de vérité."
+      ]
+    },
+    {
+      "id": 4,
+      "section": "Algèbre et Analyse",
+      "title": "Fonctions numériques : généralités et limites",
+      "pages": "p. 19–20",
+      "contents": [
+        "Généralités : fonction majorée/minorée/bornée/périodique, comparaison, extrema, monotonie, composée $g \\circ f$, courbes de $x \\mapsto \\sqrt{x+a}$ et $x \\mapsto ax^3$.",
+        "Limites : limites des fonctions usuelles et inverses en $0, +\\infty, -\\infty$ ; limite finie/infinie, gauche/droite ; opérations ; limites $\\frac{\\sin x}{x}$, $\\frac{\\tan x}{x}$, $\\frac{1-\\cos x}{x^2}$, $\\frac{\\sin(ax)}{x}$ ; limites et ordre."
+      ],
+      "capacities": [
+        "Comparer deux expressions, déterminer les variations de $f+\\lambda$, $\\lambda f$ et $g\\circ f$, et résoudre graphiquement des équations et inéquations.",
+        "Calculer les limites de fonctions polynômes, rationnelles, irrationnelles et trigonométriques simples."
+      ],
+      "recommendations": [
+        "Approcher la limite intuitivement à partir des fonctions de référence ; habituer les élèves à lever les indéterminations simples à l’aide des opérations et de l’ordre."
+      ],
+      "horsProgramme": [
+        "Toute présentation théorique de la notion de limite est hors programme."
+      ]
+    },
+    {
+      "id": 5,
+      "section": "Algèbre et Analyse",
+      "title": "Dérivation et représentation graphique des fonctions",
+      "pages": "p. 20–21",
+      "contents": [
+        "Dérivabilité en un point, nombre dérivé, tangente, approximation affine, demi-tangentes et tangentes verticales.",
+        "Dérivabilité sur un intervalle, dérivées successives, opérations ($f+g, \\lambda f, fg, f/g, f^n, f(ax+b), \\sqrt{f}$), monotonie et extrema ; équation différentielle $y'' + \\omega^2 y = 0$.",
+        "Branches infinies, asymptotes, directions asymptotiques, concavité, point d’inflexion et éléments de symétrie."
+      ],
+      "capacities": [
+        "Déterminer l’équation de la tangente, étudier la monotonie via $f'$ et résoudre des problèmes d’extrema.",
+        "Utiliser $f''$ pour étudier concavité et points d’inflexion, exploiter périodicité/symétrie et représenter des fonctions polynômes, rationnelles, irrationnelles et trigonométriques simples."
+      ],
+      "recommendations": [
+        "Traiter les approximations affines en $0$ de $(1+h)^2, (1+h)^3, \\frac{1}{1+h}, \\sqrt{1+h}$ ; utiliser $\\lim_{x\\to 0}\\frac{\\sin x}{x}$ pour dériver $\\cos$ et $\\sin$ ; admettre la solution générale de $y''+\\omega^2 y=0$."
+      ],
+      "horsProgramme": []
+    }
+  ]
+}

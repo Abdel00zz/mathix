@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Calculer la distance de la Terre à la Lune",
+    "subtitle": "Problème 1.26 — Ératosthène, Aristarque et trigonométrie",
+    "context": "Géométrie et trigonométrie"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Calculer la distance de la Terre à la Lune",
+          "content": "Comment les savants grecs de l'Antiquité — \\textbf{Ératosthène} et \\textbf{Aristarque de Samos} ($\\mathrm{III}^{\\mathrm{e}}$ siècle av. J.-C.) — ont-ils réussi à mesurer la taille de la Terre, le rayon de la Lune et la distance Terre–Lune, sans télescope ni satellite, avec de simples bâtons, des clepsydres et l'observation des éclipses ?\\par Ce problème reconstitue leur démarche géniale en \\textbf{quatre étapes géométriques} successives."
+        },
+        {
+          "type": "notation",
+          "title": "Notations astronomiques",
+          "content": "On note $R_T$, $R_L$ et $R_S$ les rayons respectifs de la Terre, de la Lune et du Soleil ; $d_{TL}$ la distance Terre–Lune et $d_{TS}$ la distance Terre–Soleil. On suppose les rayons solaires parallèles et on néglige $R_L$ devant $R_S$."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Rayon de la Terre (Ératosthène) et éclipse de Soleil",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\textbf{Étape 1 — Calcul du rayon de la Terre $R_T$.}\\par Au solstice d'été à midi, le Soleil éclaire le fond d'un puits vertical à Syène ($S$, aujourd'hui Assouan). Au même instant à Alexandrie ($A$, supposée sur le même méridien à $800\\text{ km}$ au nord), un bâton vertical (gnomon) $[AG]$ de $1\\text{ m}$ projette une ombre $[AB]$ de $12{,}5\\text{ cm}$ (on assimile les petits arcs à des segments). On note $O$ le centre de la Terre.\\begin{enumerate}\\item En utilisant le parallélisme des rayons solaires, indiquer quel angle du triangle $AGB$ est égal à l'angle au centre $\\widehat{AOS}$.\\item Quelle est la nature du triangle $AGB$ ? Calculer $\\tan(\\widehat{AGB})$ et une valeur approchée de $\\widehat{AGB}$ en degrés (puis en radians).\\item Dans le triangle isocèle $OAS$ (on note $I$ le milieu de $[AS]$), calculer $R_T$ à partir de $\\tan\\!\\left(\\dfrac{\\widehat{AOS}}{2}\\right)$ (et comparer avec le calcul direct par longueur d'arc $R_T = \\dfrac{800}{\\widehat{AOS}\\text{ (rad)}}$).\\end{enumerate}\\par\\textbf{Étape 2 — Éclipse totale de Soleil.}\\par Lors d'une éclipse totale de Soleil, le disque lunaire masque tout juste le disque solaire vu depuis la Terre (on assimile la zone d'ombre sur Terre à un point et on néglige $R_T$ devant $d_{TL}$ et $d_{TS}$).\\begin{enumerate}\\setcounter{enumi}{3}\\item À l'aide du théorème de Thalès, établir la relation liant $R_S$, $R_L$, $d_{TS}$ et $d_{TL}$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Angles alternes-internes et triangle isocèle OAS",
+          "content": "La droite $(OA)$ prolongée porte le gnomon $[AG]$. La droite $(OS)$ et le rayon $(GB)$ sont parallèles, donc les angles alternes-internes $\\widehat{AOS}$ et $\\widehat{AGB}$ sont égaux ! Dans $OAI$ rectangle en $I$, $\\sin(\\widehat{AOS}/2) = \\dfrac{AI}{OA}$ (ou $\\tan(\\widehat{AOS}/2) \\approx \\dfrac{AI}{R_T}$)."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Rayon de la Terre et éclipse de Soleil",
+          "content": "\\textbf{1)} Les rayons solaires passant par $S$ (porté par $(OS)$) et par $G$ (droite $(GB)$) sont parallèles, coupés par la sécante $(OAG)$ : les angles alternes-internes sont égaux, donc $\\widehat{AOS} = \\widehat{AGB}$.\\par\\textbf{2)} Le gnomon étant vertical, le triangle $AGB$ est rectangle en $A$, d'où :\\par $$\\tan(\\widehat{AGB}) = \\frac{AB}{AG} = \\frac{0{,}125}{1} = 0{,}125 \\implies \\widehat{AGB} = \\arctan(0{,}125) \\approx \\boxed{7{,}125^\\circ} \\approx 0{,}12435\\text{ rad}.$$\\par\\textbf{3)} Le triangle $OAS$ est isocèle en $O$ ($OA = OS = R_T$) ; la hauteur $[OI]$ est médiatrice de $[AS]$ ($AI = 400\\text{ km}$). Avec l'approximation $OI \\approx R_T$ (ou $\\tan$ au lieu de $\\sin$, quasi-identiques pour $3{,}56^\\circ$) :\\par $$R_T \\approx \\frac{AS}{2\\tan(\\widehat{AOS}/2)} = \\frac{400}{\\tan(3{,}5625^\\circ)} \\approx \\boxed{6\\,425\\text{ km}}$$\\par (et par la formule exacte d'arc de cercle $R_T = \\dfrac{800}{0{,}12435} \\approx$ \\blank{$6\\,433\\text{ km}$}, remarquablement proche du rayon réel moyen de $6\\,371\\text{ km}$ !).\\par\\textbf{4)} Par le théorème de Thalès entre le point d'observation terrestre, le centre de la Lune et le centre du Soleil :\\par $$\\frac{R_S}{R_L} = \\frac{d_{TS}}{d_{TL}}.$$"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Éclipse de Lune et distance Terre–Lune",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\textbf{Étape 3 — Éclipse totale de Lune.}\\par Lorsque la Terre passe entre le Soleil ($S$) et la Lune ($L$), elle projette derrière elle un \\textbf{cône d'ombre} d'axe $(STL)$, de rayon $R_T$ au niveau de la Terre et de rayon $CL$ au niveau de la Lune (les segments $[SA], [TB], [LC]$ sont parallèles et perpendiculaires à l'axe, avec $A, B, C$ alignés au bord du cône).\\begin{enumerate}\\item En traçant la parallèle à $(STL)$ passant par $C$ (coupant $[TB]$ et $[SA]$) et en appliquant Thalès, montrer que :\\par $$\\frac{R_T - CL}{R_S - R_T} = \\frac{d_{TL}}{d_{TS}},$$\\par puis, en utilisant l'Étape 2 et en négligeant $R_T$ devant $R_S$ (soit $R_S - R_T \\approx R_S$), en déduire la célèbre relation d'Aristarque :\\par $$CL \\approx R_T - R_L.$$\\item Lors de l'éclipse de Lune du 29 juin 2029, la Lune commencera à entrer dans le cône d'ombre à $1\\text{ h }32$, sera entièrement entrée à $2\\text{ h }31$ (elle aura alors parcouru son propre diamètre $2R_L$), et sera entièrement sortie à $5\\text{ h }11$ (son bord avant aura parcouru le diamètre du cône $2CL$ entre $1\\text{ h }32$ et $4\\text{ h }12$, ou son bord arrière entre $2\\text{ h }31$ et $5\\text{ h }11$). En déduire le rapport $\\dfrac{R_L}{CL}$ à partir de ces deux durées.\\item À l'aide du système formé par les questions 1 et 2 (en prenant $R_T \\approx 6\\,433\\text{ km}$), calculer $CL$ puis le rayon de la Lune $R_L$.\\end{enumerate}\\par\\textbf{Étape 4 — Observation directe du diamètre apparent de la Lune.}\\begin{enumerate}\\setcounter{enumi}{3}\\item Vue depuis la surface de la Terre, la Lune est observée sous un angle apparent de $0{,}5333^\\circ$ entre son bord gauche et son bord droit. Calculer la distance $OL$ de la surface terrestre au centre de la Lune, puis la distance centre à centre $D_{TL} = OL + R_T$. Comparer à la vraie valeur.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Durées de l'éclipse du 29 juin 2029",
+          "content": "De $1\\text{ h }32$ à $2\\text{ h }31$, il s'écoule $59\\text{ minutes}$ (parcours de $2 R_L$). De $2\\text{ h }31$ à $5\\text{ h }11$, il s'écoule $2\\text{ h }40 = 160\\text{ minutes}$ (parcours du diamètre du cône d'ombre $2 CL$) ! Comme la vitesse de la Lune est quasi constante, $\\dfrac{R_L}{CL} = \\dfrac{59}{160}$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Rayon de la Lune et distance Terre–Lune",
+          "content": "\\textbf{1)} En abaissant la parallèle à $(STL)$ depuis $C$, le théorème de Thalès donne $\\dfrac{R_T - CL}{R_S - R_T} = \\dfrac{d_{TL}}{d_{TS}}$. Or d'après l'Étape 2, $\\dfrac{d_{TL}}{d_{TS}} = \\dfrac{R_L}{R_S}$, donc :\\par $$R_T - CL = \\frac{R_S - R_T}{R_S} R_L = \\left(1 - \\frac{R_T}{R_S}\\right) R_L \\approx R_L \\implies \\boxed{CL \\approx R_T - R_L}.$$\\par\\textbf{2)} Entre $1\\text{ h }32$ et $2\\text{ h }31$, la Lune parcourt son diamètre $2R_L$ en $59\\text{ min}$. Entre $2\\text{ h }31$ et $5\\text{ h }11$, son bord arrière traverse tout le cône d'ombre (largeur $2CL$) en $160\\text{ min}$. À vitesse constante :\\par $$\\frac{2 R_L}{2 CL} = \\frac{59}{160} \\implies R_L = \\frac{59}{160}\\, CL \\approx 0{,}36875\\, CL.$$\\par\\textbf{3)} En injectant dans $CL + R_L = R_T \\approx 6\\,433\\text{ km}$ :\\par $$\\left(1 + \\frac{59}{160}\\right) CL = 6\\,433 \\implies CL = \\frac{160}{219}\\times 6\\,433 \\approx 4\\,700\\text{ km}, \\qquad R_L = \\frac{59}{219}\\times 6\\,433 \\approx \\boxed{1\\,733\\text{ km}}.$$\\par Rayon de la Lune obtenu : \\blank{$1\\,733\\text{ km}$} (le rayon réel est $1\\,737\\text{ km}$ : erreur de $0{,}2\\,\\%$ !).\\par\\textbf{4)} Le demi-angle apparent vaut $\\alpha = \\dfrac{0{,}5333^\\circ}{2} = 0{,}26665^\\circ$, donc :\\par $$OL = \\frac{R_L}{\\tan(0{,}26665^\\circ)} \\approx \\frac{1\\,733{,}1}{0{,}0046539} \\approx 372\\,400\\text{ km},$$\\par $$D_{TL} = OL + R_T \\approx 372\\,400 + 6\\,433 \\approx \\boxed{378\\,800\\text{ km}}.$$\\par Distance Terre–Lune : \\blank{$\\approx 379\\,000\\text{ km}$} (en réalité, elle varie entre $356\\,410\\text{ km}$ au périgée et $405\\,500\\text{ km}$ à l'apogée, moyenne $384\\,400\\text{ km}$ !)."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Vers 240 av. J.-C., \\textbf{Ératosthène} (directeur de la bibliothèque d'Alexandrie) utilise la mesure des pas des bématistes entre Alexandrie et Syène pour obtenir la circonférence de la Terre à quelques pour cent près. Quelques décennies plus tôt, \\textbf{Aristarque de Samos} avait déjà proposé un modèle héliocentrique et calculé les rapports des distances Terre–Lune–Soleil."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Depuis les missions \\textbf{Apollo} (1969), des réflecteurs laser déposés sur la Lune permettent de mesurer la distance Terre–Lune au \\textbf{centimètre près} en chronométrant l'aller-retour d'un faisceau laser : on sait ainsi que la Lune s'éloigne de la Terre d'environ $3{,}8\\text{ cm}$ par an !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Combiner \\textbf{trigonométrie}, \\textbf{théorème de Thalès} et résolution d'un système linéaire.\\item Évaluer des ordres de grandeur et justifier des approximations physiques ($R_T \\ll R_S$).\\item Relier angles en degrés, radians et longueurs d'arcs.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

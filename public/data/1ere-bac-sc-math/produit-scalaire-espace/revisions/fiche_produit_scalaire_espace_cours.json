@@ -194,7 +194,7 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Trouvons \\textbf{le plan tangent en $A(0; 0; 2)$ à la sphère de centre $\\Omega(0; 0; 0)$.}\\par Le vecteur normal au plan est $\\overrightarrow{\\Omega A}$ de coordonnées $\\blank{(0; 0; 2)}$.\\par Un point $M(x; y; z)$ appartient au plan si $\\overrightarrow{AM} \\cdot \\overrightarrow{\\Omega A} = \\blank{0}$.\\par On développe le produit scalaire avec les coordonnées :\\begin{align*}0(x - 0) + 0(y - 0) + 2(z - \\blank{2}) &= 0 \\\\2z - 4 &= \\blank{0} \\\\z &= \\blank{2}\\end{align*}\\par L'équation du plan tangent est très simplement $z = 2$."
+          "content": "\\question{Trouvons \\textbf{le plan tangent en $A(0; 0; 2)$} à la sphère de centre $\\Omega(0; 0; 0)$.}\\par Le vecteur normal au plan est $\\overrightarrow{\\Omega A}$ de coordonnées $\\blank{(0; 0; 2)}$.\\par Un point $M(x; y; z)$ appartient au plan si $\\overrightarrow{AM} \\cdot \\overrightarrow{\\Omega A} = \\blank{0}$.\\par On développe le produit scalaire avec les coordonnées :\\begin{align*}0(x - 0) + 0(y - 0) + 2(z - \\blank{2}) &= 0 \\\\2z - 4 &= \\blank{0} \\\\z &= \\blank{2}\\end{align*}\\par L'équation du plan tangent est très simplement $z = 2$."
         }
       ]
     }

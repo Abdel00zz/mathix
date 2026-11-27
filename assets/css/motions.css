@@ -1,0 +1,271 @@
+/* ============================================================================
+   motions.css — grain papier, lavis d'aquarelle, coups de pinceau & motions
+   ============================================================================ */
+
+/* ── Trame architecturale à points fins (interface principale) & grain minéral ── */
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: light-dark(0.46, 0.34);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .38 0 0 0 0 .41 0 0 0 0 .46 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+body:is([data-v="learn"], [data-v="classes"], [data-v="admin"]) .sheet {
+  opacity: 1;
+  background-color: transparent;
+  background-image: radial-gradient(
+    circle at center,
+    light-dark(
+      color-mix(in srgb, var(--ink) 15%, transparent),
+      color-mix(in srgb, var(--ink) 12%, transparent)
+    ) 1.15px,
+    transparent 1.15px
+  );
+  background-size: 20px 20px;
+  background-position: 0 0;
+  -webkit-mask-image: radial-gradient(ellipse 96% 92% at 50% 34%, #000 66%, rgba(0, 0, 0, 0.32) 100%);
+  mask-image: radial-gradient(ellipse 96% 92% at 50% 34%, #000 66%, rgba(0, 0, 0, 0.32) 100%);
+}
+
+/* ── Lumière d'atelier sculpturale : lavis minéraux fluides qui dérivent ── */
+.paint {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.paint::before,
+.paint::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(84px);
+  will-change: transform;
+  animation: drift 32s ease-in-out infinite alternate;
+}
+
+.paint::before {
+  width: 54vmax;
+  height: 54vmax;
+  top: -20vmax;
+  inset-inline-end: -14vmax;
+  background: radial-gradient(circle,
+    var(--bg-glow-1) 0%,
+    var(--bg-glow-2) 44%,
+    transparent 74%);
+}
+
+.paint::after {
+  width: 48vmax;
+  height: 48vmax;
+  bottom: -20vmax;
+  inset-inline-start: -12vmax;
+  background: radial-gradient(circle,
+    var(--bg-glow-3) 0%,
+    color-mix(in oklch, var(--paper) 16%, transparent) 48%,
+    transparent 74%);
+  animation-delay: -14s;
+}
+
+body:is([data-v="les"], [data-v="quiz"], [data-v="exo"], [data-v="exo-list"]) .paint {
+  opacity: light-dark(0.72, 0.48);
+}
+
+@media print {
+  .paint,
+  .sheet {
+    display: none !important;
+  }
+}
+
+/* ── Coup de pinceau à sec sur les en-têtes ─────────────────────────────── */
+.art {
+  position: absolute;
+  z-index: -1;
+  top: -8px;
+  inset-inline-end: -24px;
+  width: min(360px, 68vw);
+  aspect-ratio: 9 / 5;
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+/* ── Barre de progression de lecture en CSS pur ─────────────────────────── */
+.rp {
+  position: fixed;
+  top: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  z-index: 20;
+  height: 2.5px;
+  pointer-events: none;
+}
+
+.rp i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--gold, var(--am)) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@media (max-width: 720px) {
+  .art {
+    opacity: 0.16;
+    top: -4px;
+    inset-inline-end: -14px;
+    width: 56vw;
+  }
+  .rp {
+    inset-inline-start: 0;
+    height: 2px;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .rp i {
+    animation: rp linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* ── Keyframes ──────────────────────────────────────────────────────────── */
+@keyframes drift {
+  to { transform: translate3d(-5vmax, 4vmax, 0) scale(1.1); }
+}
+
+@keyframes draw {
+  from { transform: scaleY(0); }
+}
+
+@keyframes fill {
+  from { --p: 0; }
+}
+
+@keyframes rp {
+  to { transform: scaleX(1); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Ancres de morphing View Transitions (chrome stable + scène dynamique) ─ */
+.sb {
+  view-transition-name: app-sidebar;
+}
+#app > .page-main {
+  view-transition-name: page-stage;
+}
+
+/* Ne pas animer la barre latérale lors des changements de page : elle reste ancrée */
+::view-transition-group(app-sidebar) {
+  animation: none;
+}
+::view-transition-old(app-sidebar),
+::view-transition-new(app-sidebar) {
+  animation: none;
+}
+
+/* ── Transitions morphing directionnelles GPU (transform + opacity uniquement) ─ */
+@keyframes morphDrillInOut {
+  from { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  to   { opacity: 0; transform: translate3d(0, -8px, 0) scale(0.986); }
+}
+@keyframes morphDrillInNew {
+  from { opacity: 0; transform: translate3d(0, 14px, 0) scale(0.988); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes morphDrillOutOld {
+  from { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  to   { opacity: 0; transform: translate3d(16px, 4px, 0) scale(0.986); }
+}
+@keyframes morphDrillOutNew {
+  from { opacity: 0; transform: translate3d(-12px, 0, 0) scale(0.99); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes morphFwdOld {
+  from { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  to   { opacity: 0; transform: translate3d(-14px, 0, 0) scale(0.99); }
+}
+@keyframes morphFwdNew {
+  from { opacity: 0; transform: translate3d(16px, 0, 0) scale(0.99); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes morphPeerOld {
+  from { opacity: 1; transform: translate3d(0, 0, 0); }
+  to   { opacity: 0; transform: translate3d(0, -4px, 0); }
+}
+@keyframes morphPeerNew {
+  from { opacity: 0; transform: translate3d(0, 6px, 0) scale(0.994); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+::view-transition-group(page-stage) {
+  animation-duration: 240ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+::view-transition-old(page-stage) {
+  animation: morphPeerOld 165ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+::view-transition-new(page-stage) {
+  animation: morphPeerNew 225ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Descente vers une fiche / problème / quiz / exercice */
+html[data-nav-kind="drill-in"]::view-transition-old(page-stage) {
+  animation: morphDrillInOut 175ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+html[data-nav-kind="drill-in"]::view-transition-new(page-stage) {
+  animation: morphDrillInNew 245ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Remontée / Retour natif navigateur */
+html[data-nav-kind="drill-out"]::view-transition-old(page-stage),
+html[data-nav-dir="back"]::view-transition-old(page-stage) {
+  animation: morphDrillOutOld 165ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+html[data-nav-kind="drill-out"]::view-transition-new(page-stage),
+html[data-nav-dir="back"]::view-transition-new(page-stage) {
+  animation: morphDrillOutNew 235ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Suivant natif navigateur */
+html[data-nav-dir="forward"]::view-transition-old(page-stage) {
+  animation: morphFwdOld 165ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+html[data-nav-dir="forward"]::view-transition-new(page-stage) {
+  animation: morphFwdNew 235ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Racine silencieuse pour éviter tout double fondu */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 150ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Réduction du mouvement ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

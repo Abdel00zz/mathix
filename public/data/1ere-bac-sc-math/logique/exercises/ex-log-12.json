@@ -22,7 +22,7 @@
         },
         {
           "id": "sq_pA3",
-          "content": "$\\left(\\Delta > 0$ et $\\dfrac{a}{c} < 0\\right) \\Rightarrow x_1 < 0 < x_2$ ; $\\Delta < 0 \\Rightarrow (\\forall x \\in \\mathbb{R})\\; P(x) > 0$",
+          "content": "$\\left(\\Delta > 0 \\text{ et } \\dfrac{a}{c} < 0\\right) \\Rightarrow x_1 < 0 < x_2$ ; $\\Delta < 0 \\Rightarrow (\\forall x \\in \\mathbb{R})\\; P(x) > 0$",
           "hint": "Pour la première : $x_1 x_2 = \\dfrac{c}{a}$. Si $\\dfrac{a}{c} < 0$ alors $\\dfrac{c}{a} < 0$, donc $x_1$ et $x_2$ sont de signes opposés."
         },
         {

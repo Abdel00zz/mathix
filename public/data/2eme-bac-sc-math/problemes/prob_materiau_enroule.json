@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "La longueur d'un matériau enroulé",
+    "subtitle": "Problème 1.5 — Suites arithmétiques et spirales",
+    "context": "Suites numériques"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "La longueur d'un matériau enroulé",
+          "content": "Rouleau de moquette, papier toilette, ruban adhésif (scotch), bobine de câble ou film alimentaire : de nombreux matériaux du quotidien sont vendus enroulés autour d'un cylindre creux appelé \\textbf{mandrin}. Comment estimer avec précision la longueur totale $L$ du matériau enroulé sans avoir à le dérouler ?\\par Une courbe enroulée sur elle-même forme une \\textbf{spirale d'Archimède}, dont le calcul exact de longueur nécessite du calcul intégral. On propose ici deux modélisations géométriques accessibles par les \\textbf{suites arithmétiques}, en approchant la spirale par une succession de cercles concentriques."
+        },
+        {
+          "type": "notation",
+          "title": "Paramètres du rouleau",
+          "content": "\\begin{itemize}\\item $r$ : rayon extérieur du mandrin ;\\item $R$ : rayon total du rouleau complet ($R > r$) ;\\item $e$ : épaisseur supposée constante du matériau ;\\item $n$ : nombre de tours complets enroulés.\\end{itemize}Toutes les longueurs sont exprimées dans la même unité (par exemple en centimètres)."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Première modélisation (cercles de début de tour)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans cette première approche, on assimile le $k$-ième tour ($1 \\le k \\le n$) à un cercle dont le rayon est égal au rayon de la spirale au \\textbf{début} de ce tour.\\begin{enumerate}\\item Exprimer la longueur $\\ell_1$ du premier tour, puis la longueur $\\ell_2$ du deuxième tour, en fonction de $r$ et $e$.\\item Exprimer la longueur $\\ell_k$ du $k$-ième tour en fonction de $r$, $e$ et $k$. Quelle est la nature de la suite $(\\ell_k)_{k\\ge 1}$ ?\\item Calculer la longueur totale $L_1 = \\displaystyle\\sum_{k=1}^{n} \\ell_k$ en fonction de $r$, $e$ et $n$.\\item En remarquant que l'épaisseur totale de matériau vaut $R - r = n e$, éliminer $n$ pour exprimer $L_1$ uniquement en fonction de $R$, $r$ et $e$ (avec $\\dfrac{\\pi}{e}$ en facteur).\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Somme des premiers entiers",
+          "content": "On rappelle que $\\displaystyle\\sum_{k=1}^{n} (k-1) = 0 + 1 + \\cdots + (n-1) = \\dfrac{n(n-1)}{2}$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Première modélisation",
+          "content": "\\textbf{1)} Le premier cercle a pour rayon $r$, donc $\\ell_1 = 2\\pi r$. Le deuxième cercle a pour rayon $r + e$, donc $\\ell_2 = 2\\pi(r + e)$.\\par\\textbf{2)} Pour tout $k \\in \\{1, \\dots, n\\}$, le $k$-ième cercle a pour rayon $r + (k-1)e$, donc :\\par $$\\ell_k = 2\\pi\\bigl(r + (k-1)e\\bigr) = 2\\pi r + (k-1)\\cdot 2\\pi e.$$\\par La suite $(\\ell_k)$ est une \\textbf{suite arithmétique} de premier terme $2\\pi r$ et de raison $2\\pi e$.\\par\\textbf{3)} La longueur totale sur $n$ tours vaut :\\par $$L_1 = \\sum_{k=1}^{n} 2\\pi\\bigl(r + (k-1)e\\bigr) = 2\\pi r n + 2\\pi e \\cdot \\frac{n(n-1)}{2} = 2\\pi r n + \\pi e n(n-1).$$\\par\\textbf{4)} En remplaçant $n = \\dfrac{R-r}{e}$ :\\par $$\\begin{aligned}L_1 &= \\pi n\\bigl(2r + e(n-1)\\bigr) = \\frac{\\pi}{e}(R-r)\\bigl(2r + (R-r) - e\\bigr) \\\\ &= \\boxed{\\frac{\\pi}{e}(R - r)(R + r - e)}.\\end{aligned}$$\\par Formule 1 : \\blank{$\\dfrac{\\pi}{e}(R - r)(R + r - e)$}."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Seconde modélisation (rayon moyen) et applications",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La première modélisation sous-estime légèrement la longueur de chaque tour puisque le rayon réel augmente de $e$ au cours d'un tour. On assimile maintenant le $k$-ième tour à un cercle de \\textbf{rayon moyen} (moyenne entre le rayon au début et à la fin du tour).\\begin{enumerate}\\item Montrer que le rayon moyen du $k$-ième tour vaut $r_k = r + \\dfrac{2k-1}{2}e$.\\item Calculer la longueur totale $L_2 = \\displaystyle\\sum_{k=1}^{n} 2\\pi r_k$ en fonction de $r$, $e$ et $n$.\\item \\begin{enumerate}\\item Si l'on pose exactement $R - r = n e$ (épaisseur de $n$ couches empilées), montrer que $L_2 = \\dfrac{\\pi}{e}(R^2 - r^2)$. Quelle interprétation géométrique simple (en termes d'aire de couronne) retrouve-t-on ?\\item Si l'on considère que le rayon extérieur $R$ correspond au rayon du dernier cercle décalé de $\\dfrac{e}{2}$, soit $R - r = ne + \\dfrac{e}{2}$, montrer que $L_2' = \\dfrac{\\pi}{4e}\\bigl((2R-e)^2 - 4r^2\\bigr)$.\\end{enumerate}\\item \\textbf{Applications numériques :} comparer les résultats de $L_1$, $L_2'$ et $L_2$ (arrondis au décimètre près) pour :\\begin{enumerate}\\item un rouleau de \\textbf{moquette} : $e = 1\\text{ cm}$, $r = 4\\text{ cm}$, $R = 20\\text{ cm}$ ;\\item un rouleau de \\textbf{papier toilette} : $e = 0{,}04\\text{ cm}$, $r = 2\\text{ cm}$, $R = 5{,}5\\text{ cm}$ ;\\item un rouleau de \\textbf{scotch} : $e = 0{,}0028\\text{ cm}$, $r = 1{,}8\\text{ cm}$, $R = 2{,}5\\text{ cm}$.\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Somme des n premiers entiers impairs",
+          "content": "Pour la question 2, remarquez que $\\displaystyle\\sum_{k=1}^{n} (2k - 1) = 2\\frac{n(n+1)}{2} - n = n^2$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Rayon moyen et applications",
+          "content": "\\textbf{1)} Au début du $k$-ième tour, le rayon vaut $r + (k-1)e$ ; à la fin, il vaut $r + ke$. Leur moyenne est :\\par $$r_k = \\frac{\\bigl(r+(k-1)e\\bigr) + \\bigl(r+ke\\bigr)}{2} = r + \\frac{2k-1}{2}e.$$\\par\\textbf{2)} La longueur totale sur $n$ tours vaut :\\par $$L_2 = \\sum_{k=1}^{n} 2\\pi\\left(r + \\frac{2k-1}{2}e\\right) = 2\\pi r n + \\pi e \\sum_{k=1}^{n}(2k-1) = 2\\pi r n + \\pi e n^2.$$\\par\\textbf{3. a)} Avec $n = \\dfrac{R-r}{e}$, on obtient :\\par $$L_2 = \\pi n(2r + ne) = \\frac{\\pi}{e}(R-r)(R+r) = \\boxed{\\frac{\\pi(R^2 - r^2)}{e}}.$$\\par Interprétation remarquable : vue de profil, la bande enroulée occupe une \\textbf{couronne circulaire} d'aire $\\pi(R^2 - r^2)$, qui est aussi égale à l'aire du rectangle déroulé $L \\times e$ ! D'où $L = \\dfrac{\\pi(R^2-r^2)}{e}$.\\par\\textbf{3. b)} Avec la convention $R - r = ne + \\dfrac{e}{2} \\iff ne = R - r - \\dfrac{e}{2}$, on trouve :\\par $$L_2' = \\pi n(2r + ne) = \\frac{\\pi}{e}\\left(R - r - \\frac{e}{2}\\right)\\left(R + r - \\frac{e}{2}\\right) = \\frac{\\pi}{4e}\\bigl((2R-e)^2 - 4r^2\\bigr).$$\\par\\textbf{4) Applications numériques :}\\par $$\\begin{array}{|l|c|c|c|}\\hline \\text{Matériau} & L_1 & L_2' & L_2\\text{ (couronne)} \\\\\\hline \\text{Moquette } (e=1) & 11{,}6\\text{ m} & 11{,}4\\text{ m} & 12{,}1\\text{ m} \\\\\\hline \\text{Papier toilette } (e=0{,}04) & 20{,}5\\text{ m} & 20{,}4\\text{ m} & 20{,}6\\text{ m} \\\\\\hline \\text{Scotch } (e=0{,}0028) & 33{,}8\\text{ m} & 33{,}7\\text{ m} & 33{,}8\\text{ m} \\\\\\hline\\end{array}$$\\par Longueur d'un rouleau de scotch : \\blank{$\\approx 33{,}8\\text{ m}$}. Plus l'épaisseur $e$ est petite devant $R - r$, plus les trois formules coïncident avec une précision remarquable !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "La moquette moderne apparaît au $\\mathrm{XVII}^{\\mathrm{e}}$ siècle ; le papier toilette est attesté en Chine dès le $\\mathrm{II}^{\\mathrm{e}}$ siècle avant J.-C. mais n'est commercialisé en rouleaux perforés qu'à la fin du $\\mathrm{XIX}^{\\mathrm{e}}$ siècle ; quant au ruban adhésif Scotch, il est inventé en 1925 par l'ingénieur américain Richard Drew chez 3M."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En coordonnées polaires, un rouleau réel suit une \\textbf{spirale d'Archimède} d'équation $r(\\theta) = r + \\dfrac{e}{2\\pi}\\theta$. La longueur exacte de l'arc pour $\\theta \\in [0\\,;\\,2\\pi n]$ vaut $\\displaystyle\\int_0^{2\\pi n} \\sqrt{r(\\theta)^2 + r'(\\theta)^2}\\,d\\theta$. Lorsque $e \\ll r$, le terme $r'(\\theta)^2 = \\left(\\dfrac{e}{2\\pi}\\right)^2$ est négligeable devant $r(\\theta)^2$, et l'intégrale redonne exactement la formule de la couronne $\\dfrac{\\pi(R^2-r^2)}{e}$ !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Modéliser un problème géométrique par une \\textbf{suite arithmétique}.\\item Calculer les sommes $\\sum_{k=1}^n (k-1)$ et $\\sum_{k=1}^n (2k-1)$.\\item Comparer plusieurs modèles mathématiques et interpréter leur précision selon les ordres de grandeur.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

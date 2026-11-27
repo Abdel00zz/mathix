@@ -1,0 +1,273 @@
+/* ============================================================================
+   tkz.css — tableaux artistiques de signes & variations (clair / sombre)
+   Esthétique d'atelier mathématique : cadre arrondi doux, bandeau x teinté,
+   repères discrets, doubles barres carmin et flèches vectorielles indigo.
+   ============================================================================ */
+
+.math-display-shell--tkz {
+  justify-content: center;
+  margin: 18px auto;
+}
+
+.tkz-tab-scroll {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 6px 4px 10px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+table.tkz-tab {
+  --tkz-ink: var(--ink);
+  --tkz-rule: color-mix(in srgb, var(--accent) 26%, var(--line));
+  --tkz-rule-strong: color-mix(in srgb, var(--accent) 40%, var(--line));
+  --tkz-guide: color-mix(in srgb, var(--accent) 32%, var(--muted));
+  --tkz-paper: var(--surface);
+  --tkz-head: color-mix(in srgb, var(--accent) 5.5%, var(--surface));
+  --tkz-rail: color-mix(in srgb, var(--ink) 2.6%, var(--surface));
+  --tkz-pad-y: 0.56em;
+
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-inline: auto;
+  border: 1px solid var(--tkz-rule);
+  border-top-color: color-mix(in srgb, var(--tkz-rule) 75%, var(--box-bevel-top, #ffffff));
+  border-bottom-color: color-mix(in srgb, var(--tkz-rule-strong) 82%, var(--box-bevel-bottom, #0f172a));
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--tkz-paper);
+  color: var(--tkz-ink);
+  font-size: 1.06em;
+  line-height: 1.28;
+  white-space: nowrap;
+  box-shadow: var(--sculpt-frame-shadow, 0 1px 2px rgba(24, 24, 31, 0.03), 0 10px 28px -18px rgba(29, 53, 115, 0.17));
+}
+
+table.tkz-tab th,
+table.tkz-tab td {
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
+  text-align: center;
+  background: transparent;
+}
+
+table.tkz-tab .tkz-row--x > th,
+table.tkz-tab .tkz-row--x > td {
+  background: var(--tkz-head);
+}
+
+table.tkz-tab .tkz-row--x + .tkz-row > th,
+table.tkz-tab .tkz-row--x + .tkz-row > td {
+  border-top: 1.5px solid var(--tkz-rule-strong);
+}
+
+table.tkz-tab .tkz-row:not(.tkz-row--x) + .tkz-row > th,
+table.tkz-tab .tkz-row:not(.tkz-row--x) + .tkz-row > td {
+  border-top: 1px solid var(--tkz-rule);
+}
+
+table.tkz-tab .tkz-label {
+  background: var(--tkz-rail);
+  border-right: 1.25px solid var(--tkz-rule-strong);
+  padding: var(--tkz-pad-y) 1.05em;
+  font-weight: 500;
+  color: var(--accent);
+  min-width: 3em;
+}
+:root[data-theme="dark"] table.tkz-tab .tkz-label {
+  color: color-mix(in srgb, var(--accent) 68%, #fff);
+}
+table.tkz-tab .tkz-row--x > .tkz-label {
+  background: color-mix(in srgb, var(--accent) 8.5%, var(--surface));
+}
+
+table.tkz-tab .tkz-b {
+  position: relative;
+  padding: var(--tkz-pad-y) 0.42em;
+  min-width: 1.35em;
+}
+
+table.tkz-tab .tkz-b--first { padding-left: 0.85em; }
+table.tkz-tab .tkz-b--last { padding-right: 0.85em; }
+
+table.tkz-tab .tkz-i {
+  padding: var(--tkz-pad-y) 0.65em;
+  min-width: 3.1em;
+}
+
+.tkz-tab .katex { font-size: 1.08em; }
+.tkz-tab .tkz-row--x .tkz-b { padding-block: 0.58em; font-weight: 500; }
+.tkz-tab .tkz-row--sign .tkz-i--sign .katex { font-size: 1.18em; font-weight: 600; }
+
+.tkz-tab .tkz-mark--zero::before,
+.tkz-tab .tkz-mark--bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px dashed var(--tkz-guide);
+  transform: translateX(-0.5px);
+  pointer-events: none;
+}
+
+.tkz-tab .tkz-zero {
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.35em;
+  height: 1.35em;
+  padding: 0 0.16em;
+  border-radius: 50%;
+  background: var(--tkz-paper);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+  line-height: 1;
+  font-weight: 600;
+}
+
+.tkz-tab .tkz-mark--dbar { min-width: 1.1em; }
+
+.tkz-tab .tkz-mark--dbar::before,
+.tkz-tab .tkz-mark--dbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1.35px solid color-mix(in srgb, var(--r) 68%, var(--tkz-ink));
+  pointer-events: none;
+}
+
+.tkz-tab .tkz-mark--dbar::before { left: calc(50% - 2.2px); }
+.tkz-tab .tkz-mark--dbar::after { left: calc(50% + 1.8px); }
+
+.tkz-tab .tkz-row--var { --tkz-h: 5.1em; }
+.tkz-tab .tkz-row--var.tkz-row--lv3 { --tkz-h: 7em; }
+
+.tkz-tab .tkz-row--var .tkz-b,
+.tkz-tab .tkz-row--var .tkz-i { padding: 0; }
+
+.tkz-tab .tkz-var-b,
+.tkz-tab .tkz-var-i {
+  height: var(--tkz-h);
+  box-sizing: border-box;
+}
+
+.tkz-tab .tkz-var-b {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.tkz-tab .tkz-var-i {
+  position: relative;
+  min-width: 4.3em;
+}
+
+.tkz-tab .tkz-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.44em 0.42em;
+  box-sizing: border-box;
+}
+
+.tkz-tab .tkz-b--first .tkz-stack--center { padding-left: 0.85em; }
+.tkz-tab .tkz-b--last .tkz-stack--center { padding-right: 0.85em; }
+
+.tkz-tab .tkz-slot {
+  height: 1.65em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tkz-tab .tkz-stack--right .tkz-slot { justify-content: flex-end; }
+.tkz-tab .tkz-stack--left .tkz-slot { justify-content: flex-start; }
+
+table.tkz-tab .tkz-row--var .tkz-b:not(.tkz-b--first):not(.tkz-b--last):not(:has(.tkz-var-b--forbidden))::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px dashed var(--tkz-guide);
+  transform: translateX(-0.5px);
+  pointer-events: none;
+}
+
+table.tkz-tab .tkz-slot:not(:empty) {
+  position: relative;
+  z-index: 1;
+  background: var(--tkz-paper);
+  padding-inline: 0.22em;
+  border-radius: 6px;
+}
+
+.tkz-tab .tkz-dbar {
+  flex: none;
+  width: 4.5px;
+  border-left: 1.35px solid color-mix(in srgb, var(--r) 68%, var(--tkz-ink));
+  border-right: 1.35px solid color-mix(in srgb, var(--r) 68%, var(--tkz-ink));
+  background: repeating-linear-gradient(
+    -45deg,
+    color-mix(in srgb, var(--r) 14%, transparent),
+    color-mix(in srgb, var(--r) 14%, transparent) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+}
+
+.tkz-tab .tkz-arrow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.tkz-tab .tkz-arrow-line {
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.tkz-tab .tkz-arrow-tip {
+  fill: var(--accent);
+  stroke: none;
+}
+
+.tkz-tab .math-blank { min-width: 1.85em; }
+
+@media (max-width: 640px) {
+  .tkz-tab { font-size: 0.94em; border-radius: 12px; }
+  .tkz-tab .tkz-i { min-width: 2.2em; padding-inline: 0.4em; }
+  .tkz-tab .tkz-var-i { min-width: 3.1em; }
+  .tkz-tab .tkz-label { padding-inline: 0.6em; }
+}
+
+@media (max-width: 480px) {
+  table.tkz-tab { font-size: 0.88em; }
+  .tkz-tab .tkz-label { padding-inline: 0.52em; min-width: 2.3em; }
+  .tkz-tab .tkz-i { min-width: 1.95em; padding-inline: 0.34em; }
+  .tkz-tab .tkz-var-i { min-width: 2.75em; }
+}
+
+@media print {
+  .tkz-tab {
+    --tkz-guide: #555;
+    --tkz-ink: #000;
+    --tkz-rule: #000;
+    --tkz-rule-strong: #000;
+    --tkz-paper: #fff;
+    --tkz-head: #f4f4f4;
+    --tkz-rail: #f8f8f8;
+    box-shadow: none;
+  }
+  .tkz-tab-scroll { overflow: visible; }
+}

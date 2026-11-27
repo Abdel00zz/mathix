@@ -1,0 +1,95 @@
+{
+  "header": {
+    "title": "Le déplacement des drones",
+    "subtitle": "Problème 1.7 — Repère 3D, complexes et transformations",
+    "context": "Géométrie et transformations"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le déplacement des drones",
+          "content": "Les spectacles lumineux d'essaims de drones synchronisés remplacent de plus en plus les feux d'artifice. Pour chorégraphier simultanément des centaines d'appareils sans collision, les ingénieurs décrivent la position de chaque drone par ses coordonnées $(x, y, z)$ dans un repère orthonormé de l'espace (où $z \\ge 0$ représente l'altitude), et commandent chaque phase du vol par une \\textbf{transformation géométrique} explicite.\\par Dans ce problème, nous analysons les cinq mouvements successifs d'une chorégraphie complète : décollage en formation, alignement, déploiement, rotation dans l'espace, puis atterrissage."
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (complexes et matrices admis)",
+          "content": "\\begin{itemize}\\item \\textbf{Affixe dans un plan horizontal :} lorsque l'altitude $z$ reste constante, on repère un drone de position $(x,y)$ par le nombre complexe $\\rho = x + iy$ (avec $i^2 = -1$). Son conjugué est $\\bar{\\rho} = x - iy$, son module est $|\\rho| = \\sqrt{x^2 + y^2}$, et le vecteur $\\overrightarrow{AB}$ a pour affixe $\\rho_B - \\rho_A$ (et pour norme $|\\rho_B - \\rho_A|$).\\item \\textbf{Produit d'une matrice $3\\times 3$ par un vecteur colonne :}\\par $$\\begin{pmatrix}a_{11}&a_{12}&a_{13}\\\\a_{21}&a_{22}&a_{23}\\\\a_{31}&a_{32}&a_{33}\\end{pmatrix}\\begin{pmatrix}x\\\\y\\\\z\\end{pmatrix} = \\begin{pmatrix}a_{11}x + a_{12}y + a_{13}z\\\\a_{21}x + a_{22}y + a_{23}z\\\\a_{31}x + a_{32}y + a_{33}z\\end{pmatrix}.$$\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Mouvements horizontaux et complexes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item \\textbf{Premier mouvement — Décollage.} Au départ, tous les drones sont posés au sol. Quelle est alors leur altitude $z$ ? On leur applique la transformation $f(x, y, z) = (x,\\, y,\\, x^2 + y^2 + 1)$.\\begin{enumerate}\\item Calculer l'image des points de la droite au sol d'équation $y = x$, c'est-à-dire $f(x, x, 0)$.\\item Quelle est la forme géométrique prise par la courbe décrite dans le plan $y = x$, puis par la surface 3D formée par l'ensemble de l'essaim ?\\end{enumerate}\\item \\textbf{Deuxième mouvement — Projection.} On applique dans chaque plan horizontal la transformation complexe $g(\\rho) = \\dfrac{1}{2}(\\rho + \\bar{\\rho})$ (sans modifier l'altitude $z$).\\begin{enumerate}\\item Déterminer l'ensemble des points fixes de $g$ (c'est-à-dire tels que $g(\\rho) = \\rho$).\\item Exprimer la partie réelle et la partie imaginaire de $g(\\rho)$ en fonction de $x$ et $y$. Reconnaître géométriquement cette transformation de l'espace.\\end{enumerate}\\item \\textbf{Troisième mouvement — Déploiement.} On applique ensuite, toujours à altitude constante, la transformation $h(\\rho) = 2\\rho + 2i$.\\begin{enumerate}\\item Déterminer l'unique affixe fixe $\\rho_{D_0}$ telle que $h(\\rho_{D_0}) = \\rho_{D_0}$. Quel ensemble de points de l'espace reste fixe ?\\item Calculer l'image $D'$ du drone $D(x, y, 2)$ par $h$.\\item Déterminer les affixes et coordonnées des vecteurs $\\overrightarrow{D_0 D}$ et $\\overrightarrow{D_0 D'}$ (où $D_0$ est le point fixe à l'altitude $2$), puis comparer les distances $D_0 D'$ et $D_0 D$.\\item Reconnaître la transformation géométrique $h$ (en précisant ses éléments caractéristiques).\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Affixes et homothétie",
+          "content": "Pour $g$, écrire $\\rho = x + iy$ et $\\bar{\\rho} = x - iy$ pour simplifier $\\frac{1}{2}(\\rho + \\bar{\\rho})$. Pour $h$, calculer $h(\\rho) - \\rho_{D_0}$ en factorisant par $2$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Décollage, projection et déploiement",
+          "content": "\\textbf{1. a)} Au sol, tous les drones sont à l'altitude $z = 0$. Pour un point $(x, x, 0)$ :\\par $$f(x, x, 0) = (x,\\, x,\\, 2x^2 + 1).$$\\par\\textbf{1. b)} Dans le plan vertical $y = x$, l'équation $z = 2x^2 + 1$ définit une \\textbf{parabole}. En faisant varier $(x, y)$ dans tout le plan, la surface $z = x^2 + y^2 + 1$ est un \\blank{paraboloïde de révolution} (en forme de bol tourné vers le haut, de sommet $(0,0,1)$).\\par\\textbf{2. a)} Posons $\\rho = x + iy$. On a $g(\\rho) = \\dfrac{(x+iy)+(x-iy)}{2} = x$. Ainsi $g(\\rho) = \\rho \\iff x = x + iy \\iff y = 0$. Les points fixes forment le plan vertical $(xOz)$ d'équation $y = 0$.\\par\\textbf{2. b)} Pour tout $(x, y, z)$, l'image a pour coordonnées $(x, 0, z)$ : $g$ est la \\blank{projection orthogonale sur le plan $(xOz)$}.\\par\\textbf{3. a)} On résout $2\\rho + 2i = \\rho \\iff \\rho = -2i$, soit le point fixe de coordonnées horizontales $(0, -2)$. Dans l'espace, les points fixes forment la droite verticale passant par $(0, -2, 0)$.\\par\\textbf{3. b)} Pour $D(x, y, 2)$ d'affixe $\\rho = x + iy$, $h(\\rho) = 2(x+iy) + 2i = 2x + i(2y+2)$, donc $D'\\bigl(2x,\\, 2(y+1),\\, 2\\bigr)$.\\par\\textbf{3. c)} Avec $D_0(0, -2, 2)$ d'affixe $\\rho_{D_0} = -2i$ :\\par $$\\overrightarrow{D_0 D} \\text{ a pour affixe } \\rho - (-2i) = x + i(y+2) \\implies \\overrightarrow{D_0 D}(x,\\, y+2,\\, 0),$$\\par $$\\overrightarrow{D_0 D'} \\text{ a pour affixe } h(\\rho) - \\rho_{D_0} = 2(\\rho - \\rho_{D_0}) = 2x + i(2y+4) \\implies \\overrightarrow{D_0 D'} = 2\\overrightarrow{D_0 D}.$$\\par On a donc $D_0 D' = 2\\, D_0 D$.\\par\\textbf{3. d)} Dans chaque plan horizontal d'altitude $z$, $h$ est l'\\blank{homothétie de centre $D_0(0,-2,z)$ et de rapport $2$}."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Rotation spatiale et atterrissage",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item \\textbf{Quatrième mouvement — Transformation spatiale.} On applique à chaque drone $(x,y,z)$ la transformation $\\varphi(x,y,z) = (x',y',z')$ définie par le produit matriciel :\\par $$\\begin{pmatrix}x'\\\\y'\\\\z'\\end{pmatrix} = \\frac{1}{4}\\begin{pmatrix}2 & -\\sqrt{6} & -\\sqrt{6} \\\\ \\sqrt{6} & 3 & -1 \\\\ \\sqrt{6} & -1 & 3\\end{pmatrix}\\begin{pmatrix}x\\\\y\\\\z\\end{pmatrix}.$$\\begin{enumerate}\\item Résoudre le système $\\varphi(x,y,z) = (x,y,z)$ pour déterminer l'ensemble $\\Delta$ des points fixes de $\\varphi$. Donner un vecteur directeur de cette droite.\\item Calculer l'image $D'$ du drone $D(1, -2, 2)$ par $\\varphi$.\\item On note $D_0(0, -2, 2) \\in \\Delta$. Vérifier que les vecteurs $\\overrightarrow{D_0 D}$ et $\\overrightarrow{D_0 D'}$ sont tous deux orthogonaux à la droite $\\Delta$, puis calculer les longueurs $D_0 D$ et $D_0 D'$.\\item À l'aide du produit scalaire $\\overrightarrow{D_0 D}\\cdot\\overrightarrow{D_0 D'}$, calculer l'angle géométrique $\\widehat{\\left(\\overrightarrow{D_0 D},\\,\\overrightarrow{D_0 D'}\\right)}$. Reconnaître la transformation $\\varphi$.\\end{enumerate}\\item \\textbf{Cinquième mouvement — Atterrissage.} Donner l'expression d'une transformation simple $\\psi(x, y, z)$ permettant de ramener tous les drones au sol à la verticale de leur position actuelle. Quelle est la nature géométrique de $\\psi$ ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Points fixes de φ",
+          "content": "Écrire les trois équations du système $\\varphi(x,y,z) = (x,y,z)$ : en soustrayant les deux dernières lignes, on obtient immédiatement $y + z = 0$, puis la première ligne donne $x = 0$."
+        },
+        {
+          "type": "hint",
+          "title": "Calcul d'angle par produit scalaire",
+          "content": "Rappel : $\\cos\\theta = \\dfrac{\\overrightarrow{D_0 D}\\cdot\\overrightarrow{D_0 D'}}{D_0 D \\times D_0 D'}$. Vous devriez trouver $\\cos\\theta = \\dfrac{1}{2}$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Rotation 3D et atterrissage",
+          "content": "\\textbf{1. a)} $\\varphi(x,y,z) = (x,y,z)$ équivaut au système :\\par $$\\begin{cases}2x - \\sqrt{6}y - \\sqrt{6}z = 4x \\\\ \\sqrt{6}x + 3y - z = 4y \\\\ \\sqrt{6}x - y + 3z = 4z\\end{cases} \\iff \\begin{cases}-2x - \\sqrt{6}(y+z) = 0 \\\\ \\sqrt{6}x - (y+z) = 0 \\\\ \\sqrt{6}x - (y+z) = 0\\end{cases}$$\\par Les deux dernières équations sont identiques : $y + z = \\sqrt{6}x$. En remplaçant dans la première, $-2x - 6x = 0 \\implies x = 0$, puis $y + z = 0 \\implies z = -y$. L'ensemble des points fixes est la droite $\\Delta = \\{(0, y, -y),\\, y \\in \\mathbb{R}\\}$, passant par $O$ et dirigée par $\\vec{u}(0, 1, -1)$.\\par\\textbf{1. b)} Pour $D(1, -2, 2)$ :\\par $$x' = \\frac{2 + 2\\sqrt{6} - 2\\sqrt{6}}{4} = \\frac{1}{2},\\qquad y' = \\frac{\\sqrt{6} - 6 - 2}{4} = \\frac{\\sqrt{6} - 8}{4},\\qquad z' = \\frac{\\sqrt{6} + 2 + 6}{4} = \\frac{\\sqrt{6} + 8}{4}.$$\\par Donc $D'\\left(\\dfrac{1}{2},\\, \\dfrac{\\sqrt{6}-8}{4},\\, \\dfrac{\\sqrt{6}+8}{4}\\right)$.\\par\\textbf{1. c)} Avec $D_0(0, -2, 2) \\in \\Delta$, on a $\\overrightarrow{D_0 D}(1, 0, 0)$ et $\\overrightarrow{D_0 D'}\\left(\\dfrac{1}{2},\\, \\dfrac{\\sqrt{6}}{4},\\, \\dfrac{\\sqrt{6}}{4}\\right)$.\\par Produits scalaires avec $\\vec{u}(0,1,-1)$ : $\\overrightarrow{D_0 D}\\cdot\\vec{u} = 0$ et $\\overrightarrow{D_0 D'}\\cdot\\vec{u} = \\dfrac{\\sqrt{6}}{4} - \\dfrac{\\sqrt{6}}{4} = 0$, donc les deux vecteurs sont orthogonaux à l'axe $\\Delta$.\\par Normes : $D_0 D = 1$ et $D_0 D' = \\sqrt{\\dfrac{1}{4} + \\dfrac{6}{16} + \\dfrac{6}{16}} = \\sqrt{\\dfrac{4+6+6}{16}} = 1$.\\par\\textbf{1. d)} Le produit scalaire vaut $\\overrightarrow{D_0 D}\\cdot\\overrightarrow{D_0 D'} = 1\\times\\dfrac{1}{2} + 0 + 0 = \\dfrac{1}{2}$. Ainsi $\\cos\\theta = \\dfrac{1/2}{1\\times 1} = \\dfrac{1}{2}$, donc l'angle vaut \\blank{$\\dfrac{\\pi}{3}$} ($60^\\circ$). La transformation $\\varphi$ est une \\blank{rotation d'axe $\\Delta$ et d'angle $\\dfrac{\\pi}{3}$}.\\par\\textbf{2)} Pour ramener chaque drone à la verticale au sol, on pose $\\psi(x, y, z) = (x, y, 0)$ : c'est la \\textbf{projection orthogonale sur le plan du sol $(xOy)$}."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Les premiers spectacles d'essaims de drones débutent en 2012 à Linz (Autriche) avec 49 drones. Le record mondial progresse ensuite de façon spectaculaire : 100 drones en 2015, 1\\,218 aux Jeux olympiques de Pyeongchang en 2018, puis 5\\,200 drones simultanés à Shenzhen en 2021."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En robotique aérienne, on distingue 6 niveaux d'autonomie (de 0 : pilotage entièrement manuel, à 5 : autonomie totale avec évitement d'obstacles et prise de décision collective). En 3D, toutes les rotations sont codées par des \\textbf{matrices orthogonales} (vérifiant $M^T M = I$ et $\\det M = 1$) ou par des \\textbf{quaternions}, inventés par Hamilton en 1843."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Manipuler des coordonnées et des \\textbf{vecteurs dans l'espace}.\\item Utiliser le \\textbf{produit scalaire} pour prouver l'orthogonalité et calculer un angle géométrique.\\item Reconnaître des \\textbf{transformations géométriques} : projection orthogonale, homothétie, rotation.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

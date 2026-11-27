@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
+  <title>Page introuvable · Mathix</title>
+  <script>
+    (function () {
+      try {
+        var p = JSON.parse(localStorage.getItem('mathplus:profile') || '{}');
+        if (p && (p.theme === 'light' || p.theme === 'dark')) document.documentElement.dataset.theme = p.theme;
+        if (p && p.palette && p.palette !== 'atelier') document.documentElement.dataset.palette = p.palette;
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/assets/min/app.min.css" />
+  <style>
+    body {
+      min-height: 100dvh;
+      margin: 0;
+      padding: 24px;
+      display: grid;
+      place-items: center;
+      background-color: var(--bg, #FAF9F6);
+      background-image:
+        linear-gradient(to right, rgba(28, 53, 87, 0.018) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(28, 53, 87, 0.018) 1px, transparent 1px);
+      background-size: 48px 48px;
+      color: var(--ink, #1A1A1A);
+      font-family: var(--sans, 'IBM Plex Sans', system-ui, -apple-system, sans-serif);
+    }
+    .nf-card {
+      width: min(500px, 100%);
+      padding: 40px 34px;
+      border-radius: 10px;
+      border: 1px solid var(--line, #E4E1DB);
+      background: var(--surface, #FFFFFF);
+      box-shadow: 0 1px 8px rgba(26, 26, 26, 0.03);
+      text-align: center;
+    }
+    .nf-mark {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 18px;
+      border-radius: 10px;
+      border: 1.5px solid var(--gold, #9A7B2F);
+      background: var(--accent, #1C3557);
+      color: var(--on-accent, #FAF9F6);
+      display: grid;
+      place-items: center;
+      font: 700 28px/1 var(--display, 'Cormorant Garamond', Georgia, serif);
+    }
+    .nf-code {
+      font: 600 11px/1 var(--sans, 'IBM Plex Sans', system-ui, sans-serif);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold, #9A7B2F);
+      margin: 0 0 10px;
+    }
+    .nf-title {
+      font: 700 32px/1.18 var(--display, 'Cormorant Garamond', Georgia, serif);
+      letter-spacing: -0.015em;
+      margin: 0 0 12px;
+    }
+    .nf-text {
+      color: var(--muted, #5C5C5C);
+      font-size: 15px;
+      line-height: 1.65;
+      margin: 0 0 26px;
+    }
+    .nf-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <main class="nf-card">
+    <div class="nf-mark" aria-hidden="true">M</div>
+    <p class="nf-code">Erreur 404</p>
+    <h1 class="nf-title">Cette page n’existe pas</h1>
+    <p class="nf-text">L’adresse demandée est introuvable ou a été déplacée. Vous pouvez revenir à votre espace de travail Mathix.</p>
+    <div class="nf-actions">
+      <a class="btn primary" href="/">Retour à l’accueil</a>
+      <button class="btn" type="button" onclick="history.back()">Page précédente</button>
+    </div>
+  </main>
+</body>
+</html>

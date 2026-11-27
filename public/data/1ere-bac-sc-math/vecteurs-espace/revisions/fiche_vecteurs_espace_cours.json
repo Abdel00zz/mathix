@@ -76,7 +76,7 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Simplifions \\textbf{l'expression vectorielle $\\overrightarrow{W} = (\\overrightarrow{u} + \\overrightarrow{v}) + (\\overrightarrow{w} - \\overrightarrow{u}) - \\overrightarrow{v}$.}\\par On commence par réorganiser les termes en regroupant ceux de même nature :\\begin{align*}\\overrightarrow{W} &= \\overrightarrow{u} - \\blank{\\overrightarrow{u}} + \\overrightarrow{v} - \\blank{\\overrightarrow{v}} + \\overrightarrow{w} \\\\&= \\blank{\\overrightarrow{0}} + \\overrightarrow{0} + \\overrightarrow{w} \\\\&= \\blank{\\overrightarrow{w}}\\end{align*}"
+          "content": "\\question{Simplifions \\textbf{l'expression vectorielle} $\\overrightarrow{W} = (\\overrightarrow{u} + \\overrightarrow{v}) + (\\overrightarrow{w} - \\overrightarrow{u}) - \\overrightarrow{v}$.}\\par On commence par réorganiser les termes en regroupant ceux de même nature :\\begin{align*}\\overrightarrow{W} &= \\overrightarrow{u} - \\blank{\\overrightarrow{u}} + \\overrightarrow{v} - \\blank{\\overrightarrow{v}} + \\overrightarrow{w} \\\\&= \\blank{\\overrightarrow{0}} + \\overrightarrow{0} + \\overrightarrow{w} \\\\&= \\blank{\\overrightarrow{w}}\\end{align*}"
         }
       ]
     },

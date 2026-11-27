@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Autour du théorème de Pappus",
+    "subtitle": "Problème 1.33 — Théorèmes de Ménélaüs et de Pappus",
+    "context": "Géométrie, Thalès et barycentre"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Autour du théorème de Pappus",
+          "content": "Le \\textbf{théorème de Pappus} ($\\mathrm{IV}^{\\mathrm{e}}$ siècle) est l'un des plus beaux joyaux de la géométrie plane :\\par \\textit{Soient trois points alignés $A_1, B_1, C_1$ sur une première droite, et trois points alignés $A_2, B_2, C_2$ sur une seconde droite. On note $D = (A_1 B_2) \\cap (A_2 B_1)$, $E = (A_1 C_2) \\cap (A_2 C_1)$ et $F = (B_1 C_2) \\cap (B_2 C_1)$. Alors les trois points $D$, $E$ et $F$ sont \\textbf{toujours alignés} !}\\par Pour démontrer ce théorème surprenant, nous établissons d'abord un outil incontournable de la géométrie du triangle : le \\textbf{théorème de Ménélaüs} ($\\mathrm{I}^{\\mathrm{er}}$ siècle)."
+        },
+        {
+          "type": "notation",
+          "title": "Énoncé (simplifié) du théorème de Ménélaüs et axiome de Pasch",
+          "content": "\\begin{itemize}\\item \\textbf{Théorème de Ménélaüs :} dans un triangle $ABC$, soient $X \\in (BC)$, $Y \\in (AC)$ et $Z \\in (AB)$ distincts des sommets. On suppose que soit \\textbf{zéro}, soit \\textbf{exactement deux} de ces points appartiennent aux côtés (segments $[BC], [AC], [AB]$). Alors $X, Y, Z$ sont alignés si et seulement si :\\par $$\\frac{XB}{XC} \\times \\frac{YC}{YA} \\times \\frac{ZA}{ZB} = 1.$$\\par \\textit{(Précision : avec des mesures algébriques orientées $\\frac{\\overline{XB}}{\\overline{XC}}\\cdot\\frac{\\overline{YC}}{\\overline{YA}}\\cdot\\frac{\\overline{ZA}}{\\overline{ZB}} = 1$, la condition sur l'appartenance aux segments devient superflue.)}\\item \\textbf{Axiome de Pasch :} une droite qui ne passe par aucun sommet d'un triangle et qui coupe un de ses côtés (segments) coupe nécessairement \\textbf{exactement un} des deux autres côtés.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Démonstration du théorème de Ménélaüs",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\textbf{A. Condition nécessaire ($\\Rightarrow$).}\\par On suppose que $X, Y, Z$ sont alignés. On trace la parallèle à $(BC)$ passant par $A$, qui coupe la droite $(XZ)$ en un point $A'$.\\begin{enumerate}\\item En appliquant le théorème de Thalès dans le triangle $ZXB$ puis dans le triangle $YXC$, exprimer $\\dfrac{XB}{AA'}$ et $\\dfrac{XC}{AA'}$, puis en déduire le rapport $\\dfrac{XB}{XC}$ et conclure que $\\dfrac{XB}{XC}\\times\\dfrac{YC}{YA}\\times\\dfrac{ZA}{ZB} = 1$.\\end{enumerate}\\par\\textbf{B. Condition suffisante ($\\Leftarrow$).}\\par Réciproquement, on suppose que $\\dfrac{XB}{XC}\\times\\dfrac{YC}{YA}\\times\\dfrac{ZA}{ZB} = 1$. On traite d'abord le cas où $X \\in [BC]$, $Y \\in [AC]$ et $Z \\notin [AB]$.\\begin{enumerate}\\setcounter{enumi}{1}\\item Montrer par l'\\textbf{absurde} que les droites $(BC)$ et $(YZ)$ ne sont pas parallèles (utiliser l'axiome de Pasch sur la droite $(YZ)$ qui coupe $[AC]$).\\item On note $X'$ le point d'intersection de $(BC)$ et $(YZ)$. En appliquant la Partie A aux points alignés $X', Y, Z$, montrer que $\\dfrac{X'B}{X'C} = \\dfrac{XB}{XC}$.\\item À l'aide de l'axiome de Pasch, montrer que $X' \\in [BC]$. En posant $\\alpha = \\dfrac{XB}{XC} > 0$, montrer que $X$ et $X'$ sont tous deux le barycentre de $(B, 1)$ et $(C, \\alpha)$. Conclure que $X = X'$, donc que $X, Y, Z$ sont alignés.\\item Adapter la question 4 au second cas ($X \\notin [BC]$, $Y \\notin [AC]$, $Z \\notin [AB]$) : quel barycentre de $B$ et $C$ obtient-on alors ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Barycentre et signe selon que X ∈ [BC] ou X ∉ [BC]",
+          "content": "Si $X \\in [BC]$ et $XB = \\alpha XC$, les vecteurs $\\overrightarrow{XB}$ et $\\overrightarrow{XC}$ sont de \\textbf{sens contraires}, donc $\\overrightarrow{XB} = -\\alpha\\overrightarrow{XC} \\iff \\overrightarrow{XB} + \\alpha\\overrightarrow{XC} = \\vec{0}$. Si $X \\notin [BC]$, ils sont de \\textbf{même sens}, donc $\\overrightarrow{XB} - \\alpha\\overrightarrow{XC} = \\vec{0}$ (avec $\\alpha \\neq 1$, car $B \\neq C$) !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Théorème de Ménélaüs",
+          "content": "\\textbf{1) Condition nécessaire :} Comme $(AA') \\parallel (BC)$ :\\begin{itemize}\\item Dans $ZXB$ ($A \\in (ZB)$, $A' \\in (ZX)$), Thalès donne $\\dfrac{XB}{AA'} = \\dfrac{ZB}{ZA}$.\\item Dans $YXC$ ($A \\in (YC)$, $A' \\in (YX)$), Thalès donne $\\dfrac{XC}{AA'} = \\dfrac{YC}{YA}$.\\end{itemize}\\par En divisant la première égalité par la seconde, $AA'$ disparaît :\\par $$\\frac{XB}{XC} = \\frac{ZB}{ZA}\\times\\frac{YA}{YC} \\iff \\boxed{\\frac{XB}{XC}\\times\\frac{YC}{YA}\\times\\frac{ZA}{ZB} = 1}.$$\\par\\textbf{2) Non-parallélisme par l'absurde :} Supposons $(BC) \\parallel (YZ)$. La droite $(YZ)$ coupe le segment $[AC]$ (en $Y$) mais ne coupe pas le segment $[BC]$ (car elles sont parallèles). D'après l'\\textbf{axiome de Pasch}, $(YZ)$ doit alors couper le troisième côté $[AB]$, ce qui imposerait $Z \\in [AB]$ : contradiction avec l'hypothèse $Z \\notin [AB]$ ! Donc $(BC)$ et $(YZ)$ sont sécantes.\\par\\textbf{3)} Les points $X', Y, Z$ étant alignés, la Partie A donne $\\dfrac{X'B}{X'C}\\times\\dfrac{YC}{YA}\\times\\dfrac{ZA}{ZB} = 1$. En comparant avec l'hypothèse $\\dfrac{XB}{XC}\\times\\dfrac{YC}{YA}\\times\\dfrac{ZA}{ZB} = 1$, on obtient $\\dfrac{X'B}{X'C} = \\dfrac{XB}{XC}$.\\par\\textbf{4)} La droite $(YZ)$ coupe $[AC]$ mais pas $[AB]$ ($Z \\notin [AB]$), donc par l'axiome de Pasch elle coupe $[BC]$, c'est-à-dire $X' \\in [BC]$. Posons $\\alpha = \\dfrac{XB}{XC} = \\dfrac{X'B}{X'C} > 0$. Comme $X \\in [BC]$, $\\overrightarrow{XB}$ et $\\overrightarrow{XC}$ sont de sens contraires, donc :\\par $$XB = \\alpha XC \\iff \\overrightarrow{XB} = -\\alpha\\overrightarrow{XC} \\iff \\overrightarrow{XB} + \\alpha\\overrightarrow{XC} = \\vec{0}.$$\\par $X$ est donc l'unique barycentre de \\blank{$(B, 1)$ et $(C, \\alpha)$}. De même $X' \\in [BC]$ vérifie $\\overrightarrow{X'B} + \\alpha\\overrightarrow{X'C} = \\vec{0}$, donc $X' = X$ : les points $X, Y, Z$ sont alignés !\\par\\textbf{5)} Si aucun des trois points n'est sur les segments, l'axiome de Pasch impose que $X' \\notin [BC]$ (sinon $(YZ)$ couperait un autre côté). Alors $\\overrightarrow{XB}$ et $\\overrightarrow{XC}$ sont de même sens ($\\alpha \\neq 1$), donc $\\overrightarrow{XB} - \\alpha\\overrightarrow{XC} = \\vec{0}$ : $X$ et $X'$ sont tous deux l'unique barycentre de \\blank{$(B, 1)$ et $(C, -\\alpha)$}, donc $X = X'$ et $X, Y, Z$ sont alignés."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Démonstration du théorème de Pappus",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On reprend la configuration du théorème de Pappus (en supposant que les trois droites $(A_2 B_1)$, $(A_1 C_2)$ et $(B_2 C_1)$ forment un triangle non dégénéré $JKL$, avec :\\par $$J = (A_2 B_1) \\cap (B_2 C_1),\\qquad K = (A_1 C_2) \\cap (A_2 B_1),\\qquad L = (B_2 C_1) \\cap (A_1 C_2).$$\\begin{enumerate}\\item Vérifier que chacune des \\textbf{cinq droites} $(A_1 C_1)$, $(A_2 C_2)$, $(B_1 C_2)$, $(A_2 C_1)$ et $(A_1 B_2)$ coupe les trois droites portant les côtés du triangle $JKL$ en des points précis ($A_1, B_1, C_1, A_2, B_2, C_2, D, E, F$). Écrire les \\textbf{cinq égalités de Ménélaüs} correspondantes dans le triangle $JKL$.\\item En multipliant convenablement ces cinq égalités (en inversant la cinquième), montrer que presque tous les facteurs se simplifient pour laisser :\\par $$\\frac{FJ}{FL}\\times\\frac{EL}{EK}\\times\\frac{DK}{DJ} = 1,$$\\par puis conclure à l'aide de la réciproque du théorème de Ménélaüs que les points $D$, $E$ et $F$ sont alignés !\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Repérer sur quels côtés de JKL se trouvent les 9 points",
+          "content": "Regardez les trois droites du triangle $JKL$ : $(JK) = (A_2 B_1)$ porte $A_2, B_1, D$ ; $(KL) = (A_1 C_2)$ porte $A_1, C_2, E$ ; $(LJ) = (B_2 C_1)$ porte $B_2, C_1, F$ ! Chaque droite parmi $(A_1C_1)$, $(A_2C_2)$, $(B_1C_2)$, $(A_2C_1)$, $(A_1B_2)$ coupe exactement ces trois droites !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Théorème de Pappus",
+          "content": "\\textbf{1)} Les trois droites du triangle $JKL$ sont $(JK)=(A_2B_1)$, $(KL)=(A_1C_2)$ et $(LJ)=(B_2C_1)$. Appliquons la condition nécessaire de Ménélaüs dans le triangle $JKL$ aux cinq droites sécantes :\\begin{itemize}\\item Droite $(A_1 C_1)$ (coupe $(KL)$ en $A_1$, $(LJ)$ en $C_1$, $(JK)$ en $B_1$) : $\\dfrac{A_1 K}{A_1 L}\\cdot\\dfrac{C_1 L}{C_1 J}\\cdot\\dfrac{B_1 J}{B_1 K} = 1$.\\item Droite $(A_2 C_2)$ (coupe en $A_2, C_2, B_2$) : $\\dfrac{A_2 J}{A_2 K}\\cdot\\dfrac{C_2 K}{C_2 L}\\cdot\\dfrac{B_2 L}{B_2 J} = 1$.\\item Droite $(B_1 C_2)$ (coupe en $B_1, F, C_2$) : $\\dfrac{B_1 K}{B_1 J}\\cdot\\dfrac{FJ}{FL}\\cdot\\dfrac{C_2 L}{C_2 K} = 1$.\\item Droite $(A_2 C_1)$ (coupe en $A_2, C_1, E$) : $\\dfrac{A_2 K}{A_2 J}\\cdot\\dfrac{C_1 J}{C_1 L}\\cdot\\dfrac{EL}{EK} = 1$.\\item Droite $(A_1 B_2)$ (coupe en $A_1, B_2, D$) : $\\dfrac{A_1 K}{A_1 L}\\cdot\\dfrac{B_2 L}{B_2 J}\\cdot\\dfrac{DJ}{DK} = 1$, soit en inversant : $\\dfrac{A_1 L}{A_1 K}\\cdot\\dfrac{B_2 J}{B_2 L}\\cdot\\dfrac{DK}{DJ} = 1$.\\end{itemize}\\par\\textbf{2)} En multipliant les cinq égalités (avec la $5^{\\text{e}}$ inversée), les facteurs relatifs à $A_1, B_1, C_1, A_2, B_2, C_2$ apparaissent chacun une fois au numérateur et une fois au dénominateur et s'éliminent deux à deux ! Il ne reste exactement que :\\par $$\\boxed{\\frac{FJ}{FL}\\times\\frac{EL}{EK}\\times\\frac{DK}{DJ} = 1}.$$\\par Par la condition suffisante du théorème de Ménélaüs appliquée dans le triangle $JKL$ aux points $F \\in (LJ)$, $E \\in (KL)$ et $D \\in (JK)$, les points \\blank{$D, E, F$ sont alignés} !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "\\textbf{Ménélaüs d'Alexandrie} ($\\mathrm{I}^{\\mathrm{er}}$ s. ap. J.-C.) énonce son théorème en géométrie plane et sphérique (pour l'astronomie). \\textbf{Pappus d'Alexandrie} ($\\mathrm{IV}^{\\mathrm{e}}$ s.) consigne son célèbre théorème d'alignement à la proposition 139 du livre VII de sa \\textit{Collection mathématique}, monument de la géométrie grecque antique."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Le théorème de Pappus est l'un des piliers de la \\textbf{géométrie projective} (développée aux $\\mathrm{XVII}^{\\mathrm{e}}$ et $\\mathrm{XIX}^{\\mathrm{e}}$ siècles par Desargues, Pascal et Poncelet), dans laquelle deux droites parallèles se coupent en un « point à l'infini ». C'est aussi un cas dégénéré (deux droites au lieu d'une ellipse) du \\textbf{théorème de l'hexagramme mystique de Pascal} !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Combiner \\textbf{théorème de Thalès}, \\textbf{raisonnement par l'absurde} et \\textbf{unicité du barycentre}.\\item Démontrer une équivalence logique (condition nécessaire puis condition suffisante).\\item Enchaîner plusieurs applications d'un théorème intermédiaire (simplification télescopique).\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

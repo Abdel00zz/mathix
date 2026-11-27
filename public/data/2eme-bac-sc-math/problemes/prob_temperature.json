@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Refroidir ou réchauffer un verre d'eau",
+    "subtitle": "Problème 1.13 — Loi de Newton et équations différentielles",
+    "context": "Analyse et modélisation physique"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Refroidir ou réchauffer un verre d'eau",
+          "content": "Vous préparez un thé brûlant à $100^\\circ\\text{C}$ dans une pièce à $20^\\circ\\text{C}$, ou vous sortez un verre d'eau fraîche du réfrigérateur à $5^\\circ\\text{C}$. À quelle vitesse la température rejoint-elle celle de la pièce ? Et que se passe-t-il si l'on met en contact thermique direct le verre chaud et le verre froid dans une boîte isolée ?\\par En 1701, \\textbf{Isaac Newton} formule sa célèbre \\textbf{loi du refroidissement} : la vitesse de variation de la température $T(t)$ d'un objet est proportionnelle à l'écart entre sa température et la température ambiante $T_{\\text{env}}$ :\\par $$T'(t) = -r\\bigl(T(t) - T_{\\text{env}}\\bigr),$$\\par où $r > 0$ est un coefficient qui dépend du récipient et du milieu (le temps $t$ est exprimé en \\textbf{minutes})."
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (équations différentielles admises)",
+          "content": "\\begin{itemize}\\item \\textbf{Ordre 1 :} les solutions de $y' + r y = b$ (avec $r \\neq 0$) sont $y(t) = \\lambda e^{-rt} + \\dfrac{b}{r}$ ($\\lambda \\in \\mathbb{R}$).\\item \\textbf{Ordre 2 (cas $y'' + a y' = 0$, $a \\neq 0$) :} en posant $z = y'$, on a $z' = -a z$, donc $y'(t) = c_1 e^{-at}$, puis par primitivation $y(t) = C_1 e^{-at} + C_2$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Refroidissement puis réchauffement dans une pièce à 20 °C",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\textbf{A. Loi générale et refroidissement.}\\begin{enumerate}\\item Résoudre l'équation différentielle $T'(t) = -r\\bigl(T(t) - T_{\\text{env}}\\bigr)$ en fonction de $r$, $T_{\\text{env}}$ et d'une constante $\\lambda$.\\item On verse de l'eau bouillante ($T(0) = 100^\\circ\\text{C}$) dans un verre placé dans une pièce à $T_{\\text{env}} = 20^\\circ\\text{C}$. Au bout de $1\\text{ minute}$, la température mesure $T(1) = 64^\\circ\\text{C}$. Déterminer $\\lambda$ puis la valeur exacte de $r$ (vérifier que $r \\approx 0{,}6\\text{ min}^{-1}$).\\item On prend désormais $r = 0{,}6\\text{ min}^{-1}$. Au bout de combien de temps la température passe-t-elle en dessous de $21^\\circ\\text{C}$ ? L'eau atteint-elle théoriquement exactement $20^\\circ\\text{C}$ en un temps fini ?\\end{enumerate}\\par\\textbf{B. Réchauffement d'un verre d'eau froide.}\\par On place dans la même pièce ($T_{\\text{env}} = 20^\\circ\\text{C}$, même coefficient $r = 0{,}6\\text{ min}^{-1}$) un verre identique contenant de l'eau à $T(0) = 5^\\circ\\text{C}$.\\begin{enumerate}\\setcounter{enumi}{3}\\item Donner l'expression de $T(t)$ pour $t \\ge 0$.\\item Au bout de combien de temps la température dépasse-t-elle $10^\\circ\\text{C}$ ? (Et $15^\\circ\\text{C}$ ?)\\item Calculer la vitesse instantanée de réchauffement $T'(t)$ (en $^\\circ\\text{C/min}$). Quelle est sa valeur initiale $T'(0)$ ? Au bout de combien de temps cette vitesse est-elle divisée par $2$ ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Déterminer r à partir de T(1) = 64",
+          "content": "Écrire $T(t) = 80 e^{-rt} + 20$, puis $80 e^{-r} + 20 = 64 \\iff e^{-r} = \\dfrac{44}{80} = 0{,}55 \\iff r = -\\ln(0{,}55)$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Refroidissement et réchauffement",
+          "content": "\\textbf{1)} $T' + r T = r T_{\\text{env}}$ a pour solution générale :\\par $$T(t) = \\lambda e^{-rt} + T_{\\text{env}}, \\qquad \\lambda \\in \\mathbb{R}.$$\\par\\textbf{2)} Pour $T(0) = 100$ et $T_{\\text{env}} = 20$, on a $\\lambda + 20 = 100 \\implies \\lambda = 80$, donc $T(t) = 80 e^{-rt} + 20$. La mesure $T(1) = 64$ donne :\\par $$80 e^{-r} + 20 = 64 \\iff e^{-r} = \\frac{44}{80} = \\frac{11}{20} = 0{,}55 \\implies r = -\\ln(0{,}55) \\approx 0{,}5978 \\approx \\boxed{0{,}6\\text{ min}^{-1}}.$$\\par\\textbf{3)} Avec $r = 0{,}6$, on résout :\\par $$80 e^{-0{,}6 t} + 20 < 21 \\iff e^{-0{,}6 t} < \\frac{1}{80} \\iff -0{,}6 t < -\\ln(80) \\iff t > \\frac{\\ln 80}{0{,}6} \\approx \\boxed{7{,}30\\text{ min}},$$\\par soit environ \\blank{$7\\text{ min } 18\\text{ s}$}. En revanche, $80 e^{-0{,}6 t} > 0$ pour tout $t \\in \\mathbb{R}$, donc $T(t) > 20$ toujours : la température tend vers $20^\\circ\\text{C}$ asymptotiquement sans jamais l'atteindre mathématiquement en un temps fini.\\par\\textbf{4)} Pour $T(0) = 5$, $\\lambda + 20 = 5 \\implies \\lambda = -15$, donc $T(t) = -15 e^{-0{,}6 t} + 20$.\\par\\textbf{5)} Pour dépasser $10^\\circ\\text{C}$ :\\par $$-15 e^{-0{,}6 t} + 20 > 10 \\iff e^{-0{,}6 t} < \\frac{10}{15} = \\frac{2}{3} \\iff t > -\\frac{\\ln(2/3)}{0{,}6} \\approx \\boxed{0{,}676\\text{ min}} \\approx \\text{41 secondes}.$$\\par (Et pour dépasser $15^\\circ\\text{C}$ : $e^{-0{,}6t} < \\frac{1}{3} \\implies t > \\frac{\\ln 3}{0{,}6} \\approx 1{,}83\\text{ min} \\approx 1\\text{ min } 50\\text{ s}$.)\\par\\textbf{6)} La vitesse de réchauffement est $T'(t) = 9 e^{-0{,}6 t}$ (en $^\\circ\\text{C/min}$). Initialement, $T'(0) =$ \\blank{$9\\,^\\circ\\text{C/min}$}. Elle est divisée par $2$ lorsque :\\par $$9 e^{-0{,}6 t} = 4{,}5 \\iff e^{-0{,}6 t} = \\frac{1}{2} \\iff t = \\frac{\\ln 2}{0{,}6} \\approx \\boxed{1{,}155\\text{ min}} \\approx 1\\text{ min } 9\\text{ s}.$$"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Échange thermique entre deux verres isolés",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On met désormais les deux verres (verre 1 à $T_1(0) = 5^\\circ\\text{C}$, verre 2 à $T_2(0) = 100^\\circ\\text{C}$) en contact thermique direct à l'intérieur d'une enceinte parfaitement isolée de l'extérieur. Le système couplé suit la loi de Newton avec le même coefficient $r = 0{,}6\\text{ min}^{-1}$ :\\par $$\\begin{cases}T_1'(t) = -r\\bigl(T_1(t) - T_2(t)\\bigr) \\\\ T_2'(t) = -r\\bigl(T_2(t) - T_1(t)\\bigr)\\end{cases}$$\\begin{enumerate}\\item Montrer que $T_1'(t) + T_2'(t) = 0$. En déduire que $T_1(t) + T_2(t)$ est constante et trouver la température d'équilibre finale $T_{\\text{éq}}$.\\item En dérivant la première équation, montrer que $T_1$ vérifie l'équation différentielle du second ordre $T_1''(t) + 2r T_1'(t) = 0$.\\item Résoudre cette équation et déterminer les expressions explicites de $T_1(t)$ et $T_2(t)$ pour $t \\ge 0$ (avec $r = 0{,}6$).\\item \\textbf{Comparaison :} on compare le refroidissement du verre chaud dans la pièce à $20^\\circ\\text{C}$ ($T(t) = 80 e^{-0{,}6 t} + 20$) à son refroidissement au contact du verre froid ($T_2(t)$). Résoudre l'inéquation $T(t) \\le T_2(t)$ (en posant $X = e^{-0{,}6 t}$) : laquelle des deux méthodes refroidit le verre chaud le plus vite au début, puis à long terme ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Comparer T(t) et T_2(t) avec X = e^{-0,6 t}",
+          "content": "Comme $e^{-1{,}2 t} = (e^{-0{,}6 t})^2 = X^2$, l'inéquation $80 X + 20 \\le 52{,}5 + 47{,}5 X^2$ devient une inéquation du second degré $47{,}5 X^2 - 80 X + 32{,}5 \\ge 0$ dont $X = 1$ est racine évidente !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Échange isolé et comparaison",
+          "content": "\\textbf{1)} En additionnant les deux équations, $T_1'(t) + T_2'(t) = -r(T_1 - T_2 + T_2 - T_1) = 0$. La somme est donc constante : $T_1(t) + T_2(t) = T_1(0) + T_2(0) = 105^\\circ\\text{C}$. À l'équilibre ($T_1 = T_2$), la température commune est $T_{\\text{éq}} = \\dfrac{105}{2} =$ \\blank{$52{,}5^\\circ\\text{C}$}.\\par\\textbf{2)} En dérivant $T_1' = -r(T_1 - T_2)$ et en utilisant $T_2' = -T_1'$ :\\par $$T_1'' = -r(T_1' - T_2') = -r(T_1' + T_1') = -2r T_1' \\iff T_1'' + 2r T_1' = 0.$$\\par\\textbf{3)} Les solutions sont $T_1(t) = C_1 e^{-2rt} + C_2$. Avec $T_1(0) = 5$ et $T_1'(0) = -r(5 - 100) = 95r = -2r C_1$, on obtient $C_1 = -47{,}5$ et $C_2 = 52{,}5$. Par symétrie ($T_2 = 105 - T_1$) :\\par $$T_1(t) = 52{,}5 - 47{,}5 e^{-1{,}2 t}, \\qquad T_2(t) = 52{,}5 + 47{,}5 e^{-1{,}2 t}.$$\\par\\textbf{4)} Posons $X = e^{-0{,}6 t} \\in ]0\\,;\\,1]$. L'inéquation $T(t) \\le T_2(t)$ s'écrit :\\par $$80 X + 20 \\le 52{,}5 + 47{,}5 X^2 \\iff 47{,}5 X^2 - 80 X + 32{,}5 \\ge 0 \\iff 95 X^2 - 160 X + 65 \\ge 0.$$\\par $X = 1$ est racine évidente ($95 - 160 + 65 = 0$), donc le trinôme se factorise en $(X - 1)(95 X - 65) \\ge 0$. L'autre racine est $X_2 = \\dfrac{65}{95} = \\dfrac{13}{19} \\approx 0{,}6842$.\\par Comme $X \\in ]0\\,;\\,1]$ :\\begin{itemize}\\item Pour $X \\in \\left]\\dfrac{13}{19}\\,;\\,1\\right[$ (soit $0 < t < -\\dfrac{\\ln(13/19)}{0{,}6} \\approx 0{,}632\\text{ min} \\approx$ \\blank{$38\\text{ s}$}) : $T_2(t) < T(t)$, le verre chaud refroidit \\textbf{plus vite au contact du verre froid} (car l'écart initial $95^\\circ\\text{C}$ est plus grand que $80^\\circ\\text{C}$).\\item Pour $t > 38\\text{ s}$ : $T(t) < T_2(t)$, le verre dans la pièce passe en dessous et finit par refroidir jusqu'à $20^\\circ\\text{C}$, contre $52{,}5^\\circ\\text{C}$ seulement dans la boîte isolée !\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "En 1701, \\textbf{Isaac Newton} publie anonymement dans les \\textit{Philosophical Transactions} sa \\textit{Scala graduum caloris}, où il énonce la loi du refroidissement et propose une échelle thermométrique. Cette loi reste aujourd'hui utilisée en médecine légale (estimation de l'heure d'un décès) et en thermique du bâtiment."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "La loi de Newton décrit bien le refroidissement par \\textbf{convection} lorsque l'écart de température reste modéré. Pour des objets très chauds (métal en fusion, étoiles), le rayonnement domine et suit la \\textbf{loi de Stefan–Boltzmann} en $T^4$ : $T'(t) = -k(T^4 - T_{\\text{env}}^4)$."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Résoudre des inéquations exponentielles et des inéquations du \\textbf{second degré par changement de variable}.\\item Étudier la \\textbf{vitesse de variation} (dérivée) et le comportement asymptotique.\\item Interpréter physiquement le croisement de deux courbes.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

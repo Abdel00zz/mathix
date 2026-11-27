@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = [
+  "shared/wasm_abi",
+  "shared/serde_json",
+  "math_engine",
+  "json_engine",
+  "mathix_server",
+  "mathix_frontend",
+]
+
+[workspace.package]
+edition = "2021"
+
+[profile.release]
+opt-level = "z"
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
+overflow-checks = false

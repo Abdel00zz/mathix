@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#F6F7FB" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0A092D" media="(prefers-color-scheme: dark)" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+  <title>Mathix — Administration</title>
+
+  <script>
+    (function () {
+      try {
+        var p = JSON.parse(localStorage.getItem('mathplus:profile') || '{}');
+        if (p && (p.theme === 'light' || p.theme === 'dark')) {
+          document.documentElement.dataset.theme = p.theme;
+        }
+        if (p && p.paletteVer === 2 && p.palette && p.palette !== 'quizlet' && p.palette !== 'botanique') {
+          document.documentElement.dataset.palette = p.palette;
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preload" href="../engines/mathix_admin.wasm?v=20261127d" as="fetch" crossorigin />
+  <link rel="stylesheet" href="../vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="../assets/min/app.min.css?v=20261127d" id="link-app-css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Gloock&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..600&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&family=Instrument+Sans:wght@400;500;600&family=Noto+Sans+Math&display=swap" />
+</head>
+
+<body data-v="admin">
+  <div class="paint" aria-hidden="true"></div>
+  <div class="sheet" aria-hidden="true"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="br" x="-10%" y="-25%" width="120%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency=".012 .06" numOctaves="2" seed="3" result="w" />
+        <feDisplacementMap in="SourceGraphic" in2="w" scale="22" result="d" />
+        <feTurbulence type="fractalNoise" baseFrequency=".012 .55" numOctaves="2" seed="8" result="g" />
+        <feColorMatrix in="g" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  3 0 0 0 -.8" result="m" />
+        <feComposite in="d" in2="m" operator="in" />
+      </filter>
+      <symbol id="art" viewBox="0 0 360 200">
+        <g fill="none" stroke-linecap="round" filter="url(#br)">
+          <path d="M30 70C120 20 230 30 330 80" stroke-width="30" style="stroke:color-mix(in srgb,var(--accent) 30%,transparent)" />
+          <path d="M50 120C140 80 220 110 320 70" stroke-width="20" style="stroke:color-mix(in srgb,var(--err) 36%,transparent)" />
+          <path d="M90 160C170 130 250 150 300 120" stroke-width="26" style="stroke:color-mix(in srgb,#E0A63B 40%,transparent)" />
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div id="app"></div>
+  <noscript>
+    <div style="max-width:480px;margin:12vh auto;padding:28px;border:1px solid #E4E1DB;border-radius:10px;background:#fff;color:#1A1A1A;font-family:'IBM Plex Sans',system-ui,sans-serif;text-align:center">
+      <h1 style="margin:0 0 10px;font-size:22px;font-family:'Cormorant Garamond',Georgia,serif">Console d’administration</h1>
+      <p style="margin:0;color:#5C5C5C;line-height:1.6">Activez JavaScript pour accéder au pilotage et au Studio éditorial Mathix.</p>
+    </div>
+  </noscript>
+
+  <script src="../vendor/katex/katex.min.js"></script>
+  <script>
+    (function () {
+      var dev = new URLSearchParams(location.search).has('dev');
+      var s = document.createElement('script');
+      s.type = 'module';
+      s.dataset.wasm = '../engines/mathix_admin.wasm?v=20261127d';
+      s.dataset.admin = '1';
+      s.src = dev ? '../assets/js/wasm-host.js' : '../assets/min/host.min.js?v=20261127d';
+      document.body.appendChild(s);
+      if (dev) {
+        var cssLink = document.getElementById('link-app-css');
+        if (cssLink) cssLink.remove();
+        ['tokens', 'base', 'motions', 'components', 'math', 'tkz', 'views', 'lesson', 'exercise', 'studio'].forEach(function (n) {
+          var l = document.createElement('link');
+          l.rel = 'stylesheet';
+          l.href = '../assets/css/' + n + '.css';
+          document.head.appendChild(l);
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

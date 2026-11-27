@@ -1,0 +1,961 @@
+/* ============================================================================
+   base.css — reset éditorial, corps, typographie globale, focus, print
+   ============================================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  height: 100%;
+  font-size: var(--ui-root-fs, 16px);
+  overflow-x: clip;
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  scrollbar-color: var(--muted) var(--bg);
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+:root.is-theme-switching *,
+:root.is-theme-switching *::before,
+:root.is-theme-switching *::after {
+  transition: none !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  overflow-x: clip;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 56% at 10% 4%, var(--bg-glow-1) 0%, transparent 62%),
+    radial-gradient(ellipse 68% 54% at 92% 14%, var(--bg-glow-2) 0%, transparent 60%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font: 400 1rem/1.5 var(--sans);
+  font-variation-settings: "opsz" 14;
+  -webkit-font-smoothing: antialiased;
+  --sbw: clamp(158px, 11.8vw, 176px);
+  padding-inline-start: var(--sbw);
+  transition: padding-inline-start 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-sb="collapsed"] body {
+  --sbw: 56px;
+}
+
+@media (max-width: 1024px) and (min-width: 721px) {
+  body {
+    --sbw: 154px;
+  }
+  :root[data-sb="collapsed"] body {
+    --sbw: 54px;
+  }
+}
+
+@media (max-width: 720px) {
+  body,
+  :root[data-sb="collapsed"] body {
+    --sbw: 0px;
+    padding-inline-start: 0;
+  }
+}
+
+body[data-has-sb="0"] {
+  --sbw: 0px !important;
+  padding-inline-start: 0 !important;
+}
+
+img, svg, video, canvas { max-width: 100%; height: auto; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button, a, summary, [role="button"], [role="checkbox"], label, input, select {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+a { color: inherit; }
+[hidden] { display: none !important; }
+annotation { display: none; }
+
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+[tabindex="-1"]:focus { outline: 0; }
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  inset-inline-start: 16px;
+  z-index: 100000;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font: 600 13.5px/1 var(--sans);
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: top 0.16s ease;
+}
+.skip-link:focus { top: 14px; }
+
+math {
+  font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", "Noto Sans Math", serif;
+  font-size: 0.97em;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+}
+:not(pre) > code {
+  padding: 0.1em 0.36em;
+  border-radius: 4px;
+  background: var(--code-bg, color-mix(in srgb, var(--ink) 6%, var(--paper)));
+}
+pre:has(code) {
+  overflow-x: auto;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 12.5px/1.6 var(--mono);
+}
+pre code {
+  font-family: inherit;
+  background: transparent;
+  padding: 0;
+}
+
+kbd {
+  margin-inline-start: 6px;
+  padding: 1px 6px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--code-bg, var(--bg));
+  font: 500 11px var(--mono);
+  color: var(--muted);
+}
+
+/* ── Conteneur principal ────────────────────────────────────────────────── */
+#app {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+}
+
+.page-main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: min(100%, var(--home-max, 780px));
+  margin: 0 auto;
+  padding: calc(clamp(20px, 2.6vw, 36px) * var(--space-y, 1)) clamp(16px, 3vw, 32px) calc(48px * var(--space-y, 1));
+}
+
+.page-main--wide {
+  max-width: min(100%, var(--wide-max, 1140px));
+}
+
+/* Mesure éditoriale fluide & adaptative selon la taille et la résolution de l'écran */
+.page-main--lesson {
+  width: 100%;
+  max-width: min(100%, var(--lesson-max, 880px));
+  margin: 0 auto;
+  padding: 0 clamp(14px, 3vw, 32px) calc(76px * var(--space-y, 1));
+}
+
+body:is([data-v="quiz"], [data-v="exo"]) .page-main {
+  padding-top: 12px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font: 400 clamp(20px, 2.8vw, 25px)/1.16 var(--display, var(--serif));
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+h1 .math-renderer,
+h2 .math-renderer,
+h3 .math-renderer {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.sub {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 12.8px;
+  line-height: 1.48;
+}
+
+.sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.sec--prog {
+  margin-bottom: 8px;
+  padding-bottom: 2px;
+  border-bottom: 0;
+}
+
+.sec h2 {
+  margin: 0;
+  font: 400 15.5px/1.25 var(--display, var(--serif));
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.012em;
+}
+
+.sec span {
+  font: 500 11px/1.2 var(--mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.sec #total {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+  color: var(--muted);
+  font: 500 11px/1.2 var(--mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+.body-muted {
+  color: var(--muted);
+  font-size: 12.8px;
+}
+
+.link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+.link:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+/* ── Dialogues natifs (Motion & profondeur façon Notion) ─────────────────── */
+dialog {
+  width: min(92vw, 440px);
+  max-height: min(90dvh, 760px);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  padding: 19px 20px;
+  border: 1px solid color-mix(in srgb, var(--line) 88%, var(--ink) 12%);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--notion-modal-shadow);
+  opacity: 0;
+  transform: translateY(10px) scale(0.968);
+  transition:
+    opacity 190ms var(--ease-notion),
+    transform 220ms var(--ease-notion),
+    overlay 220ms allow-discrete,
+    display 220ms allow-discrete;
+}
+dialog[open] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: translateY(10px) scale(0.968);
+  }
+}
+dialog::backdrop {
+  background: var(--scrim);
+  -webkit-backdrop-filter: blur(8px) saturate(1.1);
+  backdrop-filter: blur(8px) saturate(1.1);
+  opacity: 0;
+  transition: opacity 180ms ease, overlay 180ms allow-discrete, display 180ms allow-discrete;
+}
+dialog[open]::backdrop {
+  opacity: 1;
+}
+@starting-style {
+  dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+dialog h2 {
+  margin: 0 0 6px;
+  font: 600 18px/1.22 var(--display, var(--serif));
+  font-variant-numeric: lining-nums tabular-nums;
+}
+dialog p {
+  margin: 0 0 13px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ── Accessibilité ──────────────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Tablette (721px–1024px) & Mobile (<= 720px / <= 640px) ─────────────── */
+@media (max-width: 1024px) and (min-width: 721px) {
+  .page-main {
+    max-width: min(100%, 820px);
+    padding: 28px clamp(18px, 3vw, 26px) 52px;
+  }
+  .page-main--lesson {
+    max-width: min(100%, 820px);
+    padding: 0 clamp(14px, 2.5vw, 24px) 60px;
+  }
+}
+
+@media (max-width: 720px) {
+  body,
+  body[data-sb],
+  body[data-sb="0"],
+  body[data-sb="1"] {
+    --sbw: 0px;
+    padding-inline-start: 0 !important;
+    padding-bottom: 0;
+    background-attachment: scroll;
+  }
+  body[data-has-sb="0"] {
+    padding-bottom: 0 !important;
+  }
+  .page-main {
+    padding: 16px max(14px, env(safe-area-inset-left, 0px)) calc(96px + env(safe-area-inset-bottom, 0px)) max(14px, env(safe-area-inset-right, 0px));
+  }
+  body[data-has-sb="0"] .page-main {
+    padding: 14px max(14px, env(safe-area-inset-left, 0px)) calc(34px + env(safe-area-inset-bottom, 0px)) max(14px, env(safe-area-inset-right, 0px));
+  }
+  .page-main--lesson {
+    max-width: 100%;
+    padding: 0 max(10px, env(safe-area-inset-left, 0px)) calc(38px + env(safe-area-inset-bottom, 0px)) max(10px, env(safe-area-inset-right, 0px));
+  }
+  /* Évite le zoom automatique iOS Safari au focus des champs de formulaire */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* Bottom-sheet tactile & échelle typographique smartphone (<= 640px / <= 480px) */
+@media (max-width: 640px) {
+  h1 {
+    font-size: clamp(19px, 5vw, 22px);
+    line-height: 1.18;
+  }
+  .sub {
+    margin: 3px 0 13px;
+    font-size: 12.2px;
+    line-height: 1.44;
+  }
+  .sec {
+    margin: 12px 0 6px;
+    gap: 8px;
+  }
+  .sec h2 {
+    font-size: 14.5px;
+  }
+  .sec .meta {
+    font-size: 10px;
+  }
+  dialog:not(.media-lightbox):not(.st-print-modal) {
+    margin: auto 0 0;
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 92dvh;
+    border-radius: 18px 18px 0 0;
+    border-inline: 0;
+    border-bottom: 0;
+    padding: 15px 14px calc(18px + env(safe-area-inset-bottom, 0px));
+  }
+  dialog h2 {
+    font-size: 16.5px;
+    line-height: 1.24;
+  }
+  dialog p {
+    font-size: 12.8px;
+    margin-bottom: 10px;
+  }
+  .print-dlg {
+    padding: 0;
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 18px 18px 0 0;
+  }
+  .print-dlg__head {
+    padding: 10px 14px;
+    gap: 9px;
+  }
+  .print-dlg__icon {
+    width: 30px;
+    height: 30px;
+  }
+  .print-dlg__title {
+    font-size: 0.92rem;
+  }
+  .print-dlg__body {
+    padding: 11px 14px;
+    gap: 7px;
+  }
+  .print-scope-pills {
+    grid-template-columns: 1fr;
+  }
+  .print-scope-pill,
+  .print-mode-card {
+    padding: 8px 10px;
+  }
+  .print-dlg__foot {
+    padding: 9px 14px calc(11px + env(safe-area-inset-bottom, 0px));
+    gap: 7px;
+  }
+  .print-dlg__foot .btn {
+    flex: 1 1 0;
+    min-height: 38px;
+  }
+}
+
+/* ── Modale d'options d'impression & export PDF (.print-dlg) ────────────── */
+.print-cartouche,
+.print-work-space,
+.print-all-exercises {
+  display: none;
+}
+
+.print-dlg {
+  width: min(94vw, 560px);
+  max-height: 92dvh;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--line) 88%, var(--ink) 12%);
+  border-radius: 16px;
+  background: var(--sheet-bg, var(--surface));
+  color: var(--ink);
+  box-shadow: var(--notion-modal-shadow);
+}
+.print-dlg[open] {
+  display: flex;
+  flex-direction: column;
+}
+.print-dlg__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 18px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 85%, transparent);
+  background: color-mix(in srgb, var(--surface) 92%, var(--bg));
+}
+.print-dlg__title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.print-dlg__icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  flex: none;
+}
+.print-dlg__title {
+  margin: 0;
+  font: 700 1.08rem/1.25 var(--display, var(--serif));
+  color: var(--ink);
+}
+.print-dlg__sub {
+  margin: 2px 0 0;
+  font: 400 0.78rem/1.35 var(--sans);
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.print-dlg__body {
+  padding: 13px 18px 14px;
+  overflow-y: auto;
+  display: grid;
+  gap: 9px;
+}
+.print-dlg__section-lbl {
+  margin: 1px 0 -3px;
+  font: 700 0.67rem/1.2 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.print-scope-pills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 7px;
+}
+.print-scope-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7.5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  font: 600 0.8rem/1.3 var(--sans);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+.print-scope-pill input {
+  accent-color: var(--accent);
+  margin: 0;
+}
+.print-scope-pill:has(input:checked) {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  color: var(--accent);
+}
+
+.print-mode-grid {
+  display: grid;
+  gap: 6.5px;
+}
+.print-mode-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8.5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+.print-mode-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--line));
+}
+.print-mode-card:has(input:checked) {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6.5%, var(--surface));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.print-mode-card input {
+  margin-top: 3px;
+  accent-color: var(--accent);
+  flex: none;
+}
+.print-mode-card__box {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+}
+.print-mode-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.print-mode-card__top strong {
+  font: 600 0.88rem/1.3 var(--sans);
+  color: var(--ink);
+}
+.print-mode-card__tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+  color: var(--muted);
+  font: 600 0.66rem/1.2 var(--sans);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex: none;
+}
+.print-mode-card__tag.is-rec {
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--accent);
+}
+.print-mode-card__desc {
+  font: 400 0.78rem/1.45 var(--sans);
+  color: var(--muted);
+}
+
+.print-opts-list {
+  display: grid;
+  gap: 7px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg) 65%, var(--surface));
+}
+.print-opt-check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font: 500 0.81rem/1.35 var(--sans);
+  color: var(--ink);
+  cursor: pointer;
+}
+.print-opt-check input {
+  accent-color: var(--accent);
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  flex: none;
+}
+
+.print-dlg__foot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 12px 20px;
+  border-top: 1px solid color-mix(in srgb, var(--line) 85%, transparent);
+  background: color-mix(in srgb, var(--ink) 2%, var(--surface));
+}
+.print-dlg__submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* ── Impression académique A4 (Révision & Exercices / Examens) ──────────── */
+@page {
+  size: A4 portrait;
+  margin: 13mm 14mm 15mm;
+}
+
+@media print {
+  :root,
+  :root[data-theme="dark"],
+  body,
+  body[data-sb] {
+    --bg: #ffffff !important;
+    --surface: #ffffff !important;
+    --sheet-bg: #ffffff !important;
+    --ink: #0f172a !important;
+    --muted: #475569 !important;
+    --line: #cbd5e1 !important;
+    --accent: #1e3a8a !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #splash-screen,
+  .no-print,
+  .sb,
+  .paint,
+  .sheet,
+  .rp,
+  .toast-stack,
+  #toc,
+  #les-menu,
+  #print-dlg,
+  #dlg,
+  #focus-dlg,
+  .blk-focus-btn,
+  .app-sol-summary,
+  .les-footer {
+    display: none !important;
+  }
+
+  .page-main,
+  .page-main--lesson {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* ── Cartouche académique d'en-tête ── */
+  .print-cartouche {
+    display: block !important;
+    margin: 0 0 18px !important;
+    padding: 10px 14px 12px !important;
+    border: 1.5px solid #1e293b !important;
+    border-radius: 8px !important;
+    background: #f8fafc !important;
+    break-inside: avoid;
+  }
+  .print-cartouche__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #cbd5e1;
+  }
+  .print-cartouche__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .print-cartouche__logo {
+    display: inline-grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: #1e3a8a !important;
+    color: #ffffff !important;
+    font: 700 14px/1 var(--serif);
+  }
+  .print-cartouche__app {
+    font: 700 9.5px/1.2 var(--sans);
+    letter-spacing: 0.14em;
+    color: #1e3a8a !important;
+  }
+  .print-cartouche__lvl {
+    font: 600 11.5px/1.3 var(--sans);
+    color: #334155 !important;
+  }
+  .print-cartouche__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+  }
+  .print-cartouche__badge {
+    padding: 2px 8px;
+    border: 1px solid #93c5fd;
+    border-radius: 999px;
+    background: #eff6ff !important;
+    color: #1e40af !important;
+    font: 700 9.5px/1.2 var(--sans);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .print-cartouche__date {
+    font: 500 10px/1.2 var(--sans);
+    color: #64748b !important;
+  }
+  .print-cartouche__sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 8px;
+  }
+  .print-cartouche__doc {
+    font: 700 13.5px/1.25 var(--display, var(--serif));
+    color: #0f172a !important;
+  }
+  .print-cartouche__student {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    font: 600 10.5px/1 var(--sans);
+    color: #334155 !important;
+  }
+  .print-cartouche__student i {
+    display: inline-block;
+    width: 135px;
+    border-bottom: 1px dotted #475569;
+    height: 11px;
+  }
+  .print-cartouche__student i.is-short {
+    width: 55px;
+  }
+
+  /* ── Cadre quadrillé de rédaction sur papier (.print-work-space) ── */
+  .print-work-space {
+    display: block !important;
+    position: relative;
+    height: 26mm;
+    margin: 10px 0 6px !important;
+    padding: 5px 9px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    background-color: #ffffff !important;
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.25) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.25) 1px, transparent 1px) !important;
+    background-size: 5mm 5mm !important;
+    break-inside: avoid;
+  }
+  .print-work-space__lbl {
+    font: 600 9px/1 var(--sans);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b !important;
+    background: #ffffff;
+    padding-right: 4px;
+  }
+
+  /* ── Impression FICHE DE RÉVISION (#les) ── */
+  #les .revision-hero {
+    margin: 0 0 14px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+  }
+  #les .revision-hero-title {
+    font-size: 22pt !important;
+    margin-bottom: 6px !important;
+  }
+  #les .ls {
+    margin-bottom: 24px !important;
+  }
+  #les .lh {
+    break-after: avoid;
+    margin: 18px 0 10px !important;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  #les details.blk.is-socratic,
+  #les details.blk.is-reveal {
+    margin: 12px 0 !important;
+    break-inside: avoid;
+  }
+  #les details.blk.is-socratic > summary,
+  #les details.blk.is-reveal > summary {
+    justify-content: flex-start !important;
+    text-align: left !important;
+    padding: 4px 0 !important;
+    min-height: 0 !important;
+  }
+  #les details.blk.is-socratic > summary .blk-q,
+  #les details.blk.is-reveal > summary .blk-q {
+    text-align: left !important;
+    font-size: 12.5pt !important;
+  }
+  #les details.blk.is-socratic > .bx,
+  #les details.blk.is-reveal > .bx {
+    max-width: 100% !important;
+    margin: 4px 0 8px !important;
+    padding: 10px 14px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    background: #f8fafc !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    break-inside: avoid;
+  }
+  #les .blk[data-t="application"] {
+    margin: 16px 0 !important;
+    padding: 10px 0 !important;
+    break-inside: avoid;
+  }
+  #les .app-correction-panel {
+    margin: 8px 0 4px !important;
+    padding: 10px 14px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-left: 3px solid #1e3a8a !important;
+    border-radius: 6px !important;
+    background: #f8fafc !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    break-inside: avoid;
+  }
+  body[data-print-rev-mode="course-only"] #les .app-sol-divider,
+  body[data-print-rev-mode="worksheet"] #les .app-sol-divider {
+    display: none !important;
+  }
+  body[data-print-hide-lex="1"] #les #les-lexique {
+    display: none !important;
+  }
+
+  /* Gestion des blancs (\blank) à l'impression */
+  body[data-print-rev-mode="worksheet"] #les .math-blank,
+  #les .math-blank:not(.revealed) {
+    color: transparent !important;
+    background: transparent !important;
+    border-bottom: 1.5px dotted #334155 !important;
+    min-width: 5.5em !important;
+    display: inline-block !important;
+    box-shadow: none !important;
+  }
+  body[data-print-rev-mode="worksheet"] #les .math-blank * {
+    visibility: hidden !important;
+  }
+  #les .math-blank.revealed,
+  #exo .math-blank.revealed,
+  #quiz .math-blank.revealed {
+    color: #b91c1c !important;
+    background: transparent !important;
+    font-weight: 700 !important;
+    border-bottom: 0 !important;
+    text-decoration: none !important;
+  }
+
+  /* ── Impression EXERCICES & EXAMENS (#exo) ── */
+  body[data-print-scope="all"] .no-print-when-all {
+    display: none !important;
+  }
+  body[data-print-scope="all"] .print-all-exercises {
+    display: block !important;
+  }
+
+  .print-ex-block {
+    margin: 0 0 22px !important;
+    padding-bottom: 14px !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+  }
+  .print-ex-block:last-child {
+    border-bottom: 0 !important;
+  }
+  .print-ex-block__hd {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 10px !important;
+    break-after: avoid;
+  }
+  .print-ex-block__num {
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: #1e3a8a !important;
+    color: #ffffff !important;
+    font: 700 10px/1.3 var(--sans);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .print-ex-block__title {
+    margin: 0 !important;
+    font: 700 14pt/1.25 var(--display, var(--serif)) !important;
+    color: #0f172a !important;
+  }
+  .print-ex-block__meta {
+    margin-left: auto;
+    font: 600 10.5px/1.2 var(--sans);
+    color: #475569 !important;
+  }
+}

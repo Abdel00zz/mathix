@@ -1,0 +1,493 @@
+/* ============================================================================
+   math.css — Moteur stylistique KaTeX optimisé, intelligent & adaptatif
+   - Thématisation automatique clair/sombre via light-dark() (zéro bloc dupliqué)
+   - Échelle optique fluide --math-scale (permet +10 % ciblé dans les exercices)
+   - Formules display $$ … $$ centrées avec ajustement anti-débordement fitDisplayMath
+   - Blancs interactifs (.math-blank / .fill) élevés au-dessus des barres de fraction
+   - Boîtes de résultats dynamiques (.result-box) centrées au contenu (fit-content)
+   ============================================================================ */
+
+.math-renderer {
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+.math-renderer.math-inline {
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+.math-renderer :is(strong, b) {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: inherit;
+}
+.math-renderer :is(strong, b) .katex {
+  font-weight: 700;
+}
+
+.math-renderer .math-inline-node { display: inline; }
+.math-renderer .math-nowrap { white-space: nowrap; }
+.math-renderer .math-inline-rendered .katex {
+  font-size: calc(0.96em * var(--math-inline-scale, var(--math-scale, 1)));
+}
+
+/* ── Formules display $$ … $$ (centrées, taille optique cohérente avec inline) ─ */
+.math-renderer .math-display-shell {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  overflow: visible;
+}
+.math-renderer .math-display-node {
+  max-width: 100%;
+  font-size: inherit;
+  text-align: center;
+  overflow: visible;
+}
+.math-renderer .math-display-node:not(.result-box, .is-boxed-formula) {
+  width: 100%;
+}
+.math-renderer .math-display-node .katex-display {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0.85rem auto 0.95rem;
+  padding: 2px 0;
+  overflow-x: auto;
+  overflow-y: visible;
+  text-align: center;
+  scrollbar-width: none;
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+.math-renderer .math-display-node .katex-display::-webkit-scrollbar { display: none; }
+.math-renderer .katex-display > .katex {
+  font-size: calc(0.98em * var(--math-display-scale, var(--math-scale, 1)));
+  display: inline-block;
+  max-width: 100%;
+  text-align: center;
+}
+.math-renderer .math-display-fitted > .katex-display > .katex {
+  font-size: calc(0.98em * var(--math-display-scale, var(--math-scale, 1)) * var(--fit-ratio, 0.86));
+}
+:is(.btn, .opt) .katex-display { margin: 0.2rem auto; }
+
+@media (max-width: 600px) {
+  .math-renderer:not(.math-inline) { font-size: 0.95rem; line-height: 1.66; }
+  .math-renderer .math-inline-rendered .katex { font-size: calc(0.92em * var(--math-inline-scale, var(--math-scale, 1))); }
+  .math-renderer .katex-display > .katex { font-size: calc(0.94em * var(--math-display-scale, var(--math-scale, 1))); }
+  .math-renderer .math-display-fitted > .katex-display > .katex { font-size: calc(0.94em * var(--math-display-scale, var(--math-scale, 1)) * var(--fit-ratio, 0.86)); }
+}
+
+/* ── Blancs interactifs (\blank{…} / .fill) : pointillés fins bleus, nombreux, minimalistes & GPU ─ */
+.math-blank {
+  --blank-blue: light-dark(#1d4ed8, #60a5fa);
+  --blank-tint: light-dark(rgba(37, 99, 235, 0.085), rgba(96, 165, 250, 0.14));
+  --blank-tint-strong: light-dark(rgba(37, 99, 235, 0.16), rgba(96, 165, 250, 0.24));
+
+  position: relative;
+  display: inline-block;
+  min-width: 2.55em;
+  padding: 0 0.26em;
+  margin: 0 2px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: transparent;
+  font-family: var(--serif);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 190ms var(--ease-spring, cubic-bezier(0.22, 1, 0.36, 1));
+}
+.math-blank:focus:not(:focus-visible) {
+  outline: none;
+}
+#les .math-blank:focus-visible,
+#exo .math-blank:focus-visible,
+.math-blank:focus-visible {
+  outline: 2px solid var(--blank-blue);
+  outline-offset: 2px;
+  border-radius: 5px;
+}
+.math-blank:not(.revealed) > * {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Voile minimal bleu au survol/focus (100 % GPU : opacity + transform, zéro blur) */
+.math-blank:not(.revealed)::before {
+  content: "";
+  position: absolute;
+  inset: 1px -2px;
+  border-radius: 5px;
+  background: var(--blank-tint);
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    transform 200ms var(--ease-spring, cubic-bezier(0.22, 1, 0.36, 1));
+}
+.math-blank:not(.revealed):is(:hover, :focus-visible)::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Pointillés bleus ultra-fins (1.75 px), denses et nombreux — bleu saturé et net à chaque zoom */
+.math-blank:not(.revealed)::after {
+  content: "";
+  position: absolute;
+  left: 0.1em;
+  right: 0.1em;
+  bottom: 0.22em;
+  height: 1.75px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--blank-blue) 0 1.8px,
+    transparent 1.8px 4.8px
+  );
+  opacity: 0.96;
+  transform: translateY(0) scaleY(1);
+  transform-origin: center bottom;
+  pointer-events: none;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  transition:
+    transform 200ms var(--ease-spring, cubic-bezier(0.22, 1, 0.36, 1)),
+    opacity 160ms ease;
+}
+.math-blank:not(.revealed):is(:hover, :focus-visible)::after {
+  opacity: 1;
+  transform: translateY(-1.5px) scaleY(1.25);
+  animation: mathBlankHoverPulse 1.3s ease-in-out infinite;
+}
+.math-blank:not(.revealed):active::before {
+  background: var(--blank-tint-strong);
+  transform: scale(0.96);
+}
+.math-blank:not(.revealed):active::after {
+  animation: none;
+  opacity: 1;
+  transform: translateY(0.5px) scaleX(0.96);
+}
+
+/* État révélé : apparition cinétique GPU + encre rouge nette sans soulignement */
+.math-blank.revealed,
+.fill {
+  --blank-reveal-ink: light-dark(#c81e3a, #ff7f90);
+  --blank-reveal-tint: light-dark(rgba(208, 56, 76, 0.085), rgba(255, 127, 144, 0.14));
+  --blank-reveal-flash: light-dark(rgba(208, 56, 76, 0.16), rgba(255, 127, 144, 0.24));
+
+  position: relative;
+  display: inline-block;
+  min-width: 0;
+  padding: 0 0.22em;
+  margin: 0 1.5px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--blank-reveal-ink);
+  font-family: var(--serif);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  animation: mathBlankReveal 240ms var(--ease-spring, cubic-bezier(0.22, 1, 0.36, 1));
+  transition: color 160ms ease, background-color 160ms ease;
+}
+.math-blank.revealed .katex,
+.fill .katex {
+  color: inherit;
+}
+.math-blank.revealed:hover {
+  background-color: var(--blank-reveal-tint);
+}
+
+/* Halo éclair rouge fugace à la révélation (GPU : opacity + transform) */
+.math-blank.revealed::before {
+  content: "";
+  position: absolute;
+  inset: -1px -3px;
+  border-radius: 5px;
+  background: var(--blank-reveal-flash);
+  pointer-events: none;
+  opacity: 0;
+  transform-origin: center;
+  animation: mathBlankFlash 360ms var(--ease-spring, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+
+/* Aucun soulignement sur l'élément révélé */
+:is(.math-blank.revealed, .fill)::after {
+  content: none;
+  display: none;
+}
+
+@keyframes mathBlankHoverPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.54; }
+}
+
+@keyframes mathBlankReveal {
+  0% { opacity: 0; transform: translateY(3px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes mathBlankFlash {
+  0% { opacity: 0; transform: scale(0.94); }
+  28% { opacity: 0.9; transform: scale(1.02); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+/* Compatibilité parfaite des blancs dans les fractions & formules KaTeX */
+.katex .math-blank {
+  position: relative;
+  z-index: 3;
+  min-width: 2.25em;
+  padding: 0 0.22em;
+  line-height: 1.15;
+  vertical-align: baseline;
+}
+.katex .math-blank:not(.revealed)::after {
+  bottom: 0.1em;
+}
+.katex .math-blank:not(.revealed):has(.mfrac) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.48em;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.katex .math-blank:not(.revealed):has(.mfrac)::after {
+  bottom: 0.36em;
+}
+.katex .math-blank.revealed:has(.mfrac) {
+  padding: 0.08em 0.24em 0.14em;
+  vertical-align: middle;
+}
+.katex .mfrac .math-blank {
+  position: relative;
+  top: -0.04em;
+  min-width: 1.95em;
+  margin: 0;
+  padding: 0 0.16em;
+  line-height: 1.1;
+}
+.katex .mfrac .math-blank:not(.revealed)::after {
+  bottom: 0.16em;
+}
+.katex .mfrac .math-blank.revealed {
+  padding-bottom: 0;
+}
+.katex .mfrac .math-blank.revealed::after {
+  display: none;
+}
+.katex .mfrac .frac-line { pointer-events: none; }
+
+@media (max-width: 720px), (pointer: coarse) {
+  .math-blank:not(.katex .math-blank) { min-height: 28px; padding: 2px 6px; line-height: 24px; }
+  .math-blank:not(.katex .math-blank):not(.revealed)::after { bottom: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .math-blank,
+  .math-blank::before,
+  .math-blank::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  .math-blank::before,
+  .math-blank::after { display: none !important; }
+}
+
+/* ── Boîtes encadrées (\boxed / \fbox / \result) : fond transparent, sans arrondi, noir ─ */
+.result-box,
+.math-result,
+.is-boxed-formula {
+  width: fit-content;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0.7rem auto 0.45rem;
+  padding: 0.46rem 1.05rem;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 82%, transparent);
+  border-radius: 0;
+  background: transparent;
+  background-image: none;
+  color: var(--ink);
+  text-align: center;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  box-shadow: none;
+}
+:is(.result-box, .math-result, .is-boxed-formula) .katex-display {
+  margin: 0.08rem auto !important;
+}
+
+.math-boxed,
+.math-boxed-pill {
+  display: inline-block;
+  padding: 0.14rem 0.5rem;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 82%, transparent);
+  border-radius: 0;
+  background: transparent;
+  background-image: none;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.25;
+  vertical-align: middle;
+  box-shadow: none;
+}
+:is(.math-boxed, .math-boxed-pill):has(.mfrac) {
+  padding: 0.24rem 0.56rem;
+}
+.katex .fbox {
+  border: 1.25px solid color-mix(in srgb, var(--ink) 82%, transparent) !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+@media print {
+  .result-box,
+  .math-result,
+  .is-boxed-formula,
+  .math-boxed,
+  .math-boxed-pill {
+    border-color: #000000 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ── Macros pédagogiques & surlignages ──────────────────────────────────── */
+.math-highlight { padding: 1px 6px; border-radius: 4px; background: color-mix(in srgb, var(--gold, var(--am)) 14%, transparent); }
+.math-hl-yellow { background: color-mix(in srgb, #eab308 18%, transparent); }
+.math-hl-red { background: color-mix(in srgb, var(--r) 14%, transparent); }
+.math-hl-blue { background: color-mix(in srgb, var(--bl) 13%, transparent); }
+.math-hl-green { background: color-mix(in srgb, var(--g) 14%, transparent); }
+.math-hl-orange { background: color-mix(in srgb, #ea580c 14%, transparent); }
+.math-hl-purple { background: color-mix(in srgb, var(--v) 13%, transparent); }
+.math-hl-pink { background: color-mix(in srgb, #db2777 13%, transparent); }
+.math-hl-cyan { background: color-mix(in srgb, #0891b2 13%, transparent); }
+.math-hl-gray { background: color-mix(in srgb, var(--ink) 8%, transparent); }
+
+:is(.math-qst, .math-mathqst, .math-semref, .math-ref) { color: var(--accent); font-weight: 600; font-style: normal; }
+:is(.math-defi, .math-st, .keyword) { color: var(--ink); font-weight: 600; text-decoration: none; background: none; padding: 0; }
+.math-savant { font-family: var(--serif); font-style: italic; font-size: 1.04em; font-weight: 600; color: var(--ink); }
+.math-history { color: var(--muted); font-style: italic; }
+.math-motivation { color: var(--ink); font-style: italic; }
+.math-itemsize { display: inline-block; margin: 0.15em 0.55em 0.15em 0.35em; vertical-align: middle; }
+.method-step { position: relative; margin: 10px 0; padding: 8px 14px; border-inline-start: 1.5px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }
+.calc-btn { display: inline-block; padding: 1px 7px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px; background: var(--surface); font: 500 12px var(--mono); color: var(--ink); }
+.math-quote { margin: 14px 0; padding: 8px 16px; border-inline-start: 1.5px solid var(--gold, var(--am)); color: var(--muted); font-style: italic; }
+.math-verbatim { margin: 12px 0; padding: 12px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-recessed); font: 400 13px/1.5 var(--mono); overflow-x: auto; }
+.math-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 12px 0; }
+
+/* ── Probabilités & géométrie (boules, dés, pièces, arbres) ─────────────── */
+.boule { display: inline-grid; place-items: center; width: 1.05em; height: 1.05em; border-radius: 50%; font: 700 0.85em/1 var(--sans); color: #fff; vertical-align: -0.12em; }
+.boule-rouge { background: #dc2626; }
+.boule-noire { background: #1a1c25; }
+.boule-verte { background: #16a34a; }
+.boule-bleue { background: #2563eb; }
+.boule-jaune { background: #eab308; color: #1a1c25; }
+.boule-blanche { background: #fff; color: #1a1c25; border: 1.5px solid #94a3b8; }
+.boule-orange { background: #ea580c; }
+.boule-violette { background: #7c3aed; }
+
+.dice-face { display: inline-grid; place-items: center; width: 1.15em; height: 1.15em; border-radius: 0.25em; border: 1.5px solid var(--ink); font: 700 0.8em/1 var(--sans); color: var(--ink); vertical-align: -0.14em; background: var(--surface); }
+.coin { display: inline-grid; place-items: center; width: 1.1em; height: 1.1em; border-radius: 50%; font: 700 0.78em/1 var(--sans); vertical-align: -0.13em; border: 1.4px solid currentColor; }
+.coin-pile { background: color-mix(in srgb, var(--ink) 12%, var(--surface)); color: var(--ink); }
+.coin-face { background: color-mix(in srgb, var(--am) 20%, var(--surface)); color: var(--am); }
+
+:is(.sign-plus, .var-arrow-up) { color: var(--bl); }
+:is(.sign-moins, .var-arrow-down) { color: var(--r); }
+:is(.sign-zero, .var-dbar) { color: var(--ink); font-weight: 700; }
+:is(.var-arrow-big, .var-dbar-big) { font-size: 1.25em; }
+:is(.tree-node, .circle-text) { display: inline-grid; place-items: center; min-width: 1.6em; height: 1.6em; padding: 0 0.3em; border-radius: 50%; border: 1.5px solid var(--accent); color: var(--accent); font: 600 0.88em/1 var(--sans); vertical-align: -0.2em; }
+.geo-point { color: var(--r); font-weight: 600; }
+
+/* ── Listes LaTeX (enumerate / itemize) : alignement optique intelligent ── */
+.math-renderer ul.math-list { margin: 14px 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.math-renderer ul.math-list--nested { margin: 8px 0 2px; gap: 8px; }
+.math-renderer .math-list-item { position: relative; display: grid; grid-template-columns: 28px minmax(0, 1fr); column-gap: 12px; align-items: first baseline; padding: 0; }
+.math-renderer ul.math-list--unordered .math-list-item { grid-template-columns: 14px minmax(0, 1fr); column-gap: 9px; align-items: first baseline; }
+.math-renderer .math-list-item:has(> .math-list-content > .math-renderer > .math-display-shell:first-child),
+.math-renderer .math-list-item:has(> .math-list-content > .math-display-shell:first-child) { align-items: center; }
+.math-renderer .math-list-content { display: block; min-width: 0; overflow: visible; }
+.math-renderer .math-list-content > .math-renderer { font: inherit; color: inherit; }
+.math-renderer .math-list-marker { display: inline-flex; align-items: center; justify-content: center; flex: none; user-select: none; }
+.math-renderer .math-list-marker--num {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  border: 1px solid light-dark(rgba(15, 118, 110, 0.2), rgba(45, 212, 191, 0.28));
+  border-radius: 50%;
+  background: light-dark(rgba(15, 118, 110, 0.085), rgba(45, 212, 191, 0.14));
+  color: light-dark(#0f766e, #5eead4);
+  font: 600 0.78rem/1 var(--sans);
+  font-variant-numeric: lining-nums tabular-nums;
+  transform: translateY(-0.08em);
+}
+.math-renderer .math-list-marker--bullet { width: 14px; color: var(--gold, var(--am)); font: 700 1.05em/1 var(--sans); }
+
+/* ── Tableaux artistiques de référence (.art-table) — cadre architectural sculpté ─ */
+.math-display-shell--table { margin: 18px auto; }
+.art-table-scroll { width: 100%; max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: 4px 2px 10px; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+.art-table-frame {
+  display: inline-block;
+  min-width: min(100%, 420px);
+  max-width: 100%;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+  border-top-color: var(--box-bevel-top, light-dark(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.16)));
+  border-bottom-color: color-mix(in srgb, var(--accent) 26%, var(--box-bevel-bottom, var(--line)));
+  background: var(--surface);
+  box-shadow: var(--sculpt-frame-shadow, light-dark(0 1px 2px rgba(24, 24, 31, 0.03), 0 12px 30px -16px rgba(0, 0, 0, 0.48)));
+  overflow: hidden;
+}
+table.art-table { width: 100%; border-collapse: collapse; font-family: var(--serif); font-size: 0.98em; font-variant-numeric: lining-nums tabular-nums; color: var(--ink); text-align: center; }
+table.art-table thead tr {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 7.5%, var(--surface)) 0%, color-mix(in srgb, var(--accent) 4%, var(--surface)) 100%);
+  border-bottom: 1.5px solid color-mix(in srgb, var(--accent) 28%, var(--line));
+}
+table.art-table th { padding: 13px 18px; font: 600 13.5px/1.35 var(--sans); letter-spacing: 0.02em; color: var(--accent); white-space: nowrap; }
+table.art-table td { padding: 13px 18px; vertical-align: middle; border-top: 1px solid color-mix(in srgb, var(--line) 75%, transparent); transition: background-color 150ms ease; }
+table.art-table :is(th + th, td + td) { border-inline-start: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+table.art-table tbody tr:first-child td { border-top: 0; }
+table.art-table tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--ink) 2%, transparent); }
+table.art-table tbody tr:hover td { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+table.art-table .katex { font-size: 0.94em; }
+table.art-table .align-l { text-align: left; }
+table.art-table .align-c { text-align: center; }
+table.art-table .align-r { text-align: right; }
+
+@media (max-width: 640px) {
+  .art-table-frame { min-width: 100%; }
+  table.art-table :is(th, td) { padding: 9px 11px; font-size: 0.9em; }
+  .math-columns { grid-template-columns: 1fr; gap: 10px; }
+  .result-box, .is-boxed-formula { max-width: 100%; overflow-x: auto; padding: 0.4rem 0.75rem; }
+}
+
+@media (max-width: 480px) {
+  .math-renderer .math-display-node .katex-display { margin: 0.65rem auto 0.75rem; }
+  .math-renderer ul.math-list { margin: 10px 0; gap: 9px; }
+  .math-renderer .math-list-item { grid-template-columns: 24px minmax(0, 1fr); column-gap: 9px; }
+  .math-renderer .math-list-marker--num { width: 22px; height: 22px; font-size: 0.72rem; }
+}
+
+/* ── Figures \image & erreurs KaTeX ─────────────────────────────────────── */
+.math-figure { margin: 18px auto; max-width: min(100%, 600px); text-align: center; }
+.math-figure img { border-radius: 12px; border: 1px solid var(--line); margin-inline: auto; }
+.math-figure figcaption { margin-top: 8px; font: 400 13px var(--sans); color: var(--muted); font-style: italic; }
+.katex-error { color: var(--err); font: 400 0.85em var(--mono); background: color-mix(in srgb, var(--err) 10%, transparent); border-radius: 4px; padding: 0 4px; }

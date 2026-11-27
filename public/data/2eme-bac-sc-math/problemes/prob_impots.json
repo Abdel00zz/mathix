@@ -1,0 +1,95 @@
+{
+  "header": {
+    "title": "Déclarer ses impôts seul ou en famille ?",
+    "subtitle": "Problème 1.29 — Fonctions affines par morceaux et convexité",
+    "context": "Analyse et fonctions"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Déclarer ses impôts seul ou en famille ?",
+          "content": "En France, l'impôt sur le revenu suit un \\textbf{barème progressif par tranches} : ce n'est pas l'ensemble du revenu qui est imposé au taux maximal atteint, mais uniquement la fraction située dans chaque tranche ! De plus, grâce au système du \\textbf{quotient familial}, un foyer disposant de $p$ parts fiscales (par exemple $2$ parts pour un couple marié ou pacsé, $1{,}5$ part pour un parent isolé avec un enfant rattaché) paie un impôt égal à $p \\times I\\!\\left(\\dfrac{R}{p}\\right)$, où $R$ est le revenu total du foyer.\\par Est-il toujours fiscalement avantageux pour un couple de faire une déclaration commune ? Et pour un parent d'inclure sur sa déclaration un enfant majeur qui travaille ? La réponse repose sur une propriété géométrique fondamentale : la \\textbf{convexité} !"
+        },
+        {
+          "type": "notation",
+          "title": "Barème simplifié (revenus r exprimés en milliers d'euros)",
+          "content": "Pour une personne seule ($1$ part) de revenu annuel $r \\ge 0$ (en milliers d'euros), le barème progressif par tranches est :\\par $$\\begin{array}{|l|c|c|c|c|c|}\\hline \\text{Tranche de } r & [0\\,;\\,10[ & [10\\,;\\,26[ & [26\\,;\\,75[ & [75\\,;\\,160[ & [160\\,;\\,+\\infty[ \\\\\\hline \\text{Taux marginal} & 0\\,\\% & 11\\,\\% & 30\\,\\% & 41\\,\\% & 45\\,\\% \\\\\\hline\\end{array}$$"
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (convexité)",
+          "content": "Une fonction $f$ est \\textbf{convexe} sur $[0\\,;\\,+\\infty[$ si sa courbe représentative se situe toujours en dessous de ses cordes, ce qui implique pour tous $r_1, r_2 \\ge 0$ l'\\textbf{inégalité de convexité} :\\par $$f\\!\\left(\\frac{r_1 + r_2}{2}\\right) \\le \\frac{f(r_1) + f(r_2)}{2}.$$\\par Pour une fonction continue affine par morceaux, elle est convexe si et seulement si les pentes (coefficients directeurs) des morceaux successifs forment une suite \\textbf{croissante}."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Impôt d'un adulte seul et d'un couple (2 parts)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item \\textbf{Cas d'un adulte seul ($1$ part) :}\\begin{enumerate}\\item Calculer l'impôt $I(r)$ (en milliers d'euros) sur chacune des cinq tranches et vérifier que :\\par $$I(r) = \\begin{cases} 0 & \\text{si } 0 \\le r < 10 \\\\ 0{,}11 r - 1{,}1 & \\text{si } 10 \\le r < 26 \\\\ 0{,}30 r - 6{,}04 & \\text{si } 26 \\le r < 75 \\\\ 0{,}41 r - 14{,}29 & \\text{si } 75 \\le r < 160 \\\\ 0{,}45 r - 20{,}69 & \\text{si } r \\ge 160 \\end{cases}$$\\item Étudier la continuité et la dérivabilité de $I$ aux bornes $r = 10, 26, 75, 160$. Pourquoi une hausse de revenu ne peut-elle jamais faire perdre d'argent en « changeant de tranche » ?\\item Justifier que la fonction $I$ est convexe sur $[0\\,;\\,+\\infty[$.\\end{enumerate}\\item \\textbf{Cas de deux adultes ($2$ parts) :} deux conjoints ont pour revenus $r_1$ et $r_2$. En déclaration commune, leur impôt vaut $I_2(r_1 + r_2) = 2\\,I\\!\\left(\\dfrac{r_1 + r_2}{2}\\right)$.\\begin{enumerate}\\item Expliciter la fonction $I_2(r)$ sur ses cinq tranches (quels sont les nouveaux seuils ?).\\item Démontrer à l'aide de la convexité de $I$ que pour tous $r_1, r_2 \\ge 0$ :\\par $$I_2(r_1 + r_2) \\le I(r_1) + I(r_2).$$\\item Conclure : la déclaration commune est-elle toujours avantageuse pour un couple ? Dans quel cas y a-t-il égalité ?\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Calcul par tranches cumulées et convexité",
+          "content": "Sur $[26\\,;\\,75[$, on paie $0$ sur $[0\\,;\\,10]$, puis $0{,}11\\times(26-10) = 1{,}76$ sur $[10\\,;\\,26]$, puis $0{,}30(r - 26)$ sur le reste : $1{,}76 + 0{,}30r - 7{,}80 = 0{,}30r - 6{,}04$. Pour la question 2b, multipliez par $2$ l'inégalité $I\\!\\left(\\frac{r_1+r_2}{2}\\right) \\le \\frac{I(r_1)+I(r_2)}{2}$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Seul et en couple",
+          "content": "\\textbf{1. a)} En cumulant chaque tranche :\\begin{itemize}\\item $[0\\,;\\,10[$ : $I(r) = 0$.\\item $[10\\,;\\,26[$ : $0{,}11(r - 10) = 0{,}11 r - 1{,}1$ (en $r=26$, $I(26) = 1{,}76$).\\item $[26\\,;\\,75[$ : $1{,}76 + 0{,}30(r - 26) = 0{,}30 r - 6{,}04$ (en $r=75$, $I(75) = 16{,}46$).\\item $[75\\,;\\,160[$ : $16{,}46 + 0{,}41(r - 75) = 0{,}41 r - 14{,}29$ (en $r=160$, $I(160) = 51{,}31$).\\item $[160\\,;\\,+\\infty[$ : $51{,}31 + 0{,}45(r - 160) = 0{,}45 r - 20{,}69$.\\end{itemize}\\par\\textbf{1. b)} Les limites à gauche et à droite coïncident en $10$ ($0$), $26$ ($1{,}76$), $75$ ($16{,}46$) et $160$ ($51{,}31$) : $I$ est \\textbf{continue partout} sur $[0\\,;\\,+\\infty[$. En revanche, les pentes changent ($0 \\neq 0{,}11 \\neq 0{,}30 \\neq 0{,}41 \\neq 0{,}45$) : $I$ n'est \\textbf{pas dérivable} en $10, 26, 75, 160$. Comme la pente est toujours $\\le 0{,}45 < 1$, le revenu net $r - I(r)$ est strictement croissant : gagner plus ne fait jamais baisser le revenu après impôt !\\par\\textbf{1. c)} La fonction $I$ est continue, affine par morceaux, et ses pentes $0 < 0{,}11 < 0{,}30 < 0{,}41 < 0{,}45$ sont croissantes : elle est donc \\textbf{convexe}.\\par\\textbf{2. a)} Pour $I_2(r) = 2 I(r/2)$, tous les seuils sont doublés ($20, 52, 150, 320$), les taux restent inchangés et les constantes sont doublées ($0$, $0{,}11r - 2{,}2$, $0{,}30r - 12{,}08$, $0{,}41r - 28{,}58$, $0{,}45r - 41{,}38$).\\par\\textbf{2. b)} Par convexité de $I$ :\\par $$I\\!\\left(\\frac{r_1 + r_2}{2}\\right) \\le \\frac{I(r_1) + I(r_2)}{2} \\iff \\boxed{I_2(r_1 + r_2) \\le I(r_1) + I(r_2)}.$$\\par\\textbf{2. c)} Déclarer ensemble est donc \\textbf{toujours au moins aussi avantageux} (souvent strictement plus avantageux si $r_1$ et $r_2$ sont dans des tranches différentes). Il y a égalité dès que $r_1$ et $r_2$ appartiennent à la \\textbf{même tranche} (par exemple si $r_1 = r_2$)."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Un adulte et un enfant qui travaille (1,5 part)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Considérons maintenant un parent (revenu $r_1$) et son enfant majeur rattachable (revenu $r_2 = \\lambda r_1$ avec $0 \\le \\lambda \\le \\dfrac{1}{2}$, que l'on suppose suffisamment faible pour être non imposable s'il déclare seul : $r_2 < 10$, soit $I(r_2) = 0$ — ou plus généralement on compare $I_{\\text{famille}} = \\dfrac{3}{2}I\\!\\left(\\dfrac{2(r_1 + r_2)}{3}\\right)$ avec $I(r_1) + I(r_2)$).\\begin{enumerate}\\item \\textbf{Premier cas : $r_1 = 50$ ($50\\,000\\text{ €}$).} Calculer $I(50)$. Si le parent et l'enfant déclarent ensemble ($1{,}5$ part, revenu total $50(1+\\lambda)$), vérifier que $\\dfrac{2\\times 50(1+\\lambda)}{3} \\in [26\\,;\\,75[$ pour tout $\\lambda \\in [0\\,;\\,0{,}5]$, puis exprimer $I_{\\text{famille}}(\\lambda)$ en fonction de $\\lambda$. Pour quelles valeurs du revenu $r_2$ de l'enfant la déclaration \\textbf{en famille} est-elle plus avantageuse (en supposant $r_2 \\le 10$ pour comparer à $I(50)$, puis vérifier ce qui se passe au-delà de $10$) ?\\item \\textbf{Second cas : $r_1 = 150$ ($150\\,000\\text{ €}$).} Calculer $I(150)$. Vérifier que $\\dfrac{2\\times 150(1+\\lambda)}{3} = 100(1+\\lambda) \\in [75\\,;\\,160[$ pour tout $\\lambda \\in [0\\,;\\,0{,}5]$, exprimer $I_{\\text{famille}}(\\lambda)$ et déterminer jusqu'à quel revenu $r_2$ de l'enfant la déclaration en famille reste plus avantageuse que deux déclarations séparées ($I(150) + I(r_2)$).\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Comparer I_famille à I(r_1) + I(r_2)",
+          "content": "Pour $r_1 = 50$ : $I_{\\text{famille}} = \\frac{3}{2}\\bigl(0{,}30\\cdot\\frac{100(1+\\lambda)}{3} - 6{,}04\\bigr) = 15(1+\\lambda) - 9{,}06 = 15\\lambda + 5{,}94$. Comparez à $I(50) = 8{,}96$ (puis tenez compte de $I(r_2) = 0{,}11 r_2 - 1{,}1$ si $r_2 > 10$ !)."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Parent et enfant (1,5 part)",
+          "content": "\\textbf{1) Cas $r_1 = 50$ :} $I(50) = 0{,}30\\times 50 - 6{,}04 = 8{,}96$ (soit $8\\,960\\text{ €}$).\\par En déclaration commune ($1{,}5$ part), le quotient familial vaut $\\dfrac{50(1+\\lambda)}{1{,}5} = \\dfrac{100(1+\\lambda)}{3} \\in [33{,}33\\,;\\,50] \\subset [26\\,;\\,75[$, donc :\\par $$I_{\\text{famille}} = \\frac{3}{2}\\left(0{,}30\\cdot\\frac{100(1+\\lambda)}{3} - 6{,}04\\right) = 15\\lambda + 5{,}94 = 0{,}30\\, r_2 + 5{,}94.$$\\par\\begin{itemize}\\item Tant que $r_2 \\le 10$ (enfant non imposable seul), on compare à $I(50) = 8{,}96$ : $0{,}30 r_2 + 5{,}94 < 8{,}96 \\iff r_2 < \\dfrac{3{,}02}{0{,}30} \\approx$ \\blank{$10{,}07$} (soit $10\\,067\\text{ €}$). Comme $10 < 10{,}07$, la déclaration \\textbf{en famille} est avantageuse sur tout $[0\\,;\\,10]$ !\\item Pour $r_2 \\in [10\\,;\\,25]$ ($I(r_2) = 0{,}11 r_2 - 1{,}1$) : $0{,}30 r_2 + 5{,}94 < 8{,}96 + 0{,}11 r_2 - 1{,}1 \\iff 0{,}19 r_2 < 1{,}92 \\iff r_2 < \\mathbf{10{,}11}$ ($10\\,105\\text{ €}$). Au-delà, mieux vaut déclarer séparément !\\end{itemize}\\par\\textbf{2) Cas $r_1 = 150$ :} $I(150) = 0{,}41\\times 150 - 14{,}29 = 47{,}21$ ($47\\,210\\text{ €}$).\\par En déclaration commune, $\\dfrac{150(1+\\lambda)}{1{,}5} = 100(1+\\lambda) \\in [100\\,;\\,150] \\subset [75\\,;\\,160[$, donc :\\par $$I_{\\text{famille}} = \\frac{3}{2}\\bigl(0{,}41\\times 100(1+\\lambda) - 14{,}29\\bigr) = 61{,}5\\lambda + 40{,}065 = 0{,}41\\, r_2 + 40{,}065.$$\\par Comparaison avec $I(150)$ seul ($r_2 \\le 10$) : $0{,}41 r_2 + 40{,}065 < 47{,}21$ est toujours vrai (seuil $r_2 < \\dfrac{7{,}145}{0{,}41} \\approx$ \\blank{$17{,}43$}, soit $17\\,427\\text{ €}$). En tenant compte de $I(r_2) = 0{,}11 r_2 - 1{,}1$ sur $[10\\,;\\,26[$ : $0{,}41 r_2 + 40{,}065 < 47{,}21 + 0{,}11 r_2 - 1{,}1 \\iff 0{,}30 r_2 < 6{,}045 \\iff r_2 < \\mathbf{20{,}15}$ ($20\\,150\\text{ €}$). Au-dessous de ce seuil, la déclaration \\textbf{en famille} reste gagnante !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "L'impôt progressif sur le revenu est instauré en France en 1914 (loi Caillaux), et le mécanisme du \\textbf{quotient familial} est introduit en 1945 pour tenir compte des charges de famille. En pratique, l'avantage fiscal procuré par chaque demi-part d'enfant est aujourd'hui \\textbf{plafonné} par la loi."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "La \\textbf{convexité} joue un rôle central bien au-delà de la fiscalité : l'\\textbf{inégalité de Jensen} $f\\!\\left(\\sum \\alpha_i x_i\\right) \\le \\sum \\alpha_i f(x_i)$ intervient en probabilités, en théorie de l'information (entropie), en thermodynamique et en apprentissage automatique (optimisation convexe)."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Construire et étudier une \\textbf{fonction affine par morceaux} (continuité, dérivabilité aux points anguleux).\\item Découvrir et exploiter l'\\textbf{inégalité de convexité}.\\item Résoudre des inéquations affines paramétrées pour comparer deux régimes fiscaux.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

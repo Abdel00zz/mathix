@@ -428,7 +428,7 @@
         },
         {
           "type": "property",
-          "title": "Comment \\mathqst{$\\\\mathbb{Z}$ se partitionne-t-il} en classes modulo $n$ ?",
+          "title": "Comment \\mathqst{$\\mathbb{Z}$ se partitionne-t-il} en classes modulo $n$ ?",
           "content": "Soit $n \\in \\mathbb{N}^*$.\\par\\begin{enumerate}\\item Pour tout $a \\in \\mathbb{Z}$, il existe un unique $r \\in \\{0, 1, \\ldots, \\blank{n-1}\\}$ tel que $\\overline{a} = \\overline{r}$.\\item Les classes $\\overline{0}, \\overline{1}, \\ldots, \\overline{n-1}$ sont deux à deux \\blank{disjointes}.\\item $\\mathbb{Z} = \\overline{0} \\cup \\overline{1} \\cup \\cdots \\cup \\overline{n-1}$.\\end{enumerate}"
         },
         {

@@ -270,7 +270,7 @@
           "subQuestions": [
             {
               "id": "2a",
-              "content": "Montrer que $\\lim_{x \\to +\\infty} f(x) = -\\infty$ \\n\\left( on pourra écrire $f(x)$ sous la forme $x \\left[ 1 + \\dfrac{1}{x} - \\left(x + \\dfrac{1}{x}\\right)e^x \\right] \\right)$.",
+              "content": "Montrer que $\\lim_{x \\to +\\infty} f(x) = -\\infty$ (on pourra écrire $f(x)$ sous la forme $x \\left[ 1 + \\dfrac{1}{x} - \\left(x + \\dfrac{1}{x}\\right)e^x \\right]$).",
               "bareme": 0.5,
               "hint": "Factorisez globalement par $x$. Analysez la limite du terme entre crochets, qui est conditionné par le produit $x e^x$ tendant vers l'infini."
             },

@@ -1,17 +1,94 @@
 {
   "header": {
     "title": "Cadre Référentiel 2026",
-    "subtitle": "2ème BAC Sciences Mathématiques",
-    "context": "Mathématiques"
+    "subtitle": "2ème BAC Sciences Mathématiques (A & B)",
+    "context": "Mathématiques · Examen National"
   },
   "sections": [
-    { "id": "arithmetique", "category": "method", "title": "Maîtriser les concepts d'arithmétique dans $\\mathbb{Z}$ (Bézout, Gauss, congruences)" },
-    { "id": "structures", "category": "method", "title": "Étudier les structures algébriques (groupes, anneaux, corps)" },
-    { "id": "complexes", "category": "method", "title": "Utiliser les nombres complexes en algèbre et en géométrie" },
-    { "id": "suites", "category": "method", "title": "Étudier les suites numériques et les suites récurrentes" },
-    { "id": "fonctions", "category": "method", "title": "Étudier des fonctions réelles (continuité, dérivabilité, variations)" },
-    { "id": "integration", "category": "method", "title": "Maîtriser le calcul intégral et ses applications" },
-    { "id": "equa_diff", "category": "method", "title": "Résoudre des équations différentielles" },
-    { "id": "proba", "category": "method", "title": "Calculer des probabilités et étudier des variables aléatoires" }
+    { "id": "domaine_analyse", "category": "domain", "title": "Analyse" },
+
+    { "id": "sm_sub_continuite", "category": "subdomain", "title": "Limites, continuité et fonction réciproque" },
+    { "id": "sm_cont_pt", "category": "method", "title": "Sais-tu étudier la continuité d'une fonction en un point (y compris à droite et à gauche) et déterminer un prolongement par continuité ?" },
+    { "id": "sm_cont_image", "category": "method", "title": "Maîtrises-tu la détermination de l'image d'un segment ou d'un intervalle par une fonction continue et strictement monotone ?" },
+    { "id": "sm_cont_tvi", "category": "method", "title": "Sais-tu appliquer le théorème des valeurs intermédiaires (TVI) pour prouver l'existence et l'unicité d'une solution de $f(x) = \\lambda$ ou étudier une suite implicite ?" },
+    { "id": "sm_cont_recip", "category": "method", "title": "Es-tu capable d'établir l'existence de la fonction réciproque $f^{-1}$, d'étudier ses variations, sa continuité et de tracer sa courbe $C_{f^{-1}}$ ?" },
+    { "id": "sm_cont_racine_n", "category": "method", "title": "Maîtrises-tu le calcul algébrique, les limites et les équations faisant intervenir la fonction racine $n$-ième $x \\mapsto \\sqrt[n]{x}$ et les puissances rationnelles $x^r$ ?" },
+    { "id": "sm_cont_arctan", "category": "method", "title": "Connais-tu les propriétés fondamentales, la dérivée, les identités usuelles (ex. $\\arctan x + \\arctan\\frac{1}{x}$) et les limites liées à la fonction $\\arctan$ ?" },
+
+    { "id": "sm_sub_derivation", "category": "subdomain", "title": "Dérivation, théorèmes fondamentaux et étude de fonctions" },
+    { "id": "sm_der_pt", "category": "method", "title": "Sais-tu étudier la dérivabilité d'une fonction en un point, à droite et à gauche, et interpréter géométriquement le résultat (tangente, demi-tangente verticale ou anguleuse) ?" },
+    { "id": "sm_der_comp_recip", "category": "method", "title": "Maîtrises-tu le calcul des dérivées d'une composée $g \\circ f$, d'une fonction réciproque $(f^{-1})'(y_0) = \\frac{1}{f'(x_0)}$ et des dérivées successives $f^{(n)}$ par récurrence ?" },
+    { "id": "sm_der_rolle", "category": "method", "title": "Sais-tu appliquer le théorème de Rolle pour montrer qu'une dérivée s'annule ou qu'une équation admet au moins une racine sur un intervalle ?" },
+    { "id": "sm_der_taf_iaf", "category": "method", "title": "Maîtrises-tu le théorème des accroissements finis (TAF) et l'inégalité des accroissements finis (IAF) pour établir des encadrements et démontrer la convergence de suites ?" },
+    { "id": "sm_der_branches", "category": "method", "title": "Es-tu capable d'étudier toutes les branches infinies (asymptotes horizontales, verticales, obliques, branches paraboliques) et la position relative de $C_f$ par rapport à son asymptote ?" },
+    { "id": "sm_der_convexite", "category": "method", "title": "Sais-tu exploiter $f''$ pour étudier la concavité, la convexité, les points d'inflexion et en déduire des inégalités de convexité ?" },
+
+    { "id": "sm_sub_suites", "category": "subdomain", "title": "Suites numériques" },
+    { "id": "sm_suite_conv_mono", "category": "method", "title": "Sais-tu utiliser le théorème de convergence monotone (croissante majorée / décroissante minorée) et les théorèmes d'encadrement pour calculer la limite d'une suite ?" },
+    { "id": "sm_suite_adj", "category": "method", "title": "Maîtrises-tu la caractérisation de deux suites adjacentes pour prouver leur convergence vers une limite commune et encadrer cette limite ?" },
+    { "id": "sm_suite_rec_f", "category": "method", "title": "Es-tu capable d'étudier une suite récurrente $u_{n+1} = f(u_n)$ (stabilité d'un intervalle $f(I) \\subset I$, monotonie, limite solution de $f(l) = l$) ?" },
+    { "id": "sm_suite_iaf", "category": "method", "title": "Sais-tu combiner l'inégalité des accroissements finis $|f(x) - l| \\le k |x - l|$ ($0 < k < 1$) avec un raisonnement par récurrence pour prouver que $\\lim u_n = l$ ?" },
+    { "id": "sm_suite_impl", "category": "method", "title": "Parviens-tu à étudier une suite définie implicitement comme unique solution d'une équation $f_n(x) = 0$ (existence, monotonie, convergence et limite) ?" },
+
+    { "id": "sm_sub_ln_exp", "category": "subdomain", "title": "Fonctions logarithmiques et exponentielles" },
+    { "id": "sm_ln_props", "category": "method", "title": "Maîtrises-tu les propriétés algébriques de $\\ln$ et $\\log_a$, la résolution d'équations/inéquations logarithmiques et la dérivation de $\\ln(|u(x)|)$ ?" },
+    { "id": "sm_exp_props", "category": "method", "title": "Es-tu à l'aise avec les fonctions $e^x$ et $a^x = e^{x \\ln a}$, les équations/inéquations exponentielles et les primitives de $u' e^u$ ?" },
+    { "id": "sm_croiss_comp", "category": "method", "title": "Connais-tu parfaitement les limites fondamentales et croissances comparées ($\\frac{\\ln x}{x^\\alpha}$, $x^\\alpha \\ln x$, $\\frac{e^x}{x^\\alpha}$, $x^\\alpha e^{-x}$) pour lever toute forme indéterminée ?" },
+    { "id": "sm_etude_famille", "category": "method", "title": "Sais-tu mener l'étude complète d'une famille de fonctions $f_n$ ou $f_m$ comportant $\\ln$ et $\\exp$ et étudier le comportement des extrémums ou intersections ?" },
+
+    { "id": "sm_sub_integral", "category": "subdomain", "title": "Calcul intégral et fonctions définies par une intégrale" },
+    { "id": "sm_int_prim_ipp", "category": "method", "title": "Sais-tu calculer une intégrale par recherche de primitive ou par intégration par parties (y compris IPP répétée ou cyclique) ?" },
+    { "id": "sm_int_chgt_var", "category": "method", "title": "Maîtrises-tu la technique du changement de variable $t = \\varphi(x)$ (mise à jour des bornes et de $dt = \\varphi'(x)\\,dx$) ?" },
+    { "id": "sm_int_param", "category": "method", "title": "Es-tu capable d'étudier une fonction définie par une intégrale $F(x) = \\int_{u(x)}^{v(x)} f(t)\\,dt$ (domaine, dérivabilité, $F'(x)$, variations, limites et encadrements) ?" },
+    { "id": "sm_int_riemann", "category": "method", "title": "Sais-tu reconnaître une somme de Riemann $\\frac{b-a}{n}\\sum_{k=1}^{n} f\\left(a + k\\frac{b-a}{n}\\right)$ et calculer sa limite à l'aide d'une intégrale ?" },
+    { "id": "sm_int_suites", "category": "method", "title": "Parviens-tu à étudier une suite d'intégrales $I_n = \\int_a^b f_n(t)\\,dt$ (monotonie, encadrement, relation de récurrence par IPP et limite) ?" },
+    { "id": "sm_int_aires_vol", "category": "method", "title": "Sais-tu calculer l'aire d'un domaine plan entre deux courbes (en unités d'aire) et le volume d'un solide de révolution autour de $(Ox)$ ?" },
+
+    { "id": "sm_sub_equadiff", "category": "subdomain", "title": "Équations différentielles" },
+    { "id": "sm_ed_1", "category": "method", "title": "Sais-tu résoudre l'équation différentielle linéaire du premier ordre $y' = ay + b$ et déterminer l'unique solution vérifiant une condition initiale $y(x_0) = y_0$ ?" },
+    { "id": "sm_ed_2", "category": "method", "title": "Maîtrises-tu la résolution de $y'' + ay' + by = 0$ via l'équation caractéristique ($\\Delta > 0$, $\\Delta = 0$, $\\Delta < 0$) avec conditions initiales $y(x_0), y'(x_0)$ ?" },
+
+    { "id": "domaine_algebre", "category": "domain", "title": "Algèbre et arithmétique" },
+
+    { "id": "sm_sub_arith", "category": "subdomain", "title": "Arithmétique dans $\\mathbb{Z}$" },
+    { "id": "sm_arith_div_cong", "category": "method", "title": "Maîtrises-tu la divisibilité, la division euclidienne et le calcul de congruences modulo $n$ dans $\\mathbb{Z}/n\\mathbb{Z}$ (inverses modulo $n$, puissances) ?" },
+    { "id": "sm_arith_euclide", "category": "method", "title": "Sais-tu utiliser l'algorithme d'Euclide et les propriétés de $a \\land b$ et $a \\lor b$ (y compris $ab = (a \\land b)(a \\lor b)$) ?" },
+    { "id": "sm_arith_bezout_gauss", "category": "method", "title": "Es-tu capable d'appliquer les théorèmes de Bézout et de Gauss pour résoudre une équation diophantienne $ax + by = c$ et caractériser les entiers premiers entre eux ?" },
+    { "id": "sm_arith_fermat", "category": "method", "title": "Sais-tu mobiliser le petit théorème de Fermat ($a^{p-1} \\equiv 1 \\pmod p$) et la décomposition en facteurs premiers dans une démonstration arithmétique ?" },
+    { "id": "sm_arith_sys_cong", "category": "method", "title": "Parviens-tu à résoudre un système de congruences $x \\equiv a \\pmod m$ et $x \\equiv b \\pmod n$ lorsque $m \\land n = 1$ ?" },
+
+    { "id": "sm_sub_complexes", "category": "subdomain", "title": "Nombres complexes" },
+    { "id": "sm_comp_formes", "category": "method", "title": "Maîtrises-tu le passage fluide entre formes algébrique, trigonométrique et exponentielle $re^{i\\theta}$, ainsi que les formules d'Euler et de Moivre ?" },
+    { "id": "sm_comp_racines", "category": "method", "title": "Sais-tu déterminer les racines carrées d'un nombre complexe et les racines $n$-ièmes de l'unité $\\mathbb{U}_n$ ou d'un complexe non nul, avec leur interprétation géométrique ?" },
+    { "id": "sm_comp_eq2", "category": "method", "title": "Es-tu capable de résoudre dans $\\mathbb{C}$ une équation du second degré $az^2 + bz + c = 0$ à coefficients complexes quelconques ?" },
+    { "id": "sm_comp_geo", "category": "method", "title": "Sais-tu traduire en complexes l'alignement, la cocyclicité ($\\frac{z_D-z_A}{z_D-z_B} : \\frac{z_C-z_A}{z_C-z_B} \\in \\mathbb{R}$), l'orthogonalité et la nature d'un triangle ou quadrilatère ?" },
+    { "id": "sm_comp_transf", "category": "method", "title": "Maîtrises-tu la reconnaissance et la composition des similitudes directes $z' = az + b$ (translation, homothétie, rotation, similitude directe : centre, rapport, angle) ?" },
+
+    { "id": "sm_sub_structures", "category": "subdomain", "title": "Structures algébriques (Groupes, Anneaux, Corps)" },
+    { "id": "sm_str_lci", "category": "method", "title": "Sais-tu vérifier si une loi de composition interne $*$ est commutative, associative, possède un élément neutre et déterminer les éléments symétrisables ?" },
+    { "id": "sm_str_groupe", "category": "method", "title": "Es-tu capable de démontrer qu'un ensemble muni d'une loi est un groupe $(G, *)$ ou qu'une partie $H$ est un sous-groupe de $(G, *)$ ?" },
+    { "id": "sm_str_morph", "category": "method", "title": "Maîtrises-tu la notion de morphisme et d'isomorphisme de groupes pour transférer une structure algébrique d'un ensemble connu vers un autre ?" },
+    { "id": "sm_str_anneau_corps", "category": "method", "title": "Sais-tu caractériser un anneau unitaire $(A, +, \\times)$, un anneau intègre (sans diviseurs de zéro) et un corps commutatif $(K, +, \\times)$ ?" },
+    { "id": "sm_str_matrices", "category": "method", "title": "Es-tu à l'aise avec le calcul matriciel dans $\\mathcal{M}_2(\\mathbb{R})$ et $\\mathcal{M}_3(\\mathbb{R})$ (anneau matriciel, matrices inversibles, puissances $M^n$ et morphismes) ?" },
+
+    { "id": "sm_sub_ev", "category": "subdomain", "title": "Espaces vectoriels réels" },
+    { "id": "sm_ev_sev", "category": "method", "title": "Sais-tu démontrer qu'une partie $F$ d'un $\\mathbb{R}$-espace vectoriel $E$ (ex. $\\mathbb{R}^2$, $\\mathbb{R}^3$, $\\mathcal{M}_2(\\mathbb{R})$, fonctions) est un sous-espace vectoriel ?" },
+    { "id": "sm_ev_familles", "category": "method", "title": "Maîtrises-tu l'étude de l'indépendance linéaire (famille libre / liée), des familles génératrices et la démonstration qu'une famille forme une base de $E$ ?" },
+    { "id": "sm_ev_dim", "category": "method", "title": "Sais-tu déterminer la dimension d'un espace vectoriel fini et calculer les coordonnées d'un vecteur dans une nouvelle base ?" },
+
+    { "id": "domaine_proba", "category": "domain", "title": "Probabilités" },
+
+    { "id": "sm_sub_proba", "category": "subdomain", "title": "Dénombrement, probabilités conditionnelles et variables aléatoires" },
+    { "id": "sm_prob_denom", "category": "method", "title": "Sais-tu choisir le modèle combinatoire exact (tirages successifs avec/sans remise, tirages simultanés, partitions) pour calculer $\\text{card}(\\Omega)$ et $\\text{card}(A)$ ?" },
+    { "id": "sm_prob_cond_tot", "category": "method", "title": "Maîtrises-tu les probabilités conditionnelles $P_B(A)$, la formule des probabilités composées, la formule des probabilités totales et la formule de Bayes ?" },
+    { "id": "sm_prob_indep", "category": "method", "title": "Es-tu capable de vérifier et d'exploiter l'indépendance de deux événements ou la répétition d'épreuves indépendantes ?" },
+    { "id": "sm_prob_va", "category": "method", "title": "Sais-tu déterminer la loi de probabilité d'une variable aléatoire discrète $X$, sa fonction de répartition, son espérance $E(X)$, sa variance $V(X)$ et son écart-type $\\sigma(X)$ ?" },
+    { "id": "sm_prob_binom", "category": "method", "title": "Maîtrises-tu l'identification d'un schéma de Bernoulli et l'utilisation de la loi binomiale $\\mathcal{B}(n, p)$ ($P(X=k)=C_n^k p^k(1-p)^{n-k}$, $E(X)=np$, $V(X)=np(1-p)$) ?" },
+
+    { "id": "domaine_geo", "category": "domain", "title": "Géométrie dans l'espace (Sc. Math B)" },
+
+    { "id": "sm_sub_espace", "category": "subdomain", "title": "Produit scalaire et produit vectoriel dans l'espace" },
+    { "id": "sm_geo_plan_sphere", "category": "method", "title": "Sais-tu déterminer l'équation cartésienne d'un plan, d'une sphère et étudier l'intersection sphère/plan ou sphère/droite via la distance $d(\\Omega, (P))$ ?" },
+    { "id": "sm_geo_prod_vect", "category": "method", "title": "Maîtrises-tu le produit vectoriel $\\vec{u} \\wedge \\vec{v}$ pour calculer l'aire d'un triangle, l'équation d'un plan défini par trois points et la distance d'un point à une droite ?" }
   ]
 }

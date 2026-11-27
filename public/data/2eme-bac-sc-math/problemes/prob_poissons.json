@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Compter les poissons dans un lac",
+    "subtitle": "Problème 1.10 — Capture-Marquage-Recapture",
+    "context": "Probabilités et statistique"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Compter les poissons dans un lac",
+          "content": "Comment estimer le nombre total $N$ de poissons vivant dans un lac ou une rivière, alors qu'il est impossible de vider l'eau ou de tous les compter un par un ? Les biologistes utilisent la méthode de \\textbf{Capture–Marquage–Recapture} (CMR) :\\begin{enumerate}\\item On capture un premier échantillon de $n_1$ poissons, on les \\textbf{marque} (bague, encoche ou puce) et on les relâche.\\item Après un délai suffisant pour qu'ils se mélangent de façon homogène à la population totale $N$, on capture un second échantillon de $n_2$ poissons.\\item On compte le nombre $m$ de poissons \\textbf{déjà marqués} dans ce second échantillon.\\end{enumerate}À partir de $n_1$, $n_2$ et $m$, on cherche à estimer $N$ et à encadrer cette estimation avec un niveau de confiance de $95\\,\\%$."
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (outils probabilistes admis)",
+          "content": "\\begin{itemize}\\item \\textbf{Loi de Bernoulli $\\mathcal{B}(p)$ :} une variable $Y_i$ valant $1$ avec probabilité $p$ et $0$ avec probabilité $1-p$ vérifie $\\mathbb{E}(Y_i) = p$ et $\\operatorname{Var}(Y_i) = p(1-p)$.\\item \\textbf{Loi binomiale $\\mathcal{B}(n_2, p)$ :} somme de $n_2$ variables de Bernoulli indépendantes de même paramètre $p$ ; son espérance vaut $\\mathbb{E}(Y) = n_2 p$.\\item \\textbf{Loi des grands nombres et intervalle de fluctuation à $95\\,\\%$ :} lorsque $n_2$ est grand, la fréquence observée $\\bar{y} = \\dfrac{m}{n_2}$ tend vers $p$ et appartient, avec une probabilité d'au moins $95\\,\\%$, à l'intervalle $\\left[p - \\dfrac{1}{\\sqrt{n_2}}\\,;\\, p + \\dfrac{1}{\\sqrt{n_2}}\\right]$ (soit réciproquement $p \\in \\left[\\bar{y} - \\dfrac{1}{\\sqrt{n_2}}\\,;\\, \\bar{y} + \\dfrac{1}{\\sqrt{n_2}}\\right]$).\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Étude probabiliste et estimateur de Petersen",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour modéliser la seconde capture (de taille $n_2$), on suppose $n_2$ petit devant $N$ afin d'assimiler les $n_2$ captures à des tirages indépendants avec remise. Pour chaque $i \\in \\{1, \\dots, n_2\\}$, on pose $Y_i = 1$ si le $i$-ième poisson capturé est marqué, et $Y_i = 0$ sinon.\\begin{enumerate}\\item Quelle est la loi de probabilité de $Y_i$ ? Quel est son paramètre $p$ en fonction de $n_1$ et $N$ ?\\item Donner l'espérance $\\mathbb{E}(Y_1)$ et la variance $\\operatorname{Var}(Y_1)$.\\item On note $Y$ le nombre total de poissons marqués dans le second échantillon. Exprimer $Y$ en fonction des $Y_i$.\\item Quelle est la loi de $Y$ ? Donner son espérance $\\mathbb{E}(Y)$.\\item Que donne la loi des grands nombres pour la fréquence $\\dfrac{Y}{n_2}$ ?\\item Lors d'une campagne réelle, on observe $m$ poissons marqués parmi les $n_2$ capturés, soit une fréquence empirique $\\bar{y} = \\dfrac{m}{n_2}$. En identifiant $\\bar{y}$ à la probabilité $p = \\dfrac{n_1}{N}$, en déduire l'estimateur $\\widehat{N}$ de la population totale.\\item À partir de l'encadrement $\\bar{y} - \\dfrac{1}{\\sqrt{n_2}} \\le \\dfrac{n_1}{N} \\le \\bar{y} + \\dfrac{1}{\\sqrt{n_2}}$ (valable à $95\\,\\%$ lorsque $\\bar{y} > \\dfrac{1}{\\sqrt{n_2}}$), en déduire un \\textbf{intervalle de confiance à $95\\,\\%$} pour le nombre total $N$ de poissons.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Inversion d'un encadrement strictement positif",
+          "content": "Si $0 < a \\le \\dfrac{n_1}{N} \\le b$, alors en prenant les inverses (qui renversent le sens des inégalités) puis en multipliant par $n_1 > 0$, on obtient $\\dfrac{n_1}{b} \\le N \\le \\dfrac{n_1}{a}$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Estimateur et intervalle de confiance",
+          "content": "\\textbf{1)} Il y a $n_1$ poissons marqués sur $N$ poissons au total : chaque poisson capturé est marqué avec probabilité $p = \\dfrac{n_1}{N}$. Donc $Y_i \\sim \\mathcal{B}\\!\\left(\\dfrac{n_1}{N}\\right)$.\\par\\textbf{2)} $\\mathbb{E}(Y_1) = \\dfrac{n_1}{N}$ et $\\operatorname{Var}(Y_1) = \\dfrac{n_1}{N}\\left(1 - \\dfrac{n_1}{N}\\right)$.\\par\\textbf{3)} $Y = \\displaystyle\\sum_{i=1}^{n_2} Y_i$.\\par\\textbf{4)} $Y$ est la somme de $n_2$ variables de Bernoulli indépendantes de même paramètre $p = \\dfrac{n_1}{N}$, donc $Y \\sim \\mathcal{B}\\!\\left(n_2,\\, \\dfrac{n_1}{N}\\right)$ et $\\mathbb{E}(Y) = \\dfrac{n_1 n_2}{N}$.\\par\\textbf{5)} Par la loi des grands nombres, la fréquence $\\dfrac{Y}{n_2}$ converge vers $p = \\dfrac{n_1}{N}$ lorsque $n_2$ devient grand.\\par\\textbf{6)} En approchant $\\dfrac{n_1}{N}$ par $\\bar{y} = \\dfrac{m}{n_2}$, on obtient l'\\textbf{estimateur de Lincoln–Petersen} :\\par $$\\widehat{N} = \\boxed{\\frac{n_1 n_2}{m}}.$$\\par Estimateur ponctuel : \\blank{$\\widehat{N} = \\dfrac{n_1 n_2}{m}$}.\\par\\textbf{7)} En inversant l'inégalité $0 < \\bar{y} - \\dfrac{1}{\\sqrt{n_2}} \\le \\dfrac{n_1}{N} \\le \\bar{y} + \\dfrac{1}{\\sqrt{n_2}}$ :\\par $$\\frac{n_1}{\\bar{y} + \\frac{1}{\\sqrt{n_2}}} \\le N \\le \\frac{n_1}{\\bar{y} - \\frac{1}{\\sqrt{n_2}}}.$$\\par C'est un intervalle de confiance à $95\\,\\%$ pour la taille $N$ de la population."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Application aux saumons du Scorff (2010–2014)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Des campagnes CMR ont été menées par l'INRAE sur la rivière bretonne du \\textbf{Scorff} afin d'estimer chaque année le nombre de saumons remontant le cours d'eau :\\par $$\\begin{array}{|c|c|c|c|}\\hline \\text{Année} & \\text{Marqués } n_1 & \\text{Recapturés } n_2 & \\text{Dont marqués } m \\\\\\hline 2010 & 533 & 58 & 32 \\\\\\hline 2011 & 307 & 28 & 21 \\\\\\hline 2012 & 227 & 34 & 18 \\\\\\hline 2013 & 394 & 29 & 13 \\\\\\hline 2014 & 433 & 56 & 38 \\\\\\hline\\end{array}$$\\begin{enumerate}\\item Pour chacune des cinq années, calculer l'estimation ponctuelle $\\widehat{N} = \\dfrac{n_1 n_2}{m}$ (arrondie à l'entier) ainsi que l'intervalle de confiance à $95\\,\\%$ obtenu à la Partie 1.\\item Commenter la largeur de ces intervalles : pourquoi l'intervalle de 2013 est-il nettement plus large que celui de 2014 ?\\item \\textbf{Estimateur de Chapman :} pour éviter un biais statistique lorsque $m$ est petit (ou une division par zéro si $m=0$), les écologues utilisent souvent $\\widehat{N}_C = \\dfrac{(n_1+1)(n_2+1)}{m+1} - 1$. Calculer $\\widehat{N}_C$ pour l'année 2013 et comparer à $\\widehat{N}$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Calcul pour 2010",
+          "content": "En 2010 : $\\bar{y} = \\dfrac{32}{58} \\approx 0{,}5517$ et $\\dfrac{1}{\\sqrt{58}} \\approx 0{,}1313$. D'où $\\widehat{N} = \\dfrac{533\\times 58}{32} \\approx 966$, borne basse $\\dfrac{533}{0{,}5517+0{,}1313} \\approx 780$, borne haute $\\dfrac{533}{0{,}5517-0{,}1313} \\approx 1\\,268$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Saumons du Scorff",
+          "content": "\\textbf{1)} Tableau récapitulatif des estimations (arrondies à l'entier) :\\par $$\\begin{array}{|c|c|c|c|}\\hline \\text{Année} & \\widehat{N} = \\frac{n_1 n_2}{m} & \\text{IC à } 95\\,\\% & \\widehat{N}_C\\text{ (Chapman)} \\\\\\hline 2010 & 966 & [780\\,;\\,1\\,268] & 954 \\\\\\hline 2011 & 409 & [327\\,;\\,547] & 405 \\\\\\hline 2012 & 429 & [324\\,;\\,634] & 419 \\\\\\hline 2013 & 879 & [621\\,;\\,1\\,500] & 845 \\\\\\hline 2014 & 638 & [533\\,;\\,795] & 633 \\\\\\hline\\end{array}$$\\par Estimation 2010 : \\blank{$966$} saumons ; estimation 2014 : \\blank{$638$} saumons.\\par\\textbf{2)} En 2013, la taille du second échantillon $n_2 = 29$ est presque deux fois plus petite qu'en 2014 ($n_2 = 56$) et la proportion $\\bar{y} = 13/29 \\approx 0{,}45$ est plus faible : le terme $\\dfrac{1}{\\sqrt{n_2}} \\approx 0{,}186$ est donc grand, ce qui rend le dénominateur $\\bar{y} - \\dfrac{1}{\\sqrt{n_2}} \\approx 0{,}263$ petit et élargit fortement la borne supérieure ($1\\,500$).\\par\\textbf{3)} En 2013, l'estimateur de Chapman donne $\\widehat{N}_C = \\dfrac{395 \\times 30}{14} - 1 \\approx$ \\blank{$845$} saumons, légèrement inférieur à $\\widehat{N} = 879$ (car l'estimateur de Petersen surestime légèrement en moyenne lorsque $m$ est faible)."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "En 1786, \\textbf{Pierre-Simon de Laplace} utilise déjà le principe de capture–recapture pour estimer la population de la France (environ $25$ millions) à partir du rapport entre naissances annuelles et recensements locaux ! La méthode est formalisée pour les poissons en 1896 par le biologiste danois C. G. J. Petersen, puis pour les oiseaux migrateurs en 1930 par Frederick Lincoln."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En pratique, la méthode CMR suppose une \\textbf{population fermée} (ni naissances, ni décès, ni migrations entre les deux campagnes) et que le marquage ne modifie ni la survie ni la probabilité d'être recapturé. Des modèles plus avancés (Jolly–Seber) permettent de lever ces hypothèses sur plusieurs saisons."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Traduire un protocole expérimental en modèle probabiliste (\\textbf{Bernoulli} et \\textbf{binomiale}).\\item Manipuler des \\textbf{encadrements} et des inverses pour construire un intervalle de confiance.\\item Analyser l'influence de la taille d'échantillon $n_2$ sur la précision d'une estimation.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

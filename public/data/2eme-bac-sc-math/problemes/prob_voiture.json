@@ -1,0 +1,95 @@
+{
+  "header": {
+    "title": "Que vaut votre voiture ?",
+    "subtitle": "Problème 1.30 — Décote Argus et exponentielles",
+    "context": "Suites et fonctions exponentielles"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Que vaut votre voiture ?",
+          "content": "Dès qu'elle sort de la concession, une voiture neuve perd de la valeur : c'est la \\textbf{décote}. Sur le marché de l'occasion, la cote de référence (\\textit{cote Argus}) tient compte principalement de deux facteurs : l'\\textbf{âge} $x \\ge 0$ du véhicule (en années) et son \\textbf{kilométrage} $k$ par rapport à un usage standard de $15\\,000\\text{ km/an}$.\\par Nous construisons la fonction continue de décote temporelle, puis la correction kilométrique afin d'estimer la valeur réelle d'une voiture d'occasion."
+        },
+        {
+          "type": "notation",
+          "title": "Barème de décote Argus modélisé",
+          "content": "\\begin{itemize}\\item \\textbf{Décote selon l'âge $x$ (en années) :} la voiture (prix neuf $C_0$) perd $20\\,\\%$ de sa valeur la $1^{\\text{re}}$ année ($x \\in [0\\,;\\,1]$), $15\\,\\%$ la $2^{\\text{e}}$ année ($x \\in [1\\,;\\,2]$), $10\\,\\%$ par an les $3^{\\text{e}}$ et $4^{\\text{e}}$ années ($x \\in [2\\,;\\,4]$), puis $7\\,\\%$ par an au-delà ($x \\ge 4$).\\item \\textbf{Correction kilométrique :} la référence est $k_{\\text{réf}}(x) = 15\\,000\\,x$ km. Chaque tranche complète de $1\\,000\\text{ km}$ \\textbf{au-dessus} de la référence retire $0{,}5\\,\\%$ à la cote ; chaque tranche complète de $1\\,000\\text{ km}$ \\textbf{en dessous} ajoute $0{,}25\\,\\%$ à la cote.\\end{itemize}"
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (puissances réelles a^x et ln)",
+          "content": "Pour prolonger une baisse annuelle de taux $t$ (coefficient multiplicateur $q = 1 - t$) à une durée non entière $x \\ge 0$, on utilise la puissance réelle $q^x = e^{x\\ln q}$. L'équation $q^x = y$ (avec $y > 0$) se résout par $x = \\dfrac{\\ln y}{\\ln q}$."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Décote temporelle continue",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Calculer la valeur de la voiture (en fonction de $C_0$) aux âges entiers $x = 1$, $x = 2$, $x = 3$ et $x = 4$ ans.\\item En interpolant de façon exponentielle sur chaque période (un taux annuel constant $t$ correspond à multiplier par $(1-t)^{\\Delta x}$ sur une durée $\\Delta x$), donner l'expression de la cote $C(x)$ en fonction de $C_0$ sur chacun des quatre intervalles $[0\\,;\\,1]$, $[1\\,;\\,2]$, $[2\\,;\\,4]$ et $[4\\,;\\,+\\infty[$. Vérifier que $C$ est continue partout.\\item \\textbf{Applications pour un prix neuf $C_0 = 10\\,000\\text{ €}$ :}\\begin{enumerate}\\item Quelle est la cote de la voiture au bout de $2\\text{ ans et demi}$ ($x = 2{,}5$) ?\\item Au bout de combien de temps (en années et mois) la voiture a-t-elle perdu exactement la \\textbf{moitié} de sa valeur neuve ?\\item Au bout de combien de temps bénéficie-t-on d'une décote de \\textbf{$40\\,\\%$} (la voiture ne vaut plus que $60\\,\\%$ de $C_0$) ?\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Repérer la bonne tranche avant d'utiliser ln",
+          "content": "Calculez les valeurs aux charnières : $C(1) = 0{,}80 C_0$, $C(2) = 0{,}68 C_0$, $C(3) = 0{,}612 C_0$, $C(4) = 0{,}5508 C_0$. Ainsi $0{,}60 C_0$ est atteint entre $3$ et $4$ ans, tandis que $0{,}50 C_0$ est atteint après $4$ ans !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Décote temporelle",
+          "content": "\\textbf{1)} $C(1) = 0{,}80 C_0$ ; $C(2) = 0{,}85\\times 0{,}80 C_0 = 0{,}68 C_0$ ; $C(3) = 0{,}90\\times 0{,}68 C_0 = 0{,}612 C_0$ ; $C(4) = 0{,}90\\times 0{,}612 C_0 = 0{,}5508 C_0$.\\par\\textbf{2)} La fonction continue de décote est :\\par $$C(x) = \\begin{cases} C_0\\,(0{,}80)^x & \\text{si } 0 \\le x \\le 1 \\\\ 0{,}80\\, C_0\\,(0{,}85)^{x-1} & \\text{si } 1 \\le x \\le 2 \\\\ 0{,}68\\, C_0\\,(0{,}90)^{x-2} & \\text{si } 2 \\le x \\le 4 \\\\ 0{,}5508\\, C_0\\,(0{,}93)^{x-4} & \\text{si } x \\ge 4 \\end{cases}$$\\par On vérifie aisément que les expressions coïncident exactement en $x = 1, 2, 4$ : $C$ est continue et strictement décroissante.\\par\\textbf{3. a)} Pour $C_0 = 10\\,000\\text{ €}$ et $x = 2{,}5 \\in [2\\,;\\,4]$ :\\par $$C(2{,}5) = 0{,}68\\times 10\\,000\\times (0{,}90)^{0{,}5} = 6\\,800\\sqrt{0{,}9} \\approx \\boxed{6\\,451\\text{ €}}.$$\\par Cote à $2{,}5$ ans : \\blank{$6\\,451\\text{ €}$}.\\par\\textbf{3. b)} Comme $0{,}50 < 0{,}5508$, on est dans la tranche $x \\ge 4$ :\\par $$0{,}5508\\,(0{,}93)^{x-4} = 0{,}50 \\iff x = 4 + \\frac{\\ln(0{,}50 / 0{,}5508)}{\\ln(0{,}93)} \\approx \\boxed{5{,}33\\text{ ans}},$$\\par soit environ \\blank{$5\\text{ ans et } 4\\text{ mois}$}.\\par\\textbf{3. c)} Comme $0{,}5508 < 0{,}60 < 0{,}68$, on est dans la tranche $x \\in [2\\,;\\,4]$ :\\par $$0{,}68\\,(0{,}90)^{x-2} = 0{,}60 \\iff x = 2 + \\frac{\\ln(0{,}60 / 0{,}68)}{\\ln(0{,}90)} \\approx \\boxed{3{,}19\\text{ ans}},$$\\par soit environ \\blank{$3\\text{ ans et } 2\\text{ mois}$}."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Correction liée au kilométrage",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour une voiture d'âge $x$ ayant parcouru $k$ kilomètres, on note $n = \\left\\lfloor \\dfrac{|k - 15\\,000\\,x|}{1\\,000}\\right\\rfloor$ le nombre de tranches entières de $1\\,000\\text{ km}$ d'écart par rapport à la référence $15\\,000\\,x$.\\begin{enumerate}\\item Pour notre voiture de $2{,}5$ ans ($C_0 = 10\\,000\\text{ €}$, cote temporelle $6\\,451\\text{ €}$), quel est le kilométrage de référence ? Calculer la valeur ajustée si le compteur affiche :\\begin{enumerate}\\item $k = 42\\,000\\text{ km}$ ;\\item $k = 30\\,000\\text{ km}$.\\end{enumerate}\\item Un propriétaire souhaite que le surkilométrage de sa voiture d'âge $x$ ne lui fasse \\textbf{pas perdre plus de $10\\,\\%$} de sa cote temporelle. Déterminer le nombre maximal de tranches $n$ autorisé, puis exprimer le kilométrage maximal $k_{\\max}(x)$ en fonction de $x$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Tranches de 1 000 km et perte maximale de 10 %",
+          "content": "À $0{,}5\\,\\%$ par tranche de $1\\,000\\text{ km}$ en trop, $n$ tranches font perdre $0{,}5n\\,\\%$. Pour que cette perte reste $\\le 10\\,\\%$, il faut $0{,}005 n \\le 0{,}10$, soit $n \\le 20$ tranches (attention à la partie entière $\\lfloor (k - 15\\,000x)/1\\,000 \\rfloor \\le 20 \\iff k < 15\\,000x + 21\\,000$) !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Kilométrage",
+          "content": "\\textbf{1)} À $x = 2{,}5$ ans, le kilométrage de référence est $15\\,000 \\times 2{,}5 = 37\\,500\\text{ km}$.\\begin{itemize}\\item \\textbf{a) $k = 42\\,000\\text{ km}$ :} excès de $4\\,500\\text{ km}$, soit $n = \\lfloor 4{,}5\\rfloor = 4$ tranches au-dessus $\\implies$ décote de $4\\times 0{,}5\\,\\% = 2\\,\\%$. Valeur ajustée : $6\\,451 \\times 0{,}98 \\approx$ \\blank{$6\\,322\\text{ €}$}.\\item \\textbf{b) $k = 30\\,000\\text{ km}$ :} déficit de $7\\,500\\text{ km}$, soit $n = \\lfloor 7{,}5\\rfloor = 7$ tranches en dessous $\\implies$ surcote de $7\\times 0{,}25\\,\\% = 1{,}75\\,\\%$. Valeur ajustée : $6\\,451 \\times 1{,}0175 \\approx$ \\blank{$6\\,564\\text{ €}$}.\\end{itemize}\\par\\textbf{2)} Pour que la décote kilométrique $0{,}005\\,n$ ne dépasse pas $10\\,\\%$ ($0{,}10$) :\\par $$0{,}005\\, n \\le 0{,}10 \\iff n \\le \\frac{0{,}10}{0{,}005} = 20.$$\\par Comme $n = \\left\\lfloor\\dfrac{k - 15\\,000 x}{1\\,000}\\right\\rfloor$, la condition $n \\le 20$ équivaut à $\\dfrac{k - 15\\,000 x}{1\\,000} < 21$, soit :\\par $$k < \\boxed{15\\,000\\,x + 21\\,000\\text{ km}}$$\\par (ou $k \\le 15\\,000\\,x + 20\\,000\\text{ km}$ si l'on compte exactement $20$ tranches pleines)."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Le journal \\textit{L'Argus de l'automobile}, fondé en France en \\textbf{1927}, publie la première cote officielle des véhicules d'occasion qui deviendra la référence des assureurs, concessionnaires et experts pendant près d'un siècle."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "La décote est particulièrement brutale la première année ($-20\\,\\%$ dès la sortie de garantie neuve), puis s'aplatit progressivement. Certains modèles rares de collection finissent même par voir leur courbe s'inverser et prendre de la valeur au bout de $30$ ans !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Traduire des pourcentages d'évolution successifs en \\textbf{coefficients multiplicateurs} et fonctions exponentielles par morceaux.\\item Manipuler la fonction \\textbf{partie entière} $\\lfloor x \\rfloor$ dans des inéquations.\\item Résoudre des équations de seuils temporels.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

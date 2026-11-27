@@ -1,0 +1,4 @@
+[package]
+name = "serde_json"
+version = "1.0.154"
+edition.workspace = true

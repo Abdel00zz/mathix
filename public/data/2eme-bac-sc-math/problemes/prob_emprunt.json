@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Combien rembourser lors d'un emprunt ?",
+    "subtitle": "Problème 1.28 — Mathématiques financières et récurrence",
+    "context": "Suites numériques"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Combien rembourser lors d'un emprunt ?",
+          "content": "Lorsqu'on emprunte un capital $C_0$ à une banque (pour acheter un logement ou financer des études) à un taux d'intérêt mensuel $t > 0$ sur $N$ mois, chaque mensualité $M_n$ ($1 \\le n \\le N$) se décompose en deux parts :\\begin{itemize}\\item les \\textbf{intérêts} $I_n = t\\, C_{n-1}$, calculés sur le capital $C_{n-1}$ restant dû au début du mois $n$ ;\\item l'\\textbf{amortissement} $A_n$, qui sert réellement à réduire le capital restant dû ($C_n = C_{n-1} - A_n$).\\end{itemize}Deux grands modes de remboursement existent : le remboursement à \\textbf{mensualités constantes} (le plus répandu) et le remboursement à \\textbf{amortissement constant}. Lequel coûte le moins cher en intérêts ?"
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (calcul de la durée N)",
+          "content": "Pour isoler le nombre de mensualités $N$ dans l'équation $(1 + t)^{-N} = 1 - \\dfrac{t C_0}{M}$, on utilise la fonction logarithme népérien $\\ln$ : $-N\\ln(1+t) = \\ln\\!\\left(1 - \\dfrac{t C_0}{M}\\right)$."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Formule générale et mensualités constantes",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Montrer que pour tout $n \\in \\{1, \\dots, N\\}$, le capital restant dû $C_n$ vérifie la relation de récurrence : $$C_n = (1 + t)\\, C_{n-1} - M_n.$$\\item Démontrer par récurrence que pour tout $n \\in \\{1, \\dots, N\\}$ :\\par $$C_n = (1 + t)^n C_0 - \\sum_{k=1}^{n} (1 + t)^{n-k} M_k.$$\\item \\textbf{Cas des mensualités constantes ($M_k = M$ pour tout $k$) :}\\begin{enumerate}\\item Pour $t > 0$, simplifier la somme géométrique pour exprimer $C_n$ en fonction de $C_0, M, t, n$. (Que vaut $C_n$ si $t = 0$ ?)\\item En traduisant que l'emprunt est entièrement soldé au mois $N$ ($C_N = 0$), montrer que la mensualité constante vaut :\\par $$M = \\frac{t\\, C_0}{1 - (1 + t)^{-N}}.$$\\item Inversement, si la mensualité $M > t C_0$ est fixée, exprimer la durée $N$ en fonction de $C_0, M, t$.\\item Quelle est l'expression du coût total des intérêts $I_{\\text{const}}$ sur toute la durée du prêt ?\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Somme géométrique pour M_k = M",
+          "content": "Dans $\\displaystyle\\sum_{k=1}^{n} (1+t)^{n-k}$, en posant $j = n - k$, la somme vaut $\\displaystyle\\sum_{j=0}^{n-1} (1+t)^j = \\dfrac{(1+t)^n - 1}{(1+t) - 1} = \\dfrac{(1+t)^n - 1}{t}$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Mensualités constantes",
+          "content": "\\textbf{1)} Comme $M_n = A_n + I_n = A_n + t C_{n-1}$, on a $A_n = M_n - t C_{n-1}$, donc :\\par $$C_n = C_{n-1} - A_n = C_{n-1} - (M_n - t C_{n-1}) = (1 + t)C_{n-1} - M_n.$$\\par\\textbf{2)} \\textit{Initialisation ($n=1$) :} $C_1 = (1+t)^1 C_0 - (1+t)^0 M_1 = (1+t)C_0 - M_1$ (vrai).\\par \\textit{Hérédité :} si la formule vaut au rang $n$, alors :\\par $$\\begin{aligned}C_{n+1} &= (1+t)C_n - M_{n+1} = (1+t)^{n+1}C_0 - \\sum_{k=1}^{n}(1+t)^{n+1-k} M_k - (1+t)^0 M_{n+1} \\\\ &= (1+t)^{n+1}C_0 - \\sum_{k=1}^{n+1}(1+t)^{n+1-k} M_k.\\end{aligned}$$\\par\\textbf{3. a)} Pour $M_k = M$ et $t > 0$ :\\par $$C_n = (1+t)^n C_0 - M\\,\\frac{(1+t)^n - 1}{t}.$$\\par (Si $t = 0$, on a simplement $C_n = C_0 - n M$.)\\par\\textbf{3. b)} $C_N = 0 \\iff (1+t)^N C_0 = M\\dfrac{(1+t)^N - 1}{t} \\iff M = \\dfrac{t C_0 (1+t)^N}{(1+t)^N - 1} = \\boxed{\\dfrac{t C_0}{1 - (1+t)^{-N}}}$.\\par Formule de la mensualité : \\blank{$\\dfrac{t C_0}{1 - (1+t)^{-N}}$}.\\par\\textbf{3. c)} $(1+t)^{-N} = 1 - \\dfrac{t C_0}{M} \\iff N = -\\dfrac{\\ln\\!\\left(1 - \\frac{t C_0}{M}\\right)}{\\ln(1+t)}$ (qui existe dès que $M > t C_0$, c'est-à-dire que la mensualité couvre au moins les intérêts initiaux !).\\par\\textbf{3. d)} On verse $N$ fois la somme $M$ pour rembourser $C_0$, donc le coût total des intérêts vaut $I_{\\text{const}} = N M - C_0$."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Amortissement constant et comparaison",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans le second mode de remboursement, l'amortissement mensuel est constant : $A_n = A = \\dfrac{C_0}{N}$ pour tout $n \\in \\{1, \\dots, N\\}$.\\begin{enumerate}\\item Exprimer le capital restant dû $C_n$ (pour $0 \\le n \\le N$), les intérêts $I_n = t C_{n-1}$ payés au mois $n$, puis la mensualité $M_n = A + I_n$ en fonction de $C_0, N, t$ et $n$. Quelle est la nature de la suite $(M_n)$ ?\\item Calculer le coût total des intérêts $I_{\\text{amort}} = \\displaystyle\\sum_{n=1}^{N} I_n$ et montrer que :\\par $$I_{\\text{amort}} = \\frac{t\\, C_0\\,(N + 1)}{2}.$$\\item \\textbf{Application numérique :} comparer les deux modes pour un emprunt de $C_0 = 100\\,000\\text{ €}$ sur $20\\text{ ans}$ ($N = 240\\text{ mois}$) au taux annuel nominal de $1{,}5\\,\\%$ (taux mensuel proportionnel $t = \\dfrac{0{,}015}{12} = 0{,}00125$). Calculer les mensualités (constante vs $1^{\\text{re}}$ et dernière) et le coût total des intérêts dans chaque cas !\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Somme arithmétique des intérêts",
+          "content": "Pour $n = 1, \\dots, N$, $C_{n-1} = C_0\\left(1 - \\dfrac{n-1}{N}\\right) = \\dfrac{C_0}{N}(N - n + 1)$. Lorsque $n$ parcourt $1 \\dots N$, $N - n + 1$ parcourt exactement $N, N-1, \\dots, 1$, dont la somme vaut $\\dfrac{N(N+1)}{2}$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Amortissement constant et comparaison",
+          "content": "\\textbf{1)} Chaque mois, le capital baisse de $A = \\dfrac{C_0}{N}$, donc $C_n = C_0 - n\\dfrac{C_0}{N} = C_0\\left(1 - \\dfrac{n}{N}\\right)$. Au mois $n \\in \\{1, \\dots, N\\}$ :\\par $$I_n = t C_{n-1} = \\frac{t C_0}{N}(N - n + 1), \\qquad M_n = \\frac{C_0}{N}\\bigl(1 + t(N - n + 1)\\bigr).$$\\par La suite $(M_n)$ est une \\textbf{suite arithmétique décroissante} de raison $-\\dfrac{t C_0}{N}$.\\par\\textbf{2)} Le coût total des intérêts vaut :\\par $$I_{\\text{amort}} = \\sum_{n=1}^{N} \\frac{t C_0}{N}(N - n + 1) = \\frac{t C_0}{N}\\cdot\\frac{N(N+1)}{2} = \\boxed{\\frac{t C_0 (N + 1)}{2}}.$$\\par\\textbf{3) Application numérique ($C_0 = 100\\,000\\text{ €}$, $N = 240$, $t = 0{,}00125$) :}\\begin{itemize}\\item \\textbf{Mensualité constante :} $M = \\dfrac{0{,}00125 \\times 100\\,000}{1 - 1{,}00125^{-240}} \\approx$ \\blank{$482{,}55\\text{ €}$}. Coût total des intérêts : $240 M - 100\\,000 \\approx$ \\blank{$15\\,810{,}90\\text{ €}$}.\\item \\textbf{Amortissement constant :} $A = \\dfrac{100\\,000}{240} \\approx 416{,}67\\text{ €}$ ; $1^{\\text{re}}$ mensualité $M_1 = 416{,}67 + 125 = 541{,}67\\text{ €}$, dernière mensualité $M_{240} = 416{,}67 + 0{,}52 = 417{,}19\\text{ €}$. Coût total des intérêts : $I_{\\text{amort}} = \\dfrac{0{,}00125\\times 100\\,000\\times 241}{2} =$ \\blank{$15\\,062{,}50\\text{ €}$}.\\end{itemize}\\par L'amortissement constant fait économiser environ $748\\text{ €}$ d'intérêts car on rembourse le capital plus vite au début, au prix de mensualités initiales plus élevées."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Les tables d'intérêts composés apparaissent dès la Mésopotamie antique, mais c'est à la Renaissance (Luca Pacioli, Simon Stevin au $\\mathrm{XVI}^{\\mathrm{e}}$ siècle) que se formalisent les mathématiques financières modernes et les tableaux d'amortissement."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En pratique, les banques distinguent le taux mensuel \\textbf{proportionnel} ($t = t_{\\text{annuel}}/12$, utilisé en France pour les prêts immobiliers) du taux mensuel \\textbf{actuariel} ($(1+t)^{12} = 1 + t_{\\text{annuel}}$), et intègrent assurance et frais dans le \\textbf{TAEG} (Taux Annuel Effectif Global)."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Établir et démontrer par \\textbf{récurrence} la solution d'une suite arithmético-géométrique générale.\\item Calculer des sommes de suites \\textbf{géométriques} et \\textbf{arithmétiques}.\\item Comparer deux modèles financiers en interprétant leurs avantages et contraintes.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

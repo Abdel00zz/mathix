@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 162" width="340" height="162" role="img" aria-label="Tableau de variations de la fonction g">
+  <defs>
+    <marker id="tarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#2a3fa8"/>
+    </marker>
+  </defs>
+  <rect x="4" y="4" width="332" height="154" rx="8" fill="#fbfcff" stroke="#17203d" stroke-width="1.6"/>
+  <!-- Header band -->
+  <rect x="4.8" y="4.8" width="330.4" height="36" rx="7" fill="#eef2fc"/>
+  <line x1="4" y1="41" x2="336" y2="41" stroke="#17203d" stroke-width="1.4"/>
+  <line x1="4" y1="80" x2="336" y2="80" stroke="#17203d" stroke-width="1.4"/>
+  <line x1="78" y1="4" x2="78" y2="158" stroke="#17203d" stroke-width="1.5"/>
+
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#17203d" text-anchor="middle">
+    <!-- Row 1: x -->
+    <text x="41" y="28" font-style="italic" font-weight="600">x</text>
+    <text x="106" y="28">−∞</text>
+    <text x="308" y="28">+∞</text>
+
+    <!-- Row 2: g'(x) -->
+    <text x="41" y="66" font-style="italic" font-weight="600">g'(x)</text>
+    <text x="207" y="67" font-size="19" font-weight="700" fill="#13795b">+</text>
+
+    <!-- Row 3: g(x) -->
+    <text x="41" y="124" font-style="italic" font-weight="600">g(x)</text>
+    <text x="108" y="144" font-size="15">−∞</text>
+    <text x="306" y="103" font-size="15">+∞</text>
+  </g>
+  <!-- Increasing arrow -->
+  <line x1="130" y1="137" x2="280" y2="100" stroke="#2a3fa8" stroke-width="2.1" marker-end="url(#tarr)"/>
+</svg>

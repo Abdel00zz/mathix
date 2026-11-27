@@ -1,0 +1,85 @@
+{
+  "header": {
+    "title": "Comment empiler des boulets ?",
+    "subtitle": "Problème 1.24 — Densité d'empilement et dérivation",
+    "context": "Géométrie, trigonométrie et dérivation"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Comment empiler des boulets ?",
+          "content": "Sur le pont d'un navire de guerre au $\\mathrm{XVI}^{\\mathrm{e}}$ siècle, sur l'étal d'un marchand d'oranges ou dans la structure cristalline des métaux, une même question géométrique se pose : \\textbf{comment ranger des sphères (ou des disques dans le plan) identiques de façon à laisser le moins de vide possible ?}\\par On étudie d'abord ce problème en dimension $2$, avec des \\textbf{disques identiques de rayon $R = 1$} rangés régulièrement sur un plan. On définit la \\textbf{densité d'empilement} $d$ comme la proportion de surface occupée par les disques dans une maille élémentaire qui pave tout le plan par translation :\\par $$d = \\frac{\\text{aire occupée par les disques dans la maille}}{\\text{aire totale de la maille}}.$$"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Empilements carré et hexagonal",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item \\textbf{Empilement carré :} on aligne les disques de rayon $1$ en lignes et colonnes orthogonales, de sorte que chaque disque touche ses $4$ voisins (haut, bas, gauche, droite). On prend pour maille élémentaire le carré reliant les centres de $4$ disques adjacents.\\begin{enumerate}\\item Quelle est la longueur du côté de ce carré et son aire ?\\item Quelle fraction de disque contient ce carré au total (en réunissant les $4$ coins) ?\\item En déduire la densité $d_{\\text{carré}}$ (valeur exacte et pourcentage approché à $0{,}01\\,\\%$).\\end{enumerate}\\item \\textbf{Empilement hexagonal (en quinconce) :} chaque disque touche désormais $6$ voisins, de sorte que les centres de $3$ disques mutuellement tangents forment un triangle équilatéral.\\begin{enumerate}\\item Quelle est la longueur du côté de ce triangle équilatéral ? Calculer sa hauteur et son aire.\\item Quelle fraction totale de disque est contenue à l'intérieur de ce triangle (chacun des $3$ angles mesure $\\dfrac{\\pi}{3}$) ?\\item En déduire la densité $d_{\\text{hex}}$ (valeur exacte et pourcentage approché à $0{,}01\\,\\%$). Comparer avec l'empilement carré.\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Aire d'un secteur circulaire",
+          "content": "Un secteur de rayon $R = 1$ et d'angle au centre $\\alpha$ (en radians) a pour aire $\\dfrac{\\alpha}{2}$ (puisque pour $\\alpha = 2\\pi$, le disque entier a pour aire $\\pi$)."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Carré vs Hexagonal",
+          "content": "\\textbf{1. a)} Deux disques tangents de rayon $1$ ont leurs centres distants de $2$ : le carré a pour côté $2$ et pour aire $2^2 = 4$.\\par\\textbf{1. b)} Chaque coin contient un quart de disque (angle $\\frac{\\pi}{2}$), soit au total $4 \\times \\frac{1}{4} = 1$ disque entier d'aire $\\pi$.\\par\\textbf{1. c)} La densité de l'empilement carré vaut :\\par $$d_{\\text{carré}} = \\frac{\\pi}{4} \\approx \\boxed{78{,}54\\,\\%}.$$\\par\\textbf{2. a)} Le triangle équilatéral a pour côté $2$, pour hauteur $\\sqrt{2^2 - 1^2} = \\sqrt{3}$, et pour aire $\\dfrac{2 \\times \\sqrt{3}}{2} = \\sqrt{3}$.\\par\\textbf{2. b)} Chaque sommet a un angle $\\dfrac{\\pi}{3} = \\dfrac{1}{6}$ de tour : les $3$ secteurs réunis forment $3 \\times \\dfrac{1}{6} = \\dfrac{1}{2}$ disque, d'aire $\\dfrac{\\pi}{2}$.\\par\\textbf{2. c)} La densité de l'empilement hexagonal vaut :\\par $$d_{\\text{hex}} = \\frac{\\pi/2}{\\sqrt{3}} = \\boxed{\\frac{\\pi}{2\\sqrt{3}}} \\approx \\boxed{90{,}69\\,\\%}.$$\\par Densité hexagonale : \\blank{$\\dfrac{\\pi}{2\\sqrt{3}} \\approx 90{,}69\\,\\%$}, soit plus de $12$ points de pourcentage gagnés sur l'empilement carré !"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Optimisation sur tous les réseaux parallélogrammatiques",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On considère plus généralement un pavage par une maille en forme de \\textbf{losange} de côté $2$ ( reliant $4$ disques de rayon $1$ tangents deux à deux le long des côtés du losange) et d'angle au sommet $\\theta$.\\begin{enumerate}\\item Expliquer pourquoi, pour que les deux disques situés aux sommets opposés de la petite diagonale ne se chevauchent pas, l'angle $\\theta$ doit vérifier $\\theta \\in \\left[\\dfrac{\\pi}{3}\\,;\\,\\dfrac{2\\pi}{3}\\right]$. (À quels empilements correspondent $\\theta = \\dfrac{\\pi}{2}$ et $\\theta = \\dfrac{\\pi}{3}$ ?)\\item Exprimer l'aire $A(\\theta)$ du losange en fonction de $\\theta$, puis vérifier que la somme des $4$ secteurs de disques contenus dans le losange vaut toujours $\\pi$ (indépendamment de $\\theta$).\\item En déduire l'expression de la densité $d(\\theta)$ sur $\\left[\\dfrac{\\pi}{3}\\,;\\,\\dfrac{2\\pi}{3}\\right]$.\\item Calculer la dérivée $d'(\\theta)$, dresser le tableau de variations de $d$ sur $\\left[\\dfrac{\\pi}{3}\\,;\\,\\dfrac{2\\pi}{3}\\right]$, et démontrer que l'\\textbf{empilement hexagonal est optimal} parmi tous les réseaux réguliers du plan.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Dérivée de 1/sin(θ)",
+          "content": "L'aire d'un losange de côté $2$ et d'angle $\\theta$ est $2 \\times (2\\sin\\theta) = 4\\sin\\theta$. La dérivée de $\\dfrac{1}{\\sin\\theta}$ vaut $-\\dfrac{\\cos\\theta}{\\sin^2\\theta}$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Optimalité de l'empilement hexagonal",
+          "content": "\\textbf{1)} Les diagonales d'un losange de côté $2$ et d'angle $\\theta$ mesurent $4\\sin(\\theta/2)$ et $4\\cos(\\theta/2)$. Pour qu'aucun couple de disques de rayon $1$ ne se chevauche, ces deux diagonales doivent être $\\ge 2$ :\\par $$\\sin(\\theta/2) \\ge \\frac{1}{2} \\;\\text{ et }\\; \\cos(\\theta/2) \\ge \\frac{1}{2} \\iff \\frac{\\pi}{6} \\le \\frac{\\theta}{2} \\le \\frac{\\pi}{3} \\iff \\theta \\in \\left[\\frac{\\pi}{3}\\,;\\,\\frac{2\\pi}{3}\\right].$$\\par $\\theta = \\dfrac{\\pi}{2}$ redonne l'empilement carré ; $\\theta = \\dfrac{\\pi}{3}$ (ou $\\dfrac{2\\pi}{3}$) redonne l'empilement hexagonal !\\par\\textbf{2)} La hauteur du losange vaut $2\\sin\\theta$, donc son aire vaut $A(\\theta) = 2 \\times 2\\sin\\theta = 4\\sin\\theta$. Comme la somme des $4$ angles intérieurs d'un parallélogramme vaut $2\\pi$, les $4$ secteurs circulaires de rayon $1$ ont toujours une aire totale égale à $\\dfrac{2\\pi}{2} = \\pi$.\\par\\textbf{3)} La densité vaut donc :\\par $$d(\\theta) = \\boxed{\\frac{\\pi}{4\\sin\\theta}}.$$\\par\\textbf{4)} Pour tout $\\theta \\in \\left[\\dfrac{\\pi}{3}\\,;\\,\\dfrac{2\\pi}{3}\\right]$, la dérivée vaut :\\par $$d'(\\theta) = -\\frac{\\pi\\cos\\theta}{4\\sin^2\\theta}.$$\\par\\begin{itemize}\\item Sur $\\left[\\dfrac{\\pi}{3}\\,;\\,\\dfrac{\\pi}{2}\\right[$ : $\\cos\\theta > 0 \\implies d'(\\theta) < 0$ ($d$ décroît jusqu'au minimum $\\dfrac{\\pi}{4}$ en $\\theta = \\dfrac{\\pi}{2}$).\\item Sur $\\left]\\dfrac{\\pi}{2}\\,;\\,\\dfrac{2\\pi}{3}\\right]$ : $\\cos\\theta < 0 \\implies d'(\\theta) > 0$ ($d$ croît).\\end{itemize}\\par Le \\textbf{maximum absolu} est donc atteint aux bornes $\\theta = \\dfrac{\\pi}{3}$ et $\\theta = \\dfrac{2\\pi}{3}$ : $d_{\\max} = \\dfrac{\\pi}{4\\sin(\\pi/3)} =$ \\blank{$\\dfrac{\\pi}{2\\sqrt{3}}$}, c'est-à-dire l'\\textbf{empilement hexagonal} !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "En \\textbf{1611}, \\textbf{Johannes Kepler} conjecture que l'empilement le plus dense de sphères en dimension $3$ est l'empilement pyramidal des boulets de canon (densité $\\dfrac{\\pi}{3\\sqrt{2}} \\approx 74{,}05\\,\\%$). Le cas 2D (tous empilements, même irréguliers) est démontré par Axel Thue en 1890 (et complété par Fejes Tóth en 1940). Inscrite par David Hilbert en 1900 comme son $18^{\\mathrm{e}}$ problème, la conjecture de Kepler en 3D résiste près de quatre siècles jusqu'à la preuve assistée par ordinateur de \\textbf{Thomas Hales} en 1998 (vérifiée formellement en 2014) !"
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Et en dimensions supérieures ? En 2016, la mathématicienne ukrainienne \\textbf{Maryna Viazovska} crée la sensation en résolvant l'empilement optimal de sphères en dimension $8$ (réseau $E_8$), puis en dimension $24$ (réseau de Leech), ce qui lui vaut la \\textbf{médaille Fields en 2022} !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Calculer des aires de polygones et de secteurs circulaires par \\textbf{trigonométrie}.\\item Dériver une fonction trigonométrique quotient ($1/\\sin\\theta$) et étudier son tableau de variations.\\item Résoudre un problème géométrique d'\\textbf{optimisation globale}.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

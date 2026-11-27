@@ -1,0 +1,95 @@
+{
+  "header": {
+    "title": "L'aiguille de Buffon",
+    "subtitle": "Problème 1.34 — Probabilité géométrique et estimation de π",
+    "context": "Probabilités et géométrie"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "L'aiguille de Buffon",
+          "content": "Est-il possible de calculer une valeur approchée du nombre $\\pi$ en lançant simplement une aiguille au hasard sur un parquet ? En 1733, le naturaliste et mathématicien français \\textbf{Georges-Louis Leclerc, comte de Buffon}, imagine cette expérience stupéfiante : on lance à plusieurs reprises une aiguille de longueur $a$ sur un parquet formé de lames parallèles de largeur $\\ell$ (avec $a < \\ell$), et l'on compte la proportion de lancers où l'aiguille \\textbf{coupe une rainure} entre deux lames.\\par Étonnamment, la probabilité théorique de cet événement fait apparaître le nombre $\\pi$, ce qui permet d'estimer $\\pi$ de manière purement probabiliste (l'un des tout premiers exemples de méthode de \\textbf{Monte-Carlo}) !"
+        },
+        {
+          "type": "notation",
+          "title": "Modélisation géométrique",
+          "content": "L'aiguille est modélisée par un segment $[AB]$ de longueur $a$ et de milieu $I$. Les rainures sont des droites parallèles espacées de $\\ell$ (avec $a < \\ell$). On note $(D)$ la rainure la plus proche de $I$, $d$ la distance de $I$ à $(D)$, et $\\theta$ l'angle formé par l'aiguille avec la direction de $(D)$ ($\\theta = 0$ lorsque l'aiguille est parallèle à $(D)$). Les lancers sont supposés indépendants et uniformes (toutes les positions et orientations sont équiprobables)."
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (probabilité géométrique, intégrale et fluctuation)",
+          "content": "\\begin{itemize}\\item \\textbf{Probabilité géométrique :} lorsque deux variables aléatoires continues indépendantes $(\\theta, d)$ sont choisies uniformément dans un domaine d'aire $\\mathcal{A}_{\\text{tot}}$, la probabilité d'un événement de domaine favorable d'aire $\\mathcal{A}_{\\text{fav}}$ vaut $p = \\dfrac{\\mathcal{A}_{\\text{fav}}}{\\mathcal{A}_{\\text{tot}}}$.\\item \\textbf{Intégrale de $\\sin$ :} $\\displaystyle\\int_0^\\pi \\sin x\\,dx = [-\\cos x]_0^\\pi = (-\\cos\\pi) - (-\\cos 0) = 1 + 1 = 2$.\\item \\textbf{Intervalle de fluctuation à $95\\,\\%$ :} pour la fréquence empirique $\\bar{x} = \\dfrac{Y}{n}$ de $n$ essais de Bernoulli de paramètre $p$, on a avec probabilité $\\approx 0{,}95$ : $\\bar{x} \\in \\left[p - 1{,}96\\sqrt{\\dfrac{p(1-p)}{n}}\\,;\\, p + 1{,}96\\sqrt{\\dfrac{p(1-p)}{n}}\\right]$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Condition géométrique et calcul de la probabilité p",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Par des arguments de symétrie, justifier que l'on peut restreindre l'étude à $d \\in \\left[0\\,;\\,\\dfrac{\\ell}{2}\\right]$ et $\\theta \\in [0\\,;\\,\\pi[$.\\item On note $H$ le projeté orthogonal de $I$ sur la rainure $(D)$ (ainsi $IH = d$). Dans le cas limite où une extrémité $A$ de l'aiguille touche exactement $(D)$, utiliser le triangle rectangle $IHA$ pour exprimer $d$ en fonction de $a$ et $\\theta$.\\item En déduire la condition (inéquation entre $d$ et $\\theta$) pour que l'aiguille coupe une rainure.\\item Dans le plan $(\\theta, d)$, l'ensemble de tous les couples possibles est le rectangle $[0\\,;\\,\\pi] \\times \\left[0\\,;\\,\\dfrac{\\ell}{2}\\right]$. Calculer son aire $\\mathcal{A}_{\\text{tot}}$.\\item L'ensemble des couples $(\\theta, d)$ favorables est la zone située sous la courbe $d = \\dfrac{a}{2}\\sin\\theta$ pour $\\theta \\in [0\\,;\\,\\pi]$. Calculer son aire $\\mathcal{A}_{\\text{fav}} = \\displaystyle\\int_0^\\pi \\frac{a}{2}\\sin\\theta\\,d\\theta$.\\item En déduire la célèbre formule de Buffon pour la probabilité $p$ que l'aiguille coupe une rainure :\\par $$p = \\frac{2a}{\\pi\\ell}.$$\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Triangle rectangle IHA",
+          "content": "Comme $I$ est le milieu de $[AB]$, $IA = \\dfrac{a}{2}$. L'angle $\\widehat{IAH}$ vaut $\\theta$, donc $\\sin\\theta = \\dfrac{IH}{IA} = \\dfrac{d}{a/2} = \\dfrac{2d}{a}$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Formule de Buffon",
+          "content": "\\textbf{1)} La distance de $I$ à la rainure la plus proche d'une lame de largeur $\\ell$ ne peut jamais dépasser la demi-largeur $\\dfrac{\\ell}{2}$ : donc $d \\in \\left[0\\,;\\,\\dfrac{\\ell}{2}\\right]$. De plus, comme l'aiguille est symétrique (échanger $A$ et $B$ revient à tourner de $\\pi$), on peut restreindre l'angle à $\\theta \\in [0\\,;\\,\\pi[$.\\par\\textbf{2)} Dans le triangle $IHA$ rectangle en $H$, $IA = \\dfrac{a}{2}$ et $IH = d$, donc :\\par $$\\sin\\theta = \\frac{IH}{IA} = \\frac{2d}{a} \\iff d = \\frac{a}{2}\\sin\\theta.$$\\par\\textbf{3)} L'aiguille coupe la rainure $(D)$ si et seulement si son milieu $I$ est plus proche de $(D)$ que cette distance limite (et comme $a < \\ell$, elle ne peut pas couper deux rainures) :\\par $$d \\le \\frac{a}{2}\\sin\\theta \\quad (\\text{ou } d < \\frac{a}{2}\\sin\\theta).$$\\par\\textbf{4)} Aire du rectangle total : $\\mathcal{A}_{\\text{tot}} = \\pi \\times \\dfrac{\\ell}{2} = \\dfrac{\\pi\\ell}{2}$.\\par\\textbf{5)} Aire sous la courbe favorable (on vérifie que $\\frac{a}{2}\\sin\\theta \\le \\frac{a}{2} < \\frac{\\ell}{2}$, donc la courbe reste bien dans le rectangle !) :\\par $$\\mathcal{A}_{\\text{fav}} = \\int_0^\\pi \\frac{a}{2}\\sin\\theta\\,d\\theta = \\frac{a}{2}\\bigl[-\\cos\\theta\\bigr]_0^\\pi = \\frac{a}{2}(1 - (-1)) = \\boxed{a}.$$\\par\\textbf{6)} La probabilité cherchée vaut donc :\\par $$p = \\frac{\\mathcal{A}_{\\text{fav}}}{\\mathcal{A}_{\\text{tot}}} = \\frac{a}{\\frac{\\pi\\ell}{2}} = \\boxed{\\frac{2a}{\\pi\\ell}}.$$\\par Formule de Buffon : \\blank{$p = \\dfrac{2a}{\\pi\\ell}$}."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Étude statistique et estimation de π",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On répète $n$ fois l'expérience de manière indépendante. Pour un lancer donné, on note $X = 1$ si l'aiguille coupe une rainure et $X = 0$ sinon, et $Y = \\displaystyle\\sum_{i=1}^{n} X_i$ le nombre total d'aiguilles coupant une rainure.\\begin{enumerate}\\item Quelle est la loi de $X$ ? Calculer $\\mathbb{E}(X)$, $\\mathbb{E}(X^2)$ et $\\operatorname{Var}(X)$ en fonction de $p$.\\item Quelle est la loi de $Y$ ? Que garantit la loi des grands nombres pour la fréquence empirique $\\bar{x} = \\dfrac{Y}{n}$ ?\\item Montrer que pour tout $p \\in [0\\,;\\,1]$, la variance $\\operatorname{Var}(X) = p(1 - p)$ atteint son maximum en $p = \\dfrac{1}{2}$ et vaut au plus $\\dfrac{1}{4}$. En déduire, à partir de l'intervalle de fluctuation à $95\\,\\%$, que l'écart $|\\bar{x} - p|$ est majoré avec $95\\,\\%$ de confiance par $\\dfrac{1{,}96}{2\\sqrt{n}} = \\dfrac{0{,}98}{\\sqrt{n}}$.\\item \\textbf{Application numérique :} on choisit $a = 5\\text{ cm}$ et $\\ell = 10\\text{ cm}$ (soit $p = \\dfrac{1}{\\pi}$). Une simulation de $n = 50$ lancers donne $15$ aiguilles coupant une rainure.\\begin{enumerate}\\item Calculer la fréquence observée $\\bar{x}$ et l'estimation ponctuelle $\\widehat{\\pi} = \\dfrac{1}{\\bar{x}}$.\\item Calculer la marge d'erreur maximale $\\varepsilon = \\dfrac{1{,}96}{2\\sqrt{50}}$ sur $p$, en déduire un intervalle de confiance à $95\\,\\%$ pour $p = \\dfrac{1}{\\pi}$, puis (par passage à l'inverse) un intervalle de confiance à $95\\,\\%$ pour $\\pi$ ! Commenter la précision obtenue avec seulement $50$ lancers.\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Maximum de p(1 - p) et passage à l'inverse pour π",
+          "content": "$p(1 - p) = \\dfrac{1}{4} - \\left(p - \\dfrac{1}{2}\\right)^2 \\le \\dfrac{1}{4}$. Pour $n = 50$, $\\varepsilon = \\dfrac{1{,}96}{2\\sqrt{50}} \\approx 0{,}139 \\approx 0{,}14$ : on a donc $0{,}30 - 0{,}14 \\le \\dfrac{1}{\\pi} \\le 0{,}30 + 0{,}14$, qu'il suffit d'inverser pour encadrer $\\pi$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Estimation de π",
+          "content": "\\textbf{1)} $X$ suit la loi de Bernoulli $\\mathcal{B}(p)$. On a $\\mathbb{E}(X) = p$, $\\mathbb{E}(X^2) = 1^2\\cdot p + 0^2\\cdot(1-p) = p$, et $\\operatorname{Var}(X) = \\mathbb{E}(X^2) - \\bigl(\\mathbb{E}(X)\\bigr)^2 = p - p^2 = p(1 - p)$.\\par\\textbf{2)} $Y$ suit la loi binomiale $\\mathcal{B}(n, p)$. La loi des grands nombres garantit que $\\displaystyle\\lim_{n\\to+\\infty}\\frac{Y}{n} = p$.\\par\\textbf{3)} $p(1 - p) = \\dfrac{1}{4} - \\left(p - \\dfrac{1}{2}\\right)^2 \\le \\dfrac{1}{4}$, avec maximum atteint en $p = \\dfrac{1}{2}$. Donc $\\sqrt{p(1-p)} \\le \\dfrac{1}{2}$, et l'intervalle de fluctuation à $95\\,\\%$ donne :\\par $$|\\bar{x} - p| \\le 1{,}96\\sqrt{\\frac{p(1-p)}{n}} \\le \\boxed{\\frac{1{,}96}{2\\sqrt{n}} = \\frac{0{,}98}{\\sqrt{n}}}.$$\\par\\textbf{4. a)} Pour $a = 5, \\ell = 10$, on a $p = \\dfrac{2\\times 5}{\\pi\\times 10} = \\dfrac{1}{\\pi}$. Sur $n = 50$ lancers avec $15$ succès, $\\bar{x} = \\dfrac{15}{50} = 0{,}30$, d'où l'estimation :\\par $$\\widehat{\\pi} = \\frac{1}{\\bar{x}} = \\frac{10}{3} \\approx \\boxed{3{,}33}.$$\\par\\textbf{4. b)} La marge d'erreur maximale sur $p$ vaut :\\par $$\\varepsilon = \\frac{1{,}96}{2\\sqrt{50}} \\approx \\boxed{0{,}139}.$$\\par L'intervalle de confiance à $95\\,\\%$ pour $p = \\dfrac{1}{\\pi}$ est donc $[0{,}30 - 0{,}139\\,;\\,0{,}30 + 0{,}139] = [0{,}161\\,;\\,0{,}439]$. En prenant les inverses :\\par $$\\pi \\in \\left[\\frac{1}{0{,}439}\\,;\\,\\frac{1}{0{,}161}\\right] \\approx \\boxed{[2{,}28\\,;\\,6{,}21]}.$$\\par Intervalle de confiance pour $\\pi$ : \\blank{$[2{,}28\\,;\\,6{,}21]$} (qui contient bien $\\pi \\approx 3{,}1416$, mais reste très large car la précision ne décroît qu'en $1/\\sqrt{n}$ : pour gagner $1$ décimale, il faut $100$ fois plus de lancers !)."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "C'est en \\textbf{1733} que \\textbf{Buffon} présente à l'Académie des sciences son \\textit{Essai d'arithmétique morale} (publié en 1777 dans le tome IV des Suppléments à son \\textit{Histoire naturelle}), où il traite le jeu du franc-carreau puis l'aiguille, fondant les \\textbf{probabilités géométriques}. En 1901, le mathématicien italien Mario Lazzarini affirma avoir obtenu $\\pi \\approx 3{,}1415929$ après $3\\,408$ lancers — un résultat statistiquement si parfait qu'il est aujourd'hui soupçonné de trucage !"
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Dans le cas $a > \\ell$ (aiguille plus longue que la largeur des lames), l'aiguille peut couper plusieurs rainures à la fois ; la probabilité qu'elle en coupe au moins une vaut $p = \\dfrac{2a}{\\pi\\ell}\\bigl(1 - \\sqrt{1 - (\\ell/a)^2}\\bigr) + 1 - \\dfrac{2}{\\pi}\\arcsin(\\ell/a)$. Plus étonnant encore (théorème de Barbier, 1860) : le \\textbf{nombre moyen} d'intersections vaut toujours $\\dfrac{2a}{\\pi\\ell}$, même si l'aiguille est tordue en courbe quelconque (« nouille de Buffon ») !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Traduire une condition géométrique en \\textbf{inéquation trigonométrique}.\\item Majorer un polynôme du second degré ($p(1-p) \\le 1/4$) pour borner une erreur.\\item Comprendre la vitesse de convergence en $1/\\sqrt{n}$ d'une estimation statistique.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

@@ -119,7 +119,7 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\qst{Étudions deux fonctions oscillantes près de $0$.\\begin{enumerate}\\item Pour $f(x)=2+x^2\\sin\\left(\\dfrac1x\\right)$, déterminer $\\displaystyle \\lim_{x \\to0}f(x)$.\\item Pour $g(x)=\\dfrac{x}{2}E\\left(\\dfrac3x\\right)$, déterminer $\\displaystyle \\lim_{x \\to0}g(x)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Comme $|\\sin(1/x)|\\le1$, on a\\end{enumerate}$$|f(x)-2|=x^2\\left|\\sin\\left(\\dfrac1x\\right)\\right|\\le\\blank{x^2}.$ Le majorant tend vers $0$, donc $\\displaystyle \\lim_{x \\to0}f(x)=\\blank{2}$.\\par\\smallskip\\begin{enumerate}\\item La propriété de la partie entière donne\\end{enumerate}\\begin{align*}\\left|g(x)-\\dfrac32\\right|&=\\dfrac{|x|}{2}\\left|\\blank{E\\left(\\dfrac3x\\right)-\\dfrac3x}\\right|\\\\&\\le\\dfrac{|x|}{2}.\\end{align*} Ce majorant tend vers $0$, donc $\\displaystyle \\lim_{x \\to0}g(x)=\\blank{\\dfrac32}$. Les résultats sont : $\\boxed{2}$ et $\\boxed{\\dfrac32}$."
+          "content": "\\qst{Étudions deux fonctions oscillantes près de $0$.\\begin{enumerate}\\item Pour $f(x)=2+x^2\\sin\\left(\\dfrac1x\\right)$, déterminer $\\displaystyle \\lim_{x \\to0}f(x)$.\\item Pour $g(x)=\\dfrac{x}{2}E\\left(\\dfrac3x\\right)$, déterminer $\\displaystyle \\lim_{x \\to0}g(x)$.\\end{enumerate}}\\par\\smallskip\\begin{enumerate}\\item Comme $|\\sin(1/x)|\\le1$, on a\\end{enumerate}$$|f(x)-2|=x^2\\left|\\sin\\left(\\dfrac1x\\right)\\right|\\le\\blank{x^2}.$$ Le majorant tend vers $0$, donc $\\displaystyle \\lim_{x \\to0}f(x)=\\blank{2}$.\\par\\smallskip\\begin{enumerate}\\item La propriété de la partie entière donne\\end{enumerate}\\begin{align*}\\left|g(x)-\\dfrac32\\right|&=\\dfrac{|x|}{2}\\left|\\blank{E\\left(\\dfrac3x\\right)-\\dfrac3x}\\right|\\\\&\\le\\dfrac{|x|}{2}.\\end{align*} Ce majorant tend vers $0$, donc $\\displaystyle \\lim_{x \\to0}g(x)=\\blank{\\dfrac32}$. Les résultats sont : $\\boxed{2}$ et $\\boxed{\\dfrac32}$."
         },
         {
           "type": "warning",
@@ -540,7 +540,7 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\qst{Calculons $\\displaystyle \\lim_{x \\to0}\\dfrac{\\sqrt[3]{1+x}-1}{x}$.} Posons $a=\\sqrt[3]{1+x}$ et $b=1$. Comme $a^3-b^3=\\blank{x}$, on a :\\begin{align*}\\dfrac{a-b}{x}&=\\dfrac{a^3-b^3}{x(\\blank{a^2+ab+b^2})}\\\\&=\\dfrac{1}{a^2+ab+b^2}.\\end{align*} Lorsque $x$ tend vers $0$, $a$ tend vers $\\blank{1}$. Le dénominateur tend donc vers $\\blank{3}$, d'où :$$\\boxed{\\displaystyle \\lim_{x \\to0}\\dfrac{\\sqrt[3]{1+x}-1}{x}=\\blank{\\dfrac13}$"
+          "content": "\\qst{Calculons $\\displaystyle \\lim_{x \\to0}\\dfrac{\\sqrt[3]{1+x}-1}{x}$.} Posons $a=\\sqrt[3]{1+x}$ et $b=1$. Comme $a^3-b^3=\\blank{x}$, on a :\\begin{align*}\\dfrac{a-b}{x}&=\\dfrac{a^3-b^3}{x(\\blank{a^2+ab+b^2})}\\\\&=\\dfrac{1}{a^2+ab+b^2}.\\end{align*} Lorsque $x$ tend vers $0$, $a$ tend vers $\\blank{1}$. Le dénominateur tend donc vers $\\blank{3}$, d'où :$$\\boxed{\\displaystyle \\lim_{x \\to0}\\dfrac{\\sqrt[3]{1+x}-1}{x}=\\blank{\\dfrac13}}$$"
         },
         {
           "type": "method",
@@ -555,7 +555,7 @@
         {
           "type": "application",
           "difficulty": 4,
-          "content": "\\qst{Calculons $\\displaystyle \\lim_{x \\to1}\\dfrac{\\sqrt[3]{x}-1}{\\sqrt{x}-1}$.} Posons $x=\\blank{t^6}$. Lorsque $x$ tend vers $1$, $t$ tend vers $1$. Le quotient devient :\\begin{align*}\\dfrac{t^2-1}{t^3-1}&=\\dfrac{\\blank{(t-1)(t+1)}}{(t-1)(t^2+t+1)}\\\\&=\\dfrac{t+1}{\\blank{t^2+t+1}}.\\end{align*} En faisant tendre $t$ vers $1$, on obtient :$$\\boxed{\\displaystyle \\lim_{x \\to1}\\dfrac{\\sqrt[3]{x}-1}{\\sqrt{x}-1}=\\blank{\\dfrac23}$"
+          "content": "\\qst{Calculons $\\displaystyle \\lim_{x \\to1}\\dfrac{\\sqrt[3]{x}-1}{\\sqrt{x}-1}$.} Posons $x=\\blank{t^6}$. Lorsque $x$ tend vers $1$, $t$ tend vers $1$. Le quotient devient :\\begin{align*}\\dfrac{t^2-1}{t^3-1}&=\\dfrac{\\blank{(t-1)(t+1)}}{(t-1)(t^2+t+1)}\\\\&=\\dfrac{t+1}{\\blank{t^2+t+1}}.\\end{align*} En faisant tendre $t$ vers $1$, on obtient :$$\\boxed{\\displaystyle \\lim_{x \\to1}\\dfrac{\\sqrt[3]{x}-1}{\\sqrt{x}-1}=\\blank{\\dfrac23}}$$"
         }
       ]
     },
@@ -613,7 +613,7 @@
         {
           "type": "application",
           "difficulty": 4,
-          "content": "\\qst{Montrons que $\\operatorname{Arctan}\\!\\left(\\dfrac12\\right)+\\operatorname{Arctan}\\!\\left(\\dfrac13\\right)=\\dfrac{\\pi}{4}$.} Posons $a=\\operatorname{Arctan}\\!\\left(\\dfrac12\\right)$ et $b=\\operatorname{Arctan}\\!\\left(\\dfrac13\\right)$. Comme $0<\\dfrac13<\\dfrac12<1$ et que $\\operatorname{Arctan}$ est \\blank{\\text{croissante}}, on a $a,b\\in\\blank{\\left]0,\\dfrac{\\pi}{4}\\right[}$. Ainsi, $a+b\\in\\blank{\\left]0,\\dfrac{\\pi}{2}\\right[}$.\\par\\smallskip D'autre part :\\begin{align*}\\tan(a+b)&=\\dfrac{\\tan a+\\tan b}{1-\\tan a\\tan b}\\\\&=\\dfrac{\\dfrac12+\\dfrac13}{\\blank{1-\\dfrac16}}\\\\&=\\dfrac{\\dfrac56}{\\dfrac56}\\\\&=1.\\end{align*}Or $\\tan\\!\\left(\\dfrac{\\pi}{4}\\right)=1$ et la tangente est injective sur $\\left]-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right[$. On en déduit :\\par\\smallskip$$\\boxed{\\operatorname{Arctan}\\!\\left(\\dfrac12\\right)+\\operatorname{Arctan}\\!\\left(\\dfrac13\\right)=\\blank{\\dfrac{\\pi}{4}}$"
+          "content": "\\qst{Montrons que $\\operatorname{Arctan}\\!\\left(\\dfrac12\\right)+\\operatorname{Arctan}\\!\\left(\\dfrac13\\right)=\\dfrac{\\pi}{4}$.} Posons $a=\\operatorname{Arctan}\\!\\left(\\dfrac12\\right)$ et $b=\\operatorname{Arctan}\\!\\left(\\dfrac13\\right)$. Comme $0<\\dfrac13<\\dfrac12<1$ et que $\\operatorname{Arctan}$ est \\blank{\\text{croissante}}, on a $a,b\\in\\blank{\\left]0,\\dfrac{\\pi}{4}\\right[}$. Ainsi, $a+b\\in\\blank{\\left]0,\\dfrac{\\pi}{2}\\right[}$.\\par\\smallskip D'autre part :\\begin{align*}\\tan(a+b)&=\\dfrac{\\tan a+\\tan b}{1-\\tan a\\tan b}\\\\&=\\dfrac{\\dfrac12+\\dfrac13}{\\blank{1-\\dfrac16}}\\\\&=\\dfrac{\\dfrac56}{\\dfrac56}\\\\&=1.\\end{align*}Or $\\tan\\!\\left(\\dfrac{\\pi}{4}\\right)=1$ et la tangente est injective sur $\\left]-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right[$. On en déduit :\\par\\smallskip$$\\boxed{\\operatorname{Arctan}\\!\\left(\\dfrac12\\right)+\\operatorname{Arctan}\\!\\left(\\dfrac13\\right)=\\blank{\\dfrac{\\pi}{4}}}$$"
         },
         {
           "type": "warning",

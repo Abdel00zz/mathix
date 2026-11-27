@@ -1,0 +1,190 @@
+rules_version = '2';
+
+// ===============================================================
+// Assumed Data Model — Mathix (Project: mathix-5a799)
+// ===============================================================
+//
+// This security rules file assumes the following data structures:
+//
+// 1. Collection: platform
+//    Document ID: public (/platform/public)
+//    Purpose: Public read-only curriculum overrides and global unlock
+//             configuration published exclusively by Admin backend.
+//    Fields (server-authored via Admin SDK only):
+//      - pubRev: int (revision counter)
+//      - updatedAt: int (Unix timestamp in ms)
+//      - config: map (global unlock & platform settings)
+//      - overrides: map (published curriculum overrides)
+//    Access:
+//      - get: public (unauthenticated or authenticated single-doc read)
+//      - list: denied (no collection enumeration)
+//      - create, update, delete: denied (Admin SDK backend only)
+//
+// 2. Collection: students
+//    Document ID: {uid} (/students/{uid}, must equal request.auth.uid)
+//    Purpose: Per-student identity metadata (contains PII: email) and
+//             learning progression state for Google-authenticated students.
+//    Fields:
+//      - uid: string (required, immutable, 1..128 chars, must equal {uid})
+//      - email: string (optional, size <= 160) - student Google email (PII)
+//      - displayName: string (optional, size <= 120) - student display name
+//      - photoURL: string (optional, size <= 512) - student avatar URL
+//      - stRev: int (optional, >= 0) - student sync revision counter
+//      - updatedAt: int (optional, >= 0) - last update timestamp (ms)
+//      - resetAt: int (optional, >= 0) - last reset timestamp (ms)
+//      - profile: map (optional, keys().size() <= 20) - student profile metadata
+//      - progressRevision: map (optional, keys().size() <= 120) - revision sheets state
+//      - progressQuiz: map (optional, keys().size() <= 120) - quiz attempts/scores
+//      - progressExercises: map (optional, keys().size() <= 120) - exercises completion
+//      - progressCore: map (optional, keys().size() <= 20) - core stats/streaks/XP
+//      - summary: map (optional, keys().size() <= 25) - precomputed progress summary
+//    Access:
+//      - get: owner only (request.auth != null && request.auth.uid == uid)
+//      - list: denied (prevents student enumeration & PII scraping)
+//      - create, update: owner only + strict schema, type, size & immutability checks
+//      - delete: denied (student resets update maps/resetAt, never delete doc)
+//
+// 3. Collection: platform_admin
+//    Document ID: {docId} (/platform_admin/{docId})
+//    Purpose: Internal Admin Studio state & operational secrets/metadata.
+//    Access:
+//      - read, write: strictly denied to all clients (Admin SDK backend only)
+//
+// ===============================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    // Check if the request comes from an authenticated Firebase Auth user
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Check if the authenticated user owns the document at userId
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Validate required fields exist on the resulting document
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+
+    // Enforce strict schema (reject any extraneous/unexpected fields)
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    // Verify UID matches both path parameter and authenticated user on create/write
+    function uidUnchanged(userId) {
+      return 'uid' in request.resource.data &&
+             request.resource.data.uid is string &&
+             request.resource.data.uid == userId &&
+             request.resource.data.uid == request.auth.uid;
+    }
+
+    // Ensure existing uid field cannot be modified on update
+    function uidNotModified() {
+      return !('uid' in resource.data) ||
+             request.resource.data.uid == resource.data.uid;
+    }
+
+    // Validate optional string field (if present, must be string within max length)
+    function isValidOptionalString(data, field, maxLen) {
+      return !(field in data) ||
+             (data[field] is string && data[field].size() <= maxLen);
+    }
+
+    // Validate optional non-negative 64-bit integer field (if present, int >= 0)
+    function isValidOptionalNonNegativeInt(data, field) {
+      return !(field in data) ||
+             (data[field] is int && data[field] >= 0);
+    }
+
+    // Validate optional map field (if present, map with bounded top-level key count)
+    function isValidOptionalBoundedMap(data, field, maxKeys) {
+      return !(field in data) ||
+             (data[field] is map && data[field].keys().size() <= maxKeys);
+    }
+
+    // ===============================================================
+    // Domain Validators (Called in BOTH create and update)
+    // ===============================================================
+
+    function isValidStudent(data, userId) {
+      return hasRequiredFields(['uid']) &&
+             hasOnlyAllowedFields([
+               'uid',
+               'email',
+               'displayName',
+               'photoURL',
+               'stRev',
+               'updatedAt',
+               'resetAt',
+               'profile',
+               'progressRevision',
+               'progressQuiz',
+               'progressExercises',
+               'progressCore',
+               'summary'
+             ]) &&
+             data.uid is string &&
+             data.uid == userId &&
+             data.uid.size() > 0 &&
+             data.uid.size() <= 128 &&
+             isValidOptionalString(data, 'email', 160) &&
+             isValidOptionalString(data, 'displayName', 120) &&
+             isValidOptionalString(data, 'photoURL', 512) &&
+             isValidOptionalNonNegativeInt(data, 'stRev') &&
+             isValidOptionalNonNegativeInt(data, 'updatedAt') &&
+             isValidOptionalNonNegativeInt(data, 'resetAt') &&
+             isValidOptionalBoundedMap(data, 'profile', 20) &&
+             isValidOptionalBoundedMap(data, 'progressRevision', 120) &&
+             isValidOptionalBoundedMap(data, 'progressQuiz', 120) &&
+             isValidOptionalBoundedMap(data, 'progressExercises', 120) &&
+             isValidOptionalBoundedMap(data, 'progressCore', 20) &&
+             isValidOptionalBoundedMap(data, 'summary', 25);
+    }
+
+    // ===============================================================
+    // Collection Rules
+    // ===============================================================
+
+    // 1. Public curriculum overrides & global unlock configuration
+    //    Single document read allowed; listing and all client writes denied.
+    match /platform/public {
+      allow get: if true;
+      allow list: if false;
+      allow create, update, delete: if false;
+    }
+
+    // 2. Per-student progression & identity document (PII protected)
+    //    Owner-only single-doc read/create/update; listing & deletion denied.
+    match /students/{uid} {
+      allow get: if isOwner(uid);
+      allow list: if false;
+      allow create: if isOwner(uid) &&
+                       uidUnchanged(uid) &&
+                       isValidStudent(request.resource.data, uid);
+      allow update: if isOwner(uid) &&
+                       uidUnchanged(uid) &&
+                       uidNotModified() &&
+                       isValidStudent(request.resource.data, uid);
+      allow delete: if false;
+    }
+
+    // 3. Backend-only administrative collection
+    match /platform_admin/{docId} {
+      allow read, write: if false;
+    }
+
+    // 4. Default catch-all deny for all other collections and subcollections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

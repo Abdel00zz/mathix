@@ -44,7 +44,7 @@
         {
           "id": "a",
           "content": "Montrer que $(\\forall x \\in D_f) : \\quad f'(x)=\\frac{(x-1)(x^2+x+2)}{x^3}$",
-          "hint": "Dérivez $f(x)$ à partir de sa forme simplifiée $f(x) = x - 1 + \\frac{1}{x^2} - \frac{1}{x}$. Mettez tout au même dénominateur."
+          "hint": "Dérivez $f(x)$ à partir de sa forme simplifiée $f(x) = x - 1 + \\frac{1}{x^2} - \\frac{1}{x}$. Mettez tout au même dénominateur."
         },
         {
           "id": "b",

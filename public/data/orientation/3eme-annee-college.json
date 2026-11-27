@@ -1,0 +1,103 @@
+{
+  "classId": "3eme-annee-college",
+  "title": "Troisième année du cycle secondaire collégial",
+  "source": "Ministère de l’Éducation Nationale · Cycle collégial",
+  "year": "Programme officiel",
+  "chapters": [
+    {
+      "id": 1,
+      "section": "Algèbre",
+      "title": "Racines carrées et calcul algébrique",
+      "contents": [
+        "Définition de $\\sqrt{a}$ ($a \\ge 0$) et opérations.",
+        "Identités remarquables, développement et factorisation."
+      ],
+      "capacities": [
+        "Simplifier des expressions contenant des radicaux, rendre un dénominateur rationnel et factoriser."
+      ],
+      "recommendations": [
+        "Insister sur les erreurs classiques ($\\sqrt{a+b} \\ne \\sqrt{a}+\\sqrt{b}$) et la rationalisation des dénominateurs."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 2,
+      "section": "Algèbre",
+      "title": "Ordre dans $\\mathbb{R}$, équations, inéquations et systèmes",
+      "contents": [
+        "Ordre et opérations, encadrements.",
+        "Équations produit nul, inéquations et systèmes $2\\times 2$."
+      ],
+      "capacities": [
+        "Encadrer une expression et modéliser un problème par un système $2 \\times 2$."
+      ],
+      "recommendations": [
+        "Préparer l’Examen Régional en alternant résolutions algébriques et interprétations graphiques."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 3,
+      "section": "Analyse",
+      "title": "Fonctions linéaires et fonctions affines",
+      "contents": [
+        "Fonction linéaire $f(x) = ax$ et affine $g(x) = ax + b$.",
+        "Coefficient directeur et représentation graphique."
+      ],
+      "capacities": [
+        "Déterminer l’expression d’une fonction affine et lire images et antécédents."
+      ],
+      "recommendations": [
+        "Faire le lien entre coefficient directeur, proportionnalité des accroissements et pente de droite."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 4,
+      "section": "Géométrie",
+      "title": "Thalès, Pythagore et trigonométrie",
+      "contents": [
+        "Théorèmes direct et réciproque de Thalès et Pythagore.",
+        "Rapports trigonométriques ($\\sin, \\cos, \\tan$) et $\\cos^2 x + \\sin^2 x = 1$."
+      ],
+      "capacities": [
+        "Calculer des longueurs et angles dans un triangle rectangle et prouver un parallélisme."
+      ],
+      "recommendations": [
+        "Exiger la vérification complète des hypothèses (alignement et ordre des points pour la réciproque de Thalès)."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 5,
+      "section": "Géométrie",
+      "title": "Repère dans le plan et équation d’une droite",
+      "contents": [
+        "Coordonnées, milieu, distance $AB = \\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}$.",
+        "Équation réduite $y = mx + p$, parallélisme et perpendicularité ($m\\cdot m' = -1$)."
+      ],
+      "capacities": [
+        "Déterminer l’équation réduite d’une droite et étudier parallélisme et orthogonalité."
+      ],
+      "recommendations": [
+        "Relier la géométrie analytique aux systèmes $2\\times 2$ (point d’intersection de deux droites)."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 6,
+      "section": "Statistiques",
+      "title": "Statistiques descriptives",
+      "contents": [
+        "Effectifs cumulés, moyenne, médiane, mode et classe modale."
+      ],
+      "capacities": [
+        "Déterminer la moyenne, la médiane et le mode d’une série statistique."
+      ],
+      "recommendations": [
+        "Travailler la lecture et l’interprétation de tableaux d’effectifs et diagrammes."
+      ],
+      "horsProgramme": []
+    }
+  ]
+}

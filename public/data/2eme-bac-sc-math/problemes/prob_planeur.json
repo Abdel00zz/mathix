@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Le vol d'un planeur",
+    "subtitle": "Problème 1.9 — Dérivation et polaire des vitesses",
+    "context": "Analyse et dérivation"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le vol d'un planeur",
+          "content": "Un planeur vole sans moteur : en air calme, il perd continuellement de l'altitude tout en avançant. Pour optimiser son vol — soit \\textbf{rester en l'air le plus longtemps possible}, soit \\textbf{parcourir la plus grande distance possible} avant de toucher le sol — le pilote consulte un graphique fondamental appelé la \\textbf{polaire des vitesses}, qui relie la vitesse verticale de chute $V_z$ à la vitesse horizontale $v$.\\par Pour un planeur donné, la polaire des vitesses est modélisée sur l'intervalle $v \\in [65\\,;\\,170]$ (en $\\text{km/h}$) par la fonction :\\par $$V_z(v) = \\frac{v^3}{a v^4 + b v^2 + c}, \\qquad\\text{avec } a = 0{,}007,\\; b = -290,\\; c = 850\\,000,$$\\par où $V_z(v) < 0$ est la vitesse verticale exprimée en \\textbf{mètres par seconde} ($\\text{m/s}$)."
+        },
+        {
+          "type": "notation",
+          "title": "Conversion d'unités et définitions aéronautiques",
+          "content": "\\begin{itemize}\\item Pour convertir une vitesse de $\\text{m/s}$ en $\\text{km/h}$, on multiplie par $3{,}6$ (car $1\\text{ m/s} = 3{,}6\\text{ km/h}$).\\item L'\\textbf{angle de pente} $\\alpha < 0$ de la trajectoire vérifie $\\tan(\\alpha) = \\dfrac{V_z\\text{ (en km/h)}}{v\\text{ (en km/h)}}$.\\item La \\textbf{finesse} (en valeur absolue) est le rapport $\\left|\\dfrac{v}{V_z}\\right|$ (exprimés dans la même unité) : une finesse de $35$ signifie que le planeur parcourt $35\\text{ km}$ horizontalement en perdant $1\\text{ km}$ d'altitude.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Vitesse de décrochage, vitesse maximale et taux de chute minimal",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item \\textbf{Vitesses extrêmes du domaine de vol.}\\begin{enumerate}\\item Calculer la vitesse verticale $V_z(65)$ (en $\\text{m/s}$ puis en $\\text{km/h}$) à la vitesse minimale $v = 65\\text{ km/h}$ (limite de décrochage).\\item Calculer de même $V_z(170)$ à la vitesse maximale $v = 170\\text{ km/h}$.\\item En déduire l'angle de pente $\\alpha$ (en degrés, arrondi au centième) pour chacune de ces deux vitesses.\\end{enumerate}\\item \\textbf{Taux de chute minimal (rester en l'air le plus longtemps possible).}\\begin{enumerate}\\item Montrer que pour tout $v \\in [65\\,;\\,170]$, la dérivée de $V_z$ s'écrit : $$V_z'(v) = \\frac{v^2\\bigl(-a v^4 + b v^2 + 3c\\bigr)}{\\bigl(a v^4 + b v^2 + c\\bigr)^2}.$$\\item Résoudre l'équation $V_z'(v) = 0$ sur $[65\\,;\\,170]$ en posant $X = v^2$, et dresser le tableau de variations de $V_z$ (attention : $V_z(v) < 0$, donc le taux de chute minimal correspond au \\textbf{maximum} de $V_z$ !).\\item En déduire la vitesse optimale $v_m$, le taux de chute minimal $V_z(v_m)$ (en $\\text{m/s}$ et $\\text{km/h}$) et l'angle de pente correspondant.\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Signe du dénominateur et équation bicarrée",
+          "content": "Pour vérifier que le dénominateur $a v^4 + b v^2 + c$ est strictement négatif sur $[65\\,;\\,170]$, on pose $X = v^2 \\in [4\\,225\\,;\\,28\\,900]$ : les deux racines de $a X^2 + b X + c = 0$ valent environ $3\\,176$ et $38\\,252$, de sorte que $aX^2 + bX + c < 0$ entre les racines (par exemple en $v = 100$, il vaut $-1\\,350\\,000 < 0$), donc $V_z(v) < 0$ sur tout l'intervalle. Pour $V_z'(v) = 0$, on résout de même l'équation bicarrée $-a X^2 + b X + 3c = 0$ avec $X = v^2 > 0$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Chute minimale",
+          "content": "\\textbf{1. a)} Pour $v = 65$ : $a v^4 + b v^2 + c = 0{,}007\\times 65^4 - 290\\times 65^2 + 850\\,000 \\approx -250\\,302{,}8$, donc :\\par $$V_z(65) = \\frac{65^3}{-250\\,302{,}8} \\approx -1{,}097\\text{ m/s} \\approx -3{,}95\\text{ km/h}.$$\\par\\textbf{1. b)} Pour $v = 170$ : $a v^4 + b v^2 + c \\approx -1\\,684\\,530$, donc :\\par $$V_z(170) = \\frac{170^3}{-1\\,684\\,530} \\approx -2{,}916\\text{ m/s} \\approx -10{,}50\\text{ km/h}.$$\\par\\textbf{1. c)} Les angles de pente valent :\\par $$\\alpha(65) = \\arctan\\left(\\frac{-3{,}95}{65}\\right) \\approx -3{,}48^\\circ, \\qquad \\alpha(170) = \\arctan\\left(\\frac{-10{,}50}{170}\\right) \\approx -3{,}53^\\circ.$$\\par\\textbf{2. a)} Par la formule $\\left(\\dfrac{u}{w}\\right)' = \\dfrac{u'w - uw'}{w^2}$ avec $u(v) = v^3$ et $w(v) = av^4 + bv^2 + c$ :\\par $$\\begin{aligned}V_z'(v) &= \\frac{3v^2(av^4 + bv^2 + c) - v^3(4av^3 + 2bv)}{(av^4 + bv^2 + c)^2} \\\\ &= \\frac{v^2(3av^4 + 3bv^2 + 3c - 4av^4 - 2bv^2)}{(av^4 + bv^2 + c)^2} = \\frac{v^2(-av^4 + bv^2 + 3c)}{(av^4 + bv^2 + c)^2}.\\end{aligned}$$\\par\\textbf{2. b)} Le signe de $V_z'(v)$ est celui de $P(X) = -aX^2 + bX + 3c$ avec $X = v^2 > 0$. Le discriminant vaut :\\par $$\\Delta = b^2 - 4(-a)(3c) = (-290)^2 + 12\\times 0{,}007\\times 850\\,000 = 84\\,100 + 71\\,400 = 155\\,500 > 0.$$\\par Comme $-a < 0$, l'unique racine positive de $P(X) = 0$ est :\\par $$X_m = \\frac{-b - \\sqrt{\\Delta}}{-2a} = \\frac{b + \\sqrt{\\Delta}}{2a} = \\frac{-290 + \\sqrt{155\\,500}}{0{,}014} \\approx 7\\,452{,}45 \\implies v_m = \\sqrt{X_m} \\approx \\boxed{86{,}33\\text{ km/h}}.$$\\par Comme $-a < 0$, $V_z'(v) > 0$ sur $[65\\,;\\,v_m[$ et $V_z'(v) < 0$ sur $]v_m\\,;\\,170]$ : $V_z$ est croissante puis décroissante et atteint son \\textbf{maximum} (taux de chute minimal en valeur absolue) en $v_m \\approx$ \\blank{$86{,}33\\text{ km/h}$}.\\par\\textbf{2. c)} À cette vitesse optimale :\\par $$V_z(86{,}33) \\approx \\boxed{-0{,}70\\text{ m/s}} \\approx -2{,}51\\text{ km/h}, \\qquad \\alpha(v_m) = \\arctan\\left(\\frac{-2{,}51}{86{,}33}\\right) \\approx -1{,}67^\\circ.$$"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Finesse maximale (aller le plus loin possible)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour parcourir la plus grande distance horizontale $d$ à partir d'une altitude $h$ donnée, on étudie la fonction finesse algébrique $f(v) = \\dfrac{v}{3{,}6\\,V_z(v)}$ (négative ici car $V_z < 0$ ; maximiser la finesse revient à minimiser $|V_z(v)|/v$, donc à trouver l'extremum de $f$).\\begin{enumerate}\\item Exprimer $f(v)$ simplement en fonction de $v$, $a$, $b$ et $c$ (ou dériver directement le quotient $\\dfrac{v}{V_z(v)}$).\\item Montrer que $f'(v) = 0 \\iff V_z(v) - v\\,V_z'(v) = 0 \\iff a v^4 = c$, puis calculer la vitesse de finesse maximale $v_f = \\sqrt[4]{\\dfrac{c}{a}}$.\\item Calculer $V_z(v_f)$ (en $\\text{m/s}$ et $\\text{km/h}$), la finesse maximale $|f(v_f)|$ et l'angle de pente correspondant.\\item \\textbf{Propriété graphique remarquable :} écrire l'équation de la tangente à la courbe de $V_z$ au point d'abscisse $v_f$. Montrer que cette tangente passe par l'\\textbf{origine $O(0,0)$} ! Comment un pilote peut-il donc repérer graphiquement $v_f$ sur une polaire des vitesses ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Dériver g(v) = V_z(v)/v",
+          "content": "On peut aussi simplifier $\\dfrac{v}{V_z(v)} = a v^2 + b + \\dfrac{c}{v^2}$ ! Sa dérivée vaut $2av - \\dfrac{2c}{v^3}$, qui s'annule immédiatement pour $v^4 = \\dfrac{c}{a}$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Finesse maximale",
+          "content": "\\textbf{1)} En remplaçant $V_z(v) = \\dfrac{v^3}{av^4 + bv^2 + c}$, on obtient directement :\\par $$\\frac{v}{V_z(v)} = \\frac{av^4 + bv^2 + c}{v^2} = a v^2 + b + \\frac{c}{v^2}, \\qquad\\text{et } f(v) = \\frac{1}{3{,}6}\\left(a v^2 + b + \\frac{c}{v^2}\\right).$$\\par\\textbf{2)} En dérivant $f(v)$ (ou par $\\left(\\frac{v}{V_z}\\right)' = \\frac{V_z - vV_z'}{V_z^2}$) :\\par $$f'(v) = \\frac{1}{3{,}6}\\left(2av - \\frac{2c}{v^3}\\right) = \\frac{2(av^4 - c)}{3{,}6\\,v^3}.$$\\par Ainsi $f'(v) = 0 \\iff V_z(v) - v V_z'(v) = 0 \\iff v^4 = \\dfrac{c}{a} = \\dfrac{850\\,000}{0{,}007} \\approx 1{,}2143\\times 10^8$, d'où :\\par $$v_f = \\sqrt[4]{\\frac{c}{a}} \\approx \\boxed{104{,}97\\text{ km/h}}.$$\\par Vitesse de finesse maximale : \\blank{$104{,}97\\text{ km/h}$}. Pour $v < v_f$, $f'(v) < 0$ et pour $v > v_f$, $f'(v) > 0$ : $f$ atteint son minimum (donc la finesse $|f|$ atteint son \\textbf{maximum}) en $v_f$.\\par\\textbf{3)} À $v_f \\approx 104{,}97\\text{ km/h}$ :\\par $$V_z(v_f) \\approx -0{,}773\\text{ m/s} \\approx -2{,}78\\text{ km/h}, \\qquad |f(v_f)| = \\frac{104{,}97}{2{,}784} \\approx \\boxed{37{,}7}, \\qquad \\alpha(v_f) \\approx -1{,}52^\\circ.$$\\par Finesse maximale : \\blank{$37{,}7$} (en partant de $1\\text{ km}$ d'altitude, le planeur parcourt près de $38\\text{ km}$ !).\\par\\textbf{4)} L'équation de la tangente à la courbe de $V_z$ en $v_f$ est $y = V_z'(v_f)(v - v_f) + V_z(v_f) = V_z'(v_f)\\,v + \\bigl(V_z(v_f) - v_f V_z'(v_f)\\bigr)$. Or on vient de montrer que $V_z(v_f) - v_f V_z'(v_f) = 0$ ! La tangente a donc pour équation $y = V_z'(v_f)\\,v$ : elle \\textbf{passe par l'origine $O(0,0)$}. Graphiquement, il suffit de tracer depuis l'origine la tangente à la polaire pour lire immédiatement la vitesse de finesse maximale !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Les pionniers du vol à voile, dont l'Allemand \\textbf{Otto Lilienthal} à la fin du $\\mathrm{XIX}^{\\mathrm{e}}$ siècle, sont les premiers à mesurer systématiquement la portance et la traînée des ailes. Aujourd'hui, les planeurs de compétition en fibre de carbone atteignent des finesses supérieures à $60$ (et même $70$ pour l'Eta) !"
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En présence d'un vent de face de vitesse $w$ ou d'une masse d'air descendante $W_z$, le pilote décale simplement l'origine du repère en $(w, W_z)$ et trace la nouvelle tangente à la polaire depuis ce point décalé (théorie de \\textbf{MacCready}) : contre un vent de face, il faut voler \\textit{plus vite} que $v_f$ pour maximiser la distance au sol !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Dériver une \\textbf{fonction rationnelle} et étudier le signe d'un polynôme bicarré.\\item Interpréter des \\textbf{extrema} dans un problème concret d'optimisation.\\item Utiliser l'\\textbf{équation d'une tangente} pour dégager une propriété géométrique.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

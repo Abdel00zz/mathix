@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "La droite d'Euler",
+    "subtitle": "Problème 1.32 — Vecteurs, barycentres et orthogonalité",
+    "context": "Barycentre et géométrie vectorielle"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "La droite d'Euler",
+          "content": "Dans tout triangle $ABC$, trois points remarquables jouent un rôle fondamental :\\begin{itemize}\\item $O$, le \\textbf{centre du cercle circonscrit} (intersection des trois médiatrices) ;\\item $G$, le \\textbf{centre de gravité} (intersection des trois médianes, c'est-à-dire l'isobarycentre de $A, B, C$) ;\\item $H$, l'\\textbf{orthocentre} (intersection des trois hauteurs).\\end{itemize}En 1767, \\textbf{Leonhard Euler} démontre un résultat fascinant : dans tout triangle non équilatéral, ces trois points $O$, $G$ et $H$ sont \\textbf{toujours alignés}, et vérifient précisément $\\overrightarrow{OH} = 3\\overrightarrow{OG}$ ! La droite qui les porte s'appelle la \\textbf{droite d'Euler}.\\par Nous allons démontrer ce théorème par \\textbf{deux méthodes totalement indépendantes} : l'une purement vectorielle, l'autre géométrique par symétrie et barycentres."
+        },
+        {
+          "type": "notation",
+          "title": "Points auxiliaires",
+          "content": "On note $I$, $J$ et $K$ les milieux respectifs des côtés $[BC]$, $[AC]$ et $[AB]$ du triangle $ABC$."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Première méthode : approche vectorielle (relation de Sylvester)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Rappeler la propriété vectorielle de l'isobarycentre $G$ de $A, B, C$, et en déduire que : $$\\overrightarrow{OA} + \\overrightarrow{OB} + \\overrightarrow{OC} = 3\\overrightarrow{OG}.$$\\item On introduit l'unique point $M$ du plan défini par $\\overrightarrow{OM} = \\overrightarrow{OA} + \\overrightarrow{OB} + \\overrightarrow{OC}$.\\begin{enumerate}\\item Justifier que les vecteurs $\\overrightarrow{OI}$ et $\\overrightarrow{BC}$ sont orthogonaux.\\item Exprimer $\\overrightarrow{OB} + \\overrightarrow{OC}$ en fonction de $\\overrightarrow{OI}$, puis démontrer que $\\overrightarrow{AM} = 2\\overrightarrow{OI}$.\\item En déduire que $\\overrightarrow{AM}$ et $\\overrightarrow{BC}$ sont orthogonaux, c'est-à-dire que $M$ appartient à la hauteur issue de $A$.\\item Montrer de manière analogue que $M$ appartient aux hauteurs issues de $B$ et de $C$.\\item Conclure que $M = H$ (on obtient ainsi la \\textbf{relation de Sylvester} : $\\overrightarrow{OH} = \\overrightarrow{OA} + \\overrightarrow{OB} + \\overrightarrow{OC}$).\\end{enumerate}\\item En déduire la \\textbf{relation vectorielle d'Euler} $\\overrightarrow{OH} = 3\\overrightarrow{OG}$ et conclure quant à l'alignement de $O$, $G$ et $H$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Utiliser le milieu I de [BC]",
+          "content": "Comme $I$ est le milieu de $[BC]$, pour tout point $O$ on a $\\overrightarrow{OB} + \\overrightarrow{OC} = 2\\overrightarrow{OI}$. Injectez cela dans $\\overrightarrow{OM} = \\overrightarrow{OA} + \\overrightarrow{OB} + \\overrightarrow{OC}$, puis passez $\\overrightarrow{OA}$ à gauche !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Méthode vectorielle",
+          "content": "\\textbf{1)} $G$ est l'isobarycentre de $A, B, C$, donc pour tout point $P$ du plan, $\\overrightarrow{PA} + \\overrightarrow{PB} + \\overrightarrow{PC} = 3\\overrightarrow{PG}$. Pour $P = O$, on obtient $\\overrightarrow{OA} + \\overrightarrow{OB} + \\overrightarrow{OC} = 3\\overrightarrow{OG}$.\\par\\textbf{2. a)} $O$ est sur la médiatrice de $[BC]$ qui passe par le milieu $I$ de $[BC]$, donc $(OI) \\perp (BC)$, soit $\\overrightarrow{OI} \\perp \\overrightarrow{BC}$.\\par\\textbf{2. b)} Comme $I$ est le milieu de $[BC]$, $\\overrightarrow{OB} + \\overrightarrow{OC} = 2\\overrightarrow{OI}$. Par définition de $M$ :\\par $$\\overrightarrow{OM} = \\overrightarrow{OA} + 2\\overrightarrow{OI} \\iff \\overrightarrow{OM} - \\overrightarrow{OA} = 2\\overrightarrow{OI} \\iff \\boxed{\\overrightarrow{AM} = 2\\overrightarrow{OI}}.$$\\par\\textbf{2. c)} $\\overrightarrow{AM}$ est colinéaire à $\\overrightarrow{OI}$ et $\\overrightarrow{OI} \\perp \\overrightarrow{BC}$, donc $\\overrightarrow{AM} \\perp \\overrightarrow{BC}$ : le point $M$ appartient à la hauteur issue de $A$.\\par\\textbf{2. d)} En remplaçant $A, I$ par $B, J$ puis $C, K$, on obtient exactement de même $\\overrightarrow{BM} = 2\\overrightarrow{OJ} \\perp \\overrightarrow{AC}$ et $\\overrightarrow{CM} = 2\\overrightarrow{OK} \\perp \\overrightarrow{AB}$ : $M$ appartient aux trois hauteurs !\\par\\textbf{2. e)} Le seul point commun aux trois hauteurs est l'orthocentre $H$, donc $M = H$, ce qui prouve la \\textbf{relation de Sylvester} :\\par $$\\overrightarrow{OH} = \\overrightarrow{OA} + \\overrightarrow{OB} + \\overrightarrow{OC}.$$\\par\\textbf{3)} En combinant avec la question 1, on obtient la \\textbf{relation d'Euler} : \\blank{$\\overrightarrow{OH} = 3\\overrightarrow{OG}$}. Les vecteurs $\\overrightarrow{OH}$ et $\\overrightarrow{OG}$ sont donc colinéaires : les points $O$, $G$ et $H$ sont \\textbf{alignés} (avec $G$ au tiers du segment $[OH]$ à partir de $O$ !)."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Seconde méthode : symétrie centrale et barycentres",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On note $D$ le symétrique du sommet $C$ par rapport au centre $O$ du cercle circonscrit, et $K$ le milieu de $[AB]$.\\begin{enumerate}\\item Justifier que $[CD]$ est un diamètre du cercle circonscrit, puis en déduire la nature des triangles $ACD$ et $BCD$.\\item Montrer que $(DA) \\parallel (BH)$ et $(DB) \\parallel (AH)$. En déduire la nature du quadrilatère $AHBD$, puis montrer que $K$ est le milieu de $[HD]$.\\item On note $G'$ le centre de gravité du triangle $CHD$ (isobarycentre de $(C,1)$, $(H,1)$, $(D,1)$). À l'aide du théorème d'\\textbf{associativité du barycentre}, exprimer $G'$ comme barycentre de $C$ et $K$, puis démontrer que $G' = G$.\\item En remarquant que $O$ est le milieu de $[CD]$, conclure sur l'alignement des points $O$, $G$ et $H$ (et retrouver le rapport $HO / HG$).\\item \\textbf{Question annexe :} que se passe-t-il lorsque le triangle $ABC$ est \\textbf{équilatéral} ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Associativité du barycentre dans ABC et CHD",
+          "content": "$K$ est le milieu de $[AB]$ \\textit{et} le milieu de $[HD]$ ! Par associativité, $G = \\operatorname{bar}\\{(C,1),(A,1),(B,1)\\} = \\operatorname{bar}\\{(C,1),(K,2)\\}$, et de même $G' = \\operatorname{bar}\\{(C,1),(H,1),(D,1)\\} = \\operatorname{bar}\\{(C,1),(K,2)\\}$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Symétrie et barycentres",
+          "content": "\\textbf{1)} Comme $O$ est le centre du cercle circonscrit et $OC = OD$, $D$ appartient aussi au cercle et $[CD]$ en est un diamètre. Les triangles $ACD$ et $BCD$ inscrits dans ce cercle de diamètre $[CD]$ sont donc \\textbf{rectangles respectivement en $A$ et en $B$}.\\par\\textbf{2)} $(DA) \\perp (AC)$ et la hauteur $(BH) \\perp (AC)$, donc $(DA) \\parallel (BH)$. De même $(BD) \\perp (BC)$ et $(AH) \\perp (BC)$, donc $(BD) \\parallel (AH)$. Le quadrilatère $AHBD$ a ses côtés opposés parallèles deux à deux : c'est un \\blank{parallélogramme}. Ses diagonales $[AB]$ et $[HD]$ se coupent donc en leur milieu : puisque $K$ est le milieu de $[AB]$, $K$ est aussi le \\textbf{milieu de $[HD]$}.\\par\\textbf{3)} Par associativité du barycentre :\\begin{itemize}\\item $G' = \\operatorname{bar}\\{(C,1), (H,1), (D,1)\\} = \\operatorname{bar}\\{(C,1), (K,2)\\}$ car $K$ est le milieu de $[HD]$ ;\\item $G = \\operatorname{bar}\\{(C,1), (A,1), (B,1)\\} = \\operatorname{bar}\\{(C,1), (K,2)\\}$ car $K$ est le milieu de $[AB]$.\\end{itemize}\\par Par unicité du barycentre, \\blank{$G' = G$}.\\par\\textbf{4)} $O$ est le milieu de $[CD]$, donc $(HO)$ est une \\textbf{médiane} du triangle $CHD$. Le centre de gravité $G' = G$ de $CHD$ appartient donc à la médiane $[HO]$ (aux deux tiers à partir de $H$, soit $HG = \\frac{2}{3} HO \\iff \\overrightarrow{OH} = 3\\overrightarrow{OG}$) ! Les points $O, G, H$ sont donc alignés.\\par\\textbf{5) Cas équilatéral :} Dans un triangle équilatéral, médiatrices, médianes et hauteurs sont confondues : les points $O$, $G$ et $H$ sont \\textbf{confondus} en un seul point, il n'y a donc plus une unique droite d'Euler !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "En \\textbf{1767}, \\textbf{Leonhard Euler} publie son mémoire \\textit{Solutio facilis problematum quorundam geometricorum difficillimorum} (« Solution facile de certains problèmes géométriques très difficiles »), dans lequel il établit par voie analytique l'alignement de $O$, $G$ et $H$ — et montre comment reconstruire le triangle $ABC$ connaissant $O, G, H$ et un rayon."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Le milieu $\\Omega$ du segment $[OH]$ est lui aussi remarquable : c'est le centre du \\textbf{cercle d'Euler} (ou cercle des neuf points), qui passe par les $3$ milieux des côtés, les $3$ pieds des hauteurs et les $3$ milieux des segments $[AH], [BH], [CH]$ ! La droite d'Euler possède également une généralisation en 3D pour les tétraèdres orthocentriques."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Manipuler le \\textbf{barycentre}, son \\textbf{associativité} et les relations vectorielles dans un triangle.\\item Exploiter l'\\textbf{orthogonalité} et la géométrie du cercle (angle inscrit dans un demi-cercle).\\item Comparer deux démonstrations (vectorielle vs géométrique) d'un même théorème classique.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="300" viewBox="0 0 560 300" role="img" aria-labelledby="title desc">
+  <title id="title">L’intersection de deux ensembles</title>
+  <desc id="desc">Deux disques représentent A et B dans l’ensemble E. Seule leur zone commune est colorée : A intersection B contient les éléments qui appartiennent à la fois à A et à B.</desc>
+  <defs><clipPath id="a"><circle cx="225" cy="158" r="80"/></clipPath><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8L8 0" stroke="#719274" stroke-width="1"/></pattern></defs>
+  <rect width="560" height="300" rx="12" fill="#fafbf7"/>
+  <text x="25" y="30" font-family="Arial, sans-serif" font-size="12" letter-spacing="2" fill="#506b54">DEUX CONDITIONS À LA FOIS</text>
+  <rect x="58" y="51" width="444" height="211" rx="7" fill="none" stroke="#c5cebe"/>
+  <circle cx="335" cy="158" r="80" fill="#dce8d6" clip-path="url(#a)"/>
+  <circle cx="335" cy="158" r="80" fill="url(#hatch)" clip-path="url(#a)"/>
+  <circle cx="225" cy="158" r="80" fill="none" stroke="#41664d" stroke-width="2"/>
+  <circle cx="335" cy="158" r="80" fill="none" stroke="#41664d" stroke-width="2"/>
+  <g font-family="Georgia, serif" font-style="italic" font-size="22" fill="#304d3b"><text x="77" y="80">E</text><text x="180" y="165">A</text><text x="366" y="165">B</text></g>
+  <text x="280" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#304d3b">A ∩ B</text>
+  <text x="280" y="286" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#506b54">La zone commune à A et à B</text>
+</svg>

@@ -1,0 +1,95 @@
+{
+  "header": {
+    "title": "L'évolution d'un virus",
+    "subtitle": "Problème 1.12 — Modèles de Malthus et de Verhulst",
+    "context": "Analyse et modélisation"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "L'évolution d'un virus",
+          "content": "Comment modéliser la propagation d'une épidémie (ou la croissance d'une population dans un milieu limité) ? Deux grands modèles mathématiques historiques s'affrontent :\\begin{itemize}\\item Le \\textbf{modèle de Malthus} (1798), où le taux de variation de la population est proportionnel à sa taille : croissance exponentielle illimitée.\\item Le \\textbf{modèle logistique de Verhulst} (1838), qui tient compte d'une \\textbf{capacité limite $K$} (population totale susceptible d'être contaminée), freinant la propagation à mesure qu'on approche de $K$.\\end{itemize}Nous allons résoudre ces deux modèles puis confronter le modèle de Verhulst aux données réelles de l'épidémie de \\textbf{SARS-CoV-2 en France} entre septembre 2020 et septembre 2022."
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (exponentielle, ln et équations différentielles)",
+          "content": "\\begin{itemize}\\item \\textbf{Équation différentielle $y' = k y$ :} les solutions dérivables sur $\\mathbb{R}$ sont les fonctions $t \\mapsto C e^{kt}$ ($C \\in \\mathbb{R}$).\\item \\textbf{Dérivée de $\\ln(u)$ :} pour une fonction dérivable $u > 0$, la dérivée de $\\ln(u)$ est $\\dfrac{u'}{u}$ ; réciproquement, une primitive de $\\dfrac{u'}{u}$ est $\\ln(u)$.\\item \\textbf{Lien $\\ln$ et $\\exp$ :} pour $A > 0$, $\\ln(A) = B \\iff A = e^B$, et $\\ln(a) - \\ln(b) = \\ln\\!\\left(\\dfrac{a}{b}\\right)$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Le modèle de Malthus",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On note $M(t) > 0$ le nombre de cas cumulés (ou d'individus) à l'instant $t \\ge 0$, avec $M(0) = M_0 > 0$. On note $\\alpha > 0$ le taux d'apparition de nouveaux cas et $\\beta \\ge 0$ le taux de disparition/guérison. Le modèle de Malthus postule l'équation différentielle :\\par $$M'(t) = (\\alpha - \\beta)\\, M(t).$$\\begin{enumerate}\\item Résoudre cette équation différentielle en tenant compte de la condition initiale $M(0) = M_0$.\\item Discuter le comportement de $M(t)$ lorsque $t \\to +\\infty$ selon les trois cas : $\\alpha = \\beta$, $\\alpha > \\beta$ et $\\alpha < \\beta$.\\item Expliquer pourquoi ce modèle ne peut pas décrire une épidémie sur le long terme.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Solution de y' = k y",
+          "content": "Poser $k = \\alpha - \\beta$ : $M(t) = C e^{(\\alpha-\\beta)t}$, puis évaluer en $t = 0$ pour déterminer la constante $C$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Modèle de Malthus",
+          "content": "\\textbf{1)} Les solutions de $M'(t) = (\\alpha - \\beta)M(t)$ sont de la forme $M(t) = C e^{(\\alpha-\\beta)t}$. Comme $M(0) = C e^0 = C = M_0$, on obtient :\\par $$M(t) = \\boxed{M_0\\, e^{(\\alpha-\\beta)t}}.$$\\par\\textbf{2)} Comportement à l'infini :\\begin{itemize}\\item Si $\\alpha = \\beta$ : $M(t) = M_0$ est \\textbf{constante}.\\item Si $\\alpha > \\beta$ : $\\alpha - \\beta > 0$, donc $\\displaystyle\\lim_{t\\to+\\infty} M(t) = +\\infty$ (croissance exponentielle).\\item Si $\\alpha < \\beta$ : $\\alpha - \\beta < 0$, donc $\\displaystyle\\lim_{t\\to+\\infty} M(t) = 0$ (extinction de la population).\\end{itemize}\\par\\textbf{3)} Dans le cas d'une épidémie ($\\alpha > \\beta$), $M(t) \\to +\\infty$ finit par dépasser la taille de la population humaine ! Le modèle de Malthus n'est réaliste qu'au tout début d'une épidémie."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Le modèle logistique de Verhulst et application au SARS-CoV-2",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour corriger cette limite, Verhulst introduit une constante de saturation $K > 0$ (capacité maximale) et un taux de croissance $r > 0$. La fonction $V(t)$ (avec $0 < V(0) < K$) vérifie l'équation différentielle :\\par $$V'(t) = \\frac{r}{K}\\bigl(K - V(t)\\bigr)\\,V(t).$$\\begin{enumerate}\\item Quelles sont les deux fonctions constantes solutions de cette équation ?\\item Pour $0 < V < K$, vérifier la décomposition en éléments simples :\\par $$\\frac{1}{V(K - V)} = \\frac{1}{K}\\left(\\frac{1}{V} + \\frac{1}{K - V}\\right).$$\\item En divisant l'équation différentielle par $V(t)(K - V(t))$, montrer que pour tout $t \\ge 0$ :\\par $$\\frac{V'(t)}{V(t)} + \\frac{V'(t)}{K - V(t)} = r.$$\\item En primitivant les deux membres (penser à $\\ln(V)$ et $-\\ln(K - V)$), puis en utilisant la condition initiale $V(0)$, démontrer que :\\par $$V(t) = \\frac{K}{1 + \\left(\\dfrac{K}{V(0)} - 1\\right)e^{-rt}}.$$\\item Calculer $\\displaystyle\\lim_{t\\to+\\infty} V(t)$ et vérifier que la fonction $V$ est strictement croissante (courbe en « S » ou sigmoïde).\\item \\textbf{Application réelle (SARS-CoV-2 en France) :} on relève le nombre cumulé de cas confirmés (en milliers) à trois dates espacées de $10$ mois :\\begin{itemize}\\item $t = 0$ (septembre 2020) : $V(0) = 470$ ;\\item $t = 10$ (juillet 2021) : $V(10) = 5\\,814$ ;\\item $t = 20$ (mai 2022) : $V(20) = 28\\,540$.\\end{itemize}\\begin{enumerate}\\item En posant $u = e^{-10r}$, exprimer $\\dfrac{K}{V(10)} - 1$ et $\\dfrac{K}{V(20)} - 1$ en fonction de $\\dfrac{K}{V(0)} - 1$ et $u$, puis en déduire la valeur numérique de $K$ et celle de $r$.\\item Calculer la prévision du modèle pour septembre 2022 ($t = 24$) et comparer au chiffre réel observé ($33\\,998$ milliers de cas).\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Primitivation de V'/(K - V)",
+          "content": "Attention au signe moins : la dérivée de $\\ln(K - V(t))$ est $\\dfrac{-V'(t)}{K - V(t)}$, donc une primitive de $\\dfrac{V'(t)}{V(t)} + \\dfrac{V'(t)}{K - V(t)}$ est $\\ln(V(t)) - \\ln(K - V(t)) = \\ln\\!\\left(\\dfrac{V(t)}{K - V(t)}\\right)$."
+        },
+        {
+          "type": "hint",
+          "title": "Trouver K à partir de V(0), V(10), V(20)",
+          "content": "Notons $A = \\dfrac{K}{V(0)} - 1$. Alors $\\dfrac{K}{V(10)} - 1 = A u$ et $\\dfrac{K}{V(20)} - 1 = A u^2$, d'où la relation $\\left(\\dfrac{K}{V(10)} - 1\\right)^2 = \\left(\\dfrac{K}{V(0)} - 1\\right)\\left(\\dfrac{K}{V(20)} - 1\\right)$, qui est une équation du \\textbf{premier degré} en $K$ (les termes en $K^2$ se simplifient après division par $K$ !)."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Modèle de Verhulst",
+          "content": "\\textbf{1)} Si $V(t) = c$ est constante, $V'(t) = 0 \\iff c(K - c) = 0 \\iff c = 0$ ou $c = K$.\\par\\textbf{2)} $\\dfrac{1}{K}\\left(\\dfrac{1}{V} + \\dfrac{1}{K-V}\\right) = \\dfrac{1}{K}\\cdot\\dfrac{(K-V) + V}{V(K-V)} = \\dfrac{1}{V(K-V)}$.\\par\\textbf{3)} En divisant $V' = \\dfrac{r}{K} V(K-V)$ par $V(K-V) > 0$, on obtient $\\dfrac{V'}{V(K-V)} = \\dfrac{r}{K}$, puis d'après la question 2 :\\par $$\\frac{V'(t)}{V(t)} + \\frac{V'(t)}{K - V(t)} = r.$$\\par\\textbf{4)} Une primitive du membre de gauche est $\\ln\\!\\left(\\dfrac{V(t)}{K-V(t)}\\right)$, et celle de $r$ est $rt + C$. Ainsi :\\par $$\\frac{V(t)}{K - V(t)} = e^C e^{rt}.$$\\par En $t = 0$, $e^C = \\dfrac{V(0)}{K - V(0)}$, donc en inversant :\\par $$\\frac{K - V(t)}{V(t)} = \\frac{K}{V(t)} - 1 = \\left(\\frac{K}{V(0)} - 1\\right)e^{-rt} \\implies V(t) = \\boxed{\\frac{K}{1 + \\left(\\frac{K}{V(0)} - 1\\right)e^{-rt}}}.$$\\par\\textbf{5)} Comme $r > 0$, $\\displaystyle\\lim_{t\\to+\\infty} e^{-rt} = 0$, donc $\\displaystyle\\lim_{t\\to+\\infty} V(t) =$ \\blank{$K$}. De plus, comme $0 < V(t) < K$, on a $V'(t) = \\dfrac{r}{K}V(t)(K - V(t)) > 0$, donc $V$ est strictement croissante.\\par\\textbf{6. a)} Avec $A = \\dfrac{K}{V_0}-1$ et $u = e^{-10r}$, on a $\\dfrac{K}{V_{10}}-1 = Au$ et $\\dfrac{K}{V_{20}}-1 = Au^2$, d'où :\\par $$\\left(\\frac{K}{V_{10}} - 1\\right)^2 = \\left(\\frac{K}{V_0} - 1\\right)\\left(\\frac{K}{V_{20}} - 1\\right) \\implies K = \\frac{V_{10}\\bigl(V_0 V_{10} - 2 V_0 V_{20} + V_{10} V_{20}\\bigr)}{V_{10}^2 - V_0 V_{20}}.$$\\par L'application numérique avec $V_0 = 470$, $V_{10} = 5\\,814$, $V_{20} = 28\\,540$ donne :\\par $$K \\approx \\boxed{40\\,445{,}6\\text{ milliers}} \\quad (\\approx 40{,}4\\text{ millions de cas}).$$\\par Puis $u = e^{-10r} = \\dfrac{K/V_{10} - 1}{K/V_0 - 1} \\approx \\dfrac{5{,}9566}{85{,}0545} \\approx 0{,}07003$, donc :\\par $$r = -\\frac{\\ln(u)}{10} \\approx \\boxed{0{,}2659\\text{ mois}^{-1}}.$$\\par\\textbf{6. b)} Pour $t = 24$ (septembre 2022) :\\par $$V(24) = \\frac{40\\,445{,}63}{1 + 85{,}0545\\, e^{-0{,}2659 \\times 24}} \\approx \\boxed{35\\,354\\text{ milliers}}.$$\\par Prévision : \\blank{$35\\,354$ milliers} (soit environ $35{,}4\\text{ millions}$), très proche des $34{,}0\\text{ millions}$ réellement enregistrés (écart d'environ $4\\,\\%$) !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "En 1798, l'économiste britannique \\textbf{Thomas Malthus} alerte sur le décalage entre une croissance démographique exponentielle et des ressources agricoles linéaires. En 1838, le mathématicien belge \\textbf{Pierre-François Verhulst} introduit l'équation logistique qui porte son nom, redécouverte et popularisée au $\\mathrm{XX}^{\\mathrm{e}}$ siècle en biologie et en épidémiologie."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Les épidémiologistes utilisent aujourd'hui des modèles à compartiments plus fins comme le modèle \\textbf{SIR} (\\textit{Susceptible, Infectious, Recovered}), qui couple trois équations différentielles et fait apparaître le célèbre nombre de reproduction de base $R_0$, seuil déclencheur d'une épidémie."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Décomposer une fraction rationnelle en éléments simples.\\item Analyser les variations et la limite d'une fonction issue d'un modèle différentiel.\\item Ajuster les paramètres d'un modèle mathématique sur des données expérimentales réelles.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[package]
+name = "wasm_abi"
+version = "1.0.0"
+edition.workspace = true
+description = "ABI C WebAssembly partagée et sécurisée (thread_local RefCell) pour les moteurs mathPlus."
+
+[lib]
+crate-type = ["rlib"]

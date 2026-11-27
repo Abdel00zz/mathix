@@ -11,37 +11,37 @@
                     },
                     {
                         "id":  "1ere-annee-college",
-                        "title":  "1ère année collégiale",
+                        "title":  "1re année collégiale",
                         "path":  "data/classes/1ere-annee-college.json"
                     },
                     {
                         "id":  "2eme-annee-college",
-                        "title":  "2ème année collégiale",
+                        "title":  "2e année collégiale",
                         "path":  "data/classes/2eme-annee-college.json"
                     },
                     {
                         "id":  "3eme-annee-college",
-                        "title":  "3ème année collégiale",
+                        "title":  "3e année collégiale",
                         "path":  "data/classes/3eme-annee-college.json"
                     },
                     {
                         "id":  "1ere-bac-sc-ex",
-                        "title":  "1ère Bac Sciences Expérimentales",
+                        "title":  "1re Bac Sciences Expérimentales",
                         "path":  "data/classes/1ere-bac-sc-ex.json"
                     },
                     {
                         "id":  "1ere-bac-sc-math",
-                        "title":  "1ère Bac Sciences Mathématiques",
+                        "title":  "1re Bac Sciences Mathématiques",
                         "path":  "data/classes/1ere-bac-sc-math.json"
                     },
                     {
                         "id":  "2eme-bac-sc-ex",
-                        "title":  "2ème Bac Sciences Expérimentales",
+                        "title":  "2e Bac Sciences Expérimentales",
                         "path":  "data/classes/2eme-bac-sc-ex.json"
                     },
                     {
                         "id":  "2eme-bac-sc-math",
-                        "title":  "2ème Bac Sciences Mathématiques",
+                        "title":  "2e Bac Sciences Mathématiques",
                         "path":  "data/classes/2eme-bac-sc-math.json"
                     }
                 ],

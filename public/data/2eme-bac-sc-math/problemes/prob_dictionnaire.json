@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Rechercher dans un dictionnaire",
+    "subtitle": "Problème 1.16 — Algorithmique, récurrence et complexité",
+    "context": "Suites, récurrence et algorithmique"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Rechercher dans un dictionnaire",
+          "content": "Pour trouver un mot dans un dictionnaire classé par ordre alphabétique contenant $n$ mots, personne ne lit les mots un par un depuis la page $1$ ! On ouvre le dictionnaire au milieu, on compare le mot observé au mot cherché, puis on ne garde que la moitié pertinente, et on recommence : c'est la \\textbf{recherche dichotomique}.\\par À quel point la recherche dichotomique est-elle plus rapide que la \\textbf{recherche séquentielle} ? Pour les comparer objectivement, nous calculons pour chaque algorithme sa \\textbf{complexité dans le pire cas} et sa \\textbf{complexité en moyenne} (nombre moyen d'étapes lorsque le mot cherché est choisi uniformément au hasard parmi les $n$ mots)."
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (logarithme en base 2 et notation O)",
+          "content": "\\begin{itemize}\\item \\textbf{Logarithme en base $2$ :} pour tout entier $p \\ge 1$ tel que $N = 2^p$, on note $\\log_2(N) = p$. Plus généralement, pour $x > 0$, $\\log_2(x) = \\dfrac{\\ln x}{\\ln 2}$.\\item \\textbf{Ordre de grandeur $\\mathcal{O}(f(n))$ :} on dit qu'une complexité $C(n)$ est en $\\mathcal{O}(f(n))$ lorsque son comportement pour de grandes valeurs de $n$ est dominé par un multiple constant de $f(n)$ (par exemple $\\dfrac{n+1}{2} = \\mathcal{O}(n)$ et $\\log_2(n+1) = \\mathcal{O}(\\ln n)$).\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Recherche séquentielle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On parcourt les $n$ mots du dictionnaire dans l'ordre, du mot $n^\\circ 1$ au mot $n^\\circ n$, jusqu'à trouver le mot cherché.\\begin{enumerate}\\item Combien d'étapes faut-il pour trouver le $i$-ième mot du dictionnaire ($1 \\le i \\le n$) ?\\item Quel est le nombre d'étapes dans le \\textbf{pire cas} ? En déduire la complexité dans le pire cas.\\item En supposant que chacun des $n$ mots a la même probabilité $\\dfrac{1}{n}$ d'être cherché, calculer le \\textbf{nombre moyen d'étapes} $M_{\\text{s\\'eq}}(n)$. Quel est son ordre de grandeur ?\\item Application : pour un dictionnaire de $n = 65\\,535$ mots, combien d'étapes faut-il en moyenne et dans le pire cas ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Moyenne des entiers de 1 à n",
+          "content": "La moyenne vaut $\\dfrac{1}{n}\\displaystyle\\sum_{i=1}^{n} i = \\dfrac{1}{n}\\cdot\\dfrac{n(n+1)}{2}$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Recherche séquentielle",
+          "content": "\\textbf{1)} Pour atteindre le $i$-ième mot, il faut exactement $i$ comparaisons (étapes).\\par\\textbf{2)} Le pire cas est le dernier mot ($i = n$) : il faut $n$ étapes, soit une complexité en $\\mathcal{O}(n)$.\\par\\textbf{3)} Le nombre moyen d'étapes est :\\par $$M_{\\text{s\\'eq}}(n) = \\frac{1}{n}\\sum_{i=1}^{n} i = \\frac{1}{n}\\cdot\\frac{n(n+1)}{2} = \\boxed{\\frac{n+1}{2}} = \\mathcal{O}(n).$$\\par\\textbf{4)} Pour $n = 65\\,535$ mots : pire cas $= 65\\,535$ étapes, moyenne $= \\dfrac{65\\,536}{2} =$ \\blank{$32\\,768$} étapes !"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Recherche dichotomique",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On suppose que le nombre total de mots est de la forme $n = 2^p - 1$, où $p \\in \\mathbb{N}^*$ (ainsi $p = \\log_2(n+1)$).\\begin{enumerate}\\item Montrer que pour tout $p \\ge 1$, $2^{p+1} - 1 = 1 + 2(2^p - 1)$. Pourquoi le fait que $n = 2^p - 1$ soit impair garantit-il qu'il existe toujours un unique \\textbf{mot central}, laissant deux sous-dictionnaires strictement identiques de taille $2^{p-1} - 1$ ?\\item \\textbf{Complexité dans le pire cas.}\\begin{enumerate}\\item Combien de mots restent au maximum dans la zone de recherche après $k$ étapes infructueuses ($0 \\le k \\le p - 1$) ?\\item En déduire le nombre maximal d'étapes nécessaires pour trouver n'importe quel mot en fonction de $p$, puis de $n$. Quelle est la complexité dans le pire cas ?\\end{enumerate}\\item \\textbf{Complexité en moyenne.}\\begin{enumerate}\\item Combien de mots sont trouvés exactement à la $1^{\\text{re}}$ étape ? À la $2^{\\text{e}}$ étape ? Plus généralement, montrer qu'exactement $2^{k-1}$ mots sont trouvés à la $k$-ième étape ($1 \\le k \\le p$).\\item Démontrer par récurrence que pour tout entier $p \\ge 1$ :\\par $$\\sum_{k=1}^{p} k\\, 2^{k-1} = (p - 1)\\, 2^p + 1.$$\\item En déduire le nombre moyen d'étapes $M_{\\text{dich}}(n)$ en fonction de $n$ et $\\log_2(n+1)$, puis son ordre de grandeur.\\end{enumerate}\\item \\textbf{Comparaison :} pour $n = 65\\,535 = 2^{16} - 1$ mots, calculer le pire cas et la moyenne de la recherche dichotomique. Comparer avec la Partie 1 !\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Récurrence sur la somme des k·2^{k-1}",
+          "content": "Hérédité : $\\displaystyle\\sum_{k=1}^{p+1} k\\,2^{k-1} = \\bigl((p-1)2^p + 1\\bigr) + (p+1)2^p = 2p\\cdot 2^p + 1 = p\\cdot 2^{p+1} + 1$. Ensuite, remplacez $2^p = n + 1$ et $p = \\log_2(n+1)$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Recherche dichotomique",
+          "content": "\\textbf{1)} $1 + 2(2^p - 1) = 1 + 2^{p+1} - 2 = 2^{p+1} - 1$. Comme $2^p$ est pair (pour $p \\ge 1$), $n = 2^p - 1$ est \\textbf{impair} : il existe un unique mot central (à la position $2^{p-1}$), qui partage les $n - 1 = 2(2^{p-1} - 1)$ mots restants en deux moitiés égales de taille $2^{p-1} - 1$.\\par\\textbf{2. a)} Par récurrence immédiate, après $k$ étapes infructueuses, il reste $2^{p-k} - 1$ mots (avant la $k$-ième étape, il y avait $2^{p-k+1} - 1$ mots).\\par\\textbf{2. b)} Après $p - 1$ étapes infructueuses, il reste $2^1 - 1 = 1$ seul mot, qui est trouvé à la $p$-ième étape ! Le pire cas vaut donc :\\par $$p = \\boxed{\\log_2(n + 1)} = \\mathcal{O}(\\ln n).$$\\par Pire cas dichotomique : \\blank{$\\log_2(n+1)$}.\\par\\textbf{3. a)} À l'étape $1$, seul le mot central ($1 = 2^0$) est trouvé. À l'étape $2$, les milieux des $2$ moitiés ($2 = 2^1$ mots) sont trouvés. Par récurrence, à l'étape $k$, l'espace est découpé en $2^{k-1}$ sous-intervalles non vides, dont chacun possède un unique milieu : exactement $2^{k-1}$ mots sont trouvés en $k$ étapes (vérification : $\\sum_{k=1}^{p} 2^{k-1} = 2^p - 1 = n$).\\par\\textbf{3. b)} \\textit{Initialisation ($p=1$) :} $1\\cdot 2^0 = 1$ et $(1-1)2^1 + 1 = 1$. \\textit{Hérédité :} si la formule vaut au rang $p$, alors :\\par $$\\sum_{k=1}^{p+1} k\\,2^{k-1} = (p-1)2^p + 1 + (p+1)2^p = 2p\\cdot 2^p + 1 = p\\,2^{p+1} + 1.$$ La formule est démontrée pour tout $p \\ge 1$.\\par\\textbf{3. c)} Comme $2^p = n + 1$ et $p = \\log_2(n+1)$, la somme totale des étapes vaut $(p-1)(n+1) + 1 = (n+1)\\log_2(n+1) - n$, donc :\\par $$M_{\\text{dich}}(n) = \\frac{1}{n}\\sum_{k=1}^{p} k\\,2^{k-1} = \\boxed{\\frac{n+1}{n}\\log_2(n+1) - 1} = \\mathcal{O}(\\ln n).$$\\par\\textit{(Remarque : pour $n$ grand, $M_{\\text{dich}}(n) \\approx \\log_2(n+1) - 1$, soit à peine $1$ étape de moins que le pire cas !)}\\par\\textbf{4)} Pour $n = 65\\,535 = 2^{16} - 1$ : pire cas $= \\mathbf{16}$ étapes, moyenne $= \\dfrac{65\\,536}{65\\,535}\\times 16 - 1 \\approx$ \\blank{$15$} étapes — contre $32\\,768$ étapes en moyenne pour la recherche séquentielle (plus de $2\\,000$ fois plus rapide !)."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "La recherche dichotomique (\\textit{binary search}) est l'un des algorithmes fondamentaux de l'informatique, décrit dès 1946 par John Mauchly. Pourtant, l'informaticien Donald Knuth note que la première version entièrement exempte de bug d'arrondi ne fut publiée qu'en 1962 !"
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Si les données sont réparties de manière uniforme (comme des noms dans un annuaire où l'on ouvre directement près de la lettre « S » pour « Samir »), la \\textbf{recherche par interpolation} atteint une complexité moyenne encore plus vertigineuse : $\\mathcal{O}\\bigl(\\ln(\\ln n)\\bigr)$ !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Utiliser le \\textbf{raisonnement par récurrence} pour évaluer une somme pondérée $\\sum k 2^{k-1}$.\\item Analyser et comparer la \\textbf{complexité} (linéaire vs logarithmique) de deux algorithmes.\\item Relier structure de données (puissances de $2$) et efficacité de calcul.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

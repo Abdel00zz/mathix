@@ -1,0 +1,466 @@
+/* ============================================================================
+   tokens.css — Système chromatique perceptuel avancé (oklch / light-dark)
+   4 palettes éditoriales cohérentes (Atelier, Minéral, Manuscrit, Botanique),
+   encres sémantiques calibrées par type de résultat mathématique et courbes
+   de motion calculées.
+   ============================================================================ */
+
+@property --p {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+:root {
+  /* ── Palette 1 (défaut) : Quizlet (Indigo Cobalt #4255FF · Brume #F6F7FB · Marine #2E3856 · Or #FFCD1F) ─ */
+  /* Échelle d'élévation unifiée à 4 niveaux : L0 canvas · L1 gravé · L2 carte · L3 élevé */
+  --bg: #f6f7fb;
+  --surface-recessed: #edeff6;
+  --surface: #ffffff;
+  --paper: #ffffff;
+  --surface-elevated: #ffffff;
+  --code-bg: #eef0fa;
+  --ink: #2e3856;
+  --muted: #586380;
+  --line: #d9dde8;
+  --border: #d9dde8;
+  --accent: #4255ff;
+  --accent-soft: #ecefff;
+  --accent-border: #b8c2ff;
+  --gold: #c2850a;
+  --gold-soft: #fff6d6;
+  --gold-border: #f5d66b;
+  --on-accent: #ffffff;
+  --rule: rgba(46, 56, 86, 0.07);
+  --err: #d93848;
+  --ok: #138a63;
+  --ring: rgba(66, 85, 255, 0.24);
+  --scrim: rgba(10, 9, 45, 0.44);
+  --bg-glow-1: rgba(66, 85, 255, 0.04);
+  --bg-glow-2: rgba(255, 205, 31, 0.035);
+  --bg-glow-3: rgba(60, 207, 207, 0.035);
+
+  /* ── Encres sémantiques adaptatives — Harmonie Quizlet Indigo · Menthe · Corail · Or ── */
+  --g: light-dark(#138a63, #3cd6a0);
+  --bl: light-dark(#2b59c3, #80a8ff);
+  --v: light-dark(#5e3bee, #b4a2ff);
+  --am: light-dark(#c2850a, #ffcd1f);
+  --r: light-dark(#d93848, #ff725b);
+
+  /* ── Courbes & durées de motion conscientes (Fluide × Précis) ── */
+  --ease-notion: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur-med: 220ms;
+  --notion-wash: color-mix(in srgb, var(--accent) 6.5%, transparent);
+
+  /* ── Architecture optique des boîtes, plaques & cartes (ombres marine douces) ── */
+  --box-bevel-top: light-dark(rgba(255, 255, 255, 0.96), rgba(246, 247, 251, 0.08));
+  --box-bevel-bottom: light-dark(rgba(10, 9, 45, 0.1), rgba(0, 0, 0, 0.65));
+  --box-engraved-top: light-dark(rgba(10, 9, 45, 0.09), rgba(0, 0, 0, 0.6));
+  --box-engraved-bottom: light-dark(rgba(255, 255, 255, 0.92), rgba(246, 247, 251, 0.06));
+  --engrave-shadow:
+    inset 0 1px 2px light-dark(rgba(10, 9, 45, 0.045), rgba(0, 0, 0, 0.38)),
+    0 1px 0 light-dark(rgba(255, 255, 255, 0.9), rgba(246, 247, 251, 0.04));
+  --sculpt-sheet-shadow:
+    inset 0 1px 0 light-dark(rgba(255, 255, 255, 0.96), rgba(246, 247, 251, 0.07)),
+    0 1px 2px light-dark(rgba(10, 9, 45, 0.05), rgba(0, 0, 0, 0.48)),
+    0 8px 24px -8px light-dark(rgba(46, 56, 86, 0.1), rgba(0, 0, 0, 0.62)),
+    0 20px 44px -20px light-dark(rgba(46, 56, 86, 0.08), rgba(0, 0, 0, 0.72));
+  --sculpt-engraved-shadow:
+    inset 0 1px 2.5px light-dark(rgba(10, 9, 45, 0.04), rgba(0, 0, 0, 0.38)),
+    0 1px 0 light-dark(rgba(255, 255, 255, 0.9), rgba(246, 247, 251, 0.045));
+  --sculpt-plaque-shadow:
+    inset 0 1px 0 light-dark(rgba(255, 255, 255, 0.96), rgba(246, 247, 251, 0.07)),
+    0 1px 2px light-dark(rgba(10, 9, 45, 0.05), rgba(0, 0, 0, 0.46)),
+    0 6px 18px -8px light-dark(rgba(46, 56, 86, 0.1), rgba(0, 0, 0, 0.56));
+  --sculpt-plaque-hover:
+    inset 0 1px 0 light-dark(rgba(255, 255, 255, 1), rgba(246, 247, 251, 0.11)),
+    0 2px 6px light-dark(rgba(46, 56, 86, 0.08), rgba(0, 0, 0, 0.52)),
+    0 12px 26px -10px light-dark(rgba(66, 85, 255, 0.16), rgba(0, 0, 0, 0.68));
+  --sculpt-frame-shadow:
+    inset 0 1px 0 light-dark(rgba(255, 255, 255, 0.96), rgba(246, 247, 251, 0.07)),
+    0 1px 2px light-dark(rgba(10, 9, 45, 0.045), rgba(0, 0, 0, 0.44)),
+    0 8px 24px -12px light-dark(rgba(46, 56, 86, 0.1), rgba(0, 0, 0, 0.62));
+  --notion-modal-shadow:
+    0 0 0 1px light-dark(rgba(46, 56, 86, 0.08), rgba(246, 247, 251, 0.08)),
+    0 14px 36px -6px light-dark(rgba(46, 56, 86, 0.14), rgba(0, 0, 0, 0.58)),
+    0 28px 64px -14px light-dark(rgba(10, 9, 45, 0.18), rgba(0, 0, 0, 0.72));
+
+  /* ── Typographie Éditoriale Papier (Young Serif · Gloock · DM Sans · DM Mono) ── */
+  --display: "Young Serif", "Gloock", Georgia, serif;
+  --serif: "Young Serif", Georgia, serif;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-inter: "DM Sans", system-ui, -apple-system, sans-serif;
+  --qst-font: "Young Serif", Georgia, serif;
+  --mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --arabic: "IBM Plex Sans Arabic", "Noto Sans Arabic", Tahoma, sans-serif;
+
+  /* ── Échelle dynamique & intelligente (taille d'écran + résolution DPR) ── */
+  --ui-root-fs: clamp(15px, 14.35px + 0.16vw, 17.5px);
+  --home-max: clamp(680px, 64vw, 940px);
+  --lesson-max: clamp(740px, 68vw, 1080px);
+  --exo-max: clamp(760px, 68vw, 1080px);
+  --wide-max: clamp(980px, 78vw, 1340px);
+  --space-y: 1;
+
+  /* ── Layout & couches ─────────────────────────────────────────────────── */
+  --sbw: 56px;
+  --z-sidebar: 5;
+  --z-modal: 500;
+  --z-toast: 900;
+
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Grands écrans QHD / 2K / Ultrawide (>= 1920px) : confort proportionnel sans lignes trop longues */
+@media (min-width: 1920px) {
+  :root {
+    --ui-root-fs: clamp(16.75px, 14.2px + 0.15vw, 19.5px);
+    --lesson-max: clamp(980px, 58vw, 1180px);
+    --exo-max: clamp(980px, 58vw, 1180px);
+    --home-max: clamp(860px, 52vw, 1060px);
+  }
+}
+
+/* Écrans 4K / très haute définition (>= 2560px) */
+@media (min-width: 2560px) {
+  :root {
+    --ui-root-fs: clamp(18px, 14.5px + 0.16vw, 21px);
+    --lesson-max: clamp(1120px, 48vw, 1280px);
+    --exo-max: clamp(1120px, 48vw, 1280px);
+    --home-max: clamp(960px, 44vw, 1140px);
+  }
+}
+
+/* Laptops compacts / fenêtres basses en hauteur : respiration verticale intelligente */
+@media (max-height: 760px) and (min-width: 900px) {
+  :root {
+    --space-y: 0.86;
+  }
+}
+
+/* Smartphones compacts (<= 480px) */
+@media (max-width: 480px) {
+  :root {
+    --ui-root-fs: clamp(14.5px, 3.85vw, 15.5px);
+  }
+}
+
+/* Adaptation optique selon la résolution matérielle (DPR 1x vs HiDPI / Retina >= 2dppx) */
+@media (min-resolution: 2dppx) {
+  :root {
+    --rule: light-dark(oklch(35% 0.026 152 / 0.07), oklch(78% 0.018 145 / 0.06));
+  }
+}
+@media (max-resolution: 1.25dppx) {
+  :root {
+    --rule: light-dark(oklch(35% 0.026 152 / 0.098), oklch(78% 0.018 145 / 0.088));
+  }
+}
+
+/* ── Palette 2 : Encre & Craie (Minéral / Sarcelle profond) ─────────────── */
+:root[data-palette="mineral"] {
+  --bg: #eef4f7;
+  --surface-recessed: #e5edf2;
+  --surface: #fbfdfe;
+  --paper: #fbfdfe;
+  --surface-elevated: #ffffff;
+  --code-bg: #e8f0f4;
+  --ink: #16222b;
+  --muted: #4c5d6a;
+  --line: #cfdbe3;
+  --border: #cfdbe3;
+  --accent: #0f5257;
+  --accent-soft: #dcefef;
+  --accent-border: #9ed0d3;
+  --gold: #a45b0e;
+  --gold-soft: #faecd8;
+  --gold-border: #e2be8d;
+  --on-accent: #f8fcfc;
+  --rule: rgba(22, 34, 43, 0.075);
+  --err: #b62b3a;
+  --ok: #1d6a5a;
+  --ring: rgba(15, 82, 87, 0.22);
+  --scrim: rgba(14, 24, 32, 0.42);
+  --g: light-dark(#1d6a5a, #72d3be);
+  --bl: light-dark(#175b8a, #8ac5f2);
+  --v: light-dark(#5246a8, #b5aeff);
+  --am: light-dark(#a45b0e, #f2b963);
+  --r: light-dark(#b62b3a, #ff8e9b);
+}
+
+/* ── Palette 3 : Sépia Manuscrit (Parchemin chaud & Bordeaux savant) ────── */
+:root[data-palette="manuscrit"] {
+  --bg: #efe8dc;
+  --surface-recessed: #e7dfd0;
+  --surface: #fcf9f3;
+  --paper: #fcf9f3;
+  --surface-elevated: #fffefb;
+  --code-bg: #ece3d4;
+  --ink: #241d19;
+  --muted: #5f534a;
+  --line: #d9cebc;
+  --border: #d9cebc;
+  --accent: #6e203c;
+  --accent-soft: #f4e1e7;
+  --accent-border: #dbafc0;
+  --gold: #9a5d10;
+  --gold-soft: #f7ead2;
+  --gold-border: #e1c08b;
+  --on-accent: #fdfaf5;
+  --rule: rgba(36, 29, 25, 0.078);
+  --err: #ac2828;
+  --ok: #226347;
+  --ring: rgba(110, 32, 60, 0.22);
+  --scrim: rgba(28, 20, 16, 0.44);
+  --g: light-dark(#226347, #79cfa9);
+  --bl: light-dark(#2d4f85, #9bb8eb);
+  --v: light-dark(#6c3c7e, #cba0dc);
+  --am: light-dark(#9a5d10, #ebb962);
+  --r: light-dark(#ac2828, #f48b8b);
+}
+
+/* ── Palette 4 : Atelier Papier & Sauge (Sauge céladon & Terre cuite) ───── */
+:root[data-palette="atelier"] {
+  --bg: oklch(88.5% 0.023 147);
+  --surface-recessed: color-mix(in oklch, var(--bg) 52%, var(--paper));
+  --surface: oklch(96.6% 0.018 87);
+  --paper: oklch(96.6% 0.018 87);
+  --surface-elevated: oklch(98.5% 0.011 87);
+  --code-bg: #f1ece1;
+  --ink: oklch(29% 0.038 160);
+  --muted: oklch(43% 0.026 152);
+  --line: oklch(79.5% 0.02 135);
+  --border: oklch(79.5% 0.02 135);
+  --accent: oklch(46% 0.147 32);
+  --accent-soft: color-mix(in oklch, var(--accent) 10%, var(--paper));
+  --accent-border: color-mix(in oklch, var(--accent) 34%, var(--line));
+  --gold: #8c5a36;
+  --gold-soft: #f5ebd9;
+  --gold-border: #dca679;
+  --on-accent: #f9f6ef;
+  --rule: oklch(35% 0.026 152 / 0.085);
+  --err: #b64524;
+  --ok: #5f7a4c;
+  --ring: oklch(46% 0.147 32 / 0.24);
+  --scrim: oklch(19% 0.02 152 / 0.42);
+  --g: light-dark(#5f7a4c, #9ec086);
+  --bl: light-dark(#2c5364, #8cb8d4);
+  --v: light-dark(#5c4b68, #c5b0d6);
+  --am: light-dark(#8c5a36, #dca679);
+  --r: light-dark(#b64524, #ef8b73);
+}
+
+/* ── Mode sombre harmonisé (Quizlet Midnight Navy #0A092D · Indigo #7583FF · Or #FFCD1F) ── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a092d;
+    --surface-recessed: #131438;
+    --surface: #1b1e47;
+    --paper: #1b1e47;
+    --surface-elevated: #2e3856;
+    --code-bg: #1f2452;
+    --ink: #f6f7fb;
+    --muted: #939bb4;
+    --line: #2e3856;
+    --border: #2e3856;
+    --accent: #7583ff;
+    --accent-soft: rgba(117, 131, 255, 0.16);
+    --accent-border: rgba(117, 131, 255, 0.38);
+    --gold: #ffcd1f;
+    --gold-soft: rgba(255, 205, 31, 0.14);
+    --gold-border: rgba(255, 205, 31, 0.34);
+    --on-accent: #0a092d;
+    --rule: rgba(246, 247, 251, 0.065);
+    --err: #ff725b;
+    --ok: #3cd6a0;
+    --ring: rgba(117, 131, 255, 0.32);
+    --scrim: rgba(5, 4, 24, 0.72);
+    --bg-glow-1: rgba(66, 85, 255, 0.12);
+    --bg-glow-2: rgba(255, 205, 31, 0.04);
+    --bg-glow-3: rgba(60, 207, 207, 0.04);
+    color-scheme: dark;
+  }
+  :root:not([data-theme="light"])[data-palette="mineral"] {
+    --bg: #0c1318;
+    --surface-recessed: #111b22;
+    --surface: #16232b;
+    --paper: #16232b;
+    --surface-elevated: #1d2d37;
+    --code-bg: #1b2a34;
+    --ink: #eef4f7;
+    --muted: #9fb1be;
+    --line: #283a46;
+    --border: #283a46;
+    --accent: #7cd6d0;
+    --accent-soft: rgba(124, 214, 208, 0.16);
+    --accent-border: rgba(124, 214, 208, 0.34);
+    --gold: #f2b963;
+    --gold-soft: rgba(242, 185, 99, 0.15);
+    --gold-border: rgba(242, 185, 99, 0.34);
+    --on-accent: #0b161a;
+    --err: #ff8e9b;
+    --ok: #72d3be;
+    --ring: rgba(124, 214, 208, 0.28);
+    --rule: rgba(190, 218, 232, 0.075);
+    --scrim: rgba(6, 11, 15, 0.66);
+  }
+  :root:not([data-theme="light"])[data-palette="manuscrit"] {
+    --bg: #15110f;
+    --surface-recessed: #1c1714;
+    --surface: #231d19;
+    --paper: #231d19;
+    --surface-elevated: #2c2520;
+    --code-bg: #2a231e;
+    --ink: #f6efe6;
+    --muted: #b8aa9d;
+    --line: #3b312b;
+    --border: #3b312b;
+    --accent: #e6a0b7;
+    --accent-soft: rgba(230, 160, 183, 0.16);
+    --accent-border: rgba(230, 160, 183, 0.34);
+    --gold: #ebb962;
+    --gold-soft: rgba(235, 185, 98, 0.15);
+    --gold-border: rgba(235, 185, 98, 0.34);
+    --on-accent: #1b1014;
+    --err: #f48b8b;
+    --ok: #79cfa9;
+    --ring: rgba(230, 160, 183, 0.28);
+    --rule: rgba(235, 222, 205, 0.072);
+    --scrim: rgba(12, 9, 7, 0.66);
+  }
+  :root:not([data-theme="light"])[data-palette="atelier"] {
+    --bg: oklch(17.2% 0.017 154);
+    --surface-recessed: oklch(20.4% 0.018 153);
+    --surface: oklch(23.8% 0.02 152);
+    --paper: oklch(23.8% 0.02 152);
+    --surface-elevated: oklch(27.8% 0.021 150);
+    --code-bg: oklch(27.2% 0.02 150);
+    --ink: oklch(93.8% 0.015 88);
+    --muted: oklch(74% 0.018 145);
+    --line: oklch(34.5% 0.022 150);
+    --border: oklch(34.5% 0.022 150);
+    --accent: oklch(67% 0.148 35);
+    --accent-soft: oklch(67% 0.148 35 / 0.16);
+    --accent-border: oklch(67% 0.148 35 / 0.36);
+    --gold: #dca679;
+    --gold-soft: rgba(220, 166, 121, 0.16);
+    --gold-border: rgba(220, 166, 121, 0.34);
+    --on-accent: oklch(17.5% 0.018 154);
+    --rule: oklch(78% 0.018 145 / 0.072);
+    --err: #ef8b73;
+    --ok: #9ec086;
+    --ring: oklch(67% 0.148 35 / 0.28);
+    --scrim: oklch(8% 0.014 154 / 0.64);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0a092d;
+  --surface-recessed: #131438;
+  --surface: #1b1e47;
+  --paper: #1b1e47;
+  --surface-elevated: #2e3856;
+  --code-bg: #1f2452;
+  --ink: #f6f7fb;
+  --muted: #939bb4;
+  --line: #2e3856;
+  --border: #2e3856;
+  --accent: #7583ff;
+  --accent-soft: rgba(117, 131, 255, 0.16);
+  --accent-border: rgba(117, 131, 255, 0.38);
+  --gold: #ffcd1f;
+  --gold-soft: rgba(255, 205, 31, 0.14);
+  --gold-border: rgba(255, 205, 31, 0.34);
+  --on-accent: #0a092d;
+  --rule: rgba(246, 247, 251, 0.065);
+  --err: #ff725b;
+  --ok: #3cd6a0;
+  --ring: rgba(117, 131, 255, 0.32);
+  --scrim: rgba(5, 4, 24, 0.72);
+  --bg-glow-1: rgba(66, 85, 255, 0.12);
+  --bg-glow-2: rgba(255, 205, 31, 0.04);
+  --bg-glow-3: rgba(60, 207, 207, 0.04);
+  color-scheme: dark;
+}
+:root[data-theme="dark"][data-palette="mineral"] {
+  --bg: #0c1318;
+  --surface-recessed: #111b22;
+  --surface: #16232b;
+  --paper: #16232b;
+  --surface-elevated: #1d2d37;
+  --code-bg: #1b2a34;
+  --ink: #eef4f7;
+  --muted: #9fb1be;
+  --line: #283a46;
+  --border: #283a46;
+  --accent: #7cd6d0;
+  --accent-soft: rgba(124, 214, 208, 0.16);
+  --accent-border: rgba(124, 214, 208, 0.34);
+  --gold: #f2b963;
+  --gold-soft: rgba(242, 185, 99, 0.15);
+  --gold-border: rgba(242, 185, 99, 0.34);
+  --on-accent: #0b161a;
+  --err: #ff8e9b;
+  --ok: #72d3be;
+  --ring: rgba(124, 214, 208, 0.28);
+  --rule: rgba(190, 218, 232, 0.075);
+  --scrim: rgba(6, 11, 15, 0.66);
+}
+:root[data-theme="dark"][data-palette="manuscrit"] {
+  --bg: #15110f;
+  --surface-recessed: #1c1714;
+  --surface: #231d19;
+  --paper: #231d19;
+  --surface-elevated: #2c2520;
+  --code-bg: #2a231e;
+  --ink: #f6efe6;
+  --muted: #b8aa9d;
+  --line: #3b312b;
+  --border: #3b312b;
+  --accent: #e6a0b7;
+  --accent-soft: rgba(230, 160, 183, 0.16);
+  --accent-border: rgba(230, 160, 183, 0.34);
+  --gold: #ebb962;
+  --gold-soft: rgba(235, 185, 98, 0.15);
+  --gold-border: rgba(235, 185, 98, 0.34);
+  --on-accent: #1b1014;
+  --err: #f48b8b;
+  --ok: #79cfa9;
+  --ring: rgba(230, 160, 183, 0.28);
+  --rule: rgba(235, 222, 205, 0.072);
+  --scrim: rgba(12, 9, 7, 0.66);
+}
+:root[data-theme="dark"][data-palette="atelier"] {
+  --bg: oklch(17.2% 0.017 154);
+  --surface-recessed: oklch(20.4% 0.018 153);
+  --surface: oklch(23.8% 0.02 152);
+  --paper: oklch(23.8% 0.02 152);
+  --surface-elevated: oklch(27.8% 0.021 150);
+  --code-bg: oklch(27.2% 0.02 150);
+  --ink: oklch(93.8% 0.015 88);
+  --muted: oklch(74% 0.018 145);
+  --line: oklch(34.5% 0.022 150);
+  --border: oklch(34.5% 0.022 150);
+  --accent: oklch(67% 0.148 35);
+  --accent-soft: oklch(67% 0.148 35 / 0.16);
+  --accent-border: oklch(67% 0.148 35 / 0.36);
+  --gold: #dca679;
+  --gold-soft: rgba(220, 166, 121, 0.16);
+  --gold-border: rgba(220, 166, 121, 0.34);
+  --on-accent: oklch(17.5% 0.018 154);
+  --rule: oklch(78% 0.018 145 / 0.072);
+  --err: #ef8b73;
+  --ok: #9ec086;
+  --ring: oklch(67% 0.148 35 / 0.28);
+  --scrim: oklch(8% 0.014 154 / 0.64);
+}
+
+.t-mono { font-family: var(--mono); }
+html[lang="ar"] .ar-auto,
+html[dir="rtl"] .ar-auto,
+.ar-auto { font-family: var(--arabic); }

@@ -184,17 +184,17 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to +\\infty} (x^3 - x^2 + 1)$.}\\par C'est la forme $+\\infty - \\infty$. Factorisons par $x^3$ :\\begin{align*}x^3 - x^2 + 1 &= x^3\\left(1 - \\frac{1}{x} + \\frac{1}{x^3}\\right)\\end{align*}\\par Comme $\\displaystyle\\lim_{x \\to +\\infty} x^3 = +\\infty$ et $\\displaystyle\\lim_{x \\to +\\infty}\\left(1 - \\frac{1}{x} + \\frac{1}{x^3}\\right) = 1 > 0$ :\\par$$\\lim_{x \\to +\\infty} (x^3 - x^2 + 1) = \\blank{+\\infty}$$"
+          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to +\\infty} (x^3 - x^2 + 1)$}.}\\par C'est la forme $+\\infty - \\infty$. Factorisons par $x^3$ :\\begin{align*}x^3 - x^2 + 1 &= x^3\\left(1 - \\frac{1}{x} + \\frac{1}{x^3}\\right)\\end{align*}\\par Comme $\\displaystyle\\lim_{x \\to +\\infty} x^3 = +\\infty$ et $\\displaystyle\\lim_{x \\to +\\infty}\\left(1 - \\frac{1}{x} + \\frac{1}{x^3}\\right) = 1 > 0$ :\\par$$\\lim_{x \\to +\\infty} (x^3 - x^2 + 1) = \\blank{+\\infty}$$"
         },
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 1} \\frac{x^2 -} 1{x - 1}$.}\\par C'est la forme $\\frac{0}{0}$. Factorisons le numérateur :\\begin{align*}\\frac{x^2 - 1}{x - 1} &= \\frac{(x-1)(x+1)}{x-1} \\\\&= x + 1\\end{align*}\\par Donc $\\displaystyle\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} = 1 + 1 = \\blank{2}$."
+          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1}$}.}\\par C'est la forme $\\frac{0}{0}$. Factorisons le numérateur :\\begin{align*}\\frac{x^2 - 1}{x - 1} &= \\frac{(x-1)(x+1)}{x-1} \\\\&= x + 1\\end{align*}\\par Donc $\\displaystyle\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} = 1 + 1 = \\blank{2}$."
         },
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to +\\infty} (\\sqrt{x^2 +} x - x)$.}\\par C'est la forme $+\\infty - \\infty$. Multiplions par le conjugué :\\begin{align*}\\sqrt{x^2+x} - x &= \\frac{(x^2+x) - x^2}{\\sqrt{x^2+x} + x} \\\\&= \\frac{x}{\\sqrt{x^2+x} + x}\\end{align*}\\par Factorisons par $x$ ($x > 0$) :\\begin{align*}&= \\frac{x}{x\\left(\\sqrt{1+\\frac{1}{x}} + 1\\right)} \\\\&= \\frac{1}{\\sqrt{1+\\frac{1}{x}} + 1}\\end{align*}\\par Comme $\\frac{1}{x} \\to 0$ : $\\displaystyle\\lim_{x \\to +\\infty} (\\sqrt{x^2+x} - x) = \\frac{1}{1+1} = \\blank{\\frac{1}{2}}$."
+          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to +\\infty} (\\sqrt{x^2 + x} - x)$}.}\\par C'est la forme $+\\infty - \\infty$. Multiplions par le conjugué :\\begin{align*}\\sqrt{x^2+x} - x &= \\frac{(x^2+x) - x^2}{\\sqrt{x^2+x} + x} \\\\&= \\frac{x}{\\sqrt{x^2+x} + x}\\end{align*}\\par Factorisons par $x$ ($x > 0$) :\\begin{align*}&= \\frac{x}{x\\left(\\sqrt{1+\\frac{1}{x}} + 1\\right)} \\\\&= \\frac{1}{\\sqrt{1+\\frac{1}{x}} + 1}\\end{align*}\\par Comme $\\frac{1}{x} \\to 0$ : $\\displaystyle\\lim_{x \\to +\\infty} (\\sqrt{x^2+x} - x) = \\frac{1}{1+1} = \\blank{\\frac{1}{2}}$."
         },
         {
           "type": "warning",
@@ -229,12 +229,12 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 3} \\frac{x^2 -} 9{x - 3}$ (forme $\\frac{0}{0}$).}\\par Factorisons le numérateur :\\begin{align*}\\frac{x^2 - 9}{x - 3} &= \\frac{(x-3)(x+3)}{x-3} \\\\&= x + 3\\end{align*}\\par Donc $\\displaystyle\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3} = 3 + 3 = \\blank{6}$."
+          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3}$} (forme $\\frac{0}{0}$).}\\par Factorisons le numérateur :\\begin{align*}\\frac{x^2 - 9}{x - 3} &= \\frac{(x-3)(x+3)}{x-3} \\\\&= x + 3\\end{align*}\\par Donc $\\displaystyle\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3} = 3 + 3 = \\blank{6}$."
         },
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 2} \\frac{x^3 -} 8{x^2 - 4}$ (forme $\\frac{0}{0}$).}\\par Factorisons : $x^3 - 8 = (x-2)(x^2+2x+4)$ et $x^2 - 4 = (x-2)(x+2)$.\\begin{align*}\\frac{x^3 - 8}{x^2 - 4} &= \\frac{(x-2)(x^2+2x+4)}{(x-2)(x+2)} \\\\&= \\frac{x^2+2x+4}{x+2}\\end{align*}\\par Donc $\\displaystyle\\lim_{x \\to 2} \\frac{x^3 - 8}{x^2 - 4} = \\frac{4+4+4}{4} = \\blank{3}$."
+          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 2} \\frac{x^3 - 8}{x^2 - 4}$} (forme $\\frac{0}{0}$).}\\par Factorisons : $x^3 - 8 = (x-2)(x^2+2x+4)$ et $x^2 - 4 = (x-2)(x+2)$.\\begin{align*}\\frac{x^3 - 8}{x^2 - 4} &= \\frac{(x-2)(x^2+2x+4)}{(x-2)(x+2)} \\\\&= \\frac{x^2+2x+4}{x+2}\\end{align*}\\par Donc $\\displaystyle\\lim_{x \\to 2} \\frac{x^3 - 8}{x^2 - 4} = \\frac{4+4+4}{4} = \\blank{3}$."
         },
         {
           "type": "method",
@@ -244,7 +244,7 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 1} \\frac{\\sqrt{x} -} 1{x - 1}$ (forme $\\frac{0}{0}$).}\\par Multiplions par le conjugué :\\begin{align*}\\frac{\\sqrt{x} - 1}{x - 1} &= \\frac{\\sqrt{x} - 1}{(\\sqrt{x} - 1)(\\sqrt{x} + 1)} \\\\&= \\frac{1}{\\sqrt{x} + 1}\\end{align*}\\par Donc $\\displaystyle\\lim_{x \\to 1} \\frac{\\sqrt{x} - 1}{x - 1} = \\frac{1}{1 + 1} = \\blank{\\frac{1}{2}}$."
+          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 1} \\frac{\\sqrt{x} - 1}{x - 1}$} (forme $\\frac{0}{0}$).}\\par Multiplions par le conjugué :\\begin{align*}\\frac{\\sqrt{x} - 1}{x - 1} &= \\frac{\\sqrt{x} - 1}{(\\sqrt{x} - 1)(\\sqrt{x} + 1)} \\\\&= \\frac{1}{\\sqrt{x} + 1}\\end{align*}\\par Donc $\\displaystyle\\lim_{x \\to 1} \\frac{\\sqrt{x} - 1}{x - 1} = \\frac{1}{1 + 1} = \\blank{\\frac{1}{2}}$."
         },
         {
           "type": "warning",
@@ -284,12 +284,12 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 0} \\frac{1 -} \\cos(2x){x \\sin(3x)}$ (forme $\\frac{0}{0}$).}\\par On réécrit en faisant apparaître les limites connues :\\begin{align*}\\frac{1 - \\cos(2x)}{x \\sin(3x)} &= \\frac{1 - \\cos(2x)}{x^2} \\cdot \\frac{x}{\\sin(3x)} \\cdot \\frac{1}{1}\\end{align*}\\par Or $\\displaystyle\\lim_{x \\to 0} \\frac{1-\\cos(2x)}{x^2} = \\frac{(2)^2}{2} = 2$ et $\\displaystyle\\lim_{x \\to 0} \\frac{x}{\\sin(3x)} = \\frac{1}{3}$.\\par Donc :\\par$$\\lim_{x \\to 0} \\frac{1-\\cos(2x)}{x\\sin(3x)} = 2 \\times \\frac{1}{3} = \\blank{\\frac{2}{3}}$$"
+          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 0} \\frac{1 - \\cos(2x)}{x \\sin(3x)}$} (forme $\\frac{0}{0}$).}\\par On réécrit en faisant apparaître les limites connues :\\begin{align*}\\frac{1 - \\cos(2x)}{x \\sin(3x)} &= \\frac{1 - \\cos(2x)}{x^2} \\cdot \\frac{x}{\\sin(3x)} \\cdot \\frac{1}{1}\\end{align*}\\par Or $\\displaystyle\\lim_{x \\to 0} \\frac{1-\\cos(2x)}{x^2} = \\frac{(2)^2}{2} = 2$ et $\\displaystyle\\lim_{x \\to 0} \\frac{x}{\\sin(3x)} = \\frac{1}{3}$.\\par Donc :\\par$$\\lim_{x \\to 0} \\frac{1-\\cos(2x)}{x\\sin(3x)} = 2 \\times \\frac{1}{3} = \\blank{\\frac{2}{3}}$$"
         },
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to \\pi} \\frac{\\sin x}{x} - \\pi$.}\\par Posons $t = x - \\pi$, donc $x = t + \\pi$ et $t \\to 0$.\\begin{align*}\\frac{\\sin x}{x - \\pi} &= \\frac{\\sin(t + \\pi)}{t} \\\\&= \\frac{-\\sin t}{t}\\end{align*}\\par Comme $\\displaystyle\\lim_{t \\to 0} \\frac{\\sin t}{t} = 1$ :\\par$$\\lim_{x \\to \\pi} \\frac{\\sin x}{x - \\pi} = \\blank{-1}$$"
+          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to \\pi} \\frac{\\sin x}{x - \\pi}$}.}\\par Posons $t = x - \\pi$, donc $x = t + \\pi$ et $t \\to 0$.\\begin{align*}\\frac{\\sin x}{x - \\pi} &= \\frac{\\sin(t + \\pi)}{t} \\\\&= \\frac{-\\sin t}{t}\\end{align*}\\par Comme $\\displaystyle\\lim_{t \\to 0} \\frac{\\sin t}{t} = 1$ :\\par$$\\lim_{x \\to \\pi} \\frac{\\sin x}{x - \\pi} = \\blank{-1}$$"
         },
         {
           "type": "warning",
@@ -323,7 +323,7 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 0} x^2 \\sin\\}!\\left(\\frac{1}{x}\\right)$.}\\par Pour tout $x \\neq 0$ : $-1 \\leq \\sin\\!\\left(\\frac{1}{x}\\right) \\leq 1$, donc :\\par$$-x^2 \\leq x^2 \\sin\\!\\left(\\frac{1}{x}\\right) \\leq x^2$$\\par Comme $\\displaystyle\\lim_{x \\to 0} (-x^2) = \\lim_{x \\to 0} x^2 = 0$ :\\par Par les gendarmes : $\\displaystyle\\lim_{x \\to 0} x^2 \\sin\\!\\left(\\frac{1}{x}\\right) = \\blank{0}$."
+          "content": "\\question{Calculons \\textbf{$\\displaystyle\\lim_{x \\to 0} x^2 \\sin\\left(\\frac{1}{x}\\right)$}.}\\par Pour tout $x \\neq 0$ : $-1 \\leq \\sin\\!\\left(\\frac{1}{x}\\right) \\leq 1$, donc :\\par$$-x^2 \\leq x^2 \\sin\\!\\left(\\frac{1}{x}\\right) \\leq x^2$$\\par Comme $\\displaystyle\\lim_{x \\to 0} (-x^2) = \\lim_{x \\to 0} x^2 = 0$ :\\par Par les gendarmes : $\\displaystyle\\lim_{x \\to 0} x^2 \\sin\\!\\left(\\frac{1}{x}\\right) = \\blank{0}$."
         },
         {
           "type": "property",

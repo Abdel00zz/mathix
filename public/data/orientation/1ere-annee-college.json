@@ -1,0 +1,125 @@
+{
+  "classId": "1ere-annee-college",
+  "title": "Première année du cycle secondaire collégial",
+  "source": "Ministère de l’Éducation Nationale · Cycle collégial",
+  "year": "Programme officiel",
+  "chapters": [
+    {
+      "id": 1,
+      "section": "Algèbre",
+      "title": "Enchaînement d’opérations sur les décimaux positifs",
+      "contents": [
+        "Priorités opératoires avec et sans parenthèses.",
+        "Distributivité : $k(a+b) = ka + kb$."
+      ],
+      "capacities": [
+        "Calculer une expression numérique en respectant les priorités.",
+        "Développer ou factoriser une expression simple."
+      ],
+      "recommendations": [
+        "Consolider le calcul mental et l’usage raisonné des parenthèses sur des situations concrètes."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 2,
+      "section": "Algèbre",
+      "title": "Nombres en écriture fractionnaire",
+      "contents": [
+        "Égalité de fractions, simplification et comparaison.",
+        "Addition, soustraction et multiplication de fractions."
+      ],
+      "capacities": [
+        "Réduire au même dénominateur, simplifier et comparer des fractions.",
+        "Résoudre des problèmes de proportions."
+      ],
+      "recommendations": [
+        "Relier l’écriture fractionnaire à la division et aux situations de partage."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 3,
+      "section": "Algèbre",
+      "title": "Nombres relatifs et puissances",
+      "contents": [
+        "Droite graduée, distance à zéro, opposé et opérations sur les relatifs.",
+        "Puissance d’un nombre relatif et puissances de $10$."
+      ],
+      "capacities": [
+        "Effectuer des sommes algébriques, produits et quotients.",
+        "Utiliser les règles de calcul sur les puissances."
+      ],
+      "recommendations": [
+        "S’appuyer sur la droite graduée et les variations de grandeurs (température, altitude) pour ancrer la règle des signes."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 4,
+      "section": "Algèbre",
+      "title": "Développement, factorisation et équations du 1er degré",
+      "contents": [
+        "Expressions littérales, réduction, développement et factorisation.",
+        "Équation du premier degré $ax + b = c$."
+      ],
+      "capacities": [
+        "Mettre en équation un problème concret et vérifier la solution.",
+        "Simplifier des expressions algébriques usuelles."
+      ],
+      "recommendations": [
+        "Privilégier la modélisation de problèmes simples et la vérification systématique de la solution."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 5,
+      "section": "Géométrie",
+      "title": "Triangles et droites remarquables",
+      "contents": [
+        "Inégalité triangulaire, somme des angles ($180^\\circ$).",
+        "Médiatrices, hauteurs, bissectrices et cercle circonscrit."
+      ],
+      "capacities": [
+        "Construire un triangle et ses droites remarquables.",
+        "Calculer un angle manquant et justifier l’alignement."
+      ],
+      "recommendations": [
+        "Associer constructions aux instruments et premières justifications déductives."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 6,
+      "section": "Géométrie",
+      "title": "Symétrie centrale et parallélogramme",
+      "contents": [
+        "Symétrie centrale de centre $O$ et conservation des longueurs/angles.",
+        "Parallélogramme, rectangle, losange et carré."
+      ],
+      "capacities": [
+        "Construire le symétrique d’une figure et démontrer la nature d’un quadrilatère."
+      ],
+      "recommendations": [
+        "Utiliser les propriétés caractéristiques du parallélogramme pour structurer les démonstrations."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 7,
+      "section": "Statistiques",
+      "title": "Proportionnalité, repérage et statistiques",
+      "contents": [
+        "Tableau de proportionnalité, pourcentage, échelle et vitesse.",
+        "Repère orthogonal et représentations statistiques."
+      ],
+      "capacities": [
+        "Calculer une quatrième proportionnelle et lire un diagramme statistique."
+      ],
+      "recommendations": [
+        "Traiter des données issues de la vie courante (cartes, tarifs, graphiques)."
+      ],
+      "horsProgramme": []
+    }
+  ]
+}

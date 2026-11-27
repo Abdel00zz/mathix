@@ -1,0 +1,21 @@
+# Ne pas envoyer les artefacts locaux, sources Rust, pièces jointes dev ni base locale sur Vercel
+node_modules
+dist
+.vercel
+.git
+.aistudio
+.env
+.env.*
+*firebase-adminsdk*.json
+*service-account*.json
+.audit_tmp
+tests
+engines/rust
+engines/mathix-server
+public/assets/aistudio
+server
+README.md
+TECHNOLOGIE.md
+*.log
+.DS_Store
+Thumbs.db

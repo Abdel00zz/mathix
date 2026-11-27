@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Mathix">
+  <rect width="512" height="512" fill="#1C3557"/>
+  <rect x="64" y="64" width="384" height="384" rx="88" fill="#15273F" stroke="#9A7B2F" stroke-opacity="0.6" stroke-width="8"/>
+  <text x="256" y="345" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="240" font-weight="600" fill="#FAF9F6">M</text>
+</svg>

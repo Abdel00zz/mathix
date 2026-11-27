@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Calculer la surface d'une toiture",
+    "subtitle": "Problème 1.20 — Trigonométrie, aires et volumes",
+    "context": "Géométrie et trigonométrie"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Calculer la surface d'une toiture",
+          "content": "Lorsqu'un couvreur établit un devis ou lorsqu'on reconstruit une charpente monumentale comme celle de la cathédrale \\textbf{Notre-Dame de Paris} (détruite par l'incendie du 15 avril 2019), il faut calculer avec précision la \\textbf{surface exacte des pans inclinés} de la toiture ainsi que le \\textbf{volume des combles} (appelé « la Forêt » à Notre-Dame en raison de ses quelque $1\\,300$ chênes).\\par Nous établissons d'abord les formules générales pour un toit classique à deux pans, avant de les appliquer à l'architecture en croix latine de Notre-Dame de Paris."
+        },
+        {
+          "type": "notation",
+          "title": "Paramètres d'une toiture à deux pans",
+          "content": "Un bâtiment rectangulaire a pour largeur (pignon) $x$ et pour longueur $y$. La toiture symétrique à deux pans forme un angle $\\theta \\in ]0\\,;\\,90^\\circ[$ avec l'horizontale. On note $h$ la hauteur sous faîtage et $\\ell$ la longueur rampante d'un pan (de la gouttière au faîtage)."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Toiture simple à deux pans",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Exprimer la hauteur $h$ et la longueur rampante $\\ell$ en fonction de $x$ et $\\theta$, puis exprimer $\\ell$ uniquement en fonction de $x$ et $h$.\\item En déduire deux expressions de la surface totale $S$ de la toiture (les deux pans réunis) : l'une en fonction de $x, y, \\theta$, l'autre en fonction de $x, y, h$.\\item Exprimer le volume $V$ des combles (prisme droit à base triangulaire) en fonction de $x, y, h$, puis en fonction de $x, y, \\theta$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Coupe transversale triangulaire",
+          "content": "En coupe, le toit forme un triangle isocèle de base $x$, de hauteur $h$ et de côtés égaux $\\ell$. La hauteur partage ce triangle en deux triangles rectangles de base $\\dfrac{x}{2}$, de hauteur $h$ et d'hypoténuse $\\ell$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Formules générales",
+          "content": "\\textbf{1)} Dans le demi-triangle rectangle de base $\\dfrac{x}{2}$ :\\par $$h = \\frac{x}{2}\\tan\\theta, \\qquad \\ell = \\frac{x}{2\\cos\\theta}, \\qquad \\ell = \\sqrt{h^2 + \\frac{x^2}{4}}.$$\\par\\textbf{2)} La toiture se compose de $2$ rectangles de dimensions $\\ell \\times y$, donc :\\par $$S = 2\\ell y = \\boxed{\\frac{xy}{\\cos\\theta}} = 2y\\sqrt{h^2 + \\frac{x^2}{4}}.$$\\par Formule trigonométrique de la surface : \\blank{$\\dfrac{xy}{\\cos\\theta}$}.\\par\\textbf{3)} L'aire de la base triangulaire vaut $\\dfrac{xh}{2}$, donc le volume du prisme droit de longueur $y$ vaut :\\par $$V = \\frac{x y h}{2} = \\boxed{\\frac{x^2 y}{4}\\tan\\theta}.$$"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Application à Notre-Dame de Paris",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La toiture principale de Notre-Dame de Paris a une forme de croix dont toutes les branches ont la même largeur $x = 12\\text{ m}$ et la même pente $\\theta = 55^\\circ$ :\\begin{itemize}\\item \\textbf{Nef :} longueur de faîtage $60\\text{ m}$ (raccordée à la croisée du transept, ce qui raccourcit ses gouttières de $6\\text{ m}$ chacune) ;\\item \\textbf{Chœur :} longueur de faîtage $38\\text{ m}$ (gouttières raccourcies de $6\\text{ m}$ à la croisée) ;\\item \\textbf{Deux bras du transept :} chacun a une longueur de faîtage de $20\\text{ m}$ (gouttières raccourcies de $6\\text{ m}$ à la croisée) ;\\item \\textbf{Abside (chevet à l'extrémité du chœur) :} modélisée par la moitié d'une pyramide droite à base hexagonale régulière de rayon $R = \\dfrac{x}{2} = 6\\text{ m}$ et de même hauteur $h$ que la charpente (soit $3$ faces triangulaires isocèles de base $6\\text{ m}$ et d'arêtes latérales égales à $\\ell$).\\end{itemize}\\begin{enumerate}\\item Calculer la hauteur $h$ sous faîtage et la longueur rampante $\\ell$ (arrondies au centimètre).\\item Chaque pan de la nef, du chœur et d'un bras du transept est un \\textbf{trapèze rectangle} de hauteur $\\ell$, dont la grande base est la longueur au faîtage et la petite base la longueur à la gouttière. Calculer les surfaces $A_N$ (nef), $A_C$ (chœur) et $A_T$ (un bras de transept), puis la surface totale hors abside.\\item Calculer la hauteur $k$ d'une face triangulaire de l'abside, puis l'aire $A_{\\text{ab}}$ des $3$ faces de l'abside et la \\textbf{surface totale de la toiture} de Notre-Dame.\\item \\textbf{Volume des combles :}\\begin{enumerate}\\item Calculer le volume $V_1$ du prisme nef + chœur ($y_1 = 60 + 38 = 98\\text{ m}$) et le volume $V_2$ du prisme des deux transepts ($y_2 = 20 + 20 = 40\\text{ m}$).\\item À la croisée du transept (carré de côté $12\\text{ m}$), les deux prismes se superposent selon une \\textbf{pyramide carrée} de base $12\\times 12\\text{ m}$ et de hauteur $h$ (que l'on a donc comptée deux fois !). Calculer son volume $V_3$.\\item Calculer le volume $V_{\\text{ab}}$ de la demi-pyramide hexagonale de l'abside, puis en déduire le \\textbf{volume total des combles} $V_{\\text{tot}} = V_1 + V_2 - V_3 + V_{\\text{ab}}$.\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Trapèzes et demi-hexagone",
+          "content": "L'aire de deux trapèzes identiques de bases $B$ et $b$ et de hauteur $\\ell$ vaut $2 \\times \\dfrac{(B+b)\\ell}{2} = (B+b)\\ell$ ! Pour l'abside, un hexagone régulier de rayon $6\\text{ m}$ est composé de $6$ triangles équilatéraux de côté $6\\text{ m}$, donc une moitié d'hexagone a $3$ triangles équilatéraux d'aire $3 \\times \\dfrac{6^2\\sqrt{3}}{4}$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Notre-Dame de Paris",
+          "content": "\\textbf{1)} Avec $x = 12\\text{ m}$ et $\\theta = 55^\\circ$ :\\par $$h = 6\\tan(55^\\circ) \\approx \\boxed{8{,}57\\text{ m}}, \\qquad \\ell = \\frac{6}{\\cos(55^\\circ)} \\approx \\boxed{10{,}46\\text{ m}}.$$\\par\\textbf{2)} Longueurs aux gouttières : nef $60 - 6 = 54\\text{ m}$, chœur $38 - 6 = 32\\text{ m}$, transept $20 - 6 = 14\\text{ m}$. Les deux pans de chaque branche donnent :\\par $$A_N = (60 + 54)\\ell \\approx 1\\,192{,}5\\text{ m}^2,\\qquad A_C = (38 + 32)\\ell \\approx 732{,}2\\text{ m}^2,\\qquad A_T = (20 + 14)\\ell \\approx 355{,}7\\text{ m}^2.$$\\par Total hors abside : $A_N + A_C + 2 A_T \\approx 2\\,636{,}1\\text{ m}^2$.\\par\\textbf{3)} Chaque face triangulaire de l'abside est isocèle de base $6\\text{ m}$ et de côtés égaux $\\ell \\approx 10{,}46\\text{ m}$. Par Pythagore, sa hauteur vaut :\\par $$k = \\sqrt{\\ell^2 - 3^2} \\approx \\sqrt{109{,}42 - 9} \\approx 10{,}02\\text{ m}.$$\\par Aire des $3$ faces : $A_{\\text{ab}} = 3 \\times \\dfrac{6 \\times k}{2} \\approx 90{,}2\\text{ m}^2$. La surface totale de la toiture vaut :\\par $$A_{\\text{tot}} = 2\\,636{,}1 + 90{,}2 \\approx \\boxed{2\\,726{,}3\\text{ m}^2}.$$\\par Surface totale : \\blank{$\\approx 2\\,726\\text{ m}^2$}.\\par\\textbf{4. a)} $V_1 = \\dfrac{12 \\times 98 \\times h}{2} \\approx 5\\,038{,}5\\text{ m}^3$ et $V_2 = \\dfrac{12 \\times 40 \\times h}{2} \\approx 2\\,056{,}5\\text{ m}^3$.\\par\\textbf{4. b)} La pyramide d'intersection à la croisée du transept a pour volume :\\par $$V_3 = \\frac{1}{3} \\times 12^2 \\times h = 48 h \\approx 411{,}3\\text{ m}^3.$$\\par\\textbf{4. c)} La base de la demi-pyramide de l'abside est formée de $3$ triangles équilatéraux de côté $6\\text{ m}$ (aire $3 \\times \\dfrac{36\\sqrt{3}}{4} = 27\\sqrt{3} \\approx 46{,}77\\text{ m}^2$), d'où :\\par $$V_{\\text{ab}} = \\frac{1}{3} \\times 27\\sqrt{3} \\times h = 9\\sqrt{3}\\,h \\approx 133{,}6\\text{ m}^3.$$\\par Volume total des combles :\\par $$V_{\\text{tot}} = 5\\,038{,}5 + 2\\,056{,}5 - 411{,}3 + 133{,}6 \\approx \\boxed{6\\,817\\text{ m}^3}.$$\\par Volume total : \\blank{$\\approx 6\\,817\\text{ m}^3$}."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Érigée entre 1163 et 1345, la charpente médiévale de Notre-Dame de Paris datait en grande partie du début du $\\mathrm{XIII}^{\\mathrm{e}}$ siècle. Sa pente très raide de $55^\\circ$ (typique de l'architecture gothique) permettait d'évacuer rapidement pluie et neige tout en réduisant la poussée horizontale sur les murs."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En architecture, l'intersection orthogonale de deux toits de même hauteur forme ce que l'on appelle une \\textbf{voûte d'arêtes} (et sa partie commune est une pyramide carrée, ou plus précisément une \\textit{intersection de deux prismes triangulaires}, qui correspond au volume $V_3$ retranché par le principe d'inclusion–exclusion !)."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Utiliser la \\textbf{trigonométrie} et le théorème de Pythagore dans des figures composées.\\item Décomposer une surface et un solide complexes (trapèzes, prismes, pyramides).\\item Appliquer le principe d'\\textbf{inclusion–exclusion} pour corriger un chevauchement de volumes.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

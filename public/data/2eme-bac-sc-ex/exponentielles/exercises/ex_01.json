@@ -8,7 +8,13 @@
     {
       "id": "pI",
       "content": "Soit $g$ la fonction numérique définie sur $\\mathbb{R}$ par $g(x)=e^x-x^2+3x-1$. Le tableau ci-contre est le tableau de variations de la fonction $g$.",
-      "type": "header"
+      "type": "header",
+      "media": {
+        "src": "/data/2eme-bac-sc-ex/pictures/ex_01_tab_g.svg",
+        "position": "right",
+        "width": "40%",
+        "alt": "Tableau de variations de la fonction g"
+      }
     },
     {
       "id": "qI1",

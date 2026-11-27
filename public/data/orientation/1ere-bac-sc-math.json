@@ -1,0 +1,217 @@
+{
+  "classId": "1ere-bac-sc-math",
+  "title": "Première année du cycle du baccalauréat — Sciences Mathématiques",
+  "source": "Ministère de l’Éducation Nationale · Sections Internationales BIOF (Option Français)",
+  "year": "Novembre 2014",
+  "pdfUrl": "/assets/aistudio/1er_bac__1__de7fcbf1.pdf",
+  "chapters": [
+    {
+      "id": 1,
+      "section": "Géométrie plane",
+      "title": "Le barycentre dans le plan",
+      "pages": "p. 22",
+      "contents": [
+        "Barycentre de $n$ points ($2 \\le n \\le 4$) ; centre de gravité.",
+        "Propriété caractéristique du barycentre ; invariance ; associativité.",
+        "Coordonnées du barycentre dans un repère donné."
+      ],
+      "capacities": [
+        "Utiliser le barycentre pour simplifier une expression vectorielle.",
+        "Utiliser le barycentre pour établir l’alignement de trois points et l’intersection de droites.",
+        "Construire le barycentre de $n$ points ($2 \\le n \\le 4$) et déterminer des lieux géométriques."
+      ],
+      "recommendations": [
+        "Sensibiliser les élèves au lien entre le barycentre en mathématiques et dans les disciplines de la spécialité.",
+        "Mettre en évidence le rôle du barycentre et du produit scalaire pour déterminer des lieux tels que $\\{M \\in P \\mid \\vec{u}\\cdot\\overrightarrow{AM} = k\\}$, $MA^2 - MB^2 = k$, $MA^2 + MB^2 = k$, $\\frac{MA}{MB} = k$ et $\\overrightarrow{MA}\\cdot\\overrightarrow{MB} = k$."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 2,
+      "section": "Géométrie plane",
+      "title": "Analytique du produit scalaire et applications",
+      "pages": "p. 22–23",
+      "contents": [
+        "Expression analytique du produit scalaire, de la norme d’un vecteur et de la distance de deux points ; expressions de $\\cos\\theta$ et $\\sin\\theta$ ; inégalité de Cauchy-Schwarz et inégalité triangulaire.",
+        "Droite dans le plan : vecteur normal, équation cartésienne définie par un point et un vecteur normal, distance d’un point à une droite.",
+        "Cercle (étude analytique) : équation cartésienne, représentation paramétrique, ensemble $\\{M(x,y) \\mid x^2+y^2+ax+by+c=0\\}$, position relative cercle/droite et tangente en un point."
+      ],
+      "capacities": [
+        "Exprimer le parallélisme et l’orthogonalité de deux droites ; calculer distances, aires et mesures d’angles.",
+        "Reconnaître l’ensemble des points $M$ vérifiant $\\overrightarrow{MA}\\cdot\\overrightarrow{MB}=0$ et déterminer centre et rayon d’un cercle.",
+        "Passer d’une équation cartésienne à une représentation paramétrique et inversement."
+      ],
+      "recommendations": [
+        "Montrer le rôle de la méthode analytique dans la résolution de problèmes géométriques, notamment le cercle défini par trois points non alignés.",
+        "Exploiter le régionnement analytique du plan pour représenter graphiquement les solutions d’inéquations non linéaires à deux inconnues."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 3,
+      "section": "Géométrie plane",
+      "title": "La rotation dans le plan",
+      "pages": "p. 23",
+      "contents": [
+        "Définition d’une rotation, rotation réciproque, décomposition en deux symétries axiales.",
+        "Propriétés : conservation de la distance, des angles orientés, du barycentre, de l’équipollence, du parallélisme et de l’orthogonalité.",
+        "Image d’une droite, d’un segment, d’un cercle, d’un angle et d’une intersection ; composée de deux rotations."
+      ],
+      "capacities": [
+        "Construire les images de figures usuelles par une rotation donnée.",
+        "Reconnaître une rotation pour résoudre des problèmes géométriques (lieux, constructions) et reconnaître des figures isométriques."
+      ],
+      "recommendations": [
+        "Définir une rotation à partir de son centre et de son angle."
+      ],
+      "horsProgramme": [
+        "L’introduction des coordonnées et de l’expression analytique d’une rotation est hors programme."
+      ]
+    },
+    {
+      "id": 4,
+      "section": "Géométrie dans l’espace",
+      "title": "Vecteurs, géométrie analytique, produit scalaire et vectoriel",
+      "pages": "p. 24–25",
+      "contents": [
+        "Vecteurs de l’espace : colinéarité, définition vectorielle d’une droite et d’un plan, coplanarité.",
+        "Géométrie analytique : coordonnées dans un repère/base, déterminant de trois vecteurs, représentations paramétriques et cartésiennes, positions relatives.",
+        "Produit scalaire dans $V_3$ et applications : plan par point et vecteur normal, distance point-plan, sphère $x^2+y^2+z^2+ax+by+cz+d=0$, plan tangent et intersections.",
+        "Produit vectoriel : orientation de l’espace, norme, antisymétrie, bilinéarité, coordonnées en base orthonormée directe, distance point-droite."
+      ],
+      "capacities": [
+        "Exprimer colinéarité, coplanarité, parallélisme et orthogonalité vectoriellement et analytiquement.",
+        "Choisir la représentation convenable (cartésienne ou paramétrique) pour étudier les positions relatives.",
+        "Déterminer plan, droite orthogonale, équation cartésienne/paramétrique d’une sphère et aire d’un triangle via le produit vectoriel."
+      ],
+      "recommendations": [
+        "Se limiter à l’interprétation géométrique de l’alignement et de la coplanarité ; définir repère et base à partir de quatre points non coplanaires.",
+        "Limiter l’étude analytique de la position relative sphère/plan et sphère/droite à des exemples numériques sans traiter le cas général.",
+        "Définir le produit vectoriel à l’aide du bonhomme d’Ampère et admettre toutes ses propriétés."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 5,
+      "section": "Algèbre",
+      "title": "Notions de logique",
+      "pages": "p. 26",
+      "contents": [
+        "Propositions, opérations sur les propositions, fonctions propositionnelles.",
+        "Quantificateurs ($\\forall, \\exists$), propositions quantifiées et lois logiques.",
+        "Raisonnements mathématiques : absurde, contraposée, disjonction des cas, équivalence, récurrence."
+      ],
+      "capacities": [
+        "Transformer un énoncé mathématique en écriture symbolique avec connecteurs et quantificateurs, et inversement.",
+        "Choisir le type de raisonnement convenable et rédiger des démonstrations claires et logiquement correctes."
+      ],
+      "recommendations": [
+        "Approcher la logique à partir d’activités variées issues des acquis de l’élève et réinvestir ses résultats dans tous les chapitres."
+      ],
+      "horsProgramme": [
+        "Éviter toute construction théorique et toute utilisation excessive de tableaux de vérité."
+      ]
+    },
+    {
+      "id": 6,
+      "section": "Algèbre",
+      "title": "Les ensembles et les applications",
+      "pages": "p. 26–27",
+      "contents": [
+        "Ensemble en compréhension/extension, partie d’un ensemble, ensemble des parties $\\mathcal{P}(E)$, inclusion, complémentaire, intersection, réunion, différence, lois de Morgan, produit cartésien.",
+        "Applications : égalité, image directe et image réciproque d’une partie, injection, surjection, bijection, bijection réciproque, composée, restriction et prolongement."
+      ],
+      "capacities": [
+        "Maîtriser le lien entre règles de logique et opérations ensemblistes.",
+        "Déterminer l’image directe/réciproque, la bijection réciproque et la composée/décomposition d’applications."
+      ],
+      "recommendations": [
+        "Investir la logique dans les ensembles en préparant l’étude des structures ; introduire $\\mathbb{R}^2$ comme exemple de produit cartésien."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 7,
+      "section": "Algèbre",
+      "title": "Arithmétique dans $\\mathbb{Z}$",
+      "pages": "p. 27",
+      "contents": [
+        "Division euclidienne et ses propriétés.",
+        "Nombres premiers et décomposition en produit de facteurs premiers.",
+        "PPCM ($a \\vee b$), PGCD ($a \\wedge b$), propriétés et algorithme d’Euclide.",
+        "Congruence modulo $n$ ; ensemble $\\mathbb{Z}/n\\mathbb{Z}$ et opérations."
+      ],
+      "capacities": [
+        "Appliquer l’algorithme d’Euclide pour déterminer le PGCD de deux entiers.",
+        "Reconnaître $\\mathbb{Z}/n\\mathbb{Z}$ et utiliser les congruences modulo $n$ dans l’étude de la divisibilité."
+      ],
+      "recommendations": [
+        "Exploiter ce chapitre pour pratiquer les différents raisonnements, notamment la récurrence, et initier à l’étude algébrique de $\\mathbb{Z}/n\\mathbb{Z}$."
+      ],
+      "horsProgramme": [
+        "Les nombres premiers entre eux (et Bézout/Gauss) sont hors programme en 1re Bac Sc. Math."
+      ]
+    },
+    {
+      "id": 8,
+      "section": "Algèbre",
+      "title": "Dénombrement",
+      "pages": "p. 28",
+      "contents": [
+        "Ensemble fini et cardinal ($\\text{card}$), principe général du dénombrement, cardinal du produit cartésien.",
+        "Cardinal de l’ensemble des applications entre ensembles finis, de $\\mathcal{P}(E)$, de la réunion et de l’intersection.",
+        "Arrangements $A_n^p$, permutations $n!$, combinaisons $C_n^p$, propriétés de $C_n^p$ et formule du binôme."
+      ],
+      "capacities": [
+        "Utiliser l’arbre des choix et le modèle combinatoire adéquat pour résoudre des problèmes variés."
+      ],
+      "recommendations": [
+        "Introduire le dénombrement par l’arbre des choix et les principes de somme/produit ; relier arrangements aux injections et permutations aux bijections."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 9,
+      "section": "Analyse",
+      "title": "Généralités sur les fonctions, suites et trigonométrie",
+      "pages": "p. 28–30",
+      "contents": [
+        "Fonctions majorée, minorée, bornée, périodique ; comparaison, extrema, monotonie, composée ; courbes de $x \\mapsto \\sqrt{x+a}$, $x \\mapsto ax^3$ et $x \\mapsto E(x)$.",
+        "Suites numériques : suites récurrentes, majorées/minorées/bornées, monotonie, suites arithmétiques et géométriques.",
+        "Trigonométrie : formules de transformation et transformation de $a\\cos x + b\\sin x$."
+      ],
+      "capacities": [
+        "Déduire variations, extrema et signe depuis la courbe ou le tableau ; étudier $f+\\lambda$, $\\lambda f$, $g\\circ f$ et résoudre graphiquement $f(x)=c$, $f(x)=g(x)$.",
+        "Utiliser la récurrence, étudier une suite et calculer la somme de $n$ termes consécutifs.",
+        "Résoudre des équations et inéquations trigonométriques sur le cercle trigonométrique."
+      ],
+      "recommendations": [
+        "Privilégier des exemples issus de la spécialité et utiliser l’outil informatique pour les suites récurrentes sans excès."
+      ],
+      "horsProgramme": [
+        "Les fonctions du type $x \\mapsto E(f(x))$ et $x \\mapsto f(E(x))$ sont hors programme."
+      ]
+    },
+    {
+      "id": 10,
+      "section": "Analyse",
+      "title": "Limite, dérivation et représentation graphique",
+      "pages": "p. 30–32",
+      "contents": [
+        "Limites finies/infinies en un point et en $\\pm\\infty$, limites à gauche/droite, opérations, limites usuelles $\\frac{\\sin x}{x}$, $\\frac{\\tan x}{x}$, $\\frac{1-\\cos x}{x^2}$, $\\frac{\\sin(ax)}{x}$, limites et ordre.",
+        "Dérivabilité en un point et sur un intervalle, tangente, approximation affine, demi-tangentes, point anguleux, dérivées successives, opérations, équation différentielle $y'' + \\omega^2 y = 0$.",
+        "Branches infinies, asymptotes, directions asymptotiques, concavité, point d’inflexion et éléments de symétrie."
+      ],
+      "capacities": [
+        "Calculer des limites (polynômes, rationnelles, irrationnelles, trigonométriques) et lever les indéterminations.",
+        "Maîtriser les règles de dérivation, déterminer tangentes, monotonie, extrema et appliquer la dérivation aux limites.",
+        "Étudier concavité/inflexion via $f''$, utiliser périodicité/symétrie et tracer la courbe de fonctions polynômes, rationnelles, irrationnelles et trigonométriques."
+      ],
+      "recommendations": [
+        "Approcher la limite intuitivement à partir des fonctions usuelles ; limiter la définition formelle à quelques propriétés et exercices de familiarisation.",
+        "Approcher au voisinage de $0$ : $(1+h)^2$, $(1+h)^3$, $\\frac{1}{1+h}$, $\\sqrt{1+h}$ ; utiliser $\\lim_{x\\to 0}\\frac{\\sin x}{x}$ pour dériver $\\cos$ et $\\sin$ ; admettre la solution générale de $y''+\\omega^2 y=0$."
+      ],
+      "horsProgramme": []
+    }
+  ]
+}

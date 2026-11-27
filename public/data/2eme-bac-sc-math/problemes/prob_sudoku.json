@@ -1,0 +1,95 @@
+{
+  "header": {
+    "title": "Combien y a-t-il de grilles de sudoku ?",
+    "subtitle": "Problème 1.17 — Combinatoire et raisonnement par l'absurde",
+    "context": "Dénombrement et logique"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Combien y a-t-il de grilles de sudoku ?",
+          "content": "Dans un sudoku classique $9\\times 9$, le nombre de grilles valides est si astronomique ($6{,}67 \\times 10^{21}$) qu'il a fallu des ordinateurs puissants et des arguments de symétrie avancés pour le calculer en 2005.\\par Pour comprendre les mécanismes combinatoires à l'œuvre, nous allons dénombrer \\textbf{entièrement à la main} le nombre exact de grilles valides de \\textbf{mini-sudoku $4 \\times 4$} (divisé en $4$ blocs carrés $2 \\times 2$), où chaque ligne, chaque colonne et chaque bloc $2 \\times 2$ doit contenir exactement une fois chacun des chiffres $1, 2, 3, 4$."
+        },
+        {
+          "type": "notation",
+          "title": "Structure de la grille 4 × 4",
+          "content": "On numérote les lignes $L_1, L_2, L_3, L_4$ (de haut en bas) et les colonnes $C_1, C_2, C_3, C_4$ (de gauche à droite). Les quatre blocs $2 \\times 2$ sont : haut-gauche ($B_1$), haut-droite ($B_2$), bas-gauche ($B_3$) et bas-droite ($B_4$)."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Premiers majorants et raisonnement par l'absurde",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item \\textbf{Grilles sans contrainte de ligne, colonne ni bloc :} de combien de façons peut-on placer quatre chiffres $1$, quatre chiffres $2$, quatre chiffres $3$ et quatre chiffres $4$ dans les $16$ cases de la grille ?\\item \\textbf{Contrainte des blocs seuls :} combien de grilles contiennent exactement les chiffres $1, 2, 3, 4$ dans chacun des $4$ blocs $2 \\times 2$ (sans imposer les règles de lignes ni de colonnes) ?\\item \\textbf{Propriété structurante (par l'absurde) :} on considère une grille valide et on s'intéresse aux deux premières cases de la ligne $L_3$ (qui forment la ligne du haut du bloc $B_3$) et aux deux premières cases de la colonne $C_3$ (qui forment la colonne de gauche du bloc $B_2$). On note $\\{a, b\\}$ les deux chiffres dans ces deux cases de $L_3$, et $\\{c, d\\}$ ceux dans les deux premières cases de $C_3$.\\begin{enumerate}\\item Montrer par l'absurde qu'il est impossible d'avoir $\\{a, b\\} = \\{c, d\\}$ (deux chiffres en commun).\\item Montrer de même par l'absurde qu'il est impossible que $\\{a, b\\}$ et $\\{c, d\\}$ soient disjoints (zéro chiffre en commun).\\item En déduire que $\\{a, b\\}$ et $\\{c, d\\}$ ont \\textbf{exactement un chiffre en commun} !\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Choix successifs des emplacements",
+          "content": "Pour la question 1, choisissez d'abord $4$ cases parmi $16$ pour les « $1$ », puis $4$ parmi les $12$ restantes pour les « $2$ », puis $4$ parmi les $8$ restantes pour les « $3$ », et les « $4$ » vont dans les $4$ dernières cases : $\\binom{16}{4}\\binom{12}{4}\\binom{8}{4}$."
+        },
+        {
+          "type": "hint",
+          "title": "Regarder la case (L3, C3) !",
+          "content": "Pour la question 3 : si $\\{a,b\\}$ et $\\{c,d\\}$ étaient disjoints, les $4$ chiffres $1, 2, 3, 4$ seraient tous déjà présents soit sur $L_3$, soit sur $C_3$ : que pourrait-on mettre dans la case d'intersection $(L_3, C_3)$ ? Et si $\\{a,b\\} = \\{c,d\\}$, où iraient ces deux chiffres dans le bloc $B_1$ (haut-gauche) ou $B_4$ (bas-droite) ?"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Majorants et propriété d'intersection",
+          "content": "\\textbf{1)} Sans contrainte, le nombre de grilles vaut :\\par $$\\binom{16}{4}\\binom{12}{4}\\binom{8}{4}\\binom{4}{4} = \\frac{16!}{(4!)^4} = 1\\,820 \\times 495 \\times 70 = \\boxed{63\\,063\\,000}.$$\\par\\textbf{2)} Dans chaque bloc $2\\times 2$, il y a $4! = 24$ permutations des chiffres $\\{1,2,3,4\\}$. Comme les $4$ blocs sont choisis indépendamment :\\par $$(4!)^4 = 24^4 = \\boxed{331\\,776}.$$\\par\\textbf{3. a)} Supposons par l'absurde que $\\{a,b\\} = \\{c,d\\}$. Alors dans le bloc $B_4$ (bas-droite, intersection de $L_3, L_4$ et $C_3, C_4$), les chiffres $a$ et $b$ sont interdits sur toute la ligne $L_3$ \\textit{et} sur toute la colonne $C_3$ ! Il ne reste donc qu'une seule case disponible dans $B_4$ — la case $(L_4, C_4)$ — pour y placer \\textit{deux} chiffres distincts $a$ et $b$ : c'est \\textbf{absurde} !\\par\\textbf{3. b)} Supposons par l'absurde que $\\{a,b\\} \\cap \\{c,d\\} = \\emptyset$. Alors $\\{a,b,c,d\\} = \\{1,2,3,4\\}$ : les $4$ chiffres possibles sont déjà tous présents dans les deux premières cases de $L_3$ ou les deux premières cases de $C_3$. Aucun chiffre ne peut donc être placé dans la case $(L_3, C_3)$ : c'est \\textbf{absurde} !\\par\\textbf{3. c)} Comme l'intersection de deux paires $\\{a,b\\}$ et $\\{c,d\\}$ ne peut contenir ni $2$ ni $0$ éléments, elle contient \\textbf{exactement $1$ chiffre en commun}."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Dénombrement exact des grilles 4 × 4",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On fixe maintenant le bloc haut-gauche $B_1$ sous la forme canonique :\\par $$\\begin{array}{|c|c||c|c|}\\hline 1 & 2 & \\cdot & \\cdot \\\\\\hline 3 & 4 & \\cdot & \\cdot \\\\\\hline\\hline \\cdot & \\cdot & \\cdot & \\cdot \\\\\\hline \\cdot & \\cdot & \\cdot & \\cdot \\\\\\hline\\end{array}$$\\begin{enumerate}\\item Combien de choix y a-t-il en réalité pour le bloc $B_1$ ? (On multipliera donc par ce facteur à la fin.)\\item Le bloc $B_1$ étant fixé comme ci-dessus, combien de possibilités y a-t-il pour compléter la ligne $L_1$ ? Expliquer pourquoi, par symétrie entre les colonnes $C_3$ et $C_4$, ces deux choix conduisent au \\textbf{même nombre de grilles} (facteur $2$).\\item On fixe donc $L_1 = (1, 2, 3, 4)$. Quelles sont les deux seules façons possibles de compléter la ligne $L_2$ (et donc tout le bloc $B_2$) ?\\item Étudier séparément chacun de ces deux cas pour compter toutes les façons valides de compléter les lignes $L_3$ et $L_4$ :\\begin{enumerate}\\item \\textbf{Cas A :} $L_2 = (3, 4, 1, 2)$.\\item \\textbf{Cas B :} $L_2 = (3, 4, 2, 1)$.\\end{enumerate}\\item En déduire le \\textbf{nombre exact total de grilles de sudoku $4 \\times 4$}.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Dénombrer les cas A et B",
+          "content": "Dans le cas A ($L_1=(1,2,3,4), L_2=(3,4,1,2)$), les colonnes $C_1, C_2$ doivent recevoir $\\{2,4\\}$ et $\\{1,3\\}$ en $L_3, L_4$ : vous avez $2$ choix indépendants pour $B_3$ et $2$ choix indépendants pour $B_4$ ! Dans le cas B ($L_2=(3,4,2,1)$), la présence de $\\{3,2\\}$ dans $C_3$ et $\\{4,1\\}$ dans $C_4$ force davantage les choix : vérifiez qu'il n'y a que $2$ grilles possibles !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Dénombrement exact",
+          "content": "\\textbf{1)} Il y a $4! = 24$ façons de remplir le bloc $B_1$ (toutes équivalentes par renommage des chiffres $\\{1,2,3,4\\}$).\\par\\textbf{2)} Sur $L_1$, il reste à placer $3$ et $4$ dans les colonnes $C_3, C_4$ : $2$ choix possibles, $(1,2,3,4)$ ou $(1,2,4,3)$. Échanger les colonnes $C_3$ et $C_4$ transforme toute grille valide commençant par $(1,2,3,4)$ en une grille valide commençant par $(1,2,4,3)$ : les deux choix donnent le même nombre de grilles.\\par\\textbf{3)} Avec $L_1 = (1,2,3,4)$, il reste à placer $1$ et $2$ sur $L_2$ dans $C_3, C_4$, soit $2$ cas : $L_2 = (3,4,1,2)$ ou $L_2 = (3,4,2,1)$.\\par\\textbf{4. a) Cas A : $L_1 = (1,2,3,4)$ et $L_2 = (3,4,1,2)$.}\\par Dans $B_3$ : la colonne $C_1$ contient déjà $1, 3$ donc doit recevoir $\\{2, 4\\}$ (soit $2$ ordres possibles en $(L_3, L_4)$ : $(2,4)$ ou $(4,2)$). Une fois $C_1$ fixée, $C_2$ reçoit $\\{1, 3\\}$ dans l'un des $2$ ordres, mais attention : on a le choix libre entre $(2,1)$ ou $(2,3)$ sur $L_3$ ! Vérifions : $B_3$ peut prendre $4$ dispositions : $\\begin{smallmatrix}2&1\\\\4&3\\end{smallmatrix}$, $\\begin{smallmatrix}2&3\\\\4&1\\end{smallmatrix}$, $\\begin{smallmatrix}4&1\\\\2&3\\end{smallmatrix}$, $\\begin{smallmatrix}4&3\\\\2&1\\end{smallmatrix}$. Pour chacune, les colonnes $C_3$ (manquent $\\{2,4\\}$) et $C_4$ (manquent $\\{1,3\\}$) imposent \\textbf{une unique} façon de remplir $B_4$ ! Cela donne exactement \\blank{$4$} grilles valides.\\par\\textbf{4. b) Cas B : $L_1 = (1,2,3,4)$ et $L_2 = (3,4,2,1)$.}\\par Ici $C_1$ attend $\\{2,4\\}$, $C_2$ attend $\\{1,3\\}$, $C_3$ attend $\\{1,4\\}$ et $C_4$ attend $\\{2,3\\}$. Si l'on place $2$ en $(L_3, C_1)$, alors en $L_3$ le $2$ ne peut plus aller en $C_4$, donc $C_4$ reçoit $3$ en $L_3$ et $2$ en $L_4$ ; par suite $C_2$ reçoit $1$ en $L_3$ et $3$ en $L_4$, et $C_3$ reçoit $4$ en $L_3$ et $1$ en $L_4$ : tout est forcé ! Symétriquement, placer $4$ en $(L_3, C_1)$ force une seconde grille unique. Cela donne exactement \\blank{$2$} grilles valides.\\par\\textbf{5)} En rassemblant tous les facteurs (choix de $B_1$ : $4! = 24$, choix de $L_1$ : $2$, somme des cas A et B : $4 + 2 = 6$) :\\par $$N_{4\\times 4} = 4! \\times 2 \\times (4 + 2) = 24 \\times 2 \\times 6 = \\boxed{288}.$$\\par Nombre total de grilles de sudoku $4\\times 4$ : \\blank{$288$}."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Les ancêtres du sudoku sont les carrés magiques chinois ($\\mathrm{VII}^{\\mathrm{e}}$ s. av. J.-C.) et surtout les \\textbf{carrés latins} étudiés par Leonhard Euler au $\\mathrm{XVIII}^{\\mathrm{e}}$ siècle. Dès 1895, le journal français \\textit{Le Siècle} publie des grilles de chiffres proches du sudoku. La version moderne apparaît en 1979 aux États-Unis sous le nom \\textit{Number Place}, avant de connaître un succès planétaire au Japon en 1984 sous le nom \\textbf{Sudoku} (« chiffre unique »)."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En 2005, Bertram Felgenhauer et Frazer Jarvis ont établi que le sudoku $9 \\times 9$ possède exactement $6\\,670\\,903\\,752\\,021\\,072\\,936\\,960 \\approx 6{,}67 \\times 10^{21}$ grilles valides (soit $5\\,472\\,730\\,538$ grilles essentiellement différentes à symétries près). En 2012, Gary McGuire a démontré après un calcul massif qu'une grille $9\\times 9$ à solution unique doit comporter au minimum \\textbf{$17$ indices} au départ."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Pratiquer le \\textbf{raisonnement par l'absurde} et la \\textbf{disjonction de cas}.\\item Exploiter les \\textbf{symétries} pour réduire un problème de dénombrement.\\item Calculer avec les factorielles et les coefficients binomiaux.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

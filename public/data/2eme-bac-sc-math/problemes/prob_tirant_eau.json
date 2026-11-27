@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Le tirant d'eau des navires",
+    "subtitle": "Problème 1.22 — Archimède, trigonométrie et intégrales",
+    "context": "Géométrie et analyse"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le tirant d'eau des navires",
+          "content": "Le \\textbf{tirant d'eau} $t$ d'un navire est la hauteur de la partie immergée de sa coque (de la quille à la ligne de flottaison). Connaître cette hauteur est vital pour éviter qu'un navire ne s'échoue dans un port ou un canal peu profond.\\par D'après la \\textbf{poussée d'Archimède}, pour qu'un navire de masse $M$ (en $\\text{kg}$) flotte dans l'eau de mer (masse volumique $\\rho = 1\\,027\\text{ kg/m}^3$), le volume d'eau déplacé par la partie immergée doit être exactement égal à :\\par $$V_{\\text{eau}} = \\frac{M}{1\\,027}\\quad (\\text{en m}^3).$$\\par On étudie quatre formes idéalisées de coque cylindrique (de même section transversale sur toute la longueur $L$ du navire) appliquées à trois navires célèbres :\\begin{itemize}\\item \\textbf{Titanic :} $M = 52\\,000\\text{ tonnes} = 5{,}2\\times 10^7\\text{ kg}$, largeur $\\ell = 28\\text{ m}$, longueur $L = 269\\text{ m}$ (tirant d'eau réel $\\approx 10\\text{ m}$) ;\\item \\textbf{Santa-Maria :} $M = 223\\text{ tonnes} = 2{,}23\\times 10^5\\text{ kg}$, $\\ell = 8\\text{ m}$, $L = 25\\text{ m}$ (réel $\\approx 3\\text{ m}$) ;\\item \\textbf{Canoë (3 personnes) :} $M = 380\\text{ kg}$, $\\ell = 1\\text{ m}$, $L = 5\\text{ m}$ (réel $\\approx 10\\text{ cm}$).\\end{itemize}"
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (calcul intégral d'aire)",
+          "content": "Dans la Partie 2 (coque courbe), l'aire située entre l'axe des abscisses et la courbe d'une fonction positive $f$ sur $[0\\,;\\,t]$ vaut $\\displaystyle\\int_0^t f(x)\\,dx = F(t) - F(0)$ où $F' = f$. On utilise les primitives usuelles : $\\int x^2\\,dx = \\dfrac{x^3}{3}$ et $\\int \\sqrt{x - c}\\,dx = \\dfrac{2}{3}(x - c)^{3/2}$."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Coques en U, en V profond et multiplan",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "La coque étant cylindrique de longueur $L$, le volume immergé vaut $V = A(t)\\cdot L$, où $A(t)$ est l'aire de la section transversale immergée. On pose donc $A(t) = \\dfrac{M}{1\\,027\\,L}$.\\begin{enumerate}\\item \\textbf{Cas 1 — Coque en U (fond plat, parois verticales) :} exprimer $t$ en fonction de $\\ell, L, M$ et calculer $t$ pour les trois navires.\\item \\textbf{Cas 2 — Coque en V profond ($\\theta = 25^\\circ$ avec l'horizontale) :}\\begin{enumerate}\\item Exprimer la demi-largeur à la flottaison $w/2$ en fonction de $t$ et $\\theta$, puis montrer que $t = \\sqrt{\\dfrac{M\\tan 25^\\circ}{1\\,027\\,L}}$.\\item Calculer le tirant d'eau $t$ et la largeur à la ligne de flottaison $w = \\dfrac{2t}{\\tan 25^\\circ}$ pour les trois navires.\\end{enumerate}\\item \\textbf{Cas 3 — Coque multiplan :} le fond forme un V plat de largeur $\\dfrac{3}{4}\\ell$ incliné d'un angle $\\theta_1 = 18^\\circ$ avec l'horizontale ; au-dessus, les flancs sont inclinés d'un angle $\\theta_2 = 25^\\circ$.\\begin{enumerate}\\item On suppose la ligne de flottaison située sur le deuxième plan (à une hauteur $x_2 > 0$ au-dessus du fond plat de hauteur $h_1 = \\dfrac{3\\ell}{8}\\tan\\theta_1$, donc $t = h_1 + x_2$). Calculer l'aire $A_1$ du triangle inférieur et l'aire $A_2$ du trapèze immergé supérieur en fonction de $\\ell$, $x_2$, $\\theta_1$ et $\\theta_2$.\\item En résolvant l'équation du second degré en $x_2$ issue de $A_1 + A_2 = \\dfrac{M}{1\\,027\\,L}$, montrer que :\\par $$t = \\frac{3\\ell}{8}\\tan\\theta_1 + \\tan\\theta_2\\left(-\\frac{3\\ell}{8} + \\sqrt{\\left(\\frac{3\\ell}{8}\\right)^2 + \\frac{1}{\\tan\\theta_2}\\left(\\frac{M}{1\\,027\\,L} - \\left(\\frac{3\\ell}{8}\\right)^2\\tan\\theta_1\\right)}\\right).$$\\item Calculer le tirant d'eau $t$ pour les trois navires.\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Aire du trapèze dans le cas multiplan",
+          "content": "Sur le second plan (angle $\\theta_2$), la largeur passe de $b = \\dfrac{3}{4}\\ell$ en bas à $B = \\dfrac{3}{4}\\ell + \\dfrac{2 x_2}{\\tan\\theta_2}$ à la ligne de flottaison. L'aire du trapèze vaut $A_2 = \\dfrac{b + B}{2} x_2 = \\dfrac{3\\ell}{4}x_2 + \\dfrac{x_2^2}{\\tan\\theta_2}$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Coques polygonales",
+          "content": "\\textbf{1) Coque en U :} $A(t) = \\ell t = \\dfrac{M}{1\\,027\\,L} \\implies t = \\boxed{\\dfrac{M}{1\\,027\\,\\ell L}}$.\\begin{itemize}\\item Titanic : $t = \\dfrac{5{,}2\\times 10^7}{1\\,027\\times 28\\times 269} \\approx \\boxed{6{,}72\\text{ m}}$.\\item Santa-Maria : $t = \\dfrac{2{,}23\\times 10^5}{1\\,027\\times 8\\times 25} \\approx \\boxed{1{,}09\\text{ m}}$.\\item Canoë : $t = \\dfrac{380}{1\\,027\\times 1\\times 5} \\approx \\boxed{0{,}074\\text{ m}} = 7{,}4\\text{ cm}$.\\end{itemize}\\par\\textbf{2) Coque en V profond ($\\theta = 25^\\circ$) :} La demi-largeur à la hauteur $t$ vaut $\\dfrac{t}{\\tan 25^\\circ}$, donc la section triangulaire a pour aire $A(t) = \\dfrac{t^2}{\\tan 25^\\circ}$, d'où $t = \\sqrt{\\dfrac{M\\tan 25^\\circ}{1\\,027\\,L}}$ et $w = \\dfrac{2t}{\\tan 25^\\circ}$ :\\begin{itemize}\\item Titanic : $t \\approx$ \\blank{$9{,}37\\text{ m}$}, largeur $w \\approx 40{,}2\\text{ m}$ (plus large que le vrai Titanic !).\\item Santa-Maria : $t \\approx 2{,}01\\text{ m}$, largeur $w \\approx 8{,}63\\text{ m}$.\\item Canoë : $t \\approx 0{,}186\\text{ m} = 18{,}6\\text{ cm}$, largeur $w \\approx 0{,}80\\text{ m}$.\\end{itemize}\\par\\textbf{3) Coque multiplan ($\\theta_1 = 18^\\circ$, $\\theta_2 = 25^\\circ$) :}\\par Posons $d = \\dfrac{3\\ell}{8}$. Le triangle inférieur a pour base $2d$ et hauteur $h_1 = d\\tan\\theta_1$, donc $A_1 = d^2\\tan\\theta_1$. Le trapèze supérieur de hauteur $x_2$ a pour bases $2d$ et $2d + \\dfrac{2x_2}{\\tan\\theta_2}$, donc $A_2 = 2d x_2 + \\dfrac{x_2^2}{\\tan\\theta_2}$. En résolvant $\\dfrac{1}{\\tan\\theta_2}x_2^2 + 2d x_2 - (A - A_1) = 0$ pour $x_2 > 0$, on obtient exactement la formule annoncée.\\par Applications numériques :\\begin{itemize}\\item Titanic : $t \\approx$ \\blank{$8{,}26\\text{ m}$} (largeur à la flottaison $\\approx 41{,}8\\text{ m}$).\\item Santa-Maria : $t \\approx 1{,}73\\text{ m}$ (largeur $\\approx 9{,}24\\text{ m}$).\\item Canoë : $t \\approx 15{,}6\\text{ cm}$ (largeur $\\approx 0{,}90\\text{ m}$).\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Coque de forme courbe",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dans un repère orthonormé où l'axe des abscisses $x \\ge 0$ représente la \\textbf{hauteur} depuis la quille et l'ordonnée $y = f(x)$ la \\textbf{demi-largeur} de la coque, on modélise le profil par :\\par $$f(x) = \\begin{cases} x^2 & \\text{si } 0 \\le x \\le 0{,}63 \\\\ \\sqrt{x - 0{,}47} & \\text{si } x \\ge 0{,}63 \\end{cases}$$\\begin{enumerate}\\item Étudier la continuité et la dérivabilité (à gauche et à droite) de $f$ au point de raccord $x = 0{,}63$ : le raccord est-il mathématiquement exact ou très proche d'être lisse ?\\item Exprimer l'aire de section immergée $A(t) = 2\\displaystyle\\int_0^t f(x)\\,dx$ selon les deux cas $0 \\le t \\le 0{,}63$ et $t > 0{,}63$.\\item En déduire le tirant d'eau $t$ et la largeur à la flottaison $w = 2f(t)$ pour le Canoë, la Santa-Maria et le Titanic. Commenter la pertinence de cette même courbe fixe pour les trois navires.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Intégrer en deux morceaux si t > 0,63",
+          "content": "Calculer d'abord $A(0{,}63) = 2\\int_0^{0{,}63} x^2\\,dx = \\dfrac{2}{3}(0{,}63)^3 \\approx 0{,}1667\\text{ m}^2$. Comparez cette aire seuil aux valeurs de $A = \\dfrac{M}{1\\,027\\,L}$ pour les trois navires ($0{,}074\\text{ m}^2$ pour le canoë, $8{,}69\\text{ m}^2$ pour la Santa-Maria, $188{,}23\\text{ m}^2$ pour le Titanic) !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Coque courbe",
+          "content": "\\textbf{1)} À gauche en $0{,}63$ : $0{,}63^2 = 0{,}3969$ et dérivée $2\\times 0{,}63 = 1{,}26$. À droite en $0{,}63$ : $\\sqrt{0{,}63 - 0{,}47} = \\sqrt{0{,}16} = 0{,}40$ et dérivée $\\dfrac{1}{2\\sqrt{0{,}16}} = 1{,}25$. La fonction n'est donc pas rigoureusement continue ni dérivable en $0{,}63$, mais les valeurs ($0{,}3969 \\approx 0{,}40$) et les pentes ($1{,}26 \\approx 1{,}25$) sont si proches que le raccord est visuellement parfaitement lisse !\\par\\textbf{2)} Pour $0 \\le t \\le 0{,}63$ : $A(t) = 2\\int_0^t x^2\\,dx = \\dfrac{2}{3} t^3$.\\par Pour $t > 0{,}63$ :\\par $$A(t) = \\frac{2}{3}(0{,}63)^3 + 2\\left[\\frac{2}{3}(x-0{,}47)^{3/2}\\right]_{0{,}63}^t = \\frac{2}{3}(0{,}63)^3 - \\frac{4}{3}(0{,}16)^{3/2} + \\frac{4}{3}(t - 0{,}47)^{3/2} \\approx 0{,}08136 + \\frac{4}{3}(t - 0{,}47)^{3/2}.$$\\par\\textbf{3)} Applications ($A = \\dfrac{M}{1\\,027\\,L}$) :\\begin{itemize}\\item \\textbf{Canoë} ($A \\approx 0{,}0740 < 0{,}1667$) : $t = \\sqrt[3]{\\dfrac{3}{2}A} \\approx$ \\blank{$0{,}48\\text{ m}$} ($48\\text{ cm}$), largeur $2t^2 \\approx 46\\text{ cm}$.\\item \\textbf{Santa-Maria} ($A \\approx 8{,}686 > 0{,}1667$) : $t = 0{,}47 + \\left(\\dfrac{3}{4}(A - 0{,}08136)\\right)^{2/3} \\approx \\boxed{3{,}94\\text{ m}}$, largeur $2\\sqrt{t-0{,}47} \\approx 3{,}72\\text{ m}$.\\item \\textbf{Titanic} ($A \\approx 188{,}23$) : $t \\approx 27{,}57\\text{ m}$, largeur $10{,}41\\text{ m}$ — irréaliste pour un paquebot de $28\\text{ m}$ de large, car la courbe $y = \\sqrt{x-0{,}47}$ n'est pas remise à l'échelle de $\\ell$ !\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Le principe qui régit la flottabilité des navires est formulé dès le $\\mathrm{III}^{\\mathrm{e}}$ siècle avant J.-C. par \\textbf{Archimède de Syracuse} dans son traité \\textit{Des corps flottants}, l'un des textes fondateurs de l'hydrostatique."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Sur un navire réel, la carène varie de la proue (en V effilé pour fendre les vagues) à la poupe (plus plate pour la stabilité), et son inclinaison change avec la houle et la répartition de la cargaison : les architectes navals calculent le volume déplacé et le centre de carène (métacentre) par des \\textbf{intégrales multiples} numériques."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Modéliser des sections géométriques (rectangles, triangles, trapèzes) à l'aide de la \\textbf{trigonométrie}.\\item Résoudre une \\textbf{équation du second degré} issue d'une contrainte physique.\\item Étudier le raccord (continuité et dérivabilité) d'une fonction définie par morceaux.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

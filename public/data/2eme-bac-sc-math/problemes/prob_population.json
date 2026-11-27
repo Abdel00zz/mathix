@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Évolution d'une population animale",
+    "subtitle": "Problème 1.11 — Modèle de Leslie et matrices",
+    "context": "Suites et algèbre linéaire"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Évolution d'une population animale",
+          "content": "Pour prévoir l'évolution d'une espèce animale (préservation d'espèces menacées ou gestion d'espèces invasives), il ne suffit pas de connaître l'effectif total : les taux de survie et de reproduction dépendent fortement de l'\\textbf{âge} (ou du stade biologique) des individus.\\par En 1945, l'écologue \\textbf{Patrick Holt Leslie} propose de découper la population en classes d'âge (par exemple jeunes et adultes, ou œufs, chenilles et papillons) et de modéliser le passage d'une étape $n$ à l'étape $n+1$ par un système linéaire écrit sous forme \\textbf{matricielle} : $X_{n+1} = L X_n$."
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (calcul matriciel admis)",
+          "content": "\\begin{itemize}\\item \\textbf{Produit matriciel :} pour $A = \\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ et $B = \\begin{pmatrix}e&f\\\\g&h\\end{pmatrix}$, on a $AB = \\begin{pmatrix}ae+bg & af+bh \\\\ ce+dg & cf+dh\\end{pmatrix}$, et $A\\begin{pmatrix}x\\\\y\\end{pmatrix} = \\begin{pmatrix}ax+by\\\\cx+dy\\end{pmatrix}$. (Même règle ligne $\\times$ colonne en taille $3\\times 3$.)\\item \\textbf{Diagonalisation et puissances :} si $L = P D P^{-1}$ avec $D = \\begin{pmatrix}\\lambda_1 & 0 \\\\ 0 & \\lambda_2\\end{pmatrix}$ diagonale, alors par récurrence $L^n = P D^n P^{-1}$, où $D^n = \\begin{pmatrix}\\lambda_1^n & 0 \\\\ 0 & \\lambda_2^n\\end{pmatrix}$ !\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Exemple 1 : Une population de souris",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On divise une population de souris femelles en deux classes d'âge : les \\textbf{jeunes} ($j_n$) et les \\textbf{adultes} ($a_n$) au mois $n$. On suppose qu'au départ il n'y a que des jeunes ($j_0 > 0$, $a_0 = 0$) et que d'un mois au suivant :\\begin{itemize}\\item chaque jeune donne naissance en moyenne à $1$ jeune et survit jusqu'à l'âge adulte avec une probabilité de $25\\,\\%$ ($0{,}25$) ;\\item chaque adulte donne naissance en moyenne à $8$ jeunes puis disparaît le mois suivant.\\end{itemize}\\begin{enumerate}\\item Écrire $j_{n+1}$ et $a_{n+1}$ en fonction de $j_n$ et $a_n$, puis mettre ce système sous la forme $X_{n+1} = L X_n$ avec $X_n = \\begin{pmatrix}j_n\\\\a_n\\end{pmatrix}$ et une matrice de Leslie $L$ de taille $2\\times 2$.\\item On pose $P = \\begin{pmatrix}8 & -4 \\\\ 1 & 1\\end{pmatrix}$, $P^{-1} = \\dfrac{1}{12}\\begin{pmatrix}1 & 4 \\\\ -1 & 8\\end{pmatrix}$ et $D = \\begin{pmatrix}2 & 0 \\\\ 0 & -1\\end{pmatrix}$. Vérifier par le calcul que $P P^{-1} = I_2$ et que $L = P D P^{-1}$.\\item Démontrer par récurrence que pour tout entier naturel $n$, $L^n = P D^n P^{-1}$, puis calculer explicitement les quatre coefficients de $L^n$.\\item En utilisant $X_n = L^n X_0$ (avec $a_0 = 0$), exprimer $j_n$ et $a_n$ en fonction de $j_0$ et $n$.\\item Comment évolue la population totale ? Calculer $\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{j_n}{a_n}$ : vers quelle répartition jeunes/adultes la population tend-elle ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Récurrence pour L^n = P D^n P^{-1}",
+          "content": "Pour l'hérédité : $L^{n+1} = L^n L = (P D^n P^{-1})(P D P^{-1}) = P D^n (P^{-1} P) D P^{-1} = P D^{n+1} P^{-1}$. Attention : $(-1)^n$ alterne de signe selon la parité de $n$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Population de souris",
+          "content": "\\textbf{1)} Les règles démographiques donnent :\\par $$\\begin{cases}j_{n+1} = j_n + 8 a_n \\\\ a_{n+1} = 0{,}25 j_n\\end{cases} \\iff X_{n+1} = L X_n \\quad\\text{avec } L = \\begin{pmatrix}1 & 8 \\\\ 0{,}25 & 0\\end{pmatrix}.$$\\par\\textbf{2)} Vérification :\\par $$P P^{-1} = \\frac{1}{12}\\begin{pmatrix}8+4 & 32-32 \\\\ 1-1 & 4+8\\end{pmatrix} = \\begin{pmatrix}1 & 0 \\\\ 0 & 1\\end{pmatrix} = I_2,$$\\par $$P D P^{-1} = \\frac{1}{12}\\begin{pmatrix}16 & 4 \\\\ 2 & -1\\end{pmatrix}\\begin{pmatrix}1 & 4 \\\\ -1 & 8\\end{pmatrix} = \\frac{1}{12}\\begin{pmatrix}12 & 96 \\\\ 3 & 0\\end{pmatrix} = \\begin{pmatrix}1 & 8 \\\\ 0{,}25 & 0\\end{pmatrix} = L.$$\\par\\textbf{3)} \\textit{Initialisation ($n=0$) :} $L^0 = I_2 = P I_2 P^{-1} = P D^0 P^{-1}$. \\textit{Hérédité :} si $L^n = P D^n P^{-1}$, alors $L^{n+1} = P D^n P^{-1} P D P^{-1} = P D^{n+1} P^{-1}$. D'où, pour tout $n \\in \\mathbb{N}$ :\\par $$L^n = \\frac{1}{12}\\begin{pmatrix}8\\cdot 2^n & -4(-1)^n \\\\ 2^n & (-1)^n\\end{pmatrix}\\begin{pmatrix}1 & 4 \\\\ -1 & 8\\end{pmatrix} = \\frac{1}{12}\\begin{pmatrix}8\\cdot 2^n + 4(-1)^n & 32\\cdot 2^n - 32(-1)^n \\\\ 2^n - (-1)^n & 4\\cdot 2^n + 8(-1)^n\\end{pmatrix}.$$\\par\\textbf{4)} Avec $X_0 = \\begin{pmatrix}j_0\\\\0\\end{pmatrix}$, $X_n = L^n X_0$ donne la première colonne multipliée par $j_0$ :\\par $$j_n = \\frac{2^{n+3} + 4(-1)^n}{12} j_0 = \\frac{2^{n+1} + (-1)^n}{3} j_0, \\qquad a_n = \\frac{2^n - (-1)^n}{12} j_0.$$\\par (Remarque équivalente : $+(-1)^n = -(-1)^{n+1}$, donc $j_n = \\dfrac{2^{n+1}-(-1)^{n+1}}{3}j_0$ et $a_n = \\dfrac{2^n + (-1)^{n+1}}{12}j_0$.)\\par\\textbf{5)} Comme $2^n \\to +\\infty$ tandis que $|(-1)^n| = 1$, la population croît exponentiellement (elle double environ chaque mois !). De plus, pour $n \\ge 1$ :\\par $$\\frac{j_n}{a_n} = \\frac{4\\bigl(2^{n+1} + (-1)^n\\bigr)}{2^n - (-1)^n} = \\frac{8 + 4\\left(-\\frac{1}{2}\\right)^n}{1 - \\left(-\\frac{1}{2}\\right)^n} \\xrightarrow[n\\to+\\infty]{} \\boxed{8}.$$\\par Rapport limite jeunes/adultes : \\blank{$8$} (à long terme, il y a exactement $8$ jeunes pour $1$ adulte, soit $\\frac{8}{9}$ de jeunes et $\\frac{1}{9}$ d'adultes)."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Exemple 2 : Cycle de vie des papillons",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le cycle de vie d'une espèce de papillons comporte trois stades d'égale durée : les \\textbf{œufs} ($e_n$), les \\textbf{chenilles} ($c_n$) et les \\textbf{papillons adultes} ($p_n$). D'une étape à la suivante :\\begin{itemize}\\item $2\\,\\%$ des œufs éclosent en chenilles ($c_{n+1} = 0{,}02\\, e_n$) ;\\item $10\\,\\%$ des chenilles deviennent des papillons adultes ($p_{n+1} = 0{,}1\\, c_n$) ;\\item chaque papillon pond en moyenne $864$ œufs avant de mourir ($e_{n+1} = 864\\, p_n$).\\end{itemize}\\begin{enumerate}\\item Écrire la matrice de Leslie $L$ de taille $3\\times 3$ telle que $X_{n+1} = L X_n$ avec $X_n = \\begin{pmatrix}e_n\\\\c_n\\\\p_n\\end{pmatrix}$.\\item Calculer $L^2$ puis $L^3$. Que remarque-t-on ?\\item En déduire l'expression de $L^{3k}$ pour tout entier $k \\in \\mathbb{N}$, puis celle de $X_{3k}$, $X_{3k+1}$ et $X_{3k+2}$ en fonction de $(e_0, c_0, p_0)$.\\item Comment évolue cette population ? Comparez la répartition par stades avec celle des souris de la Partie 1.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Calculer L^3",
+          "content": "Calculez $864 \\times 0{,}02 \\times 0{,}1 = 1{,}728$ : $L^3$ est un multiple de la matrice identité $I_3$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Population de papillons",
+          "content": "\\textbf{1)} La matrice de Leslie est :\\par $$L = \\begin{pmatrix}0 & 0 & 864 \\\\ 0{,}02 & 0 & 0 \\\\ 0 & 0{,}1 & 0\\end{pmatrix}.$$\\par\\textbf{2)} En calculant les produits successifs :\\par $$L^2 = \\begin{pmatrix}0 & 86{,}4 & 0 \\\\ 0 & 0 & 17{,}28 \\\\ 0{,}002 & 0 & 0\\end{pmatrix}, \\qquad L^3 = \\begin{pmatrix}1{,}728 & 0 & 0 \\\\ 0 & 1{,}728 & 0 \\\\ 0 & 0 & 1{,}728\\end{pmatrix} = \\boxed{1{,}728\\, I_3}.$$\\par\\textbf{3)} Par récurrence immédiate, $L^{3k} = (L^3)^k = 1{,}728^k I_3$. On en déduit :\\par $$X_{3k} = 1{,}728^k\\begin{pmatrix}e_0 \\\\ c_0 \\\\ p_0\\end{pmatrix}, \\qquad X_{3k+1} = 1{,}728^k\\begin{pmatrix}864 p_0 \\\\ 0{,}02 e_0 \\\\ 0{,}1 c_0\\end{pmatrix}, \\qquad X_{3k+2} = 1{,}728^k\\begin{pmatrix}86{,}4 c_0 \\\\ 17{,}28 p_0 \\\\ 0{,}002 e_0\\end{pmatrix}.$$\\par Facteur de croissance tous les $3$ cycles : \\blank{$1{,}728$} (soit $1{,}2^3$ : une croissance moyenne de $+20\\,\\%$ par stade !).\\par\\textbf{4)} Contrairement aux souris dont la répartition jeunes/adultes converge vers un équilibre stable ($8/1$), la répartition des papillons est \\textbf{périodique de période $3$} : si l'on part uniquement d'œufs ($c_0 = p_0 = 0$), on n'observera à chaque instant qu'un seul stade biologique à la fois (uniquement des œufs, puis uniquement des chenilles, puis uniquement des papillons) !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "C'est en étudiant la démographie des rats bruns à Oxford pendant la Seconde Guerre mondiale que \\textbf{Patrick Holt Leslie} introduit ces matrices en 1945 dans la revue \\textit{Biometrika}. Ses travaux s'appuient sur le \\textbf{théorème de Perron–Frobenius} (1907–1912) sur les matrices à coefficients positifs."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Le nombre $1{,}728$ dans l'exemple des papillons s'appelle le taux net de reproduction $R_0$ : si $R_0 > 1$, la population croît exponentiellement ; si $R_0 < 1$, elle s'éteint ; si $R_0 = 1$, elle se stabilise. En écologie moderne, on couple le modèle de Leslie avec des effets de saturation des ressources (comme dans le modèle logistique du problème suivant)."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Modéliser des \\textbf{suites couplées} à l'aide de matrices.\\item Démontrer une formule explicite par \\textbf{récurrence}.\\item Étudier le comportement asymptotique (convergence d'un quotient de suites ou comportement périodique).\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "classId": "tronc-commun-sc",
+  "title": "Tronc Commun Scientifique",
+  "source": "Ministère de l’Éducation Nationale · Sections Internationales BIOF (Option Français)",
+  "year": "Novembre 2014",
+  "pdfUrl": "/assets/aistudio/1er_bac__1__de7fcbf1.pdf",
+  "chapters": [
+    {
+      "id": 1,
+      "section": "Ensembles et calcul numérique",
+      "title": "Arithmétique dans $\\mathbb{N}$ et ensembles de nombres",
+      "pages": "p. 2",
+      "contents": [
+        "Nombres pairs et impairs, multiples et PPCM, diviseurs et PGCD, nombres premiers et décomposition en facteurs premiers.",
+        "Ensembles $\\mathbb{N}, \\mathbb{Z}, \\mathbb{D}, \\mathbb{Q}, \\mathbb{R}$, irrationnels, puissances et écriture scientifique.",
+        "Identités remarquables $(a\\pm b)^2$, $a^2-b^2$, $a^3-b^3$, $a^3+b^3$ ; développement et factorisation."
+      ],
+      "capacities": [
+        "Utiliser la parité et la décomposition en facteurs premiers pour résoudre des problèmes simples sur les entiers naturels.",
+        "Distinguer les ensembles de nombres et choisir l’écriture algébrique adaptée."
+      ],
+      "recommendations": [
+        "Introduire les symboles $\\in, \\notin, \\subset, \\not\\subset, \\cap, \\cup$ ; initier aux démonstrations par la parité sans excès ; présenter $\\sqrt{n}$ (non carré parfait) comme irrationnel."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 2,
+      "section": "Ensembles et calcul numérique",
+      "title": "Ordre dans $\\mathbb{R}$, polynômes et équations/systèmes",
+      "pages": "p. 3–5",
+      "contents": [
+        "Ordre et opérations, valeur absolue, intervalles, encadrement et approximations décimales.",
+        "Polynômes : degré, somme, produit, racine, division euclidienne par $x-a$, factorisation.",
+        "Équations et inéquations du 1er et 2nd degré (forme canonique, signe du trinôme), systèmes $2\\times 2$ et régionnement du plan."
+      ],
+      "capacities": [
+        "Comparer des nombres, encadrer/majorer/minorer des expressions et utiliser la calculatrice pour des valeurs approchées.",
+        "Maîtriser la division par $x-a$ et la factorisation d’un polynôme.",
+        "Résoudre équations, inéquations et systèmes (substitution, combinaison linéaire, déterminant) et modéliser des problèmes de programmation linéaire."
+      ],
+      "recommendations": [
+        "Lier $|x-a| \\le r$ à la distance sur la droite graduée ; habituer à résoudre des équations du 2nd degré sans discriminant quand c’est immédiat ; renforcer la méthode du déterminant."
+      ],
+      "horsProgramme": [
+        "Toute construction théorique de la notion de polynôme est écartée ; les équations et inéquations paramétriques du second degré sont hors programme."
+      ]
+    },
+    {
+      "id": 3,
+      "section": "Géométrie",
+      "title": "Géométrie plane et produit scalaire",
+      "pages": "p. 5–6",
+      "contents": [
+        "Calcul vectoriel (Chasles, colinéarité, milieu) et projection (Thalès direct/réciproque, conservation du coefficient de colinéarité).",
+        "Droite dans le plan : coordonnées, déterminant, représentation paramétrique, équation cartésienne, positions relatives.",
+        "Transformations du plan : symétries, translation, homothétie ; images de figures usuelles.",
+        "Produit scalaire : définition, expression trigonométrique, orthogonalité, relations métriques dans le triangle rectangle, théorèmes de la médiane et d’Al-Kashi."
+      ],
+      "capacities": [
+        "Construire $a\\vec{u}+b\\vec{v}$, traduire vectoriellement Thalès et utiliser l’outil analytique dans le plan.",
+        "Reconnaître figures isométriques et semblables à l’aide des transformations.",
+        "Exprimer distance et orthogonalité via le produit scalaire et appliquer Al-Kashi et le théorème de la médiane."
+      ],
+      "recommendations": [
+        "Éviter toute construction théorique de la projection ; introduire le produit scalaire par la projection orthogonale."
+      ],
+      "horsProgramme": [
+        "Les expressions analytiques des transformations du plan ainsi que l’expression analytique du produit scalaire sont hors programme en Tronc Commun."
+      ]
+    },
+    {
+      "id": 4,
+      "section": "Géométrie",
+      "title": "Géométrie dans l’espace",
+      "pages": "p. 7",
+      "contents": [
+        "Axiomes d’incidence et détermination d’un plan.",
+        "Positions relatives de droites et de plans ; propriétés du parallélisme, de l’intersection et de l’orthogonalité."
+      ],
+      "capacities": [
+        "Reconnaître et représenter dans le plan des solides et sections planes ; distinguer analogies et non-analogies plan/espace."
+      ],
+      "recommendations": [
+        "Assurer un passage progressif de l’observation à la démonstration ; admettre les formules d’aires et de volumes."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 5,
+      "section": "Analyse et Statistiques",
+      "title": "Fonctions numériques, trigonométrie et statistique",
+      "pages": "p. 7–10",
+      "contents": [
+        "Fonctions : domaine, parité, variations, extrema, courbes de $ax^2$, $a/x$, $ax^2+bx+c$, $\\frac{ax+b}{cx+d}$, $\\sin x$, $\\cos x$.",
+        "Trigonométrie : cercle trigonométrique, abscisse curviligne, angles orientés, relations fondamentales, équations/inéquations, angles inscrits et loi des sinus.",
+        "Statistique : tableaux, fréquences cumulées, graphiques, paramètres de position (moyenne, médiane, mode) et de dispersion (écart moyen, variance, écart-type)."
+      ],
+      "capacities": [
+        "Tracer paraboles et hyperboles sans changement de repère et résoudre graphiquement des équations et inéquations.",
+        "Utiliser le cercle trigonométrique pour résoudre les équations et inéquations fondamentales.",
+        "Organiser des données statistiques et interpréter les paramètres de position et de dispersion."
+      ],
+      "recommendations": [
+        "Considérer les fonctions étudiées ainsi que $\\cos$ et $\\sin$ comme fonctions de référence ; s’appuyer sur des situations authentiques (économie, biologie, géographie) en statistique."
+      ],
+      "horsProgramme": []
+    }
+  ]
+}

@@ -233,7 +233,7 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Résolvons \\textbf{l'équation $\\cos\\left(x + \\dfrac{\\pi}{4}\\right) = \\cos(2x)$ dans $\\mathbb{R}$.}\\par\\smallskip Les deux termes sont des cosinus, on pose directement les deux cas avec $k \\in \\mathbb{Z}$ :\\begin{align*}x + \\frac{\\pi}{4} = \\blank{2x + 2k\\pi} \\quad &\\text{ou} \\quad x + \\frac{\\pi}{4} = \\blank{-2x + 2k\\pi} \\\\-x = -\\frac{\\pi}{4} + 2k\\pi \\quad &\\text{ou} \\quad 3x = \\blank{-\\frac{\\pi}{4} + 2k\\pi} \\\\x = \\blank{\\frac{\\pi}{4} - 2k\\pi} \\quad &\\text{ou} \\quad x = \\blank{-\\frac{\\pi}{12} + \\frac{2k\\pi}{3}}\\end{align*}"
+          "content": "\\question{Résolvons \\textbf{l'équation $\\cos\\left(x + \\dfrac{\\pi}{4}\\right) = \\cos(2x)$} dans $\\mathbb{R}$.}\\par\\smallskip Les deux termes sont des cosinus, on pose directement les deux cas avec $k \\in \\mathbb{Z}$ :\\begin{align*}x + \\frac{\\pi}{4} = \\blank{2x + 2k\\pi} \\quad &\\text{ou} \\quad x + \\frac{\\pi}{4} = \\blank{-2x + 2k\\pi} \\\\-x = -\\frac{\\pi}{4} + 2k\\pi \\quad &\\text{ou} \\quad 3x = \\blank{-\\frac{\\pi}{4} + 2k\\pi} \\\\x = \\blank{\\frac{\\pi}{4} - 2k\\pi} \\quad &\\text{ou} \\quad x = \\blank{-\\frac{\\pi}{12} + \\frac{2k\\pi}{3}}\\end{align*}"
         },
         {
           "type": "method",
@@ -269,7 +269,7 @@
         {
           "type": "application",
           "difficulty": 3,
-          "content": "\\question{Résolvons \\textbf{l'équation $\\cos x + \\sqrt{3}\\sin x = 1$ dans $\\mathbb{R}$.}\\par\\smallskip On calcule le facteur commun $R = \\sqrt{1^2 + (\\sqrt{3})^2} = \\sqrt{4} = \\blank{2}$.\\par On met $2$ en facteur :\\begin{align*}2\\left(\\blank{\\frac{1}{2}}\\cos x + \\frac{\\sqrt{3}}{2}\\sin x\\right) &= 1 \\\\2\\left(\\cos\\left(\\frac{\\pi}{3}\\right)\\cos x + \\blank{\\sin\\left(\\frac{\\pi}{3}\\right)}\\sin x\\right) &= 1 \\\\2\\cos\\left(\\blank{x - \\frac{\\pi}{3}}\\right) &= 1 \\\\\\cos\\left(x - \\frac{\\pi}{3}\\right) &= \\blank{\\frac{1}{2}} = \\cos\\left(\\frac{\\pi}{3}\\right)\\end{align*}Donc $x - \\frac{\\pi}{3} = \\frac{\\pi}{3} + 2k\\pi$ ou $x - \\frac{\\pi}{3} = -\\frac{\\pi}{3} + 2k\\pi$, d'où :\\par$$x = \\blank{\\frac{2\\pi}{3} + 2k\\pi} \\quad \\text{ou} \\quad x = \\blank{2k\\pi}$$"
+          "content": "\\question{Résolvons \\textbf{l'équation $\\cos x + \\sqrt{3}\\sin x = 1$} dans $\\mathbb{R}$.}\\par\\smallskip On calcule le facteur commun $R = \\sqrt{1^2 + (\\sqrt{3})^2} = \\sqrt{4} = \\blank{2}$.\\par On met $2$ en facteur :\\begin{align*}2\\left(\\blank{\\frac{1}{2}}\\cos x + \\frac{\\sqrt{3}}{2}\\sin x\\right) &= 1 \\\\2\\left(\\cos\\left(\\frac{\\pi}{3}\\right)\\cos x + \\blank{\\sin\\left(\\frac{\\pi}{3}\\right)}\\sin x\\right) &= 1 \\\\2\\cos\\left(\\blank{x - \\frac{\\pi}{3}}\\right) &= 1 \\\\\\cos\\left(x - \\frac{\\pi}{3}\\right) &= \\blank{\\frac{1}{2}} = \\cos\\left(\\frac{\\pi}{3}\\right)\\end{align*}Donc $x - \\frac{\\pi}{3} = \\frac{\\pi}{3} + 2k\\pi$ ou $x - \\frac{\\pi}{3} = -\\frac{\\pi}{3} + 2k\\pi$, d'où :\\par$$x = \\blank{\\frac{2\\pi}{3} + 2k\\pi} \\quad \\text{ou} \\quad x = \\blank{2k\\pi}$$"
         },
         {
           "type": "remark",

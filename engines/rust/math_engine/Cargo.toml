@@ -1,0 +1,18 @@
+[package]
+name = "math_engine"
+version = "1.5.0"
+edition.workspace = true
+description = "Moteur mathématique et socratique modulaire de Mathix (Rust → WASM32)."
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["wasm-entry"]
+wasm-entry = []
+
+[dependencies]
+serde_json = { path = "../shared/serde_json" }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm_abi = { path = "../shared/wasm_abi" }

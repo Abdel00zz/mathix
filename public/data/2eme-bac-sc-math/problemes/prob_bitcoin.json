@@ -1,0 +1,69 @@
+{
+  "header": {
+    "title": "Combien y a-t-il de bitcoins ?",
+    "subtitle": "Problème 1.27 — Blockchain et séries géométriques",
+    "context": "Suites numériques"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Combien y a-t-il de bitcoins ?",
+          "content": "Contrairement aux monnaies traditionnelles émises par des banques centrales, le \\textbf{Bitcoin} (lancé en janvier 2009 sous le pseudonyme de Satoshi Nakamoto) repose sur un protocole mathématique décentralisé appelé \\textbf{blockchain}, dans lequel la création monétaire est strictement programmée et plafonnée.\\par À chaque fois qu'un « mineur » valide un nouveau \\textbf{bloc} de transactions, il reçoit une récompense en bitcoins nouvellement créés. Mais cette récompense est \\textbf{divisée par deux} à intervalles réguliers (un événement appelé \\textit{halving}). Combien de bitcoins existeront au maximum dans l'histoire ?"
+        },
+        {
+          "type": "notation",
+          "title": "Règles exactes du protocole Bitcoin",
+          "content": "\\begin{itemize}\\item Le premier bloc (\\textit{bloc genesis}) est miné le \\textbf{3 janvier 2009 à 11 h 00} avec une récompense initiale de \\textbf{$50\\text{ BTC}$}.\\item La difficulté cryptographique est ajustée tous les \\textbf{$14\\text{ jours}$} afin que le temps moyen de création d'un bloc reste égal à \\textbf{$10\\text{ minutes}$}.\\item Tous les \\textbf{$210\\,000\\text{ blocs}$}, la récompense par bloc est divisée par $2$ (\\textit{halving}) : $50$, puis $25$, puis $12{,}5$, puis $6{,}25$, etc.\\item La plus petite subdivision d'un bitcoin est le \\textbf{satoshi} : $1\\text{ satoshi} = 10^{-8}\\text{ BTC}$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Rythme de minage et formule de la masse monétaire",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Combien de blocs sont créés en moyenne au cours d'une période d'ajustement de $14\\text{ jours}$ ?\\item Combien de temps (en jours, puis en années et jours) s'écoule en moyenne entre deux \\textit{halvings} consécutifs ($210\\,000\\text{ blocs}$) ?\\item En supposant exactement $10\\text{ minutes}$ par bloc depuis le 3 janvier 2009 à 11 h 00, combien de blocs ont été créés jusqu'au \\textbf{14 juillet 2023 à 11 h 00} (en tenant compte des $4$ années bissextiles : 2012, 2016, 2020) ?\\item Lors de la création du \\textbf{millionième bloc} ($1\\,000\\,000$), combien de \\textit{halvings} auront déjà eu lieu ? Quelle sera alors la récompense pour ce bloc, et quel sera le nombre total de bitcoins créés jusqu'au millionième bloc inclus ?\\item Montrer qu'après $m$ cycles complets de $210\\,000$ blocs (c'est-à-dire juste avant le $m$-ième \\textit{halving}, soit $210\\,000\\,m$ blocs), le nombre total de bitcoins émis vaut :\\par $$B_m = 21\\,000\\,000\\left(1 - \\frac{1}{2^m}\\right).$$\\par En déduire la limite $\\displaystyle\\lim_{m\\to+\\infty} B_m$, appelée le plafond du Bitcoin.\\item En supposant toujours $10\\text{ min/bloc}$, estimer le nombre de blocs créés au \\textbf{$1^{\\text{er}}$ janvier 2140}, le nombre de \\textit{halvings} écoulés, la récompense par bloc (en satoshis) et le pourcentage du plafond déjà miné !\\item \\textbf{Applications historiques :}\\begin{enumerate}\\item Pendant quelle période (et pour quelle masse monétaire totale en circulation) la récompense par bloc a-t-elle valu exactement $6{,}25\\text{ BTC}$ ?\\item En janvier 2017 (à l'issue du $2^{\\text{e}}$ cycle complet, $m = 2$), le cours du bitcoin atteint $1\\,000\\text{ €}$. Quelle était alors la capitalisation totale (valeur cumulée de tous les bitcoins en circulation) ?\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Suite géométrique des halvings",
+          "content": "Au cycle $k$ ($k = 0, 1, \\dots, m-1$), chacun des $210\\,000$ blocs rapporte $\\dfrac{50}{2^k}$ BTC, soit $210\\,000 \\times 50 \\times \\left(\\dfrac{1}{2}\\right)^k = 10\\,500\\,000\\left(\\dfrac{1}{2}\\right)^k$ BTC pour le cycle entier ! Sommez de $k = 0$ à $m - 1$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Mathématiques du Bitcoin",
+          "content": "\\textbf{1)} À raison de $6$ blocs/heure ($144$ blocs/jour), en $14\\text{ jours}$ sont créés $14 \\times 144 =$ \\blank{$2\\,016$} blocs.\\par\\textbf{2)} $210\\,000$ blocs prennent $210\\,000 \\times 10\\text{ min} = 2\\,100\\,000\\text{ min} = 35\\,000\\text{ h} \\approx 1\\,458{,}33\\text{ jours}$, soit \\textbf{$3\\text{ ans et } 363\\text{ jours}$} (près de $4\\text{ ans}$).\\par\\textbf{3)} Du 3 jan 2009 au 14 juil 2023, il s'écoule $14\\text{ ans}$ (dont $3$ années bissextiles : 2012, 2016, 2020) et $192\\text{ jours}$, soit $14\\times 365 + 3 + 192 = 5\\,305\\text{ jours}$, ce qui donne $5\\,305 \\times 144 = 763\\,920$ blocs (ou $763\\,998$ selon l'heure exacte).\\par\\textbf{4)} Division euclidienne : $1\\,000\\,000 = 4 \\times 210\\,000 + 160\\,000$. Il y a donc eu \\textbf{$4$ halvings}, et la récompense du millionième bloc vaut $\\dfrac{50}{2^4} =$ \\blank{$3{,}125\\text{ BTC}$}.\\par Nombre total de bitcoins créés jusqu'au millionième bloc :\\par $$B_4 + 160\\,000 \\times 3{,}125 = 21\\,000\\,000\\left(1 - \\frac{1}{16}\\right) + 500\\,000 = 19\\,687\\,500 + 500\\,000 = \\boxed{20\\,187\\,500\\text{ BTC}}.$$\\par\\textbf{5)} Sur $m$ cycles complets ($k = 0, \\dots, m-1$) :\\par $$B_m = \\sum_{k=0}^{m-1} 210\\,000 \\times \\frac{50}{2^k} = 10\\,500\\,000 \\cdot \\frac{1 - \\left(\\frac{1}{2}\\right)^m}{1 - \\frac{1}{2}} = \\boxed{21\\,000\\,000\\left(1 - \\frac{1}{2^m}\\right)}.$$\\par Quand $m \\to +\\infty$, $\\left(\\dfrac{1}{2}\\right)^m \\to 0$, donc $\\displaystyle\\lim_{m\\to+\\infty} B_m =$ \\blank{$21\\,000\\,000\\text{ BTC}$}.\\par\\textbf{6)} Du 3 jan 2009 au $1^{\\text{er}}$ jan 2140 ($131\\text{ ans}$, $32$ bissextiles, moins $2$ jours) : $\\approx 47\\,845\\text{ jours} \\implies \\approx 6\\,889\\,680$ blocs ($\\approx 6{,}69\\text{M}$ selon la convention $365\\text{ j/an}$), soit \\textbf{$32$ halvings} (ou $31$ selon l'arrondi). Après $31$ halvings, la récompense n'est plus que $\\dfrac{50}{2^{31}} \\approx 2{,}33\\times 10^{-8}\\text{ BTC} \\approx 2{,}33\\text{ satoshis}$, et plus de $99{,}999\\,999\\,95\\,\\%$ des $21$ millions de bitcoins auront été créés !\\par\\textbf{7. a)} $6{,}25 = \\dfrac{50}{2^3} \\implies m = 3$ halvings, soit entre le bloc $630\\,000$ et le bloc $840\\,000$ (en théorie fin 2020–fin 2024 ; en réalité mai 2020–avril 2024), période pendant laquelle la masse monétaire passe de $B_3 = 18\\,375\\,000\\text{ BTC}$ à $B_4 = 19\\,687\\,500\\text{ BTC}$.\\par\\textbf{7. b)} Après $m = 2$ cycles complets, $B_2 = 21\\,000\\,000\\left(1 - \\dfrac{1}{4}\\right) = 15\\,750\\,000\\text{ BTC}$. À $1\\,000\\text{ €}$ le bitcoin, la capitalisation vaut \\blank{$15{,}75\\text{ milliards €}$}."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "En octobre 2008, en pleine crise financière mondiale, un auteur anonyme nommé \\textbf{Satoshi Nakamoto} publie le livre blanc du Bitcoin. Le premier achat réel connu a lieu le 22 mai 2010 : un programmeur achète deux pizzas pour $10\\,000$ bitcoins !"
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En réalité, comme le code du Bitcoin arrondit la récompense par bloc au \\textbf{satoshi inférieur} (division entière), la création de nouveaux bitcoins s'arrêtera définitivement au $33^{\\text{e}}$ \\textit{halving} (vers 2140), pour un plafond réel très légèrement inférieur à $21\\,000\\,000$ BTC (environ $20\\,999\\,999{,}9769$ BTC)."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Appliquer la \\textbf{division euclidienne} pour situer un rang dans des cycles.\\item Calculer la \\textbf{somme et la limite d'une série géométrique} de raison $1/2$.\\item Interpréter un modèle mathématique discret sur des ordres de grandeur financiers.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

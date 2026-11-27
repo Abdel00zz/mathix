@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Mathix" />
+  <meta name="application-name" content="Mathix" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#F6F7FB" media="(prefers-color-scheme: light)" id="meta-theme-light" />
+  <meta name="theme-color" content="#0A092D" media="(prefers-color-scheme: dark)" id="meta-theme-dark" />
+  <meta name="description" content="Mathix — Plateforme éditoriale de mathématiques : cours interactifs, quiz, exercices corrigés, examens nationaux, cadre référentiel et prépa concours." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Mathix" />
+  <meta property="og:title" content="Mathix — Programme, leçons, quiz et exercices" />
+  <meta property="og:description" content="Plateforme éditoriale de mathématiques : fiches à rappel actif, tableaux de variations, quiz interactifs, examens nationaux et concours." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mathix — Programme, leçons, quiz et exercices" />
+  <meta name="twitter:description" content="Cours interactifs, quiz, exercices, examens nationaux et cadre référentiel de mathématiques." />
+
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <title>Mathix — Programme, leçons, quiz et exercices</title>
+
+  <script>
+    (function () {
+      try {
+        var p = JSON.parse(localStorage.getItem('mathplus:profile') || '{}');
+        if (p && (p.theme === 'light' || p.theme === 'dark')) {
+          document.documentElement.dataset.theme = p.theme;
+        }
+        if (p && p.paletteVer === 2 && p.palette && p.palette !== 'quizlet' && p.palette !== 'botanique') {
+          document.documentElement.dataset.palette = p.palette;
+        }
+        var sbPref = localStorage.getItem('mathplus:sb-collapsed');
+        if (sbPref === '1' || (sbPref === null && window.innerWidth > 720 && window.innerWidth < 1120)) {
+          document.documentElement.dataset.sb = 'collapsed';
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preload" href="engines/mathix_app.wasm?v=20261127d" as="fetch" crossorigin />
+  <link rel="preload" href="assets/min/app.min.css?v=20261127d" as="style" />
+  <link rel="preload" href="vendor/katex/katex.min.css" as="style" />
+  <link rel="stylesheet" href="vendor/katex/katex.min.css" id="link-katex" />
+  <link rel="stylesheet" href="assets/min/app.min.css?v=20261127d" id="link-app-css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Gloock&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..600&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&family=Instrument+Sans:wght@400;500;600;700&family=Caveat:wght@600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Sans+Math&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" />
+
+  <style>
+    #splash-screen {
+      position: fixed; inset: 0; z-index: 99999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 20px; background: var(--bg, #f6f7fb); color: var(--ink, #2e3856);
+      text-align: center; opacity: 1; transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #splash-screen.fade-out { opacity: 0; pointer-events: none; }
+    #splash-card { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: min(520px, calc(100vw - 32px)); padding: 28px 24px; }
+    #splash-mark { width: 56px; height: 56px; border-radius: 15px; background: var(--accent, #4255ff); color: var(--on-accent, #ffffff); display: grid; place-items: center; font: 400 30px/1 "Young Serif", Georgia, serif; }
+    #splash-title { margin-top: 14px; font: 400 26px/1.2 "Young Serif", Georgia, serif; letter-spacing: -0.015em; }
+    #splash-track { position: relative; width: min(220px, 68vw); height: 2.5px; margin-top: 22px; overflow: hidden; border-radius: 999px; background: var(--line, #d9dde8); }
+    #splash-track::after { content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: 44%; border-radius: 999px; background: var(--accent, #4255ff); animation: mp-splash-slide 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+    #splash-eyebrow { margin-top: 16px; font: 500 10.5px "DM Mono", ui-monospace, monospace; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted, #586380); }
+    @keyframes mp-splash-slide { 0% { transform: translateX(-110%); } 100% { transform: translateX(260%); } }
+  </style>
+</head>
+
+<body data-v="learn">
+  <a class="skip-link" href="#app">Aller au contenu principal</a>
+  <div class="paint" aria-hidden="true"></div>
+  <div class="sheet" aria-hidden="true"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="br" x="-10%" y="-25%" width="120%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency=".012 .06" numOctaves="2" seed="3" result="w" />
+        <feDisplacementMap in="SourceGraphic" in2="w" scale="22" result="d" />
+        <feTurbulence type="fractalNoise" baseFrequency=".012 .55" numOctaves="2" seed="8" result="g" />
+        <feColorMatrix in="g" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  3 0 0 0 -.8" result="m" />
+        <feComposite in="d" in2="m" operator="in" />
+      </filter>
+      <symbol id="art" viewBox="0 0 360 200">
+        <g fill="none" stroke-linecap="round" filter="url(#br)">
+          <path d="M30 70C120 20 230 30 330 80" stroke-width="30" style="stroke:color-mix(in srgb,var(--accent) 30%,transparent)" />
+          <path d="M50 120C140 80 220 110 320 70" stroke-width="20" style="stroke:color-mix(in srgb,var(--err) 36%,transparent)" />
+          <path d="M90 160C170 130 250 150 300 120" stroke-width="26" style="stroke:color-mix(in srgb,#E0A63B 40%,transparent)" />
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div id="splash-screen" role="status" aria-live="polite" aria-label="Chargement">
+    <div id="splash-card">
+      <div id="splash-mark" aria-hidden="true">M</div>
+      <div id="splash-title">Mathix</div>
+      <div id="splash-track" aria-hidden="true"></div>
+      <span id="splash-eyebrow">Préparation de votre espace Mathix</span>
+    </div>
+  </div>
+
+  <!-- Barre latérale élève minimaliste & pliable -->
+  <nav class="sb no-print" id="sidebar" aria-label="Navigation">
+    <div class="sb-head">
+      <a class="sb-brand" href="#/eleve" id="sb-home" data-tip="Changer de classe" aria-label="Mathix — Choisir une classe">
+        <span class="sb-mark" aria-hidden="true">M</span>
+        <span class="sb-brand-txt">
+          <strong class="sb-brand-name">Mathix</strong>
+        </span>
+      </a>
+      <button class="sb-toggle" id="sb-toggle" type="button" aria-label="Replier la barre latérale" aria-expanded="true" data-tip="Replier (Ctrl+B)">
+        <i data-sb-icon="panel-left-close"></i>
+      </button>
+    </div>
+
+    <div class="sb-group">
+      <div class="sb-top">
+        <button class="sn" id="sb-orient" type="button" data-tone="accent" data-tip="Orientation">
+          <i class="sn-ico" data-sb-icon="compass"></i>
+          <span class="sn-body">
+            <span class="sn-lbl">Orientation</span>
+          </span>
+        </button>
+        <button class="sn" id="sb-help" type="button" data-tone="gold" data-tip="Aide">
+          <i class="sn-ico" data-sb-icon="question-circle"></i>
+          <span class="sn-body">
+            <span class="sn-lbl">Aide</span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="sbf">
+      <button class="sn sn--compact" id="av" type="button" data-tone="neutral" data-tip="Paramètres et profil">
+        <i class="sn-ico" data-sb-icon="settings"></i>
+        <span class="sn-body">
+          <span class="sn-lbl">Paramètres</span>
+        </span>
+      </button>
+    </div>
+
+    <button class="sb-rail-btn" id="sb-rail-btn" type="button" aria-label="Déplier ou replier la barre latérale" title="Replier / Déplier (Ctrl+B)">
+      <i data-sb-icon="chevron-left"></i>
+    </button>
+  </nav>
+
+  <div id="app" hidden></div>
+  <noscript>
+    <div style="max-width:520px;margin:12vh auto;padding:28px;border:1px solid #E1DFD8;border-radius:16px;background:#fff;color:#171B24;font-family:system-ui,sans-serif;text-align:center">
+      <h1 style="margin:0 0 10px;font-size:22px">JavaScript requis</h1>
+      <p style="margin:0;color:#5F6777;line-height:1.6">Mathix nécessite JavaScript et WebAssembly pour afficher les leçons interactives, les formules LaTeX et vos quiz.</p>
+    </div>
+  </noscript>
+
+  <!-- Paramètres élève -->
+  <dialog id="set">
+    <form method="dialog" id="sf">
+      <div class="dlg-head">
+        <h2>Paramètres</h2>
+        <button class="close-x" type="submit" value="no" formnovalidate aria-label="Fermer les paramètres" title="Fermer">×</button>
+      </div>
+      <p style="margin-bottom:8px">Thème</p>
+      <div class="chips">
+        <label><input type="radio" name="th" value="auto" />Auto</label>
+        <label><input type="radio" name="th" value="light" />Clair</label>
+        <label><input type="radio" name="th" value="dark" />Sombre</label>
+      </div>
+      <p style="margin-bottom:8px">Palette</p>
+      <div class="pal-grid" id="pal-grid" role="group" aria-label="Palette">
+        <button class="pal-opt" type="button" data-pal="quizlet" aria-pressed="true">
+          <span class="pal-swatches"><i style="background:#F6F7FB"></i><i style="background:#4255FF"></i><i style="background:#FFCD1F"></i></span>
+          <span>Quizlet</span>
+        </button>
+        <button class="pal-opt" type="button" data-pal="atelier" aria-pressed="false">
+          <span class="pal-swatches"><i style="background:#D5DFD5"></i><i style="background:#F8F4EA"></i><i style="background:#B64524"></i></span>
+          <span>Atelier</span>
+        </button>
+        <button class="pal-opt" type="button" data-pal="mineral" aria-pressed="false">
+          <span class="pal-swatches"><i style="background:#EEF4F7"></i><i style="background:#0F5257"></i><i style="background:#A45B0E"></i></span>
+          <span>Minéral</span>
+        </button>
+        <button class="pal-opt" type="button" data-pal="manuscrit" aria-pressed="false">
+          <span class="pal-swatches"><i style="background:#EFE8DC"></i><i style="background:#6E203C"></i><i style="background:#9A5D10"></i></span>
+          <span>Manuscrit</span>
+        </button>
+      </div>
+      <label class="fld">Prénom<input name="fn" autocomplete="given-name" placeholder="Prénom" /></label>
+      <label class="fld">Nom<input name="ln" autocomplete="family-name" placeholder="Nom" /></label>
+      <label class="fld">Établissement<input name="sc" placeholder="Établissement" /></label>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0">
+        <div>
+          <div style="font-size:13.5px;font-weight:500">Sons</div>
+          <div style="font-size:11.5px;color:var(--muted)">Retours audio</div>
+        </div>
+        <button class="switch" type="button" id="sw-sound" role="switch" aria-checked="true"></button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 14px">
+        <div>
+          <div style="font-size:13.5px;font-weight:500">Accès libre</div>
+          <div style="font-size:11.5px;color:var(--muted)">Tout débloquer sans prérequis</div>
+        </div>
+        <button class="switch" type="button" id="sw-free" role="switch" aria-checked="false"></button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px;padding-top:12px;border-top:1px solid var(--line)">
+        <button class="btn sm" type="button" id="btn-exp-prog" style="flex:1">Sauvegarder</button>
+        <button class="btn sm" type="button" id="btn-imp-prog" style="flex:1">Restaurer</button>
+        <button class="btn sm" type="button" id="btn-cloud-sync" style="flex:1" title="Synchroniser">Synchroniser</button>
+        <input type="file" id="inp-imp-prog" accept="application/json,.json" hidden />
+      </div>
+      <div id="set-google-box" class="set-google-box"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 16px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--accent) 4%,transparent)">
+        <span style="font-size:12px;color:var(--muted)">Éditeur</span>
+        <a class="link" href="admin/" style="font-size:12.5px;font-weight:600">Administration →</a>
+      </div>
+      <div class="row">
+        <button class="btn danger" type="button" id="rst">Réinitialiser</button>
+        <button class="btn" value="no">Annuler</button>
+        <button class="btn primary" value="ok">Enregistrer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Auto-évaluation d'exercice -->
+  <dialog id="dlg">
+    <form method="dialog">
+      <h2>Exercice terminé ?</h2>
+      <p id="dt"></p>
+      <p style="margin-bottom:8px">Comment l’avez-vous trouvé ?</p>
+      <div class="chips">
+        <label><input type="radio" name="lv" value="hard" />Difficile</label>
+        <label><input type="radio" name="lv" value="medium" checked />Correct</label>
+        <label><input type="radio" name="lv" value="easy" />Facile</label>
+      </div>
+      <div class="row">
+        <button class="btn" value="no">Annuler</button>
+        <button class="btn primary" value="ok">Enregistrer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Mode Focus / Lecture agrandie étape par étape (Leçon) -->
+  <dialog id="focus-dlg" class="focus-dlg"></dialog>
+
+  <script src="vendor/katex/katex.min.js"></script>
+
+  <script>
+    (function () {
+      if (window.location.protocol === 'file:') {
+        var eye = document.getElementById('splash-eyebrow');
+        var track = document.getElementById('splash-track');
+        var card = document.getElementById('splash-card');
+        if (eye) eye.textContent = 'Un serveur local est requis';
+        if (track) track.style.display = 'none';
+        if (card) {
+          card.insertAdjacentHTML('beforeend',
+            '<div style="margin-top:18px;max-width:480px;font-size:13.5px;color:var(--muted,#666B78);line-height:1.65">' +
+            'Les navigateurs bloquent les modules ES, <code>fetch</code> et WebAssembly en <code>file://</code>.<br>' +
+            'Lancez un serveur dans ce dossier :<br>' +
+            '<code style="display:inline-block;margin-top:8px;padding:4px 10px;border-radius:8px;border:1px solid var(--line,#DEDFE6);background:var(--surface,#fff);color:var(--ink,#1A1C25)">node server/server.mjs</code> ' +
+            'ou <code style="display:inline-block;margin-top:8px;padding:4px 10px;border-radius:8px;border:1px solid var(--line,#DEDFE6);background:var(--surface,#fff);color:var(--ink,#1A1C25)">python -m http.server 8080</code>' +
+            '</div>');
+        }
+        return;
+      }
+      var dev = new URLSearchParams(location.search).has('dev');
+      var scriptTag = document.createElement('script');
+      scriptTag.type = 'module';
+      scriptTag.dataset.wasm = 'engines/mathix_app.wasm?v=20261127d';
+      scriptTag.src = dev ? 'assets/js/wasm-host.js' : 'assets/min/host.min.js?v=20261127d';
+      document.body.appendChild(scriptTag);
+      if (dev) {
+        var cssLink = document.getElementById('link-app-css');
+        if (cssLink) cssLink.remove();
+        ['tokens', 'base', 'motions', 'components', 'math', 'tkz', 'views', 'lesson', 'exercise', 'studio'].forEach(function (n) {
+          var l = document.createElement('link');
+          l.rel = 'stylesheet';
+          l.href = 'assets/css/' + n + '.css';
+          document.head.appendChild(l);
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

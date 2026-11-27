@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 390" width="560" height="390" role="img" aria-label="Diagramme de Venn des ensembles A, B, C dans E">
+  <rect x="10" y="10" width="540" height="370" rx="14" fill="#fbfcff" stroke="#1e293b" stroke-width="2.2"/>
+  <text x="30" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" font-style="italic" fill="#0f172a">E</text>
+
+  <!-- Circles A, B, C -->
+  <circle cx="220" cy="170" r="108" fill="rgba(42, 63, 168, 0.10)" stroke="#2a3fa8" stroke-width="2.4"/>
+  <circle cx="342" cy="170" r="108" fill="rgba(19, 121, 91, 0.10)" stroke="#13795b" stroke-width="2.4"/>
+  <circle cx="281" cy="256" r="104" fill="rgba(208, 56, 76, 0.09)" stroke="#d0384c" stroke-width="2.4"/>
+
+  <!-- Set Labels -->
+  <text x="116" y="88" font-family="Georgia, serif" font-size="21" font-weight="700" font-style="italic" fill="#2a3fa8">A</text>
+  <text x="434" y="88" font-family="Georgia, serif" font-size="21" font-weight="700" font-style="italic" fill="#13795b">B</text>
+  <text x="378" y="346" font-family="Georgia, serif" font-size="21" font-weight="700" font-style="italic" fill="#d0384c">C</text>
+
+  <g font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14.5" font-weight="600" fill="#17203d" text-anchor="middle">
+    <!-- Outside A u B u C (in E only): +18, +19, +20 -->
+    <text x="64" y="128">+18</text>
+    <text x="68" y="318">+19</text>
+    <text x="498" y="318">+20</text>
+
+    <!-- Only A: +1, +2, +3 -->
+    <text x="166" y="132">+1</text>
+    <text x="150" y="170">+2</text>
+    <text x="168" y="206">+3</text>
+
+    <!-- Only B: +4, +5, +6 -->
+    <text x="394" y="132">+4</text>
+    <text x="412" y="170">+5</text>
+    <text x="394" y="206">+6</text>
+
+    <!-- Only C: +7, +8, +9 -->
+    <text x="248" y="308">+7</text>
+    <text x="282" y="328">+8</text>
+    <text x="316" y="308">+9</text>
+
+    <!-- A ∩ B  C: +10, +11 -->
+    <text x="281" y="122">+10</text>
+    <text x="281" y="150">+11</text>
+
+    <!-- A ∩ C  B: +12, +13 -->
+    <text x="218" y="232">+12</text>
+    <text x="234" y="256">+13</text>
+
+    <!-- B ∩ C  A: +14, +15 -->
+    <text x="344" y="232">+14</text>
+    <text x="328" y="256">+15</text>
+
+    <!-- A ∩ B ∩ C: +16, +17 -->
+    <text x="281" y="196">+16</text>
+    <text x="281" y="220">+17</text>
+  </g>
+</svg>

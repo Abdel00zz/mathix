@@ -90,7 +90,7 @@
         {
           "id": "sq8",
           "content": "Montrer que $f'(x)=0$ a une solution unique et dresser le tableau.",
-          "hint": "Posons $N(x) = 2x^3 + 6x^2 + 7x + 1$. \n$N'(x) = 6x^2 + 12x + 7$. \n$\\Delta = 144 - 168 < 0$. $N'(x) > 0$ sur $\\mathbb{R}$. Donc $N$ est strictement croissante.\n$\\step \\textbf{Théorème des Valeurs Intermédiaires (TVI) :}$\n\\begin{itemize}\n\\item $f$ est continue et strictement monotone.\n\\item $0$ est dans l'image de l'intervalle.\n\\item Donc l'équation $f(x)=0$ a une solution unique.\n\\end{itemize}\n$\\step \\textbf{Application :}$\n$N(-1) = -2+6-7+1 = -2$ et $N(0)=1$. \n$\\exists ! \\alpha \\in ]-1, 0[$ tel que $N(\\alpha)=0$ (donc $f'(\\alpha)=0$).\n$$\\begin{array}{|c|ccccccc|} \\hline x & -\\infty & & -1 & & \\alpha & & +\\infty \\\\ \\hline N(x) & & - & | & - & 0 & + & \\\\ \\hline (x+1)^3 & & - & 0 & + & | & + & \\\\ \\hline f'(x) & & + & || & - & 0 & + & \\\\ \\hline & & & +\\infty & & & & +\\infty \\\\ f & & \\nearrow & || & \\searrow & & \\nearrow & \\\\ & -\\infty & & & & f(\\alpha) & & \\\\ \\hline \\end{array}$$"
+          "hint": "Posons $N(x) = 2x^3 + 6x^2 + 7x + 1$. \n$N'(x) = 6x^2 + 12x + 7$. \n$\\Delta = 144 - 168 < 0$. $N'(x) > 0$ sur $\\mathbb{R}$. Donc $N$ est strictement croissante.\n\\par \\textbf{Théorème des Valeurs Intermédiaires (TVI) :}\n\\begin{itemize}\n\\item $f$ est continue et strictement monotone.\n\\item $0$ est dans l'image de l'intervalle.\n\\item Donc l'équation $f(x)=0$ a une solution unique.\n\\end{itemize}\n\\par \\textbf{Application :}\n$N(-1) = -2+6-7+1 = -2$ et $N(0)=1$. \n$\\exists ! \\alpha \\in ]-1, 0[$ tel que $N(\\alpha)=0$ (donc $f'(\\alpha)=0$).\n$$\\begin{array}{|c|ccccccc|} \\hline x & -\\infty & & -1 & & \\alpha & & +\\infty \\\\ \\hline N(x) & & - & | & - & 0 & + & \\\\ \\hline (x+1)^3 & & - & 0 & + & | & + & \\\\ \\hline f'(x) & & + & || & - & 0 & + & \\\\ \\hline & & & +\\infty & & & & +\\infty \\\\ f & & \\nearrow & || & \\searrow & & \\nearrow & \\\\ & -\\infty & & & & f(\\alpha) & & \\\\ \\hline \\end{array}$$"
         }
       ]
     },
@@ -134,7 +134,7 @@
         {
           "id": "sq12",
           "content": "Tracé des courbes.",
-          "hint": "$\\step \\textbf{Construction :}$\n\\begin{itemize}\n\\item Tracer l'asymptote verticale $\\textbf{x=-1}$.\n\\item Tracer l'asymptote oblique $\\textbf{y=2x}$.\n\\item Placer les points d'intersection $O$, $A$, $B$ sur l'axe des abscisses.\n\\item Tracer la tangente $(T)$ en $x=-2$.\n\\item Relier les branches en respectant les positions relatives.\n\\end{itemize}"
+          "hint": "\\textbf{Construction :}\n\\begin{itemize}\n\\item Tracer l'asymptote verticale $\\textbf{x=-1}$.\n\\item Tracer l'asymptote oblique $\\textbf{y=2x}$.\n\\item Placer les points d'intersection $O$, $A$, $B$ sur l'axe des abscisses.\n\\item Tracer la tangente $(T)$ en $x=-2$.\n\\item Relier les branches en respectant les positions relatives.\n\\end{itemize}"
         }
       ]
     }

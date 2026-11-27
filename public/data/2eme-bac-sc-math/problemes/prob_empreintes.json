@@ -1,81 +1,103 @@
 {
   "header": {
     "title": "Avez-vous les mêmes empreintes qu'un autre ?",
-    "subtitle": "Empreintes digitales",
-    "context": "Dénombrement · Probabilités"
+    "subtitle": "Problème 1.2 — Dénombrement et probabilités",
+    "context": "Dénombrement et probabilités"
   },
   "sections": [
     {
-      "id": "enonce",
+      "id": "contexte",
       "category": "course",
       "title": "",
       "blocks": [
         {
           "type": "problem",
-          "content": "Pour identifier de manière certaine une personne, plusieurs paramètres biométriques peuvent être utilisés. Par exemple la reconnaissance faciale, la reconnaissance de l'iris ou les empreintes digitales.\\par Une empreinte digitale est le dessin formé par les sillons et crêtes présents sur les doigts, aussi appelés dermatoglyphes. Ces dessins se forment dès les premières semaines de vie du fœtus et sont uniques pour chaque individu, même pour des vrais jumeaux.\\par On vous propose d'étudier les différentes empreintes et de calculer la probabilité d'avoir des empreintes similaires à celles d'un autre individu.\\par Pour décrire une empreinte digitale, on les classe suivant leur structure globale et selon des points singuliers locaux, appelés « minuties ». De plus, chaque minutie a une localisation sur le doigt et une orientation."
+          "title": "Avez-vous les mêmes empreintes qu'un autre ?",
+          "content": "Les empreintes digitales sont uniques à chaque individu — même deux vrais jumeaux possèdent des empreintes différentes — et restent stables tout au long de la vie. C'est pourquoi la police scientifique les utilise pour identifier des suspects. Mais \\textbf{combien d'empreintes distinctes} peut-on former, et quelle est la probabilité que deux personnes prises au hasard présentent les mêmes caractéristiques sur un doigt ?\\par Les crêtes papillaires forment d'abord une \\textbf{structure globale} parmi cinq familles : les trois grandes catégories sont les \\textbf{boucles} ($60\\,\\%$), les \\textbf{spirales} ($30\\,\\%$) et les \\textbf{arches} ($5\\,\\%$), complétées par les doubles boucles et les tentes (plus rares). À plus petite échelle, on observe une centaine de points caractéristiques appelés \\textbf{minuties}, dont les deux types principaux sont la \\textbf{terminaison} (une crête s'arrête) et la \\textbf{bifurcation} (une crête se divise en deux). Chaque minutie possède de plus une \\textbf{orientation} (vers le haut ou vers le bas)."
+        },
+        {
+          "type": "notation",
+          "title": "Cadre juridique et hypothèses de simplification",
+          "content": "\\begin{itemize}\\item En France, l'identification judiciaire repose sur au moins \\textbf{12 minuties} concordantes sans discordance (le fichier automatisé FAED en utilise jusqu'à 15 ; on en exige 8 aux États-Unis et 16 en Italie).\\item \\textbf{Hypothèses simplificatrices :} on ne conserve que les \\textbf{3 structures globales principales} (boucle, spirale, arche), les \\textbf{2 types de minuties} (terminaison $T$ et bifurcation $B$) et les \\textbf{2 orientations} possibles (haut ou bas). On suppose la population mondiale égale à $8\\text{ milliards}$ d'individus ($8\\times 10^9$).\\end{itemize}"
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (outils admis)",
+          "content": "\\begin{itemize}\\item \\textbf{Résolution de $5^n > A$ :} en 1ère Bac, on peut tester les puissances successives de $5$ à la calculatrice ($5^{13} = 1\\,220\\,703\\,125$, $5^{14} = 6\\,103\\,515\\,625$). En 2e Bac, la fonction logarithme népérien $\\ln$ permet d'écrire directement $5^n > A \\iff n > \\dfrac{\\ln A}{\\ln 5}$.\\item \\textbf{Probabilités conditionnelles et formule des probabilités totales :} pour une partition $\\{H, F\\}$ de l'univers, $\\mathbb{P}(T) = \\mathbb{P}(T \\mid F)\\,\\mathbb{P}(F) + \\mathbb{P}(T \\mid H)\\,\\mathbb{P}(H)$. Pour deux événements indépendants $E_1$ et $E_2$, $\\mathbb{P}(E_1 \\cap E_2) = \\mathbb{P}(E_1)\\,\\mathbb{P}(E_2)$.\\end{itemize}"
         }
       ]
     },
     {
-      "id": "structure_globale",
+      "id": "partie-1",
       "category": "course",
-      "title": "Structure globale",
+      "title": "Partie 1 — Dénombrement des empreintes possibles",
       "blocks": [
         {
           "type": "text",
-          "content": "Il existe 5 structures globales dont 3 principales. Voici les pourcentages d'apparition :\\par\\begin{itemize}\\item les boucles, gauches ou droite : 60\\%\\item les spirales : 30\\%\\item les arches : 5\\%\\item les double boucles et tentes sont plus rares.\\end{itemize}"
-        }
-      ]
-    },
-    {
-      "id": "points_singuliers",
-      "category": "course",
-      "title": "Points singuliers locaux",
-      "blocks": [
-        {
-          "type": "text",
-          "content": "Une minutie est une configuration localisée des sillons et crêtes. Il existe 2 types principaux :\\par\\begin{itemize}\\item la terminaison ou arrêt de ligne est la fin d'une crête,\\item la bifurcation est une crête qui se dédouble.\\end{itemize}\\par Grâce à ces deux minuties, on peut obtenir des : îlots, lacs, ponts, crochets, trifurcations, bifurcations opposées, etc."
-        }
-      ]
-    },
-    {
-      "id": "denombrement",
-      "category": "course",
-      "title": "Dénombrement",
-      "blocks": [
-        {
-          "type": "text",
-          "content": "Considérons un cas simplifié où, à un emplacement donné du doigt, il y a soit aucune minutie particulière, soit une terminaison, soit une bifurcation et ce dans deux orientations possibles : haut ou bas.\\par\\begin{enumerate}\\item Combien y a-t-il de configurations possibles pour un emplacement sur un doigt ? $\\\\twoheadrightarrow$Indice 1\\item Combien y a-t-il de configurations possibles pour un doigt entier sur lequel on étudie 12 emplacements donnés ? $\\\\twoheadrightarrow$Indice 2\\item Combien d'emplacements faut-il considérer pour que le nombre de configurations possibles dépasse la population mondiale en 2022 : 8 milliards ? $\\\\twoheadrightarrow$Indice 3\\end{enumerate}"
-        }
-      ]
-    },
-    {
-      "id": "indices",
-      "category": "course",
-      "title": "Indices",
-      "blocks": [
-        {
-          "type": "hint",
-          "content": "Prenez en compte l'orientation pour chaque minutie."
+          "content": "On considère $12$ emplacements fixés sur un doigt. À chaque emplacement, il peut y avoir soit aucune minutie, soit une terminaison (orientée vers le haut ou vers le bas), soit une bifurcation (orientée vers le haut ou vers le bas).\\begin{enumerate}\\item Combien y a-t-il de configurations possibles pour un seul emplacement ?\\item En tenant compte des $3$ structures globales principales et des $12$ emplacements, combien d'empreintes digitales différentes peut-on distinguer ? Comparer ce nombre à la population mondiale ($8\\text{ milliards}$).\\item Quel est le nombre minimal $n$ d'emplacements de minuties à observer pour que le nombre d'empreintes possibles dépasse la population mondiale ?\\end{enumerate}"
         },
         {
           "type": "hint",
-          "content": "Prenez en compte la structure générale et les 12 minuties."
+          "title": "Principe multiplicatif",
+          "content": "À chaque emplacement, comptez les $2\\times 2 = 4$ minuties orientées plus le cas « aucune minutie », soit $5$ possibilités indépendantes par emplacement."
         },
         {
           "type": "hint",
-          "content": "Reprenez le calcul précédent et résolvez une inéquation. Vous aurez besoin de la fonction logarithmique."
-        }
-      ]
-    },
-    {
-      "id": "solution",
-      "category": "course",
-      "title": "",
-      "blocks": [
+          "title": "Inéquation $3\\times 5^n > 8\\times 10^9$",
+          "content": "Isoler $5^n > \\dfrac{8\\times 10^9}{3} \\approx 2{,}67\\times 10^9$, puis tester $n=13$ et $n=14$ (ou utiliser $n > \\dfrac{\\ln(8\\times 10^9/3)}{\\ln 5}$)."
+        },
         {
           "type": "solution",
-          "content": "\\textbf{1)} Pour chaque emplacement, il a 5 possibilités : une terminaison orientée vers le haut, ou vers le bas, une bifurcation orientée vers le haut, ou vers le bas, ou aucune minutie particulière.\\par\\par\\textbf{2)} Un doigt est une des trois configurations de structure générale : boucle, spirale ou arche. Pour chacune de ces configurations, on étudie 12 emplacements. Pour chaque emplacement, il y a 5 possibilités. Finalement, il y a $3 \\times 5^{12} = 732\\,421\\,875$ possibilités, soit un peu plus de 732 millions.\\par\\par\\textbf{3)} En reprenant le calcul précédent, on cherche le nombre $n$ d'emplacements tels que\\par$$3 \\times 5^n > 8\\,000\\,000\\,000 \\iff n\\ln(5) > \\ln\\left(\\dfrac{8 \\times 10^9}{3}\\right) \\iff n > \\dfrac{1}{\\ln(5)}\\,\\ln\\left(\\dfrac{8 \\times 10^9}{3}\\right)$$\\par Or $\\dfrac{1}{\\ln(5)}\\,\\ln\\left(\\dfrac{8 \\times 10^8}{3}\\right) \\approx 13{,}48$. Donc à partir de 14 emplacements, il y a plus de 8 milliards de configurations d'empreintes possibles pour un doigt."
+          "title": "Correction — Partie 1 : Dénombrement",
+          "content": "\\textbf{1)} Pour un emplacement donné, on a $2$ types de minuties $\\times 2$ orientations $= 4$ configurations avec minutie, plus $1$ configuration sans minutie, soit \\blank{$5$} configurations possibles.\\par\\textbf{2)} Par le principe multiplicatif (choix de la structure globale parmi $3$, puis choix indépendant d'une configuration parmi $5$ pour chacun des $12$ emplacements) :\\par $$N_{12} = 3 \\times 5^{12} = 3 \\times 244\\,140\\,625 = \\boxed{732\\,421\\,875}.$$\\par Nombre d'empreintes avec $12$ emplacements : \\blank{$732\\,421\\,875$}. Ce nombre est environ $11$ fois inférieur à la population mondiale ($8\\times 10^9$) : avec $12$ emplacements fixes seulement, des collisions théoriques existeraient (en pratique, les positions des minuties varient aussi, ce qui démultiplie les possibilités — voir Partie 2 !).\\par\\textbf{3)} On cherche le plus petit entier $n$ tel que :\\par $$3 \\times 5^n > 8 \\times 10^9 \\iff 5^n > \\frac{8\\times 10^9}{3} \\approx 2{,}667 \\times 10^9.$$\\par Or $5^{13} = 1\\,220\\,703\\,125 < 2{,}667 \\times 10^9$ et $5^{14} = 6\\,103\\,515\\,625 > 2{,}667 \\times 10^9$ (avec le logarithme : $n > \\dfrac{\\ln(8\\times 10^9/3)}{\\ln 5} \\approx 13{,}48$). Il suffit donc de \\blank{$n = 14$} emplacements (soit $3\\times 5^{14} \\approx 18{,}3\\text{ milliards}$ de configurations)."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Calculs de probabilités sur deux doigts",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Une étude statistique montre que la population mondiale compte $50{,}4\\,\\%$ d'hommes ($H$) et $49{,}6\\,\\%$ de femmes ($F$), et donne la répartition suivante des minuties (sachant le sexe) :\\par $$\\begin{array}{|l|c|c|}\\hline \\text{Population} & \\text{Terminaison } (T) & \\text{Bifurcation } (B) \\\\\\hline \\text{Hommes } (50{,}4\\,\\%) & 53{,}9\\,\\% & 46{,}1\\,\\% \\\\\\hline \\text{Femmes } (49{,}6\\,\\%) & 54{,}7\\,\\% & 45{,}3\\,\\% \\\\\\hline\\end{array}$$\\par On suppose qu'une empreinte possède exactement $14$ minuties réparties parmi $100$ zones possibles du doigt, de manière équiprobable et indépendante d'un individu à l'autre. On compare les empreintes de deux doigts pris au hasard.\\begin{enumerate}\\item Calculer la probabilité $\\mathbb{P}(T)$ qu'une minutie prise au hasard soit une terminaison.\\item En déduire la probabilité $\\mathbb{P}(B)$ qu'elle soit une bifurcation.\\item On compare une minutie du premier doigt et une minutie du second doigt.\\begin{enumerate}\\item Les deux orientations (haut/bas) étant équiprobables et indépendantes, quelle est la probabilité que ces deux minuties aient la même orientation ?\\item Calculer la probabilité qu'elles soient du même type (toutes deux $T$, ou toutes deux $B$).\\item En supposant le type et l'orientation indépendants, en déduire la probabilité que ces deux minuties soient identiques.\\end{enumerate}\\item On prend maintenant en compte les positions des $14$ minuties parmi les $100$ zones du doigt.\\begin{enumerate}\\item Combien y a-t-il de manières de choisir les $14$ emplacements parmi $100$ ?\\item Quelle est la probabilité que deux doigts aient exactement les mêmes $14$ emplacements de minuties ?\\item En déduire la probabilité que deux doigts pris au hasard présentent exactement les mêmes $14$ minuties (mêmes emplacements, mêmes types et mêmes orientations). Conclure.\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Formule des probabilités totales",
+          "content": "Traduire les pourcentages du tableau en probabilités conditionnelles : $\\mathbb{P}(T\\mid H) = 0{,}539$ et $\\mathbb{P}(T\\mid F) = 0{,}547$. Puis appliquer $\\mathbb{P}(T) = \\mathbb{P}(T\\mid H)\\mathbb{P}(H) + \\mathbb{P}(T\\mid F)\\mathbb{P}(F)$."
+        },
+        {
+          "type": "hint",
+          "title": "Emplacements identiques parmi 100 zones",
+          "content": "Le nombre de configurations d'emplacements est $C = \\dbinom{100}{14}$. Pour que deux doigts choisis indépendamment tombent sur la même configuration, la probabilité vaut $C \\times \\dfrac{1}{C^2} = \\dfrac{1}{C}$. Ensuite, chacune des $14$ minuties doit être identique indépendamment."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Probabilités",
+          "content": "\\textbf{1)} D'après la formule des probabilités totales :\\par $$\\mathbb{P}(T) = \\mathbb{P}(T\\mid F)\\,\\mathbb{P}(F) + \\mathbb{P}(T\\mid H)\\,\\mathbb{P}(H) = 0{,}547 \\times 0{,}496 + 0{,}539 \\times 0{,}504 = 0{,}542968 \\approx \\boxed{0{,}543}.$$\\par\\textbf{2)} Comme $B = \\overline{T}$, on a $\\mathbb{P}(B) = 1 - \\mathbb{P}(T) = 0{,}457032 \\approx \\boxed{0{,}457}$.\\par\\textbf{3. a)} Il y a $4$ couples d'orientations équiprobables : $(\\text{H},\\text{H})$, $(\\text{H},\\text{B})$, $(\\text{B},\\text{H})$, $(\\text{B},\\text{B})$. Deux d'entre eux donnent la même orientation, donc $\\mathbb{P}(\\text{même orientation}) = \\dfrac{2}{4} = \\dfrac{1}{2}$.\\par\\textbf{3. b)} Par indépendance des deux doigts :\\par $$\\mathbb{P}(\\text{même type}) = \\mathbb{P}(T)^2 + \\mathbb{P}(B)^2 \\approx 0{,}542968^2 + 0{,}457032^2 \\approx 0{,}2948 + 0{,}2089 \\approx \\boxed{0{,}504}.$$\\par\\textbf{3. c)} Par indépendance entre le type et l'orientation :\\par $$\\mathbb{P}(\\text{minutie identique}) = \\mathbb{P}(\\text{même type}) \\times \\mathbb{P}(\\text{même orientation}) \\approx 0{,}5037 \\times 0{,}5 \\approx \\boxed{0{,}252}.$$\\par Probabilité de deux minuties identiques : \\blank{$0{,}252$}.\\par\\textbf{4. a)} Choisir $14$ zones distinctes sans ordre parmi $100$ donne :\\par $$\\binom{100}{14} = \\frac{100!}{14!\\,86!} \\approx 4{,}419 \\times 10^{16}.$$\\par\\textbf{4. b)} La probabilité que deux doigts indépendants possèdent exactement les mêmes $14$ emplacements est :\\par $$\\frac{1}{\\binom{100}{14}} \\approx \\boxed{2{,}26 \\times 10^{-17}}.$$\\par\\textbf{4. c)} Il faut simultanément les mêmes $14$ emplacements et que chacune des $14$ minuties soit identique (probabilité $\\approx 0{,}25185^{14} \\approx 4{,}13\\times 10^{-9}$) :\\par $$P_{\\text{totale}} = \\frac{1}{\\binom{100}{14}} \\times (0{,}25185)^{14} \\approx 2{,}263\\times 10^{-17} \\times 4{,}129\\times 10^{-9} \\approx \\boxed{9{,}35 \\times 10^{-26}}.$$\\par Probabilité finale : \\blank{$\\approx 9{,}35 \\times 10^{-26}$} (moins d'une chance sur $10^{25}$ !). Même à l'échelle de $8$ milliards d'êtres humains, la probabilité que deux personnes partagent la même empreinte est pratiquement nulle."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Dès l'Antiquité babylonienne et chinoise, on utilisait l'empreinte du pouce comme signature sur des tablettes d'argile ou des contrats. À la fin du $\\mathrm{XIX}^{\\mathrm{e}}$ siècle, William Herschel, Henry Faulds et surtout \\textbf{Francis Galton} (1892) établissent scientifiquement la permanence et l'unicité des empreintes digitales. En France, Alphonse Bertillon crée le premier fichier judiciaire, qui conduira à la première condamnation fondée sur une empreinte digitale en 1902."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En réalité, les empreintes digitales comportent bien plus de deux types de minuties (îlots, lacs, crochets, ponts, trifurcations…) et les orientations varient continûment sur $[0\\,;\\,360^\\circ[$, ce qui rend la probabilité réelle de coïncidence encore plus faible. Toutefois, sur une scène de crime, les traces sont souvent partielles ou déformées, d'où l'importance des probabilités dans l'évaluation rigoureuse des preuves en criminalistique."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Appliquer le \\textbf{principe multiplicatif} et les \\textbf{combinaisons} $\\binom{n}{p}$ en dénombrement.\\item Résoudre une inéquation exponentielle discrète $5^n > A$.\\item Calculer des probabilités composées par \\textbf{indépendance} et \\textbf{probabilités totales}.\\end{itemize}"
         }
       ]
     }

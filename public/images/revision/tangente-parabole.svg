@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="350" viewBox="0 0 580 350" role="img" aria-labelledby="title desc">
+  <title id="title">La tangente à la parabole en a = 2</title>
+  <desc id="desc">La parabole y = x² et sa tangente y = 4x − 4 se touchent en A(2 ; 4). Sur la tangente, un déplacement horizontal de 1 correspond à une élévation de 4. Le coefficient directeur est f′(2) = 4.</desc>
+  <rect width="580" height="350" rx="12" fill="#f8fafb"/>
+  <g fill="none" stroke="#e2e9ec" stroke-width="1"><path d="M100 65H450M100 110H450M100 155H450M100 200H450M100 245H450M180 60V290M260 60V290M340 60V290M420 60V290"/></g>
+  <path d="M75 290H470m-7-5 7 5-7 5M100 305V48m-5 7 5-7 5 7" fill="none" stroke="#778a94" stroke-width="1.5"/>
+  <path d="M100 290Q228 290 356 59.6" fill="none" stroke="#385a7c" stroke-width="3"/>
+  <path d="M180 290L390 53.75" stroke="#b36b40" stroke-width="2.5"/>
+  <path d="M260 200H340V110" fill="none" stroke="#b36b40" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <path d="M260 200V290M100 200H260" stroke="#879aa3" stroke-dasharray="3 5"/>
+  <circle cx="260" cy="200" r="5" fill="#385a7c" stroke="white" stroke-width="2"/>
+  <g font-family="Arial, sans-serif" font-size="16" fill="#405966">
+    <text x="26" y="30" font-size="12" letter-spacing="2">LA DÉRIVÉE, UNE PENTE</text>
+    <text x="83" y="313">0</text><text x="255" y="314">2</text><text x="335" y="314">3</text><text x="78" y="206">4</text>
+    <text x="478" y="295" font-style="italic">x</text><text x="83" y="47" font-style="italic">y</text>
+    <text x="211" y="184">A(2 ; 4)</text><text x="290" y="223" fill="#9b5b35">+1</text><text x="348" y="162" fill="#9b5b35">+4</text>
+    <text x="402" y="69" fill="#9b5b35">Tangente</text><text x="402" y="92" font-size="14" fill="#9b5b35">y = 4x − 4</text>
+    <text x="213" y="73" fill="#385a7c">y = x²</text>
+    <text x="400" y="248" fill="#385a7c">f′(2) = 4</text>
+  </g>
+</svg>

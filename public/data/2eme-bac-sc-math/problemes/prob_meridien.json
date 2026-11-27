@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Comment a été défini le mètre ?",
+    "subtitle": "Problème 1.25 — Loi des sinus et triangulation",
+    "context": "Trigonométrie et géométrie"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Comment a été défini le mètre ?",
+          "content": "Avant la Révolution française, des centaines d'unités de longueur coexistaient d'une province à l'autre. En 1791, l'Académie des sciences décide de créer une unité universelle tirée de la nature : le \\textbf{mètre}, défini comme la \\textbf{dix-millionième partie du quart du méridien terrestre}.\\par Pour déterminer cette longueur, les astronomes \\textbf{Jean-Baptiste Delambre} et \\textbf{Pierre Méchain} sont chargés de mesurer l'arc de méridien entre Dunkerque et Barcelone. Impossible de dérouler une règle sur $1\\,000\\text{ km}$ de collines et de forêts ! Ils utilisent la méthode de \\textbf{triangulation} : il suffit de mesurer au sol une unique longueur de départ (la \\textit{base}), puis de mesurer uniquement des \\textbf{angles} entre clochers et sommets situés de part et d'autre du méridien grâce au cercle répétiteur."
+        },
+        {
+          "type": "notation",
+          "title": "Configuration de la triangulation",
+          "content": "On souhaite calculer la longueur $AB$ le long du méridien $(AB)$ à l'aide de trois triangles reliés aux points $C$ (à l'ouest), $D$ (à l'est) et $E$ (à l'ouest). On note $I = (AB) \\cap (CD)$ et $J = (AB) \\cap (DE)$, de sorte que :\\par $$AB = AI + IJ + JB.$$\\par On connaît la base $AC$, l'angle $\\widehat{BAC}$ ainsi que tous les angles des trois triangles $DAC$, $DCE$ et $DEB$."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Démonstration de la loi des sinus et formules de triangulation",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\textbf{A. Loi des sinus.}\\par Dans un triangle $ABC$ quelconque (d'angles notés $\\hat{A}, \\hat{B}, \\hat{C}$), la loi des sinus affirme :\\par $$\\frac{AC}{\\sin\\hat{B}} = \\frac{AB}{\\sin\\hat{C}} = \\frac{BC}{\\sin\\hat{A}}.$$\\begin{enumerate}\\item Rappeler la formule de l'aire $\\mathcal{A}$ du triangle $ABC$ faisant intervenir deux côtés et le sinus de l'angle compris entre eux (par exemple $AB$, $AC$ et $\\sin\\hat{A}$).\\item En écrivant cette aire de trois façons différentes (selon les trois sommets $A, B, C$), démontrer la loi des sinus.\\end{enumerate}\\par\\textbf{B. Calcul théorique par triangulation (trois étapes).}\\begin{enumerate}\\setcounter{enumi}{2}\\item \\textbf{Étape 1 (calcul de $AI$ et $DI$) :} dans le triangle $AIC$, exprimer l'angle $\\widehat{AIC}$ en fonction de $\\widehat{BAC}$ et $\\widehat{ACD}$, puis exprimer $AI$ et $CI$ en fonction de $AC$ et des angles connus. Exprimer ensuite $DC$ dans le triangle $DAC$, puis en déduire $DI = DC - CI$.\\item \\textbf{Étape 2 (calcul de $IJ$ et $JE$) :} remarquer que $\\widehat{DIJ} = \\widehat{AIC}$ (angles opposés par le sommet). Exprimer $\\widehat{DJI}$ dans le triangle $DIJ$, puis calculer $IJ$ et $DJ$ en fonction de $DI$ et des angles connus. Exprimer $DE$ dans le triangle $DCE$, puis en déduire $JE = DE - DJ$.\\item \\textbf{Étape 3 (calcul de $JB$) :} de même dans le triangle $JEB$ (avec $\\widehat{BJE} = \\widehat{DJI}$), exprimer l'angle $\\widehat{JBE}$ puis la longueur $JB$ en fonction de $JE$ et des angles connus.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Diviser les trois expressions de l'aire par AB·AC·BC",
+          "content": "Écrivez $2\\mathcal{A} = AB\\cdot AC\\sin\\hat{A} = BA\\cdot BC\\sin\\hat{B} = CA\\cdot CB\\sin\\hat{C}$, puis divisez tout par $AB\\cdot AC\\cdot BC$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Loi des sinus et formules générales",
+          "content": "\\textbf{1)} L'aire d'un triangle $ABC$ vaut $\\mathcal{A} = \\dfrac{1}{2} AB\\cdot AC\\sin\\hat{A} = \\dfrac{1}{2} BC\\cdot BA\\sin\\hat{B} = \\dfrac{1}{2} CA\\cdot CB\\sin\\hat{C}$.\\par\\textbf{2)} En divisant par $\\dfrac{1}{2} AB\\cdot AC\\cdot BC > 0$, on obtient :\\par $$\\frac{\\sin\\hat{A}}{BC} = \\frac{\\sin\\hat{B}}{AC} = \\frac{\\sin\\hat{C}}{AB} \\iff \\frac{AC}{\\sin\\hat{B}} = \\frac{AB}{\\sin\\hat{C}} = \\frac{BC}{\\sin\\hat{A}}.$$\\par\\textbf{3) Étape 1 :} Dans le triangle $AIC$ ($\\widehat{CAI} = \\widehat{BAC}$ et $\\widehat{ACI} = \\widehat{ACD}$) :\\par $$\\widehat{AIC} = 180^\\circ - \\widehat{BAC} - \\widehat{ACD}, \\qquad AI = AC\\,\\frac{\\sin(\\widehat{ACD})}{\\sin(\\widehat{AIC})}, \\qquad CI = AC\\,\\frac{\\sin(\\widehat{BAC})}{\\sin(\\widehat{AIC})}.$$\\par Dans le triangle $DAC$, la loi des sinus donne $DC = AC\\,\\dfrac{\\sin(\\widehat{DAC})}{\\sin(\\widehat{CDA})}$, d'où $DI = DC - CI$.\\par\\textbf{4) Étape 2 :} Comme $A, I, J$ et $C, I, D$ sont alignés, $\\widehat{DIJ} = \\widehat{AIC}$. Dans le triangle $DIJ$ ($\\widehat{IDJ} = \\widehat{EDC}$) :\\par $$\\widehat{DJI} = 180^\\circ - \\widehat{EDC} - \\widehat{AIC}, \\qquad IJ = DI\\,\\frac{\\sin(\\widehat{EDC})}{\\sin(\\widehat{DJI})}, \\qquad DJ = DI\\,\\frac{\\sin(\\widehat{AIC})}{\\sin(\\widehat{DJI})}.$$\\par Dans le triangle $DCE$, $DE = DC\\,\\dfrac{\\sin(\\widehat{DCE})}{\\sin(\\widehat{CED})}$, d'où $JE = DE - DJ$.\\par\\textbf{5) Étape 3 :} Dans le triangle $JEB$, $\\widehat{BJE} = \\widehat{DJI}$ (opposés par le sommet), donc $\\widehat{JBE} = 180^\\circ - \\widehat{DJI} - \\widehat{DEB}$ et :\\par $$JB = JE\\,\\frac{\\sin(\\widehat{DEB})}{\\sin(\\widehat{JBE})}.$$"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Application réelle : de Dunkerque à Béthune",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On applique ces formules aux premiers triangles réels mesurés par Delambre entre \\textbf{Dunkerque} ($A$) et \\textbf{Béthune} ($B$), via \\textbf{Watten} ($C$), \\textbf{Cassel} ($D$) et \\textbf{Fiefs} ($E$), avec la base $AC = 13\\,237\\text{ toises}$ et les angles (arrondis au degré) :\\begin{itemize}\\item Orientation de la base par rapport au méridien : $\\widehat{BAC} = 30^\\circ$.\\item Triangle $DAC$ (Dunkerque–Cassel–Watten) : $\\widehat{DAC} = 43^\\circ$, $\\widehat{ACD} = 74^\\circ$, $\\widehat{CDA} = 63^\\circ$.\\item Triangle $DCE$ (Cassel–Watten–Fiefs) : $\\widehat{DCE} = 70^\\circ$, $\\widehat{EDC} = 80^\\circ$, $\\widehat{CED} = 30^\\circ$.\\item Triangle $DEB$ (Cassel–Fiefs–Béthune) : $\\widehat{EDB} = 39^\\circ$, $\\widehat{DEB} = 63^\\circ$, $\\widehat{DBE} = 78^\\circ$.\\end{itemize}\\begin{enumerate}\\item Calculer successivement $AI$, $DC$, $CI$, $DI$ (arrondis à $0{,}1\\text{ toise}$).\\item Calculer $\\widehat{DJI}$, puis $IJ$, $DJ$, $DE$ et $JE$.\\item Calculer $JB$, puis la distance totale $AB = AI + IJ + JB$ en toises et en kilomètres (sachant que $1\\text{ toise} \\approx 1{,}949\\text{ m}$).\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Vérifier les angles aux sommets I et J",
+          "content": "Vous devez trouver $\\widehat{AIC} = 180^\\circ - 30^\\circ - 74^\\circ = 76^\\circ$, puis $\\widehat{DJI} = 180^\\circ - 80^\\circ - 76^\\circ = 24^\\circ$, et enfin $\\widehat{JBE} = 180^\\circ - 24^\\circ - 63^\\circ = 93^\\circ$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Dunkerque–Béthune",
+          "content": "\\textbf{1) Étape 1 :} $\\widehat{AIC} = 180^\\circ - 30^\\circ - 74^\\circ = 76^\\circ$.\\par $$\\begin{aligned}AI &= 13\\,237\\times\\frac{\\sin 74^\\circ}{\\sin 76^\\circ} \\approx \\boxed{13\\,113{,}8\\text{ toises}}, \\\\ DC &= 13\\,237\\times\\frac{\\sin 43^\\circ}{\\sin 63^\\circ} \\approx 10\\,131{,}9\\text{ toises}, \\\\ CI &= 13\\,237\\times\\frac{\\sin 30^\\circ}{\\sin 76^\\circ} \\approx 6\\,821{,}1\\text{ toises}, \\\\ DI &= DC - CI \\approx 3\\,310{,}8\\text{ toises}.\\end{aligned}$$\\par\\textbf{2) Étape 2 :} $\\widehat{DJI} = 180^\\circ - 80^\\circ - 76^\\circ = 24^\\circ$.\\par $$\\begin{aligned}IJ &= 3\\,310{,}8\\times\\frac{\\sin 80^\\circ}{\\sin 24^\\circ} \\approx \\boxed{8\\,016{,}3\\text{ toises}}, \\\\ DJ &= 3\\,310{,}8\\times\\frac{\\sin 76^\\circ}{\\sin 24^\\circ} \\approx 7\\,898{,}1\\text{ toises}, \\\\ DE &= 10\\,131{,}9\\times\\frac{\\sin 70^\\circ}{\\sin 30^\\circ} \\approx 19\\,041{,}8\\text{ toises}, \\\\ JE &= DE - DJ \\approx 11\\,143{,}6\\text{ toises}.\\end{aligned}$$\\par\\textbf{3) Étape 3 :} $\\widehat{JBE} = 180^\\circ - 24^\\circ - 63^\\circ = 93^\\circ$, d'où :\\par $$JB = 11\\,143{,}6\\times\\frac{\\sin 63^\\circ}{\\sin 93^\\circ} \\approx \\boxed{9\\,942{,}7\\text{ toises}}.$$\\par Distance totale le long du méridien :\\par $$AB = AI + IJ + JB \\approx 13\\,113{,}8 + 8\\,016{,}3 + 9\\,942{,}7 \\approx \\boxed{31\\,073\\text{ toises}} \\approx \\boxed{60{,}6\\text{ km}}.$$\\par Distance Dunkerque–Béthune : \\blank{$\\approx 31\\,073\\text{ toises}$}, soit \\blank{$\\approx 60{,}6\\text{ km}$} (remarquablement proche des $60\\text{ km}$ mesurés aujourd'hui !)."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "De \\textbf{1792 à 1798}, en pleine Révolution française et guerre franco-espagnole, Delambre et Méchain déploient une chaîne de \\textbf{$90$ triangles} entre Dunkerque et Barcelone (à partir d'une base mesurée à la règle entre Melun et Lieusaint : $6\\,075{,}9$ toises). Ils obtiennent $551\\,584\\text{ toises}$ ($\\approx 1\\,075\\text{ km}$) et fixent en 1799 le mètre étalon à $0{,}513074\\text{ toise}$ — à seulement \\textbf{$0{,}229\\text{ mm}$} de la vraie valeur !"
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "Pour corriger la courbure de la Terre (les triangles ne sont pas plans mais sphériques !), Delambre et Méchain utilisèrent le \\textbf{théorème de Legendre} en géométrie sphérique. Aujourd'hui, le mètre est défini avec une précision absolue par la vitesse de la lumière dans le vide ($1/299\\,792\\,458$ de seconde)."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Démontrer et appliquer la \\textbf{loi des sinus} dans un triangle quelconque.\\item Enchaîner des relations géométriques (somme des angles, angles opposés par le sommet) dans une triangulation.\\item Gérer les arrondis et conversions d'unités dans un calcul géodésique.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

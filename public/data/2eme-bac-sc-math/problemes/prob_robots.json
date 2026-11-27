@@ -1,0 +1,100 @@
+{
+  "header": {
+    "title": "Le mouvement des robots",
+    "subtitle": "Problème 1.8 — Paramétrage, barycentre et trigonométrie",
+    "context": "Vecteurs, barycentre et trigonométrie"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Le mouvement des robots",
+          "content": "Dans l'industrie (imprimantes 3D, découpe laser, bras de soudure ou d'assemblage), un robot doit guider un outil avec une précision millimétrique le long d'une trajectoire imposée.\\par On étudie ici deux architectures classiques : le \\textbf{robot cartésien} (qui commande directement les coordonnées $(x(t), y(t))$ de son outil au fil du temps $t$) et le \\textbf{robot SCARA à deux bras articulés} (où l'on doit calculer les deux angles moteurs $\\theta_1$ et $\\theta_2$ nécessaires pour atteindre un point cible $M(x,y)$ : c'est le problème de \\textit{cinématique inverse})."
+        },
+        {
+          "type": "notation",
+          "title": "Notations",
+          "content": "\\begin{itemize}\\item Dans la \\textbf{Partie 1}, une \\textbf{paramétrisation} d'une courbe est une fonction $\\gamma : t \\mapsto (x(t), y(t))$ qui donne la position du robot à l'instant $t$. Pour un segment $[PQ]$, la paramétrisation standard est $\\gamma_{PQ}(t) = P + t\\overrightarrow{PQ}$ pour $t \\in [0\\,;\\,1]$.\\item Dans la \\textbf{Partie 2}, le bras articulé est fixé à l'origine $F(0,0)$. Le premier bras $[FA]$ et le second bras $[AM]$ ont la même longueur $L > 0$. On note $\\theta_1 > 0$ l'angle de $[FA]$ avec l'axe horizontal $(FH)$ et $\\theta_2 < 0$ l'angle orienté dont le second bras tourne par rapport au prolongement du premier bras.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Robot cartésien : tracer un triangle et son cercle inscrit",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le robot doit dessiner un triangle équilatéral $ABC$ de côté $2$, sa hauteur $[CH]$ et son cercle inscrit $\\mathcal{C}$ de centre $D$. On place l'origine du repère orthonormé en $H(0,0)$, milieu de $[AB]$, de sorte que $B(1,0)$ et $y_C > 0$.\\begin{enumerate}\\item Donner les coordonnées des sommets $A$, $B$ et $C$.\\item Déterminer les coordonnées du centre $D$ du cercle inscrit (qui coïncide avec l'isobarycentre de $A, B, C$ car le triangle est équilatéral), puis le rayon $R$ de ce cercle.\\item On propose la paramétrisation $\\gamma_{AB}(t) = (2t - 1,\\, 0)$ pour $t \\in [0\\,;\\,1]$. Calculer $\\gamma_{AB}(0)$, $\\gamma_{AB}(1/2)$ et $\\gamma_{AB}(1)$ pour vérifier qu'elle décrit bien le segment $[AB]$.\\item Donner de même une paramétrisation pour chacun des segments $[BC]$, $[CA]$ et $[CH]$ pour $t \\in [0\\,;\\,1]$.\\item \\begin{enumerate}\\item Rappeler la paramétrisation du cercle trigonométrique $\\mathcal{C}_0$ de centre $O$ et de rayon $1$, pour $t \\in [0\\,;\\,2\\pi]$.\\item En déduire une paramétrisation $\\gamma_{\\mathcal{C}}(t)$ du cercle inscrit $\\mathcal{C}$ de centre $D$ et de rayon $R$.\\item Modifier cette paramétrisation par un décalage d'angle pour que le robot \\textbf{démarre exactement au point $H(0,0)$} à l'instant $t = 0$.\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Coordonnées de C et du barycentre D",
+          "content": "Dans le triangle rectangle $HBC$, $HB = 1$ et $BC = 2$, donc $HC = \\sqrt{2^2 - 1^2} = \\sqrt{3}$. Les coordonnées de l'isobarycentre $D$ sont les moyennes des coordonnées de $A, B, C$, et le rayon inscrit vaut $HD$."
+        },
+        {
+          "type": "hint",
+          "title": "Démarrer le cercle en H",
+          "content": "Pour $t = 0$, $(\\cos t, \\sin t) = (1, 0)$ place le point à droite du centre $D$. Le point $H$ se trouve tout en bas du cercle : il faut remplacer $t$ par $t - \\dfrac{\\pi}{2}$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Robot cartésien",
+          "content": "\\textbf{1)} Comme $H(0,0)$ est le milieu de $[AB]$ avec $B(1,0)$, on a $A(-1,0)$. Par le théorème de Pythagore dans $HBC$, $HC = \\sqrt{2^2 - 1^2} = \\sqrt{3}$, donc $C(0, \\sqrt{3})$.\\par\\textbf{2)} $D$ est l'isobarycentre de $A(-1,0)$, $B(1,0)$ et $C(0,\\sqrt{3})$, donc :\\par $$x_D = \\frac{-1+1+0}{3} = 0, \\qquad y_D = \\frac{0+0+\\sqrt{3}}{3} = \\frac{\\sqrt{3}}{3}.$$\\par Le cercle inscrit est tangent à $(AB)$ en $H$, donc son rayon vaut $R = HD =$ \\blank{$\\dfrac{\\sqrt{3}}{3}$}.\\par\\textbf{3)} $\\gamma_{AB}(0) = (-1,0) = A$, $\\gamma_{AB}(1/2) = (0,0) = H$, $\\gamma_{AB}(1) = (1,0) = B$ : c'est bien le segment $[AB]$ parcouru de $A$ vers $B$.\\par\\textbf{4)} En utilisant $P + t\\overrightarrow{PQ}$ pour $t \\in [0\\,;\\,1]$ :\\par $$\\begin{aligned}\\gamma_{BC}(t) &= \\bigl(1 - t,\\, t\\sqrt{3}\\bigr), \\\\ \\gamma_{CA}(t) &= \\bigl(-t,\\, (1-t)\\sqrt{3}\\bigr), \\\\ \\gamma_{CH}(t) &= \\bigl(0,\\, (1-t)\\sqrt{3}\\bigr).\\end{aligned}$$\\par\\textbf{5. a)} Le cercle trigonométrique est paramétré par $t \\mapsto (\\cos t, \\sin t)$ pour $t \\in [0\\,;\\,2\\pi]$.\\par\\textbf{5. b)} Par homothétie de rapport $R = \\dfrac{\\sqrt{3}}{3}$ et translation vers $D\\left(0, \\dfrac{\\sqrt{3}}{3}\\right)$ :\\par $$\\gamma_{\\mathcal{C}}(t) = \\left(\\frac{\\sqrt{3}}{3}\\cos t,\\; \\frac{\\sqrt{3}}{3}\\sin t + \\frac{\\sqrt{3}}{3}\\right), \\quad t \\in [0\\,;\\,2\\pi].$$\\par\\textbf{5. c)} Pour partir de $H(0,0)$ à $t=0$, on remplace $t$ par $t - \\dfrac{\\pi}{2}$. Comme $\\cos\\left(t - \\frac{\\pi}{2}\\right) = \\sin t$ et $\\sin\\left(t - \\frac{\\pi}{2}\\right) = -\\cos t$, on obtient :\\par $$\\tilde{\\gamma}_{\\mathcal{C}}(t) = \\left(\\frac{\\sqrt{3}}{3}\\sin t,\\; -\\frac{\\sqrt{3}}{3}\\cos t + \\frac{\\sqrt{3}}{3}\\right), \\quad t \\in [0\\,;\\,2\\pi].$$\\par Vérification : $\\tilde{\\gamma}_{\\mathcal{C}}(0) = (0, 0) = H$ !"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Robot SCARA à deux bras articulés",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Le robot doit positionner l'extrémité $M$ de son second bras au point $M(x,y)$ avec $x > 0$, $y > 0$ et $0 < \\sqrt{x^2+y^2} < 2L$. On note $A'$ le symétrique du coude $A$ par rapport à la droite $(FM)$ et $I$ le point d'intersection des segments $[AA']$ et $[FM]$.\\begin{enumerate}\\item Exprimer la distance $FM$ en fonction de $x$ et $y$.\\item Quelle est la nature du quadrilatère $FAMA'$ ? Justifier.\\item En déduire la nature du triangle $IFA$ et exprimer $FI$ en fonction de $x$ et $y$.\\item Calculer $\\cos(\\widehat{IFA})$ et $\\sin(\\widehat{IFA})$ en fonction de $L$, $x$ et $y$.\\item En remarquant que la somme des angles du triangle isocèle $FAM$ relie $\\widehat{IFA}$ à l'angle du coude $\\theta_2 \\in ]-\\pi\\,;\\,0[$ (précisément $|\\theta_2| = 2\\widehat{IFA}$), exprimer $\\cos(\\theta_2)$ et $\\sin(\\theta_2)$ en fonction de $L$, $x$ et $y$.\\item En considérant l'angle $\\widehat{HFM}$ formé par $[FM]$ avec l'axe des abscisses, calculer $\\cos(\\widehat{HFM})$ et $\\sin(\\widehat{HFM})$, puis exprimer $\\cos(\\theta_1)$ et $\\sin(\\theta_1)$ sachant que $\\theta_1 = \\widehat{HFM} + \\widehat{IFA}$.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Losange FAMA' et angle double",
+          "content": "Comme $FA = AM = L$, la symétrie donne $FA' = A'M = L$ : les $4$ côtés sont égaux, donc $FAMA'$ est un \\textbf{losange} et ses diagonales se coupent perpendiculairement en leur milieu $I$. Pour $\\theta_2$, utilisez $\\cos(2\\alpha) = 2\\cos^2\\alpha - 1$ et $\\sin(2\\alpha) = 2\\sin\\alpha\\cos\\alpha$ (attention au signe négatif de $\\theta_2$ !)."
+        },
+        {
+          "type": "hint",
+          "title": "Formules d'addition pour θ_1",
+          "content": "Utilisez $\\cos(\\alpha + \\beta) = \\cos\\alpha\\cos\\beta - \\sin\\alpha\\sin\\beta$ et $\\sin(\\alpha + \\beta) = \\sin\\alpha\\cos\\beta + \\cos\\alpha\\sin\\beta$ avec $\\alpha = \\widehat{HFM}$ et $\\beta = \\widehat{IFA}$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Cinématique inverse du robot SCARA",
+          "content": "\\textbf{1)} Comme $F(0,0)$ et $M(x,y)$, on a $FM = \\sqrt{x^2 + y^2}$.\\par\\textbf{2)} Par symétrie par rapport à $(FM)$, $FA' = FA = L$ et $MA' = MA = L$. Les quatre côtés de $FAMA'$ ont même longueur $L$ : c'est un \\textbf{losange}.\\par\\textbf{3)} Les diagonales d'un losange sont perpendiculaires et se coupent en leur milieu $I$ : le triangle $IFA$ est \\textbf{rectangle en $I$}, et $FI = \\dfrac{FM}{2} = \\dfrac{\\sqrt{x^2+y^2}}{2}$.\\par\\textbf{4)} Dans le triangle rectangle $IFA$ (hypoténuse $FA = L$) :\\par $$\\cos(\\widehat{IFA}) = \\frac{FI}{FA} = \\frac{\\sqrt{x^2+y^2}}{2L}, \\qquad IA = \\sqrt{L^2 - \\frac{x^2+y^2}{4}} = \\frac{\\sqrt{4L^2 - x^2 - y^2}}{2},$$\\par d'où $\\sin(\\widehat{IFA}) = \\dfrac{IA}{FA} = \\dfrac{\\sqrt{4L^2 - x^2 - y^2}}{2L}$.\\par\\textbf{5)} Le triangle $FAM$ est isocèle en $A$, donc $\\widehat{FAM} = \\pi - 2\\widehat{IFA}$. L'angle extérieur au coude vaut donc $|\\theta_2| = \\pi - \\widehat{FAM} = 2\\widehat{IFA}$, et comme le bras se replie dans le sens horaire ($\\theta_2 = -2\\widehat{IFA} < 0$) :\\par $$\\cos(\\theta_2) = \\cos(2\\widehat{IFA}) = 2\\cos^2(\\widehat{IFA}) - 1 = \\boxed{\\frac{x^2 + y^2}{2L^2} - 1},$$\\par $$\\sin(\\theta_2) = -\\sin(2\\widehat{IFA}) = -2\\sin(\\widehat{IFA})\\cos(\\widehat{IFA}) = -\\frac{\\sqrt{x^2+y^2}\\sqrt{4L^2 - x^2 - y^2}}{2L^2}.$$\\par Formule clé : $\\cos(\\theta_2) =$ \\blank{$\\dfrac{x^2 + y^2}{2L^2} - 1$}.\\par\\textbf{6)} Par définition des coordonnées polaires de $M(x,y)$ :\\par $$\\cos(\\widehat{HFM}) = \\frac{x}{\\sqrt{x^2+y^2}}, \\qquad \\sin(\\widehat{HFM}) = \\frac{y}{\\sqrt{x^2+y^2}}.$$\\par Comme $\\theta_1 = \\widehat{HFM} + \\widehat{IFA}$, les formules d'addition donnent :\\par $$\\begin{aligned}\\cos(\\theta_1) &= \\frac{x}{\\sqrt{x^2+y^2}}\\cdot\\frac{\\sqrt{x^2+y^2}}{2L} - \\frac{y}{\\sqrt{x^2+y^2}}\\cdot\\frac{\\sqrt{4L^2-x^2-y^2}}{2L} = \\frac{x}{2L} - \\frac{y\\sqrt{4L^2-x^2-y^2}}{2L\\sqrt{x^2+y^2}}, \\\\ \\sin(\\theta_1) &= \\frac{y}{\\sqrt{x^2+y^2}}\\cdot\\frac{\\sqrt{x^2+y^2}}{2L} + \\frac{x}{\\sqrt{x^2+y^2}}\\cdot\\frac{\\sqrt{4L^2-x^2-y^2}}{2L} = \\frac{y}{2L} + \\frac{x\\sqrt{4L^2-x^2-y^2}}{2L\\sqrt{x^2+y^2}}.\\end{aligned}$$\\par Connaissant leur cosinus et leur sinus, les angles moteurs $\\theta_1$ et $\\theta_2$ sont déterminés de manière unique !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Le robot \\textbf{SCARA} (\\textit{Selective Compliance Assembly Robot Arm}) est inventé en 1978 au Japon par le professeur Hiroshi Makino (Université de Yamanashi). Rapide, rigide verticalement et souple dans le plan horizontal, il révolutionne les chaînes d'assemblage électronique dès les années 1980."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En robotique, le point symétrique $A'$ correspond à une \\textbf{seconde solution} dite « coude en bas » ($\\theta_2 > 0$, $\\theta_1 = \\widehat{HFM} - \\widehat{IFA}$). La zone atteignable par ce robot est le disque de rayon $2L$ ; en 3D, les bras industriels à 6 degrés de liberté utilisent des matrices de transformation homogènes $4\\times 4$ (convention de Denavit–Hartenberg)."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Calculer un \\textbf{barycentre} et paramétrer des segments et cercles dans un repère.\\item Utiliser les propriétés géométriques d'un \\textbf{losange} et du triangle rectangle.\\item Maîtriser les \\textbf{formules trigonométriques} d'angle double et d'addition.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

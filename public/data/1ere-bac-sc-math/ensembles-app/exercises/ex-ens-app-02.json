@@ -6,9 +6,9 @@
   "requiresRedaction": true,
   "context": "On considère le diagramme de Venn suivant, avec $E$ l'ensemble universel.",
   "media": {
-    "src": "/data/1ere-bac-sc-math/pictures/ex_02_venn.png",
+    "src": "/data/1ere-bac-sc-math/pictures/ex_02_venn.svg",
     "position": "top",
-    "width": "50%",
+    "width": "62%",
     "alt": "Diagramme de Venn avec trois ensembles A, B, C et les éléments +1, +2, ..., +20 répartis dans les régions"
   },
   "questions": [

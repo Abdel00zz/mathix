@@ -1,0 +1,100 @@
+{
+  "header": {
+    "title": "Combien y a-t-il de feuilles dans un mille-feuille ?",
+    "subtitle": "Problème 1.4 — Suites arithmético-géométriques",
+    "context": "Suites numériques"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Combien y a-t-il de feuilles dans un mille-feuille ?",
+          "content": "Le mille-feuille est un grand classique de la pâtisserie française composé de \\textbf{trois plaques de pâte feuilletée} superposées, garnies de crème pâtissière. Mais ce gâteau porte-t-il bien son nom ? Contient-il vraiment mille feuilles ?\\par Pour fabriquer une pâte feuilletée, le pâtissier enferme d'abord un bloc de beurre entre deux feuilles de pâte appelée \\textbf{détrempe} (état initial : $2$ feuilles de détrempe et $1$ couche de beurre). Puis il réalise des \\textbf{tours} : à chaque tour, il étale la pâte et la replie en $p$ parties égales les unes sur les autres.\\begin{itemize}\\item $p = 2$ : \\textbf{tourage simple} (pliage en 2) ;\\item $p = 3$ : \\textbf{tourage traditionnel} (pliage portefeuille en 3) ;\\item $p = 4$ : \\textbf{tourage double} (pliage en 4).\\end{itemize}Attention : lorsque deux feuilles de détrempe se retrouvent en contact direct lors d'un pliage (sans beurre entre elles), elles \\textbf{fusionnent} en une seule feuille !"
+        },
+        {
+          "type": "notation",
+          "title": "Notations",
+          "content": "On note $f_n$ le nombre de feuilles de détrempe dans \\textbf{une plaque} de pâte feuilletée après $n$ tours de pliage en $p$ parties (où $p \\ge 2$ est un entier fixé). Le mille-feuille étant constitué de $3$ plaques, il contient $3 f_n$ feuilles au total."
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 2ème Bac Sc. Math (outils admis)",
+          "content": "Pour résoudre une inéquation du type $p^n > A$, on peut en 1ère Bac tester les puissances successives de $p$ (ou utiliser en 2e Bac la fonction logarithme : $n > \\dfrac{\\ln A}{\\ln p}$). De même, la racine quatrième $\\sqrt[4]{A}$ désigne l'unique réel positif $x$ tel que $x^4 = A$, soit $\\sqrt{\\sqrt{A}}$."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Tourage régulier en p parties",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Combien y a-t-il de feuilles de détrempe au départ ($f_0$) ?\\item Lors d'un pliage en $2$ parties, expliquer pourquoi le nombre de feuilles passe de $f_n$ à $2f_n - 1$.\\item Dans le cas général d'un pliage en $p$ parties ($p \\ge 2$), exprimer $f_1$ et $f_2$ en fonction de $p$.\\item Justifier que pour tout entier naturel $n$, on a la relation de récurrence : $$f_{n+1} = p f_n - p + 1.$$\\item On pose $b_n = f_n - 1$ pour tout $n \\in \\mathbb{N}$. Quelle est l'interprétation pâtissière concrète de $b_n$ ?\\item Montrer que la suite $(b_n)$ est géométrique. Préciser sa raison et son premier terme $b_0$.\\item En déduire l'expression explicite de $b_n$, puis celle de $f_n$, en fonction de $p$ et $n$.\\item Une pâte feuilletée classique subit $6$ tours. Calculer le nombre total de feuilles d'un mille-feuille ($3$ plaques) pour chacun des trois tourages ($p = 2$, $p = 3$, $p = 4$).\\item Pour chacun des trois tourages, quel est le nombre minimal de tours nécessaires pour qu'un mille-feuille contienne \\textbf{plus de $1\\,000$ feuilles} ?\\item Si le pâtissier ne souhaite faire que $4$ tours, en combien de parties $p$ au minimum doit-il plier la pâte à chaque tour pour dépasser $1\\,000$ feuilles ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Nombre de fusions lors d'un pliage en p",
+          "content": "En empilant $p$ morceaux de pâte l'un sur l'autre, il y a exactement $p - 1$ surfaces de contact entre deux morceaux consécutifs. À chaque contact, deux feuilles de détrempe fusionnent, ce qui retire $1$ feuille."
+        },
+        {
+          "type": "hint",
+          "title": "Suite auxiliaire b_n = f_n - 1",
+          "content": "Exprimer $b_{n+1} = f_{n+1} - 1 = (p f_n - p + 1) - 1 = p(f_n - 1) = p b_n$. Remarquer que le nombre de couches de beurre, lui, est simplement multiplié par $p$ à chaque tour !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Tourage régulier",
+          "content": "\\textbf{1)} Au départ, le beurre est pris en sandwich entre $2$ feuilles de détrempe : $f_0 = 2$.\\par\\textbf{2)} En repliant en $2$, on superpose $2$ paquets de $f_n$ feuilles (soit $2f_n$ feuilles), mais les deux feuilles qui se touchent au pli fusionnent en une seule : il reste $2f_n - 1$ feuilles.\\par\\textbf{3)} En repliant en $p$ parties, on obtient $p$ paquets empilés avec $p - 1$ zones de contact où deux feuilles fusionnent :\\par $$f_1 = p f_0 - (p - 1) = 2p - p + 1 = p + 1, \\qquad f_2 = p(p+1) - (p-1) = p^2 + 1.$$\\par\\textbf{4)} Par le même raisonnement, à l'étape $n+1$, on empile $p$ blocs de $f_n$ feuilles et on perd $p - 1$ feuilles par fusion aux interfaces :\\par $$f_{n+1} = p f_n - (p - 1) = p f_n - p + 1.$$\\par\\textbf{5)} Entre deux feuilles de détrempe consécutives se trouve exactement une couche de beurre : il y a donc $f_n - 1 = b_n$ \\textbf{couches de beurre}.\\par\\textbf{6)} Pour tout $n \\in \\mathbb{N}$ :\\par $$b_{n+1} = f_{n+1} - 1 = (p f_n - p + 1) - 1 = p(f_n - 1) = p b_n.$$\\par La suite $(b_n)$ est donc \\textbf{géométrique} de raison $p$ et de premier terme $b_0 = f_0 - 1 = 1$.\\par\\textbf{7)} On en déduit $b_n = b_0 p^n = p^n$, et par conséquent :\\par $$f_n = b_n + 1 = \\boxed{p^n + 1}.$$\\par Formule explicite : \\blank{$f_n = p^n + 1$}.\\par\\textbf{8)} Pour $6$ tours et $3$ plaques ($3 f_6 = 3(p^6 + 1)$) :\\begin{itemize}\\item Tourage simple ($p=2$) : $3(2^6 + 1) = 3 \\times 65 =$ \\blank{$195$} feuilles.\\item Tourage traditionnel ($p=3$) : $3(3^6 + 1) = 3 \\times 730 =$ \\blank{$2\\,190$} feuilles.\\item Tourage double ($p=4$) : $3(4^6 + 1) = 3 \\times 4\\,097 =$ \\blank{$12\\,291$} feuilles.\\end{itemize}\\par\\textbf{9)} On veut $3(p^n + 1) > 1\\,000 \\iff p^n > \\dfrac{997}{3} \\approx 332{,}33$ :\\begin{itemize}\\item $p = 2$ : $2^8 = 256 < 332{,}33 < 512 = 2^9 \\implies$ \\textbf{$9$ tours}.\\item $p = 3$ : $3^5 = 243 < 332{,}33 < 729 = 3^6 \\implies$ \\textbf{$6$ tours}.\\item $p = 4$ : $4^4 = 256 < 332{,}33 < 1024 = 4^5 \\implies$ \\textbf{$5$ tours}.\\end{itemize}\\par\\textbf{10)} Pour $n = 4$ tours, on veut $p^4 > \\dfrac{997}{3} \\approx 332{,}33 \\iff p > \\sqrt[4]{997/3} \\approx 4{,}27$ (en effet $4^4 = 256 < 332{,}33 < 625 = 5^4$). Il faut donc plier au minimum en \\blank{$p = 5$} parties."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Tourage mixte alterné",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En pratique, beaucoup de pâtissiers alternent un tour traditionnel ($p = 3$) et un tour double ($p = 4$). On note $\\tilde{f}_n$ le nombre de feuilles après $n$ tours ($\\tilde{f}_0 = 2$), où les tours impairs ($1^{\\text{er}}, 3^{\\text{e}}, \\dots$) sont pliés en $3$ et les tours pairs ($2^{\\text{e}}, 4^{\\text{e}}, \\dots$) en $4$.\\begin{enumerate}\\item Exprimer $\\tilde{f}_{2k+1}$ en fonction de $\\tilde{f}_{2k}$, puis montrer que pour tout $k \\in \\mathbb{N}$ : $$\\tilde{f}_{2k+2} = 12\\tilde{f}_{2k} - 11.$$\\item On pose $\\tilde{g}_k = \\tilde{f}_{2k} - 1$. Montrer que $(\\tilde{g}_k)$ est une suite géométrique et en déduire l'expression explicite de $\\tilde{f}_{2k}$ en fonction de $k$.\\item Calculer $\\tilde{f}_0, \\tilde{f}_1, \\tilde{f}_2, \\tilde{f}_3, \\tilde{f}_4, \\tilde{f}_5$ et $\\tilde{f}_6$, puis le nombre total de feuilles d'un mille-feuille après $4$ et après $6$ tours mixtes.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Composer deux tours consécutifs",
+          "content": "Écrivez $\\tilde{f}_{2k+1} = 3\\tilde{f}_{2k} - 2$, puis injectez cette expression dans $\\tilde{f}_{2k+2} = 4\\tilde{f}_{2k+1} - 3$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Tourage mixte",
+          "content": "\\textbf{1)} Un pliage en $3$ donne $\\tilde{f}_{2k+1} = 3\\tilde{f}_{2k} - 2$. Le pliage suivant en $4$ donne :\\par $$\\tilde{f}_{2k+2} = 4\\tilde{f}_{2k+1} - 3 = 4(3\\tilde{f}_{2k} - 2) - 3 = 12\\tilde{f}_{2k} - 11.$$\\par\\textbf{2)} On a $\\tilde{g}_{k+1} = \\tilde{f}_{2k+2} - 1 = (12\\tilde{f}_{2k} - 11) - 1 = 12(\\tilde{f}_{2k} - 1) = 12\\tilde{g}_k$. La suite $(\\tilde{g}_k)$ est géométrique de raison $12$ et de premier terme $\\tilde{g}_0 = \\tilde{f}_0 - 1 = 1$, d'où $\\tilde{g}_k = 12^k$ et :\\par $$\\tilde{f}_{2k} = \\boxed{12^k + 1}.$$\\par\\textbf{3)} On en déduit également $\\tilde{f}_{2k+1} = 3(12^k + 1) - 2 = 3 \\times 12^k + 1$. Les premiers termes sont :\\par $$\\tilde{f}_0 = 2,\\quad \\tilde{f}_1 = 4,\\quad \\tilde{f}_2 = 13,\\quad \\tilde{f}_3 = 37,\\quad \\tilde{f}_4 = 145,\\quad \\tilde{f}_5 = 433,\\quad \\tilde{f}_6 = 1\\,729.$$\\par Un mille-feuille ($3$ plaques) contient donc $3 \\times 145 = 435$ feuilles après $4$ tours mixtes, $3 \\times 433 = 1\\,299$ feuilles après $5$ tours, et $3 \\times 1\\,729 =$ \\blank{$5\\,187$} feuilles après $6$ tours mixtes !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "La recette de la pâte feuilletée est attribuée au cuisinier \\textbf{François Pierre de La Varenne} dans \\textit{Le Cuisinier françois} (1651), puis perfectionnée par \\textbf{Marie-Antoine Carême} au début du $\\mathrm{XIX}^{\\mathrm{e}}$ siècle. Le mille-feuille tel que nous le connaissons est popularisé en 1867 par le pâtissier parisien Adolphe Seugnot (ou Sergent). Il est aussi connu sous le nom de \\textit{Napoléon} (en référence à la ville de Naples) ou de \\textit{tompouce} aux Pays-Bas et en Belgique."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En pratique, dépasser $6$ tours traditionnels ($730$ couches dans une plaque de quelques millimètres) devient contre-productif : les couches de beurre deviennent si fines (de l'ordre du micromètre) qu'elles se mélangent à la détrempe, empêchant la pâte de lever à la cuisson. En mathématiques, la suite $f_{n+1} = a f_n + b$ s'appelle une \\textbf{suite arithmético-géométrique} : on la ramène toujours à une suite géométrique en soustrayant son point fixe $\\ell = \\dfrac{b}{1-a}$."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Établir une relation de récurrence \\textbf{arithmético-géométrique} à partir d'une situation concrète.\\item Étudier une suite récurrente via une \\textbf{suite auxiliaire géométrique}.\\item Étudier une suite extraite de rangs pairs et impairs ($\\tilde{f}_{2k}$, $\\tilde{f}_{2k+1}$).\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

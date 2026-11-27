@@ -1,0 +1,95 @@
+{
+  "header": {
+    "title": "Optimiser la taille d'une boîte",
+    "subtitle": "Problème 1.21 — Dérivation et optimisation de patrons",
+    "context": "Analyse et optimisation"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Optimiser la taille d'une boîte",
+          "content": "L'industrie de l'emballage consomme près de $100$ millions de tonnes de carton chaque année : optimiser un patron de boîte — soit pour \\textbf{maximiser le volume} à partir d'une feuille rectangulaire donnée, soit pour \\textbf{minimiser la surface de carton} nécessaire à un volume fixé — représente un enjeu économique et écologique majeur.\\par Nous étudions ici deux patrons différents de boîtes parallélépipédiques (sans couvercle, en négligeant les languettes de collage) découpés dans une feuille de format \\textbf{A4} ($21\\text{ cm} \\times 29{,}7\\text{ cm}$)."
+        },
+        {
+          "type": "notation",
+          "title": "Description des deux patrons",
+          "content": "\\begin{itemize}\\item \\textbf{Patron 1 (découpe aux quatre coins) :} dans une feuille rectangulaire, on découpe quatre carrés identiques de côté $h$ aux quatre coins, puis on relève les quatre rabats de hauteur $h$. Si la base intérieure mesure $L \\times \\ell$, la feuille initiale mesure $(L + 2h) \\times (\\ell + 2h)$.\\item \\textbf{Patron 2 (enroulement sur feuille A4 $21 \\times 29{,}7\\text{ cm}$) :} les quatre faces latérales sont alignées le long du grand côté ($29{,}7\\text{ cm}$ : alternance $h, \\ell, h, \\ell$, soit $2h + 2\\ell = 29{,}7$), et le fond ainsi qu'un côté de hauteur $h$ occupent le petit côté ($h + L = 21\\text{ cm}$).\\end{itemize}"
+        },
+        {
+          "type": "rappel",
+          "title": "Passerelle 1ère Bac → Supérieur (dérivée partielle d'une fonction de deux variables)",
+          "content": "Pour chercher le minimum d'une fonction $S(L, \\ell)$ dépendant de deux variables positives $L$ et $\\ell$, on fixe d'abord $\\ell$ comme une constante et on dérive par rapport à $L$ (noté $\\dfrac{\\partial S}{\\partial L}$), puis on fixe $L$ et on dérive par rapport à $\\ell$ (noté $\\dfrac{\\partial S}{\\partial \\ell}$). Un minimum intérieur vérifie nécessairement le système $\\dfrac{\\partial S}{\\partial L} = 0$ et $\\dfrac{\\partial S}{\\partial \\ell} = 0$."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Patron 1 : volume maximal sur A4 et support minimal à volume fixé",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\textbf{A. Optimisation du volume sur une feuille A4 ($21 \\times 29{,}7\\text{ cm}$).}\\begin{enumerate}\\item Exprimer les dimensions $L$ et $\\ell$ de la base en fonction de $h$, et préciser l'intervalle des valeurs possibles de $h$.\\item Montrer que le volume de la boîte vaut : $$V(h) = 4 h^3 - 101{,}4\\, h^2 + 623{,}7\\, h.$$\\item Étudier les variations de $V$ sur $]0\\,;\\,10{,}5[$ et déterminer la hauteur $h_1$ (au centième de cm) qui maximise le volume. Calculer alors $L$, $\\ell$, le volume maximal $V_{\\max}$ (en $\\text{cm}^3$) et l'aire de carton perdue ($4 h_1^2$).\\end{enumerate}\\par\\textbf{B. Optimisation du support pour un volume $V > 0$ fixé.}\\par On fixe désormais un volume $V > 0$ souhaité et l'on cherche les dimensions $(L, \\ell, h)$ du Patron 1 qui minimisent l'aire de la feuille $S = (L + 2h)(\\ell + 2h)$.\\begin{enumerate}\\setcounter{enumi}{3}\\item En utilisant $h = \\dfrac{V}{L\\ell}$, montrer que l'aire de la feuille en fonction de $L$ et $\\ell$ vaut :\\par $$S(L, \\ell) = L\\ell + \\frac{2V}{L} + \\frac{2V}{\\ell} + \\frac{4V^2}{L^2 \\ell^2}.$$\\item En dérivant $S$ par rapport à $L$ ($\\ell$ fixé), puis par rapport à $\\ell$ ($L$ fixé), montrer que l'annulation simultanée des deux dérivées conduit au système :\\par $$\\begin{cases}\\ell - \\dfrac{2V}{L^2} - \\dfrac{8V^2}{L^3 \\ell^2} = 0 \\\\[6pt] L - \\dfrac{2V}{\\ell^2} - \\dfrac{8V^2}{L^2 \\ell^3} = 0\\end{cases}$$\\item En soustrayant ou en comparant les deux équations multipliées respectivement par $L$ et $\\ell$, montrer que $L = \\ell$, puis en posant $\\tilde{\\ell} = \\ell^3$, résoudre l'équation du second degré en $\\tilde{\\ell}$ pour obtenir :\\par $$L = \\ell = \\sqrt[3]{4V}, \\qquad h = \\frac{\\sqrt[3]{4V}}{4} = \\frac{L}{4}.$$\\item \\textbf{Application :} pour $V = 1\\,128{,}5\\text{ cm}^3$ (le volume maximal trouvé sur A4), calculer $L, \\ell, h$, les dimensions de la feuille carrée optimale et son aire minimale. Comparer avec l'aire d'une feuille A4 ($623{,}7\\text{ cm}^2$).\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Dériver V(h) et résoudre l'équation en l^3",
+          "content": "Pour la Partie A, $V'(h) = 12 h^2 - 202{,}8 h + 623{,}7$, dont une seule racine appartient à $]0\\,;\\,10{,}5[$. Pour la Partie B, multipliez la première équation par $L$ et la seconde par $\\ell$ : le terme $L\\ell$ et le terme $-\\dfrac{8V^2}{L^2\\ell^2}$ sont identiques dans les deux, donc $\\dfrac{2V}{L} = \\dfrac{2V}{\\ell} \\implies L = \\ell$ ! En remplaçant $L$ par $\\ell$ et $\\tilde{\\ell} = \\ell^3$, on obtient $\\tilde{\\ell}^2 - 2V\\tilde{\\ell} - 8V^2 = 0$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Patron 1",
+          "content": "\\textbf{1)} $L = 29{,}7 - 2h$ et $\\ell = 21 - 2h$. Pour que $L, \\ell, h > 0$, il faut $h \\in ]0\\,;\\,10{,}5[$.\\par\\textbf{2)} $V(h) = h(29{,}7 - 2h)(21 - 2h) = 4h^3 - 101{,}4 h^2 + 623{,}7 h$.\\par\\textbf{3)} $V'(h) = 12 h^2 - 202{,}8 h + 623{,}7$. Discriminant : $\\Delta = 202{,}8^2 - 48 \\times 623{,}7 = 11\\,190{,}24$. Les racines sont :\\par $$h_1 = \\frac{202{,}8 - \\sqrt{11\\,190{,}24}}{24} \\approx \\boxed{4{,}04\\text{ cm}}, \\qquad h_2 = \\frac{202{,}8 + \\sqrt{11\\,190{,}24}}{24} \\approx 12{,}86\\text{ cm} \\notin ]0\\,;\\,10{,}5[.$$\\par $V'$ est positive sur $]0\\,;\\,h_1[$ puis négative sur $]h_1\\,;\\,10{,}5[$ : le volume maximal est atteint en $h_1 \\approx$ \\blank{$4{,}04\\text{ cm}$}, avec $L \\approx 21{,}62\\text{ cm}$, $\\ell \\approx 12{,}92\\text{ cm}$,\\par $$V_{\\max} \\approx \\boxed{1\\,128{,}5\\text{ cm}^3}, \\qquad \\text{perte} = 4 h_1^2 \\approx 65{,}3\\text{ cm}^2.$$ \\par\\textbf{4)} $S = (L + 2h)(\\ell + 2h) = L\\ell + 2hL + 2h\\ell + 4h^2 = L\\ell + \\dfrac{2V}{\\ell} + \\dfrac{2V}{L} + \\dfrac{4V^2}{L^2 \\ell^2}$.\\par\\textbf{5)} En dérivant par rapport à $L$ ($\\ell$ constant) : $\\dfrac{\\partial S}{\\partial L} = \\ell - \\dfrac{2V}{L^2} - \\dfrac{8V^2}{L^3\\ell^2} = 0$, et symétriquement $\\dfrac{\\partial S}{\\partial \\ell} = L - \\dfrac{2V}{\\ell^2} - \\dfrac{8V^2}{L^2\\ell^3} = 0$.\\par\\textbf{6)} En multipliant la $1^{\\text{re}}$ équation par $L$ et la $2^{\\text{e}}$ par $\\ell$, puis en soustrayant :\\par $$\\frac{2V}{\\ell} - \\frac{2V}{L} = 0 \\implies L = \\ell.$$\\par La première équation devient alors $\\ell - \\dfrac{2V}{\\ell^2} - \\dfrac{8V^2}{\\ell^5} = 0 \\iff \\ell^6 - 2V\\ell^3 - 8V^2 = 0$. En posant $\\tilde{\\ell} = \\ell^3 > 0$ :\\par $$\\tilde{\\ell}^2 - 2V\\tilde{\\ell} - 8V^2 = (\\tilde{\\ell} - 4V)(\\tilde{\\ell} + 2V) = 0 \\implies \\tilde{\\ell} = 4V.$$\\par Donc $L = \\ell =$ \\blank{$\\sqrt[3]{4V}$} et $h = \\dfrac{V}{L^2} = \\dfrac{4V}{4L^2} = \\dfrac{L^3}{4L^2} = \\dfrac{L}{4}$ ! La feuille optimale est un \\textbf{carré} de côté $L + 2h = \\dfrac{3}{2}L$.\\par\\textbf{7)} Pour $V = 1\\,128{,}5\\text{ cm}^3$ : $L = \\ell = \\sqrt[3]{4\\,514} \\approx 16{,}53\\text{ cm}$, $h \\approx 4{,}13\\text{ cm}$, feuille carrée de côté $24{,}79\\text{ cm}$ et d'aire minimale $S_{\\min} \\approx$ \\blank{$614{,}5\\text{ cm}^2$} $< 623{,}7\\text{ cm}^2$ (on économise environ $9{,}2\\text{ cm}^2$ par rapport à la feuille A4)."
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Patron 2 sur une feuille A4 et comparaison",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour le Patron 2 découpé dans une feuille A4 ($21 \\times 29{,}7\\text{ cm}$), on a les relations $2h + 2\\ell = 29{,}7$ (soit $\\ell = 14{,}85 - h$) et $h + L = 21$ (soit $L = 21 - h$).\\begin{enumerate}\\item Préciser l'intervalle de variation de $h$ et montrer que le volume de la boîte vaut : $$V_2(h) = h^3 - 35{,}85\\, h^2 + 311{,}85\\, h.$$\\item Dériver $V_2$, déterminer la hauteur optimale $h^*$ dans le domaine de validité, le volume maximal $V_{2,\\max}$ et la surface de feuille perdue.\\item Comparer l'efficacité du Patron 1 et du Patron 2 sur une feuille A4.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Vérifier que la seconde racine est hors domaine !",
+          "content": "La dérivée $V_2'(h) = 3h^2 - 71{,}7 h + 311{,}85$ admet deux racines positives, mais l'une d'elles dépasse $14{,}85\\text{ cm}$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Patron 2",
+          "content": "\\textbf{1)} Il faut $h > 0$, $\\ell = 14{,}85 - h > 0$ et $L = 21 - h > 0$, donc $h \\in ]0\\,;\\,14{,}85[$. Le volume vaut :\\par $$V_2(h) = h(14{,}85 - h)(21 - h) = h^3 - 35{,}85\\,h^2 + 311{,}85\\,h.$$\\par\\textbf{2)} $V_2'(h) = 3h^2 - 71{,}7 h + 311{,}85$. Le discriminant vaut $\\Delta = 71{,}7^2 - 12 \\times 311{,}85 = 5\\,140{,}89 - 3\\,742{,}20 = 1\\,398{,}69$. Les deux racines sont :\\par $$h^* = \\frac{71{,}7 - \\sqrt{1\\,398{,}69}}{6} \\approx \\boxed{5{,}72\\text{ cm}}, \\qquad h_2 = \\frac{71{,}7 + \\sqrt{1\\,398{,}69}}{6} \\approx 18{,}18\\text{ cm} \\notin ]0\\,;\\,14{,}85[.$$\\par $V_2$ est croissante sur $]0\\,;\\,5{,}72]$ puis décroissante sur $[5{,}72\\,;\\,14{,}85[$. Pour $h^* \\approx$ \\blank{$5{,}72\\text{ cm}$}, on obtient $\\ell \\approx 9{,}13\\text{ cm}$, $L \\approx 15{,}28\\text{ cm}$, et :\\par $$V_{2,\\max} \\approx \\boxed{798{,}0\\text{ cm}^3}.$$\\par La surface de carton utilisée par les $5$ faces vaut $L\\ell + 2h(L + \\ell) \\approx 139{,}5 + 279{,}2 = 418{,}7\\text{ cm}^2$, soit une perte importante de $623{,}7 - 418{,}7 \\approx 205\\text{ cm}^2$ (environ un tiers de la feuille !).\\par\\textbf{3)} Sur une feuille A4, le \\textbf{Patron 1} ($1\\,128{,}5\\text{ cm}^3$ pour $65{,}3\\text{ cm}^2$ de chute) est nettement plus performant que le Patron 2 ($798\\text{ cm}^3$ pour $205\\text{ cm}^2$ de chute)."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "De nombreux emballages emblématiques ont été conçus pour répondre à des contraintes géométriques précises : les boîtes à chapeaux au $\\mathrm{XIX}^{\\mathrm{e}}$ siècle, le tétraèdre « berlingot » Tetra Pak (1943, qui minimise le rapport surface/volume pour un pliage continu) et la brique alimentaire parallélépipédique (1963, optimisée pour le rangement et l'empilement sur palettes)."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En optimisant directement la surface de la boîte ouverte $S_{\\text{boîte}} = L\\ell + 2h(L+\\ell)$ sans contrainte de découpe rectangulaire (donc sans chutes), on trouverait $L = \\ell = \\sqrt[3]{2V}$ et $h = \\dfrac{L}{2}$ : la boîte optimale sans chute est exactement un \\textbf{demi-cube} !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Modéliser un volume par une \\textbf{fonction polynomiale de degré 3} et déterminer son maximum par dérivation.\\item Résoudre une équation bicubique par changement de variable ($\\tilde{\\ell} = \\ell^3$).\\item Découvrir l'optimisation à deux variables par annulation des dérivées partielles.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "header": {
+    "title": "Pourquoi les phares de voiture ont-ils cette forme ?",
+    "subtitle": "Problème 1.6 — Parabole, tangente et réflexion",
+    "context": "Analyse et géométrie analytique"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Pourquoi les phares de voiture ont-ils cette forme ?",
+          "content": "Un phare de voiture doit projeter un faisceau de lumière puissant et \\textbf{parallèle à la route}, alors que l'ampoule émet des rayons dans toutes les directions. Pour y parvenir, le fond du phare est tapissé d'un miroir de forme \\textbf{parabolique}.\\par D'après le principe de \\textbf{retour inverse de la lumière}, dire que tous les rayons issus de l'ampoule $F$ repartent parallèlement à l'axe du phare équivaut à montrer que tous les rayons entrants \\textbf{parallèles à l'axe} convergent, après réflexion sur la parabole, en un \\textbf{même point unique $F$}, appelé le \\textbf{foyer} de la parabole.\\par On se place dans le plan muni d'un repère orthonormé $(O;\\vec{\\imath},\\vec{\\jmath})$ et on étudie le miroir modélisé par la parabole $\\mathcal{P}$ d'équation $y = f(x) = x^2$."
+        },
+        {
+          "type": "notation",
+          "title": "Loi de la réflexion sur une courbe",
+          "content": "Lorsqu'un rayon lumineux frappe une courbe lisse en un point $I$, il se réfléchit comme sur la \\textbf{tangente} $(T)$ à la courbe en $I$ : le rayon réfléchi est le symétrique du rayon incident par rapport à la droite \\textbf{normale} $(N)$ (la perpendiculaire à $(T)$ passant par $I$)."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Tangente, normale et symétrie d'un rayon incident",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "On considère un rayon incident vertical arrivant du haut suivant la droite d'équation $x = a$, où $a \\in \\mathbb{R}^*$ est une constante non nulle.\\begin{enumerate}\\item Quel est l'axe de symétrie de la parabole $\\mathcal{P}$ d'équation $y = x^2$ ? Si tous les rayons réfléchis concourent en un point $F$, quelle doit être l'abscisse $x_F$ de $F$ ?\\item Donner les coordonnées du point d'impact $I$ du rayon $x = a$ sur la parabole $\\mathcal{P}$.\\item Déterminer l'équation réduite de la tangente $(T)$ à $\\mathcal{P}$ au point $I$.\\item On choisit sur le rayon incident (au-dessus de $I$) le point $A(a\\,;\\,a^2 + 1)$. Déterminer l'équation réduite de la droite $(P)$ passant par $A$ et parallèle à $(T)$.\\item \\begin{enumerate}\\item Donner un vecteur directeur $\\vec{v}$ de la tangente $(T)$.\\item En déduire un vecteur directeur $\\vec{w}$ de la normale $(N)$ (droite perpendiculaire à $(T)$ passant par $I$) dont l'abscisse vaut $1$.\\item Déterminer l'équation réduite de la droite $(N)$.\\end{enumerate}\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Équation de la tangente et orthogonalité",
+          "content": "La tangente en $a$ a pour équation $y = f'(a)(x-a) + f(a)$. Un vecteur directeur d'une droite de pente $m$ est $\\vec{v}(1, m)$. Deux vecteurs $\\vec{v}(1,m)$ et $\\vec{w}(1, m')$ sont orthogonaux si et seulement si $\\vec{v}\\cdot\\vec{w} = 1 + mm' = 0$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Tangente et normale",
+          "content": "\\textbf{1)} La fonction $f(x) = x^2$ est paire : la parabole est symétrique par rapport à l'axe des ordonnées ($x = 0$). Par symétrie, le foyer $F$ appartient nécessairement à cet axe, donc $x_F = 0$.\\par\\textbf{2)} Le point $I$ appartient à $\\mathcal{P}$ et a pour abscisse $a$, donc $I(a\\,;\\,a^2)$.\\par\\textbf{3)} Pour tout $x \\in \\mathbb{R}$, $f'(x) = 2x$, donc $f'(a) = 2a$. L'équation de $(T)$ est $y = 2a(x - a) + a^2$, soit \\blank{$y = 2ax - a^2$}.\\par\\textbf{4)} La droite $(P)$ étant parallèle à $(T)$, elle a le même coefficient directeur $2a$, donc $y = 2ax + p$. Comme $A(a\\,;\\,a^2+1) \\in (P)$, on a $a^2+1 = 2a^2 + p \\implies p = 1 - a^2$, d'où :\\par $$(P) : y = 2ax + 1 - a^2.$$\\par\\textbf{5. a)} La pente de $(T)$ vaut $2a$, donc $\\vec{v}(1\\,;\\,2a)$ dirige $(T)$.\\par\\textbf{5. b)} Cherchons $\\vec{w}(1\\,;\\,y_w)$ orthogonal à $\\vec{v}$ : $\\vec{v}\\cdot\\vec{w} = 0 \\iff 1 + 2a\\,y_w = 0 \\iff y_w = -\\dfrac{1}{2a}$ (licite car $a \\neq 0$). Ainsi $\\vec{w}\\left(1\\,;\\,-\\dfrac{1}{2a}\\right)$.\\par\\textbf{5. c)} La normale $(N)$ passe par $I(a\\,;\\,a^2)$ et a pour pente $-\\dfrac{1}{2a}$ :\\par $$y = -\\frac{1}{2a}(x - a) + a^2 \\iff \\boxed{y = -\\frac{1}{2a}x + a^2 + \\frac{1}{2}}.$$"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Rayon réfléchi et existence du foyer",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour construire le symétrique $A'$ de $A$ par rapport à la normale $(N)$, on note $S$ le projeté orthogonal de $A$ sur $(N)$, c'est-à-dire l'intersection des droites $(P)$ et $(N)$.\\begin{enumerate}\\item Calculer les coordonnées du point $S = (P) \\cap (N)$ en fonction de $a$.\\item Sachant que $S$ est le milieu du segment $[AA']$, déterminer les coordonnées du point $A'$.\\item Le rayon réfléchi est porté par la droite $(IA')$. Montrer que l'équation réduite de $(IA')$ est : $$y = \\left(a - \\frac{1}{4a}\\right)x + \\frac{1}{4}.$$\\item En déduire que, quelle que soit la position $a \\neq 0$ du rayon incident, tous les rayons réfléchis passent par un même point fixe $F$, dont on donnera les coordonnées. Conclure sur le placement de l'ampoule dans un phare.\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Point S et milieu de [AA']",
+          "content": "Pour $x_S$, résoudre $2ax + 1 - a^2 = -\\dfrac{1}{2a}x + a^2 + \\dfrac{1}{2}$ en multipliant les deux membres par $2a$. Puis utiliser $x_{A'} = 2x_S - x_A$ et $y_{A'} = 2y_S - y_A$."
+        },
+        {
+          "type": "hint",
+          "title": "Pente de la droite (IA')",
+          "content": "Calculez $x_{A'} - a$ et $y_{A'} - a^2$ en mettant au dénominateur commun $4a^2 + 1$ : de très belles simplifications apparaissent !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Foyer de la parabole",
+          "content": "\\textbf{1)} Le point $S$ vérifie le système $y_S = 2a x_S + 1 - a^2 = -\\dfrac{1}{2a}x_S + a^2 + \\dfrac{1}{2}$. D'où :\\par $$\\left(2a + \\frac{1}{2a}\\right)x_S = 2a^2 - \\frac{1}{2} \\iff \\frac{4a^2+1}{2a}x_S = \\frac{4a^2-1}{2} \\iff x_S = a\\,\\frac{4a^2 - 1}{4a^2 + 1}.$$\\par On en déduit l'ordonnée :\\par $$y_S = 2a^2\\frac{4a^2-1}{4a^2+1} + 1 - a^2 = \\frac{8a^4 - 2a^2 + (1-a^2)(4a^2+1)}{4a^2+1} = \\frac{4a^4 + a^2 + 1}{4a^2+1}.$$\\par\\textbf{2)} Comme $S$ est le milieu de $[AA']$ avec $A(a\\,;\\,a^2+1)$ :\\par $$x_{A'} = 2x_S - a = a\\,\\frac{2(4a^2-1) - (4a^2+1)}{4a^2+1} = a\\,\\frac{4a^2 - 3}{4a^2 + 1},$$\\par $$y_{A'} = 2y_S - (a^2+1) = \\frac{2(4a^4+a^2+1) - (a^2+1)(4a^2+1)}{4a^2+1} = \\frac{4a^4 - 3a^2 + 1}{4a^2+1}.$$\\par\\textbf{3)} Calculons le vecteur $\\overrightarrow{IA'}$ :\\par $$x_{A'} - a = a\\,\\frac{(4a^2-3)-(4a^2+1)}{4a^2+1} = \\frac{-4a}{4a^2+1},$$\\par $$y_{A'} - a^2 = \\frac{(4a^4-3a^2+1) - a^2(4a^2+1)}{4a^2+1} = \\frac{1 - 4a^2}{4a^2+1}.$$\\par Le coefficient directeur de $(IA')$ vaut donc :\\par $$m = \\frac{y_{A'} - a^2}{x_{A'} - a} = \\frac{1 - 4a^2}{-4a} = a - \\frac{1}{4a}.$$\\par Comme $(IA')$ passe par $I(a\\,;\\,a^2)$, son équation réduite est :\\par $$y = \\left(a - \\frac{1}{4a}\\right)(x - a) + a^2 = \\left(a - \\frac{1}{4a}\\right)x - a^2 + \\frac{1}{4} + a^2 = \\boxed{\\left(a - \\frac{1}{4a}\\right)x + \\frac{1}{4}}.$$\\par\\textbf{4)} Pour $x = 0$, l'ordonnée vaut $y = \\dfrac{1}{4}$, \\textbf{indépendamment de $a$} ! Tous les rayons réfléchis passent donc par le point fixe \\blank{$F\\left(0\\,;\\,\\dfrac{1}{4}\\right)$}. Inversement, en plaçant l'ampoule du phare exactement au foyer $F$ du miroir parabolique, tous les rayons émis vers le miroir repartent parallèlement à l'axe du phare !"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "La propriété focale de la parabole est déjà connue des Grecs (Apollonius de Perga, $\\mathrm{III}^{\\mathrm{e}}$ s. av. J.-C.). Selon la légende, \\textbf{Archimède} aurait utilisé des miroirs paraboliques (« miroirs ardents ») lors du siège de Syracuse en 213 av. J.-C. pour concentrer les rayons du Soleil et incendier les navires romains. Au $\\mathrm{XVIII}^{\\mathrm{e}}$ siècle, les phares maritimes adoptent des réflecteurs paraboliques avant l'invention des lentilles de Fresnel (1822)."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En trois dimensions, on fait tourner la parabole autour de son axe pour obtenir un \\textbf{paraboloïde de révolution}. C'est exactement la géométrie utilisée pour les \\textbf{antennes paraboliques} (le récepteur est placé au foyer pour capter les ondes parallèles venant du satellite), les \\textbf{fours solaires} (comme celui d'Odeillo) et les grands \\textbf{télescopes à miroir}. Plus généralement, pour $y = kx^2$, le foyer se situe en $F\\left(0\\,;\\,\\dfrac{1}{4k}\\right)$."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Déterminer l'\\textbf{équation d'une tangente} par dérivation.\\item Utiliser le \\textbf{produit scalaire} et les vecteurs normaux pour obtenir une droite perpendiculaire.\\item Mener un calcul analytique paramétré (intersection, symétrie orthogonale) et identifier un point fixe.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

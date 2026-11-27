@@ -1,0 +1,57 @@
+{
+  "id": "/",
+  "name": "Mathix — Programme, leçons, quiz et exercices",
+  "short_name": "Mathix",
+  "description": "Plateforme éditoriale de mathématiques : cours interactifs, quiz, exercices, examens nationaux, cadre référentiel et prépa concours.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#FAF9F6",
+  "theme_color": "#1C3557",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["education", "math", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "public/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "public/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "public/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Programme mathématique",
+      "short_name": "Programme",
+      "url": "./#/eleve/2eme-bac-sc-math",
+      "icons": [{ "src": "public/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Examens nationaux",
+      "short_name": "Examens",
+      "url": "./#/eleve/2eme-bac-sc-math?tab=examens",
+      "icons": [{ "src": "public/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Prépa Concours",
+      "short_name": "Concours",
+      "url": "./#/eleve/2eme-bac-sc-math?tab=concours",
+      "icons": [{ "src": "public/favicon.svg", "sizes": "any" }]
+    }
+  ]
+}

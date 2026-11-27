@@ -1,0 +1,90 @@
+{
+  "header": {
+    "title": "Faire ses courses en comptant jusqu'à douze",
+    "subtitle": "Problème 1.19 — Numération en base douze",
+    "context": "Arithmétique et numération"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Faire ses courses en comptant jusqu'à douze",
+          "content": "Nous comptons au quotidien en \\textbf{base $10$} (parce que nous avons $10$ doigts), mais le nombre $12$ est partout autour de nous : $12$ mois dans l'année, $2\\times 12$ heures dans une journée, douzaine d'œufs ou d'huîtres, $12$ pouces dans un pied anglo-saxon… Pourquoi $12$ est-il si pratique ? Parce que $12$ possède \\textbf{quatre diviseurs propres} ($2, 3, 4, 6$), contre seulement deux ($2$ et $5$) pour $10$ !\\par Dans ce problème, nous faisons toutes nos opérations et nos courses du $\\mathrm{XV}^{\\mathrm{e}}$ siècle entièrement en \\textbf{base $12$} (système \\textit{duodécimal}), sans jamais repasser par la base $10$ !"
+        },
+        {
+          "type": "notation",
+          "title": "Les douze chiffres de la base 12",
+          "content": "En base $12$, on utilise les $12$ chiffres : $0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B$, où $A$ vaut dix et $B$ vaut onze. Le nombre « douze » s'écrit donc $10_{12}$ (une douzaine et zéro unité), « cent quarante-quatre » s'écrit $100_{12}$ ($12^2$, appelé une \\textbf{grosse}). Dans tout ce problème, sauf mention contraire, tous les nombres sont écrits directement en base $12$."
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Compter, additionner, soustraire et multiplier en base 12",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item Donner le nombre suivant (successeur) en base $12$ de chacun des nombres suivants : $49$, $A0$, $AB$, $BB$ et $3A9$.\\item Construire la table d'addition en base $12$ (des chiffres $0$ à $B$), puis poser et calculer directement en base $12$ : $$56 + 64,\\qquad 19 + 34,\\qquad AB + BA.$$\\item Poser et calculer les soustractions suivantes directement en base $12$ : $$AB - 51,\\qquad 23 - 4,\\qquad 1A9 - BA.$$\\item Construire les principales lignes de la table de multiplication en base $12$, puis poser et calculer directement en base $12$ : $$10 \\times 10,\\qquad 123 \\times 45,\\qquad A3 \\times B2.$$\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Retenues en base 12",
+          "content": "En base $12$, on pose une retenue dès qu'on atteint ou dépasse $10_{12}$ (douze) ! Par exemple, $9 + 4 = 11_{12}$ (car $9 + 3 = 10_{12}$, plus $1$), et $A + B = 19_{12}$ (car $10 + 11 = 21 = 12 + 9$)."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Opérations en base 12",
+          "content": "\\textbf{1) Successeurs en base $12$ :}\\par $49 \\to 4A$, $\\; A0 \\to A1$, $\\; AB \\to B0$, $\\; BB \\to$ \\blank{$100$}, $\\; 3A9 \\to 3AA$.\\par\\textbf{2) Table d'addition (extrait des grands chiffres) et sommes :}\\par $$\\begin{array}{c|ccccc}+ & 8 & 9 & A & B \\\\\\hline 4 & 10 & 11 & 12 & 13 \\\\ 6 & 12 & 13 & 14 & 15 \\\\ 9 & 15 & 16 & 17 & 18 \\\\ A & 16 & 17 & 18 & 19 \\\\ B & 17 & 18 & 19 & 1A\\end{array}$$\\begin{itemize}\\item $56 + 64$ : $6 + 4 = A$ ; $5 + 6 = B \\implies \\boxed{BA}$.\\item $19 + 34$ : $9 + 4 = 11$ (on pose $1$, retenue $1$) ; $1 + 3 + 1 = 5 \\implies \\boxed{51}$.\\item $AB + BA$ : $B + A = 19$ (on pose $9$, retenue $1$) ; $A + B + 1 = 1A \\implies$ \\blank{$1A9$}.\\end{itemize}\\par\\textbf{3) Soustractions :}\\begin{itemize}\\item $AB - 51$ : $B - 1 = A$ ; $A - 5 = 5 \\implies \\boxed{5A}$.\\item $23 - 4$ : $13_{12} - 4 = B$ (emprunt de $1$ douzaine) ; $2 - 1 = 1 \\implies \\boxed{1B}$.\\item $1A9 - BA = \\boxed{AB}$ (vérification immédiate de l'addition $AB + BA = 1A9$ !).\\end{itemize}\\par\\textbf{4) Multiplications en base $12$ :}\\begin{itemize}\\item $10 \\times 10 = \\boxed{100}$.\\item $123 \\times 45$ : $123 \\times 5 = 5B3$ (car $3\\times 5 = 13$, $2\\times 5 + 1 = B$, $1\\times 5 = 5$) ; $123 \\times 40 = 4900$ (car $3\\times 4 = 10$, $2\\times 4 + 1 = 9$, $1\\times 4 = 4$). Somme : $5B3 + 4900 =$ \\blank{$52B3$}.\\item $A3 \\times B2$ : $A3 \\times 2 = 186$ ; $A3 \\times B0 = 9490$ (car $3\\times B = 29$, $A\\times B + 2 = 92 + 2 = 94$). Somme : $186 + 9490 = \\boxed{9656}$.\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — Fractions, divisions et courses du XVe siècle",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\begin{enumerate}\\item \\textbf{Fractions usuelles :} donner l'écriture « duodécimale » (avec virgule en base $12$) de $\\dfrac{1}{2}$, $\\dfrac{1}{3}$, $\\dfrac{1}{4}$ et $\\dfrac{1}{6}$. Pourquoi la base $12$ est-elle plus agréable que la base $10$ pour ces fractions ?\\item \\textbf{Divisions posées en base $12$ :} effectuer $1 \\div 5$ (repérer la période) et la division euclidienne exacte $3636 \\div 73$.\\item \\textbf{Courses au $\\mathrm{XV}^{\\mathrm{e}}$ siècle :} à cette époque en France, $1\\text{ sou} = 10_{12}\\text{ deniers}$ (douze deniers). Un client achète :\\begin{itemize}\\item du pain pour $1\\text{ sou}$ et $4\\text{ deniers}$ ($1{,}4\\text{ s}$) ;\\item du fromage pour $2\\text{ sous}$ et $9\\text{ deniers}$ ($2{,}9\\text{ s}$) ;\\item de la viande pour $5\\text{ sous}$ et $9\\text{ deniers}$ ($5{,}9\\text{ s}$).\\end{itemize}Il paie avec une pièce d'une livre valant $20_{12}\\text{ sous}$ (soit $24$ sous en base $10$ — ou un billet de $20_{12}\\text{ s}$). Calculer en base $12$ le montant total de ses courses et la monnaie rendue.\\item \\textbf{Vente d'œufs à la grosse :} un fermier vend $1A{,}6_{12}$ grosses d'œufs au prix de $40_{12}\\text{ deniers}$ la grosse (rappel : $1\\text{ grosse} = 10_{12}\\text{ douzaines} = 100_{12}\\text{ œufs}$). Combien d'œufs vend-il (en base $12$), combien encaisse-t-il (en deniers puis en sous), et quel est le prix d'un seul œuf ?\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Fractions simples en base 12",
+          "content": "En base $12$, le premier chiffre après la virgule représente des \\textbf{douzièmes} ($10_{12}^{-1}$). Ainsi $\\dfrac{1}{3} = \\dfrac{4}{10_{12}} = 0{,}4_{12}$ ! Et pour $3636 \\div 73$, testez $73 \\times 5$ puis le reste !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Fractions et courses en base 12",
+          "content": "\\textbf{1) Fractions usuelles en base $12$ :}\\par $$\\frac{1}{2} = \\frac{6}{10_{12}} = 0{,}6,\\qquad \\frac{1}{3} = \\frac{4}{10_{12}} = 0{,}4,\\qquad \\frac{1}{4} = \\frac{3}{10_{12}} = 0{,}3,\\qquad \\frac{1}{6} = \\frac{2}{10_{12}} = 0{,}2.$$\\par Toutes ces fractions courantes (moitié, tiers, quart, sixième) ont un développement fini à \\textbf{un seul chiffre} après la virgule (alors que $1/3$ et $1/6$ sont infinis en base $10$) !\\par\\textbf{2) Divisions en base $12$ :}\\begin{itemize}\\item $1 \\div 5$ : $10_{12} = 5\\times 2 + 2$ ; $20_{12} = 5\\times 4 + 4$ ; $40_{12} = 5\\times 9 + 3$ ; $30_{12} = 5\\times 7 + 1$ (en base $10$ : $12=5\\times 2+2$, $24=5\\times 4+4$, $48=5\\times 9+3$, $36=5\\times 7+1$). On retrouve le reste $1$, d'où une période de longueur $4$ : $1 \\div 5 =$ \\blank{$0{,}24972497\\dots$} !\\item $3636 \\div 73$ : $73 \\times 5 = 303$ (car $3\\times 5 = 13$, $7\\times 5 + 1 = 30$). Reste $363 - 303 = 60$. On abaisse $6 \\implies 606$. Or $73 \\times A = 606$ (car $3\\times A = 26$, $7\\times A + 2 = 5A + 2 = 60$) ! Donc $3636 \\div 73 =$ \\blank{$5A$} (reste $0$ !).\\end{itemize}\\par\\textbf{3) Courses :} Montant total : $1{,}4 + 2{,}9 + 5{,}9$. Chiffre des deniers : $4 + 9 + 9 = 1A_{12}$ (on pose $A$, retenue $1$). Chiffre des sous : $1 + 2 + 5 + 1 = 9$. Total : \\blank{$9{,}A\\text{ sous}$} (soit $9$ sous et $A$ deniers). Monnaie rendue sur $20_{12}\\text{ sous}$ : $20{,}0 - 9{,}A = \\boxed{12{,}2\\text{ sous}}$ (car $A + 2 = 10_{12}$, retenue $1$, puis $9 + 1 = A_{12}$ et $A_{12} + 12_{12} = 20_{12}$ !).\\par\\textbf{4) Vente d'œufs :}\\begin{itemize}\\item Nombre d'œufs : $1A{,}6 \\times 100 = \\boxed{1A60_{12}\\text{ œufs}}$.\\item Montant encaissé : $1A{,}6 \\times 40 = 1A6 \\times 4 = \\boxed{760_{12}\\text{ deniers}}$ (car $6\\times 4 = 20$, $A\\times 4 + 2 = 36$, $1\\times 4 + 3 = 7$), soit $76_{12}\\text{ sous}$ (puisque $1\\text{ sou} = 10_{12}\\text{ deniers}$).\\item Prix d'un œuf : $40 \\div 100 = \\boxed{0{,}4_{12}\\text{ denier}}$ (un tiers de denier !).\\end{itemize}"
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "Le comptage en base $12$ vient probablement du comptage des \\textbf{$12$ phalanges} des quatre doigts longs d'une main à l'aide du pouce (l'autre main comptant les douzaines jusqu'à $60$, d'où la base $60$ des Babyloniens !). Le système monétaire ancien (livre = $20$ sous, sou = $12$ deniers) a survécu au Royaume-Uni jusqu'en 1971."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "En informatique, la base $2$ (binaire) et la base $16$ (hexadécimale, chiffres $0\\dots 9, A\\dots F$) sont omniprésentes. Des sociétés savantes (comme la \\textit{Dozenal Society}) militent encore aujourd'hui pour les avantages arithmétiques de la base $12$ !"
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Maîtriser la \\textbf{numération de position en base $b$} et la division euclidienne.\\item Effectuer des opérations et des développements fractionnaires sans passer par la base $10$.\\item Relier les diviseurs d'une base à la finitude des écritures fractionnaires.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

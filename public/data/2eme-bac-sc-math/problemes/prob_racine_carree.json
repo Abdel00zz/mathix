@@ -1,0 +1,85 @@
+{
+  "header": {
+    "title": "Extraire une racine carrée à la main",
+    "subtitle": "Problème 1.18 — Fausse position, Héron et potence",
+    "context": "Suites et approximation numérique"
+  },
+  "sections": [
+    {
+      "id": "contexte",
+      "category": "course",
+      "title": "",
+      "blocks": [
+        {
+          "type": "problem",
+          "title": "Extraire une racine carrée à la main",
+          "content": "Avant l'apparition des calculatrices électroniques, comment les mathématiciens, astronomes et ingénieurs calculaient-ils $\\sqrt{2}$ ou $\\sqrt{a}$ avec une grande précision ?\\par Ce problème explore \\textbf{trois méthodes historiques célèbres} :\\begin{enumerate}\\item la méthode chinoise de la \\textbf{fausse position} (\\textit{Ying bu zu}, $\\mathrm{II}^{\\mathrm{e}}$ s. av. J.-C.), par interpolation linéaire ;\\item l'algorithme itératif de \\textbf{Héron d'Alexandrie} ($\\mathrm{I}^{\\mathrm{er}}$ s. ap. J.-C.), d'une rapidité foudroyante ;\\item l'algorithme décimal de la \\textbf{potence}, enseigné autrefois à l'école, qui produit les décimales de $\\sqrt{a}$ une à une.\\end{enumerate}"
+        }
+      ]
+    },
+    {
+      "id": "partie-1",
+      "category": "course",
+      "title": "Partie 1 — Méthode de la fausse position (Ying bu zu) et méthode de Héron",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "\\textbf{A. Méthode de la fausse position.}\\par Soit $a > 0$ et $f(x) = x^2 - a$. On dispose d'un encadrement $\\alpha < \\sqrt{a} < \\beta$ (avec $0 < \\alpha < \\beta$), de sorte que $f(\\alpha) < 0 < f(\\beta)$. On approche la parabole $y = f(x)$ sur $[\\alpha\\,;\\,\\beta]$ par la droite sécante passant par les points $\\bigl(\\alpha, f(\\alpha)\\bigr)$ et $\\bigl(\\beta, f(\\beta)\\bigr)$.\\begin{enumerate}\\item Montrer que l'équation de cette droite sécante est $y = g(x) = (\\alpha + \\beta)x - a - \\alpha\\beta$.\\item En déduire l'abscisse $x_0$ où cette droite coupe l'axe des abscisses ($g(x_0) = 0$), qui fournit une approximation de $\\sqrt{a}$.\\item Appliquer cette formule à $\\sqrt{2}$ avec $\\alpha = 1$ et $\\beta = 2$.\\end{enumerate}\\par\\textbf{B. Méthode de Héron d'Alexandrie.}\\par Soit $a > 0$. On définit la suite $(u_n)_{n\\ge 0}$ par un réel initial $u_0 > 0$ et, pour tout $n \\in \\mathbb{N}$ :\\par $$u_{n+1} = \\frac{1}{2}\\left(u_n + \\frac{a}{u_n}\\right).$$\\begin{enumerate}\\setcounter{enumi}{3}\\item Démontrer par récurrence que $u_n > 0$ pour tout $n \\in \\mathbb{N}$.\\item Montrer que pour tout $n \\in \\mathbb{N}$, $u_{n+1}^2 - a = \\dfrac{1}{4}\\left(u_n - \\dfrac{a}{u_n}\\right)^2$, et en déduire que $u_n \\ge \\sqrt{a}$ pour tout $n \\ge 1$.\\item Étudier le signe de $u_{n+1} - u_n$ pour $n \\ge 1$ et montrer que la suite $(u_n)_{n\\ge 1}$ est décroissante.\\item En déduire que $(u_n)$ converge vers une limite $\\ell > 0$, puis démontrer que $\\ell = \\sqrt{a}$.\\item Application à $\\sqrt{2}$ avec $u_0 = 1$ : calculer les valeurs exactes (en fractions) et approchées de $u_1$, $u_2$ et $u_3$. Comparer $u_3$ à $\\sqrt{2} \\approx 1{,}41421356\\dots$\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Pente de la sécante et monotonie de (u_n)",
+          "content": "Pour la Partie A, la pente de la sécante vaut $\\dfrac{f(\\beta) - f(\\alpha)}{\\beta - \\alpha} = \\dfrac{\\beta^2 - \\alpha^2}{\\beta - \\alpha} = \\alpha + \\beta$. Pour la Partie B, calculez $u_{n+1} - u_n = \\dfrac{a - u_n^2}{2 u_n}$ et utilisez le fait que $u_n \\ge \\sqrt{a} \\implies u_n^2 \\ge a$ !"
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 1 : Fausse position et Héron",
+          "content": "\\textbf{1)} La pente de la droite reliant $(\\alpha, \\alpha^2-a)$ et $(\\beta, \\beta^2-a)$ vaut $\\dfrac{(\\beta^2-a)-(\\alpha^2-a)}{\\beta-\\alpha} = \\alpha + \\beta$. Son équation est :\\par $$g(x) = (\\alpha + \\beta)(x - \\alpha) + \\alpha^2 - a = (\\alpha + \\beta)x - \\alpha^2 - \\alpha\\beta + \\alpha^2 - a = (\\alpha + \\beta)x - a - \\alpha\\beta.$$\\par\\textbf{2)} $g(x_0) = 0 \\iff x_0 = \\boxed{\\dfrac{a + \\alpha\\beta}{\\alpha + \\beta}}$.\\par\\textbf{3)} Pour $a = 2, \\alpha = 1, \\beta = 2$ : $x_0 = \\dfrac{2 + 2}{1 + 2} = \\dfrac{4}{3} \\approx 1{,}333$ (encore assez grossier, mais itérable).\\par\\textbf{4)} \\textit{Initialisation :} $u_0 > 0$. \\textit{Hérédité :} si $u_n > 0$, alors $\\dfrac{a}{u_n} > 0$ donc $u_{n+1} = \\dfrac{1}{2}\\left(u_n + \\dfrac{a}{u_n}\\right) > 0$.\\par\\textbf{5)} Pour tout $n \\in \\mathbb{N}$ :\\par $$u_{n+1}^2 - a = \\frac{1}{4}\\left(u_n^2 + 2a + \\frac{a^2}{u_n^2}\\right) - a = \\frac{1}{4}\\left(u_n^2 - 2a + \\frac{a^2}{u_n^2}\\right) = \\frac{1}{4}\\left(u_n - \\frac{a}{u_n}\\right)^2 \\ge 0.$$\\par Donc $u_{n+1}^2 \\ge a$, et comme $u_{n+1} > 0$, on a $u_n \\ge \\sqrt{a}$ pour tout $n \\ge 1$.\\par\\textbf{6)} Pour tout $n \\ge 1$ : $u_{n+1} - u_n = \\dfrac{1}{2}\\left(\\dfrac{a}{u_n} - u_n\\right) = \\dfrac{a - u_n^2}{2u_n} \\le 0$ car $u_n^2 \\ge a$ et $u_n > 0$. Donc $(u_n)_{n\\ge 1}$ est \\textbf{décroissante}.\\par\\textbf{7)} La suite $(u_n)_{n\\ge 1}$ est décroissante et minorée par $\\sqrt{a}$, donc d'après le théorème de la convergence monotone, elle converge vers une limite $\\ell \\ge \\sqrt{a} > 0$. Par passage à la limite dans $u_{n+1} = \\dfrac{1}{2}\\left(u_n + \\dfrac{a}{u_n}\\right)$ :\\par $$\\ell = \\frac{1}{2}\\left(\\ell + \\frac{a}{\\ell}\\right) \\iff \\ell = \\frac{a}{\\ell} \\iff \\ell^2 = a \\implies \\ell = \\boxed{\\sqrt{a}}.$$\\par\\textbf{8)} Pour $a = 2, u_0 = 1$ :\\par $$u_1 = \\frac{3}{2} = 1{,}5,\\qquad u_2 = \\frac{17}{12} \\approx 1{,}41667,\\qquad u_3 = \\frac{577}{408} \\approx \\boxed{1{,}4142157}.$$\\par Valeur exacte de $u_3$ : \\blank{$\\dfrac{577}{408}$}. En seulement $3$ étapes, on a déjà \\textbf{$5$ décimales exactes} de $\\sqrt{2}$ !"
+        }
+      ]
+    },
+    {
+      "id": "partie-2",
+      "category": "course",
+      "title": "Partie 2 — La méthode de la potence (extraction décimale)",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pour extraire les décimales de $\\sqrt{a}$ (avec $a \\in [1\\,;\\,100[$ pour fixer les idées), on regroupe les chiffres de $a$ par tranches de $2$ à partir de la virgule : $a = \\alpha_0 + \\dfrac{\\alpha_1}{100} + \\dfrac{\\alpha_2}{100^2} + \\cdots$, où $\\alpha_n \\in \\{0, 1, \\dots, 99\\}$.\\par On construit par récurrence trois suites d'entiers $(a_n)$, $(y_n)$ et $(d_n)$ :\\begin{itemize}\\item $a_0 = \\alpha_0$, $d_0 = \\lfloor\\sqrt{a_0}\\rfloor$, $y_0 = d_0$ ;\\item pour tout $n \\ge 1$ : on « abaisse » la tranche suivante en posant $a_n = 100\\, a_{n-1} + \\alpha_n$, puis on choisit le plus grand chiffre $d_n \\in \\{0, 1, \\dots, 9\\}$ tel que $(10 y_{n-1} + d_n)^2 \\le a_n$, c'est-à-dire $(20 y_{n-1} + d_n)\\, d_n \\le a_n - 100 y_{n-1}^2$, et on pose $y_n = 10 y_{n-1} + d_n$.\\end{itemize}\\begin{enumerate}\\item Appliquer cet algorithme pas à pas pour $a = 2$ ($\\alpha_0 = 2$, $\\alpha_n = 0$ pour $n \\ge 1$) afin de déterminer les chiffres $d_0, d_1, d_2, d_3$ (et donc les $3$ premières décimales de $\\sqrt{2}$).\\item Montrer par récurrence que pour tout $n \\in \\mathbb{N}$, on a l'encadrement : $$y_n^2 \\le a_n < (y_n + 1)^2.$$\\item Exprimer $\\dfrac{a_n}{100^n}$ en fonction de $\\alpha_0, \\dots, \\alpha_n$, puis justifier que $\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{a_n}{100^n} = a$.\\item Exprimer $\\dfrac{y_n}{10^n}$ en fonction des chiffres $d_0, d_1, \\dots, d_n$, puis démontrer à l'aide du théorème des gendarmes que $\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{y_n}{10^n} = \\sqrt{a}$ (les chiffres $d_0, d_1, d_2, \\dots$ sont bien les décimales exactes de $\\sqrt{a}$ !).\\end{enumerate}"
+        },
+        {
+          "type": "hint",
+          "title": "Encadrement de a_n et théorème des gendarmes",
+          "content": "À l'étape $n$, si $d_n$ est le plus grand entier tel que $(10 y_{n-1} + d_n)^2 \\le a_n$, pourquoi $d_n \\le 9$ automatiquement ? Car par hypothèse de récurrence, $a_{n-1} \\le (y_{n-1}+1)^2 - 1$, donc $a_n = 100 a_{n-1} + \\alpha_n \\le 100(y_{n-1}+1)^2 - 100 + 99 < (10 y_{n-1} + 10)^2$ ! Ensuite, divisez $y_n \\le \\sqrt{a_n} < y_n + 1$ par $10^n$."
+        },
+        {
+          "type": "solution",
+          "title": "Correction — Partie 2 : Méthode de la potence",
+          "content": "\\textbf{1) Calcul pas à pas de $\\sqrt{2}$ :}\\begin{itemize}\\item \\textbf{Étape 0 :} $a_0 = 2$. $1^2 \\le 2 < 2^2 \\implies d_0 = 1$, $y_0 = 1$, reste $r_0 = 2 - 1^2 = 1$.\\item \\textbf{Étape 1 :} on abaisse $00$ $\\implies$ reste augmenté $100$. On cherche $d_1$ maximal tel que $(20\\times 1 + d_1)d_1 \\le 100$. Or $24 \\times 4 = 96 \\le 100 < 25 \\times 5 = 125 \\implies d_1 = 4$, $y_1 = 14$, reste $r_1 = 100 - 96 = 4$.\\item \\textbf{Étape 2 :} on abaisse $00$ $\\implies 400$. On cherche $d_2$ maximal tel que $(20\\times 14 + d_2)d_2 = (280 + d_2)d_2 \\le 400$. Or $281 \\times 1 = 281 \\le 400 < 282 \\times 2 = 564 \\implies d_2 = 1$, $y_2 = 141$, reste $r_2 = 400 - 281 = 119$.\\item \\textbf{Étape 3 :} on abaisse $00$ $\\implies 11\\,900$. On cherche $d_3$ maximal tel que $(20\\times 141 + d_3)d_3 = (2\\,820 + d_3)d_3 \\le 11\\,900$. Or $2\\,824 \\times 4 = 11\\,296 \\le 11\\,900 < 2\\,825 \\times 5 = 14\\,125 \\implies d_3 = 4$, $y_3 = 1\\,414$.\\end{itemize}\\par On retrouve bien $\\sqrt{2} \\approx$ \\blank{$1{,}414$} !\\par\\textbf{2)} \\textit{Initialisation ($n=0$) :} par définition de la partie entière $y_0 = \\lfloor\\sqrt{a_0}\\rfloor$, on a $y_0^2 \\le a_0 < (y_0+1)^2$.\\par \\textit{Hérédité :} supposons $y_{n-1}^2 \\le a_{n-1} < (y_{n-1}+1)^2$. Comme ce sont des entiers, $a_{n-1} \\le (y_{n-1}+1)^2 - 1$, d'où :\\par $$a_n = 100 a_{n-1} + \\alpha_n \\le 100(y_{n-1}+1)^2 - 100 + 99 = (10 y_{n-1} + 10)^2 - 1 < (10 y_{n-1} + 10)^2.$$\\par Ainsi le plus grand entier $d_n$ tel que $(10 y_{n-1} + d_n)^2 \\le a_n$ appartient bien à $\\{0, 1, \\dots, 9\\}$ (car $10$ est trop grand et $0$ convient puisque $(10y_{n-1})^2 \\le 100 a_{n-1} \\le a_n$), et par maximalité de $d_n$, $y_n^2 \\le a_n < (y_n + 1)^2$.\\par\\textbf{3)} Par récurrence immédiate, $\\dfrac{a_n}{100^n} = \\displaystyle\\sum_{k=0}^{n} \\frac{\\alpha_k}{100^k}$, qui est la troncature de $a$ au rang $2n$ après la virgule : $0 \\le a - \\dfrac{a_n}{100^n} \\le \\dfrac{1}{100^n} \\to 0$, donc $\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{a_n}{100^n} = a$.\\par\\textbf{4)} De même, $\\dfrac{y_n}{10^n} = \\displaystyle\\sum_{k=0}^{n} \\frac{d_k}{10^k}$. En prenant la racine carrée dans $y_n^2 \\le a_n < (y_n+1)^2$ puis en divisant par $10^n$ :\\par $$\\frac{y_n}{10^n} \\le \\sqrt{\\frac{a_n}{100^n}} < \\frac{y_n}{10^n} + \\frac{1}{10^n} \\iff \\sqrt{\\frac{a_n}{100^n}} - \\frac{1}{10^n} < \\frac{y_n}{10^n} \\le \\sqrt{\\frac{a_n}{100^n}}.$$\\par Les deux bornes convergent vers $\\sqrt{a}$, donc par le \\textbf{théorème des gendarmes}, $\\displaystyle\\lim_{n\\to+\\infty}\\dfrac{y_n}{10^n} = \\boxed{\\sqrt{a}}$."
+        }
+      ]
+    },
+    {
+      "id": "ouverture",
+      "category": "course",
+      "title": "Histoire, prolongements et synthèse",
+      "blocks": [
+        {
+          "type": "historique",
+          "title": "Aspects historiques",
+          "content": "La tablette babylonienne YBC 7289 (vers 1800 av. J.-C.) donne déjà $\\sqrt{2}$ avec $6$ chiffres décimaux exacts ! La méthode \\textit{Ying bu zu} figure dans les \\textit{Neuf Chapitres sur l'art mathématique} (Chine, $\\mathrm{II}^{\\mathrm{e}}$ s. av. J.-C.), et la méthode de Héron apparaît dans ses \\textit{Metrica} au $\\mathrm{I}^{\\mathrm{er}}$ siècle."
+        },
+        {
+          "type": "culture",
+          "title": "Pour aller plus loin",
+          "content": "La méthode de Héron est un cas particulier de la \\textbf{méthode de Newton–Raphson} appliquée à $f(x) = x^2 - a$ : sa convergence est \\textbf{quadratique}, c'est-à-dire que le nombre de décimales exactes \\textbf{double à chaque étape} ($1 \\to 2 \\to 5 \\to 11 \\to 23 \\dots$), alors que la potence ne gagne qu'une décimale par étape."
+        },
+        {
+          "type": "summary",
+          "title": "Compétences 2ème Bac Sc. Math mobilisées",
+          "content": "\\begin{itemize}\\item Étudier une \\textbf{suite récurrente} : positivité, monotonie, minoration et convergence.\\item Démontrer un encadrement par \\textbf{récurrence} et appliquer le \\textbf{théorème des gendarmes}.\\item Comparer la vitesse de convergence de plusieurs algorithmes numériques.\\end{itemize}"
+        }
+      ]
+    }
+  ]
+}

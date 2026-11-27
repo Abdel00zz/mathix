@@ -1,0 +1,1943 @@
+/* ============================================================================
+   lesson.css — Finition éditoriale Cahier Seyès + Architecture Mathix
+   - 3 polices / 3 rôles (Newsreader · Instrument Sans · Caveat) + 4 encres Seyès
+   - Bureau bleu-gris + feuilles Seyès séparées (.ls-zone) avec marge rouge
+   - Positionnements conservés : hero/questions/encadrés/attention centrés,
+     A./B./C. en ligne, pilule « Résolvons l’exercice » à droite
+   - Styles des box conservés : 5 palettes pastel dynamiques à badge centré,
+     Preuve monochrome noir/blanc sans arrondi, intros libres sans cadre
+   - Formules mathématiques −10 % uniformes sur toute la vue Révision
+   ============================================================================ */
+
+@supports (interpolate-size: allow-keywords) {
+  #les details { interpolate-size: allow-keywords; }
+  #les details::details-content {
+    transition: opacity 220ms var(--ease-spring), content-visibility 220ms allow-discrete;
+    opacity: 0;
+  }
+  #les details[open]::details-content { opacity: 1; }
+}
+
+/* ── Toile de fond éditoriale Papier & Sauge (clair & foncé) ── */
+body[data-v="les"] {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 78% 54% at 10% 4%, var(--bg-glow-1) 0%, transparent 62%),
+    radial-gradient(ellipse 68% 54% at 90% 14%, var(--bg-glow-2) 0%, transparent 60%),
+    radial-gradient(ellipse 64% 50% at 48% 98%, var(--bg-glow-3) 0%, transparent 64%);
+  background-attachment: fixed;
+  color: var(--ink);
+}
+body[data-v="les"] .sheet { display: none; }
+body[data-v="les"] .rp { height: 2.5px; }
+body[data-v="les"] .rp i { background: linear-gradient(90deg, var(--accent) 0%, var(--gold, var(--am)) 100%); }
+body[data-v="les"] :focus-visible:not([tabindex="-1"]) { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+body[data-v="les"] [tabindex="-1"]:focus { outline: 0; }
+body[data-v="learn"] {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 74% 52% at 12% 8%, var(--bg-glow-1) 0%, transparent 60%),
+    radial-gradient(ellipse 62% 48% at 88% 82%, var(--bg-glow-2) 0%, transparent 62%);
+  background-attachment: fixed;
+}
+@media print {
+  body:is([data-v="les"], [data-v="learn"]) { background: #ffffff !important; background-image: none !important; }
+  #les.page-main--lesson,
+  #les .ls-zone {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    content-visibility: visible !important;
+  }
+}
+
+/* ── Conteneur principal de la fiche (Tokens dynamiques Confort aux Yeux) ── */
+#les.page-main--lesson,
+body[data-v="les"] #focus-dlg {
+  --display: "Newsreader", Georgia, serif;
+  --serif: "Newsreader", Georgia, serif;
+  --f-classic: "Cormorant Garamond", Georgia, serif;
+  --qst-font: "Newsreader", Georgia, serif;
+  --sans: "Instrument Sans", system-ui, -apple-system, sans-serif;
+  --hand: "Caveat", "Segoe Print", cursive;
+
+  --u: clamp(1.34rem, 1.2rem + 0.35vw, 1.62rem);
+  --sy-desk: var(--bg);
+  --sy-sheet: var(--surface);
+  --sy-recessed: var(--surface-recessed);
+  --sy-grid: var(--rule);
+  --sy-blue: var(--accent);
+  --sy-blue-bg: var(--accent-soft);
+  --sy-red: var(--err);
+  --sy-gold: var(--gold, var(--am));
+  --sy-green: var(--ok);
+  --sy-green-bg: color-mix(in srgb, var(--ok) 13%, var(--surface));
+  --sy-hl: light-dark(#f4d97e, rgba(239, 182, 92, 0.34));
+  --sy-hl-soft: light-dark(#faf0cc, rgba(239, 182, 92, 0.14));
+  --sy-on: var(--on-accent);
+
+  --sheet-bg: var(--sy-sheet);
+  --math-scale: 0.96;
+  --les-katex-size: clamp(1.06rem, 0.96rem + 0.25vw, 1.18rem);
+}
+#les.page-main--lesson {
+  position: relative;
+  width: 100%;
+  max-width: min(100%, var(--lesson-max, 880px));
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 0 clamp(14px, 3vw, 32px) calc(84px * var(--space-y, 1));
+  background: transparent;
+  overflow-x: clip;
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+#les table.art-table .katex { font-size: 0.85em; }
+#les .tkz-tab .katex { font-size: 0.97em; }
+#les .tkz-tab .tkz-row--sign .tkz-i--sign .katex { font-size: 1.06em; }
+
+/* Code 4 encres Seyès sur les micro-éléments (surligneur effilé, résultats vert stylo, puces bleu stylo) */
+#les .math-highlight {
+  padding: 0 0.28em;
+  margin: 0 -0.06em;
+  border-radius: 0.9em 0.25em 0.8em 0.3em;
+  background: linear-gradient(100deg, transparent 0, var(--sy-hl) 4%, var(--sy-hl) 96%, transparent 100%) 0 85%/100% 58% no-repeat;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+body[data-v="les"] #focus-dlg .focus-dlg__head[data-k="a"] .focus-dlg__badge {
+  border-color: color-mix(in srgb, var(--sy-hl) 85%, var(--sy-gold));
+  background: var(--sy-hl-soft);
+  color: var(--sy-red);
+}
+#les :is(.result-box, .math-result, .is-boxed-formula),
+#les :is(.math-boxed, .math-boxed-pill) {
+  border: 1.5px solid color-mix(in srgb, var(--ink) 78%, transparent);
+  border-radius: 6px;
+  background: transparent;
+  background-image: none;
+  color: var(--ink);
+  box-shadow: none;
+}
+#les .math-renderer .math-list-marker--num {
+  border-color: var(--accent-border);
+  background: var(--sy-blue-bg);
+  color: var(--sy-blue);
+}
+
+/* ── Barre supérieure collante monoligne ────────────────────────────────── */
+#les .top {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 46px;
+  min-height: 46px;
+  margin: 0 -12px 6px;
+  padding: 0 14px;
+  border-radius: 0 0 10px 10px;
+  background: color-mix(in srgb, var(--sy-desk) 90%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) ease, background-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
+}
+#les .top.is-scrolled {
+  background: color-mix(in srgb, var(--sy-sheet) 94%, transparent);
+  border-bottom-color: var(--border);
+  box-shadow: 0 8px 24px -16px light-dark(oklch(25% 0.03 145 / 0.18), rgba(0, 0, 0, 0.58));
+}
+.top-meta {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 600 11px/1.2 var(--sans);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(3px);
+  pointer-events: none;
+  transition: opacity var(--dur-fast) ease, transform var(--dur-fast) var(--ease-spring);
+}
+.top-meta .math-renderer { display: inline; font: inherit; color: inherit; }
+.top-meta .katex { text-transform: none; letter-spacing: 0; font-size: calc(1.18em * var(--math-scale, 1)); vertical-align: -0.02em; }
+#les .top.is-scrolled .top-meta { opacity: 1; transform: translateY(0); pointer-events: auto; }
+#les .top .cnt { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; font: 500 12.5px/1 var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
+#les #rt {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  margin-inline-end: 6px;
+}
+#les #rt::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  flex: none;
+  background: currentColor;
+  opacity: 0.78;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3 2'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3 2'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+#les .top .ib { width: 34px; height: 34px; flex: none; box-shadow: none; transition: transform 160ms var(--ease-spring), background-color var(--dur-fast) ease, color var(--dur-fast) ease; }
+#les .top .ib:hover { background: var(--sy-blue-bg); color: var(--sy-blue); transform: rotate(-5deg); }
+
+/* ── Popovers unifiés : Sommaire (#toc) & Options (#les-menu) ───────────── */
+:is(#les-menu, #toc) {
+  inset: auto;
+  top: calc(52px + env(safe-area-inset-top, 0px));
+  inset-inline-end: max(16px, calc((100vw - 820px) / 2 + 16px));
+  margin: 0;
+  max-height: 76dvh;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px;
+  border: 1px solid color-mix(in srgb, var(--line) 92%, var(--ink) 8%);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--notion-modal-shadow);
+  transform-origin: top right;
+  transition:
+    opacity 170ms var(--ease-notion),
+    transform 190ms var(--ease-notion),
+    overlay 190ms allow-discrete,
+    display 190ms allow-discrete;
+}
+#les-menu { width: min(296px, calc(100vw - 28px)); padding: 10px; }
+#toc { width: min(320px, calc(100vw - 28px)); }
+:is(#les-menu, #toc):popover-open { opacity: 1; transform: translateY(0) scale(1); }
+@starting-style {
+  :is(#les-menu, #toc):popover-open { opacity: 0; transform: translateY(-6px) scale(0.975); }
+}
+:is(#les-menu, #toc) .ctx { margin: 0 0 4px; padding: 5px 8px; font: 600 10.5px/1.2 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+#toc button {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  text-align: start;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: background-color var(--dur-fast), color var(--dur-fast);
+}
+#toc button:hover { background: var(--sy-blue-bg); color: var(--sy-blue); }
+#toc button.is-active {
+  background: color-mix(in srgb, var(--sy-blue-bg) 82%, transparent);
+  color: var(--sy-blue);
+  font-weight: 600;
+}
+#toc button.is-active::before {
+  content: "";
+  position: absolute;
+  inset-block: 6px;
+  inset-inline-start: 0;
+  width: 2.5px;
+  border-radius: 999px;
+  background: var(--sy-gold);
+}
+#toc b {
+  font: 700 1.12em/1 var(--f-classic);
+  font-style: normal;
+  letter-spacing: 0.02em;
+  color: var(--sy-gold);
+  flex: none;
+}
+
+/* En-tête + sélecteur segmenté 3 modes Clair / Sombre / Auto (#les-menu) */
+.les-menu__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.les-menu__head .ctx { margin: 0; padding: 2px 6px; }
+.les-menu__state {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--sy-blue-bg);
+  color: var(--sy-blue);
+  font: 600 10.5px/1.2 var(--sans);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.les-theme-seg {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 3px;
+  margin: 0 2px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+}
+.les-theme-seg::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc((100% - 6px) / 3);
+  border-radius: 7px;
+  background: var(--sy-sheet);
+  border: 1px solid var(--accent-border);
+  box-shadow: 0 2px 8px -3px light-dark(rgba(72, 54, 30, 0.16), rgba(0, 0, 0, 0.55));
+  transform: translateX(calc(var(--seg-idx, 2) * 100%));
+  transition: transform 240ms var(--ease-spring);
+  pointer-events: none;
+}
+.les-theme-opt {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font: 600 11.5px/1 var(--sans);
+  cursor: pointer;
+  transition: color var(--dur-fast) ease;
+}
+.les-theme-opt svg { flex: none; transition: transform 200ms var(--ease-spring); }
+.les-theme-opt:hover { color: var(--ink); }
+.les-theme-opt.is-active { color: var(--sy-blue); }
+.les-theme-opt.is-active svg { transform: scale(1.08); }
+
+/* Ligne interrupteur Papier Seyès / Mode sobre */
+.les-menu__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+.les-menu__row-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  color: var(--muted);
+}
+.les-menu__row-txt { display: flex; flex-direction: column; gap: 1px; }
+.les-menu__hint { font: 400 11px/1.2 var(--sans); color: var(--muted); }
+.les-switch {
+  position: relative;
+  flex: none;
+  width: 36px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--line) 85%, transparent);
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+.les-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--surface-elevated);
+  box-shadow: 0 1px 3px light-dark(oklch(25% 0.03 145 / 0.24), rgba(0, 0, 0, 0.5));
+  transition: transform 200ms var(--ease-spring);
+}
+.les-switch[aria-checked="true"] {
+  background: var(--sy-blue);
+  border-color: var(--sy-blue);
+}
+.les-switch[aria-checked="true"]::after { transform: translateX(16px); }
+
+.les-menu__zoom { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 8px; }
+.les-menu__lbl { font: 500 13px/1.2 var(--sans); color: var(--ink); }
+.les-menu__stepper { display: inline-flex; align-items: center; gap: 2px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: color-mix(in srgb, var(--ink) 2.5%, var(--surface)); }
+.les-menu__stepper button { height: 26px; border: 0; background: transparent; color: var(--ink); font: 600 12px/1 var(--sans); cursor: pointer; transition: background-color var(--dur-fast), color var(--dur-fast); }
+.les-menu__stepper #btn-zoom-out,
+.les-menu__stepper #btn-zoom-in { width: 30px; }
+.les-menu__stepper button:hover { background: var(--sy-blue-bg); color: var(--sy-blue); }
+#les-zoom-val { min-width: 42px; padding: 0 4px; text-align: center; font: 600 11.5px/1 var(--sans); font-variant-numeric: tabular-nums; color: var(--muted); }
+.les-menu__sep { height: 1px; margin: 6px 4px; border: 0; background: color-mix(in srgb, var(--line) 80%, transparent); }
+.les-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  font: 500 13px/1.3 var(--sans);
+  text-align: start;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, transform 120ms var(--ease-notion);
+}
+.les-menu__item svg { flex: none; color: var(--muted); transition: color var(--dur-fast) ease, transform 160ms var(--ease-notion); }
+.les-menu__item:hover { background: var(--sy-blue-bg); color: var(--sy-blue); }
+.les-menu__item:hover svg { color: var(--sy-blue); transform: scale(1.06); }
+.les-menu__item:active { transform: scale(0.985); }
+.les-menu__badge {
+  margin-inline-start: auto;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: var(--sy-blue-bg);
+  color: var(--sy-blue);
+  font: 600 10.5px/1.1 var(--sans);
+  font-variant-numeric: tabular-nums;
+}
+.les-menu__badge:empty { display: none; }
+
+/* ── Hero éditorial classique restauré (« Fiche » rouge profond, Cormorant 700) ─ */
+#les .revision-hero { margin: 24px 0 38px; text-align: center; }
+#les .revision-hero-title {
+  margin: 0 auto;
+  max-width: 680px;
+  font: 700 clamp(1.65rem, 3.6vw, 2.2rem)/1.16 var(--f-classic);
+  font-style: normal;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+#les .revision-hero-word { font-style: normal; font-weight: 700; color: light-dark(#991b1b, #f87171); }
+#les .revision-hero-rest { font-style: normal; font-weight: 700; color: var(--ink); }
+
+/* ── Zone d'introduction d'ouverture (libre, sans cadre, Inter) ─────────── */
+#les .ls-intro-zone { margin: 0 0 2.25rem; scroll-margin-top: 64px; }
+#les .blk[data-t="intro"] {
+  margin: 0;
+  padding: 0 clamp(4px, 1vw, 10px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font: 400 0.985rem/1.72 var(--font-inter);
+  letter-spacing: -0.008em;
+  color: var(--ink);
+}
+/* Portrait de savant en tirage Polaroïd scotché (position droite conservée) */
+#les .blk[data-t="intro"] .media-fig {
+  position: relative;
+  overflow: visible;
+  padding: 0.42rem 0.42rem 0.52rem;
+  background: var(--sy-sheet);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  box-shadow: 0 14px 28px -16px light-dark(oklch(25% 0.03 145 / 0.26), rgba(0, 0, 0, 0.65));
+  transform: rotate(1.8deg);
+  transition: transform 240ms var(--ease-spring), box-shadow 240ms ease;
+}
+#les .blk[data-t="intro"] .media-fig::before {
+  content: "";
+  position: absolute;
+  top: -0.58rem;
+  left: 50%;
+  z-index: 2;
+  width: 3.8rem;
+  height: 1.1rem;
+  transform: translateX(-50%) rotate(-3.5deg);
+  opacity: 0.9;
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.34) 0 5px, transparent 5px 10px),
+    var(--sy-hl);
+  clip-path: polygon(0 0, 100% 0, 96% 30%, 100% 62%, 96% 100%, 0 100%, 4% 62%, 0 30%);
+  pointer-events: none;
+}
+#les .blk[data-t="intro"] .media-fig:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 0 18px 34px -16px light-dark(oklch(25% 0.03 145 / 0.34), rgba(0, 0, 0, 0.72));
+}
+#les .blk[data-t="intro"] .media-fig__img { border-radius: 2px; }
+#les .blk[data-t="intro"] .media-fig__cap {
+  margin-top: 0.42rem;
+  text-align: center;
+  font: 600 1.08rem/1.15 var(--hand);
+  color: var(--ink);
+}
+#les .blk:is([data-t="intro"], [data-t="text"]) > .bx { margin-top: 0; }
+#les .blk[data-t="intro"] .math-renderer { font: inherit; color: inherit; }
+#les .ru {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  padding: 0 0.28em;
+  margin: 0 -0.06em;
+  border-radius: 0.9em 0.25em 0.8em 0.3em;
+  background: linear-gradient(100deg, transparent 0, var(--sy-hl) 4%, var(--sy-hl) 96%, transparent 100%) 0 85%/100% 58% no-repeat;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+#les .math-defi { font-family: inherit; font-weight: 600; color: var(--ink); }
+#les .math-savant { font: 600 1em var(--font-inter); font-style: normal; color: var(--sy-red); }
+
+/* ── Zones / Feuilles Seyès épurées (sans ligne rouge verticale · adaptatives) ── */
+#les .ls-zone {
+  position: relative;
+  container-type: inline-size;
+  container-name: les-sheet;
+  --les-px: clamp(1.15rem, 3.8cqi, 2.35rem);
+  background-color: var(--sy-sheet);
+  background-image:
+    linear-gradient(90deg, var(--sy-grid) 1px, transparent 1px),
+    linear-gradient(var(--sy-grid) 1px, transparent 1px);
+  background-size: var(--u) var(--u);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--sculpt-sheet-shadow);
+  margin: 0 0 calc(2rem * var(--space-y, 1));
+  scroll-margin-top: 64px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 440px;
+  overflow: clip;
+  transition: box-shadow 0.28s ease;
+}
+#les[data-paper="plain"] .ls-zone { background-image: none; }
+#les .ls-zone:hover { box-shadow: 0 24px 48px -24px light-dark(oklch(25% 0.03 145 / 0.22), rgba(0, 0, 0, 0.72)); }
+#les .section-header { padding: clamp(1.2rem, 2.4cqi, 1.65rem) var(--les-px) 0.5rem; border-bottom: 0; }
+#les :is(.lh, .section-title) {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+  margin: 0;
+  font: 500 clamp(1.42rem, 2.4cqi + 0.55rem, 1.98rem)/1.18 var(--serif);
+  font-optical-sizing: auto;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+/* Lettres de parties A., B., C. : or classique épuré, non italique, majestueux grec */
+#les .lh .ltr {
+  font: 700 clamp(1.7rem, 2.9cqi + 0.65rem, 2.34rem)/0.92 var(--f-classic);
+  font-style: normal;
+  letter-spacing: 0.025em;
+  color: var(--sy-gold);
+  flex: none;
+}
+#les :is(.lh-t, .blk-title) .math-renderer { display: inline; font: inherit; color: inherit; }
+#les .lh-t .katex { font-size: calc(0.94em * var(--math-scale, 1)); vertical-align: -0.02em; }
+#les .section-body { padding: 0.65rem var(--les-px) clamp(1.4rem, 3cqi, 2.15rem); }
+
+/* ── Paragraphe d'introduction de partie (libre, sans cadre, Inter) ─────── */
+#les .blk[data-t="text"] {
+  margin: 0 0 var(--u);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  width: 100%;
+}
+#les .blk[data-t="text"] > .bx > .math-renderer,
+#les .blk[data-t="text"] > .bx > .media-stack > .math-renderer,
+#les .blk[data-t="text"] .media-body > .math-renderer,
+#les .blk[data-t="text"] .media-flow > .math-renderer {
+  max-width: 46rem;
+  font: 400 0.965rem/1.7 var(--font-inter);
+  letter-spacing: -0.006em;
+  color: var(--muted);
+}
+#les .blk[data-t="text"] > .bx > .media-stack > .math-renderer {
+  align-self: flex-start;
+}
+
+/* ── Questions Socratiques (centrées · lettrine rouge · surligneur jaune) ─ */
+#les details.blk:is(.is-socratic, .is-reveal) { margin: 22px 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+#les details.blk:is(.is-socratic, .is-reveal)[open] { margin: 24px 0 32px; }
+#les details.blk:is(.is-socratic, .is-reveal) > summary {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 40px;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  list-style: none;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  transition: transform var(--dur-fast) var(--ease-notion);
+}
+#les details.blk:is(.is-socratic, .is-reveal) > summary::-webkit-details-marker { display: none; }
+#les details.blk:is(.is-socratic, .is-reveal) > summary:focus-visible .blk-q { outline: 2.5px solid var(--sy-red); outline-offset: 2px; }
+#les details.blk:is(.is-socratic, .is-reveal) > summary:active { transform: scale(0.99); }
+
+#les details.blk:is(.is-socratic, .is-reveal) > summary .blk-q {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font: 500 clamp(1.18rem, 2.2vw, 1.32rem)/1.44 var(--qst-font, var(--display));
+  font-optical-sizing: auto;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.004em;
+  color: var(--ink);
+  text-align: center;
+  text-wrap: balance;
+  transition: color var(--dur-fast) ease, background-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-spring);
+}
+#les details.blk:is(.is-socratic, .is-reveal) > summary:hover .blk-q {
+  background: color-mix(in oklch, var(--accent) 8%, transparent);
+  transform: translateY(-1px);
+}
+#les .soc-lead { font: 500 1em var(--qst-font, var(--display)); color: var(--ink); margin-inline-end: 0; }
+#les .soc-cap { display: inline-block; font: 600 1.38em/0.85 var(--qst-font, var(--display)); color: var(--sy-red); vertical-align: -0.01em; }
+#les .blk-q .math-renderer { display: inline; font: inherit; color: inherit; }
+#les .blk-q .katex { font-size: calc(1.08em * var(--math-scale, 1)); font-style: normal; vertical-align: -0.02em; }
+#les :is(.soc-focus, .blk-q .math-mathqst) {
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 500;
+  color: var(--ink) !important;
+  padding: 0 0.28em;
+  margin: 0 -0.06em;
+  border-radius: 0.9em 0.25em 0.8em 0.3em;
+  background: linear-gradient(100deg, transparent 0, var(--sy-hl) 4%, var(--sy-hl) 96%, transparent 100%) 0 85%/100% 56% no-repeat;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+#les .blk-q.is-q::after { content: none; }
+#les .q-mark { display: inline-block; margin-inline-start: 0.22em; font: 600 1.16em var(--serif); color: var(--sy-red); transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s var(--ease-spring); }
+#les details.blk > summary:hover .q-mark { transform: translateY(-2px) rotate(10deg) scale(1.1); }
+#les details.blk[open] > summary .q-mark { color: var(--muted); opacity: 0.45; transform: rotate(-6deg) scale(0.88); }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   ENCADRÉS PÉDAGOGIQUES MODERNES (.bx)
+   - Palettes pastel lumineuses modernes :
+     · Définition / Vocabulaire / Notation : Menthe-Aqua  rgb(134, 233, 209)
+     · Théorème                            : Corail-Rose  rgb(255, 182, 182)
+     · Propriété / Conséquence             : Ciel Glacier rgb(152, 222, 252)
+     · Proposition                         : Orchidée     rgb(254, 237, 254)
+     · Lemme / Corollaire                  : Pervenche    rgb(206, 198, 255)
+     · Méthode / Technique / Rappel (déf.) : Pêche douce  rgb(255, 218, 175)
+   ════════════════════════════════════════════════════════════════════════════ */
+#les details.blk > .bx {
+  /* Défaut : Pêche-Abricot éditorial fondu dans le papier ivoire / pin élevé (Méthode) */
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(255, 206, 154) 30%, var(--paper)),
+    color-mix(in oklch, rgb(245, 184, 120) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(255, 206, 154) 15%, var(--paper)),
+    color-mix(in oklch, rgb(245, 184, 120) 8%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(224, 150, 84) 55%, var(--border)),
+    color-mix(in oklch, rgb(245, 192, 134) 34%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(255, 206, 154) 76%, var(--paper)),
+    color-mix(in oklch, rgb(245, 184, 120) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#7c3a0f, #ffd9ad);
+  --bx-dot: light-dark(rgba(146, 72, 18, 0.055), rgba(255, 214, 170, 0.06));
+
+  position: relative;
+  display: block;
+  width: fit-content;
+  min-width: min(100%, 22rem);
+  max-width: min(100%, 39rem);
+  margin: 22px auto 16px;
+  padding: 22px 26px 17px;
+  border-radius: 15px;
+  border: 1px solid var(--bx-border);
+  background-color: var(--bx-bg);
+  background-image:
+    linear-gradient(158deg, var(--bx-bg) 0%, var(--bx-bg2) 100%),
+    radial-gradient(var(--bx-dot) 0.9px, transparent 0.9px);
+  background-size: 100% 100%, 15px 15px;
+  box-shadow:
+    inset 0 1px 0 var(--box-bevel-top),
+    0 10px 24px -16px light-dark(oklch(25% 0.03 145 / 0.16), rgba(0, 0, 0, 0.56));
+  animation: socUnfold 220ms var(--ease-spring);
+  color: var(--ink);
+  font: 400 1rem/1.58 var(--serif);
+}
+
+@container les-sheet (max-width: 540px) {
+  #les details.blk > .bx {
+    min-width: 100%;
+    padding: 19px 15px 14px;
+  }
+}
+
+#les details.blk > .bx[data-label]::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.24rem 1rem;
+  border-radius: 999px;
+  background: var(--bx-badge-bg);
+  border: 1px solid var(--bx-border);
+  color: var(--bx-badge-ink);
+  font: 700 0.68rem/1.2 var(--sans);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow:
+    0 0 0 2.5px var(--sy-sheet),
+    0 4px 12px -5px light-dark(oklch(25% 0.03 145 / 0.16), rgba(0, 0, 0, 0.5));
+}
+
+/* Définition / Vocabulaire / Notation / Convention : Menthe-Aqua papier */
+#les details.blk:is([data-t="definition"], [data-t="vocabulaire"], [data-t="notation"], [data-t="convention"]) > .bx {
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(120, 218, 192) 26%, var(--paper)),
+    color-mix(in oklch, rgb(104, 210, 184) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(120, 218, 192) 13%, var(--paper)),
+    color-mix(in oklch, rgb(104, 210, 184) 7%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(64, 168, 144) 52%, var(--border)),
+    color-mix(in oklch, rgb(118, 224, 198) 36%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(122, 222, 198) 68%, var(--paper)),
+    color-mix(in oklch, rgb(104, 210, 184) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#0a5242, #9bf0da);
+  --bx-dot: light-dark(rgba(10, 82, 66, 0.05), rgba(134, 233, 209, 0.065));
+}
+
+/* Théorème : Corail-Rose papier */
+#les details.blk[data-t="theorem"] > .bx {
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(246, 166, 164) 27%, var(--paper)),
+    color-mix(in oklch, rgb(242, 144, 142) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(246, 166, 164) 13%, var(--paper)),
+    color-mix(in oklch, rgb(242, 144, 142) 7%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(206, 98, 96) 52%, var(--border)),
+    color-mix(in oklch, rgb(246, 168, 168) 36%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(248, 174, 172) 72%, var(--paper)),
+    color-mix(in oklch, rgb(242, 144, 142) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#7f1d1d, #ffc2c2);
+  --bx-dot: light-dark(rgba(140, 30, 30, 0.05), rgba(255, 182, 182, 0.06));
+}
+
+/* Propriété : Bleu Ciel Glacier papier */
+#les details.blk[data-t="property"] > .bx {
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(136, 208, 246) 26%, var(--paper)),
+    color-mix(in oklch, rgb(124, 198, 240) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(136, 208, 246) 13%, var(--paper)),
+    color-mix(in oklch, rgb(124, 198, 240) 7%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(62, 146, 196) 52%, var(--border)),
+    color-mix(in oklch, rgb(144, 214, 250) 36%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(146, 214, 248) 70%, var(--paper)),
+    color-mix(in oklch, rgb(124, 198, 240) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#0c4a6e, #a8e0fc);
+  --bx-dot: light-dark(rgba(12, 74, 110, 0.05), rgba(152, 222, 252, 0.065));
+}
+
+/* Conséquence : Turquoise Lagon papier */
+#les details.blk[data-t="consequence"] > .bx {
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(136, 226, 222) 26%, var(--paper)),
+    color-mix(in oklch, rgb(118, 218, 214) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(136, 226, 222) 13%, var(--paper)),
+    color-mix(in oklch, rgb(118, 218, 214) 7%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(42, 162, 156) 52%, var(--border)),
+    color-mix(in oklch, rgb(144, 232, 228) 36%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(144, 232, 228) 68%, var(--paper)),
+    color-mix(in oklch, rgb(118, 218, 214) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#115e59, #9ef0ec);
+  --bx-dot: light-dark(rgba(17, 94, 89, 0.05), rgba(153, 240, 236, 0.065));
+}
+
+/* Proposition : Orchidée-Lilas Perle papier */
+#les details.blk[data-t="proposition"] > .bx {
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(236, 192, 242) 28%, var(--paper)),
+    color-mix(in oklch, rgb(224, 168, 234) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(236, 192, 242) 14%, var(--paper)),
+    color-mix(in oklch, rgb(224, 168, 234) 7%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(186, 114, 198) 50%, var(--border)),
+    color-mix(in oklch, rgb(238, 194, 246) 36%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(242, 202, 246) 76%, var(--paper)),
+    color-mix(in oklch, rgb(224, 168, 234) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#701a75, #f5d0fa);
+  --bx-dot: light-dark(rgba(124, 29, 133, 0.05), rgba(246, 208, 250, 0.06));
+}
+
+/* Corollaire : Pervenche-Indigo papier */
+#les details.blk[data-t="corollary"] > .bx {
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(188, 180, 248) 26%, var(--paper)),
+    color-mix(in oklch, rgb(176, 168, 244) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(188, 180, 248) 13%, var(--paper)),
+    color-mix(in oklch, rgb(176, 168, 244) 7%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(110, 100, 206) 50%, var(--border)),
+    color-mix(in oklch, rgb(196, 188, 252) 36%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(198, 190, 252) 72%, var(--paper)),
+    color-mix(in oklch, rgb(176, 168, 244) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#312e81, #cfc8ff);
+  --bx-dot: light-dark(rgba(55, 48, 163, 0.05), rgba(206, 198, 255, 0.065));
+}
+
+/* Lemme : Sable Champagne papier */
+#les details.blk[data-t="lemma"] > .bx {
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(238, 214, 148) 28%, var(--paper)),
+    color-mix(in oklch, rgb(228, 198, 120) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(238, 214, 148) 14%, var(--paper)),
+    color-mix(in oklch, rgb(228, 198, 120) 7%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(186, 146, 56) 52%, var(--border)),
+    color-mix(in oklch, rgb(238, 214, 148) 36%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(242, 222, 162) 74%, var(--paper)),
+    color-mix(in oklch, rgb(228, 198, 120) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#6c3e12, #f5e2a8);
+  --bx-dot: light-dark(rgba(124, 72, 18, 0.05), rgba(245, 226, 168, 0.06));
+}
+
+/* Technique : Pistache Tilleul papier */
+#les details.blk[data-t="technique"] > .bx {
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(194, 230, 154) 26%, var(--paper)),
+    color-mix(in oklch, rgb(176, 218, 132) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(194, 230, 154) 13%, var(--paper)),
+    color-mix(in oklch, rgb(176, 218, 132) 7%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(104, 154, 46) 50%, var(--border)),
+    color-mix(in oklch, rgb(198, 232, 160) 36%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(204, 236, 168) 72%, var(--paper)),
+    color-mix(in oklch, rgb(176, 218, 132) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#365314, #d2f0ad);
+  --bx-dot: light-dark(rgba(63, 98, 18, 0.05), rgba(210, 240, 173, 0.06));
+}
+
+/* Stratégie : Bois de Rose / Pétale papier */
+#les details.blk[data-t="strategy"] > .bx {
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(242, 190, 212) 28%, var(--paper)),
+    color-mix(in oklch, rgb(236, 166, 196) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(242, 190, 212) 14%, var(--paper)),
+    color-mix(in oklch, rgb(236, 166, 196) 7%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(198, 76, 128) 48%, var(--border)),
+    color-mix(in oklch, rgb(244, 194, 216) 36%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(246, 200, 220) 74%, var(--paper)),
+    color-mix(in oklch, rgb(236, 166, 196) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#831843, #f8cde0);
+  --bx-dot: light-dark(rgba(157, 23, 77, 0.05), rgba(248, 205, 224, 0.06));
+}
+
+/* Rappel / Astuce : Miel Ambré papier */
+#les details.blk:is([data-t="rappel"], [data-t="recall"], [data-t="tip"]) > .bx {
+  --bx-bg: light-dark(
+    color-mix(in oklch, rgb(248, 212, 134) 28%, var(--paper)),
+    color-mix(in oklch, rgb(240, 194, 102) 15%, var(--surface-elevated))
+  );
+  --bx-bg2: light-dark(
+    color-mix(in oklch, rgb(248, 212, 134) 14%, var(--paper)),
+    color-mix(in oklch, rgb(240, 194, 102) 7%, var(--surface))
+  );
+  --bx-border: light-dark(
+    color-mix(in oklch, rgb(206, 134, 28) 52%, var(--border)),
+    color-mix(in oklch, rgb(248, 214, 138) 36%, var(--border))
+  );
+  --bx-badge-bg: light-dark(
+    color-mix(in oklch, rgb(250, 218, 146) 74%, var(--paper)),
+    color-mix(in oklch, rgb(240, 194, 102) 24%, var(--surface-elevated))
+  );
+  --bx-badge-ink: light-dark(#8a3c0e, #fce09e);
+  --bx-dot: light-dark(rgba(158, 72, 14, 0.05), rgba(252, 224, 158, 0.06));
+}
+
+/* Formule encadrée à l'intérieur des blocs : centrée, transparente, encre éditoriale */
+#les details.blk > .bx:has(.media-inline, .media-side, .media-stack, .media-gallery) {
+  width: 100%;
+  max-width: 100%;
+}
+#les details.blk > .bx .is-boxed-formula {
+  width: fit-content;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0.72rem auto 0.35rem;
+  padding: 0.56rem 1.25rem;
+  border-radius: 0;
+  background: transparent;
+  background-image: none;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 80%, transparent);
+  color: var(--ink);
+  font: inherit;
+  text-align: center;
+  box-shadow: none;
+}
+
+#les details.blk > .bx .math-renderer {
+  font: 500 clamp(1.06rem, 1.9vw, 1.14rem)/1.58 var(--qst-font, var(--display));
+  font-variant-numeric: lining-nums tabular-nums;
+  color: inherit;
+}
+#les details.blk > .bx .math-renderer p { margin: 0 0 0.5rem; }
+#les details.blk > .bx .math-renderer p:last-child { margin-bottom: 0; }
+#les details.blk > .bx .math-renderer :is(strong, b) { font-weight: 700; color: var(--ink); }
+
+/* Parité optique exacte des formules KaTeX dans toute la fiche (Propriété, Définition, Théorème, Méthode, Preuve, Remarque, Application & Résolution — inline, display & \boxed) */
+#les .blk > .bx .math-inline-rendered .katex,
+#les .blk > .bx .katex-display > .katex,
+#les .blk[data-t="intro"] .math-inline-rendered .katex,
+#les .blk[data-t="intro"] .katex-display > .katex,
+body[data-v="les"] #focus-dlg .math-inline-rendered .katex,
+body[data-v="les"] #focus-dlg .katex-display > .katex {
+  font-size: var(--les-katex-size);
+}
+#les .blk > .bx .math-display-fitted > .katex-display > .katex,
+#les .blk[data-t="intro"] .math-display-fitted > .katex-display > .katex,
+body[data-v="les"] #focus-dlg .math-display-fitted > .katex-display > .katex {
+  font-size: calc(var(--les-katex-size) * var(--fit-ratio, 0.86));
+}
+
+@keyframes socUnfold {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Zone « Warning / Attention » : pense-bête jaune épinglé (centré) ───── */
+#les .blk.is-warn-trigger { display: flex; justify-content: center; margin: 26px 0 10px; padding: 0; border: 0; background: transparent; box-shadow: none; }
+#les .warn-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 36px;
+  padding: 0.24rem 1.15rem 0.28rem 0.85rem;
+  border: 1.5px solid color-mix(in srgb, var(--sy-hl) 88%, var(--sy-gold));
+  border-radius: 3px 3px 15px 3px;
+  background: var(--sy-hl-soft);
+  color: var(--sy-red);
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 3px 4px 0 light-dark(oklch(25% 0.03 145 / 0.1), rgba(0, 0, 0, 0.36));
+  transform: rotate(-1.5deg);
+  transition: transform 200ms var(--ease-spring), box-shadow 200ms ease, background-color 180ms ease;
+}
+/* Punaise rouge 3D en tête du pense-bête */
+#les .warn-btn::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--sy-red);
+  box-shadow: inset -2px -2px 0 rgba(0, 0, 0, 0.24), 0 2px 2px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+#les .warn-btn:is(:hover, :focus-visible) {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 4px 6px 0 light-dark(oklch(25% 0.03 145 / 0.14), rgba(0, 0, 0, 0.46));
+  background: light-dark(#fff2a6, rgba(255, 213, 64, 0.22));
+  color: var(--sy-red);
+  outline: none;
+}
+#les .warn-btn:active {
+  transform: rotate(0deg) translateY(1px);
+  box-shadow: 1px 2px 0 light-dark(oklch(25% 0.03 145 / 0.1), rgba(0, 0, 0, 0.32));
+}
+#les .warn-ico { display: inline-block; flex: none; width: 15px; height: 15px; color: currentColor; }
+#les .warn-btn .bt { padding: 0; border: 0; background: none; color: currentColor; font: 600 1.44rem/1.28 var(--hand); letter-spacing: 0.01em; text-transform: none; }
+
+/* ── Blocs Remarque / Synthèse / À retenir & « Cela permet de : » ───────── */
+#les .blk .blk-title {
+  margin: 8px 0 4px;
+  font: 600 1.06rem/1.44 var(--display);
+  color: var(--ink);
+}
+
+#les .blk:is([data-t="summary"], [data-t="keypoint"]) {
+  margin: 26px 0 18px;
+  padding: 16px 0 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+#les .blk:is([data-t="summary"], [data-t="keypoint"]) .bt {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: 700 0.76rem/1.2 var(--sans);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--sy-gold);
+}
+#les .blk[data-t="keypoint"] .bt {
+  color: light-dark(#6d28d9, #c4b5fd);
+}
+#les .blk:is([data-t="summary"], [data-t="keypoint"]) > .bx { margin-top: 8px; }
+
+/* ── Blocs Remarque & Intuition : sans filet supérieur, ruban washi distinct (céleste vs mauve doux) ── */
+#les .blk:is([data-t="remark"], [data-t="intuition"], [data-t="note"]) {
+  margin: 24px 0 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+#les .blk:is([data-t="remark"], [data-t="intuition"], [data-t="note"]) > .bh {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 0;
+  border: 0;
+}
+#les .blk:is([data-t="remark"], [data-t="intuition"], [data-t="note"]) .bt {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.34rem 1.05rem;
+  border: 0;
+  border-radius: 0;
+  font: 600 0.72rem/1.15 var(--sans);
+  letter-spacing: 0.095em;
+  text-transform: uppercase;
+  box-shadow: none;
+  clip-path: polygon(0 0, 100% 0, 97.5% 25%, 100% 50%, 97.5% 75%, 100% 100%, 0 100%, 2.5% 75%, 0 50%, 2.5% 25%);
+  transform: rotate(-1deg);
+  transition: transform 200ms var(--ease-spring), filter 180ms ease;
+}
+/* Remarque : Bleu céleste */
+#les .blk:is([data-t="remark"], [data-t="note"]) .bt {
+  background:
+    repeating-linear-gradient(135deg, light-dark(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.08)) 0 6px, transparent 6px 12px),
+    light-dark(#d4effe, rgba(56, 189, 248, 0.22));
+  color: light-dark(#0369a1, #7dd3fc);
+}
+/* Intuition : Mauve doux */
+#les .blk[data-t="intuition"] .bt {
+  background:
+    repeating-linear-gradient(135deg, light-dark(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.08)) 0 6px, transparent 6px 12px),
+    light-dark(#eadcff, rgba(192, 132, 252, 0.22));
+  color: light-dark(#6b21a8, #d8b4fe);
+}
+#les .blk:is([data-t="remark"], [data-t="intuition"], [data-t="note"]):hover .bt {
+  transform: rotate(0deg);
+}
+#les .blk:is([data-t="remark"], [data-t="intuition"], [data-t="note"]) > .bx { margin-top: 8px; }
+
+/* ── Blocs Preuve : Encre éditoriale gravée (harmonisée au thème) ── */
+#les .blk[data-t="proof"] {
+  margin: 26px 0 22px;
+  padding: 18px 22px;
+  border: 1px solid color-mix(in srgb, var(--border) 86%, var(--ink) 14%);
+  border-radius: 14px;
+  background: var(--sy-recessed);
+  box-shadow: var(--sculpt-engraved-shadow);
+}
+#les .blk[data-t="proof"] > .bh { margin-bottom: 10px; }
+#les .blk[data-t="proof"] .bt {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.34rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--ink) 32%, var(--border));
+  border-radius: 8px;
+  background: light-dark(var(--ink), color-mix(in oklch, var(--ink) 16%, var(--surface-elevated)));
+  color: light-dark(var(--paper), var(--ink));
+  font: 700 0.68rem/1.2 var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px -2px light-dark(oklch(25% 0.03 145 / 0.26), rgba(0, 0, 0, 0.44));
+  transition: transform 150ms var(--ease-spring), box-shadow 150ms ease;
+}
+#les .blk[data-t="proof"] .bt::before {
+  content: "";
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.78;
+  flex: none;
+}
+#les .blk[data-t="proof"]:hover .bt {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px -4px light-dark(oklch(25% 0.03 145 / 0.34), rgba(0, 0, 0, 0.56));
+}
+#les .blk[data-t="proof"] > .bx { margin-top: 8px; }
+#les .blk[data-t="proof"] .qed {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--ink) 74%, var(--muted));
+  box-shadow: none;
+}
+
+/* ── Blocs Exploration / Contre-exemple / Problème : 3 teintes distinctes ── */
+#les .blk:is([data-t="exploration"], [data-t="counterexample"], [data-t="problem"]) {
+  margin: 24px 0 20px;
+  padding: 18px 22px;
+  border: 1px solid var(--border);
+  border-top-color: color-mix(in srgb, var(--border) 74%, var(--box-engraved-top));
+  border-radius: 11px;
+  background: var(--sy-recessed);
+  box-shadow: var(--sculpt-engraved-shadow);
+}
+#les .blk:is([data-t="exploration"], [data-t="counterexample"], [data-t="problem"]) .bt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.28rem 0.88rem;
+  border-radius: 999px;
+  font: 700 0.68rem/1.2 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+/* Exploration : Bleu Cobalt */
+#les .blk[data-t="exploration"] .bt {
+  border: 1px solid light-dark(#93c5fd, rgba(96, 165, 250, 0.38));
+  background: light-dark(#dbeafe, rgba(59, 130, 246, 0.2));
+  color: light-dark(#1d4ed8, #93c5fd);
+}
+/* Contre-exemple : Grenat / Framboise */
+#les .blk[data-t="counterexample"] .bt {
+  border: 1px solid light-dark(#fda4af, rgba(251, 113, 133, 0.38));
+  background: light-dark(#ffe4e6, rgba(244, 63, 94, 0.2));
+  color: light-dark(#9f1239, #fda4af);
+}
+/* Problème : Ambre Cuivré */
+#les .blk[data-t="problem"] .bt {
+  border: 1px solid light-dark(#fcd34d, rgba(251, 191, 36, 0.38));
+  background: light-dark(#fef3c7, rgba(245, 158, 11, 0.2));
+  color: light-dark(#92400e, #fcd34d);
+}
+
+/* ── Feuille Problème épurée (sans encadrés lourds ni label « Problème ») ── */
+#les.is-problem-sheet .revision-hero {
+  margin: 18px 0 28px;
+}
+#les.is-problem-sheet .ls-zone {
+  background: transparent;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 20px 0 8px;
+  margin: 0;
+}
+#les.is-problem-sheet .ls-zone + .ls-zone,
+#les.is-problem-sheet .ls-intro-zone + .ls-zone {
+  border-top: 1px dotted color-mix(in srgb, var(--line) 85%, var(--muted) 15%);
+  margin-top: 16px;
+}
+#les.is-problem-sheet .section-header {
+  padding-inline: 0;
+  border-bottom: 0;
+  margin-bottom: 10px;
+}
+#les.is-problem-sheet .section-body {
+  padding-inline: 0;
+}
+#les.is-problem-sheet .blk[data-t="problem"] {
+  margin: 4px 0 14px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+#les.is-problem-sheet .blk[data-t="problem"] .bh--quiet {
+  justify-content: flex-end;
+  min-height: 0;
+  margin-bottom: -24px;
+}
+#les.is-problem-sheet .blk[data-t="problem"] .blk-title {
+  margin: 0 0 10px;
+  font: 600 1.08rem/1.35 var(--display);
+  color: var(--accent);
+}
+#les.is-problem-sheet .blk[data-t="problem"] > .bx {
+  margin-top: 0;
+}
+
+#les .revision-purpose-block {
+  width: 100%;
+  margin: 20px 0;
+  padding: 18px 22px;
+  border-radius: 11px;
+  background: linear-gradient(180deg, var(--sy-recessed), color-mix(in srgb, var(--sy-blue-bg) 34%, var(--sy-sheet)));
+  border: 1px solid var(--border);
+  border-top-color: color-mix(in srgb, var(--border) 74%, var(--box-engraved-top));
+  box-shadow: var(--sculpt-engraved-shadow);
+  color: var(--ink);
+}
+#les .revision-purpose-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+#les .revision-purpose-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  font: 700 10.5px/1.2 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sy-blue);
+  background: var(--sy-blue-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+}
+#les .revision-purpose-list { margin: 0; padding: 0; list-style: none; }
+#les .revision-purpose-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 7px; font-size: 14.5px; line-height: 1.6; }
+#les .revision-purpose-item:last-child { margin-bottom: 0; }
+#les .revision-purpose-bullet { width: 6px; height: 6px; border-radius: 50%; background: var(--sy-blue); margin-top: 8px; flex-shrink: 0; }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   EXERCICES D'APPLICATION & EXEMPLES (+10 % texte & formules · limites-modernes)
+   ════════════════════════════════════════════════════════════════════════════ */
+#les .blk:is([data-t="application"], [data-t="example"]) {
+  --math-scale: 0.99;
+  margin: 28px 0 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+#les .blk:is([data-t="application"], [data-t="example"]) > .bh {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 0;
+  border: 0;
+}
+/* Badge ruban washi à bords déchirés : Application (Terre cuite) vs Exemple (Sauge émeraude) */
+#les .blk:is([data-t="application"], [data-t="example"]) .bt {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.34rem 1.05rem;
+  border: 0;
+  border-radius: 0;
+  background:
+    repeating-linear-gradient(135deg, light-dark(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.08)) 0 6px, transparent 6px 12px),
+    var(--sy-blue-bg);
+  font: 600 0.72rem/1.15 var(--sans);
+  letter-spacing: 0.095em;
+  text-transform: uppercase;
+  color: var(--sy-blue);
+  box-shadow: none;
+  clip-path: polygon(0 0, 100% 0, 97.5% 25%, 100% 50%, 97.5% 75%, 100% 100%, 0 100%, 2.5% 75%, 0 50%, 2.5% 25%);
+  transform: rotate(-1deg);
+  transition: transform 200ms var(--ease-spring), filter 180ms ease;
+}
+/* Exemple : Sauge Émeraude (distinct d'Application terre cuite) */
+#les .blk[data-t="example"] .bt {
+  background:
+    repeating-linear-gradient(135deg, light-dark(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.08)) 0 6px, transparent 6px 12px),
+    light-dark(#d4eedb, rgba(74, 222, 128, 0.2));
+  color: light-dark(#166534, #86efac);
+}
+#les .blk:is([data-t="application"], [data-t="example"]):hover .bt {
+  transform: rotate(0deg);
+}
+
+/* Étoiles de difficulté épurées (rouge de marge Seyès, sans pastille lourde) */
+.dif-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 7.5px;
+  border-radius: 999px;
+  background: var(--surface-recessed);
+  border: 1px solid color-mix(in srgb, var(--line) 85%, transparent);
+  box-shadow: none;
+  flex: none;
+}
+#les .dif-stars {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+.dif-star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.75px;
+  height: 12.75px;
+  color: color-mix(in srgb, var(--line) 85%, var(--muted) 15%);
+  transition: transform 200ms var(--ease-spring), color 180ms ease;
+}
+#les .dif-star { color: var(--border); }
+.dif-star-svg { width: 100%; height: 100%; fill: currentColor; stroke: currentColor; stroke-width: 1.4; }
+.dif-star.is-on { color: var(--gold, var(--am)); filter: none; }
+#les .dif-star.is-on { color: var(--sy-red); filter: none; }
+#les .blk[data-t="application"]:hover .dif-star.is-on { transform: scale(1.08); }
+
+/* Typographie énoncé & résolution : taille optique strictement identique pour toutes les formules KaTeX */
+#les .blk:is([data-t="application"], [data-t="example"]) {
+  --app-katex-size: var(--les-katex-size);
+}
+#les .blk:is([data-t="application"], [data-t="example"]) > .bx > :first-child > .math-renderer,
+#les .blk:is([data-t="application"], [data-t="example"]) > .bx > :first-child > :not(.media-stack__fig) > .math-renderer {
+  font: 400 clamp(1.14rem, 2.1vw, 1.22rem)/1.64 var(--serif);
+  font-optical-sizing: auto;
+  color: var(--ink);
+}
+#les .blk:is([data-t="application"], [data-t="example"]) :is(.app-sol, .sol-bx) {
+  --math-scale: 0.99;
+}
+#les .blk:is([data-t="application"], [data-t="example"]) .sol-bx .math-renderer {
+  font: 400 1.045rem/1.8 var(--sans);
+}
+/* Parité optique exacte des formules KaTeX entre l'énoncé et la résolution (inline, display & \boxed) */
+#les .blk:is([data-t="application"], [data-t="example"]) .math-inline-rendered .katex,
+#les .blk:is([data-t="application"], [data-t="example"]) .katex-display > .katex {
+  font-size: var(--app-katex-size);
+}
+#les .blk:is([data-t="application"], [data-t="example"]) .math-display-fitted > .katex-display > .katex {
+  font-size: calc(var(--app-katex-size) * var(--fit-ratio, 0.86));
+}
+#les .blk:is([data-t="application"], [data-t="example"]) .sol-bx .katex-display {
+  margin: 0.78rem auto 0.85rem;
+}
+#les .blk:is([data-t="application"], [data-t="example"]) .sol-bx :is(.result-box, .is-boxed-formula) {
+  padding: 0.56rem 1.25rem;
+}
+
+/* Listes numérotées dans Application / Exemple : −10 % & alignement optique flexible */
+#les .blk:is([data-t="application"], [data-t="example"]) ul.math-list--ordered {
+  margin: 12px 0;
+  gap: 11px;
+  font-size: 0.9em;
+  line-height: 1.72;
+}
+#les .blk:is([data-t="application"], [data-t="example"]) ul.math-list--ordered .math-list-item {
+  grid-template-columns: 24px minmax(0, 1fr);
+  column-gap: 11px;
+  align-items: first baseline;
+}
+#les .blk:is([data-t="application"], [data-t="example"]) ul.math-list--ordered .math-list-item:has(> .math-list-content > .math-renderer > .math-display-shell:first-child),
+#les .blk:is([data-t="application"], [data-t="example"]) ul.math-list--ordered .math-list-item:has(> .math-list-content > .math-display-shell:first-child) {
+  align-items: center;
+}
+#les .blk:is([data-t="application"], [data-t="example"]) ul.math-list--ordered .math-list-content > .math-renderer {
+  font: inherit;
+  color: inherit;
+}
+#les .blk:is([data-t="application"], [data-t="example"]) ul.math-list--ordered .math-list-marker--num {
+  width: 23px;
+  height: 23px;
+  margin: 0;
+  font-size: 0.73rem;
+  transform: translateY(-0.08em);
+}
+
+/* Déclencheur « Résolvons l’exercice » : crayon moderne sans boîte + motion avancée */
+#les :is(.app-sol, .solution) {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  border-top: 0;
+  margin: 6px 0 2px;
+  padding-top: 0;
+}
+#les .ls-zone,
+#les .section-body,
+#les .blk,
+#les .blk > .bx,
+#les .blk > .bx > div {
+  min-width: 0;
+  max-width: 100%;
+}
+#les :is(.app-sol-summary, .solution-toggle) {
+  list-style: none;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  user-select: none;
+}
+#les :is(.app-sol-summary, .solution-toggle)::-webkit-details-marker { display: none; }
+#les .app-sol-pill {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: color-mix(in srgb, var(--ink) 56%, var(--muted) 44%);
+  transition: color 220ms ease, transform 220ms var(--ease-spring);
+}
+#les .app-pencil {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+}
+#les .app-pencil::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 70%);
+  opacity: 0;
+  transform: scale(0.65);
+  pointer-events: none;
+  transition: opacity 240ms ease, transform 280ms var(--ease-spring);
+}
+#les .app-pencil__svg {
+  width: 23px;
+  height: 23px;
+  overflow: visible;
+  filter: drop-shadow(0 1px 0 color-mix(in srgb, var(--surface) 65%, transparent));
+}
+#les .app-pencil__body {
+  transform-origin: 8px 20px;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+#les .app-pencil__trace {
+  stroke: var(--accent);
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  opacity: 0;
+  transition: stroke-dashoffset 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 220ms ease;
+}
+@keyframes appPencilWrite {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  28% { transform: translate(2.2px, -2.6px) rotate(-13deg); }
+  55% { transform: translate(4.2px, -1.2px) rotate(-6deg); }
+  80% { transform: translate(2.6px, -2.4px) rotate(-11deg); }
+  100% { transform: translate(2px, -2px) rotate(-9deg); }
+}
+#les :is(.app-sol-summary, .solution-toggle):hover .app-sol-pill {
+  color: var(--accent);
+}
+#les :is(.app-sol-summary, .solution-toggle):hover .app-pencil::after {
+  opacity: 1;
+  transform: scale(1.1);
+}
+#les :is(.app-sol-summary, .solution-toggle):hover .app-pencil__body {
+  animation: appPencilWrite 680ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+#les :is(.app-sol-summary, .solution-toggle):hover .app-pencil__trace {
+  stroke-dashoffset: 0;
+  opacity: 0.95;
+}
+#les :is(.app-sol-summary, .solution-toggle):active .app-sol-pill {
+  transform: scale(0.88);
+}
+#les :is(.app-sol, .solution)[open] .app-sol-pill {
+  color: var(--accent);
+}
+#les :is(.app-sol, .solution)[open] .app-pencil__body {
+  transform: translate(3.2px, -1.6px) rotate(7deg) scale(0.96);
+  animation: none;
+}
+#les :is(.app-sol, .solution)[open] .app-pencil__trace {
+  stroke-dashoffset: 0;
+  opacity: 0.85;
+}
+#les :is(.app-sol, .solution)[open] :is(.app-sol-summary, .solution-toggle):hover .app-pencil__body {
+  transform: translate(1.8px, -2.4px) rotate(-8deg) scale(1.03);
+}
+@media (prefers-reduced-motion: reduce) {
+  #les :is(.app-sol-summary, .solution-toggle):hover .app-pencil__body {
+    animation: none;
+    transform: translate(1px, -1.5px) rotate(-8deg);
+  }
+}
+
+/* Résolution fusionnée en une seule boîte architecturale gris moderne (anti-débordement strict) */
+#les :is(.app-correction-panel, .app-sol .sol-bx) {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 10px 0 8px;
+  padding: 0;
+  border: 0;
+  border-inline-start: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow-x: clip;
+  animation: socUnfold 240ms var(--ease-spring);
+}
+.app-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+  padding: 1.15rem 1.35rem;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--border) 84%, var(--ink) 16%);
+  background: linear-gradient(
+    162deg,
+    color-mix(in srgb, var(--surface) 64%, var(--bg)) 0%,
+    color-mix(in srgb, var(--bg) 56%, var(--surface)) 100%
+  );
+  box-shadow: var(--sculpt-engraved-shadow);
+  color: var(--ink);
+}
+.app-steps-list > *,
+.app-steps-list .math-renderer,
+.app-steps-list .math-display-shell,
+.app-steps-list .math-display-node {
+  min-width: 0;
+  max-width: 100%;
+}
+.app-steps-list :is(.result-box, .is-boxed-formula) {
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+#les .app-steps-list {
+  background: linear-gradient(
+    162deg,
+    color-mix(in srgb, var(--sy-sheet) 58%, var(--sy-desk)) 0%,
+    color-mix(in srgb, var(--sy-desk) 52%, var(--sy-sheet)) 100%
+  );
+  border: 1px solid color-mix(in srgb, var(--border) 84%, var(--ink) 16%);
+}
+:is(.step, .app-step) {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  font-size: 1.045rem;
+  line-height: 1.76;
+  color: var(--ink);
+  box-shadow: none;
+  overflow-wrap: break-word;
+}
+.app-steps-list > :is(.step, .app-step) + :is(.step, .app-step) {
+  margin-top: 0.85rem;
+}
+#les :is(.step, .app-step) {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+:is(.step, .app-step) p { margin: 0 0 0.55rem; color: var(--muted); }
+#les :is(.step, .app-step) p { color: var(--ink); }
+:is(.step, .app-step) p:last-child { margin-bottom: 0; }
+
+
+/* ── Pied de page éditorial de fiche & bouton discret Retour en haut ────── */
+#les .les-footer { margin: 28px 0 16px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; text-align: center; }
+#les .les-footer__meta { font: 400 0.8rem/1.4 var(--sans); letter-spacing: 0.04em; color: var(--muted); }
+#les .les-top-fab {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right, 0px));
+  bottom: max(22px, env(safe-area-inset-bottom, 0px));
+  z-index: 15;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--sy-sheet) 92%, transparent);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: var(--sy-blue);
+  box-shadow: 0 10px 24px -10px light-dark(oklch(25% 0.03 145 / 0.24), rgba(0, 0, 0, 0.65));
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px) scale(0.92);
+  pointer-events: none;
+  transition: opacity 200ms ease, transform 220ms var(--ease-spring), background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+#les .les-top-fab.is-visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+#les .les-top-fab:hover {
+  background: var(--sy-blue);
+  border-color: var(--sy-blue);
+  color: var(--sy-on);
+  transform: translateY(-2px) scale(1.04);
+}
+#les .les-top-fab:active { transform: scale(0.96); }
+
+/* ── Cadre Référentiel hiérarchique ─────────────────────────────────────── */
+.cadre-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin: 14px 0 20px; }
+.cadre-domain { margin: 22px 0 6px; font: 600 clamp(15.5px, 2vw, 18px)/1.28 var(--display); letter-spacing: -0.012em; color: var(--ink); }
+.cadre-domain:first-child { margin-top: 6px; }
+.cadre-sub { margin: 18px 0 0; }
+.cadre-sub__hd { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+.cadre-sub__title { display: inline-flex; align-items: center; gap: 8px; margin: 0; font: 600 14px/1.35 var(--sans); color: var(--accent); }
+.cadre-sub__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: none; transition: transform var(--dur-med) var(--ease-spring), background-color var(--dur-med); }
+.cadre-sub.is-complete .cadre-sub__dot { background: var(--ok); transform: scale(1.2); }
+.cadre-sub__cnt { font: 600 11.5px var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
+.cadre-sub__rail { display: grid; gap: 3px; margin-inline-start: 2.5px; padding-inline-start: 14px; border-inline-start: 1.5px solid color-mix(in srgb, var(--accent) 20%, var(--line)); }
+.cadre-skill { display: flex; align-items: flex-start; justify-content: space-between; gap: 11px; width: 100%; padding: 8px 10px; border: 0; border-radius: 9px; background: transparent; color: var(--ink); text-align: start; cursor: pointer; transition: background-color var(--dur-fast), color var(--dur-fast); }
+.cadre-skill:hover { background: color-mix(in srgb, var(--surface) 88%, var(--accent) 5%); }
+.cadre-skill__txt { flex: 1; min-width: 0; font: 400 13.5px/1.6 var(--sans); transition: color var(--dur-fast), opacity var(--dur-fast); }
+.cadre-skill.is-done .cadre-skill__txt { color: var(--muted); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--muted) 60%, transparent); }
+.cadre-skill__box { display: inline-grid; place-items: center; flex: none; width: 19px; height: 19px; margin-top: 2px; border: 1.5px solid color-mix(in srgb, var(--ink) 25%, var(--line)); border-radius: 5px; background: var(--surface); color: transparent; transition: background-color var(--dur-med) var(--ease-spring), border-color var(--dur-med) var(--ease-spring), transform var(--dur-fast) var(--ease-spring), color var(--dur-fast); }
+.cadre-skill:hover .cadre-skill__box { border-color: var(--accent); }
+.cadre-skill.is-done .cadre-skill__box { background: var(--accent); border-color: var(--accent); color: var(--on-accent); transform: scale(1.06); }
+.cadre-done-banner { margin-top: 24px; padding: 14px 18px; border: 1px solid color-mix(in srgb, var(--ok) 32%, var(--line)); border-radius: 10px; background: color-mix(in srgb, var(--ok) 9%, var(--surface)); color: var(--ok); text-align: center; animation: socUnfold 280ms var(--ease-spring); }
+
+/* ── Sélecteur visuel de palettes dans Paramètres (#set) ────────────────── */
+.pal-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin: 0 0 12px; }
+.pal-opt { display: flex; align-items: center; gap: 7px; padding: 6.5px 9px; border: 1px solid var(--line); border-radius: 9px; background: var(--bg); color: var(--ink); font: 500 12px var(--sans); cursor: pointer; transition: border-color var(--dur-fast), background-color var(--dur-fast), transform var(--dur-fast) var(--ease-spring); }
+.pal-opt:hover { border-color: var(--accent); transform: translateY(-1px); }
+.pal-opt[aria-pressed="true"] { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); font-weight: 600; }
+.pal-swatches { display: inline-flex; gap: 3px; flex: none; }
+.pal-swatches i { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.12); }
+
+/* ── Adaptations intelligentes par largeur de feuille (Container Queries) & Responsive ── */
+@container les-sheet (max-width: 520px) {
+  #les .ls-zone .section-body {
+    --les-katex-size: 1rem;
+  }
+  .app-steps-list {
+    padding: 0.96rem 1.05rem;
+    border-radius: 12px;
+  }
+}
+
+@container les-sheet (min-width: 720px) {
+  #les .ls-zone .section-body {
+    --les-katex-size: clamp(1.1rem, 0.92rem + 0.42cqi, 1.2rem);
+  }
+}
+
+@container les-sheet (min-width: 880px) {
+  .app-steps-list {
+    padding: 1.32rem 1.65rem;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 721px) {
+  #les .ls-zone { --les-px: clamp(1.25rem, 3.2vw, 1.85rem); }
+}
+
+@media (max-width: 720px) {
+  body[data-v="lesson"] {
+    background-attachment: scroll;
+  }
+  #les.page-main--lesson {
+    --les-katex-size: 0.98rem;
+    padding: 0 max(10px, env(safe-area-inset-left, 0px)) calc(42px + env(safe-area-inset-bottom, 0px)) max(10px, env(safe-area-inset-right, 0px));
+  }
+  #les .top {
+    height: 48px;
+    min-height: 48px;
+    margin: 0 -10px 6px;
+    padding: 0 8px 0 12px;
+    gap: 5px;
+  }
+  #les .top .ib {
+    width: 42px;
+    height: 42px;
+  }
+  #les .revision-hero {
+    margin: 14px 0 20px;
+  }
+  #les .revision-hero-title {
+    font-size: clamp(1.62rem, 6.8vw, 2.02rem);
+    line-height: 1.16;
+  }
+  #les .ls-intro-zone {
+    margin-bottom: 1.35rem;
+  }
+  #les .blk[data-t="intro"] {
+    padding: 0 2px;
+    font-size: 0.94rem;
+    line-height: 1.66;
+  }
+  #les .ls-zone {
+    --les-px: 0.95rem;
+    border-radius: 10px;
+    margin-bottom: 1.25rem;
+  }
+  #les .section-header {
+    padding: 1.05rem var(--les-px) 0.5rem;
+  }
+  #les .section-body {
+    padding: 0.65rem var(--les-px) 1.2rem;
+  }
+  #les :is(.lh, .section-title) {
+    font-size: clamp(1.2rem, 5vw, 1.46rem);
+    gap: 8px;
+  }
+  #les .lh .ltr {
+    font-size: clamp(1.4rem, 5.8vw, 1.7rem);
+  }
+  #les details.blk:is(.is-socratic, .is-reveal) {
+    margin: 16px 0;
+  }
+  #les details.blk:is(.is-socratic, .is-reveal) > summary .blk-q {
+    font-size: clamp(1.03rem, 4.3vw, 1.18rem);
+    padding: 4px 8px;
+    line-height: 1.42;
+  }
+  #les details.blk > .bx {
+    margin: 18px auto 12px;
+    padding: 18px 13px 13px;
+    min-width: min(100%, 15rem);
+    border-radius: 12px;
+  }
+  #les details.blk > .bx .math-renderer {
+    font-size: 0.97rem;
+    line-height: 1.56;
+  }
+  #les details.blk > .bx .is-boxed-formula {
+    padding: 0.44rem 0.82rem;
+    overflow-x: auto;
+  }
+  #les .blk:is([data-t="application"], [data-t="example"]) > .bx > :first-child > .math-renderer {
+    font-size: 1.02rem;
+    line-height: 1.6;
+  }
+  #les .blk:is([data-t="exploration"], [data-t="counterexample"], [data-t="problem"], [data-t="proof"]) {
+    padding: 13px 14px;
+    margin: 16px 0 14px;
+  }
+  #les .revision-purpose-block {
+    padding: 14px;
+    margin: 14px 0;
+  }
+  #les .revision-purpose-item {
+    font-size: 13.5px;
+    line-height: 1.52;
+  }
+  #les .app-sol-pill {
+    width: 40px;
+    height: 38px;
+    padding: 0;
+  }
+  #les .warn-btn {
+    min-height: 40px;
+  }
+  #les .warn-btn .bt {
+    font-size: 1.24rem;
+  }
+  #les .les-top-fab {
+    width: 40px;
+    height: 40px;
+    right: max(10px, env(safe-area-inset-right, 0px));
+    bottom: max(14px, calc(env(safe-area-inset-bottom, 0px) + 10px));
+  }
+  .app-steps-list {
+    padding: 0.92rem 1rem;
+    border-radius: 12px;
+  }
+  :is(.step, .app-step) {
+    padding: 0;
+    font-size: 0.95rem;
+    line-height: 1.68;
+  }
+  #les .blk:is([data-t="application"], [data-t="example"]) .sol-bx .math-renderer {
+    font-size: 0.95rem;
+    line-height: 1.66;
+  }
+  #toc,
+  #les-menu {
+    inset-inline: 10px;
+    width: auto;
+    max-width: calc(100vw - 20px);
+    max-height: 72dvh;
+  }
+  #toc button,
+  #les-menu .les-menu__item {
+    min-height: 44px;
+    padding: 10px 12px;
+    align-items: center;
+  }
+  #les-menu .les-theme-opt {
+    height: 40px;
+  }
+  #les-menu .les-menu__stepper button {
+    width: 44px;
+    height: 42px;
+  }
+
+  /* Cadre Référentiel sur téléphone */
+  .cadre-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+    margin: 10px 0 15px;
+    padding-inline-end: 20px;
+    gap: 6px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 88%, transparent 100%);
+  }
+  .cadre-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .cadre-filters > * {
+    flex: none;
+  }
+  .cadre-domain {
+    margin: 18px 0 7px;
+    font-size: 17px;
+  }
+  .cadre-sub {
+    margin: 14px 0 0;
+  }
+  .cadre-sub__hd {
+    gap: 7px;
+    margin-bottom: 5px;
+  }
+  .cadre-sub__title {
+    font-size: 13px;
+    gap: 7px;
+  }
+  .cadre-sub__rail {
+    padding-inline-start: 10px;
+    gap: 2px;
+  }
+  .cadre-skill {
+    padding: 8px 7px;
+    gap: 9px;
+    min-height: 38px;
+  }
+  .cadre-skill__txt {
+    font-size: 12.8px;
+    line-height: 1.5;
+  }
+  .cadre-skill__box {
+    width: 19px;
+    height: 19px;
+  }
+  .cadre-done-banner {
+    margin-top: 16px;
+    padding: 12px 14px;
+    font-size: 12.8px;
+  }
+
+  /* Palettes dans Paramètres (#set) */
+  .pal-grid {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .pal-opt {
+    min-height: 38px;
+    padding: 6.5px 8px;
+    gap: 6px;
+    font-size: 11.8px;
+  }
+}
+
+@media (max-width: 520px) {
+  #les #rt {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  #les .top {
+    padding: 0 6px 0 10px;
+    gap: 3px;
+  }
+  #les .top .ib {
+    width: 40px;
+    height: 40px;
+  }
+  #les .ls-zone {
+    --les-px: 0.82rem;
+  }
+}

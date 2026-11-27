@@ -1,0 +1,295 @@
+{
+  "schemaVersion": "2.0",
+  "title": "Orientation & Programme officiel",
+  "classes": [
+    {
+      "id": "1ere-annee-college",
+      "label": "1re année collégiale",
+      "cycle": "college",
+      "source": "MEN · Cycle collégial",
+      "year": "Programme officiel",
+      "path": "data/orientation/1ere-annee-college.json"
+    },
+    {
+      "id": "2eme-annee-college",
+      "label": "2e année collégiale",
+      "cycle": "college",
+      "source": "MEN · Cycle collégial",
+      "year": "Programme officiel",
+      "path": "data/orientation/2eme-annee-college.json"
+    },
+    {
+      "id": "3eme-annee-college",
+      "label": "3e année collégiale",
+      "cycle": "college",
+      "source": "MEN · Cycle collégial",
+      "year": "Programme officiel",
+      "path": "data/orientation/3eme-annee-college.json"
+    },
+    {
+      "id": "tronc-commun-sc",
+      "label": "Tronc Commun Scientifique",
+      "cycle": "tronc-commun",
+      "source": "MEN BIOF · Option Français",
+      "year": "Novembre 2014",
+      "pdfUrl": "/assets/aistudio/1er_bac__1__de7fcbf1.pdf",
+      "path": "data/orientation/tronc-commun-sc.json"
+    },
+    {
+      "id": "1ere-bac-sc-ex",
+      "label": "1re Bac Sc. Expérimentales",
+      "cycle": "1ere-bac",
+      "source": "MEN BIOF · Option Français",
+      "year": "Novembre 2014",
+      "pdfUrl": "/assets/aistudio/1er_bac__1__de7fcbf1.pdf",
+      "path": "data/orientation/1ere-bac-sc-ex.json"
+    },
+    {
+      "id": "1ere-bac-sc-math",
+      "label": "1re Bac Sc. Mathématiques",
+      "cycle": "1ere-bac",
+      "source": "MEN BIOF · Option Français",
+      "year": "Novembre 2014",
+      "pdfUrl": "/assets/aistudio/1er_bac__1__de7fcbf1.pdf",
+      "path": "data/orientation/1ere-bac-sc-math.json"
+    },
+    {
+      "id": "2eme-bac-sc-ex",
+      "label": "2e Bac Sc. Expérimentales",
+      "cycle": "2eme-bac",
+      "source": "MEN BIOF · Option Français",
+      "year": "Juin 2015",
+      "pdfUrl": "/assets/aistudio/recommandations_p_dagogiques_bac_biof_ccab4a64.pdf",
+      "path": "data/orientation/2eme-bac-sc-ex.json"
+    },
+    {
+      "id": "2eme-bac-sc-math",
+      "label": "2e Bac Sc. Mathématiques",
+      "cycle": "2eme-bac",
+      "source": "MEN BIOF · Option Français",
+      "year": "Juin 2015",
+      "pdfUrl": "/assets/aistudio/recommandations_p_dagogiques_bac_biof_ccab4a64.pdf",
+      "path": "data/orientation/2eme-bac-sc-math.json"
+    }
+  ],
+  "methodTips": {
+    "common": [
+      {
+        "title": "Rappel actif avant de lire la solution",
+        "summary": "Fermez le cours et testez votre mémoire avant de révéler.",
+        "steps": [
+          "Lisez chaque question socratique de la fiche et formulez mentalement la propriété avant de cliquer pour révéler la réponse.",
+          "Notez au brouillon les hypothèses exactes d’un théorème (continuité sur $[a,b]$, dérivabilité sur $]a,b[$).",
+          "Refaites sans modèle, 48 heures plus tard, les exercices où vous avez ouvert un indice."
+        ]
+      },
+      {
+        "title": "Structure d’une rédaction irréprochable",
+        "summary": "Hypothèses → Outil cité → Calcul → Conclusion encadrée.",
+        "steps": [
+          "Commencez toujours par préciser le domaine de définition ou l’intervalle d’étude ($\\forall x \\in I$).",
+          "Annoncez le théorème utilisé par son nom exact (TVI, Rolle, IAF, Gauss, Bézout, Thalès, Pythagore).",
+          "Vérifiez la cohérence numérique ou graphique de chaque résultat obtenu."
+        ]
+      },
+      {
+        "title": "Les 4 phases pour résoudre un problème",
+        "summary": "Comprendre, planifier, exécuter, puis vérifier chaque solution.",
+        "steps": [
+          "Reformulez l’énoncé en isolant les données, l’inconnue et la nature du résultat attendu (nombre, fonction, ensemble, preuve).",
+          "En cas de blocage, testez un cas particulier ($n=1, 2$), un problème analogue plus simple ou raisonnez à rebours depuis la conclusion.",
+          "Relisez votre résultat final pour vérifier les cas limites, le signe et la possibilité de généraliser la méthode."
+        ]
+      },
+      {
+        "title": "Apprendre de ses erreurs",
+        "summary": "Une erreur révèle un piège précis à corriger, jamais un manque de niveau.",
+        "steps": [
+          "Tenez un carnet d’erreurs classées par cause (hypothèse oubliée, signe, quantificateur, confusion $\\Rightarrow / \\Leftrightarrow$) plutôt que par chapitre.",
+          "Associez chaque piège intuitif (ex. $\\sqrt{x^2}=|x|$, ou $f'(a)=0$ ne suffit pas pour un extremum) à un contre-exemple minimal.",
+          "Considérez une notion acquise uniquement lorsque vous savez expliquer pourquoi une réponse fausse est impossible."
+        ]
+      },
+      {
+        "title": "Changer de point de vue",
+        "summary": "Passer de l’algèbre au graphique, à la géométrie ou au numérique débloque les exercices.",
+        "steps": [
+          "Traduisez une équation $f(x)=k$ en intersection de courbes, ou un calcul complexe en transformation géométrique du plan.",
+          "Contrôlez chaque résultat algébrique par une esquisse rapide de courbe ou un tableau de variations au brouillon.",
+          "Maîtriser un concept signifie circuler librement entre sa définition formelle, sa représentation graphique et son sens numérique."
+        ]
+      },
+      {
+        "title": "Rédiger avec clarté et rigueur",
+        "summary": "Une bonne démonstration se lit comme une phrase précise où chaque variable est introduite.",
+        "steps": [
+          "Déclarez toujours le statut de chaque variable avant usage : « Soit $x \\in I$ » pour prouver un $\\forall$, « Posons $x_0=\\dots$ » pour un $\\exists$.",
+          "Évitez les chaînes mécaniques de $\\Leftrightarrow$ ; privilégiez des connecteurs précis en français (Or, Donc, Par conséquent, Réciproquement).",
+          "Distinguez la recherche au brouillon (analyse) de la copie finale, rédigée dans l’ordre déductif strict sans étape implicite."
+        ]
+      },
+      {
+        "title": "Tester au brouillon avant de prouver",
+        "summary": "On découvre une idée par essais et contre-exemples, puis on la valide par déduction.",
+        "steps": [
+          "Osez conjecturer au brouillon sur deux ou trois valeurs simples avant de lancer une démonstration formelle.",
+          "Testez votre propre hypothèse sur des cas extrêmes ($0$, $1$, négatifs, bords d’intervalle) pour repérer les conditions indispensables.",
+          "Transformez l’idée validée en preuve complète : chaque hypothèse de l’énoncé doit jouer un rôle identifiable."
+        ]
+      },
+      {
+        "title": "Espacer et mélanger ses révisions",
+        "summary": "Réviser à intervalles réguliers et varier les chapitres est bien plus efficace que le bachotage.",
+        "steps": [
+          "Réactivez chaque chapitre à intervalles croissants ($J+1$, $J+3$, $J+7$, $J+21$) au lieu de relire trois heures d’affilée la veille.",
+          "Mélangez dans une même séance des exercices issus de chapitres différents pour entraîner le choix de la bonne méthode.",
+          "Remplacez la relecture passive et le surlignage par des auto-tests courts à livre fermé."
+        ]
+      },
+      {
+        "title": "Garder le contrôle pendant un exercice",
+        "summary": "Prendre du recul en cours de résolution évite de perdre du temps dans une impasse.",
+        "steps": [
+          "Toutes les 5 minutes de calcul lourd, faites une pause de 15 secondes : « Cette piste me rapproche-t-elle vraiment de la question ? ».",
+          "Relisez toujours la question précédente : dans un problème structuré, son résultat est presque toujours le levier de la suite.",
+          "Validez vos étapes intermédiaires par un contrôle rapide (parité, signe, valeur en $0$, degré, comportement asymptotique)."
+        ]
+      },
+      {
+        "title": "Transformer les méthodes en réflexes",
+        "summary": "Automatiser les outils de base libère votre esprit pour les questions de réflexion.",
+        "steps": [
+          "Reliez chaque verbe d’énoncé à un répertoire ciblé : existence (TVI, construction), unicité (monotonie stricte, absurde), inégalité (étude de fonction, IAF, récurrence).",
+          "Rendez réflexes les calculs fondamentaux (dérivées, primitives, limites usuelles, trigonométrie) pour consacrer votre énergie au raisonnement.",
+          "Après chaque exercice difficile, résumez en une seule phrase l’idée clé qui a débloqué la démonstration."
+        ]
+      }
+    ],
+    "college": [
+      {
+        "title": "Réussir ses contrôles et l’Examen Régional (3AC)",
+        "summary": "Sécuriser les points de calcul et de géométrie.",
+        "steps": [
+          "Maîtrisez parfaitement les priorités opératoires, les signes, les puissances et les racines carrées.",
+          "En géométrie, faites un schéma codé au brouillon avant de rédiger : « On sait que… Or… Donc… »."
+        ]
+      }
+    ],
+    "lycee": [
+      {
+        "title": "Construire un socle solide pour la 2e Bac",
+        "summary": "Logique, fonctions et dérivation sont transversaux.",
+        "steps": [
+          "Les raisonnements par récurrence, contraposée et absurde reviennent dans presque tous les chapitres de Terminale.",
+          "Révisez chaque chapitre avec le cycle complet : Fiche → Quiz ($\\ge 80\\,\\%$) → Exercices chronométrés."
+        ]
+      }
+    ],
+    "2eme-bac-sc-math": [
+      {
+        "title": "Stratégie Examen National Sc. Math (4 heures)",
+        "summary": "Gestion du temps, rigueur et barème optimal.",
+        "steps": [
+          "Consacrez 10 min à parcourir tout le sujet pour repérer les questions indépendantes et les parties d’algèbre/analyse.",
+          "Si une question demande « Montrer que… », vous pouvez admettre son résultat pour traiter la suite sans bloquer.",
+          "Cochez régulièrement vos acquis dans le Cadre référentiel et vérifiez les limites hors programme du bulletin officiel."
+        ]
+      },
+      {
+        "title": "Préparation des concours (ENSA, ENSAM, Médecine)",
+        "summary": "Vitesse, astuces QCM et élimination rapide.",
+        "steps": [
+          "En QCM chronométré, testez d’abord les cas limites ($x=0$, $x=1$, parité, signe, comportement asymptotique).",
+          "Utilisez l’onglet Concours en mode Simulation régulièrement pour automatiser la gestion du chronomètre."
+        ]
+      }
+    ],
+    "2eme-bac-sc-ex": [
+      {
+        "title": "Stratégie Examen National Sc. Ex (3 heures)",
+        "summary": "Gestion du temps et rentabilité sur chaque exercice.",
+        "steps": [
+          "Sécurisez rapidement les exercices de géométrie dans l’espace, complexes et probabilités avant le problème d’analyse.",
+          "Si une question demande « Montrer que… », admettez son résultat pour enchaîner sur les questions suivantes.",
+          "Cochez régulièrement vos acquis dans le Cadre référentiel de votre filière."
+        ]
+      },
+      {
+        "title": "Préparation des concours (ENSA, ENSAM, Médecine)",
+        "summary": "Vitesse, astuces QCM et élimination rapide.",
+        "steps": [
+          "En QCM chronométré, testez d’abord les valeurs particulières ($x=0$, $x=1$, signe, limites).",
+          "Entraînez-vous avec les annales et simulations thématiques de l’onglet Concours."
+        ]
+      }
+    ]
+  },
+  "orientationPaths": {
+    "college": [
+      {
+        "title": "Tronc Commun Scientifique (TCS)",
+        "tag": "Voie scientifique",
+        "description": "La passerelle naturelle vers 1re Bac Sciences Mathématiques ou Sciences Expérimentales.",
+        "requirements": "Bon niveau en calcul littéral, fonctions, géométrie analytique et physique-chimie."
+      },
+      {
+        "title": "Tronc Commun Technologique (TCT)",
+        "tag": "Ingénierie & technique",
+        "description": "Destiné aux élèves intéressés par les sciences de l’ingénieur et les métiers techniques.",
+        "requirements": "Rigueur en mathématiques appliquées, dessin technique et physique."
+      },
+      {
+        "title": "Tronc Commun Lettres / Enseignement Originel",
+        "tag": "Humanités & droit",
+        "description": "Ouvre vers les études juridiques, littéraires, linguistiques et sciences humaines.",
+        "requirements": "Maîtrise rédactionnelle, analyse de textes et culture générale."
+      }
+    ],
+    "tronc-commun": [
+      {
+        "title": "1re Bac Sciences Mathématiques",
+        "tag": "Exigence mathématique",
+        "description": "Programme approfondi en logique, ensembles, arithmétique, géométrie et analyse. Voie privilégiée pour CPGE MP.",
+        "requirements": "Goût pour la démonstration rigoureuse et régularité dans le travail personnel."
+      },
+      {
+        "title": "1re Bac Sciences Expérimentales (PC / SVT)",
+        "tag": "Sciences & santé",
+        "description": "Équilibre entre mathématiques, physique-chimie et SVT. Ouvre vers Médecine, ENSA, ENSAM, FST, Architecture.",
+        "requirements": "Solide maîtrise des fonctions, trigonométrie, physique et sciences naturelles."
+      },
+      {
+        "title": "1re Bac Sciences Économiques & Gestion",
+        "tag": "Économie & management",
+        "description": "Prépare aux écoles de commerce (ENCG), CPGE ECT, finance et gestion.",
+        "requirements": "Aisance en calcul, statistiques, analyse économique et langues."
+      }
+    ],
+    "bac": [
+      {
+        "title": "CPGE — Classes Préparatoires aux Grandes Écoles (MP / PSI / TSI)",
+        "tag": "Excellence scientifique",
+        "description": "2 ans de préparation intensive menant au CNC (EMI, EHTP, INPT, ENSIAS, Mines Rabat…) et aux concours français.",
+        "requirements": "Sélection sur dossier (Bac Sc. Math majoritaire en MP, Bac PC en PCSI/PSI)."
+      },
+      {
+        "title": "ENSA & ENSAM (Écoles Nationales d’Ingénieurs)",
+        "tag": "Ingénieur en 5 ans",
+        "description": "Cycle préparatoire intégré (2 ans) puis spécialisation informatique, génie civil, industriel, IA ou mécanique.",
+        "requirements": "Présélection sur note du Bac + concours commun QCM (Maths & Physique)."
+      },
+      {
+        "title": "Facultés de Médecine, Pharmacie & Médecine Dentaire",
+        "tag": "Études de santé",
+        "description": "Cursus médical complet (6 à 7 ans) accessible après présélection et concours national QCM.",
+        "requirements": "Excellente rapidité en QCM et maîtrise rigoureuse du programme de 2e Bac."
+      },
+      {
+        "title": "ENA (Architecture), IAV Hassan II, ENCG, FST & UM6P",
+        "tag": "Autres filières sélectives",
+        "description": "Architecture, agronomie, commerce & management, licences d’excellence et ingénierie.",
+        "requirements": "Préparation ciblée aux concours d’accès dès le second semestre."
+      }
+    ]
+  }
+}

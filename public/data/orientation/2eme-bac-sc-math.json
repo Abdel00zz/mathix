@@ -1,0 +1,247 @@
+{
+  "classId": "2eme-bac-sc-math",
+  "title": "Deuxième année du cycle du baccalauréat — Sciences Mathématiques",
+  "source": "Ministère de l’Éducation Nationale · Sections Internationales BIOF (Option Française)",
+  "year": "Juin 2015",
+  "pdfUrl": "/assets/aistudio/recommandations_p_dagogiques_bac_biof_ccab4a64.pdf",
+  "chapters": [
+    {
+      "id": 1,
+      "section": "Analyse",
+      "title": "Suites numériques",
+      "pages": "p. 14–16",
+      "contents": [
+        "Limite d’une suite numérique ; suite convergente et suite divergente.",
+        "Limites des suites numériques de la forme $(n^\\alpha)$ avec $\\alpha \\in \\mathbb{Q}^*$ et $(a^n)$ avec $a \\in \\mathbb{R}^*$.",
+        "Opérations sur les limites de suites ; limites et ordre ; critères de convergence.",
+        "Suites adjacentes ; convergence d’une suite croissante et majorée (ou décroissante et minorée) ; cas d’une suite croissante non majorée.",
+        "Étude des suites récurrentes de la forme $u_{n+1} = f(u_n)$ où $f$ est une fonction continue sur un intervalle $I$ vérifiant $f(I) \\subset I$.",
+        "Limite de la composée d’une suite et d’une fonction continue : suites de la forme $v_n = f(u_n)$."
+      ],
+      "capacities": [
+        "Utiliser les suites géométriques et arithmétiques pour étudier des suites de la forme $u_{n+1} = au_n + b$, $u_{n+1} = \\frac{au_n+b}{cu_n+d}$ et d’autres suites récurrentes simples.",
+        "Utiliser l’encadrement et les propriétés de l’ordre pour prouver la convergence ou la divergence d’une suite à partir de la définition dans des cas particuliers.",
+        "Utiliser les suites de référence et les critères de convergence pour déterminer les limites de suites numériques.",
+        "Utiliser les suites pour résoudre des problèmes variés issus de différents domaines.",
+        "Étudier les suites récurrentes $u_{n+1} = f(u_n)$ où $f$ est continue sur un intervalle $I$ avec $f(I) \\subset I$.",
+        "Déterminer la limite de la composée d’une suite et d’une fonction continue ($v_n = f(u_n)$).",
+        "Utiliser les suites adjacentes pour encadrer des nombres réels par des nombres décimaux.",
+        "Encadrer l’intégrale d’une fonction continue sur $[a,b]$ ou l’aire sous sa courbe entre $x=a$ et $x=b$ (méthode des rectangles par exemple)."
+      ],
+      "recommendations": [
+        "Approcher la notion de limite finie ou infinie à partir des suites usuelles $(\\sqrt{n})$, $(n^2)$, $(1/\\sqrt{n})$, $(1/n^2)$ (avec tableur / outil informatique), en lien avec la limite d’une fonction en $+\\infty$.",
+        "Dire qu’une suite tend vers $l$ revient à dire que tout intervalle ouvert de centre $l$ contient tous les termes à partir d’un certain rang ; vers $+\\infty$, tout intervalle $]a, +\\infty[$ contient tous les termes à partir d’un certain rang.",
+        "Démontrer : les critères de convergence, le passage à la limite dans une inégalité ($\\forall n,\\; u_n < a \\Rightarrow l \\le a$) et le théorème de deux suites adjacentes.",
+        "Étudier les limites des suites $(a^n)_{n \\ge 0}$ ($a \\in \\mathbb{R}^*$) et $(n^r)_{n \\ge 1}$ ($r \\in \\mathbb{Q}^*$) puis les considérer comme limites usuelles.",
+        "Présenter les deux propriétés : si $u_{n+1}=f(u_n)$ converge vers $l$ ($f$ continue sur $I$, $f(I)\\subset I$) alors $f(l)=l$ ; si $(u_n)$ converge vers $l$ et $f$ est continue en $l$ alors $f(u_n) \\to f(l)$."
+      ],
+      "horsProgramme": [
+        "L’utilisation de la définition formelle ($\\varepsilon$) de la limite d’une suite n’est pas un objectif du programme (réservée à quelques propriétés et activités d’initiation)."
+      ]
+    },
+    {
+      "id": 2,
+      "section": "Analyse",
+      "title": "Limites et continuité",
+      "pages": "p. 16–17",
+      "contents": [
+        "Continuité en un point ; continuité à droite et à gauche ; continuité sur un intervalle (polynômes, fonctions rationnelles, trigonométriques et $x \\mapsto \\sqrt{x}$) ; prolongement par continuité en un point.",
+        "Opérations sur les fonctions continues.",
+        "Continuité de la composée de deux fonctions continues ; limite de la composée d’une fonction continue et d’une fonction qui admet une limite ; limite de la composée d’une suite et d’une fonction continue.",
+        "Image d’un intervalle et d’un segment par une fonction continue.",
+        "Théorème des valeurs intermédiaires (TVI) ; cas d’une fonction continue et strictement monotone sur un intervalle.",
+        "Théorème des fonctions réciproques (théorème des fonctions bijectives) et fonctions réciproques usuelles : $x \\mapsto \\sqrt[n]{x}$ et $x \\mapsto \\arctan(x)$.",
+        "Puissances rationnelles $x^r$ ($r \\in \\mathbb{Q}^*$) et propriétés opératoires."
+      ],
+      "capacities": [
+        "Étudier la continuité d’une fonction en un point à l’aide du calcul des limites.",
+        "Étudier la continuité d’une fonction sur un intervalle à l’aide des fonctions usuelles et des opérations.",
+        "Déterminer l’image d’un segment ou d’un intervalle (borné ou non borné) par une fonction continue ou continue et strictement monotone.",
+        "Appliquer le théorème des valeurs intermédiaires pour prouver l’existence de solutions d’équations ou étudier le signe d’expressions.",
+        "Utiliser la méthode de dichotomie pour déterminer des valeurs approchées ou encadrer les solutions de $f(x) = \\lambda$.",
+        "Appliquer le TVI et le théorème de la fonction bijective pour une fonction continue et strictement monotone."
+      ],
+      "recommendations": [
+        "Adopter la définition : $f$ est continue en $x_0$ si $\\lim_{x \\to x_0} f(x) = f(x_0)$.",
+        "Préciser la définition de la limite en un point à travers des activités et rappeler l’unicité et les opérations sur les limites.",
+        "Admettre que l’image d’un segment par une fonction continue est un segment et que l’image d’un intervalle est un intervalle, puis en déduire le TVI.",
+        "Développer l’utilisation du tableau de variations pour déduire les propriétés d’une fonction.",
+        "Adopter le théorème des fonctions réciproques pour introduire $x \\mapsto \\sqrt[n]{x}$ et insister particulièrement sur $x \\mapsto \\arctan(x)$."
+      ],
+      "horsProgramme": [
+        "Les deux fonctions réciproques trigonométriques $x \\mapsto \\arcsin(x)$ et $x \\mapsto \\arccos(x)$ sont hors programme.",
+        "La définition formelle de la limite en un point n’est pas un objectif du programme."
+      ]
+    },
+    {
+      "id": 3,
+      "section": "Analyse",
+      "title": "Dérivation et étude de fonctions",
+      "pages": "p. 17–19",
+      "contents": [
+        "Dérivabilité : lien continuité et dérivabilité ; dérivabilité de la composée ; dérivée de la fonction réciproque d’une fonction dérivable et strictement monotone ; dérivées de $x \\mapsto \\sqrt[n]{x}$ et $x \\mapsto \\arctan(x)$.",
+        "Fonctions primitives d’une fonction continue sur un intervalle : définition et propriétés.",
+        "Fonction logarithme népérien $\\ln$ : définition, propriétés algébriques, étude de $x \\mapsto \\ln x$, dérivée logarithmique, primitives de $x \\mapsto \\frac{u'(x)}{u(x)}$ ; logarithme de base $a$ et logarithme décimal.",
+        "Fonction exponentielle népérienne $\\exp$ : définition, propriétés algébriques, nombre $e$ et écriture $e^x$, primitives de $x \\mapsto u'(x)e^{u(x)}$ ; exponentielle de base $a$ et dérivée de $x \\mapsto a^x$.",
+        "Théorème des accroissements finis : théorème de Rolle, théorème des accroissements finis (TAF), inégalité des accroissements finis (IAF) ; propriété d’une fonction constante ou strictement croissante.",
+        "Équations différentielles : $y' = ay + b$ et $y'' + ay' + by = 0$."
+      ],
+      "capacities": [
+        "Maîtriser le calcul des dérivées, déterminer le signe d’une fonction depuis son tableau de variations ou sa courbe, et étudier des fonctions irrationnelles, trigonométriques et composées.",
+        "Déterminer la monotonie, la représentation graphique et le nombre dérivé en un point de la fonction réciproque $f^{-1}$.",
+        "Utiliser les formules de dérivation pour déterminer les primitives d’une fonction sur un intervalle.",
+        "Maîtriser le calcul algébrique, les équations, inéquations, systèmes, limites fondamentales et études de fonctions comportant $\\ln$, $\\log_{10}$ ($10^x = a$) et $\\exp$.",
+        "Maîtriser l’interprétation graphique de Rolle, du TAF et de l’IAF, et les appliquer aux suites $u_{n+1} = f(u_n)$ et à l’encadrement d’expressions ou de nombres réels.",
+        "Résoudre les équations différentielles $y' = ay + b$, $y'' + ay' + by = 0$ et celles qui s’y ramènent."
+      ],
+      "recommendations": [
+        "Rappeler la dérivation et ses applications locales et globales : approximation affine, monotonie, extrema, concavité, symétrie, branches infinies, asymptotes et équations irrationnelles.",
+        "Introduire l’écriture différentielle $dy = f'(x)\\,dx$, utilisée en physique.",
+        "Considérer comme limites fondamentales : $\\lim_{x\\to+\\infty}\\frac{\\ln x}{x^n}$, $\\lim_{x\\to+\\infty}\\frac{e^x}{x^n}$, $\\lim_{x\\to-\\infty} x^n e^x$ et $\\lim_{x\\to 0^+} x^n \\ln x$ ($n \\in \\mathbb{N}^*$) ; poser $a^b = e^{b\\ln a}$ pour $a > 0$.",
+        "Insister sur l’interprétation géométrique et les applications de Rolle, du TAF et de l’IAF pour encadrer, majorer/minorer et étudier les suites.",
+        "Relier la résolution de $y'=ay+b$ et $y''+ay'+by=0$ aux disciplines de la spécialité ; admettre la solution générale de $y''+ay'+by=0$."
+      ],
+      "horsProgramme": [
+        "L’étude des fonctions de la forme $x \\mapsto \\sqrt[n]{u(x)}$ avec $n \\ge 3$ ($u$ positive) est hors programme : on se limitera à la détermination de leurs dérivées."
+      ]
+    },
+    {
+      "id": 4,
+      "section": "Analyse",
+      "title": "Calcul intégral",
+      "pages": "p. 19–20",
+      "contents": [
+        "Intégrale d’une fonction continue sur un segment $[a;b]$ et interprétation géométrique ; fonction primitive $x \\mapsto \\int_a^x f(t)\\,dt$.",
+        "Intégrale et opérations : linéarité, relation de Chasles.",
+        "Intégrale et ordre : intégrale et valeur absolue, valeur moyenne sur un segment, théorème de la moyenne ($\\exists c \\in [a;b],\\; \\int_a^b f(x)\\,dx = f(c)(b-a)$).",
+        "Techniques de calcul intégral : utilisation des primitives, intégration par parties (IPP), intégration par changement de variable.",
+        "Applications : calcul d’aires planes et calcul de volumes de révolution."
+      ],
+      "capacities": [
+        "Utiliser les techniques du calcul intégral (primitives, IPP, changement de variable) pour calculer l’intégrale d’une fonction.",
+        "Calculer l’aire d’un domaine plan limité par deux courbes et deux droites parallèles à l’axe des ordonnées.",
+        "Calculer le volume d’un solide engendré par la rotation de la courbe d’une fonction autour de l’axe des abscisses.",
+        "Appliquer le calcul intégral pour prouver des inégalités et donner des approximations.",
+        "Étudier les fonctions du type $x \\mapsto \\int_a^{v(x)} f(t)\\,dt$ ainsi que des suites définies par des intégrales.",
+        "Encadrer une intégrale par deux suites via la méthode des rectangles (fonctions monotones) et déterminer les limites des sommes de Riemann $u_n = \\frac{b-a}{n}\\sum_{k=1}^n f\\!\\left(a + k\\frac{b-a}{n}\\right)$ et $v_n = \\frac{b-a}{n}\\sum_{k=0}^{n-1} f\\!\\left(a + k\\frac{b-a}{n}\\right)$."
+      ],
+      "recommendations": [
+        "Présenter l’intégrale sur un segment à partir de la notion de primitive d’une fonction continue.",
+        "Établir le lien entre intégrale d’une fonction continue positive et aire sous la courbe (fonction constante → affine → affine par morceaux → continue positive).",
+        "Insister sur les techniques de calcul et d’encadrement d’une intégrale, ainsi que sur le rôle réciproque entre intégrale et existence de primitives."
+      ],
+      "horsProgramme": [
+        "Les fonctions à paramètre du type $x \\mapsto \\int_a^x f(x;t)\\,dt$ sont hors programme."
+      ]
+    },
+    {
+      "id": 5,
+      "section": "Algèbre et géométrie",
+      "title": "Arithmétique",
+      "pages": "p. 21",
+      "contents": [
+        "Systèmes de numération à base $b$ ($b \\ge 2$).",
+        "Nombres premiers entre eux ; théorème de Gauss ; théorème de Bézout.",
+        "Résolution dans $\\mathbb{Z}^2$ de l’équation diophantienne $ax + by = c$.",
+        "Congruence modulo $n$ (rappel) ; ensemble $\\mathbb{Z}/n\\mathbb{Z}$, opérations et propriétés.",
+        "Théorème fondamental de l’arithmétique ; ensemble $\\mathbb{Z}/p\\mathbb{Z}$ lorsque $p$ est premier.",
+        "Petit théorème de Fermat."
+      ],
+      "capacities": [
+        "Utiliser la décomposition en facteurs premiers pour déterminer le PPCM et le PGCD de deux nombres ou plus.",
+        "Écrire un entier naturel et effectuer la somme et le produit de deux nombres dans un système de numération donné.",
+        "Utiliser la congruence modulo $n$ dans des situations d’arithmétique.",
+        "Utiliser les théorèmes de Gauss, de Bézout et de Fermat dans des problèmes d’arithmétique.",
+        "Utiliser l’algorithme d’Euclide pour déterminer le PGCD et les coefficients de Bézout.",
+        "Résoudre dans $\\mathbb{Z} \\times \\mathbb{Z}$ l’équation $ax + by = c$."
+      ],
+      "recommendations": [
+        "Faire la synthèse des acquis du Tronc commun scientifique et de la 1re Bac Sciences Mathématiques.",
+        "Insister sur la rigueur des démonstrations et la clarté de rédaction.",
+        "Étudier quelques algorithmes (Euclide, crible d’Ératosthène…) et démontrer que l’ensemble des nombres premiers est infini.",
+        "Traiter des équations diophantiennes, appliquer Gauss/Bézout/Fermat et initier les élèves à des situations simples de cryptage."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 6,
+      "section": "Algèbre et géométrie",
+      "title": "Nombres complexes",
+      "pages": "p. 22–23",
+      "contents": [
+        "Ensemble $\\mathbb{C}$, écriture algébrique, égalité, parties réelle et imaginaire, conjugué et opérations.",
+        "Plan complexe : affixe d’un point, affixe d’un vecteur, image d’un nombre complexe.",
+        "Module d’un nombre complexe, lien avec la distance, inégalité triangulaire, groupe $(U, \\cdot)$ des complexes de module $1$ et cercle trigonométrique.",
+        "Argument d’un nombre complexe non nul, forme trigonométrique, coordonnées polaires, angle de deux vecteurs et interprétation géométrique de $\\frac{z-a}{z-b}$ et $\\frac{z-a}{z'-b}$.",
+        "Notation exponentielle $e^{i\\theta}$, formules d’Euler et de Moivre, linéarisation et factorisation des polynômes trigonométriques.",
+        "Racines $n$-ièmes de l’unité (groupe $(U_n, \\cdot)$) et racines $n$-ièmes d’un nombre complexe non nul.",
+        "Équation de degré 2 à inconnue complexe et coefficients complexes ; relations entre coefficients et racines.",
+        "Expressions complexes des transformations usuelles du plan : translation, symétrie, homothétie, rotation."
+      ],
+      "capacities": [
+        "Maîtriser le calcul dans $\\mathbb{C}$ et interpréter géométriquement des expressions et formules complexes.",
+        "Utiliser les complexes en trigonométrie (formules de transformation, linéarisation, développement).",
+        "Traduire par l’outil complexe : distance, alignement, orthogonalité et cocyclicité de quatre points.",
+        "Résoudre une équation du second degré dans $\\mathbb{C}$ (y compris à coefficients complexes) et les équations qui s’y ramènent.",
+        "Résoudre $z^n = 1$ et interpréter géométriquement l’ensemble des solutions.",
+        "Déterminer et utiliser les écritures complexes des transformations usuelles pour résoudre des problèmes géométriques."
+      ],
+      "recommendations": [
+        "Introduire la représentation géométrique dès le début du chapitre et en parallèle des opérations (opposé, conjugué, module, argument, somme, produit par un réel).",
+        "Utiliser les transformations et les complexes pour retrouver des formules trigonométriques et faire la synthèse des transformations planes.",
+        "Traiter sur des exemples la composée de deux rotations, d’une rotation et d’une translation, ainsi que d’une homothétie et d’une translation."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 7,
+      "section": "Algèbre et géométrie",
+      "title": "Calcul de probabilités",
+      "pages": "p. 23–24",
+      "contents": [
+        "Expériences aléatoires ; espace probabilisé fini ; hypothèse d’équiprobabilité.",
+        "Probabilité conditionnelle ; indépendance de deux événements ; indépendance de deux expériences.",
+        "Variable aléatoire ; loi de probabilité d’une variable aléatoire ; cas de la loi binomiale.",
+        "Espérance mathématique ; fonction de répartition, variance et écart-type."
+      ],
+      "capacities": [
+        "Calculer la probabilité de la réunion, de l’intersection et de l’événement contraire.",
+        "Utiliser la probabilité conditionnelle pour déterminer la probabilité de l’intersection de deux événements.",
+        "Choisir le modèle de dénombrement adapté à la situation étudiée.",
+        "Reconnaître l’indépendance et l’incompatibilité de deux événements.",
+        "Déterminer la loi de probabilité d’une variable aléatoire et reconnaître/appliquer la loi binomiale dans des situations liées aux disciplines de la spécialité."
+      ],
+      "recommendations": [
+        "Partir de la stabilité des fréquences par répétition d’expériences aléatoires simples (calculatrice touche rand ou ordinateur).",
+        "Introduire progressivement le langage probabiliste sur des situations concrètes et variées.",
+        "Profiter du calcul de probabilités pour rappeler les principaux résultats du dénombrement."
+      ],
+      "horsProgramme": [
+        "Éviter toute présentation théorique (axiomatique abstraite) de la notion de probabilité."
+      ]
+    },
+    {
+      "id": 8,
+      "section": "Algèbre et géométrie",
+      "title": "Les structures algébriques",
+      "pages": "p. 24–25",
+      "contents": [
+        "Loi de composition interne (LCI) : exemples variés (fonctions sur un intervalle, polynômes de degré $\\le n$, matrices carrées $M_2(\\mathbb{R})$ et $M_3(\\mathbb{R})$, ensembles $\\mathbb{Z}/n\\mathbb{Z}$, transformations) ; partie stable, loi extraite, associativité, commutativité, élément neutre, symétrique, notations $na$ et $a^n$ ; homomorphisme et isomorphisme.",
+        "Groupe : définition, règles de calcul, sous-groupe et propriété caractéristique ; homomorphisme de groupes, groupes isomorphes, image d’un groupe par un isomorphisme.",
+        "Anneau et corps : définition, exemples, anneau intègre ; définition et propriétés d’un corps.",
+        "Espaces vectoriels réels : loi de composition externe, définition, règles de calcul, sous-espace vectoriel et propriété caractéristique, combinaison linéaire, dépendance et indépendance linéaire, base et dimension."
+      ],
+      "capacities": [
+        "Maîtriser les techniques de calcul dans les différentes structures usuelles (matrices, $\\mathbb{Z}/n\\mathbb{Z}$, fonctions, transformations).",
+        "Utiliser les structures des ensembles usuels pour étudier celles d’autres ensembles.",
+        "Comparer et transposer une structure algébrique d’un ensemble à un autre via un homomorphisme ou un isomorphisme."
+      ],
+      "recommendations": [
+        "Se limiter aux ensembles de fonctions sur un intervalle, polynômes de degré $\\le n$, matrices carrées, $\\mathbb{Z}/n\\mathbb{Z}$ et transformations munies de la composition.",
+        "Insister sur les opérations fondamentales dans les matrices carrées et traiter les structures $(M_n; +; \\times)$ et $(M_n; +; \\cdot)$ pour $n=2$ et $n=3$.",
+        "Illustrer chaque définition par des exemples usuels et insister sur le sous-groupe et le sous-espace vectoriel dans leur relation aux structures usuelles (nombres, transformations, matrices, applications, $\\mathbb{Z}/n\\mathbb{Z}$, $U_n$…)."
+      ],
+      "horsProgramme": []
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "classId": "2eme-annee-college",
+  "title": "Deuxième année du cycle secondaire collégial",
+  "source": "Ministère de l’Éducation Nationale · Cycle collégial",
+  "year": "Programme officiel",
+  "chapters": [
+    {
+      "id": 1,
+      "section": "Algèbre",
+      "title": "Nombres rationnels et opérations",
+      "contents": [
+        "Nombre rationnel $\\frac{a}{b}$, signe, simplification et comparaison.",
+        "Somme, différence, produit, inverse et quotient."
+      ],
+      "capacities": [
+        "Conduire un calcul fractionnaire complet avec signes et parenthèses."
+      ],
+      "recommendations": [
+        "Renforcer la maîtrise du calcul sur les rationnels comme prolongement des fractions et relatifs."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 2,
+      "section": "Algèbre",
+      "title": "Puissances à exposant entier relatif",
+      "contents": [
+        "Règles de calcul sur $a^n$ ($n \\in \\mathbb{Z}$), $a^{-n} = \\frac{1}{a^n}$.",
+        "Écriture scientifique $a \\times 10^p$ ($1 \\le a < 10$)."
+      ],
+      "capacities": [
+        "Simplifier un quotient de puissances et donner l’écriture scientifique."
+      ],
+      "recommendations": [
+        "Relier l’écriture scientifique aux ordres de grandeur en physique et sciences de la vie."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 3,
+      "section": "Algèbre",
+      "title": "Calcul littéral, équations et ordre",
+      "contents": [
+        "Développement, identités remarquables, factorisation.",
+        "Équations du 1er degré, ordre et encadrements."
+      ],
+      "capacities": [
+        "Résoudre des équations à coefficients rationnels et encadrer une expression."
+      ],
+      "recommendations": [
+        "Travailler l’enchaînement des équivalences et les règles d’addition/multiplication dans les inégalités."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 4,
+      "section": "Géométrie",
+      "title": "Triangle rectangle, Pythagore et cosinus",
+      "contents": [
+        "Cercle circonscrit à un triangle rectangle.",
+        "Théorème de Pythagore ($BC^2 = AB^2 + AC^2$) et cosinus d’un angle aigu."
+      ],
+      "capacities": [
+        "Calculer une longueur avec Pythagore ou $\\cos \\widehat{B}$."
+      ],
+      "recommendations": [
+        "Distinguer clairement le théorème direct et la réciproque dans les démonstrations."
+      ],
+      "horsProgramme": []
+    },
+    {
+      "id": 5,
+      "section": "Géométrie",
+      "title": "Vecteurs, translation et pyramide/cône",
+      "contents": [
+        "Vecteur $\\overrightarrow{AB}$, relation de Chasles et translation.",
+        "Pyramide et cône : volume $V = \\frac{1}{3} B \\times h$."
+      ],
+      "capacities": [
+        "Construire l’image d’une figure par translation et calculer un volume."
+      ],
+      "recommendations": [
+        "Lier l’égalité vectorielle aux propriétés du parallélogramme."
+      ],
+      "horsProgramme": []
+    }
+  ]
+}

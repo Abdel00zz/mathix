@@ -12,7 +12,7 @@
     },
     {
       "id": "q2",
-      "content": "Montrer que pour tout $x \\in \\mathbb{R}$ : $\\left(x \\neq \\sqrt{3}$ et $x \\neq -\\sqrt{3}\\right) \\iff \\dfrac{2}{\\sqrt{x^2+1}} \\neq 1$",
+      "content": "Montrer que pour tout $x \\in \\mathbb{R}$ : $\\left(x \\neq \\sqrt{3} \\text{ et } x \\neq -\\sqrt{3}\\right) \\iff \\dfrac{2}{\\sqrt{x^2+1}} \\neq 1$",
       "hint": "Établissez les deux implications. Pour $\\Rightarrow$ : si $x \\neq \\pm\\sqrt{3}$, montrez que $x^2 \\neq 3$. Pour $\\Leftarrow$ : utilisez la contraposée."
     }
   ]

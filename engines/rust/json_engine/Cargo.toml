@@ -1,0 +1,18 @@
+[package]
+name = "json_engine"
+version = "1.7.0"
+edition.workspace = true
+description = "Moteur JSON, Studio et progression adaptative de Mathix (Rust → WASM32)."
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["wasm-entry"]
+wasm-entry = []
+
+[dependencies]
+serde_json = { path = "../shared/serde_json" }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm_abi = { path = "../shared/wasm_abi" }

@@ -6,10 +6,10 @@
   "requiresRedaction": true,
   "context": "Soit $f$ la fonction numérique définie sur $]0;+\\infty[$ par $f(x) = 2 - \\dfrac{2}{x} + (1-\\ln x)^2$. Et $(\\mathcal{C})$ sa courbe représentative dans un repère orthonormé $(O,\\overrightarrow{i},\\overrightarrow{j})$ (unité : $1\\,\\text{cm}$). La courbe $(\\mathcal{C}_g)$ ci-contre est la représentation graphique de la fonction $g: x \\mapsto f(x) - x$ qui s'annule en $\\alpha$ et $1$ ($\\alpha \\approx 0{,}3$). Soit $(\\Delta)$ la droite d'équation $y = x$.",
   "media": {
-    "src": "/data/2eme-bac-sc-math/pictures/ex_14_courbe_cg.png",
+    "src": "/data/2eme-bac-sc-math/pictures/ex_14_courbe_cg.svg",
     "type": "image",
     "position": "right",
-    "width": "35%",
+    "width": "38%",
     "alt": "Courbe de la fonction g = f(x) - x s'annulant en alpha et 1",
     "caption": "Courbe $(\\mathcal{C}_g)$",
     "shadow": true,
